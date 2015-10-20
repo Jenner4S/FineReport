@@ -1,4 +1,4 @@
-#finereport-opensource
+# FineReport V8.0设计器开发工程
 
 所需环境：JDK1.8、IntelliJ IDEA 14+或者eclipse
 
@@ -12,5 +12,3 @@
 > > > designer
 
 用eclipse直接导入此工程或者用IntelliJ IDEA直接打开此工程即可
-
-如下图所示
