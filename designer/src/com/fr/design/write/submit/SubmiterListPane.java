@@ -14,6 +14,7 @@ import com.fr.design.mainframe.ElementCasePane;
 import com.fr.design.scrollruler.ModLineBorder;
 import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.ComparatorUtils;
+import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 import com.fr.general.NameObject;
 import com.fr.report.write.Submiter;
@@ -135,6 +136,12 @@ public class SubmiterListPane extends ObjectJControlPane {
         public BuiltInSQLSubmiterProvider updateBean() {
             DBManipulation dbManipulation = dbManipulationPane.updateBean();
 
+            //复制对象用于撤销
+            try{
+                editing = (BuiltInSQLSubmiterProvider)editing.clone();
+            }catch (Exception e){
+                FRLogger.getLogger().error(e.getMessage());
+            }
             editing.setDBManipulation(dbManipulation);
 
             return editing;
