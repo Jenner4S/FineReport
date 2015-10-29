@@ -3,16 +3,17 @@ package com.fr.design.webattr;
 import com.fr.base.ConfigManager;
 import com.fr.design.dialog.BasicDialog;
 import com.fr.design.dialog.DialogActionAdapter;
+import com.fr.design.gui.core.WidgetOption;
 import com.fr.design.gui.ibutton.UIButton;
 import com.fr.design.gui.icheckbox.UICheckBox;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.utils.gui.GUICoreUtils;
-import com.fr.design.webattr.ReportSelectToolBarPane.EditToolBarPane;
 import com.fr.form.event.Listener;
 import com.fr.general.Inter;
 import com.fr.report.web.Location;
 import com.fr.report.web.ToolBarManager;
+import com.fr.report.web.WebContent;
 import com.fr.report.web.WebView;
 import com.fr.web.attr.ReportWebAttr;
 
@@ -23,14 +24,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewToolBarPane extends EditToolBarPane<WebView> {
+public class ViewToolBarPane extends AbstractEditToolBarPane {
 	private EventPane eventPane;
 	
 	private UICheckBox isUseToolBarCheckBox = new UICheckBox(Inter.getLocText("FR-Designer_Use_ToolBar"));
 	private UIButton editToolBarButton = new UIButton(Inter.getLocText("FR-Designer_Edit"));
 	private UILabel showListenersLabel = new UILabel(Inter.getLocText("Form-Editing_Listeners") + ":");
-	
-	private ToolBarManager[] toolBarManagers = null;
 	
 	public ViewToolBarPane() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -39,24 +38,7 @@ public class ViewToolBarPane extends EditToolBarPane<WebView> {
 		this.add(allPanel, BorderLayout.CENTER);
         JPanel northPane = FRGUIPaneFactory.createNColumnGridInnerContainer_S_Pane(1);
         allPanel.add(northPane, BorderLayout.NORTH);
-		editToolBarButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				final DragToolBarPane dragToolbarPane = new DragToolBarPane();
-				dragToolbarPane.setDefaultToolBar(ToolBarManager.createDefaultViewToolBar(), ReportWebWidgetConstants.getViewToolBarInstance());
-				dragToolbarPane.populateBean(ViewToolBarPane.this.toolBarManagers);
-				
-				BasicDialog toobarDialog = dragToolbarPane.showWindow(SwingUtilities.getWindowAncestor(ViewToolBarPane.this));
-				
-				toobarDialog.addDialogActionListener(new DialogActionAdapter() {
-					@Override
-					public void doOk() {
-						ViewToolBarPane.this.toolBarManagers = dragToolbarPane.updateBean();
-					}
-				});
-				toobarDialog.setVisible(true);
-			}
-		});
+        editToolBarButton.addActionListener(editBtnListener);
 		isUseToolBarCheckBox.setSelected(true);
 		isUseToolBarCheckBox.addActionListener(new ActionListener() {
 			@Override
@@ -93,7 +75,7 @@ public class ViewToolBarPane extends EditToolBarPane<WebView> {
 	}
 
 	@Override
-	public void populateBean(WebView webView) {
+	public void populateBean(WebContent webView) {
 		if (webView == null) {
 			webView = new WebView();
 		}
@@ -156,4 +138,10 @@ public class ViewToolBarPane extends EditToolBarPane<WebView> {
 		serverPageDialog.setVisible(true);
 		
 	}
+
+
+    @Override
+    protected WidgetOption[] getToolBarInstance() {
+        return ReportWebWidgetConstants.getViewToolBarInstance();
+    }
 }

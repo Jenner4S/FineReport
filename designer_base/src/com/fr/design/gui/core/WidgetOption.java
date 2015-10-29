@@ -106,12 +106,24 @@ public abstract class WidgetOption implements Serializable {
     }
 
 
-    /*
-     *  表单工具栏的控件
+    /**
+     * 报表工具栏的控件
+     *
+     * @return 报表工具栏控件
+     */
+    public static WidgetOption[] getReportParaWidgetIntance() {
+        return new WidgetOption[]{TEXTEDITOR, LABEL, FREEBUTTON, COMBOBOX, COMBOCHECKBOX, DATEEDITOR,
+                NUMBEREDITOR, TREECOMBOBOX, RADIOGROUP, CHECKBOXGROUP, TEXTAREA, PASSWORD, CHECKBOX, TREE};
+    }
+
+    /**
+     * 表单工具栏控件
+     *
+     * @return 表单工具栏控件
      */
     public static WidgetOption[] getFormWidgetIntance() {
         return new WidgetOption[]{TEXTEDITOR, LABEL, FREEBUTTON, COMBOBOX, COMBOCHECKBOX, DATEEDITOR,
-                NUMBEREDITOR, TREECOMBOBOX, RADIOGROUP, CHECKBOXGROUP, TEXTAREA, PASSWORD, CHECKBOX, TREE};
+                NUMBEREDITOR, TREECOMBOBOX, RADIOGROUP, CHECKBOXGROUP, TEXTAREA, PASSWORD, CHECKBOX, TREE, MULTI_FILEEDITOR};
     }
 
     public static final WidgetOption DATEEDITOR = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"Date", "Widget"}),

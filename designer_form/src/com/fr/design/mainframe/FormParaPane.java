@@ -148,7 +148,7 @@ public class FormParaPane extends JPanel {
 
     private void initParaButtons() {
         if(componentsList4Para.isEmpty()) {
-            WidgetOption[] options = WidgetOption.getFormWidgetIntance();
+            WidgetOption[] options = WidgetOption.getReportParaWidgetIntance();
 
             WidgetOption[] basicWidgetArray = (WidgetOption[]) ArrayUtils.addAll(
                     options, ExtraDesignClassManager.getInstance().getParameterWidgetOptions()

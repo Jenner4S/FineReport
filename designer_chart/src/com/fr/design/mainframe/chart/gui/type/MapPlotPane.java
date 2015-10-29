@@ -2,6 +2,7 @@ package com.fr.design.mainframe.chart.gui.type;
 
 import com.fr.chart.base.ChartEnumDefinitions;
 import com.fr.chart.chartattr.Chart;
+import com.fr.chart.chartattr.Legend;
 import com.fr.chart.chartattr.MapPlot;
 import com.fr.chart.chartattr.Plot;
 import com.fr.chart.charttypes.MapIndependentChart;
@@ -92,6 +93,7 @@ public class MapPlotPane extends AbstractChartTypePane {
         }
 
 		MapPlot plot = new MapPlot();
+		plot.setLegend(new Legend());
 		plot.setSvgMap(this.isSvgMap);
 		plot.setMapName(groupExtensionPane.updateBean(plot));// √˚◊÷Œ Ã‚
 
