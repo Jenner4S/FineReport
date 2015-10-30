@@ -18,6 +18,7 @@ import com.fr.form.ui.*;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.Inter;
 import com.fr.stable.ArrayUtils;
+import com.fr.stable.OperatingSystem;
 
 import javax.swing.*;
 import java.awt.*;
@@ -388,7 +389,9 @@ public class FormParaWidgetPane extends JPanel{
                     boolean dragBar = startX < point.getX() && endX > point.getX() && endY > point.getY();
                     if (!dragBar && mv.getClickCount() > 0 && mv.getID() != MouseEvent.MOUSE_RELEASED) {
                         if(!ComparatorUtils.equals(mv.getSource(), PopUpWindow.this)) {
-                            PopUpWindow.this.setVisible(false);
+                            if (!OperatingSystem.isMacOS()) {
+                                PopUpWindow.this.setVisible(false);
+                            }
                         }
                     }
                 }
