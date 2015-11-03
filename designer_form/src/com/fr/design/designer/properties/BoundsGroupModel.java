@@ -13,7 +13,6 @@ import com.fr.design.mainframe.widget.editors.PropertyCellEditor;
 import com.fr.design.designer.beans.ConstraintsGroupModel;
 import com.fr.design.designer.creator.XCreator;
 import com.fr.design.designer.creator.XWAbsoluteLayout;
-import com.fr.form.ui.FreeButton;
 import com.fr.form.ui.container.WAbsoluteLayout;
 
 /**
@@ -60,13 +59,13 @@ public class BoundsGroupModel implements ConstraintsGroupModel {
         if (column == 0) {
             switch (row) {
                 case 0:
-                    return Inter.getLocText("X-Coordinate");
+                    return Inter.getLocText("FR-Designer_X_Coordinate");
                 case 1:
-                    return Inter.getLocText("Y-Coordinate");
+                    return Inter.getLocText("FR-Designer_Y_Coordinate");
                 case 2:
-                    return Inter.getLocText("Widget-Width");
+                    return Inter.getLocText("FR-Designer_Widget_Width");
                 default:
-                    return Inter.getLocText("Widget-Height");
+                    return Inter.getLocText("FR-Designer_Widget_Height");
             }
         } else {
             switch (row) {
@@ -108,7 +107,7 @@ public class BoundsGroupModel implements ConstraintsGroupModel {
 				break;
 			case 3:
                 if(v < MINHEIGHT){
-                    JOptionPane.showMessageDialog(null, Inter.getLocText("Min-Height") + "21");
+                    JOptionPane.showMessageDialog(null, Inter.getLocText("FR-Designer_Min_Height") + "21");
                     v = component.getHeight();
                 }
 				if (bounds.height == v){
@@ -127,14 +126,14 @@ public class BoundsGroupModel implements ConstraintsGroupModel {
         }
     }
 
+    /**
+     * 属性组是否可编辑
+     * @param row 第几行
+     * @return 组件可编辑
+     */
 	@Override
 	public boolean isEditable(int row) {
-        boolean flag = (component.toData()) instanceof FreeButton && ((FreeButton) component.toData()).isCustomStyle();
-		if ((row == 2 || row == 3)
-				&& flag) {
-			// 自定义Button样式后不应该可以设置高度，宽度，就先不为这个特例给XCreator加个是否可以设置的方法吧
-			return false;
-		}
+        //这里不需要为自定义按钮屏蔽大小属性
 		return true;
 	}
 }

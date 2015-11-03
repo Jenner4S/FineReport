@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 
 import com.fr.base.ScreenResolution;
 import com.fr.base.background.GradientBackground;
-import com.fr.design.designer.beans.location.Direction;
 import com.fr.design.form.util.XCreatorConstants;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.mainframe.widget.editors.ButtonTypeEditor;
@@ -233,8 +232,8 @@ public class XButton extends XWidgetCreator {
 			editor.add(l, BorderLayout.CENTER);
 		} else {
 			l.setBorder(null);
-			editor.setLayout(null);
-			editor.add(l);
+			editor.setLayout(new BorderLayout());
+			editor.add(l,BorderLayout.CENTER);
             if (button.getFont() != null) {
                 contentLabel.setFont(button.getFont().applyResolutionNP(
                         ScreenResolution.getScreenResolution()));
@@ -269,18 +268,6 @@ public class XButton extends XWidgetCreator {
 			}
 		}
 		l.setEnabled(button.isEnabled());
-	}
-    
-    @Override
-	public int[] getDirections() {
-		if (!((FreeButton) data).isCustomStyle()) {
-			return super.getDirections();
-		} else {
-			if (ArrayUtils.contains(super.getDirections(), Direction.INNER)) {
-				return new int[] { Direction.INNER };
-			}
-			return new int[0];
-		}
 	}
 
     /**
