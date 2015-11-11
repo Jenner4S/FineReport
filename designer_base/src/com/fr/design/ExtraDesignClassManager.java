@@ -148,6 +148,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加全局监听
+     *
      * @param className 包名
      */
     public void addGlobalListenerProvider(String className) {
@@ -192,6 +193,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加提交接口
+     *
      * @param className 包全名
      */
     public void addSubmitProvider(String className) {
@@ -201,7 +203,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
             }
             try {
                 Class clazz = GeneralUtils.classForName(className);
-                SubmitProvider provider = (SubmitProvider)clazz.newInstance();
+                SubmitProvider provider = (SubmitProvider) clazz.newInstance();
                 if (!submitProviders.contains(provider)) {
                     submitProviders.add(provider);
                 }
@@ -734,11 +736,11 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         }
     }
 
-    public FormElementCaseEditorProcessor getPropertyTableEditor(){
+    public FormElementCaseEditorProcessor getPropertyTableEditor() {
         return formElementCaseEditorProcessor;
     }
 
-    public void setPropertyTableEditor(String className){
+    public void setPropertyTableEditor(String className) {
         if (StringUtils.isNotBlank(className)) {
             try {
                 Class clazz = GeneralUtils.classForName(className);
@@ -749,9 +751,10 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         }
     }
 
-    public IndentationUnitProcessor getIndentationUnitEditor(){
+    public IndentationUnitProcessor getIndentationUnitEditor() {
         return indentationUnitProcessor;
     }
+
     public void setIndentationUnitEditor(String className) {
         if (StringUtils.isNotBlank(className)) {
             try {
@@ -837,7 +840,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
             } else if (tagName.equals(FormElementCaseEditorProcessor.MARK_STRING)) {
                 setPropertyTableEditor(reader.getAttrAsString("class", ""));
             } else if (tagName.equals(IndentationUnitProcessor.MARK_STRING)) {
-                setIndentationUnitEditor(reader.getAttrAsString("class",""));
+                setIndentationUnitEditor(reader.getAttrAsString("class", ""));
             }
         }
     }

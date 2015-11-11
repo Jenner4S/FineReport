@@ -6,7 +6,7 @@ import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.ComboBox;
 
 public class ComboBoxDefinePane extends CustomWritableRepeatEditorPane<ComboBox> {
-	private DictionaryPane dictPane;
+	protected DictionaryPane dictPane;
 
 	public ComboBoxDefinePane() {
 		this.initComponents();

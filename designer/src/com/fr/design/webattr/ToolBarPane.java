@@ -1,24 +1,21 @@
 package com.fr.design.webattr;
 
-import java.awt.Component;
+import com.fr.design.beans.BasicBeanPane;
+import com.fr.design.dialog.BasicDialog;
+import com.fr.design.dialog.DialogActionAdapter;
+import com.fr.design.gui.core.WidgetOption;
+import com.fr.design.layout.FRGUIPaneFactory;
+import com.fr.form.ui.ToolBar;
+import com.fr.form.ui.Widget;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
-
-import javax.swing.BorderFactory;
-import javax.swing.SwingUtilities;
-import javax.swing.TransferHandler;
-
-import com.fr.design.beans.BasicBeanPane;
-import com.fr.design.layout.FRGUIPaneFactory;
-import com.fr.design.dialog.BasicDialog;
-import com.fr.design.dialog.DialogActionAdapter;
-import com.fr.design.gui.core.WidgetOption;
-import com.fr.form.ui.ToolBar;
-import com.fr.form.ui.Widget;
 
 public class ToolBarPane extends BasicBeanPane<ToolBar> {
 	private FToolBar ftoolbar = new FToolBar();
@@ -29,6 +26,11 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 	}
 
 
+    /**
+     * 添加鼠标监听
+     *
+     * @param mouselistener 鼠标监听
+     */
 	public void addAuthorityListener(MouseListener mouselistener) {
 		List<ToolBarButton> list = ftoolbar.getButtonlist();
 		for (int i = 0; i < list.size(); i++) {
@@ -42,6 +44,9 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 		this.add(button);
 	}
 
+    /**
+     * 初始化组件
+     */
 	public void initComponent() {
 		this.addMouseListener(listener);
 		this.setLayout(FRGUIPaneFactory.createBoxFlowLayout());
@@ -49,7 +54,9 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 		this.setBorder(BorderFactory.createTitledBorder(""));
 	}
 
-
+    /**
+     * 删除鼠标事件
+     */
 	public void removeDefaultMouseListener() {
 		this.removeMouseListener(listener);
 	}
@@ -63,6 +70,13 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 		this.ftoolbar.addButton(button);
 	}
 
+    /**
+     * 添加组件
+     *
+     * @param comp 组件
+     *
+     * @return 被添加的组件
+     */
 	public Component add(Component comp) {
 		if (comp instanceof ToolBarButton) {
 			this.ftoolbar.addButton((ToolBarButton) comp);
@@ -119,6 +133,11 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 		for (int j = 0; j < toolbar.getWidgetSize(); j++) {
 			Widget widget = toolbar.getWidget(j);
 			WidgetOption no = WidgetOption.getToolBarButton(widget.getClass());
+            if (no == null){
+                //如果装了什么插件, 放到了工具栏上, 后来删除了插件, 模板里还存着之前的控件
+                continue;
+            }
+
 			ToolBarButton button = new ToolBarButton(no.optionIcon(), widget);
 			button.setNameOption(no);
 			this.add(button);

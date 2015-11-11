@@ -39,6 +39,7 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 		Chart selectChart = collection.getSelectedChart();
 		if(selectChart != null && selectChart.getPlot() instanceof MapPlot) {
 			MapPlot map = (MapPlot)selectChart.getPlot();
+            layerPane.setSvg(map.isSvgMap());
 			layerPane.populateBean(map.getMapName());
 		}
 
@@ -66,6 +67,7 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 		if(selectChart != null && selectChart.getPlot() instanceof MapPlot) {
 			MapPlot map = (MapPlot)selectChart.getPlot();
 			if(layerPane != null) {
+                layerPane.setSvg(map.isSvgMap());
 				layerPane.initRootTree(map.getMapName());
 			}
 		}
@@ -85,7 +87,7 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
      * @return ∑µªÿ±ÍÃ‚
      */
 	public String title4PopupWindow() {
-		return Inter.getLocText("Muiti_In");
+		return Inter.getLocText("FR-Chart-Muiti_In");
 	}
 
     /**

@@ -1,14 +1,15 @@
 package com.fr.design.chart.report;
 
+import com.fr.base.MapXMLHelper;
 import com.fr.chart.base.MapSvgXMLHelper;
 import com.fr.design.beans.BasicBeanPane;
-import com.fr.design.gui.itableeditorpane.UIArrayTableModel;
-import com.fr.design.gui.itableeditorpane.UITableEditorPane;
 import com.fr.design.editor.ValueEditorPane;
 import com.fr.design.editor.ValueEditorPaneFactory;
-import com.fr.design.gui.xcombox.ComboBoxUseEditor;
 import com.fr.design.editor.editor.Editor;
 import com.fr.design.editor.editor.TextEditor;
+import com.fr.design.gui.itableeditorpane.UIArrayTableModel;
+import com.fr.design.gui.itableeditorpane.UITableEditorPane;
+import com.fr.design.gui.xcombox.ComboBoxUseEditor;
 import com.fr.general.Inter;
 
 import javax.swing.*;
@@ -55,6 +56,13 @@ public class MapCubeSetDataPane extends BasicBeanPane<List>{
 	public void freshComboxNames() {
 		initNames = MapSvgXMLHelper.getInstance().mapAllNames();
 	}
+
+    /**
+     * 位图地图刷新下拉列表
+     */
+    public void freshBitMapComboxNames() {
+        initNames = MapXMLHelper.getInstance().mapAllNames();
+    }
 	
 	// 需要得到地图 所有区域名称. 以及对应好的名字.
 	@Override

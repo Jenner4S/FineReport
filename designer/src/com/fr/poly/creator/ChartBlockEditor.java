@@ -60,7 +60,8 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 
 	public ChartBlockEditor(PolyDesigner designer, ChartBlockCreator creator) {
 		super(designer, creator);
-		this.initNorthBarComponent();
+        //shine:和产品商量后决定把最上面一排切换按钮去掉
+		//this.initNorthBarComponent();
 	}
 
 	private void initNorthBarComponent() {
@@ -94,9 +95,9 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
      * 检查控件是否可用
      */
 	public void checkChartButtonsEnable() {
-		for (ChartButton chartButton : chartButtons) {
-			chartButton.setEnabled(!BaseUtils.isAuthorityEditing());
-		}
+//		for (ChartButton chartButton : chartButtons) {
+//			chartButton.setEnabled(!BaseUtils.isAuthorityEditing());
+//		}
 	}
 
     /**
@@ -129,7 +130,8 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 
 	@Override
 	public void setBounds(Rectangle r) {
-		setBounds(r.x, r.y - BOUND_OFF, r.width, r.height + BOUND_OFF);
+        setBounds(r.x, r.y, r.width, r.height);
+		//setBounds(r.x, r.y - BOUND_OFF, r.width, r.height + BOUND_OFF);
 	}
 
 	@Override

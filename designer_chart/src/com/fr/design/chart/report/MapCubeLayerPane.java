@@ -1,18 +1,20 @@
 package com.fr.design.chart.report;
 
+import com.fr.base.MapXMLHelper;
 import com.fr.base.Utils;
 import com.fr.chart.base.ChartConstants;
 import com.fr.chart.base.MapSvgAttr;
 import com.fr.chart.base.MapSvgXMLHelper;
+import com.fr.chart.chartglyph.MapAttr;
 import com.fr.design.DesignerEnvManager;
 import com.fr.design.beans.BasicBeanPane;
 import com.fr.design.dialog.DialogActionAdapter;
 import com.fr.design.dialog.UIDialog;
+import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.StringUtils;
-import com.fr.design.utils.gui.GUICoreUtils;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -44,6 +46,8 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	private List<ChangeListener> fireWhenTreeChange = new ArrayList<ChangeListener>();
 	
 	private List<String> hasDealNames = new ArrayList<String>();
+
+    private boolean isSvg = true;
 	
 	public MapCubeLayerPane() {
 		initCom();
@@ -62,6 +66,10 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 		treePane.setPreferredSize(new Dimension(100, 100));
 		this.add(treePane, BorderLayout.CENTER);
 	}
+
+    public void setSvg(boolean isSvg) {
+        this.isSvg = isSvg;
+    }
 	
 	/**
 	 * 返回节点路径
@@ -84,9 +92,15 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 		root.add(node);
 		
 		// 每个节点都要去判断是否有地图再包含  默认钻取到同名的地图
-		MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
-		hasDealNames.clear();
-		add4Node(mapAttr, node, mapName);
+        if(isSvg) {
+            MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
+            hasDealNames.clear();
+            add4Node(mapAttr, node, mapName);
+        } else {
+            MapAttr mapAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(mapName);
+            hasDealNames.clear();
+            addBitMap4Node(mapAttr, node, mapName);
+        }
 		
 		mapTree.doLayout();
 		mapTree.validate();
@@ -105,6 +119,28 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	public void addChangeListener(ChangeListener change) {
 		fireWhenTreeChange.add(change);
 	}
+
+    private void addBitMap4Node(MapAttr editingMapAttr, DefaultMutableTreeNode node, String mapName) {
+        MapAttr mapAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(mapName);
+        if(mapAttr != null) {
+            Iterator namesValue = mapAttr.shapeValuesIterator();
+            while(namesValue.hasNext()) {
+                Object names = namesValue.next();
+                String nextToName = Utils.objectToString(editingMapAttr.getLayerTo(Utils.objectToString(names)));
+
+                MapAttr tmpAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(nextToName);
+                if(tmpAttr != null) {
+                    DefaultMutableTreeNode currentName = new DefaultMutableTreeNode(names);
+                    node.add(currentName);// 有钻取内容的地图才添加节点
+
+                    if(!hasDealNames.contains(Utils.objectToString(currentName.getUserObject()))) {
+                        hasDealNames.add(Utils.objectToString(currentName.getUserObject()));
+                        addBitMap4Node(editingMapAttr, currentName, nextToName);
+                    }
+                }
+            }
+        }
+    }
 	
 	private void add4Node(MapSvgAttr editingMapAttr, DefaultMutableTreeNode node, String mapName) {
 		MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
@@ -136,6 +172,10 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 			  }
 			  final String selectTreeName = Utils.objectToString(((DefaultMutableTreeNode)visiblePath.getLastPathComponent()).getUserObject());
 			  if(SwingUtilities.isRightMouseButton(e)) {
+                  if(!isSvg){
+                      popBitMapDialog(e, selectTreeName);
+                      return;
+                  }
 				  final MapSvgAttr editingAttr = MapSvgXMLHelper.getInstance().getMapAttr(editingMap);
 				  editedMap.add(editingMap);
 				  final MapCubeSetDataPane setDataPane = new MapCubeSetDataPane();
@@ -176,18 +216,64 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 			  }
 		  }
 	};
-	
-	private void saveMapInfo() {
+
+
+    private void popBitMapDialog(MouseEvent e, final String selectTreeName) {
+        final MapAttr editingAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(editingMap);
+        editedMap.add(editingMap);
+        final MapCubeSetDataPane setDataPane = new MapCubeSetDataPane();
+        setDataPane.freshBitMapComboxNames();
+        MapAttr mapAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(selectTreeName);
+        if(mapAttr != null) {// 从中取出对应关系  // 取出当前节点名称所对应的地图
+            List list = new ArrayList();
+            Iterator names = mapAttr.shapeValuesIterator();//行:  地图区域名(String) + 对应地图名(String)
+            while(names.hasNext()) {
+                Object name = names.next();
+                String layName = editingAttr.getLayerTo(Utils.objectToString(name));
+                if(ArrayUtils.contains(ChartConstants.NONE_KEYS, layName)) {// kunsnat: 考虑切换设计器语言.
+                    layName = StringUtils.EMPTY;
+                }
+                list.add(new Object[]{name, layName});
+            }
+            setDataPane.populateBean(list);
+        }
+
+        int x = (int)(mapTree.getLocationOnScreen().getX() + mapTree.getWidth());
+        int y = (int)e.getLocationOnScreen().getY();
+
+        UIDialog dialog = setDataPane.showUnsizedWindow(SwingUtilities.getWindowAncestor(setDataPane), new DialogActionAdapter() {
+            public void doOk() {
+                List list = setDataPane.updateBean(); // 更新当前的 地图名所对应的 区域名钻取关系 重新inittree
+                for(int i = 0; i < list.size(); i++) {
+                    Object[] values = (Object[])list.get(i);
+                    editingAttr.putLayerTo(values[0], values[1]);
+                }
+                initRootTree(editingMap);
+                saveMapInfo();
+            }
+        });
+        dialog.setSize(300, 300);
+        GUICoreUtils.centerWindow(dialog);
+        dialog.setVisible(true);
+    }
+
+    private void saveMapInfo() {
         final String[] mapNames = editedMap.toArray(new String[0]);
-        editedMap.clear();
-		SwingWorker worker = new SwingWorker<Integer, Void>() {
-			@Override
-			protected Integer doInBackground() throws Exception {
-				MapSvgXMLHelper.getInstance().saveEditedMaps(mapNames);
-				return 0;
-			}
-			
-			@Override
+        if(isSvg){
+            editedMap.clear();
+        }
+        SwingWorker worker = new SwingWorker<Integer, Void>() {
+            @Override
+            protected Integer doInBackground() throws Exception {
+                if(isSvg){
+                    MapSvgXMLHelper.getInstance().saveEditedMaps(mapNames);
+                } else {
+                    MapXMLHelper.getInstance().writerMapSourceWhenEditMap();
+                }
+                return 0;
+            }
+
+            @Override
 			protected void done() {
 				FRLogger.getLogger().info("Map Save End");
 			}
