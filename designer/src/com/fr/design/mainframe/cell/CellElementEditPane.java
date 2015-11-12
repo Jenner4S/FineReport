@@ -9,6 +9,8 @@ import javax.swing.Icon;
 import javax.swing.JPanel;
 
 import com.fr.base.BaseUtils;
+import com.fr.design.ExtraDesignClassManager;
+import com.fr.design.fun.CellAttributeProvider;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.gui.ibutton.UIHeadGroup;
 import com.fr.design.gui.itabpane.TitleChangeListener;
@@ -44,6 +46,8 @@ public class CellElementEditPane extends BasicPane {
     private JPanel center;
 
     private TitleChangeListener titleChangeListener = null;
+
+    private CellAttributeProvider cellAttributeProvider = null;
 
 
     public CellElementEditPane() {
@@ -123,7 +127,7 @@ public class CellElementEditPane extends BasicPane {
     AttributeChangeListener listener = new AttributeChangeListener() {
         @Override
         public void attributeChange() {
-            boolean isChooseFatherPane = ComparatorUtils.equals(paneList.get(tabsHeaderIconPane.getSelectedIndex()).getGlobalName(), Inter.getLocText("LeftParent")) ||
+            boolean isChooseFatherPane = ComparatorUtils.equals(paneList.get(tabsHeaderIconPane.getSelectedIndex()).getGlobalName(), Inter.getLocText("FR-Designer_LeftParent")) ||
                     ComparatorUtils.equals(paneList.get(tabsHeaderIconPane.getSelectedIndex()).getGlobalName(), Inter.getLocText("ExpandD-Up_Father_Cell"));
             boolean isChooseExpandPane = ComparatorUtils.equals(paneList.get(tabsHeaderIconPane.getSelectedIndex()).getGlobalName(), Inter.getLocText("ExpandD-Expand_Direction"));
             if (isChooseExpandPane || isChooseFatherPane) {
@@ -175,6 +179,11 @@ public class CellElementEditPane extends BasicPane {
         paneList.add(new CellStylePane());
         paneList.add(new CellPresentPane());
         paneList.add(new CellOtherSetPane());
+
+        cellAttributeProvider = ExtraDesignClassManager.getInstance().getCelllAttributeProvider();
+        if (cellAttributeProvider != null){
+            paneList.add((AbstractCellAttrPane) cellAttributeProvider.createCellAttributePane());
+        }
     }
 
 }

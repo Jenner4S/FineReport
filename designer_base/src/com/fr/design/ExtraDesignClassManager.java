@@ -108,6 +108,8 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     private IndentationUnitProcessor indentationUnitProcessor;
 
+    private CellAttributeProvider cellAttributeProvider;
+
     public GlobalListenerProvider[] getGlobalListenerProvider() {
         if (globalListenerProviders == null) {
             return new GlobalListenerProvider[0];
@@ -766,6 +768,21 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         }
     }
 
+    public CellAttributeProvider getCelllAttributeProvider(){
+        return cellAttributeProvider;
+    }
+	
+    public void setCellAttributeProvider(String className) {
+        if (StringUtils.isNotBlank(className)) {
+            try {
+                Class clazz = GeneralUtils.classForName(className);
+                cellAttributeProvider = (CellAttributeProvider) clazz.newInstance();
+            } catch (Exception e) {
+                FRContext.getLogger().error(e.getMessage(), e);
+            }
+        }
+    }
+
 
     /**
      * ÎÄ¼þÃû
@@ -840,7 +857,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
             } else if (tagName.equals(FormElementCaseEditorProcessor.MARK_STRING)) {
                 setPropertyTableEditor(reader.getAttrAsString("class", ""));
             } else if (tagName.equals(IndentationUnitProcessor.MARK_STRING)) {
-                setIndentationUnitEditor(reader.getAttrAsString("class", ""));
+                setIndentationUnitEditor(reader.getAttrAsString("class",""));
+            } else if (tagName.equals(CellAttributeProvider.MARK_STRING)) {
+                setCellAttributeProvider(reader.getAttrAsString("class",""));
             }
         }
     }
