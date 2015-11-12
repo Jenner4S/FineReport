@@ -12,3 +12,6 @@
 > > > designer
 
 用eclipse直接导入此工程或者用IntelliJ IDEA直接打开此工程即可
+
+# 插件开发入门以及调试教程
+参见这里：http://www.finedevelop.com/w/plugin/debug
