@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.icheckbox.UICheckBox;
 import com.fr.design.gui.itree.refreshabletree.TreeRootPane;
 import com.fr.design.layout.FRGUIPaneFactory;
@@ -72,11 +73,8 @@ public class TreeEditorDefinePane extends FieldEditorDefinePane<TreeEditor> {
 		return "tree";
 	}
 
-	/**
-	 * get treeSettingPane
-	 * @return
-	 */
-	public TreeSettingPane getTreeSettingPane() {
-		return this.treeSettingPane;
-	}
+    @Override
+    public DataCreatorUI dataUI() {
+        return treeSettingPane;
+    }
 }

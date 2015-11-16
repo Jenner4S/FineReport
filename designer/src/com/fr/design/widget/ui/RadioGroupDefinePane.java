@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.RadioGroup;
@@ -53,14 +54,14 @@ public class RadioGroupDefinePane extends FieldEditorDefinePane<RadioGroup> {
 		return "radiogroup";
 	}
 
-	public DictionaryPane getDictionaryPane() {
-		return this.dictPane;
-	}
-
 	@Override
 	protected void populateSubFieldEditorBean(RadioGroup ob) {
 		this.dictPane.populateBean(ob.getDictionary());
 		this.buttonGroupDictPane.populate(ob);
 	}
 
+    @Override
+    public DataCreatorUI dataUI() {
+        return dictPane;
+    }
 }

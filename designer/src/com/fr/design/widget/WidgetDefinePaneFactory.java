@@ -34,8 +34,6 @@ public class WidgetDefinePaneFactory {
         defineMap.put(Radio.class, new Appearance(RadioDefinePane.class, WidgetConstants.RADIO + ""));
         defineMap.put(CheckBox.class, new Appearance(CheckBoxDefinePane.class, WidgetConstants.CHECKBOX + ""));
         defineMap.put(TreeComboBoxEditor.class, new Appearance(TreeComboBoxEditorDefinePane.class, WidgetConstants.TREECOMBOBOX + ""));
-//        defineMap.put(TreeEditor.class.getName(), new DN(TreeComboBoxEditorDefinePane.class, WidgetConstants.TREE + ""));
-        // shoc:没看懂为什么这么搞
         defineMap.put(TreeEditor.class, new Appearance(TreeEditorDefinePane.class, WidgetConstants.TREE + ""));
         defineMap.put(MultiFileEditor.class, new Appearance(MultiFileEditorPane.class, WidgetConstants.MULTI_FILE + ""));
         defineMap.put(TextArea.class, new Appearance(TextAreaDefinePane.class, WidgetConstants.TEXTAREA + ""));
@@ -48,8 +46,7 @@ public class WidgetDefinePaneFactory {
         defineMap.put(ComboBox.class, new Appearance(ComboBoxDefinePane.class, WidgetConstants.COMBOBOX + ""));
         defineMap.put(RadioGroup.class, new Appearance(RadioGroupDefinePane.class, WidgetConstants.RADIOGROUP + ""));
         defineMap.put(CheckBoxGroup.class, new Appearance(CheckBoxGroupDefinePane.class, WidgetConstants.CHECKBOXGROUP + ""));
-        //AUGUST：按需求说表格树控件要删除 先屏蔽之
-//        defineMap.put(TableTree.class.getName(), new DN(TableTreeDefinePane.class, WidgetConstants.TABLETREE + ""));
+
         defineMap.put(NoneWidget.class, new Appearance(NoneWidgetDefinePane.class, WidgetConstants.NONE + ""));
         defineMap.put(Button.class, new Appearance(ButtonDefinePane.class, WidgetConstants.BUTTON + ""));
         defineMap.put(FreeButton.class, new Appearance(ButtonDefinePane.class, WidgetConstants.BUTTON + ""));
@@ -66,59 +63,34 @@ public class WidgetDefinePaneFactory {
 
     }
 
-    public static RN createWidgetDefinePane(Widget widget) {
+    public static RN createWidgetDefinePane(Widget widget, Operator operator) {
         Appearance dn = defineMap.get(widget.getClass());
-        BasicBeanPane<Widget> definePane = null;
-        DictionaryPane dictionaryPane = null;
-        TreeSettingPane treeSettingPane = null;
+        DataModify<Widget> definePane = null;
         try {
-            definePane = (BasicBeanPane<Widget>) dn.getDefineClass().newInstance();
-
+            definePane = (DataModify) dn.getDefineClass().newInstance();
             definePane.populateBean(widget);
-            dictionaryPane = ((DicPaneAndTreePaneCreator)definePane).getDictionaryPane();
-            treeSettingPane = ((DicPaneAndTreePaneCreator)definePane).getTreeSettingPane();
+            operator.did(definePane.dataUI(), dn.getDisplayName());
         } catch (Exception e) {
             FRContext.getLogger().error(e.getMessage(), e);
         }
-        if (treeSettingPane != null) {
-            return new RN(definePane, dn.getDisplayName(), treeSettingPane);
-        } else {
-            return new RN(definePane, dn.getDisplayName(), dictionaryPane);
-        }
+        return new RN(definePane, dn.getDisplayName());
     }
 
     public static class RN {
-        private BasicBeanPane<? extends Widget> definePane;
+        private DataModify<? extends Widget> definePane;
         private String cardName;
-        private DictionaryPane dictionaryPane;
-        private TreeSettingPane treeSettingPane;
 
-        public RN(BasicBeanPane<? extends Widget> definePane, String cardName, DictionaryPane dictionaryPane) {
+        public RN(DataModify<? extends Widget> definePane, String cardName) {
             this.definePane = definePane;
             this.cardName = cardName;
-            this.dictionaryPane = dictionaryPane;
         }
 
-        public RN(BasicBeanPane<? extends Widget> definePane, String cardName, TreeSettingPane treeSettingPane) {
-            this.definePane = definePane;
-            this.cardName = cardName;
-            this.treeSettingPane = treeSettingPane;
-        }
-
-        public BasicBeanPane<? extends Widget> getDefinePane() {
+        public DataModify<? extends Widget> getDefinePane() {
             return definePane;
         }
 
         public String getCardName() {
             return cardName;
-        }
-
-        public DictionaryPane getDictionaryPane() {
-            return dictionaryPane;
-        }
-
-        public TreeSettingPane getTreeSettingPane() {
-            return treeSettingPane;
         }
     }
 

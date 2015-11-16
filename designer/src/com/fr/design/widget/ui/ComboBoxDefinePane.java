@@ -2,6 +2,7 @@ package com.fr.design.widget.ui;
 
 import javax.swing.JPanel;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.ComboBox;
 
@@ -32,14 +33,14 @@ public class ComboBoxDefinePane extends CustomWritableRepeatEditorPane<ComboBox>
 
 		return combo;
 	}
-	
-	public DictionaryPane getDictionaryPane() {
-		return this.dictPane;
-	}
 
 	@Override
 	protected String title4PopupWindow() {
 		return "ComboBox";
 	}
 
+    @Override
+    public DataCreatorUI dataUI() {
+        return dictPane;
+    }
 }

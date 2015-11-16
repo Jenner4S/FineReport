@@ -6,7 +6,7 @@ import com.fr.design.gui.frpane.TreeSettingPane;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
 import com.fr.form.ui.Radio;
 import com.fr.general.FRFont;
 import com.fr.general.Inter;
@@ -14,7 +14,7 @@ import com.fr.general.Inter;
 import javax.swing.*;
 import java.awt.*;
 
-public class RadioDefinePane extends BasicBeanPane<Radio> implements DicPaneAndTreePaneCreator{
+public class RadioDefinePane extends AbstractDataModify<Radio> {
 	public RadioDefinePane() {
 		this.iniComoponents();
 	}
@@ -45,12 +45,4 @@ public class RadioDefinePane extends BasicBeanPane<Radio> implements DicPaneAndT
 	public Radio updateBean() {
 		return new Radio();
 	}
-
-    public DictionaryPane getDictionaryPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public TreeSettingPane getTreeSettingPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 }

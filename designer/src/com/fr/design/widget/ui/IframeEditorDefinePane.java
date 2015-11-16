@@ -21,9 +21,10 @@ import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.IframeEditor;
 import com.fr.general.Inter;
 import com.fr.stable.ParameterProvider;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
+import com.fr.third.org.apache.poi.hssf.record.formula.functions.Abs;
 
-public class IframeEditorDefinePane extends BasicBeanPane<IframeEditor> implements DicPaneAndTreePaneCreator{
+public class IframeEditorDefinePane extends AbstractDataModify<IframeEditor> {
 	private UITextField srcTextField;
 	private ReportletParameterViewPane parameterViewPane;
 	private UICheckBox horizontalCheck;
@@ -79,12 +80,4 @@ public class IframeEditorDefinePane extends BasicBeanPane<IframeEditor> implemen
 		ob.setOverflowy(this.verticalCheck.isSelected());
 		return ob;
 	}
-
-    public DictionaryPane getDictionaryPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public TreeSettingPane getTreeSettingPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 }

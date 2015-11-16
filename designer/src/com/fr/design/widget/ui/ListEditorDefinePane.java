@@ -2,6 +2,7 @@ package com.fr.design.widget.ui;
 
 import javax.swing.JPanel;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.icheckbox.UICheckBox;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
@@ -52,8 +53,8 @@ public class ListEditorDefinePane extends WriteUnableRepeatEditorPane<ListEditor
 		return ob;
 	}
 
-	public DictionaryPane getDictionaryPane() {
-		return this.dictPane;
-	}
-
+    @Override
+    public DataCreatorUI dataUI() {
+        return dictPane;
+    }
 }

@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.icheckbox.UICheckBox;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
@@ -88,7 +89,8 @@ public class CheckBoxGroupDefinePane extends FieldEditorDefinePane<CheckBoxGroup
 		return ob;
 	}
 
-	public DictionaryPane getDictionaryPane() {
-		return this.dictPane;
-	}
+    @Override
+    public DataCreatorUI dataUI() {
+        return dictPane;
+    }
 }

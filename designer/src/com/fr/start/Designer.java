@@ -349,7 +349,6 @@ public class Designer extends BaseDesigner {
     protected void collectUserInformation() {
     	//定制的就不弹出来了
     	if (!ComparatorUtils.equals(ProductConstants.APP_NAME, ProductConstants.DEFAULT_APPNAME)) {
-			UserInfoLabel.showBBSDialog();
 			return;
 		}
     	

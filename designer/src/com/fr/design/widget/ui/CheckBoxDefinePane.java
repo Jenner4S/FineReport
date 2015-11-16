@@ -11,9 +11,9 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.CheckBox;
 import com.fr.general.Inter;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
 
-public class CheckBoxDefinePane extends BasicBeanPane<CheckBox> implements DicPaneAndTreePaneCreator{
+public class CheckBoxDefinePane extends AbstractDataModify<CheckBox> {
 	private UITextField text;
 
 	public CheckBoxDefinePane() {
@@ -56,12 +56,4 @@ public class CheckBoxDefinePane extends BasicBeanPane<CheckBox> implements DicPa
 		box.setText(text.getText());
 		return box;
 	}
-
-    public DictionaryPane getDictionaryPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public TreeSettingPane getTreeSettingPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 }

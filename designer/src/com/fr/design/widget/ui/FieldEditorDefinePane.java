@@ -19,9 +19,9 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.FieldEditor;
 import com.fr.general.Inter;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
 
-public abstract class FieldEditorDefinePane<T extends FieldEditor> extends BasicBeanPane<T> implements DicPaneAndTreePaneCreator {
+public abstract class FieldEditorDefinePane<T extends FieldEditor> extends AbstractDataModify<T> {
 	private UICheckBox allowBlankCheckBox;
 	// richer:错误信息，是所有控件共有的属性，所以放到这里来
 	private UITextField errorMsgTextField;
@@ -101,24 +101,12 @@ public abstract class FieldEditorDefinePane<T extends FieldEditor> extends Basic
 		return e;
 	}
 
-    public DictionaryPane getDictionaryPane(){
-        return null;
-    };
-
-    public TreeSettingPane getTreeSettingPane(){
-        return null;
-    };
-
 	protected abstract T updateSubFieldEditorBean();
 
 	protected abstract JPanel setFirstContentPane();
 
 	@Override
 	public void checkValid() throws Exception {
-		// samuel:判断是否为参数设计面板
-        // TODO ALEX_SEP
-//		if (ReportDeziUtils.getEditingReportInternalFrame().getSelectedIndex() != 1) {
-//			return;
-//		}
+
 	}
 }

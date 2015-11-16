@@ -21,7 +21,7 @@ public abstract class AbstractPreviewProvider implements PreviewProvider {
 
     @Override
     public Map<String, Object> parametersForPreview() {
-        return Collections.EMPTY_MAP;
+        return Collections.emptyMap();
     }
 
     public boolean equals(Object obj) {

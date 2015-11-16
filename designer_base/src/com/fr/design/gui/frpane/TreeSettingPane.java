@@ -4,8 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.ilable.UILabel;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 
 import com.fr.general.NameObject;
 import com.fr.data.impl.TableDataDictionary;
@@ -21,7 +23,7 @@ import com.fr.form.ui.TreeComboBoxEditor;
 import com.fr.form.ui.TreeEditor;
 import com.fr.general.Inter;
 
-public class TreeSettingPane extends BasicPane {
+public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	private JTreeControlPane controlPane;
 	private JTreeAutoBuildPane autoBuildPane;
 	private UIComboBox buildBox;
@@ -73,7 +75,12 @@ public class TreeSettingPane extends BasicPane {
 		return Inter.getLocText("Create_Tree");
 	}
 
-	NameableCreator treeNode = new NameObjectCreator(
+    @Override
+    public JComponent toSwingComponent() {
+        return this;
+    }
+
+    NameableCreator treeNode = new NameObjectCreator(
 			Inter.getLocText("Gradation"),
 			"/com/fr/design/images/data/source/jdbcTableData.png",
 			TreeNodeAttr.class);

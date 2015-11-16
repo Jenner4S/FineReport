@@ -6,7 +6,7 @@ import com.fr.design.gui.frpane.TreeSettingPane;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
 import com.fr.form.ui.NameWidget;
 import com.fr.general.FRFont;
 import com.fr.general.Inter;
@@ -14,7 +14,7 @@ import com.fr.general.Inter;
 import javax.swing.*;
 import java.awt.*;
 
-public class UserEditorDefinePane extends BasicBeanPane<NameWidget> implements DicPaneAndTreePaneCreator{
+public class UserEditorDefinePane extends AbstractDataModify<NameWidget> {
 	private NameWidget nWidget;
 	public UserEditorDefinePane() {
 		this.initComponents();
@@ -47,12 +47,4 @@ public class UserEditorDefinePane extends BasicBeanPane<NameWidget> implements D
 	public NameWidget updateBean() {
 		return nWidget;
 	}
-
-    public DictionaryPane getDictionaryPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public TreeSettingPane getTreeSettingPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 }

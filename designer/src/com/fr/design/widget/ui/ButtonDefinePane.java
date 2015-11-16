@@ -6,7 +6,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
 import com.fr.form.ui.Button;
 import com.fr.form.ui.FreeButton;
-import com.fr.design.widget.DicPaneAndTreePaneCreator;
+import com.fr.design.widget.DataModify;
 import com.fr.design.widget.btn.ButtonDetailPane;
 import com.fr.design.widget.ui.btn.ButtonDetailPaneFactory;
 
@@ -15,7 +15,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 
-public class ButtonDefinePane extends BasicBeanPane<Button> implements DicPaneAndTreePaneCreator {
+public class ButtonDefinePane extends AbstractDataModify<Button> {
     private ButtonDetailPane detailPane;
 
     public ButtonDefinePane() {
@@ -55,13 +55,5 @@ public class ButtonDefinePane extends BasicBeanPane<Button> implements DicPaneAn
     @Override
     public Button updateBean() {
         return detailPane.update();
-    }
-
-    public DictionaryPane getDictionaryPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public TreeSettingPane getTreeSettingPane() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
