@@ -232,7 +232,9 @@ public class InformationCollector implements XMLReadable, XMLWriter {
                 Map tempMap = js.toMap();
                 for (Object key : tempMap.keySet()) {
                     if(resultMap.containsKey(key)){
-                        resultMap.put(key, Integer.parseInt(tempMap.get(key).toString()) + Integer.parseInt(tempMap.get(key).toString()));
+                        int cacheCount = Integer.parseInt(resultMap.get(key).toString());
+                        int currentCount = Integer.parseInt(tempMap.get(key).toString());
+                        resultMap.put(key, cacheCount + currentCount);
                     } else {
                         resultMap.put(key, tempMap.get(key));
                     }
