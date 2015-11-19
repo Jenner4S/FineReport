@@ -102,8 +102,10 @@ public class CellWidgetCardPane extends BasicPane {
                 }
             }
         });
+        DataModify<? extends Widget> definePane = rn.getDefinePane();
+        cardPane.add(definePane.toSwingComponent(), rn.getCardName());
         card.show(cardPane, rn.getCardName());
-        currentEditorDefinePane = rn.getDefinePane();
+        currentEditorDefinePane = definePane;
         eventTabPane.populate(cellWidget);
         widgetPropertyPane.populate(cellWidget);
         tabbedPane.setSelectedIndex(0);
