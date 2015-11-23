@@ -127,6 +127,11 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
         isRefreshing = true;
         WLayout layout = this.toData();
         this.removeAll();
+        addWidgetToSwingComponent(layout);
+        isRefreshing = false;
+    }
+
+    protected void addWidgetToSwingComponent(WLayout layout) {
         for (int i = 0; i < layout.getWidgetCount(); i++) {
             Widget wgt = layout.getWidget(i);
             if (wgt != null) {
@@ -134,7 +139,6 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
                 this.add(comp, i);
             }
         }
-        isRefreshing = false;
     }
 
     /**

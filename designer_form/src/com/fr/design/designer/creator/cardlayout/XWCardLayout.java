@@ -32,6 +32,7 @@ import com.fr.form.ui.Widget;
 import com.fr.form.ui.WidgetTitle;
 import com.fr.form.ui.container.WBorderLayout;
 import com.fr.form.ui.container.WCardLayout;
+import com.fr.form.ui.container.WLayout;
 import com.fr.form.ui.container.cardlayout.WCardMainBorderLayout;
 import com.fr.form.ui.container.cardlayout.WCardTagLayout;
 import com.fr.form.ui.container.cardlayout.WCardTitleLayout;
@@ -100,20 +101,18 @@ public class XWCardLayout extends XLayoutContainer {
 	 * @date 2014-11-25-下午6:21:48
 	 * 
 	 */
-    public void convert() {
-        isRefreshing = true;
-        WCardLayout layout = this.toData();
-        this.removeAll();
-        for (int i = 0; i < layout.getWidgetCount(); i++) {
-            Widget w = layout.getWidget(i);
-            XWidgetCreator creator = (XWidgetCreator) XCreatorUtils.createXCreator(layout.getWidget(i));
-            this.add(creator, w.getWidgetName(), i);
-            creator.setBackupParent(this);
-        }
-        isRefreshing = false;
-    }
-    
-    /**
+
+	@Override
+	protected void addWidgetToSwingComponent(WLayout layout) {
+		for (int i = 0; i < layout.getWidgetCount(); i++) {
+			Widget w = layout.getWidget(i);
+			XWidgetCreator creator = (XWidgetCreator) XCreatorUtils.createXCreator(layout.getWidget(i));
+			this.add(creator, w.getWidgetName(), i);
+			creator.setBackupParent(this);
+		}
+	}
+
+	/**
 	 * 展示当前选中的card
 	 * 
 	 *

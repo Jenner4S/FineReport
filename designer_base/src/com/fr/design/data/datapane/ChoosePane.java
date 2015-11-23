@@ -445,7 +445,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
             tableData = tableDataLocal;
         } else {
             try {
-                TableData tableDataLocal = new DBTableData(database, DataCoreUtils.createSelectSQL(paras.getSchemaName(), paras.getTableName()));
+                TableData tableDataLocal = new DBTableData(database, DataCoreUtils.createSelectSQL(paras.getSchemaName(), paras.getTableName(), DialectFactory.getDialectByName(paras.getDatabaseName())));
                 tableData = FRContext.getCurrentEnv().previewTableData(tableDataLocal, java.util.Collections.EMPTY_MAP,
                         DesignerEnvManager.getEnvManager().getMaxNumberOrPreviewRow());
             } catch (Exception e) {

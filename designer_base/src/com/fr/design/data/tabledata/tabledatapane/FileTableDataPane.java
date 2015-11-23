@@ -142,7 +142,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         // 最上面的pane，文件选择
         JPanel centerPanel = new JPanel();
         centerPanel.setPreferredSize(new Dimension(522, 200));
-        centerPanel.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("File-address")));
+        centerPanel.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer-File_address")));
         addToCenterPanel(centerPanel);
 
         // 下面的pane，参数面板
@@ -160,7 +160,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         JPanel setPanel = new JPanel();
         southPanel.add(setPanel, BorderLayout.CENTER);
         setPanel.setPreferredSize(new Dimension(setPanelWidth, 460));
-        setPanel.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("Set")));
+        setPanel.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer_Set")));
         JPanel controlPane = textSetPanel(width,height);
         setPanel.add(controlPane, BorderLayout.NORTH);
         fileTypeComboBox.addActionListener(getFileTypeListener(setPanel,width,height));
@@ -171,7 +171,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     }
 
     private void addToCenterPanel(JPanel centerPanel){
-        localFileRadioButton = new UIRadioButton(Inter.getLocText("Local-file") + ":", true);
+        localFileRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer-Local_file") + ":", true);
         urlFileRadioButton = new UIRadioButton("URL:", false);
         ButtonGroup bg = new ButtonGroup();
         bg.add(localFileRadioButton);
@@ -185,7 +185,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         urlText = new UITextField();
         urlText.setPreferredSize(new Dimension(195, 20));
         urlText.setEditable(false);
-        chooseFile = new UIButton(Inter.getLocText("Selection"));
+        chooseFile = new UIButton(Inter.getLocText("FR-Designer_Selection"));
         chooseFile.addActionListener(chooseFileListener);
 
         testConnection = new UIButton(Inter.getLocText("Datasource-Test_Connection"));
@@ -208,7 +208,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         centerPanel.add(filePath, BorderLayout.NORTH);
 
         // 中间的pane，提示信息
-        String tipContent = Inter.getLocText("Type-Parameter") + "reportlets/excel/FineReport${abc}." + "txt" + "<br>"
+        String tipContent = Inter.getLocText("FR-Designer-Type_Parameter") + "reportlets/excel/FineReport${abc}." + "txt" + "<br>"
                 + "http://192.168.100.120:8080/XXServer/Report/excel${abc}.jsp<br>" + "&nbsp</body> </html> ";
         tips = new UILabel(tipContent);
         centerPanel.add(tips, BorderLayout.CENTER);
@@ -217,8 +217,8 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     private ActionListener testConnectionListener = new ActionListener() {
         public void actionPerformed(ActionEvent arg0) {
             String uri = urlText.getText();
-            if (!uri.matches("https*://.+")) {
-                JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(FileTableDataPane.this), Inter.getLocText("Add_JS_warning"));
+            if (!checkURL(uri)) {
+                JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(FileTableDataPane.this), Inter.getLocText("FR-Designer_Add_JS_warning"));
                 return;
             }
             params = getEditorPaneParameter();
@@ -244,7 +244,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
 
     private void previewPanel(JPanel jPanel){
         JPanel previewPanel = new JPanel(new BorderLayout());
-        UIButton preview = new UIButton(Inter.getLocText("Preview"));
+        UIButton preview = new UIButton(Inter.getLocText("FR-Designer_Preview"));
         preview.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 preview();
@@ -265,7 +265,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         controlPane.setLayout(new BorderLayout(8,8));
         controlPane.setPreferredSize(new Dimension(width, height));
         JPanel comboboxPanel = new JPanel(new BorderLayout(8,8));
-        encodeLabel = new UILabel(Inter.getLocText("Encoding_Type") + ":");
+        encodeLabel = new UILabel(Inter.getLocText("FR-Designer-Encoding_Type") + ":");
         encodingComboBox = new UIComboBox(EncodeConstants.ALL_ENCODING_ARRAY);
         encodingComboBox.setSelectedIndex(4);
         encodingComboBox.setPreferredSize(new Dimension(90, 20));
@@ -296,7 +296,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         JPanel northPane = new JPanel(new BorderLayout(8,8));
         controlPane.setLayout(new BorderLayout());
         controlPane.setPreferredSize(new Dimension(width,height));
-        needColumnNameCheckBox = new UICheckBox(Inter.getLocText("FirstRow_IS_ColumnName"), false);
+        needColumnNameCheckBox = new UICheckBox(Inter.getLocText("FR-Designer-FirstRow_IS_ColumnName"), false);
         needColumnNameCheckBox.setPreferredSize(new Dimension(checkBoxWidth, 20));
         northPane.add(needColumnNameCheckBox, BorderLayout.EAST);
         controlPane.add(northPane, BorderLayout.NORTH);
@@ -347,11 +347,15 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     public void checkValid() throws Exception {
         if (urlFileRadioButton.isSelected()) {
             String url = urlText.getText().trim();
-            if (!url.matches("https*://.+")) {
-                throw new Exception(Inter.getLocText("Add_JS_warning"));
+            if (!checkURL(url)) {
+                throw new Exception(Inter.getLocText("FR-Designer_Add_JS_warning"));
             }
         }
 
+    }
+
+    private boolean checkURL(String uri){
+        return (uri.matches("https*://.+|\\$\\{.+\\}.*"));
     }
 
     private JPanel textSetPanel(int width,int height) {
@@ -371,16 +375,16 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         double p = TableLayout.PREFERRED;
         double columnSize[] = {f, p, p};
         double rowSize[] = {B, B, B, B, B, B, B};
-        needColumnNameCheckBox = new UICheckBox(Inter.getLocText("FirstRow_IS_ColumnName"), true);
-        dismenberLabel = new UILabel(Inter.getLocText("Dismenber") + ":");
-        tableDismemberRadioButton = new UIRadioButton(Inter.getLocText("TableDismember"), false);
-        tableDismemberRadioButton.setToolTipText(Inter.getLocText("TableDismember"));
-        spaceDismenberRadioButton = new UIRadioButton(Inter.getLocText("Space"), true);
-        spaceDismenberRadioButton.setToolTipText(Inter.getLocText("Space"));
-        commaDismenberRadioButton = new UIRadioButton(Inter.getLocText("CommaDismenber"), false);
-        commaDismenberRadioButton.setToolTipText(Inter.getLocText("CommaDismenber"));
-        otherDismenberRadioButton = new UIRadioButton(Inter.getLocText("Other") + ":", false);
-        otherDismenberRadioButton.setToolTipText(Inter.getLocText("Other"));
+        needColumnNameCheckBox = new UICheckBox(Inter.getLocText("FR-Designer-FirstRow_IS_ColumnName"), true);
+        dismenberLabel = new UILabel(Inter.getLocText("FR-Designer_Dismenber") + ":");
+        tableDismemberRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_TableDismember"), false);
+        tableDismemberRadioButton.setToolTipText(Inter.getLocText("FR-Designer_TableDismember"));
+        spaceDismenberRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_Space"), true);
+        spaceDismenberRadioButton.setToolTipText(Inter.getLocText("FR-Designer_Space"));
+        commaDismenberRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_CommaDismenber"), false);
+        commaDismenberRadioButton.setToolTipText(Inter.getLocText("FR-Designer_CommaDismenber"));
+        otherDismenberRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_Other") + ":", false);
+        otherDismenberRadioButton.setToolTipText(Inter.getLocText("FR-Designer_Other"));
         otherDismenberTextField = new UITextField(8);
         otherDismenberTextField.setEditable(false);
         otherDismenberRadioButton.addChangeListener(new ChangeListener() {
@@ -398,8 +402,8 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         bg2.add(spaceDismenberRadioButton);
         bg2.add(commaDismenberRadioButton);
         bg2.add(otherDismenberRadioButton);
-        igoreOneMoreDelimiterCheckBox = new UICheckBox(Inter.getLocText("Series_Dismenber_As_Single"), true);
-        encodeLabel = new UILabel(Inter.getLocText("Encoding_Type") + ":");
+        igoreOneMoreDelimiterCheckBox = new UICheckBox(Inter.getLocText("FR-Designer-Series_Dismenber_As_Single"), true);
+        encodeLabel = new UILabel(Inter.getLocText("FR-Designer-Encoding_Type") + ":");
         charsetComboBox = new UIComboBox(EncodeConstants.ALL_ENCODING_ARRAY);
         Component[][] comps = {
                 {encodeLabel,charsetComboBox,null},
@@ -488,7 +492,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
                 } else {
                     setPanel.add(textSetPanel(width,height), BorderLayout.NORTH);
                 }
-                String tipContent = Inter.getLocText("Type-Parameter") + "reportlets/excel/FineReport${abc}." + getFileSuffix() + "<br>"
+                String tipContent = Inter.getLocText("FR-Designer-Type_Parameter") + "reportlets/excel/FineReport${abc}." + getFileSuffix() + "<br>"
                         + "http://192.168.100.120:8080/XXServer/Report/excel${abc}.jsp<br>" + "&nbsp</body> </html> ";
                 tips.setText(tipContent);
             }
@@ -499,7 +503,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
 
     private class RefreshAction extends UITableEditAction {
         public RefreshAction() {
-            this.setName(Inter.getLocText("Refresh"));
+            this.setName(Inter.getLocText("FR-Designer_Refresh"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/control/refresh.png"));
         }
 
@@ -794,7 +798,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
             xmlNodeTree = new XMLNodeTree();
             this.add(new JScrollPane(xmlNodeTree));
 
-            keyPointLaber = new UILabel(Inter.getLocText("KeyPoint") + ":");
+            keyPointLaber = new UILabel(Inter.getLocText("FR-Designer_KeyPoint") + ":");
             refreshAction = new RefreshParameterAction();
             ToolBarDef toolbarDef = new ToolBarDef();
             toolbarDef.addShortCut(refreshAction);
@@ -812,7 +816,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
 
         private class RefreshParameterAction extends UpdateAction {
             public RefreshParameterAction() {
-                this.setName(Inter.getLocText("Refresh"));
+                this.setName(Inter.getLocText("FR-Designer_Refresh"));
                 this.setMnemonic('r');
                 this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/control/refresh.png"));
             }
@@ -951,7 +955,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         }
 
         private void loadedTreeModel(){
-            ExpandMutableTreeNode rootTreeNode = new ExpandMutableTreeNode(Inter.getLocText("loadedTreeModel"));
+            ExpandMutableTreeNode rootTreeNode = new ExpandMutableTreeNode(Inter.getLocText("FR-Designer_loadedTreeModel"));
             rootTreeNode.setExpanded(false);
             rootTreeNode.setAllowsChildren(false);
             DefaultTreeModel loadedTreeModel = new DefaultTreeModel(rootTreeNode);

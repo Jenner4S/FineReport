@@ -212,6 +212,7 @@ public class AboutPane extends JPanel {
                         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                         clipboard.setContents(selection, selection);
                         lastLabel.setText(descriptions[1]);
+                        lastLabel.setForeground(Color.RED);
                     }
                 }
             });

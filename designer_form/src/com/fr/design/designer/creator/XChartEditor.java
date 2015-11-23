@@ -9,6 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
+import com.fr.base.chart.BaseChart;
 import com.fr.base.chart.BaseChartCollection;
 import com.fr.design.gui.chart.BaseChartPropertyPane;
 import com.fr.design.gui.chart.MiddleChartComponent;
@@ -18,6 +19,7 @@ import com.fr.design.mainframe.widget.editors.WLayoutBorderStyleEditor;
 import com.fr.design.mainframe.widget.renderer.LayoutBorderStyleRenderer;
 import com.fr.design.module.DesignModuleFactory;
 import com.fr.design.designer.beans.events.DesignerEditor;
+import com.fr.form.ui.AbstractBorderStyleWidget;
 import com.fr.form.ui.BaseChartEditor;
 import com.fr.form.ui.Widget;
 import com.fr.design.form.util.XCreatorConstants;
@@ -46,6 +48,12 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 	public XChartEditor(BaseChartEditor editor, Dimension size) {
 		super((Widget)editor, size);
 	}
+
+	@Override
+	public String getIconPath() {
+		return super.getIconPath();
+	}
+
 
 	@Override
 	protected String getIconName() {
@@ -177,7 +185,7 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 		if (designerEditor == null) {
 			final MiddleChartComponent chartComponent = DesignModuleFactory.getChartComponent(((BaseChartEditor) data).getChartCollection());
 			if (chartComponent != null) {
-				JComponent jChart = (JComponent) chartComponent;
+				JComponent jChart = chartComponent;
 				jChart.setBorder(BorderFactory.createLineBorder(Color.lightGray));
 				designerEditor = new DesignerEditor<JComponent>(jChart);
 				chartComponent.addStopEditingListener(designerEditor);
