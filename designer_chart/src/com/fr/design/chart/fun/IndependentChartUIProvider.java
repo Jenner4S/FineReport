@@ -41,7 +41,7 @@ public interface IndependentChartUIProvider {
      * 条件属性界面
      * @return 条件属性界面
      */
-    public ConditionAttributesPane getPlotConditionPane();
+    public ConditionAttributesPane getPlotConditionPane(Plot plot);
 
     /**
      * 系列界面

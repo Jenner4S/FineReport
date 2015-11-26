@@ -133,7 +133,7 @@ public class ChartTypeInterfaceManager extends XMLFileManager implements ExtraCh
     }
 
     public ConditionAttributesPane getPlotConditionPane(Plot plot){
-        return chartTypeInterfaces.get(plot.getPlotID()).getPlotConditionPane();
+        return chartTypeInterfaces.get(plot.getPlotID()).getPlotConditionPane(plot);
     }
 
     public BasicBeanPane<Plot> getPlotSeriesPane(Plot plot){

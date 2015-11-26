@@ -1,5 +1,6 @@
 package com.fr.design.widget.ui;
 
+import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.icheckbox.UICheckBox;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.present.dict.DictionaryPane;
@@ -54,8 +55,9 @@ public class ComboCheckBoxDefinePane extends CustomWritableRepeatEditorPane<Comb
 		return combo;
 	}
 
-	public DictionaryPane getDictionaryPane() {
-		return this.dictPane;
+	@Override
+	public DataCreatorUI dataUI() {
+		return dictPane;
 	}
 	
 	@Override

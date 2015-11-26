@@ -2,6 +2,10 @@ package com.fr.design.chartinterface;
 
 import com.fr.chart.chartattr.Plot;
 import com.fr.design.chart.fun.impl.AbstractIndependentChartUI;
+import com.fr.design.chart.series.SeriesCondition.impl.Bar2DTrendLineDSConditionPane;
+import com.fr.design.chart.series.SeriesCondition.impl.Bar3DPlotDataSeriesConditionPane;
+import com.fr.design.chart.series.SeriesCondition.impl.BarPlotDataSeriesConditionPane;
+import com.fr.design.condition.ConditionAttributesPane;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
 import com.fr.design.mainframe.chart.gui.data.report.CategoryPlotMoreCateReportDataContentPane;
@@ -25,6 +29,11 @@ public class ColumnIndependentChartInterface extends AbstractIndependentChartUI 
 
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent){
         return new CategoryPlotMoreCateReportDataContentPane(parent);
+    }
+
+    public ConditionAttributesPane getPlotConditionPane(Plot plot){
+        return plot.isSupport3D() ? new Bar3DPlotDataSeriesConditionPane()
+                : (plot.isSupportTrendLine() ? new Bar2DTrendLineDSConditionPane() : new BarPlotDataSeriesConditionPane());
     }
 
     /**

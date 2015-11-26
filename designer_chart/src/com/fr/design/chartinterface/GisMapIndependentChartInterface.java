@@ -24,7 +24,6 @@ public class GisMapIndependentChartInterface extends AbstractIndependentChartUI 
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent){
         return null;
     }
-
     /**
      *图标路径
      * @return 图标路径

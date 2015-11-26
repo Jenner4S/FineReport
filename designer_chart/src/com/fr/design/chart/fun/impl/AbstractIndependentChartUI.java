@@ -3,6 +3,7 @@ package com.fr.design.chart.fun.impl;
 import com.fr.chart.chartattr.Plot;
 import com.fr.design.beans.BasicBeanPane;
 import com.fr.design.chart.fun.IndependentChartUIProvider;
+import com.fr.design.chart.series.SeriesCondition.DataSeriesConditionPane;
 import com.fr.design.condition.ConditionAttributesPane;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.mainframe.chart.AbstractChartAttrPane;
@@ -25,10 +26,6 @@ public abstract class AbstractIndependentChartUI implements IndependentChartUIPr
         return true;
     }
 
-    public ConditionAttributesPane getPlotConditionPane(){
-        return null;
-    }
-
     public BasicBeanPane<Plot> getPlotSeriesPane(){
         return null;
     }
@@ -36,4 +33,9 @@ public abstract class AbstractIndependentChartUI implements IndependentChartUIPr
     public boolean equals(Object obj) {
         return obj != null && ComparatorUtils.equals(obj.getClass(), this.getClass());
     }
+
+    public ConditionAttributesPane getPlotConditionPane(Plot plot){
+        return new DataSeriesConditionPane();
+    }
+
 }

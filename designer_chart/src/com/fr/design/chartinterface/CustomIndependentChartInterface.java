@@ -2,6 +2,8 @@ package com.fr.design.chartinterface;
 
 import com.fr.chart.chartattr.Plot;
 import com.fr.design.chart.fun.impl.AbstractIndependentChartUI;
+import com.fr.design.chart.series.SeriesCondition.DataSeriesCustomConditionPane;
+import com.fr.design.condition.ConditionAttributesPane;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
 import com.fr.design.mainframe.chart.gui.data.report.CategoryPlotReportDataContentPane;
@@ -25,6 +27,10 @@ public class CustomIndependentChartInterface extends AbstractIndependentChartUI 
 
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent){
         return new CategoryPlotReportDataContentPane(parent);
+    }
+
+    public ConditionAttributesPane getPlotConditionPane(Plot plot){
+        return new DataSeriesCustomConditionPane();
     }
 
     /**

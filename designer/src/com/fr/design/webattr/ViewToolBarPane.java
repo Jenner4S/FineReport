@@ -30,6 +30,9 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 	private UICheckBox isUseToolBarCheckBox = new UICheckBox(Inter.getLocText("FR-Designer_Use_ToolBar"));
 	private UIButton editToolBarButton = new UIButton(Inter.getLocText("FR-Designer_Edit"));
 	private UILabel showListenersLabel = new UILabel(Inter.getLocText("Form-Editing_Listeners") + ":");
+	private UICheckBox sortCheckBox = new UICheckBox(Inter.getLocText("FR-Engine-Sort_Sort"));
+	private UICheckBox conditonFilterBox = new UICheckBox(Inter.getLocText("FR-Engine-Selection_Filter"));
+	private UICheckBox listFilterBox = new UICheckBox(Inter.getLocText("FR-Engine-List_Filter"));
 	
 	public ViewToolBarPane() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -46,7 +49,11 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 				editToolBarButton.setEnabled(isUseToolBarCheckBox.isSelected());
 			}
 		});
-        northPane.add(GUICoreUtils.createFlowPane(new Component[] {isUseToolBarCheckBox, editToolBarButton}, FlowLayout.LEFT));
+		sortCheckBox.setSelected(false);
+		conditonFilterBox.setSelected(false);
+		listFilterBox.setSelected(false);
+        northPane.add(GUICoreUtils.createFlowPane(new Component[]{sortCheckBox, conditonFilterBox, listFilterBox}, FlowLayout.LEFT, 6));
+		northPane.add(GUICoreUtils.createFlowPane(new Component[] {isUseToolBarCheckBox, editToolBarButton}, FlowLayout.LEFT));
         northPane.add(GUICoreUtils.createFlowPane(showListenersLabel, FlowLayout.LEFT));
 		eventPane = new EventPane(new WebView().supportedEvents());
 		JPanel center = FRGUIPaneFactory.createBorderLayout_S_Pane();
@@ -65,6 +72,9 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 		this.eventPane.setEnabled(isEnabled);
 		
 		this.isUseToolBarCheckBox.setEnabled(isEnabled);
+		this.sortCheckBox.setEnabled(isEnabled);
+		this.conditonFilterBox.setEnabled(isEnabled);
+		this.listFilterBox.setEnabled(isEnabled);
 		this.editToolBarButton.setEnabled(isEnabled && isUseToolBarCheckBox.isSelected());
 		this.showListenersLabel.setEnabled(isEnabled);
 	}
@@ -87,7 +97,10 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 			this.isUseToolBarCheckBox.setSelected(false);
 			editToolBarButton.setEnabled(false);
 		}
-		
+		WebView wv = (WebView) webView;
+		this.listFilterBox.setSelected(wv.isListFuncCheck());
+		this.conditonFilterBox.setSelected(wv.isConditionFuncCheck());
+		this.sortCheckBox.setSelected(wv.isSortFuncCheck());
 		if (webView.getListenerSize() != 0) {
 			List<Listener> list = new ArrayList<Listener>();
 			for (int i = 0; i < webView.getListenerSize(); i++) {
@@ -105,6 +118,9 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 		} else {
 			webView.setToolBarManagers(new ToolBarManager[0]);
 		}
+		webView.setIsSortFuncCheck(this.sortCheckBox.isSelected());
+		webView.setIsConditionFuncCheck(this.conditonFilterBox.isSelected());
+		webView.setIsListFuncCheck(this.listFilterBox.isSelected());
 		for (int i = 0; i < eventPane.update().size(); i++) {
 			Listener listener = eventPane.update().get(i);
 			webView.addListener(listener);

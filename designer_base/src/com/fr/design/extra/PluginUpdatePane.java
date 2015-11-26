@@ -120,7 +120,6 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
      * @return ËùÓÐ²å¼þ
      */
     public Plugin[] loadData() throws Exception {
-        Thread.sleep(3000);
         return PluginsReaderFromStore.readPluginsForUpdate();
     }
 
