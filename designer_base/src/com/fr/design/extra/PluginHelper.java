@@ -239,13 +239,14 @@ public class PluginHelper {
 
     /**
      * 比较插件的版本，这里简单的比价字符串，不需要用数字作为标号
+     * 版本号相同也认为是更新
      *
      * @param plugin    当前的插件
      * @param oldPlugin 老的插件
      * @return 当前插件比老的插件版本高则返回true，否则返回false
      */
     public static boolean isNewThan(Plugin plugin, Plugin oldPlugin) {
-        return ComparatorUtils.compare(plugin.getVersion(), oldPlugin.getVersion()) > 0;
+        return ComparatorUtils.compare(plugin.getVersion(), oldPlugin.getVersion()) >= 0;
     }
 
     private static String sendInstalledPluginInfo(final Plugin plugin) {
