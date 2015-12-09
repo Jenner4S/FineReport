@@ -7,6 +7,7 @@ import com.fr.design.chart.series.SeriesCondition.DataSeriesConditionPane;
 import com.fr.design.condition.ConditionAttributesPane;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.mainframe.chart.AbstractChartAttrPane;
+import com.fr.design.mainframe.chart.gui.ChartStylePane;
 import com.fr.general.ComparatorUtils;
 
 
@@ -24,6 +25,10 @@ public abstract class AbstractIndependentChartUI implements IndependentChartUIPr
      */
     public boolean isUseDefaultPane(){
         return true;
+    }
+
+    public BasicBeanPane<Plot> getPlotSeriesPane(ChartStylePane parent, Plot plot){
+        return getPlotSeriesPane();
     }
 
     public BasicBeanPane<Plot> getPlotSeriesPane(){

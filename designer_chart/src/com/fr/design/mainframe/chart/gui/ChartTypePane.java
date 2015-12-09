@@ -131,10 +131,6 @@ public class ChartTypePane extends AbstractChartAttrPane{
 		buttonPane.update(collection);// 内部操作时 已经做过处理.
 		Chart chart = collection.getSelectedChart();
 
-        if(!buttonPane.isMouseOnChartTypeButtonPane()){
-            collection.addFunctionRecord(chart);
-        }
-
 		chartTypePane.updateBean(chart);
 	}
 

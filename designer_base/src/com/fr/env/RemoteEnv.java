@@ -32,6 +32,7 @@ import com.fr.stable.project.ProjectConstants;
 import com.fr.stable.xml.XMLPrintWriter;
 import com.fr.stable.xml.XMLTools;
 import com.fr.stable.xml.XMLableReader;
+import com.fr.web.ResourceConstants;
 
 import javax.swing.*;
 import javax.xml.transform.*;
@@ -1935,12 +1936,25 @@ public class RemoteEnv implements Env {
 
     @Override
     public String getLicName() {
-        return "FineReport.lic";
+        return LicUtils.FILE_NAME;
     }
 
     @Override
     public void setLicName(String licName) {
         //do nth
+    }
+
+    /**
+     * 获取当前env的build文件路径
+     */
+    public String getBuildFilePath() {
+        return ResourceConstants.BUILD_PATH;
+    }
+
+    /**
+     * 设置当前env的build文件路径
+     */
+    public void setBuildFilePath(String buildFilePath) {
     }
 
     /**

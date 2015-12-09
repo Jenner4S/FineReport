@@ -6,6 +6,7 @@ import com.fr.design.condition.ConditionAttributesPane;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.mainframe.chart.AbstractChartAttrPane;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
+import com.fr.design.mainframe.chart.gui.ChartStylePane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
 import com.fr.design.mainframe.chart.gui.data.table.AbstractTableDataContentPane;
 import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
@@ -47,7 +48,7 @@ public interface IndependentChartUIProvider {
      * 系列界面
      * @return 系列界面
      */
-    public BasicBeanPane<Plot> getPlotSeriesPane();
+    public BasicBeanPane<Plot> getPlotSeriesPane(ChartStylePane parent, Plot plot);
 
 
     /**

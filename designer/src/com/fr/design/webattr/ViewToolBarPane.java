@@ -49,9 +49,9 @@ public class ViewToolBarPane extends AbstractEditToolBarPane {
 				editToolBarButton.setEnabled(isUseToolBarCheckBox.isSelected());
 			}
 		});
-		sortCheckBox.setSelected(false);
-		conditonFilterBox.setSelected(false);
-		listFilterBox.setSelected(false);
+		sortCheckBox.setSelected(true);
+		conditonFilterBox.setSelected(true);
+		listFilterBox.setSelected(true);
         northPane.add(GUICoreUtils.createFlowPane(new Component[]{sortCheckBox, conditonFilterBox, listFilterBox}, FlowLayout.LEFT, 6));
 		northPane.add(GUICoreUtils.createFlowPane(new Component[] {isUseToolBarCheckBox, editToolBarButton}, FlowLayout.LEFT));
         northPane.add(GUICoreUtils.createFlowPane(showListenersLabel, FlowLayout.LEFT));

@@ -52,8 +52,7 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				CardLayout cl = (CardLayout)cardPane.getLayout();
-				cl.show(cardPane, cardNames[cardNamesPane.getSelectedIndex()]);
+				showCard();
 			}
 		});
 		initLayout();
@@ -62,6 +61,11 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 	
 	protected UIButtonGroup<Object> getCardNamePane(String[] cardNames) {
 		return new UIButtonGroup<Object>(cardNames);
+	}
+
+	private void showCard() {
+		CardLayout cl = (CardLayout)cardPane.getLayout();
+		cl.show(cardPane, cardNames[cardNamesPane.getSelectedIndex()]);
 	}
 
 	/**
@@ -89,6 +93,7 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 			if (pane.accept(ob)) {
 				pane.populateBean(ob);
 				cardNamesPane.setSelectedIndex(i);
+				showCard();
 				return;
 			}
 		}

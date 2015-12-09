@@ -22,44 +22,48 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	protected Plot plot;
 	protected ChartStylePane parentPane;
 	protected Chart chart;//地图有用,需要数据定义
+
+    public AbstractPlotSeriesPane(ChartStylePane parent, Plot plot) {
+        this(parent, plot, false);
+    }
 	
 	public AbstractPlotSeriesPane(ChartStylePane parent, Plot plot, boolean custom) {
         this.plot = plot;
 		this.parentPane = parent;
 		fillStylePane = getFillStylePane();
-		
+
 		double p = TableLayout.PREFERRED;
 		double f = TableLayout.FILL;
 		double[] columnSize = { f };
 		double[] rowSize = { p,p,p};
         Component[][] components = new Component[3][1];
-        
+
         if(custom) {
         	if(!(plot instanceof Bar2DPlot)) {
         		components[0] = new Component[]{getContentInPlotType()};
         		components[1] = new Component[]{new JSeparator()};
         	}
-        	
+
         	JPanel panel = TableLayoutHelper.createTableLayoutPane(components,rowSize,columnSize);
-        	
+
         	JScrollPane scrollPane = new JScrollPane();
         	scrollPane.setViewportView(panel);
         	scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        	
+
         	this.setLayout(new BorderLayout());
         	this.add(scrollPane, BorderLayout.CENTER);
-        	
+
         } else {
         	if(fillStylePane != null) {
         		components[0] = new Component[]{fillStylePane};
         		components[1] = new Component[]{new JSeparator()};
         	}
-        	
+
         	JPanel contentPane = getContentInPlotType();
         	if(contentPane != null) {
         		components[2] = new Component[]{contentPane};
         	}
-        
+
         	JPanel panel = TableLayoutHelper.createTableLayoutPane(components,rowSize,columnSize);
         	this.setLayout(new BorderLayout());
         	this.add(panel,BorderLayout.CENTER);
@@ -82,7 +86,7 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	 * 界面标题.
 	 */
 	protected String title4PopupWindow() {
-		return Inter.getLocText("ChartF-Series");
+		return Inter.getLocText("FR-Chart-Data_Series");
 	}
 
 	/**

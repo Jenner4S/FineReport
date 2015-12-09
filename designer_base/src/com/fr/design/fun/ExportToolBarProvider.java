@@ -1,6 +1,6 @@
 package com.fr.design.fun;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * 导出菜单设计器端拓展，用于控制该菜单是否在web端显示

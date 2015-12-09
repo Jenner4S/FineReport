@@ -31,9 +31,9 @@ public class ViewWebSettingPane extends WebSettingPane<WebView> {
         conditionFilterBox = new UICheckBox(Inter.getLocText("FR-Engine-Selection_Filter"));
         listFilterBox = new UICheckBox(Inter.getLocText("FR-Engine-List_Filter"));
 
-        sortCheckBox.setSelected(false);
-        conditionFilterBox.setSelected(false);
-        listFilterBox.setSelected(false);
+        sortCheckBox.setSelected(true);
+        conditionFilterBox.setSelected(true);
+        listFilterBox.setSelected(true);
         return GUICoreUtils.createFlowPane(new Component[]{new UILabel(Inter.getLocText("FR-Engine_ViewPreview") + ":"),
                 sortCheckBox, conditionFilterBox, listFilterBox}, FlowLayout.LEFT, 6);
     }
@@ -95,8 +95,8 @@ public class ViewWebSettingPane extends WebSettingPane<WebView> {
     }
     protected void setDefault(){
         super.setDefault();
-        sortCheckBox.setSelected(false);
-        conditionFilterBox.setSelected(false);
-        listFilterBox.setSelected(false);
+        sortCheckBox.setSelected(true);
+        conditionFilterBox.setSelected(true);
+        listFilterBox.setSelected(true);
     }
 }

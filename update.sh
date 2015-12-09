@@ -4,7 +4,7 @@ svn up designer_base
 svn up designer_chart
 svn up designer_form
 ftp -n<<!
-open 192.168.100.98
+open 192.168.101.98
 user anonymous anonymous
 binary
 cd /8.0/CN

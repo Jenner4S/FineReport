@@ -20,7 +20,7 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralContext;
 import com.fr.general.GeneralUtils;
-import com.fr.report.fun.WebWidgetOptionProvider;
+import com.fr.design.fun.ToolbarItemProvider;
 import com.fr.stable.EnvChangedListener;
 import com.fr.stable.StringUtils;
 import com.fr.stable.plugin.ExtraDesignClassManagerProvider;
@@ -357,7 +357,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 if (webWidgetOptions == null) {
                     webWidgetOptions = new ArrayList<WidgetOption>();
                 }
-                WebWidgetOptionProvider provider = (WebWidgetOptionProvider) clazz.newInstance();
+                ToolbarItemProvider provider = (ToolbarItemProvider) clazz.newInstance();
                 WidgetOption option = WidgetOptionFactory.createByWidgetClass(
                         provider.nameForWidget(),
                         BaseUtils.readIcon(provider.iconPathForWidget()),
@@ -826,7 +826,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 addParameterWidgetOption(reader.getAttrAsString("class", ""));
             } else if (tagName.equals(FormWidgetOptionProvider.XML_TAG)) {
                 addFormWidgetOption(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(WebWidgetOptionProvider.XML_TAG)) {
+            } else if (tagName.equals(ToolbarItemProvider.XML_TAG)) {
                 addWebWidgetOption(reader.getAttrAsString("class", ""));
             } else if (tagName.equals(ExportToolBarProvider.XML_TAG)) {
                 addExportToolBarProvider(reader.getAttrAsString("class", ""));
