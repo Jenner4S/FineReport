@@ -3,3 +3,4 @@ classes/*
 *.svn
 logdb/*
 finedb/*
+fsconfig.xml
