@@ -1,5 +1,6 @@
 package com.fr.design.mainframe.chart.gui.type;
 
+import com.fr.base.FRContext;
 import com.fr.chart.base.ChartEnumDefinitions;
 import com.fr.chart.chartattr.Chart;
 import com.fr.chart.chartattr.Legend;
@@ -92,9 +93,14 @@ public class MapPlotPane extends AbstractChartTypePane {
             resetChart(chart);
         }
 
-		MapPlot plot = new MapPlot();
-		plot.setLegend(new Legend());
-		plot.setSvgMap(this.isSvgMap);
+        MapPlot plot = getNewMapPlot();
+        if(chart.getPlot() instanceof MapPlot){
+            try{
+                plot = (MapPlot)chart.getPlot().clone();
+            } catch (CloneNotSupportedException e){
+                FRContext.getLogger().error(e.getMessage(), e);
+            }
+        }
 		plot.setMapName(groupExtensionPane.updateBean(plot));// 名字问题
 
 		if(typeDemo.get(ChartEnumDefinitions.MapType.Map_Normal.ordinal()).isPressing){
@@ -115,6 +121,13 @@ public class MapPlotPane extends AbstractChartTypePane {
 
 		checkDemosBackground();
 	}
+
+    private MapPlot getNewMapPlot() {
+        MapPlot plot = new MapPlot();
+        plot.setLegend(new Legend());
+        plot.setSvgMap(this.isSvgMap);
+        return plot;
+    }
 
 	/**
 	 * 更新地图名称 界面
