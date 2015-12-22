@@ -3,38 +3,6 @@
  */
 package com.fr.design.gui.xpane;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.geom.RoundRectangle2D;
-
-import javax.swing.AbstractButton;
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JToggleButton;
-import javax.swing.border.Border;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.plaf.basic.BasicToggleButtonUI;
-
 import com.fr.base.BaseUtils;
 import com.fr.base.GraphHelper;
 import com.fr.base.Utils;
@@ -46,11 +14,7 @@ import com.fr.design.dialog.BasicPane;
 import com.fr.design.file.HistoryTemplateListPane;
 import com.fr.design.formula.TinyFormulaPane;
 import com.fr.design.gui.frpane.UINumberDragPane;
-import com.fr.design.gui.ibutton.UIButton;
-import com.fr.design.gui.ibutton.UIButtonGroup;
-import com.fr.design.gui.ibutton.UIButtonUI;
-import com.fr.design.gui.ibutton.UIColorButton;
-import com.fr.design.gui.ibutton.UIToggleButton;
+import com.fr.design.gui.ibutton.*;
 import com.fr.design.gui.icombobox.LineComboBox;
 import com.fr.design.gui.icombobox.UIComboBox;
 import com.fr.design.gui.icontainer.UIScrollPane;
@@ -72,6 +36,17 @@ import com.fr.general.FRFont;
 import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.plaf.basic.BasicToggleButtonUI;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.RoundRectangle2D;
+
 /**
  * WLayoutBorder Pane.
  */
@@ -81,7 +56,8 @@ public class LayoutBorderPane extends BasicPane {
     private static final int NO_BORDERS = 0;
     private static final int RIGHTANGLE_BORDERS = 1;
     private static final int ROUNDED_BORDERS = 2;
-    
+    private static final int MAX_WIDTH = 220;
+
     private LayoutBorderStyle borderStyle = new LayoutBorderStyle();
 
     private LayoutBorderPreviewPane layoutBorderPreviewPane;
@@ -372,10 +348,9 @@ public class LayoutBorderPane extends BasicPane {
         transparencyPane.add(numberDragPane, BorderLayout.CENTER);
         transparencyPane.add(new UILabel(" %"), BorderLayout.EAST);
 
-        double f = TableLayout.FILL;
         double p = TableLayout.PREFERRED;
         double[] rowSize = {p,p,p,p,p,p,p};
-        double[] columnSize = { p, f};
+        double[] columnSize = { p, MAX_WIDTH};
         JPanel rightTopContentPane = TableLayoutHelper.createCommonTableLayoutPane(new JComponent[][]{
                 {new UILabel(Inter.getLocText("FR-Designer-Widget-Style_Frame_Style")), borderTypeCombo},
                 {new UILabel(Inter.getLocText("FR-Designer-Widget-Style_Render_Style")), borderStyleCombo},
@@ -425,7 +400,6 @@ public class LayoutBorderPane extends BasicPane {
 
     protected UIScrollPane initRightBottomPane(){
         formulaPane = new TinyFormulaPane();
-
         fontSizeComboBox = new UIComboBox(FRFontPane.FONT_SIZES);
         fontNameComboBox = new UIComboBox(Utils.getAvailableFontFamilyNames4Report());
         JPanel fontSizeTypePane = new JPanel(new BorderLayout(10,0));
@@ -444,10 +418,9 @@ public class LayoutBorderPane extends BasicPane {
 
         titleBackgroundPane = new BackgroundNoImagePane();
 
-        double f = TableLayout.FILL;
         double p = TableLayout.PREFERRED;
         double[] rowSize = {p,p,p,p,p,p};
-        double[] columnSize = { p, f};
+        double[] columnSize = { p, MAX_WIDTH};
 
         JPanel rightBottomContentPane = TableLayoutHelper.createCommonTableLayoutPane( new JComponent[][]{
                 {new UILabel(Inter.getLocText("FR-Designer-Widget-Style_Title_Content")), formulaPane},

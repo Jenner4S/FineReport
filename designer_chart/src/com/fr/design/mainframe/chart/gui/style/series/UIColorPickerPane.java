@@ -91,9 +91,13 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 			}
 		});
 
-		regionNumPane = new UINumberDragPane(1, 6) {
+		regionNumPane = new UINumberDragPane(0.9, 6) {
 			@Override
 			public void userEvent(double value) {
+                double oldValue = regionNumPane.updateBean();
+                if(oldValue == value){
+                    return;
+                }
 				UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
 				UIColorPickerPane.this.initContainerLister();
 			}
@@ -151,10 +155,14 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 			}
 		});
 
-		regionNumPane = new UINumberDragPane(1, 6) {
+		regionNumPane = new UINumberDragPane(0.9, 6) {
 			@Override
 			public void userEvent(double value) {
-				UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
+                double oldValue = regionNumPane.updateBean();
+                if(oldValue == value){
+                    return;
+                }
+      			UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
 				UIColorPickerPane.this.initContainerLister();
 			}
 		};
