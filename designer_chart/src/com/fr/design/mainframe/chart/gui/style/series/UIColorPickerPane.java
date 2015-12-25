@@ -9,8 +9,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LayoutManager;
 import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +61,8 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 	private JPanel stagePanel = null;
 	private ChangeListener changeListener;
 
+    private boolean moveOnColorOrTextPane;
+
 	public UIColorPickerPane() {
 		fillStyleCombox = this.getColorSelectBox();
 		fillStyleCombox.setSelectObject(Color.BLUE);
@@ -91,15 +92,13 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 			}
 		});
 
-		regionNumPane = new UINumberDragPane(0.9, 6) {
+		regionNumPane = new UINumberDragPane(1, 6) {
 			@Override
 			public void userEvent(double value) {
-                double oldValue = regionNumPane.updateBean();
-                if(oldValue == value){
-                    return;
+                if(!UIColorPickerPane.this.moveOnColorOrTextPane){
+                    UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
+                    UIColorPickerPane.this.initContainerLister();
                 }
-				UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
-				UIColorPickerPane.this.initContainerLister();
 			}
 		};
 
@@ -155,15 +154,13 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 			}
 		});
 
-		regionNumPane = new UINumberDragPane(0.9, 6) {
+		regionNumPane = new UINumberDragPane(1, 6) {
 			@Override
 			public void userEvent(double value) {
-                double oldValue = regionNumPane.updateBean();
-                if(oldValue == value){
-                    return;
+                if(!UIColorPickerPane.this.moveOnColorOrTextPane){
+                    UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
+                    UIColorPickerPane.this.initContainerLister();
                 }
-      			UIColorPickerPane.this.refreshGroupPane(getColorArray(fillStyleCombox.getSelectObject(), (int) value), getValueArray((int) value));
-				UIColorPickerPane.this.initContainerLister();
 			}
 		};
 
@@ -291,12 +288,14 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 						return;
 					}
 					requestFocus();
+                    UIColorPickerPane.this.moveOnColorOrTextPane = true;
 					isRollover = true;
 					repaint();
 				}
 
 				@Override
 				public void mouseExited(MouseEvent e) {
+                    UIColorPickerPane.this.moveOnColorOrTextPane = false;
 					isRollover = false;
 					repaint();
 				}
@@ -455,12 +454,34 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 				for (int i = 0; i < values.length; i++) {
 					JComponent com = getNewTextFieldComponent(i, values[i].toString());
 					textFieldList.add(com);
+                    initMoveOnListener(com);
 					this.add(com);
 				}
 			}
 			this.repaint();
 		}
-		
+
+        private void initMoveOnListener(Container parentComponent) {
+            for (Component tmpComp : parentComponent.getComponents()) {
+                if (tmpComp instanceof Container) {
+                    initMoveOnListener((Container) tmpComp);
+                }
+                if (tmpComp instanceof UIObserver) {
+                    tmpComp.addMouseListener(new MouseAdapter() {
+
+                        public void mouseEntered(MouseEvent e) {
+                            UIColorPickerPane.this.moveOnColorOrTextPane = true;
+                        }
+
+                        public void mouseExited(MouseEvent e) {
+                            UIColorPickerPane.this.moveOnColorOrTextPane = false;
+                        }
+
+                    });
+                }
+            }
+        }
+
 		/**
 		 * 根据这些 确定每个Field的最大最小值. 并且改变背景颜色.
 		 */

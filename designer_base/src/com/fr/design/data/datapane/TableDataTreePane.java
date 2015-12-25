@@ -137,12 +137,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
                 checkButtonEnabled();
             }
         });
-        dataTree.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent e) {
-                checkButtonEnabled();
-            }
-        });
+        dataTree.addKeyListener(getTableTreeNodeListener());
         // TreeCellEditor
         dataTree.setEditable(true);
         TableDataTreeCellEditor treeCellEditor = new TableDataTreeCellEditor(new UITextField());
@@ -150,6 +145,26 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
         dataTree.setCellEditor(treeCellEditor);
         new TableDataTreeDragSource(dataTree, DnDConstants.ACTION_COPY);
         checkButtonEnabled();
+    }
+
+    private KeyAdapter getTableTreeNodeListener() {
+        return new KeyAdapter() {
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //F2重命名先屏蔽了, 有bug没时间弄
+                if (e.getKeyCode() == KeyEvent.VK_F2){
+                    return;
+                }
+
+                super.keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                checkButtonEnabled();
+            }
+        };
     }
 
     private void createAddMenuDef() {
