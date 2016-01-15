@@ -337,16 +337,11 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     public void reset() {
     }
 
-    /**
-     * 判断界面是否为Chart 传入
-     * @param ob 对象是否为chart
-     * @return 是否是chart对象
-     */
     public boolean accept(Object ob) {
         return ob instanceof Chart;
     }
 
-    //高光渐变的默认属性设置
+        //高光渐变的默认属性设置
     private void createCondition4HighLight(Chart chart){
         if(chart != null){
             //标题

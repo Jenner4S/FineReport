@@ -17,7 +17,6 @@ import com.fr.design.dialog.BasicPane;
 import com.fr.design.mainframe.DesignerContext;
 import com.fr.general.DateUtils;
 import com.fr.general.FRLogger;
-import com.fr.general.GeneralUtils;
 import com.fr.general.Inter;
 import com.fr.stable.StringUtils;
 
@@ -127,7 +126,7 @@ public class UserInfoPane extends BasicPane{
 				try {
 					// 等国际化等加载完毕再启动线程弹出登录框
 					Thread.sleep(WAIT_TIME);
-					if(StringUtils.isEmpty(GeneralUtils.readBuildNO())){
+					if(!FRContext.isChineseEnv()){
 						return;
 					}
 

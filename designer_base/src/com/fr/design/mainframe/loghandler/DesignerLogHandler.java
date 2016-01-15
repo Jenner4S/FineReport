@@ -1,32 +1,5 @@
 package com.fr.design.mainframe.loghandler;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JTextPane;
-import javax.swing.KeyStroke;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-
 import com.fr.base.BaseUtils;
 import com.fr.base.FRContext;
 import com.fr.design.DesignerEnvManager;
@@ -37,6 +10,19 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.FRLogLevel;
 import com.fr.general.Inter;
 import com.fr.general.LogRecordTime;
+import com.fr.stable.xml.LogRecordTimeProvider;
+
+import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import java.awt.*;
+import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class DesignerLogHandler {
     protected static final int INFO_INT = FRLogLevel.INFO.intValue();
@@ -64,7 +50,7 @@ public class DesignerLogHandler {
 
     public DesignerLogHandler() {
         logHandlerArea = new LogHandlerArea();
-        caption = new LogHandlerBar(Inter.getLocText("Platform_Module_Log"));
+        caption = new LogHandlerBar(Inter.getLocText("FR-Designer_Log"));
 
         caption.addClearListener(new ActionListener() {
 
@@ -72,7 +58,7 @@ public class DesignerLogHandler {
             public void actionPerformed(ActionEvent e) {
                 logHandlerArea.jTextArea.setText("");
                 caption.clearMessage();
-                FRContext.getLogger().getRecorders().clear();
+                DesignerLogImpl.getInstance().clear();
             }
         });
         caption.addSelectedListener(new ActionListener() {
@@ -89,8 +75,8 @@ public class DesignerLogHandler {
             public void itemStateChanged(ItemEvent e) {
                 logHandlerArea.jTextArea.setText("");
                 caption.clearMessage();
-                List<LogRecordTime> recorders = FRContext.getLogger().getRecorders();
-                for (LogRecordTime logRecordTime : recorders) {
+                LogRecordTimeProvider[] recorders = DesignerLogImpl.getInstance().getRecorders();
+                for (LogRecordTimeProvider logRecordTime : recorders) {
                     logHandlerArea.printStackTrace(logRecordTime);
                 }
             }
@@ -107,7 +93,7 @@ public class DesignerLogHandler {
             public void actionPerformed(ActionEvent e) {
                 JPopupMenu showsetPopup = new JPopupMenu();
                 int logLevelvalue = DesignerEnvManager.getEnvManager().getLogLevel().intValue();
-                if (logLevelvalue == INFO_INT) {
+                if (logLevelvalue <= INFO_INT) {
                     showsetPopup.add(showInfo);
                     showsetPopup.add(showError);
                     showsetPopup.add(showServer);
@@ -157,17 +143,17 @@ public class DesignerLogHandler {
             jTextArea.setBackground(Color.white);
 
             popup = new JPopupMenu();
-            selectAll = new UIMenuItem(Inter.getLocText("Select_All"));
+            selectAll = new UIMenuItem(Inter.getLocText("FR-Designer_Select_All"));
             selectAll.addActionListener(popupListener);
             selectAll.setIcon(BaseUtils.readIcon("/com/fr/design/images/log/selectedall.png"));
             popup.add(selectAll);
 
-            copy = new UIMenuItem(Inter.getLocText("Copy"));
+            copy = new UIMenuItem(Inter.getLocText("FR-Designer_Copy"));
             copy.addActionListener(popupListener);
             copy.setIcon(BaseUtils.readIcon("/com/fr/design/images/m_edit/copy.png"));
             popup.add(copy);
 
-            clear = new UIMenuItem(Inter.getLocText("Clear_All"));
+            clear = new UIMenuItem(Inter.getLocText("FR-Designer_Clear_All"));
             clear.addActionListener(popupListener);
             clear.setIcon(BaseUtils.readIcon("/com/fr/design/images/log/clear.png"));
             popup.add(clear);
@@ -202,7 +188,7 @@ public class DesignerLogHandler {
             });
         }
 
-        public void printStackTrace(LogRecordTime logRecordTime) {
+        public void printStackTrace(LogRecordTimeProvider logRecordTime) {
             LogRecord logRecord = logRecordTime.getLogRecord();
             Date date = logRecordTime.getDate();
             int logLevelvalue = logRecord.getLevel().intValue();
@@ -257,11 +243,11 @@ public class DesignerLogHandler {
 
         private String swithInter(String str, int style) {
             if (style == ERRO_INT) {
-                str = Inter.getLocText("Alert") + ":" + str + "\n";
+                str = Inter.getLocText("FR-Designer_Alert") + ":" + str + "\n";
             } else if (style == SERVER_INT) {
-                str = Inter.getLocText("Seriously") + ":" + str + "\n";
+                str = Inter.getLocText("FR-Designer_Seriously") + ":" + str + "\n";
             } else {
-                str = Inter.getLocText("NNormal") + ":" + str + "\n";
+                str = Inter.getLocText("FR-Designer_Normal") + ":" + str + "\n";
             }
             return str;
         }
@@ -305,7 +291,7 @@ public class DesignerLogHandler {
                 } else if (ComparatorUtils.equals(evt.getActionCommand(), LogHandlerArea.this.clear.getText())) {
                     LogHandlerArea.this.jTextArea.setText("");
                     caption.clearMessage();
-                    FRContext.getLogger().getRecorders().clear();
+                    DesignerLogImpl.getInstance().clear();
                 }
             }
         };

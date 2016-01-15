@@ -9,6 +9,8 @@ import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.IOUtils;
 import com.fr.general.Inter;
 import com.fr.plugin.Plugin;
+import com.fr.plugin.PluginLicense;
+import com.fr.plugin.PluginLicenseManager;
 import com.fr.plugin.PluginLoader;
 import com.fr.stable.StringUtils;
 
@@ -62,7 +64,15 @@ public class PluginControlPane extends BasicPane {
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                 if (value instanceof Plugin) {
-                    setText(((Plugin) value).getName());
+                    PluginLicense pluginLicense = PluginLicenseManager.getInstance().getPluginLicenseByID(((Plugin) value).getId());
+                    String extraInfo = "";
+                    if (pluginLicense != null) {
+                        if (pluginLicense.isAvailable())
+                            extraInfo = "(" + (pluginLicense.isTrial() ? Inter.getLocText("FR-Plugin-Designer_Trial") : Inter.getLocText("FR-Plugin-Designer_Authorized")) + pluginLicense.getLeftTime() + Inter.getLocText("FR-Plugin-Designer_Left") + ")";
+                        else
+                            extraInfo = "(" + (pluginLicense.isTrial() ? Inter.getLocText("FR-Plugin-Designer_Trial") : Inter.getLocText("FR-Plugin-Designer_Authorized")) + Inter.getLocText("FR-Plugin-Designer_Expired") + ")";
+                    }
+                    setText(((Plugin) value).getName() + extraInfo);
                     setIcon(IOUtils.readIcon("/com/fr/design/images/server/plugin.png"));
                 }
                 return this;
@@ -71,12 +81,13 @@ public class PluginControlPane extends BasicPane {
         pluginList.setCellRenderer(renderer);
         listModel = new DefaultListModel();
         pluginList.setModel(listModel);
+        JScrollPane jScrollPane = new JScrollPane(pluginList);
 
 
         PluginDescriptionLabel label = new PluginDescriptionLabel();
         label.setText(Inter.getLocText("FR-Designer-Plugin_Plugin"));
         JPanel leftPane = GUICoreUtils.createBorderLayoutPane(
-                pluginList, BorderLayout.CENTER,
+                jScrollPane, BorderLayout.CENTER,
                 label, BorderLayout.NORTH
         );
         detailPane = new PluginDetailPane();

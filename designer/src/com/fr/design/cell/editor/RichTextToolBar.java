@@ -561,13 +561,15 @@ public class RichTextToolBar extends BasicPane{
 		//记录上一次输入成功后光标点定位, 因为有可能文本是在中间插入的
 		private int inputStart = NOT_INITED;
 		private static final int JDK_6 = 6;
+		private static final int JDK_7 = 7;
 		
 		@Override
 		public void changedUpdate(DocumentEvent e) {
 			//这边需要注意, jdk1.6和1.7对于输入法的处理逻辑不一样, jdk6时直接在输入法中输入一大段中文
 			//他会一个个insert进去直接触发inserupdate事件, 而jdk7会直接把所有的塞进来.
 			//inserupdate那边绑定的是一个个插入的事件, 多个一起插入的放这
-			if(StableUtils.getMajorJavaVersion() > JDK_6){
+			//bug84777 8.0不走if逻辑，改成只有jdk7走if逻辑
+			if(StableUtils.getMajorJavaVersion() == JDK_7){
 				if(isUpdating()){
 					return;
 				}

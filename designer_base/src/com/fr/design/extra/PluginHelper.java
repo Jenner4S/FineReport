@@ -5,17 +5,13 @@ import com.fr.base.FRContext;
 import com.fr.design.DesignerEnvManager;
 import com.fr.general.*;
 import com.fr.general.http.HttpClient;
-import com.fr.plugin.Plugin;
-import com.fr.plugin.PluginLoader;
+import com.fr.plugin.*;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.StableUtils;
 import com.fr.stable.xml.XMLTools;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
@@ -34,8 +30,7 @@ public class PluginHelper {
      * 下载插件
      *
      * @param id 插件id
-     * @param p 下载百分比处理
-     *
+     * @param p  下载百分比处理
      */
     public static void downloadPluginFile(String id, Process<Double> p) throws Exception {
         HashMap<String, String> map = new HashMap<String, String>();
@@ -108,7 +103,7 @@ public class PluginHelper {
      * 从选中的压缩文件中安装插件
      *
      * @param chosenFile 选择的压缩文件
-     * @param after 操作完成事件
+     * @param after      操作完成事件
      * @throws Exception 安装失败则抛出异常
      */
     public static void installPluginFromDisk(File chosenFile, After after) throws Exception {
@@ -118,15 +113,15 @@ public class PluginHelper {
 
     /**
      * 从压缩文件中复制Restart*.class和restart.exe到bin目录下
-     * @param file 插件文件
+     *
+     * @param file   插件文件
      * @param plugin 插件
      * @throws Exception
      */
     public static void copyFilesToBinFolder(File file, Plugin plugin) throws Exception {
         File[] pluginFiles = file.listFiles();
-        for(int i = 0; i < pluginFiles.length; ++i) {
-            File restartFile = pluginFiles[i];
-            if(restartFile.getAbsolutePath().endsWith(".class")) {
+        for (File restartFile : pluginFiles) {
+            if (restartFile.getAbsolutePath().endsWith(".class")) {
                 String installHome = StableUtils.getInstallHome();
                 IOUtils.copy(restartFile, new File(StableUtils.pathJoin(new String[]{installHome, "bin"})));
             }
@@ -138,21 +133,11 @@ public class PluginHelper {
      *
      * @param env    报表运行环境
      * @param plugin 插件
-     * @param after 操作完成事件
+     * @param after  操作完成事件
      * @throws Exception
      */
     public static void installPluginFromUnzippedTempDir(Env env, final Plugin plugin, final After after) throws Exception {
-        if (plugin == null) {
-            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
-        }
-        if (PluginLoader.getLoader().isInstalled(plugin)) {
-            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
-        }
-        if (plugin.isJarExpired()) {
-            String jarExpiredInfo = Inter.getLocText(new String[]{"FR-Designer-Plugin_Jar_Expired", ",", "FR-Designer-Plugin_Install_Failed", ",", "FR-Designer-Plugin_Please_Update_Jar", plugin.getRequiredJarTime()});
-            FRLogger.getLogger().error(jarExpiredInfo);
-            throw new Exception(jarExpiredInfo);
-        }
+        validPlugin(plugin);
         if (plugin.isValidate()) {
             File file = getTempPluginFileDirectory();
             env.copyFilesToPluginAndLibFolder(file, plugin);
@@ -183,6 +168,31 @@ public class PluginHelper {
                 }
             }
         }.execute();
+    }
+
+    private static void validPlugin(Plugin plugin) throws Exception {
+        if (plugin == null) {
+            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
+        }
+        if (PluginLoader.getLoader().isInstalled(plugin)) {
+            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
+        }
+        if (plugin.isJarExpired()) {
+            String jarExpiredInfo = Inter.getLocText(new String[]{"FR-Designer-Plugin_Jar_Expired", ",", "FR-Designer-Plugin_Install_Failed", ",", "FR-Designer-Plugin_Please_Update_Jar", plugin.getRequiredJarTime()});
+            FRLogger.getLogger().error(jarExpiredInfo);
+            throw new Exception(jarExpiredInfo);
+        }
+        File fileToCheck = getTempPluginFileDirectory();
+        if (!PluginManagerHelper.checkMD5ForJar(plugin, fileToCheck)) {
+            String MD5Info = plugin.getName() + Inter.getLocText("FR-Plugin-Plugin_Is_Damaged");
+            FRLogger.getLogger().error(MD5Info);
+            throw new Exception(MD5Info);
+        }
+        if (!PluginManagerHelper.checkLic(plugin, fileToCheck)) {
+            String checkLicFail = Inter.getLocText("FR-Designer-PluginLicense_Check_Failed");
+            FRLogger.getLogger().error(checkLicFail);
+            throw new Exception(checkLicFail);
+        }
     }
 
     /**
@@ -225,9 +235,8 @@ public class PluginHelper {
      *
      * @param env    报表运行环境
      * @param plugin 插件
+     * @return 返回没有删除掉的文件的集合
      * @throws Exception 卸载出错的时候抛出此异常
-     *
-     * @return  返回没有删除掉的文件的集合
      */
     public static String[] uninstallPlugin(Env env, Plugin plugin) throws Exception {
         if (plugin == null || env == null) {

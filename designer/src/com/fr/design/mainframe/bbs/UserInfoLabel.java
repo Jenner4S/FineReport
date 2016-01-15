@@ -9,7 +9,6 @@ import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.mainframe.DesignerContext;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.DateUtils;
-import com.fr.general.GeneralUtils;
 import com.fr.general.http.HttpClient;
 import com.fr.stable.EncodeConstants;
 import com.fr.stable.StringUtils;
@@ -83,7 +82,7 @@ public class UserInfoLabel extends UILabel{
 
 			@Override
 			public void run() {
-				if(StringUtils.isEmpty(GeneralUtils.readBuildNO())){
+				if(!FRContext.isChineseEnv()){
 					return;
 				}
 				

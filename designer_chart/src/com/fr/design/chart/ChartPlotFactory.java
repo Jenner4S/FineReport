@@ -43,7 +43,8 @@ public class ChartPlotFactory {
                 .setAxisPaneCls(XYChartStyleAxisPane.class)
                 .setDataLabelPaneClass(BubbleDataLabelPane.class));
         map.put(CustomPlot.class.getName(), new FactoryObject()
-                .setAxisPaneCls(CustomChartStyleAxisPane.class));
+                .setAxisPaneCls(CustomChartStyleAxisPane.class)
+                .setDataLabelPaneClass(Bar2DDataLabelPane.class));
         map.put(GanttPlot.class.getName(), new FactoryObject()
                 .setAxisPaneCls(GanntChartStyleAxisPane.class));
         map.put(LinePlot.class.getName(), new FactoryObject()

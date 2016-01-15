@@ -25,9 +25,9 @@ public class Bar2DDataLabelPane extends DataLabelPane {
     private UIRadioButton outSideButton;
 
     protected JPanel createJPanel4Position() {
-        centerButton = new UIRadioButton(Inter.getLocText("Center"));
-        insideButton = new UIRadioButton(Inter.getLocText("ChartDataLabelInside"));
-        outSideButton = new UIRadioButton(Inter.getLocText("ChartDataLabelOutSide"));
+        centerButton = new UIRadioButton(Inter.getLocText("FR-Designer-StyleAlignment_Center"));
+        insideButton = new UIRadioButton(Inter.getLocText("FR-Chart_DataLabelInside"));
+        outSideButton = new UIRadioButton(Inter.getLocText("FR-Chart_DataLabelOutSide"));
 
         ButtonGroup bg = new ButtonGroup();
         bg.add(insideButton);
@@ -52,6 +52,10 @@ public class Bar2DDataLabelPane extends DataLabelPane {
             insideButton.setSelected(true);
         } else if (outSideButton != null && position == Constants.OUTSIDE) {
             outSideButton.setSelected(true);
+        } else if (centerButton != null) {
+            //柱形图除了内外都是居中。
+            //组合图条件显示16.1.4之前是上下左右中，现改为内外中。之前存的上下左右都当做中。
+            centerButton.setSelected(true);
         }
     }
 

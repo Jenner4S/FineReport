@@ -28,6 +28,7 @@ import com.fr.design.mainframe.form.FormECCompositeProvider;
 import com.fr.design.mainframe.form.FormECDesignerProvider;
 import com.fr.design.mainframe.form.FormElementCaseDesigner;
 import com.fr.design.mainframe.form.FormReportComponentComposite;
+import com.fr.design.mainframe.loghandler.DesignerLogImpl;
 import com.fr.design.parameter.WorkBookParameterReader;
 import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.file.FILE;
@@ -37,6 +38,7 @@ import com.fr.io.importer.Excel2007ReportImporter;
 import com.fr.io.importer.ExcelReportImporter;
 import com.fr.js.*;
 import com.fr.main.impl.WorkBook;
+import com.fr.plugin.ExtraClassManager;
 import com.fr.quickeditor.ChartQuickEditor;
 import com.fr.quickeditor.cellquick.*;
 import com.fr.quickeditor.floatquick.FloatImageQuickEditor;
@@ -92,6 +94,7 @@ public class DesignerModule extends DesignModule {
 		InformationCollector.getInstance().collectStartTime();
 
 		ExtraDesignClassManager.getInstance().getFeedback().didFeedback();
+        ExtraClassManager.getInstance().addLogProvider(DesignerLogImpl.getInstance());
 	}
 	
 	private void registerOtherPane(){

@@ -17,7 +17,7 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 import com.fr.general.NameObject;
-import com.fr.report.write.Submiter;
+import com.fr.report.write.SubmitVisitor;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.Nameable;
 import com.fr.stable.bridge.StableFactory;
@@ -74,10 +74,10 @@ public class SubmiterListPane extends ObjectJControlPane {
 
         List<NameObject> nameObjectList = new ArrayList<NameObject>();
 
-        int submiterCount = reportWriteAttr.getSubmiterCount();
+        int submiterCount = reportWriteAttr.getSubmitVisitorCount();
         for (int i = 0; i < submiterCount; i++) {
-            Submiter submiter = reportWriteAttr.getSubmiter(i);
-            String name = reportWriteAttr.getSubmiterNameList(i);
+            SubmitVisitor submiter = reportWriteAttr.getSubmitVisitor(i);
+            String name = reportWriteAttr.getSubmitVisitorNameList(i);
             nameObjectList.add(new NameObject(name, submiter));
         }
 
@@ -95,12 +95,12 @@ public class SubmiterListPane extends ObjectJControlPane {
         NameObject[] res_array = new NameObject[res.length];
         java.util.Arrays.asList(res).toArray(res_array);
 
-        reportWriteAttr.clearSubmiters();
+        reportWriteAttr.clearSubmitVisitors();
 
         for (int i = 0; i < res_array.length; i++) {
             NameObject nameObject = res_array[i];
-            if (nameObject.getObject() instanceof Submiter) {
-                reportWriteAttr.addSubmiter(nameObject.getName(), (Submiter) nameObject.getObject());
+            if (nameObject.getObject() instanceof SubmitVisitor) {
+                reportWriteAttr.addSubmitVisitor(nameObject.getName(), (SubmitVisitor) nameObject.getObject());
             }
         }
     }

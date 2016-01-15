@@ -301,7 +301,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 	}
 
 	private void sendUserInfoInOtherThread(){
-		if (!DesignerEnvManager.getEnvManager().isJoinProductImprove()) {
+		if (!DesignerEnvManager.getEnvManager().isJoinProductImprove() || !FRContext.isChineseEnv()) {
 			return;
 		}
 		

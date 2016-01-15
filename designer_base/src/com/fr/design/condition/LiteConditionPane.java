@@ -18,6 +18,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.scrollruler.ModLineBorder;
 import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.ComparatorUtils;
+import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 import com.fr.general.data.Condition;
 
@@ -48,16 +49,16 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
 
     private static final long serialVersionUID = 1L;
     // peter:这两个变量在弹出公式编辑器的时候,需要用.
-    private UIRadioButton commonRadioButton = new UIRadioButton(Inter.getLocText("Common"));
-    private UIRadioButton formulaRadioButton = new UIRadioButton(Inter.getLocText("Formula"));
+    private UIRadioButton commonRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_Common"));
+    private UIRadioButton formulaRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_Formula"));
     private JPanel conditionCardPane;
     protected BasicBeanPane<T> defaultConditionPane;
     // card2
     private UITextArea formulaTextArea;
     private UIButton modifyButton;
     private UIButton addButton;
-    private UIRadioButton andRadioButton = new UIRadioButton(Inter.getLocText("ConditionB-AND") + "  ");
-    private UIRadioButton orRadioButton = new UIRadioButton(Inter.getLocText("ConditionB-OR"));
+    private UIRadioButton andRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_ConditionB-AND") + "  ");
+    private UIRadioButton orRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_ConditionB-OR"));
     protected JTree conditionsTree;// Conditions
     private UIButton removeButton;
     private UIButton moveUpButton;
@@ -213,7 +214,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             }
 
             int returnVal = JOptionPane.showConfirmDialog(SwingUtilities.getWindowAncestor(LiteConditionPane.this),
-                    Inter.getLocText("Utils-Are_you_sure_to_remove_the_selected_item") + "?", Inter.getLocText("Remove"),
+                    Inter.getLocText("Utils-Are_you_sure_to_remove_the_selected_item") + "?", Inter.getLocText("FR-Designer_Remove"),
                     JOptionPane.OK_CANCEL_OPTION);
             if (returnVal == JOptionPane.OK_OPTION) {
                 DefaultTreeModel treeModel = (DefaultTreeModel) conditionsTree.getModel();
@@ -437,7 +438,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
 
 
     private void initButtonPane(JPanel buttonPane) {
-        removeButton = new UIButton(Inter.getLocText("Remove"));
+        removeButton = new UIButton(Inter.getLocText("FR-Designer_Remove"));
         buttonPane.add(removeButton);
         removeButton.setIcon(BaseUtils.readIcon("com/fr/base/images/cell/control/remove.png"));
         removeButton.setEnabled(false);
@@ -482,7 +483,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         this.add(conditonTypePane, BorderLayout.NORTH);
         conditonTypePane.setBorder(new ModLineBorder(ModLineBorder.BOTTOM));
 
-        UILabel conditionTypeLabel = new UILabel(Inter.getLocText("Type") + ":");
+        UILabel conditionTypeLabel = new UILabel(Inter.getLocText("FR-Designer_Type") + ":");
         conditonTypePane.add(conditionTypeLabel, BorderLayout.WEST);
         conditionTypeLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 4, 0));
 
@@ -518,10 +519,10 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         JPanel formulaPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         formulaConditionPane.add(formulaPane, BorderLayout.CENTER);
         formulaPane.setBorder(BorderFactory.createEmptyBorder(2, 0, 2, 2));
-        formulaPane.add(GUICoreUtils.createBorderPane(new UILabel(Inter.getLocText("Formula") + "="), BorderLayout.NORTH), BorderLayout.WEST);
+        formulaPane.add(GUICoreUtils.createBorderPane(new UILabel(Inter.getLocText("FR-Designer_LiteCondition_Formula") + "="), BorderLayout.NORTH), BorderLayout.WEST);
         formulaTextArea = new UITextArea();
         formulaPane.add(new JScrollPane(formulaTextArea), BorderLayout.CENTER);
-        UIButton editFormulaButton = new UIButton(Inter.getLocText("Define"));
+        UIButton editFormulaButton = new UIButton(Inter.getLocText("FR-Designer_LiteCondition_Define"));
         formulaPane.add(GUICoreUtils.createBorderPane(editFormulaButton, BorderLayout.NORTH), BorderLayout.EAST);
         editFormulaButton.addActionListener(actionListener1);
         applyCardsPane();
@@ -547,14 +548,14 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
 
         addControlPane.add(Box.createHorizontalStrut(12));
 
-        addButton = new UIButton(Inter.getLocText("Add"), BaseUtils.readIcon("com/fr/base/images/cell/control/add.png"));
+        addButton = new UIButton(Inter.getLocText("FR-Designer_Add"), BaseUtils.readIcon("com/fr/base/images/cell/control/add.png"));
         addButton.setMnemonic('A');
         addControlPane.add(addButton);
         addButton.addActionListener(actionListener2);
 
         addControlPane.add(Box.createHorizontalStrut(4));
 
-        modifyButton = new UIButton(Inter.getLocText("Modify"), BaseUtils.readIcon("com/fr/base/images/cell/control/rename.png"));
+        modifyButton = new UIButton(Inter.getLocText("FR-Designer_Modify"), BaseUtils.readIcon("com/fr/base/images/cell/control/rename.png"));
         modifyButton.setMnemonic('M');
         addControlPane.add(modifyButton);
         modifyButton.addActionListener(actionListener8);
@@ -637,10 +638,10 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     private void applyCardsPane() {
         CardLayout cl = (CardLayout) (conditionCardPane.getLayout());
         if (this.commonRadioButton.isSelected()) {
-            this.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("Common_Condition"), null));
+            this.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("FR-Designer_LiteCondition_Common_Condition"), null));
             cl.show(conditionCardPane, "DEFAULT");
         } else {
-            this.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("Formula_Condition"), null));
+            this.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("FR-Designer_LiteCondition_Formula_Condition"), null));
             cl.show(conditionCardPane, "FORMULA");
         }
     }
@@ -936,7 +937,14 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             }
 
             JoinCondition joinCondition = (JoinCondition) rootTreeNode.getUserObject();
-            return joinCondition.getCondition();
+            Condition newCondition = joinCondition.getCondition();
+            //clone(),防止多个条件分组使用同一个condition对象
+            try{
+                newCondition = (Condition)joinCondition.getCondition().clone();
+            }catch (CloneNotSupportedException e){
+                FRLogger.getLogger().error(e.getMessage());
+            }
+            return newCondition;
         }
     }
 }
