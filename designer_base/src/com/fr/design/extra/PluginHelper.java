@@ -7,12 +7,14 @@ import com.fr.general.*;
 import com.fr.general.http.HttpClient;
 import com.fr.plugin.*;
 import com.fr.stable.ArrayUtils;
+import com.fr.stable.EncodeConstants;
 import com.fr.stable.StableUtils;
 import com.fr.stable.xml.XMLTools;
 
 import javax.swing.*;
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -33,9 +35,7 @@ public class PluginHelper {
      * @param p  下载百分比处理
      */
     public static void downloadPluginFile(String id, Process<Double> p) throws Exception {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("id", id);
-        HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_DOWNLOAD_URL, map);
+        HttpClient httpClient = new HttpClient(getDownloadPath(id));
         if (httpClient.getResponseCode() == HttpURLConnection.HTTP_OK) {
             int totalSize = httpClient.getContentLength();
             InputStream reader = httpClient.getResponseStream();
@@ -56,6 +56,17 @@ public class PluginHelper {
             writer.flush();
             writer.close();
         }
+    }
+
+    private static String getDownloadPath(String id) throws Exception {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("id", id);
+        HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_DOWNLOAD_URL, map);
+        String resText = httpClient.getResponseText();
+        String charSet = EncodeConstants.ENCODING_UTF_8;
+        resText = URLDecoder.decode(URLDecoder.decode(resText, charSet), charSet);
+
+        return resText;
     }
 
     public static File getDownloadTempFile() {
