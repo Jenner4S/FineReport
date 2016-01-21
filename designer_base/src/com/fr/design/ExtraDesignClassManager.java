@@ -110,6 +110,30 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     private CellAttributeProvider cellAttributeProvider;
 
+    private Set<HyperlinkProvider> hyperlinkGroupProviders;
+
+    public HyperlinkProvider[] getHyperlinkProvider() {
+        if (hyperlinkGroupProviders == null) {
+            return new HyperlinkProvider[0];
+        }
+        return hyperlinkGroupProviders.toArray(new HyperlinkProvider[hyperlinkGroupProviders.size()]);
+    }
+
+    public void addHyperlinkProvider(String className) {
+        if (StringUtils.isNotEmpty(className)) {
+            if (hyperlinkGroupProviders == null) {
+                hyperlinkGroupProviders = new HashSet<HyperlinkProvider>();
+            }
+            try {
+                Class clazz = GeneralUtils.classForName(className);
+                HyperlinkProvider provider = (HyperlinkProvider) clazz.newInstance();
+                hyperlinkGroupProviders.add(provider);
+            } catch (Exception e) {
+                FRLogger.getLogger().error(e.getMessage(), e);
+            }
+        }
+    }
+
     public GlobalListenerProvider[] getGlobalListenerProvider() {
         if (globalListenerProviders == null) {
             return new GlobalListenerProvider[0];
@@ -477,6 +501,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                         BaseUtils.readIcon(provider.iconPathForWidget()),
                         provider.classForWidget()
                 );
+                if (cellWidgetOptions.contains(option)) {
+                    return;
+                }
                 cellWidgetOptionMap.put(provider.classForWidget(), new Appearance(provider.appearanceForWidget(), Appearance.P_MARK + cellWidgetOptionMap.size()));
                 cellWidgetOptions.add(option);
             } catch (Exception e) {
@@ -860,6 +887,8 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 setIndentationUnitEditor(reader.getAttrAsString("class",""));
             } else if (tagName.equals(CellAttributeProvider.MARK_STRING)) {
                 setCellAttributeProvider(reader.getAttrAsString("class",""));
+            } else if (tagName.equals(HyperlinkProvider.XML_TAG)) {
+                addHyperlinkProvider(reader.getAttrAsString("class",""));
             }
         }
     }

@@ -83,7 +83,7 @@ public class FormulaEditor extends Editor<Formula> {
 
 
     protected void showFormulaPane() {
-        final UIFormula formulaPane = FormulaFactory.createFormulaPane();
+        final UIFormula formulaPane = FormulaFactory.createFormulaPaneWhenReserveFormula();
         formulaPane.populate(formula);
         formulaPane.showLargeWindow(SwingUtilities.getWindowAncestor(FormulaEditor.this), new DialogActionAdapter() {
 

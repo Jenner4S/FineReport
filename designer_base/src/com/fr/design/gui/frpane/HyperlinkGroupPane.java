@@ -1,12 +1,14 @@
 package com.fr.design.gui.frpane;
 
+import com.fr.design.ExtraDesignClassManager;
 import com.fr.design.actions.HyperlinkPluginAction;
 import com.fr.design.actions.UpdateAction;
-import com.fr.general.NameObject;
+import com.fr.design.fun.HyperlinkProvider;
 import com.fr.design.gui.controlpane.JControlPane;
 import com.fr.design.gui.controlpane.NameableCreator;
 import com.fr.design.module.DesignModuleFactory;
 import com.fr.general.Inter;
+import com.fr.general.NameObject;
 import com.fr.js.JavaScript;
 import com.fr.js.NameJavaScript;
 import com.fr.js.NameJavaScriptGroup;
@@ -15,6 +17,7 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.Nameable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 超级链接 界面.
@@ -33,14 +36,20 @@ public class HyperlinkGroupPane extends JControlPane {
         NameableCreator[] creators = DesignModuleFactory.getHyperlinkGroupType().getHyperlinkCreators();
         PluginManager.getInstance().setExtensionPoint(HyperlinkPluginAction.XML_TAG);
         ArrayList<UpdateAction> templateArrayLisy = PluginManager.getInstance().getResultList();
-        if (templateArrayLisy.isEmpty()) {
-            return creators;
-        }
+//        if (templateArrayLisy.isEmpty()) {
+//            return creators;
+//        }
         NameableCreator[] pluginCreators = new NameableCreator[templateArrayLisy.size()];
         for (int i = 0; i < templateArrayLisy.size(); i++) {
             pluginCreators[i] = ((HyperlinkPluginAction) templateArrayLisy.get(i)).getHyperlinkCreator();
         }
-        return (NameableCreator[]) ArrayUtils.addAll(creators, pluginCreators);
+        HyperlinkProvider[] providers = ExtraDesignClassManager.getInstance().getHyperlinkProvider();
+        List<NameableCreator> creatorList = new ArrayList<NameableCreator>();
+        for (HyperlinkProvider provider : providers) {
+            NameableCreator nc = provider.createHyperlinkCreator();
+            creatorList.add(nc);
+        }
+        return (NameableCreator[]) ArrayUtils.addAll(creatorList.toArray(new NameableCreator[creatorList.size()]), ArrayUtils.addAll(creators, pluginCreators));
     }
 
     /**
@@ -49,7 +58,7 @@ public class HyperlinkGroupPane extends JControlPane {
      * @return 返回标题字符串.
      */
     public String title4PopupWindow() {
-        return Inter.getLocText("Hyperlink");
+        return Inter.getLocText("FR-Designer_Hyperlink");
     }
 
     public void populate(NameJavaScriptGroup nameHyperlink_array) {
