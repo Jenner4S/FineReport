@@ -1,3 +1,12 @@
+# 源码下载方式
+
+以使用IntelliJ IDEA为例子
+
+1. 从菜单栏上选择VCS->Checkout from Version Control->Git
+2. 按照如图所示的方式输入信息![git](screenshots/clone.png)
+3. 点击Clone即可把代码克隆到桌面上（注意Parent Directory的值是自己想存放源码的磁盘位置）
+
+
 # 插件开发入门以及调试教程
 参见这里：http://www.finedevelop.com/w/plugin/debug
 注意：
