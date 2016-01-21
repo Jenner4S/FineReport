@@ -8,8 +8,7 @@
 
 
 # 插件开发入门以及调试教程
-参见这里：http://www.finedevelop.com/w/plugin/debug
-注意：
+参见这里：[http://www.finedevelop.com/w/plugin/debug](http://www.finedevelop.com/w/plugin/debug)
 
 # FineReport V8.0设计器开发工程配置
 
