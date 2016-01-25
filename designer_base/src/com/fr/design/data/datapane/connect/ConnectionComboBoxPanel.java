@@ -17,6 +17,8 @@ import javax.swing.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 选择数据连接的下拉框
  *
@@ -28,10 +30,10 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
      *
      */
     private static final long serialVersionUID = 1L;
-    private Class<Connection> cls; // 所取的Connection都是cls及其子类
+    private Class<? extends Connection> cls; // 所取的Connection都是cls及其子类
     private java.util.List<String> nameList = new ArrayList<String>();
 
-    public ConnectionComboBoxPanel(Class<Connection> cls) {
+    public ConnectionComboBoxPanel(Class<? extends Connection> cls) {
         super();
 
         this.cls = cls;
@@ -59,10 +61,14 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
         while (nameIt.hasNext()) {
             String conName = nameIt.next();
             Connection connection = mgr.getConnection(conName);
-            connection.addConnection(nameList, conName, new Class[]{AbstractDatabaseConnection.class});
+            filterConnection(connection, conName, nameList);
         }
 
         return nameList.iterator();
+    }
+
+    protected void filterConnection(Connection connection, String conName, List<String> nameList) {
+        connection.addConnection(nameList, conName, new Class[]{AbstractDatabaseConnection.class});
     }
 
 
