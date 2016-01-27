@@ -160,7 +160,7 @@ public abstract class ToolBarMenuDock {
     }
 
     private MenuDef createFileMenuDef(ToolBarMenuDockPlus plus) {
-        MenuDef menuDef = new MenuDef(Inter.getLocText("M-File"), 'F');
+        MenuDef menuDef = new MenuDef(Inter.getLocText("FR-Designer_File"), 'F');
 
         ShortCut[] scs = new ShortCut[0];
         if (!BaseUtils.isAuthorityEditing()) {
@@ -232,7 +232,7 @@ public abstract class ToolBarMenuDock {
 
 
     protected MenuDef createServerMenuDef(ToolBarMenuDockPlus plus) {
-        MenuDef menuDef = new MenuDef(Inter.getLocText("M-Server"), 'S');
+        MenuDef menuDef = new MenuDef(Inter.getLocText("FR-Designer_M-Server"), 'S');
 
         if (FRContext.getCurrentEnv() == null || !FRContext.getCurrentEnv().isRoot()) {
             menuDef.addShortCut(new ConnectionListAction());
@@ -252,8 +252,12 @@ public abstract class ToolBarMenuDock {
         );
 
         if (!BaseUtils.isAuthorityEditing()) {
+            if (FRContext.isChineseEnv()){
+                menuDef.addShortCut(
+                        new PluginManagerAction()
+                );
+            }
             menuDef.addShortCut(
-                    new PluginManagerAction(),
                     new FunctionManagerAction(),
                     new GlobalParameterAction()
             );
@@ -288,7 +292,7 @@ public abstract class ToolBarMenuDock {
 
 
     private MenuDef createHelpMenuDef() {
-        MenuDef menuDef = new MenuDef(Inter.getLocText("M-Help"), 'H');
+        MenuDef menuDef = new MenuDef(Inter.getLocText("FR-Designer_Help"), 'H');
         ShortCut[] otherHelpShortCuts = createHelpShortCuts();
         for (ShortCut shortCut : otherHelpShortCuts) {
             menuDef.addShortCut(shortCut);

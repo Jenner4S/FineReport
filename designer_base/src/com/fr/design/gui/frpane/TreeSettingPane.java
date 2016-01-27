@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import com.fr.data.impl.TreeNodeWrapper;
 import com.fr.design.data.DataCreatorUI;
 import com.fr.design.gui.ilable.UILabel;
 
@@ -32,8 +33,8 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	 */
 	private static final long serialVersionUID = 1762889323082827111L;
 
-	private String[] buildWay = new String[] { Inter.getLocText("Layer-Build"),
-			Inter.getLocText("Auto-Build") };
+	private String[] buildWay = new String[] { Inter.getLocText("FR-Designer_Layer-Build"),
+			Inter.getLocText("FR-Designer_Auto-Build") };
 
 	public TreeSettingPane(boolean isEditor) {
 		this.initComponents(isEditor);
@@ -42,7 +43,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	private void initComponents(boolean isEditor) {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		JPanel buildWayPanel= FRGUIPaneFactory.createMediumHGapFlowInnerContainer_M_Pane();
-		UILabel buildWayLabel = new UILabel(Inter.getLocText("Build-Way") + " £º");
+		UILabel buildWayLabel = new UILabel(Inter.getLocText("FR-Designer_Build-Way") + " £º");
 		buildWayPanel.add(buildWayLabel);
 		buildBox = new UIComboBox(buildWay);
 		buildBox.addItemListener(new ItemListener() {
@@ -72,7 +73,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 
 	@Override
 	protected String title4PopupWindow() {
-		return Inter.getLocText("Create_Tree");
+		return Inter.getLocText("FR-Designer_Create_Tree");
 	}
 
     @Override
@@ -81,7 +82,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
     }
 
     NameableCreator treeNode = new NameObjectCreator(
-			Inter.getLocText("Gradation"),
+			Inter.getLocText("FR-Designer_Gradation"),
 			"/com/fr/design/images/data/source/jdbcTableData.png",
 			TreeNodeAttr.class);
 
@@ -138,6 +139,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 				te.setTreeAttr(editor.getTreeAttr());
 				te.setTreeNodeAttr(editor.getTreeNodeAttr());
 				te.setNodeOrDict(editor.getTreeNodeAttr());
+				te.setPerformanceFirst(editor.isPerformanceFirst());
 			}
 		}
 		return te;
@@ -190,6 +192,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 				tcb.setTreeAttr(editor.getTreeAttr());
 				tcb.setTreeNodeAttr(editor.getTreeNodeAttr());
 				tcb.setNodeOrDict(editor.getTreeNodeAttr());
+				tcb.setPerformanceFirst(editor.isPerformanceFirst());
 			}
 		}
 		return tcb;
@@ -200,7 +203,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	 * @param nodeOrDict
 	 */
 	public void populate(Object nodeOrDict) {
-		if(nodeOrDict instanceof TreeNodeAttr[]) {
+		if(nodeOrDict instanceof TreeNodeAttr[] || nodeOrDict instanceof TreeNodeWrapper) {
 			buildBox.setSelectedIndex(0);
 			NameObject no = new NameObject("name", nodeOrDict);
 			controlPane.populate(no);

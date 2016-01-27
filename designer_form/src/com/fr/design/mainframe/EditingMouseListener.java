@@ -6,10 +6,7 @@ import java.awt.Cursor;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JPopupMenu;
-import javax.swing.JWindow;
+import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 
 import com.fr.base.BaseUtils;
@@ -43,6 +40,7 @@ public class EditingMouseListener extends MouseInputAdapter {
 
 	private static final int INDEX = 0;
 	private FormDesigner designer;
+
 	/**
 	 * 普通模式下对应的model
 	 */
@@ -115,7 +113,7 @@ public class EditingMouseListener extends MouseInputAdapter {
         int screen_Y = (int)designer.getArea().getLocationOnScreen().getY();
         this.promptWindow.setSize(promptWindow.getPreferredSize());
         this.promptWindow.setPreferredSize(promptWindow.getPreferredSize());
-        promptWindow.setLocation( screen_X + x + GAP ,screen_Y + y + GAP);
+        promptWindow.setLocation(screen_X + x + GAP, screen_Y + y + GAP);
         promptWindow.setVisible(true);
     }
 
@@ -137,7 +135,6 @@ public class EditingMouseListener extends MouseInputAdapter {
 			// 获取焦点，以便获取热键
 			designer.requestFocus();
 		}
-
 		if (e.isPopupTrigger()) {
 			// 为触发上下文菜单预留
 		} else if (e.getButton() == MouseEvent.BUTTON1) {
@@ -305,19 +302,23 @@ public class EditingMouseListener extends MouseInputAdapter {
 		if (BaseUtils.isAuthorityEditing()) {
 			return;
 		}
-		// 如果当前是拖拽状态，拖拽组件
+		// 如果当前是左键拖拽状态，拖拽组件
 		if (stateModel.dragable()) {
-			stateModel.dragging(e);
-            // 获取e所在的焦点组件
-            XCreator hotspot = designer.getComponentAt(e.getX(), e.getY());
-         // 拉伸时鼠标拖动过快，导致所在组件获取会为空
-            if (hotspot == null) {
-            	return;
-            }
-            // 获取焦点组件所在的焦点容器
-            XLayoutContainer container = XCreatorUtils.getHotspotContainer(hotspot);
-            //提示组件是否可以拖入
-            promptUser(e.getX(), e.getY(), container);
+			if (SwingUtilities.isRightMouseButton(e)) {
+				return;
+			} else {
+				stateModel.dragging(e);
+				// 获取e所在的焦点组件
+				XCreator hotspot = designer.getComponentAt(e.getX(), e.getY());
+				// 拉伸时鼠标拖动过快，导致所在组件获取会为空
+				if (hotspot == null) {
+					return;
+				}
+				// 获取焦点组件所在的焦点容器
+				XLayoutContainer container = XCreatorUtils.getHotspotContainer(hotspot);
+				//提示组件是否可以拖入
+				promptUser(e.getX(), e.getY(), container);
+				}
 		} else if (designer.isDrawLineMode()) {
 			if (stateModel.prepareForDrawLining()) {
 				stateModel.drawLine(e);
@@ -338,7 +339,6 @@ public class EditingMouseListener extends MouseInputAdapter {
 				lastPressEvent = null;
 			}
 		}
-
 		designer.repaint();
 	}
 
@@ -347,7 +347,7 @@ public class EditingMouseListener extends MouseInputAdapter {
      * @param e    鼠标事件
      */
 	public void mouseClicked(MouseEvent e) {
- 		if (e.getButton() != MouseEvent.BUTTON1) {
+		if (e.getButton() != MouseEvent.BUTTON1) {
 			return;
 		}
 		XCreator creator = designer.getComponentAt(e);

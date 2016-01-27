@@ -66,12 +66,12 @@ public class PluginControlPane extends BasicPane {
                 if (value instanceof Plugin) {
                     PluginLicense pluginLicense = PluginLicenseManager.getInstance().getPluginLicenseByID(((Plugin) value).getId());
                     String extraInfo = "";
-                    if (pluginLicense != null) {
-                        if (pluginLicense.isAvailable())
+                    if (pluginLicense.isAvailable()) {
+                        if (pluginLicense.getLeftTime() != -1) {
                             extraInfo = "(" + (pluginLicense.isTrial() ? Inter.getLocText("FR-Plugin-Designer_Trial") : Inter.getLocText("FR-Plugin-Designer_Authorized")) + pluginLicense.getLeftTime() + Inter.getLocText("FR-Plugin-Designer_Left") + ")";
-                        else
-                            extraInfo = "(" + (pluginLicense.isTrial() ? Inter.getLocText("FR-Plugin-Designer_Trial") : Inter.getLocText("FR-Plugin-Designer_Authorized")) + Inter.getLocText("FR-Plugin-Designer_Expired") + ")";
-                    }
+                        }
+                    } else
+                        extraInfo = "(" + (pluginLicense.isTrial() ? Inter.getLocText("FR-Plugin-Designer_Trial") : Inter.getLocText("FR-Plugin-Designer_Authorized")) + Inter.getLocText("FR-Plugin-Designer_Expired") + ")";
                     setText(((Plugin) value).getName() + extraInfo);
                     setIcon(IOUtils.readIcon("/com/fr/design/images/server/plugin.png"));
                 }

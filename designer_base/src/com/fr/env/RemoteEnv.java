@@ -55,6 +55,7 @@ public class RemoteEnv implements Env {
     private static final int SSL_PORT = 443;
     private static final int MAX_PER_ROUTE = 20;
     private static final int MAX_TOTAL = 100;
+    private static final String REMOTE_PLUGIN = "remote_plugin.info";
     private static final String CERT_KEY = "javax.net.ssl.trustStore";
     private static final String PWD_KEY = "javax.net.ssl.trustStorePassword";
     private static final String HTTPS_PREFIX = "https:";
@@ -221,7 +222,7 @@ public class RemoteEnv implements Env {
             if (ComparatorUtils.equals(message, RemoteDeziConstants.NO_SUCH_RESOURCE)) {
                 return null;
             } else if (ComparatorUtils.equals(message, RemoteDeziConstants.INVALID_USER)) {
-            	throw new EnvException(RemoteDeziConstants.INVALID_USER);
+                throw new EnvException(RemoteDeziConstants.INVALID_USER);
             } else if (ComparatorUtils.equals(message, RemoteDeziConstants.FILE_LOCKED)) {
                 JOptionPane.showMessageDialog(null, Inter.getLocText("FR-Remote_File_is_Locked"));
                 return null;
@@ -334,11 +335,11 @@ public class RemoteEnv implements Env {
         para.put("cmd", "test_server_connection");
         para.put("user", user);
         para.put("password", password);
-        
-        if(path.startsWith("https") && (!DesignerEnvManager.getEnvManager().isHttps())){
-        	return false;
+
+        if (path.startsWith("https") && (!DesignerEnvManager.getEnvManager().isHttps())) {
+            return false;
         }
-        
+
         HttpClient client = createHttpMethod(para, true);
 
         String res = stream2String(execute4InputStream(client));
@@ -355,8 +356,8 @@ public class RemoteEnv implements Env {
             return true;
         } else if (ComparatorUtils.equals(res, "invalid username or password.")) {
             JOptionPane.showMessageDialog(parentComponent,
-                        Inter.getLocText(new String[]{"Datasource-Connection_failed", "Registration-User_Name", "Password", "Error"}, new String[]{",", "", "", "!"})
-                        , Inter.getLocText("FR-Server-All_Error"), JOptionPane.ERROR_MESSAGE);
+                    Inter.getLocText(new String[]{"Datasource-Connection_failed", "Registration-User_Name", "Password", "Error"}, new String[]{",", "", "", "!"})
+                    , Inter.getLocText("FR-Server-All_Error"), JOptionPane.ERROR_MESSAGE);
             return false;
         } else if (res.indexOf("RegistEditionException") != -1) {
             if (needMessage) {
@@ -377,8 +378,8 @@ public class RemoteEnv implements Env {
         }
     }
 
-    private void setHttpsParas(){
-		if( path.startsWith(HTTPS_PREFIX) && System.getProperty(CERT_KEY) == null){
+    private void setHttpsParas() {
+        if (path.startsWith(HTTPS_PREFIX) && System.getProperty(CERT_KEY) == null) {
             DesignerEnvManager envManager = DesignerEnvManager.getEnvManager();
             System.setProperty(CERT_KEY, envManager.getCertificatePath());
             System.setProperty(PWD_KEY, envManager.getCertificatePass());
@@ -732,7 +733,7 @@ public class RemoteEnv implements Env {
             return false;
         }
 
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
     /**
@@ -820,7 +821,7 @@ public class RemoteEnv implements Env {
             return false;
         }
 
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
     /**
@@ -843,8 +844,8 @@ public class RemoteEnv implements Env {
         if (input == null) {
             return false;
         }
-        
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
     /**
@@ -872,7 +873,7 @@ public class RemoteEnv implements Env {
             return false;
         }
 
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
     /**
@@ -899,7 +900,7 @@ public class RemoteEnv implements Env {
             return false;
         }
 
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
 
@@ -949,7 +950,7 @@ public class RemoteEnv implements Env {
                 return false;
             }
 
-            return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+            return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
         } catch (Exception e) {
             FRLogger.getLogger().error(e.getMessage());
         }
@@ -980,7 +981,7 @@ public class RemoteEnv implements Env {
             return false;
         }
 
-        return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+        return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
     }
 
     /**
@@ -1387,16 +1388,17 @@ public class RemoteEnv implements Env {
 
 
     /**
-     *读取路径下的svg文件
+     * 读取路径下的svg文件
+     *
      * @param path 制定路径,是基于报表目录下resource文件夹路径
      * @return 读到的文件
      */
-    public File[] readPathSvgFiles(String path){
-        String cataloguePath =StableUtils.pathJoin(new String[]{CacheManager.getProviderInstance().getCacheDirectory().getPath(), SvgProvider.SERVER,path});
+    public File[] readPathSvgFiles(String path) {
+        String cataloguePath = StableUtils.pathJoin(new String[]{CacheManager.getProviderInstance().getCacheDirectory().getPath(), SvgProvider.SERVER, path});
 
         //检查缓存文件保存的目录下serversvgs文件夹是否存在 ，先用来暂存服务器读过来的svg文件
         File catalogue = new File(cataloguePath);
-        if(!catalogue.exists()){
+        if (!catalogue.exists()) {
             catalogue.mkdirs();
         }
 
@@ -1405,7 +1407,7 @@ public class RemoteEnv implements Env {
             HashMap<String, String> para = new HashMap<String, String>();
             para.put("op", "fr_remote_design");
             para.put("cmd", "design_read_svgfile");
-            para.put("resourcePath",path);
+            para.put("resourcePath", path);
             para.put("current_uid", this.createUserID());
             para.put("currentUsername", this.getUser());
 
@@ -1416,10 +1418,10 @@ public class RemoteEnv implements Env {
                 JSONObject jsonObject = (JSONObject) ja.get(i);
                 String svgFileName = (String) jsonObject.get("svgfileName");
                 String svgfileContent = (String) jsonObject.get("svgfileContent");
-                File file = new File(StableUtils.pathJoin(new String[]{cataloguePath,svgFileName}));
+                File file = new File(StableUtils.pathJoin(new String[]{cataloguePath, svgFileName}));
                 InputStream in = new ByteArrayInputStream(svgfileContent.getBytes(EncodeConstants.ENCODING_UTF_8));
                 FileOutputStream out = new FileOutputStream(file);
-                IOUtils.copyBinaryTo(in,out);
+                IOUtils.copyBinaryTo(in, out);
                 fileArray.add(file);
             }
         } catch (Exception e) {
@@ -1430,18 +1432,18 @@ public class RemoteEnv implements Env {
     }
 
 
-
     /**
      * 写svg文件
+     *
      * @param svgFile svg文件
      * @return 是否写入成功
      * @throws Exception 异常
      */
-    public boolean writeSvgFile(SvgProvider svgFile) throws Exception{
+    public boolean writeSvgFile(SvgProvider svgFile) throws Exception {
         HashMap<String, String> para = new HashMap<String, String>();
         para.put("op", "fr_remote_design");
         para.put("cmd", "design_save_svg");
-        para.put("filePath",svgFile.getFilePath());
+        para.put("filePath", svgFile.getFilePath());
         para.put("current_uid", this.createUserID());
         para.put("currentUsername", this.getUser());
 
@@ -1674,7 +1676,7 @@ public class RemoteEnv implements Env {
                 return false;
             }
 
-            return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+            return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
         } catch (Exception e) {
             FRContext.getLogger().error(e.getMessage());
         }
@@ -1859,18 +1861,18 @@ public class RemoteEnv implements Env {
 
             client = createHttpMethod(para);
             InputStream input = execute4InputStream(client);
-            
+
             if (input == null) {
                 return false;
             }
-            return Boolean.valueOf(IOUtils.inputStream2String(input,EncodeConstants.ENCODING_UTF_8));
+            return Boolean.valueOf(IOUtils.inputStream2String(input, EncodeConstants.ENCODING_UTF_8));
         } catch (Exception e) {
             FRLogger.getLogger().error(e.getMessage());
             return false;
         }
 
     }
-    
+
     /**
      * 是否是管理员身份
      *
@@ -1983,7 +1985,7 @@ public class RemoteEnv implements Env {
     /**
      * 将文件拷贝到插件目录
      *
-     * @param dir 要拷贝的文件
+     * @param dir    要拷贝的文件
      * @param plugin 插件
      */
     public void copyFilesToPluginAndLibFolder(File dir, Plugin plugin) throws Exception {
@@ -1993,15 +1995,16 @@ public class RemoteEnv implements Env {
     /**
      * 将文件添加到指定目录或者删除指定目录的文件
      *
-     * @param file 解压插件的临时目录
+     * @param file   解压插件的临时目录
      * @param plugin 当前处理的插件
      */
-    public void movePluginEmbFile(File file, Plugin plugin) throws Exception{
+    public void movePluginEmbFile(File file, Plugin plugin) throws Exception {
 
     }
 
     /**
      * 将文件从插件目录删除
+     *
      * @param plugin 要删除插件
      * @return 同上
      */
@@ -2017,4 +2020,26 @@ public class RemoteEnv implements Env {
     public void writePlugin(Plugin plugin) throws Exception {
 
     }
+
+    public InputStream readPluginConfig() throws Exception {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        HashMap<String, String> para = new HashMap<String, String>();
+        para.put("op", "fr_remote_design");
+        para.put("cmd", "design_get_plugin_info");
+
+        return postBytes2ServerB(out.toByteArray(), para);
+    }
+
+    /**
+     * 远程设计先不需要检测MD5
+     *
+     * @return 是否正确
+     * @throws Exception MD5算法异常
+     */
+    @Override
+    public boolean isTruePluginMD5(Plugin plugin, File file) throws Exception {
+        return true;
+    }
+
+
 }

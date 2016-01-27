@@ -3,16 +3,26 @@ package com.fr.design.extra;
 import com.fr.base.Env;
 import com.fr.base.FRContext;
 import com.fr.design.DesignerEnvManager;
-import com.fr.general.*;
+import com.fr.general.ComparatorUtils;
+import com.fr.general.FRLogger;
+import com.fr.general.GeneralUtils;
+import com.fr.general.IOUtils;
+import com.fr.general.Inter;
 import com.fr.general.http.HttpClient;
-import com.fr.plugin.*;
+import com.fr.plugin.Plugin;
+import com.fr.plugin.PluginLoader;
+import com.fr.plugin.PluginManagerHelper;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.EncodeConstants;
 import com.fr.stable.StableUtils;
+import com.fr.stable.project.ProjectConstants;
 import com.fr.stable.xml.XMLTools;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URLDecoder;
 import java.util.HashMap;
@@ -183,26 +193,29 @@ public class PluginHelper {
 
     private static void validPlugin(Plugin plugin) throws Exception {
         if (plugin == null) {
-            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
+            throw new com.fr.design.extra.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
         }
         if (PluginLoader.getLoader().isInstalled(plugin)) {
-            throw new Exception(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
+            throw new com.fr.design.extra.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
         }
         if (plugin.isJarExpired()) {
             String jarExpiredInfo = Inter.getLocText(new String[]{"FR-Designer-Plugin_Jar_Expired", ",", "FR-Designer-Plugin_Install_Failed", ",", "FR-Designer-Plugin_Please_Update_Jar", plugin.getRequiredJarTime()});
             FRLogger.getLogger().error(jarExpiredInfo);
-            throw new Exception(jarExpiredInfo);
+            throw new com.fr.design.extra.PluginVerifyException(jarExpiredInfo);
         }
         File fileToCheck = getTempPluginFileDirectory();
-        if (!PluginManagerHelper.checkMD5ForJar(plugin, fileToCheck)) {
+        if (!FRContext.getCurrentEnv().isTruePluginMD5(plugin, fileToCheck)) {
             String MD5Info = plugin.getName() + Inter.getLocText("FR-Plugin-Plugin_Is_Damaged");
             FRLogger.getLogger().error(MD5Info);
-            throw new Exception(MD5Info);
+            throw new com.fr.design.extra.PluginVerifyException(MD5Info);
         }
+        File oldfile = new File(StableUtils.pathJoin(FRContext.getCurrentEnv().getPath(), ProjectConstants.PLUGINS_NAME, "plugin-" + plugin.getId()));
         if (!PluginManagerHelper.checkLic(plugin, fileToCheck)) {
-            String checkLicFail = Inter.getLocText("FR-Designer-PluginLicense_Check_Failed");
-            FRLogger.getLogger().error(checkLicFail);
-            throw new Exception(checkLicFail);
+            if (!PluginManagerHelper.checkLic(plugin, oldfile)) {//安装时,在安装目录下和压缩包里都没有才弹框
+                String checkLicFail = Inter.getLocText("FR-Designer-PluginLicense_Check_Failed");
+                FRLogger.getLogger().error(checkLicFail);
+                throw new com.fr.design.extra.PluginVerifyException(checkLicFail);
+            }
         }
     }
 
