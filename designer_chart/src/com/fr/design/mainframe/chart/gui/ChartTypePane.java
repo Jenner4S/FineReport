@@ -100,8 +100,6 @@ public class ChartTypePane extends AbstractChartAttrPane{
 
 				chart.setWrapperName(ChartTypeManager.getInstance().getWrapperName(plotID));
 
-				chart.setRequiredJs(ChartTypeManager.getInstance().getRequiredJS(plotID));
-
 				chart.setChartImagePath(ChartTypeManager.getInstance().getChartImagePath(plotID));
 
 				boolean isUseDefault = ChartTypeInterfaceManager.getInstance().isUseDefaultPane(plotID);

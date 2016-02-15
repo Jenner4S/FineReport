@@ -51,6 +51,21 @@ public class BBSDialog extends UIDialog {
         add(jfxPanel, BorderLayout.CENTER);
     }
 
+    private void disableLink(final WebEngine eng) {
+        try{
+            // webView端不跳转 虽然webView可以指定本地浏览器打开某个链接，但是当本地浏览器跳转到指定链接的同时，webView也做了跳转，
+            // 为了避免出现在一个600*400的资讯框里加载整个网页的情况，webView不跳转到新网页
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    eng.executeScript("history.go(0)");
+                }
+            });
+        }catch(Exception e){
+            FRLogger.getLogger().error(e.getMessage());
+        }
+    }
+
     /**
      * 打开资讯框
      * @param url 资讯链接
@@ -66,7 +81,6 @@ public class BBSDialog extends UIDialog {
                 jfxPanel.setScene(scene);
                 Double widthDouble = new Integer(WIDTH).doubleValue();
                 Double heightDouble = new Integer(HEIGHT).doubleValue();
-
                 WebView view = new WebView();
                 view.setMinSize(widthDouble, heightDouble);
                 view.setPrefSize(widthDouble, heightDouble);
@@ -77,16 +91,9 @@ public class BBSDialog extends UIDialog {
                 root.getChildren().add(view);
                 eng.locationProperty().addListener(new ChangeListener<String>() {
                     @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+                    public void changed(ObservableValue<? extends String> observable, final String oldValue, String newValue)
                     {
-                    	try{
-                    		// webView端不跳转
-                    		// 虽然webView可以指定本地浏览器打开某个链接，但是当本地浏览器跳转到指定链接的同时，webView也做了跳转，
-                    		// 为了避免出现在一个600*400的资讯框里加载整个网页的情况，webView不跳转到新网页
-                    		eng.executeScript("history.back()");
-                    	}catch(Exception e){
-                    		// 只捕捉，不处理
-                    	}
+                    	disableLink(eng);
                     	// webView好像默认以手机版显示网页，浏览器里过滤掉这个跳转
                 		if(ComparatorUtils.equals(newValue, url) || ComparatorUtils.equals(newValue, BBSConstants.BBS_MOBILE_MOD)){
                 			return;

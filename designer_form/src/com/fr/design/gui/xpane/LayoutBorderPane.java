@@ -402,6 +402,7 @@ public class LayoutBorderPane extends BasicPane {
         formulaPane = new TinyFormulaPane();
         fontSizeComboBox = new UIComboBox(FRFontPane.FONT_SIZES);
         fontNameComboBox = new UIComboBox(Utils.getAvailableFontFamilyNames4Report());
+        fontNameComboBox.setPreferredSize(new Dimension(160, 30));
         JPanel fontSizeTypePane = new JPanel(new BorderLayout(10,0));
         fontSizeTypePane.add(fontSizeComboBox, BorderLayout.CENTER);
         fontSizeTypePane.add(fontNameComboBox, BorderLayout.EAST);

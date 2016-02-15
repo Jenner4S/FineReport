@@ -50,7 +50,7 @@ public class AlphaPane extends JPanel {
 		alphaPane.setBorder(BorderFactory.createEmptyBorder());
 		this.add(alphaPane, BorderLayout.CENTER);
 		
-		alphaPane.add(new UILabel(Inter.getLocText("Chart_Alpha_Int") + ":"));
+		alphaPane.add(new UILabel(Inter.getLocText("Plugin-Chart_Alpha") + ":"));
 		
 		alphaPane.add(alphaSlider = new UISlider(UISlider.HORIZONTAL, 0, ALPHA_FLOAT, START_VALUE));
 		alphaSlider.setPreferredSize(new Dimension(80, 20));
@@ -88,8 +88,9 @@ public class AlphaPane extends JPanel {
 		public void stateChanged(ChangeEvent e) {
 			int alpha = alphaSlider.getValue();
 			if(alpha >= 0 && alpha <= ALPHA_FLOAT) {
-				valueSpinner.setValue(checkFormat(alphaSlider.getValue()));
-			}
+                JFormattedTextField field = GUICoreUtils.getSpinnerTextField(valueSpinner);
+                field.setText(checkFormat(alpha));
+            }
 		}
 	};
 	
