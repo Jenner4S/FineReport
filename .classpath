@@ -4,13 +4,18 @@
 	<classpathentry kind="src" path="designer_chart/src"/>
 	<classpathentry kind="src" path="designer_form/src"/>
 	<classpathentry kind="src" path="designer/src"/>
+	<classpathentry kind="src" path="echarts-map/src"/>
 	<classpathentry kind="lib" path="lib/fr-chart-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-core-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-performance-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-platform-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-report-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-third-8.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<accessrules>
+			<accessrule kind="accessible" pattern="*"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="lib/swt.jar"/>
 	<classpathentry kind="lib" path="lib/poi2007_fat.jar"/>
