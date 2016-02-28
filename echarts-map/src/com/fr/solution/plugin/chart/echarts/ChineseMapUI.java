@@ -8,9 +8,7 @@ import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
 import com.fr.design.mainframe.chart.gui.data.table.AbstractTableDataContentPane;
 import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
-import com.fr.solution.plugin.chart.echarts.ui.map.CategoryPlotReportDataContentPane;
 import com.fr.solution.plugin.chart.echarts.ui.map.CategoryPlotTableDataContentPane;
-import com.fr.solution.plugin.chart.echarts.ui.map.ChineseMapReportDataContentPane;
 import com.fr.solution.plugin.chart.echarts.ui.map.ChineseChartTypePane;
 import com.fr.solution.plugin.chart.echarts.ui.map.MapEChartsStylePane;
 
@@ -41,8 +39,9 @@ public class ChineseMapUI extends AbstractIndependentChartUI  {
     @Override
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent) {
 //    	return new ChineseMapTableDataContentPane(parent);
-        return new ChineseMapReportDataContentPane(parent);
+//        return new ChineseMapReportDataContentPane(parent);
 //        return new CategoryPlotReportDataContentPane(parent);
+    	return null;
         
         
     }

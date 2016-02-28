@@ -3,7 +3,7 @@
     <!-- JDK路径，根据自己机器上实际位置修改-->
     <property name="jdk.home" value="E:\JDK"/>
 
-    <property name="libs" value="./lib"/>
+    <property name="libs" value="../lib"/>
     <property name="publicLibs" value=""/>
     <property name="destLoc" value="."/>
     <property name="classes" value="classes"/>
