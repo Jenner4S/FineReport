@@ -28,7 +28,7 @@ public class MapChartTitle extends Title {
         super(textObject);
     }
     public MapChartTitle() {
-        super();
+//        super();
     }
     @Override
     public void readXML(XMLableReader reader) {

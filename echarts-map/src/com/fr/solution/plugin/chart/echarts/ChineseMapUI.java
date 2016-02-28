@@ -41,8 +41,8 @@ public class ChineseMapUI extends AbstractIndependentChartUI  {
     @Override
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent) {
 //    	return new ChineseMapTableDataContentPane(parent);
-//        return new ChineseMapReportDataContentPane(parent);
-        return new CategoryPlotReportDataContentPane(parent);
+        return new ChineseMapReportDataContentPane(parent);
+//        return new CategoryPlotReportDataContentPane(parent);
         
         
     }

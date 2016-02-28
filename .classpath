@@ -5,6 +5,8 @@
 	<classpathentry kind="src" path="designer_form/src"/>
 	<classpathentry kind="src" path="designer/src"/>
 	<classpathentry kind="src" path="echarts-map/src"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="plugin-vancharts/src"/>
 	<classpathentry kind="lib" path="lib/fr-chart-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-core-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-performance-8.0.jar"/>

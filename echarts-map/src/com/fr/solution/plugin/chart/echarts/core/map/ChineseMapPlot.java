@@ -45,7 +45,7 @@ public class ChineseMapPlot extends NewPlot {
     
     @Override
     public String getPlotID() {
-        return "EChartsChinaMapPlot1";
+        return "EChartsChinaMapPlot";
     }
    
     @Override
