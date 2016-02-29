@@ -11,7 +11,6 @@ import com.fr.design.gui.ilable.BoldFontTextLabel;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.table.AbstractTableDataContentPane;
-import com.fr.design.mainframe.chart.gui.data.table.SeriesTypeUseComboxPane;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.Inter;
 import com.fr.stable.ArrayUtils;

@@ -15,7 +15,9 @@ import com.fr.general.Background;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 import com.fr.js.NameJavaScriptGroup;
+import com.fr.plugin.chart.PiePlot4VanChart;
 import com.fr.solution.plugin.chart.echarts.ChineseMap;
+import com.fr.solution.plugin.chart.echarts.base.ChartMapType;
 import com.fr.solution.plugin.chart.echarts.base.NewChart;
 import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapPlot;
 
@@ -45,6 +47,11 @@ public class ChineseChartTypePane extends UserDefinedChartTypePane {
     protected List<ChartImagePane> initStyleList() {
         return new ArrayList<ChartImagePane>();
     }
+	 @Override
+	    protected String[] getTypeLayoutPath() {
+	        return new String[]{
+	        };
+	    }
 	  /**
      * 更新界面内容
      */
@@ -73,65 +80,18 @@ public class ChineseChartTypePane extends UserDefinedChartTypePane {
     }
 
     public void updateBean(Chart chart) {
-    	
+    	super.updateBean(chart);
     	  checkTypeChange();
-          /*Plot oldPlot = chart.getPlot();
-          Plot newPlot = getSelectedClonedPlot();*/
-          
           for(int i = 0; i < typeDemo.size(); i++){
               if(typeDemo.get(i).isPressing && i != lastTypeIndex){
                   NewChart chart2 = ChineseMap.charts[i];
+//                  ChartMapType type = ( (NewChart)chart2).getMaptype();
+//                  ( (NewChart)chart).setMaptype(type);
                   chart.setPlot(chart2.getPlot());
                   break;
               }
           }
     }
-
-    
-    protected void cloneOldConditionCollection(Plot oldPlot, Plot newPlot) throws CloneNotSupportedException{
-        if (oldPlot.getConditionCollection() != null) {
-            newPlot.setConditionCollection((ConditionCollection)oldPlot.getConditionCollection().clone());
-        }
-    }
-    
-    /**
-     * 同一个图表， 类型之间切换
-     */
-    protected void cloneOldPlot2New(Plot oldPlot, Plot newPlot) {
-        try {
-            if (oldPlot.getLegend() != null) {
-                newPlot.setLegend((Legend) oldPlot.getLegend().clone());
-            }
-            cloneOldConditionCollection(oldPlot, newPlot);
-            if (oldPlot.getHotHyperLink() != null) {
-                newPlot.setHotHyperLink((NameJavaScriptGroup)oldPlot.getHotHyperLink().clone());
-            }
-            if (oldPlot.getPlotFillStyle() != null) {
-                newPlot.setPlotFillStyle((AttrFillStyle)oldPlot.getPlotFillStyle().clone());
-            }
-            newPlot.setPlotStyle(oldPlot.getPlotStyle());
-            if (oldPlot.getDataSheet() != null) {
-                newPlot.setDataSheet((DataSheet)oldPlot.getDataSheet().clone());
-            }
-
-            if (oldPlot.getBackground() != null) {
-                newPlot.setBackground((Background)oldPlot.getBackground().clone());
-            }
-            if (oldPlot.getBorderColor() != null) {
-                newPlot.setBorderColor(oldPlot.getBorderColor());
-            }
-            newPlot.setBorderStyle(oldPlot.getBorderStyle());
-            newPlot.setRoundRadius(oldPlot.getRoundRadius());
-            newPlot.setAlpha(oldPlot.getAlpha());
-            newPlot.setShadow(oldPlot.isShadow());
-
-        } catch (CloneNotSupportedException e) {
-            FRLogger.getLogger().error("Error in change plot");
-        }
-    }
-    
-    
-    
     
     
     /**

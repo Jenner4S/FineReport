@@ -155,8 +155,7 @@ public class MapEChartsTitlePane extends BasicScrollPane<NewChart> {
         MapChartTitle title = (MapChartTitle) ob.getTitle();
         if (title == null) {
             title = new MapChartTitle();
-        }//System.out.println("������title������");
-       
+        }
         title.setSubTitle(subTitle.getText());
         title.setTitleVisble(showTitle.getSelectedItem());
         String titleString = tinyFormulaPane.updateBean();

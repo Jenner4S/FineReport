@@ -57,6 +57,7 @@
         <echo message="编译${compile_files}下的Java文件"/>
         <javac destdir="${classes}" debug="false" optimize="on" source="${source_jdk_version}"
                target="${target_jdk_version}"
+    	classpath="C:\Users\hao01\git\finereport\advanced-development\WebReport\WEB-INF\classes"
                fork="true" memoryMaximumSize="512m" listfiles="false" srcdir="${basedir}"
                executable="${compile_jdk_version}/bin/javac">
             <src path="${basedir}/src"/>

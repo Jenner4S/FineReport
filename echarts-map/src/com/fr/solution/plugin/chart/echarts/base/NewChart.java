@@ -47,6 +47,7 @@ public class NewChart extends Chart {
         PlotGlyph plotGlyph = null;
         try {
             if(newPlot != null){
+//            	newPlot.setType(getMaptype());
             	newPlot.setName_ref(getName_ref());
                 plotGlyph =newPlot.createPlotGlyph(chartData);
                 glyph.setPlotGlyph(plotGlyph);

@@ -91,8 +91,16 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
                      System.out.println("\u7CFB\u5217\u540D"+label+"\u503C"+value+ " \u5206\u7C7B\u540D" + cateName);
                      System.out.println(dataPoint.toJSONObject(repo).toString());
                      if(value>0){
-                    	 
-                    	  
+                    	 if(name_ref!=null)
+                    	 {
+                    		 if(name_ref.getListName()!=null)
+                    		 {
+                    			 System.out.println("得到的值：："+name_ref.getListName().toString());
+                            	 if(name_ref.getListName().has(label)){
+                            		 label = name_ref.getListName().getString(label);
+                            	 }
+                    		 }
+                    	 }
                     	 if(!geodata.has(label)){
                     		 geodata.put(label, GetLatAndLngByBaidu.getCoordinate(label));
                     	 }
@@ -170,7 +178,7 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
                     		 }
                     	 }
                     	 if(!geodata.has(label)&&getType().getType()=="china"){
-								//geodata.put(label, GetLatAndLngByBaidu.getCoordinate(label));
+								geodata.put(label, GetLatAndLngByBaidu.getCoordinate(label));
                     	 }
 //                    	 if(label.contains("省"))
                     	 markdata.put(JSONObject.create().put("name", label).put("value", value));

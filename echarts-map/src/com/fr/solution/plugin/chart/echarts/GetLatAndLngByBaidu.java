@@ -19,8 +19,8 @@ public class GetLatAndLngByBaidu {
 	* @throws IOException 
 	*/ 
 	public static JSONArray getCoordinate(String addr)  { 
-		String lng = null;//经度
-		String lat = null;//纬度
+		String lng = "";//经度
+		String lat = "";//纬度
 		String address = null; 
 		try { 
 			address = java.net.URLEncoder.encode(addr, "UTF-8"); 
@@ -46,6 +46,11 @@ public class GetLatAndLngByBaidu {
 				String data = null; 
 				int count = 1;
 				while((data= br.readLine())!=null){ 
+					if(count==4){
+						if(data.equals("        ")){
+							break;
+						}
+					}
 					if(count==5){
 						lng = (String)data.subSequence(data.indexOf(":")+1, data.indexOf(","));//经度
 						count++;
@@ -55,7 +60,9 @@ public class GetLatAndLngByBaidu {
 					}else{
 						count++;
 					}
+					System.out.println(":::"+data);
 				} 
+				
 			} 
 		} catch (IOException e) { 
 			e.printStackTrace(); 
@@ -81,7 +88,7 @@ public class GetLatAndLngByBaidu {
 		return JSONArray.create().put(lng).put(lat);//{lng,lat}; 
 	} 
 	public static void main(String[] args) throws IOException, JSONException {
-		JSONArray o = GetLatAndLngByBaidu.getCoordinate("成都市天府四街");
+		JSONArray o = GetLatAndLngByBaidu.getCoordinate("北京");
 		System.out.println(o.get(0));//经度
 		System.out.println(o.get(1));//纬度
 	}
