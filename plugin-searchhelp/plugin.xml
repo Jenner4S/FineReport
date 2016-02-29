@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.help.search.bbs.doc</id>
+    <name><![CDATA[搜索论坛和文档]]></name>
+    <active>yes</active>
+    <hidden>no</hidden>
+    <version>4.0</version>
+    <env-version>8.0</env-version>
+    <jartime>2015-08-30</jartime>
+    <vendor>盾牌</vendor>
+    <description><![CDATA[可以在设计器中搜索论坛和文档]]></description>
+    <change-notes><![CDATA[增加论坛和文档搜索切换，使用Enter键开始搜索，避免过多的搜索请求]]></change-notes>
+    <extra-core>
+    </extra-core>
+    <extra-report/>
+    <extra-designer>
+        <TitlePlaceProcessor class="com.fr.plugin.search.SearchPlace"/>
+    </extra-designer>
+</plugin>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.treesearch</id>
+    <name><![CDATA[文件树搜索插件]]></name>
+    <active>yes</active>
+    <version>2.0</version>
+    <env-version>8.0</env-version>
+    <jartime>2015-09-23</jartime>
+    <vendor>finereport</vendor>
+    <description><![CDATA[安装后, 在文件树上方的工具栏上会多出一个可点击的搜索按钮]]></description>
+    <change-notes><![CDATA[快捷键Ctrl+R]]></change-notes>
+    <extra-core>
+        <LocaleFinder class="com.fr.plugin.designer.ActualLocaleFinder"/>
+    </extra-core>
+    <extra-report/>
+    <extra-designer>
+        <TemplateTreeShortCut class="com.fr.plugin.designer.SearchTemplateAction"/>
+        <GlobalListenerProvider class="com.fr.plugin.designer.BosskeyOfSearch"/>
+    </extra-designer>
+</plugin>
