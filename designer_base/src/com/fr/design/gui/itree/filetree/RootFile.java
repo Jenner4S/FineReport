@@ -2,8 +2,8 @@ package com.fr.design.gui.itree.filetree;
 
 import java.io.File;
 /**
- * ÓÃÓÚÅĞ¶ÏÊÇ·ñÎª¸ùÄ¿Â¼
- * Àı:  C:\
+ * ç”¨äºåˆ¤æ–­æ˜¯å¦ä¸ºæ ¹ç›®å½•
+ * ä¾‹:  C:\
  * @author kunsnat
  *
  */
@@ -26,5 +26,3 @@ public class RootFile {
         return file.getAbsolutePath();
     }
 }
-
-

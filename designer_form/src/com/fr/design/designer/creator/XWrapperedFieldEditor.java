@@ -12,12 +12,12 @@ import com.fr.form.ui.FieldEditor;
 /**
  *
  *
- * @date: 2014-11-25-ÏÂÎç5:08:06
+ * @date: 2014-11-25-ä¸‹åˆ5:08:06
  */
 public abstract class XWrapperedFieldEditor extends XFieldEditor {
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public XWrapperedFieldEditor(FieldEditor widget, Dimension initSize) {
 		super(widget, initSize);
@@ -29,14 +29,14 @@ public abstract class XWrapperedFieldEditor extends XFieldEditor {
 
     
 	/**
-	 * »ñÈ¡µ±Ç°XCreatorµÄÒ»¸ö·â×°¸¸ÈİÆ÷
+	 * è·å–å½“å‰XCreatorçš„ä¸€ä¸ªå°è£…çˆ¶å®¹å™¨
 	 * 
-	 * @param widgetName µ±Ç°×é¼şÃû
+	 * @param widgetName å½“å‰ç»„ä»¶å
 	 * 
-	 * @return ·â×°µÄ¸¸ÈİÆ÷
+	 * @return å°è£…çš„çˆ¶å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:47:23
+	 * @date 2014-11-25-ä¸‹åˆ4:47:23
 	 * 
 	 */
 	protected XLayoutContainer getCreatorWrapper(String widgetName){
@@ -44,12 +44,12 @@ public abstract class XWrapperedFieldEditor extends XFieldEditor {
 	}
 	
 	/**
-	 * ½«µ±Ç°¶ÔÏóÌí¼Óµ½¸¸ÈİÆ÷ÖĞ
+	 * å°†å½“å‰å¯¹è±¡æ·»åŠ åˆ°çˆ¶å®¹å™¨ä¸­
 	 * 
-	 * @param parentPanel ¸¸ÈİÆ÷×é¼ş
+	 * @param parentPanel çˆ¶å®¹å™¨ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:57:55
+	 * @date 2014-11-25-ä¸‹åˆ4:57:55
 	 * 
 	 */
 	protected void addToWrapper(XLayoutContainer parentPanel, int width, int minHeight){			
@@ -58,9 +58,9 @@ public abstract class XWrapperedFieldEditor extends XFieldEditor {
 	}
     
     /**
-	 * ´Ë¿Ø¼şÔÚ×ÔÊÊÓ¦²¼¾ÖÒª±£³ÖÔ­Ñù¸ß¶È
+	 * æ­¤æ§ä»¶åœ¨è‡ªé€‚åº”å¸ƒå±€è¦ä¿æŒåŸæ ·é«˜åº¦
 	 * 
-	 * @return ÊÇÔò·µ»Øtrue
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	@Override
 	public boolean shouldScaleCreator() {

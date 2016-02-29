@@ -6,16 +6,16 @@ import com.fr.design.mainframe.BaseWidgetPropertyPane;
 import com.fr.design.mainframe.DockingView;
 
 /**
- * Í¼±íÊôĞÔ½çÃæ ³éÏó, ÓÃÓÚ¶à¹¤³ÌĞ­×÷..
+ * å›¾è¡¨å±æ€§ç•Œé¢ æŠ½è±¡, ç”¨äºå¤šå·¥ç¨‹åä½œ..
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-7-10 ÉÏÎç09:12:11
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-7-10 ä¸Šåˆ09:12:11
  */
 public abstract class BaseChartPropertyPane extends DockingView {
 	
 	public abstract void setSureProperty();
 
 	/**
-	 * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñÊı¾İ.
+	 * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼æ•°æ®.
 	 */
 	public abstract void setSupportCellData(boolean supportCellData);
 	

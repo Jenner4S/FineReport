@@ -6,10 +6,10 @@ import com.fr.design.actions.UpdateAction;
 import com.fr.design.mainframe.CellElementPropertyPane;
 
 /**
- * ËùÓĞµÄCellAttributeTableAction¶¼ÊÇÖ¸Ïòµ¥Ôª¸ñÊôĞÔ±íµÄ,µãÁË¾Í×Ô¶¯Ìø×ªµ½µ¥Ôª¸ñÊôĞÔ±í
+ * æ‰€æœ‰çš„CellAttributeTableActionéƒ½æ˜¯æŒ‡å‘å•å…ƒæ ¼å±æ€§è¡¨çš„,ç‚¹äº†å°±è‡ªåŠ¨è·³è½¬åˆ°å•å…ƒæ ¼å±æ€§è¡¨
  * 
  * @author zhou
- * @since 2012-5-23ÏÂÎç4:19:48
+ * @since 2012-5-23ä¸‹åˆ4:19:48
  */
 public abstract class CellAttributeTableAction extends UpdateAction {
 

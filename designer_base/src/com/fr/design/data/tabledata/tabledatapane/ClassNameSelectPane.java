@@ -39,7 +39,7 @@ public class ClassNameSelectPane extends BasicPane {
     }
 
     /*
-     * 选中某ClassPath
+     * 閫変腑鏌怌lassPath
      */
     public void setClassPath(String classPath) {
 
@@ -47,7 +47,7 @@ public class ClassNameSelectPane extends BasicPane {
     }
 
     /*
-     * 返回选中的ClassPath
+     * 杩斿洖閫変腑鐨凜lassPath
      */
     public String getClassPath() {
         return classFileTree.getSelectedClassPath();
@@ -61,4 +61,3 @@ public class ClassNameSelectPane extends BasicPane {
         }
     }
 }
-

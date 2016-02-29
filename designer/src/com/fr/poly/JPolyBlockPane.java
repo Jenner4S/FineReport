@@ -10,7 +10,7 @@ import com.fr.report.stable.ReportSettings;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-2 ¾ÛºÏ±¨±í¿éµÄÉè¼Æ½çÃæ
+ * @since 6.5.4 åˆ›å»ºäº2011-4-2 èšåˆæŠ¥è¡¨å—çš„è®¾è®¡ç•Œé¢
  */
 public class JPolyBlockPane extends PolyElementCasePane {
 

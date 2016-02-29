@@ -21,14 +21,14 @@ import com.fr.general.NameObject;
 /**
  * @author neil
  *
- * @date: 2015-3-9-ÉÏÎç9:10:20
+ * @date: 2015-3-9-ä¸Šåˆ9:10:20
  */
 public class ConfusionManagerPane extends JControlPane {
 
 	/**
-	 * »ñÈ¡µ±Ç°Ãæ°åµÄ±à¼­¶ÔÏó
+	 * è·å–å½“å‰é¢æ¿çš„ç¼–è¾‘å¯¹è±¡
 	 * 
-	 * @return Êı¾İ»ìÏı±à¼­¶ÔÏó
+	 * @return æ•°æ®æ··æ·†ç¼–è¾‘å¯¹è±¡
 	 * 
 	 */
 	public NameableCreator[] createNameableCreators() {
@@ -45,9 +45,9 @@ public class ConfusionManagerPane extends JControlPane {
 	}
 
 	/**
-	 * »ñÈ¡Ä£°åÖĞÄÚÖÃÊı¾İ¼¯, ²¢Õ¹Ê¾»ìÏıÒ³Ãæ, Èç¹ûÃ»ÓĞÄÚÖÃÊı¾İ¼¯, Ôò·µ»Øfalse
+	 * è·å–æ¨¡æ¿ä¸­å†…ç½®æ•°æ®é›†, å¹¶å±•ç¤ºæ··æ·†é¡µé¢, å¦‚æœæ²¡æœ‰å†…ç½®æ•°æ®é›†, åˆ™è¿”å›false
 	 * 
-	 * @return ÊÇ·ñ´æÔÚÄÚÖÃÊı¾İ¼¯
+	 * @return æ˜¯å¦å­˜åœ¨å†…ç½®æ•°æ®é›†
 	 * 
 	 */
 	public boolean populateTabledataManager() {

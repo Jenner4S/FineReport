@@ -82,7 +82,7 @@ public class BackgroundPane extends BasicPane {
     	this(false);
     }
     
-    //ĞèÇóËµ: Èç¹ûÊÇä¯ÀÀÆ÷±³¾°, Òş²Øµô¼¸¸öbutton
+    //éœ€æ±‚è¯´: å¦‚æœæ˜¯æµè§ˆå™¨èƒŒæ™¯, éšè—æ‰å‡ ä¸ªbutton
     public BackgroundPane(boolean isBrowserBackgroundPane) {
     	BackgroundPane.isBrowserBackgroundPane = isBrowserBackgroundPane;
         this.initComponents();
@@ -229,7 +229,7 @@ public class BackgroundPane extends BasicPane {
     public Background update() {
         try {
             Component selectComponent = tabbedPane.getSelectedComponent();
-            if (selectComponent.getClass() == JPanel.class) {//ĞèÒª³õÊ¼»¯.
+            if (selectComponent.getClass() == JPanel.class) {//éœ€è¦åˆå§‹åŒ–.
                 int selectedIndex = tabbedPane.getSelectedIndex();
                 if (selectedIndex == BACKGROUND_NULL) {
                     selectComponent = this.getNullBackgroundPane();
@@ -372,7 +372,7 @@ public class BackgroundPane extends BasicPane {
     }
 
     /**
-     * Texture background pane.  TODO kunsnat: ²ğ³öÈ¥. ÕæÌØÃ´µÄ³¤..
+     * Texture background pane.  TODO kunsnat: æ‹†å‡ºå». çœŸç‰¹ä¹ˆçš„é•¿..
      */
     public static class TextureBackgroundPane extends BPane {
 
@@ -380,11 +380,11 @@ public class BackgroundPane extends BasicPane {
         private TextureButton[] textureButtonArray;
         
         public TextureBackgroundPane() {
-        	super(8);// Ä¬ÈÏµÄ. 
+        	super(8);// é»˜è®¤çš„. 
         }
         
         public TextureBackgroundPane(int colum) {
-        	super(colum);// ×Ô¶¨ÒåµÄ. 
+        	super(colum);// è‡ªå®šä¹‰çš„. 
         }
         
         protected LayoutManager layoutOfTypePane(int nColumn) {
@@ -505,7 +505,7 @@ public class BackgroundPane extends BasicPane {
     		super(nColumn);
     	}
     	
-    	// ÖØÔØ ²»¼ÓÔØÁ½¸öÇ°ºó°´Å¥
+    	// é‡è½½ ä¸åŠ è½½ä¸¤ä¸ªå‰åæŒ‰é’®
     	protected void setChildrenOfContentPane(JPanel contentPane) {
     		foregroundColorPane = new ColorSelectBox(80);
     		backgroundColorPane = new ColorSelectBox(80);
@@ -749,7 +749,7 @@ public class BackgroundPane extends BasicPane {
             JPanel layoutPane=FRGUIPaneFactory.createMediumHGapHighTopFlowInnerContainer_M_Pane();
             selectFilePane.add(layoutPane, BorderLayout.CENTER);
 
-            //²¼¾Ö
+            //å¸ƒå±€
             defaultRadioButton = new UIRadioButton(Inter.getLocText("Default"));
             tiledRadioButton = new UIRadioButton(Inter.getLocText("Image-Titled"));
             extendRadioButton = new UIRadioButton(Inter.getLocText("Image-Extend"));

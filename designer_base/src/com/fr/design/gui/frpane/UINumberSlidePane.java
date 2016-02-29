@@ -16,7 +16,7 @@ import com.fr.design.gui.itextfield.UINumberField;
 import com.fr.design.gui.style.NumberDragBar;
 
 /**
- * ÍÏ×§µÄ»¬ÌõºÍ¶ÔÓ¦»¬ÌõÖµµÄÊı×Ö
+ * æ‹–æ‹½çš„æ»‘æ¡å’Œå¯¹åº”æ»‘æ¡å€¼çš„æ•°å­—
  * 
  * @author jim
  * @date 2014-8-20
@@ -59,8 +59,8 @@ public class UINumberSlidePane extends BasicBeanPane<Double> {
 	
 	
 	/**
-	 * ÊÖ¶¯ÊäÈë»¬ÌõÖµºó£¬checkÏÂ
-	 * @param value Öµ
+	 * æ‰‹åŠ¨è¾“å…¥æ»‘æ¡å€¼åï¼Œcheckä¸‹
+	 * @param value å€¼
 	 */
 	public void checkValue(double value) {
 		value = Math.max(value, minValue);
@@ -71,7 +71,7 @@ public class UINumberSlidePane extends BasicBeanPane<Double> {
 		double diff = Math.abs(value - this.value);
 		manual.setValue(value);
 		dragBar.setValue((int)value);
-		// ÍÏ¶¯µÄ±È½ÏĞ¡£¬¾ÍÏÈ²»µ÷Õû½çÃæÏÔÊ¾´óĞ¡£¬ÔİÊ±Éè5pxÃÅ¼÷
+		// æ‹–åŠ¨çš„æ¯”è¾ƒå°ï¼Œå°±å…ˆä¸è°ƒæ•´ç•Œé¢æ˜¾ç¤ºå¤§å°ï¼Œæš‚æ—¶è®¾5pxé—¨æ§›
 		if (diff < MIN_DIFF_VALUE) {
 			return;
 		}
@@ -109,16 +109,16 @@ public class UINumberSlidePane extends BasicBeanPane<Double> {
 	}
 	
 	/**
-	 * Ìí¼Ó¸Ä±äÊÂ¼ş
-	 * @param l  ±ä»¯ÊÂ¼ş
+	 * æ·»åŠ æ”¹å˜äº‹ä»¶
+	 * @param l  å˜åŒ–äº‹ä»¶
 	 */
 	public void addChangeListener(ChangeListener l) {
 		this.listenerList.add(ChangeListener.class, l);
 	}
 
 	/**
-	 * remove ChangeListenerÊÂ¼ş
-	 * @param l ChangeListenerÊÂ¼ş
+	 * remove ChangeListeneräº‹ä»¶
+	 * @param l ChangeListeneräº‹ä»¶
 	 */
 	public void removeChangeListener(ChangeListener l) {
 		this.listenerList.remove(ChangeListener.class, l);

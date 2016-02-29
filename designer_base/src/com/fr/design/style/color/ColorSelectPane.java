@@ -67,7 +67,7 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
 		JPanel centerPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
 		this.add(centerPane, BorderLayout.CENTER);
 		
-		// ×î½üÊ¹ÓÃ
+		// æœ€è¿‘ä½¿ç”¨
 		UsedColorPane pane = new UsedColorPane(1, 8, ColorSelectConfigManager.getInstance().getColors(),this);
 		centerPane.add(pane.getPane());
 		
@@ -106,8 +106,8 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
 
     /**
      * Add change listener.
-     * Ôö¼Ó¼àÌı
-     * @param ¼àÌı
+     * å¢åŠ ç›‘å¬
+     * @param ç›‘å¬
      */
     public void addChangeListener(ChangeListener changeListener) {
         this.colorChangeListenerList.add(changeListener);
@@ -147,8 +147,8 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
     }
 
     /**
-     * Ñ¡ÖĞÑÕÉ«
-     * @param ÑÕÉ«µ¥Ôª¸ñ
+     * é€‰ä¸­é¢œè‰²
+     * @param é¢œè‰²å•å…ƒæ ¼
      * 
      */
 	@Override
@@ -157,8 +157,8 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
 	}
 
 	/**
-	 * ³õÊ¼»¯ÖĞÑëÃæ°å
-	 * @param centerPane ÖĞÑëÃæ°å
+	 * åˆå§‹åŒ–ä¸­å¤®é¢æ¿
+	 * @param centerPane ä¸­å¤®é¢æ¿
 	 * 
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
 	}
 
 	/**
-	 * Í¸Ã÷
+	 * é€æ˜
 	 */
 	@Override
 	public void doTransparent() {
@@ -175,7 +175,7 @@ public class ColorSelectPane extends TransparentPane implements ColorSelectable 
 	}
 
 	/**
-	 * ¸ü¶àÑÕÉ«
+	 * æ›´å¤šé¢œè‰²
 	 */
 	@Override
 	public void customButtonPressed() {

@@ -73,9 +73,9 @@ public class DecoratedTableDataPane extends AbstractTableDataPane<DecoratedTable
 	}
 	
     /**
-     * 选中组件改变事件
+     * 閫変腑缁勪欢鏀瑰彉浜嬩欢
      *
-     * @param taget 目标
+     * @param taget 鐩爣
      */
 	public void selectionChanged(CheckBoxList target) {
 		DecoratedTableData updatedBean = updateBeanExcludeFilter();

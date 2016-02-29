@@ -12,23 +12,23 @@ import javax.swing.tree.TreePath;
 import com.fr.general.ComparatorUtils;
 
 /**
- * ÎÄ¼ş½á¹¹Ê÷.
+ * æ–‡ä»¶ç»“æ„æ ‘.
  */
 public abstract class AbstractFileTree extends JTree implements TreeExpansionListener {
     /**
-     * ÁĞ³öËùÓĞµÄFileNode.
+     * åˆ—å‡ºæ‰€æœ‰çš„FileNode.
      */
     public abstract FileDirectoryNode[] listFileNodes(DefaultMutableTreeNode currentTreeNode);
 
     /**
-     * Õ¹¿ªTreeNode.
+     * å±•å¼€TreeNode.
      */
     public boolean expandTreeNode(DefaultMutableTreeNode currentTreeNode) {
         if (currentTreeNode.isLeaf()) {
             return false;
         }
 
-        //ÅĞ¶ÏµÚÒ»¸öº¢×Ó½Úµã.
+        //åˆ¤æ–­ç¬¬ä¸€ä¸ªå­©å­èŠ‚ç‚¹.
         DefaultMutableTreeNode flag = (DefaultMutableTreeNode) currentTreeNode.getFirstChild();
         if (flag == null) {     // No flag
             return false;
@@ -37,12 +37,12 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
         if (!(firstChildObj instanceof Boolean)) {
             return false;      // Already expanded
         }
-        currentTreeNode.removeAllChildren();  //É¾³ıËùÓĞµÄ½Úµã.
+        currentTreeNode.removeAllChildren();  //åˆ é™¤æ‰€æœ‰çš„èŠ‚ç‚¹.
 
-        // ÁĞ³öËùÓĞµÄ×ÓÎÄ¼ş¼Ğ.
+        // åˆ—å‡ºæ‰€æœ‰çš„å­æ–‡ä»¶å¤¹.
         FileDirectoryNode[] fileNodes = listFileNodes(currentTreeNode);
-        // Èç¹ûËùµÃÎª¿Õ,(´ËÊ± isDirectoryÊÇtrue µ«ÊÇÄÃ²»µ½×ÓÎÄ¼ş ËùÒÔ²»Ó¦¸ÃÕ¹¿ªÎÄ¼ş¼Ğ)
-        // »òÕßÎÄ¼ş¼ĞÖĞÃ»ÓĞÎÄ¼ş.
+        // å¦‚æœæ‰€å¾—ä¸ºç©º,(æ­¤æ—¶ isDirectoryæ˜¯true ä½†æ˜¯æ‹¿ä¸åˆ°å­æ–‡ä»¶ æ‰€ä»¥ä¸åº”è¯¥å±•å¼€æ–‡ä»¶å¤¹)
+        // æˆ–è€…æ–‡ä»¶å¤¹ä¸­æ²¡æœ‰æ–‡ä»¶.
         if ( fileNodes == null) {
         	return false;
         }
@@ -52,10 +52,10 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
             DefaultMutableTreeNode node = new DefaultMutableTreeNode(tmpNameNode);
             currentTreeNode.add(node);
 
-            // Èç¹ûÊÇÄ¿Â¼,ĞèÒªÌí¼Ó×Ó½Úµã.
+            // å¦‚æœæ˜¯ç›®å½•,éœ€è¦æ·»åŠ å­èŠ‚ç‚¹.
             if (tmpNameNode.isDirectory()) {
-            	// Èç¹ûÓĞÄ¿Â¼µ«ÊÇÁĞ²»³ö×ÓÎÄ¼ş ¾Í²»Ìí¼Ó×Ó½Úµã.
-            	// »òÕßÎÄ¼ş¼ĞÖĞÃ»ÓĞ×ÓÎÄ¼şµÄ Ò²²»Ìí¼Ó×Ó½Úµã.kt
+            	// å¦‚æœæœ‰ç›®å½•ä½†æ˜¯åˆ—ä¸å‡ºå­æ–‡ä»¶ å°±ä¸æ·»åŠ å­èŠ‚ç‚¹.
+            	// æˆ–è€…æ–‡ä»¶å¤¹ä¸­æ²¡æœ‰å­æ–‡ä»¶çš„ ä¹Ÿä¸æ·»åŠ å­èŠ‚ç‚¹.kt
             	FileDirectoryNode[] childFileNode = listFileNodes(node);
             	if (childFileNode != null ) {
             		node.add(new DefaultMutableTreeNode(Boolean.TRUE));
@@ -63,7 +63,7 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
             }
         }
 
-        // ÖØĞÂ¼ÓÔØparentTreeNode.
+        // é‡æ–°åŠ è½½parentTreeNode.
         ((DefaultTreeModel) this.getModel()).reload(currentTreeNode);
 //        this.expandPath(GUICoreUtils.getTreePath(currentTreeNode));
 
@@ -76,7 +76,7 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
 
     public void treeExpanded(TreeExpansionEvent event) {
         DefaultMutableTreeNode currentTreeNode = getMutableTreeNode(event.getPath());
-        // ÅĞ¶Ïµ±Ç°ÎÄ¼ş½ÚµãËùµÃ×ÓÎÄ¼şÎªnullÊ±  ²»Õ¹¿ª½Úµã.
+        // åˆ¤æ–­å½“å‰æ–‡ä»¶èŠ‚ç‚¹æ‰€å¾—å­æ–‡ä»¶ä¸ºnullæ—¶  ä¸å±•å¼€èŠ‚ç‚¹.
         FileDirectoryNode[] fileNodes = listFileNodes(currentTreeNode);
         if(fileNodes != null) {
         	this.expandTreeNode(currentTreeNode);
@@ -87,7 +87,7 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
     }
 
     /**
-     * ÊÇ·ñÊÇ¸¸×Ó¹ØÏµµÄÎÄ¼ş.
+     * æ˜¯å¦æ˜¯çˆ¶å­å…³ç³»çš„æ–‡ä»¶.
      */
     public static boolean isParentFile(File parentFile, File childFile) {
         while (true) {
@@ -103,4 +103,3 @@ public abstract class AbstractFileTree extends JTree implements TreeExpansionLis
         return false;
     }
 }
-

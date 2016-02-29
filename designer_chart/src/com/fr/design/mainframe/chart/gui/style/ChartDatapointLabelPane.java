@@ -188,7 +188,7 @@ public class ChartDatapointLabelPane extends BasicPane{
 		});
 	}
 
-    // 添加层级 关系
+    // 娣诲姞灞傜骇 鍏崇郴
     private void getLabelPositionPane() {
 
     }
@@ -296,7 +296,7 @@ public class ChartDatapointLabelPane extends BasicPane{
 				}
 			}
 			if (divideComoBox != null && dataLabel.contains(ChartConstants.BREAKLINE_PARA)) {
-				divideComoBox.setSelectedItem(ChartConstants.DELIMITERS[3]);// 以前的换行符 ${BR}
+				divideComoBox.setSelectedItem(ChartConstants.DELIMITERS[3]);// 浠ュ墠鐨勬崲琛岀 ${BR}
 			}
 
 			if (isCategory != null) {
@@ -347,7 +347,7 @@ public class ChartDatapointLabelPane extends BasicPane{
 	}
 
     /**
-     * 检查box使用.
+     * 妫�鏌ox浣跨敤.
      */
 	public void checkBoxUse() {
 		labelPane.setVisible(isLabelShow.isSelected());
@@ -422,7 +422,7 @@ public class ChartDatapointLabelPane extends BasicPane{
 		if(textFontPane != null){
 			attrContents.setTextAttr(textFontPane.update());
 		}
-		updatePercentFormatpane(); //格式不能populate正确
+		updatePercentFormatpane(); //鏍煎紡涓嶈兘populate姝ｇ‘
 		return attrContents;
 	}
 	

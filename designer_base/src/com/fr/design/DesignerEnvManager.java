@@ -46,20 +46,20 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     private List<String> recentOpenedFilePathList = new ArrayList<String>();
     private boolean showPaintToolBar = true;
     private int maxNumberOrPreviewRow = 200;
-    // nameºÍEnvµÄ¼üÖµ¶Ô
+    // nameå’ŒEnvçš„é”®å€¼å¯¹
     private Map<String, Env> nameEnvMap = new ListMap();
-    // marks: µ±Ç°±¨±í·şÎñÆ÷Ãû×Ö
+    // marks: å½“å‰æŠ¥è¡¨æœåŠ¡å™¨åå­—
     private String curEnvName = null;
     private boolean showProjectPane = true;
     private boolean showDataPane = true;
-    //p:ÕâÊÇµ±Ç°Ñ¡ÔñµÄÊı¾İ¿âÁ¬½ÓµÄÃû×Ö,Õâ¸öÔÚĞÂ½¨Êı¾İÔ´µÄÊ±ºòÓÃµ½.
+    //p:è¿™æ˜¯å½“å‰é€‰æ‹©çš„æ•°æ®åº“è¿æ¥çš„åå­—,è¿™ä¸ªåœ¨æ–°å»ºæ•°æ®æºçš„æ—¶å€™ç”¨åˆ°.
     private String recentSelectedConnection = null;
-    // Éè¼ÆÆ÷Ô¤ÀÀÊ±µÄJetty¶Ë¿Ú
+    // è®¾è®¡å™¨é¢„è§ˆæ—¶çš„Jettyç«¯å£
     public int jettyServerPort = 8075;
     // eason:
     private boolean supportUndo = true;
     private boolean supportDefaultParentCalculate = true;
-    //samuel:Ö§³Ö×Ö·û´®±à¼­Îª¹«Ê½
+    //samuel:æ”¯æŒå­—ç¬¦ä¸²ç¼–è¾‘ä¸ºå…¬å¼
     private boolean supportStringToFormula = true;
     private boolean defaultStringToFormula = false;
     private String autoCompleteShortcuts = UIConstants.DEFAULT_AUTO_COMPLETE;
@@ -73,7 +73,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     private boolean isDragPermited = false;
     private Level level = Level.INFO;
     private int language;
-    //2014-8-26Ä¬ÈÏÏÔÊ¾È«²¿, ÒòÎªÒÔÇ°µÄ°æ±¾, ËäÈ»ÊÇfalse, Êµ¼ÊÉÏÊÇÏÔÊ¾ËùÓĞ±í, Òò´ËÕâ±ßÒª¼æÈİ
+    //2014-8-26é»˜è®¤æ˜¾ç¤ºå…¨éƒ¨, å› ä¸ºä»¥å‰çš„ç‰ˆæœ¬, è™½ç„¶æ˜¯false, å®é™…ä¸Šæ˜¯æ˜¾ç¤ºæ‰€æœ‰è¡¨, å› æ­¤è¿™è¾¹è¦å…¼å®¹
     private boolean useOracleSystemSpace = true;
     private boolean autoBackUp = true;
     private int undoLimit = 5;
@@ -89,17 +89,17 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     private int westRegionContainerWidth = 240;
     private String encryptionKey;
     private String jdkHome;
-    //µ±Ç°Éè¼ÆÆ÷ÓÃ»§µÄÂÛÌ³êÇ³Æ
+    //å½“å‰è®¾è®¡å™¨ç”¨æˆ·çš„è®ºå›æ˜µç§°
     private String bbsName;
-    //µ±Ç°Éè¼ÆÆ÷ÓÃ»§µÄÂÛÌ³ÃÜÂë
+    //å½“å‰è®¾è®¡å™¨ç”¨æˆ·çš„è®ºå›å¯†ç 
     private String bbsPassword;
-	//ÉÏÒ»´ÎµÇÂ¼µ¯´°µÄÊ±¼ä, ÎªÁË¿ØÖÆÒ»ÌìÖ»µ¯Ò»´Î´°¿Ú
+	//ä¸Šä¸€æ¬¡ç™»å½•å¼¹çª—çš„æ—¶é—´, ä¸ºäº†æ§åˆ¶ä¸€å¤©åªå¼¹ä¸€æ¬¡çª—å£
     private String lastShowBBSTime;
-    //ÉÏÒ»´Î×ÊÑ¶µ¯´°Ê±¼ä£¬ ÎªÁË¿ØÖÆÒ»ÌìÖ»µ¯Ò»´Î
+    //ä¸Šä¸€æ¬¡èµ„è®¯å¼¹çª—æ—¶é—´ï¼Œ ä¸ºäº†æ§åˆ¶ä¸€å¤©åªå¼¹ä¸€æ¬¡
     private String lastShowBBSNewsTime;
-    //Éè¼ÆÆ÷µÄÎ¨Ò»ID, ÓÃÓÚÔ¶³ÌÉè¼ÆºÍÔÚÏßÑéÖ¤¼¤»îÂë
+    //è®¾è®¡å™¨çš„å”¯ä¸€ID, ç”¨äºè¿œç¨‹è®¾è®¡å’Œåœ¨çº¿éªŒè¯æ¿€æ´»ç 
     private String uuid;
-    //¼ÇÂ¼µ±Ç°¼¤»îÂëµÄÔÚÏß¼¤»î×´Ì¬.
+    //è®°å½•å½“å‰æ¿€æ´»ç çš„åœ¨çº¿æ¿€æ´»çŠ¶æ€.
     private int activeKeyStatus = -1;
     private boolean joinProductImprove = true;
     
@@ -110,13 +110,13 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     
     public static final String CAS_PARAS = "CASParas";
     
-    //httpsÁ´½ÓËùĞèµÄÖ¤ÊéÂ·¾¶
+    //httpsé“¾æ¥æ‰€éœ€çš„è¯ä¹¦è·¯å¾„
     private String certificatePath = StringUtils.EMPTY;
     
-    //httpsÁ´½ÓËùĞèµÄÖ¤ÊéÃÜÂë
+    //httpsé“¾æ¥æ‰€éœ€çš„è¯ä¹¦å¯†ç 
     private String certificatePass = StringUtils.EMPTY;
     
-    //ÊÇ·ñÆôÓÃhttpsÁ¬½Ó
+    //æ˜¯å¦å¯ç”¨httpsè¿æ¥
     private boolean isHttps = false;
     
     private static List<SwingWorker> mapWorkerList = new ArrayList<SwingWorker>();
@@ -133,7 +133,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
                 FRContext.getLogger().error(e.getMessage(), e);
             }
 
-            // james£ºÈç¹ûÃ»ÓĞenv¶¨Òå£¬ÒªÉèÖÃÒ»¸öÄ¬ÈÏµÄ
+            // jamesï¼šå¦‚æœæ²¡æœ‰envå®šä¹‰ï¼Œè¦è®¾ç½®ä¸€ä¸ªé»˜è®¤çš„
             if (designerEnvManager.nameEnvMap.size() <= 0) {
                 String installHome = StableUtils.getInstallHome();
                 if (installHome != null) {
@@ -158,18 +158,18 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * Ìí¼ÓÉè¼ÆÆ÷ÖĞÏà¹ØµÄworker
+     * æ·»åŠ è®¾è®¡å™¨ä¸­ç›¸å…³çš„worker
      *
-     * @param worker Ïà¹ØµÄworker
+     * @param worker ç›¸å…³çš„worker
      */
     public static void addWorkers(SwingWorker worker) {
         mapWorkerList.add(worker);
     }
 
     /**
-     * É¾³ıÉè¼ÆÆ÷ÖĞÏà¹ØµÄworker.
+     * åˆ é™¤è®¾è®¡å™¨ä¸­ç›¸å…³çš„worker.
      *
-     * @param worker Ïà¹ØµÄworker
+     * @param worker ç›¸å…³çš„worker
      */
     public static void removeWorkers(SwingWorker worker) {
         if (mapWorkerList.contains(worker)) {
@@ -178,7 +178,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ×öÍêÉè¼ÆÆ÷ÖĞÏÖ´æµÄµØÍ¼worker
+     * åšå®Œè®¾è®¡å™¨ä¸­ç°å­˜çš„åœ°å›¾worker
      */
     public static void doEndMapSaveWorkersIndesign() {
         for (int i = 0; i < mapWorkerList.size(); i++) {
@@ -195,7 +195,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * richer:ÔØÈëlogÉèÖÃ
+     * richer:è½½å…¥logè®¾ç½®
      */
     public static void loadLogSetting() {
         DesignerEnvManager designerEnvManager = DesignerEnvManager.getEnvManager();
@@ -207,7 +207,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
             System.setProperty("java.home", designerEnvManager.getJdkHome());
         }
 
-        // Ğ´ÎÄ¼şµÄLogLocation
+        // å†™æ–‡ä»¶çš„LogLocation
         String logLocation = DesignerEnvManager.getEnvManager().getLogLocation();
         if (logLocation != null) {
             try {
@@ -234,9 +234,9 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
     private File getDesignerEnvFile() {
         File envFile = getEnvFile();
-        // james:FineReportEnv.xmlÎÄ¼şÃ»ÓĞ±ØÒª×ö¼æÈİ£¬ÀïÃæ±£´æµÄÖ÷ÒªÊÇ½çÃæ²¼¾ÖÒÔ¼°Éè¼ÆÆ÷¼¤»îµÄĞÅÏ¢
-        // ¶ÔÓÚÕâĞ©ÄÚÈİ£¬³ıÁË¼¤»îÂëÒÔÍâ£¬ÆäËûµÄ¼æÈİºÁÎŞÒâÒå¡£¶ÔÓÚ¼¤»îÂë£¬Ò²¿ÉÒÔ²»¼æÈİ£¬ÕıºÃÖªµÀÓÃ»§ÊÇ·ñ½øĞĞÁËÉı¼¶ÄØ
-        // ¶ÔÓÚ×Ô¼ºÉı¼¶µÄÓÃ»§£¬ÕıºÃÖªµÀÓĞÉı¼¶µÄÓÃ»§ÄØ¡£¶ÔÓÚÎÒÃÇ°ïÖúÉı¼¶µÄ£¬¸øÓÃ»§Ò»¸ö¼¤»îÂë¾ÍÊÇÀ²
+        // james:FineReportEnv.xmlæ–‡ä»¶æ²¡æœ‰å¿…è¦åšå…¼å®¹ï¼Œé‡Œé¢ä¿å­˜çš„ä¸»è¦æ˜¯ç•Œé¢å¸ƒå±€ä»¥åŠè®¾è®¡å™¨æ¿€æ´»çš„ä¿¡æ¯
+        // å¯¹äºè¿™äº›å†…å®¹ï¼Œé™¤äº†æ¿€æ´»ç ä»¥å¤–ï¼Œå…¶ä»–çš„å…¼å®¹æ¯«æ— æ„ä¹‰ã€‚å¯¹äºæ¿€æ´»ç ï¼Œä¹Ÿå¯ä»¥ä¸å…¼å®¹ï¼Œæ­£å¥½çŸ¥é“ç”¨æˆ·æ˜¯å¦è¿›è¡Œäº†å‡çº§å‘¢
+        // å¯¹äºè‡ªå·±å‡çº§çš„ç”¨æˆ·ï¼Œæ­£å¥½çŸ¥é“æœ‰å‡çº§çš„ç”¨æˆ·å‘¢ã€‚å¯¹äºæˆ‘ä»¬å¸®åŠ©å‡çº§çš„ï¼Œç»™ç”¨æˆ·ä¸€ä¸ªæ¿€æ´»ç å°±æ˜¯å•¦
         if (!envFile.exists()) {
             createEnvFile(envFile);
         }
@@ -249,12 +249,12 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
             FileWriter fileWriter = new FileWriter(envFile);
             File oldEnvFile = new File(ProductConstants.getEnvHome() + File.separator + ProductConstants.APP_NAME + "6-1" + "Env.xml");
             if (oldEnvFile.exists()) {
-                // marks:¼æÈİDesignerEnv6-1.xml
+                // marks:å…¼å®¹DesignerEnv6-1.xml
                 FileReader fileReader = new FileReader(oldEnvFile);
                 Utils.copyCharTo(fileReader, fileWriter);
                 fileReader.close();
             } else {
-                // marks:Éú³ÉÒ»¸öĞÂµÄxmlÎÄ¼ş
+                // marks:ç”Ÿæˆä¸€ä¸ªæ–°çš„xmlæ–‡ä»¶
                 StringReader stringReader = new StringReader("<?xml version=\"1.0\" encoding=\"UTF-8\" ?><Env></Env>");
                 Utils.copyCharTo(stringReader, fileWriter);
                 stringReader.close();
@@ -279,8 +279,8 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
     
     /**
-     * ÊÇ·ñÆôÓÃÁËhttps
-     * @return Í¬ÉÏ
+     * æ˜¯å¦å¯ç”¨äº†https
+     * @return åŒä¸Š
      */
     public boolean isHttps() {
 		return isHttps;
@@ -311,14 +311,14 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 	}
 
     /**
-     * ·µ»ØÉÏ´Î´ò¿ªµÄÄ£°åÎÄ¼ş
+     * è¿”å›ä¸Šæ¬¡æ‰“å¼€çš„æ¨¡æ¿æ–‡ä»¶
      */
     public String getLastOpenFile() {
         return lastOpenFilePath;
     }
 
     /**
-     * ÉèÖÃ¼ÇÂ¼ ÉÏ´Î´ò¿ªµÄÄ£°åÎÄ¼ş
+     * è®¾ç½®è®°å½• ä¸Šæ¬¡æ‰“å¼€çš„æ¨¡æ¿æ–‡ä»¶
      */
     public void setLastOpenFile(String lastOpenFilePath) {
         this.lastOpenFilePath = lastOpenFilePath;
@@ -326,7 +326,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * µÃµ½Î÷Ãæ°åµÄÉÏÏÂ×ÓÃæ°åµÄ¸ß¶ÈÇø·Ö
+     * å¾—åˆ°è¥¿é¢æ¿çš„ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦åŒºåˆ†
      *
      * @return
      */
@@ -335,7 +335,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * µÃµ½ÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ê±µÄÎ÷±ßÃæ°åµÄ¿í¶È
+     * å¾—åˆ°ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨æ—¶çš„è¥¿è¾¹é¢æ¿çš„å®½åº¦
      *
      * @return
      */
@@ -344,7 +344,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃÎ÷Ãæ°åµÄÉÏÏÂ×ÓÃæ°åµÄ¸ß¶ÈÇø·Ö
+     * è®¾ç½®è¥¿é¢æ¿çš„ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦åŒºåˆ†
      *
      * @param toolPaneY
      */
@@ -353,7 +353,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ê±µÄÎ÷±ßÃæ°åµÄ¿í¶È
+     * è®¾ç½®ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨æ—¶çš„è¥¿è¾¹é¢æ¿çš„å®½åº¦
      *
      * @param westRegionContainerWidth
      */
@@ -363,7 +363,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * µÃµ½ÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ç°¶«²¿Ãæ°åµÄÉÏÏÂ×ÓÃæ°åµÄ¸ß¶ÈÇø·Ö
+     * å¾—åˆ°ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨å‰ä¸œéƒ¨é¢æ¿çš„ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦åŒºåˆ†
      *
      * @return
      */
@@ -372,7 +372,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * µÃµ½ÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ç°¶«²¿Ãæ°åµÄ¿í¶È
+     * å¾—åˆ°ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨å‰ä¸œéƒ¨é¢æ¿çš„å®½åº¦
      *
      * @return
      */
@@ -381,7 +381,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ç°¶«²¿Ãæ°åµÄÉÏÏÂ×ÓÃæ°åµÄ¸ß¶ÈÇø·Ö
+     * è®¾ç½®ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨å‰ä¸œéƒ¨é¢æ¿çš„ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦åŒºåˆ†
      *
      * @param toolPaneY
      */
@@ -390,7 +390,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃÉÏ´Î¹Ø±ÕÉè¼ÆÆ÷Ç°¶«²¿Ãæ°åµÄ¿í¶È
+     * è®¾ç½®ä¸Šæ¬¡å…³é—­è®¾è®¡å™¨å‰ä¸œéƒ¨é¢æ¿çš„å®½åº¦
      *
      * @param eastRegionContainerWidth
      */
@@ -400,9 +400,9 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * ÅĞ¶Ïµ±Ç°»·¾³ÊÇ·ñÎªÄ¬ÈÏ
+     * åˆ¤æ–­å½“å‰ç¯å¢ƒæ˜¯å¦ä¸ºé»˜è®¤
      *
-     * @return ÊÇÄ¬ÈÏÔò·µ»Øtrue
+     * @return æ˜¯é»˜è®¤åˆ™è¿”å›true
      */
     public boolean isCurrentEnvDefault() {
         Env currentEnv = this.getEnv(curEnvName);
@@ -411,7 +411,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ·µ»ØÄ¬ÈÏ»·¾³
+     * è¿”å›é»˜è®¤ç¯å¢ƒ
      */
     public Env getDefaultEnv() {
         String installHome = StableUtils.getInstallHome();
@@ -433,7 +433,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ·µ»ØÄ¬ÈÏ»·¾³Ãû³Æ
+     * è¿”å›é»˜è®¤ç¯å¢ƒåç§°
      */
     public String getDefaultEnvName() {
         String installHome = StableUtils.getInstallHome();
@@ -453,7 +453,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃµ±Ç°»·¾³ÎªÄ¬ÈÏ
+     * è®¾ç½®å½“å‰ç¯å¢ƒä¸ºé»˜è®¤
      */
     public void setCurrentEnv2Default() {
         if (isCurrentEnvDefault()) {
@@ -467,60 +467,60 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * Ä£°åTreeÊÇ·ñÕ¹¿ª
+     * æ¨¡æ¿Treeæ˜¯å¦å±•å¼€
      *
-     * @return Õ¹¿ªÔò·µ»Øtrue
+     * @return å±•å¼€åˆ™è¿”å›true
      */
     public boolean isTemplateTreePaneExpanded() {
         return templateTreePaneExpanded;
     }
 
     /**
-     * ÉèÖÃÄ£°åTreeÊÇ·ñÕ¹¿ª
+     * è®¾ç½®æ¨¡æ¿Treeæ˜¯å¦å±•å¼€
      */
     public void setTemplateTreePaneExpanded(boolean templateTreePaneExpanded) {
         this.templateTreePaneExpanded = templateTreePaneExpanded;
     }
 
     /**
-     * Öª·ñ×Ô¶¯±¸·İ
+     * çŸ¥å¦è‡ªåŠ¨å¤‡ä»½
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isAutoBackUp() {
         return autoBackUp;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñ×Ô¶¯±¸·İ
+     * è®¾ç½®æ˜¯å¦è‡ªåŠ¨å¤‡ä»½
      */
     public void setAutoBackUp(boolean autoBackUp) {
         this.autoBackUp = autoBackUp;
     }
 
     /**
-     * ·µ»ØÒ³Ãæ³¤¶Èµ¥Î»
+     * è¿”å›é¡µé¢é•¿åº¦å•ä½
      */
     public short getPageLengthUnit() {
         return pageLengthUnit;
     }
 
     /**
-     * ÉèÖÃÒ³Ãæ³¤¶Èµ¥Î»
+     * è®¾ç½®é¡µé¢é•¿åº¦å•ä½
      */
     public void setPageLengthUnit(short pageLengthUnit) {
         this.pageLengthUnit = pageLengthUnit;
     }
 
     /**
-     * ·µ»Ø±¨±í³¤¶Èµ¥Î»
+     * è¿”å›æŠ¥è¡¨é•¿åº¦å•ä½
      */
     public short getReportLengthUnit() {
         return reportLengthUnit;
     }
 
     /**
-     * ÉèÖÃ±¨±í³¤¶Èµ¥Î»
+     * è®¾ç½®æŠ¥è¡¨é•¿åº¦å•ä½
      */
     public void setReportLengthUnit(short reportLengthUnit) {
         this.reportLengthUnit = reportLengthUnit;
@@ -538,11 +538,11 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
 	/**
-	 * ±£´æÉè¼ÆÆ÷µÄÅäÖÃÎÄ¼ş, ¸ÃÎÄ¼ş²»ÔÚenvµÄresourceÄ¿Â¼ÏÂ
-	 * ¶øÊÇÔÚConsts.getEnvHome() + File.separator + Consts.APP_NAME
+	 * ä¿å­˜è®¾è®¡å™¨çš„é…ç½®æ–‡ä»¶, è¯¥æ–‡ä»¶ä¸åœ¨envçš„resourceç›®å½•ä¸‹
+	 * è€Œæ˜¯åœ¨Consts.getEnvHome() + File.separator + Consts.APP_NAME
 	 * 
 	 *
-	 * @date 2014-9-29-ÉÏÎç11:04:23
+	 * @date 2014-9-29-ä¸Šåˆ11:04:23
 	 *
 	 */
     public void saveXMLFile() {
@@ -550,7 +550,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 		if (xmlFile == null) {
 			return;
 		}
-		if (!xmlFile.getParentFile().exists()) {//½¨Á¢Ä¿Â¼.
+		if (!xmlFile.getParentFile().exists()) {//å»ºç«‹ç›®å½•.
 			StableUtils.mkdirs(xmlFile.getParentFile());
 		}
     	
@@ -562,16 +562,16 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÊ¹ÓÃ´ÅÅÌ¿Õ¼ä
+     * è®¾ç½®æ˜¯å¦ä½¿ç”¨ç£ç›˜ç©ºé—´
      */
     public void setOracleSystemSpace(boolean displayOracleSystem) {
         this.useOracleSystemSpace = displayOracleSystem;
     }
     
     /**
-	 * ÊÇ·ñ¼ÓÈë²úÆ·¸ÄÁ¼
+	 * æ˜¯å¦åŠ å…¥äº§å“æ”¹è‰¯
 	 * 
-	 * @return ÊÇ·ñ¼ÓÈë²úÆ·¸ÄÁ¼
+	 * @return æ˜¯å¦åŠ å…¥äº§å“æ”¹è‰¯
 	 * 
 	 */
 	public boolean isJoinProductImprove() {
@@ -579,7 +579,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 	}
 
 	/**
-	 * ÉèÖÃ¼ÓÈë²úÆ·¸ÄÁ¼
+	 * è®¾ç½®åŠ å…¥äº§å“æ”¹è‰¯
 	 * 
 	 */
 	public void setJoinProductImprove(boolean joinProductImprove) {
@@ -587,77 +587,77 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 	}
 
 	/**
-     * ÊÇ·ñ´ÅÅÌ¿Õ¼ä²ÎÊı
+     * æ˜¯å¦ç£ç›˜ç©ºé—´å‚æ•°
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isOracleSystemSpace() {
         return this.useOracleSystemSpace;
     }
 
     /**
-     * ·µ»ØÓïÑÔÀàĞÍ
+     * è¿”å›è¯­è¨€ç±»å‹
      */
     public int getLanguage() {
         return this.language;
     }
 
     /**
-     * ÉèÖÃÓïÑÔ²ÎÊı
+     * è®¾ç½®è¯­è¨€å‚æ•°
      */
     public void setLanguage(int i) {
         this.language = i;
     }
 
     /**
-     * ·µ»Ø»·¾³Ãû³Æµü´úÆ÷
+     * è¿”å›ç¯å¢ƒåç§°è¿­ä»£å™¨
      */
     public Iterator<String> getEnvNameIterator() {
         return this.nameEnvMap.keySet().iterator();
     }
 
     /**
-     * ¸ù¾İÃû³Æ·µ»Ø»·¾³
+     * æ ¹æ®åç§°è¿”å›ç¯å¢ƒ
      */
     public Env getEnv(String name) {
         return this.nameEnvMap.get(name);
     }
 
     /**
-     * ¼ÇÂ¼Ãû³Æ ºÍ¶ÔÓ¦µÄ»·¾³
+     * è®°å½•åç§° å’Œå¯¹åº”çš„ç¯å¢ƒ
      *
-     * @param name Ãû³Æ
-     * @param env  ¶ÔÓ¦µÄ»·¾³
+     * @param name åç§°
+     * @param env  å¯¹åº”çš„ç¯å¢ƒ
      */
     public void putEnv(String name, Env env) {
         this.nameEnvMap.put(name, env);
     }
 
     /**
-     * É¾³ıÃû³Æ¶ÔÓ¦µÄ»·¾³
+     * åˆ é™¤åç§°å¯¹åº”çš„ç¯å¢ƒ
      *
-     * @param name »·¾³µÄÃû×Ö
+     * @param name ç¯å¢ƒçš„åå­—
      */
     public void removeEnv(String name) {
         this.nameEnvMap.remove(name);
     }
 
     /**
-     * Çå³ıÈ«²¿»·¾³
+     * æ¸…é™¤å…¨éƒ¨ç¯å¢ƒ
      */
     public void clearAllEnv() {
         this.nameEnvMap.clear();
     }
 
     /**
-     * ·µ»Ø½çÃæµÄ´óĞ¡·¶Î§.
+     * è¿”å›ç•Œé¢çš„å¤§å°èŒƒå›´.
      */
     public Rectangle getWindowBounds() {
         return this.windowBounds;
     }
 
     /**
-     * ÉèÖÃ½çÃæµÄ´óĞ¡·¶Î§
+     * è®¾ç½®ç•Œé¢çš„å¤§å°èŒƒå›´
      */
     public void setWindowBounds(Rectangle windowBounds) {
         this.windowBounds = windowBounds;
@@ -665,28 +665,28 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * ·µ»Øµ±Ç°»·¾³µÄÃû³Æ.
+     * è¿”å›å½“å‰ç¯å¢ƒçš„åç§°.
      */
     public String getCurEnvName() {
         return this.curEnvName;
     }
 
     /**
-     * ÉèÖÃµ±Ç°»·¾³µÄÃû³Æ
+     * è®¾ç½®å½“å‰ç¯å¢ƒçš„åç§°
      */
     public void setCurEnvName(String envName) {
         this.curEnvName = envName;
     }
 
     /**
-     * ·µ»ØJetty·şÎñÆ÷µÄ¶Ë¿ÚºÅ
+     * è¿”å›JettyæœåŠ¡å™¨çš„ç«¯å£å·
      */
     public int getJettyServerPort() {
         return this.jettyServerPort;
     }
 
     /**
-     * ÉèÖÃJetty·şÎñÆ÷µÄ¶Ë¿ÚºÅ
+     * è®¾ç½®JettyæœåŠ¡å™¨çš„ç«¯å£å·
      */
     public void setJettyServerPort(int jettyServerPort) {
         if (jettyServerPort <= 0) {
@@ -696,28 +696,28 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ·µ»Ø¶Ô»°¿òµ±Ç°Â·¾¶
+     * è¿”å›å¯¹è¯æ¡†å½“å‰è·¯å¾„
      */
     public String getDialogCurrentDirectory() {
         return DialogCurrentDirectory;
     }
 
     /**
-     * ÉèÖÃµ±Ç°¶Ô»°¿òÂ·¾¶
+     * è®¾ç½®å½“å‰å¯¹è¯æ¡†è·¯å¾„
      */
     public void setDialogCurrentDirectory(String dialogCurrentDirectory) {
         this.DialogCurrentDirectory = dialogCurrentDirectory;
     }
 
     /**
-     * ·µ»Øµ±Ç°Â·¾¶Ç°×º
+     * è¿”å›å½“å‰è·¯å¾„å‰ç¼€
      */
     public String getCurrentDirectoryPrefix() {
         return CurrentDirectoryPrefix;
     }
 
     /**
-     * ÉèÖÃµ±Ç°Â·¾¶Ç°×º
+     * è®¾ç½®å½“å‰è·¯å¾„å‰ç¼€
      */
     public void setCurrentDirectoryPrefix(String prefix) {
         this.CurrentDirectoryPrefix = prefix;
@@ -725,19 +725,19 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * ·µ»Ø×î½ü´ò¿ªµÄÎÄ¼şÂ·¾¶ÁĞ±í
+     * è¿”å›æœ€è¿‘æ‰“å¼€çš„æ–‡ä»¶è·¯å¾„åˆ—è¡¨
      */
     public List<String> getRecentOpenedFilePathList() {
         return this.recentOpenedFilePathList;
     }
 
     /**
-     * Ìí¼Ó×î½ü´ò¿ªµÄÎÄ¼şÂ·¾¶
+     * æ·»åŠ æœ€è¿‘æ‰“å¼€çš„æ–‡ä»¶è·¯å¾„
      *
-     * @param filePath ÎÄ¼şÂ·¾¶
+     * @param filePath æ–‡ä»¶è·¯å¾„
      */
     public void addRecentOpenedFilePath(String filePath) {
-        // ÏÈÉ¾³ı.
+        // å…ˆåˆ é™¤.
         if (this.recentOpenedFilePathList.contains(filePath)) {
             this.recentOpenedFilePathList.remove(filePath);
         }
@@ -747,10 +747,10 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * Ìæ»»½üÆÚ´ò¿ªµÄÎÄ¼şÂ·¾¶
+     * æ›¿æ¢è¿‘æœŸæ‰“å¼€çš„æ–‡ä»¶è·¯å¾„
      *
-     * @param oldPath ¾ÉµÄÂ·¾¶
-     * @param newPath ĞÂµÄÂ·¾¶
+     * @param oldPath æ—§çš„è·¯å¾„
+     * @param newPath æ–°çš„è·¯å¾„
      */
     public void replaceRecentOpenedFilePath(String oldPath, String newPath) {
         if (this.recentOpenedFilePathList.contains(oldPath)) {
@@ -770,9 +770,9 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÒÆ³ı×î½ü´ò¿ªµÄÎÄ¼şÂ·¾¶
+     * ç§»é™¤æœ€è¿‘æ‰“å¼€çš„æ–‡ä»¶è·¯å¾„
      *
-     * @param filePath ÎÄ¼şÂ·¾¶
+     * @param filePath æ–‡ä»¶è·¯å¾„
      */
     public void removeRecentOpenedFilePath(String filePath) {
         if (this.recentOpenedFilePathList.contains(filePath)) {
@@ -782,94 +782,94 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * ÊÇ·ñÕ¹Ê¾toolbar
+     * æ˜¯å¦å±•ç¤ºtoolbar
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isShowPaintToolBar() {
         return showPaintToolBar;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÕ¹Ê¾toolbar
+     * è®¾ç½®æ˜¯å¦å±•ç¤ºtoolbar
      */
     public void setShowPaintToolBar(boolean showPaintToolBar) {
         this.showPaintToolBar = showPaintToolBar;
     }
 
     /**
-     * ÊÇ·ñÖ§³Ö³·Ïú
+     * æ˜¯å¦æ”¯æŒæ’¤é”€
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportUndo() {
         return supportUndo;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Ö³·Ïú
+     * è®¾ç½®æ˜¯å¦æ”¯æŒæ’¤é”€
      */
     public void setSupportUndo(boolean supportUndo) {
         this.supportUndo = supportUndo;
     }
 
     /**
-     * ÊÇ·ñÖ§³ÖÄ¬ÈÏ¸¸Àà¼ÆËã
+     * æ˜¯å¦æ”¯æŒé»˜è®¤çˆ¶ç±»è®¡ç®—
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportDefaultParentCalculate() {
         return supportDefaultParentCalculate;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³ÖÄ¬ÈÏ¸¸Àà¼ÆËã
+     * è®¾ç½®æ˜¯å¦æ”¯æŒé»˜è®¤çˆ¶ç±»è®¡ç®—
      */
     public void setSupportDefaultParentCalculate(boolean supportDefaultParentCalculate) {
         this.supportDefaultParentCalculate = supportDefaultParentCalculate;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Ö×Ö·û´®×ªÎª¹«Ê½
+     * è®¾ç½®æ˜¯å¦æ”¯æŒå­—ç¬¦ä¸²è½¬ä¸ºå…¬å¼
      *
-     * @return Ö§³ÖÔò·µ»Øtrue
+     * @return æ”¯æŒåˆ™è¿”å›true
      */
     public boolean isSupportStringToFormula() {
         return supportStringToFormula;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Ö×Ö·û´®×ªÎª¹«Ê½
+     * è®¾ç½®æ˜¯å¦æ”¯æŒå­—ç¬¦ä¸²è½¬ä¸ºå…¬å¼
      */
     public void setSupportStringToFormula(boolean supportStringToFormula) {
         this.supportStringToFormula = supportStringToFormula;
     }
 
     /**
-     * ÊÇ·ñÄ¬ÈÏ×Ö·û´®×ªÎª¹«Ê½
+     * æ˜¯å¦é»˜è®¤å­—ç¬¦ä¸²è½¬ä¸ºå…¬å¼
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDefaultStringToFormula() {
         return defaultStringToFormula;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Ö×Ö·û´®×ªÎª¹«Ê½
+     * è®¾ç½®æ˜¯å¦æ”¯æŒå­—ç¬¦ä¸²è½¬ä¸ºå…¬å¼
      */
     public void setDefaultStringToFormula(boolean defaultStringToFormula) {
         this.defaultStringToFormula = defaultStringToFormula;
     }
 
     /**
-     * »ñÈ¡¿ì½İ¼üÃû³Æ
+     * è·å–å¿«æ·é”®åç§°
      */
     public String getAutoCompleteShortcuts() {
         return autoCompleteShortcuts;
     }
 
     /**
-     * ÉèÖÃ¿ì½İ¼üÃû³Æ
+     * è®¾ç½®å¿«æ·é”®åç§°
      */
     public void setAutoCompleteShortcuts(String autoCompleteShortcuts) {
         this.autoCompleteShortcuts = autoCompleteShortcuts;
@@ -877,92 +877,92 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
 
     /**
-     * ÁĞ±íÍ·ÊÇ·ñ¿É¼û
+     * åˆ—è¡¨å¤´æ˜¯å¦å¯è§
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isColumnHeaderVisible() {
         return columnHeaderVisible;
     }
 
     /**
-     * ÉèÖÃÁĞ±íÍ·ÊÇ·ñ¿É¼û
+     * è®¾ç½®åˆ—è¡¨å¤´æ˜¯å¦å¯è§
      */
     public void setColumnHeaderVisible(boolean columnHeaderVisible) {
         this.columnHeaderVisible = columnHeaderVisible;
     }
 
     /**
-     * ĞĞ±íÍ·ÊÇ·ñ¿É¼û
+     * è¡Œè¡¨å¤´æ˜¯å¦å¯è§
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isRowHeaderVisible() {
         return rowHeaderVisible;
     }
 
     /**
-     * ÉèÖÃĞĞ±íÍ·ÊÇ·ñ¿É¼û
+     * è®¾ç½®è¡Œè¡¨å¤´æ˜¯å¦å¯è§
      */
     public void setRowHeaderVisible(boolean rowHeaderVisible) {
         this.rowHeaderVisible = rowHeaderVisible;
     }
 
     /**
-     * ´¹Ö±¹ö¶¯ÌõÊÇ·ñ¿É¼û
+     * å‚ç›´æ»šåŠ¨æ¡æ˜¯å¦å¯è§
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isVerticalScrollBarVisible() {
         return verticalScrollBarVisible;
     }
 
     /**
-     * ÉèÖÃ´¹Ö±¹ö¶¯Ìõ¿É¼û
+     * è®¾ç½®å‚ç›´æ»šåŠ¨æ¡å¯è§
      */
     public void setVerticalScrollBarVisible(boolean verticalScrollBarVisible) {
         this.verticalScrollBarVisible = verticalScrollBarVisible;
     }
 
     /**
-     * Ë®Æ½¹ö¶¯ÌõÊÇ·ñ¿É¼û
+     * æ°´å¹³æ»šåŠ¨æ¡æ˜¯å¦å¯è§
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isHorizontalScrollBarVisible() {
         return horizontalScrollBarVisible;
     }
 
     /**
-     * ÉèÖÃË®Æ½¹ö¶¯ÌõÊÇ·ñ¿É¼û
+     * è®¾ç½®æ°´å¹³æ»šåŠ¨æ¡æ˜¯å¦å¯è§
      */
     public void setHorizontalScrollBarVisible(boolean horizontalScrollBarVisible) {
         this.horizontalScrollBarVisible = horizontalScrollBarVisible;
     }
 
     /**
-     * ·µ»ØÍø¸ñÏßµÄÑÕÉ«
+     * è¿”å›ç½‘æ ¼çº¿çš„é¢œè‰²
      */
     public Color getGridLineColor() {
         return gridLineColor;
     }
 
     /**
-     * ÉèÖÃÍø¸ñÏßµÄÑÕÉ«
+     * è®¾ç½®ç½‘æ ¼çº¿çš„é¢œè‰²
      */
     public void setGridLineColor(Color gridLineColor) {
         this.gridLineColor = gridLineColor;
     }
 
     /**
-     * ·µ»ØÒ³ÃæµÄÏßÑÕÉ«
+     * è¿”å›é¡µé¢çš„çº¿é¢œè‰²
      */
     public Color getPaginationLineColor() {
         return paginationLineColor;
     }
 
     /**
-     * ÉèÖÃÒ³ÃæµÄÏßÑÕÉ«
+     * è®¾ç½®é¡µé¢çš„çº¿é¢œè‰²
      */
     public void setPaginationLineColor(Color paginationLineColor) {
         this.paginationLineColor = paginationLineColor;
@@ -970,148 +970,148 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÊÇ·ñÖ§³Öµ¥Ôª¸ñ±à¼­Æ÷
+     * æ˜¯å¦æ”¯æŒå•å…ƒæ ¼ç¼–è¾‘å™¨
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportCellEditorDef() {
         return supportCellEditorDef;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñ±à¼­Æ÷
+     * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼ç¼–è¾‘å™¨
      */
     public void setSupportCellEditorDef(boolean supportCellEditorDef) {
         this.supportCellEditorDef = supportCellEditorDef;
     }
 
     /**
-     * ÊÇ·ñÔÊĞíÍÏ×§
+     * æ˜¯å¦å…è®¸æ‹–æ‹½
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDragPermited() {
         return isDragPermited;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÔÊĞíÍÏ×§
+     * è®¾ç½®æ˜¯å¦å…è®¸æ‹–æ‹½
      */
     public void setDragPermited(boolean isDragPermited) {
         this.isDragPermited = isDragPermited;
     }
 
     /**
-     * ·µ»Ø×î´óÔ¤ÀÀµÄĞĞÊı
+     * è¿”å›æœ€å¤§é¢„è§ˆçš„è¡Œæ•°
      */
     public int getMaxNumberOrPreviewRow() {
         return maxNumberOrPreviewRow;
     }
 
     /**
-     * ÉèÖÃ×î´óÔ¤ÀÀµÄĞĞÊı
+     * è®¾ç½®æœ€å¤§é¢„è§ˆçš„è¡Œæ•°
      */
     public void setMaxNumberOrPreviewRow(int maxNumberOrPreviewRow) {
         this.maxNumberOrPreviewRow = maxNumberOrPreviewRow;
     }
 
     /**
-     * ÊÇ·ñÕ¹Ê¾¹¤³Ì½çÃæ
+     * æ˜¯å¦å±•ç¤ºå·¥ç¨‹ç•Œé¢
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isShowProjectPane() {
         return showProjectPane;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÏÔÊ¾¹¤³Ì½çÃæ.
+     * è®¾ç½®æ˜¯å¦æ˜¾ç¤ºå·¥ç¨‹ç•Œé¢.
      */
     public void setShowProjectPane(boolean showProjectPane) {
         this.showProjectPane = showProjectPane;
     }
 
     /**
-     * ÊÇ·ñÕ¹Ê¾Êı¾İ½çÃæ
+     * æ˜¯å¦å±•ç¤ºæ•°æ®ç•Œé¢
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isShowDataPane() {
         return showDataPane;
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÏÔÊ¾Êı¾İ½çÃæ
+     * è®¾ç½®æ˜¯å¦æ˜¾ç¤ºæ•°æ®ç•Œé¢
      */
     public void setShowDataPane(boolean showDataPane) {
         this.showDataPane = showDataPane;
     }
 
     /**
-     * ·µ»Ø×î½üÑ¡ÔñµÄÁ´½Ó
+     * è¿”å›æœ€è¿‘é€‰æ‹©çš„é“¾æ¥
      */
     public String getRecentSelectedConnection() {
         return recentSelectedConnection;
     }
 
     /**
-     * ÉèÖÃ×î½üÑ¡ÔñµÄÁ´½Ó
+     * è®¾ç½®æœ€è¿‘é€‰æ‹©çš„é“¾æ¥
      */
     public void setRecentSelectedConnection(String recentlySelectedConnectionName) {
         this.recentSelectedConnection = recentlySelectedConnectionName;
     }
 
     /**
-     * ·µ»Ø¼¤»îÂë
+     * è¿”å›æ¿€æ´»ç 
      */
     public String getActivationKey() {
         return activationKey;
     }
 
     /**
-     * ÉèÖÃ¼¤»îÂë
+     * è®¾ç½®æ¿€æ´»ç 
      */
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
     }
 
     /**
-     * ·µ»ØLogµÄÎ»ÖÃ
+     * è¿”å›Logçš„ä½ç½®
      */
     public String getLogLocation() {
         return logLocation;
     }
 
     /**
-     * ÉèÖÃLogµÄÎ»ÖÃ
+     * è®¾ç½®Logçš„ä½ç½®
      */
     public void setLogLocation(String logsLocation) {
         this.logLocation = logsLocation;
     }
 
     /**
-     * ·µ»ØÈÕÖ¾µÄµÈ¼¶
+     * è¿”å›æ—¥å¿—çš„ç­‰çº§
      */
     public Level getLogLevel() {
         return this.level;
     }
 
     /**
-     * ÉèÖÃlogµÄµÈ¼¶
+     * è®¾ç½®logçš„ç­‰çº§
      */
     public void setLogLevel(Level level) {
         this.level = level;
     }
 
     /**
-     * ÉèÖÃ³·ÏúµÄÏŞÖÆ´ÎÊı
+     * è®¾ç½®æ’¤é”€çš„é™åˆ¶æ¬¡æ•°
      */
     public void setUndoLimit(int undoLimit) {
         this.undoLimit = undoLimit;
     }
 
     /**
-     * ·µ»Ø³·ÏúµÄÏŞÖÆ´ÎÊı
+     * è¿”å›æ’¤é”€çš„é™åˆ¶æ¬¡æ•°
      */
     public int getUndoLimit() {
         return undoLimit;
@@ -1267,7 +1267,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     public void readXML(XMLableReader reader) {
         if (reader.isChildNode()) {
             String name = reader.getTagName();
-            if (name.equals("XMLVersion")) {// ¼æÈİ09.12.30Ç°°ÑXMLVersionĞ´ÔÚ¸ùÄ¿Â¼ÏÂµÄµÚÒ»¸ö±êÇ©ÖĞ
+            if (name.equals("XMLVersion")) {// å…¼å®¹09.12.30å‰æŠŠXMLVersionå†™åœ¨æ ¹ç›®å½•ä¸‹çš„ç¬¬ä¸€ä¸ªæ ‡ç­¾ä¸­
             	readXMLVersion(reader);
             } else if (name.equals("Attributes")) {
                 this.readAttributes(reader);
@@ -1344,7 +1344,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
             this.setLastEastRegionToolPaneY(Integer.parseInt(tmpVal));
         }
         if ((tmpVal = reader.getAttrAsString("containerWidth", null)) != null) {
-        	// bug33217,705ÊÇºÃµÄ£¬²»ÖªµÀ711ÀïÒòÎªÊ²Ã´°ÑÕâ¶Î´úÂë×¢ÊÍÁË£¬ÏÖ´ò¿ª
+        	// bug33217,705æ˜¯å¥½çš„ï¼Œä¸çŸ¥é“711é‡Œå› ä¸ºä»€ä¹ˆæŠŠè¿™æ®µä»£ç æ³¨é‡Šäº†ï¼Œç°æ‰“å¼€
             this.setLastEastRegionContainerWidth(Integer.parseInt(tmpVal));
         }
     }
@@ -1378,10 +1378,10 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
         this.setJoinProductImprove(reader.getAttrAsBoolean("joinProductImprove", true));
         this.setAutoBackUp(reader.getAttrAsBoolean("autoBackUp", true));
         this.setTemplateTreePaneExpanded(reader.getAttrAsBoolean("templateTreePaneExpanded", false));
-        // peter:¶ÁÈ¡webinfLocation
+        // peter:è¯»å–webinfLocation
         if ((tmpVal = reader.getAttrAsString("webinfLocation", null)) != null) {
-            // marks:¼æÈİ6.1µÄ
-            // marks:ÉèÖÃÄ¬ÈÏµÄÄ¿Â¼.
+            // marks:å…¼å®¹6.1çš„
+            // marks:è®¾ç½®é»˜è®¤çš„ç›®å½•.
             Env reportServer = LocalEnv.createEnv(tmpVal);
 
             String curReportServerName = Inter.getLocText("Server-Embedded_Server");
@@ -1421,7 +1421,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
     private void readCurEnv(XMLableReader reader) {
         String tmpVal;
-        // marks:ÉèÖÃÄ¬ÈÏµÄwebInfÃû×Ö
+        // marks:è®¾ç½®é»˜è®¤çš„webInfåå­—
         if ((tmpVal = reader.getAttrAsString("currentEnv", null)) != null) {
             this.setCurEnvName(tmpVal);
         }
@@ -1436,7 +1436,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 
                 if (reader.isChildNode()) {
                     if (reader.getTagName().equals("Env")) { // description.
-                        // marks:»ñÈ¡Ãû×Ö
+                        // marks:è·å–åå­—
                         String reportServerName = reader.getAttrAsString("name", null);
 
                         Env env = readEnv(reader);
@@ -1450,7 +1450,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
             }
         });
 
-        // xml¶ÁÍêÖ®ºó,¿´Ò»ÏÂnameEnvMapÊÇ²»ÊÇ³¤¶ÈÎª0
+        // xmlè¯»å®Œä¹‹å,çœ‹ä¸€ä¸‹nameEnvMapæ˜¯ä¸æ˜¯é•¿åº¦ä¸º0
         if (nameEnvMap.isEmpty() && StableUtils.getInstallHome() != null) {
             String install_home = StableUtils.getInstallHome();
             if (install_home != null && new java.io.File(install_home).exists()) {
@@ -1475,7 +1475,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
                 if (reader.isChildNode()) {
                     String tmpVal;
                     String name = reader.getTagName();
-                    // alex:ÒÔÇ°Ò»Ö±ÊÇĞ´ResentOpenedFilePath
+                    // alex:ä»¥å‰ä¸€ç›´æ˜¯å†™ResentOpenedFilePath
                     if ("ResentOpenedFilePath".equals(name) || "Path".equals(name)) { // description.
                         if ((tmpVal = reader.getElementValue()) != null) {
                             DesignerEnvManager.this.recentOpenedFilePathList.add(tmpVal);
@@ -1531,14 +1531,14 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 		this.activeKeyStatus = activeKeyStatus;
 	}
 
-	//Ğ´Èëuuid
+	//å†™å…¥uuid
     private void writeUUID(XMLPrintWriter writer){
     	writer.startTAG("uuid");
     	writer.textNode(getUUID());
     	writer.end();
     }
 
-    //¶ÁÈ¡uuid
+    //è¯»å–uuid
 	private void readUUID(XMLableReader reader){
 		String tmpVal;
 		if (StringUtils.isNotBlank(tmpVal = reader.getElementValue())) {
@@ -1546,7 +1546,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 		}
 	}
 	
-	//Ğ´Èë¼¤»î×´Ì¬
+	//å†™å…¥æ¿€æ´»çŠ¶æ€
 	private void writeActiveStatus(XMLPrintWriter writer){
 		if (this.activeKeyStatus == 0){
 			writer.startTAG("status");
@@ -1555,7 +1555,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
 		}
 	}
 	
-	//¶ÁÈ¡¼¤»î×´Ì¬
+	//è¯»å–æ¿€æ´»çŠ¶æ€
 	private void readActiveStatus(XMLableReader reader){
 		String tmpVal;
 		if (StringUtils.isNotBlank(tmpVal = reader.getElementValue())) {
@@ -1693,7 +1693,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
                 .startTAG("JettyServerPort").textNode(String.valueOf(this.jettyServerPort)).end();
     }
     
-    //Ğ´ÂÛÌ³Ïà¹ØµÄÁ½¸öÊôĞÔ
+    //å†™è®ºå›ç›¸å…³çš„ä¸¤ä¸ªå±æ€§
     private void writeBBSRelated(XMLPrintWriter writer){
         if (StringUtils.isNotBlank(bbsName)) {
         	writer.startTAG("bbsName");
@@ -1735,7 +1735,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     private void writeReportPaneAttributions(XMLPrintWriter writer) {
-        // eason: ReportPaneAttributions±¨±íÖ§³ÖµÄ Ò»Ğ©¹¦ÄÜºÍGridµÄGUIÊôĞÔµÈµÈ
+        // eason: ReportPaneAttributionsæŠ¥è¡¨æ”¯æŒçš„ ä¸€äº›åŠŸèƒ½å’ŒGridçš„GUIå±æ€§ç­‰ç­‰
         writer.startTAG("ReportPaneAttributions")
                 .attr("supportUndo", this.isSupportUndo())
                 .attr("supportDefaultParentCalculate", this.isSupportDefaultParentCalculate())
@@ -1755,7 +1755,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /*
-         * Ğ´EnvÎªxml
+         * å†™Envä¸ºxml
          */
     private static void writeEnv(XMLPrintWriter writer, String name, Env env) {
         if (env == null) {
@@ -1770,7 +1770,7 @@ public class DesignerEnvManager implements XMLReadable, XMLWriter {
     }
 
     /*
-         * ´Óxml¶ÁEnv
+         * ä»xmlè¯»Env
          */
     private static Env readEnv(XMLableReader reader) {
         Env env = null;

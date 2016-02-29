@@ -12,7 +12,7 @@ import com.fr.general.Inter;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-16
+ * @since 6.5.5 åˆ›å»ºäºŽ2011-6-16
  */
 public class LoadingBasicPaneTest {
 

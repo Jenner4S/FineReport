@@ -15,7 +15,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÉÏÎç11:28
+ * Time: ä¸Šåˆ11:28
  */
 public class UITableScrollPaneBorder extends AbstractBorder implements UIResource {
 

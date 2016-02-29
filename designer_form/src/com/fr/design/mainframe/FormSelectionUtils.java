@@ -46,7 +46,7 @@ public class FormSelectionUtils {
 						Widget cloned = new ClonedWidgetCreator(designer.getTarget())
 								.clonedWidgetWithNoRepeatName(creator.toData());
 						XCreator clondCreator = XCreatorUtils.createXCreator(cloned, creator.getSize());
-						// ÉèÖÃÎ»ÖÃ£¬ÒÆ¶¯20x20£¬·ÀÖ¹±»Õ³ÌûµÄ×é¼şÖØµş£¬ÕÕ¹Ë±íµ¥²¼¾ÖÇé¿öÏÂ
+						// è®¾ç½®ä½ç½®ï¼Œç§»åŠ¨20x20ï¼Œé˜²æ­¢è¢«ç²˜å¸–çš„ç»„ä»¶é‡å ï¼Œç…§é¡¾è¡¨å•å¸ƒå±€æƒ…å†µä¸‹
 						adapter.addBean(clondCreator, x + creator.getX() - rec.x + clondCreator.getWidth() / 2, y
 								+ creator.getY() - rec.y + clondCreator.getHeight() / 2);
 						designer.getSelectionModel().getSelection().addSelectedCreator(clondCreator);

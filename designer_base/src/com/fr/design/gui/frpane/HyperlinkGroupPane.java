@@ -20,17 +20,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ³¬¼¶Á´½Ó ½çÃæ.
+ * è¶…çº§é“¾æ¥ ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-25 ÉÏÎç11:17:57
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-25 ä¸Šåˆ11:17:57
  */
 public class HyperlinkGroupPane extends JControlPane {
 
     /**
-     * Éú³ÉÌí¼Ó°´Å¥µÄNameableCreator
+     * ç”Ÿæˆæ·»åŠ æŒ‰é’®çš„NameableCreator
      *
-     * @return ·µ»ØNameable°´Å¥Êı×é.
+     * @return è¿”å›NameableæŒ‰é’®æ•°ç»„.
      */
     public NameableCreator[] createNameableCreators() {
         NameableCreator[] creators = DesignModuleFactory.getHyperlinkGroupType().getHyperlinkCreators();
@@ -53,9 +53,9 @@ public class HyperlinkGroupPane extends JControlPane {
     }
 
     /**
-     * µ¯³öÁĞ±íµÄ±êÌâ.
+     * å¼¹å‡ºåˆ—è¡¨çš„æ ‡é¢˜.
      *
-     * @return ·µ»Ø±êÌâ×Ö·û´®.
+     * @return è¿”å›æ ‡é¢˜å­—ç¬¦ä¸².
      */
     public String title4PopupWindow() {
         return Inter.getLocText("FR-Designer_Hyperlink");
@@ -73,9 +73,9 @@ public class HyperlinkGroupPane extends JControlPane {
     }
 
     /**
-     * updateJsµÄGroup
+     * updateJsçš„Group
      *
-     * @return ·µ»ØNameJavaScriptGroup
+     * @return è¿”å›NameJavaScriptGroup
      */
     public NameJavaScriptGroup updateJSGroup() {
         Nameable[] res = this.update();

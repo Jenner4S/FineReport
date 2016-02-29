@@ -15,8 +15,8 @@ import com.fr.design.chart.series.SeriesCondition.LineMarkerTypePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç9:57
- * À×´ïÍ¼Ìõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:57
+ * é›·è¾¾å›¾æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class RadarPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = 4134539843311969532L;

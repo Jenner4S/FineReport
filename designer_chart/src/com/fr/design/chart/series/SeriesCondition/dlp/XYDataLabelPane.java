@@ -5,8 +5,8 @@ import java.awt.*;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-13 ÉÏÎç11:03:35
- * ÀàËµÃ÷: É¢µãµÄ±êÇ©½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-13 ä¸Šåˆ11:03:35
+ * ç±»è¯´æ˜: æ•£ç‚¹çš„æ ‡ç­¾ç•Œé¢
  */
 public class XYDataLabelPane extends DataLabelPane {
 

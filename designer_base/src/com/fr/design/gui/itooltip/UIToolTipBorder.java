@@ -10,7 +10,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-31
- * Time: ÉÏÎç10:38
+ * Time: ä¸Šåˆ10:38
  */
 public class UIToolTipBorder implements Border {
 

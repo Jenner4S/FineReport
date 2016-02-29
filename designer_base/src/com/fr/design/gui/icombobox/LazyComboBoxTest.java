@@ -19,7 +19,7 @@ import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-15
+ * @since 6.5.5 åˆ›å»ºäºŽ2011-6-15
  */
 public class LazyComboBoxTest {
 	public static void main(String[] args) {

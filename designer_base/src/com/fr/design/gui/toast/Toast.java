@@ -135,7 +135,7 @@ public class Toast extends JFrame {
         toastButton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Toast.makeToast(frame, "a asdadasdsadasniÈöµÄÈö´òËã!", 10);
+                Toast.makeToast(frame, "a asdadasdsadasniæ’’çš„æ’’æ‰“ç®—!", 10);
             }
         });
 

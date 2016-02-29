@@ -62,7 +62,7 @@ public class ChartDownLoadWorker extends SwingWorker<Void, Double>{
             Set key = files.keySet();
             Iterator iterator = key.iterator();
             int totalSize = 0;
-            //ÏÈµÃµ½ËùÓĞµÄ³¤¶È£¬·½±ã¼ÆËã°Ù·Ö±È
+            //å…ˆå¾—åˆ°æ‰€æœ‰çš„é•¿åº¦ï¼Œæ–¹ä¾¿è®¡ç®—ç™¾åˆ†æ¯”
             while (iterator.hasNext()) {
                 String jarName = (String) iterator.next();
                 String jarUrl = FILE_PATH + jarName;
@@ -80,7 +80,7 @@ public class ChartDownLoadWorker extends SwingWorker<Void, Double>{
                 InputStream reader = url.openStream();
                 String filePath = files.get(jarName);
                 int point = filePath.lastIndexOf(".");
-                //ÏÈĞ´ÁÙÊ±ÎÄ¼ş£¬·ÀÖ¹¸üĞÂÒ»°ëÒâÍâÖĞÖ¹
+                //å…ˆå†™ä¸´æ—¶æ–‡ä»¶ï¼Œé˜²æ­¢æ›´æ–°ä¸€åŠæ„å¤–ä¸­æ­¢
                 String tmpFilePath = filePath.substring(0,point)+TEMP+filePath.substring(point);
                 FileOutputStream writer = new FileOutputStream(tmpFilePath);
                 byte[] buffer = new byte[BYTE];
@@ -101,7 +101,7 @@ public class ChartDownLoadWorker extends SwingWorker<Void, Double>{
         return null;
     }
 
-    //Ìæ»»¸üĞÂÏÂÀ´µÄÁÙÊ±ÎÄ¼ş
+    //æ›¿æ¢æ›´æ–°ä¸‹æ¥çš„ä¸´æ—¶æ–‡ä»¶
     protected void replaceFiles(){
         try {
             Set key = files.keySet();
@@ -110,7 +110,7 @@ public class ChartDownLoadWorker extends SwingWorker<Void, Double>{
                 String jarName = (String) iterator.next();
                 String filePath = files.get(jarName);
                 int point = filePath.lastIndexOf(".");
-                //ÏÈĞ´ÁÙÊ±ÎÄ¼ş£¬·ÀÖ¹¸üĞÂÒ»°ëÒâÍâÖĞÖ¹
+                //å…ˆå†™ä¸´æ—¶æ–‡ä»¶ï¼Œé˜²æ­¢æ›´æ–°ä¸€åŠæ„å¤–ä¸­æ­¢
                 String tmpFilePath = filePath.substring(0,point)+TEMP+filePath.substring(point);
                 FileInputStream inputStream = new FileInputStream(tmpFilePath);
                 FileOutputStream writer = new FileOutputStream(filePath);
@@ -130,12 +130,12 @@ public class ChartDownLoadWorker extends SwingWorker<Void, Double>{
     }
 
     /**
-     * Íê³ÉÊ±µÄ¶¯×÷
+     * å®Œæˆæ—¶çš„åŠ¨ä½œ
      */
     public void done() {
-        //¼ì²âÊÇ·ñÃ»ÓĞ±£´æµÄÄ£°æ
+        //æ£€æµ‹æ˜¯å¦æ²¡æœ‰ä¿å­˜çš„æ¨¡ç‰ˆ
         SaveSomeTemplatePane saveSomeTempaltePane = new SaveSomeTemplatePane(true);
-        // Ö»ÓĞÒ»¸öÎÄ¼şÎ´±£´æÊ±
+        // åªæœ‰ä¸€ä¸ªæ–‡ä»¶æœªä¿å­˜æ—¶
         if (HistoryTemplateListPane.getInstance().getHistoryCount() == 1) {
             int choose = saveSomeTempaltePane.saveLastOneTemplate();
             if (choose != JOptionPane.CANCEL_OPTION) {

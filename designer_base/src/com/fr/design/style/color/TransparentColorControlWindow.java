@@ -3,10 +3,10 @@ package com.fr.design.style.color;
 import com.fr.design.gui.ipoppane.PopupHider;
 
 /**
- * Ö§³ÖÍ¸Ã÷µÄcolorControlWindow
+ * æ”¯æŒé€æ˜çš„colorControlWindow
  * 
  * @author focus
- * @time 2014Äê11ÔÂ13ÈÕÏÂÎç7:44:11
+ * @time 2014å¹´11æœˆ13æ—¥ä¸‹åˆ7:44:11
  * @version
  */
 public abstract class TransparentColorControlWindow extends  ColorControlWindow{

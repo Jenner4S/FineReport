@@ -32,9 +32,9 @@ public class ReportParameterAction extends JWorkBookAction {
     }
 
     /**
-     * 执行动作
+     * 鎵ц鍔ㄤ綔
      *
-     * @return 是否执行成功
+     * @return 鏄惁鎵ц鎴愬姛
      */
     public void actionPerformed(ActionEvent evt) {
         final JWorkBook jwb = getEditingComponent();

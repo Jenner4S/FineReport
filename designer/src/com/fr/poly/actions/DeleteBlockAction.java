@@ -16,7 +16,7 @@ import com.fr.poly.PolyDesigner;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-11
+ * @since 6.5.4 åˆ›å»ºäºŽ2011-4-11
  */
 public class DeleteBlockAction extends UpdateAction implements TemplateComponentActionInterface<PolyDesigner> {
 

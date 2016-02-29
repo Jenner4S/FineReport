@@ -7,7 +7,7 @@ import com.fr.design.gui.itextfield.UINumberField;
  * Created with IntelliJ IDEA.
  * User: Lenovo
  * Date: 13-3-29
- * Time: ÉÏÎç11:13
+ * Time: ä¸Šåˆ11:13
  * To change this template use File | Settings | File Templates.
  */
 

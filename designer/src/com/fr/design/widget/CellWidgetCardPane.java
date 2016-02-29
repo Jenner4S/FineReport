@@ -17,10 +17,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /*
- * carl :µ¥¶ÀÅª³öÀ´
+ * carl :å•ç‹¬å¼„å‡ºæ¥
  */
 public class CellWidgetCardPane extends BasicPane {
-    //	µ±Ç°µÄ±à¼­Æ÷ÊôĞÔ¶¨ÒåÃæ°å
+    //	å½“å‰çš„ç¼–è¾‘å™¨å±æ€§å®šä¹‰é¢æ¿
     private DataModify<? extends Widget> currentEditorDefinePane;
 
     private JTabbedPane tabbedPane;
@@ -146,13 +146,13 @@ public class CellWidgetCardPane extends BasicPane {
 
     @Override
     /**
-     *¼ì²é
+     *æ£€æŸ¥
      */
     public void checkValid() throws Exception {
         currentEditorDefinePane.checkValid();
     }
 
-    //:jackie  Èç¹ûÑ¡ÔñµÄÏîÓĞĞÎÌ¬£¬Ôò½«ĞÎÌ¬Ãæ°å¼ÓÈëtabÃæ°å
+    //:jackie  å¦‚æœé€‰æ‹©çš„é¡¹æœ‰å½¢æ€ï¼Œåˆ™å°†å½¢æ€é¢æ¿åŠ å…¥tabé¢æ¿
     private void addPresPane(boolean add) {
         if (add) {
             tabbedPane.add(this.presPane, 1);

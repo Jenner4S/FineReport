@@ -9,7 +9,7 @@ import com.fr.form.main.FormIO;
  * @author richie
  * @date 14/11/10
  * @since 8.0
- * 表单模板参数读取实现
+ * 琛ㄥ崟妯℃澘鍙傛暟璇诲彇瀹炵幇
  */
 public class FormParameterReader extends AbstractParameterReader {
 

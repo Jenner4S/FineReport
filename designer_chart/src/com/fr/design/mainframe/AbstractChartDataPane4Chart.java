@@ -27,7 +27,7 @@ import java.awt.event.ItemListener;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/3
- * Time: ÏÂÎç6:53
+ * Time: ä¸‹åˆ6:53
  */
 public class AbstractChartDataPane4Chart extends DataContentsPane implements UIObserver {
 
@@ -138,7 +138,7 @@ public class AbstractChartDataPane4Chart extends DataContentsPane implements UIO
 
 
     /**
-     * Êı¾İÅäÖÃÃæ°å
+     * æ•°æ®é…ç½®é¢æ¿
      *
      * @return
      */
@@ -187,18 +187,18 @@ public class AbstractChartDataPane4Chart extends DataContentsPane implements UIO
 
 
     /**
-     * ×¢²á¹Û²ìÕß¼àÌıÊÂ¼ş
+     * æ³¨å†Œè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         this.observerListener = listener;
     }
 
     /**
-     * Ê¹ÓÃÓ¦¸ÃÏìÓ¦listener
+     * ä½¿ç”¨åº”è¯¥å“åº”listener
      *
-     * @return Ó¦¸ÃÏìÓ¦
+     * @return åº”è¯¥å“åº”
      */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -229,14 +229,14 @@ public class AbstractChartDataPane4Chart extends DataContentsPane implements UIO
     }
 
     /**
-     * Çå¿ÕÊı¾İ¼¯µÄÉèÖÃ
+     * æ¸…ç©ºæ•°æ®é›†çš„è®¾ç½®
      */
     public void clearTableDataSetting() {
 
     }
 
     /**
-     * Êı¾İ¼¯Êı¾İ¸Ä±ä
+     * æ•°æ®é›†æ•°æ®æ”¹å˜
      */
     public void fireTableDataChange() {
 

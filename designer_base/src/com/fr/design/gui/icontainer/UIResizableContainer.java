@@ -43,7 +43,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÔÊĞíÍÏ×§
+     * è®¾ç½®æ˜¯å¦å…è®¸æ‹–æ‹½
      *
      * @param isEnabled
      */
@@ -52,7 +52,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * ÉèÖÃÃæ°å¿í¶È
+     * è®¾ç½®é¢æ¿å®½åº¦
      *
      * @param width
      */
@@ -88,7 +88,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * ½«Ãæ°åÉèÖÃ³É×î¼ÑµÄ¿í¶È
+     * å°†é¢æ¿è®¾ç½®æˆæœ€ä½³çš„å®½åº¦
      */
     public void setWindow2PreferWidth() {
         if (containerWidth == toolPaneHeight) {
@@ -98,7 +98,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * µÃµ½ÉÏÏÂ×ÓÃæ°åµÄ¸ß¶È
+     * å¾—åˆ°ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦
      *
      * @return
      */
@@ -107,7 +107,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * ÉèÖÃ¹Ø±ÕÉè¼ÆÆ÷Ç°×îºóÒ»´ÎÉÏÏÂ×ÓÃæ°åµÄ¸ß¶È
+     * è®¾ç½®å…³é—­è®¾è®¡å™¨å‰æœ€åä¸€æ¬¡ä¸Šä¸‹å­é¢æ¿çš„é«˜åº¦
      *
      * @param toolPaneY
      */
@@ -116,7 +116,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * µÃµ½ÈİÆ÷µÄ¿í¶È
+     * å¾—åˆ°å®¹å™¨çš„å®½åº¦
      *
      * @return
      */
@@ -125,7 +125,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * ÉèÖÃ¹Ø±ÕÉè¼ÆÆ÷Ç°×îºóÒ»´ÎÃæ°åµÄ¿í¶È
+     * è®¾ç½®å…³é—­è®¾è®¡å™¨å‰æœ€åä¸€æ¬¡é¢æ¿çš„å®½åº¦
      *
      * @param containerWidth
      */
@@ -187,16 +187,16 @@ public class UIResizableContainer extends JPanel {
 
     @Override
     /**
-     * µÃµ½×î¼Ñ´óĞ¡
+     * å¾—åˆ°æœ€ä½³å¤§å°
      */
     public Dimension getPreferredSize() {
         return new Dimension(containerWidth, 400);
     }
 
     /**
-     * Ìæ»»ÉÏ×ÓÃæ°å
+     * æ›¿æ¢ä¸Šå­é¢æ¿
      *
-     * @param pane Ãæ°å
+     * @param pane é¢æ¿
      */
     public void replaceUpPane(JComponent pane) {
         remove(pane);
@@ -207,9 +207,9 @@ public class UIResizableContainer extends JPanel {
 
 
     /**
-     * Ìæ»»ÏÂ×ÓÃæ°å
+     * æ›¿æ¢ä¸‹å­é¢æ¿
      *
-     * @param pane Ãæ°å
+     * @param pane é¢æ¿
      */
     public void replaceDownPane(JComponent pane) {
         remove(pane);
@@ -219,7 +219,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * µÃµ½ÉÏ×ÓÃæ°å
+     * å¾—åˆ°ä¸Šå­é¢æ¿
      *
      * @return
      */
@@ -228,7 +228,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * µÃµ½ÏÂ×ÓÃæ°å
+     * å¾—åˆ°ä¸‹å­é¢æ¿
      *
      * @return
      */
@@ -237,7 +237,7 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * Ë¢ĞÂÏÂÃæ°å
+     * åˆ·æ–°ä¸‹é¢æ¿
      */
     public void refreshDownPane() {
 
@@ -449,8 +449,8 @@ public class UIResizableContainer extends JPanel {
     }
 
     /**
-     * Ö÷º¯Êı
-     * @param args  ²ÎÊı
+     * ä¸»å‡½æ•°
+     * @param args  å‚æ•°
      */
     public static void main(String... args) {
         JFrame jf = new JFrame("test");

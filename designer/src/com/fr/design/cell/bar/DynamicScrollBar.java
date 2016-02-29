@@ -21,7 +21,7 @@ import com.fr.report.ReportHelper;
  */
 public class DynamicScrollBar extends JScrollBar {
     private ElementCasePane reportPane;
-    private boolean isSupportHide = true;//ÊÇ·ñÖ§³Ö½«ScrollBarÒş²ØÆğÀ´.
+    private boolean isSupportHide = true;//æ˜¯å¦æ”¯æŒå°†ScrollBaréšè—èµ·æ¥.
     private int dpi;
 
     public DynamicScrollBar(int orientation, ElementCasePane reportPane, int dpi) {
@@ -174,7 +174,7 @@ public class DynamicScrollBar extends JScrollBar {
             maxIndex = Math.max(lastIndex, extent) + 1;
             maxIndex = Math.max(newValue + extent, maxIndex);
 
-            // TODO ALEX_SEP ²»Ã÷°×Õâ¶Î´úÂëµÄ±ØÒªĞÔ
+            // TODO ALEX_SEP ä¸æ˜ç™½è¿™æ®µä»£ç çš„å¿…è¦æ€§
 //                //Check GridSelection.
 //                GridSelection gridSelection = reportPane.getGridSelection();
 //                int type = gridSelection.getType();

@@ -36,7 +36,7 @@ public class GlobalStyleMenuDef extends MenuDef {
     }
 
     /**
-     * ¸üĞÂ²Ëµ¥Ïî
+     * æ›´æ–°èœå•é¡¹
      */
     public void updateMenu() {
         UIMenu createdMenu = this.createJMenu();
@@ -56,18 +56,18 @@ public class GlobalStyleMenuDef extends MenuDef {
     }
 
     /**
-     * ¿ØÖÆ×Ô¶¨ÒåÑùÊ½Ãû³ÆµÄ³¤¶È
+     * æ§åˆ¶è‡ªå®šä¹‰æ ·å¼åç§°çš„é•¿åº¦
      *
-     * @param longName Ãû×Ö
-     * @return ¿ØÖÆÖ®ºóµÄÃû×Ö
+     * @param longName åå­—
+     * @return æ§åˆ¶ä¹‹åçš„åå­—
      */
     public static String judgeChina(String longName) {
 
-        //neil:bug 1623 ¿ØÖÆ×Ô¶¨ÒåÑùÊ½Ãû³ÆµÄ³¤¶È£¬Ö»ÏÔÊ¾Ç°12¸ö×Ö·û£¬Ã¿¸öÓ¢ÎÄËã1¸ö×Ö·û£¬Ã¿¸öºº×ÖËã2¸ö×Ö·û
+        //neil:bug 1623 æ§åˆ¶è‡ªå®šä¹‰æ ·å¼åç§°çš„é•¿åº¦ï¼Œåªæ˜¾ç¤ºå‰12ä¸ªå­—ç¬¦ï¼Œæ¯ä¸ªè‹±æ–‡ç®—1ä¸ªå­—ç¬¦ï¼Œæ¯ä¸ªæ±‰å­—ç®—2ä¸ªå­—ç¬¦
         Integer index = 0;
         StringBuffer sBuffer = new StringBuffer();
         for (int i = 0; i < longName.length(); i++) {
-            String bb = longName.substring(i, i + 1); //Éú³ÉÒ»¸öPattern,Í¬Ê±±àÒëÒ»¸öÕıÔò±í´ïÊ½
+            String bb = longName.substring(i, i + 1); //ç”Ÿæˆä¸€ä¸ªPattern,åŒæ—¶ç¼–è¯‘ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼
             boolean cc = PinyinHelper.isChinese(bb.charAt(0));
             if (index == MAX_LENTH) {
                 sBuffer.append("..");
@@ -103,9 +103,9 @@ public class GlobalStyleMenuDef extends MenuDef {
         }
 
         /**
-         * ¶¯×÷
+         * åŠ¨ä½œ
          *
-         * @param e ÊÂ¼ş
+         * @param e äº‹ä»¶
          */
         public void actionPerformed(ActionEvent e) {
             CellElementPropertyPane.getInstance().GoToPane(new String[]{Inter.getLocText("FR-Engine_Style"), Inter.getLocText("FR-Engine_Custom")});
@@ -120,7 +120,7 @@ public class GlobalStyleMenuDef extends MenuDef {
         public GlobalStyleSelection(ElementCasePane t, NameStyle nameStyle) {
             super(t);
             setName(StringUtils.EMPTY);
-            //ÖØ¸´»­ÁËÒ»´Î£¬²»ĞèÒªicon
+            //é‡å¤ç”»äº†ä¸€æ¬¡ï¼Œä¸éœ€è¦icon
 //        	this.setName(nameStyle == null ? "" : nameStyle.getName());
 //        	this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_format/cell.png"));
             this.setNameStyle(nameStyle);
@@ -135,8 +135,8 @@ public class GlobalStyleMenuDef extends MenuDef {
         }
 
         /**
-         * Ö´ĞĞ¶¯×÷·µ»Ø
-         * @return ÊÇ·µ»Øtrue
+         * æ‰§è¡ŒåŠ¨ä½œè¿”å›
+         * @return æ˜¯è¿”å›true
          */
         public boolean executeActionReturnUndoRecordNeeded() {
             StylePane stylePane = new StylePane();

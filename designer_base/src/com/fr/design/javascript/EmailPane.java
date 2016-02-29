@@ -54,8 +54,8 @@ public class EmailPane extends FurtherBasicBeanPane<EmailJavaScript> {
 	}
     
     /**
-     * ÓÉÓÚ·¢ÓÊ¼şpaneÖĞµÄshowTplContentµ¥Ñ¡¿òºÍÍ¼±í³¬Á´itemNameTextFieldÎÄ±¾¿ò
-     * ÔÚÒ»Ğ©Çé¿öÏÂ²»Ê¹ÓÃ£¬ËùÒÔÄ¬ÈÏcenterPaneÎª¶¼ÓĞ£¬ÆäËûÇé¿öÏÂ×ÓÀàÊµÏÖ
+     * ç”±äºå‘é‚®ä»¶paneä¸­çš„showTplContentå•é€‰æ¡†å’Œå›¾è¡¨è¶…é“¾itemNameTextFieldæ–‡æœ¬æ¡†
+     * åœ¨ä¸€äº›æƒ…å†µä¸‹ä¸ä½¿ç”¨ï¼Œæ‰€ä»¥é»˜è®¤centerPaneä¸ºéƒ½æœ‰ï¼Œå…¶ä»–æƒ…å†µä¸‹å­ç±»å®ç°
      */
     protected void initCenterPane(UILabel mainTextLabel, JScrollPane scrollPane, double fill, double preferred) {
     	double[] rowSize = { preferred, preferred, preferred, preferred, preferred, fill, preferred, preferred, preferred };
@@ -96,7 +96,7 @@ public class EmailPane extends FurtherBasicBeanPane<EmailJavaScript> {
 	
 
     /**
-     * ÖØÖÃ¸÷²¿·Ö
+     * é‡ç½®å„éƒ¨åˆ†
      */
 	public void reset() {
 		populateBean(null);
@@ -134,17 +134,17 @@ public class EmailPane extends FurtherBasicBeanPane<EmailJavaScript> {
 	}
 
     /**
-     * ½çÃæµÄ±êÌâ
-     * @return ±êÌâ×Ö´®
+     * ç•Œé¢çš„æ ‡é¢˜
+     * @return æ ‡é¢˜å­—ä¸²
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Designer_Email_sentEmail");
 	}
 
     /**
-     * ÊÇ·ñÊÇ±¾Àà¶ÔÏó
-     * @param ob ĞèÒªÅĞ¶ÏµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇ±¾Àà¶ÔÏó
+     * æ˜¯å¦æ˜¯æœ¬ç±»å¯¹è±¡
+     * @param ob éœ€è¦åˆ¤æ–­çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯æœ¬ç±»å¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return ob instanceof EmailJavaScript;

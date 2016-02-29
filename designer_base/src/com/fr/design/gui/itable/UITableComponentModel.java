@@ -2,10 +2,10 @@ package com.fr.design.gui.itable;
 
 
 /**
- * Ô¤ÏëµÄ Ö»±ÈUITableDataModel ²î±ğÒ»¼şÊÂ: setValue ²»×ötoString ±£³Ö±à¼­component´æÔÚ.
+ * é¢„æƒ³çš„ åªæ¯”UITableDataModel å·®åˆ«ä¸€ä»¶äº‹: setValue ä¸åštoString ä¿æŒç¼–è¾‘componentå­˜åœ¨.
  * 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-6 ÏÂÎç03:32:22
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-6 ä¸‹åˆ03:32:22
  */
 public class UITableComponentModel extends UITableDataModel {
 

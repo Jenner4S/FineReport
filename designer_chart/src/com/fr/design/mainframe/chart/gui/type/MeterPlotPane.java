@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÒÇ±íÅÌ, ÊôĞÔ±í ÀàĞÍÑ¡Ôñ ½çÃæ.
+ * ä»ªè¡¨ç›˜, å±æ€§è¡¨ ç±»å‹é€‰æ‹© ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç10:48:57
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ10:48:57
  */
 public class MeterPlotPane extends AbstractChartTypePane {
 	
@@ -76,15 +76,15 @@ public class MeterPlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Meter");
 	}
 	
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -94,7 +94,7 @@ public class MeterPlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
       	MeterPlot meterPlot = (MeterPlot)chart.getPlot();
@@ -117,9 +117,9 @@ public class MeterPlotPane extends AbstractChartTypePane {
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return super.accept(ob) && ((Chart) ob).getPlot() instanceof MeterPlot;

@@ -24,9 +24,9 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
     private String[] cardNames;
 
     /**
-     * ¹¹Ôìº¯Êý£¬¿Ø¼þÊÂ¼þµÄÌá½»Èë¿âÃæ°å
-     * @param javaScriptActionPane JSÌá½»Ãæ°å¶ÔÏó
-     * @param dbManipulationPaneList Ìá½»Èë¿âµÄÌá½»Ãæ°åÁÐ±í
+     * æž„é€ å‡½æ•°ï¼ŒæŽ§ä»¶äº‹ä»¶çš„æäº¤å…¥åº“é¢æ¿
+     * @param javaScriptActionPane JSæäº¤é¢æ¿å¯¹è±¡
+     * @param dbManipulationPaneList æäº¤å…¥åº“çš„æäº¤é¢æ¿åˆ—è¡¨
      */
     public Commit2DBJavaScriptPane(final JavaScriptActionPane javaScriptActionPane, List dbManipulationPaneList) {
         this.dbmPaneList=dbManipulationPaneList;
@@ -57,7 +57,7 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
 
 
     /**
-     * ¸üÐÂDBManipulationPane
+     * æ›´æ–°DBManipulationPane
      */
     public void updateCardPane(){
         cardNames = new String[dbmPaneList.size()] ;
@@ -78,8 +78,8 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
     }
 
     /**
-     * ÐÂ½¨DBManipulationPane
-     * @return    ÐÂ½¨µÄDBManipulationPane
+     * æ–°å»ºDBManipulationPane
+     * @return    æ–°å»ºçš„DBManipulationPane
      */
     public DBManipulationPane createDBManipulationPane(){
         DBManipulationPane db = javaScriptActionPane.createDBManipulationPane();
@@ -90,19 +90,19 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
     }
 
     /**
-     * ´°¿ÚÃû³Æ
-     * @return ·µ»Ø´°¿ÚÃû³Æ
+     * çª—å£åç§°
+     * @return è¿”å›žçª—å£åç§°
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("JavaScript-Commit_to_Database");
 	}
 
 	/**
-	 * ½çÃæÖØÖÃ
+	 * ç•Œé¢é‡ç½®
 	 */
 	public void reset() {
 		this.javaScriptActionPane.setCall(null);
-		//ÖØÖÃºóÖ»±£Áô£¬Ö»ÁôµÚÒ»¸ötab
+		//é‡ç½®åŽåªä¿ç•™ï¼Œåªç•™ç¬¬ä¸€ä¸ªtab
         while (dbmPaneList.size() > 1){
             dbmPaneList.remove(1);
         }
@@ -111,14 +111,14 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
 
 	@Override
     /**
-     * ½«JavaBeanÄÚµÄÊý¾ÝÊä³öÖÁ½çÃæÉÏ
+     * å°†JavaBeanå†…çš„æ•°æ®è¾“å‡ºè‡³ç•Œé¢ä¸Š
      */
 	public void populateBean(Commit2DBJavaScript commit2db) {
 		if (commit2db == null) {
 			reset();
 			return;
 		}
-        //ÏÈ°ÑÔ­À´µÄlistÇå³ý£¬È»ºóÔÙ¸ù¾Ý´«Èë²ÎÊýÖØÐÂadd
+        //å…ˆæŠŠåŽŸæ¥çš„listæ¸…é™¤ï¼Œç„¶åŽå†æ ¹æ®ä¼ å…¥å‚æ•°é‡æ–°add
         dbmPaneList.clear();
 		this.javaScriptActionPane.setCall(commit2db.getCallBack());
         for(int i = 0;i < commit2db.getDBManipulation().size();i++){
@@ -130,8 +130,8 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
     }
 
     /**
-     * ¸üÐÂÊý¾Ý²ãJavaBean
-     * @return ·µ»ØJavaBean
+     * æ›´æ–°æ•°æ®å±‚JavaBean
+     * @return è¿”å›žJavaBean
      */
 	public Commit2DBJavaScript updateBean() {
 		Commit2DBJavaScript commit2dbJavaScript = new Commit2DBJavaScript();
@@ -153,9 +153,9 @@ public class Commit2DBJavaScriptPane extends FurtherBasicBeanPane<Commit2DBJavaS
 	}
 
     /**
-     * ÅÐ¶ÏÊÇ·ñÊÇÄÜ½ÓÊÜµÄÊý¾ÝÀàÐÍ
-     * @param ob ¶ÔÏó
-     * @return ·µ»ØÊÇ·ñÊÇÄÜ½ÓÊÜµÄÊý¾ÝÀàÐÍ
+     * åˆ¤æ–­æ˜¯å¦æ˜¯èƒ½æŽ¥å—çš„æ•°æ®ç±»åž‹
+     * @param ob å¯¹è±¡
+     * @return è¿”å›žæ˜¯å¦æ˜¯èƒ½æŽ¥å—çš„æ•°æ®ç±»åž‹
      */
 	public boolean accept(Object ob) {
 		return ob instanceof Commit2DBJavaScript;

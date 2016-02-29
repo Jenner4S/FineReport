@@ -16,7 +16,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-5
- * Time: 下午4:05
+ * Time: 涓嬪崍4:05
  */
 public class UISpinnerButtonUI extends UIBasicButtonUI {
     private int orientation;
@@ -24,9 +24,9 @@ public class UISpinnerButtonUI extends UIBasicButtonUI {
     protected static Dimension xpSize = new Dimension(15, 8);
 
     /**
-     * 创建UI
-     * @param c 组件
-     * @return 组件UI
+     * 鍒涘缓UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         throw new IllegalStateException("Must not be used this way.");

@@ -23,7 +23,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-17
- * Time: 上午10:16
+ * Time: 涓婂崍10:16
  */
 public class UISBChooser extends JDialog {
     private static final int VALUE = 100;
@@ -143,14 +143,14 @@ public class UISBChooser extends JDialog {
     }
 
     /**
-     * 显示这个Chooser
+     * 鏄剧ず杩欎釜Chooser
      *
-     * @param frame   框架
-     * @param ref     颜色
-     * @param inColor 颜色
-     * @param s       int值S
-     * @param b       亮度
-     * @return 返回颜色
+     * @param frame   妗嗘灦
+     * @param ref     棰滆壊
+     * @param inColor 棰滆壊
+     * @param s       int鍊糞
+     * @param b       浜害
+     * @return 杩斿洖棰滆壊
      */
     public static Color showSBChooser(Frame frame, Color ref, Color inColor, int s, int b) {
         if (myInstance == null) {
@@ -164,7 +164,7 @@ public class UISBChooser extends JDialog {
     }
 
     /**
-     * 删除实例
+     * 鍒犻櫎瀹炰緥
      */
     public static void deleteInstance() {
         myInstance = null;

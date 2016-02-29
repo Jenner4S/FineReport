@@ -37,7 +37,7 @@ public class ExtendedComboBox extends UIComboBox {
     }
 
     /**
-     * ¸üÐÂUI
+     * æ›´æ–°UI
      */
     public void updateUI() {
         setUI(new ExtendedComboBoxUI());

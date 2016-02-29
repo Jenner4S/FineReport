@@ -44,7 +44,7 @@ public class CellWidgetAttrAction extends AbstractCellElementAction {
         try {
             Widget oldWidget = (Widget) cellElement.getWidget().clone();
             pane.update(cellElement);
-            //这边需要重新设置权限细粒度的hashset是因为Update是直接生成一个新的来update的，所以以前里面的hashset都没有了
+            //杩欒竟闇�瑕侀噸鏂拌缃潈闄愮粏绮掑害鐨刪ashset鏄洜涓篣pdate鏄洿鎺ョ敓鎴愪竴涓柊鐨勬潵update鐨勶紝鎵�浠ヤ互鍓嶉噷闈㈢殑hashset閮芥病鏈変簡
             Widget newWidget = cellElement.getWidget();
             if (newWidget.getClass() == oldWidget.getClass()) {
             	newWidget.setWidgetPrivilegeControl((WidgetPrivilegeControl) oldWidget.getWidgetPrivilegeControl().clone());

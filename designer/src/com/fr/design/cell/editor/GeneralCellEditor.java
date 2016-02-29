@@ -25,9 +25,9 @@ public class GeneralCellEditor extends TextCellEditor {
 	public Object getCellEditorValue()  throws Exception {
         Object textValue = super.getCellEditorValue();
 
-        //Èç¹û¸ñÊ½ÊÇTextFormat£¬¾Í·µ»ØÆÕÍ¨ÎÄ±¾.
-        //TODO, peter Õâ¸öµØ·½ĞèÒªÖØĞÂÉè¼Æ,ÎÒ¸Ğ¾õÏÂÃæµÄ convertGeneralStringAccordingToExcel£¬¿ÉÒÔÓÃForamtÀ´ÊµÏÖ¡£
-        //peter:Ö»¶Á·½Ê½»ñµÃStyle.
+        //å¦‚æœæ ¼å¼æ˜¯TextFormatï¼Œå°±è¿”å›æ™®é€šæ–‡æœ¬.
+        //TODO, peter è¿™ä¸ªåœ°æ–¹éœ€è¦é‡æ–°è®¾è®¡,æˆ‘æ„Ÿè§‰ä¸‹é¢çš„ convertGeneralStringAccordingToExcelï¼Œå¯ä»¥ç”¨Foramtæ¥å®ç°ã€‚
+        //peter:åªè¯»æ–¹å¼è·å¾—Style.
         Style style = cellElement.getStyle();
         if(style != null && style.getFormat() instanceof TextFormat) {
             return textValue;

@@ -8,7 +8,7 @@ import java.awt.LayoutManager;
 /**
  * @author richer
  * @since 6.5.3
- * Í³Ò»µÄ²¼¾Ö¹ÜÀíÆ÷
+ * ç»Ÿä¸€çš„å¸ƒå±€ç®¡ç†å™¨
  */
 public interface FRLayoutManager extends LayoutManager{
     public boolean isResizable();

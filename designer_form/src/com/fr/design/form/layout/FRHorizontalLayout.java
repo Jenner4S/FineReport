@@ -9,7 +9,7 @@ import java.awt.Insets;
 
 /**
  * @author richer
- * @since 6.5.3 ˮƽ���� ���в����ڵĿؼ��ĸ߶Ƚ��������ĸ߶�һ���������Լ����뷽ʽ������������
+ * @since 6.5.3 水平布局 所有布局内的控件的高度将和容器的高度一样，宽度以及对齐方式可以自由设置
  */
 public class FRHorizontalLayout extends FRFlowLayout {
 

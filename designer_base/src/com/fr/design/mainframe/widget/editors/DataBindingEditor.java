@@ -24,7 +24,7 @@ import com.fr.general.Inter;
  * DataBindingEditor
  *
  * @editor zhou
- * @since 2012-3-29下午5:26:28
+ * @since 2012-3-29涓嬪崍5:26:28
  */
 public class DataBindingEditor extends Editor<DataBinding> {
 
@@ -135,9 +135,9 @@ public class DataBindingEditor extends Editor<DataBinding> {
     }
 
     /**
-     * 是否是支持的类型
-     * @param object  需要被判断的object
-     * @return 如果是，返回true
+     * 鏄惁鏄敮鎸佺殑绫诲瀷
+     * @param object  闇�瑕佽鍒ゆ柇鐨刼bject
+     * @return 濡傛灉鏄紝杩斿洖true
      */
     public boolean accept(Object object) {
         return object instanceof DataBinding;

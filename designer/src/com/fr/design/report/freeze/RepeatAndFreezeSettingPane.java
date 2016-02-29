@@ -22,38 +22,38 @@ import com.fr.stable.bridge.StableFactory;
  * Sets Report Page Attributes
  */
 public class RepeatAndFreezeSettingPane extends BasicPane {
-	// ÖØ¸´±êÌâĞĞ
+	// é‡å¤æ ‡é¢˜è¡Œ
 	private RepeatRowPane repeatTitleRowPane;
-	// ÖØ¸´±êÌâÁĞ
+	// é‡å¤æ ‡é¢˜åˆ—
 	private RepeatColPane repeatTitleColPane;
-	// ÖØ¸´½áÎ²ĞĞ
+	// é‡å¤ç»“å°¾è¡Œ
 	private RepeatRowPane repeatFinisRowPane;
-	// ÖØ¸´½áÎ²ÁĞ
+	// é‡å¤ç»“å°¾åˆ—
 	private RepeatColPane repeatFinisColPane;
-	// ·ÖÒ³¶³½áĞĞ
+	// åˆ†é¡µå†»ç»“è¡Œ
 	private FreezePagePane freezePageRowPane;
-	// ·ÖÒ³¶³½áÁĞ
+	// åˆ†é¡µå†»ç»“åˆ—
 	private FreezePagePane freezePageColPane;
-	// Ìî±¨¶³½áĞĞ
+	// å¡«æŠ¥å†»ç»“è¡Œ
 	private FreezeWriteRowPane freezeWriteRowPane;
-	// Ìî±¨¶³½áÁĞ
+	// å¡«æŠ¥å†»ç»“åˆ—
 	private FreezeWriteColPane freezeWriteColPane;
-	// ÖØ¸´±êÌâ
+	// é‡å¤æ ‡é¢˜
 	private UICheckBox useRepeatTitleRCheckBox;
 	private UICheckBox useRepeatTitleCCheckBox;
-	// ÖØ¸´½áÎ²
+	// é‡å¤ç»“å°¾
 	private UICheckBox useRepeatFinisRCheckBox;
 	private UICheckBox useRepeatFinisCCheckBox;
 
-	// ·ÖÒ³¶³½á
+	// åˆ†é¡µå†»ç»“
 	private UICheckBox usePageFrozenCCheckBox;
 	private UICheckBox usePageFrozenRCheckBox;
-	// Ìî±¨¶³½á
+	// å¡«æŠ¥å†»ç»“
 	private UICheckBox useWriteFrozenCCheckBox;
 	private UICheckBox useWriteFrozenRCheckBox;
 
 	/**
-	 * ÖØ¸´±êÌâĞĞ
+	 * é‡å¤æ ‡é¢˜è¡Œ
 	 */
 	private JPanel initRowStartPane(){
 		JPanel soverlapRowStartPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
@@ -67,15 +67,15 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * ÖØ¸´±êÌâÁĞ
+	 * é‡å¤æ ‡é¢˜åˆ—
 	 */
 	private JPanel initColStartPane(){
-		// ÖØ¸´´òÓ¡±êÌâµÄÆğÊ¼ÁĞ
+		// é‡å¤æ‰“å°æ ‡é¢˜çš„èµ·å§‹åˆ—
 		JPanel soverlapColStartPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		useRepeatTitleCCheckBox = new UICheckBox();
 		soverlapColStartPane.add(useRepeatTitleCCheckBox);
 		soverlapColStartPane.add(new UILabel(Inter.getLocText(new String[]{"PageSetup-Title_Start_Column", "From"})));
-		// ÖØ¸´´òÓ¡±êÌâµÄ½áÊøÁĞ
+		// é‡å¤æ‰“å°æ ‡é¢˜çš„ç»“æŸåˆ—
 		repeatTitleColPane = new RepeatColPane();
 		soverlapColStartPane.add(repeatTitleColPane);
 		
@@ -83,10 +83,10 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * ÖØ¸´½áÎ²ĞĞ
+	 * é‡å¤ç»“å°¾è¡Œ
 	 */
 	private JPanel initFootRowStarPane(){
-		// ÖØ¸´´òÓ¡½áÎ²µÄÆğÊ¼ĞĞ
+		// é‡å¤æ‰“å°ç»“å°¾çš„èµ·å§‹è¡Œ
 		JPanel foverlapRowStartPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		useRepeatFinisRCheckBox = new UICheckBox();
 		foverlapRowStartPane.add(useRepeatFinisRCheckBox);
@@ -98,10 +98,10 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * ÖØ¸´½áÎ²ÁĞ
+	 * é‡å¤ç»“å°¾åˆ—
 	 */
 	private JPanel initFootColStartPane(){
-		// ÖØ¸´´òÓ¡½áÎ²µÄÆğÊ¼ÁĞ
+		// é‡å¤æ‰“å°ç»“å°¾çš„èµ·å§‹åˆ—
 		JPanel foverlapColStartPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		useRepeatFinisCCheckBox = new UICheckBox();
 		foverlapColStartPane.add(useRepeatFinisCCheckBox);
@@ -113,12 +113,12 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * »ñÈ¡·ÖÒ³¶³½áµÄ±êÌâ(±íµ¥ÖĞ²»ĞèÒªĞ´·ÖÒ³¶ş×Ö)
+	 * è·å–åˆ†é¡µå†»ç»“çš„æ ‡é¢˜(è¡¨å•ä¸­ä¸éœ€è¦å†™åˆ†é¡µäºŒå­—)
 	 * 
-	 * @return ·ÖÒ³¶³½áµÄ±êÌâ
+	 * @return åˆ†é¡µå†»ç»“çš„æ ‡é¢˜
 	 * 
 	 *
-	 * @date 2014-11-14-ÏÂÎç1:32:08
+	 * @date 2014-11-14-ä¸‹åˆ1:32:08
 	 * 
 	 */
 	protected String getPageFrozenTitle(){
@@ -126,11 +126,11 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * ·ÖÒ³¶³½áPane
+	 * åˆ†é¡µå†»ç»“Pane
 	 */
 	private JPanel initPageFrozenPane(){
 		JPanel pagePanel = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		// ·ÖÒ³¶³½á
+		// åˆ†é¡µå†»ç»“
 		UILabel pageLabel = new UILabel(getPageFrozenTitle());
 		JPanel pageLabelPanel = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		pageLabelPanel.add(pageLabel);
@@ -145,7 +145,7 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 		JPanel pageRowGridPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		pageRowGridPane.add(this.usePageFrozenRCheckBox = new UICheckBox());
 		pagecon.add(pageRowGridPane);
-		// ÏÔÊ¾ĞĞ¶³½áĞÅÏ¢µÄpanel
+		// æ˜¾ç¤ºè¡Œå†»ç»“ä¿¡æ¯çš„panel
 		freezePageRowPane = new FreezePagePane(true);
 		pageRowGridPane.add(freezePageRowPane);
 		addPageFrozenCol(pagecon);
@@ -154,10 +154,10 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * ·ÖÒ³¶³½áÁĞ
+	 * åˆ†é¡µå†»ç»“åˆ—
 	 */
 	private void addPageFrozenCol(JPanel pagecon){
-		// ÏÔÊ¾ÁĞ¶³½áĞÅÏ¢µÄpanel
+		// æ˜¾ç¤ºåˆ—å†»ç»“ä¿¡æ¯çš„panel
 		freezePageColPane = new FreezePagePane(false);
 		JPanel pageColGridPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		pageColGridPane.add(this.usePageFrozenCCheckBox = new UICheckBox());
@@ -166,11 +166,11 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	/**
-	 * Ìî±¨¶³½áPane
+	 * å¡«æŠ¥å†»ç»“Pane
 	 */
 	private JPanel initWriteFrozenPane(){
 		JPanel writePanel = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		// Ìî±¨¶³½á
+		// å¡«æŠ¥å†»ç»“
 		UILabel writeLabel = new UILabel(Inter.getLocText(new String[]{"Face_Write", "Frozen"}) + ":");
 		JPanel writeLabelPanel = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		writeLabelPanel.add(writeLabel);
@@ -179,10 +179,10 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 		writecon.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 		writePanel.add(writecon, BorderLayout.CENTER);
 
-		// ĞĞ¶³½á
+		// è¡Œå†»ç»“
 		JPanel writeRowPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		writeRowPane.add(this.useWriteFrozenRCheckBox = new UICheckBox());
-		// ÁĞ¶³½á
+		// åˆ—å†»ç»“
 		JPanel writeColPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		writeColPane.add(this.useWriteFrozenCCheckBox = new UICheckBox());
 		writecon.add(writeRowPane);
@@ -207,8 +207,8 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 		repeatPanel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 		JPanel freezePanel = FRGUIPaneFactory.createBorderLayout_S_Pane();
 		outfreezePanel.add(freezePanel);
-		// ÖØ¸´´òÓ¡²¿·Ö
-		// ÖØ¸´´òÓ¡±êÌâµÄÆğÊ¼ĞĞ
+		// é‡å¤æ‰“å°éƒ¨åˆ†
+		// é‡å¤æ‰“å°æ ‡é¢˜çš„èµ·å§‹è¡Œ
 		JPanel labelPanel = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		labelPanel.add(new UILabel(Inter.getLocText("FR-Engine_Select_the_repeated_row_and_column") + ":"));
 		UILabel warning = new UILabel("(" + Inter.getLocText("FR-Engine_FreezeWarning1") + ")");
@@ -231,29 +231,29 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	protected void initWriteListener(){
-		// Ìî±¨ÖØ¸´¶³½áĞĞ
+		// å¡«æŠ¥é‡å¤å†»ç»“è¡Œ
 		useWriteFrozenCCheckBox.addChangeListener(useWriteFrozenCListener);
-		// Ìî±¨ÖØ¸´¶³½áÁĞ
+		// å¡«æŠ¥é‡å¤å†»ç»“åˆ—
 		useWriteFrozenRCheckBox.addChangeListener(useWriteFrozenRListener);
 	}
 	
 	private void initPageRwoListener(){
 		repeatTitleRowPane.addListener(freezePageRowListener);
-		// ·ÖÒ³ÖØ¸´¶³½áĞĞ
+		// åˆ†é¡µé‡å¤å†»ç»“è¡Œ
 		usePageFrozenRCheckBox.addChangeListener(usePageFrozenRListener);
-		//ÖØ¸´±êÌâĞĞ
+		//é‡å¤æ ‡é¢˜è¡Œ
 		useRepeatTitleRCheckBox.addChangeListener(useRepeatTitleRListener);
-		//ÖØ¸´½áÎ²ĞĞ
+		//é‡å¤ç»“å°¾è¡Œ
 		useRepeatFinisRCheckBox.addChangeListener(useRepeatFinisRListener);
 	}
 	
 	protected void initPageColListener(){
 		repeatTitleColPane.addListener(freezePageColListener);
-		// ·ÖÒ³ÖØ¸´¶³½áÁĞ
+		// åˆ†é¡µé‡å¤å†»ç»“åˆ—
 		usePageFrozenCCheckBox.addChangeListener(usePageFrozenCListener);
-		//ÖØ¸´±êÌâÁĞ
+		//é‡å¤æ ‡é¢˜åˆ—
 		useRepeatTitleCCheckBox.addChangeListener(useRepeatTitleCListener);
-		//ÖØ¸´½áÎ²ÁĞ
+		//é‡å¤ç»“å°¾åˆ—
 		useRepeatFinisCCheckBox.addChangeListener(useRepeatFinisCListener);
 	}
 	
@@ -349,7 +349,7 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 		}
 	};
 	
-	// ·ÖÒ³ÖØ¸´¶³½áĞĞÊı¾İÁª¶¯
+	// åˆ†é¡µé‡å¤å†»ç»“è¡Œæ•°æ®è”åŠ¨
 	ChangeListener freezePageRowListener = new ChangeListener() {
 		@Override
 		public void stateChanged(ChangeEvent e) {
@@ -359,7 +359,7 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 		}
 	};
 	
-	// ·ÖÒ³ÖØ¸´¶³½áÁĞÊı¾İÁª¶¯
+	// åˆ†é¡µé‡å¤å†»ç»“åˆ—æ•°æ®è”åŠ¨
 	ChangeListener freezePageColListener = new ChangeListener() {
 		@Override
 		public void stateChanged(ChangeEvent e) {
@@ -370,10 +370,10 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	};
 
 	/**
-	 * ´°¿Ú±êÌâ
+	 * çª—å£æ ‡é¢˜
 	 * 
 	 *
-	 * @date 2014-11-14-ÏÂÎç2:30:58
+	 * @date 2014-11-14-ä¸‹åˆ2:30:58
 	 * 
 	 */
 	protected String title4PopupWindow() {
@@ -445,12 +445,12 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 
     /**
-	 * ³õÊ¼»¯Ìî±¨¶³½ápane
+	 * åˆå§‹åŒ–å¡«æŠ¥å†»ç»“pane
 	 * 
-	 * @param writeFrozenColumnRow Ìî±¨¶³½á¸ñ×Ó
+	 * @param writeFrozenColumnRow å¡«æŠ¥å†»ç»“æ ¼å­
 	 * 
 	 *
-	 * @date 2014-11-14-ÏÂÎç2:30:15
+	 * @date 2014-11-14-ä¸‹åˆ2:30:15
 	 * 
 	 */
 	public void populateWriteFrozenColumnRow(ColumnRow writeFrozenColumnRow) {
@@ -486,7 +486,7 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
 	protected void updateRowPane(ReportPageAttrProvider attribute){
-		// ÖØ¸´±êÌâĞĞ
+		// é‡å¤æ ‡é¢˜è¡Œ
 		int titleFrom = valid(useRepeatTitleRCheckBox, this.repeatTitleRowPane.updateBean().getFrom());
 		int titleTo = valid(useRepeatTitleRCheckBox, this.repeatTitleRowPane.updateBean().getTo());
 		attribute.setRepeatHeaderRowFrom(titleFrom);
@@ -519,12 +519,12 @@ public class RepeatAndFreezeSettingPane extends BasicPane {
 	}
 	
     /**
-	 * ¸üĞÂWriteFrozenColumnRow
+	 * æ›´æ–°WriteFrozenColumnRow
 	 * 
-	 * @return ĞĞÁĞ
+	 * @return è¡Œåˆ—
 	 * 
 	 *
-	 * @date 2014-11-14-ÏÂÎç2:29:45
+	 * @date 2014-11-14-ä¸‹åˆ2:29:45
 	 * 
 	 */
 	public ColumnRow updateWriteFrozenColumnRow() {

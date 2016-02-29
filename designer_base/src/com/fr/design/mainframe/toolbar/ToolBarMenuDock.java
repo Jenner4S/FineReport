@@ -8,9 +8,24 @@ import com.fr.base.FRContext;
 import com.fr.design.DesignState;
 import com.fr.design.ExtraDesignClassManager;
 import com.fr.design.actions.UpdateAction;
-import com.fr.design.actions.file.*;
-import com.fr.design.actions.help.*;
-import com.fr.design.actions.server.*;
+import com.fr.design.actions.file.CloseCurrentTemplateAction;
+import com.fr.design.actions.file.ExitDesignerAction;
+import com.fr.design.actions.file.OpenRecentReportMenuDef;
+import com.fr.design.actions.file.OpenTemplateAction;
+import com.fr.design.actions.file.PreferenceAction;
+import com.fr.design.actions.file.SwitchExistEnv;
+import com.fr.design.actions.help.AboutAction;
+import com.fr.design.actions.help.FeedBackAction;
+import com.fr.design.actions.help.ForumAction;
+import com.fr.design.actions.help.SupportQQAction;
+import com.fr.design.actions.help.TutorialAction;
+import com.fr.design.actions.help.WebDemoAction;
+import com.fr.design.actions.server.ConnectionListAction;
+import com.fr.design.actions.server.FunctionManagerAction;
+import com.fr.design.actions.server.GlobalParameterAction;
+import com.fr.design.actions.server.GlobalTableDataAction;
+import com.fr.design.actions.server.PlatformManagerAction;
+import com.fr.design.actions.server.PluginManagerAction;
 import com.fr.design.file.NewTemplatePane;
 import com.fr.design.fun.MenuHandler;
 import com.fr.design.gui.ibutton.UIButton;
@@ -20,24 +35,30 @@ import com.fr.design.gui.imenu.UIMenuBar;
 import com.fr.design.gui.itoolbar.UILargeToolbar;
 import com.fr.design.gui.itoolbar.UIToolbar;
 import com.fr.design.mainframe.JTemplate;
-import com.fr.design.menu.*;
+import com.fr.design.menu.MenuDef;
+import com.fr.design.menu.SeparatorDef;
+import com.fr.design.menu.ShortCut;
+import com.fr.design.menu.ToolBarDef;
 import com.fr.general.ComparatorUtils;
+import com.fr.general.GeneralContext;
 import com.fr.general.Inter;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.ProductConstants;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-13
+ * @since 6.5.5 åˆ›å»ºäº2011-6-13
  */
 /*
- * TODO ALEX_SEP ´Ósheet1ÇĞ»»µ½sheet2,Èç¹ûÓÃµ½µÄDockingÊÇÒ»ÑùµÄ,ÆÚÍûÎ»ÖÃ²»Òª·¢Éú±ä¶¯,sheet1Ê±²Ù×÷ÏÔÊ¾µÄÄÄ¸ödockingµÄtab,ÔÚsheet2Ê±Ò²Ò»Ñù
- * ¸Ğ¾õÓÃdocking×Ô¼ºÈ·¶¨ÆäÎ»ÖÃµÄ·½Ê½±È½ÏÈİÒ×ÊµÏÖ
- * »¹ÓĞdockingµÄ×´Ì¬µÄ±£´æ,ÏÂ´Î´ò¿ªÉè¼ÆÆ÷,Ò²Ó¦¸ÃÊÇÕâÑùµÄ
+ * TODO ALEX_SEP ä»sheet1åˆ‡æ¢åˆ°sheet2,å¦‚æœç”¨åˆ°çš„Dockingæ˜¯ä¸€æ ·çš„,æœŸæœ›ä½ç½®ä¸è¦å‘ç”Ÿå˜åŠ¨,sheet1æ—¶æ“ä½œæ˜¾ç¤ºçš„å“ªä¸ªdockingçš„tab,åœ¨sheet2æ—¶ä¹Ÿä¸€æ ·
+ * æ„Ÿè§‰ç”¨dockingè‡ªå·±ç¡®å®šå…¶ä½ç½®çš„æ–¹å¼æ¯”è¾ƒå®¹æ˜“å®ç°
+ * è¿˜æœ‰dockingçš„çŠ¶æ€çš„ä¿å­˜,ä¸‹æ¬¡æ‰“å¼€è®¾è®¡å™¨,ä¹Ÿåº”è¯¥æ˜¯è¿™æ ·çš„
  */
 public abstract class ToolBarMenuDock {
     private static final String FINEREPORT = "FineReport";
@@ -47,7 +68,7 @@ public abstract class ToolBarMenuDock {
     private ToolBarDef toolBarDef;
 
     /**
-     * ¸üĞÂ²Ëµ¥
+     * æ›´æ–°èœå•
      */
     public void updateMenuDef() {
         for (int i = 0, count = ArrayUtils.getLength(menus); i < count; i++) {
@@ -56,7 +77,7 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * ¸üĞÂtoolbar
+     * æ›´æ–°toolbar
      */
     public void updateToolBarDef() {
         if (toolBarDef == null) {
@@ -74,10 +95,10 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * Éú³É²Ëµ¥À¸
+     * ç”Ÿæˆèœå•æ 
      *
-     * @param plus ¶ÔÏó
-     * @return ²Ëµ¥À¸
+     * @param plus å¯¹è±¡
+     * @return èœå•æ 
      */
     public final JMenuBar createJMenuBar(ToolBarMenuDockPlus plus) {
         UIMenuBar jMenuBar = new UIMenuBar() {
@@ -99,9 +120,9 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * Éú³É±¨±íÉè¼ÆºÍ±íµ¥Éè¼ÆµÄ±à¼­ÇøÓò
+     * ç”ŸæˆæŠ¥è¡¨è®¾è®¡å’Œè¡¨å•è®¾è®¡çš„ç¼–è¾‘åŒºåŸŸ
      *
-     * @return Ä£°å
+     * @return æ¨¡æ¿
      */
     public JTemplate<?, ?> createNewTemplate() {
         return null;
@@ -113,25 +134,25 @@ public abstract class ToolBarMenuDock {
 
     private MenuDef[] menus(final ToolBarMenuDockPlus plus) {
         java.util.List<MenuDef> menuList = new java.util.ArrayList<MenuDef>();
-        // Ìí¼ÓÎÄ¼ş²Ëµ¥
+        // æ·»åŠ æ–‡ä»¶èœå•
         menuList.add(createFileMenuDef(plus));
 
         MenuDef[] menuDefs = createTemplateShortCuts(plus);
         insertTemplateExtendMenu(plus, menuDefs);
 
-        // Ìí¼ÓÄ£°å²Ëµ¥
+        // æ·»åŠ æ¨¡æ¿èœå•
         menuList.addAll(Arrays.asList(menuDefs));
 
-        // Ìí¼Ó·şÎñÆ÷²Ëµ¥
+        // æ·»åŠ æœåŠ¡å™¨èœå•
         menuList.add(createServerMenuDef(plus));
-        // Ìí¼Ó°ïÖú²Ëµ¥
+        // æ·»åŠ å¸®åŠ©èœå•
         menuList.add(createHelpMenuDef());
 
         return menuList.toArray(new MenuDef[menuList.size()]);
     }
 
     private void insertTemplateExtendMenu(ToolBarMenuDockPlus plus, MenuDef[] menuDefs) {
-        // ¸ø²Ëµ¥¼Ó²å¼şÈë¿Ú
+        // ç»™èœå•åŠ æ’ä»¶å…¥å£
         for (MenuDef m : menuDefs) {
             switch (m.getAnchor()) {
                 case MenuHandler.TEMPLATE :
@@ -150,10 +171,10 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * ´´½¨ĞÂ½¨Ä£°åµÄ²Ëµ¥
+     * åˆ›å»ºæ–°å»ºæ¨¡æ¿çš„èœå•
      *
-     * @param plus ¶ÔÏó
-     * @return ²Ëµ¥
+     * @param plus å¯¹è±¡
+     * @return èœå•
      */
     public MenuDef[] createTemplateShortCuts(ToolBarMenuDockPlus plus) {
         return plus.menus4Target();
@@ -214,16 +235,16 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * ´´½¨ĞÂ½¨ÎÄ¼şµÄ²Ëµ¥
+     * åˆ›å»ºæ–°å»ºæ–‡ä»¶çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public abstract ShortCut[] createNewFileShortCuts();
     
     /**
-	 * ´´½¨ÂÛÌ³µÇÂ¼Ãæ°å, chartÄÇ±ß²»ĞèÒª
+	 * åˆ›å»ºè®ºå›ç™»å½•é¢æ¿, charté‚£è¾¹ä¸éœ€è¦
 	 * 
-	 * @return Ãæ°å×é¼ş
+	 * @return é¢æ¿ç»„ä»¶
 	 * 
 	 */
     public Component createBBSLoginPane(){
@@ -252,7 +273,7 @@ public abstract class ToolBarMenuDock {
         );
 
         if (!BaseUtils.isAuthorityEditing()) {
-            if (FRContext.isChineseEnv()){
+            if (shouldShowPlugin()){
                 menuDef.addShortCut(
                         new PluginManagerAction()
                 );
@@ -267,9 +288,13 @@ public abstract class ToolBarMenuDock {
         return menuDef;
     }
 
+    private boolean shouldShowPlugin() {
+        return FRContext.isChineseEnv() || ComparatorUtils.equals(GeneralContext.getLocale(), Locale.TAIWAN);
+    }
+
     /**
-     * ´´½¨°ïÖú×Ó²Ëµ¥
-     * @return °ï×é²Ëµ¥µÄ×Ó²Ëµ¥
+     * åˆ›å»ºå¸®åŠ©å­èœå•
+     * @return å¸®ç»„èœå•çš„å­èœå•
      */
     public ShortCut[] createHelpShortCuts() {
         java.util.List<ShortCut> shortCuts = new ArrayList<ShortCut>();
@@ -302,11 +327,11 @@ public abstract class ToolBarMenuDock {
     }
 
     /**
-     * Éú³É¹¤¾ßÀ¸
+     * ç”Ÿæˆå·¥å…·æ 
      *
-     * @param toolbarComponent ¹¤¾ßÀ¸
-     * @param plus             ¶ÔÏó
-     * @return ¹¤¾ßÀ¸
+     * @param toolbarComponent å·¥å…·æ 
+     * @param plus             å¯¹è±¡
+     * @return å·¥å…·æ 
      */
     public JComponent resetToolBar(JComponent toolbarComponent, ToolBarMenuDockPlus plus) {
         ToolBarDef[] plusToolBarDefs = plus.toolbars4Target();
@@ -357,10 +382,10 @@ public abstract class ToolBarMenuDock {
 
 
     /**
-     * ÖØÖÃÉÏÃæµÄ¹¤¾ßÀ¸
+     * é‡ç½®ä¸Šé¢çš„å·¥å…·æ 
      *
-     * @param plus ¶ÔÏó
-     * @return ¹¤¾ßÀ¸
+     * @param plus å¯¹è±¡
+     * @return å·¥å…·æ 
      */
     public JComponent[] resetUpToolBar(ToolBarMenuDockPlus plus) {
         return plus.toolBarButton4Form();
@@ -368,18 +393,18 @@ public abstract class ToolBarMenuDock {
 
 
     /**
-     * ´´½¨´óµÄ¹¤¾ß°´Å¥
+     * åˆ›å»ºå¤§çš„å·¥å…·æŒ‰é’®
      *
-     * @return ´óµÄ¹¤¾ß°´Å¥
+     * @return å¤§çš„å·¥å…·æŒ‰é’®
      */
     public UILargeToolbar createLargeToolbar() {
         return new UILargeToolbar(FlowLayout.LEFT);
     }
 
     /**
-     * ´´½¨ÉÏÃæµÄ°´Å¥
+     * åˆ›å»ºä¸Šé¢çš„æŒ‰é’®
      *
-     * @return °´Å¥
+     * @return æŒ‰é’®
      */
     public UIButton[] createUp() {
         return new UIButton[0];
@@ -430,9 +455,9 @@ public abstract class ToolBarMenuDock {
         }
 
         /**
-         * µ¼³ö²Ëµ¥µÄ×Ó²Ëµ¥ £¬Ä¿Ç°ÓÃÓÚÍ¼±íÉè¼ÆÆ÷
+         * å¯¼å‡ºèœå•çš„å­èœå• ï¼Œç›®å‰ç”¨äºå›¾è¡¨è®¾è®¡å™¨
          *
-         * @return ×Ó²Ëµ¥
+         * @return å­èœå•
          */
     	public ShortCut[] shortcut4ExportMenu(){
             return new ShortCut[0];
@@ -464,7 +489,7 @@ public abstract class ToolBarMenuDock {
     }
 
     protected void insertMenu(MenuDef menuDef, String anchor, ShortCutMethodAction action) {
-        // ÏÂÃæÊÇ²å¼ş½Ó¿Ú½ÓÈëµã
+        // ä¸‹é¢æ˜¯æ’ä»¶æ¥å£æ¥å…¥ç‚¹
         MenuHandler[] menuHandlers = ExtraDesignClassManager.getInstance().getMenuHandlers(anchor);
         for (MenuHandler handler : menuHandlers) {
             int insertPosition = handler.insertPosition(menuDef.getShortCutCount());
@@ -493,7 +518,7 @@ public abstract class ToolBarMenuDock {
     }
     
     /**
-	 * Éè¼ÆÆ÷ÍË³öÊ±, ×öµÄÒ»Ğ©²Ù×÷.
+	 * è®¾è®¡å™¨é€€å‡ºæ—¶, åšçš„ä¸€äº›æ“ä½œ.
 	 * 
 	 */
     public void shutDown(){
@@ -512,13 +537,13 @@ public abstract class ToolBarMenuDock {
         }
     }
 
-    //²»ĞèÒª±à¼­¶ÔÏóµÄ²Ëµ¥, ±ÈÈçÎÄ¼ş, ·şÎñÆ÷, ¹ØÓÚ
+    //ä¸éœ€è¦ç¼–è¾‘å¯¹è±¡çš„èœå•, æ¯”å¦‚æ–‡ä»¶, æœåŠ¡å™¨, å…³äº
     private class NoTargetAction extends AbstractShortCutMethodAction{
 
     }
 
-    //Ä£°åÎª¶ÔÏóµÄ²Ëµ¥, ±ÈÈçÄ£°å, ºóĞøÈç¹ûµ¥Ôª¸ñÒ²Òª, Ö±½Ó¼Ó¸öCellTargetAction¼´¿É.
-    //ÔÚmethodActionÖĞ×öhandler.shortcut(cell), ²»ĞèÒªĞŞ¸ÄhandlerÖĞÔ­ÓĞ½Ó¿Ú, ¼Ó¸öshortcut(cell).
+    //æ¨¡æ¿ä¸ºå¯¹è±¡çš„èœå•, æ¯”å¦‚æ¨¡æ¿, åç»­å¦‚æœå•å…ƒæ ¼ä¹Ÿè¦, ç›´æ¥åŠ ä¸ªCellTargetActionå³å¯.
+    //åœ¨methodActionä¸­åšhandler.shortcut(cell), ä¸éœ€è¦ä¿®æ”¹handlerä¸­åŸæœ‰æ¥å£, åŠ ä¸ªshortcut(cell).
     private class TemplateTargetAction extends AbstractShortCutMethodAction{
 
         private ToolBarMenuDockPlus plus;

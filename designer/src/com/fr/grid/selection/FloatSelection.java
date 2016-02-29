@@ -34,7 +34,7 @@ import com.fr.design.utils.DesignUtils;
 /**
  * the float selection
  * @editor zhou
- * 2012-3-22ÏÂÎç2:09:20
+ * 2012-3-22ä¸‹åˆ2:09:20
  */
 public class FloatSelection extends Selection {
     private String selectedFloatName;
@@ -213,7 +213,7 @@ public class FloatSelection extends Selection {
     public boolean isSelectedOneCell(ElementCasePane ePane) {
         return false;
     }
-    //TODO:august Õâ¶ù²»±È½ÏFloatElement»á²»»áÓĞÎÊÌâ°¡
+    //TODO:august è¿™å„¿ä¸æ¯”è¾ƒFloatElementä¼šä¸ä¼šæœ‰é—®é¢˜å•Š
     @Override
     public boolean equals(Object obj) {
         return obj instanceof FloatSelection && ComparatorUtils.equals(this.getSelectedFloatName(), ((FloatSelection) obj).getSelectedFloatName());

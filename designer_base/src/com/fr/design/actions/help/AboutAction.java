@@ -22,8 +22,8 @@ public class AboutAction extends UpdateAction {
     }
 
     /**
-     * 动作
-     * @param evt 事件
+     * 鍔ㄤ綔
+     * @param evt 浜嬩欢
      */
     public void actionPerformed(ActionEvent evt) {
         AboutPane aboutPane = new AboutPane();

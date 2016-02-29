@@ -26,7 +26,7 @@ public abstract class TransparentPane extends BasicPane {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		this.setBorder(BorderFactory.createEmptyBorder(2, 4, 2, 4));
 
-		// richer:能否拖动
+		// richer:鑳藉惁鎷栧姩
 		if (isSupportTransparent) {
 			UIButton transparentButton = new UIButton(Inter.getLocText("ChartF-Transparency"));
 			transparentButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -60,7 +60,7 @@ public abstract class TransparentPane extends BasicPane {
 		}
 	}
 
-	// richer：自定义按钮，让用户可以按自己的需求自定义边框样式
+	// richer锛氳嚜瀹氫箟鎸夐挳锛岃鐢ㄦ埛鍙互鎸夎嚜宸辩殑闇�姹傝嚜瀹氫箟杈规鏍峰紡
 	private class CustomButton extends UIButton {
 
 		/**

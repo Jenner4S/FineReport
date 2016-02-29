@@ -42,27 +42,27 @@ public class UpdateVersion extends SwingWorker<JSONObject,Void> {
     }
 
     /**
-     * ´Ó·şÎñÆ÷¶ÁÈ¡°æ±¾
+     * ä»æœåŠ¡å™¨è¯»å–ç‰ˆæœ¬
      */
     private static String readVersionFromServer(int timeOut) throws IOException {
         URL getUrl = new URL(VERSION_URL);
-        // ¸ù¾İÆ´´ÕµÄURL£¬´ò¿ªÁ¬½Ó£¬URL.openConnectionº¯Êı»á¸ù¾İURLµÄÀàĞÍ£¬
-        // ·µ»Ø²»Í¬µÄURLConnection×ÓÀàµÄ¶ÔÏó£¬ÕâÀïURLÊÇÒ»¸öhttp£¬Òò´ËÊµ¼Ê·µ»ØµÄÊÇHttpURLConnection
+        // æ ¹æ®æ‹¼å‡‘çš„URLï¼Œæ‰“å¼€è¿æ¥ï¼ŒURL.openConnectionå‡½æ•°ä¼šæ ¹æ®URLçš„ç±»å‹ï¼Œ
+        // è¿”å›ä¸åŒçš„URLConnectionå­ç±»çš„å¯¹è±¡ï¼Œè¿™é‡ŒURLæ˜¯ä¸€ä¸ªhttpï¼Œå› æ­¤å®é™…è¿”å›çš„æ˜¯HttpURLConnection
         HttpURLConnection connection = (HttpURLConnection) getUrl
                 .openConnection();
         connection.setReadTimeout(timeOut);
-        // ½øĞĞÁ¬½Ó£¬µ«ÊÇÊµ¼ÊÉÏget requestÒªÔÚÏÂÒ»¾äµÄconnection.getInputStream()º¯ÊıÖĞ²Å»áÕæÕı·¢µ½
-        // ·şÎñÆ÷
+        // è¿›è¡Œè¿æ¥ï¼Œä½†æ˜¯å®é™…ä¸Šget requestè¦åœ¨ä¸‹ä¸€å¥çš„connection.getInputStream()å‡½æ•°ä¸­æ‰ä¼šçœŸæ­£å‘åˆ°
+        // æœåŠ¡å™¨
         connection.connect();
-        // È¡µÃÊäÈëÁ÷£¬²¢Ê¹ÓÃReader¶ÁÈ¡
-        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf8"));//ÉèÖÃ±àÂë,·ñÔòÖĞÎÄÂÒÂë
+        // å–å¾—è¾“å…¥æµï¼Œå¹¶ä½¿ç”¨Readerè¯»å–
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf8"));//è®¾ç½®ç¼–ç ,å¦åˆ™ä¸­æ–‡ä¹±ç 
         String lines;
         StringBuffer sb = new StringBuffer();
         while ((lines = reader.readLine()) != null) {
             sb.append(lines);
         }
         reader.close();
-        // ¶Ï¿ªÁ¬½Ó
+        // æ–­å¼€è¿æ¥
         connection.disconnect();
         return sb.toString();
     }

@@ -49,7 +49,7 @@ public class PropertyGroupModel extends AbstractPropertyGroupModel {
         try {
             Method m = properties[row].getWriteMethod();
             m.invoke(dealCreatorData(), value);
-        	//ÊôĞÔÃû³ÆÎª¿Ø¼şÃûÊ±£¬µ¥¶À´¦ÀíÏÂ
+        	//å±æ€§åç§°ä¸ºæ§ä»¶åæ—¶ï¼Œå•ç‹¬å¤„ç†ä¸‹
             if(ComparatorUtils.equals(FormConstants.NAME, properties[row].getName())){
             	creator.resetCreatorName(value.toString());
             }
@@ -62,9 +62,9 @@ public class PropertyGroupModel extends AbstractPropertyGroupModel {
     }
 
     /**
-     * ¸ÄĞĞÊÇ·ñ¿É±à¼­
-     * @param row ĞĞ
-     * @return µÚrowĞĞ¿É±à¼­·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * æ”¹è¡Œæ˜¯å¦å¯ç¼–è¾‘
+     * @param row è¡Œ
+     * @return ç¬¬rowè¡Œå¯ç¼–è¾‘è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     @Override
     public boolean isEditable(int row) {
@@ -72,8 +72,8 @@ public class PropertyGroupModel extends AbstractPropertyGroupModel {
     }
 
     /**
-     * ¸ÃÊôĞÔËùÊôµÄ·ÖÀà,ÆÕÍ¨ÊôĞÔ·ÖÎª»ù±¾ÊôĞÔºÍÆäËü,ÊÂ¼şÊôĞÔ¸ù¾İÊÂ¼şÃû³Æ²»Í¬½øĞĞ·ÖÀà
-     * @return ·µ»ØÊôĞÔÃû³Æ
+     * è¯¥å±æ€§æ‰€å±çš„åˆ†ç±»,æ™®é€šå±æ€§åˆ†ä¸ºåŸºæœ¬å±æ€§å’Œå…¶å®ƒ,äº‹ä»¶å±æ€§æ ¹æ®äº‹ä»¶åç§°ä¸åŒè¿›è¡Œåˆ†ç±»
+     * @return è¿”å›å±æ€§åç§°
      */
     @Override
     public String getGroupName() {
@@ -81,9 +81,9 @@ public class PropertyGroupModel extends AbstractPropertyGroupModel {
     }
 
     /**
-     * ±È½Ï
-     * @param gm ÊôĞÔÀà
-     * @return ·µ»Ø±È½Ï½á¹û
+     * æ¯”è¾ƒ
+     * @param gm å±æ€§ç±»
+     * @return è¿”å›æ¯”è¾ƒç»“æœ
      */
     @Override
     public int compareTo(AbstractPropertyGroupModel gm) {
@@ -105,7 +105,7 @@ public class PropertyGroupModel extends AbstractPropertyGroupModel {
     }
     
     /**
-     * ¿Ø¼şÊôĞÔ¸³ÖµºÍÈ¡ÖµÊ±£¬Õë¶ÔscaleºÍtitle×öÏÂ´¦Àí
+     * æ§ä»¶å±æ€§èµ‹å€¼å’Œå–å€¼æ—¶ï¼Œé’ˆå¯¹scaleå’Œtitleåšä¸‹å¤„ç†
      * @return
      */
     private Object dealCreatorData() {

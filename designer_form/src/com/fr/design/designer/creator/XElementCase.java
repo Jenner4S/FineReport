@@ -36,22 +36,22 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	
 	protected void initXCreatorProperties() {
 		super.initXCreatorProperties();
-		// ±¨±í¿é³õÊ¼»¯Ê±Òª¼ÓÔØ¶ÔÓ¦µÄborderStyle
+		// æŠ¥è¡¨å—åˆå§‹åŒ–æ—¶è¦åŠ è½½å¯¹åº”çš„borderStyle
 		initBorderStyle();
 	}
 	
 	/**
-     * ÊÇ·ñÖ§³ÖÉèÖÃ±êÌâ
-     * @return ÊÇ·µ»Øtrue
+     * æ˜¯å¦æ”¯æŒè®¾ç½®æ ‡é¢˜
+     * @return æ˜¯è¿”å›true
      */
     public boolean hasTitleStyle() {
 		return true;
 	}
 
     /**
-     * ·µ»Ø×é¼şÊôĞÔÖµ
-     * @return ·µ»Ø×é¼şÊôĞÔÖµ
-     * @throws IntrospectionException Òì³£
+     * è¿”å›ç»„ä»¶å±æ€§å€¼
+     * @return è¿”å›ç»„ä»¶å±æ€§å€¼
+     * @throws IntrospectionException å¼‚å¸¸
      */
     public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
 
@@ -91,8 +91,8 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	}
 
     /**
-     * ·µ»Ø×é¼şÄ¬ÈÏÃû
-     * @return ×é¼şÀàÃû(Ğ¡Ğ´)
+     * è¿”å›ç»„ä»¶é»˜è®¤å
+     * @return ç»„ä»¶ç±»å(å°å†™)
      */
     public String createDefaultName() {
         return "report";
@@ -119,7 +119,7 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	}
 	
 	/**
-	 * ´ÓdataÖĞ»ñÈ¡µ½Í¼Æ¬±³¾°, ²¢ÉèÖÃµ½LabelÉÏ
+	 * ä»dataä¸­è·å–åˆ°å›¾ç‰‡èƒŒæ™¯, å¹¶è®¾ç½®åˆ°Labelä¸Š
 	 */
 	private UILabel initImageBackground(){
 		UILabel imageLable = new UILabel();
@@ -130,7 +130,7 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	}
 	
 	/**
-	 * ÉèÖÃÖ¸¶¨LabelµÄ±³¾°
+	 * è®¾ç½®æŒ‡å®šLabelçš„èƒŒæ™¯
 	 */
 	private void setLabelBackground(Image image, UILabel imageLable){
 		ImageIcon icon = new ImageIcon(image);
@@ -141,8 +141,8 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	}
 
     /**
-     * ÊÇ·ñÕ¹ÏÖ¸²¸ÇµÄpane
-     * @param display     ÊÇ·ñ
+     * æ˜¯å¦å±•ç°è¦†ç›–çš„pane
+     * @param display     æ˜¯å¦
      */
     public void  displayCoverPane(boolean display){
         coverPanel.setVisible(display);
@@ -156,32 +156,32 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
     }
 
     /**
-     * ³õÊ¼»¯´óĞ¡
-     * @return  ³ß´ç
+     * åˆå§‹åŒ–å¤§å°
+     * @return  å°ºå¯¸
      */
 	public Dimension initEditorSize() {
 		return new Dimension(250, 100);
 	}
 
     /**
-     * ÊÇ·ñÊÇ±¨±í¿é
-     * @return  ÊÇ
+     * æ˜¯å¦æ˜¯æŠ¥è¡¨å—
+     * @return  æ˜¯
      */
 	public boolean isReport() {
 		return true;
 	}
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;
     }
     
     /**
-     * ·µ»Ø±¨±í¿é¶ÔÓ¦µÄwidget
-     * @return ·µ»ØElementCaseEditor
+     * è¿”å›æŠ¥è¡¨å—å¯¹åº”çš„widget
+     * @return è¿”å›ElementCaseEditor
      */
     public ElementCaseEditor toData() {
     	return ((ElementCaseEditor) data);
@@ -213,9 +213,9 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
 	}
 	
 	/**
-	 * ÏìÓ¦µã»÷ÊÂ¼ş
-	 * @param editingMouseListener ÊÂ¼ş´¦ÀíÆ÷
-	 * @param e µã»÷ÊÂ¼ş
+	 * å“åº”ç‚¹å‡»äº‹ä»¶
+	 * @param editingMouseListener äº‹ä»¶å¤„ç†å™¨
+	 * @param e ç‚¹å‡»äº‹ä»¶
 	 */
 	public void respondClick(EditingMouseListener editingMouseListener,MouseEvent e){
 		super.respondClick(editingMouseListener, e);
@@ -227,7 +227,7 @@ public class XElementCase extends XBorderStyleWidgetCreator implements FormEleme
     	FormDesigner designer = editingMouseListener.getDesigner();
         if (e.getClickCount() == 2 || designer.getCursor().getType() == Cursor.HAND_CURSOR){
             FormElementCaseContainerProvider component = (FormElementCaseContainerProvider) designer.getComponentAt(e);
-             //ÇĞ»»Éè¼ÆÆ÷
+             //åˆ‡æ¢è®¾è®¡å™¨
             designer.switchTab(component);
         }
      }

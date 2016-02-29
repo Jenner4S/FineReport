@@ -29,7 +29,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-//TODO: august TemplatePaneºÍTemplateTreePane×îºÃºÏ²¢³ÉÒ»¸öÀà
+//TODO: august TemplatePaneå’ŒTemplateTreePaneæœ€å¥½åˆå¹¶æˆä¸€ä¸ªç±»
 public class TemplatePane extends JPanel implements MouseListener {
     private static final long NUM = 1L;
     private static int NUM200 = 200;
@@ -43,7 +43,7 @@ public class TemplatePane extends JPanel implements MouseListener {
     }
 
     private static final long serialVersionUID = 2108412478281713143L;
-    public static final int HEIGHT = 23;// ×îºÃºÍÈÕÖ¾µÄ¸ß¶ÈÍ³Ò» ÓÃÍ¬Ò»¸ö±äÁ¿
+    public static final int HEIGHT = 23;// æœ€å¥½å’Œæ—¥å¿—çš„é«˜åº¦ç»Ÿä¸€ ç”¨åŒä¸€ä¸ªå˜é‡
     private static javax.swing.Icon leftIcon = BaseUtils.readIcon("/com/fr/design/images/docking/left.png");
     ;
     private static javax.swing.Icon rightIcon = BaseUtils.readIcon("/com/fr/design/images/docking/right.png");
@@ -96,8 +96,8 @@ public class TemplatePane extends JPanel implements MouseListener {
     }
 
     /**
-     * ÊÇ·ñ¿ÉÀ©Õ¹
-     * @return Í¬ÉÏ
+     * æ˜¯å¦å¯æ‰©å±•
+     * @return åŒä¸Š
      */
     public boolean IsExpanded() {
         return this.isExpanded;
@@ -114,7 +114,7 @@ public class TemplatePane extends JPanel implements MouseListener {
         Env selectedEnv = envManager.getEnv(selectedName);
         GeneralContext.fireEnvWillChangeListener();
         try {
-            //Èç¹ûÊÇÔ¶³ÌµÄ»¹ÒªÏÈ²âÊÔÏÂ£¬Èç¹ûÊ§°Ü¾Í²»ÇĞ»»
+            //å¦‚æœæ˜¯è¿œç¨‹çš„è¿˜è¦å…ˆæµ‹è¯•ä¸‹ï¼Œå¦‚æœå¤±è´¥å°±ä¸åˆ‡æ¢
             if (selectedEnv instanceof RemoteEnv) {
                 if (!((RemoteEnv) selectedEnv).testServerConnection()) {
                     JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), Inter.getLocText(new String[]{"M-SwitchWorkspace", "Failed"}));
@@ -148,7 +148,7 @@ public class TemplatePane extends JPanel implements MouseListener {
     }
 
     /**
-     * ±à¼­items
+     * ç¼–è¾‘items
      */
     public void editItems() {
         final EnvListPane envListPane = new EnvListPane();
@@ -208,16 +208,16 @@ public class TemplatePane extends JPanel implements MouseListener {
     }
 
     /**
-     * Êó±êµã»÷
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e äº‹ä»¶
      */
     @Override
     public void mouseClicked(MouseEvent e) {
     }
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e äº‹ä»¶
      */
     @Override
     public void mousePressed(MouseEvent e) {
@@ -230,31 +230,31 @@ public class TemplatePane extends JPanel implements MouseListener {
     }
 
     /**
-     * Êó±ê·Å¿ª
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æ”¾å¼€
+     * @param e äº‹ä»¶
      */
     @Override
     public void mouseReleased(MouseEvent e) {
     }
 
     /**
-     * Êó±ê½øÈë
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e äº‹ä»¶
      */
     @Override
     public void mouseEntered(MouseEvent e) {
     }
 
     /**
-     * Êó±êÀë¿ª
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e äº‹ä»¶
      */
     @Override
     public void mouseExited(MouseEvent e) {
     }
 
     /**
-     * ´¦ÀíÒì³£
+     * å¤„ç†å¼‚å¸¸
      */
     public void dealEvnExceptionWhenStartDesigner() {
         final EnvListPane envListPane = new EnvListPane();

@@ -15,7 +15,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÉÏÎç9:57
+ * Time: ä¸Šåˆ9:57
  */
 public class UIToolBarBorder extends MetalBorders.ToolBarBorder {
 

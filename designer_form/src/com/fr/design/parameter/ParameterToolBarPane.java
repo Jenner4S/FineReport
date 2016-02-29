@@ -19,7 +19,7 @@ import com.fr.design.gui.ibutton.UIButton;
 import com.fr.general.Inter;
 
 /**
- * ²ÎÊıµã»÷¶¯×÷Ìõ
+ * å‚æ•°ç‚¹å‡»åŠ¨ä½œæ¡
  * @author: august
  * */
 public class ParameterToolBarPane extends BasicBeanPane<Parameter[]> {
@@ -114,7 +114,7 @@ public class ParameterToolBarPane extends BasicBeanPane<Parameter[]> {
 		addAll.addActionListener(l);
 	}
 
-	// ParameterToolBarPane µÄ²¼¾Ö
+	// ParameterToolBarPane çš„å¸ƒå±€
 	private class FlowParameterPaneLayout implements LayoutManager {
 
 		public FlowParameterPaneLayout() {

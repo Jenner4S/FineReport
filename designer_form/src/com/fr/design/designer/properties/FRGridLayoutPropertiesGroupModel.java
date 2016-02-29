@@ -15,7 +15,7 @@ import com.fr.design.designer.creator.XWGridLayout;
 import com.fr.form.ui.container.WGridLayout;
 
 /**
- * 格子布局的属性组
+ * 鏍煎瓙甯冨眬鐨勫睘鎬х粍
  * @author richer
  * @since  6.5.3
  */

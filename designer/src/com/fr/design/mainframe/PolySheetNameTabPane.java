@@ -6,15 +6,15 @@ import com.fr.design.menu.MenuDef;
 
 
 /**
- * »ñÈ¡
+ * è·å–
  * 
- * @date 2015-2-5-ÉÏÎç10:19:17
+ * @date 2015-2-5-ä¸Šåˆ10:19:17
  * 
  */
 public class PolySheetNameTabPane extends SheetNameTabPane{
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public PolySheetNameTabPane(ReportComponentComposite reportCompositeX) {
 		super(reportCompositeX);

@@ -14,7 +14,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÏÂÎç3:36
+ * Time: ä¸‹åˆ3:36
  */
 public class UITableHeaderRolloverBorder extends UITableHeaderBorder {
 

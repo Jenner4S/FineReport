@@ -27,7 +27,7 @@ public class WidgetToolBarPane extends BasicPane implements DesignToolbarProvide
     private static final int BUTTON_HEIGHT = 20;
     private static final int WIDTH_GAP = 13;
 
-    // componentsListÓÃÓÚ²¼¾ÖµÄ
+    // componentsListç”¨äºŽå¸ƒå±€çš„
     private ArrayList<JComponent> componentsList4Form = new ArrayList<JComponent>();
     private FormDesigner designer;
 
@@ -120,7 +120,7 @@ public class WidgetToolBarPane extends BasicPane implements DesignToolbarProvide
 
     private void initFormButtons() {
         if (componentsList4Form.isEmpty()) {
-            // ±íµ¥²¼¾Ö
+            // è¡¨å•å¸ƒå±€
             this.componentsList4Form.add(new TitleLabel(Inter.getLocText("Form-Layout")));
             WidgetOption[] containerWidgetArray = FormWidgetOption.getFormContainerInstance();
             for (WidgetOption no : containerWidgetArray) {
@@ -129,7 +129,7 @@ public class WidgetToolBarPane extends BasicPane implements DesignToolbarProvide
 
             final WidgetOption[] wo = DesignModuleFactory.getExtraWidgetOptions();
 
-            // Õâ¸öÌõ¼þËµÃ÷ÊÇ·ñ¼ÓÔØÁËÍ¼±íÄ£¿é
+            // è¿™ä¸ªæ¡ä»¶è¯´æ˜Žæ˜¯å¦åŠ è½½äº†å›¾è¡¨æ¨¡å—
             if (wo != null && wo.length > 0) {
                 this.componentsList4Form.add(new TitleLabel(Inter.getLocText("Chart")));
                 UIButton chartButton = new UIButton(BaseUtils.readIcon("com/fr/design/images/toolbarbtn/chart.png"));

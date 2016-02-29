@@ -5,30 +5,30 @@ import com.fr.form.ui.Widget;
 /**
  * @author : focus
  * @since : 8.0
- * ×Ô¶¨Òåweb¹¤¾ßÀ¸²Ëµ¥
+ * è‡ªå®šä¹‰webå·¥å…·æ èœå•
  */
 public interface ToolbarItemProvider {
 
     String XML_TAG = "ToolbarItemProvider";
 
     /**
-     * ×Ô¶¨Òåweb¹¤¾ßÀ¸²Ëµ¥Êµ¼ÊÀà£¬¸ÃÀà¿ÉÒÔ¼Ì³Ğ×Ôcom.fr.form.ui.ToolBarMenuButton »òÕß com.fr.form.ui.ToolBarButton;
+     * è‡ªå®šä¹‰webå·¥å…·æ èœå•å®é™…ç±»ï¼Œè¯¥ç±»å¯ä»¥ç»§æ‰¿è‡ªcom.fr.form.ui.ToolBarMenuButton æˆ–è€… com.fr.form.ui.ToolBarButton;
      *
-     * @return ²Ëµ¥Àà
+     * @return èœå•ç±»
      */
     Class<? extends Widget> classForWidget();
 
     /**
-     * ×Ô¶¨Òåweb¹¤¾ßÀ¸²Ëµ¥ÔÚÉè¼ÆÆ÷½çÃæÉÏµÄÍ¼±êÂ·¾¶
+     * è‡ªå®šä¹‰webå·¥å…·æ èœå•åœ¨è®¾è®¡å™¨ç•Œé¢ä¸Šçš„å›¾æ ‡è·¯å¾„
      *
-     * @return Í¼±êËùÔÚµÄÂ·¾¶
+     * @return å›¾æ ‡æ‰€åœ¨çš„è·¯å¾„
      */
     String iconPathForWidget();
 
     /**
-     * ×Ô¶¨Òåweb¹¤¾ßÀ¸²Ëµ¥ÔÚÉè¼ÆÆ÷ÉÏÏÔÊ¾µÄÃû×Ö
+     * è‡ªå®šä¹‰webå·¥å…·æ èœå•åœ¨è®¾è®¡å™¨ä¸Šæ˜¾ç¤ºçš„åå­—
      *
-     * @return ²Ëµ¥Ãû
+     * @return èœå•å
      */
     String nameForWidget();
 

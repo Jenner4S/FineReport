@@ -10,14 +10,14 @@ import com.fr.base.BaseUtils;
 /**
  * @author neil
  *
- * @date: 2015-3-13-ÉÏÎç9:47:58
+ * @date: 2015-3-13-ä¸Šåˆ9:47:58
  */
 public class BISplashPane extends SplashPane{
 
 	/**
-	 * ´´½¨Æô¶¯»­ÃæµÄ±³¾°Í¼Æ¬
+	 * åˆ›å»ºå¯åŠ¨ç”»é¢çš„èƒŒæ™¯å›¾ç‰‡
 	 * 
-	 * @return ±³¾°Í¼Æ¬
+	 * @return èƒŒæ™¯å›¾ç‰‡
 	 * 
 	 */
 	public Image createSplashBackground() {

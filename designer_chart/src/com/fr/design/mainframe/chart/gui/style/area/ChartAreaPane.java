@@ -15,9 +15,9 @@ import com.fr.design.mainframe.chart.gui.style.legend.AutoSelectedPane;
 import com.fr.general.ComparatorUtils;
 
 /**
- * ÊôĞÔ±í, Í¼±íÑùÊ½-ÇøÓò½çÃæ.
+ * å±æ€§è¡¨, å›¾è¡¨æ ·å¼-åŒºåŸŸç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-9 ÏÂÎç12:25:00
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-9 ä¸‹åˆ12:25:00
  */
 public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPane {
 	private static final long serialVersionUID = -3532884544720748530L;
@@ -30,8 +30,8 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 	}
 
     /**
-     * ½çÃæ Ê¹ÓÃ±êÌâ
-     * @return     ±êÌâ
+     * ç•Œé¢ ä½¿ç”¨æ ‡é¢˜
+     * @return     æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_AREA_TITLE;
@@ -47,7 +47,7 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 		}
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
         if (jTemplate.isJWorkBook() || jTemplate.getEditingReportIndex() == BaseJForm.ELEMENTCASE_TAB) {
-            //±íµ¥ÖĞµÄÍ¼±í×é¼şµÄÍ¼±íÇøÅ²µ½¿Ø¼şÊôĞÔ±íµÄÑùÊ½ÖĞÁË
+            //è¡¨å•ä¸­çš„å›¾è¡¨ç»„ä»¶çš„å›¾è¡¨åŒºæŒªåˆ°æ§ä»¶å±æ€§è¡¨çš„æ ·å¼ä¸­äº†
             paneList.add(new NamePane(areaPane.title4PopupWindow(), areaPane));
         }else if(jTemplate.isChartBook()){
             paneList.add(new NamePane(areaPane.title4PopupWindow(), areaPane));
@@ -65,7 +65,7 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæ
+	 * æ›´æ–°ç•Œé¢
 	 */
 	public void populateBean(Chart chart) {
 		areaPane.populateBean(chart);
@@ -73,7 +73,7 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ.
+	 * ä¿å­˜ç•Œé¢å±æ€§.
 	 */
 	@Override
 	public void updateBean(Chart chart) {
@@ -82,7 +82,7 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 	}
 
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄ½çÃæid
+	 * è®¾ç½®é€‰ä¸­çš„ç•Œé¢id
 	 */
 	public void setSelectedIndex(String id) {
 		for (int i = 0; i < paneList.size(); i++) {
@@ -93,4 +93,3 @@ public class ChartAreaPane extends ThirdTabPane<Chart> implements AutoSelectedPa
         }
 	}
 }
-

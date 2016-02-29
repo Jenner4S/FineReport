@@ -20,9 +20,9 @@ public class FormECColumnsAction extends AbastractFormECAction<FormElementCasePa
     }
 
     /**
-     * 执行动作
+     * 鎵ц鍔ㄤ綔
      *
-     * @return 是否执行成功
+     * @return 鏄惁鎵ц鎴愬姛
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         final FormElementCasePaneDelegate jws = this.getEditingComponent();
@@ -40,7 +40,7 @@ public class FormECColumnsAction extends AbastractFormECAction<FormElementCasePa
 
             @Override
             public void doOk() {
-                // bug:64173 重新生成一个workSheetAttr,否则会受到之前属性的干扰
+                // bug:64173 閲嶆柊鐢熸垚涓�涓獁orkSheetAttr,鍚﹀垯浼氬彈鍒颁箣鍓嶅睘鎬х殑骞叉壈
                 WorkSheetAttr attr = new WorkSheetAttr();
                 elementCase.setWorkSheetAttr(attr);
                 cPane.update(attr);

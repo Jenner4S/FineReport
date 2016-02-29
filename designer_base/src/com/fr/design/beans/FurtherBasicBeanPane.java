@@ -3,25 +3,25 @@ package com.fr.design.beans;
 /**
  * 
  * @author zhou
- * @since 2012-5-30ÏÂÎç12:12:42
+ * @since 2012-5-30ä¸‹åˆ12:12:42
  */
 public abstract class FurtherBasicBeanPane<T> extends BasicBeanPane<T> {
 	/**
-	 * ÊÇ·ñÊÇÖ¸¶¨ÀàĞÍ
-	 * @param ob ¶ÔÏó
-	 * @return ÊÇ·ñÊÇÖ¸¶¨ÀàĞÍ
+	 * æ˜¯å¦æ˜¯æŒ‡å®šç±»å‹
+	 * @param ob å¯¹è±¡
+	 * @return æ˜¯å¦æ˜¯æŒ‡å®šç±»å‹
 	 */
 	public abstract boolean accept(Object ob);
 
 	/**
-	 * titleÓ¦¸ÃÊÇÒ»¸öÊôĞÔ£¬²»Ö»ÊÇ¶Ô»°¿òµÄ±êÌâÊ±ÓÃµ½£¬ÓëÆäËû×é¼ş½áºÏÊ±£¬Ò²»áÓÃµÃµ½
-	 * @return Ëç»¯¿ñ±êÌâ
+	 * titleåº”è¯¥æ˜¯ä¸€ä¸ªå±æ€§ï¼Œä¸åªæ˜¯å¯¹è¯æ¡†çš„æ ‡é¢˜æ—¶ç”¨åˆ°ï¼Œä¸å…¶ä»–ç»„ä»¶ç»“åˆæ—¶ï¼Œä¹Ÿä¼šç”¨å¾—åˆ°
+	 * @return ç»¥åŒ–ç‹‚æ ‡é¢˜
 	 */
 	@Override
 	public abstract String title4PopupWindow();
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	public abstract void reset();
 	

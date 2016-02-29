@@ -39,7 +39,7 @@ public class ServerTray {
 
 		this.hostJettyServer = hostJettyServer;
 
-		//p:Ê×ÏÈ¹¹½¨ÓÒ¼ü²Ëµ¥
+		//p:é¦–å…ˆæ„å»ºå³é”®èœå•
 		PopupMenu popup = new PopupMenu();
 		manangeMenu = new MenuItem(Inter.getLocText("Server-Open_Service_Manager"));
 		manangeMenu.addActionListener(new ActionListener() {
@@ -48,20 +48,20 @@ public class ServerTray {
 		    	if(!serverManageFrame.isVisible()) {
 		    		serverManageFrame.setVisible(true);
 		    	}
-		    	serverManageFrame.toFront();//p:µ½µÚÒ»¸ö.
+		    	serverManageFrame.toFront();//p:åˆ°ç¬¬ä¸€ä¸ª.
 			}
 		});
         startMenu = new MenuItem(Inter.getLocText("FR-Server_Embedded_Server_Start"));
         stopMenu = new MenuItem(Inter.getLocText("FR-Server_Embedded_Server_Stop"));
 		exitMenu = new MenuItem(Inter.getLocText("Exit"));
-		//´´½¨´ò¿ª¼àÌıÆ÷
+		//åˆ›å»ºæ‰“å¼€ç›‘å¬å™¨
 		ActionListener startListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JettyHost jettyServer = StartServer.getInstance();
 				try {
 					if(!jettyServer.isStarted()) {
 						jettyServer.start();
-						jettyServer.addAndStartLocalEnvHomeWebApp();//ÔİÍ£ºóÔÙ´ò¿ªjetty,ĞèÒªaddApp
+						jettyServer.addAndStartLocalEnvHomeWebApp();//æš‚åœåå†æ‰“å¼€jetty,éœ€è¦addApp
 					}
 				} catch(Exception exp) {
                     FRContext.getLogger().error(exp.getMessage(), exp);
@@ -82,7 +82,7 @@ public class ServerTray {
 		};
 		startMenu.addActionListener(startListener);
 		stopMenu.addActionListener(stopListener);
-		//´´½¨ÍË³ö²Ëµ¥¼àÌıÆ÷
+		//åˆ›å»ºé€€å‡ºèœå•ç›‘å¬å™¨
 		ActionListener exitListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				exit();
@@ -97,7 +97,7 @@ public class ServerTray {
 		popup.addSeparator();
 		popup.add(exitMenu);
 
-		//p:¿ªÊ¼´´½¨ÍĞÅÌ.
+		//p:å¼€å§‹åˆ›å»ºæ‰˜ç›˜.
 		trayIcon = new TrayIcon(trayStartedImage, Inter.getLocText("Server-Embedded_Server"), popup);
 		trayIcon.setImageAutoSize(true);
 		trayIcon.addMouseListener(new MouseAdapter() {
@@ -110,7 +110,7 @@ public class ServerTray {
 		    	if(!serverManageFrame.isVisible()) {
 		    		serverManageFrame.setVisible(true);
 		    	}
-		    	serverManageFrame.toFront();//p:µ½µÚÒ»¸ö.
+		    	serverManageFrame.toFront();//p:åˆ°ç¬¬ä¸€ä¸ª.
 		    }
 		});
 
@@ -125,7 +125,7 @@ public class ServerTray {
 			System.err.println("Can not create the System Tray:" + e);
 		}
 
-		//p:ÏÈcheck
+		//p:å…ˆcheck
 		checkPopupMenuItemEnabled(this.hostJettyServer);
 
 		// TODOJ

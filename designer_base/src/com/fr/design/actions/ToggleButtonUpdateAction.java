@@ -3,7 +3,7 @@ package com.fr.design.actions;
 import com.fr.design.gui.ibutton.UIToggleButton;
 
 /**
- * ¾ßÓÐToggleButtonÊôÐÔµÄaction,¼Ì³ÐÕâ¸öÀàµÄaction¾Í»áÓÐ
+ * å…·æœ‰ToggleButtonå±žæ€§çš„action,ç»§æ‰¿è¿™ä¸ªç±»çš„actionå°±ä¼šæœ‰
  * 
  * @author zhou
  * 

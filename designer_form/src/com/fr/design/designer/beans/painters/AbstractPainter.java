@@ -21,8 +21,8 @@ public abstract class AbstractPainter implements HoverPainter {
     protected XCreator creator;
 
     /**
-     * ¹¹Ôìº¯Êı
-     * @param container ÈİÆ÷
+     * æ„é€ å‡½æ•°
+     * @param container å®¹å™¨
      */
     public AbstractPainter(XLayoutContainer container) {
         this.container = container;
@@ -34,10 +34,10 @@ public abstract class AbstractPainter implements HoverPainter {
     }
     
     /**
-     *  »­³õÊ¼ÇøÓò
-     *  @param g »­Í¼Àà
-     *  @param startX ÆğÊ¼xÎ»ÖÃ
-     *  @param startY ÆğÊ¼yÎ»ÖÃ
+     *  ç”»åˆå§‹åŒºåŸŸ
+     *  @param g ç”»å›¾ç±»
+     *  @param startX èµ·å§‹xä½ç½®
+     *  @param startY èµ·å§‹yä½ç½®
      */
 	public void paint(Graphics g, int startX, int startY) {
 		if(hotspot_bounds != null){
@@ -46,8 +46,8 @@ public abstract class AbstractPainter implements HoverPainter {
 	}
     
 	/**
-	 * ÉèÖÃ±ß½ç
-	 * @param rect Î»ÖÃ
+	 * è®¾ç½®è¾¹ç•Œ
+	 * @param rect ä½ç½®
 	 */
     @Override
     public void setRenderingBounds(Rectangle rect) {
@@ -65,7 +65,7 @@ public abstract class AbstractPainter implements HoverPainter {
     }
     
     /**
-     * ×ÔÊÊÓ¦²¼¾ÖÄÇ±ßäÖÈ¾ÌáÊ¾£¬Òª»­Õû¸ö±³¾°£¬²»ÊÇ»­±ß¿ò
+     * è‡ªé€‚åº”å¸ƒå±€é‚£è¾¹æ¸²æŸ“æç¤ºï¼Œè¦ç”»æ•´ä¸ªèƒŒæ™¯ï¼Œä¸æ˜¯ç”»è¾¹æ¡†
      */
     protected void drawRegionBackground(Graphics g, int x, int y, int width, int height, Color bColor, boolean accept) {
     	drawHotspot(g, x, y, width, height, bColor, accept, true);
@@ -75,7 +75,7 @@ public abstract class AbstractPainter implements HoverPainter {
         Graphics2D g2d = (Graphics2D) g;
         Color color = g2d.getColor();
         Stroke backup = g2d.getStroke();
-        // ÉèÖÃÏßÌõµÄÑùÊ½
+        // è®¾ç½®çº¿æ¡çš„æ ·å¼
         g2d.setStroke(XCreatorConstants.STROKE);
         g2d.setColor(bColor);
         if (!accept) {

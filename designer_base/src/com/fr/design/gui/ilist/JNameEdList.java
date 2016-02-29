@@ -24,7 +24,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
     private static final int ICON_WIDTH = 20;
     private boolean editable = true;
 
-    // kunsnat: ÊÇ·ñÇ¿ÖÆListNameÊÇÊı×Ö (intĞÍ)
+    // kunsnat: æ˜¯å¦å¼ºåˆ¶ListNameæ˜¯æ•°å­— (intå‹)
     private boolean isNameShouldNumber = false;
 
     transient protected ListCellEditor cellEditor;
@@ -50,16 +50,16 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * SetsÊÇ·ñ¿É±à¼­
+     * Setsæ˜¯å¦å¯ç¼–è¾‘
      */
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
 
     /**
-     * ÊÇ·ñ¿É±à¼­
+     * æ˜¯å¦å¯ç¼–è¾‘
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isEditable() {
         return this.editable;
@@ -70,36 +70,36 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /**
-     * ÊÇ·ñÇ¿ÖÆListNameÊÇÊı×Ö (intĞÍ)
+     * æ˜¯å¦å¼ºåˆ¶ListNameæ˜¯æ•°å­— (intå‹)
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isNameShouldNumber() {
         return isNameShouldNumber;
     }
 
     /**
-     * Ìí¼ÓÃû×Ö¸Ä±äÊ±µÄlistener
+     * æ·»åŠ åå­—æ”¹å˜æ—¶çš„listener
      *
-     * @param l ¼àÌıÆ÷
+     * @param l ç›‘å¬å™¨
      */
     public void addModNameActionListener(ModNameActionListener l) {
         ll.add(l);
     }
 
     /**
-     * ±à¼­Ê±µÄ¼àÌıÆ÷
+     * ç¼–è¾‘æ—¶çš„ç›‘å¬å™¨
      *
-     * @param l ¼àÌıÆ÷
+     * @param l ç›‘å¬å™¨
      */
     public void addEditingListner(PropertyChangeAdapter l) {
         this.editingListner = l;
     }
 
     /**
-     * ÒÆ³ıÄ³Ãû×Ö¸Ä±äÊ±µÄlistener
+     * ç§»é™¤æŸåå­—æ”¹å˜æ—¶çš„listener
      *
-     * @param l ¼àÌıÆ÷
+     * @param l ç›‘å¬å™¨
      */
     public void removeModNameActionListener(ModNameActionListener l) {
         ll.remove(l);
@@ -147,7 +147,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * È¡µÃindex½ÚµãµÄÃû×Ö
+     * å–å¾—indexèŠ‚ç‚¹çš„åå­—
      */
     public String getNameAt(int index) {
         Nameable nameable = ((ListModelElement) getModel().getElementAt(index)).wrapper;
@@ -177,16 +177,16 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * ÉèÖÃindex½ÚµãµÄÃû×Ö
+     * è®¾ç½®indexèŠ‚ç‚¹çš„åå­—
      */
-    // b:edit¸Ä±änameµÄÊ±ºòÔõÃ´°ì£¿
+    // b:editæ”¹å˜nameçš„æ—¶å€™æ€ä¹ˆåŠï¼Ÿ
     public void setNameAt(String name, int index) {
         Nameable nameable = ((ListModelElement) getModel().getElementAt(index)).wrapper;
         if (nameable != null) {
             String oldName = nameable.getName();
 
             if (isNameShouldNumber()) {
-                // kunsnat: ÏŞÖÆÖ»ÄÜÊÇÊı×Ö(intĞÍ)
+                // kunsnat: é™åˆ¶åªèƒ½æ˜¯æ•°å­—(intå‹)
                 Number number = Utils.string2Number(name);
                 if (number == null) {
                     nameable.setName(oldName);
@@ -205,18 +205,18 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * ±à¼­µÚindex¸öitem
+     * ç¼–è¾‘ç¬¬indexä¸ªitem
      */
     private String oldName;
 
     /**
-     * ±à¼­µÚindexÏî
+     * ç¼–è¾‘ç¬¬indexé¡¹
      *
-     * @param index ĞòºÅ
-     * @return ³É¹¦·µ»Øtrue
+     * @param index åºå·
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean editItemAt(int index) {
-        // Èç¹û²»¿É±à¼­,·µ»Ø
+        // å¦‚æœä¸å¯ç¼–è¾‘,è¿”å›
         if (!this.editable) {
             return false;
         }
@@ -238,7 +238,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
             return false;
         }
         Rectangle rect = this.getCellBounds(index, index);
-        // alex:ËùÓĞµÄJNameEdList¶¼ÓĞIcon,¿Õ³öÇ°Ãæ20 * 20µÄÎ»ÖÃ¾ÍÊÇ·ÅµÄIcon
+        // alex:æ‰€æœ‰çš„JNameEdListéƒ½æœ‰Icon,ç©ºå‡ºå‰é¢20 * 20çš„ä½ç½®å°±æ˜¯æ”¾çš„Icon
         rect.setRect(createRect(rect, ICON_WIDTH));
 
         editorComp.setBounds(rect);
@@ -263,7 +263,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * ¸ù¾İListCellEditorÈ¡µÃ±à¼­Æ÷µÄComponent
+     * æ ¹æ®ListCellEditorå–å¾—ç¼–è¾‘å™¨çš„Component
      */
     private Component prepareEditor(ListCellEditor cellEditor, int index) {
         String name = getNameAt(index);
@@ -274,25 +274,25 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /*
-     * ¼ÇÂ¼ÕıÔÚ±à¼­µÄindex
+     * è®°å½•æ­£åœ¨ç¼–è¾‘çš„index
      */
     private void setEditingIndex(int idx) {
         editingIndex = idx;
     }
 
     /**
-     * ±à¼­È¡Ïû
+     * ç¼–è¾‘å–æ¶ˆ
      *
-     * @param e ÊÂ¼ş
+     * @param e äº‹ä»¶
      */
     public void editingCanceled(ChangeEvent e) {
         removeComp();
     }
 
     /**
-     * ±à¼­½áÊø
+     * ç¼–è¾‘ç»“æŸ
      *
-     * @param e ÊÂ¼ş
+     * @param e äº‹ä»¶
      */
     public void editingStopped(ChangeEvent e) {
         doAfterLostFocus();
@@ -300,7 +300,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /**
-     * Í£Ö¹±à¼­ÊÂ¼ş
+     * åœæ­¢ç¼–è¾‘äº‹ä»¶
      */
     public void stopEditing() {
         ListCellEditor editor = getCellEditor();
@@ -332,7 +332,7 @@ public class JNameEdList extends UIList implements CellEditorListener {
 
 
     /*
-     * ÒÆ³ı±à¼­Æ÷µÄComponent
+     * ç§»é™¤ç¼–è¾‘å™¨çš„Component
      */
     private void removeComp() {
         if (editorComp != null) {
@@ -345,9 +345,9 @@ public class JNameEdList extends UIList implements CellEditorListener {
     }
 
     /**
-     * Ö÷º¯Êı
+     * ä¸»å‡½æ•°
      *
-     * @param args ²ÎÊı
+     * @param args å‚æ•°
      */
     public static void main(String... args) {
         JFrame f = new JFrame();

@@ -9,8 +9,8 @@ import com.fr.design.style.background.BackgroundSelectPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-1 ÏÂÎç03:12:49
- * ÀàËµÃ÷: Í¼°¸µÄ±³¾°Ñ¡Ôñ µ¯³ö½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-1 ä¸‹åˆ03:12:49
+ * ç±»è¯´æ˜: å›¾æ¡ˆçš„èƒŒæ™¯é€‰æ‹© å¼¹å‡ºç•Œé¢
  */
 public class PatternSelectPane extends BackgroundSelectPane {
 	private static final long serialVersionUID = 6504634749254957415L;
@@ -21,7 +21,7 @@ public class PatternSelectPane extends BackgroundSelectPane {
 
 	@Override
 	public BackgroundSettingPane getShowPane(double preWidth) {
-		// ×îÉÙ6¸ö. ÒòÎªÏîÄ¿Ì«¶àÁË. »áÀ­µÄºÜ³¤
+		// æœ€å°‘6ä¸ª. å› ä¸ºé¡¹ç›®å¤ªå¤šäº†. ä¼šæ‹‰çš„å¾ˆé•¿
 		int column = Math.max((int)preWidth / 25, 6);
 		return new PatternBackgroundPaneNoFore(column); 
 	}

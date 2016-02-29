@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 
  * @author zhou
- * @since 2012-7-26œ¬ŒÁ2:03:12
+ * @since 2012-7-26‰∏ãÂçà2:03:12
  */
 public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook> {
 
@@ -40,14 +40,14 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 		return this.getBook().getParameters();
 	}
 
-	// ±®±Ì≤Œ ˝
+	// Êä•Ë°®ÂèÇÊï∞
 	@Override
 	public Parameter[] getReportParameters() {
 		ReportParameterAttr rpa = this.getBook().getReportParameterAttr();
 		return rpa == null ? new Parameter[0] : rpa.getParameters();
 	}
 
-	//  ˝æ›‘¥≤Œ ˝
+	// Êï∞ÊçÆÊ∫êÂèÇÊï∞
 	@Override
 	public Parameter[] getTableDataParameters() {
 		TableDataSource source = this.getBook();
@@ -65,10 +65,10 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 	
 	/**
-	 * ÷ÿ√¸√˚TableData∫Ûµƒ“ª–©≤Ÿ◊˜
-	 * @param oldName æ…√˚◊÷
-	 * @param newName –¬√˚◊÷
-	 * @return ∑µªÿ «∑ÒÀ¢–¬.
+	 * ÈáçÂëΩÂêçTableDataÂêéÁöÑ‰∏Ä‰∫õÊìç‰Ωú
+	 * @param oldName ÊóßÂêçÂ≠ó
+	 * @param newName Êñ∞ÂêçÂ≠ó
+	 * @return ËøîÂõûÊòØÂê¶Âà∑Êñ∞.
 	 */
 	public boolean renameTableData(String oldName, String newName) {
 		if (super.renameTableData(oldName, newName)) {
@@ -81,7 +81,7 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 
 	/**
-	 * ª∑æ≥∏ƒ±‰.
+	 * ÁéØÂ¢ÉÊîπÂèò.
 	 */
 	public void envChanged() {
 		DesignToolbarProvider provider = StableFactory.getMarkedObject(DesignToolbarProvider.STRING_MARKED, DesignToolbarProvider.class);
@@ -92,7 +92,7 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 
 	/**
-	 * ≤Œ ˝∏ƒ±‰.
+	 * ÂèÇÊï∞ÊîπÂèò.
 	 */
 	public void parameterChanged() {
 		jTemplate.updateReportParameterAttr();
@@ -100,7 +100,7 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 	
 	/**
-	 * øÿº˛∏ƒ±‰.
+	 * Êéß‰ª∂ÊîπÂèò.
 	 */
 	public void widgetConfigChanged() {
 		DesignToolbarProvider provider = StableFactory.getMarkedObject(DesignToolbarProvider.STRING_MARKED, DesignToolbarProvider.class);
@@ -111,8 +111,8 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 
 	/**
-	 * ∑µªÿøÿº˛µƒ√˚◊÷
-	 * @return widgetName øÿº˛¡–±Ì.
+	 * ËøîÂõûÊéß‰ª∂ÁöÑÂêçÂ≠ó
+	 * @return widgetName Êéß‰ª∂ÂàóË°®.
 	 */
 	public List<WidgetName> getWidgetsName() {
 		List<WidgetName> list = new ArrayList<WidgetName>();
@@ -138,8 +138,8 @@ public class WorkBookModelAdapter extends DesignModelAdapter<WorkBook, JWorkBook
 	}
 
 	/**
-	 * ∑µªÿ–¸∏°‘™Àÿµƒ√˚◊÷ ˝◊È
-	 * @return ∑µªÿ ˝◊È.
+	 * ËøîÂõûÊÇ¨ÊµÆÂÖÉÁ¥†ÁöÑÂêçÂ≠óÊï∞ÁªÑ
+	 * @return ËøîÂõûÊï∞ÁªÑ.
 	 */
 	public String[] getFloatNames() {
 		TemplateElementCase elementCase = jTemplate.getEditingElementCase();

@@ -25,7 +25,7 @@ import java.awt.event.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç6:45
+ * Time: ä¸‹åˆ6:45
  */
 public class JSONDataPane extends ChartDesignDataLoadPane {
     private UITextField url = new UITextField();
@@ -65,7 +65,7 @@ public class JSONDataPane extends ChartDesignDataLoadPane {
             public void mouseReleased(MouseEvent e) {
                 tableData.setFilePath(url.getText());
                 fireChange();
-                //Ô¤ÀÀJSONÊı¾İ
+                //é¢„è§ˆJSONæ•°æ®
                 TableDataWrapper tableDataWrappe = getTableDataWrapper();
                 if (tableDataWrappe != null) {
                     try {
@@ -89,8 +89,8 @@ public class JSONDataPane extends ChartDesignDataLoadPane {
     }
 
     /**
-     * ¼ÓÔØÊı¾İ¼¯
-     * @param tableData Êı¾İ¼¯
+     * åŠ è½½æ•°æ®é›†
+     * @param tableData æ•°æ®é›†
      */
     public void populateChartTableData(TableData tableData) {
         if(tableData instanceof JSONTableData) {

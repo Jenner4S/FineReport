@@ -13,7 +13,7 @@ import com.fr.stable.StringUtils;
 import com.fr.design.mainframe.*;
 
 /**
- * Ä£°åÉè¼Æ½çÃæ
+ * æ¨¡æ¿è®¾è®¡ç•Œé¢
  */
 public abstract class TargetComponent<T> extends JComponent {
 	private T target;
@@ -22,7 +22,7 @@ public abstract class TargetComponent<T> extends JComponent {
 		this.target = t;
 	}
 
-	// TODO ALEX_SEP JWorkBook²»ÏëÓĞcopy, paste, cutµÄ²Ù×÷,ÔõÃ´°ì?
+	// TODO ALEX_SEP JWorkBookä¸æƒ³æœ‰copy, paste, cutçš„æ“ä½œ,æ€ä¹ˆåŠ?
 	public abstract void copy();
 
 	public abstract boolean paste();

@@ -9,10 +9,10 @@ import com.fr.form.ui.Widget;
 import javax.swing.*;
 
 /**
- * ±íµ¥ÖĞ Í¼±í¿Ø¼şĞÅÏ¢, Ãû³Æ, class, formÖĞÍ¨¹ıXcreatorUtils·´ÉäÀà ÊµÏÖXChartEditorµÄ³õÊ¼»¯.
+ * è¡¨å•ä¸­ å›¾è¡¨æ§ä»¶ä¿¡æ¯, åç§°, class, formä¸­é€šè¿‡XcreatorUtilsåå°„ç±» å®ç°XChartEditorçš„åˆå§‹åŒ–.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-7-5 ÉÏÎç09:59:39
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-7-5 ä¸Šåˆ09:59:39
  */
 public class ChartWidgetOption extends WidgetOption {
 	private static final long serialVersionUID = -6576352405047132226L;
@@ -29,9 +29,9 @@ public class ChartWidgetOption extends WidgetOption {
 	}
 
 	/**
-	 * Í¨¹ıÀà ĞÅÏ¢µÈ ´´½¨¶ÔÓ¦µÄ¿Ø¼ş±à¼­Æ÷.
+	 * é€šè¿‡ç±» ä¿¡æ¯ç­‰ åˆ›å»ºå¯¹åº”çš„æ§ä»¶ç¼–è¾‘å™¨.
 	 *
-	 * @return ·µ»Ø¿Ø¼ş±à¼­Æ÷.
+	 * @return è¿”å›æ§ä»¶ç¼–è¾‘å™¨.
 	 */
 	public Widget createWidget() {
 		Class<? extends ChartEditor> clz = widgetClass();
@@ -51,27 +51,27 @@ public class ChartWidgetOption extends WidgetOption {
 	}
 
 	/**
-	 * ĞÅÏ¢Ãû³Æ, Ò»°ãÊÇÍ¼±íµÄÀàĞÍÃû³Æ.
+	 * ä¿¡æ¯åç§°, ä¸€èˆ¬æ˜¯å›¾è¡¨çš„ç±»å‹åç§°.
 	 *
-	 * @return ·µ»ØÃû³Æ.
+	 * @return è¿”å›åç§°.
 	 */
 	public String optionName() {
 		return this.optionName;
 	}
 
 	/**
-	 * ĞÅÏ¢Í¼Æ¬, Ò»°ãÊÇÍ¼±í°´Å¥µÄËõÂÔÍ¼.
+	 * ä¿¡æ¯å›¾ç‰‡, ä¸€èˆ¬æ˜¯å›¾è¡¨æŒ‰é’®çš„ç¼©ç•¥å›¾.
 	 *
-	 * @return ĞÅÏ¢Í¼Æ¬.
+	 * @return ä¿¡æ¯å›¾ç‰‡.
 	 */
 	public Icon optionIcon() {
 		return this.optionIcon;
 	}
 
 	/**
-	 * Í¼±í¿Ø¼ş¶ÔÓ¦EditorµÄÀà.
+	 * å›¾è¡¨æ§ä»¶å¯¹åº”Editorçš„ç±».
 	 *
-	 * @return ·µ»ØÀà.
+	 * @return è¿”å›ç±».
 	 */
 	public Class<? extends ChartEditor> widgetClass() {
 		return this.widgetClass;

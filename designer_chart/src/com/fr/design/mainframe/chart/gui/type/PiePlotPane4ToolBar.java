@@ -18,7 +18,7 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç5:52
+ * Time: ä¸‹åˆ5:52
  */
 public class PiePlotPane4ToolBar extends PlotPane4ToolBar {
     private static final int PIE_CHART = 0;

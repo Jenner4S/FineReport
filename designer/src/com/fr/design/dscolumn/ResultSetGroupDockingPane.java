@@ -27,7 +27,7 @@ import com.fr.stable.Constants;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * Õâ¸öpaneÊÇÑ¡ÖĞÊı¾İÁĞºó£¬ÔÚÉÏ·½QuickRegion´¦ÏÔÊ¾µÄpane
+ * è¿™ä¸ªpaneæ˜¯é€‰ä¸­æ•°æ®åˆ—åï¼Œåœ¨ä¸Šæ–¹QuickRegionå¤„æ˜¾ç¤ºçš„pane
  *
  * @author zhou
  */
@@ -136,7 +136,7 @@ public class ResultSetGroupDockingPane extends ResultSetGroupPane {
                 this.goBox.setSelectedIndex(BIND_SELECTED);
             }
         } else if (recordGrouper instanceof FunctionGrouper && ((FunctionGrouper) recordGrouper).isCustom()) {
-            // ÕâÖÖÇé¿öÒ²·Åµ½×Ô¶¨Òå·Ö×éÀïÃæ
+            // è¿™ç§æƒ…å†µä¹Ÿæ”¾åˆ°è‡ªå®šä¹‰åˆ†ç»„é‡Œé¢
             cardLayout.show(cardPane, "groupPane");
             this.goBox.setSelectedIndex(BIND_GROUP);
             this.groupComboBox.setSelectedIndex(ADVANCED);
@@ -145,7 +145,7 @@ public class ResultSetGroupDockingPane extends ResultSetGroupPane {
             this.goBox.setSelectedIndex(BIND_SUMMARY);
             this.functionComboBox.setFunction(((SummaryGrouper) recordGrouper).getFunction());
         } else if (recordGrouper instanceof CustomGrouper) {
-            // ×Ô¶¨Òå·Ö×é or ¸ß¼¶·Ö×é
+            // è‡ªå®šä¹‰åˆ†ç»„ or é«˜çº§åˆ†ç»„
             cardLayout.show(cardPane, "groupPane");
             this.goBox.setSelectedIndex(BIND_GROUP);
             this.groupComboBox.setSelectedIndex(ADVANCED);

@@ -26,7 +26,7 @@ import com.fr.form.ui.container.cardlayout.WTabFitLayout;
 /**
  *
  *
- * @date: 2014-11-25-ÏÂÎç3:11:14
+ * @date: 2014-11-25-ä¸‹åˆ3:11:14
  */
 public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	
@@ -34,7 +34,7 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	
 	private String tagName = "Tab";
 	
-	//Ôö¼ÓÒ»¸ötabNameIndex·ÀÖ¹tabFitLayoutÖØÃû
+	//å¢åŠ ä¸€ä¸ªtabNameIndexé˜²æ­¢tabFitLayouté‡å
 	private int tabFitIndex = 0;
 	private CardSwitchButton currentCard;
 
@@ -69,7 +69,7 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public XWCardTagLayout(WCardTagLayout widget, Dimension initSize, XWCardLayout cardLayout) {
 		super(widget, initSize);
@@ -78,12 +78,12 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	}
 
 	/**
-	 * Ìí¼Ó×é¼şµÄ¼àÌıÊÂ¼ş
+	 * æ·»åŠ ç»„ä»¶çš„ç›‘å¬äº‹ä»¶
 	 * 
-	 * @param e ÊÂ¼ş
+	 * @param e äº‹ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:20:10
+	 * @date 2014-11-25-ä¸‹åˆ6:20:10
 	 * 
 	 */
 	public void componentAdded(ContainerEvent e) {
@@ -94,7 +94,7 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 		}
 		
 		int index = this.cardLayout.toData().getWidgetCount();
-		//ĞÂ¼ÓÒ»¸öcard
+		//æ–°åŠ ä¸€ä¸ªcard
 		String widgetName = tagName+getTabNameIndex();
 		WTabFitLayout fitLayout = new WTabFitLayout(widgetName,tabFitIndex,currentCard);
 		fitLayout.setTabNameIndex(getTabNameIndex());
@@ -113,7 +113,7 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	}
 	
     /**
-     * ½«WLayout×ª»»ÎªXLayoutContainer
+     * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
      */
     public void convert() {
         isRefreshing = true;
@@ -131,16 +131,16 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
     }
     
     /**
-     * ÇĞ»»µ½·ÇÌí¼Ó×´Ì¬
+     * åˆ‡æ¢åˆ°éæ·»åŠ çŠ¶æ€
      * 
-     * @return designer ±íµ¥Éè¼ÆÆ÷
+     * @return designer è¡¨å•è®¾è®¡å™¨
      */
     public void stopAddingState(FormDesigner designer){
     	designer.stopAddingState();
     	return;
     }
     
-    //ĞÂÔöÊ±È¥tabFitLayoutÃû×ÖÖĞ×î´óµÄIndex+1£¬·ÀÖ¹ÖØÃû
+    //æ–°å¢æ—¶å»tabFitLayoutåå­—ä¸­æœ€å¤§çš„Index+1ï¼Œé˜²æ­¢é‡å
     private int getTabNameIndex(){
     	int tabNameIndex = 0;
     	WCardLayout layout = this.cardLayout.toData();
@@ -157,7 +157,7 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
     }
     
 	/**
-	 * µ÷Õûtab¿í¶È
+	 * è°ƒæ•´tabå®½åº¦
 	 * 
 	 * void
 	 */
@@ -178,8 +178,8 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
 	
 	
 	/**
-	 * ¸Ã²¼¾ÖĞèÒªÒş²Ø£¬ÎŞĞè¶Ô±ß¿ò½øĞĞ²Ù×÷
-	 * @param ±ß¿ò
+	 * è¯¥å¸ƒå±€éœ€è¦éšè—ï¼Œæ— éœ€å¯¹è¾¹æ¡†è¿›è¡Œæ“ä½œ
+	 * @param è¾¹æ¡†
 	 * 
 	 */
     public void setBorder(Border border) {
@@ -188,9 +188,9 @@ public class XWCardTagLayout extends XWHorizontalBoxLayout {
     
 	@Override
 	/**
-	 * ¸Ã²¼¾ÖÒş²Ø£¬µã»÷¸Ã²¼¾ÖÊ±Ñ¡ÖĞÏàÓ¦µÄtab²¼¾ÖÖ÷Ìå
-	 * @param editingMouseListener ¼àÌı
-	 * @param e Êó±êµã»÷ÊÂ¼ş
+	 * è¯¥å¸ƒå±€éšè—ï¼Œç‚¹å‡»è¯¥å¸ƒå±€æ—¶é€‰ä¸­ç›¸åº”çš„tabå¸ƒå±€ä¸»ä½“
+	 * @param editingMouseListener ç›‘å¬
+	 * @param e é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 * 
 	 */
 	public void respondClick(EditingMouseListener editingMouseListener,

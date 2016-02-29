@@ -14,29 +14,29 @@ public class MemFILE implements FILE {
     }
 
     /**
-     * ĞÂ½¨Ò»¸öÄ¿Â¼
+     * æ–°å»ºä¸€ä¸ªç›®å½•
      *
-     * @param name Ãû×Ö
-     * @return ĞÂ½¨Ä¿Â¼
+     * @param name åå­—
+     * @return æ–°å»ºç›®å½•
      */
     public boolean createFolder(String name) {
         return false;
     }
 
     /**
-     * ÊÇ·ñ´æÔÚ
+     * æ˜¯å¦å­˜åœ¨
      *
-     * @return ÊÇ·ñ´æÔÚ
+     * @return æ˜¯å¦å­˜åœ¨
      */
     public boolean exists() {
         return false;
     }
 
     /**
-     * ĞÂ½¨ÎÄ¼ş
+     * æ–°å»ºæ–‡ä»¶
      *
-     * @return ÊÇ·ñĞÂ½¨³É¹¦
-     * @throws Exception Òì³£
+     * @return æ˜¯å¦æ–°å»ºæˆåŠŸ
+     * @throws Exception å¼‚å¸¸
      */
     public boolean mkfile() throws Exception {
         return false;
@@ -62,18 +62,18 @@ public class MemFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñÊÇÄÚ´æÎÄ¼ş
+     * æ˜¯å¦æ˜¯å†…å­˜æ–‡ä»¶
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isMemFile() {
         return true;
     }
 
     /**
-     * ÊÇ·ñÊÇ»·¾³ÎÄ¼ş
+     * æ˜¯å¦æ˜¯ç¯å¢ƒæ–‡ä»¶
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isEnvFile() {
         return false;
@@ -85,36 +85,36 @@ public class MemFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñÊÇÄ¿Â¼
+     * æ˜¯å¦æ˜¯ç›®å½•
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDirectory() {
         return false;
     }
 
     /**
-     * ÁĞ³öµ±Ç°Ä¿Â¼ÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ
+     * åˆ—å‡ºå½“å‰ç›®å½•ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹
      *
-     * @return ÎÄ¼ş
+     * @return æ–‡ä»¶
      */
     public FILE[] listFiles() {
         return new FILE[0];
     }
 
     /**
-     * ºó×º
+     * åç¼€
      *
-     * @return ºó×º
+     * @return åç¼€
      */
     public String prefix() {
         return FILEFactory.MEM_PREFIX;
     }
 
     /**
-     * string·½·¨
+     * stringæ–¹æ³•
      *
-     * @return ×Ö·û´®
+     * @return å­—ç¬¦ä¸²
      */
     public String toString() {
         return prefix() + this.name;
@@ -126,28 +126,28 @@ public class MemFILE implements FILE {
     }
 
     /**
-     * ¹Ø±ÕÎÄ¼ş
+     * å…³é—­æ–‡ä»¶
      *
-     * @throws Exception Òì³£
+     * @throws Exception å¼‚å¸¸
      */
     public void closeTemplate() throws Exception {
     }
 
     /**
-     * ×÷ÎªÊäÈëÁ÷
+     * ä½œä¸ºè¾“å…¥æµ
      *
-     * @return ÊäÈëÁ÷
-     * @throws Exception Òì³£
+     * @return è¾“å…¥æµ
+     * @throws Exception å¼‚å¸¸
      */
     public InputStream asInputStream() throws Exception {
         return null;
     }
 
     /**
-     * ×÷ÎªÊä³öÁ÷
+     * ä½œä¸ºè¾“å‡ºæµ
      *
-     * @return Êä³öÁ÷
-     * @throws Exception Òì³£
+     * @return è¾“å‡ºæµ
+     * @throws Exception å¼‚å¸¸
      */
     public OutputStream asOutputStream() throws Exception {
         return null;

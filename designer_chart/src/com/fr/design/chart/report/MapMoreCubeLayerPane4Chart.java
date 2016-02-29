@@ -43,7 +43,7 @@ public class MapMoreCubeLayerPane4Chart extends MultiTabPane<ChartCollection> {
    			layerPane.populateBean(map.getMapName());
    		}
 
-   		// È·ÈÏ²ã¼¶¹ØÏµ
+   		// ç¡®è®¤å±‚çº§å…³ç³»
    		dataPane.populateBean(collection.getSelectedChart().getFilterDefinition());
    	}
 
@@ -54,13 +54,13 @@ public class MapMoreCubeLayerPane4Chart extends MultiTabPane<ChartCollection> {
    		Chart selectChart = collection.getSelectedChart();
    		if(selectChart != null && selectChart.getPlot() instanceof MapPlot) {
    			MapPlot map = (MapPlot)selectChart.getPlot();
-   			layerPane.updateBean(map.getMapName());// È·¶¨¸üĞÂµØÍ¼Ãû³ÆËù¶ÔÓ¦µÄ²ã¼¶¹ØÏµ
+   			layerPane.updateBean(map.getMapName());// ç¡®å®šæ›´æ–°åœ°å›¾åç§°æ‰€å¯¹åº”çš„å±‚çº§å…³ç³»
    		}
    	}
 
    	/**
-   	 * Ë¢ĞÂ²ã¼¶Ê÷ ºÍ Êı¾İÖĞpopulate Êı¾İµÄ²ãÊı
-        * @param collection  Í¼±íÊÕ¼¯Æ÷.
+   	 * åˆ·æ–°å±‚çº§æ ‘ å’Œ æ•°æ®ä¸­populate æ•°æ®çš„å±‚æ•°
+        * @param collection  å›¾è¡¨æ”¶é›†å™¨.
    	 */
    	public void init4PopuMapTree(ChartCollection collection) {
    		Chart selectChart = collection.getSelectedChart();
@@ -73,39 +73,39 @@ public class MapMoreCubeLayerPane4Chart extends MultiTabPane<ChartCollection> {
    	}
 
        /**
-        * ÅĞ¶ÏÊÇ·ñºÏ¸ñ
-        * @param ob  ²ÎÊıÅĞ¶Ï
-        * @return Ä¬ÈÏºÏ¸ñ.
+        * åˆ¤æ–­æ˜¯å¦åˆæ ¼
+        * @param ob  å‚æ•°åˆ¤æ–­
+        * @return é»˜è®¤åˆæ ¼.
         */
    	public boolean accept(Object ob) {
    		return true;
    	}
 
        /**
-        * ½çÃæ±êÌâ
-        * @return ·µ»Ø±êÌâ
+        * ç•Œé¢æ ‡é¢˜
+        * @return è¿”å›æ ‡é¢˜
         */
    	public String title4PopupWindow() {
    		return Inter.getLocText("FR-Chart-Map_Multilayer");
    	}
 
        /**
-        * ÖØÖÃ
+        * é‡ç½®
         */
    	public void reset() {
 
    	}
 
    	/**
-   	 * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñÊı¾İ.
+   	 * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼æ•°æ®.
    	 */
    	public void setSurpportCellData(boolean surpportCellData) {
    		dataPane.justSupportOneSelect(surpportCellData);
    	}
 
 	/**
-     * ³ö·¢Êı¾İ¼¯¸Ä±ä
-     * @param tableDataWrapper Êı¾İ¼¯
+     * å‡ºå‘æ•°æ®é›†æ”¹å˜
+     * @param tableDataWrapper æ•°æ®é›†
      */
 	public void fireTableDataChanged(TableDataWrapper tableDataWrapper) {
 		 dataPane.fireTableDataChanged(tableDataWrapper);

@@ -45,7 +45,7 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     private HeaderPane header;
 
     /**
-     * @param ±êÌâÀ¸µÄÃû×Ö£¬length´ú±íÁĞÊı
+     * @param æ ‡é¢˜æ çš„åå­—ï¼Œlengthä»£è¡¨åˆ—æ•°
      */
     public UICorrelationPane(String... names) {
         columnCount = names.length;
@@ -56,8 +56,8 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * @param column ÁĞÊı
-     *               Ã»ÓĞ±êÌâÀ¸µÄCorrelationPane
+     * @param column åˆ—æ•°
+     *               æ²¡æœ‰æ ‡é¢˜æ çš„CorrelationPane
      */
     public UICorrelationPane(int column) {
         columnCount = column;
@@ -67,7 +67,7 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ²»ĞèÒªÊ¹ÓÃÌí¼Ó°´Å¥, Ä¿Ç°Ö»ÓĞÍ¼±í: ¹É¼ÛÍ¼, ¸ÊÌØÍ¼µ¥Ôª¸ñÊı¾İ½çÃæÓÃµ½.
+     * ä¸éœ€è¦ä½¿ç”¨æ·»åŠ æŒ‰é’®, ç›®å‰åªæœ‰å›¾è¡¨: è‚¡ä»·å›¾, ç”˜ç‰¹å›¾å•å…ƒæ ¼æ•°æ®ç•Œé¢ç”¨åˆ°.
      */
     public void noAddUse() {
         addButton.setEnabled(false);
@@ -79,8 +79,8 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Ìí¼Ó°´Å¥ µÈ ÊÇ·ñ¿ÉÓÃ
-     * @param use ÊÇ·ñ¿ÉÓÃ
+     * æ·»åŠ æŒ‰é’® ç­‰ æ˜¯å¦å¯ç”¨
+     * @param use æ˜¯å¦å¯ç”¨
      */
     public void checkBoxUse(boolean use) {
         addButton.setEnabled(use);
@@ -116,23 +116,23 @@ public class UICorrelationPane extends JPanel implements UIObserver {
 
 
     /**
-     *Ìí¼ÓÒ»ĞĞ
-     * @param line ĞĞ
+     *æ·»åŠ ä¸€è¡Œ
+     * @param line è¡Œ
      */
     public void addLine(Object[] line) {
         tablePane.addLine(line);
     }
 
     /**
-     * É¾³ıÄ³ĞĞÄÚÈİ
-     * @param rowIndex ĞĞºÅ
+     * åˆ é™¤æŸè¡Œå†…å®¹
+     * @param rowIndex è¡Œå·
      */
     public void removeLine(int rowIndex) {
         tablePane.removeLine(rowIndex);
     }
 
     /**
-     * @return Ìí¼Ó°´Å¥µÄÊÂ¼ş½Ó¿Ú
+     * @return æ·»åŠ æŒ‰é’®çš„äº‹ä»¶æ¥å£
      */
     protected ActionListener getAddButtonListener() {
         return new ActionListener() {
@@ -173,7 +173,7 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Í£Ö¹µ¥Ôª¸ñ±à¼­
+     * åœæ­¢å•å…ƒæ ¼ç¼–è¾‘
      */
     public void stopCellEditing() {
         if (tablePane.getDefaultEditor(UITable.class) != null) {
@@ -182,16 +182,16 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Í£Ö¹Ãæ°å±à¼­
-     * @param e ÊÂ¼ş
+     * åœæ­¢é¢æ¿ç¼–è¾‘
+     * @param e äº‹ä»¶
      */
     public void stopPaneEditing(ChangeEvent e) {
         fireChanged();
     }
 
     /**
-     * ´´½¨table±à¼­Æ÷
-     * @return ±à¼­Æ÷
+     * åˆ›å»ºtableç¼–è¾‘å™¨
+     * @return ç¼–è¾‘å™¨
      */
     public UITableEditor createUITableEditor() {
         return new UIDefaultTableCellEditor(new UITextField());
@@ -223,7 +223,7 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Í¨Öª±ä»¯
+     * é€šçŸ¥å˜åŒ–
      */
     public void fireTargetChanged() {
         this.validate();
@@ -233,18 +233,18 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-   	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 *
-   	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
     }
 
     /**
-   	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+   	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
    	 *
-   	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    	 */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -253,26 +253,26 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     public class Layout implements LayoutManager {
 
         /**
-         * Ôö¼Ó×é¼ş
-         * @param name ×é¼şÃû
-         * @param comp ×é¼ş
+         * å¢åŠ ç»„ä»¶
+         * @param name ç»„ä»¶å
+         * @param comp ç»„ä»¶
          */
         public void addLayoutComponent(String name, Component comp) {
 
         }
 
         /**
-         *ÒÆ³ı×é¼ş
-         * @param comp ×é¼ş
+         *ç§»é™¤ç»„ä»¶
+         * @param comp ç»„ä»¶
          */
         public void removeLayoutComponent(Component comp) {
 
         }
 
         /**
-         *×î¼Ñ´óĞ¡
-         * @param parent ¸¸ÈİÆ÷
-         * @return ´óĞ¡
+         *æœ€ä½³å¤§å°
+         * @param parent çˆ¶å®¹å™¨
+         * @return å¤§å°
          */
         public Dimension preferredLayoutSize(Container parent) {
             int h = addButton.getPreferredSize().height + tablePane.getPreferredSize().height;
@@ -283,17 +283,17 @@ public class UICorrelationPane extends JPanel implements UIObserver {
         }
 
         /**
-         * ×îĞ¡²¼¾Ö´óĞ¡
-         * @param parent ¸¸ÈİÆ÷
-         * @return ´óĞ¡
+         * æœ€å°å¸ƒå±€å¤§å°
+         * @param parent çˆ¶å®¹å™¨
+         * @return å¤§å°
          */
         public Dimension minimumLayoutSize(Container parent) {
             return preferredLayoutSize(parent);
         }
 
         /**
-         * ²¼¾ÖÈİÆ÷
-         * @param parent ¸¸ÈİÆ÷
+         * å¸ƒå±€å®¹å™¨
+         * @param parent çˆ¶å®¹å™¨
          */
         public void layoutContainer(Container parent) {
             int width = parent.getWidth();
@@ -338,16 +338,16 @@ public class UICorrelationPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Ôö¼Ó¼àÌı
-     * @param l ¼àÌı
+     * å¢åŠ ç›‘å¬
+     * @param l ç›‘å¬
      */
     public void addChangeListener(ChangeListener l) {
         this.listenerList.add(ChangeListener.class, l);
     }
 
     /**
-     * ÒÆ³ı¼àÌı
-     * @param l ¼àÌı
+     * ç§»é™¤ç›‘å¬
+     * @param l ç›‘å¬
      */
     public void removeChangeListener(ChangeListener l) {
         this.listenerList.remove(ChangeListener.class, l);
@@ -381,8 +381,8 @@ public class UICorrelationPane extends JPanel implements UIObserver {
 
 
     /**
-     * Ö÷º¯Êı
-     * @param args ²ÎÊı
+     * ä¸»å‡½æ•°
+     * @param args å‚æ•°
      */
     public static void main(String... args) {
         JFrame jf = new JFrame("test");

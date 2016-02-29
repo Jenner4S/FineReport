@@ -21,10 +21,10 @@ import java.util.Date;
  */
 public class ChartEnvManager  implements XMLReadable, XMLWriter {
     public static final String ACTIVE_KEY = "RXWY-A25421-K58F47757-7373";
-    private static final int ONE_MONTH_SECOND = 30*24*60*60;//30Ìì£¬ÒÔÃëÎªµ¥Î»
+    private static final int ONE_MONTH_SECOND = 30*24*60*60;//30å¤©ï¼Œä»¥ç§’ä¸ºå•ä½
     private static final int MS =1000;
 
-    boolean isPushUpdateAuto = true; //ÊÇ·ñ×Ô¶¯ÍÆËÍ¸üĞÂ
+    boolean isPushUpdateAuto = true; //æ˜¯å¦è‡ªåŠ¨æ¨é€æ›´æ–°
 
     private String activationKey = null;
 
@@ -79,14 +79,14 @@ public class ChartEnvManager  implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ·µ»Ø¼¤»îÂë
+     * è¿”å›æ¿€æ´»ç 
      */
     public String getActivationKey() {
         return activationKey;
     }
 
     /**
-     * ÉèÖÃ¼¤»îÂë
+     * è®¾ç½®æ¿€æ´»ç 
      */
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
@@ -100,23 +100,23 @@ public class ChartEnvManager  implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ÊÇ·ñÉèÖÃÁË×Ô¶¯ÍÆËÍÍ¼±íÉè¼ÆÆ÷ÔÚÏß¸üĞĞ
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦è®¾ç½®äº†è‡ªåŠ¨æ¨é€å›¾è¡¨è®¾è®¡å™¨åœ¨çº¿æ›´è¡Œ
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isPushUpdateAuto(){
         return isPushUpdateAuto;
     }
 
     /**
-     *ÔÚÉèÖÃ²»×Ô¶¯ÍÆËÍÔÚÏß¸üĞÂµÄÇé¿öÏÂ£¬Ã¿30Ìì×Ô¶¯¼ì²âÒ»´Î
-     * @return ÊÇ·ñĞèÒª¼ì²â
+     *åœ¨è®¾ç½®ä¸è‡ªåŠ¨æ¨é€åœ¨çº¿æ›´æ–°çš„æƒ…å†µä¸‹ï¼Œæ¯30å¤©è‡ªåŠ¨æ£€æµ‹ä¸€æ¬¡
+     * @return æ˜¯å¦éœ€è¦æ£€æµ‹
      */
     public boolean isOverOneMonth(){
         return !isPushUpdateAuto && ((new Date().getTime()-lastCheckDate.getTime())/MS>=checkTimeSpan);
     }
 
     /***
-     * ÖØĞÂÉèÖÃ×îĞÂ¼ì²éµÄÈÕÆÚ
+     * é‡æ–°è®¾ç½®æœ€æ–°æ£€æŸ¥çš„æ—¥æœŸ
      */
     public void resetCheckDate(){
         this.lastCheckDate = new Date();
@@ -153,18 +153,18 @@ public class ChartEnvManager  implements XMLReadable, XMLWriter {
     }
 
     /**
-   	 * ±£´æÉè¼ÆÆ÷µÄÅäÖÃÎÄ¼ş, ¸ÃÎÄ¼ş²»ÔÚenvµÄresourceÄ¿Â¼ÏÂ
-   	 * ¶øÊÇÔÚConsts.getEnvHome() + File.separator + Consts.APP_NAME
+   	 * ä¿å­˜è®¾è®¡å™¨çš„é…ç½®æ–‡ä»¶, è¯¥æ–‡ä»¶ä¸åœ¨envçš„resourceç›®å½•ä¸‹
+   	 * è€Œæ˜¯åœ¨Consts.getEnvHome() + File.separator + Consts.APP_NAME
    	 *
    	 *
-   	 * @date 2014-9-29-ÉÏÎç11:04:23
+   	 * @date 2014-9-29-ä¸Šåˆ11:04:23
    	 */
        public void saveXMLFile() {
            File xmlFile = this.getDesignerEnvFile();
    		   if (xmlFile == null) {
    			  return;
    		   }
-   		   if (!xmlFile.getParentFile().exists()) {//½¨Á¢Ä¿Â¼.
+   		   if (!xmlFile.getParentFile().exists()) {//å»ºç«‹ç›®å½•.
    			  StableUtils.mkdirs(xmlFile.getParentFile());
    		   }
 

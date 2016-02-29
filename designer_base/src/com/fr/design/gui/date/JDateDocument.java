@@ -12,22 +12,22 @@ import javax.swing.text.PlainDocument;
 /**
  */
 public class JDateDocument extends PlainDocument{
-    private JTextComponent textComponent; //ÈÕÆÚÊäÈëÎÄ±¾¿ò
+    private JTextComponent textComponent; //æ—¥æœŸè¾“å…¥æ–‡æœ¬æ¡†
     private SimpleDateFormat dateFormat;
 
     /******************************************************************
-     ** º¯ÊıÃû³Æ£ºJDateDocument
-     ** ¹¦ÄÜÃèÊö£ºÉèÖÃ´ËÎÄ±¾¿òÏÔÊ¾µÄÄ¬ÈÏÖµ¡¢¸ñÊ½ÏŞÖÆºÍµ±Ç°ÈÕÆÚ
-     ** Èë¿Ú²ÎÊı£º
-     ** tc : JTextComponentÀàĞÍ,µ±Ç°²Ù×÷µÄÎÄ±¾¿ò
-     ** dateFormat : SimpleDateFormatÀàĞÍ,µ±Ç°²Ù×÷ÎÄ±¾¿òµÄ¸ñÊ½ÏŞÖÆ
-     ** initDateTime : StringÀàĞÍ,µ±Ç°ÈÕÆÚ
-     ** ·µ»ØÖµ£ºÎŞ
-     ** µ÷ÓÃÕß£ºÀàJDateDocument
+     ** å‡½æ•°åç§°ï¼šJDateDocument
+     ** åŠŸèƒ½æè¿°ï¼šè®¾ç½®æ­¤æ–‡æœ¬æ¡†æ˜¾ç¤ºçš„é»˜è®¤å€¼ã€æ ¼å¼é™åˆ¶å’Œå½“å‰æ—¥æœŸ
+     ** å…¥å£å‚æ•°ï¼š
+     ** tc : JTextComponentç±»å‹,å½“å‰æ“ä½œçš„æ–‡æœ¬æ¡†
+     ** dateFormat : SimpleDateFormatç±»å‹,å½“å‰æ“ä½œæ–‡æœ¬æ¡†çš„æ ¼å¼é™åˆ¶
+     ** initDateTime : Stringç±»å‹,å½“å‰æ—¥æœŸ
+     ** è¿”å›å€¼ï¼šæ— 
+     ** è°ƒç”¨è€…ï¼šç±»JDateDocument
      *******************************************************************/
     public JDateDocument(JTextComponent tc, SimpleDateFormat dateFormat) throws
         UnsupportedOperationException{
-        //µ±Ç°ÈÕÆÚ¹¹Ôì
+        //å½“å‰æ—¥æœŸæ„é€ 
         this(tc, dateFormat, getCurrentDate(dateFormat));
     }
 
@@ -35,11 +35,11 @@ public class JDateDocument extends PlainDocument{
                          SimpleDateFormat dateFormat,
                          String initDateTime) throws
         UnsupportedOperationException{
-        //ÉèÖÃµ±Ç°ÈÕÆÚ¸ñÊ½
+        //è®¾ç½®å½“å‰æ—¥æœŸæ ¼å¼
         setDateFormat(dateFormat);
-        //±£´æ²Ù×÷µÄÎÄ±¾¿ò
+        //ä¿å­˜æ“ä½œçš„æ–‡æœ¬æ¡†
         textComponent = tc;
-        //ÉèÖÃÏÔÊ¾Îªµ±Ç°ÈÕÆÚ,Í¬Ê±Íê³ÉÏÔÊ¾µÄ¸ñÊ½»¯
+        //è®¾ç½®æ˜¾ç¤ºä¸ºå½“å‰æ—¥æœŸ,åŒæ—¶å®Œæˆæ˜¾ç¤ºçš„æ ¼å¼åŒ–
         try{
             insertString(0, initDateTime, null);
         } catch(BadLocationException ex){
@@ -48,7 +48,7 @@ public class JDateDocument extends PlainDocument{
     }
 
     /**
-     * ÉèÖÃµ±Ç°ÈÕÆÚ¸ñÊ½
+     * è®¾ç½®å½“å‰æ—¥æœŸæ ¼å¼
      * @param dateFormat SimpleDateFormat
      */
     public void setDateFormat(SimpleDateFormat dateFormat){
@@ -56,7 +56,7 @@ public class JDateDocument extends PlainDocument{
     }
 
     /**
-     * È¡µÃµ±Ç°ÈÕÆÚ¸ñÊ½
+     * å–å¾—å½“å‰æ—¥æœŸæ ¼å¼
      * @return SimpleDateFormat
      */
     public SimpleDateFormat getDateFormat(){
@@ -64,7 +64,7 @@ public class JDateDocument extends PlainDocument{
     }
 
     /**
-     * È¡µÃµ±Ç°ÏµÍ³ÈÕÊ±
+     * å–å¾—å½“å‰ç³»ç»Ÿæ—¥æ—¶
      * @return String
      */
     public static String getCurrentDate(SimpleDateFormat smFormat){
@@ -72,79 +72,79 @@ public class JDateDocument extends PlainDocument{
     }
 
     /******************************************************************
-     ** º¯ÊıÃû³Æ£ºpublic void insertString(int offset, String s,
+     ** å‡½æ•°åç§°ï¼špublic void insertString(int offset, String s,
      **             AttributeSet attributeSet) throws BadLocationException
-     ** ¹¦ÄÜÃèÊö£ºÖØÔØÔ­·½·¨,ÏŞÖÆÓÃ»§²åÈë¸ñÊ½ÎªÈÕÆÚ¸ñÊ½
-     ** Èë¿Ú²ÎÊı£ºoffset: intĞÍ,²åÈëÎ»ÖÃ
-     **            s: StringĞÍ,²åÈë×Ö·û´®
-     **            attributeSet: AttributeSetĞÍ,ÊôĞÔ¼¯
-     ** ·µ»ØÖµ£ºÎŞ
-     ** µ÷ÓÃÕß£ºÀàJDateDocument
+     ** åŠŸèƒ½æè¿°ï¼šé‡è½½åŸæ–¹æ³•,é™åˆ¶ç”¨æˆ·æ’å…¥æ ¼å¼ä¸ºæ—¥æœŸæ ¼å¼
+     ** å…¥å£å‚æ•°ï¼šoffset: intå‹,æ’å…¥ä½ç½®
+     **            s: Stringå‹,æ’å…¥å­—ç¬¦ä¸²
+     **            attributeSet: AttributeSetå‹,å±æ€§é›†
+     ** è¿”å›å€¼ï¼šæ— 
+     ** è°ƒç”¨è€…ï¼šç±»JDateDocument
      *******************************************************************/
     public void insertString(int offset, String s,
                              AttributeSet attributeSet) throws BadLocationException{
-        String toTest; //ÓÃÓÚ²âÊÔÊäÈëºÏ·¨ĞÔµÄ×Ö·û´®
-        //ÅĞ¶Ï²åÈë×Ö·û´®³¤¶È
+        String toTest; //ç”¨äºæµ‹è¯•è¾“å…¥åˆæ³•æ€§çš„å­—ç¬¦ä¸²
+        //åˆ¤æ–­æ’å…¥å­—ç¬¦ä¸²é•¿åº¦
         if(s.length() == 1){
-            //³¤¶ÈÎª1
+            //é•¿åº¦ä¸º1
             try{
-                //ÏŞÖÆÊäÈëÎªÕûÊı
+                //é™åˆ¶è¾“å…¥ä¸ºæ•´æ•°
                 Integer.parseInt(s);
             } catch(Exception ex){
-                //´íÎóÔòÌáÊ¾²¢·µ»Ø
+                //é”™è¯¯åˆ™æç¤ºå¹¶è¿”å›
                 Toolkit.getDefaultToolkit().beep();
                 return;
             }
-            //È¡µÃÔ­Ê¼²åÈëÎ»ÖÃ
+            //å–å¾—åŸå§‹æ’å…¥ä½ç½®
             int newOffset = offset;
-            //Èç¹û²åÈëÎ»ÖÃÎª"/"," ","-"·ûºÅµÄÇ°Ãæ,ÔòÒÆ¶¯µ½ÆäºóÃæ²åÈë(¸Ä±änewOffsetµÄÖµ)
+            //å¦‚æœæ’å…¥ä½ç½®ä¸º"/"," ","-"ç¬¦å·çš„å‰é¢,åˆ™ç§»åŠ¨åˆ°å…¶åé¢æ’å…¥(æ”¹å˜newOffsetçš„å€¼)
             if(offset == 4 || offset == 7 ||
                offset == 10 || offset == 13 ||
                offset == 16){
                 newOffset++;
                 textComponent.setCaretPosition(newOffset);
             }
-            //Èç¹û²åÈëÎ»ÖÃÎª×îºó,Ôò²»²åÈë
+            //å¦‚æœæ’å…¥ä½ç½®ä¸ºæœ€å,åˆ™ä¸æ’å…¥
             if(offset == dateFormat.toPattern().length()){
                 return;
             }
-            //È¡µÃÏÔÊ¾µÄÊ±¼ä,´¦ÀíºóµÃµ½ÒªÏÔÊ¾µÄ×Ö·û´®
+            //å–å¾—æ˜¾ç¤ºçš„æ—¶é—´,å¤„ç†åå¾—åˆ°è¦æ˜¾ç¤ºçš„å­—ç¬¦ä¸²
             toTest = textComponent.getText();
             toTest = toTest.substring(0, newOffset) + s +
                 toTest.substring(newOffset + 1);
-            //Èç¹ûÒªÏÔÊ¾µÄ×Ö·û´®ºÏ·¨,ÔòÏÔÊ¾,·ñÔò¸ø³öÌáÊ¾²¢ÍË³ö
+            //å¦‚æœè¦æ˜¾ç¤ºçš„å­—ç¬¦ä¸²åˆæ³•,åˆ™æ˜¾ç¤º,å¦åˆ™ç»™å‡ºæç¤ºå¹¶é€€å‡º
             boolean isValid = isValidDate(toTest);
             if(!isValid){
                 Toolkit.getDefaultToolkit().beep();
                 return;
             }
-            //²åÈë×Ö·û´®
+            //æ’å…¥å­—ç¬¦ä¸²
             super.remove(newOffset, 1);
             super.insertString(newOffset, s, attributeSet);
         }
-        //Èç¹û²åÈë³¤¶È10
+        //å¦‚æœæ’å…¥é•¿åº¦10
         else if(s.length() == 10 || s.length() == 19){
-            //ºÏ·¨ÔòÏÔÊ¾,·ñÔò¸ø³öÌáÊ¾ÍË³ö
+            //åˆæ³•åˆ™æ˜¾ç¤º,å¦åˆ™ç»™å‡ºæç¤ºé€€å‡º
             if(!isValidDate(s)){
                 Toolkit.getDefaultToolkit().beep();
                 return;
             }
-            //²åÈë×Ö·û´®
+            //æ’å…¥å­—ç¬¦ä¸²
             super.remove(0, getLength());
             super.insertString(0, s, attributeSet);
         }
     }
 
     /**********************************************************************************
-     ** º¯ÊıÃû³Æ£ºpublic void remove(int offset, int length) throws BadLocationException
-     ** ¹¦ÄÜÃèÊö£ºÖØÔØÔ­·½·¨,É¾³ıºÏÊÊÎ»ÖÃµÄ×Ö·û´®
-     ** Èë¿Ú²ÎÊı£ºoffset: intĞÍ,²åÈëÎ»ÖÃ
-     **            length: intĞÍ,É¾³ı³¤¶È
-     ** ·µ»ØÖµ£ºÎŞ
-     ** µ÷ÓÃÕß£ºinsertString(int, String,AttributeSet)
+     ** å‡½æ•°åç§°ï¼špublic void remove(int offset, int length) throws BadLocationException
+     ** åŠŸèƒ½æè¿°ï¼šé‡è½½åŸæ–¹æ³•,åˆ é™¤åˆé€‚ä½ç½®çš„å­—ç¬¦ä¸²
+     ** å…¥å£å‚æ•°ï¼šoffset: intå‹,æ’å…¥ä½ç½®
+     **            length: intå‹,åˆ é™¤é•¿åº¦
+     ** è¿”å›å€¼ï¼šæ— 
+     ** è°ƒç”¨è€…ï¼šinsertString(int, String,AttributeSet)
      ***********************************************************************************/
     public void remove(int offset, int length) throws BadLocationException{
-        //Èç¹û²åÈëÎ»ÖÃÔÚ"-"Ç°,Ôò»ØÍËÒ»¸ö¹â±êÎ»ÖÃ
+        //å¦‚æœæ’å…¥ä½ç½®åœ¨"-"å‰,åˆ™å›é€€ä¸€ä¸ªå…‰æ ‡ä½ç½®
         //yyyy-MM-dd HH:mm:ss
         if(offset == 4 || offset == 7 ||
            offset == 10 || offset == 13 ||
@@ -155,53 +155,53 @@ public class JDateDocument extends PlainDocument{
     }
 
     /**********************************************************************************
-     ** º¯ÊıÃû³Æ£ºpublic boolean isLegalDate(String strDate)
-     ** ¹¦ÄÜÃèÊö£ºÅĞ¶Ï²åÈëµÄ³¤¶ÈÎª10µÄ×Ö·û´®ÊÇ·ñºÏ·¨
-     ** Èë¿Ú²ÎÊı£ºintY: intĞÍ,ÄêµÄÖµ
-     **            intM: intĞÍ,ÔÂµÄÖµ
-     **            intD: intĞÍ,ÈÕµÄÖµ
-     ** ·µ»ØÖµ£ºbooleanĞÍ,Õæ,±íÊ¾ÊÇºÏ·¨µÄ,¼Ù,±íÊ¾²»ºÏ·¨
-     ** µ÷ÓÃÕß£ºinsertString(int, String,AttributeSet)
+     ** å‡½æ•°åç§°ï¼špublic boolean isLegalDate(String strDate)
+     ** åŠŸèƒ½æè¿°ï¼šåˆ¤æ–­æ’å…¥çš„é•¿åº¦ä¸º10çš„å­—ç¬¦ä¸²æ˜¯å¦åˆæ³•
+     ** å…¥å£å‚æ•°ï¼šintY: intå‹,å¹´çš„å€¼
+     **            intM: intå‹,æœˆçš„å€¼
+     **            intD: intå‹,æ—¥çš„å€¼
+     ** è¿”å›å€¼ï¼šbooleanå‹,çœŸ,è¡¨ç¤ºæ˜¯åˆæ³•çš„,å‡,è¡¨ç¤ºä¸åˆæ³•
+     ** è°ƒç”¨è€…ï¼šinsertString(int, String,AttributeSet)
      ***********************************************************************************/
     private boolean isValidDate(String strDate){
-        int intY, intM, intD; //Äê,ÔÂ,ÈÕ,Ê±,·Ö,ÃëµÄÖµ
+        int intY, intM, intD; //å¹´,æœˆ,æ—¥,æ—¶,åˆ†,ç§’çš„å€¼
         int intH = 0, intMi = 0, intS = 0;
-        int iCaretPosition; //¹â±êÎ»ÖÃ
+        int iCaretPosition; //å…‰æ ‡ä½ç½®
         int iPatternLen = getDateFormat().toPattern().length();
-        //»ñÈ¡×Ö·û´®
+        //è·å–å­—ç¬¦ä¸²
         if(strDate == null){
             return false;
         }
         strDate = strDate.trim();
-        //Èç¹ûÎª¿Õ,³¤¶È²»¶Ô,ÔòÎª·Ç·¨,·µ»Øfalse
+        //å¦‚æœä¸ºç©º,é•¿åº¦ä¸å¯¹,åˆ™ä¸ºéæ³•,è¿”å›false
         if(strDate.length() != iPatternLen){
             return false;
         }
-        //Èç¹ûÊÇÈ«½Ç×Ö·û,Ôò·µ»Øfalse
+        //å¦‚æœæ˜¯å…¨è§’å­—ç¬¦,åˆ™è¿”å›false
         for(int i = 0; i < 10; i++){
             if(((int)strDate.charAt(i)) > 255){
                 return false;
             }
         }
-        //È¡Äê,ÔÂ,ÈÕµÄÖµ
+        //å–å¹´,æœˆ,æ—¥çš„å€¼
         try{
             intY = Integer.parseInt(strDate.substring(0, 4));
             intM = Integer.parseInt(strDate.substring(5, 7));
             intD = Integer.parseInt(strDate.substring(8, 10));
         } catch(Exception e){
-            //Ê§°ÜÔò·µ»Øfalse
+            //å¤±è´¥åˆ™è¿”å›false
             return false;
         }
 //        System.err.println("int:intY="+intY+",intM="+intM+",intD="+intD);
         iCaretPosition = textComponent.getCaretPosition();
         boolean isValid = true;
 
-        //ÔÂÔ½½ç
+        //æœˆè¶Šç•Œ
         if(intM > 12 || intM < 1){
             intM = Math.min(12, Math.max(1, intM));
             isValid = false;
         }
-        //¸ù¾İÔÂ·İ,ÅĞ¶ÏÈÕÆÚÊäÈë,ÈçÔ½½ç,ÔòĞŞ¸Ä
+        //æ ¹æ®æœˆä»½,åˆ¤æ–­æ—¥æœŸè¾“å…¥,å¦‚è¶Šç•Œ,åˆ™ä¿®æ”¹
         if(intD < 1){
             intD = 1;
             isValid = false;
@@ -210,34 +210,34 @@ public class JDateDocument extends PlainDocument{
             case 4:
             case 6:
             case 9:
-            case 11: //×î´óÌìÊıÎª30Ìì
+            case 11: //æœ€å¤§å¤©æ•°ä¸º30å¤©
 
-                //Èç¹ûÊäÈë´óÓÚ30,ÔòĞŞ¸ÄÎª30
+                //å¦‚æœè¾“å…¥å¤§äº30,åˆ™ä¿®æ”¹ä¸º30
                 if(intD > 30){
                     intD = 30;
                     isValid = false;
                 }
                 break;
-            case 2: //2ÔÂ·İ
+            case 2: //2æœˆä»½
 
-                //Çø±ğÈòÄê
+                //åŒºåˆ«é—°å¹´
                 if((intY % 4 == 0 && intY % 100 != 0) || intY % 400 == 0){
-                    //Èç¹ûÊäÈë´óÓÚ29,ÔòĞŞ¸ÄÎª29
+                    //å¦‚æœè¾“å…¥å¤§äº29,åˆ™ä¿®æ”¹ä¸º29
                     if(intD > 29){
                         intD = 29;
                         isValid = false;
                     }
                 } else{
-                    //Èç¹ûÊäÈë´óÓÚ28,ÔòĞŞ¸ÄÎª28
+                    //å¦‚æœè¾“å…¥å¤§äº28,åˆ™ä¿®æ”¹ä¸º28
                     if(intD > 28){
                         intD = 28;
                         isValid = false;
                     }
                 }
                 break;
-            default: //×î´óÌìÊıÎª31Ìì
+            default: //æœ€å¤§å¤©æ•°ä¸º31å¤©
 
-                //Èç¹ûÊäÈë´óÓÚ31,ÔòĞŞ¸ÄÎª31
+                //å¦‚æœè¾“å…¥å¤§äº31,åˆ™ä¿®æ”¹ä¸º31
                 if(intD > 31){
                     intD = 31;
                     isValid = false;
@@ -254,17 +254,17 @@ public class JDateDocument extends PlainDocument{
             } catch(Exception e){
                 return false;
             }
-            //Ê±Ô½½ç
+            //æ—¶è¶Šç•Œ
             if(intH > 23 || intH < 0){
                 intH = Math.min(23, Math.max(0, intH));
                 isValid = false;
             }
-            //·ÖÔ½½ç
+            //åˆ†è¶Šç•Œ
             if(intMi > 59 || intMi < 0){
                 intMi = Math.min(59, Math.max(0, intMi));
                 isValid = false;
             }
-            //ÃëÔ½½ç
+            //ç§’è¶Šç•Œ
             if(intS > 59 || intS < 0){
                 intS = Math.min(59, Math.max(0, intS));
                 isValid = false;
@@ -280,22 +280,22 @@ public class JDateDocument extends PlainDocument{
 
     private String toDateString(int y, int m, int d, int h, int mi, int s){
         m = Math.max(1, Math.min(12, m));
-        //×î´óÌìÊıÎª31Ìì
+        //æœ€å¤§å¤©æ•°ä¸º31å¤©
         d = Math.max(1, Math.min(31, d));
         switch(m){
             case 4:
             case 6:
             case 9:
             case 11:
-                d = Math.min(30, d); //×î´óÌìÊıÎª30Ìì
+                d = Math.min(30, d); //æœ€å¤§å¤©æ•°ä¸º30å¤©
                 break;
             case 2:
 
-                //ÈóÄê
+                //æ¶¦å¹´
                 if((y % 4 == 0 && y % 100 != 0) || y % 400 == 0){
-                    d = Math.min(29, d); //×î´óÌìÊıÎª29Ìì
+                    d = Math.min(29, d); //æœ€å¤§å¤©æ•°ä¸º29å¤©
                 } else{
-                    d = Math.min(28, d); //×î´óÌìÊıÎª28Ìì
+                    d = Math.min(28, d); //æœ€å¤§å¤©æ•°ä¸º28å¤©
                 }
                 break;
         }

@@ -7,20 +7,20 @@ import javax.swing.*;
 import java.util.List;
 
 /**
- * ½«TableData°ü×°ÏÂ ÓÃÒÔÇø·ÖÄ£°åÊı¾İ¼¯¡¢·şÎñÆ÷Êı¾İ¼¯¡¢´æ´¢¹ı³ÌÊı¾İ¼¯
- * ¶¨ÒåÁË²Ù×÷TableDataµÄÒ»Ğ©ÒªÓÃµÄ·½·¨£ºtabledataµÄÃû×Ö¡¢Í¼±ê¡¢²úÉúµÄÁĞÃû¼¯ºÏ¡¢Ô¤ÀÀÊı¾İ¼¯µÈ
- * ×¢ÒâÏÖÔÚ´æ´¢¹ı³ÌStoreProcedure±¾ÖÊÉÏ²»ÊÇTableData
- * !!Notice:²»Ö§³Ö¶ÔÊı¾İ¼¯µÄĞŞ¸Ä¡¢ÖØÃüÃûµÈ¸Ä±äTableDataµÄ²Ù×÷¡£Ò»¸ö¼È¶¨µÄÊı¾İ¼¯
- * £¨È·¶¨µÄSQL²éÑ¯Óï¾ä£©£¬¶ÔÓ¦ÏàÓ¦µÄTableDataWrappe¡£ Èç¹ûÊı¾İ¼¯±ä»¯ÁË£¬ÄÇÃ´TableDataWrappeÒ²»áÖØĞÂÉú³É¡£
- * ÓÃÒÔ±£Ö¤>>>>>>>>calculateColumnNameList()Ö»¼ÆËãÒ»´Î£¬¶øÇÒÊÇÕıÈ·µÄ<<<<<<
+ * å°†TableDataåŒ…è£…ä¸‹ ç”¨ä»¥åŒºåˆ†æ¨¡æ¿æ•°æ®é›†ã€æœåŠ¡å™¨æ•°æ®é›†ã€å­˜å‚¨è¿‡ç¨‹æ•°æ®é›†
+ * å®šä¹‰äº†æ“ä½œTableDataçš„ä¸€äº›è¦ç”¨çš„æ–¹æ³•ï¼štabledataçš„åå­—ã€å›¾æ ‡ã€äº§ç”Ÿçš„åˆ—åé›†åˆã€é¢„è§ˆæ•°æ®é›†ç­‰
+ * æ³¨æ„ç°åœ¨å­˜å‚¨è¿‡ç¨‹StoreProcedureæœ¬è´¨ä¸Šä¸æ˜¯TableData
+ * !!Notice:ä¸æ”¯æŒå¯¹æ•°æ®é›†çš„ä¿®æ”¹ã€é‡å‘½åç­‰æ”¹å˜TableDataçš„æ“ä½œã€‚ä¸€ä¸ªæ—¢å®šçš„æ•°æ®é›†
+ * ï¼ˆç¡®å®šçš„SQLæŸ¥è¯¢è¯­å¥ï¼‰ï¼Œå¯¹åº”ç›¸åº”çš„TableDataWrappeã€‚ å¦‚æœæ•°æ®é›†å˜åŒ–äº†ï¼Œé‚£ä¹ˆTableDataWrappeä¹Ÿä¼šé‡æ–°ç”Ÿæˆã€‚
+ * ç”¨ä»¥ä¿è¯>>>>>>>>calculateColumnNameList()åªè®¡ç®—ä¸€æ¬¡ï¼Œè€Œä¸”æ˜¯æ­£ç¡®çš„<<<<<<
  * 
  * @author zhou
- * @since 2012-3-28ÏÂÎç9:51:49
+ * @since 2012-3-28ä¸‹åˆ9:51:49
  */
 public interface TableDataWrapper extends ChildrenNodesLoader {
 
 	/**
-	 * Êı¾İ¼¯Ãû×Ö
+	 * æ•°æ®é›†åå­—
 	 * 
 	 * @return
 	 */
@@ -34,32 +34,32 @@ public interface TableDataWrapper extends ChildrenNodesLoader {
     public TableData getTableData();
 
     /**
-	 * Êı¾İ¼¯Í¼±ê
+	 * æ•°æ®é›†å›¾æ ‡
 	 * 
 	 * @return
 	 */
 	public Icon getIcon();
 
 	/**
-	 * Êı¾İ¼¯Ö´ĞĞ½á¹û·µ»ØµÄËùÓĞ×Ö¶Î
+	 * æ•°æ®é›†æ‰§è¡Œç»“æœè¿”å›çš„æ‰€æœ‰å­—æ®µ
 	 * 
-	 * TODO:Òª²»Òª¼ÓÉÏExceptionÄØ£¿¸öÈË¸Ğ¾õºÜÓĞ±ØÒª
+	 * TODO:è¦ä¸è¦åŠ ä¸ŠExceptionå‘¢ï¼Ÿä¸ªäººæ„Ÿè§‰å¾ˆæœ‰å¿…è¦
 	 * @return
 	 */
 	public List<String> calculateColumnNameList();
 
 	/**
-	 * Ô¤ÀÀÊı¾İ¼¯
+	 * é¢„è§ˆæ•°æ®é›†
 	 */
 	public void previewData();
 
 	/**
-	 * Ô¤ÀÀÊı¾İ¼¯£¬´øÓĞÏÔÊ¾ÖµºÍÊµ¼ÊÖµµÄ±ê¼Ç½á¹û
+	 * é¢„è§ˆæ•°æ®é›†ï¼Œå¸¦æœ‰æ˜¾ç¤ºå€¼å’Œå®é™…å€¼çš„æ ‡è®°ç»“æœ
 	 */
 	public void previewData(final int keyIndex, final int valueIndex);
 
 	/**
-	 * ÊÇ·ñÒì³£ TODO:Õâ¸öÓ¦¸ÃºÍcalculateColumnNameList·½·¨½áºÏÔÚÒ»Æğ
+	 * æ˜¯å¦å¼‚å¸¸ TODO:è¿™ä¸ªåº”è¯¥å’ŒcalculateColumnNameListæ–¹æ³•ç»“åˆåœ¨ä¸€èµ·
 	 * 
 	 * @return
 	 */

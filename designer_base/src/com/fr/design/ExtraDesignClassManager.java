@@ -32,7 +32,7 @@ import java.util.*;
 /**
  * @author : richie
  * @since : 8.0
- * ÓÃÓÚÉè¼ÆÆ÷À©Õ¹µÄ¹ÜÀíÀà
+ * ç”¨äºè®¾è®¡å™¨æ‰©å±•çš„ç®¡ç†ç±»
  */
 public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesignClassManagerProvider {
 
@@ -45,8 +45,8 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         if (classManager == null) {
             classManager = new ExtraDesignClassManager();
             classManager.readXMLFile();
-            // ³õÊ¼»¯µÄÊ±ºò£¬Ä¬ÈÏ³¢ÊÔ¼ÓÔØµÄ²å¼ş
-            // richie:ÏÈÆÁ±Îµô¸üĞÂ²Ëµ¥£¬ÒòÎªÃ»ÓĞÉè¼Æ±È½Ï³ó
+            // åˆå§‹åŒ–çš„æ—¶å€™ï¼Œé»˜è®¤å°è¯•åŠ è½½çš„æ’ä»¶
+            // richie:å…ˆå±è”½æ‰æ›´æ–°èœå•ï¼Œå› ä¸ºæ²¡æœ‰è®¾è®¡æ¯”è¾ƒä¸‘
             //classManager.addMenuHandler("com.fr.update.UpdateMenuHandler");
         }
 
@@ -129,7 +129,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 HyperlinkProvider provider = (HyperlinkProvider) clazz.newInstance();
                 hyperlinkGroupProviders.add(provider);
             } catch (Exception e) {
-                FRLogger.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -142,18 +142,18 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * »ñÈ¡javaScriptPane
+     * è·å–javaScriptPane
      *
-     * @return javaScriptPane¼¯ºÏ
+     * @return javaScriptPaneé›†åˆ
      */
     public List<JavaScriptActionProvider> getJavaScriptActionProvider() {
         return javaScriptActionProviders;
     }
 
     /**
-     * Ìí¼ÓÒ»¸öjavaScriptPane
+     * æ·»åŠ ä¸€ä¸ªjavaScriptPane
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addJavaScriptActionProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -167,15 +167,15 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     javaScriptActionProviders.add(provider);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
 
     /**
-     * Ìí¼ÓÈ«¾Ö¼àÌı
+     * æ·»åŠ å…¨å±€ç›‘å¬
      *
-     * @param className °üÃû
+     * @param className åŒ…å
      */
     public void addGlobalListenerProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -189,7 +189,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     globalListenerProviders.add(provider);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -218,9 +218,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓÌá½»½Ó¿Ú
+     * æ·»åŠ æäº¤æ¥å£
      *
-     * @param className °üÈ«Ãû
+     * @param className åŒ…å…¨å
      */
     public void addSubmitProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -234,7 +234,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     submitProviders.add(provider);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
@@ -248,9 +248,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓreportTDCreators
+     * æ·»åŠ reportTDCreators
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addTableDataNameObjectCreator(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -273,15 +273,15 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     reportTDCreators.add(creator);
                 }
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
 
     /**
-     * Ìí¼ÓserverTDCreators
+     * æ·»åŠ serverTDCreators
      *
-     * @return ÀàÃû
+     * @return ç±»å
      */
     public TableDataNameObjectCreator[] getServerTableDataCreators() {
         if (serverTDCreators == null) {
@@ -293,9 +293,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
 
     /**
-     * Ìí¼ÓserverTDCreators
+     * æ·»åŠ serverTDCreators
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addServerTableDataNameObjectCreator(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -318,7 +318,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     serverTDCreators.add(creator);
                 }
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
@@ -340,9 +340,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓparameterWidgetOptionsMap
+     * æ·»åŠ parameterWidgetOptionsMap
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addParameterWidgetOption(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -363,16 +363,16 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 parameterWidgetOptionsMap.put(provider.classForWidget(), provider.appearanceForWidget());
                 parameterWidgetOptions.add(option);
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
 
     /**
-     * Ìí¼Ó webWidgetOptions
+     * æ·»åŠ  webWidgetOptions
      *
-     * @param className ÀàÃû
-     * @return ·µ»Ø webWidgetOptions
+     * @param className ç±»å
+     * @return è¿”å› webWidgetOptions
      */
     public void addWebWidgetOption(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -391,7 +391,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     webWidgetOptions.add(option);
                 }
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
@@ -429,9 +429,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼Ó formWidgetContainerOptions
+     * æ·»åŠ  formWidgetContainerOptions
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addFormWidgetOption(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -459,7 +459,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     formWidgetOptions.add(option);
                 }
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
@@ -481,9 +481,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓcellWidgetOptionMap
+     * æ·»åŠ cellWidgetOptionMap
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addCellWidgetOption(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -507,16 +507,16 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 cellWidgetOptionMap.put(provider.classForWidget(), new Appearance(provider.appearanceForWidget(), Appearance.P_MARK + cellWidgetOptionMap.size()));
                 cellWidgetOptions.add(option);
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
 
 
     /**
-     * Ìí¼Ó connectionCreators
+     * æ·»åŠ  connectionCreators
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addConnection(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -536,7 +536,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     connectionCreators.add(creator);
                 }
             } catch (Exception e) {
-                FRLogger.getLogger().error("class not found:" + e.getMessage());
+                recordClassLoadError(className);
             }
         }
     }
@@ -557,9 +557,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓpreviewProviders
+     * æ·»åŠ previewProviders
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addPreviewProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -573,7 +573,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     previewProviders.add(provider);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -586,9 +586,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼Ó highlightProviders
+     * æ·»åŠ  highlightProviders
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addTemplateTreeShortCutProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -600,7 +600,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 ShortCut provider = (ShortCut) clazz.newInstance();
                 templateTreeShortCutProviders.add(provider);
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -613,9 +613,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼Ó highlightProviders
+     * æ·»åŠ  highlightProviders
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addConditionProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -627,7 +627,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 HighlightProvider provider = (HighlightProvider) clazz.newInstance();
                 highlightProviders.add(provider);
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -658,9 +658,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓmenuHandlers
+     * æ·»åŠ menuHandlers
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addMenuHandler(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -674,7 +674,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     menuHandlers.add(handler);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -689,7 +689,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 Class clazz = GeneralUtils.classForName(className);
                 uiFormulaProcessor = (UIFormulaProcessor) clazz.newInstance();
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -702,9 +702,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓpresentKindProviders
+     * æ·»åŠ presentKindProviders
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addPresentKindProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -716,7 +716,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 PresentKindProvider provider = (PresentKindProvider) clazz.newInstance();
                 presentKindProviders.add(provider);
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -729,9 +729,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ìí¼ÓexportToolBarProviders
+     * æ·»åŠ exportToolBarProviders
      *
-     * @param className ÀàÃû
+     * @param className ç±»å
      */
     public void addExportToolBarProvider(String className) {
         if (StringUtils.isNotBlank(className)) {
@@ -745,7 +745,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     exportToolBarProviders.add(provider);
                 }
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -760,7 +760,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 Class clazz = GeneralUtils.classForName(className);
                 titlePlaceProcessor = (TitlePlaceProcessor) clazz.newInstance();
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -775,7 +775,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 Class clazz = GeneralUtils.classForName(className);
                 formElementCaseEditorProcessor = (FormElementCaseEditorProcessor) clazz.newInstance();
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -790,7 +790,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 Class clazz = GeneralUtils.classForName(className);
                 indentationUnitProcessor = (IndentationUnitProcessor) clazz.newInstance();
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
@@ -805,16 +805,20 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                 Class clazz = GeneralUtils.classForName(className);
                 cellAttributeProvider = (CellAttributeProvider) clazz.newInstance();
             } catch (Exception e) {
-                FRContext.getLogger().error(e.getMessage(), e);
+                recordClassLoadError(className);
             }
         }
     }
 
+    private void recordClassLoadError(String className) {
+        FRContext.getLogger().error("Error to load:" + className);
+    }
+
 
     /**
-     * ÎÄ¼şÃû
+     * æ–‡ä»¶å
      *
-     * @return ÎÄ¼şÃû
+     * @return æ–‡ä»¶å
      */
     @Override
     public String fileName() {
@@ -822,19 +826,19 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * ¶Áxml
+     * è¯»xml
      *
-     * @param reader xml¶ÔÏó
+     * @param reader xmlå¯¹è±¡
      */
     public void readXML(XMLableReader reader) {
         readXML(reader, null);
     }
 
     /**
-     * ¶Áxml
+     * è¯»xml
      *
-     * @param reader                   xml¶ÔÏó
-     * @param extraDesignInterfaceList ½Ó¿ÚÁĞ±í
+     * @param reader                   xmlå¯¹è±¡
+     * @param extraDesignInterfaceList æ¥å£åˆ—è¡¨
      */
     @Override
     public void readXML(XMLableReader reader, List<String> extraDesignInterfaceList) {
@@ -894,9 +898,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     }
 
     /**
-     * Ğ´xml
+     * å†™xml
      *
-     * @param writer xml¶ÔÏó
+     * @param writer xmlå¯¹è±¡
      */
     public void writeXML(XMLPrintWriter writer) {
         writer.startTAG(XML_TAG);

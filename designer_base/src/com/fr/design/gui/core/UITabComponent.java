@@ -3,21 +3,21 @@ package com.fr.design.gui.core;
 import javax.swing.event.ChangeListener;
 
 /**
- * Õâ¸ö½Ó¿ÚËµÃ÷Ò»¸ö»ù±¾×é¼şÊÇÀàËÆÓÚtabbedpaneµÄĞÎÊ½
+ * è¿™ä¸ªæ¥å£è¯´æ˜ä¸€ä¸ªåŸºæœ¬ç»„ä»¶æ˜¯ç±»ä¼¼äºtabbedpaneçš„å½¢å¼
  * 
  * @author zhou
- * @since 2012-5-17ÏÂÎç4:46:00
+ * @since 2012-5-17ä¸‹åˆ4:46:00
  */
 public interface UITabComponent {
 	/**
-	 * »ñÈ¡µ±Ç°Ñ¡ÖĞµÄtab
+	 * è·å–å½“å‰é€‰ä¸­çš„tab
 	 * 
 	 * @return
 	 */
 	public int getSelectedIndex();
 
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄtab
+	 * è®¾ç½®é€‰ä¸­çš„tab
 	 * 
 	 * @param newSelectedIndex
 	 */

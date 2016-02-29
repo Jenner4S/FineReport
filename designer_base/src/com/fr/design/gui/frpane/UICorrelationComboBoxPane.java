@@ -81,8 +81,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
 
 
     /**
-     * Ë¢ĞÂÏÂÀ­ÁĞ±íºÍ°´Å¥
-     * @param values ÏÂÀ­ÁĞ±íÀïµÄÖµ
+     * åˆ·æ–°ä¸‹æ‹‰åˆ—è¡¨å’ŒæŒ‰é’®
+     * @param values ä¸‹æ‹‰åˆ—è¡¨é‡Œçš„å€¼
      */
     public void refreshMenuAndAddMenuAction(List<UIMenuNameableCreator> values) {
         if (values == null || values.isEmpty()) {
@@ -90,7 +90,7 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
         }
         this.values = values;
         popMenu.removeAll();
-        // Èç¹ûÖ»ÓĞÒ»¸öµ¯³öÏî£¬ÄÇÃ´¾Í²»µ¯³ö£¬Ö±½ÓÈÃadd°´Å¥Ìæ´ú
+        // å¦‚æœåªæœ‰ä¸€ä¸ªå¼¹å‡ºé¡¹ï¼Œé‚£ä¹ˆå°±ä¸å¼¹å‡ºï¼Œç›´æ¥è®©addæŒ‰é’®æ›¿ä»£
         if (values.size() > 1) {
             for (UIMenuNameableCreator value : values) {
                 final String itemName = value.getName();
@@ -133,15 +133,15 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
 
     private boolean whetherAdd(String itemName){
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
-        //ÏÈÆÁ±ÎµôÕâ¸ö£¬Ö®ºó»¹ÓĞ±ğµÄ
+        //å…ˆå±è”½æ‰è¿™ä¸ªï¼Œä¹‹åè¿˜æœ‰åˆ«çš„
         String[] names = {Inter.getLocText("FR-Hyperlink_Chart_Float"), Inter.getLocText("FR-Hyperlink_Chart_Cell")};
         for (String name : names){
             if(!jTemplate.isJWorkBook() && ComparatorUtils.equals(itemName,name)){
                 if(jTemplate.getEditingReportIndex() == BaseJForm.ELEMENTCASE_TAB &&  ComparatorUtils.equals(itemName, names[0])){
-                    //±íµ¥±¨±í¿éÖĞÍ¼±íĞü¸¡ÔªËØ³¬Á´£¬Ö»ÆÁ±ÎÁª¶¯Ğü¸¡ÔªËØ
+                    //è¡¨å•æŠ¥è¡¨å—ä¸­å›¾è¡¨æ‚¬æµ®å…ƒç´ è¶…é“¾ï¼Œåªå±è”½è”åŠ¨æ‚¬æµ®å…ƒç´ 
                     return false;
                 } else if(jTemplate.getEditingReportIndex() == BaseJForm.FORM_TAB) {
-                    //±íµ¥Í¼±í³¬Á´ÆÁ±ÎµôÁª¶¯Ğü¸¡ÔªËØºÍÁª¶¯µ¥Ôª¸ñ
+                    //è¡¨å•å›¾è¡¨è¶…é“¾å±è”½æ‰è”åŠ¨æ‚¬æµ®å…ƒç´ å’Œè”åŠ¨å•å…ƒæ ¼
                     return false;
                 }
             }
@@ -152,7 +152,7 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
 
     private String createUnrepeatedName(String prefix) {
         List<UIMenuNameableCreator> all = tablePane.updateBean();
-        // richer:Éú³ÉµÄÃû×Ö´Ó1¿ªÊ¼. kunsnat: Ìí¼ÓÊôĞÔ´Ó0¿ªÊ¼.
+        // richer:ç”Ÿæˆçš„åå­—ä»1å¼€å§‹. kunsnat: æ·»åŠ å±æ€§ä»0å¼€å§‹.
         int count = all.size() + 1;
         while (true) {
             String name_test = prefix + count;
@@ -262,26 +262,26 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     public class Layout implements LayoutManager {
 
         /**
-         * Ôö¼Ó²¼¾Ö
-         * @param name Ãû×Ö
-         * @param comp ×é¼ş
+         * å¢åŠ å¸ƒå±€
+         * @param name åå­—
+         * @param comp ç»„ä»¶
          */
         public void addLayoutComponent(String name, Component comp) {
 
         }
 
         /**
-         * É¾³ı×é¼ş
-         * @param comp ×é¼ş
+         * åˆ é™¤ç»„ä»¶
+         * @param comp ç»„ä»¶
          */
         public void removeLayoutComponent(Component comp) {
 
         }
 
         /**
-         * »ñµÃ×é¼şµÄ´óĞ¡
-         * @param parent ÉÏ²ãÈİÆ÷
-         * @return ×é¼şµÄ´óĞ¡
+         * è·å¾—ç»„ä»¶çš„å¤§å°
+         * @param parent ä¸Šå±‚å®¹å™¨
+         * @return ç»„ä»¶çš„å¤§å°
          */
         public Dimension preferredLayoutSize(Container parent) {
             int h = addButton.getPreferredSize().height + tablePane.getPreferredSize().height;
@@ -289,17 +289,17 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
         }
 
         /**
-         * ×îĞ¡µÄ²¼¾Ö´óĞ¡
-         * @param parent ÉÏ²ãÈİÆ÷
-         * @return ×îĞ¡µÄ´óĞ¡
+         * æœ€å°çš„å¸ƒå±€å¤§å°
+         * @param parent ä¸Šå±‚å®¹å™¨
+         * @return æœ€å°çš„å¤§å°
          */
         public Dimension minimumLayoutSize(Container parent) {
             return preferredLayoutSize(parent);
         }
 
         /**
-         * ²¼¾ÖÈİÆ÷
-         * @param parent ÉÏ²ãÈİÆ÷
+         * å¸ƒå±€å®¹å™¨
+         * @param parent ä¸Šå±‚å®¹å™¨
          */
         public void layoutContainer(Container parent) {
             int width = parent.getWidth();
@@ -311,8 +311,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Ôö¼Ó¼àÌıÊÂ¼ş
-     * @param l ¼àÌıµÄ¶ÔÏó
+     * å¢åŠ ç›‘å¬äº‹ä»¶
+     * @param l ç›‘å¬çš„å¯¹è±¡
      */
     public void addChangeListener(ChangeListener l) {
         this.listenerList.add(ChangeListener.class, l);
@@ -320,8 +320,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * É¾³ı¼àÌıÊÂ¼ş
-     * @param l ĞèÒªÉ¾³ıµÄÊÂ¼ş
+     * åˆ é™¤ç›‘å¬äº‹ä»¶
+     * @param l éœ€è¦åˆ é™¤çš„äº‹ä»¶
      */
     public void removeChangeListener(ChangeListener l) {
         this.listenerList.remove(ChangeListener.class, l);
@@ -341,7 +341,7 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ÏìÓ¦ÊÂ¼ş
+     * å“åº”äº‹ä»¶
      */
     public void fireTargetChanged() {
         this.validate();
@@ -351,7 +351,7 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * Ô¤¶¨ÒåµÄ¿í¶ÈºÍ¸ß¶È
+     * é¢„å®šä¹‰çš„å®½åº¦å’Œé«˜åº¦
      */
     public Dimension getPreferredSize() {
         Dimension dim = new Dimension();
@@ -361,22 +361,22 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ¸üĞÂ²¢ÇÒÖØÔØ µ±Ç°ÁĞ±íµÄÖµ
-     * @param list ¸üĞÂµÄÁĞ±í
+     * æ›´æ–°å¹¶ä¸”é‡è½½ å½“å‰åˆ—è¡¨çš„å€¼
+     * @param list æ›´æ–°çš„åˆ—è¡¨
      */
     public void populateBean(List list) {
         tablePane.populateBean(list);
     }
 
     /**
-     * ·µ»Ø µ±Ç°ÁĞ±í±£´æµÄÖµ, Ç¶Ì×µÄÒ»²ã, Ö÷Òª¶ÔÓ¦creatorÖĞµÄobj
+     * è¿”å› å½“å‰åˆ—è¡¨ä¿å­˜çš„å€¼, åµŒå¥—çš„ä¸€å±‚, ä¸»è¦å¯¹åº”creatorä¸­çš„obj
      */
     public List updateBean() {
         return tablePane.updateBean();
     }
 
     /**
-     * ÖØÖÃÃ¿¸öÌõÄ¿µÄÃû×Ö
+     * é‡ç½®æ¯ä¸ªæ¡ç›®çš„åå­—
      */
     public void resetItemName(){
         for(int i = 0; i < tablePane.getRowCount(); i++){
@@ -393,8 +393,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ²âÊÔÀı×Ó½çÃæ
-     * @param args ²ÎÊıÏòÁ¿
+     * æµ‹è¯•ä¾‹å­ç•Œé¢
+     * @param args å‚æ•°å‘é‡
      */
     public static void main(String... args) {
         JFrame jf = new JFrame("test");
@@ -421,8 +421,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ×¢²á¹Û²ìÕß¼àÌıÊÂ¼ş
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * æ³¨å†Œè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
@@ -430,8 +430,8 @@ public class UICorrelationComboBoxPane extends JPanel implements UIObserver {
     }
 
     /**
-     * ÊÇ·ñĞèÒªÏìÓ¦ÊÂ¼ş
-     * @return ĞèÒªÏàÓ¦
+     * æ˜¯å¦éœ€è¦å“åº”äº‹ä»¶
+     * @return éœ€è¦ç›¸åº”
      */
     public boolean shouldResponseChangeListener() {
         return true;

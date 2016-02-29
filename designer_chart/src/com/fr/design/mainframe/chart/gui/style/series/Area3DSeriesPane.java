@@ -12,9 +12,9 @@ import com.fr.design.mainframe.chart.gui.ChartStylePane;
 import com.fr.general.Inter;
 
 /**
- * ÊôĞÔ±í, ÈıÎ¬Ãæ»ıÍ¼ Í¼±íÑùÊ½-ÏµÁĞ½çÃæ.
+ * å±æ€§è¡¨, ä¸‰ç»´é¢ç§¯å›¾ å›¾è¡¨æ ·å¼-ç³»åˆ—ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-9 ÉÏÎç10:31:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-9 ä¸Šåˆ10:31:47
  */
 public class Area3DSeriesPane extends AbstractPlotSeriesPane {
 	

@@ -10,11 +10,11 @@ public class ConstantsEditor extends FormulaEditor {
 	}
 	
 	protected void showFormulaPane() {
-		// do nothing ·ÀÖ¹ÐÞ¸Ä...
+		// do nothing é˜²æ­¢ä¿®æ”¹...
 	}
 	
 	public void setValue(Formula value) {
-		// do nothing ·ÀÖ¹ÐÞ¸Ä...
+		// do nothing é˜²æ­¢ä¿®æ”¹...
     }
 	
 	public boolean accept(Object object) {

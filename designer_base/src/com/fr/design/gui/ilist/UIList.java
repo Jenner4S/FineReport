@@ -14,7 +14,7 @@ import java.util.Vector;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-22
- * Time: ÉÏÎç11:07
+ * Time: ä¸Šåˆ11:07
  * To change this template use File | Settings | File Templates.
  */
 public class UIList extends JList{

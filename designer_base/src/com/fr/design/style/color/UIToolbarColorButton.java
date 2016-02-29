@@ -90,8 +90,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 	}
 
 	/**
-	 * ÉèÖÃÑÕÉ«
-	 * @param color ÑÕÉ«
+	 * è®¾ç½®é¢œè‰²
+	 * @param color é¢œè‰²
 	 */
 	public void setColorWithoutchanged(Color color) {
 		this.color = color;
@@ -99,8 +99,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 	}
 
 	/**
-	 * ÊÇ·ñ¿ÉÎªNULLÖµ
-	 * @return Í¬ÉÏ
+	 * æ˜¯å¦å¯ä¸ºNULLå€¼
+	 * @return åŒä¸Š
 	 */
 	public boolean isCanBeNull() {
 		return this.isCanBeNull;
@@ -153,7 +153,7 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 	}
 
 	/**
-	 * Òş²Øµ¯³ö¿ò
+	 * éšè—å¼¹å‡ºæ¡†
 	 */
 	public void hidePopupMenu() {
 		if (popupWin != null) {
@@ -180,8 +180,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 
 	/**
 	 * Adds a new ColorChangeListener
-	 * ×¢²á¼àÌı
-	 * @param changeListener ¼àÌı
+	 * æ³¨å†Œç›‘å¬
+	 * @param changeListener ç›‘å¬
 	 */
 	public void addColorChangeListener(ChangeListener changeListener) {
 		colorChangeListenerList.add(ChangeListener.class, changeListener);
@@ -189,15 +189,15 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 
 	/**
 	 * Removes an old ColorChangeListener.
-	 * ÒÆ³ı¼àÌı
-	 * @param changeListener ¼àÌı
+	 * ç§»é™¤ç›‘å¬
+	 * @param changeListener ç›‘å¬
 	 */
 	public void removeColorChangeListener(ChangeListener changeListener) {
 		colorChangeListenerList.remove(ChangeListener.class, changeListener);
 	}
 
 	/**
-	 * ´¥·¢ÑÕÉ«¸Ä±äÊÂ¼ş
+	 * è§¦å‘é¢œè‰²æ”¹å˜äº‹ä»¶
 	 * 
 	 */
 	public void fireColorStateChanged() {
@@ -226,8 +226,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 
 	@Override
 	/**
-	 * Ñ¡ÖĞÑÕÉ«
-	 *  @param colorCell ÑÕÉ«µ¥Ôª¸ñ
+	 * é€‰ä¸­é¢œè‰²
+	 *  @param colorCell é¢œè‰²å•å…ƒæ ¼
 	 */
 	public void colorSetted(ColorCell colorCell) {
 		hidePopupMenu();
@@ -235,8 +235,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 
 	@Override
 	/**
-	 * ×¢²á¼àÌı
-	 * @param listener ¼àÌı
+	 * æ³¨å†Œç›‘å¬
+	 * @param listener ç›‘å¬
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiObserverListener = listener;
@@ -244,8 +244,8 @@ public class UIToolbarColorButton extends UICombinationButton implements PopupHi
 
 	@Override
 	/**
-	 * ÊÇ·ñÏìÓ¦¼àÌı
-	 * @return Í¬ÉÏ
+	 * æ˜¯å¦å“åº”ç›‘å¬
+	 * @return åŒä¸Š
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;

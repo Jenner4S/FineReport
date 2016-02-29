@@ -19,10 +19,10 @@ public class GeneralFloatEditor extends TextFloatEditor {
 	public Object getFloatEditorValue()  throws Exception {
         Object textValue = super.getFloatEditorValue();
 
-        //Èç¹û¸ñÊ½ÊÇTextFormat£¬¾Í·µ»ØÆÕÍ¨ÎÄ±¾.
-        //TODO, peter Õâ¸öµØ·½ĞèÒªÖØĞÂÉè¼Æ,ÎÒ¸Ğ¾õÏÂÃæµÄ convertGeneralStringAccordingToExcel£¬¿ÉÒÔÓÃForamtÀ´ÊµÏÖ¡£
+        //å¦‚æœæ ¼å¼æ˜¯TextFormatï¼Œå°±è¿”å›æ™®é€šæ–‡æœ¬.
+        //TODO, peter è¿™ä¸ªåœ°æ–¹éœ€è¦é‡æ–°è®¾è®¡,æˆ‘æ„Ÿè§‰ä¸‹é¢çš„ convertGeneralStringAccordingToExcelï¼Œå¯ä»¥ç”¨Foramtæ¥å®ç°ã€‚
         FloatElement floatElement = this.getFloatElement();
-        //peter:Ö»¶Á·½Ê½»ñµÃStyle.
+        //peter:åªè¯»æ–¹å¼è·å¾—Style.
         Style style = floatElement.getStyle();
         if(style != null &&
                 style.getFormat() != null && style.getFormat() == TextFormat.getInstance()) {

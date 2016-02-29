@@ -52,7 +52,7 @@ public class AlignmentPane extends BasicPane {
     private UIBasicSpinner leftIndentSpinner;
     private UIBasicSpinner rightIndentSpinner;
     
-    //james:ĞĞ¼ä¾àÀë
+    //james:è¡Œé—´è·ç¦»
     private UIBasicSpinner spacingBeforeSpinner;
     private UIBasicSpinner spacingAfterSpinner;
     private UIBasicSpinner lineSpacingSpinner;
@@ -84,7 +84,7 @@ public class AlignmentPane extends BasicPane {
         this.add(contentPane, BorderLayout.NORTH);
         contentPane.add(getAlignment());
         contentPane.add(getTextImagePane());
-        //richer:ÎÄ±¾¿ØÖÆºÍÍ¼Æ¬²¼¾Ö
+        //richer:æ–‡æœ¬æ§åˆ¶å’Œå›¾ç‰‡å¸ƒå±€
         JPanel textDirectionPanel = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
         contentPane.add(textDirectionPanel);
         textDirectionPanel.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("StyleAlignment-Text_Rotation"), null));
@@ -95,7 +95,7 @@ public class AlignmentPane extends BasicPane {
         JPanel rotationPane = FRGUIPaneFactory.createMediumHGapFlowInnerContainer_M_Pane();
         textDirectionPanel.add(rotationPane);
 
-        rotationPane.add(new UILabel(" " + Inter.getLocText("StyleAlignment-Text_Rotation")));//james:¼ÓÁËÒ»¸ö¿Õ¸ñ£¬ÕâÑù¶ÔÆëÁËºÃ¿´Ğ©
+        rotationPane.add(new UILabel(" " + Inter.getLocText("StyleAlignment-Text_Rotation")));//james:åŠ äº†ä¸€ä¸ªç©ºæ ¼ï¼Œè¿™æ ·å¯¹é½äº†å¥½çœ‹äº›
 
         rotationSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, -NUM_90, NUM_90, 1));
         rotationSpinner.addChangeListener(changeListener);
@@ -105,7 +105,7 @@ public class AlignmentPane extends BasicPane {
         rotationPane.add(new UILabel("(" + Inter.getLocText("StyleAlignment-between_-90_and_90") + ")"));
         contentPane.add(getIndentPane());
 
-        //james:ĞĞ¼ä¾àÀë
+        //james:è¡Œé—´è·ç¦»
         JPanel spacingPane = new JPanel();
         contentPane.add(spacingPane);
         initSpacingPane(spacingPane);
@@ -182,7 +182,7 @@ public class AlignmentPane extends BasicPane {
         textComboBox.addActionListener(actionListener);
         textStylePane.add(new UILabel(Inter.getLocText("StyleAlignment-Text_Style")));
         textStylePane.add(textComboBox);
-        textImagePane.add(textStylePane);//½«ÎÄ±¾·ÅºóÃæ¸üºÃ¿´µã
+        textImagePane.add(textStylePane);//å°†æ–‡æœ¬æ”¾åé¢æ›´å¥½çœ‹ç‚¹
         return textImagePane;
     }
 
@@ -207,16 +207,16 @@ public class AlignmentPane extends BasicPane {
     }
 
     /**
-     * Ìí¼Ó±ä»¯¼àÌıÊÂ¼ş
+     * æ·»åŠ å˜åŒ–ç›‘å¬äº‹ä»¶
      *
-     * @param changeListener ±ä»¯¼àÌı
+     * @param changeListener å˜åŒ–ç›‘å¬
      */
     public void addChangeListener(ChangeListener changeListener) {
         eventChangeList.add(ChangeListener.class, changeListener);
     }
 
     /**
-     * ´¥·¢×´Ì¬×ª»»
+     * è§¦å‘çŠ¶æ€è½¬æ¢
      *
      */
     public void fireStateChanged() {
@@ -294,7 +294,7 @@ public class AlignmentPane extends BasicPane {
         this.leftIndentSpinner.setValue(new Integer(style.getPaddingLeft()));
         this.rightIndentSpinner.setValue(new Integer(style.getPaddingRight()));
     
-        //james:ĞĞ¼ä¾àÀë
+        //james:è¡Œé—´è·ç¦»
         this.spacingBeforeSpinner.setValue(new Integer(style.getSpacingBefore()));
         this.spacingAfterSpinner.setValue(new Integer(style.getSpacingAfter()));
         this.lineSpacingSpinner.setValue(new Integer(style.getLineSpacing()));
@@ -320,7 +320,7 @@ public class AlignmentPane extends BasicPane {
     }
 
     /**
-     * ¼ì²âÊÇ·ñºÏ·¨
+     * æ£€æµ‹æ˜¯å¦åˆæ³•
      *
      */
     public void checkValid() throws Exception {
@@ -337,7 +337,7 @@ public class AlignmentPane extends BasicPane {
      * @param style the new style.
      */
     public Style update(Style style) {
-        //peter:ĞèÒªÅĞ¶Ï´«µİ½øÀ´µÄÖµÊÇ·ñÎªnull.
+        //peter:éœ€è¦åˆ¤æ–­ä¼ é€’è¿›æ¥çš„å€¼æ˜¯å¦ä¸ºnull.
         if (style == null) {
             return style;
         }

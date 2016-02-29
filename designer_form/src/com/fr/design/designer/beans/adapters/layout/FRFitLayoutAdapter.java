@@ -32,7 +32,7 @@ import com.fr.form.ui.container.cardlayout.WCardMainBorderLayout;
 import com.fr.general.ComparatorUtils;
 
 /**
- * ×ÔÊÊÓ¦²¼¾ÖµÄÈİÆ÷ÊÊÅäÆ÷
+ * è‡ªé€‚åº”å¸ƒå±€çš„å®¹å™¨é€‚é…å™¨
  * 
  * @author jim
  * @date 2014-6-24
@@ -43,8 +43,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 	
 	private static final double TOP_HALF = 0.25;
 	private static final double BOTTOM_HALF = 0.75;
-	private static final int DEFAULT_AREA_LENGTH = 5; //ÅĞ¶Ï½»²æÇøÓò·¶Î§µÄÄ¬ÈÏ³¤¶È
-	private static final int BORDER_PROPORTION = 10; //±ß½çÈıµÈ·Ö»ò½»²æÇøÓò´óĞ¡È¡×é¼ş1/10ºÍÄ¬ÈÏ´óĞ¡
+	private static final int DEFAULT_AREA_LENGTH = 5; //åˆ¤æ–­äº¤å‰åŒºåŸŸèŒƒå›´çš„é»˜è®¤é•¿åº¦
+	private static final int BORDER_PROPORTION = 10; //è¾¹ç•Œä¸‰ç­‰åˆ†æˆ–äº¤å‰åŒºåŸŸå¤§å°å–ç»„ä»¶1/10å’Œé»˜è®¤å¤§å°
 	private static final int COMP_TOP = 1;
 	private static final int COMP_BOTTOM = 2;
 	private static final int COMP_LEFT = 3;
@@ -59,25 +59,25 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 	
 	private int trisectAreaDirect = 0;
 	private int crossPointAreaDirect = 0;
-	// Ôö¼ÓÉ¾³ıÀ­Éì¿Ø¼şÓÃµÄÁÙÊ±list
+	// å¢åŠ åˆ é™¤æ‹‰ä¼¸æ§ä»¶ç”¨çš„ä¸´æ—¶list
 	private List<Component> rightComps;
 	private List<Component> leftComps;
 	private List<Component> downComps;
 	private List<Component> upComps;
-	// ÈıµÈ·ÖÊ±¼ÆËã¶ÔÓ¦²àµÄ×é¼ş
+	// ä¸‰ç­‰åˆ†æ—¶è®¡ç®—å¯¹åº”ä¾§çš„ç»„ä»¶
 	private boolean isFindRelatedComps = false;
-	// äÖÈ¾Ê±Ö»¼ÆËã¶ÔÓ¦µÄbounds¶ø²»µ÷Õû
+	// æ¸²æŸ“æ—¶åªè®¡ç®—å¯¹åº”çš„boundsè€Œä¸è°ƒæ•´
 	private boolean isCalculateChildPos = false;
-	private int[] childPosition = null; //painterÓÃµÄÎ»ÖÃ
+	private int[] childPosition = null; //painterç”¨çš„ä½ç½®
 	private HoverPainter painter;
-	private int minWidth = 0; // ×îĞ¡³ß´ç£¬ÓÉÓÚÆÁÄ»°Ù·Ö±ÈÀï²»Í¬£¬ÏÔÊ¾µÄ×îĞ¡´óĞ¡Ò²²»Í¬
+	private int minWidth = 0; // æœ€å°å°ºå¯¸ï¼Œç”±äºå±å¹•ç™¾åˆ†æ¯”é‡Œä¸åŒï¼Œæ˜¾ç¤ºçš„æœ€å°å¤§å°ä¹Ÿä¸åŒ
 	private int minHeight = 0;
-	private int actualVal = 0;  // ´æÔÚ¼ä¸ôÊ±£¬add move drag ÅĞ¶Ï¶ÔÆëµÈ¶¼Òª¿¼ÂÇ
-	private PaddingMargin margin; // ²¼¾ÖÈİÆ÷±ß¾à
+	private int actualVal = 0;  // å­˜åœ¨é—´éš”æ—¶ï¼Œadd move drag åˆ¤æ–­å¯¹é½ç­‰éƒ½è¦è€ƒè™‘
+	private PaddingMargin margin; // å¸ƒå±€å®¹å™¨è¾¹è·
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param container XWFitLayoutÈİÆ÷
+	 * æ„é€ å‡½æ•°
+	 * @param container XWFitLayoutå®¹å™¨
 	 */
 	public FRFitLayoutAdapter(XLayoutContainer container) {
 		super(container);
@@ -99,7 +99,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 	}
 	
 	/**
-	 * ·µ»Ø²¼¾Ö×ÔÉíÊôĞÔ£¬·½±ãÒ»Ğ©ÌØÓĞÉèÖÃÔÚlayoutË¢ĞÂÊ±´¦Àí
+	 * è¿”å›å¸ƒå±€è‡ªèº«å±æ€§ï¼Œæ–¹ä¾¿ä¸€äº›ç‰¹æœ‰è®¾ç½®åœ¨layoutåˆ·æ–°æ—¶å¤„ç†
 	 */
 	@Override
     public GroupModel getLayoutProperties() {
@@ -108,11 +108,11 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
 	
 	/**
-	 * Ìí¼Ó×é¼ş
+	 * æ·»åŠ ç»„ä»¶
 	 * 
-	 * @param child ´ıÌí¼ÓµÄ×é¼ş
-	 *@param x ×ø±êx
-	 *@param y ×ø±êy
+	 * @param child å¾…æ·»åŠ çš„ç»„ä»¶
+	 *@param x åæ ‡x
+	 *@param y åæ ‡y
 	 */
 	@Override
 	public void addComp(XCreator child, int x, int y) {
@@ -126,7 +126,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 			container.add(child, child.toData().getWidgetName());
 		}
 		XWFitLayout layout = (XWFitLayout) container;
-		// ¸üĞÂ¶ÔÓ¦µÄBoundsWidget
+		// æ›´æ–°å¯¹åº”çš„BoundsWidget
 		layout.updateBoundsWidget();
 		updateCreatorBackBound();
     }
@@ -147,29 +147,29 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 	}
     
 	/**
-	 * ÄÜ·ñ¶ÔÓ¦Î»ÖÃ·ÅÖÃµ±Ç°×é¼ş
-	 *@param creator ×é¼ş
-     *@param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@return ÊÇ·ñ¿ÉÒÔ·ÅÖÃ
+	 * èƒ½å¦å¯¹åº”ä½ç½®æ”¾ç½®å½“å‰ç»„ä»¶
+	 *@param creator ç»„ä»¶
+     *@param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@return æ˜¯å¦å¯ä»¥æ”¾ç½®
 	 */
     @Override
     public boolean accept(XCreator creator, int x, int y) {
-    	// ¼ÆËãÊÇ·ñÄÜÍÏÈëÊó±êÇøÓòÊ±£¬»áÓÃµ½fix µÄ·½·¨
+    	// è®¡ç®—æ˜¯å¦èƒ½æ‹–å…¥é¼ æ ‡åŒºåŸŸæ—¶ï¼Œä¼šç”¨åˆ°fix çš„æ–¹æ³•
     	isFindRelatedComps = false;
-    	//ÍÏÈë×é¼şÅĞ¶ÏÊ±£¬ÏÈÅĞ¶ÏÊÇ·ñÎª½»²æµãÇøÓò£¬Æä´ÎÈıµÈ·ÖÇøÓò£¬ÔÙ´ÎÆ½·ÖÇøÓò
+    	//æ‹–å…¥ç»„ä»¶åˆ¤æ–­æ—¶ï¼Œå…ˆåˆ¤æ–­æ˜¯å¦ä¸ºäº¤å‰ç‚¹åŒºåŸŸï¼Œå…¶æ¬¡ä¸‰ç­‰åˆ†åŒºåŸŸï¼Œå†æ¬¡å¹³åˆ†åŒºåŸŸ
     	Component comp = container.getComponentAt(x, y);
     	if (checkInterval(comp)) {
     		return false;
     	}
-    	//Èç¹ûµ±Ç°´¦ÓÚ±ßÔµµØ´ø, ÄÇÃ´¾Í°ÑËûÌùµ½¸¸ÈİÆ÷ÉÏ
+    	//å¦‚æœå½“å‰å¤„äºè¾¹ç¼˜åœ°å¸¦, é‚£ä¹ˆå°±æŠŠä»–è´´åˆ°çˆ¶å®¹å™¨ä¸Š
     	matchEdge(x, y);
     	
 		int componentHeight = comp.getHeight();
 		int componentWidth = comp.getWidth();
-		//ÉÏ°ë²¿·Ö¸ß¶È
+		//ä¸ŠåŠéƒ¨åˆ†é«˜åº¦
 		int upHeight = (int) (componentHeight * TOP_HALF) + comp.getY();
-		//ÏÂ°ë²¿·Ö¸ß¶È
+		//ä¸‹åŠéƒ¨åˆ†é«˜åº¦
 		int downHeight = (int) (componentHeight * BOTTOM_HALF) + comp.getY();
     	
     	if (isCrossPointArea(comp, x, y)) {
@@ -185,20 +185,20 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		return y > upHeight && y < downHeight ? horizonValid : verticalValid;
     }
     
-    // ¼ä¸ôÇøÓò
+    // é—´éš”åŒºåŸŸ
     private boolean checkInterval(Component comp){
     	return container.getComponentCount()>0 && comp == container;
     }
     
     /**
-     * ÊÇ·ñÔÚ×é¼ş±ßÔµ
-     * @param x ºá×ø±ê
-     * @param y ×İ×ø±ê
-     * @return ÊÇ·ñÔÚ×é¼ş±ßÔµ
+     * æ˜¯å¦åœ¨ç»„ä»¶è¾¹ç¼˜
+     * @param x æ¨ªåæ ‡
+     * @param y çºµåæ ‡
+     * @return æ˜¯å¦åœ¨ç»„ä»¶è¾¹ç¼˜
      */
     public boolean matchEdge(int x, int y){
     	if(intersectsEdge(x, y,container)){
-    		//Ñ°ÕÒ×î½üµÄfit, ÔÚ±ßÔµµØ¶ÎÌí¼ÓµÄ¿Ø¼ş, ½«ÆäËÍ¸ø¸Ãfit
+    		//å¯»æ‰¾æœ€è¿‘çš„fit, åœ¨è¾¹ç¼˜åœ°æ®µæ·»åŠ çš„æ§ä»¶, å°†å…¶é€ç»™è¯¥fit
     		XLayoutContainer parent = container.findNearestFit();
     		container = parent != null ? parent : container;
     		return true;
@@ -207,38 +207,38 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
 	/**
-	 * ÊÇ·ñÔÚ×é¼ş±ßÔµ
-	 * @param x ºá×ø±ê
-	 * @param y ×İ×ø±ê
-	 * @param container ²ÎÕÕ×é¼ş
-	 * @return ÊÇ·ñÔÚ×é¼ş±ßÔµ
+	 * æ˜¯å¦åœ¨ç»„ä»¶è¾¹ç¼˜
+	 * @param x æ¨ªåæ ‡
+	 * @param y çºµåæ ‡
+	 * @param container å‚ç…§ç»„ä»¶
+	 * @return æ˜¯å¦åœ¨ç»„ä»¶è¾¹ç¼˜
 	 */
-    //ÊÇ·ñ°üº¬ÓÚ±ßÔµµØ¶Î, °´Ë³ĞòÉÏ, ÏÂ, ×ó, ÓÒ¼ì²â
+    //æ˜¯å¦åŒ…å«äºè¾¹ç¼˜åœ°æ®µ, æŒ‰é¡ºåºä¸Š, ä¸‹, å·¦, å³æ£€æµ‹
 	public boolean intersectsEdge(int x, int y,XLayoutContainer container) {
 		int containerX = container.getX();
 		int containerY = container.getY();
 		int containerWidth = container.getWidth();
 		int containerHeight = container.getHeight();
 		
-		// µ±Ç°×ø±êµã
+		// å½“å‰åæ ‡ç‚¹
 		Rectangle currentXY = new Rectangle(x, y, 1, 1);
-		// ÉÏ±ßÔµ
+		// ä¸Šè¾¹ç¼˜
 		Rectangle upEdge = new Rectangle(containerX, containerY, containerWidth, BORDER_PROPORTION);
 		if(upEdge.intersects(currentXY)){
 			return true;
 		}
 		
 		int bottomY = containerY + containerHeight - BORDER_PROPORTION;
-		// ÏÂ±ßÔµ
+		// ä¸‹è¾¹ç¼˜
 		Rectangle bottomEdge = new Rectangle(containerX, bottomY, containerWidth, BORDER_PROPORTION);
 		if(bottomEdge.intersects(currentXY)){
 			return true;
 		}
 		
-		//×óÓÒ±ßÔµµÄ¸ß¶È -10*2 ÊÇÎªÁË²»ºÍÉÏÏÂ±ßÔµÖØºÏ
+		//å·¦å³è¾¹ç¼˜çš„é«˜åº¦ -10*2 æ˜¯ä¸ºäº†ä¸å’Œä¸Šä¸‹è¾¹ç¼˜é‡åˆ
 		int verticalHeight = containerHeight - BORDER_PROPORTION * 2;
 		int leftY = containerY + BORDER_PROPORTION;
-		// ×ó±ßÔµ 
+		// å·¦è¾¹ç¼˜ 
 		Rectangle leftEdge = new Rectangle(containerX, leftY, BORDER_PROPORTION, verticalHeight);
 		if(leftEdge.intersects(currentXY)){
 			return true;
@@ -246,13 +246,13 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		
 		int rightY = containerY + BORDER_PROPORTION;
 		int rightX = containerX + containerWidth - BORDER_PROPORTION;
-		// ÓÒ±ßÔµ
+		// å³è¾¹ç¼˜
 		Rectangle rightEdge = new Rectangle(rightX, rightY, BORDER_PROPORTION, verticalHeight);
 		return  rightEdge.intersects(currentXY);
 	}
     
     /**
-     * ½»²æµãÇøÓòÊ±£¬ÄÜ·ñ¶ÔÓ¦Î»ÖÃ·ÅÈë×é¼ş
+     * äº¤å‰ç‚¹åŒºåŸŸæ—¶ï¼Œèƒ½å¦å¯¹åº”ä½ç½®æ”¾å…¥ç»„ä»¶
      */
     private boolean canAcceptWhileCrossPoint(Component comp, int x, int y) {
     	int cX = comp.getX(), cY = comp.getY(), cH = comp.getHeight(), cW = comp.getWidth();
@@ -296,12 +296,12 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 			minLength = Math.min(topComp.getWidth(), Math.min(cW, bottomComp.getWidth()));
 			min = minWidth*2;
 		}
-		// ÓĞ¼ä¸ôµÄ»°£¬Òª¿¼ÂÇÈİÄÉ¼ä¸ô
+		// æœ‰é—´éš”çš„è¯ï¼Œè¦è€ƒè™‘å®¹çº³é—´éš”
     	return minLength >= min+actualVal;
     }
     
     private boolean canAcceptWhileTrisection(Component comp, int x, int y) {
-    	//·ûºÏÈıµÈ·Ö£¬Êµ¼ÊÇøÓò²»Âú×ãÈıµÈ·ÖµÄ´óĞ¡
+    	//ç¬¦åˆä¸‰ç­‰åˆ†ï¼Œå®é™…åŒºåŸŸä¸æ»¡è¶³ä¸‰ç­‰åˆ†çš„å¤§å°
 		int cX = comp.getX(), cY = comp.getY(), cH = comp.getHeight(), cW = comp.getWidth();
 		int upMinHeight = 0, downMinHeight = 0, leftMinWidth = 0, rightMinWidth = 0;
     	if (ComparatorUtils.equals(trisectAreaDirect, COMP_TOP)) {
@@ -335,8 +335,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ·µ»Øµ±Ç°×é¼şËùÔÚyÖµÉÏ·½µÄËùÓĞ×é¼şÖĞ×îĞ¡¸ß¶È£¬ÇÒ±£Ö¤ÕâĞ©¿Ø¼şÊÇÏàÁÚ²»¸ô¶ÏµÄ
-     * ÅĞ¶Ï¶ÔÆëÊ±¿¼ÂÇ¼ä¸ô
+     * è¿”å›å½“å‰ç»„ä»¶æ‰€åœ¨yå€¼ä¸Šæ–¹çš„æ‰€æœ‰ç»„ä»¶ä¸­æœ€å°é«˜åº¦ï¼Œä¸”ä¿è¯è¿™äº›æ§ä»¶æ˜¯ç›¸é‚»ä¸éš”æ–­çš„
+     * åˆ¤æ–­å¯¹é½æ—¶è€ƒè™‘é—´éš”
      */
     private int getUpMinHeightComp(int cY, int x) {
     	if (cY == margin.getTop()) {
@@ -390,8 +390,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ·µ»ØºÍµ±Ç°×é¼şÏàÍ¬y×ø±êµÄËùÓĞ×é¼şÖĞ×îĞ¡¸ß¶È£¬ÇÒ±£Ö¤ÕâĞ©¿Ø¼şÊÇÏàÁÚ²»¸ô¶ÏµÄ
-     * ÅĞ¶Ï¶ÔÆëÊ±¿¼ÂÇ¼ä¸ô
+     * è¿”å›å’Œå½“å‰ç»„ä»¶ç›¸åŒyåæ ‡çš„æ‰€æœ‰ç»„ä»¶ä¸­æœ€å°é«˜åº¦ï¼Œä¸”ä¿è¯è¿™äº›æ§ä»¶æ˜¯ç›¸é‚»ä¸éš”æ–­çš„
+     * åˆ¤æ–­å¯¹é½æ—¶è€ƒè™‘é—´éš”
      */
     private int getDownMinHeightComp(Component currentcomp, int y) {
     	int cX = currentcomp.getX();
@@ -435,8 +435,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ·µ»Øµ±Ç°×é¼şÓÒ²àÏàÍ¬xµÄËùÓĞ×é¼şÖĞ×îĞ¡¿í¶È£¬ÇÒ±£Ö¤ÕâĞ©¿Ø¼şÊÇÏàÁÚ²»¸ô¶ÏµÄ
-     * ÅĞ¶Ï¶ÔÆëÊ±¿¼ÂÇ¼ä¸ô
+     * è¿”å›å½“å‰ç»„ä»¶å³ä¾§ç›¸åŒxçš„æ‰€æœ‰ç»„ä»¶ä¸­æœ€å°å®½åº¦ï¼Œä¸”ä¿è¯è¿™äº›æ§ä»¶æ˜¯ç›¸é‚»ä¸éš”æ–­çš„
+     * åˆ¤æ–­å¯¹é½æ—¶è€ƒè™‘é—´éš”
      */
     private int getMinRightWidth(int cX, int cW, int y) {
     	int xL = cX+DEFAULT_AREA_LENGTH ;
@@ -444,7 +444,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	if (xL>container.getWidth() - margin.getRight()){
     		return 0;
     	}
-    	// ÒÔµ±Ç°×é¼ş½ô°¤×ÅÓÒ²àµÄ×é¼şÎª»ù×¼£¬ÔÚyÖá·½Ïò²éÕÒ·ûºÏÌõ¼şµÄ×é¼ş
+    	// ä»¥å½“å‰ç»„ä»¶ç´§æŒ¨ç€å³ä¾§çš„ç»„ä»¶ä¸ºåŸºå‡†ï¼Œåœ¨yè½´æ–¹å‘æŸ¥æ‰¾ç¬¦åˆæ¡ä»¶çš„ç»„ä»¶
     	Component targetComp = container.getComponentAt(xL, y);
     	int minWidth = targetComp.getWidth();
     	int max=container.getHeight() - margin.getBottom();
@@ -485,8 +485,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ·µ»Øµ±Ç°×é¼ş´¹Ö±·½ÏòÍ¬²àµÄ×é¼ş(×é¼şÓÒ±ß½çÏàÁ¬)ÖĞ×îĞ¡¿í¶È
-     * ÅĞ¶Ï¶ÔÆëÊ±¿¼ÂÇ¼ä¸ô
+     * è¿”å›å½“å‰ç»„ä»¶å‚ç›´æ–¹å‘åŒä¾§çš„ç»„ä»¶(ç»„ä»¶å³è¾¹ç•Œç›¸è¿)ä¸­æœ€å°å®½åº¦
+     * åˆ¤æ–­å¯¹é½æ—¶è€ƒè™‘é—´éš”
      */
     private int getMinLeftWidth(Component currentComp, int x) {
     	int minWidth = currentComp.getWidth();
@@ -532,11 +532,11 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÅĞ¶ÏÊÇ·ñÊó±êÔÚ×é¼şµÄÈıµÈ·ÖÇøÓò£¬Èç¹û×é¼şÔÚ²¼¾Ö¹ÜÀíÆ÷ÖĞ¼ä£¬ÉÏÏÂ×óÓÒ¶¼¿ÉÄÜ»áÈıµÈ·Ö
-     * @param parentComp Êó±êËùÔÚÇøÓòµÄ×é¼ş
-     * @param x ×ø±êx
-     * @param y ×ø±êy
-     * @return ÊÇÔò·µ»Øtrue
+     * åˆ¤æ–­æ˜¯å¦é¼ æ ‡åœ¨ç»„ä»¶çš„ä¸‰ç­‰åˆ†åŒºåŸŸï¼Œå¦‚æœç»„ä»¶åœ¨å¸ƒå±€ç®¡ç†å™¨ä¸­é—´ï¼Œä¸Šä¸‹å·¦å³éƒ½å¯èƒ½ä¼šä¸‰ç­‰åˆ†
+     * @param parentComp é¼ æ ‡æ‰€åœ¨åŒºåŸŸçš„ç»„ä»¶
+     * @param x åæ ‡x
+     * @param y åæ ‡y
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isTrisectionArea(Component parentComp, int x, int y) {
     	XCreator creator = (XCreator)parentComp;
@@ -547,23 +547,23 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int maxHeight = parentComp.getHeight();
     	int xL = parentComp.getX();
     	int yL = parentComp.getY();
-    	// ×é¼ş¿í¸ßµÄÊ®·ÖÖ®Ò»ºÍÄ¬ÈÏÖµÈ¡´ó
+    	// ç»„ä»¶å®½é«˜çš„ååˆ†ä¹‹ä¸€å’Œé»˜è®¤å€¼å–å¤§
     	int minRangeWidth = Math.max(maxWidth/BORDER_PROPORTION, DEFAULT_AREA_LENGTH);
     	int minRangeHeight = Math.max(maxHeight/BORDER_PROPORTION, DEFAULT_AREA_LENGTH);
     	if(y<yL+minRangeHeight ) {
-    		// ÔÚ×é¼şÉÏ²àÈıµÈ·Ö
+    		// åœ¨ç»„ä»¶ä¸Šä¾§ä¸‰ç­‰åˆ†
     		trisectAreaDirect = COMP_TOP;
     	} else if(y>yL+maxHeight-minRangeHeight) {
-    		// ÔÚ×é¼şÏÂ²àÈıµÈ·Ö
+    		// åœ¨ç»„ä»¶ä¸‹ä¾§ä¸‰ç­‰åˆ†
     		trisectAreaDirect = COMP_BOTTOM;
     	} else if (x<xL+minRangeWidth) {
-    		// ÔÚ×é¼ş×ó²àÈıµÈ·Ö
+    		// åœ¨ç»„ä»¶å·¦ä¾§ä¸‰ç­‰åˆ†
     		trisectAreaDirect = COMP_LEFT;
     	} else if(x>xL+maxWidth-minRangeWidth) {
-    		// ÔÚ×é¼şÓÒ²àÈıµÈ·Ö
+    		// åœ¨ç»„ä»¶å³ä¾§ä¸‰ç­‰åˆ†
     		trisectAreaDirect = COMP_RIGHT;
     	}
-    	// tab²¼¾ÖµÄ±ß½çÌØÊâ´¦Àí£¬²»½øĞĞÈıµÈ·Ö
+    	// tabå¸ƒå±€çš„è¾¹ç•Œç‰¹æ®Šå¤„ç†ï¼Œä¸è¿›è¡Œä¸‰ç­‰åˆ†
     	if(!creator.getTargetChildrenList().isEmpty()){
     		return false;
     	}
@@ -572,14 +572,14 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÊÇ·ñÎª×é¼ş½»²æµãÇøÓò »òÕßÊÇÏàÁÚÈı×é½¨ÖĞ¼äµã
-     * @param currentComp µ±Ç°×é¼ş
-     * @param x ×ø±êx
-     * @param y ×ø±êy
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦ä¸ºç»„ä»¶äº¤å‰ç‚¹åŒºåŸŸ æˆ–è€…æ˜¯ç›¸é‚»ä¸‰ç»„å»ºä¸­é—´ç‚¹
+     * @param currentComp å½“å‰ç»„ä»¶
+     * @param x åæ ‡x
+     * @param y åæ ‡y
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isCrossPointArea(Component currentComp, int x, int y) {
-    	// 3¸ö¼°ÒÔÉÏ¶¼»á³öÏÖ½»²æµãÇøÓò£¨°üÀ¨±ß½ç´¦µÄ£©
+    	// 3ä¸ªåŠä»¥ä¸Šéƒ½ä¼šå‡ºç°äº¤å‰ç‚¹åŒºåŸŸï¼ˆåŒ…æ‹¬è¾¹ç•Œå¤„çš„ï¼‰
     	if(currentComp == null || container.getComponentCount() <= 2){
     		return false;
     	}
@@ -596,21 +596,21 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int containerW = container.getWidth() - margin.getRight();
     	int containerH = container.getHeight() - margin.getBottom();
 		if (x<objX && y<objY) {
-			//×óÉÏ½ÇÇøÓò
+			//å·¦ä¸Šè§’åŒºåŸŸ
 			crossPointAreaDirect = cY > margin.getTop() || cX > margin.getLeft() ? COMP_LEFT_TOP : 0;
 		} else if (y<objY && x>rx-areaWidth){
-			//ÓÒÉÏ½Ç
+			//å³ä¸Šè§’
 			crossPointAreaDirect = cY>margin.getTop() || rx < containerW ? COMP_RIGHT_TOP : 0;
 		} else if (x<objX && y>by-areaHeight) {
-			//×óÏÂ½Ç
+			//å·¦ä¸‹è§’
 			crossPointAreaDirect = cX>margin.getLeft() || by<containerH ? COMP_LEFT_BOTTOM : 0;
 		} else if (x>rx-areaWidth && y>by-areaHeight) {
-			//ÓÒÏÂ½Ç
+			//å³ä¸‹è§’
 			crossPointAreaDirect = by<containerH || rx < containerW ? COMP_RIGHT_BOTTOM : 0;
 		} else {
 			isMiddlePosition(currentComp, x, y, areaWidth, areaHeight);
 		} 
-    	// tab²¼¾ÖµÄ±ß½çÌØÊâ´¦Àí
+    	// tabå¸ƒå±€çš„è¾¹ç•Œç‰¹æ®Šå¤„ç†
 		XCreator creator = (XCreator)currentComp;
     	if(!creator.getTargetChildrenList().isEmpty()){
     		return false;
@@ -625,7 +625,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int cH = comp.getHeight();
     	boolean isCrosspoint = false;
     	if (x>cX+cW/2-areaWidth && x<cX+cW/2+areaWidth) {
-    		// ÉÏÏÂ±ß¿òÏßÖĞ¼äÎ»ÖÃ
+    		// ä¸Šä¸‹è¾¹æ¡†çº¿ä¸­é—´ä½ç½®
     		Component leftComp = container.getLeftComp(cX, cY);
     		Component rightComp = container.getRightComp(cX, cY, cW);
     		if (y < cY + areaHeight) {
@@ -640,7 +640,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 				crossPointAreaDirect = isCrosspoint ? COMP_BOTTOM : 0;
 			}
     	} else if (y>cY+cH/2-areaHeight && y<cY+cH/2+areaHeight) {
-    		// ×óÓÒ±ß¿òÏßÖĞ¼äÎ»ÖÃ
+    		// å·¦å³è¾¹æ¡†çº¿ä¸­é—´ä½ç½®
     		Component topComp = container.getTopComp(cX, cY);
     		Component bottomComp = container.getBottomComp(cX, cY, cH);
 			if (x < cX+areaWidth) {
@@ -671,20 +671,20 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	downComps = null;
     }
     private Rectangle adjustBackupBound(Rectangle backupBound,XWCardMainBorderLayout mainLayout){
-    	// ²ÎÊı½çÃæ¸ß¶È¶Ô×İ×ø±ê²úÉúµÄÓ°Ïì
+    	// å‚æ•°ç•Œé¢é«˜åº¦å¯¹çºµåæ ‡äº§ç”Ÿçš„å½±å“
     	JForm jform = (JForm)(HistoryTemplateListPane.getInstance().getCurrentEditingTemplate());
     	if(jform.getFormDesign().getParaComponent()!= null){
     		backupBound.y -= jform.getFormDesign().getParaHeight();
     	}
     	
 		Rectangle rec = mainLayout.getBounds();
-		// XWTabLayoutÀïÃæµÄºá×İ×ø±êÊÕµ½Íâ²ãXWCardMainBorderLayoutµÄºá×İ×ø±êÓ°Ïì
-		// ¼õµôÖ®ºó¿ÉÒÔ°´ÕÕËüÔ­À´µÄÂß¼­Ö´ĞĞ
+		// XWTabLayouté‡Œé¢çš„æ¨ªçºµåæ ‡æ”¶åˆ°å¤–å±‚XWCardMainBorderLayoutçš„æ¨ªçºµåæ ‡å½±å“
+		// å‡æ‰ä¹‹åå¯ä»¥æŒ‰ç…§å®ƒåŸæ¥çš„é€»è¾‘æ‰§è¡Œ
 		backupBound.x -= rec.x;
 		backupBound.y -= rec.y;
 		XWCardLayout cardLayout = mainLayout.getCardPart();
     	LayoutBorderStyle style = cardLayout.toData().getBorderStyle();
-    	// µ±tab²¼¾ÖÎª±êÌâÑùÊ½Ê±£¬²ÅĞèÒª´¦Àí±êÌâÀ¸¸ß¶È²úÉúµÄÓ°Ïì
+    	// å½“tabå¸ƒå±€ä¸ºæ ‡é¢˜æ ·å¼æ—¶ï¼Œæ‰éœ€è¦å¤„ç†æ ‡é¢˜æ é«˜åº¦äº§ç”Ÿçš„å½±å“
     	if(ComparatorUtils.equals(style.getType(), LayoutBorderStyle.TITLE)){
     		backupBound.y -= WCardMainBorderLayout.TAB_HEIGHT;
     	}
@@ -692,22 +692,22 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÍÏ×§¿Ø¼ş±ß¿òºó£¬¸ù¾İ¿Ø¼şµÄ´óĞ¡³ß´ç£¬½øĞĞÏà¹Ø×é¼şµÄµ÷Õû
-     * @param creator ×é¼ş
+     * æ‹–æ‹½æ§ä»¶è¾¹æ¡†åï¼Œæ ¹æ®æ§ä»¶çš„å¤§å°å°ºå¯¸ï¼Œè¿›è¡Œç›¸å…³ç»„ä»¶çš„è°ƒæ•´
+     * @param creator ç»„ä»¶
      */
     @Override
     public void fix(XCreator creator) {
-    	//ÍÏ×§×é¼şÔ­´óĞ¡¡¢Î»ÖÃ
+    	//æ‹–æ‹½ç»„ä»¶åŸå¤§å°ã€ä½ç½®
     	Rectangle backupBound = creator.getBackupBound();
     	backupBound.x -= container.getX();
     	backupBound.y -= container.getY();
-    	//µ±Ç°ÍÏ×§×é¼şµÄÎ»ÖÃ
+    	//å½“å‰æ‹–æ‹½ç»„ä»¶çš„ä½ç½®
     	int x = creator.getX();
     	int y = creator.getY();
     	
-    	// »ñÈ¡ÈİÆ÷ËùÓĞÄÚ²¿×é¼şºá×ø±ê
+    	// è·å–å®¹å™¨æ‰€æœ‰å†…éƒ¨ç»„ä»¶æ¨ªåæ ‡
     	int[] posXs = container.getHors();
-    	// »ñÈ¡ÈİÆ÷ËùÓĞÄÚ²¿×é¼ş×İ×ø±ê                                                                 
+    	// è·å–å®¹å™¨æ‰€æœ‰å†…éƒ¨ç»„ä»¶çºµåæ ‡                                                                 
     	int[] posYs = container.getVeris();
     	
     	XLayoutContainer outerLayout = container.getOuterLayout();
@@ -716,7 +716,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     		backupBound = adjustBackupBound(backupBound, mainLayout);
     	}
     	
-    	//ÍÏ×§×é¼şÍÏ×§ÒÔºóµÄ´óĞ¡
+    	//æ‹–æ‹½ç»„ä»¶æ‹–æ‹½ä»¥åçš„å¤§å°
     	int w = creator.getWidth();
     	int h = creator.getHeight();
     	initCompsList();
@@ -733,7 +733,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	}
 		clearCompsList();
     	XWFitLayout layout = (XWFitLayout) container;
-    	layout.updateBoundsWidget(); // ¸üĞÂ¶ÔÓ¦µÄBoundsWidget
+    	layout.updateBoundsWidget(); // æ›´æ–°å¯¹åº”çš„BoundsWidget
     	updateCreatorBackBound();
     }
     
@@ -751,7 +751,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 			return;
 		}
 		w = adjustDiffByDependingLine(x, posXs, w);
-		difference = w-backupBound.width; //ÍÏ×§³¤¶È
+		difference = w-backupBound.width; //æ‹–æ‹½é•¿åº¦
 		dealDirectionAtRight(backupBound, difference, creator);
     }
     
@@ -773,7 +773,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		dealDirectionABottom(backupBound, difference, creator);
     }
     
-    // ¸ù¾İĞèÒªÒÀ¸½µÄÎ»ÖÃµ÷ÕûÍÏ×§µÄ×ø±êÖµ
+    // æ ¹æ®éœ€è¦ä¾é™„çš„ä½ç½®è°ƒæ•´æ‹–æ‹½çš„åæ ‡å€¼
     private int adjustCoordinateByDependingLine(int coordinate,int[] coordinates){
 		for(int i=0; i<coordinates.length; i++){
 			if(coordinate == coordinates[i]){
@@ -787,7 +787,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		return coordinate;
     }
     
-    // ¸ù¾İĞèÒªÒÀ¸½µÄÎ»ÖÃµ÷ÕûÍÏ×§µÄ¾àÀë
+    // æ ¹æ®éœ€è¦ä¾é™„çš„ä½ç½®è°ƒæ•´æ‹–æ‹½çš„è·ç¦»
     private int adjustDiffByDependingLine(int coordinate,int[] coordinates,int diff){
 		for(int i=0; i<coordinates.length; i++){
 			if(coordinate+diff > coordinates[i]-DEPENDING_SCOPE && coordinate+diff < coordinates[i] + DEPENDING_SCOPE){
@@ -798,16 +798,16 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		return diff;
     }
     
-    // ×ó²à±ß¿òÀ­Éì£¬Ñ­»·ÕÒ³ö¶ÔÆëµÄÁ½²à¿Ø¼ş
+    // å·¦ä¾§è¾¹æ¡†æ‹‰ä¼¸ï¼Œå¾ªç¯æ‰¾å‡ºå¯¹é½çš„ä¸¤ä¾§æ§ä»¶
     private void dealDirectionAtLeft(Rectangle backupBound, int difference, Component creator) {
     	rightComps.add(creator);
     	Component rightComp = null;
     	int leftx = backupBound.x-DEFAULT_AREA_LENGTH - actualVal;
-    	// È¡×ó²à±ß¿òÓÒÃæµÄ×é¼şxÖµ
+    	// å–å·¦ä¾§è¾¹æ¡†å³é¢çš„ç»„ä»¶xå€¼
     	int rightx = backupBound.x+DEFAULT_AREA_LENGTH;
     	Component leftComp = container.getLeftComp(backupBound.x, backupBound.y);
     	leftComps.add(leftComp);
-    	//ÏÈÕÒÉÏ²à¶ÔÆëÊ±(yÏàµÈ)µÄ×óÓÒÁ½±ß×é¼ş
+    	//å…ˆæ‰¾ä¸Šä¾§å¯¹é½æ—¶(yç›¸ç­‰)çš„å·¦å³ä¸¤è¾¹ç»„ä»¶
     	int ry = backupBound.y;
     	int ly = leftComp.getY();	
     	int min = margin.getTop();
@@ -827,7 +827,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     			}
     		}
     	}
-    	// ÏÂ²à¶ÔÆëÊ±£¨y+hÏàµÈ£©Á½±ß×é¼ş
+    	// ä¸‹ä¾§å¯¹é½æ—¶ï¼ˆy+hç›¸ç­‰ï¼‰ä¸¤è¾¹ç»„ä»¶
     	ry = backupBound.y + backupBound.height ;
     	ly = leftComps.get(0).getY() + leftComps.get(0).getHeight();
     	while(ry<= max && ly<= max) {
@@ -848,12 +848,12 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	dealHorDirection(backupBound.x, difference);
     }
     
-    // ÓÒ²à±ß¿òÀ­Éì£¬Ñ­»·ÕÒ³ö¶ÔÆëµÄÁ½²à¿Ø¼ş
+    // å³ä¾§è¾¹æ¡†æ‹‰ä¼¸ï¼Œå¾ªç¯æ‰¾å‡ºå¯¹é½çš„ä¸¤ä¾§æ§ä»¶
     private void dealDirectionAtRight(Rectangle backupBound, int difference, Component creator) {
     	leftComps.add(creator);
     	Component leftComp = null;
     	int leftx = backupBound.x+backupBound.width-DEFAULT_AREA_LENGTH;
-    	// È¡ÓÒ²à±ß¿òÓÒÃæµÄ×é¼şxÖµ
+    	// å–å³ä¾§è¾¹æ¡†å³é¢çš„ç»„ä»¶xå€¼
     	int rightx = backupBound.x+backupBound.width+DEFAULT_AREA_LENGTH+actualVal;
     	Component rightComp = container.getRightComp(backupBound.x, backupBound.y, backupBound.width);
     	rightComps.add(rightComp);
@@ -896,7 +896,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     *  Ë®Æ½·½ÏòÉÏÀ­Éì±ß¿òµÄ´¦Àí 
+     *  æ°´å¹³æ–¹å‘ä¸Šæ‹‰ä¼¸è¾¹æ¡†çš„å¤„ç† 
      */
     private void dealHorDirection(int objx, int difference) {
     	if (difference>0) {
@@ -904,25 +904,25 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	} else {
     		difference = Math.max(difference, minWidth-getMinWidth(leftComps));
     	}
-    	//ÖØĞÂ¼ÆËã×óÓÒÁ½²à×é¼şsize¡¢point
+    	//é‡æ–°è®¡ç®—å·¦å³ä¸¤ä¾§ç»„ä»¶sizeã€point
     	if(CalculateLefttRelatComponent(difference)){
     		CalculateRightRelatComponent(objx+difference, -difference);
     	}
     }
     
-    // ÉÏ²à±ß¿òÀ­Éì£¬Ñ­»·ÕÒ³ö¶ÔÆëµÄÁ½²à¿Ø¼ş
+    // ä¸Šä¾§è¾¹æ¡†æ‹‰ä¼¸ï¼Œå¾ªç¯æ‰¾å‡ºå¯¹é½çš„ä¸¤ä¾§æ§ä»¶
     private void dealDirectionAtTop(Rectangle backupBound, int difference, Component creator) {
     	downComps.add(creator);
-    	// È¡ÉÏ²à±ß¿òÉÏÃæµÄ×é¼şÓÃµÄyÖµ
+    	// å–ä¸Šä¾§è¾¹æ¡†ä¸Šé¢çš„ç»„ä»¶ç”¨çš„yå€¼
     	int topy = backupBound.y-DEFAULT_AREA_LENGTH - actualVal;
-    	// ÉÏ²à±ß¿òÏÂÃæµÄ×é¼şyÖµ
+    	// ä¸Šä¾§è¾¹æ¡†ä¸‹é¢çš„ç»„ä»¶yå€¼
     	int bottomy = backupBound.y+DEFAULT_AREA_LENGTH;
     	Component topComp = container.getTopComp(backupBound.x, backupBound.y);
     	upComps.add(topComp);
     	Component bottomComp = null;
     	int min = margin.getLeft();
     	int max = container.getWidth() - margin.getRight();
-    	//ÏÈÕÒ×ó²à²à¶ÔÆëÊ±(xÏàµÈ)µÄÉÏÏÂÁ½±ß×é¼ş
+    	//å…ˆæ‰¾å·¦ä¾§ä¾§å¯¹é½æ—¶(xç›¸ç­‰)çš„ä¸Šä¸‹ä¸¤è¾¹ç»„ä»¶
     	int ux = topComp.getX();
     	int dx = backupBound.x;
     	while(ux>= min && dx>=min) {
@@ -940,7 +940,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     			}
     		}
     	}
-    	// ÓÒ²à¶ÔÆëÊ±£¨x+wÏàµÈ£©Á½±ß×é¼ş
+    	// å³ä¾§å¯¹é½æ—¶ï¼ˆx+wç›¸ç­‰ï¼‰ä¸¤è¾¹ç»„ä»¶
     	ux = upComps.get(0).getX()+upComps.get(0).getWidth();
     	dx = backupBound.x + backupBound.width;
     	while (ux<= max && dx<= max) {
@@ -962,14 +962,14 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	dealVertiDirection(backupBound.y , difference);
     }
     
-    // ÏÂ²à±ß¿òÀ­Éì£¬Ñ­»·ÕÒ³ö¶ÔÆëµÄÁ½²à¿Ø¼ş
+    // ä¸‹ä¾§è¾¹æ¡†æ‹‰ä¼¸ï¼Œå¾ªç¯æ‰¾å‡ºå¯¹é½çš„ä¸¤ä¾§æ§ä»¶
     private void dealDirectionABottom(Rectangle backupBound, int difference, Component creator) {
     	upComps.add(creator);
     	Component topComp = null;
     	Component bottomComp = container.getBottomComp(backupBound.x, backupBound.y, backupBound.height);
-    	// ÏÂ²à±ß¿òÏÂÃæµÄ×é¼şy×ø±ê
+    	// ä¸‹ä¾§è¾¹æ¡†ä¸‹é¢çš„ç»„ä»¶yåæ ‡
     	int bottomy = backupBound.y+backupBound.height+DEFAULT_AREA_LENGTH + actualVal;
-    	// È¡ÏÂ²à±ß¿òÉÏÃæµÄ×é¼şÓÃµÄyÖµ
+    	// å–ä¸‹ä¾§è¾¹æ¡†ä¸Šé¢çš„ç»„ä»¶ç”¨çš„yå€¼
     	int topy = backupBound.y+backupBound.height-DEFAULT_AREA_LENGTH;
     	downComps.add(bottomComp);
     	int dx = bottomComp.getX();
@@ -1012,7 +1012,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     *  ´¹Ö±·½ÏòÉÏÀ­Éì±ß¿òµÄ´¦Àí 
+     *  å‚ç›´æ–¹å‘ä¸Šæ‹‰ä¼¸è¾¹æ¡†çš„å¤„ç† 
      */
     private void dealVertiDirection(int objY, int difference) {
     	if (difference>0) {
@@ -1020,17 +1020,17 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	} else {
     		difference = Math.max(difference, minHeight - getMinHeight(upComps));
     	}
-    	//ÖØĞÂ¼ÆËãÉÏÏÂÁ½²à×é¼şsize¡¢point
+    	//é‡æ–°è®¡ç®—ä¸Šä¸‹ä¸¤ä¾§ç»„ä»¶sizeã€point
     	 if(CalculateUpRelatComponent(difference)){
     		CalculateDownRelatComponent(objY+difference, -difference);
     	};
     }
     
     /**
-     *  ĞÂÍÏÈë×é¼şÊ±£¬¼ÆËãµ÷ÕûÆäËû¹ØÁª×é¼şÎ»ÖÃ´óĞ¡
-     * @param child  ĞÂÍÏÈëµÄ×é¼ş
-     * @param x Êó±êËùÔÚx×ø±ê
-     * @param y Êó±êËùÔÚy×ø±ê
+     *  æ–°æ‹–å…¥ç»„ä»¶æ—¶ï¼Œè®¡ç®—è°ƒæ•´å…¶ä»–å…³è”ç»„ä»¶ä½ç½®å¤§å°
+     * @param child  æ–°æ‹–å…¥çš„ç»„ä»¶
+     * @param x é¼ æ ‡æ‰€åœ¨xåæ ‡
+     * @param y é¼ æ ‡æ‰€åœ¨yåæ ‡
      */
     public void fix(XCreator child, int x, int y) {
     	Component parentComp = container.getComponentAt(x, y);
@@ -1038,11 +1038,11 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     		child.setLocation(0, 0);
         	child.setSize(parentComp.getWidth(), parentComp.getHeight());
     	} else if(isCrossPointArea(parentComp, x, y)){
-    		//½»²æÇøÓò²åÈë×é¼şÊ±£¬¸ù¾İ¾ßÌåÎ»ÖÃ½øĞĞÉÏÏÂ»òÕß×óÓÒ»òÕßÏàÁÚÈı¸ö×é¼şµÄÎ»ÖÃ´óĞ¡²åÈë
+    		//äº¤å‰åŒºåŸŸæ’å…¥ç»„ä»¶æ—¶ï¼Œæ ¹æ®å…·ä½“ä½ç½®è¿›è¡Œä¸Šä¸‹æˆ–è€…å·¦å³æˆ–è€…ç›¸é‚»ä¸‰ä¸ªç»„ä»¶çš„ä½ç½®å¤§å°æ’å…¥
     		fixCrossPointArea(parentComp, child, x, y);
     		return;
     	} else if (isTrisectionArea(parentComp, x, y)) {
-    		// ÔÚ±ß½çÈıµÈ·ÖÇøÓò£¬¾Í²»ÔÙºÍ×é¼ş¶şµÈ·ÖÁË
+    		// åœ¨è¾¹ç•Œä¸‰ç­‰åˆ†åŒºåŸŸï¼Œå°±ä¸å†å’Œç»„ä»¶äºŒç­‰åˆ†äº†
     		fixTrisect(parentComp, child, x, y);
     		return;
     	} else{
@@ -1051,7 +1051,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * Æ½·Ö£¬Õı³£Çé¿öÍÏÈë×é¼şÊ±£¬°´ÕÕÉÏ1/4ÇøÓò¡¢ÏÂ1/4ÇøÓòÎªÉÏÏÂÆ½·Ö£¬ÖĞ×ó²à1/2ÇøÓò¡¢ÖĞÓÒ²à1/2ÇøÓòÎª×óÓÒÆ½·Ö
+     * å¹³åˆ†ï¼Œæ­£å¸¸æƒ…å†µæ‹–å…¥ç»„ä»¶æ—¶ï¼ŒæŒ‰ç…§ä¸Š1/4åŒºåŸŸã€ä¸‹1/4åŒºåŸŸä¸ºä¸Šä¸‹å¹³åˆ†ï¼Œä¸­å·¦ä¾§1/2åŒºåŸŸã€ä¸­å³ä¾§1/2åŒºåŸŸä¸ºå·¦å³å¹³åˆ†
      */
     private void fixHalve(Component currentComp, XCreator child, int x, int y) {
     	XCreator creator = (XCreator)currentComp;
@@ -1077,7 +1077,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 			finalY = yL+dim.height + actualVal;
 			finalH = maxHeight - dim.height - actualVal;
 		} else if(isDividDown){
-			// Èôµ±Ç°ÇøÓò¸ß¶È·ÇÅ¼Êı£¬ÄÇÃ´ºÍisDividUpÊ±¼ÆËãÒ»ÖÂ£¬·ñÔòÓÀÔ¶¶¼ÊÇÉÏ°ë²¿·ÖĞ¡1px
+			// è‹¥å½“å‰åŒºåŸŸé«˜åº¦éå¶æ•°ï¼Œé‚£ä¹ˆå’ŒisDividUpæ—¶è®¡ç®—ä¸€è‡´ï¼Œå¦åˆ™æ°¸è¿œéƒ½æ˜¯ä¸ŠåŠéƒ¨åˆ†å°1px
 			dim.height = maxHeight/2 - actualVal/2;
 			dim.width = maxWidth;
 			finalH = maxHeight-dim.height - actualVal;
@@ -1103,9 +1103,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		}
     }
     
-    // ±ß½çÅĞ¶Ï³´µÃÔ­À´µÄÂß¼­
-    // tab²¼¾ÖµÄ±ß½çÍÏÈëĞÂ×é¼ş£¬ºÍµ±Ç°tab²¼¾ÖÆ½·Ö£¬ÕâÊ±ºòµÄactualVal×é½¨¼ä¸ôÊÇtabÀïÃæµÄ×é½¨¼ä¸ô
-    // ²»Ó¦¸ÃÔÚÍâ²ã×ÔÊÊÓ¦²¼¾ÖÌí¼Ó
+    // è¾¹ç•Œåˆ¤æ–­ç‚’å¾—åŸæ¥çš„é€»è¾‘
+    // tabå¸ƒå±€çš„è¾¹ç•Œæ‹–å…¥æ–°ç»„ä»¶ï¼Œå’Œå½“å‰tabå¸ƒå±€å¹³åˆ†ï¼Œè¿™æ—¶å€™çš„actualValç»„å»ºé—´éš”æ˜¯tabé‡Œé¢çš„ç»„å»ºé—´éš”
+    // ä¸åº”è¯¥åœ¨å¤–å±‚è‡ªé€‚åº”å¸ƒå±€æ·»åŠ 
     private void fixHalveOfTab(XCreator currentCreator, XCreator child, int x, int y){
     	int maxWidth = currentCreator.getWidth();
     	int maxHeight = currentCreator.getHeight();
@@ -1165,23 +1165,23 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		int containerY = container.getY();
 		int containerWidth = container.getWidth();
 		int containerHeight = container.getHeight();
-		// µ±Ç°×ø±êµã
+		// å½“å‰åæ ‡ç‚¹
 		Rectangle currentXY = new Rectangle(tempX, tempY, 1, 1);
-		// ÉÏ±ßÔµ
+		// ä¸Šè¾¹ç¼˜
 		Rectangle upEdge = new Rectangle(containerX, containerY, containerWidth, BORDER_PROPORTION);
 		if(upEdge.intersects(currentXY)){
 			position = COMP_TOP;
 		}
 		int bottomY = containerY + containerHeight - BORDER_PROPORTION;
-		// ÏÂ±ßÔµ
+		// ä¸‹è¾¹ç¼˜
 		Rectangle bottomEdge = new Rectangle(containerX, bottomY, containerWidth, BORDER_PROPORTION);
 		if(bottomEdge.intersects(currentXY)){
 			position = COMP_BOTTOM;
 		}
-		//×óÓÒ±ßÔµµÄ¸ß¶È -10*2 ÊÇÎªÁË²»ºÍÉÏÏÂ±ßÔµÖØºÏ
+		//å·¦å³è¾¹ç¼˜çš„é«˜åº¦ -10*2 æ˜¯ä¸ºäº†ä¸å’Œä¸Šä¸‹è¾¹ç¼˜é‡åˆ
 		int verticalHeight = containerHeight - BORDER_PROPORTION * 2;
 		int leftY = containerY + BORDER_PROPORTION;
-		// ×ó±ßÔµ 
+		// å·¦è¾¹ç¼˜ 
 		Rectangle leftEdge = new Rectangle(containerX, leftY, BORDER_PROPORTION, verticalHeight);
 		if(leftEdge.intersects(currentXY)){
 			position = COMP_LEFT;
@@ -1190,12 +1190,12 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ×é¼ş½»²æÇøÓò½øĞĞ²åÈëÊ±£¬µ÷ÕûÊÜµ½±ä¶¯µÄÆäËû×é¼ş,Ö®Ç°ÊÇ½»²æÇøÓò²åÈëÒ²°´ÕÕÈıµÈ·ÖÂß¼­£¬ºóÃæ²âÊÔÖĞ·¢ÏÖÓĞbug£¬¸ÄÎªºÍbiÒ»ÑùµÄÊó±êËùÔÚ²àÆ½·Ö
-     * Ä¬ÈÏ×óÉÏ½Ç¡¢ÓÒÏÂ½ÇÇøÓòÊÇ´¹Ö±·½Ïò²åÈë×é¼ş
-     * ÓÒÉÏ½ÇºÍ×óÏÂ½ÇÊÇË®Æ½·½Ïò²åÈë×é¼ş£¬ÕâÑù±ÜÃâÌï×Ö¿éÊ±ÖØ¸´
+     * ç»„ä»¶äº¤å‰åŒºåŸŸè¿›è¡Œæ’å…¥æ—¶ï¼Œè°ƒæ•´å—åˆ°å˜åŠ¨çš„å…¶ä»–ç»„ä»¶,ä¹‹å‰æ˜¯äº¤å‰åŒºåŸŸæ’å…¥ä¹ŸæŒ‰ç…§ä¸‰ç­‰åˆ†é€»è¾‘ï¼Œåé¢æµ‹è¯•ä¸­å‘ç°æœ‰bugï¼Œæ”¹ä¸ºå’Œbiä¸€æ ·çš„é¼ æ ‡æ‰€åœ¨ä¾§å¹³åˆ†
+     * é»˜è®¤å·¦ä¸Šè§’ã€å³ä¸‹è§’åŒºåŸŸæ˜¯å‚ç›´æ–¹å‘æ’å…¥ç»„ä»¶
+     * å³ä¸Šè§’å’Œå·¦ä¸‹è§’æ˜¯æ°´å¹³æ–¹å‘æ’å…¥ç»„ä»¶ï¼Œè¿™æ ·é¿å…ç”°å­—å—æ—¶é‡å¤
      */
     private void fixCrossPointArea(Component currentComp, XCreator child, int x, int y) {
-    	//¼ÆËãÇ°ÏÈÈ«²¿³õÊ¼»¯´ıµ÷Õû¿Ø¼şËùÔÚµÄlist
+    	//è®¡ç®—å‰å…ˆå…¨éƒ¨åˆå§‹åŒ–å¾…è°ƒæ•´æ§ä»¶æ‰€åœ¨çš„list
     	initCompsList();
 		switch(crossPointAreaDirect) {
 			case COMP_LEFT_TOP :
@@ -1228,7 +1228,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ×óÉÏ½»²æÇøÓò²åÈë×é¼ş£¬Ä¬ÈÏ´¹Ö±·½Ïò²åÈë
+     * å·¦ä¸Šäº¤å‰åŒºåŸŸæ’å…¥ç»„ä»¶ï¼Œé»˜è®¤å‚ç›´æ–¹å‘æ’å…¥
      */
     private void dealCrossPointAtLeftTop(Component currentComp, XCreator child) {
     	int minDH = 0, minRW = 0, childw = 0, childh = 0;
@@ -1238,7 +1238,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int cW = currentComp.getWidth();
     	Component topComp = container.getTopComp(cX, cY);
 		Component leftComp = container.getLeftComp(cX, cY);
-		//ÉÏ·½Ã»ÓĞ×é¼ş»òÕßÓĞÒ»¸öx×ø±ê²»ÏàÍ¬µÄ×é¼ş
+		//ä¸Šæ–¹æ²¡æœ‰ç»„ä»¶æˆ–è€…æœ‰ä¸€ä¸ªxåæ ‡ä¸ç›¸åŒçš„ç»„ä»¶
     	if (topComp==null || topComp.getX()!=cX) {
     		minDH = cH<leftComp.getHeight() ? cH : leftComp.getHeight();
     		downComps.add(leftComp);
@@ -1249,7 +1249,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 			if (isCalculateChildPos) {
 				childPosition = new int[]{leftComp.getX(), leftComp.getY(), childw, childh};
 			} else{
-				//ÏÈÉèÖÃchildÎ»ÖÃ£¬²»È»leftComp×ø±êµ÷Õûºó¾Í²»¶ÔÁË
+				//å…ˆè®¾ç½®childä½ç½®ï¼Œä¸ç„¶leftCompåæ ‡è°ƒæ•´åå°±ä¸å¯¹äº†
 				child.setLocation(leftComp.getX(), leftComp.getY());
 				child.setSize(childw, childh);
 				calculateBottomComps(dLength);
@@ -1272,16 +1272,16 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÓÒÏÂ½»²æÇøÓò²åÈë×é¼ş£¬Ä¬ÈÏ´¹Ö±·½Ïò²åÈë
+     * å³ä¸‹äº¤å‰åŒºåŸŸæ’å…¥ç»„ä»¶ï¼Œé»˜è®¤å‚ç›´æ–¹å‘æ’å…¥
      */
     private void dealCrossPointAtRightBottom(Component currentComp, XCreator child) {
     	int minUH = 0;
     	int minLW = 0;
     	int cH = currentComp.getHeight(), cW = currentComp.getWidth(), cX = currentComp.getX(), cY = currentComp.getY();
-    	// Êó±êÔÚÓÒÏÂÇøÓòÊ±£¬ÕÒÓÒÏÂ²àºÍÏÂÓÒ²àµÄ×é¼ş
+    	// é¼ æ ‡åœ¨å³ä¸‹åŒºåŸŸæ—¶ï¼Œæ‰¾å³ä¸‹ä¾§å’Œä¸‹å³ä¾§çš„ç»„ä»¶
     	Component bottomComp = container.getRightBottomComp(cX, cY, cH, cW);
 		Component rightComp = container.getBottomRightComp(cX, cY, cH, cW);
-		//ÓÒÏÂ·½Ã»ÓĞ×é¼ş»òÕßÓĞÒ»¸öÓÒ²à²»¶ÔÆëµÄ×é¼ş
+		//å³ä¸‹æ–¹æ²¡æœ‰ç»„ä»¶æˆ–è€…æœ‰ä¸€ä¸ªå³ä¾§ä¸å¯¹é½çš„ç»„ä»¶
 		if (bottomComp==null || (bottomComp.getX()+bottomComp.getWidth() != cX+cW)) {
 			minUH = cH<rightComp.getHeight() ? cH : rightComp.getHeight();
 			upComps.add(currentComp);
@@ -1298,14 +1298,14 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ×óÏÂ½»²æÇøÓò²åÈë×é¼ş£¬Ä¬ÈÏË®Æ½·½Ïò²åÈë
+     * å·¦ä¸‹äº¤å‰åŒºåŸŸæ’å…¥ç»„ä»¶ï¼Œé»˜è®¤æ°´å¹³æ–¹å‘æ’å…¥
      */
     private void dealCrossPointAtLeftBottom(Component currentComp, XCreator child) {
     	int minUH = 0, minRW = 0;
     	int cX = currentComp.getX(), cY = currentComp.getY(), cH = currentComp.getHeight(), cW = currentComp.getWidth();
     	Component bottomComp = container.getBottomComp(cX, cY, cH);
     	Component leftComp = container.getBottomLeftComp(cX, cY, cH);
-		//×ó²àÃ»ÓĞ»òÕßÓĞÒ»¸öÏÂ²Ş²»¶ÔÆëµÄ×é¼ş
+		//å·¦ä¾§æ²¡æœ‰æˆ–è€…æœ‰ä¸€ä¸ªä¸‹å•ä¸å¯¹é½çš„ç»„ä»¶
 		if (leftComp==null || (leftComp.getY()+leftComp.getHeight() != cY+cH)) {
 			rightComps.add(currentComp);
 			rightComps.add(bottomComp);
@@ -1330,14 +1330,14 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÓÒÉÏ½»²æÇøÓò²åÈë×é¼ş£¬Ä¬ÈÏË®Æ½·½Ïò²åÈë
+     * å³ä¸Šäº¤å‰åŒºåŸŸæ’å…¥ç»„ä»¶ï¼Œé»˜è®¤æ°´å¹³æ–¹å‘æ’å…¥
      */
     private void dealCrossPointAtRightTop(Component currentComp, XCreator child) {
     	int minDH = 0, minLW = 0;
     	int cX = currentComp.getX(), cY = currentComp.getY(), cH = currentComp.getHeight(), cW = currentComp.getWidth();
     	Component topComp = container.getRightTopComp(cX, cY, cW);
 		Component rightComp = container.getRightComp(cX, cY, cW);
-		//ÓÒ·½Ã»ÓĞ×é¼ş»òÕßÓĞÒ»¸öÓÒ²à²»¶ÔÆëµÄ×é¼ş
+		//å³æ–¹æ²¡æœ‰ç»„ä»¶æˆ–è€…æœ‰ä¸€ä¸ªå³ä¾§ä¸å¯¹é½çš„ç»„ä»¶
 		if (rightComp==null || (rightComp.getY()!=cY)) {
 			leftComps.add(currentComp);
 			leftComps.add(topComp);
@@ -1430,9 +1430,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÈıµÈ·ÖÇøÓòÊ±£¬µ÷ÕûÏà¹ØÁªµÄ×é¼ş
-     * @param currentComp  Êó±êËùÔÚ×é¼ş
-     * @param child  ´ı²åÈë×é¼ş
+     * ä¸‰ç­‰åˆ†åŒºåŸŸæ—¶ï¼Œè°ƒæ•´ç›¸å…³è”çš„ç»„ä»¶
+     * @param currentComp  é¼ æ ‡æ‰€åœ¨ç»„ä»¶
+     * @param child  å¾…æ’å…¥ç»„ä»¶
      */
     private void fixTrisect(Component currentComp, XCreator child, int x, int y) {
     	int minUpH = 0, minDownH = 0, minLeftW = 0, minRightW = 0;
@@ -1454,7 +1454,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     		minLeftW = getMinLeftWidth(currentComp, x);
     		dealTrisectAtRight(child, minLeftW, minRightW);
     	} else if(ComparatorUtils.equals(trisectAreaDirect, COMP_LEFT)) {
-    		// µ±Ç°×é¼ş¾ÍÔÚÓÒ²àÊ±£¬cWÎª0
+    		// å½“å‰ç»„ä»¶å°±åœ¨å³ä¾§æ—¶ï¼ŒcWä¸º0
     		minRightW = getMinRightWidth(cX, 0,  y);
     		if(cX-DEFAULT_AREA_LENGTH > margin.getLeft()) {
     			Component targetRightComp  = container.getLeftComp(cX, y);
@@ -1467,10 +1467,10 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-	 * µ±Ç°×é¼şÉÏ±ß½çÇøÓòÈıµÈ·Ö
+	 * å½“å‰ç»„ä»¶ä¸Šè¾¹ç•ŒåŒºåŸŸä¸‰ç­‰åˆ†
 	 */
     private void dealTrisectAtTop(XCreator child, int minUH, int minDH) {
-    	// ÈıµÈ·ÖÓĞ¼ä¸ôÊ±£¬Êµ¼ÊÊÇÁ½²à¶¼Òª¼õÈ¥°ë¸ö¼ä¸ô´óĞ¡
+    	// ä¸‰ç­‰åˆ†æœ‰é—´éš”æ—¶ï¼Œå®é™…æ˜¯ä¸¤ä¾§éƒ½è¦å‡å»åŠä¸ªé—´éš”å¤§å°
     	int averageH = (minUH+minDH - actualVal)/3;
     	int dLength = 0;
     	int uLength = 0;
@@ -1510,13 +1510,13 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	if (!isCalculateChildPos) {
     		calculateBottomComps(dLength);
     	}
-    	// ¼ÆËãÁ½²àÊ±£¬¶¼¶îÍâÈ¥µô°ë¸ö¼ä¸ô£¬3µÈ·ÖºÍÆ½·Ö½»²æµã²»Í¬£¬Ö»ÄÜÌØÊâ´¦ÀíÏÂ
+    	// è®¡ç®—ä¸¤ä¾§æ—¶ï¼Œéƒ½é¢å¤–å»æ‰åŠä¸ªé—´éš”ï¼Œ3ç­‰åˆ†å’Œå¹³åˆ†äº¤å‰ç‚¹ä¸åŒï¼Œåªèƒ½ç‰¹æ®Šå¤„ç†ä¸‹
     	averageH += actualVal/2;
     	calculateTopComps(uLength, child, averageH);
     }
     
     /**
-	 * µ±Ç°×é¼şÓÒ±ß½çÇøÓòÈıµÈ·Ö
+	 * å½“å‰ç»„ä»¶å³è¾¹ç•ŒåŒºåŸŸä¸‰ç­‰åˆ†
 	 */
     private void dealTrisectAtRight(XCreator child, int minLW, int minRW) {
     	int averageW = (minLW+minRW - actualVal)/3;
@@ -1557,7 +1557,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	if (!isCalculateChildPos) {
     		calculateRightComps(rightLength);
     	}
-    	// averageW ÊÇÒÑ¾­È¥³ı¼ä¸ôºóµÄ´óĞ¡£¬ËùÒÔÔÙ¼ÓÉÏ°ë¸ö¼ä¸ô£¬·ñÔò´¦ÀíÊ±»á±äĞ¡
+    	// averageW æ˜¯å·²ç»å»é™¤é—´éš”åçš„å¤§å°ï¼Œæ‰€ä»¥å†åŠ ä¸ŠåŠä¸ªé—´éš”ï¼Œå¦åˆ™å¤„ç†æ—¶ä¼šå˜å°
     	averageW += actualVal/2;
     	calculateLeftComps(leftLength, child, averageW);
     }
@@ -1652,7 +1652,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-	 * É¾³ı×é¼ş»òÕßÖØĞÂÍÏ¶¯Ê±£¬ÆäËü×é¼şÖØĞÂ¼ÆËãÎ»ÖÃ´óĞ¡
+	 * åˆ é™¤ç»„ä»¶æˆ–è€…é‡æ–°æ‹–åŠ¨æ—¶ï¼Œå…¶å®ƒç»„ä»¶é‡æ–°è®¡ç®—ä½ç½®å¤§å°
 	 */
 	protected void delete(XCreator creator, int creatorWidth, int creatorHeight) {
 		int x = creator.getX();
@@ -1662,11 +1662,11 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÖØĞÂ¼ÆËãÄÚ²¿×é¼ş´óĞ¡
-     * @param x ×ø±êx
-     * @param y ×ø±êy 
-     * @param creatorWidth É¾³ıµÄ×é¼şÖ®Ç°ËùÔÚ²¼¾ÖµÄ¿í¶È
-     * @param creatorHeight É¾³ıµÄ×é¼şÖ®Ç°ËùÔÚ²¼¾ÖµÄ¸ß¶È
+     * é‡æ–°è®¡ç®—å†…éƒ¨ç»„ä»¶å¤§å°
+     * @param x åæ ‡x
+     * @param y åæ ‡y 
+     * @param creatorWidth åˆ é™¤çš„ç»„ä»¶ä¹‹å‰æ‰€åœ¨å¸ƒå±€çš„å®½åº¦
+     * @param creatorHeight åˆ é™¤çš„ç»„ä»¶ä¹‹å‰æ‰€åœ¨å¸ƒå±€çš„é«˜åº¦
      */
     public void recalculateChildrenSize(int x, int y, int creatorWidth, int creatorHeight) {
     	if (container.getComponentCount() == 0){
@@ -1685,7 +1685,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
         	} else if(!upComps.isEmpty() && getAllWidth(upComps)==width) {
         		CalculateUpRelatComponent(height+actualVal);
         	} else {
-        		// ÓÉÓÚ²¼¾ÖÈıµÈ·ÖµÄ´æÔÚ£¬¿ÉÄÜ»á³öÏÖÉ¾³ı×é¼şÊ±£¬ÕÒ²»µ½¹ØÁªµÄ×é¼şÌî³ä£¬´ËÊ±ÌØÊâ´¦Àí
+        		// ç”±äºå¸ƒå±€ä¸‰ç­‰åˆ†çš„å­˜åœ¨ï¼Œå¯èƒ½ä¼šå‡ºç°åˆ é™¤ç»„ä»¶æ—¶ï¼Œæ‰¾ä¸åˆ°å…³è”çš„ç»„ä»¶å¡«å……ï¼Œæ­¤æ—¶ç‰¹æ®Šå¤„ç†
         		calculateNoRelatedComponent(x, y, width, height);
         	}
     	}
@@ -1693,17 +1693,17 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ËÄ²à±ß¿ò¶¼Ã»ÓĞ¶ÔÆëµÄ£¬´ËÊ±Ã¿²àÓĞÇÒÖ»ÓĞÒ»¸ö·½Ïò²»¶ÔÆë
-     * ±ÈÈçÓÒ²à²»¶ÔÆë£¬ÄÇÃ´±ØÈ»ÓÒÉÏ»òÓÒÏÂÃ»¶ÔÆë£¬²»»áÍ¬Ê±²»¶ÔÆë£¬·ñÔò²»»á³öÏÖ´ËÇé¿ö
-     * Õı³£É¾³ıÊÇÓÒ×óÏÂÉÏÓÅÏÈÔ­Ôò£¬Õâ±ßÄ¿Ç°Ö»µ÷ÕûÓÒ²àÒÔÖÁÌî³äÍêÕû£¬
-     * ÓÒ²à²»¶ÔÆëÊ±µÄ×é¼şÏÈÉÏÏÂÎ¢µ÷£¬ÔÙÏò×ó²àÌî³ä¡£
+     * å››ä¾§è¾¹æ¡†éƒ½æ²¡æœ‰å¯¹é½çš„ï¼Œæ­¤æ—¶æ¯ä¾§æœ‰ä¸”åªæœ‰ä¸€ä¸ªæ–¹å‘ä¸å¯¹é½
+     * æ¯”å¦‚å³ä¾§ä¸å¯¹é½ï¼Œé‚£ä¹ˆå¿…ç„¶å³ä¸Šæˆ–å³ä¸‹æ²¡å¯¹é½ï¼Œä¸ä¼šåŒæ—¶ä¸å¯¹é½ï¼Œå¦åˆ™ä¸ä¼šå‡ºç°æ­¤æƒ…å†µ
+     * æ­£å¸¸åˆ é™¤æ˜¯å³å·¦ä¸‹ä¸Šä¼˜å…ˆåŸåˆ™ï¼Œè¿™è¾¹ç›®å‰åªè°ƒæ•´å³ä¾§ä»¥è‡³å¡«å……å®Œæ•´ï¼Œ
+     * å³ä¾§ä¸å¯¹é½æ—¶çš„ç»„ä»¶å…ˆä¸Šä¸‹å¾®è°ƒï¼Œå†å‘å·¦ä¾§å¡«å……ã€‚
      */
     private void calculateNoRelatedComponent(int x, int y, int width, int height) {
-    	// Ö»ÓĞ×îºóÒ»¸ö×é¼şÁË£¬Ö±½ÓÉ¾³ı
+    	// åªæœ‰æœ€åä¸€ä¸ªç»„ä»¶äº†ï¼Œç›´æ¥åˆ é™¤
     	if (container.getComponentCount() <= 1) {
     		return;
     	}
-    	// É¾³ıµ±Ç°×é¼şÊ±£¬ÓÉÓÚÃ»ÓĞ¸ÕºÃ±ß¿ò¶ÔÆëµÄÆäËû×é¼ş£¬ÕâÊ±ºòĞèÒªµ÷ÕûµÄ×é¼ş
+    	// åˆ é™¤å½“å‰ç»„ä»¶æ—¶ï¼Œç”±äºæ²¡æœ‰åˆšå¥½è¾¹æ¡†å¯¹é½çš„å…¶ä»–ç»„ä»¶ï¼Œè¿™æ—¶å€™éœ€è¦è°ƒæ•´çš„ç»„ä»¶
     	Component rightComp = container.getRightComp(x, y, width);
     	if(rightComp == null){
     		return;
@@ -1730,11 +1730,11 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int rh = rcomp.getHeight();
     	int rw = rcomp.getWidth();
     	int dh = bound.y - ry - actualVal;
-    	// Ã»·¨ËõĞ¡¸ß¶È
+    	// æ²¡æ³•ç¼©å°é«˜åº¦
     	if (dh < minHeight) {
-    		// Ã»·¨ËõĞ¡Ê±ÔòÀ­ÉìrcompµÄÉÏ±ß¿ò
+    		// æ²¡æ³•ç¼©å°æ—¶åˆ™æ‹‰ä¼¸rcompçš„ä¸Šè¾¹æ¡†
 			dealDirectionAtTop(rcomp.getBounds(), dh + actualVal, rcomp);
-			//µ÷ÕûµÄÊ±ºò¿ÉÄÜÓĞ×é¼ş´ïµ½×îĞ¡¸ß¶È£¬ÅĞ¶ÏÏÂ
+			//è°ƒæ•´çš„æ—¶å€™å¯èƒ½æœ‰ç»„ä»¶è¾¾åˆ°æœ€å°é«˜åº¦ï¼Œåˆ¤æ–­ä¸‹
 			if (rcomp.getY() != bound.y) {
 				clearCompsList();
 		    	initCompsList();
@@ -1747,7 +1747,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 				return;
 			}
     	} else {
-    		// ÓÒ²à¿Ø¼şµ×²¿¶ÔÆë
+    		// å³ä¾§æ§ä»¶åº•éƒ¨å¯¹é½
     		if (rh+ry == bound.y+bound.height) {
 				rcomp.setSize(rw, dh);
 				bound.width += rw;
@@ -1769,7 +1769,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	int dh = ry  + rh - bound.y - bound.height - actualVal;
     	if (dh < minHeight) {
     		dealDirectionABottom(rcomp.getBounds(), -dh - actualVal, rcomp);
-    		//µ÷ÕûµÄÊ±ºò¿ÉÄÜÓĞ×é¼ş´ïµ½×îĞ¡¸ß¶È£¬ÅĞ¶ÏÏÂ
+    		//è°ƒæ•´çš„æ—¶å€™å¯èƒ½æœ‰ç»„ä»¶è¾¾åˆ°æœ€å°é«˜åº¦ï¼Œåˆ¤æ–­ä¸‹
     		if (rcomp.getHeight()+ry != bound.y + bound.height) {
     			clearCompsList();
     	    	initCompsList();
@@ -1818,7 +1818,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	return minH;
     }
     
-    // É¾³ıÊ±¼ÆËã´ıÉ¾³ı×é¼şÉÏÏÂ²àµÄ×é¼şÊÇ·ñºÎÆä¶ÔÆë
+    // åˆ é™¤æ—¶è®¡ç®—å¾…åˆ é™¤ç»„ä»¶ä¸Šä¸‹ä¾§çš„ç»„ä»¶æ˜¯å¦ä½•å…¶å¯¹é½
     private int getAllHeight(List<Component> comps) {
     	int allHeight = 0;
     	if (comps.isEmpty()) {
@@ -1846,7 +1846,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * »ñÈ¡ÓĞÄÄĞ©Ïà¹ØÁªµÄ×é¼ş
+     * è·å–æœ‰å“ªäº›ç›¸å…³è”çš„ç»„ä»¶
      */
     protected void calculateRelatedComponent(int objX, int objY, int objWidth, int objHeight) {
     	int count = container.getComponentCount();
@@ -1873,9 +1873,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÍÏ×§×é¼şÊ±±éÀúÄ³Ò»²à×é¼şµÃµ½¸Ã²à×é¼şÄÜ¹»Ëõ·ÅµÄ×îĞ¡¿í¶È£¬tab²¼¾Ö×îĞ¡¿í¶È  = ÄÚ²¿×é¼şÊı * µ¥¸ö×é¼ş×îĞ¡¿í¶È
-     * @param list Ä³Ò»²à×é¼şµÄ¼¯ºÏ Èç£ºleftComps<Component>
-     * @return int ×îĞ¡¿í¶È
+     * æ‹–æ‹½ç»„ä»¶æ—¶éå†æŸä¸€ä¾§ç»„ä»¶å¾—åˆ°è¯¥ä¾§ç»„ä»¶èƒ½å¤Ÿç¼©æ”¾çš„æœ€å°å®½åº¦ï¼Œtabå¸ƒå±€æœ€å°å®½åº¦  = å†…éƒ¨ç»„ä»¶æ•° * å•ä¸ªç»„ä»¶æœ€å°å®½åº¦
+     * @param list æŸä¸€ä¾§ç»„ä»¶çš„é›†åˆ å¦‚ï¼šleftComps<Component>
+     * @return int æœ€å°å®½åº¦
      * 
      */
     private int getCompsMinWidth(List<?> list){
@@ -1883,9 +1883,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÍÏ×§×é¼ş±éÀúÄ³Ò»²àµÃµ½¸Ã²à×é¼şÄÜ¹»Ëõ·ÅµÄ×îĞ¡¸ß¶È£¬tab²¼¾Ö×îĞ¡¸ß¶È = ÄÚ²¿×é¼şÊı  * µ¥¸ö×é¼ş×îĞ¡¸ß¶È  + ±êÌâ¸ß¶È
-     * @param list Ä³Ò»²à×é¼ş¼¯ºÏ
-     * @return int ×îĞ¡¸ß¶È
+     * æ‹–æ‹½ç»„ä»¶éå†æŸä¸€ä¾§å¾—åˆ°è¯¥ä¾§ç»„ä»¶èƒ½å¤Ÿç¼©æ”¾çš„æœ€å°é«˜åº¦ï¼Œtabå¸ƒå±€æœ€å°é«˜åº¦ = å†…éƒ¨ç»„ä»¶æ•°  * å•ä¸ªç»„ä»¶æœ€å°é«˜åº¦  + æ ‡é¢˜é«˜åº¦
+     * @param list æŸä¸€ä¾§ç»„ä»¶é›†åˆ
+     * @return int æœ€å°é«˜åº¦
      * 
      */
     private int getCompsMinHeight(List<?> list){
@@ -1900,10 +1900,10 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ¸ù¾İ×Ó×é¼şµÄºá(×İ)×ø±ê»ñÈ¡Ä³Ò»²à×é¼şµÄ×î´óÄÚ²¿×é¼şÊı
-     * @param list Ä³Ò»²à×é¼ş¼¯ºÏ
-     * @param isHor ÊÇ·ñÒÔºá×ø±êÎª×¼
-     * @return int ×î´óÄÚ²¿×é¼şÊı
+     * æ ¹æ®å­ç»„ä»¶çš„æ¨ª(çºµ)åæ ‡è·å–æŸä¸€ä¾§ç»„ä»¶çš„æœ€å¤§å†…éƒ¨ç»„ä»¶æ•°
+     * @param list æŸä¸€ä¾§ç»„ä»¶é›†åˆ
+     * @param isHor æ˜¯å¦ä»¥æ¨ªåæ ‡ä¸ºå‡†
+     * @return int æœ€å¤§å†…éƒ¨ç»„ä»¶æ•°
      * 
      */
     private int getMaxCompsNum(List<?> list,boolean isHor){
@@ -1925,10 +1925,10 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ¸ù¾İÆ«ÒÆÁ¿Ëõ·ÅÄÚ²¿×é¼ş´óĞ¡,£¨tab²¼¾ÖÓÃµ½£©
-     * @param creator tab²¼¾Ö
-     * @param offset Æ«ÒÆÁ¿
-     * @param isHor ÊÇ·ñÎªºáÏòÍÏ×§
+     * æ ¹æ®åç§»é‡ç¼©æ”¾å†…éƒ¨ç»„ä»¶å¤§å°,ï¼ˆtabå¸ƒå±€ç”¨åˆ°ï¼‰
+     * @param creator tabå¸ƒå±€
+     * @param offset åç§»é‡
+     * @param isHor æ˜¯å¦ä¸ºæ¨ªå‘æ‹–æ‹½
      */
     private void adjustCompsSize(XCreator creator,int offset,boolean isHor){
 		ArrayList<?> childrenList = creator.getTargetChildrenList();
@@ -1954,15 +1954,15 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		}
     }
     
-    // ×İÏòÍÏ×§£¬ÏÈ½«tab²¼¾ÖµÄ¸ß¶ÈÉèÖÃÎªÍÏ×§ºóµÄÊµ¼Ê¸ß¶È
+    // çºµå‘æ‹–æ‹½ï¼Œå…ˆå°†tabå¸ƒå±€çš„é«˜åº¦è®¾ç½®ä¸ºæ‹–æ‹½åçš„å®é™…é«˜åº¦
     private void setAdjustedHeight(XWTabFitLayout tabLayout,int offset){
     	tabLayout.setSize(tabLayout.getWidth(),tabLayout.getHeight() + offset);
     }
     
-    // ºáÏòÍÏ×§£¬ÏÈ½«tab²¼¾ÖµÄ¿í¶ÈÉèÖÃÎªÍÏ×§ºóµÄÊµ¼Ê¿í¶È
+    // æ¨ªå‘æ‹–æ‹½ï¼Œå…ˆå°†tabå¸ƒå±€çš„å®½åº¦è®¾ç½®ä¸ºæ‹–æ‹½åçš„å®é™…å®½åº¦
     private void setAdjustedSize(XWTabFitLayout tabLayout,int offset,boolean isHor){
     	if(offset < 0){
-    		// Ëõ·ÅÊ±ĞèÒª±¸·İÔ­tab²¼¾Ö¿í¸ß
+    		// ç¼©æ”¾æ—¶éœ€è¦å¤‡ä»½åŸtabå¸ƒå±€å®½é«˜
     		tabLayout.setReferDim(new Dimension(tabLayout.getWidth(),tabLayout.getHeight()));
     	}
     	if(isHor){
@@ -1972,7 +1972,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	setAdjustedHeight(tabLayout,offset);
     }
     
-    // °´ÕÕÍÏ×§Æ«ÒÆÁ¿£¬¶Ôtab²¼¾Ö½øĞĞËõ·Å
+    // æŒ‰ç…§æ‹–æ‹½åç§»é‡ï¼Œå¯¹tabå¸ƒå±€è¿›è¡Œç¼©æ”¾
     private void adjustCreatorsSize(double percent,XWTabFitLayout tabLayout,boolean isHor){
     	if(isHor){
     		tabLayout.adjustCreatorsWidth(percent);
@@ -1983,9 +1983,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     
     
     /**
-     * É¾³ı»òÀ­Éì¿Ø¼şÓÒ±ß¿ò µ÷ÕûÓÒ²à×é¼şÎ»ÖÃ´óĞ¡
-     * @param objX µ÷ÕûºóµÄ×ø±êx
-     * @param objWidth µ÷ÕûºóµÄ¿í¶È
+     * åˆ é™¤æˆ–æ‹‰ä¼¸æ§ä»¶å³è¾¹æ¡† è°ƒæ•´å³ä¾§ç»„ä»¶ä½ç½®å¤§å°
+     * @param objX è°ƒæ•´åçš„åæ ‡x
+     * @param objWidth è°ƒæ•´åçš„å®½åº¦
      */
     protected void CalculateRightRelatComponent(int objX, int objWidth){
     	int count = rightComps.size();
@@ -2001,9 +2001,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * Êµ¼ÊÍÏ×§Æ«ÒÆÁ¿ÊÇ·ñ³¬³öÁË¿Éµ÷ÕûµÄ¿í¶È·¶Î§
-     * @param offset Êµ¼ÊÆ«ÒÆÁ¿
-     * @return boolean ÊÇ·ñ³¬³öµ÷Õû·¶Î§
+     * å®é™…æ‹–æ‹½åç§»é‡æ˜¯å¦è¶…å‡ºäº†å¯è°ƒæ•´çš„å®½åº¦èŒƒå›´
+     * @param offset å®é™…åç§»é‡
+     * @return boolean æ˜¯å¦è¶…å‡ºè°ƒæ•´èŒƒå›´
      * 
      */
     private boolean isBeyondAdjustWidthScope(int offset){
@@ -2012,7 +2012,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	return isBeyondScope;
     }
     
-    // Êµ¼ÊÍÏ×§Æ«ÒÆÁ¿ÊÇ·ñ³¬³öÄ³Ò»²àµÄ¿Éµ÷Õû¿í¶È
+    // å®é™…æ‹–æ‹½åç§»é‡æ˜¯å¦è¶…å‡ºæŸä¸€ä¾§çš„å¯è°ƒæ•´å®½åº¦
     private boolean isBeyondWidthScope(int offset,List<?> compsList){
     	int compMinWidth = getCompsMinWidth(compsList);
 		for(int i=0;i<compsList.size();i++){
@@ -2025,7 +2025,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * É¾³ı»òÀ­Éì¿Ø¼ş×ó±ß¿òÊ± µ÷Õû×ó²àµÄ×é¼şÎ»ÖÃ´óĞ¡£»
+     * åˆ é™¤æˆ–æ‹‰ä¼¸æ§ä»¶å·¦è¾¹æ¡†æ—¶ è°ƒæ•´å·¦ä¾§çš„ç»„ä»¶ä½ç½®å¤§å°ï¼›
      */
     protected boolean CalculateLefttRelatComponent(int objWidth){
     	if(isBeyondAdjustWidthScope(objWidth)){
@@ -2043,7 +2043,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * É¾³ı»òÀ­ÉìÏÂ±ß¿ò  µ÷ÕûÏÂ·½µÄ×é¼şÎ»ÖÃ´óĞ¡
+     * åˆ é™¤æˆ–æ‹‰ä¼¸ä¸‹è¾¹æ¡†  è°ƒæ•´ä¸‹æ–¹çš„ç»„ä»¶ä½ç½®å¤§å°
      */
     protected void CalculateDownRelatComponent( int objY, int objHeight){
     	int count = downComps.size();
@@ -2059,9 +2059,9 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * Êµ¼ÊÍÏ×§Æ«ÒÆÁ¿ÊÇ·ñ³¬³öÁË¿Éµ÷ÕûµÄ¸ß¶È·¶Î§
-     * @param offset Êµ¼ÊÆ«ÒÆÁ¿
-     * @return boolean ÊÇ·ñ³¬³öµ÷Õû·¶Î§
+     * å®é™…æ‹–æ‹½åç§»é‡æ˜¯å¦è¶…å‡ºäº†å¯è°ƒæ•´çš„é«˜åº¦èŒƒå›´
+     * @param offset å®é™…åç§»é‡
+     * @return boolean æ˜¯å¦è¶…å‡ºè°ƒæ•´èŒƒå›´
      * 
      */
     private boolean isBeyondAdjustHeightScope(int offset){
@@ -2070,7 +2070,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     	return isBeyondScope;
     }
     
-    // Êµ¼ÊÍÏ×§Æ«ÒÆÁ¿ÊÇ·ñ³¬³öÄ³Ò»²àµÄ¿Éµ÷Õû¸ß¶È
+    // å®é™…æ‹–æ‹½åç§»é‡æ˜¯å¦è¶…å‡ºæŸä¸€ä¾§çš„å¯è°ƒæ•´é«˜åº¦
     private boolean isBeyondHeightScope(int offset,List<?> compsList){
     	int minHeight = getCompsMinHeight(compsList);
 		for(int i=0;i<compsList.size();i++){
@@ -2082,7 +2082,7 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
 		return false;
     }
     /**
-     * É¾³ı»òÀ­ÉìÉÏ±ß¿ò    µ÷ÕûÉÏ·½µÄ×é¼şÎ»ÖÃ´óĞ¡
+     * åˆ é™¤æˆ–æ‹‰ä¼¸ä¸Šè¾¹æ¡†    è°ƒæ•´ä¸Šæ–¹çš„ç»„ä»¶ä½ç½®å¤§å°
      */
     protected boolean CalculateUpRelatComponent(int objHeight){
     	if(isBeyondAdjustHeightScope(objHeight)){
@@ -2100,8 +2100,8 @@ public class FRFitLayoutAdapter extends AbstractLayoutAdapter {
     }
 
 	/**
-	 * ²»µ÷Õû£¬Ö»¼ÆËãÎ»ÖÃ
-	 * @return childµÄÎ»ÖÃ
+	 * ä¸è°ƒæ•´ï¼Œåªè®¡ç®—ä½ç½®
+	 * @return childçš„ä½ç½®
 	 */
 	public int[] getChildPosition(Component currentComp, XCreator child, int x, int y ) {
 		if (currentComp == container) {

@@ -17,7 +17,7 @@ import com.fr.stable.js.WidgetName;
  * the editor to edit WidgetName
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:04:37
+ * @since 2012-3-29ä¸‹åˆ6:04:37
  */
 public class WidgetNameEditor extends Editor<WidgetName> {
 	private FilterComboBox<WidgetName> comb;

@@ -18,9 +18,9 @@ import com.fr.general.Inter;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ·â×°Ò»²ã Í¼±íĞÂ½¨µÄ¶Ô»°¿ò, ÅäºÏÊôĞÔ±íÈ·¶¨: ÏÈµ¥¶ÀÖ»ÒªÒ»ÖÖÍ¼±íÀàĞÍµÄ¶Ô»°¿ò.
+ * å°è£…ä¸€å±‚ å›¾è¡¨æ–°å»ºçš„å¯¹è¯æ¡†, é…åˆå±æ€§è¡¨ç¡®å®š: å…ˆå•ç‹¬åªè¦ä¸€ç§å›¾è¡¨ç±»å‹çš„å¯¹è¯æ¡†.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-7 ÏÂÎç07:29:15
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-7 ä¸‹åˆ07:29:15
  */
 public class ChartDialog extends MiddleChartDialog {
 	
@@ -77,14 +77,14 @@ public class ChartDialog extends MiddleChartDialog {
     }
 
     /**
-     * ²»´¦Àí
+     * ä¸å¤„ç†
      */
 	public void checkValid() throws Exception {
 		
 	}
 	
 	/**
-	 * ¸üĞÂĞÂ½¨µÄÍ¼±í ChartCollection
+	 * æ›´æ–°æ–°å»ºçš„å›¾è¡¨ ChartCollection
 	 */
     public void populate(BaseChartCollection cc) {
         if (cc == null) {
@@ -94,7 +94,7 @@ public class ChartDialog extends MiddleChartDialog {
     }
 
     /**
-     * ·µ»Øµ±Ç°ÕıÔÚ±à¼­µÄÍ¼±íChartCollection
+     * è¿”å›å½“å‰æ­£åœ¨ç¼–è¾‘çš„å›¾è¡¨ChartCollection
      */
     public BaseChartCollection getChartCollection() {
         return this.cc;

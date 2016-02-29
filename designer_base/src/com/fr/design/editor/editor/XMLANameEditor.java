@@ -16,31 +16,31 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: wikky
  * Date: 14-3-21
- * Time: ÉÏÎç9:12
+ * Time: ä¸Šåˆ9:12
  * To change this template use File | Settings | File Templates.
  */
 public class XMLANameEditor extends ColumnIndexEditor{
     private String[] XMLANames;
 
     /**
-     * ¶àÎ¬Êı¾İ¼¯¹ıÂË½çÃæµÄÎ¬¶ÈºÍ¶ÈÁ¿ÖµËùÓÃEditor
+     * å¤šç»´æ•°æ®é›†è¿‡æ»¤ç•Œé¢çš„ç»´åº¦å’Œåº¦é‡å€¼æ‰€ç”¨Editor
      */
     public XMLANameEditor() {
         this(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
     /**
-     * ¶àÎ¬Êı¾İ¼¯¹ıÂË½çÃæµÄÎ¬¶ÈºÍ¶ÈÁ¿ÖµËùÓÃEditor
-     * @param columnNames ¶ÈÁ¿Öµ
+     * å¤šç»´æ•°æ®é›†è¿‡æ»¤ç•Œé¢çš„ç»´åº¦å’Œåº¦é‡å€¼æ‰€ç”¨Editor
+     * @param columnNames åº¦é‡å€¼
      */
     public XMLANameEditor(String[] columnNames) {
         this(columnNames, Inter.getLocText("Measure"));
     }
 
     /**
-     * ¶àÎ¬Êı¾İ¼¯¹ıÂË½çÃæµÄÎ¬¶ÈºÍ¶ÈÁ¿ÖµËùÓÃEditor
-     * @param columnNames Î¬¶È»ò¶ÈÁ¿Öµ
-     * @param name ÏÔÊ¾Ãû³Æ
+     * å¤šç»´æ•°æ®é›†è¿‡æ»¤ç•Œé¢çš„ç»´åº¦å’Œåº¦é‡å€¼æ‰€ç”¨Editor
+     * @param columnNames ç»´åº¦æˆ–åº¦é‡å€¼
+     * @param name æ˜¾ç¤ºåç§°
      */
     public XMLANameEditor(final String[] columnNames, String name) {
         super(columnNames.length, name);
@@ -63,8 +63,8 @@ public class XMLANameEditor extends ColumnIndexEditor{
     }
 
     /**
-     *¸øXMLANames¸³Öµ
-     * @param value Òª¸³ÓèµÄÖµ
+     *ç»™XMLANamesèµ‹å€¼
+     * @param value è¦èµ‹äºˆçš„å€¼
      */
     @Override
     public void setValue(Object value) {
@@ -79,9 +79,9 @@ public class XMLANameEditor extends ColumnIndexEditor{
     }
 
     /**
-     * ÅĞ¶Ï²ÎÊıÊÇ·ñÊÇString
-     * @param object ´«½øÀ´ÓÃÓÚÅĞ¶ÏµÄ²ÎÊı
-     * @return ²ÎÊıÊÇ·ñÊÇString
+     * åˆ¤æ–­å‚æ•°æ˜¯å¦æ˜¯String
+     * @param object ä¼ è¿›æ¥ç”¨äºåˆ¤æ–­çš„å‚æ•°
+     * @return å‚æ•°æ˜¯å¦æ˜¯String
      */
     @Override
     public boolean accept(Object object) {
@@ -89,8 +89,8 @@ public class XMLANameEditor extends ColumnIndexEditor{
     }
 
     /**
-     * »ñÈ¡Î¬¶È»ò¶ÈÁ¿Öµ
-     * @return ·µ»ØÎ¬¶È»ò¶ÈÁ¿Öµ
+     * è·å–ç»´åº¦æˆ–åº¦é‡å€¼
+     * @return è¿”å›ç»´åº¦æˆ–åº¦é‡å€¼
      */
     public String getColumnName() {
         int index = ((Integer) this.getValue()).intValue() - 1;
@@ -98,16 +98,16 @@ public class XMLANameEditor extends ColumnIndexEditor{
     }
 
     /**
-     * »ñÈ¡Î¬¶È»ò¶ÈÁ¿Öµ
-     * @param index ËùÑ¡ÔñµÄĞòºÅ
-     * @return ·µ»ØĞòºÅ¶ÔÓ¦µÄÎ¬¶È»ò¶ÈÁ¿Öµ
+     * è·å–ç»´åº¦æˆ–åº¦é‡å€¼
+     * @param index æ‰€é€‰æ‹©çš„åºå·
+     * @return è¿”å›åºå·å¯¹åº”çš„ç»´åº¦æˆ–åº¦é‡å€¼
      */
     public String getColumnNameAtIndex(int index) {
         return index >= 0 && XMLANames.length > index ? XMLANames[index] : StringUtils.EMPTY;
     }
 
     /**
-     * »ñÈ¡Í¼±êÃû
+     * è·å–å›¾æ ‡å
      * @return
      */
     public String getIconName() {

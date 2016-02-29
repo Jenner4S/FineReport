@@ -10,7 +10,7 @@ import com.fr.design.chart.gui.active.action.SetLegendStyleAction;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ3:58
+ * Time   : ‰∏ãÂçà3:58
  */
 public class LegendActiveGlyph extends ActiveGlyph {
     private LegendGlyph legendGlyph;

@@ -13,15 +13,15 @@ import com.fr.general.Inter;
 import javax.swing.*;
 import java.awt.*;
 /**
- * ÊôĞÔ±í, Í¼±íÑùÊ½ - ÏµÁĞ ½çÃæ, Í¨¹ıÖØÔØ¼Ì³ĞÃ¿¸ö²»Í¬µÄ·½·¨, µÃµ½ÄÚÈİµÄ×éºÏ.
+ * å±æ€§è¡¨, å›¾è¡¨æ ·å¼ - ç³»åˆ— ç•Œé¢, é€šè¿‡é‡è½½ç»§æ‰¿æ¯ä¸ªä¸åŒçš„æ–¹æ³•, å¾—åˆ°å†…å®¹çš„ç»„åˆ.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-5 ÉÏÎç11:07:51
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-5 ä¸Šåˆ11:07:51
  */
 public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	protected ChartFillStylePane fillStylePane;
 	protected Plot plot;
 	protected ChartStylePane parentPane;
-	protected Chart chart;//µØÍ¼ÓĞÓÃ,ĞèÒªÊı¾İ¶¨Òå
+	protected Chart chart;//åœ°å›¾æœ‰ç”¨,éœ€è¦æ•°æ®å®šä¹‰
 
     public AbstractPlotSeriesPane(ChartStylePane parent, Plot plot) {
         this(parent, plot, false);
@@ -71,26 +71,26 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	}
 	
 	/**
-	 * ÔÚÃ¿¸ö²»Í¬ÀàĞÍPlot, µÃµ½²»Í¬ÀàĞÍµÄÊôĞÔ. ±ÈÈç: ÖùĞÎµÄ·ç¸ñ, ÕÛÏßµÄÏßĞÍÇúÏß.
+	 * åœ¨æ¯ä¸ªä¸åŒç±»å‹Plot, å¾—åˆ°ä¸åŒç±»å‹çš„å±æ€§. æ¯”å¦‚: æŸ±å½¢çš„é£æ ¼, æŠ˜çº¿çš„çº¿å‹æ›²çº¿.
 	 */
 	protected abstract JPanel getContentInPlotType();
 	
 	/**
-	 * ·µ»Ø Ìî³ä½çÃæ.
+	 * è¿”å› å¡«å……ç•Œé¢.
 	 */
 	protected ChartFillStylePane getFillStylePane() {
 		return new ChartFillStylePane();
 	}
 	
 	/**
-	 * ½çÃæ±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜.
 	 */
 	protected String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Data_Series");
 	}
 
 	/**
-	 * ÖØÔØ donothing
+	 * é‡è½½ donothing
 	 */
 	public Plot updateBean() {
 		return null;
@@ -98,7 +98,7 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	
 	
 	/**
-	 * ¸üĞÂPlotµÄÊôĞÔµ½ÏµÁĞ½çÃæ
+	 * æ›´æ–°Plotçš„å±æ€§åˆ°ç³»åˆ—ç•Œé¢
 	 */
 	public void populateBean(Plot plot) {
 		if(plot == null) {
@@ -110,7 +110,7 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	}
 
 	/**
-	 * ±£´æ ÏµÁĞ½çÃæµÄÊôĞÔµ½Plot
+	 * ä¿å­˜ ç³»åˆ—ç•Œé¢çš„å±æ€§åˆ°Plot
 	 */
 	public void updateBean(Plot plot) {
 		if(plot == null) {
@@ -122,8 +122,8 @@ public abstract class AbstractPlotSeriesPane extends BasicBeanPane<Plot>{
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°µÄchart£¬Ö»ÓĞµØÍ¼ÓĞÓÃ
-	 * @param chart µ±Ç°µÄchart
+	 * è®¾ç½®å½“å‰çš„chartï¼Œåªæœ‰åœ°å›¾æœ‰ç”¨
+	 * @param chart å½“å‰çš„chart
 	 */
 	public void setCurrentChart(Chart chart){
 		this.chart = chart;

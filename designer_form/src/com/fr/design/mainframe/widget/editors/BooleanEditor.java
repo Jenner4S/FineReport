@@ -10,7 +10,7 @@ import com.fr.design.gui.icheckbox.UICheckBox;
 /**
  * @author richer
  * @since 6.5.3
- * ²¼¶ûÀàÐÍÖµµÄ±à¼­Æ÷
+ * å¸ƒå°”ç±»åž‹å€¼çš„ç¼–è¾‘å™¨
  */
 public class BooleanEditor extends AbstractPropertyEditor {
 

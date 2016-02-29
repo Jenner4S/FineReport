@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 柱形图工具栏小图系列
+ * 鏌卞舰鍥惧伐鍏锋爮灏忓浘绯诲垪
  * Created by IntelliJ IDEA.
  * Author : DAISY
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: 下午5:21
+ * Time: 涓嬪崍5:21
  */
 public class ColumnPlotPane4ToolBar extends PlotPane4ToolBar {
 

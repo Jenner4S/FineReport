@@ -16,15 +16,15 @@ import java.awt.event.MouseEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÏÂÎç4:12
+ * Time: ä¸‹åˆ4:12
  */
 public class UIRadioButtonMenuItemUI extends UIBasicMenuItemUI {
 
     /**
-     * ´´½¨UI
+     * åˆ›å»ºUI
      *
-     * @param b ×é¼ş
-     * @return ×é¼şUI
+     * @param b ç»„ä»¶
+     * @return ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent b) {
         return new UIRadioButtonMenuItemUI();
@@ -35,12 +35,12 @@ public class UIRadioButtonMenuItemUI extends UIBasicMenuItemUI {
     }
 
     /**
-     * Êó±êµã»÷ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»äº‹ä»¶
      *
-     * @param item    ²Ëµ¥Ïî
-     * @param e       Êó±êÊÂ¼ş
-     * @param path    ²Ëµ¥ÔªËØÂ·¾¶
-     * @param manager Êó±êÑ¡Ôñmanager
+     * @param item    èœå•é¡¹
+     * @param e       é¼ æ ‡äº‹ä»¶
+     * @param path    èœå•å…ƒç´ è·¯å¾„
+     * @param manager é¼ æ ‡é€‰æ‹©manager
      */
     public void processMouseEvent(JMenuItem item, MouseEvent e,
                                   MenuElement path[], MenuSelectionManager manager) {

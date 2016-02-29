@@ -37,17 +37,17 @@ public class GridUtils {
     private GridUtils() {
     }
 
-    //peter:Ã»ÓĞDrag
+    //peter:æ²¡æœ‰Drag
     public final static int DRAG_NONE = 0;
-    //peter:Drag CellSelectionµÄ±ß¿òÀ´ÒÆ¶¯ÔªËØ.
+    //peter:Drag CellSelectionçš„è¾¹æ¡†æ¥ç§»åŠ¨å…ƒç´ .
     public final static int DRAG_CELLSELECTION = 1;
-    //peter:Drag CellSelectionµÄÓÒÏÂ½ÇÂäÀ´¸´ÖÆÔªËØ
+    //peter:Drag CellSelectionçš„å³ä¸‹è§’è½æ¥å¤åˆ¶å…ƒç´ 
     public final static int DRAG_CELLSELECTION_BOTTOMRIGHT_CORNER = 2;
     public final static int DRAG_FLOAT = 3;
 
-    //peter:ÏÂÃæÕâ¼¸¸öÁ¿ÊÇÔÚDragÁĞµÄÊ±ºòÓÃ.
-    public final static int DRAG_CELL_SIZE = 1; //peter:dragµÄÊ±ºò¸Ä±ä¸ñ×ÓµÄ¿í¶È.
-    public final static int DRAG_SELECT_UNITS = 2; //peter:dragµÄÊ±ºò,Ñ¡ÖĞµ¥Ôª¸ñ.
+    //peter:ä¸‹é¢è¿™å‡ ä¸ªé‡æ˜¯åœ¨Dragåˆ—çš„æ—¶å€™ç”¨.
+    public final static int DRAG_CELL_SIZE = 1; //peter:dragçš„æ—¶å€™æ”¹å˜æ ¼å­çš„å®½åº¦.
+    public final static int DRAG_SELECT_UNITS = 2; //peter:dragçš„æ—¶å€™,é€‰ä¸­å•å…ƒæ ¼.
 
     /**
      * Is above float element.(the return may be null). <br>
@@ -55,33 +55,33 @@ public class GridUtils {
      * The object[] is null
      */
     public static Object[] getAboveFloatElementCursor(ElementCasePane reportPane, double evtX, double evtY) {
-        //peter: ½«Òª·µ»ØµÄObjects
+        //peter: å°†è¦è¿”å›çš„Objects
         Object[] returnObject = null;
         ElementCase report = reportPane.getEditingElementCase();
         Selection sel = reportPane.getSelection();
-        //peter:¼ì²éËùÓĞµÄĞü¸¡ÔªËØ.
+        //peter:æ£€æŸ¥æ‰€æœ‰çš„æ‚¬æµ®å…ƒç´ .
         Iterator flotIt = report.floatIterator();
         while (flotIt.hasNext()) {
             FloatElement tmpFloatElement = (FloatElement) flotIt.next();
-            //peter:¼ÆËãĞü¸¡ÔªËØµÄËÄ¸ö½ÇÂäµÄÎ»ÖÃ.
+            //peter:è®¡ç®—æ‚¬æµ®å…ƒç´ çš„å››ä¸ªè§’è½çš„ä½ç½®.
             double[] floatArray = caculateFloatElementLocations(tmpFloatElement, ReportHelper.getColumnWidthList(report),
                     ReportHelper.getRowHeightList(report), reportPane.getGrid().getVerticalValue(), reportPane.getGrid().getHorizontalValue());
 
             int resolution = ScreenResolution.getScreenResolution();
-            //peter:Ğü¸¡ÔªËØµÄ·¶Î§.
+            //peter:æ‚¬æµ®å…ƒç´ çš„èŒƒå›´.
             Rectangle2D floatElementRect = new Rectangle2D.Double(floatArray[0], floatArray[1], tmpFloatElement.getWidth().toPixD(resolution), tmpFloatElement.getHeight().toPixD(resolution));
-            //peter:²»ÊÇµ±Ç°Ñ¡ÖĞµÄĞü¸¡ÔªËØ,²»Ö§³ÖÁù¸ö¸Ä±ä´óĞ¡µÄµã.
+            //peter:ä¸æ˜¯å½“å‰é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ ,ä¸æ”¯æŒå…­ä¸ªæ”¹å˜å¤§å°çš„ç‚¹.
             if (!(sel instanceof FloatSelection && ComparatorUtils.equals(tmpFloatElement.getName(), ((FloatSelection) sel).getSelectedFloatName()))) {
                 if (floatElementRect.contains(evtX, evtY)) {
                     returnObject = new Object[]{tmpFloatElement, new Cursor(Cursor.MOVE_CURSOR)};
                 }
 
-                //peter:»¹Òª¼ÌĞø²éÕÒ,Èç¹ûµ±Ç°µÄÊó±êÔÚÑ¡ÖĞµÄĞü¸¡ÔªËØµÄÁù¸ö¿ÉÒÔÒÆ¶¯µÄµãÉÏ,ÓÅÏÈ.
+                //peter:è¿˜è¦ç»§ç»­æŸ¥æ‰¾,å¦‚æœå½“å‰çš„é¼ æ ‡åœ¨é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ çš„å…­ä¸ªå¯ä»¥ç§»åŠ¨çš„ç‚¹ä¸Š,ä¼˜å…ˆ.
                 continue;
             }
             Cursor cursor = null;
             Rectangle2D[] cornerRect = getCornerRect(floatArray);
-            //peter:Ğü¸¡ÔªËØ¶ÔÓ¦µÄÁùÖÖÊó±ê.
+            //peter:æ‚¬æµ®å…ƒç´ å¯¹åº”çš„å…­ç§é¼ æ ‡.
             int[] cursorType = {Cursor.NW_RESIZE_CURSOR, Cursor.N_RESIZE_CURSOR, Cursor.NE_RESIZE_CURSOR, Cursor.E_RESIZE_CURSOR, Cursor.SE_RESIZE_CURSOR,
                     Cursor.S_RESIZE_CURSOR, Cursor.SW_RESIZE_CURSOR, Cursor.W_RESIZE_CURSOR};
             for (int c = 0; c < cornerRect.length; c++) {
@@ -90,11 +90,11 @@ public class GridUtils {
                     break;
                 }
             }
-            //peter:ÔÚĞü¸¡ÔªËØÇøÓòÄÚ²¿,µ«ÊÇ²»ÔÚÄÇÁù¸öµãÉÏ,ÊÇÒÆ¶¯µÄÊó±ê
+            //peter:åœ¨æ‚¬æµ®å…ƒç´ åŒºåŸŸå†…éƒ¨,ä½†æ˜¯ä¸åœ¨é‚£å…­ä¸ªç‚¹ä¸Š,æ˜¯ç§»åŠ¨çš„é¼ æ ‡
             if (floatElementRect.contains(evtX, evtY) && cursor == null) {
                 returnObject = new Object[]{tmpFloatElement, new Cursor(Cursor.MOVE_CURSOR)};
             }
-            //peter:ÔÚµ±Ç°Ñ¡ÖĞÔªËØµÄÁù¸öµãÉÏ,×î¸ßÓÅÏÈ¼¶±ğ,Ö±½Ó·µ»Ø.
+            //peter:åœ¨å½“å‰é€‰ä¸­å…ƒç´ çš„å…­ä¸ªç‚¹ä¸Š,æœ€é«˜ä¼˜å…ˆçº§åˆ«,ç›´æ¥è¿”å›.
             if (cursor != null) {// select
                 return new Object[]{tmpFloatElement, cursor};
             }
@@ -102,8 +102,8 @@ public class GridUtils {
         return returnObject;
     }
 
-    //peter:Ğü¸¡ÔªËØµÄÁù¸ö¿ÉÒÆ¶¯µÄĞ¡¾ØĞÎµã.
-    //marks:µ±Ñ¡ÔñµÄĞü¸¡ÔªËØ¶àÓàÒ»¸öÊ±ºò£¬ÎÒÃÇÓ¦¸Ã²»·µ»ØĞü¸¡ÔªËØµÄ¹â±ê
+    //peter:æ‚¬æµ®å…ƒç´ çš„å…­ä¸ªå¯ç§»åŠ¨çš„å°çŸ©å½¢ç‚¹.
+    //marks:å½“é€‰æ‹©çš„æ‚¬æµ®å…ƒç´ å¤šä½™ä¸€ä¸ªæ—¶å€™ï¼Œæˆ‘ä»¬åº”è¯¥ä¸è¿”å›æ‚¬æµ®å…ƒç´ çš„å…‰æ ‡
     private static Rectangle2D[] getCornerRect(double[] floatArray) {
         double floatX1 = floatArray[0];
         double floatY1 = floatArray[1];
@@ -137,9 +137,9 @@ public class GridUtils {
 
     /**
      * Gets column and row which located on (evtX, evtY)
-     * peter:Õâ¸ö·½·¨ÖØ¸´¿¼ÂÇµ½FrozenµÄÇé¿ö,Ã»ÓĞÈÎºÎBUG,Õâ¸ö·½·¨Ã»ÓĞ¿¼ÂÇÄÇÖÖ²»ÎŞÏŞÔö´óµÄÇé¿ö.
+     * peter:è¿™ä¸ªæ–¹æ³•é‡å¤è€ƒè™‘åˆ°Frozençš„æƒ…å†µ,æ²¡æœ‰ä»»ä½•BUG,è¿™ä¸ªæ–¹æ³•æ²¡æœ‰è€ƒè™‘é‚£ç§ä¸æ— é™å¢å¤§çš„æƒ…å†µ.
      *
-     * @param reportPane µ±Ç°µÄReportPane
+     * @param reportPane å½“å‰çš„ReportPane
      * @param evtX       event x
      * @param evtY       event y
      * @return the event located column and row.
@@ -204,10 +204,10 @@ public class GridUtils {
 
     /**
      * Gets column and row which located on (evtX, evtY)
-     * peter:Õâ¸ö·½·¨ÊÇµ÷Õû¹ıµÄColumn,Row,²»ÄÜĞ¡ÓÚ0, ²»ÄÜ´óÓÚ×î´óÖµ,Õâ¸ö·½·¨³ä·Ö¿¼ÂÇÁË²»ÎŞÏŞÔö´óµÄÇé¿ö.
-     * Ò»°ã¾­³£ÓÃÕâ¸ö·½·¨, ¶ÔÓ¦µÄgetEventColumnRow(...)·´¶ø²»³£ÓÃ.
+     * peter:è¿™ä¸ªæ–¹æ³•æ˜¯è°ƒæ•´è¿‡çš„Column,Row,ä¸èƒ½å°äº0, ä¸èƒ½å¤§äºæœ€å¤§å€¼,è¿™ä¸ªæ–¹æ³•å……åˆ†è€ƒè™‘äº†ä¸æ— é™å¢å¤§çš„æƒ…å†µ.
+     * ä¸€èˆ¬ç»å¸¸ç”¨è¿™ä¸ªæ–¹æ³•, å¯¹åº”çš„getEventColumnRow(...)åè€Œä¸å¸¸ç”¨.
      *
-     * @param reportPane µ±Ç°µÄReportPane
+     * @param reportPane å½“å‰çš„ReportPane
      * @param evtX       event x
      * @param evtY       event y
      * @return the event located column and row.
@@ -223,7 +223,7 @@ public class GridUtils {
     }
 
     /**
-     * ÊÇ·ñ¿É½«µ±Ç°µ¥Ôª¸ñ±äÎª¿É¼ûµÄ¸ñ×Ó
+     * æ˜¯å¦å¯å°†å½“å‰å•å…ƒæ ¼å˜ä¸ºå¯è§çš„æ ¼å­
      */
     public static boolean canMove(ElementCasePane reportPane, int cellColumn, int cellRow) {
         if (reportPane.mustInVisibleRange()) {
@@ -241,7 +241,7 @@ public class GridUtils {
     }
 
     /**
-     * Ñ¡ÔñÒ»¸öCell, Ö§³ÖMerge.
+     * é€‰æ‹©ä¸€ä¸ªCell, æ”¯æŒMerge.
      */
     public static void doSelectCell(ElementCasePane reportPane, int cellColumn, int cellRow) {
         ElementCase report = reportPane.getEditingElementCase();
@@ -256,34 +256,34 @@ public class GridUtils {
     }
 
     /**
-     * peter: ´ÓReportPaneÑ¡ÖĞµÄÇøÓò²úÉúElementsCopy
+     * peter: ä»ReportPaneé€‰ä¸­çš„åŒºåŸŸäº§ç”ŸElementsCopy
      */
     public static ElementsTransferable caculateElementsTransferable(ElementCasePane reportPane) {
         ElementsTransferable elementsTransferable = new ElementsTransferable();
 
-        //p:»ñµÃµ±Ç°µÄReport¶ÔÏó.
+        //p:è·å¾—å½“å‰çš„Reportå¯¹è±¡.
         ElementCase report = reportPane.getEditingElementCase();
 
         Selection sel = reportPane.getSelection();
-        //p:ÏÈÅĞ¶ÏĞü¸¡ÔªËØ.
+        //p:å…ˆåˆ¤æ–­æ‚¬æµ®å…ƒç´ .
         if (sel instanceof FloatSelection) {
             FloatSelection fs = (FloatSelection) sel;
-            //p:ĞèÒª¹¹½¨floatElementsClip.
+            //p:éœ€è¦æ„å»ºfloatElementsClip.
             FloatElementsClip floatElementsClip = new FloatElementsClip(report.getFloatElement(fs.getSelectedFloatName()));
 
             elementsTransferable.addObject(floatElementsClip);
         } else {
             CellSelection cs = (CellSelection) sel;
             java.util.List<TemplateCellElement> elList = new java.util.ArrayList<TemplateCellElement>();
-            //p:»ñµÃËùÓĞÏà½»µÄCellElement.
+            //p:è·å¾—æ‰€æœ‰ç›¸äº¤çš„CellElement.
             Rectangle selectionBounds = new Rectangle(cs.getColumn(), cs.getRow(), cs.getColumnSpan(), cs.getRowSpan());
             Iterator cells = report.intersect(cs.getColumn(), cs.getRow(), cs.getColumnSpan(), cs.getRowSpan());
             while (cells.hasNext()) {
                 TemplateCellElement cellElement = (TemplateCellElement) cells.next();
                 Rectangle tmpCellBound = new Rectangle(cellElement.getColumn(), cellElement.getRow(), cellElement.getColumnSpan(), cellElement.getRowSpan());
-                //peter,ÏàµÈ»òÕß°üº¬
+                //peter,ç›¸ç­‰æˆ–è€…åŒ…å«
                 if (GUICoreUtils.isTheSameRect(selectionBounds, tmpCellBound) || selectionBounds.contains(tmpCellBound)) {
-                    //peter:Ìí¼Óµ½CellElementsClip
+                    //peter:æ·»åŠ åˆ°CellElementsClip
                     elList.add((TemplateCellElement) cellElement.deriveCellElement(cellElement.getColumn() - cs.getColumn(), cellElement.getRow() - cs.getRow()));
                 }
             }
@@ -303,12 +303,12 @@ public class GridUtils {
     public static ColumnRow getAdjustLastColumnRowOfReportPane(ElementCasePane reportPane) {
         ElementCase report = reportPane.getEditingElementCase();
 
-        //james£ºÈ«Ñ¡µ½×îºóÒ»¸öÓĞÄÚÈİµÄ¸ñ×Ó
+        //jamesï¼šå…¨é€‰åˆ°æœ€åä¸€ä¸ªæœ‰å†…å®¹çš„æ ¼å­
         return ColumnRow.valueOf(Math.max(1, report.getColumnCount()), Math.max(1, report.getRowCount()));
     }
 
     /**
-     * ¼ÆËã¿É¼ûÇøÓòµÄĞĞ/ÁĞÊı
+     * è®¡ç®—å¯è§åŒºåŸŸçš„è¡Œ/åˆ—æ•°
      */
     public static int getExtentValue(int start, DynamicUnitList sizeList, double visibleSize, int dpi) {
         double sumSize = 0;
@@ -342,7 +342,7 @@ public class GridUtils {
             cellGUIAttr = new CellGUIAttr();
         }
 
-        // carl:¸ù¾İÓÃ»§ÉèÖÃÀ´µ÷ÕûĞĞ¸ß»òÕßÁĞ¿í
+        // carl:æ ¹æ®ç”¨æˆ·è®¾ç½®æ¥è°ƒæ•´è¡Œé«˜æˆ–è€…åˆ—å®½
         if (cellGUIAttr.getAdjustMode() == ReportConstants.AUTO_SHRINK_TO_FIT_HEIGHT
                 || (cellGUIAttr.getAdjustMode() == ReportConstants.AUTO_SHRINK_TO_FIT_DEFAULT
                 && reportShrinkMode == ReportConstants.AUTO_SHRINK_TO_FIT_HEIGHT)) {
@@ -364,10 +364,10 @@ public class GridUtils {
                     UNIT.max(preferredHeight, rowHeightList.get(editCellElement.getRow())));
         } else {
             int lastRowIndex = editCellElement.getRow() + editCellElement.getRowSpan() - 1;
-            // kurt »­µ¥Ôª¸ñÊ±Ôö¼ÓµÄ¸ß¶È
+            // kurt ç”»å•å…ƒæ ¼æ—¶å¢åŠ çš„é«˜åº¦
             long extraHeight = preferredHeight.toFU() - rowHeightList.getRangeValue(editCellElement.getRow(), lastRowIndex + 1).toFU();
             if (extraHeight > 0) {
-                // kurt Æ½·Ö¸øÕâĞ©ĞĞ
+                // kurt å¹³åˆ†ç»™è¿™äº›è¡Œ
                 for (int m = editCellElement.getRow(); m <= lastRowIndex; m++) {
                     rowHeightList.set(m, FU.getInstance(rowHeightList.get(m).toFU() + extraHeight
                             / editCellElement.getRowSpan()));
@@ -379,7 +379,7 @@ public class GridUtils {
     private static void fitWidth(TemplateCellElement editCellElement, DynamicUnitList columnWidthList, DynamicUnitList rowHeightList) {
         UNIT preferredWidth = PaintUtils.getPreferredWidth(editCellElement, PT.valueOfFU(rowHeightList.getRangeValue(editCellElement.getRow(),
                 editCellElement.getRow() + editCellElement.getRowSpan()).toFU()));
-        // carl£ºÕÕ×Åµ÷ÕûĞĞ¸ßÀ´Åª
+        // carlï¼šç…§ç€è°ƒæ•´è¡Œé«˜æ¥å¼„
         if (editCellElement.getColumnSpan() == 1) {
             columnWidthList.set(editCellElement.getColumn(), UNIT.max(preferredWidth,
                     columnWidthList.get(editCellElement.getColumn())));

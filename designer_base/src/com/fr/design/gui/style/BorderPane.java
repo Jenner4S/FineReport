@@ -28,7 +28,7 @@ import com.fr.design.style.color.NewColorSelectBox;
 
 /**
  * @author zhou
- * @since 2012-5-28ÏÂÎç6:22:04
+ * @since 2012-5-28ä¸‹åˆ6:22:04
  */
 public class BorderPane extends AbstractBasicStylePane {
 	private boolean insideMode = false;

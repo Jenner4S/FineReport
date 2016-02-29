@@ -13,7 +13,7 @@ import java.util.List;
  * Created with IntelliJ IDEA.
  * User: Randost
  * Date: 14-12-2
- * Time: ÏÂÎç2:50
+ * Time: ä¸‹åˆ2:50
  * To change this template use File | Settings | File Templates.
  */
 public class FunnelPlotPane extends AbstractChartTypePane{
@@ -53,15 +53,15 @@ public class FunnelPlotPane extends AbstractChartTypePane{
 
 
     /**
-     * ·µ»Ø½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+     * è¿”å›ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText("FR-Chart-Type_Funnel");
     }
 
     /**
-     * ¸üĞÂ½çÃæÄÚÈİ
+     * æ›´æ–°ç•Œé¢å†…å®¹
      */
     public void populateBean(Chart chart) {
         super.populateBean(chart);
@@ -71,7 +71,7 @@ public class FunnelPlotPane extends AbstractChartTypePane{
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔ
+     * ä¿å­˜ç•Œé¢å±æ€§
      */
     public void updateBean(Chart chart) {
         chart.switchPlot(getSelectedClonedPlot());
@@ -92,9 +92,9 @@ public class FunnelPlotPane extends AbstractChartTypePane{
     }
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
     public boolean accept(Object ob) {
         return super.accept(ob) && ((Chart) ob).getPlot() instanceof FunnelPlot;

@@ -23,7 +23,7 @@ public class SubmitJobListPane extends ObjectJControlPane {
 	}
 
 	/**
-	 * Ñ¡Ïî
+	 * é€‰é¡¹
 	 * @return
 	 */
 	public NameableCreator[] createNameableCreators() {

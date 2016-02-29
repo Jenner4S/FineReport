@@ -112,8 +112,8 @@ public class ReportletHyperlinkPane extends BasicBeanPane<ReportletHyperlink> {
                 return;
             }
 
-            //¸ù¾İÄ£°åÂ·¾¶·µ»Ø²ÎÊı
-            //Óëµ±Ç°Ä£¿é¡¢µ±Ç°ÎÄ¼şÎŞ¹Ø
+            //æ ¹æ®æ¨¡æ¿è·¯å¾„è¿”å›å‚æ•°
+            //ä¸å½“å‰æ¨¡å—ã€å½“å‰æ–‡ä»¶æ— å…³
             Parameter[] parameters = new Parameter[0];
 
             ParameterReader[] readers = DesignModuleFactory.getParameterReaders();

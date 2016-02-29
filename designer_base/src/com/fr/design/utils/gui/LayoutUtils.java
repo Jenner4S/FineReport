@@ -12,12 +12,12 @@ import java.awt.LayoutManager;
  * User   : Richer
  * Version: 6.5.5
  * Date   : 11-7-19
- * Time   : ÉÏÎç10:17
+ * Time   : ä¸Šåˆ10:17
  */
 public class LayoutUtils {
 
     /**
-     * Ö÷ÒªÓÃÓÚ²¼¾Ö¹ÜÀíÆ÷¸Ä±äÊ±£¬»òÕß×é¼ş³ß´ç±»ÍÏ×§ ·¢Éú±ä»¯Ê±ÖØĞÂ²¼¾Ö¡£
+     * ä¸»è¦ç”¨äºå¸ƒå±€ç®¡ç†å™¨æ”¹å˜æ—¶ï¼Œæˆ–è€…ç»„ä»¶å°ºå¯¸è¢«æ‹–æ‹½ å‘ç”Ÿå˜åŒ–æ—¶é‡æ–°å¸ƒå±€ã€‚
      */
 	
     private LayoutUtils() {
@@ -25,14 +25,14 @@ public class LayoutUtils {
     }
 
 	/**
-     * ½ö¶Ôµ±Ç°ÈİÆ÷ÖØĞÂ²¼¾Ö£¬²»¿¼ÂÇÆä¸¸ÈİÆ÷
+     * ä»…å¯¹å½“å‰å®¹å™¨é‡æ–°å¸ƒå±€ï¼Œä¸è€ƒè™‘å…¶çˆ¶å®¹å™¨
      */
     public static void layoutContainer(Container container) {
         _layoutContainer(container);
     }
 
 	/**
-	 * »ñµÃ×é¼ş×îÉÏ²ãÈİÆ÷£¬µİ¹éµ÷ÓÃÍê³ÉÉè¼Æ½çÃæµÄ¸üĞÂ¡£
+	 * è·å¾—ç»„ä»¶æœ€ä¸Šå±‚å®¹å™¨ï¼Œé€’å½’è°ƒç”¨å®Œæˆè®¾è®¡ç•Œé¢çš„æ›´æ–°ã€‚
 	 */
 	public static void layoutRootContainer(Component comp) {
 		Container parentContainer = ((comp instanceof Container) ? (Container) comp : comp.getParent());
@@ -42,7 +42,7 @@ public class LayoutUtils {
 	}
     
     /**
-     * ÓÉcontainer¿ªÊ¼ÉÏËİµ½µÚÒ»¸öÃ»ÓĞ²¼¾Ö¹ÜÀíÆ÷µÄ×é¼şÈİÆ÷
+     * ç”±containerå¼€å§‹ä¸Šæº¯åˆ°ç¬¬ä¸€ä¸ªæ²¡æœ‰å¸ƒå±€ç®¡ç†å™¨çš„ç»„ä»¶å®¹å™¨
      */
     public static Container getTopContainer(Container container) {
         Container parent = container.getParent();
@@ -61,7 +61,7 @@ public class LayoutUtils {
     }
 
     /**
-     * µİ¹é·½Ê½²¼¾ÖÕû¸öÓÉcontainer¿ªÊ¼µÄÈİÆ÷
+     * é€’å½’æ–¹å¼å¸ƒå±€æ•´ä¸ªç”±containerå¼€å§‹çš„å®¹å™¨
      */
     private static void _layoutContainer(Container container) {
         LayoutManager layout = container.getLayout();

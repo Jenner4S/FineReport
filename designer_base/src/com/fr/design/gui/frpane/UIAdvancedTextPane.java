@@ -21,7 +21,7 @@ import com.fr.design.menu.KeySetUtils;
 import com.fr.general.Inter;
 
 /**
- * p:ÕâÊÇÒ»¸öÔöÇ¿µÄJTextPane,Ö§³ÖºÜ¶àAction 
+ * p:è¿™æ˜¯ä¸€ä¸ªå¢å¼ºçš„JTextPane,æ”¯æŒå¾ˆå¤šAction 
  */
 public class UIAdvancedTextPane extends UITextPane {
 	/**
@@ -44,7 +44,7 @@ public class UIAdvancedTextPane extends UITextPane {
 
 		applyDocument();
 		
-		//p:µ±µ÷ÓÃsetDocument()·½·¨µÄÊ±ºò£¬µ÷ÓÃÕâ¸öproperty changeµÄ·½·¨.
+		//p:å½“è°ƒç”¨setDocument()æ–¹æ³•çš„æ—¶å€™ï¼Œè°ƒç”¨è¿™ä¸ªproperty changeçš„æ–¹æ³•.
 		this.addPropertyChangeListener("document", new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {
 				applyDocument();
@@ -52,7 +52,7 @@ public class UIAdvancedTextPane extends UITextPane {
 		});
 	}
 
-    //p:½«Listener¼Óµ½DocumentÀïÃæ
+    //p:å°†ListeneråŠ åˆ°Documenté‡Œé¢
     private void applyDocument() {
 		Document textDocument = getDocument();
 		textDocument.addUndoableEditListener(new UndoableEditListener() {

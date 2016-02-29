@@ -6,10 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 import com.fr.design.beans.BasicBeanPane;
 
 /**
- * 生成带参数的BasicBeanPane
+ * 鐢熸垚甯﹀弬鏁扮殑BasicBeanPane
  * 
  * @author zhou
- * @since 2012-4-5上午9:29:20
+ * @since 2012-4-5涓婂崍9:29:20
  */
 public abstract class ObjectJControlPane extends JControlPane {
 	private Object object;
@@ -50,7 +50,7 @@ public abstract class ObjectJControlPane extends JControlPane {
 	}
 
 	/**
-	 * 传进BasicBeanPane的构造函数的参数，可能是
+	 * 浼犺繘BasicBeanPane鐨勬瀯閫犲嚱鏁扮殑鍙傛暟锛屽彲鑳芥槸
 	 * 
 	 * @param clazz
 	 * @param cls

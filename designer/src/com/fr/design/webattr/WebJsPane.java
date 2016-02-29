@@ -71,9 +71,9 @@ public class WebJsPane extends BasicPane {
 
 		testConnection = new UIButton(Inter.getLocText("Test_URL"));
 		testConnection.setEnabled(false);
-		testConnection.addActionListener(testConnectionListener);// 测试连接按钮
+		testConnection.addActionListener(testConnectionListener);// 娴嬭瘯杩炴帴鎸夐挳
 		
-		//ember:中英文两个按钮大小比较的结果不确定，做下判断
+		//ember:涓嫳鏂囦袱涓寜閽ぇ灏忔瘮杈冪殑缁撴灉涓嶇‘瀹氾紝鍋氫笅鍒ゆ柇
 		if(testConnection.getPreferredSize().width > chooseFile.getPreferredSize().width) {
 			chooseFile.setPreferredSize(testConnection.getPreferredSize());
 		} else {
@@ -164,7 +164,7 @@ public class WebJsPane extends BasicPane {
 
 			if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame()) == FILEChooserPane.OK_OPTION) {
 				final FILE file = fileChooser.getSelectedFILE();
-				if (file == null) {// 选择的文件不能是 null
+				if (file == null) {// 閫夋嫨鐨勬枃浠朵笉鑳芥槸 null
 					return;
 				}
 

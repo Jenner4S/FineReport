@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-26
- * Time: 上午10:47
+ * Time: 涓婂崍10:47
  */
 public abstract class HyperlinkPluginAction extends UpdateAction {
     public static final String XML_TAG = "hyperlinkType";
@@ -24,21 +24,21 @@ public abstract class HyperlinkPluginAction extends UpdateAction {
 
 
     /**
-     * 名字
+     * 鍚嶅瓧
      *
      * @return
      */
     public abstract String getDisplayName();
 
     /**
-     * 得到超级链接的声明类
+     * 寰楀埌瓒呯骇閾炬帴鐨勫０鏄庣被
      *
      * @return
      */
     public abstract Class getHyperlinkClass();
 
     /**
-     * 得到相应面板的类
+     * 寰楀埌鐩稿簲闈㈡澘鐨勭被
      *
      * @return
      */
@@ -49,8 +49,8 @@ public abstract class HyperlinkPluginAction extends UpdateAction {
     }
 
     /**
-     * 动作
-     * @param e 动作
+     * 鍔ㄤ綔
+     * @param e 鍔ㄤ綔
      */
     public void actionPerformed(ActionEvent e) {
     }

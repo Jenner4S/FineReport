@@ -42,20 +42,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÕûÌåµÄ²ÎÊıÉè¼ÆÃæ°å
+ * æ•´ä½“çš„å‚æ•°è®¾è®¡é¢æ¿
  *
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:36:52
+ * @since 2012-3-23ä¸‹åˆ3:36:52
  */
 
-//TODO:Ò»ÇĞ¹ØÓÚsetbuttonµÄÉ¾³ıµô
+//TODO:ä¸€åˆ‡å…³äºsetbuttonçš„åˆ é™¤æ‰
 public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus, ParaDefinitePane {
     private static final int NUM_IN_A_LINE = 4;
     private Parameter[] parameterArray;
     //    private FormParaDesigner formParaDesignEditor;
     private ParameterDesignerProvider paraDesignEditor;
     private PropertyChangeAdapter propertyChangeListener;
-    // ÓÃÓÚÌí¼ÓÊ±¼Ç×¡Î»ÖÃ,Ã¿ĞĞÎå×é
+    // ç”¨äºæ·»åŠ æ—¶è®°ä½ä½ç½®,æ¯è¡Œäº”ç»„
     private int currentIndex;
     private Parameter[] allParameters;
     private UIButtonGroup<Integer> bg;
@@ -138,7 +138,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     public void initBeforeUpEdit() {
         paraDesignEditor.initBeforeUpEdit();
@@ -168,7 +168,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * »ñÈ¡Ä¬ÈÏ´óĞ¡
+     * è·å–é»˜è®¤å¤§å°
      *
      * @return
      */
@@ -202,8 +202,8 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * µ¼³ö²Ëµ¥Ïî£¬ÓÃÓÚÍ¼±íÉè¼ÆÆ÷
-     * @return ²Ëµ¥Ïî
+     * å¯¼å‡ºèœå•é¡¹ï¼Œç”¨äºå›¾è¡¨è®¾è®¡å™¨
+     * @return èœå•é¡¹
      */
     public ShortCut[] shortcut4ExportMenu() {
         return new ShortCut[0];
@@ -223,7 +223,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
             reportParameterAttr.setShowWindow(true);
         }
 
-        // formParaDesignEditor.populate()ĞèÒªÔÚrefreshParameter()Ö®Ç°Ö´ĞĞ,²»È»»áÊ¹refreshParameterÖĞÒÑ¾­Ìí¼ÓµÄ²ÎÊıÅĞ¶¨³öÎÊÌâ
+        // formParaDesignEditor.populate()éœ€è¦åœ¨refreshParameter()ä¹‹å‰æ‰§è¡Œ,ä¸ç„¶ä¼šä½¿refreshParameterä¸­å·²ç»æ·»åŠ çš„å‚æ•°åˆ¤å®šå‡ºé—®é¢˜
         ParameterUI parameterUI = reportParameterAttr.getParameterUI();
         if (parameterUI == null) {
             try {
@@ -260,7 +260,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * Ë¢ĞÂËùÓĞµÄ¿Ø¼ş
+     * åˆ·æ–°æ‰€æœ‰çš„æ§ä»¶
      */
     public void refreshAllNameWidgets() {
         if (paraDesignEditor != null) {
@@ -270,10 +270,10 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
 
 
     /**
-     * Ë¢ĞÂÊı¾İ¼¯
+     * åˆ·æ–°æ•°æ®é›†
      *
-     * @param oldName ¾ÉµÄÃû×Ö
-     * @param newName ĞÂµÄÃû×Ö
+     * @param oldName æ—§çš„åå­—
+     * @param newName æ–°çš„åå­—
      */
     public void refresh4TableData(String oldName, String newName) {
         if (paraDesignEditor != null) {
@@ -294,7 +294,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * Ë¢ĞÂ²ÎÊı
+     * åˆ·æ–°å‚æ•°
      */
     public void refreshParameter() {
         if (paraDesignEditor != null) {
@@ -303,7 +303,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * // »ñÈ¡²ÎÊıÃæ°åÀïÃæËùÓĞ¿Ø¼şµÄÃû×ÖÁĞ±í
+     * // è·å–å‚æ•°é¢æ¿é‡Œé¢æ‰€æœ‰æ§ä»¶çš„åå­—åˆ—è¡¨
      *
      * @return
      */
@@ -329,9 +329,9 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ÊÇ·ñÓĞ²éÑ¯°´Å¥
+     * æ˜¯å¦æœ‰æŸ¥è¯¢æŒ‰é’®
      *
-     * @return ÓĞÔò·µ»Øtrue
+     * @return æœ‰åˆ™è¿”å›true
      */
     public boolean isWithQueryButton() {
         return paraDesignEditor.isWithQueryButton();
@@ -357,7 +357,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
             reportParameterAttr.setAlign(bridge.getPosition());
             reportParameterAttr.setBackground(bridge.getDataBackground());
         }
-        //ÕâÀï²»ÓÃ parameterUI µÄÔ­ÒòÊÇ¿¼ÂÇµ½Ã»ÓĞ¿Ø¼şµÄÊ±ºòÉèÖÃ¿í¶ÈÓĞĞ§¹ûµ«²»±£´æ£¬Ö»ÓĞº¬ÓĞ¿Ø¼ş²Å±£´æÊôĞÔ
+        //è¿™é‡Œä¸ç”¨ parameterUI çš„åŸå› æ˜¯è€ƒè™‘åˆ°æ²¡æœ‰æ§ä»¶çš„æ—¶å€™è®¾ç½®å®½åº¦æœ‰æ•ˆæœä½†ä¸ä¿å­˜ï¼Œåªæœ‰å«æœ‰æ§ä»¶æ‰ä¿å­˜å±æ€§
         paraDesignEditor.getParaTarget().setDesignSize(new Dimension(bridge.getDesignWidth(),
                 (int)paraDesignEditor.getParaTarget().getDesignSize().getHeight()));
         reportParameterAttr.setParameterUI(parameterUI);
@@ -365,9 +365,9 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ½«²ÎÊıÔö¼Óµ½±à¼­Æ÷ÖĞ
+     * å°†å‚æ•°å¢åŠ åˆ°ç¼–è¾‘å™¨ä¸­
      *
-     * @param parameter ²ÎÊı
+     * @param parameter å‚æ•°
      */
     public void addingParameter2Editor(Parameter parameter) {
         if (isWithoutParaXCreator()) {
@@ -387,9 +387,9 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ½«²ÎÊıÔö¼Óµ½´ø²éÑ¯°´Å¥µÄ±à¼­Æ÷ÖĞ
+     * å°†å‚æ•°å¢åŠ åˆ°å¸¦æŸ¥è¯¢æŒ‰é’®çš„ç¼–è¾‘å™¨ä¸­
      *
-     * @param parameter ²ÎÊı
+     * @param parameter å‚æ•°
      */
     public void addingParameter2EditorWithQueryButton(Parameter parameter) {
         currentIndex = (isWithoutParaXCreator()) ? 0 : (currentIndex + NUM_IN_A_LINE);
@@ -407,7 +407,7 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ½«ËùÓĞµÄ²ÎÊıÔö¼Óµ½±à¼­Æ÷ÖĞ
+     * å°†æ‰€æœ‰çš„å‚æ•°å¢åŠ åˆ°ç¼–è¾‘å™¨ä¸­
      */
     public void addingAllParameter2Editor() {
         if (isWithoutParaXCreator()) {
@@ -430,9 +430,9 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ¼ì²éÌá½»°´Å¥
+     * æ£€æŸ¥æäº¤æŒ‰é’®
      *
-     * @return ·µ»Øtrue
+     * @return è¿”å›true
      */
     public boolean checkSubmitButton() {
         return true;
@@ -440,18 +440,18 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
 
 
     /**
-     * Õë¶Ô¶ÔÏóµÄ¹¤¾ßÌõ
+     * é’ˆå¯¹å¯¹è±¡çš„å·¥å…·æ¡
      *
-     * @return ÎŞ¹¤¾ß
+     * @return æ— å·¥å…·
      */
     public ToolBarDef[] toolbars4Target() {
         return new ToolBarDef[0];
     }
 
     /**
-     * ²ÎÊıÃæ°åµÄÎÄ¼ş²Ëµ¥µÄ×Ó²Ëµ¥
+     * å‚æ•°é¢æ¿çš„æ–‡ä»¶èœå•çš„å­èœå•
      *
-     * @return ÎÄ¼ş²Ëµ¥µÄ×Ó²Ëµ¥
+     * @return æ–‡ä»¶èœå•çš„å­èœå•
      */
     public ShortCut[] shortcut4FileMenu() {
         return (ShortCut[]) ArrayUtils.addAll(BaseUtils.isAuthorityEditing() ?
@@ -467,9 +467,9 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ²ÎÊıÃæ°åµÄÄ£°å²Ëµ¥
+     * å‚æ•°é¢æ¿çš„æ¨¡æ¿èœå•
      *
-     * @return Ä£°å²Ëµ¥
+     * @return æ¨¡æ¿èœå•
      */
     public MenuDef[] menus4Target() {
         MenuDef tplMenu = new MenuDef(KeySetUtils.TEMPLATE.getMenuKeySetName(),KeySetUtils.TEMPLATE.getMnemonic());
@@ -487,27 +487,27 @@ public class ParameterDefinitePane extends JPanel implements ToolBarMenuDockPlus
     }
 
     /**
-     * ²ÎÊıÃæ°åÕë¶ÔFROMµÄ¹¤¾ßÌõ
+     * å‚æ•°é¢æ¿é’ˆå¯¹FROMçš„å·¥å…·æ¡
      *
-     * @return ·µ»Ø¹¤¾ß
+     * @return è¿”å›å·¥å…·
      */
     public JPanel[] toolbarPanes4Form() {
         return paraDesignEditor.toolbarPanes4Form();
     }
 
     /**
-     * ²ÎÊıÃæ°åÕë¶ÔFORMµÄ¹¦ÄÜ°´Å¥
+     * å‚æ•°é¢æ¿é’ˆå¯¹FORMçš„åŠŸèƒ½æŒ‰é’®
      *
-     * @return ·µ»Ø¹¤¾ß°´Å¥
+     * @return è¿”å›å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         return paraDesignEditor.toolBarButton4Form();
     }
 
     /**
-     * ²ÎÊıÃæ°åÕë¶ÔÈ¨ÏŞÏ¸Á£¶ÈµÄ¹¤¾ßÌõ
+     * å‚æ•°é¢æ¿é’ˆå¯¹æƒé™ç»†ç²’åº¦çš„å·¥å…·æ¡
      *
-     * @return ¹¤¾ßÌõ
+     * @return å·¥å…·æ¡
      */
     public JComponent toolBar4Authority() {
         return new AuthorityToolBarPane();

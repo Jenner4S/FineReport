@@ -12,7 +12,7 @@ import javax.swing.plaf.ButtonUI;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-5
- * Time: ÏÂÎç4:52
+ * Time: ä¸‹åˆ4:52
  */
 public class SpecialUIButton extends JButton {
     public SpecialUIButton(ButtonUI ui) {

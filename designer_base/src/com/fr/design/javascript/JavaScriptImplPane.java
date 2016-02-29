@@ -98,8 +98,8 @@ public class JavaScriptImplPane extends FurtherBasicBeanPane<JavaScriptImpl> {
     }
 
 	/**
-	 *参数改变
-	 * @param list  参数列表.
+	 *鍙傛暟鏀瑰彉
+	 * @param list  鍙傛暟鍒楄〃.
 	 */
 	public void parameterChanger(List<ParameterProvider> list) {
 		String[] name = new String[list.size()];
@@ -112,15 +112,15 @@ public class JavaScriptImplPane extends FurtherBasicBeanPane<JavaScriptImpl> {
 	}
 
 	/**
-	 * title for popup window 弹出界面标题
-     * @return  标题.
+	 * title for popup window 寮瑰嚭鐣岄潰鏍囬
+     * @return  鏍囬.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Designer_JavaScript");
 	}
 
     /**
-     * 重置
+     * 閲嶇疆
      */
 	public void reset() {
 		populateBean(null);
@@ -266,9 +266,9 @@ public class JavaScriptImplPane extends FurtherBasicBeanPane<JavaScriptImpl> {
     }
 
     /**
-     * 判断类型
-     * @param ob  判断目标
-     * @return 返回是否符合类型.
+     * 鍒ゆ柇绫诲瀷
+     * @param ob  鍒ゆ柇鐩爣
+     * @return 杩斿洖鏄惁绗﹀悎绫诲瀷.
      */
 	public boolean accept(Object ob) {
 		return ob instanceof JavaScriptImpl;

@@ -24,7 +24,7 @@ import java.util.*;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/3
- * Time: ÏÂÎç6:49
+ * Time: ä¸‹åˆ6:49
  */
 public class MapDataPane4Chart extends AbstractChartDataPane4Chart {
     private UIComboBoxPane dataContentPane;
@@ -116,7 +116,7 @@ public class MapDataPane4Chart extends AbstractChartDataPane4Chart {
     }
 
     /**
-     * Êı¾İ¼¯Êı¾İ¸Ä±ä
+     * æ•°æ®é›†æ•°æ®æ”¹å˜
      */
     public void fireTableDataChange() {
         if (dataContentPane == null) {

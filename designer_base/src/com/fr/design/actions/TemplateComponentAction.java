@@ -31,7 +31,7 @@ public abstract class TemplateComponentAction<T extends TargetComponent> extends
 
     /**
      * update enable
-     * TODO ALEX_SEP Õâ¸ö·½·¨µÄÃû×ÖÖ»ÊÇ¼òµ¥µÄ½Ğupdate,Ì«²»Ã÷ÁËÁË
+     * TODO ALEX_SEP è¿™ä¸ªæ–¹æ³•çš„åå­—åªæ˜¯ç®€å•çš„å«update,å¤ªä¸æ˜äº†äº†
      */
     @Override
     public void update() {

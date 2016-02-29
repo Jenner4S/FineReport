@@ -10,7 +10,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-30
- * Time: 上午10:36
+ * Time: 涓婂崍10:36
  */
 public class UIMenuBarUI extends BasicMenuBarUI {
 
@@ -18,7 +18,7 @@ public class UIMenuBarUI extends BasicMenuBarUI {
     }
 
     public void paint(java.awt.Graphics g, javax.swing.JComponent c) {
-        //是否完全不透明
+        //鏄惁瀹屽叏涓嶉�忔槑
         super.paint(g, c);
         if (!c.isOpaque()) {
             return;

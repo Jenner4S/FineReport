@@ -10,7 +10,7 @@ import java.util.TimerTask;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-4-16
- * Time: ÏÂÎç4:40
+ * Time: ä¸‹åˆ4:40
  * To change this template use File | Settings | File Templates.
  */
 public class FormatePaneNumField extends UITextField {
@@ -42,4 +42,3 @@ public class FormatePaneNumField extends UITextField {
 
     }
 }
-

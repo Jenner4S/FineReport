@@ -7,33 +7,33 @@ import com.fr.design.beans.FurtherBasicBeanPane;
  * @author richie
  * @date 2015-05-22
  * @since 8.0
- * ĞÎÌ¬ÀàĞÍ½Ó¿Ú
+ * å½¢æ€ç±»å‹æ¥å£
  */
 public interface PresentKindProvider {
 
     String MARK_STRING = "PresentKindProvider";
 
     /**
-     * ĞÎÌ¬ÉèÖÃ½çÃæ
-     * @return ĞÎÌ¬ÉèÖÃ½çÃæ
+     * å½¢æ€è®¾ç½®ç•Œé¢
+     * @return å½¢æ€è®¾ç½®ç•Œé¢
      */
     FurtherBasicBeanPane<? extends Present> appearanceForPresent();
 
     /**
-     * ÔÚĞÎÌ¬ÉèÖÃÃæ°åÉÏÏÔÊ¾µÄÃû×Ö
-     * @return Ãû×Ö
+     * åœ¨å½¢æ€è®¾ç½®é¢æ¿ä¸Šæ˜¾ç¤ºçš„åå­—
+     * @return åå­—
      */
     String title();
 
     /**
-     * ¸ÃĞÎÌ¬¶ÔÓ¦µÄÀà
-     * @return Àà
+     * è¯¥å½¢æ€å¯¹åº”çš„ç±»
+     * @return ç±»
      */
     Class<? extends Present> kindOfPresent();
 
     /**
-     * ²Ëµ¥¿ì½İ¼ü
-     * @return ¿ì½İµã¶ÔÓ¦µÄ×Ö·û
+     * èœå•å¿«æ·é”®
+     * @return å¿«æ·ç‚¹å¯¹åº”çš„å­—ç¬¦
      */
     char mnemonic();
 }

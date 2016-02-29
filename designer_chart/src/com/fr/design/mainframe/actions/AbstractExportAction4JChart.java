@@ -26,7 +26,7 @@ import java.io.FileOutputStream;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: 上午9:48
+ * Time: 涓婂崍9:48
  */
 public abstract class AbstractExportAction4JChart extends JChartAction {
     protected AbstractExportAction4JChart(JChart chart){
@@ -40,15 +40,15 @@ public abstract class AbstractExportAction4JChart extends JChartAction {
     }
 
     /**
-     * 执行方法
-     * @param e 事件
+     * 鎵ц鏂规硶
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         JChart chart = this.getEditingComponent();
         FILE editingFILE = chart.getEditingFILE();
         DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
 
-        // 弹出参数
+        // 寮瑰嚭鍙傛暟
         final java.util.Map parameterMap = new java.util.HashMap();
         final ChartBook chartBook = getChartBook();
 
@@ -56,7 +56,7 @@ public abstract class AbstractExportAction4JChart extends JChartAction {
         FILEChooserPane fileChooserPane = FILEChooserPane.getInstance(false, true);
         fileChooserPane.setFILEFilter(this.getChooseFileFilter());
 
-        // 打开文件后输出文件名修改，eg：w.cpt.doc / w.svg.doc，去掉中间的后缀名~~ w.doc
+        // 鎵撳紑鏂囦欢鍚庤緭鍑烘枃浠跺悕淇敼锛宔g锛歸.cpt.doc / w.svg.doc锛屽幓鎺変腑闂寸殑鍚庣紑鍚崀~ w.doc
         String filenName = editingFILE.getName();
         if (filenName.indexOf('.') != -1) {
             filenName = filenName.substring(0, editingFILE.getName().lastIndexOf('.'));

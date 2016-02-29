@@ -13,7 +13,7 @@ import com.fr.poly.creator.BlockCreator;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-2 ÓÃÓÚ¾ÛºÏ±¨±í¿éµÄ±à¼­¡¢ÒÆ¶¯¡¢É¾³ıµÈ²Ù×÷µÄ¼àÌıÆ÷
+ * @since 6.5.4 åˆ›å»ºäº2011-4-2 ç”¨äºèšåˆæŠ¥è¡¨å—çš„ç¼–è¾‘ã€ç§»åŠ¨ã€åˆ é™¤ç­‰æ“ä½œçš„ç›‘å¬å™¨
  */
 public class DataEditingListener extends MouseAdapter {
 
@@ -26,7 +26,7 @@ public class DataEditingListener extends MouseAdapter {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		if (!designer.isFocusOwner()) {
-			// »ñÈ¡½¹µã£¬ÒÔ±ã»ñÈ¡ÈÈ¼ü
+			// è·å–ç„¦ç‚¹ï¼Œä»¥ä¾¿è·å–çƒ­é”®
 			designer.requestFocus();
 		}
 

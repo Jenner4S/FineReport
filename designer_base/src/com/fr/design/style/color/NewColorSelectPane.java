@@ -29,7 +29,7 @@ import com.fr.general.Inter;
 /**
  * 
  * @author zhou
- * @since 2012-5-29ÉÏÎç10:39:35
+ * @since 2012-5-29ä¸Šåˆ10:39:35
  */
 public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	private static final long serialVersionUID = -8634152305687249392L;
@@ -38,15 +38,15 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	// color setting action.
 	private ArrayList<ChangeListener> colorChangeListenerList = new ArrayList<ChangeListener>();
 	
-	// ÑÕÉ«Ñ¡ÔñÆ÷
+	// é¢œè‰²é€‰æ‹©å™¨
 	private ColorSelectDetailPane pane;
-	// ÊÇ·ñÖ§³ÖÍ¸Ã÷
+	// æ˜¯å¦æ”¯æŒé€æ˜
 	private boolean isSupportTransparent;
 	
 	private final static int TRANSPANENT_WINDOW_HEIGHT = 165;
 	private final static int WINDWO_HEIGHT = 150;
 	
-	// ×î½üÊ¹ÓÃÑÕÉ«
+	// æœ€è¿‘ä½¿ç”¨é¢œè‰²
 	UsedColorPane usedColorPane;
 
 	/**
@@ -79,7 +79,7 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 		JPanel centerPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
 		this.add(centerPane, BorderLayout.CENTER);
 		
-		// ×î½üÊ¹ÓÃ
+		// æœ€è¿‘ä½¿ç”¨
 		usedColorPane = new UsedColorPane(1, 8, ColorSelectConfigManager.getInstance().getColors(),this);
 		centerPane.add(usedColorPane.getPane());
 		
@@ -111,8 +111,8 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	
 
 	/**
-	 * Ìí¼Ó¼àÌı
-	 * @param ¼àÌıÁĞ±í
+	 * æ·»åŠ ç›‘å¬
+	 * @param ç›‘å¬åˆ—è¡¨
 	 * Add change listener.
 	 */
 	public void addChangeListener(ChangeListener changeListener) {
@@ -125,8 +125,8 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	}
 
 	/**
-	 * »ñÈ¡ÑÕÉ«
-	 * @return ÑÕÉ«
+	 * è·å–é¢œè‰²
+	 * @return é¢œè‰²
 	 * Return the color.
 	 */
 	public Color getColor() {
@@ -134,9 +134,9 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	}
 
 	/**
-	 * »ñÈ¡ÑÕÉ«
+	 * è·å–é¢œè‰²
 	 * 
-	 * @return ÑÕÉ«
+	 * @return é¢œè‰²
 	 */
 	public Color getNotNoneColor() {
 		if (color == null) {
@@ -169,8 +169,8 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	}
 
 	/**
-	 * ÉèÖÃÑÕÉ«
-	 * @param ÑÕÉ«Î»ÖÃ
+	 * è®¾ç½®é¢œè‰²
+	 * @param é¢œè‰²ä½ç½®
 	 */
 	@Override
 	public void colorSetted(ColorCell colorCell) {
@@ -194,7 +194,7 @@ public class NewColorSelectPane extends BasicPane implements ColorSelectable {
 	}
 	
 	/**
-	 * ¸üĞÂ×î½üÊ¹ÓÃÑÕÉ«
+	 * æ›´æ–°æœ€è¿‘ä½¿ç”¨é¢œè‰²
 	 * 
 	 */
 	public void updateUsedColor(){

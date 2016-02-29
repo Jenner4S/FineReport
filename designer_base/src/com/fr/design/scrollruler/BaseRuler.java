@@ -108,7 +108,7 @@ public abstract class BaseRuler extends JComponent {
 //
 //		RulerUnitItem(short unit) {
 //			this.unit = unit;
-//			this.setText("µ•Œª£∫" + unit);
+//			this.setText("Âçï‰ΩçÔºö" + unit);
 //		}
 //
 //		short getRulerUnit() {

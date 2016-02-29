@@ -24,12 +24,12 @@ import com.fr.start.BBSGuestPaneProvider;
 /**
  * @author neil
  *
- * @date: 2015-3-13-ÏÂÎç12:54:45
+ * @date: 2015-3-13-ä¸‹åˆ12:54:45
  */
 public class BBSGuestPane extends JPanel implements BBSGuestPaneProvider{
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public BBSGuestPane() {
 		this.setLayout(FRGUIPaneFactory.createLabelFlowLayout());
@@ -38,10 +38,10 @@ public class BBSGuestPane extends JPanel implements BBSGuestPaneProvider{
 	
 	private void initTableContent(){
 		JPanel guestPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		//¸ĞĞ»±êÇ©
+		//æ„Ÿè°¢æ ‡ç­¾
 		JPanel infoPane = initInfoPane();
 		guestPane.add(infoPane, BorderLayout.NORTH);
-		//ÓÃ»§Ãû+³¬Á´
+		//ç”¨æˆ·å+è¶…é“¾
 		JPanel userPane = initUserPane();
 		guestPane.add(userPane, BorderLayout.CENTER);
 		

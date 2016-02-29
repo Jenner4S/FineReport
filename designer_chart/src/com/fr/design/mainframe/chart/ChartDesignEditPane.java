@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç5:47
+ * Time: ä¸‹åˆ5:47
  */
 public class ChartDesignEditPane extends ChartEditPane {
 
@@ -45,12 +45,11 @@ public class ChartDesignEditPane extends ChartEditPane {
     }
 
     /**
-     *Ö÷ÒªÓÃÓÚÍ¼±íÉè¼ÆÆ÷£¬ÅĞ¶ÏÑùÊ½¸Ä±äÊÇ·ñÀ´×Ô¹¤¾ßÀ¸µÄÈ«¾ÖÑùÊ½°´Å¥
-     * @param isFromToolBar ÊÇ·ñÀ´×Ô¹¤¾ßÀ¸
+     *ä¸»è¦ç”¨äºå›¾è¡¨è®¾è®¡å™¨ï¼Œåˆ¤æ–­æ ·å¼æ”¹å˜æ˜¯å¦æ¥è‡ªå·¥å…·æ çš„å…¨å±€æ ·å¼æŒ‰é’®
+     * @param isFromToolBar æ˜¯å¦æ¥è‡ªå·¥å…·æ 
      */
     public void styleChange(boolean isFromToolBar){
         this.isFromToolBar = isFromToolBar;
     }
 
 }
-

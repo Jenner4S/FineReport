@@ -19,7 +19,7 @@ import java.awt.event.ItemListener;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/1
- * Time: 下午3:15
+ * Time: 涓嬪崍3:15
  */
 public abstract class AbstractMapPlotPane4ToolBar extends JPanel{
 
@@ -56,8 +56,8 @@ public abstract class AbstractMapPlotPane4ToolBar extends JPanel{
     protected abstract void calculateDetailMaps(int mapType);
 
     /**
-     * 更新地图面板
-     * @param mapType 地图名字
+     * 鏇存柊鍦板浘闈㈡澘
+     * @param mapType 鍦板浘鍚嶅瓧
      */
     public void populateMapPane(String mapType){
         mapTypeComboBox.removeItemListener(mapTypeListener);
@@ -76,7 +76,7 @@ public abstract class AbstractMapPlotPane4ToolBar extends JPanel{
     public abstract String[] getMapTypes();
 
     /**
-     * 切换图表类型
+     * 鍒囨崲鍥捐〃绫诲瀷
      */
     public void fireChange(){
         ChartCollection chartCollection = (ChartCollection)chartDesigner.getTarget().getChartCollection();
@@ -103,7 +103,7 @@ public abstract class AbstractMapPlotPane4ToolBar extends JPanel{
     protected abstract Plot getSelectedClonedPlot();
 
     /**
-     * 触发更新
+     * 瑙﹀彂鏇存柊
      */
     public void fireTargetModified() {
         chartDesigner.fireTargetModified();

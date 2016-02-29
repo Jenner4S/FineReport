@@ -1,1 +1,1 @@
-package com.fr.design.mainframe;/** * Author : Shockway * Date: 13-7-9 * Time: ÏÂÎç1:56 */public interface BaseFormDesigner {}
+package com.fr.design.mainframe;/** * Author : Shockway * Date: 13-7-9 * Time: ä¸‹åˆ1:56 */public interface BaseFormDesigner {}

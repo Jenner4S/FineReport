@@ -25,18 +25,18 @@ import java.util.Locale;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-22
- * Time: ÉÏÎç10:20
+ * Time: ä¸Šåˆ10:20
  */
 public class PdfExporter4Chart extends ImageExporter4Chart {
     protected static MyFontMapper fontMapper = null;
 
 
     /**
-     * ½«½á¹ûcrtµ¼³ö³ÉÄ¿±êÎÄ¼ş
+     * å°†ç»“æœcrtå¯¼å‡ºæˆç›®æ ‡æ–‡ä»¶
      *
-     * @param out   Êä³öÁ÷
-     * @param chart chartÎÄ¼ş
-     * @throws Exception µ¼³öÊ§°ÜÔòÅ×³ö´ËÒì³£
+     * @param out   è¾“å‡ºæµ
+     * @param chart chartæ–‡ä»¶
+     * @throws Exception å¯¼å‡ºå¤±è´¥åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public void export(OutputStream out, JChart chart) throws Exception {
         ChartDesigner designer = chart.getChartDesigner();
@@ -51,7 +51,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
             writer = PdfWriter.getInstance(document, bo);
             document.open();
         }
-        //½«chart»­µ½PDFÉÏÈ¥
+        //å°†chartç”»åˆ°PDFä¸Šå»
         PdfContentByte cb = writer.getDirectContent();
         Graphics2D g2d = cb.createGraphics(imageWidth, imageHeight, prepareFontMapper());
         paintGlyph(g2d, imageWidth, imageHeight, designer);
@@ -73,19 +73,19 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
 
     private static void insertDirectory4Linux() {
        /*
-   	 * alex:ÔÚ222ÕâÌ¨RedhatµÄ»úÆ÷ÉÏ²âÊÔ,·¢ÏÖ°Ñ´Ówindows¿½À´µÄsimsun.ttcÖ»ÓĞ·ÅÔÚusr/share/fonts/default/Type1ÀïÃæ²Å¿ÉÒÔÓÃÆğÀ´
-   	 * Èç¹ûÊÇ·ÅÔÚusr/share/fontsÄ¿Â¼»òÊÇ${env}/resources/fontsÄ¿Â¼ÏÂÃæ,ËäÈ»¿ÉÒÔ¶Áµ½,µ«ÊÇawtToPdfÖ®ºó·µ»Ø³öÈ¥È´ÒÀ¾ÉÎŞ·¨Æğ×÷ÓÃ
-   	 * ÖĞÎÄ×ÖÒÀÈ»¼·ÔÚÒ»Æğ
+   	 * alex:åœ¨222è¿™å°Redhatçš„æœºå™¨ä¸Šæµ‹è¯•,å‘ç°æŠŠä»windowsæ‹·æ¥çš„simsun.ttcåªæœ‰æ”¾åœ¨usr/share/fonts/default/Type1é‡Œé¢æ‰å¯ä»¥ç”¨èµ·æ¥
+   	 * å¦‚æœæ˜¯æ”¾åœ¨usr/share/fontsç›®å½•æˆ–æ˜¯${env}/resources/fontsç›®å½•ä¸‹é¢,è™½ç„¶å¯ä»¥è¯»åˆ°,ä½†æ˜¯awtToPdfä¹‹åè¿”å›å‡ºå»å´ä¾æ—§æ— æ³•èµ·ä½œç”¨
+   	 * ä¸­æ–‡å­—ä¾ç„¶æŒ¤åœ¨ä¸€èµ·
    	 *
-   	 * ¾õµÃÊµÔÚºÜ¹îÒì,¿ÉÄÜ±ØĞë·ÅÔÚÏµÍ³×ÖÌåµÄÎÄ¼ş¼ĞÏÂÃæ²ÅĞĞ°É
+   	 * è§‰å¾—å®åœ¨å¾ˆè¯¡å¼‚,å¯èƒ½å¿…é¡»æ”¾åœ¨ç³»ç»Ÿå­—ä½“çš„æ–‡ä»¶å¤¹ä¸‹é¢æ‰è¡Œå§
    	 *
-   	 * PS:ÕâÊÇÔÚÓÃGraphics drawStringµÄÊ±ºòÓöµ½µÄÎÊÌâ
+   	 * PS:è¿™æ˜¯åœ¨ç”¨Graphics drawStringçš„æ—¶å€™é‡åˆ°çš„é—®é¢˜
    	 */
         //Linux
         InsertDirectory(fontMapper, new File("/usr/X11R6/lib/X11/fonts"));
         InsertDirectory(fontMapper, new File("/usr/share/fonts"));
         String path = StableUtils.pathJoin(new String[]{FRContext.getCurrentEnv().getPath(), "fonts"});
-        //ÔÙÈ¥web-inf/fontsÀïÃæÕÒÒ»ÏÂ, Ê¡È¥¿Í»§ËÄ´¦ÕÒjdk°²×°Â·¾¶µÄÂé·³
+        //å†å»web-inf/fontsé‡Œé¢æ‰¾ä¸€ä¸‹, çœå»å®¢æˆ·å››å¤„æ‰¾jdkå®‰è£…è·¯å¾„çš„éº»çƒ¦
         InsertDirectory(fontMapper, new File(path));
 
         //Solaris
@@ -105,7 +105,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
         InsertDirectory(fontMapper, new File("C:\\WINDOWS\\Fonts"));
     }
 
-    //peter:Ñ­»·ËùÓĞµÄÄ¿Â¼£¬±éÀúËùÓĞµÄFontMapper.
+    //peter:å¾ªç¯æ‰€æœ‰çš„ç›®å½•ï¼Œéå†æ‰€æœ‰çš„FontMapper.
     protected static void InsertDirectory(MyFontMapper fontMapper, File dir) {
         if (dir == null || !dir.exists() || !dir.isDirectory()) {
             return;
@@ -130,7 +130,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
 
         fontMapper = new MyFontMapper();
         try {
-            //È»ºó¼ÓÔØÏµÍ³Font×ÖÌå.
+            //ç„¶ååŠ è½½ç³»ç»ŸFontå­—ä½“.
             if (OperatingSystem.isWindows()) {
                 insertDirectory4Windows();
 
@@ -158,7 +158,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
             } else if (FRContext.getLocale() == Locale.KOREA || FRContext.getLocale() == Locale.KOREAN) {
                 MyFontMapper.defaultFont = BaseFont.createFont(MyFontMapper.KOREAN_FONT_GO_THIC, MyFontMapper.KOREAN_ENCODING_H, BaseFont.NOT_EMBEDDED);
             } else {
-                //Ä¬ÈÏÒ²ÉèÖÃÒ»¸ö°É45422 , ²»ÉèÖÃÄ¬ÈÏ×ÖÌå, linuxÓ¢ÎÄ»·¾³µ¼²»³öÀ´
+                //é»˜è®¤ä¹Ÿè®¾ç½®ä¸€ä¸ªå§45422 , ä¸è®¾ç½®é»˜è®¤å­—ä½“, linuxè‹±æ–‡ç¯å¢ƒå¯¼ä¸å‡ºæ¥
                 MyFontMapper.defaultFont = BaseFont.createFont(MyFontMapper.CHINESE_SIMPLIFIED_FONT, MyFontMapper.CHINESE_SIMPLIFIED_ENCODING_H, BaseFont.NOT_EMBEDDED);
             }
         } catch (Exception e) {
@@ -211,9 +211,9 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
             }
 
             /**
-             * toString·½·¨
+             * toStringæ–¹æ³•
              *
-             * @return ¶ÔÏóËµÃ÷
+             * @return å¯¹è±¡è¯´æ˜
              */
             public String toString() {
                 return "{fontName:" + fontName + ",encoding:" + encoding + ",embedded:" + embedded + ",cached:" + cached;
@@ -225,21 +225,21 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
         }
 
         /**
-         * ×ª»¯×ÖÌå
+         * è½¬åŒ–å­—ä½“
          *
-         * @param font awt×ÖÌå
-         * @return pdf×ÖÌå
+         * @param font awtå­—ä½“
+         * @return pdfå­—ä½“
          */
         public BaseFont awtToPdf(Font font) {
             try {
                 BaseFontParameters p = getBaseFontParameters(font.getFontName());
 
    				/*
-   											 * alex:²»Ã÷ÕæÏà
-   											 * ¾­²âÊÔ,Arial´ÖÌåÔÚgetFontName·µ»ØµÄÊÇArial Bold,¿ÉÒÔÔÚÉÏÃæµÄ·½·¨ÖĞµÃµ½¶ÔÓ¦µÄp
-   											 * ËùÒÔgetFontNameÊÇÓĞÓÃµÄ
-   											 * µ«ÊÇÔÚlinuxÉÏ²âÊÔ,ËÎÌåÔÚgetFontName·µ»ØµÄÈ´ÊÇDialogÕâÖÖÂß¼­×ÖÌå,Ö»ÓĞgetName²Å·µ»ØSimSun
-   											 * ËùÒÔ»¹ĞèÒªgetBaseFontParametersÒ»ÏÂ
+   											 * alex:ä¸æ˜çœŸç›¸
+   											 * ç»æµ‹è¯•,Arialç²—ä½“åœ¨getFontNameè¿”å›çš„æ˜¯Arial Bold,å¯ä»¥åœ¨ä¸Šé¢çš„æ–¹æ³•ä¸­å¾—åˆ°å¯¹åº”çš„p
+   											 * æ‰€ä»¥getFontNameæ˜¯æœ‰ç”¨çš„
+   											 * ä½†æ˜¯åœ¨linuxä¸Šæµ‹è¯•,å®‹ä½“åœ¨getFontNameè¿”å›çš„å´æ˜¯Dialogè¿™ç§é€»è¾‘å­—ä½“,åªæœ‰getNameæ‰è¿”å›SimSun
+   											 * æ‰€ä»¥è¿˜éœ€è¦getBaseFontParametersä¸€ä¸‹
    											 */
                 if (p == null) {
                     p = getBaseFontParameters(font.getName());
@@ -250,7 +250,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
                 } else {
                     //				FRContext.getLogger().info(Inter.getLocText("Utils-Font_Not_Found") + ":" + font.getFontName());
 
-                    // alex:Î´ÕÒµ½ºÏÊÊµÄ×ÖÌå,Èç¹ûÓĞÄ¬ÈÏ×ÖÌå,ÓÃÖ®,Ã»ÓĞµÄ»°,¸ù¾İBold & ItalicÉèÖÃ×ÖÌå
+                    // alex:æœªæ‰¾åˆ°åˆé€‚çš„å­—ä½“,å¦‚æœæœ‰é»˜è®¤å­—ä½“,ç”¨ä¹‹,æ²¡æœ‰çš„è¯,æ ¹æ®Bold & Italicè®¾ç½®å­—ä½“
                     if (defaultFont != null) {
                         return defaultFont;
                     } else {
@@ -273,11 +273,11 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
         }
 
         /**
-         * ×ª»¯×ÖÌå
+         * è½¬åŒ–å­—ä½“
          *
-         * @param font pdf×ÖÌå
-         * @param size ´óĞ¡
-         * @return ×ª»¯ºóawt×ÖÌå
+         * @param font pdfå­—ä½“
+         * @param size å¤§å°
+         * @return è½¬åŒ–åawtå­—ä½“
          */
         public Font pdfToAwt(BaseFont font, int size) {
             String[][] names = font.getFullFontName();
@@ -328,7 +328,7 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
             }
             BaseFontParameters p = new BaseFontParameters(path);
 
-            // alex:²»Ò»ÑùµÄÃû×Ö¿ÉÄÜ¶ÔÓ¦Í¬ÑùµÄBaseFontParameters,±ÈÈçsimsunºÍËÎÌå¶¼¶ÔÓ¦Í¬ÑùµÄp
+            // alex:ä¸ä¸€æ ·çš„åå­—å¯èƒ½å¯¹åº”åŒæ ·çš„BaseFontParameters,æ¯”å¦‚simsunå’Œå®‹ä½“éƒ½å¯¹åº”åŒæ ·çš„p
             mapper.put(main, p);
             for (k = 0; k < names.length; k++) {
                 mapper.put(names[k][3], p);
@@ -336,10 +336,10 @@ public class PdfExporter4Chart extends ImageExporter4Chart {
         }
 
         /**
-         * ²åÈëÄ¿Â¼ÀïµÄ×ÖÌå
+         * æ’å…¥ç›®å½•é‡Œçš„å­—ä½“
          *
-         * @param dir Ä¿Â¼
-         * @return ²åÈëÊıÁ¿
+         * @param dir ç›®å½•
+         * @return æ’å…¥æ•°é‡
          */
         public int insertDirectory(String dir) {
             File file = new File(dir);

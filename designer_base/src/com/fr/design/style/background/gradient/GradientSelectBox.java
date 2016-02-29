@@ -16,8 +16,8 @@ import com.fr.design.style.background.BackgroundJComponent;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-10 ÏÂÎç02:52:40
- * ÀàËµÃ÷: ½¥±äÉ« Ñ¡ÔñBox
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-10 ä¸‹åˆ02:52:40
+ * ç±»è¯´æ˜: æ¸å˜è‰² é€‰æ‹©Box
  */
 public class GradientSelectBox extends BasicPane {
 	private static final long serialVersionUID = -3133347878480990266L;

@@ -30,7 +30,7 @@ import com.fr.general.Inter;
 /**
  * 
  * @author zhou
- * @since 2012-5-28下午6:22:09
+ * @since 2012-5-28涓嬪崍6:22:09
  */
 public class BackgroundPane extends AbstractBasicStylePane {
 
@@ -51,7 +51,7 @@ public class BackgroundPane extends AbstractBasicStylePane {
         initPaneList();
 		final JPanel centerPane = new JPanel(cardlayout) {
 			@Override
-			public Dimension getPreferredSize() {// AUGUST:使用当前面板的的高度
+			public Dimension getPreferredSize() {// AUGUST:浣跨敤褰撳墠闈㈡澘鐨勭殑楂樺害
 				int index = typeComboBox.getSelectedIndex();
 				return new Dimension(super.getPreferredSize().width, paneList.get(index).getPreferredSize().height);
 			}
@@ -83,8 +83,8 @@ public class BackgroundPane extends AbstractBasicStylePane {
     }
 
     /**
-     * 事件监听
-     * @param changeListener     事件
+     * 浜嬩欢鐩戝惉
+     * @param changeListener     浜嬩欢
      */
 	public void addChangeListener(ChangeListener changeListener) {
 		listenerList.add(ChangeListener.class, changeListener);
@@ -107,8 +107,8 @@ public class BackgroundPane extends AbstractBasicStylePane {
 	}
 
     /**
-     * 名称
-     * @return    名称
+     * 鍚嶇О
+     * @return    鍚嶇О
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Utils_Background");

@@ -24,12 +24,12 @@ public class SaveAsTemplateAction extends JTemplateAction<JTemplate<?, ?>> {
     }
 
     /**
-     * ¶¯×÷
-     * @param e ÊÂ¼ş
+     * åŠ¨ä½œ
+     * @param e äº‹ä»¶
      */
     public void actionPerformed(ActionEvent e) {
         JTemplate<?, ?> jt = this.getEditingComponent();
-        // kunsnat: ±£´æÇ°Í£Ö¹±à¼­×´Ì¬,±£´æÊôĞÔ.
+        // kunsnat: ä¿å­˜å‰åœæ­¢ç¼–è¾‘çŠ¶æ€,ä¿å­˜å±æ€§.
         jt.stopEditing();
         jt.saveAsTemplate();
         this.setEnabled(true);
@@ -42,7 +42,7 @@ public class SaveAsTemplateAction extends JTemplateAction<JTemplate<?, ?>> {
         super.update();
 
 //    	this.setEnabled(!this.getEditingComponent().isSaved());
-//    	Áí´æÎª°´Å¥Ó¦¸ÃÒ»Ö±¿ÉÓÃÊ¹ÓÃ
+//    	å¦å­˜ä¸ºæŒ‰é’®åº”è¯¥ä¸€ç›´å¯ç”¨ä½¿ç”¨
         this.setEnabled(true);
     }
 }

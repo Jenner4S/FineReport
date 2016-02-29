@@ -48,9 +48,9 @@ public class EmbeddedFormExportExportAction extends JTemplateAction<JForm>{
     }
     
     /**
-	 * Action触发事件
+	 * Action瑙﹀彂浜嬩欢
 	 * 
-	 * @param e 触发事件
+	 * @param e 瑙﹀彂浜嬩欢
 	 * 
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -103,7 +103,7 @@ public class EmbeddedFormExportExportAction extends JTemplateAction<JForm>{
 	
 	private void inputParameter(final Map<String, Object> parameterMap, final Form tpl, DesignerFrame designerFrame){
         Parameter[] parameters = tpl.getParameters();
-        if (ArrayUtils.isNotEmpty(parameters)) {// 检查Parameter.
+        if (ArrayUtils.isNotEmpty(parameters)) {// 妫�鏌arameter.
             final ParameterInputPane pPane = new ParameterInputPane(parameters);
             pPane.showSmallWindow(designerFrame, new DialogActionAdapter() {
 

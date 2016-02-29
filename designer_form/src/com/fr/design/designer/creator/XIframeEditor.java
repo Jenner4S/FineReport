@@ -86,9 +86,9 @@ public class XIframeEditor extends XWidgetCreator {
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * ÕâÀï¿ØÖÆ ÍøÒ³Ô¤¶¨Òå¿Ø¼şÔÚ¹¤¾ßÀ¸²»ÏÔÊ¾
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * è¿™é‡Œæ§åˆ¶ ç½‘é¡µé¢„å®šä¹‰æ§ä»¶åœ¨å·¥å…·æ ä¸æ˜¾ç¤º
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;

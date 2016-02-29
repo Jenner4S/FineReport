@@ -198,12 +198,12 @@ public class RegPane extends BasicPane {
 	}
 	
 	/**
-	 * Ìí¼Óµç»°¹æÔò¼àÌıÆ÷
+	 * æ·»åŠ ç”µè¯è§„åˆ™ç›‘å¬å™¨
 	 * 
-	 * @param listener ¼àÌıÆ÷
+	 * @param listener ç›‘å¬å™¨
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:30:55
+	 * @date 2014-12-3-ä¸‹åˆ7:30:55
 	 * 
 	 */
 	public void addPhoneRegListener(PhoneRegListener listener) {
@@ -211,12 +211,12 @@ public class RegPane extends BasicPane {
 	}
 	
 	/**
-	 * ÒÆ³ıµç»°¹æÔò¼àÌıÆ÷
+	 * ç§»é™¤ç”µè¯è§„åˆ™ç›‘å¬å™¨
 	 * 
-	 * @param listener ¼àÌıÆ÷
+	 * @param listener ç›‘å¬å™¨
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:30:55
+	 * @date 2014-12-3-ä¸‹åˆ7:30:55
 	 * 
 	 */
 	public void removePhoneRegListener(PhoneRegListener listener) {
@@ -224,12 +224,12 @@ public class RegPane extends BasicPane {
 	}
 	
 	/**
-	 * Ìí¼ÓÕıÔò¼àÌıÆ÷
+	 * æ·»åŠ æ­£åˆ™ç›‘å¬å™¨
 	 * 
-	 * @param listener ¼àÌıÆ÷
+	 * @param listener ç›‘å¬å™¨
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:29:48
+	 * @date 2014-12-3-ä¸‹åˆ7:29:48
 	 * 
 	 */
 	public void addRegChangeListener(RegChangeListener listener) {
@@ -237,12 +237,12 @@ public class RegPane extends BasicPane {
 	}
 	
 	/**
-	 * ÒÆ³ıÕıÔò¼àÌıÆ÷
+	 * ç§»é™¤æ­£åˆ™ç›‘å¬å™¨
 	 * 
-	 * @param listener ¼àÌıÆ÷
+	 * @param listener ç›‘å¬å™¨
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:29:48
+	 * @date 2014-12-3-ä¸‹åˆ7:29:48
 	 * 
 	 */
 	public void removeRegChangeListener(RegChangeListener listener) {
@@ -279,12 +279,12 @@ public class RegPane extends BasicPane {
 	public interface PhoneRegListener extends EventListener{
 		
 		/**
-		 * µç»°¹æÔò±ä»¯¼àÌı
+		 * ç”µè¯è§„åˆ™å˜åŒ–ç›‘å¬
 		 * 
-		 * @param e ±ä»¯ÊÂ¼ş
+		 * @param e å˜åŒ–äº‹ä»¶
 		 * 
 		 *
-		 * @date 2014-12-3-ÏÂÎç7:29:01
+		 * @date 2014-12-3-ä¸‹åˆ7:29:01
 		 * 
 		 */
 		void phoneRegChangeAction(PhoneRegEvent e);
@@ -294,10 +294,10 @@ public class RegPane extends BasicPane {
 	public interface RegChangeListener extends EventListener {
 		
 		/**
-		 * ÕıÔò±í´ï¹æÔò±ä»¯¼àÌı
+		 * æ­£åˆ™è¡¨è¾¾è§„åˆ™å˜åŒ–ç›‘å¬
 		 * 
 		 *
-		 * @date 2014-12-3-ÏÂÎç7:29:01
+		 * @date 2014-12-3-ä¸‹åˆ7:29:01
 		 * 
 		 */
 		void regChangeAction();

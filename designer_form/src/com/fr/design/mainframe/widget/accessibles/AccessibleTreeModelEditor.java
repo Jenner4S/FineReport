@@ -9,7 +9,7 @@ import com.fr.design.gui.frpane.TreeSettingPane;
 
 
 /**
- * ÓÃÓÚTreeEditoºÍTreeComboBoxµÄÊı¾İ¸ñÊ½ÉèÖÃ
+ * ç”¨äºTreeEditoå’ŒTreeComboBoxçš„æ•°æ®æ ¼å¼è®¾ç½®
  * @since 6.5.3
  */
 public class AccessibleTreeModelEditor extends UneditableAccessibleEditor {

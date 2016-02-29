@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * µØÍ¼¶à²ã×êÈ¡½çÃæ, ¾ÍÊÇÒ»¸ö¶à²ãTabÇĞ»»½çÃæ
+ * åœ°å›¾å¤šå±‚é’»å–ç•Œé¢, å°±æ˜¯ä¸€ä¸ªå¤šå±‚Tabåˆ‡æ¢ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-22 ÉÏÎç10:23:37
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-22 ä¸Šåˆ10:23:37
  */
 public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 	private static final long serialVersionUID = -174286187746442527L;
@@ -43,7 +43,7 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 			layerPane.populateBean(map.getMapName());
 		}
 
-		// È·ÈÏ²ã¼¶¹ØÏµ 
+		// ç¡®è®¤å±‚çº§å…³ç³» 
 		dataPane.populateBean(collection.getSelectedChart().getFilterDefinition());
 	}
 
@@ -54,13 +54,13 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 		Chart selectChart = collection.getSelectedChart();
 		if(selectChart != null && selectChart.getPlot() instanceof MapPlot) {
 			MapPlot map = (MapPlot)selectChart.getPlot();
-			layerPane.updateBean(map.getMapName());// È·¶¨¸üĞÂµØÍ¼Ãû³ÆËù¶ÔÓ¦µÄ²ã¼¶¹ØÏµ
+			layerPane.updateBean(map.getMapName());// ç¡®å®šæ›´æ–°åœ°å›¾åç§°æ‰€å¯¹åº”çš„å±‚çº§å…³ç³»
 		}
 	}
 	
 	/**
-	 * Ë¢ĞÂ²ã¼¶Ê÷ ºÍ Êı¾İÖĞpopulate Êı¾İµÄ²ãÊı
-     * @param collection  Í¼±íÊÕ¼¯Æ÷.
+	 * åˆ·æ–°å±‚çº§æ ‘ å’Œ æ•°æ®ä¸­populate æ•°æ®çš„å±‚æ•°
+     * @param collection  å›¾è¡¨æ”¶é›†å™¨.
 	 */
 	public void init4PopuMapTree(ChartCollection collection) {
 		Chart selectChart = collection.getSelectedChart();
@@ -74,31 +74,31 @@ public class MapMoreCubeLayerPane extends MultiTabPane<ChartCollection>{
 	}
 
     /**
-     * ÅĞ¶ÏÊÇ·ñºÏ¸ñ
-     * @param ob  ²ÎÊıÅĞ¶Ï
-     * @return Ä¬ÈÏºÏ¸ñ.
+     * åˆ¤æ–­æ˜¯å¦åˆæ ¼
+     * @param ob  å‚æ•°åˆ¤æ–­
+     * @return é»˜è®¤åˆæ ¼.
      */
 	public boolean accept(Object ob) {
 		return true;
 	}
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ·µ»Ø±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return è¿”å›æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Muiti_In");
 	}
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
 	public void reset() {
 
 	}
 	
 	/**
-	 * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñÊı¾İ.
+	 * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼æ•°æ®.
 	 */
 	public void setSurpportCellData(boolean surpportCellData) {
 		dataPane.justSupportOneSelect(surpportCellData);

@@ -42,7 +42,7 @@ public class TableDataTree extends UserObjectRefreshJTree<TableDataSourceOP> {
             ExpandMutableTreeNode treeNode = (ExpandMutableTreeNode) value;
             Object userObj = treeNode.getUserObject();
             if (userObj instanceof String) {
-                // p:Õâ¸öÊÇcolumn field.
+                // p:è¿™ä¸ªæ˜¯column field.
                 this.setIcon(BaseUtils.readIcon("com/fr/design/images/data/field.png"));
                 this.setText((String) userObj);
             } else if (userObj instanceof NameObject) {
@@ -67,7 +67,7 @@ public class TableDataTree extends UserObjectRefreshJTree<TableDataSourceOP> {
                 this.setIcon(null);
                 this.setText(PENDING.toString());
             }
-            // ÕâÀïĞÂ½¨Ò»¸öLabel×÷ÎªrenderÊÇÒòÎªJTreeÔÚ¶¯Ì¬Ë¢ĞÂµÄÊ±ºò£¬½ÚµãÉÏrender»­²¼µÄµÄ¿í¶È²»»á±ä£¬»áÊ¹µÃÒ»²¿·Ö±È½Ï³¤µÄÊı¾İÏÔÊ¾Îª"..."
+            // è¿™é‡Œæ–°å»ºä¸€ä¸ªLabelä½œä¸ºrenderæ˜¯å› ä¸ºJTreeåœ¨åŠ¨æ€åˆ·æ–°çš„æ—¶å€™ï¼ŒèŠ‚ç‚¹ä¸Šrenderç”»å¸ƒçš„çš„å®½åº¦ä¸ä¼šå˜ï¼Œä¼šä½¿å¾—ä¸€éƒ¨åˆ†æ¯”è¾ƒé•¿çš„æ•°æ®æ˜¾ç¤ºä¸º"..."
             UILabel label = new UILabel();
             label.setText(getText());
             label.setIcon(getIcon());
@@ -145,7 +145,7 @@ public class TableDataTree extends UserObjectRefreshJTree<TableDataSourceOP> {
     }
 
     /*
-     * p:»ñµÃÑ¡ÖĞµÄNameObject = name + tabledata.
+     * p:è·å¾—é€‰ä¸­çš„NameObject = name + tabledata.
 	 */
     public NameObject getSelectedNameObject() {
         TreePath selectedTreePath = this.getSelectionPath();
@@ -224,7 +224,7 @@ public class TableDataTree extends UserObjectRefreshJTree<TableDataSourceOP> {
     }
 
     /**
-     * p:Ìí¼ÓÒ»¸öNameObject½Úµã.
+     * p:æ·»åŠ ä¸€ä¸ªNameObjectèŠ‚ç‚¹.
      */
     public void addNameObject(NameObject no) {
         if (no == null) {
@@ -232,7 +232,7 @@ public class TableDataTree extends UserObjectRefreshJTree<TableDataSourceOP> {
         }
         DefaultTreeModel treeModel = (DefaultTreeModel) this.getModel();
 
-        // ĞÂ½¨Ò»¸ö·Å×ÅNameObjectµÄnewChildTreeNode,¼Óµ½RootÏÂÃæ
+        // æ–°å»ºä¸€ä¸ªæ”¾ç€NameObjectçš„newChildTreeNode,åŠ åˆ°Rootä¸‹é¢
         ExpandMutableTreeNode root = (ExpandMutableTreeNode) treeModel.getRoot();
 
         ExpandMutableTreeNode newChildTreeNode = new ExpandMutableTreeNode(no);

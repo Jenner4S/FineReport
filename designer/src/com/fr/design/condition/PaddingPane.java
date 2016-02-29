@@ -53,8 +53,8 @@ public class PaddingPane extends ConditionAttrSingleConditionPane<HighlightActio
     }
 
     /**
-     * µ¯³ö´°¿Ú²Ëµ¥ÃüÃû
-     * @return ²Ëµ¥Ãû
+     * å¼¹å‡ºçª—å£èœå•å‘½å
+     * @return èœå•å
      */
     @Override
     public String nameForPopupMenuItem() {

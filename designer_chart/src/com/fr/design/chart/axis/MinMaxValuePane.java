@@ -23,7 +23,7 @@ public class MinMaxValuePane extends JPanel {
     protected UICheckBox minCheckBox;
     protected UITextField minValueField;
 
-	// Ö÷´ÎÒª¿Ì¶Èµ¥Î»
+	// ä¸»æ¬¡è¦åˆ»åº¦å•ä½
     protected UICheckBox isCustomMainUnitBox;
     protected UITextField mainUnitField;
 
@@ -103,7 +103,7 @@ public class MinMaxValuePane extends JPanel {
 			}
 		} 
 
-		// ×î´óÖµ
+		// æœ€å¤§å€¼
 		if (axis.isCustomMaxValue()) {
 			maxCheckBox.setSelected(true);
 			if(axis.getMaxValue() != null) {
@@ -111,7 +111,7 @@ public class MinMaxValuePane extends JPanel {
 			}
 		} 
 
-		// Ö÷´Î¿Ì¶Èµ¥Î»
+		// ä¸»æ¬¡åˆ»åº¦å•ä½
 		if (axis.isCustomMainUnit()) {
 			isCustomMainUnitBox.setSelected(true);
 			if(axis.getMainUnit() != null) {
@@ -133,7 +133,7 @@ public class MinMaxValuePane extends JPanel {
 		if (axis == null) {
 			return;
 		}
-		// ×î´ó×îĞ¡Öµ
+		// æœ€å¤§æœ€å°å€¼
 		if (minCheckBox.isSelected()) {
 			axis.setCustomMinValue(StringUtils.isNotEmpty(minValueField.getText()));
 			axis.setMinValue(new Formula(minValueField.getText()));
@@ -151,7 +151,7 @@ public class MinMaxValuePane extends JPanel {
 	}
 
     private void updateUnit(Axis axis) {
-        // Ö÷Òª¿Ì¶È
+        // ä¸»è¦åˆ»åº¦
         if (isCustomMainUnitBox.isSelected()){
             String increment = mainUnitField.getText();
             if(StringUtils.isEmpty(increment)) {

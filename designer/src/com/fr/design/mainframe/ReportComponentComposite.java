@@ -18,10 +18,10 @@ import com.fr.main.impl.WorkBook;
 import com.fr.report.report.TemplateReport;
 
 /**
- * Õû¸ö±¨±í±à¼­ÇøÓò °üÀ¨¹ö¶¯Ìõ¡¢ÖĞ¼äµÄgrid»òÕß¾ÛºÏ¿é¡¢ÏÂÃæµÄsheetTab
+ * æ•´ä¸ªæŠ¥è¡¨ç¼–è¾‘åŒºåŸŸ åŒ…æ‹¬æ»šåŠ¨æ¡ã€ä¸­é—´çš„gridæˆ–è€…èšåˆå—ã€ä¸‹é¢çš„sheetTab
  *
  * @editor zhou
- * @since 2012-3-27ÏÂÎç12:12:05
+ * @since 2012-3-27ä¸‹åˆ12:12:05
  */
 public class ReportComponentComposite extends JComponent {
     private JWorkBook parent;
@@ -63,7 +63,7 @@ public class ReportComponentComposite extends JComponent {
         WorkBook workbook = getEditingWorkBook();
         if (workbook == null) {
             FRContext.getLogger().error(Inter.getLocText("Read_failure") + "!");
-            //AUGUST:¼Ó¸ö±¨´í,²»È»²âÊÔ×ÜÊÇSBµÄÈÏÎª´ò²»¿ªÒ»¸ö»µµÄexcelÎÄ¼ş¾ÍÊÇBUG£¬Ò²²»ÖªµÀÈ¥¼ì²éÏÂÔ´ÎÄ¼ş¡£
+            //AUGUST:åŠ ä¸ªæŠ¥é”™,ä¸ç„¶æµ‹è¯•æ€»æ˜¯SBçš„è®¤ä¸ºæ‰“ä¸å¼€ä¸€ä¸ªåçš„excelæ–‡ä»¶å°±æ˜¯BUGï¼Œä¹Ÿä¸çŸ¥é“å»æ£€æŸ¥ä¸‹æºæ–‡ä»¶ã€‚
             return;
         }
         centerCardPane.populate(workbook.getTemplateReport(newIndex));
@@ -94,9 +94,9 @@ public class ReportComponentComposite extends JComponent {
     }
 
     /**
-	 * ÒÆ³ıÑ¡ÖĞ×´Ì¬
+	 * ç§»é™¤é€‰ä¸­çŠ¶æ€
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:41:44
+	 * @date 2015-2-5-ä¸Šåˆ11:41:44
 	 * 
 	 */
     public void removeSelection() {
@@ -144,9 +144,9 @@ public class ReportComponentComposite extends JComponent {
     }
 
     /**
-     * Ìí¼ÓÄ¿±ê¸Ä±äµÄ¼àÌı
+     * æ·»åŠ ç›®æ ‡æ”¹å˜çš„ç›‘å¬
      *
-     * @param targetModifiedListener ¶ÔÏóĞŞ¸Ä¼àÌıÆ÷
+     * @param targetModifiedListener å¯¹è±¡ä¿®æ”¹ç›‘å¬å™¨
      */
     public void addTargetModifiedListener(TargetModifiedListener targetModifiedListener) {
         this.centerCardPane.addTargetModifiedListener(targetModifiedListener);
@@ -168,7 +168,7 @@ public class ReportComponentComposite extends JComponent {
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         centerCardPane.stopEditing();
@@ -182,7 +182,7 @@ public class ReportComponentComposite extends JComponent {
     }
 
     /**
-     * Ä£°å¸üĞÂ
+     * æ¨¡æ¿æ›´æ–°
      */
     public void fireTargetModified() {
         parent.fireTargetModified();

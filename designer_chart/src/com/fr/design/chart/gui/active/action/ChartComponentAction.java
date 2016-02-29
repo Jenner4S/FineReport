@@ -12,7 +12,7 @@ import com.fr.design.actions.UpdateAction;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : ÏÂÎç5:05
+ * Time   : ä¸‹åˆ5:05
  */
 public abstract class ChartComponentAction extends UpdateAction {
     protected ChartComponent chartComponent;

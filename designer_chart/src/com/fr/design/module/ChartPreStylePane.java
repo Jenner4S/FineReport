@@ -19,9 +19,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Í¼±íÔ¤¶¨Òå·ç¸ñ½çÃæ,  ·şÎñÆ÷--Í¼±í·ç¸ñ.
+ * å›¾è¡¨é¢„å®šä¹‰é£æ ¼ç•Œé¢,  æœåŠ¡å™¨--å›¾è¡¨é£æ ¼.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-20 ÏÂÎç05:02:00
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-20 ä¸‹åˆ05:02:00
  */
 public class ChartPreStylePane extends BasicBeanPane<ChartPreStyle>{
 	

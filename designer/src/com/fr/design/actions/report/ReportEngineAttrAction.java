@@ -23,9 +23,9 @@ public class ReportEngineAttrAction extends ReportComponentAction<WorkSheetDesig
     private boolean isChange;
 
     /**
-     * 执行动作
+     * 鎵ц鍔ㄤ綔
      *
-     * @return 是否执行成功
+     * @return 鏄惁鎵ц鎴愬姛
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         WorkSheetDesigner jws = getEditingComponent();

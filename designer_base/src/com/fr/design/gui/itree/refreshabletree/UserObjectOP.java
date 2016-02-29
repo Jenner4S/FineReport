@@ -7,16 +7,16 @@ import com.fr.design.gui.itree.refreshabletree.loader.ChildrenNodesLoader;
 
 
 /**
- * UserObjectRefreshJTreeµÄ²Ù×÷
+ * UserObjectRefreshJTreeçš„æ“ä½œ
  * 
  * @editor zhou
- * @since 2012-3-28ÏÂÎç9:49:31
+ * @since 2012-3-28ä¸‹åˆ9:49:31
  */
 
 public interface UserObjectOP<T> extends ChildrenNodesLoader {
 
 	/*
-	 * ³õÊ¼»¯·µ»Øname, T¼üÖµ¶Ô
+	 * åˆå§‹åŒ–è¿”å›name, Té”®å€¼å¯¹
 	 */
 	public List<Map<String, T>> init();
 
@@ -26,7 +26,7 @@ public interface UserObjectOP<T> extends ChildrenNodesLoader {
 	public boolean interceptButtonEnabled();
 	
 	/*
-	 * ÒÆ³ıÃû×ÖÊÇnameµÄTableData
+	 * ç§»é™¤åå­—æ˜¯nameçš„TableData
 	 */
 	public void removeAction(String name);
 

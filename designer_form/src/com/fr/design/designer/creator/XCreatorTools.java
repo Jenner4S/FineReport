@@ -14,44 +14,44 @@ import java.util.ArrayList;
 public interface XCreatorTools {
 
 	/**
-	 * ¿Ø¼şÊ÷²»ÏÔÊ¾´Ë×é¼ş
-	 * @param path ¿Ø¼şÊ÷list
+	 * æ§ä»¶æ ‘ä¸æ˜¾ç¤ºæ­¤ç»„ä»¶
+	 * @param path æ§ä»¶æ ‘list
 	 */
 	void notShowInComponentTree(ArrayList<Component> path);
 	
 	/**
-	 * ÖØÖÃ×é¼şµÄÃû³Æ
-	 * @param name Ãû³Æ
+	 * é‡ç½®ç»„ä»¶çš„åç§°
+	 * @param name åç§°
 	 */
 	void resetCreatorName(String name);
 	
 	/**
-	 * ·µ»Ø±à¼­µÄ×Ó×é¼ş£¬scaleÎªÆäÄÚ²¿×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›ç¼–è¾‘çš„å­ç»„ä»¶ï¼Œscaleä¸ºå…¶å†…éƒ¨ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	XCreator getEditingChildCreator();
 	
 	/**
-	 * ·µ»Ø¶ÔÓ¦ÊôĞÔ±íµÄ×é¼ş£¬scaleºÍtitle·µ»ØÆä×Ó×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›å¯¹åº”å±æ€§è¡¨çš„ç»„ä»¶ï¼Œscaleå’Œtitleè¿”å›å…¶å­ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	XCreator getPropertyDescriptorCreator();
 	
 	/**
-	 * ¸üĞÂ×Ó×é¼şµÄBound; Ã»ÓĞ²»´¦Àí
-	 *  @param minHeight ×îĞ¡¸ß¶È
+	 * æ›´æ–°å­ç»„ä»¶çš„Bound; æ²¡æœ‰ä¸å¤„ç†
+	 *  @param minHeight æœ€å°é«˜åº¦
 	 */
 	void updateChildBound(int minHeight);
 	
 	/**
-	 * ÊÇ·ñ×÷Îª¿Ø¼şÊ÷µÄÒ¶×Ó½Úµã
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦ä½œä¸ºæ§ä»¶æ ‘çš„å¶å­èŠ‚ç‚¹
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	boolean isComponentTreeLeaf();
 	
 	/**
-	 * ÊÇ·ñÎªsclaeºÍtitle×¨ÊôÈİÆ÷
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦ä¸ºsclaeå’Œtitleä¸“å±å®¹å™¨
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	boolean isDedicateContainer();
 	

@@ -33,9 +33,9 @@ public class XTreeEditor extends XWidgetCreator {
 
     @Override
 	/**
-	 * Ê÷¿Ø¼şµÄÊôĞÔÃæ°å
-	 * @return   ÊôĞÔÊı×é
-	 * @throws  Introspection¹ı³Ì´íÎó
+	 * æ ‘æ§ä»¶çš„å±æ€§é¢æ¿
+	 * @return   å±æ€§æ•°ç»„
+	 * @throws  Introspectionè¿‡ç¨‹é”™è¯¯
 	 */
     public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
         CRPropertyDescriptor[] crp = !((FieldEditor) toData()).isAllowBlank() ?
@@ -112,8 +112,8 @@ public class XTreeEditor extends XWidgetCreator {
 
     @Override
     /**
-     * ¿Ø¼şµÄÔ¤¶¨Òå´óĞ¡
-	 * @return     ¿Ø¼şµÄÔ¤¶¨Òå´óĞ¡
+     * æ§ä»¶çš„é¢„å®šä¹‰å¤§å°
+	 * @return     æ§ä»¶çš„é¢„å®šä¹‰å¤§å°
      */
     public Dimension initEditorSize() {
         return SMALL_PREFERRED_SIZE;

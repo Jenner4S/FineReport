@@ -98,8 +98,8 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     *¹Ø±ÕÑ¡ÔñµÄÎÄ¼ş
-     * @param selected Ñ¡ÔñµÄ
+     *å…³é—­é€‰æ‹©çš„æ–‡ä»¶
+     * @param selected é€‰æ‹©çš„
      */
     public void closeSelectedReport(JTemplate<?, ?> selected) {
         if (contains(selected) == -1) {
@@ -124,13 +124,13 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
 
     public void setCurrentEditingTemplate(JTemplate<?, ?> jt) {
         this.editingTemplate = jt;
-        //Èç¹ûµ±Ç°ÀúÊ·Ãæ°åÖĞÃ»ÓĞ
+        //å¦‚æœå½“å‰å†å²é¢æ¿ä¸­æ²¡æœ‰
 
         if (contains(jt) == -1) {
             addHistory();
         }
         MutilTempalteTabPane.getInstance().refreshOpenedTemplate(historyList);
-        //ÉèÖÃtabÀ¸Îªµ±Ç°Ñ¡ÖĞµÄÄÇÒ»À¸
+        //è®¾ç½®tabæ ä¸ºå½“å‰é€‰ä¸­çš„é‚£ä¸€æ 
         if (editingTemplate != null) {
             MutilTempalteTabPane.getInstance().setSelectedIndex(contains(jt));
         }
@@ -138,7 +138,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * Ìí¼ÓÀúÊ·¼ÇÂ¼
+     * æ·»åŠ å†å²è®°å½•
      */
     public void addHistory() {
         if (editingTemplate == null) {
@@ -155,7 +155,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
 
 
     /**
-     * Çå¿ÕÀúÊ·¼ÇÂ¼
+     * æ¸…ç©ºå†å²è®°å½•
      */
     public void removeAllHistory() {
         historyList.clear();
@@ -182,10 +182,10 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * »ñÈ¡Ä£°åµÄindex
+     * è·å–æ¨¡æ¿çš„index
      *
-     * @param jt Ä£°å
-     * @return Î»ÖÃ
+     * @param jt æ¨¡æ¿
+     * @return ä½ç½®
      */
     public int contains(JTemplate<?, ?> jt) {
         for (int i = 0; i < historyList.size(); i++) {
@@ -198,9 +198,9 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
 
 
     /**
-     * ÅĞ¶ÏÊÇ·ñ´ò¿ª¹ı¸ÃÄ£°å
-     * @param filename ÎÄ¼şÃû
-     * @return ÎÄ¼şÎ»ÖÃ
+     * åˆ¤æ–­æ˜¯å¦æ‰“å¼€è¿‡è¯¥æ¨¡æ¿
+     * @param filename æ–‡ä»¶å
+     * @return æ–‡ä»¶ä½ç½®
      */
     public int contains(String filename) {
         for (int i = 0; i < historyList.size(); i++) {
@@ -213,9 +213,9 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * ÊÇ·ñÊÇµ±Ç°±à¼­µÄÎÄ¼ş
-     * @param filename ÎÄ¼şÃû
-     * @return ÊÇÔò·µ»ØTRUE
+     * æ˜¯å¦æ˜¯å½“å‰ç¼–è¾‘çš„æ–‡ä»¶
+     * @param filename æ–‡ä»¶å
+     * @return æ˜¯åˆ™è¿”å›TRUE
      */
     public boolean isCurrentEditingFile(String filename) {
         String editingFileName = editingTemplate.getFullPathName();
@@ -280,7 +280,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refresh() {
         list.removeAll();
@@ -289,7 +289,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * ´ò¿ªÑ¡ÔñµÄÎÄ¼ş
+     * æ‰“å¼€é€‰æ‹©çš„æ–‡ä»¶
      */
     public void openSelectedReport() {
         DesignerContext.getDesignerFrame().addAndActivateJTemplate((JTemplate<?, ?>) list.getSelectedValue());
@@ -298,7 +298,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * ´ò¿ªÎÄ¼şËùÔÚÎÄ¼ş¼Ğ
+     * æ‰“å¼€æ–‡ä»¶æ‰€åœ¨æ–‡ä»¶å¤¹
      */
     public void openContainerFolder() {
         FileNode fileNode = new FileNode(((JTemplate<?, ?>) list.getSelectedValue()).getEditingFILE().getPath(), false);
@@ -307,7 +307,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * É¾³ıÎÄ¼ş
+     * åˆ é™¤æ–‡ä»¶
      */
     public void deleteFile() {
 // TODO Auto-generated method stub
@@ -315,7 +315,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /***
-     * ËöÎÄ¼ş
+     * çæ–‡ä»¶
      */
     public void lockFile() {
 // TODO Auto-generated method stub
@@ -323,7 +323,7 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * ½âËø
+     * è§£é”
      */
     public void unLockFile() {
 // TODO Auto-generated method stub
@@ -331,8 +331,8 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * Â·¾¶
-     * @return Â·¾¶
+     * è·¯å¾„
+     * @return è·¯å¾„
      */
     public String getSelectedTemplatePath() {
         if (list.getSelectedIndex() < 0 || list.getSelectedIndex() > list.getModel().getSize() - 1) {
@@ -351,12 +351,12 @@ public class HistoryTemplateListPane extends JPanel implements FileOperations {
     }
 
     /**
-     * ÎÄ¼şÊÇ·ñ´æÔÚ
+     * æ–‡ä»¶æ˜¯å¦å­˜åœ¨
      *
-     * @param newName ÎÄ¼şÃû
-     * @param oldName Ô­Ãû
-     * @param suffix  ºó×ºÃû
-     * @return ÎÄ¼şÊÇ·ñ´æÔÚ
+     * @param newName æ–‡ä»¶å
+     * @param oldName åŸå
+     * @param suffix  åç¼€å
+     * @return æ–‡ä»¶æ˜¯å¦å­˜åœ¨
      */
     public boolean isNameAlreadyExist(String newName, String oldName, String suffix) {
         boolean isNameAreadyExist = false;

@@ -13,9 +13,9 @@ import com.fr.design.actions.UpdateAction;
 import com.fr.design.gui.imenu.UIMenuItem;
 
 /**
- * ĞéÏßµÄSeparator¡£
+ * è™šçº¿çš„Separatorã€‚
  * @author zhou
- * @since 2012-6-6ÏÂÎç12:34:46
+ * @since 2012-6-6ä¸‹åˆ12:34:46
  */
 public class DottedSeparator extends UpdateAction {
 

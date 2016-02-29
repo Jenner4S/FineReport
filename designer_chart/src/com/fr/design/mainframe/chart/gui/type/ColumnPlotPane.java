@@ -11,9 +11,9 @@ import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 
 /**
- * ÖùĞÎÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * æŸ±å½¢å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç06:57:14
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ06:57:14
  */
 public class ColumnPlotPane extends AbstractBarPane{
 	private static final long serialVersionUID = 7070966970039838314L;
@@ -64,8 +64,8 @@ public class ColumnPlotPane extends AbstractBarPane{
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Column");
@@ -106,7 +106,7 @@ public class ColumnPlotPane extends AbstractBarPane{
     }
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
 	    chart.switchPlot(getSelectedClonedPlot());
@@ -114,9 +114,9 @@ public class ColumnPlotPane extends AbstractBarPane{
 	}
 
 	/**
-	 * ÅĞ¶Ï½çÃæÊÇ·ñ½øÈë
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ¶ÔÏóÊÇ·ñÊÇchart
+	 * åˆ¤æ–­ç•Œé¢æ˜¯å¦è¿›å…¥
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return å¯¹è±¡æ˜¯å¦æ˜¯chart
 	 */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

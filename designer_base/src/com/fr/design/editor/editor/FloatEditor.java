@@ -4,10 +4,10 @@ import com.fr.base.Utils;
 import com.fr.general.Inter;
 
 /**
- * µ¥¾«¶ÈĞÍ±à¼­Æ÷
+ * å•ç²¾åº¦å‹ç¼–è¾‘å™¨
  *
  * @author zhou
- * @since 2012-3-29ÏÂÎç4:50:01
+ * @since 2012-3-29ä¸‹åˆ4:50:01
  */
 public class FloatEditor extends NumberEditor<Float> {
 

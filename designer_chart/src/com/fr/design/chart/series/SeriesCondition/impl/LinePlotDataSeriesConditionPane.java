@@ -9,7 +9,7 @@ import com.fr.chart.chartattr.Plot;
 import com.fr.design.chart.series.SeriesCondition.*;
 
 /**
- * ÕÛÏßÍ¼(ÎŞÇ÷ÊÆÏß)ÖĞµÄÌõ¼şÊôĞÔ½çÃæ.
+ * æŠ˜çº¿å›¾(æ— è¶‹åŠ¿çº¿)ä¸­çš„æ¡ä»¶å±æ€§ç•Œé¢.
  */
 public class LinePlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = 90767073697041627L;

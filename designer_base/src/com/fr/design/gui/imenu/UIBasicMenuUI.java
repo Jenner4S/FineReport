@@ -24,7 +24,7 @@ import java.beans.PropertyChangeListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-11
- * Time: 上午11:21
+ * Time: 涓婂崍11:21
  */
 public class UIBasicMenuUI extends UIBasicMenuItemUI {
     private static final boolean DEBUG = false; // show bad params, misc.
@@ -38,10 +38,10 @@ public class UIBasicMenuUI extends UIBasicMenuItemUI {
     private static boolean crossMenuMnemonic = true;
 
     /**
-     * 创建UI
+     * 鍒涘缓UI
      *
-     * @param x 组件
-     * @return 组件UI
+     * @param x 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent x) {
         return new UIBasicMenuUI();

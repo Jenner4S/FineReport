@@ -17,5 +17,3 @@ public class FloatEditorEvent extends EventObject {
         super(source);
     }
 }
-
-

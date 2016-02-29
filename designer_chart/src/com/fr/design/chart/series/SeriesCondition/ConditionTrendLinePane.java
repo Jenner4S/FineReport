@@ -96,7 +96,7 @@ public class ConditionTrendLinePane extends BasicBeanPane<ConditionTrendLine> {
 	}
 	
 	private JPanel initExtendsPane() {
-		JPanel extendsPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();		// 前推倒推设置
+		JPanel extendsPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();		// 鍓嶆帹鍊掓帹璁剧疆
 		extendsPane.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText(new String[]{"Chart_Trend", "Forecast"}), null));
 		
 		extendsPane.add(new UILabel(Inter.getLocText("Chart_TrendLine_Forward") + ":"));

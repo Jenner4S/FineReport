@@ -7,13 +7,13 @@ import com.fr.design.Exception.ValidationException;
 /**
  * @author richer
  * @since 6.5.3
- * ÊôĞÔ±à¼­Æ÷
+ * å±æ€§ç¼–è¾‘å™¨
  */
 public interface ExtendedPropertyEditor extends PropertyEditor {
 	void validateValue() throws ValidationException;
 
 	void setDefaultValue(Object v);
 	
-	//Í·ÌÛËÀÁË,¾ÍÏÈÕâÑù×ö°É,Õâ¸öÊôĞÔ±íÀË·ÑÌ«¶àÊ±¼äÁË,ÎªÊµÏÖĞí¶à¹¦ÄÜ,ÌáĞèÇóÖØ×öÕâÀï;
+	//å¤´ç–¼æ­»äº†,å°±å…ˆè¿™æ ·åšå§,è¿™ä¸ªå±æ€§è¡¨æµªè´¹å¤ªå¤šæ—¶é—´äº†,ä¸ºå®ç°è®¸å¤šåŠŸèƒ½,æéœ€æ±‚é‡åšè¿™é‡Œ;
 	boolean refreshInTime();
 }

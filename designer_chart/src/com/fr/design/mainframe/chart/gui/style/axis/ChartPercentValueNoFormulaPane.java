@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 public class ChartPercentValueNoFormulaPane extends ChartValueNoFormulaPane{
 
-    // û�аٷֱ�
+    // 没有百分比
     protected JPanel addLogarithmicPane2ValuePane() {
         return null;
     }

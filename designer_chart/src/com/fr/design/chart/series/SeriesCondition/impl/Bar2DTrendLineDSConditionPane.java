@@ -8,8 +8,8 @@ import com.fr.design.chart.series.SeriesCondition.TrendLinePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç11:19
- * ÖùĞÎÍ¼ ·Ç¶Ñ»ı ´øÇ÷ÊÆÏßµÄ Ìõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ11:19
+ * æŸ±å½¢å›¾ éå †ç§¯ å¸¦è¶‹åŠ¿çº¿çš„ æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class Bar2DTrendLineDSConditionPane extends BarPlotDataSeriesConditionPane {
 	private static final long serialVersionUID = -5888582645195218536L;

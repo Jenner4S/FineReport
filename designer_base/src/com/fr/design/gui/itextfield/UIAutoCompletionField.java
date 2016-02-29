@@ -45,8 +45,8 @@ public class UIAutoCompletionField extends UITextField implements DocumentListen
         addKeyListener(this);
     }
 
-    // ÄÌÄÌµÄ setTextºÍÊÍ·ÅUITextFieldÄÚ´æÊ±Ò²»á´¥·¢DocumentListener
-    // Ö»ÄÜÔÚsetTextºó¼ÓÉÏDocumentListenerÁË
+    // å¥¶å¥¶çš„ setTextå’Œé‡Šæ”¾UITextFieldå†…å­˜æ—¶ä¹Ÿä¼šè§¦å‘DocumentListener
+    // åªèƒ½åœ¨setTextååŠ ä¸ŠDocumentListeneräº†
 
     /**
      *

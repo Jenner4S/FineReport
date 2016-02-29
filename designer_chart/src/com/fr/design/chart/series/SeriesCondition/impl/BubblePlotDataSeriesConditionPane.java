@@ -11,7 +11,7 @@ import com.fr.design.chart.series.SeriesCondition.DataSeriesConditionPane;
 import com.fr.design.chart.series.SeriesCondition.LabelColorPane;
 
 /**
- * ÆøÅİÍ¼ Ìõ¼şÏÔÊ¾ ½çÃæ.
+ * æ°”æ³¡å›¾ æ¡ä»¶æ˜¾ç¤º ç•Œé¢.
  * Created by kunsnat on 14-3-11.
  * kunsnat@gmail.com
  */
@@ -22,8 +22,8 @@ public class BubblePlotDataSeriesConditionPane extends DataSeriesConditionPane {
     }
 
     /**
-     * ·µ»Ø¶ÔÓ¦µÄclass
-     * @return ·µ»Øclass
+     * è¿”å›å¯¹åº”çš„class
+     * @return è¿”å›class
      */
     public Class<? extends Plot> class4Correspond() {
         return BubblePlot.class;

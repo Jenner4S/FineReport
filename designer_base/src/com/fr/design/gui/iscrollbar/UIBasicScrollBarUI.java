@@ -15,7 +15,7 @@ import java.beans.PropertyChangeListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-17
- * Time: ÉÏÎç9:58
+ * Time: ä¸Šåˆ9:58
  */
 public class UIBasicScrollBarUI extends BasicScrollBarUI {
 
@@ -57,10 +57,10 @@ public class UIBasicScrollBarUI extends BasicScrollBarUI {
     }
 
     /**
-     * ´´½¨×é¼şUI
+     * åˆ›å»ºç»„ä»¶UI
      *
-     * @param c ×é¼ş
-     * @return ·µ»Ø×é¼şUI
+     * @param c ç»„ä»¶
+     * @return è¿”å›ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIBasicScrollBarUI();
@@ -149,7 +149,7 @@ public class UIBasicScrollBarUI extends BasicScrollBarUI {
         Color normalColor = ThemeUtils.NORMAL__COLOR_8;
 
         switch (scrollbar.getOrientation()) {
-            //harry: ´¹Ö±¹ö¶¯ÌõºÍË®Æ½¹ö¶¯ÌõµÄ»­·¨·Ö¿ª¡£
+            //harry: å‚ç›´æ»šåŠ¨æ¡å’Œæ°´å¹³æ»šåŠ¨æ¡çš„ç”»æ³•åˆ†å¼€ã€‚
             case JScrollBar.VERTICAL:
                 drawVertical(g, t, xs, ys, x2, pressedColor,  rolloverColor, normalColor);
                 break;
@@ -245,9 +245,9 @@ public class UIBasicScrollBarUI extends BasicScrollBarUI {
     }
 
     /**
-     * ÊÇ·ñ¿É¼û
+     * æ˜¯å¦å¯è§
      *
-     * @return ¿É¼û·µ»Øtrue
+     * @return å¯è§è¿”å›true
      */
     public boolean isThumbVisible() {
         if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {

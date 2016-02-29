@@ -45,7 +45,7 @@ public class CompositeComponentAdapter implements ComponentAdapter {
 		this.xCreator = (XCreator) c;
 	}
     /**
-     * ÊµÀı»¯×é¼şµÄÊÊÅäÆ÷ºó£¬ÔÚÕâ¶ù½øĞĞ³õÊ¼»¯
+     * å®ä¾‹åŒ–ç»„ä»¶çš„é€‚é…å™¨åï¼Œåœ¨è¿™å„¿è¿›è¡Œåˆå§‹åŒ–
      */
 	public void initialize() {
 		initButtonText();
@@ -64,7 +64,7 @@ public class CompositeComponentAdapter implements ComponentAdapter {
 
 	@Override
 	public void paintComponentMascot(Graphics g) {
-        //×ÔÊÊÓ¦½»²æµãäÖÈ¾ÓĞµãÎÊÌâ£¬ÍÏ×§µÄ¿Ø¼şÉèÖÃ³É°ëÍ¸Ã÷
+        //è‡ªé€‚åº”äº¤å‰ç‚¹æ¸²æŸ“æœ‰ç‚¹é—®é¢˜ï¼Œæ‹–æ‹½çš„æ§ä»¶è®¾ç½®æˆåŠé€æ˜
         Graphics2D g2d = (Graphics2D) g;
         AlphaComposite composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,.5f);
         g2d.setComposite(composite);
@@ -79,7 +79,7 @@ public class CompositeComponentAdapter implements ComponentAdapter {
 		if (changeVarNameAction == null) {
 			changeVarNameAction = new ChangeNameAction(designer);
 		}
-        //µ×²ã²¼¾Ö»òÕßÊÇ×ÔÊÊÓ¦²¼¾Ö¶¼²»ÄÜÉ¾³ı
+        //åº•å±‚å¸ƒå±€æˆ–è€…æ˜¯è‡ªé€‚åº”å¸ƒå±€éƒ½ä¸èƒ½åˆ é™¤
         boolean isRootComponent = ComponentUtils.isRootComponent(xCreator) || designer.isRoot(xCreator);
 		changeVarNameAction.setEnabled(!isRootComponent);
 		popupMenu.add(changeVarNameAction);
@@ -132,8 +132,8 @@ public class CompositeComponentAdapter implements ComponentAdapter {
 	}
 	
 	/**
-	 * ×ÔÊÊÓ¦²¼¾ÖÖĞ·ÅÖÃÎÄ±¾¿òµÈÓÃµÄscaleLayoutºÍ±¨±í¿é¡¢Í¼±í¿éÖ§³ÖµÄ±êÌâ¿Ø¼şÓÃµÄtitleLayoutÊ±
-	 * ¿Ø¼şÊ÷´¦Ö»ÏÔÊ¾¸¸ÈİÆ÷£¬µ«ÊÇ¿Ø¼şÊôĞÔ»¹ÊÇÎª×ÔÉíµÄ
+	 * è‡ªé€‚åº”å¸ƒå±€ä¸­æ”¾ç½®æ–‡æœ¬æ¡†ç­‰ç”¨çš„scaleLayoutå’ŒæŠ¥è¡¨å—ã€å›¾è¡¨å—æ”¯æŒçš„æ ‡é¢˜æ§ä»¶ç”¨çš„titleLayoutæ—¶
+	 * æ§ä»¶æ ‘å¤„åªæ˜¾ç¤ºçˆ¶å®¹å™¨ï¼Œä½†æ˜¯æ§ä»¶å±æ€§è¿˜æ˜¯ä¸ºè‡ªèº«çš„
 	 * @return
 	 */
 	private CRPropertyDescriptor[] getCalculateCreatorProperties() {

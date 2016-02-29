@@ -20,9 +20,9 @@ import java.awt.datatransfer.Transferable;
 import java.awt.dnd.*;
 import java.io.Serializable;
 /**
- * ÍÏ¶¯¾ÛºÏ¿éµÄÄÇ¸öÊúµÄ¶¯×÷Ìõ
+ * æ‹–åŠ¨èšåˆå—çš„é‚£ä¸ªç«–çš„åŠ¨ä½œæ¡
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:42:10
+ * @since 2012-3-23ä¸‹åˆ3:42:10
  */
 public class PolyComponetsBar extends JToolBar {
 	private static Color FOLDER_PANE_BACKGROUND = new Color(214, 223, 247);
@@ -47,7 +47,7 @@ public class PolyComponetsBar extends JToolBar {
 	}
 
 	/**
-	 * ÉèÖÃÊÇ·ñ¿ÉÓÃ×´Ì¬
+	 * è®¾ç½®æ˜¯å¦å¯ç”¨çŠ¶æ€
 	 */
 	public void checkEnable() {
 		for (SerIcon serIcon : serIcons) {
@@ -117,8 +117,8 @@ public class PolyComponetsBar extends JToolBar {
 	}
 
 	/**
-	 * ²âÊÔÏÂ
-	 * @param args ²ÎÊı
+	 * æµ‹è¯•ä¸‹
+	 * @param args å‚æ•°
 	 */
 	public static void main(String... args) {
 		try {

@@ -26,7 +26,7 @@ import com.fr.stable.bridge.StableFactory;
  + * Created with IntelliJ IDEA.
  + * User: zx
  + * Date: 14-8-6
- + * Time: 下午2:53
+ + * Time: 涓嬪崍2:53
  + */
 public class FormHyperlinkNorthPane  extends BasicBeanPane<FormHyperlinkProvider> {
 
@@ -111,7 +111,7 @@ public class FormHyperlinkNorthPane  extends BasicBeanPane<FormHyperlinkProvider
             this.itemNameTextField.setText(formHyperlink.getItemName());
         }
         String editorName = formHyperlink.getRelateEditorName();
-        //防止初始的时候有空白选项
+        //闃叉鍒濆鐨勬椂鍊欐湁绌虹櫧閫夐」
         if (editorName == null){
             return;
         }

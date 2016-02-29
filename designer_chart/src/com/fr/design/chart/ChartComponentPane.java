@@ -22,12 +22,12 @@ import com.fr.design.chart.gui.ChartComponent;
 import com.fr.design.layout.FRGUIPaneFactory;
 
 /**
- * 存放ChartComponent, 可调整大小的Pane.
+ * 瀛樻斁ChartComponent, 鍙皟鏁村ぇ灏忕殑Pane.
  */
 public class ChartComponentPane extends JPanel implements MouseMotionListener, MouseListener {
 	private static final long serialVersionUID = -77093070905580457L;
 
-	// 给设计界面加一个边框，方便拖拽
+	// 缁欒璁＄晫闈㈠姞涓�涓竟妗嗭紝鏂逛究鎷栨嫿
     private static final int BORDER_STYLE = 10;
 
     private List<PropertyChangeAdapter> listeners = new ArrayList<PropertyChangeAdapter>();

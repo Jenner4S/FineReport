@@ -7,7 +7,7 @@ import com.fr.design.dialog.BasicPane;
 import com.fr.design.mainframe.AbstractChartDataPane4Chart;
 
 /**
- * Í¼±íÉè¼ÆÆ÷µ¼Èë ½çÃæ
+ * å›¾è¡¨è®¾è®¡å™¨å¯¼å…¥ ç•Œé¢
  * Created by kunsnat on 14-10-21.
  * kunsnat@gmail.com
  */
@@ -20,23 +20,23 @@ public abstract class ChartDesignDataLoadPane extends BasicPane {
     }
 
     /**
-     * ¼ÓÔØÊı¾İ¼¯
+     * åŠ è½½æ•°æ®é›†
      *
-     * @param tableData Êı¾İ¼¯
+     * @param tableData æ•°æ®é›†
      */
     public abstract void populateChartTableData(TableData tableData);
 
     /**
-     * ¸ù¾İ½çÃæ »ñÈ¡Êı¾İ¼¯Ïà¹Ø.
+     * æ ¹æ®ç•Œé¢ è·å–æ•°æ®é›†ç›¸å…³.
      *
-     * @return ·µ»ØÊı¾İ¼¯
+     * @return è¿”å›æ•°æ®é›†
      */
     public abstract TableData getTableData();
 
 
     protected abstract String getNamePrefix();
 
-    //ÏìÓ¦ÊôĞÔÊÂ¼ş
+    //å“åº”å±æ€§äº‹ä»¶
     protected void fireChange() {
         parentPane.fireTableDataChange();
     }

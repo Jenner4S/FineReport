@@ -20,30 +20,30 @@ public abstract class WidgetOption implements Serializable {
     }
 
     /**
-     * Ãû×Ö
+     * åå­—
      *
-     * @return Ãû×Ö
+     * @return åå­—
      */
     public abstract String optionName();
 
     /**
-     * Í¼±ê
+     * å›¾æ ‡
      *
-     * @return Í¼±ê
+     * @return å›¾æ ‡
      */
     public abstract Icon optionIcon();
 
     /**
-     * Àà
+     * ç±»
      *
-     * @return Àà
+     * @return ç±»
      */
     public abstract Class<? extends Widget> widgetClass();
 
     /**
-     * ´´½¨¿Ø¼ş
+     * åˆ›å»ºæ§ä»¶
      *
-     * @return ¿Ø¼ş
+     * @return æ§ä»¶
      */
     public abstract Widget createWidget();
 
@@ -52,9 +52,9 @@ public abstract class WidgetOption implements Serializable {
     }
 
     /**
-     * Õâ¸önameµÄhashcode
+     * è¿™ä¸ªnameçš„hashcode
      *
-     * @return Õâ¸önameµÄhashcode
+     * @return è¿™ä¸ªnameçš„hashcode
      */
     public int hashCode() {
         return optionName().hashCode();
@@ -80,7 +80,7 @@ public abstract class WidgetOption implements Serializable {
     }
 
     /*
-     * Ô¤¶¨Òå¿Ø¼ş
+     * é¢„å®šä¹‰æ§ä»¶
      */
     public static WidgetOption[] getPredefinedWidget() {
         java.util.List<WidgetOption> list = new ArrayList<WidgetOption>();
@@ -98,7 +98,7 @@ public abstract class WidgetOption implements Serializable {
     }
 
     /*
-     * Ó¦ÓÃÓë±¨±íÉè¼ÆµÄ¿Ø¼ş
+     * åº”ç”¨ä¸æŠ¥è¡¨è®¾è®¡çš„æ§ä»¶
      */
     public static WidgetOption[] getReportWidgetInstance() {
         return new WidgetOption[]{TEXTEDITOR, TEXTAREA, NUMBEREDITOR, PASSWORD, BUTTON, CHECKBOX, RADIOGROUP, CHECKBOXGROUP, COMBOBOX,
@@ -107,9 +107,9 @@ public abstract class WidgetOption implements Serializable {
 
 
     /**
-     * ±¨±í¹¤¾ßÀ¸µÄ¿Ø¼ş
+     * æŠ¥è¡¨å·¥å…·æ çš„æ§ä»¶
      *
-     * @return ±¨±í¹¤¾ßÀ¸¿Ø¼ş
+     * @return æŠ¥è¡¨å·¥å…·æ æ§ä»¶
      */
     public static WidgetOption[] getReportParaWidgetIntance() {
         return new WidgetOption[]{TEXTEDITOR, LABEL, FREEBUTTON, COMBOBOX, COMBOCHECKBOX, DATEEDITOR,
@@ -117,9 +117,9 @@ public abstract class WidgetOption implements Serializable {
     }
 
     /**
-     * ±íµ¥¹¤¾ßÀ¸¿Ø¼ş
+     * è¡¨å•å·¥å…·æ æ§ä»¶
      *
-     * @return ±íµ¥¹¤¾ßÀ¸¿Ø¼ş
+     * @return è¡¨å•å·¥å…·æ æ§ä»¶
      */
     public static WidgetOption[] getFormWidgetIntance() {
         return new WidgetOption[]{TEXTEDITOR, LABEL, FREEBUTTON, COMBOBOX, COMBOCHECKBOX, DATEEDITOR,

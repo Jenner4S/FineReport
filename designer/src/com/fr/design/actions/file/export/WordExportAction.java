@@ -41,4 +41,3 @@ public class WordExportAction extends AbstractExportAction {
         return "doc";
     }
 }
-

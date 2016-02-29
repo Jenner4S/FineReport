@@ -46,7 +46,7 @@ public class UICalendarPanel extends JPanel {
     private java.util.Date selectedDate = null;
     private boolean isTimePicker;
     /**
-     * ÄêÔÂ¸ñÊ½
+     * å¹´æœˆæ ¼å¼
      */
     final SimpleDateFormat monthFormat
             = new SimpleDateFormat("yyyy-MM");
@@ -140,7 +140,7 @@ public class UICalendarPanel extends JPanel {
 
 
     private JPanel createCenterPane() {
-        //ĞÇÆÚÈÕ ĞÇÆÚÒ» ĞÇÆÚ¶ş ĞÇÆÚÈı ĞÇÆÚËÄ ĞÇÆÚÎå ĞÇÆÚÁù
+        //æ˜ŸæœŸæ—¥ æ˜ŸæœŸä¸€ æ˜ŸæœŸäºŒ æ˜ŸæœŸä¸‰ æ˜ŸæœŸå›› æ˜ŸæœŸäº” æ˜ŸæœŸå…­
         JPanel pWeeks = new JPanel(new GridLayout(1, 7, 1, 0));
         pWeeks.setPreferredSize(new Dimension(216, 22));
         pWeeks.setBackground(new Color(0xFFFFFF));
@@ -158,7 +158,7 @@ public class UICalendarPanel extends JPanel {
             pWeeks.add(label);
         }
 
-        //ÖĞ¼ä·ÅÈÕÆÚµÄÃæ°å
+        //ä¸­é—´æ”¾æ—¥æœŸçš„é¢æ¿
         days = new DayPane();
         days.setOpaque(true);
         days.setPreferredSize(new Dimension(216, 115));
@@ -167,7 +167,7 @@ public class UICalendarPanel extends JPanel {
         pCenter.add(pWeeks, BorderLayout.NORTH);
         pCenter.add(days, BorderLayout.CENTER);
 
-        //ÏÔÊ¾½ñÌìµÄÈÕÆÚ,Ö±½Óµ¥»÷Í¼±êÌøµ½½ñÌì
+        //æ˜¾ç¤ºä»Šå¤©çš„æ—¥æœŸ,ç›´æ¥å•å‡»å›¾æ ‡è·³åˆ°ä»Šå¤©
         GradientPane pToday = new GradientPane(new GradientBackground(new Color(0x097BDA), new Color(0x40A3EE), GradientBackground.TOP2BOTTOM), false);
         pToday.setPreferredSize(new Dimension(216, 18));
         pToday.setLayout(new BorderLayout());
@@ -231,7 +231,7 @@ public class UICalendarPanel extends JPanel {
     }
 
     /**
-     * ´´½¨ÉÏÒ»ÔÂ,ÏÂÒ»ÔÂ,ÉÏÒ»Äê,ÏÂÒ»Äê"°´Å¥"
+     * åˆ›å»ºä¸Šä¸€æœˆ,ä¸‹ä¸€æœˆ,ä¸Šä¸€å¹´,ä¸‹ä¸€å¹´"æŒ‰é’®"
      * @param field int
      * @param amount int
      * @return UILabel
@@ -272,10 +272,10 @@ public class UICalendarPanel extends JPanel {
     }
 
     /**
-     * ¸üĞÂÈÕÆÚ
+     * æ›´æ–°æ—¥æœŸ
      */
     protected void updateDays() {
-        //¸üĞÂÔÂ·İ
+        //æ›´æ–°æœˆä»½
         monthLabel.setText(monthFormat.format(calendar.getTime()));
         days.removeAll();
         days.setFloatIndex(-1);
@@ -304,7 +304,7 @@ public class UICalendarPanel extends JPanel {
             if (!isCurrentMonth) {
                 label.setForeground(new Color(0x6F6F6));
             }
-            //µ±Ç°Ñ¡ÔñµÄÈÕÆÚ
+            //å½“å‰é€‰æ‹©çš„æ—¥æœŸ
             if (setupCalendar.get(Calendar.DAY_OF_MONTH) == selectedCalendar.get(Calendar.DAY_OF_MONTH) && isCurrentMonth) {
                 gp.setGradientBackground(new GradientBackground(new Color(0x097BD9), new Color(0x41A3EE), GradientBackground.TOP2BOTTOM));
                 gp.add(label, BorderLayout.CENTER);
@@ -754,4 +754,3 @@ public class UICalendarPanel extends JPanel {
         frame.setVisible(true);
     }
 }
-

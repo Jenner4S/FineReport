@@ -84,7 +84,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ·µ»ØenvÅäÖÃÂ·¾¶
+     * è¿”å›envé…ç½®è·¯å¾„
      */
     @Override
     public String getPath() {
@@ -96,7 +96,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * µ±Ç°Éè¼Æ»·¾³µÄÓÃ»§Ãû£¬ÓÃÓÚÔ¶³ÌÉè¼Æ
+     * å½“å‰è®¾è®¡ç¯å¢ƒçš„ç”¨æˆ·åï¼Œç”¨äºè¿œç¨‹è®¾è®¡
      */
     public String getUser() {
         return user;
@@ -140,10 +140,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ËùÓĞÓë·şÎñÆ÷¶Ë½»»¥Ç°,¶¼Òªµ÷ÓÃÕâ¸ö·½·¨Éú³ÉUserID
+     * æ‰€æœ‰ä¸æœåŠ¡å™¨ç«¯äº¤äº’å‰,éƒ½è¦è°ƒç”¨è¿™ä¸ªæ–¹æ³•ç”ŸæˆUserID
      */
     private String createUserID() throws EnvException {
-        // Èç¹ûµÇÂ¼Ö®ºóuserID»¹ÊÇnull
+        // å¦‚æœç™»å½•ä¹‹åuserIDè¿˜æ˜¯null
         if (this.userID == null) {
             if (!VT4FR.REMOTE_DESIGN.support() && licNotSupport <= 0) {
                 licNotSupport++;
@@ -160,7 +160,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¸ù¾İnameValuePairs,Ò²¾ÍÊÇ²ÎÊı¶Ô,Éú³ÉPostMethod
+     * æ ¹æ®nameValuePairs,ä¹Ÿå°±æ˜¯å‚æ•°å¯¹,ç”ŸæˆPostMethod
      */
     private HttpClient createHttpMethod(HashMap<String, String> para, boolean isSignIn) throws EnvException, UnsupportedEncodingException {
         String methodPath = this.path;
@@ -171,7 +171,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¸ù¾İnameValuePairs,Ò²¾ÍÊÇ²ÎÊı¶Ô,Éú³ÉPostMethod,²»Í¬Ö®´¦ÔÚÓÚ,²ÎÊıÆ´ÔÚpathºóÃæ,²»ÊÇmethod.addParameters
+     * æ ¹æ®nameValuePairs,ä¹Ÿå°±æ˜¯å‚æ•°å¯¹,ç”ŸæˆPostMethod,ä¸åŒä¹‹å¤„åœ¨äº,å‚æ•°æ‹¼åœ¨pathåé¢,ä¸æ˜¯method.addParameters
      */
     private HttpClient createHttpMethod2(HashMap<String, String> para) throws EnvException {
         StringBuilder sb = new StringBuilder(path);
@@ -185,22 +185,22 @@ public class RemoteEnv implements Env {
 
      /*
       * Read the response body.
-	  * ÄÃ³öInputStreamÖĞËùÓĞµÄByte,×ª»»³ÉByteArrayInputStreamµÄĞÎÊ½·µ»Ø
+	  * æ‹¿å‡ºInputStreamä¸­æ‰€æœ‰çš„Byte,è½¬æ¢æˆByteArrayInputStreamçš„å½¢å¼è¿”å›
       *
-	  * ÕâÑù×öµÄÄ¿µÄÊÇÈ·±£method.releaseConnection
+	  * è¿™æ ·åšçš„ç›®çš„æ˜¯ç¡®ä¿method.releaseConnection
 	  *
-	  * TODO µ«Èç¹û²»×ömethod.releaseConnection,ÓĞ¶à´óÎ£º¦ÄØ?²»È·¶¨...
+	  * TODO ä½†å¦‚æœä¸åšmethod.releaseConnection,æœ‰å¤šå¤§å±å®³å‘¢?ä¸ç¡®å®š...
 	  */
 
     /**
-     * execute methodÖ®ºó,È¡·µ»ØµÄinputstream
+     * execute methodä¹‹å,å–è¿”å›çš„inputstream
      */
     private ByteArrayInputStream execute4InputStream(HttpClient client) throws Exception {
         setHttpsParas();
         try {
             int statusCode = client.getResponseCode();
             if (statusCode != HttpURLConnection.HTTP_OK) {
-                //Êı¾İ¼ÓÔØÌ«¶à£¬ÆÁ±Îµô
+                //æ•°æ®åŠ è½½å¤ªå¤šï¼Œå±è”½æ‰
                 //doWithTimeOutException();
                 throw new EnvException("Method failed: " + statusCode);
             }
@@ -215,9 +215,9 @@ public class RemoteEnv implements Env {
         try {
             Utils.copyBinaryTo(in, out);
 
-            // ¿´Ò»ÏÂ´«¹ıÀ´µÄbyte[]ÊÇ²»ÊÇDesignProcessor.INVALID,Èç¹ûÊÇµÄ»°,¾ÍÅ×Exception
+            // çœ‹ä¸€ä¸‹ä¼ è¿‡æ¥çš„byte[]æ˜¯ä¸æ˜¯DesignProcessor.INVALID,å¦‚æœæ˜¯çš„è¯,å°±æŠ›Exception
             byte[] bytes = out.toByteArray();
-            // carl£º¸ñÊ½Ò»ÖÂ´«ÖĞÎÄ
+            // carlï¼šæ ¼å¼ä¸€è‡´ä¼ ä¸­æ–‡
             String message = new String(bytes, EncodeConstants.ENCODING_UTF_8);
             if (ComparatorUtils.equals(message, RemoteDeziConstants.NO_SUCH_RESOURCE)) {
                 return null;
@@ -250,11 +250,11 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * nameValuePairs,Õâ¸ö²ÎÊıÒª½Ó×Åthis.path,Æ´³ÉÒ»¸öURL,·ñÔò·şÎñÆ÷¶Ëreq.getParameterÊÇÎŞ·¨µÃµ½µÄ
+     * nameValuePairs,è¿™ä¸ªå‚æ•°è¦æ¥ç€this.path,æ‹¼æˆä¸€ä¸ªURL,å¦åˆ™æœåŠ¡å™¨ç«¯req.getParameteræ˜¯æ— æ³•å¾—åˆ°çš„
      *
-     * @param bytes Êı¾İ
-     * @return ÊÇ·ñ³É¹¦Ìá½»
-     * @throws Exception Òì³£
+     * @param bytes æ•°æ®
+     * @return æ˜¯å¦æˆåŠŸæäº¤
+     * @throws Exception å¼‚å¸¸
      */
     private boolean postBytes2Server(byte[] bytes, HashMap<String, String> para) throws Exception {
         HttpClient client = createHttpMethod2(para);
@@ -265,10 +265,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * °ÑInputStream×ª³ÉÒ»¶ÎString
+     * æŠŠInputStreamè½¬æˆä¸€æ®µString
      *
-     * @param in InputStreamÊäÈëÁ÷
-     * @return ×ª»»ºóµÄ×Ö·û´®
+     * @param in InputStreamè¾“å…¥æµ
+     * @return è½¬æ¢åçš„å­—ç¬¦ä¸²
      */
     public static String stream2String(InputStream in) {
         if (in == null) {
@@ -298,31 +298,31 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ²âÊÔÁ¬½Ó·şÎñÆ÷
+     * æµ‹è¯•è¿æ¥æœåŠ¡å™¨
      *
-     * @return ²âÊÔÁ¬½Ó³É¹¦·µ»Øtrue
-     * @throws Exception Òì³£
+     * @return æµ‹è¯•è¿æ¥æˆåŠŸè¿”å›true
+     * @throws Exception å¼‚å¸¸
      */
     public boolean testServerConnection() throws Exception {
         return testConnection(true, true, DesignerContext.getDesignerFrame());
     }
 
     /**
-     * ²âÊÔµ±Ç°ÅäÖÃÊÇ·ñÕıÈ·
+     * æµ‹è¯•å½“å‰é…ç½®æ˜¯å¦æ­£ç¡®
      *
-     * @return Á´½ÓÊÇ·ñ³É¹¦
-     * @throws Exception Òì³£
+     * @return é“¾æ¥æ˜¯å¦æˆåŠŸ
+     * @throws Exception å¼‚å¸¸
      */
     public boolean testServerConnectionWithOutShowMessagePane() throws Exception {
         return testConnection(false, true, DesignerContext.getDesignerFrame());
     }
 
     /**
-     * Ö÷ÒªÓÃÓÚÔÚ»·¾³ÅäÖÃÃæ°åÖĞµÄ²âÊÔÁ¬½Ó°´Å¥Ê±£¬²»Òª×¢²á½øÔ¶³Ì»·¾³
+     * ä¸»è¦ç”¨äºåœ¨ç¯å¢ƒé…ç½®é¢æ¿ä¸­çš„æµ‹è¯•è¿æ¥æŒ‰é’®æ—¶ï¼Œä¸è¦æ³¨å†Œè¿›è¿œç¨‹ç¯å¢ƒ
      *
-     * @param messageParentPane µ¯¿òµÄÒÀÀµµÄÃæ°å
-     * @return ÊÇ·ñ²âÊÔÁ¬½Ó³É¹¦
-     * @throws Exception Òì³£
+     * @param messageParentPane å¼¹æ¡†çš„ä¾èµ–çš„é¢æ¿
+     * @return æ˜¯å¦æµ‹è¯•è¿æ¥æˆåŠŸ
+     * @throws Exception å¼‚å¸¸
      */
     public boolean testConnectionWithOutRegisteServer(Component messageParentPane) throws Exception {
         return testConnection(true, false, messageParentPane);
@@ -350,7 +350,7 @@ public class RemoteEnv implements Env {
             return false;
         } else if (ComparatorUtils.equals(res, "true")) {
             if (!clock.connected && isRegisteServer) {
-                //·şÎñÆ÷ÖĞ¶ÏÓÖÖØĞÂÆô¶¯Ö®ºó£¬ÖØĞÂÏòÔ¶³Ì·şÎñÆ÷×¢²á
+                //æœåŠ¡å™¨ä¸­æ–­åˆé‡æ–°å¯åŠ¨ä¹‹åï¼Œé‡æ–°å‘è¿œç¨‹æœåŠ¡å™¨æ³¨å†Œ
                 register2Server();
             }
             return true;
@@ -395,7 +395,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ĞÄÌø·ÃÎÊ£¬ÓÃÀ´¸üĞÂµ±Ç°ÓÃ»§µÄ·ÃÎÊÊ±¼ä
+     * å¿ƒè·³è®¿é—®ï¼Œç”¨æ¥æ›´æ–°å½“å‰ç”¨æˆ·çš„è®¿é—®æ—¶é—´
      *
      * @throws Exception
      */
@@ -409,10 +409,10 @@ public class RemoteEnv implements Env {
         HttpClient client = createHttpMethod(para, true);
         execute4InputStream(client);
 
-        //Õâ×ö·¨²»ºÃ, 30ÃëË¢Ò»´Î, Ë¢ĞÂµÄÊ±ºò»áÖØĞÂ¹¹½¨Ê÷, ¹¹½¨Íê»á°Ñ×Ó½Úµã¶¼ÊÕËõÆğÀ´, Ğ§¹ûÌ«²î.
-        //ÎªÊ²Ã´²»±£´æË¢ĞÂÇ°Ê÷µÄÉìËõ×´Ì¬, ÒòÎªË¢ĞÂºóµÄÊ÷ºÍË¢ĞÂÇ°µÄÊ÷µÄ½á¹¹Î´±ØÊÇÒ»ÖÂµÄ.
+        //è¿™åšæ³•ä¸å¥½, 30ç§’åˆ·ä¸€æ¬¡, åˆ·æ–°çš„æ—¶å€™ä¼šé‡æ–°æ„å»ºæ ‘, æ„å»ºå®Œä¼šæŠŠå­èŠ‚ç‚¹éƒ½æ”¶ç¼©èµ·æ¥, æ•ˆæœå¤ªå·®.
+        //ä¸ºä»€ä¹ˆä¸ä¿å­˜åˆ·æ–°å‰æ ‘çš„ä¼¸ç¼©çŠ¶æ€, å› ä¸ºåˆ·æ–°åçš„æ ‘å’Œåˆ·æ–°å‰çš„æ ‘çš„ç»“æ„æœªå¿…æ˜¯ä¸€è‡´çš„.
 
-        //·şÎñÆ÷Í¨Öª¿Í»§¶Ë¸üĞÂ×óÉÏ½ÇÎÄ¼şÊ÷Ãæ°å
+        //æœåŠ¡å™¨é€šçŸ¥å®¢æˆ·ç«¯æ›´æ–°å·¦ä¸Šè§’æ–‡ä»¶æ ‘é¢æ¿
 //        try {
 //            if (ComparatorUtils.equals(stream2String(execute4InputStream(method)), "true")) {
 //                DesignerFrameFileDealerPane.getInstance().refresh();
@@ -423,16 +423,16 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ·µ»ØÃèÊö¸ÃÔËĞĞ»·¾³µÄÃû×Ö
+     * è¿”å›æè¿°è¯¥è¿è¡Œç¯å¢ƒçš„åå­—
      *
-     * @return ÃèÊö»·¾³Ãû×ÖµÄ×Ö·û´®
+     * @return æè¿°ç¯å¢ƒåå­—çš„å­—ç¬¦ä¸²
      */
     public String getEnvDescription() {
         return Inter.getLocText("Env-Remote_Server");
     }
 
     /**
-     * µÇÂ¼,·µ»ØuserID
+     * ç™»å½•,è¿”å›userID
      */
     public void signIn() throws Exception {
         if (clock != null && clock.connected) {
@@ -452,14 +452,14 @@ public class RemoteEnv implements Env {
 
         simulaRPC(para, true);
 
-        //neil:µ÷ÓÃClock·½·¨£¬10ÃëÏò·şÎñÆ÷·¢ËÍÒ»¸ö×Ö½Ú£¬È·±£Ã»µôÏß
+        //neil:è°ƒç”¨Clockæ–¹æ³•ï¼Œ10ç§’å‘æœåŠ¡å™¨å‘é€ä¸€ä¸ªå­—èŠ‚ï¼Œç¡®ä¿æ²¡æ‰çº¿
         if (clock == null) {
             Clock clock = new Clock(this);
             setClock(clock);
         }
         clock.start();
 
-        // Ô¶³ÌµÇÂ¼µÄĞÄÌø·ÃÎÊ, ·ÀÖ¹Éè¼ÆÆ÷Ç¿ÖÆ¹Ø±Õ¶øÃ»ÓĞLogout
+        // è¿œç¨‹ç™»å½•çš„å¿ƒè·³è®¿é—®, é˜²æ­¢è®¾è®¡å™¨å¼ºåˆ¶å…³é—­è€Œæ²¡æœ‰Logout
         if (timer != null) {
             timer.cancel();
         }
@@ -501,9 +501,9 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¸ù¾İuserID sign out
+     * æ ¹æ®userID sign out
      *
-     * @return ³É¹¦Ç©³ö·µ»Øtrue
+     * @return æˆåŠŸç­¾å‡ºè¿”å›true
      * @throws Exception
      */
     public boolean signOut() throws Exception {
@@ -511,9 +511,9 @@ public class RemoteEnv implements Env {
             return true;
         }
         stopLogTimer();
-        // richer:µÇ³öµÄÊ±ºò¾Í°Ñ¶¨Ê±·¢ËÍµÄÊ±ÖÓÍ£µô
+        // richer:ç™»å‡ºçš„æ—¶å€™å°±æŠŠå®šæ—¶å‘é€çš„æ—¶é’Ÿåœæ‰
         clock.stop();
-        // richer:°ÑÂÖÑµÊ¹ÓÃµÄ¶¨Ê±Æ÷Ò²È¥µô
+        // richer:æŠŠè½®è®­ä½¿ç”¨çš„å®šæ—¶å™¨ä¹Ÿå»æ‰
         timer.cancel();
 
         HashMap<String, String> para = new HashMap<String, String>();
@@ -528,7 +528,7 @@ public class RemoteEnv implements Env {
     protected boolean simulaRPC(HashMap<String, String> para, boolean isSignIn) throws Exception {
         HttpClient client = createHttpMethod(para, isSignIn);
 
-        // execute methodÈ¡µ½input streamÔÙ×ª³ÉString
+        // execute methodå–åˆ°input streamå†è½¬æˆString
         String resJSON = null;
         try {
             resJSON = stream2String(execute4InputStream(client));
@@ -567,7 +567,7 @@ public class RemoteEnv implements Env {
                 throw new EnvException(exception);
             }
         } catch (JSONException je) {
-            // ·µ»ØµÄresJSON²»ÊÇJSON¸ñÊ½µÄ,ÄÇ¾ÍÖ±½Ó·µ»ØresJSON×÷ÎªuserID
+            // è¿”å›çš„resJSONä¸æ˜¯JSONæ ¼å¼çš„,é‚£å°±ç›´æ¥è¿”å›resJSONä½œä¸ºuserID
             return true;
         }
 
@@ -589,19 +589,19 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * È¡Â·¾¶filePathÏÂÃæÎÄ¼şµÄlock
+     * å–è·¯å¾„filePathä¸‹é¢æ–‡ä»¶çš„lock
      * <p/>
-     * ´¦ÓÚÍ¬Ò»¸öÔ­×Ó²Ù×÷,ÒªÃ´ÄÃµ½ËùÓĞµÄËø,ÒªÃ´Ò»¸öËøÒ²Ã»ÓĞÄÃµ½
+     * å¤„äºåŒä¸€ä¸ªåŸå­æ“ä½œ,è¦ä¹ˆæ‹¿åˆ°æ‰€æœ‰çš„é”,è¦ä¹ˆä¸€ä¸ªé”ä¹Ÿæ²¡æœ‰æ‹¿åˆ°
      */
     public boolean getLock(String[] filePathes) throws Exception {
         return doLockOperation(filePathes, "design_get_lock");
     }
 
     /**
-     * ½âËøÎÄ¼ş
+     * è§£é”æ–‡ä»¶
      *
-     * @param filePathes ÎÄ¼şÂ·¾¶
-     * @return ³É¹¦½âËø·µ»Øtrue
+     * @param filePathes æ–‡ä»¶è·¯å¾„
+     * @return æˆåŠŸè§£é”è¿”å›true
      * @throws Exception
      */
     public boolean releaseLock(String[] filePathes) throws Exception {
@@ -609,10 +609,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * µ±Ç°EnvÏÂ,tplPathÄ¿Â¼ÏÂÊÇ·ñ´æÔÚÄ£°å
+     * å½“å‰Envä¸‹,tplPathç›®å½•ä¸‹æ˜¯å¦å­˜åœ¨æ¨¡æ¿
      *
-     * @param reportPath Â·¾¶
-     * @return ÊÇ·ñ´æÔÚ
+     * @param reportPath è·¯å¾„
+     * @return æ˜¯å¦å­˜åœ¨
      */
     @Override
     public boolean isTemplateExist(String reportPath) throws Exception {
@@ -632,9 +632,9 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ½âËøµ±Ç°Ä£°å£¬ÓÃÓÚÔ¶³ÌÉè¼Æ¡£µ±Ô¶³ÌÉè¼ÆÄ³ÕÅÄ£°å Ê±£¬ÔÚ½âËøÖ®Ç°¸ÄÄ£°å´¦ÓÚËø¶¨×´Ì¬
+     * è§£é”å½“å‰æ¨¡æ¿ï¼Œç”¨äºè¿œç¨‹è®¾è®¡ã€‚å½“è¿œç¨‹è®¾è®¡æŸå¼ æ¨¡æ¿ æ—¶ï¼Œåœ¨è§£é”ä¹‹å‰æ”¹æ¨¡æ¿å¤„äºé”å®šçŠ¶æ€
      *
-     * @param tplPath Â·¾¶
+     * @param tplPath è·¯å¾„
      * @throws Exception
      */
     @Override
@@ -672,9 +672,9 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * post ro Server Ìá½»µ½·şÎñÆ÷
+         * post ro Server æäº¤åˆ°æœåŠ¡å™¨
          *
-         * @return ÊÇ·ñÌá½»³É¹¦
+         * @return æ˜¯å¦æäº¤æˆåŠŸ
          */
         public boolean post2Server() {
             try {
@@ -686,7 +686,7 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * Ë¢ĞÂÊı³öÁ÷£¬²¢Ìá½»
+         * åˆ·æ–°æ•°å‡ºæµï¼Œå¹¶æäº¤
          *
          * @throws IOException
          */
@@ -696,9 +696,9 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * ½«Ö¸¶¨×Ö½ÚĞ´ÈëÊäÈëÁ÷Êı×é
+         * å°†æŒ‡å®šå­—èŠ‚å†™å…¥è¾“å…¥æµæ•°ç»„
          *
-         * @param b Ğ´ÈëµÄ×Ö½Ú
+         * @param b å†™å…¥çš„å­—èŠ‚
          * @throws IOException
          */
         @Override
@@ -709,18 +709,18 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ²âÊÔÊı¾İÁ¬½ÓÊÇ·ñÄÜ¹»ÕıÈ·µÄÁ¬½ÓÉÏ
+     * æµ‹è¯•æ•°æ®è¿æ¥æ˜¯å¦èƒ½å¤Ÿæ­£ç¡®çš„è¿æ¥ä¸Š
      *
-     * @param database Êı¾İÁ¬½Ó
-     * @return Èç¹ûÄÜÕıÈ·µÄÁ¬½Óµ½Êı¾İ¿âÔò·µ»Øtrue
-     * @throws Exception ÎŞ·¨ÕıÈ·Á¬½Óµ½Êı¾İ¿âÔòÅ×³ö´ËÒì³£
-     *                   TODO alex_ENV ¸öÈËÒÔÎª,ÕâÀïÓ¦¸ÃÊÇ²âÊÔËùÓĞConnectionµÄÁ¬½Ó,ËùÒÔConnectionÓëTableData½Ó¿ÚµÄ¹ØÁªĞèÒªË¼¿¼
+     * @param database æ•°æ®è¿æ¥
+     * @return å¦‚æœèƒ½æ­£ç¡®çš„è¿æ¥åˆ°æ•°æ®åº“åˆ™è¿”å›true
+     * @throws Exception æ— æ³•æ­£ç¡®è¿æ¥åˆ°æ•°æ®åº“åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
+     *                   TODO alex_ENV ä¸ªäººä»¥ä¸º,è¿™é‡Œåº”è¯¥æ˜¯æµ‹è¯•æ‰€æœ‰Connectionçš„è¿æ¥,æ‰€ä»¥Connectionä¸TableDataæ¥å£çš„å…³è”éœ€è¦æ€è€ƒ
      */
     @Override
     public boolean testConnection(com.fr.data.impl.Connection database) throws Exception {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑdatabaseĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠdatabaseå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFileDatabaseConnection(database, out);
 
         HashMap<String, String> para = new HashMap<String, String>();
@@ -737,7 +737,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ben:È¡schema
+     * ben:å–schema
      */
     @Override
     public String[] getTableSchema(com.fr.data.impl.Connection database) throws Exception {
@@ -755,7 +755,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * b:·Ö±ğÈ¡Table,View,Procedure,Êµ¼ÊÓ¦ÓÃÊ±¸üÓĞÒâÒå
+     * b:åˆ†åˆ«å–Table,View,Procedure,å®é™…åº”ç”¨æ—¶æ›´æœ‰æ„ä¹‰
      */
     @Override
     public TableProcedure[] getTableProcedure(com.fr.data.impl.Connection database, String type, String schema) throws Exception {
@@ -801,10 +801,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÔÚµ±Ç°Â·¾¶ÏÂĞÂ½¨ÎÄ¼ş¼Ğ
+     * åœ¨å½“å‰è·¯å¾„ä¸‹æ–°å»ºæ–‡ä»¶å¤¹
      *
-     * @param folderPath ÎÄ¼şÃû
-     * @return ³É¹¦´´½¨·µ»Øtrue
+     * @param folderPath æ–‡ä»¶å
+     * @return æˆåŠŸåˆ›å»ºè¿”å›true
      * @throws Exception
      */
     @Override
@@ -825,10 +825,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ĞÂ½¨Ò»¸öÎÄ¼ş
+     * æ–°å»ºä¸€ä¸ªæ–‡ä»¶
      *
-     * @param filePath £ºÄ¿±êÎÄ¼şÏà¶ÔÂ·¾¶
-     * @return ³É¹¦ĞÂ½¨·µ»Øtrue
+     * @param filePath ï¼šç›®æ ‡æ–‡ä»¶ç›¸å¯¹è·¯å¾„
+     * @return æˆåŠŸæ–°å»ºè¿”å›true
      * @throws Exception
      */
     @Override
@@ -849,10 +849,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+     * åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
      *
-     * @param filePath £ºÄ¿±êÎÄ¼şÏà¶ÔÂ·¾¶
-     * @return ÎÄ¼şÊÇ·ñ´æÔÚ
+     * @param filePath ï¼šç›®æ ‡æ–‡ä»¶ç›¸å¯¹è·¯å¾„
+     * @return æ–‡ä»¶æ˜¯å¦å­˜åœ¨
      * @throws Exception
      */
     @Override
@@ -877,10 +877,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÅĞ¶ÏÎÄ¼şÊÇ·ñËø×¡
+     * åˆ¤æ–­æ–‡ä»¶æ˜¯å¦é”ä½
      *
-     * @param filePath ÎÄ¼şÂ·¾¶
-     * @return ÎÄ¼ş±»Ëø×¡ÁË£¬·µ»Øtrue
+     * @param filePath æ–‡ä»¶è·¯å¾„
+     * @return æ–‡ä»¶è¢«é”ä½äº†ï¼Œè¿”å›true
      * @throws Exception
      */
     public boolean fileLocked(String filePath) throws Exception {
@@ -905,33 +905,33 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * ×¢²á»·¾³£¬ÓÃÓÚ¼ì²âÊÇ·ñÆô¶¯¶¨Ê±Æ÷£¬Ö÷ÒªÓÃÓÚ±¾µØ»·¾³À´¼à²âÔ¶³Ì
+     * æ³¨å†Œç¯å¢ƒï¼Œç”¨äºæ£€æµ‹æ˜¯å¦å¯åŠ¨å®šæ—¶å™¨ï¼Œä¸»è¦ç”¨äºæœ¬åœ°ç¯å¢ƒæ¥ç›‘æµ‹è¿œç¨‹
      *
-     * @param env ÓÃ»§»·¾³
+     * @param env ç”¨æˆ·ç¯å¢ƒ
      */
     public void registerUserEnv(UserBaseEnv env) {
     }
 
     /**
-     * ÓÃÓÚ¼ì²âÓÃ»§»·¾³
-     * £¬Æô¶¯¶¨Ê±Æ÷
+     * ç”¨äºæ£€æµ‹ç”¨æˆ·ç¯å¢ƒ
+     * ï¼Œå¯åŠ¨å®šæ—¶å™¨
      */
     public void startUserCheckTimer() {
     }
 
 
     /**
-     * Í£Ö¹¶¨Ê±Æ÷
+     * åœæ­¢å®šæ—¶å™¨
      */
     public void stopUserCheckTimer() {
     }
 
 
     /**
-     * É¾³ıÎÄ¼ş
+     * åˆ é™¤æ–‡ä»¶
      *
-     * @param filePath ÎÄ¼şµØÖ·
-     * @return É¾³ı³É¹¦·µ»Øtrue
+     * @param filePath æ–‡ä»¶åœ°å€
+     * @return åˆ é™¤æˆåŠŸè¿”å›true
      */
     public boolean deleteFile(String filePath) {
         if (filePath == null) {
@@ -958,11 +958,11 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * Ô¶³ÌÉè¼ÆÆ÷Éè¼ÆÊ±£¬¼ÙÈç¿ªÁËÈ¨ÏŞ¾Í²»¿ÉÔ¤ÀÀÁË¡£Õâ±ß·ÅÒ»¸öÈ«¾ÖµÄmapÀ´¿ªºóÃÅ
+     * è¿œç¨‹è®¾è®¡å™¨è®¾è®¡æ—¶ï¼Œå‡å¦‚å¼€äº†æƒé™å°±ä¸å¯é¢„è§ˆäº†ã€‚è¿™è¾¹æ”¾ä¸€ä¸ªå…¨å±€çš„mapæ¥å¼€åé—¨
      *
-     * @param key   ¼üÖµ
-     * @param value Öµ
-     * @return Èç¹ûĞ´Èë³É¹¦£¬·µ»Øtrue
+     * @param key   é”®å€¼
+     * @param value å€¼
+     * @return å¦‚æœå†™å…¥æˆåŠŸï¼Œè¿”å›true
      * @throws Exception
      */
     public boolean writePrivilegeMap(String key, String value) throws Exception {
@@ -974,7 +974,7 @@ public class RemoteEnv implements Env {
         para.put("key", key);
         para.put("value", value);
 
-        HttpClient client = createHttpMethod(para); //jim £º¼ÓÉÏuser£¬Ô¶³ÌÉè¼Æµã»÷Ô¤ÀÀÊ±´«µİÓÃ»§½ÇÉ«ĞÅÏ¢
+        HttpClient client = createHttpMethod(para); //jim ï¼šåŠ ä¸Šuserï¼Œè¿œç¨‹è®¾è®¡ç‚¹å‡»é¢„è§ˆæ—¶ä¼ é€’ç”¨æˆ·è§’è‰²ä¿¡æ¯
         InputStream input = execute4InputStream(client);
 
         if (input == null) {
@@ -985,7 +985,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * DataSourceÖĞÈ¥³ıµ±Ç°½ÇÉ«Ã»ÓĞÈ¨ÏŞ·ÃÎÊµÄÊı¾İÔ´
+     * DataSourceä¸­å»é™¤å½“å‰è§’è‰²æ²¡æœ‰æƒé™è®¿é—®çš„æ•°æ®æº
      */
     public void removeNoPrivilegeConnection() {
         DatasourceManagerProvider dm = DatasourceManager.getProviderInstance();
@@ -1021,10 +1021,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÁĞ³öWEB-INFÄ¿Â¼ÏÂÖ¸¶¨Â·¾¶µÄÎÄ¼ş¼ĞÓëÎÄ¼ş
+     * åˆ—å‡ºWEB-INFç›®å½•ä¸‹æŒ‡å®šè·¯å¾„çš„æ–‡ä»¶å¤¹ä¸æ–‡ä»¶
      *
-     * @param rootFilePath Ö¸¶¨Ä¿Â¼
-     * @return WEB-INFÄ¿Â¼ÏÂÖ¸¶¨Â·¾¶µÄÎÄ¼ş¼ĞÓëÎÄ¼ş
+     * @param rootFilePath æŒ‡å®šç›®å½•
+     * @return WEB-INFç›®å½•ä¸‹æŒ‡å®šè·¯å¾„çš„æ–‡ä»¶å¤¹ä¸æ–‡ä»¶
      * @throws Exception
      */
     @Override
@@ -1033,10 +1033,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÁĞ³öWEB-INFÉÏ²ãÄ¿Â¼ÏÂÖ¸¶¨Â·¾¶µÄÎÄ¼ş¼ĞÓëÎÄ¼ş
+     * åˆ—å‡ºWEB-INFä¸Šå±‚ç›®å½•ä¸‹æŒ‡å®šè·¯å¾„çš„æ–‡ä»¶å¤¹ä¸æ–‡ä»¶
      *
-     * @param rootFilePath Ö¸¶¨Ä¿Â¼
-     * @return WEB-INFÉÏ²ãÄ¿Â¼ÏÂÖ¸¶¨Â·¾¶µÄÎÄ¼ş¼ĞÓëÎÄ¼ş
+     * @param rootFilePath æŒ‡å®šç›®å½•
+     * @return WEB-INFä¸Šå±‚ç›®å½•ä¸‹æŒ‡å®šè·¯å¾„çš„æ–‡ä»¶å¤¹ä¸æ–‡ä»¶
      * @throws Exception
      */
     @Override
@@ -1062,7 +1062,7 @@ public class RemoteEnv implements Env {
             return new FileNode[0];
         }
 
-        // Ô¶³Ì»·¾³ÏÂ×ó²àÄ¿Â¼Ê÷Ôİ²»ĞèÒª´ò¿ªxlsx£¬xlsÎÄ¼ş
+        // è¿œç¨‹ç¯å¢ƒä¸‹å·¦ä¾§ç›®å½•æ ‘æš‚ä¸éœ€è¦æ‰“å¼€xlsxï¼Œxlsæ–‡ä»¶
         fileNodes = DavXMLUtils.readXMLFileNodes(input);
         ArrayList<FileNode> al = new ArrayList<FileNode>();
         for (int i = 0; i < fileNodes.length; i++) {
@@ -1079,10 +1079,10 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * ÁĞ³öÄ¿±êÄ¿Â¼ÏÂËùÓĞcptÎÄ¼ş»òÎÄ¼ş¼Ğ
+     * åˆ—å‡ºç›®æ ‡ç›®å½•ä¸‹æ‰€æœ‰cptæ–‡ä»¶æˆ–æ–‡ä»¶å¤¹
      *
-     * @param rootFilePath Ö¸¶¨Ä¿Â¼
-     * @return ÁĞ³öÄ¿±êÄ¿Â¼ÏÂËùÓĞcptÎÄ¼ş»òÎÄ¼ş¼Ğ
+     * @param rootFilePath æŒ‡å®šç›®å½•
+     * @return åˆ—å‡ºç›®æ ‡ç›®å½•ä¸‹æ‰€æœ‰cptæ–‡ä»¶æˆ–æ–‡ä»¶å¤¹
      * @throws Exception
      */
     public FileNode[] listCpt(String rootFilePath) throws Exception {
@@ -1090,11 +1090,11 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÁĞ³öÄ¿±êÄ¿Â¼ÏÂËùÓĞcptÎÄ¼ş»òÎÄ¼ş¼Ğ
+     * åˆ—å‡ºç›®æ ‡ç›®å½•ä¸‹æ‰€æœ‰cptæ–‡ä»¶æˆ–æ–‡ä»¶å¤¹
      *
-     * @param rootFilePath Ö¸¶¨Ä¿Â¼
-     * @param recurse      ÊÇ·ñµİ¹é²éÕÒÆä×ÓÄ¿Â¼
-     * @return ÁĞ³öÄ¿±êÄ¿Â¼ÏÂËùÓĞcptÎÄ¼ş»òÎÄ¼ş¼Ğ
+     * @param rootFilePath æŒ‡å®šç›®å½•
+     * @param recurse      æ˜¯å¦é€’å½’æŸ¥æ‰¾å…¶å­ç›®å½•
+     * @return åˆ—å‡ºç›®æ ‡ç›®å½•ä¸‹æ‰€æœ‰cptæ–‡ä»¶æˆ–æ–‡ä»¶å¤¹
      * @throws Exception
      */
     public FileNode[] listCpt(String rootFilePath, boolean recurse) {
@@ -1123,16 +1123,16 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * »ñÈ¡Ö¸¶¨Êı¾İ¼¯µÄ²ÎÊı
+     * è·å–æŒ‡å®šæ•°æ®é›†çš„å‚æ•°
      *
-     * @param tableData Êı¾İ¼¯
-     * @return Êı¾İ¼¯µÄ²ÎÊı
-     * @throws Exception »ñÈ¡²ÎÊıÊ§°ÜÔòÅ×³ö´ËÒì³£
+     * @param tableData æ•°æ®é›†
+     * @return æ•°æ®é›†çš„å‚æ•°
+     * @throws Exception è·å–å‚æ•°å¤±è´¥åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public Parameter[] getTableDataParameters(TableData tableData) throws Exception {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-//        °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+//        æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFileTableData(tableData, out);
 
         HashMap<String, String> para = new HashMap<String, String>();
@@ -1148,16 +1148,16 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * »ñÈ¡´æ´¢¹ı³ÌÖĞµÄ²ÎÊı
+     * è·å–å­˜å‚¨è¿‡ç¨‹ä¸­çš„å‚æ•°
      *
-     * @param storeProcedure ´æ´¢¹ı³Ì
-     * @return ·µ»Ø´æ´¢¹ı³ÌÖĞµÄËùÓĞ²ÎÊı×é³ÉµÄÊı×é
-     * @throws Exception Èç¹û»ñÈ¡²ÎÊıÊ§°ÜÔòÅ×³ö´ËÒì³£
+     * @param storeProcedure å­˜å‚¨è¿‡ç¨‹
+     * @return è¿”å›å­˜å‚¨è¿‡ç¨‹ä¸­çš„æ‰€æœ‰å‚æ•°ç»„æˆçš„æ•°ç»„
+     * @throws Exception å¦‚æœè·å–å‚æ•°å¤±è´¥åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public Parameter[] getStoreProcedureParameters(StoreProcedure storeProcedure) throws Exception {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFileStoreProcedureAndSource(storeProcedure, out);
         HashMap<String, String> para = new HashMap<String, String>();
         para.put("op", "fr_remote_design");
@@ -1171,21 +1171,21 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¸ù¾İÖ¸¶¨µÄ²ÎÊıÉú³ÉÒ»¸öÊµ¼Ê¿ÉÔ¤ÀÀµÄÊı¾İ¼¯
+     * æ ¹æ®æŒ‡å®šçš„å‚æ•°ç”Ÿæˆä¸€ä¸ªå®é™…å¯é¢„è§ˆçš„æ•°æ®é›†
      *
-     * @param tableData    ´ø²ÎÊıµÄÊı¾İ¼¯
-     * @param parameterMap ²ÎÊı¼üÖµ¶Ô
-     * @param rowCount     ĞèÒª»ñÈ¡µÄĞĞÊı
-     * @return Êµ¼ÊµÄ¶şÎ¬Êı¾İ¼¯
-     * @throws Exception Èç¹ûÉú³ÉÊı¾İÊ§°ÜÔòÅ×³ö´ËÒì³£
+     * @param tableData    å¸¦å‚æ•°çš„æ•°æ®é›†
+     * @param parameterMap å‚æ•°é”®å€¼å¯¹
+     * @param rowCount     éœ€è¦è·å–çš„è¡Œæ•°
+     * @return å®é™…çš„äºŒç»´æ•°æ®é›†
+     * @throws Exception å¦‚æœç”Ÿæˆæ•°æ®å¤±è´¥åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public EmbeddedTableData previewTableData(Object tableData, java.util.Map parameterMap, int rowCount) throws Exception {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFileTableDataAndSource((TableData) tableData, out);
 
-        // °ÑparameterMap×ª³ÉJSON¸ñÊ½µÄ×Ö·û´®
+        // æŠŠparameterMapè½¬æˆJSONæ ¼å¼çš„å­—ç¬¦ä¸²
         JSONObject jo = new JSONObject(parameterMap);
         String jsonParameter = jo.toString();
         HashMap<String, String> para = new HashMap<String, String>();
@@ -1203,28 +1203,28 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¸ù¾İÖ¸¶¨µÄ²ÎÊıÉú³ÉÒ»¸öÊµ¼Ê¿ÉÔ¤ÀÀµÄÊı¾İ¼¯
+     * æ ¹æ®æŒ‡å®šçš„å‚æ•°ç”Ÿæˆä¸€ä¸ªå®é™…å¯é¢„è§ˆçš„æ•°æ®é›†
      *
-     * @param tableData    ´ø²ÎÊıµÄÊı¾İ¼¯
-     * @param parameterMap ²ÎÊı¼üÖµ¶Ô
-     * @param start        ¿ªÊ¼
-     * @param end          ½áÎ²
-     * @param cols         ÁĞÃû
-     * @param colIdx       ÁĞĞòºÅ
-     * @return Êµ¼ÊµÄ¶şÎ»Êı¾İÌõ
-     * @throws Exception Òì³£
+     * @param tableData    å¸¦å‚æ•°çš„æ•°æ®é›†
+     * @param parameterMap å‚æ•°é”®å€¼å¯¹
+     * @param start        å¼€å§‹
+     * @param end          ç»“å°¾
+     * @param cols         åˆ—å
+     * @param colIdx       åˆ—åºå·
+     * @return å®é™…çš„äºŒä½æ•°æ®æ¡
+     * @throws Exception å¼‚å¸¸
      */
     public Object previewTableData(Object tableData, java.util.Map parameterMap, int start, int end, String[] cols, int[] colIdx) throws Exception {
         return previewTableData(tableData, parameterMap, -1);
     }
 
     /**
-     * nameValuePairs,Õâ¸ö²ÎÊıÒª½Ó×Åthis.path,Æ´³ÉÒ»¸öURL,·ñÔò·şÎñÆ÷¶Ëreq.getParameterÊÇÎŞ·¨µÃµ½µÄ
+     * nameValuePairs,è¿™ä¸ªå‚æ•°è¦æ¥ç€this.path,æ‹¼æˆä¸€ä¸ªURL,å¦åˆ™æœåŠ¡å™¨ç«¯req.getParameteræ˜¯æ— æ³•å¾—åˆ°çš„
      *
-     * @param bytes Êı¾İ
-     * @param para  ²ÎÊı
-     * @return ´Ó·şÎñÆ÷¶ËµÃµ½InputStream
-     * @throws Exception Òì³£
+     * @param bytes æ•°æ®
+     * @param para  å‚æ•°
+     * @return ä»æœåŠ¡å™¨ç«¯å¾—åˆ°InputStream
+     * @throws Exception å¼‚å¸¸
      */
     public InputStream postBytes2ServerB(byte[] bytes, HashMap<String, String> para) throws Exception {
         HttpClient client = createHttpMethod2(para);
@@ -1278,7 +1278,7 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * ¿ªÊ¼Á¬½Ó
+         * å¼€å§‹è¿æ¥
          */
         public void start() {
             if (connected) {
@@ -1289,7 +1289,7 @@ public class RemoteEnv implements Env {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    // richie:Á¬ĞøÈı´Î³¢ÊÔÁ¬½Ó¶¼Ã»ÓĞÏìÓ¦²ÅÅĞ¶¨Îª¶ªÊ§Á¬½Ó
+                    // richie:è¿ç»­ä¸‰æ¬¡å°è¯•è¿æ¥éƒ½æ²¡æœ‰å“åº”æ‰åˆ¤å®šä¸ºä¸¢å¤±è¿æ¥
                     while (connected) {
                         try {
                             attemptConnect();
@@ -1302,17 +1302,17 @@ public class RemoteEnv implements Env {
                                 } catch (Exception exc) {
                                     stop();
                                     if (exc instanceof NoRouteToHostException) {
-                                        //ÍøÂçÎÊÌâµ¼ÖÂµÄÁ¬½ÓÖĞ¶Ï
+                                        //ç½‘ç»œé—®é¢˜å¯¼è‡´çš„è¿æ¥ä¸­æ–­
                                         if (JOptionPane.showConfirmDialog(null, Inter.getLocText("FR-Remote_Connect2Server_Again"), UIManager.getString("OptionPane.titleText"), JOptionPane.YES_NO_OPTION)
                                                 == JOptionPane.OK_OPTION) {
-                                            //µ÷ÓÃÖØĞÂÁ¬½Ó·şÎñÆ÷µÄ·½·¨
+                                            //è°ƒç”¨é‡æ–°è¿æ¥æœåŠ¡å™¨çš„æ–¹æ³•
                                             connectedAgain();
                                         }
                                     } else {
-                                        //·şÎñÆ÷¹Ø±ÕÒıÆğµÄÁ¬½ÓÖĞ¶Ï
+                                        //æœåŠ¡å™¨å…³é—­å¼•èµ·çš„è¿æ¥ä¸­æ–­
                                         if (JOptionPane.showConfirmDialog(null, Inter.getLocText("FR-Remote_Re_Connect_to_Server"), UIManager.getString("OptionPane.titleText"), JOptionPane.YES_NO_OPTION)
                                                 == JOptionPane.OK_OPTION) {
-                                            //µ÷ÓÃÖØĞÂÁ¬½Ó·şÎñÆ÷µÄ·½·¨
+                                            //è°ƒç”¨é‡æ–°è¿æ¥æœåŠ¡å™¨çš„æ–¹æ³•
                                             connectedAgain();
                                         }
                                     }
@@ -1325,7 +1325,7 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * ·şÎñÆ÷Á¬½ÓÖĞ¶ÏºóÖØĞÂÁ¬½Ó
+         * æœåŠ¡å™¨è¿æ¥ä¸­æ–­åé‡æ–°è¿æ¥
          */
         private void connectedAgain() {
             try {
@@ -1352,7 +1352,7 @@ public class RemoteEnv implements Env {
         }
 
         /**
-         * Í£Ö¹Á¬½Ó
+         * åœæ­¢è¿æ¥
          */
         public void stop() {
             connected = false;
@@ -1363,11 +1363,11 @@ public class RemoteEnv implements Env {
             Pattern pattern = Pattern.compile("[/:]+");
             String[] strs = pattern.split(remoteEnv.path);
 
-            String shost = strs[1];//host,Èç£º192.168.100.195
-            int sport = Integer.parseInt(strs[2]);//¶Ë¿Ú,Èç£º8080
+            String shost = strs[1];//host,å¦‚ï¼š192.168.100.195
+            int sport = Integer.parseInt(strs[2]);//ç«¯å£,å¦‚ï¼š8080
 
             Socket socket = new Socket(shost, sport);
-            //OOBBINLINE£ºÊÇ·ñÖ§³Ö·¢ËÍÒ»¸ö×Ö½ÚµÄTCP½ô¼±Êı¾İ,false±íÊ¾·şÎñÆ÷²»ÓÃ´¦ÀíÕâ¸öÊı¾İ
+            //OOBBINLINEï¼šæ˜¯å¦æ”¯æŒå‘é€ä¸€ä¸ªå­—èŠ‚çš„TCPç´§æ€¥æ•°æ®,falseè¡¨ç¤ºæœåŠ¡å™¨ä¸ç”¨å¤„ç†è¿™ä¸ªæ•°æ®
             socket.setOOBInline(false);
             socket.sendUrgentData(0xFF);
             socket.close();
@@ -1375,10 +1375,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¶Á±¨±íÔËĞĞ»·¾³ËùĞèµÄÅäÖÃÎÄ¼ş,Èçdatasource.xml, config.xml,ÕâĞ©ÎÄ¼ş¶¼±£´æÔÚWEB-INF/resourcesÄ¿Â¼ÏÂÃæ
+     * è¯»æŠ¥è¡¨è¿è¡Œç¯å¢ƒæ‰€éœ€çš„é…ç½®æ–‡ä»¶,å¦‚datasource.xml, config.xml,è¿™äº›æ–‡ä»¶éƒ½ä¿å­˜åœ¨WEB-INF/resourcesç›®å½•ä¸‹é¢
      *
-     * @param resourceName ÅäÖÃÎÄ¼şµÄÃû×Ö£¬Èçdatasource.xml
-     * @return ÊäÈëÁ÷
+     * @param resourceName é…ç½®æ–‡ä»¶çš„åå­—ï¼Œå¦‚datasource.xml
+     * @return è¾“å…¥æµ
      * @throws Exception
      */
     @Override
@@ -1388,15 +1388,15 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * ¶ÁÈ¡Â·¾¶ÏÂµÄsvgÎÄ¼ş
+     * è¯»å–è·¯å¾„ä¸‹çš„svgæ–‡ä»¶
      *
-     * @param path ÖÆ¶¨Â·¾¶,ÊÇ»ùÓÚ±¨±íÄ¿Â¼ÏÂresourceÎÄ¼ş¼ĞÂ·¾¶
-     * @return ¶Áµ½µÄÎÄ¼ş
+     * @param path åˆ¶å®šè·¯å¾„,æ˜¯åŸºäºæŠ¥è¡¨ç›®å½•ä¸‹resourceæ–‡ä»¶å¤¹è·¯å¾„
+     * @return è¯»åˆ°çš„æ–‡ä»¶
      */
     public File[] readPathSvgFiles(String path) {
         String cataloguePath = StableUtils.pathJoin(new String[]{CacheManager.getProviderInstance().getCacheDirectory().getPath(), SvgProvider.SERVER, path});
 
-        //¼ì²é»º´æÎÄ¼ş±£´æµÄÄ¿Â¼ÏÂserversvgsÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ £¬ÏÈÓÃÀ´Ôİ´æ·şÎñÆ÷¶Á¹ıÀ´µÄsvgÎÄ¼ş
+        //æ£€æŸ¥ç¼“å­˜æ–‡ä»¶ä¿å­˜çš„ç›®å½•ä¸‹serversvgsæ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨ ï¼Œå…ˆç”¨æ¥æš‚å­˜æœåŠ¡å™¨è¯»è¿‡æ¥çš„svgæ–‡ä»¶
         File catalogue = new File(cataloguePath);
         if (!catalogue.exists()) {
             catalogue.mkdirs();
@@ -1433,11 +1433,11 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * Ğ´svgÎÄ¼ş
+     * å†™svgæ–‡ä»¶
      *
-     * @param svgFile svgÎÄ¼ş
-     * @return ÊÇ·ñĞ´Èë³É¹¦
-     * @throws Exception Òì³£
+     * @param svgFile svgæ–‡ä»¶
+     * @return æ˜¯å¦å†™å…¥æˆåŠŸ
+     * @throws Exception å¼‚å¸¸
      */
     public boolean writeSvgFile(SvgProvider svgFile) throws Exception {
         HashMap<String, String> para = new HashMap<String, String>();
@@ -1447,7 +1447,7 @@ public class RemoteEnv implements Env {
         para.put("current_uid", this.createUserID());
         para.put("currentUsername", this.getUser());
 
-        // Í¨¹ıByteArrayOutputStream½«svgĞ´³É×Ö½ÚÁ÷
+        // é€šè¿‡ByteArrayOutputStreamå°†svgå†™æˆå­—èŠ‚æµ
         Bytes2ServerOutputStream out = new Bytes2ServerOutputStream(para);
         OutputStreamWriter outWriter = new OutputStreamWriter(out, "UTF-8");
         StreamResult result = new StreamResult(outWriter);
@@ -1483,11 +1483,11 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * Ğ´±¨±íÔËĞĞ»·¾³ËùĞèµÄÅäÖÃÎÄ¼ş
+     * å†™æŠ¥è¡¨è¿è¡Œç¯å¢ƒæ‰€éœ€çš„é…ç½®æ–‡ä»¶
      *
-     * @param mgr ¹ÜÀí¸÷¸ö×ÊÔ´ÎÄ¼şµÄ¹ÜÀíÆ÷
-     * @return Ğ´Èëxml³É¹¦·µ»Øtrue
-     * @throws Exception Ğ´Èëxml´íÎóÔòÅ×³ö´ËÒì³£
+     * @param mgr ç®¡ç†å„ä¸ªèµ„æºæ–‡ä»¶çš„ç®¡ç†å™¨
+     * @return å†™å…¥xmlæˆåŠŸè¿”å›true
+     * @throws Exception å†™å…¥xmlé”™è¯¯åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     @Override
     public boolean writeResource(XMLFileManagerProvider mgr) throws Exception {
@@ -1498,7 +1498,7 @@ public class RemoteEnv implements Env {
         para.put("current_uid", this.createUserID());
         para.put("currentUsername", this.getUser());
 
-        // alex:Í¨¹ıByteArrayOutputStream½«mgrĞ´³É×Ö½ÚÁ÷
+        // alex:é€šè¿‡ByteArrayOutputStreamå°†mgrå†™æˆå­—èŠ‚æµ
         Bytes2ServerOutputStream out = new Bytes2ServerOutputStream(para);
         XMLTools.writeOutputStreamXML(mgr, out);
 
@@ -1519,11 +1519,11 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ¶ÁÈ¡ÎÄ¼ş
+     * è¯»å–æ–‡ä»¶
      *
-     * @param beanPath ÎÄ¼şÃû
-     * @param prefix   µ±Ç°EnvÏÂµÃ¹¤³Ì·ÖÀà£¬Èçreportlets£¬libµÈ
-     * @return InputStream  ÊäÈëÁ÷
+     * @param beanPath æ–‡ä»¶å
+     * @param prefix   å½“å‰Envä¸‹å¾—å·¥ç¨‹åˆ†ç±»ï¼Œå¦‚reportletsï¼Œlibç­‰
+     * @return InputStream  è¾“å…¥æµ
      */
     public InputStream readBean(String beanPath, String prefix)
             throws Exception {
@@ -1535,16 +1535,16 @@ public class RemoteEnv implements Env {
 
         HttpClient client = createHttpMethod(para);
         //        return Utils.toZipIn(execute4InputStream(method));
-        //Utils.toZipInÕâ±ßÓĞbug£¬Ô¶³ÌÁ¬½ÓµÄÊ±ºòdatasource.xml²»ÄÜ¶ÁÈ¡£¬ÏÈ»¹Ô­ÁË
+        //Utils.toZipInè¿™è¾¹æœ‰bugï¼Œè¿œç¨‹è¿æ¥çš„æ—¶å€™datasource.xmlä¸èƒ½è¯»å–ï¼Œå…ˆè¿˜åŸäº†
         return execute4InputStream(client);
     }
 
     /**
-     * Ğ´ÎÄ¼ş
+     * å†™æ–‡ä»¶
      *
-     * @param beanPath ÎÄ¼şÃû
-     * @param prefix   µ±Ç°EnvÏÂµÃ¹¤³Ì·ÖÀà£¬Èçreportlets£¬libµÈ
-     * @return OutputStream  Êä³öÁ÷
+     * @param beanPath æ–‡ä»¶å
+     * @param prefix   å½“å‰Envä¸‹å¾—å·¥ç¨‹åˆ†ç±»ï¼Œå¦‚reportletsï¼Œlibç­‰
+     * @return OutputStream  è¾“å‡ºæµ
      */
     public OutputStream writeBean(String beanPath, String prefix)
             throws Exception {
@@ -1558,11 +1558,11 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ·µ»ØÊı¾İ¿â±íµÄÁĞÃû
+     * è¿”å›æ•°æ®åº“è¡¨çš„åˆ—å
      *
-     * @param selectedName ËùÑ¡ÔñÊı¾İ¿âÃû
-     * @param schema       Êı¾İ¿âÄ£Ê½£¬ÓÃÓÚ´æ´¢¹ı³Ì
-     * @param tableName    ËùÑ¡ÔñÊı¾İ¿âÃû
+     * @param selectedName æ‰€é€‰æ‹©æ•°æ®åº“å
+     * @param schema       æ•°æ®åº“æ¨¡å¼ï¼Œç”¨äºå­˜å‚¨è¿‡ç¨‹
+     * @param tableName    æ‰€é€‰æ‹©æ•°æ®åº“å
      */
     @Override
     public String[] getColumns(String selectedName, String schema, String tableName) throws Exception {
@@ -1588,7 +1588,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ·µ»ØÄ£°åÎÄ¼şÂ·¾¶
+     * è¿”å›æ¨¡æ¿æ–‡ä»¶è·¯å¾„
      */
     @Override
     public String getWebReportPath() {
@@ -1629,7 +1629,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * »ñÈ¡datasource.xmlÎÄ¼şµÄĞŞ¸Ä±í
+     * è·å–datasource.xmlæ–‡ä»¶çš„ä¿®æ”¹è¡¨
      */
     public ModifiedTable getDataSourceModifiedTables(String type) {
         try {
@@ -1652,17 +1652,17 @@ public class RemoteEnv implements Env {
 
 
     /**
-     * Ğ´ĞŞ¸Ä±í
+     * å†™ä¿®æ”¹è¡¨
      *
-     * @param modifiedTable ĞŞ¸Ä±í
-     * @param type          ²Ù×÷ÀàĞÍ£¬ÊÇÊı¾İÁ¬½Ó»¹ÊÇ·şÎñÆ÷Êı¾İ¼¯
-     * @return Ğ´Èë³É¹¦·µ»Øtrue
+     * @param modifiedTable ä¿®æ”¹è¡¨
+     * @param type          æ“ä½œç±»å‹ï¼Œæ˜¯æ•°æ®è¿æ¥è¿˜æ˜¯æœåŠ¡å™¨æ•°æ®é›†
+     * @return å†™å…¥æˆåŠŸè¿”å›true
      */
     public boolean writeDataSourceModifiedTables(ModifiedTable modifiedTable, String type) {
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLModifiedTables(modifiedTable, out);
         try {
             HashMap<String, String> para = new HashMap<String, String>();
@@ -1729,7 +1729,7 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * Êä³öÈÕÖ¾ĞÅÏ¢
+     * è¾“å‡ºæ—¥å¿—ä¿¡æ¯
      *
      * @throws Exception
      */
@@ -1758,21 +1758,21 @@ public class RemoteEnv implements Env {
     //TODO:
 
     /**
-     * Ô¤ÀÀ´æ´¢¹ı³Ì
+     * é¢„è§ˆå­˜å‚¨è¿‡ç¨‹
      *
-     * @param storeProcedure ´æ´¢¹ı³Ì
-     * @param parameterMap   ²ÎÊımap
-     * @param rowCount       ĞĞÊı
-     * @return ·µ»ØÈ¡µ½µÄ´æ´¢¹ı³Ì
+     * @param storeProcedure å­˜å‚¨è¿‡ç¨‹
+     * @param parameterMap   å‚æ•°map
+     * @param rowCount       è¡Œæ•°
+     * @return è¿”å›å–åˆ°çš„å­˜å‚¨è¿‡ç¨‹
      */
     @Override
     public ProcedureDataModel[] previewProcedureDataModel(StoreProcedure storeProcedure, Map parameterMap, int rowCount) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFileStoreProcedureAndSource(storeProcedure, out);
 
-        // °ÑparameterMap×ª³ÉJSON¸ñÊ½µÄ×Ö·û´®
+        // æŠŠparameterMapè½¬æˆJSONæ ¼å¼çš„å­—ç¬¦ä¸²
         JSONObject jo = new JSONObject(parameterMap);
         String jsonParameter = jo.toString();
 
@@ -1812,10 +1812,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÊÇ·ñÎªOracleÊı¾İÁ¬½Ó
+     * æ˜¯å¦ä¸ºOracleæ•°æ®è¿æ¥
      *
-     * @param database Êı¾İÁ¬½Ó
-     * @return ÊÇ·µ»Øtrue
+     * @param database æ•°æ®è¿æ¥
+     * @return æ˜¯è¿”å›true
      * @throws Exception
      */
     public boolean isOracle(Connection database) throws Exception {
@@ -1836,19 +1836,19 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÔÚÄ£°åÃæ°åÖĞÊÇ·ñÖ§³ÖÔö¼Ó´ò¿ªËùÔÚÎÄ¼ş¼Ğ¡¢ÖØÃüÃû¡¢É¾³ıÈı¸ö¹¤¾ßÀ¸Ñ¡Ïî
+     * åœ¨æ¨¡æ¿é¢æ¿ä¸­æ˜¯å¦æ”¯æŒå¢åŠ æ‰“å¼€æ‰€åœ¨æ–‡ä»¶å¤¹ã€é‡å‘½åã€åˆ é™¤ä¸‰ä¸ªå·¥å…·æ é€‰é¡¹
      *
-     * @return ²»Ö§³Ö·µ»Øfalse
+     * @return ä¸æ”¯æŒè¿”å›false
      */
     public boolean isSupportLocalFileOperate() {
         return false;
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÓĞÎÄ¼ş¼ĞÈ¨ÏŞ
+     * åˆ¤æ–­æ˜¯å¦æœ‰æ–‡ä»¶å¤¹æƒé™
      *
-     * @param path Â·¾¶
-     * @return ÓĞÈ¨ÏŞÔò·µ»Øtrue
+     * @param path è·¯å¾„
+     * @return æœ‰æƒé™åˆ™è¿”å›true
      */
     public boolean hasFileFolderAllow(String path) {
         HttpClient client = null;
@@ -1874,18 +1874,18 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ÊÇ·ñÊÇ¹ÜÀíÔ±Éí·İ
+     * æ˜¯å¦æ˜¯ç®¡ç†å‘˜èº«ä»½
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isRoot() {
         return isRoot;
     }
 
     /**
-     * ÊÇ·ñÎªÑ¹Ëõ°ü²¿Êğ
+     * æ˜¯å¦ä¸ºå‹ç¼©åŒ…éƒ¨ç½²
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     @Override
     public boolean isPackDeploy() {
@@ -1947,23 +1947,23 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * »ñÈ¡µ±Ç°envµÄbuildÎÄ¼şÂ·¾¶
+     * è·å–å½“å‰envçš„buildæ–‡ä»¶è·¯å¾„
      */
     public String getBuildFilePath() {
         return ResourceConstants.BUILD_PATH;
     }
 
     /**
-     * ÉèÖÃµ±Ç°envµÄbuildÎÄ¼şÂ·¾¶
+     * è®¾ç½®å½“å‰envçš„buildæ–‡ä»¶è·¯å¾„
      */
     public void setBuildFilePath(String buildFilePath) {
     }
 
     /**
-     * ±àÒëJavaÔ´´úÂë£¬·½±ã¶ş´Î¿ª·¢µÄ½øĞĞ
+     * ç¼–è¯‘Javaæºä»£ç ï¼Œæ–¹ä¾¿äºŒæ¬¡å¼€å‘çš„è¿›è¡Œ
      *
-     * @param sourceText Ô´´úÂë
-     * @return ±àÒëĞÅÏ¢£¬ÓĞ¿ÉÄÜÊÇ³É¹¦ĞÅÏ¢£¬Ò²ÓĞ¿ÉÄÜÊÇ³ö´í»òÕß¾¯¸æĞÅÏ¢
+     * @param sourceText æºä»£ç 
+     * @return ç¼–è¯‘ä¿¡æ¯ï¼Œæœ‰å¯èƒ½æ˜¯æˆåŠŸä¿¡æ¯ï¼Œä¹Ÿæœ‰å¯èƒ½æ˜¯å‡ºé”™æˆ–è€…è­¦å‘Šä¿¡æ¯
      */
     public JavaCompileInfo compilerSourceCode(String sourceText) throws Exception {
         HashMap<String, String> para = new HashMap<String, String>();
@@ -1983,39 +1983,39 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * ½«ÎÄ¼ş¿½±´µ½²å¼şÄ¿Â¼
+     * å°†æ–‡ä»¶æ‹·è´åˆ°æ’ä»¶ç›®å½•
      *
-     * @param dir    Òª¿½±´µÄÎÄ¼ş
-     * @param plugin ²å¼ş
+     * @param dir    è¦æ‹·è´çš„æ–‡ä»¶
+     * @param plugin æ’ä»¶
      */
     public void copyFilesToPluginAndLibFolder(File dir, Plugin plugin) throws Exception {
 
     }
 
     /**
-     * ½«ÎÄ¼şÌí¼Óµ½Ö¸¶¨Ä¿Â¼»òÕßÉ¾³ıÖ¸¶¨Ä¿Â¼µÄÎÄ¼ş
+     * å°†æ–‡ä»¶æ·»åŠ åˆ°æŒ‡å®šç›®å½•æˆ–è€…åˆ é™¤æŒ‡å®šç›®å½•çš„æ–‡ä»¶
      *
-     * @param file   ½âÑ¹²å¼şµÄÁÙÊ±Ä¿Â¼
-     * @param plugin µ±Ç°´¦ÀíµÄ²å¼ş
+     * @param file   è§£å‹æ’ä»¶çš„ä¸´æ—¶ç›®å½•
+     * @param plugin å½“å‰å¤„ç†çš„æ’ä»¶
      */
     public void movePluginEmbFile(File file, Plugin plugin) throws Exception {
 
     }
 
     /**
-     * ½«ÎÄ¼ş´Ó²å¼şÄ¿Â¼É¾³ı
+     * å°†æ–‡ä»¶ä»æ’ä»¶ç›®å½•åˆ é™¤
      *
-     * @param plugin ÒªÉ¾³ı²å¼ş
-     * @return Í¬ÉÏ
+     * @param plugin è¦åˆ é™¤æ’ä»¶
+     * @return åŒä¸Š
      */
     public String[] deleteFileFromPluginAndLibFolder(Plugin plugin) {
         return new String[0];
     }
 
     /**
-     * ±£´æ²å¼şµÄÅäÖÃÎÄ¼ş
+     * ä¿å­˜æ’ä»¶çš„é…ç½®æ–‡ä»¶
      *
-     * @param plugin ²å¼ş
+     * @param plugin æ’ä»¶
      */
     public void writePlugin(Plugin plugin) throws Exception {
 
@@ -2031,10 +2031,10 @@ public class RemoteEnv implements Env {
     }
 
     /**
-     * Ô¶³ÌÉè¼ÆÏÈ²»ĞèÒª¼ì²âMD5
+     * è¿œç¨‹è®¾è®¡å…ˆä¸éœ€è¦æ£€æµ‹MD5
      *
-     * @return ÊÇ·ñÕıÈ·
-     * @throws Exception MD5Ëã·¨Òì³£
+     * @return æ˜¯å¦æ­£ç¡®
+     * @throws Exception MD5ç®—æ³•å¼‚å¸¸
      */
     @Override
     public boolean isTruePluginMD5(Plugin plugin, File file) throws Exception {

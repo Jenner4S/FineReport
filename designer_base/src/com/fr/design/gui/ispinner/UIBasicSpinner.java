@@ -13,7 +13,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-27
- * Time: ÏÂÎç2:17
+ * Time: ä¸‹åˆ2:17
  */
 public class UIBasicSpinner extends JSpinner implements UIObserver {
 

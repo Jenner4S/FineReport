@@ -30,7 +30,7 @@ import java.util.List;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/3
- * Time: ÉÏÎç10:00
+ * Time: ä¸Šåˆ10:00
  */
 public class MapArrayPane extends JControlPane {
     private static final int LEFT_WIDTH = 180;
@@ -159,12 +159,12 @@ public class MapArrayPane extends JControlPane {
         }
     }
 
-    //±£´æĞŞ¸Ä¹ıµÄµØÍ¼ĞÅÏ¢
+    //ä¿å­˜ä¿®æ”¹è¿‡çš„åœ°å›¾ä¿¡æ¯
     private void saveMapInfo(final String mapName) {
         SwingWorker worker = new SwingWorker<Integer, Void>() {
             @Override
             protected Integer doInBackground() throws Exception {
-                MapSvgAttr attr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);// Ö»ÓĞÔÚ±à¼­µØÍ¼Ê±²ÅĞèÒª´¢´æÏà¹ØÊı¾İ @kuns
+                MapSvgAttr attr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);// åªæœ‰åœ¨ç¼–è¾‘åœ°å›¾æ—¶æ‰éœ€è¦å‚¨å­˜ç›¸å…³æ•°æ® @kuns
                 if (attr != null) {
                     attr.writeBack(mapName);
                 }
@@ -173,7 +173,7 @@ public class MapArrayPane extends JControlPane {
 
             @Override
             protected void done() {
-                FRLogger.getLogger().info(Inter.getLocText("FR-Chart-Map_Saved")); // µØÍ¼ÒÑ¾­±£´æ.
+                FRLogger.getLogger().info(Inter.getLocText("FR-Chart-Map_Saved")); // åœ°å›¾å·²ç»ä¿å­˜.
             }
 
         };
@@ -195,9 +195,9 @@ public class MapArrayPane extends JControlPane {
 
 
     /**
-     * ´´½¨²Ëµ¥
+     * åˆ›å»ºèœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public NameableCreator[] createNameableCreators() {
         return new NameableCreator[]{
@@ -207,7 +207,7 @@ public class MapArrayPane extends JControlPane {
                         attr.setFilePath(MapSvgXMLHelper.customMapPath() + CoreConstants.SEPARATOR + helper.createUnrepeatedName(Inter.getLocText("FR-Chart-Custom_Map")) + ".svg");
                         MapSvgXMLHelper.getInstance().addNewSvgMaps(attr.getName(), attr);
                         update4Edited(attr.getName());
-                        // ·µ»Ø²ÎÊıÉèÖÃÃæ°å.
+                        // è¿”å›å‚æ•°è®¾ç½®é¢æ¿.
                         return attr;
                     }
 
@@ -245,21 +245,21 @@ public class MapArrayPane extends JControlPane {
     }
 
     /**
-     * ¸üĞÂ
+     * æ›´æ–°
      */
     public void updateBeans() {
         super.update();
         this.update4AllType();
         this.updateAllEditedAttrMaps();
         MapSvgXMLHelper.getInstance().clearTempAttrMaps();
-        //versionIDµİÔö
+        //versionIDé€’å¢
         this.toolBar.fireTargetModified();
         this.saveMapInfo(selectedName);
     }
 
     /**
-     * ´´½¨list
-     * @return ·µ»Ølist
+     * åˆ›å»ºlist
+     * @return è¿”å›list
      */
     public JNameEdList createJNameList() {
         JNameEdList nameEdList = new JNameEdList(new DefaultListModel()) {
@@ -298,7 +298,7 @@ public class MapArrayPane extends JControlPane {
        }
     }
 
-    //¸ù¾İµØÍ¼µÄÃû×Ö·µ»ØµØÍ¼µÄÍ¼Æ¬
+    //æ ¹æ®åœ°å›¾çš„åå­—è¿”å›åœ°å›¾çš„å›¾ç‰‡
     private Image getMapImage(String mapName) {
         if (MapSvgXMLHelper.getInstance().containsMapName(mapName)) {
             MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
@@ -312,7 +312,7 @@ public class MapArrayPane extends JControlPane {
     }
 
         /*
-     * NameableµÄListCellRenerer
+     * Nameableçš„ListCellRenerer
      */
     private class NameableListCellRenderer extends
             DefaultListCellRenderer {

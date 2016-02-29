@@ -10,9 +10,9 @@ import java.beans.PropertyDescriptor;
 public abstract class AbstractFormElementCaseEditorProcessor implements FormElementCaseEditorProcessor {
 
     /**
-     * 生成属性表
-     * @param temp 传入当前操作的class
-     * @return 返回属性表
+     * 鐢熸垚灞炴�ц〃
+     * @param temp 浼犲叆褰撳墠鎿嶄綔鐨刢lass
+     * @return 杩斿洖灞炴�ц〃
      */
     public PropertyDescriptor[] createPropertyDescriptor(Class<?> temp){
         return new PropertyDescriptor[0];

@@ -21,7 +21,7 @@ import com.fr.general.Inter;
 import com.fr.design.style.background.BackgroundPane.BackgroundSettingPane;
 
 /**
- * ½¥±äÉ«µÄÃæ°å£¬²»ÊÇºÜpp£¬Ãæ°åÓ¦ÓÃÏÔµÃ·±Ëö£¬ÓĞĞ´¿ÉÒÔĞ´³É¿Ø¼şÀàĞÍ£¬±ÈÈçÉ«²ÊÑ¡ÔñµÄ¡£¡££¬¿ÉÒÔ×öµÃ»¨ÉÚµã
+ * æ¸å˜è‰²çš„é¢æ¿ï¼Œä¸æ˜¯å¾ˆppï¼Œé¢æ¿åº”ç”¨æ˜¾å¾—ç¹çï¼Œæœ‰å†™å¯ä»¥å†™æˆæ§ä»¶ç±»å‹ï¼Œæ¯”å¦‚è‰²å½©é€‰æ‹©çš„ã€‚ã€‚ï¼Œå¯ä»¥åšå¾—èŠ±å“¨ç‚¹
  * @author ben
  */
 public class GradientPane extends BackgroundSettingPane {
@@ -33,12 +33,12 @@ public class GradientPane extends BackgroundSettingPane {
 
 	public GradientPane() {
 
-		// bug 5452 ¼ò»¯GradientPane
+		// bug 5452 ç®€åŒ–GradientPane
 		JPanel jpanel = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText(new String[]{"Gradient-Color", "Set"}));
 		jpanel.setPreferredSize(new Dimension(450, 320));
 		jpanel.setLayout(new BorderLayout());
 
-		// neil:Ôö¼Ó½¥±äÉ«ÍÏ¶¯Ìõ
+		// neil:å¢åŠ æ¸å˜è‰²æ‹–åŠ¨æ¡
 		JPanel gradientPanel = FRGUIPaneFactory.createBorderLayout_S_Pane();
 		JPanel blankJp = new JPanel();
 		gradientBar = new GradientBar(4, 254);

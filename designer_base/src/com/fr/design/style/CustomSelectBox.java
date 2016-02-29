@@ -16,8 +16,8 @@ import com.fr.design.style.color.ColorSelectPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-24 ÏÂÎç03:02:37
- * ÀàËµÃ÷: ×Ô¶¨ÒåĞÎ×´µÄ µ¯³öbox
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-24 ä¸‹åˆ03:02:37
+ * ç±»è¯´æ˜: è‡ªå®šä¹‰å½¢çŠ¶çš„ å¼¹å‡ºbox
  */
 public class CustomSelectBox extends AbstractPopBox {
 

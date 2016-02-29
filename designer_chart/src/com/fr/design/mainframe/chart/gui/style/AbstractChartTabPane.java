@@ -3,9 +3,9 @@ package com.fr.design.mainframe.chart.gui.style;
 import com.fr.design.dialog.BasicScrollPane;
 
 /**
- * ³éÏóµÄ, Í¼±íÇĞ»»½çÃæ.
+ * æŠ½è±¡çš„, å›¾è¡¨åˆ‡æ¢ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÏÂÎç03:55:42
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸‹åˆ03:55:42
  */
 public abstract class AbstractChartTabPane<T> extends BasicScrollPane<T> {
 
@@ -14,7 +14,7 @@ public abstract class AbstractChartTabPane<T> extends BasicScrollPane<T> {
 		super();
 	}
 	
-	//ÉÏ²ãpaneÒÑ¾­ÓĞÁËscroll£¬ĞèÒª°ÑÊÂ¼şÆÁ±Îµô
+	//ä¸Šå±‚paneå·²ç»æœ‰äº†scrollï¼Œéœ€è¦æŠŠäº‹ä»¶å±è”½æ‰
 	public AbstractChartTabPane(boolean noScroll){
 		super(noScroll);
 	}

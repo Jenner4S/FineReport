@@ -31,8 +31,8 @@ public class FRBorderLayoutAdapter extends AbstractLayoutAdapter {
 	}
 
     /**
-     * ÓĞµÄ¿Ø¼şÔÚÍÏ×§µ÷Õû´óĞ¡ºóĞèÒª¸ù¾İ×ÔÉíÄÚÈİÖØĞÂ¼ÆËãÏÂµ±Ç°µÄ³ß´çÊÇ·ñºÏÊÊ£¬Èç¹û²»ºÏÊÊ£¬¾ÍĞèÒªÖØĞÂfixÒ»ÏÂ
-     * @param creator ×é¼ş
+     * æœ‰çš„æ§ä»¶åœ¨æ‹–æ‹½è°ƒæ•´å¤§å°åéœ€è¦æ ¹æ®è‡ªèº«å†…å®¹é‡æ–°è®¡ç®—ä¸‹å½“å‰çš„å°ºå¯¸æ˜¯å¦åˆé€‚ï¼Œå¦‚æœä¸åˆé€‚ï¼Œå°±éœ€è¦é‡æ–°fixä¸€ä¸‹
+     * @param creator ç»„ä»¶
      */
     public void fix(XCreator creator) {
         FRBorderLayout layout = (FRBorderLayout)container.getFRLayout();
@@ -52,10 +52,10 @@ public class FRBorderLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-     * Ôö¼Ó×é¼ş
-     * @param child    ×é¼ş
-     * @param x    ºá×ø±ê
-     * @param y    ×İ×ø±ê
+     * å¢åŠ ç»„ä»¶
+     * @param child    ç»„ä»¶
+     * @param x    æ¨ªåæ ‡
+     * @param y    çºµåæ ‡
      */
     public void addComp(XCreator child, int x, int y) {
         String placement = getPlacement(child, x, y);     
@@ -64,14 +64,14 @@ public class FRBorderLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-     * ÔÚÌí¼Ó×é¼ş×´Ì¬Ê±£¬µ±Êó±êÒÆ¶¯µ½Ä³¸öÈİÆ÷ÉÏ·½Ê±£¬Èç¹û¸ÃÈİÆ÷ÓĞ²¼¾Ö¹ÜÀíÆ÷£¬Ôò»áµ÷ÓÃ¸Ã²¼¾Ö
-     * ¹ÜÀíÊÊÅäÆ÷µÄacceptÀ´¾ö¶¨µ±Ç°Î»ÖÃÊÇ·ñ¿ÉÒÔ·ÅÖÃ£¬²¢Ìá¹©ÌØÊâµÄ±êÊ¶£¬±ÈÈçºìÉ«ÇøÓò±êÊ¶¡£±È
-     * ÈçÔÚBorderLayoutÖĞ£¬Èç¹ûÄ³¸ö·½Î»ÒÑ¾­·ÅÖÃÁË×é¼ş£¬Ôò´ËÊ±Ó¦¸Ã·µ»Øfalse±êÊ¶¸ÃÇøÓò²»¿ÉÒÔ
-     * ·ÅÖÃ¡£
-     *@param creator ×é¼ş
-     *@param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@return ÊÇ·ñ¿ÉÒÔ·ÅÖÃ
+     * åœ¨æ·»åŠ ç»„ä»¶çŠ¶æ€æ—¶ï¼Œå½“é¼ æ ‡ç§»åŠ¨åˆ°æŸä¸ªå®¹å™¨ä¸Šæ–¹æ—¶ï¼Œå¦‚æœè¯¥å®¹å™¨æœ‰å¸ƒå±€ç®¡ç†å™¨ï¼Œåˆ™ä¼šè°ƒç”¨è¯¥å¸ƒå±€
+     * ç®¡ç†é€‚é…å™¨çš„acceptæ¥å†³å®šå½“å‰ä½ç½®æ˜¯å¦å¯ä»¥æ”¾ç½®ï¼Œå¹¶æä¾›ç‰¹æ®Šçš„æ ‡è¯†ï¼Œæ¯”å¦‚çº¢è‰²åŒºåŸŸæ ‡è¯†ã€‚æ¯”
+     * å¦‚åœ¨BorderLayoutä¸­ï¼Œå¦‚æœæŸä¸ªæ–¹ä½å·²ç»æ”¾ç½®äº†ç»„ä»¶ï¼Œåˆ™æ­¤æ—¶åº”è¯¥è¿”å›falseæ ‡è¯†è¯¥åŒºåŸŸä¸å¯ä»¥
+     * æ”¾ç½®ã€‚
+     *@param creator ç»„ä»¶
+     *@param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@return æ˜¯å¦å¯ä»¥æ”¾ç½®
      */
     public boolean accept(XCreator creator, int x, int y) {
         String placement = getPlacement(creator, x, y);
@@ -121,8 +121,8 @@ public class FRBorderLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-     * Ôö¼ÓÏÂÒ»¸ö×é¼ş
-     * @param dragged ×é¼ş
+     * å¢åŠ ä¸‹ä¸€ä¸ªç»„ä»¶
+     * @param dragged ç»„ä»¶
      */
     public void addNextComponent(XCreator dragged) {
         FRBorderLayout layout = (FRBorderLayout) container.getLayout();
@@ -148,26 +148,26 @@ public class FRBorderLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-     * Ä¿±ê¿Ø¼şÎ»ÖÃ²åÈë×é¼ş
-     * @param target Ä¿±ê
-     * @param added Ôö¼Ó×é¼ş
+     * ç›®æ ‡æ§ä»¶ä½ç½®æ’å…¥ç»„ä»¶
+     * @param target ç›®æ ‡
+     * @param added å¢åŠ ç»„ä»¶
      */
     public void addBefore(XCreator target, XCreator added) {
         addNextComponent(added);
     }
 
     /**
-     * ²åÔÚÄ¿±ê×é¼şºóÃæ
-     * @param target Ä¿±ê
-     * @param added Ôö¼Ó×é¼ş
+     * æ’åœ¨ç›®æ ‡ç»„ä»¶åé¢
+     * @param target ç›®æ ‡
+     * @param added å¢åŠ ç»„ä»¶
      */
     public void addAfter(XCreator target, XCreator added) {
         addNextComponent(added);
     }
 
     /**
-     * ÊÇ·ñÄÜ½ÓÊÕ¸ü¶àµÄ×é¼ş
-     * @return ÄÜÔò·µ»Øtrue
+     * æ˜¯å¦èƒ½æ¥æ”¶æ›´å¤šçš„ç»„ä»¶
+     * @return èƒ½åˆ™è¿”å›true
      */
     public boolean canAcceptMoreComponent() {
         FRBorderLayout layout = (FRBorderLayout) container.getLayout();

@@ -7,21 +7,21 @@ import com.fr.data.impl.EmbeddedTableData;
 import com.fr.stable.StringUtils;
 
 /**
- * Êı¾İ¼¯»ìÏıÏà¹ØµÄĞÅÏ¢
+ * æ•°æ®é›†æ··æ·†ç›¸å…³çš„ä¿¡æ¯
  * 
  * @author neil
  * 
- * @date: 2015-3-9-ÉÏÎç10:56:40
+ * @date: 2015-3-9-ä¸Šåˆ10:56:40
  */
 public class ConfusionInfo {
 
-	//Êı¾İ¼¯Ãû
+	//æ•°æ®é›†å
 	private String tabledataName;
-	//»ìÏıµÄÃ¿Ò»ÁĞµÄkey
+	//æ··æ·†çš„æ¯ä¸€åˆ—çš„key
 	private String[] confusionKeys;
-	//ÁĞÃû
+	//åˆ—å
 	private String[] columnNames;
-	//ÁĞÀàĞÍ
+	//åˆ—ç±»å‹
 	private Class[] colType;
 	
 	public ConfusionInfo(EmbeddedTableData tabledata, String tabledataName){
@@ -79,11 +79,11 @@ public class ConfusionInfo {
 	}
 	
 	/**
-	 * Ö¸¶¨µÄÁĞÊÇ·ñÊÇÊı×ÖÀàĞÍµÄ
+	 * æŒ‡å®šçš„åˆ—æ˜¯å¦æ˜¯æ•°å­—ç±»å‹çš„
 	 * 
-	 * @param col Ö¸¶¨µÄÁĞ
+	 * @param col æŒ‡å®šçš„åˆ—
 	 * 
-	 * @return Ö¸¶¨µÄÁĞÊÇ·ñÊÇÊı×ÖÀàĞÍµÄ
+	 * @return æŒ‡å®šçš„åˆ—æ˜¯å¦æ˜¯æ•°å­—ç±»å‹çš„
 	 * 
 	 */
 	public boolean isNumberColumn(int col){

@@ -29,7 +29,7 @@ public abstract class PluginAbstractLoadingViewPane<V, T> extends PluginAbstract
     private CardLayout cardLayout;
 
     /**
-     * ³õÊ¼»¯cardlayoutÒ³Ãæ
+     * åˆå§‹åŒ–cardlayouté¡µé¢
      * @param tabbedPane
      */
     public PluginAbstractLoadingViewPane(UITabbedPane tabbedPane) {
@@ -43,40 +43,40 @@ public abstract class PluginAbstractLoadingViewPane<V, T> extends PluginAbstract
         loadDataInAnotherThread();
     }
     /**
-     * ´´½¨³É¹¦Ò³Ãæ
-     * @return ´´½¨µÄÒ³Ãæ¶ÔÏó
+     * åˆ›å»ºæˆåŠŸé¡µé¢
+     * @return åˆ›å»ºçš„é¡µé¢å¯¹è±¡
      */
     public abstract JPanel createSuccessPane();
 
     /**
-     * ´´½¨´íÎóÒ³Ãæ
-     * @return ´´½¨µÄÒ³Ãæ¶ÔÏó
+     * åˆ›å»ºé”™è¯¯é¡µé¢
+     * @return åˆ›å»ºçš„é¡µé¢å¯¹è±¡
      */
     public abstract JPanel createErrorPane();
 
     /**
-     * ÏÔÊ¾¼ÓÔØÒ³Ãæ
+     * æ˜¾ç¤ºåŠ è½½é¡µé¢
      */
     public void showLoadingCard() {
         cardLayout.show(this, LOAD_CARD);
     }
 
     /**
-     * ÏÔÊ¾³É¹¦Ò³Ãæ
+     * æ˜¾ç¤ºæˆåŠŸé¡µé¢
      */
     public void showSuccessCard() {
         cardLayout.show(this, SUCCESS_CARD);
     }
 
     /**
-     * ÏÔÊ¾¼ÓÔØ´íÎóÒ³Ãæ
+     * æ˜¾ç¤ºåŠ è½½é”™è¯¯é¡µé¢
      */
     public void showLoadErrorCard() {
         cardLayout.show(this, LOAD_ERROR);
     }
 
     /**
-     * Í£Ö¹¼ÓÔØ
+     * åœæ­¢åŠ è½½
      */
     public void stopLoad() {
         busyIconTimer.stop();
@@ -160,32 +160,32 @@ public abstract class PluginAbstractLoadingViewPane<V, T> extends PluginAbstract
     protected abstract void installFromDiskFile();
 
     /**
-     * ¼ÓÔØÊı¾İ
-     * @return ·µ»ØÊı¾İ
+     * åŠ è½½æ•°æ®
+     * @return è¿”å›æ•°æ®
      */
     public abstract V loadData() throws Exception;
 
     /**
-     * ¼ÓÔØ³É¹¦
-     * @param v ½«µÃµ½µÄÊı¾İ´«Èë
+     * åŠ è½½æˆåŠŸ
+     * @param v å°†å¾—åˆ°çš„æ•°æ®ä¼ å…¥
      */
     public abstract void loadOnSuccess(V v);
 
     /**
-     * ¼ÓÔØÊ§°Ü
-     * @param e Òì³£ÏûÏ¢
+     * åŠ è½½å¤±è´¥
+     * @param e å¼‚å¸¸æ¶ˆæ¯
      */
     public abstract void loadOnFailed(Exception e);
 
     /**
-     * ÕıÔÚ¼ÓÔØÒ³µÄ±êÌâ
-     * @return ±êÌâ×Ö·û´®
+     * æ­£åœ¨åŠ è½½é¡µçš„æ ‡é¢˜
+     * @return æ ‡é¢˜å­—ç¬¦ä¸²
      */
     public abstract String textForLoadingLabel();
 
     /**
-     * ´Ó´ÅÅÌ°²×°°´Å¥µÄÌáÊ¾
-     * @return °´Å¥±êÌâ×Ö·û´®
+     * ä»ç£ç›˜å®‰è£…æŒ‰é’®çš„æç¤º
+     * @return æŒ‰é’®æ ‡é¢˜å­—ç¬¦ä¸²
      */
     public abstract String textForInstallFromDiskFileButton();
 }

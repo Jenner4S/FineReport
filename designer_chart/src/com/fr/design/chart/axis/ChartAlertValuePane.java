@@ -32,9 +32,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Í¼±í ×ø±êÖá ¾¯½äÏßÖµ ±à¼­½çÃæ. (Ä¬ÈÏ Î»ÖÃ¾Ó×ó¾ÓÓÒ)
+ * å›¾è¡¨ åæ ‡è½´ è­¦æˆ’çº¿å€¼ ç¼–è¾‘ç•Œé¢. (é»˜è®¤ ä½ç½®å±…å·¦å±…å³)
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-5-22 ÉÏÎç09:49:54
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-5-22 ä¸Šåˆ09:49:54
  */
 public class ChartAlertValuePane extends BasicBeanPane<ChartAlertValue> {
 	private static final int DE_FONT = 9;
@@ -113,7 +113,7 @@ public class ChartAlertValuePane extends BasicBeanPane<ChartAlertValue> {
 		fontNameBox = new UIComboBox();
 		fontNameBox.setPreferredSize(new Dimension(80,20));
 		
-		fontNameBox.addItem("SimSun"); // TODO Õâ±ß×ÖÌåÖĞÃ»ÓĞÔÚÁĞ±íÄÚ
+		fontNameBox.addItem("SimSun"); // TODO è¿™è¾¹å­—ä½“ä¸­æ²¡æœ‰åœ¨åˆ—è¡¨å†…
 		String[] names = Utils.getAvailableFontFamilyNames4Report();
 		for(int i = 0; i < names.length; i++) {
 			fontNameBox.addItem(names[i]);
@@ -147,7 +147,7 @@ public class ChartAlertValuePane extends BasicBeanPane<ChartAlertValue> {
 		leftButton.setSelected(true);
 	}
 	
-	protected String getLeftName() {// ¾Ó×ó ¾ÓÓÒ
+	protected String getLeftName() {// å±…å·¦ å±…å³
 		return Inter.getLocText("Chart_Alert_Left");
 	}
 	
@@ -173,7 +173,7 @@ public class ChartAlertValuePane extends BasicBeanPane<ChartAlertValue> {
 
     @Override
 	public void populateBean(ChartAlertValue ob) {
-    	//¼æÈİÒÔÇ°ÉèÖÃµÄĞéÏß
+    	//å…¼å®¹ä»¥å‰è®¾ç½®çš„è™šçº¿
     	if (ob.getLineStyle().getLineStyle() != Constants.LINE_NONE
     		&& ob.getLineStyle().getLineStyle() != Constants.LINE_THIN
     		&& ob.getLineStyle().getLineStyle() != Constants.LINE_MEDIUM

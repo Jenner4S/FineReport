@@ -27,9 +27,9 @@ import java.util.List;
 
 /**
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-7-3 ÏÂÎç02:46:45
-* ÀàËµÃ÷: ÊÂ¼şËµÃ÷: ¹¤¾ßÀ¸±à¼­--> ÊÇË¢ĞÂChartComponent È»ºóÏìÓ¦Õû¸öÉè¼Æ¿éµÄ¸Ä±äÊÂ¼ş
- 				       ÓÒ¼ü±à¼­ ---> Ë¢ĞÂChartCompment  Ë¢ĞÂ¶ÔÓ¦µÄ¹¤¾ßÀ¸(¼ÓÈëÊÂ¼ş) È»ºóÏìÓ¦Õû¸öÉè¼Æ¿éµÄ¸Ä±äÊÂ¼ş
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-7-3 ä¸‹åˆ02:46:45
+* ç±»è¯´æ˜: äº‹ä»¶è¯´æ˜: å·¥å…·æ ç¼–è¾‘--> æ˜¯åˆ·æ–°ChartComponent ç„¶åå“åº”æ•´ä¸ªè®¾è®¡å—çš„æ”¹å˜äº‹ä»¶
+ 				       å³é”®ç¼–è¾‘ ---> åˆ·æ–°ChartCompment  åˆ·æ–°å¯¹åº”çš„å·¥å…·æ (åŠ å…¥äº‹ä»¶) ç„¶åå“åº”æ•´ä¸ªè®¾è®¡å—çš„æ”¹å˜äº‹ä»¶
  */
 public class ChartComponent extends MiddleChartComponent implements MouseListener, MouseMotionListener {
 	private static final long serialVersionUID = 744164838619052097L;
@@ -58,7 +58,7 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-     *  ±ØĞë¼ÓÈë ÏìÓ¦ÊÂ¼ş, Í£Ö¹µ±Ç°µÄÑ¡ÖĞÔªËØ±à¼­ && »ñÈ¡½¹µã
+     *  å¿…é¡»åŠ å…¥ å“åº”äº‹ä»¶, åœæ­¢å½“å‰çš„é€‰ä¸­å…ƒç´ ç¼–è¾‘ && è·å–ç„¦ç‚¹
      * @author kunsnat E-mail kunsnat@gmail.com
      * @param cc
      */
@@ -80,8 +80,8 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
 
 
     /**
-     * ÓÒ¼ü±à¼­ Í¼±í±à¼­²ãµÄ¼àÌıÊÂ¼ş, ÔÚÍ£Ö¹±à¼­Ê± ÏìÓ¦Õû¸ö±à¼­Ä£°å(form, sheet)µÄ¸Ä±ä.
-     * @param l   ¼àÌıÊÂ¼ş
+     * å³é”®ç¼–è¾‘ å›¾è¡¨ç¼–è¾‘å±‚çš„ç›‘å¬äº‹ä»¶, åœ¨åœæ­¢ç¼–è¾‘æ—¶ å“åº”æ•´ä¸ªç¼–è¾‘æ¨¡æ¿(form, sheet)çš„æ”¹å˜.
+     * @param l   ç›‘å¬äº‹ä»¶
      */
     public void addStopEditingListener(PropertyChangeListener l) {
     	 if (!listeners.contains(l)) {
@@ -96,7 +96,7 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-      * Í£Ö¹±à¼­, Í¨ÖªÊÂÇé, Ë¢ĞÂ»­³öĞÂ½çÃæ.
+      * åœæ­¢ç¼–è¾‘, é€šçŸ¥äº‹æƒ…, åˆ·æ–°ç”»å‡ºæ–°ç•Œé¢.
       */
     public void reset() {
         fireStopEditing();
@@ -115,8 +115,8 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
         repaint();
     }
 
-    public void populate(BaseChartCollection cc) { // kunsnat_bug: 5471 ÊµÏÖÉèÖÃµÄ¼´Ê±Ô¤ÀÀ
-    	try {// clone ÎªÁËÅĞ¶Ï±à¼­Ç°ºóµÄÖµ.
+    public void populate(BaseChartCollection cc) { // kunsnat_bug: 5471 å®ç°è®¾ç½®çš„å³æ—¶é¢„è§ˆ
+    	try {// clone ä¸ºäº†åˆ¤æ–­ç¼–è¾‘å‰åçš„å€¼.
     		this.chartCollection4Design = (ChartCollection)cc;
 //    		this.chartCollection4Design = (ChartCollection)cc.clone();
 		} catch (Exception e) {
@@ -130,15 +130,15 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Ö±à¼­, Èç:µ¯³ö¶Ô»°¿ò, ÓÒ¼üÑ¡ÖĞÁĞ±í
+     * è®¾ç½®æ˜¯å¦æ”¯æŒç¼–è¾‘, å¦‚:å¼¹å‡ºå¯¹è¯æ¡†, å³é”®é€‰ä¸­åˆ—è¡¨
      */
     public void setSupportEdit(boolean supportEdit) {
 		this.supportEdit = supportEdit;
 	}
 
     /**
-     * ·µ»ØÊÇ·ñÖ§³Ö±à¼­,  Èç:µ¯³ö¶Ô»°¿ò, ÓÒ¼üÑ¡ÖĞÁĞ±í
-     * @return ·µ»ØÊÇ·ñÖ§³Ö±à¼­.
+     * è¿”å›æ˜¯å¦æ”¯æŒç¼–è¾‘,  å¦‚:å¼¹å‡ºå¯¹è¯æ¡†, å³é”®é€‰ä¸­åˆ—è¡¨
+     * @return è¿”å›æ˜¯å¦æ”¯æŒç¼–è¾‘.
      */
 	public boolean isSupportEdit() {
 		return supportEdit;
@@ -178,7 +178,7 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
         }
 
         Object lastHint = g2d.getRenderingHint(RenderingHints.KEY_ANTIALIASING);
-        // ·´¾â³İ
+        // åé”¯é½¿
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         drawChartGlyph(g2d);
@@ -197,11 +197,11 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /*
-      * ChartGlyph¸Ä±ä´óĞ¡µÄÊ±ºò×öµÄ²Ù×÷
+      * ChartGlyphæ”¹å˜å¤§å°çš„æ—¶å€™åšçš„æ“ä½œ
       */
     private void refreshChartGlyph() {
         Dimension d = getBounds().getSize();
-        this.editingChart = this.chartCollection4Design.getSelectedChart();// kunsnat: ÇĞ»»Ñ¡ÖĞÊ± Í¬²½ÇĞ»»Plot
+        this.editingChart = this.chartCollection4Design.getSelectedChart();// kunsnat: åˆ‡æ¢é€‰ä¸­æ—¶ åŒæ­¥åˆ‡æ¢Plot
         if (editingChart != null) {
             this.chartGlyph = editingChart.createGlyph(editingChart.defaultChartData());
             this.activeGlyph = ActiveGlyphFactory.createActiveGlyph(this, chartGlyph);
@@ -220,8 +220,8 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-     * Êó±êµã»÷
-     * @param event    Êó±êÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param event    é¼ æ ‡äº‹ä»¶
      */
     public void mouseClicked(MouseEvent event) { 
     	 int click = event.getClickCount();
@@ -231,8 +231,8 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-     * Êó±ê°´Ñ¹
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡æŒ‰å‹
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
     	point = new Point(e.getX(),e.getY());
@@ -249,38 +249,38 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
     }
 
     /**
-     * Êó±êËÉ¿ª
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡æ¾å¼€
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseReleased(MouseEvent e) { 
 	}
 
     /**
-     * Êó±ê½øÈë
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÍË³ö
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡é€€å‡º
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÍÏ×§
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡æ‹–æ‹½
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseDragged(MouseEvent e) {
 	}
 
     /**
-     * Êó±êÒÆ¶¯
-     * @param e    Êó±êÊÂ¼ş
+     * é¼ æ ‡ç§»åŠ¨
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
     public void mouseMoved(MouseEvent e) {
     	ActiveGlyph ag = this.getActiveGlyph();
@@ -313,8 +313,8 @@ public class ChartComponent extends MiddleChartComponent implements MouseListene
                 chartGlyph.setBounds(new Rectangle2D.Double(0, 0, chartWidth, chartHeight));
             }
             // chartGlyph.draw(g2d, ScreenResolution.getScreenResolution());
-            //²»Ö±½Ó»­chartGlyph¶ø»­imageµÄÔ­ÒòÊÇ±íµ¥µÄÖùĞÎÍ¼»áÒç³ö±íµ¥
-            //ÆäËûÍ¼¶¼ok£¬ÆäÊµ¸Ğ¾õÓ¦¸ÃÊÇÖùĞÎÍ¼»­µÄ²»¶Ô£¬Ó¦¸ÃÒ²¿ÉÒÔ¸ÄÄÇ±ß
+            //ä¸ç›´æ¥ç”»chartGlyphè€Œç”»imageçš„åŸå› æ˜¯è¡¨å•çš„æŸ±å½¢å›¾ä¼šæº¢å‡ºè¡¨å•
+            //å…¶ä»–å›¾éƒ½okï¼Œå…¶å®æ„Ÿè§‰åº”è¯¥æ˜¯æŸ±å½¢å›¾ç”»çš„ä¸å¯¹ï¼Œåº”è¯¥ä¹Ÿå¯ä»¥æ”¹é‚£è¾¹
             Image chartImage =  chartGlyph.toImage(chartWidth,chartHeight,ScreenResolution.getScreenResolution());
             g2d.drawImage(chartImage, 0, 0, chartWidth, chartHeight, null);
         }

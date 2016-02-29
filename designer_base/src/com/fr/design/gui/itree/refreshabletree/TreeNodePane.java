@@ -13,7 +13,7 @@ public class TreeNodePane extends BasicBeanPane<TreeNodeAttr> {
 	private DictionaryPane dataRadioPane;
 	
 	/*
-	 * richer:树支节点数据设置面板
+	 * richer:鏍戞敮鑺傜偣鏁版嵁璁剧疆闈㈡澘
 	 */
 	public TreeNodePane(){
 		this.initComponents();

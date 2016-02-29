@@ -7,7 +7,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: zheng
  * Date: 14-4-24
- * Time: …œŒÁ10:09
+ * Time: ‰∏äÂçà10:09
  */
 public class DBManipulationInWidgetEventPane extends DBManipulationPane {
 
@@ -35,5 +35,3 @@ public class DBManipulationInWidgetEventPane extends DBManipulationPane {
     }
 
 }
-
-

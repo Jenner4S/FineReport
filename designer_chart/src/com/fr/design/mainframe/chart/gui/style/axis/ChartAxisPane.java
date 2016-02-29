@@ -34,7 +34,7 @@ public class ChartAxisPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 		
 		ChartStyleAxisPane axisStylePane = ChartPlotFactory.createChartStyleAxisPaneByPlot(plot);
 		AxisStyleObject[] objs = axisStylePane.createAxisStyleObjects(plot);
-		// ¼ÓÔØ ¶ÔÓ¦µÄPlot ×ø±êÖá½çÃæ // TODO Ö®Ç°µÄ, ÔÚÓÒ¼ü É¾³ıÖ®ºó, ¿ÉÒÔÈ«²¿Ìæ»».
+		// åŠ è½½ å¯¹åº”çš„Plot åæ ‡è½´ç•Œé¢ // TODO ä¹‹å‰çš„, åœ¨å³é”® åˆ é™¤ä¹‹å, å¯ä»¥å…¨éƒ¨æ›¿æ¢.
 		for(int i = 0; i < objs.length; i++) {
 			ChartAxisUsePane usePane = objs[i].getAxisStylePane();
 			
@@ -52,7 +52,7 @@ public class ChartAxisPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 	}
 	
 	/**
-	 * ¸ù¾İÊı¾İ±í ¼ì²é×ø±êÖáÊÇ·ñ¿ÉÓÃ
+	 * æ ¹æ®æ•°æ®è¡¨ æ£€æŸ¥åæ ‡è½´æ˜¯å¦å¯ç”¨
 	 */
 	public void checkUseWithDataSheet(boolean use) {
 		if(first instanceof ChartCategoryPane) {
@@ -129,4 +129,3 @@ public class ChartAxisPane extends ThirdTabPane<Chart> implements AutoSelectedPa
 		}
 	}
 }
-

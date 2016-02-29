@@ -21,9 +21,9 @@ public class UIBasicOptionPaneUI extends BasicOptionPaneUI {
     private static final int NUM_4 = 4;
 
     /**
-     * 创建组件UI
-     * @param x 组件
-     * @return 组件
+     * 鍒涘缓缁勪欢UI
+     * @param x 缁勪欢
+     * @return 缁勪欢
      */
     public static ComponentUI createUI(JComponent x) {
         return new UIBasicOptionPaneUI();

@@ -25,9 +25,9 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
     
     /**
-     * ÊÇ·ñÊ¹ÓÃ¿Ø¼ş±¸·İ´óĞ¡
-     * @param xCreator ¿Ø¼ş
-     * @return ËùÔÚÈİÆ÷ÏàÍ¬£¬ÇÒÖ§³Ö±¸·İµÄ»°·µ»Øtrue
+     * æ˜¯å¦ä½¿ç”¨æ§ä»¶å¤‡ä»½å¤§å°
+     * @param xCreator æ§ä»¶
+     * @return æ‰€åœ¨å®¹å™¨ç›¸åŒï¼Œä¸”æ”¯æŒå¤‡ä»½çš„è¯è¿”å›true
      */
     public boolean whetherUseBackupSize(XCreator xCreator) {
     	Class clazz = container.getClass();
@@ -40,23 +40,23 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
     
     /**
-     * ÊÇ·ñÖ§³ÖÓÃ±¸·İ´óĞ¡
-     * @return ·ñ
+     * æ˜¯å¦æ”¯æŒç”¨å¤‡ä»½å¤§å°
+     * @return å¦
      */
     public boolean supportBackupSize() {
     	return false;
     }
 
     /**
-     * ÓĞµÄ¿Ø¼şÔÚÍÏ×§µ÷Õû´óĞ¡ºóĞèÒª¸ù¾İ×ÔÉíÄÚÈİÖØĞÂ¼ÆËãÏÂµ±Ç°µÄ³ß´çÊÇ·ñºÏÊÊ£¬Èç¹û²»ºÏÊÊ£¬¾ÍĞèÒªÖØĞÂfixÒ»ÏÂ
-     * @param creator ×é¼ş
+     * æœ‰çš„æ§ä»¶åœ¨æ‹–æ‹½è°ƒæ•´å¤§å°åéœ€è¦æ ¹æ®è‡ªèº«å†…å®¹é‡æ–°è®¡ç®—ä¸‹å½“å‰çš„å°ºå¯¸æ˜¯å¦åˆé€‚ï¼Œå¦‚æœä¸åˆé€‚ï¼Œå°±éœ€è¦é‡æ–°fixä¸€ä¸‹
+     * @param creator ç»„ä»¶
      */
     public void fix(XCreator creator) {
     }
 
     /**
-     * ÏÔÊ¾parentµÄ×Ö×é¼şchild£¬½â¾öCardLayoutÖĞÏÔÊ¾Ä³¸ö·ÇÏÔÊ¾×é¼şµÄÌØÊâÇé¿ö
-     * @param child ×é¼ş
+     * æ˜¾ç¤ºparentçš„å­—ç»„ä»¶childï¼Œè§£å†³CardLayoutä¸­æ˜¾ç¤ºæŸä¸ªéæ˜¾ç¤ºç»„ä»¶çš„ç‰¹æ®Šæƒ…å†µ
+     * @param child ç»„ä»¶
      */
     @Override
     public void showComponent(XCreator child) {
@@ -64,12 +64,12 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
     
     /**
-     * ×é¼şµÄComponentAdapterÔÚÌí¼Ó×é¼şÊ±£¬Èç¹û·¢ÏÖ²¼¾Ö¹ÜÀíÆ÷²»Îª¿Õ£¬»á¼Ì¶øµ÷ÓÃ¸Ã²¼¾Ö¹ÜÀíÆ÷µÄ
-     * addComp·½·¨À´Íê³É×é¼şµÄ¾ßÌåÌí¼Ó¡£ÔÚ¸Ã·½·¨ÄÚ£¬²¼¾Ö¹ÜÀíÆ÷¿ÉÒÔÌá¹©¶îÍâµÄ¹¦ÄÜ¡£
-     * @param creator ±»Ìí¼ÓµÄĞÂ×é¼ş
-     * @param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @return ÊÇ·ñÌí¼Ó³É¹¦£¬³É¹¦·µ»Øtrue£¬·ñÔòfalse
+     * ç»„ä»¶çš„ComponentAdapteråœ¨æ·»åŠ ç»„ä»¶æ—¶ï¼Œå¦‚æœå‘ç°å¸ƒå±€ç®¡ç†å™¨ä¸ä¸ºç©ºï¼Œä¼šç»§è€Œè°ƒç”¨è¯¥å¸ƒå±€ç®¡ç†å™¨çš„
+     * addCompæ–¹æ³•æ¥å®Œæˆç»„ä»¶çš„å…·ä½“æ·»åŠ ã€‚åœ¨è¯¥æ–¹æ³•å†…ï¼Œå¸ƒå±€ç®¡ç†å™¨å¯ä»¥æä¾›é¢å¤–çš„åŠŸèƒ½ã€‚
+     * @param creator è¢«æ·»åŠ çš„æ–°ç»„ä»¶
+     * @param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @return æ˜¯å¦æ·»åŠ æˆåŠŸï¼ŒæˆåŠŸè¿”å›trueï¼Œå¦åˆ™false
      */
     @Override
 	public boolean addBean(XCreator creator, int x, int y) {
@@ -82,10 +82,10 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
 	}
     
     /**
-     * É¾³ı×é¼ş
-     * @param creator ×é¼ş
-     * @param initWidth ×é¼şÖ®Ç°¿í¶È
-     * @param initHeight ×é¼şÖ®Ç°¸ß¶È
+     * åˆ é™¤ç»„ä»¶
+     * @param creator ç»„ä»¶
+     * @param initWidth ç»„ä»¶ä¹‹å‰å®½åº¦
+     * @param initHeight ç»„ä»¶ä¹‹å‰é«˜åº¦
      */
     public void removeBean(XCreator creator, int creatorWidth, int creatorHeight) {
     	delete(creator, creatorWidth, creatorHeight);
@@ -97,8 +97,8 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     protected abstract void addComp(XCreator creator, int x, int y);
 
     /**
-     * Ôö¼ÓÏÂÒ»¸ö×é¼ş
-     * @param dragged ×é¼ş
+     * å¢åŠ ä¸‹ä¸€ä¸ªç»„ä»¶
+     * @param dragged ç»„ä»¶
      */
     @Override
     public void addNextComponent(XCreator dragged) {
@@ -107,9 +107,9 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
 
     /**
-     * Ä¿±ê¿Ø¼şÎ»ÖÃ²åÈë×é¼ş
-     * @param target Ä¿±ê
-     * @param added Ôö¼Ó×é¼ş
+     * ç›®æ ‡æ§ä»¶ä½ç½®æ’å…¥ç»„ä»¶
+     * @param target ç›®æ ‡
+     * @param added å¢åŠ ç»„ä»¶
      */
     @Override
     public void addBefore(XCreator target, XCreator added) {
@@ -125,9 +125,9 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
 
     /**
-     * ²åÔÚÄ¿±ê×é¼şºóÃæ
-     * @param target Ä¿±ê
-     * @param added Ôö¼Ó×é¼ş
+     * æ’åœ¨ç›®æ ‡ç»„ä»¶åé¢
+     * @param target ç›®æ ‡
+     * @param added å¢åŠ ç»„ä»¶
      */
     @Override
     public void addAfter(XCreator target, XCreator added) {
@@ -154,8 +154,8 @@ public abstract class AbstractLayoutAdapter implements LayoutAdapter {
     }
     
     /**
-     * ÊÇ·ñÄÜ½ÓÊÕ¸ü¶àµÄ×é¼ş
-     * @return ÄÜÔò·µ»Øtrue
+     * æ˜¯å¦èƒ½æ¥æ”¶æ›´å¤šçš„ç»„ä»¶
+     * @return èƒ½åˆ™è¿”å›true
      */
     @Override
     public boolean canAcceptMoreComponent() {

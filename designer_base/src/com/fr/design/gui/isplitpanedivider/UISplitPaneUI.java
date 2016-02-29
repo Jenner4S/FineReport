@@ -10,22 +10,22 @@ import javax.swing.plaf.metal.MetalSplitPaneUI;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-12
- * Time: 下午4:59
+ * Time: 涓嬪崍4:59
  */
 public class UISplitPaneUI extends MetalSplitPaneUI {
 
     /**
-     * 创建UI
-     * @param x 组件
-     * @return 返回组件UI
+     * 鍒涘缓UI
+     * @param x 缁勪欢
+     * @return 杩斿洖缁勪欢UI
      */
     public static ComponentUI createUI(JComponent x) {
    		return new UISplitPaneUI();
    	}
 
     /**
-     * 创建Divider
-     * @return 返回默认的divider
+     * 鍒涘缓Divider
+     * @return 杩斿洖榛樿鐨刣ivider
      */
    	public BasicSplitPaneDivider createDefaultDivider() {
    		return new UISplitPaneDivider(this);

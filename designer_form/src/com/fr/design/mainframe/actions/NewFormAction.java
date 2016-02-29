@@ -25,9 +25,9 @@ public class NewFormAction extends UpdateAction {
     }
 
     /**
-     * 动作
+     * 鍔ㄤ綔
      *
-     * @param e 事件
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         BaseJForm jform = StableFactory.getMarkedInstanceObjectFromClass(BaseJForm.XML_TAG, BaseJForm.class);

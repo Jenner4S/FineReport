@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¸ÊÌØÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * ç”˜ç‰¹å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç10:38:18
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ10:38:18
  */
 public class GanttPlotPane extends AbstractChartTypePane{
 	private static final long serialVersionUID = -601566194238908115L;
@@ -30,7 +30,7 @@ public class GanttPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * Ã»ÓĞ²¼¾Ö
+	 * æ²¡æœ‰å¸ƒå±€
 	 */
 	protected List<ChartImagePane> initStyleList() {
 		return new ArrayList<ChartImagePane>();
@@ -50,15 +50,15 @@ public class GanttPlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Gantt_Chart");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(chart.getPlot() != null && chart.getPlot().getPlotStyle() != ChartConstants.STYLE_NONE){
@@ -68,7 +68,7 @@ public class GanttPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(0).isPressing = true; 
@@ -77,9 +77,9 @@ public class GanttPlotPane extends AbstractChartTypePane{
 	}
 	
 	/**
-	 * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+	 * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
 	 */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

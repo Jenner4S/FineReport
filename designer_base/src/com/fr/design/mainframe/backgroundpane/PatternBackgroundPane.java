@@ -21,7 +21,7 @@ import java.awt.geom.Rectangle2D;
 
 /**
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:12:33
+ * @since 2012-5-29ä¸‹åˆ1:12:33
  */
 public class PatternBackgroundPane extends BackgroundSettingPane {
 
@@ -98,9 +98,9 @@ public class PatternBackgroundPane extends BackgroundSettingPane {
 
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		 foregroundColorPane.addSelectChangeListener(new ChangeListener() {

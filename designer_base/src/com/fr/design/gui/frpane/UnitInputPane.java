@@ -44,7 +44,7 @@ public abstract class UnitInputPane extends BasicPane {
 		UILabel titleLabel = new UILabel(title + ":");
 		centerPane.add(titleLabel);
 
-		// Denny£ºÔÚ¶Ô»°¿òÖĞ¼ÓÈëJSpinner¶ÔÏó
+		// Dennyï¼šåœ¨å¯¹è¯æ¡†ä¸­åŠ å…¥JSpinnerå¯¹è±¡
 		numberFieldSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, 999, 1));
 		GUICoreUtils.setColumnForSpinner(numberFieldSpinner, 24);
 		numberFieldSpinner.setPreferredSize(new Dimension(60, 20));
@@ -80,10 +80,10 @@ public abstract class UnitInputPane extends BasicPane {
 		} else {
 			floatValue = de.floatValue();
 		}
-        //Ñ¡ÖĞ¶àÁĞ, ²¢ÇÒÁĞ¿í²»ÍêÈ«Ò»ÖÂµÄ»°, ¾Í²»ÏÔÊ¾ÖµÁË.
+        //é€‰ä¸­å¤šåˆ—, å¹¶ä¸”åˆ—å®½ä¸å®Œå…¨ä¸€è‡´çš„è¯, å°±ä¸æ˜¾ç¤ºå€¼äº†.
 		temp.setText(floatValue == 0 ? StringUtils.EMPTY : Utils.convertNumberStringToString(new Float(floatValue)));
 
-		// denny:Ä¬ÈÏÓ¦¸ÃÎªÑ¡ÖĞ£¬·½±ãÓÃ»§ĞŞ¸Ä
+		// denny:é»˜è®¤åº”è¯¥ä¸ºé€‰ä¸­ï¼Œæ–¹ä¾¿ç”¨æˆ·ä¿®æ”¹
 		temp.selectAll();
 	}
 
@@ -94,13 +94,13 @@ public abstract class UnitInputPane extends BasicPane {
 		temp.addMouseListener(ml);
 	}
 
-	// Å×¸ö´íÖ»ÊÇÎªÁËÍ¨ÖªÍâÃæÖµÃ»±ä
+	// æŠ›ä¸ªé”™åªæ˜¯ä¸ºäº†é€šçŸ¥å¤–é¢å€¼æ²¡å˜
 	public double update() throws ValueNotChangeException {
-		// ÖµÃ»±ä¾Í²»¸Ä
+		// å€¼æ²¡å˜å°±ä¸æ”¹
 		if (!changed) {
             throw vncExp;
         }
-		// Denny: get numberFieldSpinner µÄ TextField
+		// Denny: get numberFieldSpinner çš„ TextField
 		JFormattedTextField temp = GUICoreUtils.getSpinnerTextField(numberFieldSpinner);
 
 		try {

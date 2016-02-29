@@ -10,7 +10,7 @@ import com.fr.design.gui.itextfield.UITextField;
 
 /**
  * @author richer
- * @since 6.5.4 垂直方向上的均分布局，上下组件高度比为ratio : (1 - ratio)
+ * @since 6.5.4 鍨傜洿鏂瑰悜涓婄殑鍧囧垎甯冨眬锛屼笂涓嬬粍浠堕珮搴︽瘮涓簉atio : (1 - ratio)
  */
 public class FRVerticalSplitLayout extends FRSplitLayout {
 	public FRVerticalSplitLayout() {
@@ -48,7 +48,7 @@ public class FRVerticalSplitLayout extends FRSplitLayout {
 	@Override
 	public void layoutContainer(Container target) {
 		Insets insets = target.getInsets();
-		// 这个布局只有两个组件
+		// 杩欎釜甯冨眬鍙湁涓や釜缁勪欢
 		int availableWidth = target.getWidth() - insets.left - insets.right - hgap * 2;
 		int availableHeight = target.getHeight() - insets.top - insets.bottom - vgap;
 		int asideHeight = 0;
@@ -62,12 +62,12 @@ public class FRVerticalSplitLayout extends FRSplitLayout {
 	}
 	
 	public static void main(String[] args) {
-		JFrame f = new JFrame("垂直均分布局测试");
+		JFrame f = new JFrame("鍨傜洿鍧囧垎甯冨眬娴嬭瘯");
 		JPanel p = (JPanel) f.getContentPane();
 		p.setLayout(new FRVerticalSplitLayout(0.2, 2, 2));
-		UITextField f1 = new UITextField("上边");
+		UITextField f1 = new UITextField("涓婅竟");
 		p.add(f1, FRSplitLayout.ASIDE);
-		UITextField f2 = new UITextField("下边");
+		UITextField f2 = new UITextField("涓嬭竟");
 		p.add(f2, FRSplitLayout.CENTER);
 		f.setSize(300, 210);
 		f.setVisible(true);

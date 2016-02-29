@@ -7,7 +7,7 @@ import javax.swing.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÏÂÎç2:45
+ * Time   : ä¸‹åˆ2:45
  */
 public class RadarDataLabelPane extends DataLabelPane {
 

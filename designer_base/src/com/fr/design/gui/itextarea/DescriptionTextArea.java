@@ -5,7 +5,7 @@ package com.fr.design.gui.itextarea;
 
 
 /**
- * peter:Õâ¸ö¿Ø¼şÖ÷ÒªÊÇÓÃÀ´ÔÚ½çÃæÏÔÊ¾°ïÖúĞÅÏ¢µÄ.
+ * peter:è¿™ä¸ªæ§ä»¶ä¸»è¦æ˜¯ç”¨æ¥åœ¨ç•Œé¢æ˜¾ç¤ºå¸®åŠ©ä¿¡æ¯çš„.
  */
 public class DescriptionTextArea extends UITextArea {
     public DescriptionTextArea() {

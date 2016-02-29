@@ -3,7 +3,7 @@ package com.fr.design.gui.itree.filetree;
 import java.io.File;
 
 /**
- * ÎÄ¼þ½Úµã,ÓÃÓÚ´æ·ÅÎÄ¼þµÄ name ºÍ isDirectoryÊôÐÔ
+ * æ–‡ä»¶èŠ‚ç‚¹,ç”¨äºŽå­˜æ”¾æ–‡ä»¶çš„ name å’Œ isDirectoryå±žæ€§
  */
 public class FileDirectoryNode implements java.io.Serializable, Cloneable {
     private String name;
@@ -42,7 +42,7 @@ public class FileDirectoryNode implements java.io.Serializable, Cloneable {
     }
 
     /**
-     * ´ÓFile²úÉú FileDirectoryNode.
+     * ä»ŽFileäº§ç”Ÿ FileDirectoryNode.
      */
     public static FileDirectoryNode createFileDirectoryNode(File file) {
     	FileDirectoryNode fileDirectoryNode = new FileDirectoryNode();
@@ -54,4 +54,3 @@ public class FileDirectoryNode implements java.io.Serializable, Cloneable {
         return fileDirectoryNode;
     }
 }
-

@@ -24,9 +24,10 @@ import com.fr.stable.StringUtils;
 import javax.swing.*;
 import java.awt.*;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 /**
- * XCreatorµÄÏà¹Ø´¦Àí
+ * XCreatorçš„ç›¸å…³å¤„ç†
  *
  * @author richer
  * @since 6.5.3
@@ -107,47 +108,55 @@ public class XCreatorUtils {
     }
 
     /**
-     *´´½¨creator
-     * @param widget ¿Ø¼ş
-     * @return ·µ»Ø¿Ø¼şµÄcreator
+     *åˆ›å»ºcreator
+     * @param widget æ§ä»¶
+     * @return è¿”å›æ§ä»¶çš„creator
      */
     public static XCreator createXCreator(Widget widget) {
         return createXCreator(widget, new Dimension());
     }
 
     /**
-     * ´ø³õÊ¼´óĞ¡µÄWidget×ª»¯ÎªXCreatorµ±È»XCreatorÒ²ĞèÒª°Ñ´óĞ¡¸³ÖµÉÏ
-     * @param widget ¿Ø¼ş
-     * @param d ´óĞ¡
-     * @return ·µ»Ø¿Ø¼şµÄxcreator
+     * å¸¦åˆå§‹å¤§å°çš„Widgetè½¬åŒ–ä¸ºXCreatorå½“ç„¶XCreatorä¹Ÿéœ€è¦æŠŠå¤§å°èµ‹å€¼ä¸Š
+     * @param widget æ§ä»¶
+     * @param d å¤§å°
+     * @return è¿”å›æ§ä»¶çš„xcreator
      */
     public static XCreator createXCreator(Widget widget, Dimension d) {
-        XCreator creator = null;
-        Class<? extends Widget> widgetClass = widget.getClass();
-        Class<? extends XCreator> clazz = XCreatorUtils.searchXCreatorClass(widgetClass);
-        if (clazz == null) {
-            FRContext.getLogger().error(widget + "'s" + " xcreator doesn't exsit!");
+        Class<? extends Widget> widgetClass;
+        Class<? extends XCreator> clazz;
+
+        if (widget == null) {
             clazz = NullCreator.class;
-            widgetClass = Widget.class;
-        }
-        Constructor<? extends XCreator> c;
-        try {
-            // Ä£¿é·ÖÀëÔµ¹Ê XChartEditorÓÃ½Ó¿Ú¹¹Ôì
-            if (clazz.getName().endsWith("XChartEditor")) {
-                c = clazz.getConstructor(BaseChartEditor.class, Dimension.class);
-            } else {
-                c = clazz.getConstructor(widgetClass, Dimension.class);
+        } else {
+            widgetClass = widget.getClass();
+            clazz = XCreatorUtils.searchXCreatorClass(widgetClass);
+            if (clazz == null) {
+                FRContext.getLogger().error(widget + "'s" + " xcreator doesn't exsit!");
+                clazz = NullCreator.class;
             }
-            creator = c.newInstance(widget, d);
-        } catch (Exception e) {
-            FRContext.getLogger().error(e.getMessage(), e);
+        }
+        XCreator creator = null;
+        Constructor[] constructors = clazz.getConstructors();
+        for (Constructor c : constructors) {
+            try {
+                creator = (XCreator) c.newInstance(widget, d);
+                break;
+            } catch (Exception ignore) {
+                // richie:è¿™é‡Œçš„é”™è¯¯å¯ä»¥å¿½ç•¥
+                FRContext.getLogger().error(ignore.getMessage());
+            }
+        }
+        if (creator == null) {
+            FRContext.getLogger().error("Error to create xcreator!");
+            creator = new NullCreator(widget, d);
         }
         return creator;
     }
 
     /**
-     *Ë¢ĞÂËùÓĞÃû×Ö¿Ø¼ş
-     * @param container ²¼¾ÖÈİÆ÷
+     *åˆ·æ–°æ‰€æœ‰åå­—æ§ä»¶
+     * @param container å¸ƒå±€å®¹å™¨
      */
     public static void refreshAllNameWidgets(XLayoutContainer container) {
         _refreshNameWidget(container);
@@ -166,10 +175,10 @@ public class XCreatorUtils {
     }
 
     /**
-	 * »ñÈ¡½¹µã×é¼şËùÔÚµÄ¶¥²ãÈİÆ÷,²»°üÀ¨Ä¿±ê±¾Éí
+	 * è·å–ç„¦ç‚¹ç»„ä»¶æ‰€åœ¨çš„é¡¶å±‚å®¹å™¨,ä¸åŒ…æ‹¬ç›®æ ‡æœ¬èº«
 	 * 
-	 * @param creator ×é¼ş
-	 * @return ·µ»Ø¸¸ÈİÆ÷
+	 * @param creator ç»„ä»¶
+	 * @return è¿”å›çˆ¶å®¹å™¨
 	 */
 	public static XLayoutContainer getParentXLayoutContainer(XCreator creator) {
 		Container c = creator.getParent();
@@ -188,10 +197,10 @@ public class XCreatorUtils {
 	}
 
 	/**
-	 * »ñÈ¡½¹µã×é¼şËùÔÚµÄ¶¥²ãÈİÆ÷,¿ÉÄÜÊÇÄ¿±ê±¾Éí
+	 * è·å–ç„¦ç‚¹ç»„ä»¶æ‰€åœ¨çš„é¡¶å±‚å®¹å™¨,å¯èƒ½æ˜¯ç›®æ ‡æœ¬èº«
 	 * 
-	 * @param creator ×é¼ş
-	 * @return ·µ»Ø¶¥²ãÈİÆ÷
+	 * @param creator ç»„ä»¶
+	 * @return è¿”å›é¡¶å±‚å®¹å™¨
 	 */
 	public static XLayoutContainer getHotspotContainer(XCreator creator) {
 		if (creator.isDedicateContainer()) {
@@ -204,10 +213,10 @@ public class XCreatorUtils {
 	}
 
 	/**
-	 * ·µ»Ø×é¼şµÄÍ¼±ê
+	 * è¿”å›ç»„ä»¶çš„å›¾æ ‡
 	 * 
-	 * @param creator  ×é¼ş
-	 * @return  ×é¼şicon
+	 * @param creator  ç»„ä»¶
+	 * @return  ç»„ä»¶icon
 	 */
     public static Icon getCreatorIcon(XCreator creator) {
         String iconPath = creator.getIconPath();

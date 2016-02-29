@@ -6,7 +6,7 @@ import com.fr.design.data.DesignTableDataManager;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-4-20
- * Time: ÉÏÎç11:27
+ * Time: ä¸Šåˆ11:27
  * To change this template use File | Settings | File Templates.
  */
 public class GlobalTreeTableDataDictPane extends  TreeTableDataDictPane {

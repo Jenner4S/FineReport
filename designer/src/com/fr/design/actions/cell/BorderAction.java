@@ -55,7 +55,7 @@ public class BorderAction extends ElementCaseAction implements ChangeListener {
             this.putValue(UIToolbarBorderButton.class.getName(), borderStylePane);
             borderStylePane.setEnabled(this.isEnabled());
             borderStylePane.set4Toolbar();
-            // peter:≤˙…˙tooltip
+            // peter:‰∫ßÁîütooltip
             borderStylePane.setToolTipText(ActionUtils.createButtonToolTipText(this));
             borderStylePane.setCellBorderStyle(new CellBorderStyle());
             borderStylePane.addStyleChangeListener(this);
@@ -67,7 +67,7 @@ public class BorderAction extends ElementCaseAction implements ChangeListener {
 
     public boolean update(ElementCasePane elementCasePane) {
         if (oldCellBorderStyle.isNoneBorderStyle()) {
-            //Œﬁ±ﬂøÚ∏Ò Ω
+            //Êó†ËæπÊ°ÜÊ†ºÂºè
             return BorderUtils.updateCellBorderStyle(elementCasePane, oldCellBorderStyle);
         }
         return BorderUtils.update(elementCasePane, oldCellBorderStyle);

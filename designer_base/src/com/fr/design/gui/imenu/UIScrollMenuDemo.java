@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
  * Created with IntelliJ IDEA.
  * User: richie
  * Date: 13-12-5
- * Time: …œŒÁ11:12
+ * Time: ‰∏äÂçà11:12
  */
 public class UIScrollMenuDemo extends JFrame {
     public UIScrollMenuDemo() {

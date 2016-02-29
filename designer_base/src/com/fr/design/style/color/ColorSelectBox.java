@@ -49,12 +49,12 @@ public class ColorSelectBox extends AbstractSelectBox<Color> implements UIObserv
     }
 
     /**
-     * ³õÊ¼»¯µ¯³ö¿òµÄÃæ°å
-     * @param preferredWidth ¿í¶È
-     * @return µ¯³öÃæ°å
+     * åˆå§‹åŒ–å¼¹å‡ºæ¡†çš„é¢æ¿
+     * @param preferredWidth å®½åº¦
+     * @return å¼¹å‡ºé¢æ¿
      */
     public JPanel initWindowPane(double preferredWidth) {
-    	// ÏÂÀ­µÄÊ±ºòÖØĞÂÉú³ÉÃæ°å£¬Ë¢ĞÂ×î½üÊ¹ÓÃÑÕÉ«
+    	// ä¸‹æ‹‰çš„æ—¶å€™é‡æ–°ç”Ÿæˆé¢æ¿ï¼Œåˆ·æ–°æœ€è¿‘ä½¿ç”¨é¢œè‰²
     	colorPane = getColorSelectPane();
         colorPane.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
@@ -67,16 +67,16 @@ public class ColorSelectBox extends AbstractSelectBox<Color> implements UIObserv
     }
 
     /**
-     * »ñÈ¡µ±Ç°Ñ¡ÖĞµÄÑÕÉ«
-     * @return µ±Ç°Ñ¡ÖĞµÄÑÕÉ«
+     * è·å–å½“å‰é€‰ä¸­çš„é¢œè‰²
+     * @return å½“å‰é€‰ä¸­çš„é¢œè‰²
      */
     public Color getSelectObject() {
         return this.color;
     }
 
     /**
-     *ÉèÖÃÑ¡ÖĞµÄÑÕÉ«
-     * @param color ÑÕÉ«
+     *è®¾ç½®é€‰ä¸­çš„é¢œè‰²
+     * @param color é¢œè‰²
      */
     public void setSelectObject(Color color) {
         this.color = color;
@@ -86,16 +86,16 @@ public class ColorSelectBox extends AbstractSelectBox<Color> implements UIObserv
     }
 
     /**
-     * ×¢²á¼àÌıÆ÷
-     * @param listener ¼àÌıÆ÷
+     * æ³¨å†Œç›‘å¬å™¨
+     * @param listener ç›‘å¬å™¨
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
     }
 
     /**
-     * ÊÇ·ñÏàÓ¦ÊÂ¼ş
-     * @return ĞèÒªÏàÓ¦
+     * æ˜¯å¦ç›¸åº”äº‹ä»¶
+     * @return éœ€è¦ç›¸åº”
      */
     public boolean shouldResponseChangeListener() {
         return true;

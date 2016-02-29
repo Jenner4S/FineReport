@@ -13,7 +13,7 @@ import com.fr.stable.StableUtils;
  * GridColumn used to paint and edit grid column.
  *
  * @editor zhou
- * @since 2012-3-22ÏÂÎç6:12:40
+ * @since 2012-3-22ä¸‹åˆ6:12:40
  */
 public class GridColumn extends GridHeader<String> {
 

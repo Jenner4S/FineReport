@@ -4,7 +4,7 @@ import com.fr.base.SeparationConstants;
 import com.fr.general.Inter;
 
 public class DictionaryConstants {
-	// richer:ÕıÔò±í´ïÊ½
+	// richer:æ­£åˆ™è¡¨è¾¾å¼
 	public final static String[] regexps = new String[] { 
 		"", 
 		"^.+$",
@@ -39,7 +39,7 @@ public class DictionaryConstants {
 	public final static int REG_POSTCODE = 8;
 	public final static int REG_CUSTOM = 9;
 	
-	// richer:·Ö¸ô·û
+	// richer:åˆ†éš”ç¬¦
 	public static final String[] delimiters = new String[]{
 		SeparationConstants.COMMA, SeparationConstants.SEMICOLON, SeparationConstants.COLON
 		};
@@ -59,7 +59,7 @@ public class DictionaryConstants {
 		Inter.getLocText("Form-Single_quote"),
 		Inter.getLocText("Form-Double_quotes")
 	};
-	// richer:ÎÄ¼şÀàĞÍÑ¡ÔñÆ÷
+	// richer:æ–‡ä»¶ç±»å‹é€‰æ‹©å™¨
 	public static final String[] fileTypes = new String[]{
 		"",
 		"txt",

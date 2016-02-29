@@ -6,12 +6,12 @@ import com.fr.design.mainframe.chart.gui.style.series.ChartSeriesPane;
 import com.fr.design.mainframe.chart.gui.style.series.SeriesPane4ChartDesigner;
 
 /**
- * 图表设计器的样式面板
+ * 鍥捐〃璁捐鍣ㄧ殑鏍峰紡闈㈡澘
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-25
- * Time: 下午6:56
+ * Time: 涓嬪崍6:56
  */
 public class StylePane4Chart extends ChartStylePane {
 

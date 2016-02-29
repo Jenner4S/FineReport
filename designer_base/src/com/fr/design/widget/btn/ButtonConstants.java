@@ -12,7 +12,7 @@ import com.fr.stable.bridge.StableFactory;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç6:23
+ * Time   : ä¸‹åˆ6:23
  */
 public class ButtonConstants {
 

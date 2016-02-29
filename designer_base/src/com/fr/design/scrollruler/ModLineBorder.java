@@ -10,9 +10,9 @@ import javax.swing.border.AbstractBorder;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ModLineBorder, ÏÔÊ¾Ä³¼¸¸ö±ß¿ò
- * august£ºĞ´Õâ¸öÀàµÄÈË£¬»¹ÊÇ¶ÔswingµÄapi²»ÊìÏ¤£¬²»ÊÇÒÑ¾­ÓĞÒ»¸ö£º
- * BorderFactory.createMatteBorder(top, left, bottom, right, color)·½·¨ÁËÂğ£¿
+ * ModLineBorder, æ˜¾ç¤ºæŸå‡ ä¸ªè¾¹æ¡†
+ * augustï¼šå†™è¿™ä¸ªç±»çš„äººï¼Œè¿˜æ˜¯å¯¹swingçš„apiä¸ç†Ÿæ‚‰ï¼Œä¸æ˜¯å·²ç»æœ‰ä¸€ä¸ªï¼š
+ * BorderFactory.createMatteBorder(top, left, bottom, right, color)æ–¹æ³•äº†å—ï¼Ÿ
  */
 public class ModLineBorder extends AbstractBorder {
     public static final int TOP = 0x00000001;

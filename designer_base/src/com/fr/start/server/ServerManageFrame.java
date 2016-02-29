@@ -24,10 +24,10 @@ import com.fr.design.utils.DesignUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ÄÚÖÃJetty·şÎñÆ÷¹ÜÀí½çÃæ 
+ * å†…ç½®JettyæœåŠ¡å™¨ç®¡ç†ç•Œé¢ 
  */
 public class ServerManageFrame extends JFrame {
-	// ÓÉÓÚÊµ¼ÊÇé¿ö£¬Ö»ĞèÒªÒ»¸öµ±Ç°¶ÔÏóµÄInstance.
+	// ç”±äºå®é™…æƒ…å†µï¼Œåªéœ€è¦ä¸€ä¸ªå½“å‰å¯¹è±¡çš„Instance.
 	private static ServerManageFrame serverManageFrame = null;
 	private JettyHost hostJettyServer;
 	
@@ -36,7 +36,7 @@ public class ServerManageFrame extends JFrame {
 			serverManageFrame = new ServerManageFrame(hostJettyServer);
 		}
 
-		//p:Ã¿´ÎÆô¶¯Ö®Ç°¶¼ĞèÒª¼ì²é°´Å¥µÄEnabledÊôĞÔ.
+		//p:æ¯æ¬¡å¯åŠ¨ä¹‹å‰éƒ½éœ€è¦æ£€æŸ¥æŒ‰é’®çš„Enabledå±æ€§.
 		try {
 			serverManageFrame.checkButtonEnabled();
 		} catch(Exception exp) {
@@ -150,8 +150,8 @@ public class ServerManageFrame extends JFrame {
 	}
 
     /**
-     * ¼ìÑébuttonÊÇ·ñ¿ÉÓÃ
-     * @throws Exception Òì³£
+     * æ£€éªŒbuttonæ˜¯å¦å¯ç”¨
+     * @throws Exception å¼‚å¸¸
      */
 	public void checkButtonEnabled() throws Exception  {
 		JettyHost jettyServer = StartServer.getInstance();

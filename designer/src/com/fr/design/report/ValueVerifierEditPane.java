@@ -21,7 +21,7 @@ public class ValueVerifierEditPane extends JPanel {
 			Inter.getLocText("Verify-Error_Information") };
 
 	public ValueVerifierEditPane() {
-		// ben:UITableEditorPane£»
+		// ben:UITableEditorPaneï¼›
 		this.setLayout(FRGUIPaneFactory.createM_BorderLayout());
 		tableEditorPane = new UITableEditorPane<Object[]>(new UIArrayTableModel(columnNames, new int[] {
 				ActionStyle.ADDSTYLE, ActionStyle.DELETESTYLE,

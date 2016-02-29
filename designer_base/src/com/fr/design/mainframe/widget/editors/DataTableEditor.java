@@ -48,9 +48,9 @@ public class DataTableEditor extends Editor<DataTableConfig> {
 
 
     /**
-     * ÄÜ½ÓÊÜµÄÊı¾İÀàĞÍ
-     * @param object ÀàĞÍ
-     * @return ÊÇDataTableConfigÀàĞÍÔò·µ»Øtrue
+     * èƒ½æ¥å—çš„æ•°æ®ç±»å‹
+     * @param object ç±»å‹
+     * @return æ˜¯DataTableConfigç±»å‹åˆ™è¿”å›true
      */
 	public boolean accept(Object object) {
 		return object instanceof DataTableConfig;
@@ -73,7 +73,7 @@ public class DataTableEditor extends Editor<DataTableConfig> {
 	}
 
 	/**
-	 * µÃµ½Í¼±êÃû
+	 * å¾—åˆ°å›¾æ ‡å
 	 *
 	 * @return
 	 */

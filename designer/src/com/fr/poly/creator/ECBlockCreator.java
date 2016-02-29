@@ -19,7 +19,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-1
+ * @since 6.5.4 åˆ›å»ºäº2011-4-1
  */
 public class ECBlockCreator extends BlockCreator<PolyECBlock> {
 	private ECBlockEditor editor;
@@ -65,9 +65,9 @@ public class ECBlockCreator extends BlockCreator<PolyECBlock> {
 	}
 
 	/**
-	 * ¼ì²â°´Å¥×´Ì¬
+	 * æ£€æµ‹æŒ‰é’®çŠ¶æ€
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:33:46
+	 * @date 2015-2-5-ä¸Šåˆ11:33:46
 	 * 
 	 */
 	public void checkButtonEnable() {
@@ -84,11 +84,11 @@ public class ECBlockCreator extends BlockCreator<PolyECBlock> {
 	}
 
 	/**
-	 * µ±Ç°¶ÔÏóµÄ¹¤¾ßÀ¸Êı×é
+	 * å½“å‰å¯¹è±¡çš„å·¥å…·æ æ•°ç»„
 	 * 
-	 * @return ¹¤¾ßÀ¸Êı×é
+	 * @return å·¥å…·æ æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:32:10
+	 * @date 2015-2-5-ä¸Šåˆ11:32:10
 	 * 
 	 */
 	public ToolBarDef[] toolbars4Target() {
@@ -96,11 +96,11 @@ public class ECBlockCreator extends BlockCreator<PolyECBlock> {
 	}
 
 	/**
-	 * ÔÚFormµÄ¹¤¾ßÀ¸×é
+	 * åœ¨Formçš„å·¥å…·æ ç»„
 	 * 
-	 * @return ×é¼şÊı×é
+	 * @return ç»„ä»¶æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:31:46
+	 * @date 2015-2-5-ä¸Šåˆ11:31:46
 	 * 
 	 */
 	public JComponent[] toolBarButton4Form() {
@@ -108,11 +108,11 @@ public class ECBlockCreator extends BlockCreator<PolyECBlock> {
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°²Ëµ¥À¸×é
+	 * è·å–å½“å‰èœå•æ ç»„
 	 * 
-	 * @return ²Ëµ¥À¸×é
+	 * @return èœå•æ ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:29:07
+	 * @date 2015-2-5-ä¸Šåˆ11:29:07
 	 * 
 	 */
 	public MenuDef[] menus4Target() {
@@ -124,11 +124,11 @@ public class ECBlockCreator extends BlockCreator<PolyECBlock> {
     }
 
     /**
-	 * »ñÈ¡²Ëµ¥ÀïµÄ¿ì½İ·½Ê½Êı×é
+	 * è·å–èœå•é‡Œçš„å¿«æ·æ–¹å¼æ•°ç»„
 	 * 
-	 * @return ²Ëµ¥ÀïµÄ¿ì½İ·½Ê½Êı×é
+	 * @return èœå•é‡Œçš„å¿«æ·æ–¹å¼æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:27:08
+	 * @date 2015-2-5-ä¸Šåˆ11:27:08
 	 * 
 	 */
 	public ShortCut[] shortcut4TemplateMenu() {

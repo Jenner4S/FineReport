@@ -16,7 +16,7 @@ import com.sun.awt.AWTUtilities;
 
 /**
  * @author Jerry
- *         ·ÇÄ£Ì¬Ğü¸¡¶Ô»°¿ò£¬ÆøÅİĞÎ×´
+ *         éæ¨¡æ€æ‚¬æµ®å¯¹è¯æ¡†ï¼Œæ°”æ³¡å½¢çŠ¶
  */
 public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 	private static final long serialVersionUID = -6386018511442190959L;
@@ -35,22 +35,22 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 	private UIDialog showDialog;
 
 	/**
-	 * @param arrowPosition ¼ıÍ·µÄÎ»ÖÃ£¬ÉÏÏÂ×óÓÒ£¬ÔİÊ±Ö»´¦ÀíÁË×ó±ß£¬ºóÃæÓÃµ½ÁËÔÙËµ TODO
-	 * @param arrowPoint    ¼ıÍ·µÄ×ø±êµã
-	 * @param contentPane   ¶Ô»°¿òÖĞµÄPanel
+	 * @param arrowPosition ç®­å¤´çš„ä½ç½®ï¼Œä¸Šä¸‹å·¦å³ï¼Œæš‚æ—¶åªå¤„ç†äº†å·¦è¾¹ï¼Œåé¢ç”¨åˆ°äº†å†è¯´ TODO
+	 * @param arrowPoint    ç®­å¤´çš„åæ ‡ç‚¹
+	 * @param contentPane   å¯¹è¯æ¡†ä¸­çš„Panel
 	 */
 	public UIBubbleFloatPane(int arrowPosition, Point arrowPoint, BasicBeanPane<T> contentPane) {
 		this(arrowPosition, arrowPoint, contentPane, contentPane.getPreferredSize().width, contentPane.getPreferredSize().height);
 	}
 
 	/**
-	 * Õâ¸ö·½·¨Ö÷ÒªÓÃÓÚÄÇĞ©¿í¶ÈºÍ¸ß¶ÈÓĞ±ä»¯µÄÃæ°å£¬ÒòÎªÏÔÈ»ÍâÃæµÄÆøÅİÒª¹Ì¶¨´óĞ¡£¬²»È»ºö´óºöĞ¡£¬ÌåÑéÌ«²îÁË
+	 * è¿™ä¸ªæ–¹æ³•ä¸»è¦ç”¨äºé‚£äº›å®½åº¦å’Œé«˜åº¦æœ‰å˜åŒ–çš„é¢æ¿ï¼Œå› ä¸ºæ˜¾ç„¶å¤–é¢çš„æ°”æ³¡è¦å›ºå®šå¤§å°ï¼Œä¸ç„¶å¿½å¤§å¿½å°ï¼Œä½“éªŒå¤ªå·®äº†
 	 *
-	 * @param arrowPosition ¼ıÍ·µÄÎ»ÖÃ£¬ÉÏÏÂ×óÓÒ£¬ÔİÊ±Ö»´¦ÀíÁË×ó±ß£¬ºóÃæÓÃµ½ÁËÔÙËµ TODO
-	 * @param arrowPoint    ¼ıÍ·µÄ×ø±êµã
-	 * @param contentPane   ¶Ô»°¿òÖĞµÄPanel
-	 * @param width         ¶Ô»°¿òÖĞµÄPanelµÄ¿í¶È£¬Ğ´ËÀÁË
-	 * @param height        ¶Ô»°¿òÖĞµÄPanelµÄ¸ß¶È£¬Ğ´ËÀÁË
+	 * @param arrowPosition ç®­å¤´çš„ä½ç½®ï¼Œä¸Šä¸‹å·¦å³ï¼Œæš‚æ—¶åªå¤„ç†äº†å·¦è¾¹ï¼Œåé¢ç”¨åˆ°äº†å†è¯´ TODO
+	 * @param arrowPoint    ç®­å¤´çš„åæ ‡ç‚¹
+	 * @param contentPane   å¯¹è¯æ¡†ä¸­çš„Panel
+	 * @param width         å¯¹è¯æ¡†ä¸­çš„Panelçš„å®½åº¦ï¼Œå†™æ­»äº†
+	 * @param height        å¯¹è¯æ¡†ä¸­çš„Panelçš„é«˜åº¦ï¼Œå†™æ­»äº†
 	 */
 	public UIBubbleFloatPane(int arrowPosition, Point arrowPoint, BasicBeanPane<T> contentPane, int width, int height) {
 		this.contentPane = contentPane;
@@ -68,9 +68,9 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 	}
 
     /**
-     * show¶Ô»°¿ò
-     * @param fatherPane ÉÏÒ»²ã½çÃæ parentPane
-     * @param ob  ´«ÈëµÄÄÚÈİ£¬ÔÚshowÖ®Ç°populate
+     * showå¯¹è¯æ¡†
+     * @param fatherPane ä¸Šä¸€å±‚ç•Œé¢ parentPane
+     * @param ob  ä¼ å…¥çš„å†…å®¹ï¼Œåœ¨showä¹‹å‰populate
      */
 	public void show(JComponent fatherPane, T ob) {
 		populateBean(ob);
@@ -81,14 +81,14 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 	}
 
 	/**
-	 * Êı¾İÕ¹ÏÖ
+	 * æ•°æ®å±•ç°
 	 */
 	public void populateBean(T ob) {
 		contentPane.populateBean(ob);
 	}
 
 	/**
-	 * Í£Ö¹±à¼­, ¸üĞÂÖÁ×îĞÂµÄÃæ°åµ½ÊôĞÔ±£´æ
+	 * åœæ­¢ç¼–è¾‘, æ›´æ–°è‡³æœ€æ–°çš„é¢æ¿åˆ°å±æ€§ä¿å­˜
 	 */
 	public T updateBean() {
 		updateContentPane();
@@ -96,15 +96,15 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 	}
 
 	/**
-	 * ĞèÒªÊµÏÖ¸üĞÂÄÚÈİ£¬½«updateBean´«Öµ¸ø¶ÔÏó¼´¿É£¬ÔÚ´°¿ÚÏûÊ§µÄÊ±ºò»á±»µ÷ÓÃ
+	 * éœ€è¦å®ç°æ›´æ–°å†…å®¹ï¼Œå°†updateBeanä¼ å€¼ç»™å¯¹è±¡å³å¯ï¼Œåœ¨çª—å£æ¶ˆå¤±çš„æ—¶å€™ä¼šè¢«è°ƒç”¨
 	 */
 	protected abstract void updateContentPane();
 
 	/**
-	 * ÒÔ¶Ô»°¿òµÄĞÎÊ½µ¯³ö
+	 * ä»¥å¯¹è¯æ¡†çš„å½¢å¼å¼¹å‡º
 	 *
-	 * @param window ´°¿Ú
-	 * @return ¶Ô»°¿ò
+	 * @param window çª—å£
+	 * @return å¯¹è¯æ¡†
 	 */
 	public UIDialog showUnsizedWindow(Window window) {
 		CustomShapedDialog dg = null;
@@ -168,7 +168,7 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 			MouseEvent mv = (MouseEvent) event;
 			if (mv.getClickCount() > 0) {
 				Point point = new Point((int) (mv.getLocationOnScreen().getX()) - 2 * OFF_LEFT, (int) mv.getLocationOnScreen().getY());
-				// ÅĞ¶ÏÊó±êµã»÷ÊÇ·ñÔÚ±ß½çÄÚ
+				// åˆ¤æ–­é¼ æ ‡ç‚¹å‡»æ˜¯å¦åœ¨è¾¹ç•Œå†…
 				if (!containsPoint(point) && showDialog != null) {
 					updateContentPane();
 					showDialog.setVisible(false);
@@ -180,7 +180,7 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 
     private boolean containsPoint(Point point) {
         if(arrowPosition == Constants.TOP){
-            //¼ıÍ·ºÍ°´Å¥Ò²ËãÔÚpaneÄÚ
+            //ç®­å¤´å’ŒæŒ‰é’®ä¹Ÿç®—åœ¨paneå†…
             Rectangle judgedBounds = new Rectangle(bounds.x, bounds.y - OFF_LEFT * 2, bounds.width, bounds.height + OFF_LEFT * 2 + OFF_LEFT);
            return judgedBounds.contains(point);
         }
@@ -283,7 +283,7 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 		}
 
 		/**
-		 * »­³ö½çÃæµÄÑùÊ½, ±ß¿òµÈ.
+		 * ç”»å‡ºç•Œé¢çš„æ ·å¼, è¾¹æ¡†ç­‰.
 		 */
 		public void paint(Graphics g) {
 			super.paint(g);
@@ -309,7 +309,7 @@ public abstract class UIBubbleFloatPane<T> extends BasicBeanPane<T> {
 		}
 
 		/**
-		 * ¼ì²é
+		 * æ£€æŸ¥
 		 */
 		public void checkValid() throws Exception {
 

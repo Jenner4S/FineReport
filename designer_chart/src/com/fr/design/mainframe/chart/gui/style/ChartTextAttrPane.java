@@ -37,8 +37,8 @@ public class ChartTextAttrPane extends BasicPane {
     }
 
     /**
-     * ±êÌâ
-     * @return ±êÌâ
+     * æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow() {
         // TODO Auto-generated method stub
@@ -86,8 +86,8 @@ public class ChartTextAttrPane extends BasicPane {
     }
 
     /**
-     * ¸üÐÂ×Ö
-     * @return ¸üÐÂ×Ö
+     * æ›´æ–°å­—
+     * @return æ›´æ–°å­—
      */
     public FRFont updateFRFont() {
         int style = Font.PLAIN;

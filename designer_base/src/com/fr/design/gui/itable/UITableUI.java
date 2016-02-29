@@ -55,14 +55,14 @@ public class UITableUI extends BasicTableUI {
         Graphics2D g2d = (Graphics2D) g;
         Color oldColor = g2d.getColor();
         Stroke oldStroke = g2d.getStroke();
-        //Êó±êĞüÍ£Ê±£¬»­Ò»²ãÀ¶É«±³¾°É«
+        //é¼ æ ‡æ‚¬åœæ—¶ï¼Œç”»ä¸€å±‚è“è‰²èƒŒæ™¯è‰²
         paintRolloverBackground(g2d);
         super.paint(g, c);
-        //»­ĞéÏß£¬²»ÖØĞ´Ô­À´µÄpaintGridÒòÎªpaintGridÎªprivate
+        //ç”»è™šçº¿ï¼Œä¸é‡å†™åŸæ¥çš„paintGridå› ä¸ºpaintGridä¸ºprivate
 //		paintDotLine(g2d);
-        //»­XºÅ
+        //ç”»Xå·
         paintDeleteButton(g2d);
-        //»­ÍÏ×§
+        //ç”»æ‹–æ‹½
         paintDragTab(g2d);
 
 
@@ -209,9 +209,9 @@ public class UITableUI extends BasicTableUI {
     }
 
     /**
-     * ³õÊ¼»¯UI
+     * åˆå§‹åŒ–UI
      *
-     * @param c ×é¼ş
+     * @param c ç»„ä»¶
      */
     public void installUI(JComponent c) {
         table = (JTable) c;

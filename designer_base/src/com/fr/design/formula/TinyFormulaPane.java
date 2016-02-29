@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 /**
  * 
  * @author zhou
- * @since 2012-6-1ÏÂÎç3:50:37
+ * @since 2012-6-1ä¸‹åˆ3:50:37
  */
 public class TinyFormulaPane extends BasicBeanPane<String> implements UIObserver{
 	
@@ -40,7 +40,7 @@ public class TinyFormulaPane extends BasicBeanPane<String> implements UIObserver
 		formulaTextField = new UITextField();
 		formulaTextField.setGlobalName(Inter.getLocText("ExpandD-Sort_After_Expand"));
 
-		// Ìí¼ÓÒ»¹«Ê½±à¼­Æ÷°´Å¥
+		// æ·»åŠ ä¸€å…¬å¼ç¼–è¾‘å™¨æŒ‰é’®
 		formulaTextFieldButton = new UIButton(BaseUtils.readIcon("/com/fr/design/images/m_insert/formula.png"));
 		formulaTextFieldButton.setToolTipText(Inter.getLocText("Formula") + "...");
 		formulaTextFieldButton.setPreferredSize(new Dimension(24, 20));
@@ -92,7 +92,7 @@ public class TinyFormulaPane extends BasicBeanPane<String> implements UIObserver
 	}
 	
 	/**
-	 * ¹«Ê½´°¿Úµã»÷È·¶¨ºóµÄÊÂ¼ş½Ó¿Ú
+	 * å…¬å¼çª—å£ç‚¹å‡»ç¡®å®šåçš„äº‹ä»¶æ¥å£
 	 */
 	public void okEvent() {
 		

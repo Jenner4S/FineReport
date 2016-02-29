@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-25
- * Time: 下午5:05
+ * Time: 涓嬪崍5:05
  */
 public abstract class DataConnectionAction extends UpdateAction {
     public static final String XML_TAG = "connectionType";
@@ -26,28 +26,28 @@ public abstract class DataConnectionAction extends UpdateAction {
     }
 
     /**
-     * 名字
+     * 鍚嶅瓧
      *
      * @return
      */
     public abstract String getDisplayName();
 
     /**
-     * 图标
+     * 鍥炬爣
      *
      * @return
      */
     public abstract String getIconPath();
 
     /**
-     * 得到数据连接的声明类
+     * 寰楀埌鏁版嵁杩炴帴鐨勫０鏄庣被
      *
      * @return
      */
     public abstract Class getConnectionClass();
 
     /**
-     * 得到相应面板的类
+     * 寰楀埌鐩稿簲闈㈡澘鐨勭被
      *
      * @return
      */
@@ -59,8 +59,8 @@ public abstract class DataConnectionAction extends UpdateAction {
     }
 
     /**
-     * 动作
-     * @param e 动作
+     * 鍔ㄤ綔
+     * @param e 鍔ㄤ綔
      */
     public void actionPerformed(ActionEvent e) {
     }

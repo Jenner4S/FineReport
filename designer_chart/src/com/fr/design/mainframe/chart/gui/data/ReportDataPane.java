@@ -32,32 +32,32 @@ public class ReportDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 
     /**
-     * µ¥Ôª¸ñÊı¾İ
-     * @return ½çÃæµÄ±êÌâ
+     * å•å…ƒæ ¼æ•°æ®
+     * @return ç•Œé¢çš„æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart_Cell_Data");
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜÕâ¸ö¶ÔÏó
-     * @param ob ĞèÒªÅĞ¶ÏµÄ¶ÔÏó
-     * @return ½çÃæÊÇ·ñ½ÓÊÜ¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—è¿™ä¸ªå¯¹è±¡
+     * @param ob éœ€è¦åˆ¤æ–­çš„å¯¹è±¡
+     * @return ç•Œé¢æ˜¯å¦æ¥å—å¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return ob instanceof ChartCollection && ((ChartCollection)ob).getSelectedChart().getFilterDefinition() instanceof ReportDataDefinition;
 	}
 
     /**
-     * ½çÃæÖØÖÃ
+     * ç•Œé¢é‡ç½®
      */
 	public void reset() {
 		
 	}
 
     /**
-     * Ë¢ĞÂcontentPane
-     * @param collection Í¼±íÊôĞÔµÄ¼¯ºÏ
+     * åˆ·æ–°contentPane
+     * @param collection å›¾è¡¨å±æ€§çš„é›†åˆ
      */
 	public void refreshContentPane(ChartCollection collection) {
 		this.removeAll();
@@ -70,7 +70,7 @@ public class ReportDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 	
 	/**
-	 * ¼ì²é½çÃæÊÇ·ñ¿ÉÓÃ.
+	 * æ£€æŸ¥ç•Œé¢æ˜¯å¦å¯ç”¨.
 	 */
 	public void checkBoxUse() {
 		if(contentPane != null) {

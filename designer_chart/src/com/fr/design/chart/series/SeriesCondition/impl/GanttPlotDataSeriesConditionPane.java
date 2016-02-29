@@ -13,7 +13,7 @@ import com.fr.design.chart.series.SeriesCondition.LabelColorPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : …œŒÁ9:56
+ * Time   : ‰∏äÂçà9:56
  */
 public class GanttPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 

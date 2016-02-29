@@ -83,17 +83,17 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.3 ¾ÛºÏ±¨±íµÄÉè¼Æ¿é£¬²»°üÀ¨µ×²¿ºÍÓÒ±ßµÄ¹ö¶¯ÌõÒÔ¼°×ó±ßºÍÉÏ±ßµÄÏñËØ±êÊ¶Ìõ
+ * @since 6.5.3 èšåˆæŠ¥è¡¨çš„è®¾è®¡å—ï¼Œä¸åŒ…æ‹¬åº•éƒ¨å’Œå³è¾¹çš„æ»šåŠ¨æ¡ä»¥åŠå·¦è¾¹å’Œä¸Šè¾¹çš„åƒç´ æ ‡è¯†æ¡
  */
 /*
- * August: 1.PolyDesignerÓ¦¸ÃÓĞ¸öSelectableElement£¬ÀàËÆÓÚElementCasePaneµÄselection,
- * ÄÇÃ´¾¿¾¹ÊÇcreator¿ÉÑ¡»¹ÊÇeditor¿ÉÑ¡ÄØ£¿ 2.¿¼ÂÇµ½creator±¾À´¾ÍÊÇ´æÔÚµÄ£¬¶øeditorÊÇÓÉÓÚµã»÷ÁËcreator²ÅÉú³ÉµÄ,
- * PolyDesignerµÄSelectableElementÊÇcreator
- * 3.¼ÓÈë¾ÛºÏ¿éÊÇECBLOCKÊ±£¬ÄÇÃ´ÆäÑ¡ÖĞµÄ¶«Î÷Ó¦¸ÃÊÇÊ²Ã´ÄØ£¿ÊÇ¾ÛºÏ¿é»¹ÊÇÀïÃæµÄµ¥Ôª¸ñ»òÕßĞü¸¡ÔªËØ£¿
+ * August: 1.PolyDesigneråº”è¯¥æœ‰ä¸ªSelectableElementï¼Œç±»ä¼¼äºElementCasePaneçš„selection,
+ * é‚£ä¹ˆç©¶ç«Ÿæ˜¯creatorå¯é€‰è¿˜æ˜¯editorå¯é€‰å‘¢ï¼Ÿ 2.è€ƒè™‘åˆ°creatoræœ¬æ¥å°±æ˜¯å­˜åœ¨çš„ï¼Œè€Œeditoræ˜¯ç”±äºç‚¹å‡»äº†creatoræ‰ç”Ÿæˆçš„,
+ * PolyDesignerçš„SelectableElementæ˜¯creator
+ * 3.åŠ å…¥èšåˆå—æ˜¯ECBLOCKæ—¶ï¼Œé‚£ä¹ˆå…¶é€‰ä¸­çš„ä¸œè¥¿åº”è¯¥æ˜¯ä»€ä¹ˆå‘¢ï¼Ÿæ˜¯èšåˆå—è¿˜æ˜¯é‡Œé¢çš„å•å…ƒæ ¼æˆ–è€…æ‚¬æµ®å…ƒç´ ï¼Ÿ
  */
 public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCasePane, BlockCreator> implements ScrollRulerComponent {
     /**
-     * Ñ¡ÖĞµÄÀàĞÍ--1.Ê²Ã´¶¼Ã»Ñ¡ÖĞ2.Ñ¡ÖĞÒ»¸ö¾ÛºÏ¿éÄÚ²¿µÄÄÚÈİ3.Ñ¡ÖĞ¾ÛºÏ¿é±¾Ê¡
+     * é€‰ä¸­çš„ç±»å‹--1.ä»€ä¹ˆéƒ½æ²¡é€‰ä¸­2.é€‰ä¸­ä¸€ä¸ªèšåˆå—å†…éƒ¨çš„å†…å®¹3.é€‰ä¸­èšåˆå—æœ¬çœ
      */
     public static enum SelectionType {
         NONE, INNER, BLOCK
@@ -104,12 +104,12 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     private AddedData addedData;
     private DataEditingListener editingListener;
     private BlockCreator selection;
-    // Ë®Æ½ºÍ´¹Ö±¹ö¶¯ÌõµÄÖµ
+    // æ°´å¹³å’Œå‚ç›´æ»šåŠ¨æ¡çš„å€¼
     private int horizontalValue = 0;
     private int verticalValue = 0;
     private transient ArrayList<TemplateBlock> clip_board = new ArrayList<TemplateBlock>();
 
-    // richer:Êó±ê¹öÂÖÃ¿¹ö¶¯Ò»ÏÂ£¬PolyDesignPaneµÄ³ß´ç¾Í¸Ä±äROTATIONSÕâÃ´¶à
+    // richer:é¼ æ ‡æ»šè½®æ¯æ»šåŠ¨ä¸€ä¸‹ï¼ŒPolyDesignPaneçš„å°ºå¯¸å°±æ”¹å˜ROTATIONSè¿™ä¹ˆå¤š
     private static final int ROTATIONS = 50;
     private JScrollBar verScrollBar;
     private JScrollBar horScrollBar;
@@ -122,7 +122,7 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     public PolyDesigner(PolyWorkSheet report) {
         super(report);
         setDoubleBuffered(true);
-        // ÎªÁË´¦Àí¼üÅÌÊÂ¼ş£¬ĞèÒªFormDesignerÄÜ¹»»ñÈ¡½¹µã
+        // ä¸ºäº†å¤„ç†é”®ç›˜äº‹ä»¶ï¼Œéœ€è¦FormDesignerèƒ½å¤Ÿè·å–ç„¦ç‚¹
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
         initInputActionMap();
@@ -182,9 +182,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ÊÇ·ñº¬ÓĞ¾ÛºÍ±¨±í¿é
-     * @param targetComponent     Ä¿±ê×é¼ş
-     * @return        ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦å«æœ‰èšå’ŒæŠ¥è¡¨å—
+     * @param targetComponent     ç›®æ ‡ç»„ä»¶
+     * @return        æ˜¯åˆ™è¿”å›true
      */
     public boolean containsBlocks(TargetComponent targetComponent) {
         for (int i = 0, count = this.getTarget().getBlockCount(); i < count; i++) {
@@ -218,24 +218,24 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     *  Ôö¼Ó×é¼ş
-     * @param currentEditor  ×é¼ş
+     *  å¢åŠ ç»„ä»¶
+     * @param currentEditor  ç»„ä»¶
      */
     public void addEditor(BlockEditor currentEditor) {
         this.polyArea.add(currentEditor);
     }
 
     /**
-     *  ÒÆ³ı×é¼ş
-     * @param currentEditor  ×é¼ş
+     *  ç§»é™¤ç»„ä»¶
+     * @param currentEditor  ç»„ä»¶
      */
     public void removeEditor(BlockEditor currentEditor) {
         this.polyArea.remove(currentEditor);
     }
 
     /**
-     * È¨ÏŞ±à¼­×´Ì¬
-     * @return   È¨ÏŞ±à¼­Ãæ°å
+     * æƒé™ç¼–è¾‘çŠ¶æ€
+     * @return   æƒé™ç¼–è¾‘é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         if (elementCasePane == null) {
@@ -258,8 +258,8 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     *  Ôö¼Ó×é¼ş
-     * @param creator  ×é¼ş
+     *  å¢åŠ ç»„ä»¶
+     * @param creator  ç»„ä»¶
      */
     public void addBlockCreator(BlockCreator creator) {
         TemplateBlock block = creator.getValue();
@@ -315,20 +315,20 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Ñ¡ÖĞÒ»¸ö¾ÛºÏ¿ì
+     * é€‰ä¸­ä¸€ä¸ªèšåˆå¿«
      */
     @Override
     /**
-     * Ñ¡ÖĞÒ»¸ö¾ÛºÏ¿ì
+     * é€‰ä¸­ä¸€ä¸ªèšåˆå¿«
      */
     public void setSelection(BlockCreator selectElement) {
-        //¾ÛºÏ¿é²»²Î¼ÓÈ¨ÏŞ±à¼­
+        //èšåˆå—ä¸å‚åŠ æƒé™ç¼–è¾‘
 
         if (selectElement == null) {
             if (BaseUtils.isAuthorityEditing()) {
                 JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
                 if (jTemplate.isJWorkBook()) {
-                    //Çå²ÎÊıÃæ°å
+                    //æ¸…å‚æ•°é¢æ¿
                     jTemplate.removeParameterPaneSelection();
                 }
                 noAuthorityEdit();
@@ -344,15 +344,15 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Ñ¡ÖĞµÄÊÇ·ñÊÇ±¨±í¿é
-     * @return    ÊÇÔò·µ»Øtrue
+     * é€‰ä¸­çš„æ˜¯å¦æ˜¯æŠ¥è¡¨å—
+     * @return    æ˜¯åˆ™è¿”å›true
      */
     public boolean isSelectedECBolck() {
         return this.selection instanceof ECBlockCreator;
     }
 
     /**
-     * ²»Ö§³ÖÈ¨ÏŞ±à¼­
+     * ä¸æ”¯æŒæƒé™ç¼–è¾‘
      */
     public void noAuthorityEdit() {
         EastRegionContainerPane.getInstance().replaceUpPane(new NoSupportAuthorityEdit());
@@ -361,7 +361,7 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 
     private void stopEditingState() {
         if (selection != null) {
-            // ÒÆ³ı±à¼­Æ÷µÄÊ±ºòµ±È»Ò²ÒªÍË³ö±à¼­×´Ì¬
+            // ç§»é™¤ç¼–è¾‘å™¨çš„æ—¶å€™å½“ç„¶ä¹Ÿè¦é€€å‡ºç¼–è¾‘çŠ¶æ€
             removeEditor(selection.getEditor());
             selection = null;
         }
@@ -414,7 +414,7 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 
     @Override
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     public void copy() {
         if (selection != null) {
@@ -424,12 +424,12 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ğ¤Ìù
-     * @return ğ¤Ìù³É¹¦·µ»Øtrue
+     * é»è´´
+     * @return é»è´´æˆåŠŸè¿”å›true
      */
     public boolean paste() {
         if (!clip_board.isEmpty()) {
-            // Õ³ÌùºóÃû×ÖºÍ±ß½ç¶¼ĞèÒª¸Ä±ä
+            // ç²˜è´´ååå­—å’Œè¾¹ç•Œéƒ½éœ€è¦æ”¹å˜
             TemplateBlock block = null;
             try {
                 block = (TemplateBlock) clip_board.get(0).clone();
@@ -476,15 +476,15 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopAddingState() {
         this.addingData = null;
     }
 
     /**
-     * É¾³ı
-     * @return É¾³ı³É¹¦·µ»Øtrue
+     * åˆ é™¤
+     * @return åˆ é™¤æˆåŠŸè¿”å›true
      */
     public boolean delete() {
         if (selection != null) {
@@ -522,8 +522,8 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ¼ôÇĞ
-     * @return ¼ôÇĞ³É¹¦·µ»Øtrue
+     * å‰ªåˆ‡
+     * @return å‰ªåˆ‡æˆåŠŸè¿”å›true
      */
     public boolean cut() {
         copy();
@@ -532,9 +532,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ÒÆ¶¯
-     * @param x    ºá×ø±ê
-     * @param y    ×İ×ø±ê
+     * ç§»åŠ¨
+     * @param x    æ¨ªåæ ‡
+     * @param y    çºµåæ ‡
      */
     public void move(int x, int y) {
         if (selection == null) {
@@ -556,11 +556,11 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         if (selection != null) {
-            // ÔÚÍ£Ö¹±à¼­µÄÊ±ºò£¬Òª°Ñ±à¼­Æ÷µÄÖµ¸³Öµ¸øÏÔÊ¾Æ÷
+            // åœ¨åœæ­¢ç¼–è¾‘çš„æ—¶å€™ï¼Œè¦æŠŠç¼–è¾‘å™¨çš„å€¼èµ‹å€¼ç»™æ˜¾ç¤ºå™¨
             TemplateBlock block = selection.getValue();
             selection.setValue(block);
             this.removeEditor(selection.getEditor());
@@ -644,8 +644,8 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ¿ªÊ¼±à¼­
-     * @param blockName  ¾ÛºÏ¿éÃû³Æ
+     * å¼€å§‹ç¼–è¾‘
+     * @param blockName  èšåˆå—åç§°
      */
     public void startEditing(String blockName) {
         if (StringUtils.isBlank(blockName)) {
@@ -661,9 +661,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ´´½¨ÕıÔÚ±à¼­µÄ×´Ì¬.
+     * åˆ›å»ºæ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      *
-     * @return ·µ»ØÕıÔÚ±à¼­µÄ×´Ì¬.
+     * @return è¿”å›æ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      */
     public EditingState createEditingState() {
         return new PolyDesignerEditingState(selection);
@@ -679,7 +679,7 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
             }
             this.blockName = creator.getValue().getBlockName();
 
-            // TODO: Ğ´¸öĞÂµÄSelection£¬Í¼±í£¬±íµ¥¿ÉÄÜ¶¼Òª
+            // TODO: å†™ä¸ªæ–°çš„Selectionï¼Œå›¾è¡¨ï¼Œè¡¨å•å¯èƒ½éƒ½è¦
             if (creator.getEditor() instanceof ECBlockEditor) {
                 select = ((ECBlockEditor) creator.getEditor()).createEffective().getSelection();
             }
@@ -711,18 +711,18 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     // ////////////////////////////////////////////////////////////////////
 
     /**
-     * Ä£°åµÄ¹¤¾ß
+     * æ¨¡æ¿çš„å·¥å…·
      *
-     * @return ¹¤¾ß
+     * @return å·¥å…·
      */
     public ToolBarDef[] toolbars4Target() {
         return selection == null || isChooseBlock() ? null : this.selection.toolbars4Target();
     }
 
     /**
-     * ±íµ¥µÄ¹¤¾ß°´Å¥
+     * è¡¨å•çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         polyComponetsBar.checkEnable();
@@ -746,9 +746,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Ä£°åµÄ×Ó²Ëµ¥
+     * æ¨¡æ¿çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return (ShortCut[]) ArrayUtils.addAll(super.shortcut4TemplateMenu(), new ShortCut[]{});
@@ -759,9 +759,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Ä¿±êµÄ²Ëµ¥
+     * ç›®æ ‡çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         return selection == null ? new MenuDef[0] : this.selection.menus4Target();
@@ -856,7 +856,7 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
         if (selection == null || selection.getEditor() == null) {
             return QuickEditorRegion.getInstance();
         }
-        //Õâ±ßÊÇ½øĞĞ¸üĞÂ
+        //è¿™è¾¹æ˜¯è¿›è¡Œæ›´æ–°
         BlockEditor current_editor = selection.getEditor();
         current_editor.resetSelectionAndChooseState();
         return QuickEditorRegion.getInstance();
@@ -873,8 +873,8 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     *   ÊÇ·ñÑ¡ÖĞ¾ÛºÏ¿é±¾Éí
-     * @return   ÊÇÔò·µ»Øtrue
+     *   æ˜¯å¦é€‰ä¸­èšåˆå—æœ¬èº«
+     * @return   æ˜¯åˆ™è¿”å›true
      */
     public boolean isChooseBlock() {
         return selectedtype == SelectionType.BLOCK;
@@ -890,18 +890,18 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * Ìí¼ÓÑ¡ÖĞµÄSelectionListener
+     * æ·»åŠ é€‰ä¸­çš„SelectionListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void addSelectionChangeListener(SelectionListener selectionListener) {
         this.listenerList.add(SelectionListener.class, selectionListener);
     }
 
     /**
-     * ÒÆ³ıÑ¡ÖĞµÄSelectionListener
+     * ç§»é™¤é€‰ä¸­çš„SelectionListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void removeSelectionChangeListener(SelectionListener selectionListener) {
         this.listenerList.remove(SelectionListener.class, selectionListener);
@@ -921,23 +921,23 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
     }
 
     /**
-     * ¼ÆËã¹ö¶¯ÌõµÄÖµºÍmax
-     * @param oldmax Ö®Ç°×î´óÖµ
-     * @param max µ±Ç°×î´óÖµ
-     * @param newValue µ±Ç°value
-     * @param oldValue Ö®Ç°value
-     * @param visi designerµÄ´óĞ¡
-     * @param orientation ¹ö¶¯Ìõ·½Ïò
-     * @return ¼ÆËãºóµÄÖµºÍmax
+     * è®¡ç®—æ»šåŠ¨æ¡çš„å€¼å’Œmax
+     * @param oldmax ä¹‹å‰æœ€å¤§å€¼
+     * @param max å½“å‰æœ€å¤§å€¼
+     * @param newValue å½“å‰value
+     * @param oldValue ä¹‹å‰value
+     * @param visi designerçš„å¤§å°
+     * @param orientation æ»šåŠ¨æ¡æ–¹å‘
+     * @return è®¡ç®—åçš„å€¼å’Œmax
      */
 	public Point calculateScroll(int oldmax, int max, int newValue, int oldValue, int visi, int orientation) {
 		return new Point(newValue, max);
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°¾ÛºÏ±¨±íÇøÓò×óÉÏ½Çx×ø±ê
+	 * è·å–å½“å‰èšåˆæŠ¥è¡¨åŒºåŸŸå·¦ä¸Šè§’xåæ ‡
 	 * 
-	 * @return µ±Ç°¾ÛºÏ±¨±íÇøÓò×óÉÏ½Çx×ø±ê
+	 * @return å½“å‰èšåˆæŠ¥è¡¨åŒºåŸŸå·¦ä¸Šè§’xåæ ‡
 	 * 
 	 */
 	public double getAreaLocationX(){
@@ -945,9 +945,9 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°¾ÛºÏ±¨±íÇøÓò×óÉÏ½Çy×ø±ê
+	 * è·å–å½“å‰èšåˆæŠ¥è¡¨åŒºåŸŸå·¦ä¸Šè§’yåæ ‡
 	 * 
-	 * @return µ±Ç°¾ÛºÏ±¨±íÇøÓò×óÉÏ½Çy×ø±ê
+	 * @return å½“å‰èšåˆæŠ¥è¡¨åŒºåŸŸå·¦ä¸Šè§’yåæ ‡
 	 * 
 	 */
 	public double getAreaLocationY(){
@@ -955,11 +955,11 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 	}
 	
 	/**
-	 * ¼ì²âÖ¸¶¨¿éÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * æ£€æµ‹æŒ‡å®šå—æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
-	 * @param creator Ö¸¶¨µÄ¿é±à¼­Æ÷
+	 * @param creator æŒ‡å®šçš„å—ç¼–è¾‘å™¨
 	 * 
-	 * @return ÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * @return æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
 	 */
 	public boolean intersectsAllBlock(BlockCreator creator){
@@ -967,11 +967,11 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 	}
 	
 	/**
-	 * ¼ì²âÖ¸¶¨¿éÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * æ£€æµ‹æŒ‡å®šå—æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
-	 * @param block Ö¸¶¨µÄ¿é
+	 * @param block æŒ‡å®šçš„å—
 	 * 
-	 * @return ÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * @return æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
 	 */
 	public boolean intersectsAllBlock(TemplateBlock block){
@@ -981,12 +981,12 @@ public class PolyDesigner extends ReportComponent<PolyWorkSheet, PolyElementCase
 	}
 	
 	/**
-	 * ¼ì²âÖ¸¶¨¿éÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * æ£€æµ‹æŒ‡å®šå—æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
-	 * @param rec Ö¸¶¨µÄ¿éÇøÓò
-	 * @param blockName Ö¸¶¨µÄ¿éÃû³Æ
+	 * @param rec æŒ‡å®šçš„å—åŒºåŸŸ
+	 * @param blockName æŒ‡å®šçš„å—åç§°
 	 * 
-	 * @return ÊÇ·ñÓëÆäËûµÄ¿éÓĞÖØµşÇøÓò
+	 * @return æ˜¯å¦ä¸å…¶ä»–çš„å—æœ‰é‡å åŒºåŸŸ
 	 * 
 	 */
 	public boolean intersectsAllBlock(UnitRectangle rec, String blockName){

@@ -18,7 +18,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-18
- * Time: …œŒÁ11:04
+ * Time: ‰∏äÂçà11:04
  */
 public class UIBasicComboBoxEditor extends MetalComboBoxEditor {
 

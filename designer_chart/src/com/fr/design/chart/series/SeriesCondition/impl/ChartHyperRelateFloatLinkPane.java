@@ -22,8 +22,8 @@ import java.util.List;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-12-28 ÏÂÎç03:02:43
- * ÀàËµÃ÷: Í¼±í³¬Á´  ¹ØÁªĞü¸¡ÔªËØ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-12-28 ä¸‹åˆ03:02:43
+ * ç±»è¯´æ˜: å›¾è¡¨è¶…é“¾  å…³è”æ‚¬æµ®å…ƒç´ 
  */
 public class ChartHyperRelateFloatLinkPane extends BasicBeanPane<ChartHyperRelateFloatLink> {
 	private static final long serialVersionUID = -3308412003405587689L;
@@ -58,7 +58,7 @@ public class ChartHyperRelateFloatLinkPane extends BasicBeanPane<ChartHyperRelat
 		Border boder = null;
 		Font font = null;	
 		TitledBorder border = new TitledBorder(boder, Inter.getLocText(new String[]{"Related", "M_Insert-Float"}), 4, 2, font, new Color(1, 159, 222));
-		// Ô²½Ç²»ĞĞ
+		// åœ†è§’ä¸è¡Œ
 		centerPane.setBorder(border);
 		
 		centerPane.add(pane, BorderLayout.NORTH);
@@ -74,8 +74,8 @@ public class ChartHyperRelateFloatLinkPane extends BasicBeanPane<ChartHyperRelat
 	}
 
     /**
-     * ÊÇ·ñĞèÒª¼ÓÔØÖØÃüÃûµÄ¿Õ¼ä
-     * @return Ä¬ÈÏĞèÒª¼ÓÔØ
+     * æ˜¯å¦éœ€è¦åŠ è½½é‡å‘½åçš„ç©ºé—´
+     * @return é»˜è®¤éœ€è¦åŠ è½½
      */
     protected boolean needRenamePane(){
         return true;

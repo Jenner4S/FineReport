@@ -23,7 +23,7 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-20
- * Time: ÉÏÎç9:55
+ * Time: ä¸Šåˆ9:55
  */
 public class TableDataNameObjectCreator extends NameObjectCreator {
     private boolean b = false;
@@ -91,9 +91,9 @@ public class TableDataNameObjectCreator extends NameObjectCreator {
     }
 
     /**
-     * È¡µÃ²Ëµ¥µÄÍ¼Æ¬
+     * å–å¾—èœå•çš„å›¾ç‰‡
      *
-     * @return Í¼Æ¬
+     * @return å›¾ç‰‡
      */
     public Icon menuIcon() {
         return createMenuIcon();
@@ -108,9 +108,9 @@ public class TableDataNameObjectCreator extends NameObjectCreator {
     }
 
     /**
-     * ´´½¨ÌáÊ¾
+     * åˆ›å»ºæç¤º
      *
-     * @return ÌáÊ¾
+     * @return æç¤º
      */
     public String createTooltip() {
         return b ? Inter.getLocText("Connect_SQL_Cannot_Null") : null;
@@ -121,7 +121,7 @@ public class TableDataNameObjectCreator extends NameObjectCreator {
     }
 
     /**
-     * ½«namesÅÅĞò
+     * å°†namesæ’åº
      *
      * @return
      */
@@ -147,16 +147,16 @@ public class TableDataNameObjectCreator extends NameObjectCreator {
     }
 
     /**
-     * ¼ÓÈëÃû×Ö
+     * åŠ å…¥åå­—
      *
-     * @param names Ãû×Ö
+     * @param names åå­—
      */
     public void addNames(String names) {
         this.names.add(names);
     }
 
     /**
-     * Çå³ı
+     * æ¸…é™¤
      */
     public void clear() {
         this.names.clear();

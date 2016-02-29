@@ -17,9 +17,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * ÒÇ±íÅÌ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İ½çÃæ
+ * ä»ªè¡¨ç›˜ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-21 ÏÂÎç02:47:57
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-21 ä¸‹åˆ02:47:57
  */
 public class MeterPlotReportDataContentPane extends AbstractReportDataContentPane {
 	

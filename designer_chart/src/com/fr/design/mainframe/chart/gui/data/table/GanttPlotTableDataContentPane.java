@@ -178,7 +178,7 @@ public class GanttPlotTableDataContentPane extends AbstractTableDataContentPane{
 	}
 
     /**
-     * 清空所有的box设置
+     * 娓呯┖鎵�鏈夌殑box璁剧疆
      */
     public void clearAllBoxList(){
         clearBoxItems(step);

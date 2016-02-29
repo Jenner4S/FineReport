@@ -29,7 +29,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-1
+ * @since 6.5.4 åˆ›å»ºäº2011-4-1
  */
 public class PolyDesignerDropTarget extends DropTargetAdapter {
 	
@@ -39,7 +39,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 	private PolyDesigner designer;
 	private AddingData addingData;
 	private int resolution = ScreenResolution.getScreenResolution();
-	//½ûÖ¹ÖØµşÌáÊ¾´°¿Ú
+	//ç¦æ­¢é‡å æç¤ºçª—å£
 	private BlockForbiddenWindow forbiddenWindow = new BlockForbiddenWindow();
 
 	public PolyDesignerDropTarget(PolyDesigner designer) {
@@ -48,9 +48,9 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 	}
 
 	/**
-	 * ÍÏ×§½øÈëÊÂ¼ş
+	 * æ‹–æ‹½è¿›å…¥äº‹ä»¶
 	 * 
-	 * @param dtde Êó±êÊÂ¼ş
+	 * @param dtde é¼ æ ‡äº‹ä»¶
 	 * 
 	 */
 	public void dragEnter(DropTargetDragEvent dtde) {
@@ -58,7 +58,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 		if (BaseUtils.isAuthorityEditing()) {
 			return;
 		}
-		// richer:±ÜÃâÔÚÒ»´ÎÍÏ×§¹ı³ÌÖĞÖØ¸´²éÕÒ
+		// richer:é¿å…åœ¨ä¸€æ¬¡æ‹–æ‹½è¿‡ç¨‹ä¸­é‡å¤æŸ¥æ‰¾
 		if (designer.getAddingData() != null) {
 			return;
 		}
@@ -93,18 +93,18 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 	}
 
 	/**
-	 * ÍÏ×§Ğü¸¡ÊÂ¼ş
+	 * æ‹–æ‹½æ‚¬æµ®äº‹ä»¶
 	 * 
-	 * @param dtde Êó±êÊÂ¼ş
+	 * @param dtde é¼ æ ‡äº‹ä»¶
 	 * 
 	 */
 	public void dragOver(DropTargetDragEvent dtde) {
 		if (addingData != null) {
 			Point loc = dtde.getLocation();
 			addingData.moveTo(loc);
-			//¼ì²âÊÇ·ñ¸ú±ğµÄ×é¼şÖØµş
+			//æ£€æµ‹æ˜¯å¦è·Ÿåˆ«çš„ç»„ä»¶é‡å 
 			setForbiddenWindowVisibility(loc);
-			//¼ì²âÊÇ·ñµ½´ï½ÇÂä
+			//æ£€æµ‹æ˜¯å¦åˆ°è¾¾è§’è½
 			scrollWhileDropCorner(dtde);
 			
 			designer.repaint();
@@ -117,7 +117,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 			@Override
 			public void run() {
 				Point location = dtde.getLocation();
-				//µ±blockµÄÓÒÏÂ½ÇĞ¡ÓÚµ±Ç°Ãæ°åµÄ-SCROLL_POINTÊ±, ¿ªÊ¼¹ö¶¯
+				//å½“blockçš„å³ä¸‹è§’å°äºå½“å‰é¢æ¿çš„-SCROLL_POINTæ—¶, å¼€å§‹æ»šåŠ¨
 				if(location.x > designer.getWidth() - SCROLL_POINT){
 					JScrollBar horizonBar = designer.getHorizontalScrollBar();
 					horizonBar.setValue(horizonBar.getValue() + SCROLL_DISTANCE);
@@ -133,7 +133,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 		tt.start();
 	}
 	
-	//ÉèÖÃÊÇ·ñÏÔÊ¾ ½ûÖ¹×é¼şÖØµş ´°¿Ú
+	//è®¾ç½®æ˜¯å¦æ˜¾ç¤º ç¦æ­¢ç»„ä»¶é‡å  çª—å£
 	private void setForbiddenWindowVisibility(Point loc){
 		BlockCreator creator = addingData.getCreator();
 		Rectangle pixRec = getCreatorPixRectangle(creator, loc);
@@ -149,9 +149,9 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 	}
 
 	/**
-	 * ·ÅÏÂÊÂ¼ş
+	 * æ”¾ä¸‹äº‹ä»¶
 	 * 
-	 * @param dtde Êó±êÊÂ¼ş
+	 * @param dtde é¼ æ ‡äº‹ä»¶
 	 * 
 	 */
 	public void drop(DropTargetDropEvent dtde) {
@@ -167,16 +167,16 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 			designer.addBlockCreator(creator);
 			designer.stopEditing();
 			designer.setSelection(creator);
-			//ÔÚÖØĞÂÉèÖÃÁËÑ¡ÔñÖ®ºó£¬Òª¶Ô²Ëµ¥ºÍ¹¤¾ß½øĞĞtargetµÄÖØĞÂÉèÖÃ
+			//åœ¨é‡æ–°è®¾ç½®äº†é€‰æ‹©ä¹‹åï¼Œè¦å¯¹èœå•å’Œå·¥å…·è¿›è¡Œtargetçš„é‡æ–°è®¾ç½®
 			DesignerContext.getDesignerFrame().resetToolkitByPlus(DesignerContext.getDesignerFrame().getSelectedJTemplate());
 			focusOnSelection();
 			designer.fireTargetModified();
-			// richer:ÍÏ×§Íê³ÉºóĞèÒª°ÑaddingDataÖØÖÃ
+			// richer:æ‹–æ‹½å®Œæˆåéœ€è¦æŠŠaddingDataé‡ç½®
 			addingData = null;
 		}
 	}
 	
-	//¾Û½¹Ñ¡ÖĞ¿é
+	//èšç„¦é€‰ä¸­å—
 	private void focusOnSelection(){
 		if (designer.getSelection().getEditingElementCasePane() == null) {
 			return;
@@ -187,7 +187,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 		}
 	}
 	
-	//¼ì²âĞÂ¼ÓÈëµÄcreatorÎ»ÖÃÊÇ·ñÓëÀÏµÄÖØµş, ÖØµş·µ»Øfalse
+	//æ£€æµ‹æ–°åŠ å…¥çš„creatorä½ç½®æ˜¯å¦ä¸è€çš„é‡å , é‡å è¿”å›false
 	private boolean intersectLocation(Rectangle pixRec, BlockCreator creator){
 		if (pixRec.getX() < 0 || pixRec.getY() < 0) {
 			forbiddenWindow.hideWindow();
@@ -196,7 +196,7 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 		}
 		UnitRectangle rec = new UnitRectangle(pixRec, resolution);
 		if(designer.intersectsAllBlock(rec, creator.getValue().getBlockName())){
-			//Í£Ö¹ÒÆ¶¯ºóÒªÒş²Øµô½ûÖ¹ÖØµşµÄ±êÖ¾
+			//åœæ­¢ç§»åŠ¨åè¦éšè—æ‰ç¦æ­¢é‡å çš„æ ‡å¿—
 			forbiddenWindow.hideWindow();
 			designer.repaint();
 			return false;
@@ -216,9 +216,9 @@ public class PolyDesignerDropTarget extends DropTargetAdapter {
 	}
 
 	/**
-	 * ÍÏ×§ÒÆ³öÈ¥ÊÂ¼ş
+	 * æ‹–æ‹½ç§»å‡ºå»äº‹ä»¶
 	 * 
-	 * @param dte ÍÏ×§ÊÂ¼ş
+	 * @param dte æ‹–æ‹½äº‹ä»¶
 	 * 
 	 */
 	public void dragExit(DropTargetEvent dte) {

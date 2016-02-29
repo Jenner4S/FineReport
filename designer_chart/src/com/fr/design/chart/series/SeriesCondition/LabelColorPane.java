@@ -36,8 +36,8 @@ public class LabelColorPane extends ConditionAttrSingleConditionPane<DataSeriesC
     }
 
     /**
-     *  条目名称
-     * @return 名称
+     *  鏉＄洰鍚嶇О
+     * @return 鍚嶇О
      */
     @Override
     public String nameForPopupMenuItem() {

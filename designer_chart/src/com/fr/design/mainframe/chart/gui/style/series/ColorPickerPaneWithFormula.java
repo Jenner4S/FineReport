@@ -41,7 +41,7 @@ public class ColorPickerPaneWithFormula extends UIColorPickerPane{
    	}
 
     /**
-   	 * ÉèÖÃ±ä»¯µÄ±³¾°ÑÕÉ«
+   	 * è®¾ç½®å˜åŒ–çš„èƒŒæ™¯é¢œè‰²
    	 * */
    	protected void setBackgroundUIColor(int index,Color color) {
         ((TinyFormulaPane)textFieldList.get(index)).getUITextField().setBackgroundUIColor(color);

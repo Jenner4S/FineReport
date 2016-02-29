@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * ´«µÝSerializable¶ÔÏó.
+ * ä¼ é€’Serializableå¯¹è±¡.
  */
 public class SerializableTransferable implements Transferable, ClipboardOwner {
     public static final DataFlavor SerializableDataFlavor =

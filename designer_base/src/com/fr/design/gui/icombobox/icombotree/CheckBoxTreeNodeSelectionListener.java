@@ -12,8 +12,8 @@ public class CheckBoxTreeNodeSelectionListener extends MouseAdapter
     private ArrayList treePathList = new ArrayList<TreePath>();
 
     /**
-     * 鼠标点击事件
-     * @param event 事件
+     * 榧犳爣鐐瑰嚮浜嬩欢
+     * @param event 浜嬩欢
      */
     @Override
     public void mouseClicked(MouseEvent event)

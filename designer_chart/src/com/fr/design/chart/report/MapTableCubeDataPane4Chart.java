@@ -25,7 +25,7 @@ public class MapTableCubeDataPane4Chart extends FurtherBasicBeanPane<MapMoreLaye
    	}
 
 	/**
-	 * 刷新区域名称列表
+	 * 鍒锋柊鍖哄煙鍚嶇О鍒楄〃
 	 */
    	public void refreshAreaNameBox() {
    		TableDataWrapper tableDataWrappe = tableDataWrapper;
@@ -42,23 +42,23 @@ public class MapTableCubeDataPane4Chart extends FurtherBasicBeanPane<MapMoreLaye
 	}
 
    	/**
-   	 * 界面接入
-        * @param ob  界面
-        *            @return  返回接入.
+   	 * 鐣岄潰鎺ュ叆
+        * @param ob  鐣岄潰
+        *            @return  杩斿洖鎺ュ叆.
    	 */
    	public boolean accept(Object ob) {
    		return true;
    	}
 
    	/**
-   	 * 重置
+   	 * 閲嶇疆
    	 */
    	public void reset() {
    	}
 
    	/**
-   	 * 界面弹出标题
-        * @return  返回标题.
+   	 * 鐣岄潰寮瑰嚭鏍囬
+        * @return  杩斿洖鏍囬.
    	 */
    	public String title4PopupWindow() {
    		return Inter.getLocText("FR-Chart-Table_Data");

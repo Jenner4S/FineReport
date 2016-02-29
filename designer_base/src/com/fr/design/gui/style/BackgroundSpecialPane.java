@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-17
- * Time: ÏÂÎç5:33
+ * Time: ä¸‹åˆ5:33
  */
 public class BackgroundSpecialPane extends BackgroundPane{
 

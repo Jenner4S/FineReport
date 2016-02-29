@@ -12,26 +12,26 @@ public interface ConnectionProvider {
     public static final String XML_TAG = "ConnectionProvider";
 
     /**
-     * Êı¾İÁ¬½Óµ¯³ö²Ëµ¥µÄÃû×Ö
-     * @return Ãû×Ö
+     * æ•°æ®è¿æ¥å¼¹å‡ºèœå•çš„åå­—
+     * @return åå­—
      */
     public String nameForConnection();
 
     /**
-     * Êı¾İÁ¬½Óµ¯³ö²Ëµ¥µÄÍ¼±ê
-     * @return Í¼±êÂ·¾¶
+     * æ•°æ®è¿æ¥å¼¹å‡ºèœå•çš„å›¾æ ‡
+     * @return å›¾æ ‡è·¯å¾„
      */
     public String iconPathForConnection();
 
     /**
-     * Êı¾İÁ¬½ÓµÄÀàĞÍ
-     * @return Á¬½ÓÀàĞÍ
+     * æ•°æ®è¿æ¥çš„ç±»å‹
+     * @return è¿æ¥ç±»å‹
      */
     public Class<? extends com.fr.data.impl.Connection> classForConnection();
 
     /**
-     * Êı¾İÁ¬½ÓµÄÉè¼Æ½çÃæ
-     * @return Éè¼Æ½çÃæ
+     * æ•°æ®è¿æ¥çš„è®¾è®¡ç•Œé¢
+     * @return è®¾è®¡ç•Œé¢
      */
     public Class<? extends BasicBeanPane<? extends Connection>> appearanceForConnection();
 }

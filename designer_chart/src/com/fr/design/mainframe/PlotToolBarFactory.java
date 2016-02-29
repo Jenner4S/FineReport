@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 7.1.1
- * Í¼±íÉè¼ÆÆ÷¹¤¾ßÀ¸Ãæ°åµÄ¹¤³§Àà
+ * å›¾è¡¨è®¾è®¡å™¨å·¥å…·æ é¢æ¿çš„å·¥å‚ç±»
  */
 public class PlotToolBarFactory {
     private static HashMap<ChartTypeValueCollection,Class<? extends PlotPane4ToolBar>> panes4NormalPlot =
@@ -45,10 +45,10 @@ public class PlotToolBarFactory {
     }
 
     /**
-     * ÎªÁËµØÍ¼ºÍgisÒÔÍâµÄÍ¼±íÀàĞÍ´´½¨¹¤¾ßÀ¸
-     * @param type Í¼±íÀàĞÍ
-     * @param chartDesigner Í¼±íÉè¼ÆÆ÷
-     * @return ¹¤¾ßÀ¸
+     * ä¸ºäº†åœ°å›¾å’Œgisä»¥å¤–çš„å›¾è¡¨ç±»å‹åˆ›å»ºå·¥å…·æ 
+     * @param type å›¾è¡¨ç±»å‹
+     * @param chartDesigner å›¾è¡¨è®¾è®¡å™¨
+     * @return å·¥å…·æ 
      */
     public static PlotPane4ToolBar createToolBar4NormalPlot(ChartTypeValueCollection type,ChartDesigner chartDesigner){
         if(!panes4NormalPlot.containsKey(type)){
@@ -65,10 +65,10 @@ public class PlotToolBarFactory {
     }
 
     /**
-     *ÎªµØÍ¼ºÍgis´´½¨¹¤¾ßÀ¸
-     * @param type ÀàĞÍ
-     * @param chartDesigner Í¼±íÉè¼ÆÆ÷
-     * @return ¹¤¾ßÀ¸
+     *ä¸ºåœ°å›¾å’Œgisåˆ›å»ºå·¥å…·æ 
+     * @param type ç±»å‹
+     * @param chartDesigner å›¾è¡¨è®¾è®¡å™¨
+     * @return å·¥å…·æ 
      */
     public static AbstractMapPlotPane4ToolBar createToolBar4MapPlot(ChartTypeValueCollection type,ChartDesigner chartDesigner){
         if(!panes4MapPlot.containsKey(type)){

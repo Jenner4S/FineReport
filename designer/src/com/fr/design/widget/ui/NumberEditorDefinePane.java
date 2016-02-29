@@ -155,7 +155,7 @@ public class NumberEditorDefinePane extends FieldEditorDefinePane<NumberEditor> 
         JPanel content = FRGUIPaneFactory.createY_AXISBoxInnerContainer_L_Pane();
         content.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 0));
         content.setLayout(FRGUIPaneFactory.createBorderLayout());
-        // richer:Êı×ÖµÄÔÊĞíÖ±½Ó±à¼­Ã»ÓĞÒâÒå
+        // richer:æ•°å­—çš„å…è®¸ç›´æ¥ç¼–è¾‘æ²¡æœ‰æ„ä¹‰
 
         JPanel northPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_L_Pane();
         content.add(northPane, BorderLayout.NORTH);

@@ -9,8 +9,8 @@ import com.fr.stable.Nameable;
 public class NameObjectCreator extends AbstractNameableCreator {
 	
 	/*
-	 * alex:ÕâÀïµÄ¹¹Ôìº¯ÊıÎªÊ²Ã´´«Class¶ø²»ÊÇ´«ÊµÀıÄØ?
-	 * ÒòÎª²»Ó¦¸ÃNameObjectCreator³õÊ¼»¯µÄÊ±ºò¾Í°ÑBasicBeanPane³õÊ¼»¯£¬¶øÓ¦¸ÃÔÚĞèÒªÓÃµ½Õâ¸öÃæ°åµÄÊ±ºòÔÙ×öBasicBeanPaneµÄ³õÊ¼»¯²Ù×÷
+	 * alex:è¿™é‡Œçš„æ„é€ å‡½æ•°ä¸ºä»€ä¹ˆä¼ Classè€Œä¸æ˜¯ä¼ å®ä¾‹å‘¢?
+	 * å› ä¸ºä¸åº”è¯¥NameObjectCreatoråˆå§‹åŒ–çš„æ—¶å€™å°±æŠŠBasicBeanPaneåˆå§‹åŒ–ï¼Œè€Œåº”è¯¥åœ¨éœ€è¦ç”¨åˆ°è¿™ä¸ªé¢æ¿çš„æ—¶å€™å†åšBasicBeanPaneçš„åˆå§‹åŒ–æ“ä½œ
 	 */
 	public NameObjectCreator(String menuName, Class clazz, Class<? extends BasicBeanPane> updatePane) {
 		super(menuName, clazz, updatePane);

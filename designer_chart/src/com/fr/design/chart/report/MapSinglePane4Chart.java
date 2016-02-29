@@ -29,31 +29,31 @@ public class MapSinglePane4Chart extends FurtherBasicBeanPane<TopDefinitionProvi
    	}
 
     /**
-     * ÅÐ¶Ï×¼ÐíµÄÇé¿ö
-     * @param ob  Êý¾Ý¼¯
-     * @return ÊÇ²»ÊÇ¶¥²ãÊý¾Ý
+     * åˆ¤æ–­å‡†è®¸çš„æƒ…å†µ
+     * @param ob  æ•°æ®é›†
+     * @return æ˜¯ä¸æ˜¯é¡¶å±‚æ•°æ®
      */
    	public boolean accept(Object ob) {
    		return ob instanceof TopDefinition;
    	}
 
    	/**
-   	 * ÖØÖÃ
+   	 * é‡ç½®
    	 */
    	public void reset() {
 
    	}
 
     /**
-     *½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+     *ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
      */
    	public String title4PopupWindow() {
    		return Inter.getLocText(new String[]{"SingleLayer", "Chart-Map"});
    	}
 
    	/**
-   	 * ¼ÓÔØµ¥²ãµØÍ¼Ê±µÄ Êý¾ÝÀ´Ô´½çÃæ
+   	 * åŠ è½½å•å±‚åœ°å›¾æ—¶çš„ æ•°æ®æ¥æºç•Œé¢
    	 */
    	public void populateBean(TopDefinitionProvider ob) {
         if(ob instanceof MapSingleLayerTableDefinition) {
@@ -62,15 +62,15 @@ public class MapSinglePane4Chart extends FurtherBasicBeanPane<TopDefinitionProvi
    	}
 
    	/**
-   	 * ±£´æÏÂÔØ µ¥²ãÊý¾Ý½çÃæ
+   	 * ä¿å­˜ä¸‹è½½ å•å±‚æ•°æ®ç•Œé¢
    	 */
    	public TopDefinitionProvider updateBean() {
    		return tableSinglePane.updateBean();
    	}
 
 	/**
-     * ³ö·¢Êý¾Ý¼¯¸Ä±ä
-     * @param tableDataWrapper Êý¾Ý¼¯
+     * å‡ºå‘æ•°æ®é›†æ”¹å˜
+     * @param tableDataWrapper æ•°æ®é›†
      */
 	public void fireTableDataChanged(TableDataWrapper tableDataWrapper) {
 		tableSinglePane.setTableDataWrapper(tableDataWrapper);

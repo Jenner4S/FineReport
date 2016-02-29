@@ -61,7 +61,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     private DelFileAction delFileAction = new DelFileAction();
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refresh() {
         selectedOperation.refresh();
@@ -102,7 +102,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
         fireDSChanged();
         TableDataTreePane.getInstance(DesignModelAdapter.getCurrentModelAdapter());
         HistoryTemplateListPane.getInstance().setCurrentEditingTemplate(jt);
-        //´¦Àí×Ô¶¯ĞÂ½¨µÄÄ£°å
+        //å¤„ç†è‡ªåŠ¨æ–°å»ºçš„æ¨¡æ¿
         MutilTempalteTabPane.getInstance().doWithtemTemplate();
         if (BaseUtils.isAuthorityEditing()) {
             RolesAlreadyEditedPane.getInstance().refreshDockingView();
@@ -118,7 +118,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /**
-     * Ë¢ĞÂ²Ëµ¥
+     * åˆ·æ–°èœå•
      */
     public void refreshDockingView() {
         ToolBarDef toolbarDef = new ToolBarDef();
@@ -147,15 +147,15 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged() {
         fireDSChanged(new HashMap<String, String>());
     }
 
     /**
-     *  ÏìÓ¦Êı¾İ¼¯¸Ä±ä
-     * @param map     ¸Ä±äÃû×ÖµÄÊı¾İ¼¯
+     *  å“åº”æ•°æ®é›†æ”¹å˜
+     * @param map     æ”¹å˜åå­—çš„æ•°æ®é›†
      */
     public void fireDSChanged(Map<String, String> map) {
         DesignTableDataManager.fireDSChanged(map);
@@ -182,7 +182,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     private class OpenFolderAction extends UpdateAction {
 
         public OpenFolderAction() {
-            this.setName(Inter.getLocText("Show_in_Containing_Folder"));
+            this.setName(Inter.getLocText("FR-Designer_Show_in_Containing_Folder"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_file/view_folder.png"));
         }
 
@@ -193,12 +193,12 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /*
-     * Ë¢ĞÂReportletsTree
+     * åˆ·æ–°ReportletsTree
      */
     private class RefreshTreeAction extends UpdateAction {
 
         public RefreshTreeAction() {
-            this.setName(Inter.getLocText("Refresh"));
+            this.setName(Inter.getLocText("FR-Designer_Refresh"));
             this.setSmallIcon(UIConstants.REFRESH_ICON);
         }
 
@@ -210,12 +210,12 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /*
-     * ÖØÃüÃûÎÄ¼ş
+     * é‡å‘½åæ–‡ä»¶
      */
     private class RenameAction extends UpdateAction {
 
         public RenameAction() {
-            this.setName(Inter.getLocText("Rename"));
+            this.setName(Inter.getLocText("FR-Designer_Rename"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/data/source/rename.png"));
         }
 
@@ -228,12 +228,12 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /*
-     * É¾³ıÖ¸¶¨ÎÄ¼ş
+     * åˆ é™¤æŒ‡å®šæ–‡ä»¶
      */
     private class DelFileAction extends UpdateAction {
 
         public DelFileAction() {
-            this.setName(Inter.getLocText("Remove"));
+            this.setName(Inter.getLocText("FR-Designer_Remove"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/data/source/delete.png"));
         }
 
@@ -244,12 +244,12 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /*
-     * ¼ÓËø
+     * åŠ é”
      */
     private class GetLockAction extends UpdateAction {
 
         public GetLockAction() {
-            this.setName(Inter.getLocText("Get_Lock"));
+            this.setName(Inter.getLocText("FR-Designer_Get_Lock"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/control/lock.png"));
         }
 
@@ -260,12 +260,12 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /*
-     * ½âËø
+     * è§£é”
      */
     private class ReleaseLockAction extends UpdateAction {
 
         public ReleaseLockAction() {
-            this.setName(Inter.getLocText("Release_Lock"));
+            this.setName(Inter.getLocText("FR-Designer_Release_Lock"));
             this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/control/unlock.png"));
         }
 
@@ -276,11 +276,11 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /**
-     * °´Å¥×´Ì¬¸Ä±ä
+     * æŒ‰é’®çŠ¶æ€æ”¹å˜
      */
     @Override
     public void stateChange() {
-        //µ±Ç°»·¾³ÎªÔ¶³Ì»·¾³Ê±
+        //å½“å‰ç¯å¢ƒä¸ºè¿œç¨‹ç¯å¢ƒæ—¶
         if (FRContext.getCurrentEnv() != null) {
             if (!FRContext.getCurrentEnv().isSupportLocalFileOperate()) {
                 if (selectedOperation.getSelectedTemplatePath() != null) {
@@ -299,7 +299,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
                     delFileAction.setEnabled(false);
                 }
             } else {
-                //µ±Ç°»·¾³Îª±¾µØ»·¾³Ê±
+                //å½“å‰ç¯å¢ƒä¸ºæœ¬åœ°ç¯å¢ƒæ—¶
                 if (selectedOperation.getSelectedTemplatePath() != null) {
                     openReportAction.setEnabled(true);
                     renameAction.setEnabled(true);
@@ -326,7 +326,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
     /**
-     * ÊÇ·ñ°üº¬ÎÄ¼ş¼Ğ
+     * æ˜¯å¦åŒ…å«æ–‡ä»¶å¤¹
      *
      * @return
      */
@@ -337,16 +337,16 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
             return 0;
         }
 
-        //Ñ¡ÔñµÄ°üº¬ÎÄ¼şºÍÎÄ¼ş¼ĞµÄÊıÄ¿
+        //é€‰æ‹©çš„åŒ…å«æ–‡ä»¶å’Œæ–‡ä»¶å¤¹çš„æ•°ç›®
         if (fileTree.getSelectionPaths().length == 0) {
             return 0;
         }
-        //ËùÓĞµÄnum¼õÈ¥Ä£°åµÄnum£¬µÃµ½ÎÄ¼ş¼ĞµÄnum
+        //æ‰€æœ‰çš„numå‡å»æ¨¡æ¿çš„numï¼Œå¾—åˆ°æ–‡ä»¶å¤¹çš„num
         return fileTree.getSelectionPaths().length - fileTree.getSelectedTemplatePaths().length;
     }
 
     /**
-     * ÊÇ·ñÑ¡ÔñÁË¶à¸öÄ£°å
+     * æ˜¯å¦é€‰æ‹©äº†å¤šä¸ªæ¨¡æ¿
      *
      * @return
      */
@@ -360,7 +360,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
     }
 
 
-    // js: ÖØÃüÃû¶Ô»°¿ò£¬Ä£·ÂEclipseµÄÖØÃüÃû£¬Ö§³Ö¿ì½İ¼üF2£¬Enter£¬ESC
+    // js: é‡å‘½åå¯¹è¯æ¡†ï¼Œæ¨¡ä»¿Eclipseçš„é‡å‘½åï¼Œæ”¯æŒå¿«æ·é”®F2ï¼ŒEnterï¼ŒESC
     private class RenameDialog {
 
         private UITextField jt;
@@ -385,7 +385,8 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
 
             jd = new JDialog();
             jd.setLayout(null);
-            UILabel newNameLable = new UILabel(Inter.getLocText("Enter-New-FileName"));
+            jd.setModal(true);
+            UILabel newNameLable = new UILabel(Inter.getLocText("FR-Designer_Enter-New-FileName"));
             newNameLable.setBounds(20, 10, 130, 30);
             jt = new UITextField(oldName);
             jt.getDocument().addDocumentListener(getdoDocumentListener());
@@ -400,7 +401,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
             hintsLabel.setForeground(Color.RED);
             hintsLabel.setVisible(false);
 
-            confirmButton = new UIButton(Inter.getLocText("Confirm"));
+            confirmButton = new UIButton(Inter.getLocText("FR-Designer_Confirm"));
             confirmButton.setBounds(180, 90, 60, 25);
             confirmButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -408,7 +409,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
                 }
             });
 
-            UIButton cancelButton = new UIButton(Inter.getLocText("Cancel"));
+            UIButton cancelButton = new UIButton(Inter.getLocText("FR-Designer_Cancel"));
             cancelButton.setBounds(250, 90, 60, 25);
             cancelButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -420,7 +421,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
             jd.add(confirmButton);
             jd.add(hintsLabel);
             jd.setSize(340, 180);
-            jd.setTitle(Inter.getLocText("Rename"));
+            jd.setTitle(Inter.getLocText("FR-Designer_Rename"));
             jd.setResizable(false);
             jd.setAlwaysOnTop(true);
             jd.setIconImage(BaseUtils.readImage("/com/fr/base/images/oem/logo.png"));
@@ -451,7 +452,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
             renameFile.setPath(renameFile.getPath().replace(oldName, newName));
         }
 
-        // Ôö¼ÓenterÒÔ¼°esc¿ì½İ¼üµÄÖ§³Ö
+        // å¢åŠ enterä»¥åŠescå¿«æ·é”®çš„æ”¯æŒ
         public void addUITextFieldListener(final FileNodeFILE nodeFile, final String path) {
 
             jt.addKeyListener(new KeyAdapter() {
@@ -474,7 +475,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
 
         }
 
-        // UITextFieldµÄÊäÈë¼àÌı
+        // UITextFieldçš„è¾“å…¥ç›‘å¬
         public DocumentListener getdoDocumentListener() {
             DocumentListener dl = new DocumentListener() {
 
@@ -498,7 +499,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
             userInput = jt.getText().trim();
             if (selectedOperation.isNameAlreadyExist(userInput, oldName, suffix)) {
                 jt.selectAll();
-                // Èç¹ûÎÄ¼şÃûÒÑ´æÔÚ£¬Ôò»ÒµôÈ·ÈÏ°´Å¥
+                // å¦‚æœæ–‡ä»¶åå·²å­˜åœ¨ï¼Œåˆ™ç°æ‰ç¡®è®¤æŒ‰é’®
                 hintsLabel.setText(Inter.getLocText(new String[]{"Utils-File_name", "Already_exists"}, new String[]{userInput}));
                 hintsLabel.setVisible(true);
                 confirmButton.setEnabled(false);
@@ -511,7 +512,7 @@ public class DesignerFrameFileDealerPane extends JPanel implements FileToolbarSt
 
     /**
      * @param tplFile
-     * @return ÄÚ´æÖĞµÄtemplateÖØÃüÃûÒ»ÏÂ
+     * @return å†…å­˜ä¸­çš„templateé‡å‘½åä¸€ä¸‹
      */
     private JTemplate<?, ?> getSpecialTemplateByFILE(FILE tplFile) {
         HistoryTemplateListPane historyHandle = HistoryTemplateListPane.getInstance();

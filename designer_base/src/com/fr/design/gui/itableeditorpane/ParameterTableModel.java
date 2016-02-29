@@ -18,9 +18,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 /**
- * ²ÎÊıÁĞ±í ÏÂÀ­²ÎÊıÄ£Ê½.
+ * å‚æ•°åˆ—è¡¨ ä¸‹æ‹‰å‚æ•°æ¨¡å¼.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-11 ÉÏÎç10:07:49
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-11 ä¸Šåˆ10:07:49
  */
 public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> {
 	
@@ -40,7 +40,7 @@ public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> 
     public static final int FORM_CHART_USE = 12;
 
 	private static final long serialVersionUID = 1L;
-	protected Component component = null; //Ö¸¶¨È·ÈÏ¶Ô»°¿òµÄ¸¸´°¿Ú,bug40340
+	protected Component component = null; //æŒ‡å®šç¡®è®¤å¯¹è¯æ¡†çš„çˆ¶çª—å£,bug40340
 	public ParameterTableModel() {
 		this(NO_CHART_USE);
 	}
@@ -64,10 +64,10 @@ public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> 
 
 
     /**
-     * µ¥Ôª¸ñÊÇ·ñ¿É±à¼­
-     * @param row ĞĞ
-     * @param col ÁĞ
-     * @return ÊÇ·ñ¿ÉÒÔ±à¼­
+     * å•å…ƒæ ¼æ˜¯å¦å¯ç¼–è¾‘
+     * @param row è¡Œ
+     * @param col åˆ—
+     * @return æ˜¯å¦å¯ä»¥ç¼–è¾‘
      */
 	public boolean isCellEditable(int row, int col) {
 		if(col == 1) {
@@ -89,8 +89,8 @@ public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> 
 	}
 
     /**
-     * Éú³É¹¤¾ßÀ¸ÉÏµÄÒ»ÏµÁĞ¶¯×÷°´Å¥
-     * @return ·µ»ØtableÉÏµÄactionÊı×é.
+     * ç”Ÿæˆå·¥å…·æ ä¸Šçš„ä¸€ç³»åˆ—åŠ¨ä½œæŒ‰é’®
+     * @return è¿”å›tableä¸Šçš„actionæ•°ç»„.
      */
 	@Override
 	public UITableEditAction[] createAction() {
@@ -99,8 +99,8 @@ public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> 
 	
 
     /**
-     * Éú³ÉÉÏÒÆÏÂÒÆ°´Å¥
-     * @return UItableEditÊı×é.
+     * ç”Ÿæˆä¸Šç§»ä¸‹ç§»æŒ‰é’®
+     * @return UItableEditæ•°ç»„.
      */
     public UITableEditAction[] createDBTableAction() {
         return new UITableEditAction[] { new MoveUpAction(), new MoveDownAction() };
@@ -135,7 +135,7 @@ public class ParameterTableModel extends UITableModelAdapter<ParameterProvider> 
 		public void actionPerformed(ActionEvent e) {
 			super.actionPerformed(e);
 			addParameter();
-			// kunsnat: ÆÁ±ÎÒÔÏÂ²¿·Öµ¯³ö¿ò Ö±½ÓÌí¼ÓĞĞÕë¶Ôbug 10061
+			// kunsnat: å±è”½ä»¥ä¸‹éƒ¨åˆ†å¼¹å‡ºæ¡† ç›´æ¥æ·»åŠ è¡Œé’ˆå¯¹bug 10061
 //			final ChartHotParameterEditPane pane = new ChartHotParameterEditPane();
 //			pane.populate(para);
 //			BasicDialog dialog = pane.showSmallWindow(SwingUtilities.getWindowAncestor(DesignerContext.getDesignerFrame()),new DialogActionAdapter() {

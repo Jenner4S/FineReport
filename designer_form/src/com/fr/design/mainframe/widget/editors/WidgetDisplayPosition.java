@@ -9,7 +9,7 @@ import com.fr.stable.StringUtils;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-22
- * Time: ÏÂÎç6:56
+ * Time: ä¸‹åˆ6:56
  */
 public class WidgetDisplayPosition extends ComboEditor{
     public WidgetDisplayPosition() {
@@ -31,8 +31,8 @@ public class WidgetDisplayPosition extends ComboEditor{
     }
 
     /**
-     * ´ıËµÃ÷
-     * @return   ÊÇ
+     * å¾…è¯´æ˜
+     * @return   æ˜¯
      */
     public boolean refreshInTime(){
         return true;

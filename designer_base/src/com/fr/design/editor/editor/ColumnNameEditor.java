@@ -9,10 +9,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * 列编辑器，里面是列名
+ * 鍒楃紪杈戝櫒锛岄噷闈㈡槸鍒楀悕
  *
  * @author zhou
- * @since 2012-6-1下午2:25:16
+ * @since 2012-6-1涓嬪崍2:25:16
  */
 public class ColumnNameEditor extends ColumnIndexEditor {
 

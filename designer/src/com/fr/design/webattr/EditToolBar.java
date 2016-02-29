@@ -112,7 +112,7 @@ public class EditToolBar extends BasicPane {
 	}
 
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 */
 	public void initComponent() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -243,7 +243,7 @@ public class EditToolBar extends BasicPane {
 				return;
 			}
 
-			// ÉÏÒÆ
+			// ä¸Šç§»
 			if (selectedIndex > 0) {
 				DefaultListModel listModel = (DefaultListModel) list.getModel();
 
@@ -274,7 +274,7 @@ public class EditToolBar extends BasicPane {
 				return;
 			}
 
-			// ÏÂÒÆ
+			// ä¸‹ç§»
 			if (selectedIndex == -1) {
 				return;
 			}
@@ -300,8 +300,8 @@ public class EditToolBar extends BasicPane {
 		}
 
 		/**
-		 * ¶¯×÷
-		 * @param e ÊÂ¼ş
+		 * åŠ¨ä½œ
+		 * @param e äº‹ä»¶
 		 */
 		public void actionPerformed(ActionEvent e) {
 			int i = list.getSelectedIndex();
@@ -351,7 +351,7 @@ public class EditToolBar extends BasicPane {
 		}
 
 		/**
-		 * ³õÊ¼»¯ÔªËØ
+		 * åˆå§‹åŒ–å…ƒç´ 
 		 */
 		public void initComponents() {
 			exportToolBarProviders = ExtraDesignClassManager.getInstance().getExportToolBarProviders();
@@ -463,7 +463,7 @@ public class EditToolBar extends BasicPane {
 
 
 		private JPanel getPdfPrintSetting() {
-			// richer:pdf´òÓ¡°´Å¥ÉèÖÃ
+			// richer:pdfæ‰“å°æŒ‰é’®è®¾ç½®
 			JPanel pdfPrintSetting = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
 			isPopup = new UICheckBox(Inter.getLocText("PDF-Print_isPopup"));
 			pdfPrintSetting.add(isPopup);
@@ -510,8 +510,8 @@ public class EditToolBar extends BasicPane {
 		};
 
 		/**
-		 * ¸üĞÂ
-		 * @param widget ¶ÔÓ¦×é¼ş
+		 * æ›´æ–°
+		 * @param widget å¯¹åº”ç»„ä»¶
 		 */
 		public void populate(Widget widget) {
 			this.widget = widget;
@@ -594,9 +594,9 @@ public class EditToolBar extends BasicPane {
 		}
 
 		/**
-		 * ¸üĞÂ
+		 * æ›´æ–°
 		 * 
-		 * @return ¶ÔÓ¦×é¼ş
+		 * @return å¯¹åº”ç»„ä»¶
 		 */
 		public Widget update() {
 			if (widget instanceof Export) {

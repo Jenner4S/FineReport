@@ -23,7 +23,7 @@ import com.fr.stable.ParameterProvider;
  * Defin hyperlink.
  * in fact,this is a TablEditorPane
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:48:10
+ * @since 2012-3-23ä¸‹åˆ3:48:10
  */
 public class ReportletParameterViewPane extends BasicPane {
 	private UITableEditorPane<ParameterProvider> editorPane;
@@ -33,7 +33,7 @@ public class ReportletParameterViewPane extends BasicPane {
 		this.initComponent(null, ParameterTableModel.NO_CHART_USE);
 	}
 
-	// kunsnat: ¿ØÖÆÊÇ·ñÓÃChartµÄÈÈµãÁ´½Óactions
+	// kunsnat: æ§åˆ¶æ˜¯å¦ç”¨Chartçš„çƒ­ç‚¹é“¾æ¥actions
 	public ReportletParameterViewPane(int useParaType) {
 		this.initComponent(null, useParaType);
 	}
@@ -43,9 +43,9 @@ public class ReportletParameterViewPane extends BasicPane {
 	}
 
     /**
-     * ³õÊ¼»¯×é¼ş
-     * @param actions   ChartµÄÈÈµãÁ´½Óactions
-     * @param useParaType   ÀàĞÍ
+     * åˆå§‹åŒ–ç»„ä»¶
+     * @param actions   Chartçš„çƒ­ç‚¹é“¾æ¥actions
+     * @param useParaType   ç±»å‹
      */
 	public void initComponent(final UITableEditAction[] actions, int useParaType) {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -74,8 +74,8 @@ public class ReportletParameterViewPane extends BasicPane {
 
 
     /**
-     * Ôö¼ÓÊÂ¼ş¼àÌı
-     * @param l     ¼ÓµÄ¶«¶«
+     * å¢åŠ äº‹ä»¶ç›‘å¬
+     * @param l     åŠ çš„ä¸œä¸œ
      */
 	public void addTableEditorListener(TableModelListener l) {
 		editorPane.addTableListener(l);
@@ -109,8 +109,8 @@ public class ReportletParameterViewPane extends BasicPane {
 	}
 
     /**
-     * ¸üĞÂ
-     * @return  Êı×é
+     * æ›´æ–°
+     * @return  æ•°ç»„
      */
 	public KV[] updateKV() {
 		List<ParameterProvider> list = this.update();

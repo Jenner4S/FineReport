@@ -9,7 +9,7 @@ public interface HyperlinkProvider {
     public static final String XML_TAG = "HyperlinkProvider";
 
     /**
-     * ´´½¨Ò»¸ö³¬¼¶Á¬½ÓÀàÐÍ
+     * åˆ›å»ºä¸€ä¸ªè¶…çº§è¿žæŽ¥ç±»åž‹
      * @return  NameableCreator
      */
     public NameableCreator createHyperlinkCreator();

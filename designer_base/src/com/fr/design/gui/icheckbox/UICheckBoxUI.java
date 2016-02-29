@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: ÏÂÎç5:12
+ * Time: ä¸‹åˆ5:12
  */
 public class UICheckBoxUI extends MetalCheckBoxUI {
 
@@ -24,9 +24,9 @@ public class UICheckBoxUI extends MetalCheckBoxUI {
     private final static UICheckBoxUI CHECK_BOX_UI = new UICheckBoxUI();
 
     /**
-     * ´´½¨UI
-     * @param c ×é¼ş
-     * @return ·µ»Ø×é¼şUI
+     * åˆ›å»ºUI
+     * @param c ç»„ä»¶
+     * @return è¿”å›ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent c) {
         return CHECK_BOX_UI;
@@ -41,8 +41,8 @@ public class UICheckBoxUI extends MetalCheckBoxUI {
     static UICheckBoxIcon checkIcon = new UICheckBoxIcon();
 
     /**
-     * Îª×é¼ş¼ÓÔØÍ¼±ê
-     * @param button °´Å¥
+     * ä¸ºç»„ä»¶åŠ è½½å›¾æ ‡
+     * @param button æŒ‰é’®
      */
     public void installDefaults(AbstractButton button) {
         super.installDefaults(button);

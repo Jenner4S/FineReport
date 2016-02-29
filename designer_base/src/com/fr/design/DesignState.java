@@ -11,19 +11,19 @@ import com.fr.env.RemoteEnv;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-24
- * Time: ÉÏÎç9:36
- * ¼ÇÂ¼ÏÖÔÚÉè¼ÆÆ÷µÄÉè¼Æ×´Ì¬
+ * Time: ä¸Šåˆ9:36
+ * è®°å½•ç°åœ¨è®¾è®¡å™¨çš„è®¾è®¡çŠ¶æ€
  */
 public class DesignState {
 
-    //²Ëµ¥µÄ¼¸ÖÖÇé¿ö
+    //èœå•çš„å‡ ç§æƒ…å†µ
     //Jwrok
 
     //worksheet
     public static final int WORK_SHEET = 0;
     //polyDesogner
     public static final int POLY_SHEET = 1;
-    //²ÎÊıÃæ°å
+    //å‚æ•°é¢æ¿
     public static final int PARAMETER_PANE = 2;
 
 
@@ -31,12 +31,12 @@ public class DesignState {
     public static final int JFORM = 4;
 
 
-    //ÊÇ²»ÊÇÔÚÔ¶³Ì
+    //æ˜¯ä¸æ˜¯åœ¨è¿œç¨‹
     public static final int REMOTE = 8;
 
-    //Éè¼Æ×´Ì¬
+    //è®¾è®¡çŠ¶æ€
     private int designState = -1;
-    private boolean isRoot = true;//Ä¬ÈÏÊÇ¹ÜÀíÔ±µÇÂ½
+    private boolean isRoot = true;//é»˜è®¤æ˜¯ç®¡ç†å‘˜ç™»é™†
     private boolean isAuthority = false;
 
     public DesignState(ToolBarMenuDockPlus plus) {
@@ -54,16 +54,16 @@ public class DesignState {
     }
 
     /**
-     * ÊÇ·ñÊÇ¹ÜÀíÔ±
-     * @return ÊÇ¹ÜÀíÔ±·µ»Øtrue
+     * æ˜¯å¦æ˜¯ç®¡ç†å‘˜
+     * @return æ˜¯ç®¡ç†å‘˜è¿”å›true
      */
     public boolean isRoot() {
         return this.isRoot;
     }
 
     /**
-     * ÊÇ·ñ´¦ÓÚÈ¨ÏŞ±à¼­×´Ì¬
-     * @return  ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦å¤„äºæƒé™ç¼–è¾‘çŠ¶æ€
+     * @return  æ˜¯åˆ™è¿”å›true
      */
     public boolean isAuthority() {
         return isAuthority;

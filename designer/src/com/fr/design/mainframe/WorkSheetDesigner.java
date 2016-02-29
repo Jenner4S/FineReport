@@ -38,7 +38,7 @@ public class WorkSheetDesigner extends ReportComponent<WorkSheet, ElementCasePan
 
     }
 
-    //august£ºÒÔÏÂ·½·¨Ã²ËÆ¶¼¿ÉÒÔ·Åµ½¸¸ÀàÖÐÈ¥ ²»¹ýÎÊÌâ¾ÍÊÇPolyDesigner¿ÉÄÜÓÃ²»µ½£¬Ëü»¹µÃ¸²¸Ç
+    //augustï¼šä»¥ä¸‹æ–¹æ³•è²Œä¼¼éƒ½å¯ä»¥æ”¾åˆ°çˆ¶ç±»ä¸­åŽ» ä¸è¿‡é—®é¢˜å°±æ˜¯PolyDesignerå¯èƒ½ç”¨ä¸åˆ°ï¼Œå®ƒè¿˜å¾—è¦†ç›–
     @Override
     public void setTarget(WorkSheet t) {
         super.setTarget(t);

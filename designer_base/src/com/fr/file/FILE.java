@@ -5,14 +5,14 @@ import javax.swing.Icon;
 public interface FILE {
 
     /**
-     * ºó×º
-     * @return ºó×º
+     * åç¼€
+     * @return åç¼€
      */
 	public String prefix();
 
     /**
-     * ÊÇ·ñÊÇÄ¿Â¼
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æ˜¯ç›®å½•
+     * @return æ˜¯åˆ™è¿”å›true
      */
 	public boolean isDirectory();
 	
@@ -22,57 +22,57 @@ public interface FILE {
 	// Icon
 	public Icon getIcon();
 	
-	// µ±Ç°Ä¿Â¼µÄPath
+	// å½“å‰ç›®å½•çš„Path
 	public String getPath();
 	
 	public void setPath(String path);
 	
-	// È¡µ±Ç°Ä¿Â¼µÄÉÏ¼¶Ä¿Â¼
+	// å–å½“å‰ç›®å½•çš„ä¸Šçº§ç›®å½•
 	public FILE getParent();
 
     /**
-     * ÁĞ³öµ±Ç°Ä¿Â¼ÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ
-     * @return ÎÄ¼ş
+     * åˆ—å‡ºå½“å‰ç›®å½•ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹
+     * @return æ–‡ä»¶
      */
 	public FILE[] listFiles();
 
     /**
-     * ĞÂ½¨Ò»¸öÄ¿Â¼
-     * @param name Ãû×Ö
-     * @return ĞÂ½¨Ä¿Â¼
+     * æ–°å»ºä¸€ä¸ªç›®å½•
+     * @param name åå­—
+     * @return æ–°å»ºç›®å½•
      */
 	public boolean createFolder(String name);
 
     /**
-     * ĞÂ½¨ÎÄ¼ş
-     * @return ÊÇ·ñĞÂ½¨³É¹¦
-     * @throws Exception Òì³£
+     * æ–°å»ºæ–‡ä»¶
+     * @return æ˜¯å¦æ–°å»ºæˆåŠŸ
+     * @throws Exception å¼‚å¸¸
      */
 	public boolean mkfile() throws Exception;
 
     /**
-     * ÊÇ·ñ´æÔÚ
-     * @return ÊÇ·ñ´æÔÚ
+     * æ˜¯å¦å­˜åœ¨
+     * @return æ˜¯å¦å­˜åœ¨
      */
 	public boolean exists();
 
     /**
-     * ¹Ø±ÕÎÄ¼ş
-     * @throws Exception Òì³£
+     * å…³é—­æ–‡ä»¶
+     * @throws Exception å¼‚å¸¸
      */
 	public void closeTemplate() throws Exception;
 
     /**
-     * ×÷ÎªÊäÈëÁ÷
-     * @return ÊäÈëÁ÷
-     * @throws Exception Òì³£
+     * ä½œä¸ºè¾“å…¥æµ
+     * @return è¾“å…¥æµ
+     * @throws Exception å¼‚å¸¸
      */
 	public java.io.InputStream asInputStream() throws Exception;
 
     /**
-     * ×÷ÎªÊä³öÁ÷
-     * @return Êä³öÁ÷
-     * @throws Exception Òì³£
+     * ä½œä¸ºè¾“å‡ºæµ
+     * @return è¾“å‡ºæµ
+     * @throws Exception å¼‚å¸¸
      */
 	public java.io.OutputStream asOutputStream() throws Exception;
 	
@@ -80,14 +80,14 @@ public interface FILE {
 
 
     /**
-     * ÊÇ·ñÊÇÄÚ´æÎÄ¼ş
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æ˜¯å†…å­˜æ–‡ä»¶
+     * @return æ˜¯åˆ™è¿”å›true
      */
 	public boolean isMemFile();
 
     /**
-     * ÊÇ·ñÊÇ»·¾³ÎÄ¼ş
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æ˜¯ç¯å¢ƒæ–‡ä»¶
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isEnvFile();
 }

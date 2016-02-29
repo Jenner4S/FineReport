@@ -44,7 +44,7 @@ import com.fr.design.selection.Selectedable;
 import com.fr.design.selection.SelectionListener;
 
 /**
- * ±íµ¥ÖĞµÄElementCase±à¼­Ãæ°å
+ * è¡¨å•ä¸­çš„ElementCaseç¼–è¾‘é¢æ¿
  */
 public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extends ElementCasePane, S extends SelectableElement> extends TargetComponent<T> implements Selectedable<S>, FormECDesignerProvider{
 	protected FormElementCasePaneDelegate elementCasePane;
@@ -81,9 +81,9 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶ÈÇé¿öÏÂµÄ×Ó²Ëµ¥
+     * æƒé™ç»†ç²’åº¦æƒ…å†µä¸‹çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
 	public ShortCut[] shortCuts4Authority() {
 		return new ShortCut[]{
@@ -94,9 +94,9 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
 	}
 
     /**
-     * ´´½¨È¨ÏŞÏ¸Á£¶ÈÃæ°å
+     * åˆ›å»ºæƒé™ç»†ç²’åº¦é¢æ¿
      *
-     * @return ·µ»ØÈ¨ÏŞÏ¸Á£¶ÈÃæ°å
+     * @return è¿”å›æƒé™ç»†ç²’åº¦é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         ElementCasePaneAuthorityEditPane elementCasePaneAuthorityEditPane = new ElementCasePaneAuthorityEditPane(elementCasePane);
@@ -105,9 +105,9 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
     }
     
     /**
-	 * »ñÈ¡µ±Ç°ElementCaseµÄËõÂÔÍ¼
+	 * è·å–å½“å‰ElementCaseçš„ç¼©ç•¥å›¾
 	 * 
-	 * @param size ËõÂÔÍ¼µÄ´óĞ¡
+	 * @param size ç¼©ç•¥å›¾çš„å¤§å°
 	 */
     public BufferedImage getElementCaseImage(Dimension size){
 	    BufferedImage image = null;
@@ -116,7 +116,7 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
 	        java.awt.image.BufferedImage.TYPE_INT_RGB);
 	        Graphics g = image.getGraphics();
 	        
-	        //Ìî³ä°×É«±³¾°, ²»È»ÓĞºÚ¿ò
+	        //å¡«å……ç™½è‰²èƒŒæ™¯, ä¸ç„¶æœ‰é»‘æ¡†
 			Color oldColor = g.getColor();
 			g.setColor(Color.WHITE);
 			g.fillRect(0, 0, size.width, size.height);
@@ -132,9 +132,9 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
     }
 
     /**
-     * ´´½¨ÕıÔÚ±à¼­µÄ×´Ì¬.
+     * åˆ›å»ºæ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      *
-     * @return ·µ»ØÕıÔÚ±à¼­µÄ×´Ì¬.
+     * @return è¿”å›æ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      */
     public EditingState createEditingState() {
         return this.elementCasePane.createEditingState();
@@ -145,64 +145,64 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
 //////////////////////////////////////////////////////////////////////
 
     /**
-     *  ¸´ÖÆ
+     *  å¤åˆ¶
      */
     public void copy() {
         this.elementCasePane.copy();
     }
 
     /**
-     * Õ³Ìù
-     * @return   Õ³Ìù³É¹¦Ôò·µ»Øtrue
+     * ç²˜è´´
+     * @return   ç²˜è´´æˆåŠŸåˆ™è¿”å›true
      */
     public boolean paste() {
         return this.elementCasePane.paste();
     }
 
     /**
-     * ¼ôÇĞ
-     * @return   Õ³Ìù³É¹¦Ôò·µ»Øtrue
+     * å‰ªåˆ‡
+     * @return   ç²˜è´´æˆåŠŸåˆ™è¿”å›true
      */
     public boolean cut() {
         return this.elementCasePane.cut();
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         this.elementCasePane.stopEditing();
     }
 
     /**
-     * Ä£°åµÄ¹¤¾ß
+     * æ¨¡æ¿çš„å·¥å…·
      *
-     * @return ¹¤¾ß
+     * @return å·¥å…·
      */
     public ToolBarDef[] toolbars4Target() {
         return this.elementCasePane.toolbars4Target();
     }
 
     /**
-     * ±íµ¥µÄ¹¤¾ß°´Å¥
+     * è¡¨å•çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         return this.elementCasePane.toolBarButton4Form();
     }
 
     /**
-     * Ä¿±êµÄ²Ëµ¥
+     * ç›®æ ‡çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         return this.elementCasePane.menus4Target();
     }
 
     /**
-     * »ñÈ¡½¹µã
+     * è·å–ç„¦ç‚¹
      */
     public void requestFocus() {
         super.requestFocus();
@@ -238,7 +238,7 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
     }
 
     /**
-     * ÒÆ³ıÑ¡Ôñ
+     * ç§»é™¤é€‰æ‹©
      */
     public void removeSelection() {
         TemplateElementCase templateElementCase = this.elementCasePane.getEditingElementCase();
@@ -255,18 +255,18 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
     }
 
     /**
-     * Ìí¼ÓÑ¡ÖĞµÄSelectionListener
+     * æ·»åŠ é€‰ä¸­çš„SelectionListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void addSelectionChangeListener(SelectionListener selectionListener) {
         elementCasePane.addSelectionChangeListener(selectionListener);
     }
 
     /**
-     * ÒÆ³ıÑ¡ÖĞµÄSelectionListener
+     * ç§»é™¤é€‰ä¸­çš„SelectionListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void removeSelectionChangeListener(SelectionListener selectionListener) {
         elementCasePane.removeSelectionChangeListener(selectionListener);
@@ -279,7 +279,7 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
 	}
 
     /**
-     * ÎŞÌõ¼şÈ¡Ïû¸ñÊ½Ë¢
+     * æ— æ¡ä»¶å–æ¶ˆæ ¼å¼åˆ·
      */
 	public void cancelFormat() {
 		return;
@@ -290,9 +290,9 @@ public class FormElementCaseDesigner<T extends FormElementCaseProvider, E extend
 	}
 
     /**
-     * Ä£°åµÄ×Ó²Ëµ¥
+     * æ¨¡æ¿çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
 	public ShortCut[] shortcut4TemplateMenu() {
 		return new ShortCut[0];

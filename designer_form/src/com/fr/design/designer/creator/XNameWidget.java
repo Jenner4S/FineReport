@@ -21,8 +21,8 @@ public class XNameWidget extends XWidgetCreator {
 	}
 	
 	/**
-	 * ·µ»Ø¶ÔÓ¦µÄwidget
-	 * @return ·µ»ØNameWidget
+	 * è¿”å›å¯¹åº”çš„widget
+	 * @return è¿”å›NameWidget
 	 */
 	public NameWidget toData() {
 		return (NameWidget) data;
@@ -41,9 +41,9 @@ public class XNameWidget extends XWidgetCreator {
 	}
 
 	/**
-	 * ·µ»Ø¿Ø¼şÖ§³ÖµÄÊôĞÔ±í
-	 * @return ÊôĞÔ±í
-	 * @throws ÄÚÊ¡Òì³£
+	 * è¿”å›æ§ä»¶æ”¯æŒçš„å±æ€§è¡¨
+	 * @return å±æ€§è¡¨
+	 * @throws å†…çœå¼‚å¸¸
 	 */
 	@Override
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -82,7 +82,7 @@ public class XNameWidget extends XWidgetCreator {
 	}
 
 	/**
-	 * ÊôĞÔ¸Ä±äºó£¬ÖØĞÂ¹¹½¨¿Ø¼ş
+	 * å±æ€§æ”¹å˜åï¼Œé‡æ–°æ„å»ºæ§ä»¶
 	 */
 	public void rebuild() {
 		editor = null;
@@ -96,14 +96,14 @@ public class XNameWidget extends XWidgetCreator {
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°XCreatorµÄÒ»¸ö·â×°¸¸ÈİÆ÷
+	 * è·å–å½“å‰XCreatorçš„ä¸€ä¸ªå°è£…çˆ¶å®¹å™¨
 	 * 
-	 * @param widgetName µ±Ç°×é¼şÃû
+	 * @param widgetName å½“å‰ç»„ä»¶å
 	 * 
-	 * @return ·â×°µÄ¸¸ÈİÆ÷
+	 * @return å°è£…çš„çˆ¶å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:47:23
+	 * @date 2014-11-25-ä¸‹åˆ4:47:23
 	 * 
 	 */
 	protected XLayoutContainer getCreatorWrapper(String widgetName){
@@ -111,12 +111,12 @@ public class XNameWidget extends XWidgetCreator {
 	}
 	
 	/**
-	 * ½«µ±Ç°¶ÔÏóÌí¼Óµ½¸¸ÈİÆ÷ÖĞ
+	 * å°†å½“å‰å¯¹è±¡æ·»åŠ åˆ°çˆ¶å®¹å™¨ä¸­
 	 * 
-	 * @param parentPanel ¸¸ÈİÆ÷×é¼ş
+	 * @param parentPanel çˆ¶å®¹å™¨ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:57:55
+	 * @date 2014-11-25-ä¸‹åˆ4:57:55
 	 * 
 	 */
 	protected void addToWrapper(XLayoutContainer parentPanel, int width, int minHeight){
@@ -130,9 +130,9 @@ public class XNameWidget extends XWidgetCreator {
 	}
 	
 	/**
-	 * ´Ë¿Ø¼şÔÚ×ÔÊÊÓ¦²¼¾ÖÒª±£³ÖÔ­Ñù¸ß¶È
+	 * æ­¤æ§ä»¶åœ¨è‡ªé€‚åº”å¸ƒå±€è¦ä¿æŒåŸæ ·é«˜åº¦
 	 * 
-	 * @return ÊÇÔò·µ»Øtrue
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	@Override
 	public boolean shouldScaleCreator() {

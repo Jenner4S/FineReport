@@ -22,15 +22,15 @@ public abstract class BasicBeanPane<T> extends BasicPane {
 	}
 
 	/**
-	 * ¸üĞÂÈ¨ÏŞ¹¤¾ßÀ¸Ãæ°å
+	 * æ›´æ–°æƒé™å·¥å…·æ é¢æ¿
 	 */
 	public void populateAuthority() {
 
 	}
 
 	/**
-	 * ½öÓÃÀ´´¦ÀíÍ¼±íÉè¼ÆÆ÷µÄµØÍ¼Ãæ°å
-	 * @param mapType µØÍ¼ÀàĞÍ
+	 * ä»…ç”¨æ¥å¤„ç†å›¾è¡¨è®¾è®¡å™¨çš„åœ°å›¾é¢æ¿
+	 * @param mapType åœ°å›¾ç±»å‹
 	 */
 	public void dealWidthMap(String mapType){
 

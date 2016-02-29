@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: 下午2:50
+ * Time: 涓嬪崍2:50
  */
 public class UIRadioButtonUI extends MetalRadioButtonUI {
 
@@ -34,9 +34,9 @@ public class UIRadioButtonUI extends MetalRadioButtonUI {
     private static UIRadioButtonIcon radioButton;
 
     /**
-     * 创建UI
-     * @param c 组件
-     * @return 返回本类对象
+     * 鍒涘缓UI
+     * @param c 缁勪欢
+     * @return 杩斿洖鏈被瀵硅薄
      */
     public static ComponentUI createUI(JComponent c) {
         if (c instanceof JRadioButton) {
@@ -48,8 +48,8 @@ public class UIRadioButtonUI extends MetalRadioButtonUI {
     }
 
     /**
-     * 为该组件加载图标
-     * @param c 组件对象
+     * 涓鸿缁勪欢鍔犺浇鍥炬爣
+     * @param c 缁勪欢瀵硅薄
      */
     public void installUI(JComponent c) {
         super.installUI(c);

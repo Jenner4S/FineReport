@@ -7,7 +7,7 @@ import com.fr.design.designer.properties.items.WidgetDisplayPositionItems;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-8-13
- * Time: ÏÂÎç2:19
+ * Time: ä¸‹åˆ2:19
  */
 public class WidgetDisplayPositionWrapper extends ItemWrapper{
     public WidgetDisplayPositionWrapper() {

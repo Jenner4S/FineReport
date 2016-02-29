@@ -24,7 +24,7 @@ import java.util.TimerTask;
 /**
  * @author neil
  *
- * @date: 2015-3-13-ÉÏÎç9:47:58
+ * @date: 2015-3-13-ä¸Šåˆ9:47:58
  */
 public class ReportSplashPane extends SplashPane{
 	
@@ -87,7 +87,7 @@ public class ReportSplashPane extends SplashPane{
     }
 
     public BufferedImage getSplashImage() {
-        // p:³õÊ¼»¯splashImage,ÆäÖĞ»­ÁË×Ö·û.
+        // p:åˆå§‹åŒ–splashImage,å…¶ä¸­ç”»äº†å­—ç¬¦.
         Image image = createSplashBackground();
         BufferedImage splashBuffedImage = CoreGraphHelper.toBufferedImage(image);
 
@@ -95,7 +95,7 @@ public class ReportSplashPane extends SplashPane{
         splashG2d.setPaint(new Color(230, 230, 230));
         splashG2d.setFont(new Font("Dialog", Font.PLAIN, 11));
 
-        //»æÖÆĞèÒªÏÔÊ¾µÄÎÄ±¾
+        //ç»˜åˆ¶éœ€è¦æ˜¾ç¤ºçš„æ–‡æœ¬
         paintShowText(splashG2d);
 
         return splashBuffedImage;
@@ -112,11 +112,11 @@ public class ReportSplashPane extends SplashPane{
         splashG2d.setPaint(MODULE_COLOR);
         splashG2d.setFont(new Font("Dialog", Font.PLAIN, 12));
 
-        //¼ÓÔØÄ£¿éĞÅÏ¢
+        //åŠ è½½æ¨¡å—ä¿¡æ¯
         double y = MODULE_INFO_Y + height + leading + ascent;
         GraphHelper.drawString(splashG2d, showText, MODULE_INFO_X, y);
         
-        //Ã¿´ÎËæ»ú¸ĞĞ»Ò»Î»ÂÛÌ³ÓÃ»§
+        //æ¯æ¬¡éšæœºæ„Ÿè°¢ä¸€ä½è®ºå›ç”¨æˆ·
         splashG2d.setPaint(THANK_COLOR);
         String content = Inter.getLocText("FR-Designer_Thanks-To") + GUEST;
         GraphHelper.drawString(splashG2d, content, THANK_INFO_X, y);
@@ -128,7 +128,7 @@ public class ReportSplashPane extends SplashPane{
     }
     
     /**
-	 * ´°¿Ú¹Ø±ÕºóÈ¡Ïû¶¨Ê±»ñÈ¡Ä£¿éĞÅÏ¢µÄtimer
+	 * çª—å£å…³é—­åå–æ¶ˆå®šæ—¶è·å–æ¨¡å—ä¿¡æ¯çš„timer
 	 * 
 	 */
 	public void releaseTimer() {
@@ -136,9 +136,9 @@ public class ReportSplashPane extends SplashPane{
 	}
 	
 	/**
-	 * ´´½¨Æô¶¯»­ÃæµÄ±³¾°Í¼Æ¬
+	 * åˆ›å»ºå¯åŠ¨ç”»é¢çš„èƒŒæ™¯å›¾ç‰‡
 	 * 
-	 * @return ±³¾°Í¼Æ¬
+	 * @return èƒŒæ™¯å›¾ç‰‡
 	 * 
 	 */
 	public Image createSplashBackground() {
@@ -146,10 +146,10 @@ public class ReportSplashPane extends SplashPane{
 		return BaseUtils.readImage(StableUtils.pathJoin(OEM_PATH, fileName));
     }
 	
-	//»ñÈ¡Í¼Æ¬ÎÄ¼şÃû
+	//è·å–å›¾ç‰‡æ–‡ä»¶å
 	private String getImageName(){
 		boolean isChina = GeneralContext.isChineseEnv();
-        //jdk1.8ÏÂÍ¸Ã÷ÓĞbug, ÉèÖÃÁËsetWindowTransparentºó, JFrameÖ±½Ó×îĞ¡»¯ÁË, ÏÈÓÃmacÏÂµÄ¼ÓÔØÍ¼Æ¬
+        //jdk1.8ä¸‹é€æ˜æœ‰bug, è®¾ç½®äº†setWindowTransparentå, JFrameç›´æ¥æœ€å°åŒ–äº†, å…ˆç”¨macä¸‹çš„åŠ è½½å›¾ç‰‡
         return isChina ? SPLASH_MAC_CN : SPLASH_MAC_EN;
 	}
 

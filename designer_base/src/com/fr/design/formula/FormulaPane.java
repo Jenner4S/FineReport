@@ -37,9 +37,9 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.Locale;
 /**
- * ¹«Ê½±à¼­Ãæ°å
+ * å…¬å¼ç¼–è¾‘é¢æ¿
  * @editor zhou
- * @since 2012-3-29ÏÂÎç1:50:53
+ * @since 2012-3-29ä¸‹åˆ1:50:53
  */
 public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
 
@@ -81,7 +81,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
             public void keyReleased(KeyEvent e) {
                 formulaTextArea.setForeground(Color.black);
                 String text = formulaTextArea.getText();
-                // ÅĞ¶ÏÔÚÖĞÎÄÊäÈë×´Ì¬ÊÇ·ñ»¹°üº¬ÌáÊ¾·û ÒªÉ¾µô
+                // åˆ¤æ–­åœ¨ä¸­æ–‡è¾“å…¥çŠ¶æ€æ˜¯å¦è¿˜åŒ…å«æç¤ºç¬¦ è¦åˆ æ‰
                 String tip = "\n\n\n" + Inter.getLocText("Tips:You_Can_Input_B1_To_Input_The_Data_Of_The_First_Row_Second_Column");
                 if(text.contains(tip)) {
                     text = text.substring(0, text.indexOf(tip));
@@ -256,7 +256,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
     @Override
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
-        if (key == 38 || key == 40 || key == 37 || key == 39 || key == 10) //Èç¹ûÊÇÉ¾³ı·ûºÅ  £¬ÎªÁË¿É¶ÁĞÔ Ã»ÓĞºÍÆäËû°´¼üµÄ³ÌĞòÏàÈÚºÏ
+        if (key == 38 || key == 40 || key == 37 || key == 39 || key == 10) //å¦‚æœæ˜¯åˆ é™¤ç¬¦å·  ï¼Œä¸ºäº†å¯è¯»æ€§ æ²¡æœ‰å’Œå…¶ä»–æŒ‰é”®çš„ç¨‹åºç›¸èåˆ
         {
             listModel.removeAllElements();
             currentPosition = formulaTextArea.getCaretPosition();
@@ -291,7 +291,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
                     String functionName = ((String) tipsList.getSelectedValue());
                     for (int k = 0; k < nads.length; k++) {
                         functionNameModel.addElement(nads[k]);
-                        if (functionName.equals(nads[k].getName()))//ÈôÏàµÈ£¬ÕÒ³öÏÔÊ¾µÄº¯ÊıµÄindex£¬setSelectedIndex£¨£©
+                        if (functionName.equals(nads[k].getName()))//è‹¥ç›¸ç­‰ï¼Œæ‰¾å‡ºæ˜¾ç¤ºçš„å‡½æ•°çš„indexï¼ŒsetSelectedIndexï¼ˆï¼‰
                         {
                             signOfType = 1;
                             signOfContinue = 0;
@@ -523,15 +523,15 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
                     expression = parser.parse();
                 } catch (Exception e) {
                     FRContext.getLogger().error(e.getMessage(), e);
-                    // alex:¼ÌĞøÍùÏÂÃæ×ß,expressionÎªnullÊ±¸æÖª²»ºÏ·¨¹«Ê½
+                    // alex:ç»§ç»­å¾€ä¸‹é¢èµ°,expressionä¸ºnullæ—¶å‘ŠçŸ¥ä¸åˆæ³•å…¬å¼
                 }
 
                 JOptionPane.showMessageDialog(
                         FormulaPane.this,
                         /*
-                        * alex:½ö½öÖ»ĞèÒª¸ù¾İexpressionÊÇ·ñÎªnull×÷ºÏ·¨ĞÔÅĞ¶Ï
-                        * ²»ĞèÒªeval
-                        * TODO µ«ÓĞ¸öÎÊÌâ,ÓĞĞ©º¯ÊıµÄ²ÎÊı¸öÊıÊÇÓĞ¹æ¶¨µÄ,ºÎÒÔÅĞ±ğÖ®
+                        * alex:ä»…ä»…åªéœ€è¦æ ¹æ®expressionæ˜¯å¦ä¸ºnullä½œåˆæ³•æ€§åˆ¤æ–­
+                        * ä¸éœ€è¦eval
+                        * TODO ä½†æœ‰ä¸ªé—®é¢˜,æœ‰äº›å‡½æ•°çš„å‚æ•°ä¸ªæ•°æ˜¯æœ‰è§„å®šçš„,ä½•ä»¥åˆ¤åˆ«ä¹‹
                         */
                         (expression != null ? Inter.getLocText("FormulaD-Valid_Formula") : Inter.getLocText("FormulaD-Invalid_Formula")) + ".", ProductConstants.PRODUCT_NAME,
                         JOptionPane.INFORMATION_MESSAGE);
@@ -659,7 +659,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
                         LookDetailAction lookDetailAction = new LookDetailAction();
                         popupMenu.add(lookDetailAction);
 
-                        // peter: Ö»ÓĞµ¯³ö²Ëµ¥ÓĞ×Ó²Ëµ¥µÄÊ±ºò,²ÅĞèÒªµ¯³öÀ´.
+                        // peter: åªæœ‰å¼¹å‡ºèœå•æœ‰å­èœå•çš„æ—¶å€™,æ‰éœ€è¦å¼¹å‡ºæ¥.
                         GUICoreUtils.showPopupMenu(popupMenu, functionNameList, evt.getX() - 1, evt.getY() - 1);
                     }
                 }
@@ -752,12 +752,12 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
                 }
             });
 
-            // Ñ¡Ôñ:
+            // é€‰æ‹©:
             functionTypeList.setSelectedIndex(0);
         }
 
         /*
-         * ²é¿´º¯ÊıµÄÏêÏ¸ĞÅÏ¢
+         * æŸ¥çœ‹å‡½æ•°çš„è¯¦ç»†ä¿¡æ¯
          */
         private class LookDetailAction extends UpdateAction {
 
@@ -767,7 +767,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
                 this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_file/preview.png"));
             }
 
-            // µ¯³öµÄ´°¿ÚÖĞÏÔÊ¾º¯ÊıµÄÓÃ·¨Ã÷Ï¸
+            // å¼¹å‡ºçš„çª—å£ä¸­æ˜¾ç¤ºå‡½æ•°çš„ç”¨æ³•æ˜ç»†
             public void actionPerformed(ActionEvent evt) {
                 showPopupPane();
             }
@@ -782,7 +782,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
             };
             basicPane.setLayout(FRGUIPaneFactory.createBorderLayout());
             UITextArea desArea = new UITextArea();
-//            desArea¡£setEnabled(false);
+//            desAreaã€‚setEnabled(false);
             desArea.setText(this.getTextAreaText());
             basicPane.add(new UIScrollPane(desArea), BorderLayout.CENTER);
             BasicDialog dialog = basicPane.showWindow(DesignerContext.getDesignerFrame());
@@ -863,7 +863,7 @@ public class FormulaPane extends BasicPane implements KeyListener, UIFormula{
             rootNode.removeAllChildren();
 
             if (variableResolver.isBindCell()) {
-                // ¼ÓÉÏµ±Ç°Öµ"$$$"
+                // åŠ ä¸Šå½“å‰å€¼"$$$"
                 DefaultMutableTreeNode bindCellNode = new DefaultMutableTreeNode(new TextUserObject("$$$"));
                 rootNode.add(bindCellNode);
             }

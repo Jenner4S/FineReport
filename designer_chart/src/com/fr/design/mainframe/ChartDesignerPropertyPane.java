@@ -23,7 +23,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç12:43
+ * Time: ä¸‹åˆ12:43
  */
 public class ChartDesignerPropertyPane extends BaseChartPropertyPane {
     private static ChartDesignerPropertyPane instance;
@@ -91,9 +91,9 @@ public class ChartDesignerPropertyPane extends BaseChartPropertyPane {
     }
 
     /**
-     * ¸Ğ¾õChartCollection¼ÓÔØÍ¼±íÊôĞÔ½çÃæ.
-     * @param collection  ÊÕ¼¯Í¼±í
-     * @param chartDesigner  Í¼±íÉè¼Æ
+     * æ„Ÿè§‰ChartCollectionåŠ è½½å›¾è¡¨å±æ€§ç•Œé¢.
+     * @param collection  æ”¶é›†å›¾è¡¨
+     * @param chartDesigner  å›¾è¡¨è®¾è®¡
      */
     public void populateChartPropertyPane(BaseChartCollection collection, TargetComponent<?> chartDesigner) {
         if (collection instanceof ChartCollection) {
@@ -108,7 +108,7 @@ public class ChartDesignerPropertyPane extends BaseChartPropertyPane {
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshDockingView() {
 
@@ -125,8 +125,8 @@ public class ChartDesignerPropertyPane extends BaseChartPropertyPane {
     }
 
     /**
-     * Î»ÖÃ
-     * @return Î»ÖÃ
+     * ä½ç½®
+     * @return ä½ç½®
      */
     public Location preferredLocation() {
         return null;

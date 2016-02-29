@@ -17,10 +17,10 @@ import com.fr.design.style.background.BackgroundPane4BoxChange;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-2 ÏÂÎç04:07:22
- * ÀàËµÃ÷: ½¥±äÉ«±³¾°µÄÑ¡Ôñ½çÃæ  bugÔ­ĞÍÍ¼@5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-2 ä¸‹åˆ04:07:22
+ * ç±»è¯´æ˜: æ¸å˜è‰²èƒŒæ™¯çš„é€‰æ‹©ç•Œé¢  bugåŸå‹å›¾@5471
  */
-// TODO ¸Ä³É·ºĞÍ (Background)
+// TODO æ”¹æˆæ³›å‹ (Background)
 public class GradientBackgroundSelectPane extends BackgroundPane4BoxChange {
 	private static final long serialVersionUID = -2762854865690293473L;
 	

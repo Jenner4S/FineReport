@@ -12,22 +12,22 @@ import java.beans.PropertyChangeListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: 上午10:07
+ * Time: 涓婂崍10:07
  */
 public class UIScrollPaneUI extends MetalScrollPaneUI implements PropertyChangeListener {
 
     /**
-     * 创建UI
-     * @param c 组件
-     * @return  组件UI
+     * 鍒涘缓UI
+     * @param c 缁勪欢
+     * @return  缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIScrollPaneUI();
     }
 
     /**
-     * 为组件初始化UI
-     * @param c 组件
+     * 涓虹粍浠跺垵濮嬪寲UI
+     * @param c 缁勪欢
      */
     public void installUI(JComponent c) {
         super.installUI(c);
@@ -49,8 +49,8 @@ public class UIScrollPaneUI extends MetalScrollPaneUI implements PropertyChangeL
     }
 
     /**
-     * 属性改变的方法
-     * @param e 事件
+     * 灞炴�ф敼鍙樼殑鏂规硶
+     * @param e 浜嬩欢
      */
     public void propertyChange(PropertyChangeEvent e) {
     }

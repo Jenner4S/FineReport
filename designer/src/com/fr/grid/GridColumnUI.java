@@ -24,7 +24,7 @@ import com.fr.report.elementcase.ElementCase;
 
 /**
  * @editor zhou
- * @since 2012-3-22ÏÂÎç5:51:10
+ * @since 2012-3-22ä¸‹åˆ5:51:10
  */
 public class GridColumnUI extends ComponentUI {
 
@@ -54,7 +54,7 @@ public class GridColumnUI extends ComponentUI {
         int horizontalEndValue = horizontalValue + horizontalExtent + 1;
         double verticalLineWidth = size.getWidth();
         // Paint background.
-        // denny: ÓÃÀ´±êÊ¶ÒÑÓĞÊı¾İ
+        // denny: ç”¨æ¥æ ‡è¯†å·²æœ‰æ•°æ®
         int columnCount = elementCase.getColumnCount();
         double columnLeftWidth = 0;
         if (columnCount >= horizontalBeginValue) {
@@ -72,7 +72,7 @@ public class GridColumnUI extends ComponentUI {
         GraphHelper.drawLine(g2d, 0, 0, 0, size.getHeight());
         double tmpWidth2 = 0;
         drawColumn(horizontalBeginValue, horizontalEndValue, columnWidthList, tmpWidth2, reportPane, g2d, gridColumn);
-        // »­ÉÏ±ßµÄ±ß¿òÏß.
+        // ç”»ä¸Šè¾¹çš„è¾¹æ¡†çº¿.
         g2d.setColor(gridColumn.getSeparatorLineColor());
         GraphHelper.drawLine(g2d, 0, 0, tmpWidth2, 0);
     }
@@ -98,12 +98,12 @@ public class GridColumnUI extends ComponentUI {
             }
             // ajust width.
             tmpWidth1 += tmpIncreaseWidth;
-            // marks:Ã¿ÁĞµÄ¿í¶È
+            // marks:æ¯åˆ—çš„å®½åº¦
             tmpIncreaseWidth = columnWidthList.get(i).toPixD(resolution);
 
             // check these column wich width is zero.
             tmpWidth2 = tmpIncreaseWidth <= 0 ? tmpWidth1 + 1 : tmpWidth1 + tmpIncreaseWidth;
-            // marks:»­³öÀ´¶à¸öÑ¡ÖĞµÄÇøÓò
+            // marks:ç”»å‡ºæ¥å¤šä¸ªé€‰ä¸­çš„åŒºåŸŸ
             Selection sel = reportPane.getSelection();
             int[] selectedColumn = sel.getSelectedColumns();
             if (IntList.asList(selectedColumn).contain(i)) {
@@ -171,7 +171,7 @@ public class GridColumnUI extends ComponentUI {
         if (isSelectedBounds) {
             tmpTextG2d.setPaint(gridColumn.getSelectedForeground());
         } else {
-            // p: ĞèÒªÅĞ¶ÏEnabled.
+            // p: éœ€è¦åˆ¤æ–­Enabled.
             if (gridColumn.isEnabled()) {
                 tmpTextG2d.setPaint(gridColumn.getForeground());
             } else {
@@ -190,7 +190,7 @@ public class GridColumnUI extends ComponentUI {
         if (isSelectedBounds) {
             g2d.setPaint(gridColumn.getSelectedForeground());
         } else {
-            // p: ĞèÒªÅĞ¶ÏEnabled.
+            // p: éœ€è¦åˆ¤æ–­Enabled.
             if (gridColumn.isEnabled()) {
                 g2d.setPaint(gridColumn.getForeground());
             } else {

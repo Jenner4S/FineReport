@@ -36,7 +36,7 @@ public class BorderLayoutDirectionEditor extends AbstractPropertyEditor {
 						for (int i = 0, len = obj.length; i < len; i++) {
 							res[i] = ((Item) obj[i]).getName();
 						}
-						setText(StringUtils.join("¡¢", res));
+						setText(StringUtils.join("ã€", res));
 					}
 				} else {
 					setText(Inter.getLocText("None"));

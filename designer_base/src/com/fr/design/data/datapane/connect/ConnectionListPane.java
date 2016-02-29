@@ -69,16 +69,16 @@ public class ConnectionListPane extends JControlPane {
     }
 
     /**
-     * Ãû×ÖÊÇ·ñÔÊĞí
+     * åå­—æ˜¯å¦å…è®¸
      *
-     * @return ÊÇ/·ñ
+     * @return æ˜¯/å¦
      */
     public boolean isNamePermitted() {
         return isNamePermitted;
     }
 
     /**
-     * ¼ì²é°´Å¥¿ÉÓÃ×´Ì¬ Check button enabled.
+     * æ£€æŸ¥æŒ‰é’®å¯ç”¨çŠ¶æ€ Check button enabled.
      */
     public void checkButtonEnabled() {
         super.checkButtonEnabled();
@@ -91,9 +91,9 @@ public class ConnectionListPane extends JControlPane {
     }
 
     /**
-     * ´´½¨²Ëµ¥Ïî
+     * åˆ›å»ºèœå•é¡¹
      *
-     * @return ²Ëµ¥Ïî
+     * @return èœå•é¡¹
      */
     public NameableCreator[] createNameableCreators() {
         NameableCreator[] creators = new NameableCreator[]{new NameObjectCreator(
@@ -138,7 +138,7 @@ public class ConnectionListPane extends JControlPane {
      * Update.
      */
     public void update(DatasourceManagerProvider datasourceManager) {
-        // Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉNameObject[],Ò»¶¨ÒªÕâÃ´Ğ´...
+        // Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆNameObject[],ä¸€å®šè¦è¿™ä¹ˆå†™...
         Nameable[] res = this.update();
         NameObject[] res_array = new NameObject[res.length];
         java.util.Arrays.asList(res).toArray(res_array);

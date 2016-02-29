@@ -16,7 +16,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-4
- * Time: …œŒÁ11:03
+ * Time: ‰∏äÂçà11:03
  */
 public class UIProgressBarBorder extends AbstractBorder implements UIResource {
     protected static final Insets INSETS_YQ = new Insets(3, 3, 3, 3);

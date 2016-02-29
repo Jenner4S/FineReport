@@ -15,9 +15,9 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * ¸ÊÌØÍ¼ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İ½çÃæ
+ * ç”˜ç‰¹å›¾ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-21 ÏÂÎç03:01:48
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-21 ä¸‹åˆ03:01:48
  */
 public class GanttPlotReportDataContentPane extends AbstractReportDataContentPane {
 

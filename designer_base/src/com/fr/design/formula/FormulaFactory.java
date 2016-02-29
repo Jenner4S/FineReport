@@ -7,7 +7,7 @@ import com.fr.design.fun.UIFormulaProcessor;
  * @author richie
  * @date 2015-04-17
  * @since 8.0
- * 公式编辑器管理器
+ * 鍏紡缂栬緫鍣ㄧ鐞嗗櫒
  */
 public class FormulaFactory {
 

@@ -32,9 +32,9 @@ import com.fr.report.web.Location;
 import com.fr.report.web.ToolBarManager;
 
 /**
- * richer:ÍÏ×§ToolBar buttonÒÔÊµÏÖ×Ô¶¨Òå¹¤¾ßÀ¸.·şÎñÆ÷ÅäÖÃÄÇ¶ùµÄ
+ * richer:æ‹–æ‹½ToolBar buttonä»¥å®ç°è‡ªå®šä¹‰å·¥å…·æ .æœåŠ¡å™¨é…ç½®é‚£å„¿çš„
  * 
- * @editor zhou 2012-3-22ÏÂÎç3:59:00
+ * @editor zhou 2012-3-22ä¸‹åˆ3:59:00
  */
 public class DragToolBarPane extends WidgetToolBarPane {
 	private DefaultListModel toolbarButtonListModel = new DefaultListModel();

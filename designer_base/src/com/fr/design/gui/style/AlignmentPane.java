@@ -51,8 +51,8 @@ public class AlignmentPane extends AbstractBasicStylePane implements GlobalNameO
 	private UIComboBox textRotationComboBox;
 	private UIComboBox imageLayoutComboBox;
 
-	private UIButtonGroup<Integer> hAlignmentPane;// ×ó¶ÔÆë Ë®Æ½¾ÓÖĞ ÓÒ¶ÔÆë Ë®Æ½·ÖÉ¢
-	private UIButtonGroup<Integer> vAlignmentPane;// ¾ÓÉÏ ´¹Ö±¾ÓÖĞ ¾ÓÏÂ
+	private UIButtonGroup<Integer> hAlignmentPane;// å·¦å¯¹é½ æ°´å¹³å±…ä¸­ å³å¯¹é½ æ°´å¹³åˆ†æ•£
+	private UIButtonGroup<Integer> vAlignmentPane;// å±…ä¸Š å‚ç›´å±…ä¸­ å±…ä¸‹
 
 	private UINumberDragPane rotationPane;
 
@@ -216,8 +216,8 @@ public class AlignmentPane extends AbstractBasicStylePane implements GlobalNameO
 	}
 
 	/**
-	 * ±êÌâ
-	 * @return ±êÌâ
+	 * æ ‡é¢˜
+	 * @return æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Designer-StyleAlignment_Style_Alignment");
@@ -277,7 +277,7 @@ public class AlignmentPane extends AbstractBasicStylePane implements GlobalNameO
 	 * @param style the new style.
 	 */
 	public Style update(Style style) {
-		// peter:ĞèÒªÅĞ¶Ï´«µİ½øÀ´µÄÖµÊÇ·ñÎªnull.
+		// peter:éœ€è¦åˆ¤æ–­ä¼ é€’è¿›æ¥çš„å€¼æ˜¯å¦ä¸ºnull.
 		if (style == null) {
 			return style;
 		}
@@ -350,7 +350,7 @@ public class AlignmentPane extends AbstractBasicStylePane implements GlobalNameO
 		if (ComparatorUtils.equals(globalNameListener.getGlobalName(), Inter.getLocText("Style-Right_Indent"))) {
 			style = style.derivePaddingRight(indentationUnitProcessor.paddingUnitGainFromSpinner((int)(this.rightIndentSpinner.getValue())));
 		}
-		//¼ä¾à
+		//é—´è·
 		if (ComparatorUtils.equals(globalNameListener.getGlobalName(), Inter.getLocText("Style-Spacing_Before"))) {
 			style = style.deriveSpacingBefore((int) (this.spaceBeforeSpinner.getValue()));
 		}
@@ -364,18 +364,18 @@ public class AlignmentPane extends AbstractBasicStylePane implements GlobalNameO
 	}
 
 	/**
-	 * ×¢²á¼àÌıÊÂ¼ş
+	 * æ³¨å†Œç›‘å¬äº‹ä»¶
      *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñÏìÓ¦¼àÌı
+	 * æ˜¯å¦å“åº”ç›‘å¬
 	 *
-     *  @return ·ñ
+     *  @return å¦
 	 */
 	public boolean shouldResponseNameListener() {
 		return false;

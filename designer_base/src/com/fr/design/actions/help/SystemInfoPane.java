@@ -41,11 +41,11 @@ public class SystemInfoPane extends JPanel {
         for (int i = 0; i < keys.length; i++) {
             Object[] tableRowData = new Object[2];
             String keyValue = keys[i].toString();
-            // james:ÆÁ±Îµôexe4jµÄÄÚÈÝ
+            // james:å±è”½æŽ‰exe4jçš„å†…å®¹
             if (keyValue.indexOf("exe4j") != -1) {
             	continue;
             }
-            // james£ºÕâ¸öÒ²ÊÇexe4jµÄ¶«¶«
+            // jamesï¼šè¿™ä¸ªä¹Ÿæ˜¯exe4jçš„ä¸œä¸œ
             if ("install4j.exeDir".equals(keyValue)) {
             	continue;
             }

@@ -5,27 +5,27 @@ import com.fr.design.mainframe.FormDesigner;
 public interface Direction {
 	
 	/**
-	 * ÍÏ×§×é¼ş
-	 * @param dx Ë®Æ½·½ÏòÎ»ÒÆ
-	 * @param dy ´¹Ö±·½ÏòÎ»ÒÆ
-	 * @param designer Éè¼ÆÆ÷
+	 * æ‹–æ‹½ç»„ä»¶
+	 * @param dx æ°´å¹³æ–¹å‘ä½ç§»
+	 * @param dy å‚ç›´æ–¹å‘ä½ç§»
+	 * @param designer è®¾è®¡å™¨
 	 */
 	void drag(int dx, int dy, FormDesigner designer);
 
 	/**
-	 * ¸üĞÂÊó±êÑùÊ½
-	 * @param formEditor £º Éè¼ÆÆ÷
+	 * æ›´æ–°é¼ æ ‡æ ·å¼
+	 * @param formEditor ï¼š è®¾è®¡å™¨
 	 */
     void updateCursor(FormDesigner formEditor);
     
 	/**
-	 * DirectionµÄÎ»ÖÃ±êÊ¾£¬top = 1,bottom = 2µÈ
+	 * Directionçš„ä½ç½®æ ‡ç¤ºï¼Œtop = 1,bottom = 2ç­‰
 	 */
     int getActual();
 
     /**
-     * ÍÏ×§Ç°ÏÈ±¸·İÔ­Ê¼Î»ÖÃ£¬ÍÏ×§¹ı³ÌÖĞÓÃÓÚ±È½ÏÎ»ÒÆ¸úÔ­Ê¼Î»ÖÃ´Ó¶øÈ·¶¨ĞÂÎ»ÖÃ´óĞ¡
-     * @param formEditor   Éè¼ÆÆ÷
+     * æ‹–æ‹½å‰å…ˆå¤‡ä»½åŸå§‹ä½ç½®ï¼Œæ‹–æ‹½è¿‡ç¨‹ä¸­ç”¨äºæ¯”è¾ƒä½ç§»è·ŸåŸå§‹ä½ç½®ä»è€Œç¡®å®šæ–°ä½ç½®å¤§å°
+     * @param formEditor   è®¾è®¡å™¨
      */
     void backupBounds(FormDesigner formEditor);
     

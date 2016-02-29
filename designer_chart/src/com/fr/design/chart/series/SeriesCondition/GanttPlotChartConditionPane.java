@@ -7,7 +7,7 @@ import com.fr.chart.base.ChartConstants;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÏÂÎç3:13
+ * Time   : ä¸‹åˆ3:13
  */
 public class GanttPlotChartConditionPane extends ChartConditionPane {
 

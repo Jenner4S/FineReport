@@ -8,8 +8,8 @@ public interface ColorSelectable {
 	public Color getColor();
 	
 	/**
-	 * Ñ¡ÖĞÑÕÉ«
-	 * @param colorCell ÑÕÉ«µ¥Ôª¸ñ
+	 * é€‰ä¸­é¢œè‰²
+	 * @param colorCell é¢œè‰²å•å…ƒæ ¼
 	 */
 	public void colorSetted(ColorCell colorCell);
 }

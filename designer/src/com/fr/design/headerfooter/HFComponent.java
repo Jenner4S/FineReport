@@ -304,4 +304,3 @@ public class HFComponent extends UILabel implements MoveActionListener {
         return BaseUtils.readIcon("/com/fr/base/images/dialog/headerfooter/undefined.png");
     }
 }
-

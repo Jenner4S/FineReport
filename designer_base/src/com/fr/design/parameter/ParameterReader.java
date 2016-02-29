@@ -6,22 +6,22 @@ import com.fr.base.Parameter;
  * @author richie
  * @date 14/11/10
  * @since 8.0
- * ²ÎÊı¶ÁÈ¡½Ó¿Ú£¬¿ÉÒÔ¸ù¾İ²»Í¬µÄÊµÏÖ¶ÁÈ¡²»Í¬ÀàĞÍµÄÄ£°å²ÎÊı£¨Í¼±í¡¢±íµ¥¡¢±¨±íµÈ¾ßÌåµÄÊµÏÖ£©
+ * å‚æ•°è¯»å–æ¥å£ï¼Œå¯ä»¥æ ¹æ®ä¸åŒçš„å®ç°è¯»å–ä¸åŒç±»å‹çš„æ¨¡æ¿å‚æ•°ï¼ˆå›¾è¡¨ã€è¡¨å•ã€æŠ¥è¡¨ç­‰å…·ä½“çš„å®ç°ï¼‰
  */
 public interface ParameterReader {
 
     /**
-     * ¶ÁÈ¡Ä£°å²ÎÊıÖ¸¶¨Â·¾¶ÏÂµÄÄ£°å²ÎÊı
-     * @param tplPath Ä£°åÂ·¾¶
-     * @return ²ÎÊıÊı×é
+     * è¯»å–æ¨¡æ¿å‚æ•°æŒ‡å®šè·¯å¾„ä¸‹çš„æ¨¡æ¿å‚æ•°
+     * @param tplPath æ¨¡æ¿è·¯å¾„
+     * @return å‚æ•°æ•°ç»„
      */
     public Parameter[] readParameterFromPath(String tplPath);
 
     /**
-     * ½ÓÊÜµÄÀàĞÍ
-     * @param tplPath Ä£°åÂ·¾¶
-     * @param acceptTypes ÀàĞÍ
-     * @return Èç¹û½ÓÊÜ¸ÃÖÖÀàĞÍ£¬¾ÍÖ´ĞĞ¶ÁÈ¡²Ù×÷
+     * æ¥å—çš„ç±»å‹
+     * @param tplPath æ¨¡æ¿è·¯å¾„
+     * @param acceptTypes ç±»å‹
+     * @return å¦‚æœæ¥å—è¯¥ç§ç±»å‹ï¼Œå°±æ‰§è¡Œè¯»å–æ“ä½œ
      */
     public boolean accept(String tplPath, String... acceptTypes);
 

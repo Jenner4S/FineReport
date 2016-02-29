@@ -32,7 +32,7 @@ public class ChartDatasheetPane extends BasicScrollPane<Chart>{
 	private ChartTextAttrPane textAttrPane;
 	private FormatPane formatPane;
 	private JPanel datasheetPane;
-	private ChartAxisPane axisPane; // °ó¶¨ChartAxisPaneÊÇ·ñ»Ò»¯
+	private ChartAxisPane axisPane; // ç»‘å®šChartAxisPaneæ˜¯å¦ç°åŒ–
 	
 	private class ContentPane extends JPanel{
 		private static final long serialVersionUID = 163052991494925562L;
@@ -81,15 +81,15 @@ public class ChartDatasheetPane extends BasicScrollPane<Chart>{
 	}
 	
 	/**
-	 * °ó¶¨×ø±êÖá½çÃæ
-	 * @param axisPane ×ø±êÖá½çÃæ
+	 * ç»‘å®šåæ ‡è½´ç•Œé¢
+	 * @param axisPane åæ ‡è½´ç•Œé¢
 	 */
 	public void useWithAxis(ChartAxisPane axisPane) {
 		this.axisPane = axisPane;
 	}
 	
 	/**
-	 * ¼ì²éÁª¶¯µÄ×ø±êÖá½çÃæ
+	 * æ£€æŸ¥è”åŠ¨çš„åæ ‡è½´ç•Œé¢
 	 */
 	public void checkAxisPaneUse() {
 		if(axisPane != null) {
@@ -97,7 +97,7 @@ public class ChartDatasheetPane extends BasicScrollPane<Chart>{
 		}
 	}
 	
-	// ¼ì²éÄÚ²¿boxÊ¹ÓÃ
+	// æ£€æŸ¥å†…éƒ¨boxä½¿ç”¨
 	private void checkBoxUse() {
 		isDatasheetVisable.setEnabled(true);
 		datasheetPane.setVisible(isDatasheetVisable.isSelected());
@@ -105,8 +105,8 @@ public class ChartDatasheetPane extends BasicScrollPane<Chart>{
 
 	@Override
 	/**
-	 * ±êÌâ
-	 * @return ·µ»Ø±êÌâ
+	 * æ ‡é¢˜
+	 * @return è¿”å›æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_DATA_TITLE;
@@ -152,7 +152,7 @@ public class ChartDatasheetPane extends BasicScrollPane<Chart>{
 		checkAxisPaneUse();
 		checkBoxUse();
 		
-		if(chart.isUseMoreDate()) {// ¶àÎ³×ø±êÖáÇé¿öÏÂ , Êı¾İ±í²»¿ÉÓÃ.
+		if(chart.isUseMoreDate()) {// å¤šçº¬åæ ‡è½´æƒ…å†µä¸‹ , æ•°æ®è¡¨ä¸å¯ç”¨.
 			GUICoreUtils.setEnabled(this, false);
 		} 
 	}

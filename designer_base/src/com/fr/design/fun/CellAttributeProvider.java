@@ -9,8 +9,8 @@ public interface CellAttributeProvider {
     String MARK_STRING = "CellAttributeProvider";
 
     /**
-     * ¹¹Ôìµ¥Ôª¸ñÊôĞÔÃæ°å
-     * @return Ãæ°åÀà
+     * æ„é€ å•å…ƒæ ¼å±æ€§é¢æ¿
+     * @return é¢æ¿ç±»
      */
     AbstractAttrNoScrollPane createCellAttributePane();
 }

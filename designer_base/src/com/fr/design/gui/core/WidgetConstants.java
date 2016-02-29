@@ -4,7 +4,7 @@ import com.fr.general.Inter;
 
 public class WidgetConstants {
 	
-	//Ã»ÓĞ¿Ø¼ş
+	//æ²¡æœ‰æ§ä»¶
 	public static final int NONE = -1;
 	
 	// TextEditor
@@ -54,25 +54,25 @@ public class WidgetConstants {
 	
 	public static final int MULTI_FILE = 19;
 	
-	// Ä¬ÈÏ¿Ø¼ş
+	// é»˜è®¤æ§ä»¶
 	public static final String DEFAULT_WIDGETCONFIG = Inter.getLocText("Widget-Form_Widget_Config");
 	
-	// ±¨±í¿Ø¼ş£¬ÓëÄ¬ÈÏ¿Ø¼ş²»Í¬£¬±ÈÈçlabel£¬table,SEARCHµÈ£¬ÕâÀïÊÇ²»ĞèÒªµÄ
+	// æŠ¥è¡¨æ§ä»¶ï¼Œä¸é»˜è®¤æ§ä»¶ä¸åŒï¼Œæ¯”å¦‚labelï¼Œtable,SEARCHç­‰ï¼Œè¿™é‡Œæ˜¯ä¸éœ€è¦çš„
 	public static final String REPORT_WIDGETCONFIG = Inter.getLocText("Widget-Default_Widget_Config");
 	
 	public static final String FORM_CHARTWIDGET = Inter.getLocText("Widget-Chart_Widget_Config");
 	
-	// ±íµ¥ÈİÆ÷¿Ø¼ş
+	// è¡¨å•å®¹å™¨æ§ä»¶
 	public static final String FORM_WIDGETCONTAINER = Inter.getLocText("Widget-Form_Widget_Container");
 	
 	public  static final String POLY_REPORT_WIDGET = Inter.getLocText("Poly-Report_Component");
-	// ·şÎñÆ÷Ô¤¶¨Òå¿Ø¼ş
+	// æœåŠ¡å™¨é¢„å®šä¹‰æ§ä»¶
 	public static final String USER_DEFINED_WIDGETCONFIG = Inter.getLocText("Widget-User_Defined_Widget_Config");
 	
-	// ·şÎñÆ÷×éºÏ¿Ø¼ş
+	// æœåŠ¡å™¨ç»„åˆæ§ä»¶
 	public static final String COMB_WIDGETCONFIG = Inter.getLocText("Widget-Comb_Widget_Config");
 	
-	// ·şÎñÆ÷×Ô¶¨Òå¿Ø¼ş
+	// æœåŠ¡å™¨è‡ªå®šä¹‰æ§ä»¶
 	public static final String CUSTOM_WIDGETCONFIG = Inter.getLocText("Widget-Custom_Widget_Config");
 	
 }

@@ -21,9 +21,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * µØÍ¼ ÏµÁĞÊôĞÔ ±êÇ©ÄÚÈİ½çÃæ.
+ * åœ°å›¾ ç³»åˆ—å±æ€§ æ ‡ç­¾å†…å®¹ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-5 ÏÂÎç02:35:27
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-5 ä¸‹åˆ02:35:27
  */
 public class ChartDataPointLabel4MapPane extends ChartDatapointLabelPane {
 	public ChartDataPointLabel4MapPane(ChartStylePane parent) {
@@ -91,7 +91,7 @@ public class ChartDataPointLabel4MapPane extends ChartDatapointLabelPane {
 					break;
 				}
 			}
-			// ÒÔÇ°µÄ»»ĞĞ·û ${BR}
+			// ä»¥å‰çš„æ¢è¡Œç¬¦ ${BR}
 			if (divideComoBox != null && dataLabel.contains(ChartConstants.BREAKLINE_PARA)) {
 				divideComoBox.setSelectedItem(ChartConstants.DELIMITERS[3]);
 			}

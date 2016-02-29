@@ -24,7 +24,7 @@ public class FlashLookLabelMouseAdapter extends MouseAdapter {
 		this.releaseAction = releaseAction;
 	}
 	
-	public void mouseEntered(MouseEvent e) { //µ±Êó±ê½øÈëÊ±ºòµ÷ÓÃ. 
+	public void mouseEntered(MouseEvent e) { //å½“é¼ æ ‡è¿›å…¥æ—¶å€™è°ƒç”¨. 
 		mouseEntered = true;
 		if(!buttonPressed){
 			label.setBackground(java.awt.Color.WHITE);

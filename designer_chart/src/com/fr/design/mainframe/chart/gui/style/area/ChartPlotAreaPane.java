@@ -30,8 +30,8 @@ public class ChartPlotAreaPane extends AbstractChartTabPane<Chart>{
 	}
 
     /**
-     * 标题
-     * @return 标题
+     * 鏍囬
+     * @return 鏍囬
      */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_AREA_PLOT_TITLE;

@@ -24,9 +24,9 @@ public class DSColumnConditionsPane extends BasicPane {
     //peter: Lite Condition.
 
     private DSColumnLiteConditionPane liteConditionPane;
-    //marks:ÊÇ·ñ¼Ì³Ğ¸¸¸ñÌõ¼ş
+    //marks:æ˜¯å¦ç»§æ‰¿çˆ¶æ ¼æ¡ä»¶
     private UICheckBox reselectExpandCheckBox;
-    //marks:×÷Îª²¼¾ÖµÄ¿Õ×Ö·û´®
+    //marks:ä½œä¸ºå¸ƒå±€çš„ç©ºå­—ç¬¦ä¸²
     private static final String INSET_TEXT = "      ";
 
     public DSColumnConditionsPane() {

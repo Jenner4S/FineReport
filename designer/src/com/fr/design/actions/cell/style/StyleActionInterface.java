@@ -3,7 +3,7 @@ package com.fr.design.actions.cell.style;
 import com.fr.base.Style;
 
 /**
- * peter:Õâ¸ö·½·¨Ö»ÊÇÔÚ±à¼­StyleµÄÊ±ºòÊ¹ÓÃ.
+ * peter:è¿™ä¸ªæ–¹æ³•åªæ˜¯åœ¨ç¼–è¾‘Styleçš„æ—¶å€™ä½¿ç”¨.
  */
 public interface StyleActionInterface {
     public Style executeStyle(Style style2Mod, Style selectedStyle);

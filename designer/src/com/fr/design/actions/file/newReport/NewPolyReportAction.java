@@ -21,11 +21,11 @@ public class NewPolyReportAction extends UpdateAction {
     }
 
     /**
-	 * Action´¥·¢ºó
+	 * Actionè§¦å‘å
 	 * 
-	 * @param e ´¥·¢µÄÊÂ¼ş
+	 * @param e è§¦å‘çš„äº‹ä»¶
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:43:13
+	 * @date 2015-2-5-ä¸Šåˆ11:43:13
 	 * 
 	 */
     public void actionPerformed(ActionEvent e) {

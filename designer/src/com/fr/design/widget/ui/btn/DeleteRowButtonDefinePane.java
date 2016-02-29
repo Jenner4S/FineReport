@@ -12,7 +12,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : œ¬ŒÁ8:04
+ * Time   : ‰∏ãÂçà8:04
  */
 public class DeleteRowButtonDefinePane<T extends DeleteRowButton> extends ButtonWithHotkeysDetailPane<DeleteRowButton> {
     private DefineDeleteColumnRowPane ddcp;

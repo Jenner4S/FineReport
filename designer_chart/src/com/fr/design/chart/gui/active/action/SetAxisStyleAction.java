@@ -13,7 +13,7 @@ import com.fr.stable.StringUtils;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ5:10
+ * Time   : ‰∏ãÂçà5:10
  */
 public class SetAxisStyleAction extends ChartComponentAction {
     public SetAxisStyleAction(ChartComponent chartComponent) {

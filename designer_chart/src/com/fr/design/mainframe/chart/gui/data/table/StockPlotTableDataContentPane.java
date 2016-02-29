@@ -19,9 +19,9 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * ¹É¼ÛÍ¼ ÊôĞÔ±í Êı¾İ¼¯ Êı¾İ½çÃæ
+ * è‚¡ä»·å›¾ å±æ€§è¡¨ æ•°æ®é›† æ•°æ®ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç04:38:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ04:38:28
  */
 public class StockPlotTableDataContentPane extends AbstractTableDataContentPane {
 
@@ -61,7 +61,7 @@ public class StockPlotTableDataContentPane extends AbstractTableDataContentPane 
 		}
 	};
 
-	public StockPlotTableDataContentPane(ChartDataPane parent) {// TODO ¸ü¸ÄÍ³Ò»µÄ¶¨ÒåÄ£Ê½: Ô­ÏÈµÄ»µ´¦: Ãû×Ö²»ÈİÒ×ºÜÊôĞÔ¶ÔÓ¦
+	public StockPlotTableDataContentPane(ChartDataPane parent) {// TODO æ›´æ”¹ç»Ÿä¸€çš„å®šä¹‰æ¨¡å¼: åŸå…ˆçš„åå¤„: åå­—ä¸å®¹æ˜“å¾ˆå±æ€§å¯¹åº”
 		this.setLayout(new BorderLayout());
 		
 		axisBox = new UIComboBox();
@@ -71,7 +71,7 @@ public class StockPlotTableDataContentPane extends AbstractTableDataContentPane 
 		lowBox = new UIComboBox();
 		closeBox = new UIComboBox();
 
-		//ember:ÎªÁËÓ¢ÎÄ°æÕı³£ÏÔÊ¾½«ÏÂÀ­¿ò¿í¶È´Ó100¸Ä³ÉÁË80
+		//ember:ä¸ºäº†è‹±æ–‡ç‰ˆæ­£å¸¸æ˜¾ç¤ºå°†ä¸‹æ‹‰æ¡†å®½åº¦ä»100æ”¹æˆäº†80
 		axisBox.setPreferredSize(new Dimension(90, 20));
 		volumeBox.setPreferredSize(new Dimension(90, 20));
 		openBox.setPreferredSize(new Dimension(90, 20));
@@ -129,7 +129,7 @@ public class StockPlotTableDataContentPane extends AbstractTableDataContentPane 
 	}
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         clearBoxItems(axisBox);
@@ -144,7 +144,7 @@ public class StockPlotTableDataContentPane extends AbstractTableDataContentPane 
     }
 
 	/**
-	 * ¸üĞÂ¹É¼ÛÍ¼ Êı¾İ½çÃæ.
+	 * æ›´æ–°è‚¡ä»·å›¾ æ•°æ®ç•Œé¢.
 	 */
 	public void populateBean(ChartCollection collection) {
 		if(collection == null) {

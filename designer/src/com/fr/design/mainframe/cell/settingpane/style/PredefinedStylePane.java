@@ -74,7 +74,7 @@ public class PredefinedStylePane extends FurtherBasicBeanPane<NameStyle> impleme
                         changeListener.stateChanged(new ChangeEvent(styleList));
                     }
                 }
-                // Èç¹ûµã»÷´ÎÊı´óÓÚ2ÈÏÎª·¢ÉúË«»÷£¬µ¯³ö±à¼­½çÃæ
+                // å¦‚æœç‚¹å‡»æ¬¡æ•°å¤§äº2è®¤ä¸ºå‘ç”ŸåŒå‡»ï¼Œå¼¹å‡ºç¼–è¾‘ç•Œé¢
                 // if (clickedNumber >= 2) {
                 // }
             }
@@ -84,16 +84,16 @@ public class PredefinedStylePane extends FurtherBasicBeanPane<NameStyle> impleme
     }
 
     /**
-     * Ìí¼Ó¸Ä±ä¼àÌı
+     * æ·»åŠ æ”¹å˜ç›‘å¬
      *
-     * @param changeListener ¼àÌıÊÂ¼ş
+     * @param changeListener ç›‘å¬äº‹ä»¶
      */
     public void addChangeListener(ChangeListener changeListener) {
         this.changeListener = changeListener;
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
 
@@ -116,26 +116,26 @@ public class PredefinedStylePane extends FurtherBasicBeanPane<NameStyle> impleme
     }
 
     /**
-     * »ñÈ¡Ãæ°å±êÌâ
+     * è·å–é¢æ¿æ ‡é¢˜
      *
-     * @return ±êÌâ
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText(new String[]{"PageSetup-Predefined", "Style"});
     }
 
     /**
-     * ÊÇ·ñ¿ÉÒÔ½ÓÄÉ¶ÔÏó
+     * æ˜¯å¦å¯ä»¥æ¥çº³å¯¹è±¡
      *
-     * @param ob ×é¼ş¶ÔÏó
-     * @return ÊÇ·ñ¿ÉÒÔ½ÓÄÉ¶ÔÏó
+     * @param ob ç»„ä»¶å¯¹è±¡
+     * @return æ˜¯å¦å¯ä»¥æ¥çº³å¯¹è±¡
      */
     public boolean accept(Object ob) {
         return ob instanceof NameStyle;
     }
 
     /**
-     * Ë¢ĞÂ×é¼ş¶ÔÏó
+     * åˆ·æ–°ç»„ä»¶å¯¹è±¡
      */
     public void refreshBeanElement() {
         defaultListModel.removeAllElements();

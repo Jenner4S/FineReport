@@ -20,8 +20,8 @@ public abstract class AbstractIndependentChartUI implements IndependentChartUIPr
     }
 
     /**
-     * ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ£¬ÎªÁË±ÜÃâ½çÃæÀ´»ØÇĞ»»
-     * @return ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ
+     * æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢ï¼Œä¸ºäº†é¿å…ç•Œé¢æ¥å›åˆ‡æ¢
+     * @return æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢
      */
     public boolean isUseDefaultPane(){
         return true;

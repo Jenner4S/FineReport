@@ -9,7 +9,7 @@ import com.fr.design.gui.frpane.RegPane;
 import com.fr.form.ui.reg.RegExp;
 
 /*
- * 正则表达式编辑器
+ * 姝ｅ垯琛ㄨ揪寮忕紪杈戝櫒
  */
 public class AccessibleRegexEditor extends UneditableAccessibleEditor {
 

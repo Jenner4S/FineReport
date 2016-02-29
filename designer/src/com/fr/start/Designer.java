@@ -62,9 +62,9 @@ public class Designer extends BaseDesigner {
     
 
     /**
-     * Éè¼ÆÆ÷Æô¶¯µÄMain·½·¨
+     * è®¾è®¡å™¨å¯åŠ¨çš„Mainæ–¹æ³•
      *
-     * @param args ²ÎÊı
+     * @param args å‚æ•°
      */
     public static void main(String[] args) {
         new Designer(args);
@@ -81,8 +81,8 @@ public class Designer extends BaseDesigner {
 
     @Override
     /**
-     * ´´½¨ĞÂ½¨ÎÄ¼şµÄ¿ì½İ·½Ê½Êı×é¡£
-     * @return ·µ»Ø¿ì½İ·½Ê½µÄÊı×é
+     * åˆ›å»ºæ–°å»ºæ–‡ä»¶çš„å¿«æ·æ–¹å¼æ•°ç»„ã€‚
+     * @return è¿”å›å¿«æ·æ–¹å¼çš„æ•°ç»„
      */
     public ShortCut[] createNewFileShortCuts() {
         ArrayList<ShortCut> shortCuts = new ArrayList<ShortCut>();
@@ -124,8 +124,8 @@ public class Designer extends BaseDesigner {
 
     @Override
     /**
-     * ´´½¨Éè¼ÆÆ÷ÉÏ¼¸¸ö±È½Ï´óµÄÍ¼±ê£ºĞÂ½¨cpt£¬±£´æ£¬Ç°½ø£¬ºóÍË£¬ÔËĞĞ¡£
-     * @return ·µ»Ø´óÍ¼±ê¶ÔÓ¦µÄ¹¤¾ßÀ¸
+     * åˆ›å»ºè®¾è®¡å™¨ä¸Šå‡ ä¸ªæ¯”è¾ƒå¤§çš„å›¾æ ‡ï¼šæ–°å»ºcptï¼Œä¿å­˜ï¼Œå‰è¿›ï¼Œåé€€ï¼Œè¿è¡Œã€‚
+     * @return è¿”å›å¤§å›¾æ ‡å¯¹åº”çš„å·¥å…·æ 
      */
     public UILargeToolbar createLargeToolbar() {
         UILargeToolbar largeToolbar = super.createLargeToolbar();
@@ -152,8 +152,8 @@ public class Designer extends BaseDesigner {
     }
 
     /**
-     * ´´½¨ÉÏÃæÒ»ÅÅµÄ¹¤¾ßÀ¸°´Å¥
-     * @return °´Å¥
+     * åˆ›å»ºä¸Šé¢ä¸€æ’çš„å·¥å…·æ æŒ‰é’®
+     * @return æŒ‰é’®
      */
     public UIButton[] createUp() {
         return new UIButton[]{createSaveButton(), createUndoButton(), createRedoButton()};
@@ -282,16 +282,16 @@ public class Designer extends BaseDesigner {
     }
 
     /**
-     * Éú³É¹¤¾ßÀ¸
-     * @param toolbarComponent ¹¤¾ßÀ¸
-     * @param plus             ¶ÔÏó
-     * @return  ¸üĞÂºóµÄtoolbar
+     * ç”Ÿæˆå·¥å…·æ 
+     * @param toolbarComponent å·¥å…·æ 
+     * @param plus             å¯¹è±¡
+     * @return  æ›´æ–°åçš„toolbar
      */
     public JComponent resetToolBar(JComponent toolbarComponent, ToolBarMenuDockPlus plus) {
-        //Èç¹ûÊÇ´¦ÓÚÈ¨ÏŞ±à¼­×´Ì¬
+        //å¦‚æœæ˜¯å¤„äºæƒé™ç¼–è¾‘çŠ¶æ€
         if (BaseUtils.isAuthorityEditing()) {
             if (plus instanceof JWorkBook && plus.toolbars4Target() == null) {
-                //¾ÛºÏ¿é±à¼­
+                //èšåˆå—ç¼–è¾‘
                 return super.polyToolBar(Inter.getLocText(new String[]{"Polybolck", "DashBoard-Potence", "Edit"}));
             } else {
                 return plus.toolBar4Authority();
@@ -318,17 +318,17 @@ public class Designer extends BaseDesigner {
 
     @Override
     /**
-     * Éú³É±¨±íÉè¼ÆºÍ±íµ¥Éè¼ÆµÄ±à¼­ÇøÓò
-     * @return ·µ»Ø±à¼­ÇøÓò
+     * ç”ŸæˆæŠ¥è¡¨è®¾è®¡å’Œè¡¨å•è®¾è®¡çš„ç¼–è¾‘åŒºåŸŸ
+     * @return è¿”å›ç¼–è¾‘åŒºåŸŸ
      */
     public JTemplate<?, ?> createNewTemplate() {
         return new JWorkBook();
     }
     
     /**
-	 * ´´½¨ÂÛÌ³µÇÂ¼Ãæ°å, chartÄÇ±ß²»ĞèÒª
+	 * åˆ›å»ºè®ºå›ç™»å½•é¢æ¿, charté‚£è¾¹ä¸éœ€è¦
 	 * 
-	 * @return Ãæ°å×é¼ş
+	 * @return é¢æ¿ç»„ä»¶
 	 * 
 	 */
     public Component createBBSLoginPane(){
@@ -343,18 +343,18 @@ public class Designer extends BaseDesigner {
     }
     
     /**
-	 * ÊÕ¼¯ÓÃ»§ĞÅÏ¢Âğ
+	 * æ”¶é›†ç”¨æˆ·ä¿¡æ¯å—
 	 * 
 	 */
     protected void collectUserInformation() {
-    	//¶¨ÖÆµÄ¾Í²»µ¯³öÀ´ÁË
+    	//å®šåˆ¶çš„å°±ä¸å¼¹å‡ºæ¥äº†
     	if (!ComparatorUtils.equals(ProductConstants.APP_NAME, ProductConstants.DEFAULT_APPNAME)) {
 			return;
 		}
     	
     	DesignerEnvManager envManager = DesignerEnvManager.getEnvManager();
     	final String key = envManager.getActivationKey();
-    	//±¾µØÑéÖ¤Í¨¹ı
+    	//æœ¬åœ°éªŒè¯é€šè¿‡
     	if(ActiveKeyGenerator.localVerify(key)){
     		onLineVerify(envManager, key);
 			UserInfoLabel.showBBSDialog();
@@ -362,7 +362,7 @@ public class Designer extends BaseDesigner {
     	}
     	
     	if(StableUtils.checkDesignerActive(readOldKey())){
-			//Ö»ÒªÓĞÀÏµÄkey, ¾Í²»µ¯´°, ÏÂ´ÎÆô¶¯µÄÊ±ºò, ÔÚÏßÑéÖ¤ÏÂ¾ÍĞĞ.
+			//åªè¦æœ‰è€çš„key, å°±ä¸å¼¹çª—, ä¸‹æ¬¡å¯åŠ¨çš„æ—¶å€™, åœ¨çº¿éªŒè¯ä¸‹å°±è¡Œ.
 			String newKey = ActiveKeyGenerator.generateActiveKey();
 			envManager.setActivationKey(newKey);
 			UserInfoLabel.showBBSDialog();
@@ -376,7 +376,7 @@ public class Designer extends BaseDesigner {
     
     private void onLineVerify(DesignerEnvManager envManager, final String key){
 		int status = envManager.getActiveKeyStatus();
-		//Ã»ÓĞÁªÍøÑéÖ¤¹ı
+		//æ²¡æœ‰è”ç½‘éªŒè¯è¿‡
 		if (status != 0) {
 			Thread authThread = new Thread(new Runnable() {
 				
@@ -412,7 +412,7 @@ public class Designer extends BaseDesigner {
         return temp.getActivationKey();
     }
     
-    //Ä¬ÈÏÖ»´Ó7.0ºÍ711µÄÉè¼ÆÆ÷Àï¶ÁÈ¡key
+    //é»˜è®¤åªä»7.0å’Œ711çš„è®¾è®¡å™¨é‡Œè¯»å–key
     private String readOldKey(){
     	File file71 = getOldEnvFile(OLD_ENV_FOLDER_71);
     	if (!file71.exists()) {
@@ -424,7 +424,7 @@ public class Designer extends BaseDesigner {
     }
     
     /**
-	 * Éè¼ÆÆ÷ÍË³öÊ±, ×öµÄÒ»Ğ©²Ù×÷.
+	 * è®¾è®¡å™¨é€€å‡ºæ—¶, åšçš„ä¸€äº›æ“ä½œ.
 	 * 
 	 */
     public void shutDown(){

@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Êı¾İ¶¨Òå: µØÍ¼µ¥²ãÉèÖÃ
+ * æ•°æ®å®šä¹‰: åœ°å›¾å•å±‚è®¾ç½®
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-22 ÉÏÎç10:41:03
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-22 ä¸Šåˆ10:41:03
  */
 public class MapSinglePane extends FurtherBasicBeanPane<TopDefinitionProvider> {
 
-	private UIComboBoxPane<Chart> dataFromPane;// Êı¾İÀ´Ô´µÄbox½çÃæ
+	private UIComboBoxPane<Chart> dataFromPane;// æ•°æ®æ¥æºçš„boxç•Œé¢
 	
 	private MapReportDataSinglePane reportSinglePane;
 	private MapTableDataSinglePane tableSinglePane;
@@ -49,8 +49,8 @@ public class MapSinglePane extends FurtherBasicBeanPane<TopDefinitionProvider> {
 			protected List<FurtherBasicBeanPane<? extends Chart>> initPaneList() {
 				List list = new ArrayList();
 				
-				list.add(tableSinglePane = new MapTableDataSinglePane());// Êı¾İ¼¯½çÃæ
-				list.add(reportSinglePane = new MapReportDataSinglePane());// µ¥Ôª¸ñ½çÃæ
+				list.add(tableSinglePane = new MapTableDataSinglePane());// æ•°æ®é›†ç•Œé¢
+				list.add(reportSinglePane = new MapReportDataSinglePane());// å•å…ƒæ ¼ç•Œé¢
 				
 				return list;
 			}
@@ -63,28 +63,28 @@ public class MapSinglePane extends FurtherBasicBeanPane<TopDefinitionProvider> {
 	}
 
 	/**
-	 * ÅĞ¶Ï×¼ĞíµÄÇé¿ö 
+	 * åˆ¤æ–­å‡†è®¸çš„æƒ…å†µ 
 	 */
 	public boolean accept(Object ob) {
 		return ob instanceof TopDefinition;
 	}
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	public void reset() {
 		
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText(new String[]{"SingleLayer", "Chart-Map"});
 	}
 
 	/**
-	 * ¼ÓÔØµ¥²ãµØÍ¼Ê±µÄ Êı¾İÀ´Ô´½çÃæ
+	 * åŠ è½½å•å±‚åœ°å›¾æ—¶çš„ æ•°æ®æ¥æºç•Œé¢
 	 */
 	public void populateBean(TopDefinitionProvider ob) {
 		if(ob instanceof MapSingleLayerReportDefinition) {
@@ -97,7 +97,7 @@ public class MapSinglePane extends FurtherBasicBeanPane<TopDefinitionProvider> {
 	}
 
 	/**
-	 * ±£´æÏÂÔØ µ¥²ãÊı¾İ½çÃæ
+	 * ä¿å­˜ä¸‹è½½ å•å±‚æ•°æ®ç•Œé¢
 	 */
 	public TopDefinitionProvider updateBean() {
 		if(dataFromPane.getSelectedIndex() == 0) {

@@ -52,9 +52,9 @@ public class ConnectionListAction extends UpdateAction {
     };
 
     /**
-     * Ö´ĞĞ¶¯×÷
+     * æ‰§è¡ŒåŠ¨ä½œ
      *
-     * @param evt ÊÂ¼ş
+     * @param evt äº‹ä»¶
      */
     public void actionPerformed(ActionEvent evt) {
         DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
@@ -77,10 +77,10 @@ public class ConnectionListAction extends UpdateAction {
                     return;
                 }
                 if (!doWithDatasourceManager(datasourceManager, backupManager, databaseManagerPane, databaseListDialog)) {
-                    //Èç¹û¸üĞÂÊ§°Ü£¬Ôò²»¹Ø±Õ¶Ô»°¿ò£¬Ò²²»Ğ´xmlÎÄ¼ş£¬²¢ÇÒ½«¶Ô»°¿ò¶¨Î»ÔÚÇëÖØÃüÃûµÄÄÇ¸ö¶ÔÏóÒ³Ãæ
+                    //å¦‚æœæ›´æ–°å¤±è´¥ï¼Œåˆ™ä¸å…³é—­å¯¹è¯æ¡†ï¼Œä¹Ÿä¸å†™xmlæ–‡ä»¶ï¼Œå¹¶ä¸”å°†å¯¹è¯æ¡†å®šä½åœ¨è¯·é‡å‘½åçš„é‚£ä¸ªå¯¹è±¡é¡µé¢
                     return;
                 }
-                // marks:±£´æÊı¾İ
+                // marks:ä¿å­˜æ•°æ®
                 writeFile(datasourceManager);
             }
 
@@ -106,7 +106,7 @@ public class ConnectionListAction extends UpdateAction {
     }
 
     /**
-     * ÊÇ·ñÕı³£¸üĞÂÍêdatasourceManager
+     * æ˜¯å¦æ­£å¸¸æ›´æ–°å®ŒdatasourceManager
      *
      * @param datasourceManager
      * @param databaseManagerPane
@@ -121,41 +121,41 @@ public class ConnectionListAction extends UpdateAction {
         ModifiedTable localModifiedTable = datasourceManager.checkConnectionModifyTable(backupManager, currentEnv.getUserID());
         boolean isFailed = false;
         if (currentEnv.isSupportLocalFileOperate() && !((LocalEnv) currentEnv).isNoRemoteUser()) {
-            //Èç¹ûÊÇ±¾µØ£¬²¢ÇÒÓĞÔ¶³ÌÓÃ»§Ê±Ôò¸üĞÂ×Ô¼ºµÄĞŞ¸Ä±í
+            //å¦‚æœæ˜¯æœ¬åœ°ï¼Œå¹¶ä¸”æœ‰è¿œç¨‹ç”¨æˆ·æ—¶åˆ™æ›´æ–°è‡ªå·±çš„ä¿®æ”¹è¡¨
             datasourceManager.updateSelfConnectionTotalModifiedTable(localModifiedTable, ModifiedTable.LOCAL_MODIFIER);
         } else {
             if (!currentEnv.isSupportLocalFileOperate()) {
-                //Èç¹ûÊÇÔ¶³Ì£¬ÔòÈ¥È¡·şÎñÆ÷µÄ×îĞÂµÄĞŞ¸Ä±í,¼ì²éÓĞÃ»ÓĞ³åÍ»
+                //å¦‚æœæ˜¯è¿œç¨‹ï¼Œåˆ™å»å–æœåŠ¡å™¨çš„æœ€æ–°çš„ä¿®æ”¹è¡¨,æ£€æŸ¥æœ‰æ²¡æœ‰å†²çª
                 ModifiedTable currentServerModifyTable = currentEnv.getDataSourceModifiedTables(DatasourceManager.CONNECTION);
                 if (localModifiedTable.checkModifiedTableConflictWithServer(currentServerModifyTable, currentEnv.getUserID())) {
-                    //ÓĞ³åÍ»£¬½øĞĞÌáÊ¾
+                    //æœ‰å†²çªï¼Œè¿›è¡Œæç¤º
                     String title = Inter.getLocText(new String[]{"Select", "Single", "Setting"});
                     int returnVal = JOptionPane.showConfirmDialog(DesignerContext.getDesignerFrame(), localModifiedTable.getWaringMessage(), title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (returnVal == JOptionPane.YES_OPTION) {
-                        //µã»÷ÊÇ£¬½øĞĞÏàÓ¦Ë¢ĞÂÈ¥³åÍ»
+                        //ç‚¹å‡»æ˜¯ï¼Œè¿›è¡Œç›¸åº”åˆ·æ–°å»å†²çª
                         datasourceManager.synchronizedWithServer(backupManager, DatasourceManager.CONNECTION);
-                        //ÒªÊÇÓĞÖØÃüÃû³åÍ»µÄ£¬Ôò¶ÔÏêÏ¸µÄĞŞ¸Ä±íÏÈ½øĞĞĞŞ¸Ä
+                        //è¦æ˜¯æœ‰é‡å‘½åå†²çªçš„ï¼Œåˆ™å¯¹è¯¦ç»†çš„ä¿®æ”¹è¡¨å…ˆè¿›è¡Œä¿®æ”¹
                         datasourceManager.doWithConnectionConflict(localModifiedTable);
                         localModifiedTable.removeConfilct();
                         modifyDetails.clear();
-                        //¸üĞÂÃæ°å
+                        //æ›´æ–°é¢æ¿
                         databaseManagerPane.populate(datasourceManager);
                     } else {
-                        //¸üĞÂÊ§°Ü£¬¼ÌĞøÍ£ÁôÒ³Ãæ
+                        //æ›´æ–°å¤±è´¥ï¼Œç»§ç»­åœç•™é¡µé¢
                         isFailed = true;
                     }
 
                 }
             }
         }
-        //´æÔÚÇëÖØÃüÃûÔò²»ÄÜ¸üĞÂ
+        //å­˜åœ¨è¯·é‡å‘½ååˆ™ä¸èƒ½æ›´æ–°
         int index = datasourceManager.isConnectionMapContainsRename();
         if (index != -1) {
             isFailed = true;
             databaseManagerPane.setSelectedIndex(index);
         }
         databaseListDialog.setDoOKSucceed(!isFailed);
-        //Èç¹ûĞŞ¸Ä³É¹¦£¬ÔòÈ¥Ô¶³Ì¶ËÔöÁ¿ĞŞ¸ÄĞŞ¸Ä±í
+        //å¦‚æœä¿®æ”¹æˆåŠŸï¼Œåˆ™å»è¿œç¨‹ç«¯å¢é‡ä¿®æ”¹ä¿®æ”¹è¡¨
         if (!isFailed && !currentEnv.isSupportLocalFileOperate()) {
             currentEnv.writeDataSourceModifiedTables(localModifiedTable, DatasourceManager.CONNECTION);
             localModifiedTable.clear();

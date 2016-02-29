@@ -43,9 +43,9 @@ import com.fr.stable.StringUtils;
 /**
  * Grid used to paint and edit grid.
  *
- * @editor zhou 2012-3-22ÏÂÎç1:58:12
+ * @editor zhou 2012-3-22ä¸‹åˆ1:58:12
  */
-// TODO ALEX_SEP ÄÜ²»ÄÜ°ÑCellSelection×÷ÎªGridµÄÊôĞÔ,ÒÔ´ËÀ´·Ö¿ªCellSelection & FloatSelection
+// TODO ALEX_SEP èƒ½ä¸èƒ½æŠŠCellSelectionä½œä¸ºGridçš„å±æ€§,ä»¥æ­¤æ¥åˆ†å¼€CellSelection & FloatSelection
 public class Grid extends BaseGridComponent {
     /**
      * If editing, the <code>Component</code> that is handling the editing.
@@ -70,12 +70,12 @@ public class Grid extends BaseGridComponent {
 
     private Color selectedBackground = UIConstants.SELECTED_BACKGROUND;
     private Color selectedBorderLineColor = UIConstants.SELECTED_BORDER_LINE_COLOR;
-    private boolean editable = true; // ÕûÌåµÄ×Ü¿ª¹Ø£¬¿ØÖÆ¸ñ×ÓÊÇ·ñ¿ÉÒÔ±à¼­.
+    private boolean editable = true; // æ•´ä½“çš„æ€»å¼€å…³ï¼Œæ§åˆ¶æ ¼å­æ˜¯å¦å¯ä»¥ç¼–è¾‘.
 
     private FloatElement drawingFloatElement = null;
 
-    private int dragType = GridUtils.DRAG_NONE;// DragµÄ±êÖ¾.
-    // peter:Drag¸ñ×ÓµÄÊ±ºò,ĞèÒªÏÔÊ¾µÄ±ß¿ò,µ±ÎªnullµÄÊ±ºò²»»­.
+    private int dragType = GridUtils.DRAG_NONE;// Dragçš„æ ‡å¿—.
+    // peter:Dragæ ¼å­çš„æ—¶å€™,éœ€è¦æ˜¾ç¤ºçš„è¾¹æ¡†,å½“ä¸ºnullçš„æ—¶å€™ä¸ç”».
     private Rectangle dragRectangle = null;
     // ToolTip
     private Point tooltipLocation;
@@ -106,18 +106,18 @@ public class Grid extends BaseGridComponent {
     private int verticalValue = 0;
     private int verticalExtent = VERTICAL_EXTENT_INITIAL_VALUE;
     private int horizontalValue = 0;
-    private int horizontalExtent = HORIZONTAL_EXTENT_INITIAL_VALUE;// marks:Õâ¸öÖµ´ÓÔ­À´µÄ10»»³É20£¬ÒòÎªÏÖÔÚµçÄÔ¶¼ÊÇ¿íÆÁ£¬10ÒÑ¾­Ã»ÓĞ°ì·¨Âú×ãĞèÇó£¡
+    private int horizontalExtent = HORIZONTAL_EXTENT_INITIAL_VALUE;// marks:è¿™ä¸ªå€¼ä»åŸæ¥çš„10æ¢æˆ20ï¼Œå› ä¸ºç°åœ¨ç”µè„‘éƒ½æ˜¯å®½å±ï¼Œ10å·²ç»æ²¡æœ‰åŠæ³•æ»¡è¶³éœ€æ±‚ï¼
     // denny: verticalBeginValue and horizantalBeginValue
     private int verticalBeginValue = 0;
     private int horizontalBeginValue = 0;
 
     private int resolution;
-    // ÅĞ¶ÏSmartJTablePaneÊÇ·ñÏÔÊ¾£¬×öÎª¶¯Ì¬ĞéÏß±êÊ¶·û
+    // åˆ¤æ–­SmartJTablePaneæ˜¯å¦æ˜¾ç¤ºï¼Œåšä¸ºåŠ¨æ€è™šçº¿æ ‡è¯†ç¬¦
     private boolean notShowingTableSelectPane = true;
 
     public Grid(int resolution) {
         this.resolution = resolution;
-        // ÄÜ´¥·¢processEvent£¬²»¹ÜÊÇ·ñ¸øcomponentÔö¼Ólistener
+        // èƒ½è§¦å‘processEventï¼Œä¸ç®¡æ˜¯å¦ç»™componentå¢åŠ listener
         enableEvents(AWTEvent.KEY_EVENT_MASK | AWTEvent.MOUSE_EVENT_MASK | AWTEvent.MOUSE_MOTION_EVENT_MASK);
 
         GridKeyAction.initGridInputActionMap(this);
@@ -137,10 +137,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * Ó¦ÓÃ½çÃæÉèÖÃ
+	 * åº”ç”¨ç•Œé¢è®¾ç½®
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:32:43
+	 * @date 2014-12-21-ä¸‹åˆ6:32:43
 	 * 
 	 */
     public void updateUI() {
@@ -148,12 +148,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÊÇ·ñÏÔÊ¾¸ñ×ÓÏß
+	 * æ˜¯å¦æ˜¾ç¤ºæ ¼å­çº¿
 	 * 
-	 * @return ÊÇ·ñÏÔÊ¾¸ñ×ÓÏß
+	 * @return æ˜¯å¦æ˜¾ç¤ºæ ¼å­çº¿
 	 *  
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:32:13
+	 * @date 2014-12-21-ä¸‹åˆ6:32:13
 	 * 
 	 */
     public boolean isShowGridLine() {
@@ -194,12 +194,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÊÇ·ñÏÔÊ¾·ÖÒ³Ïß
+	 * æ˜¯å¦æ˜¾ç¤ºåˆ†é¡µçº¿
 	 * 
-	 * @return ÊÇ·ñÏÔÊ¾·ÖÒ³Ïß
+	 * @return æ˜¯å¦æ˜¾ç¤ºåˆ†é¡µçº¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:31:45
+	 * @date 2014-12-21-ä¸‹åˆ6:31:45
 	 * 
 	 */
     public boolean isShowPaginateLine() {
@@ -237,12 +237,12 @@ public class Grid extends BaseGridComponent {
 
 
     /**
-	 * ÊÇ·ñÏÔÊ¾´¹Ö±¶³½áÏß
+	 * æ˜¯å¦æ˜¾ç¤ºå‚ç›´å†»ç»“çº¿
 	 * 
-	 * @return ÊÇ·ñÏÔÊ¾´¹Ö±¶³½áÏß
+	 * @return æ˜¯å¦æ˜¾ç¤ºå‚ç›´å†»ç»“çº¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:29:35
+	 * @date 2014-12-21-ä¸‹åˆ6:29:35
 	 * 
 	 */
     public boolean isShowVerticalFrozenLine() {
@@ -279,12 +279,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÊÇ·ñÏÔÊ¾Ë®Æ½¶³½áÏß
+	 * æ˜¯å¦æ˜¾ç¤ºæ°´å¹³å†»ç»“çº¿
 	 * 
-	 * @return ÊÇ·ñÏÔÊ¾Ë®Æ½¶³½áÏß
+	 * @return æ˜¯å¦æ˜¾ç¤ºæ°´å¹³å†»ç»“çº¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:29:35
+	 * @date 2014-12-21-ä¸‹åˆ6:29:35
 	 * 
 	 */
     public boolean isShowHorizontalFrozenLine() {
@@ -361,12 +361,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ×é¼şÊÇ·ñ¿ÉÒÔ±»±à¼­
+	 * ç»„ä»¶æ˜¯å¦å¯ä»¥è¢«ç¼–è¾‘
 	 * 
-	 * @return ×é¼şÊÇ·ñ¿ÉÒÔ±»±à¼­
+	 * @return ç»„ä»¶æ˜¯å¦å¯ä»¥è¢«ç¼–è¾‘
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:29:09
+	 * @date 2014-12-21-ä¸‹åˆ6:29:09
 	 * 
 	 */
     public boolean isEditable() {
@@ -485,12 +485,12 @@ public class Grid extends BaseGridComponent {
     // /////////////editor begin
 
     /**
-	 * ÊÇ·ñ´¦ÓÚ±à¼­×´Ì¬
+	 * æ˜¯å¦å¤„äºç¼–è¾‘çŠ¶æ€
 	 * 
-	 * @return ÊÇ·ñ´¦ÓÚ±à¼­×´Ì¬
+	 * @return æ˜¯å¦å¤„äºç¼–è¾‘çŠ¶æ€
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:28:45
+	 * @date 2014-12-21-ä¸‹åˆ6:28:45
 	 * 
 	 */
     public boolean isEditing() {
@@ -498,12 +498,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * µ±Ç°±à¼­¶ÔÏóÊÇ·ñÎªµ¥Ôª¸ñ
+	 * å½“å‰ç¼–è¾‘å¯¹è±¡æ˜¯å¦ä¸ºå•å…ƒæ ¼
 	 * 
-	 * @return µ±Ç°±à¼­¶ÔÏóÊÇ·ñÎªµ¥Ôª¸ñ
+	 * @return å½“å‰ç¼–è¾‘å¯¹è±¡æ˜¯å¦ä¸ºå•å…ƒæ ¼
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:28:18
+	 * @date 2014-12-21-ä¸‹åˆ6:28:18
 	 * 
 	 */
     public boolean isCellEditing() {
@@ -518,12 +518,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÊÇ·ñ´¦ÓÚÖÇÄÜÑ¡Ôñµ¥Ôª¸ñ½×¶Î
+	 * æ˜¯å¦å¤„äºæ™ºèƒ½é€‰æ‹©å•å…ƒæ ¼é˜¶æ®µ
 	 * 
-	 * @return ÊÇ·ñ´¦ÓÚÖÇÄÜÑ¡Ôñµ¥Ôª¸ñ½×¶Î
+	 * @return æ˜¯å¦å¤„äºæ™ºèƒ½é€‰æ‹©å•å…ƒæ ¼é˜¶æ®µ
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:27:36
+	 * @date 2014-12-21-ä¸‹åˆ6:27:36
 	 * 
 	 */
     public boolean IsNotShowingTableSelectPane() {
@@ -531,12 +531,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * µ±Ç°ÊÇ·ñÔÚ±à¼­Ğü¸¡ÔªËØ
+	 * å½“å‰æ˜¯å¦åœ¨ç¼–è¾‘æ‚¬æµ®å…ƒç´ 
 	 * 
-	 * @return ÊÇ·ñÔÚ±à¼­Ğü¸¡ÔªËØ
+	 * @return æ˜¯å¦åœ¨ç¼–è¾‘æ‚¬æµ®å…ƒç´ 
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:26:46
+	 * @date 2014-12-21-ä¸‹åˆ6:26:46
 	 * 
 	 */
     public boolean isFloatEditing() {
@@ -558,8 +558,8 @@ public class Grid extends BaseGridComponent {
         ElementCase report = reportPane.getEditingElementCase();
         CellElement cellElement = report.getCellElement(column, row);
 
-        // »ñµÃ¶ÔÏó.
-        Class objClass = Object.class;// Ä¬ÈÏ¶ÔÏóÊÇObject.
+        // è·å¾—å¯¹è±¡.
+        Class objClass = Object.class;// é»˜è®¤å¯¹è±¡æ˜¯Object.
         if (cellElement != null && cellElement.getValue() != null) {
             objClass = cellElement.getValue().getClass();
         }
@@ -784,10 +784,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ¿ªÊ¼µ¥Ôª¸ñ±à¼­
+	 * å¼€å§‹å•å…ƒæ ¼ç¼–è¾‘
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:25:17
+	 * @date 2014-12-21-ä¸‹åˆ6:25:17
 	 * 
 	 */
     public void startEditing() {
@@ -795,12 +795,12 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ¿ªÊ¼µ¥Ôª¸ñ±à¼­
+	 * å¼€å§‹å•å…ƒæ ¼ç¼–è¾‘
 	 * 
-	 * @param byKeyEvent ÊÇ·ñÎª¼üÅÌ´¥·¢
+	 * @param byKeyEvent æ˜¯å¦ä¸ºé”®ç›˜è§¦å‘
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:25:17
+	 * @date 2014-12-21-ä¸‹åˆ6:25:17
 	 * 
 	 */
     protected void startEditing(boolean byKeyEvent) {
@@ -810,7 +810,7 @@ public class Grid extends BaseGridComponent {
         Selection s = reportPane.getSelection();
         if (s instanceof FloatSelection) {
             FloatElement selectedFloatElement = report.getFloatElement(((FloatSelection) s).getSelectedFloatName());
-            this.stopEditing();// ĞèÒªÏÈÍ£Ö¹.
+            this.stopEditing();// éœ€è¦å…ˆåœæ­¢.
 
             Object value = selectedFloatElement.getValue();
             if (value == null) {
@@ -820,7 +820,7 @@ public class Grid extends BaseGridComponent {
             }
 
             if (this.floatEditor == null) {
-                // peter:Çå¿ÕeditorComponent.
+                // peter:æ¸…ç©ºeditorComponent.
                 this.editorComponent = null;
                 return;
             }
@@ -843,7 +843,7 @@ public class Grid extends BaseGridComponent {
                 this.editorComponent.requestFocus();
                 this.repaint(10);
             }
-        } else {// james£º
+        } else {// jamesï¼š
             // Edit CellElement.
             CellSelection cs = (CellSelection) s;
             startCellEditingAt_DEC(cs.getColumn(), cs.getRow(), null, byKeyEvent);
@@ -851,24 +851,24 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ¿ªÊ¼µ¥Ôª¸ñ±à¼­
+	 * å¼€å§‹å•å…ƒæ ¼ç¼–è¾‘
 	 * 
-	 * @param column ÁĞ
-	 * @param row ĞĞ
-	 * @param cellTypeClass µ¥Ôª¸ñÀàĞÍ
-	 * @param byKeyEvent ÊÇ·ñÎª¼üÅÌ´¥·¢
+	 * @param column åˆ—
+	 * @param row è¡Œ
+	 * @param cellTypeClass å•å…ƒæ ¼ç±»å‹
+	 * @param byKeyEvent æ˜¯å¦ä¸ºé”®ç›˜è§¦å‘
 	 * 
-	 * @return ±à¼­ÊÇ·ñ³É¹¦
+	 * @return ç¼–è¾‘æ˜¯å¦æˆåŠŸ
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:25:17
+	 * @date 2014-12-21-ä¸‹åˆ6:25:17
 	 * 
 	 */
     public boolean startCellEditingAt_DEC(int column, int row, Class cellTypeClass, boolean byKeyEvent) {
         if (this.isEditing()) {
-            this.stopEditing();// ĞèÒªÏÈÍ£Ö¹ÕıÔÚ½øĞĞµÄ±à¼­.
+            this.stopEditing();// éœ€è¦å…ˆåœæ­¢æ­£åœ¨è¿›è¡Œçš„ç¼–è¾‘.
         }
-        if (!this.isEditable()) {// ÅĞ¶Ï×Ü¿ª¹Ø£¬ÊÇ·ñ¿ÉÒÔ±à¼­.
+        if (!this.isEditable()) {// åˆ¤æ–­æ€»å¼€å…³ï¼Œæ˜¯å¦å¯ä»¥ç¼–è¾‘.
             return false;
         }
         if (row < 0 || column < 0) {
@@ -883,7 +883,7 @@ public class Grid extends BaseGridComponent {
             this.editorComponent = null;
             return false;
         }
-        // ±ØĞë±£Ö¤editingCellElement²»ÊÇnull¡£
+        // å¿…é¡»ä¿è¯editingCellElementä¸æ˜¯nullã€‚
         if (editingCellElement == null) {
             editingCellElement = new DefaultTemplateCellElement(column, row);
         }
@@ -896,7 +896,7 @@ public class Grid extends BaseGridComponent {
         if (editorComponent instanceof Window) {
             editorComponent.setVisible(true);
         } else {
-            // Èç¹ûÊÇ´ÓKeyEventÆô¶¯µÄ»°£¬Èç¹ûÊÇÎÄ±¾»òÕßÊı×Ö£¬ĞèÒªÇå¿ÕÄÚÈİ.
+            // å¦‚æœæ˜¯ä»KeyEventå¯åŠ¨çš„è¯ï¼Œå¦‚æœæ˜¯æ–‡æœ¬æˆ–è€…æ•°å­—ï¼Œéœ€è¦æ¸…ç©ºå†…å®¹.
             if (byKeyEvent && editorComponent instanceof UITextField) {
                 ((UITextField) editorComponent).setText(StringUtils.EMPTY);
             }
@@ -907,7 +907,7 @@ public class Grid extends BaseGridComponent {
     }
 
     private Component getCellEditingComp() {
-        // marks:Õâ¸öµØ·½»ñµÃeditor
+        // marks:è¿™ä¸ªåœ°æ–¹è·å¾—editor
         Component eComp = this.cellEditor.getCellEditorComponent(this, editingCellElement, resolution);
 
         if (eComp == null) {
@@ -922,7 +922,7 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * ¾ÍÔÚµ¥Ôª¸ñÀïÃæ±à¼­
+     * å°±åœ¨å•å…ƒæ ¼é‡Œé¢ç¼–è¾‘
      */
     private void startInnerEditing(int column, int row) {
         this.editingRow = this.editingCellElement.getRow();
@@ -932,20 +932,20 @@ public class Grid extends BaseGridComponent {
         this.add(this.editorComponent);
         this.getElementCasePane().ensureColumnRowVisible(column, row);
         this.validate();
-        // ĞèÒªÖØĞÂ»æÖÆ½çÃæ
+        // éœ€è¦é‡æ–°ç»˜åˆ¶ç•Œé¢
         this.repaint(10);
         this.editorComponent.requestFocus();
     }
 
     /**
-	 * Í£Ö¹±à¼­×´Ì¬
+	 * åœæ­¢ç¼–è¾‘çŠ¶æ€
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:24:54
+	 * @date 2014-12-21-ä¸‹åˆ6:24:54
 	 * 
 	 */
     public void stopEditing() {
-        // Ê×ÏÈÅĞ¶ÏÊÇÄÄÖÖÀàĞÍµÄ±à¼­.
+        // é¦–å…ˆåˆ¤æ–­æ˜¯å“ªç§ç±»å‹çš„ç¼–è¾‘.
         if (this.isCellEditing()) {
             this.stopCellEditingInner(true);
         }
@@ -955,7 +955,7 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * Stop editing. µ±±à¼­Æ÷ÒòÎªµã»÷°´Å¥Ê§È¥½¹µãºó£¬²»ĞèÒªRequest Focus.
+     * Stop editing. å½“ç¼–è¾‘å™¨å› ä¸ºç‚¹å‡»æŒ‰é’®å¤±å»ç„¦ç‚¹åï¼Œä¸éœ€è¦Request Focus.
      */
     private void stopFloatEditingInner(boolean isRequestFocus) {
         if (!this.isFloatEditing()) {
@@ -972,7 +972,7 @@ public class Grid extends BaseGridComponent {
         Object newValue = null;
         try {
             newValue = floatEditor.getFloatEditorValue();
-        } catch (Exception exp) { // ²¶×½´íÎóĞÅÏ¢.
+        } catch (Exception exp) { // æ•æ‰é”™è¯¯ä¿¡æ¯.
         }
         if (newValue == null) {// If return null, do nothing.
             removeEditor();
@@ -981,7 +981,7 @@ public class Grid extends BaseGridComponent {
 
         ElementCasePane reportPane = this.getElementCasePane();
         Selection selection = reportPane.getSelection();
-        if (selection instanceof FloatSelection) {// kunsnat: ÀàĞÍÅĞ¶Ï, ¾­³£ÔÚÉ¾³ıĞü¸¡ÔªËØÊ± Óöµ½Í£Ö¹±à¼­´íÎó.
+        if (selection instanceof FloatSelection) {// kunsnat: ç±»å‹åˆ¤æ–­, ç»å¸¸åœ¨åˆ é™¤æ‚¬æµ®å…ƒç´ æ—¶ é‡åˆ°åœæ­¢ç¼–è¾‘é”™è¯¯.
             FloatSelection fs = (FloatSelection) reportPane.getSelection();
 
             FloatElement selectedFloatElement = reportPane.getEditingElementCase().getFloatElement(fs.getSelectedFloatName());
@@ -996,7 +996,7 @@ public class Grid extends BaseGridComponent {
                 }
                 selectedFloatElement.setValue(newValue);
                 reportPane.fireTargetModified();
-                //¼ÓÕâ¾ä»°ÊÇÎªÁËÔÚ±à¼­ÍêĞü¸¡ÔªËØ¹«Ê½µÄÊ±ºò£¬µã»÷È·¶¨£¬ÓÒÉÏ½ÇÃæ°å»áÁ¢¼´Ë¢ĞÂ
+                //åŠ è¿™å¥è¯æ˜¯ä¸ºäº†åœ¨ç¼–è¾‘å®Œæ‚¬æµ®å…ƒç´ å…¬å¼çš„æ—¶å€™ï¼Œç‚¹å‡»ç¡®å®šï¼Œå³ä¸Šè§’é¢æ¿ä¼šç«‹å³åˆ·æ–°
                 reportPane.getCurrentEditor();
             }
         }
@@ -1008,7 +1008,7 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * Stop editing. µ±±à¼­Æ÷ÒòÎªµã»÷°´Å¥Ê§È¥½¹µãºó£¬²»ĞèÒªRequest Focus.
+     * Stop editing. å½“ç¼–è¾‘å™¨å› ä¸ºç‚¹å‡»æŒ‰é’®å¤±å»ç„¦ç‚¹åï¼Œä¸éœ€è¦Request Focus.
      */
     private void stopCellEditingInner(boolean isRequestFocus) {
         if ((!this.isCellEditing())) {
@@ -1030,7 +1030,7 @@ public class Grid extends BaseGridComponent {
         this.editingCellElement = tplEC.getTemplateCellElement(editingColumn, editingRow);
         try {
             newValue = cellEditor.getCellEditorValue();
-        } catch (Exception exp) { // ²¶×½´íÎóĞÅÏ¢.
+        } catch (Exception exp) { // æ•æ‰é”™è¯¯ä¿¡æ¯.
         }
 
         if (cellEditor instanceof TextCellEditor) {
@@ -1044,7 +1044,7 @@ public class Grid extends BaseGridComponent {
             removeEditor();
             return;
         }
-        // ±ØĞë±£Ö¤editingCellElement²»ÊÇnull¡£
+        // å¿…é¡»ä¿è¯editingCellElementä¸æ˜¯nullã€‚
         if (editingCellElement == null) {
             editingCellElement = new DefaultTemplateCellElement(editingColumn, editingRow);
             tplEC.addCellElement(editingCellElement);
@@ -1066,7 +1066,7 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * ½«ĞÂÖµ¸³¸øeditingCellElement
+     * å°†æ–°å€¼èµ‹ç»™editingCellElement
      *
      * @param newValue
      * @return true if the value changed
@@ -1119,7 +1119,7 @@ public class Grid extends BaseGridComponent {
 	}
 
     /**
-     * µ±µ¥Ôª¸ñÀïµÄÄÚÈİ¹ı³¤Ê±£¬×Ô¶¯µ÷Õûµ¥Ôª¸ñ
+     * å½“å•å…ƒæ ¼é‡Œçš„å†…å®¹è¿‡é•¿æ—¶ï¼Œè‡ªåŠ¨è°ƒæ•´å•å…ƒæ ¼
      *
      * @param tplEC
      */
@@ -1135,7 +1135,7 @@ public class Grid extends BaseGridComponent {
         }
     }
     
-    //ÊÇ·ñĞèÒª¸ù¾İÄÚÈİ×Ô¶¯µ÷Õû, Ä¿Ç°Ö»ÓĞ×Ö·û´®, Êı×Ö, ¸»ÎÄ±¾ĞèÒª
+    //æ˜¯å¦éœ€è¦æ ¹æ®å†…å®¹è‡ªåŠ¨è°ƒæ•´, ç›®å‰åªæœ‰å­—ç¬¦ä¸², æ•°å­—, å¯Œæ–‡æœ¬éœ€è¦
     private boolean valueNeedFit(Object value){
     	if(value == null){
     		return false;
@@ -1147,10 +1147,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * È¡Ïû±à¼­×´Ì¬
+	 * å–æ¶ˆç¼–è¾‘çŠ¶æ€
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:24:34
+	 * @date 2014-12-21-ä¸‹åˆ6:24:34
 	 * 
 	 */
     public void cancelEditing() {
@@ -1161,10 +1161,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÒÆ³ıÑ¡ÖĞ×é¼ş
+	 * ç§»é™¤é€‰ä¸­ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:24:16
+	 * @date 2014-12-21-ä¸‹åˆ6:24:16
 	 * 
 	 */
     public void removeEditor() {
@@ -1176,10 +1176,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÒÆ³ıµ¥Ôª¸ñ×é¼ş
+	 * ç§»é™¤å•å…ƒæ ¼ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:24:00
+	 * @date 2014-12-21-ä¸‹åˆ6:24:00
 	 * 
 	 */
     public void removeCellEditor() {
@@ -1210,10 +1210,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-	 * ÒÆ³ıĞü¸¡ÔªËØ×é¼ş
+	 * ç§»é™¤æ‚¬æµ®å…ƒç´ ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:23:38
+	 * @date 2014-12-21-ä¸‹åˆ6:23:38
 	 * 
 	 */
     public void removeFloatEditor() {
@@ -1239,8 +1239,8 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * ÓÃÕâ¸ö·½·¨À´³õÊ¼»¯defaultEditorsByClass, ÊÇÎªÁË¼Ó¿ìGrid¶ÔÏóµÄ³õÊ¼»¯ËÙ¶È.
-     * µ±ÓÃ»§±à¼­µÄÊ±ºò,²Å½«ÄÇ¸öCellEditorµÄ³õÊ¼»¯.
+     * ç”¨è¿™ä¸ªæ–¹æ³•æ¥åˆå§‹åŒ–defaultEditorsByClass, æ˜¯ä¸ºäº†åŠ å¿«Gridå¯¹è±¡çš„åˆå§‹åŒ–é€Ÿåº¦.
+     * å½“ç”¨æˆ·ç¼–è¾‘çš„æ—¶å€™,æ‰å°†é‚£ä¸ªCellEditorçš„åˆå§‹åŒ–.
      */
     private Hashtable<Class, CellEditor> prepareDefaultCellEditorsByClass() {
         if (this.defaultCellEditorsByClass == null) {
@@ -1252,8 +1252,8 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * ÓÃÕâ¸ö·½·¨À´³õÊ¼»¯defaultFloatEditorsByClass, ÊÇÎªÁË¼Ó¿ìGrid¶ÔÏóµÄ³õÊ¼»¯ËÙ¶È.
-     * µ±ÓÃ»§±à¼­µÄÊ±ºò,²Å½«ÄÇ¸öFloatEditorµÄ³õÊ¼»¯.
+     * ç”¨è¿™ä¸ªæ–¹æ³•æ¥åˆå§‹åŒ–defaultFloatEditorsByClass, æ˜¯ä¸ºäº†åŠ å¿«Gridå¯¹è±¡çš„åˆå§‹åŒ–é€Ÿåº¦.
+     * å½“ç”¨æˆ·ç¼–è¾‘çš„æ—¶å€™,æ‰å°†é‚£ä¸ªFloatEditorçš„åˆå§‹åŒ–.
      */
     private Hashtable<Class, FloatEditor> prepareDefaultFloatEditorsByClass() {
         if (this.defaultFloatEditorsByClass == null) {
@@ -1267,13 +1267,13 @@ public class Grid extends BaseGridComponent {
     // /////////////editor end
 
     /**
-	 * Êó±êµã»÷ÊÂ¼ş
+	 * é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 * 
-	 * @param evtX x×ø±ê
-	 * @param evtY y×ø±ê
+	 * @param evtX xåæ ‡
+	 * @param evtY yåæ ‡
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:22:56
+	 * @date 2014-12-21-ä¸‹åˆ6:22:56
 	 * 
 	 */
     public void doMousePress(double evtX, double evtY) {
@@ -1281,15 +1281,15 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * ¼ÆËãoldRectangle,ÒòÎªCellElementµÄºÏ²¢»á±ä³É¶à´óµÄÇøÓò.
+     * è®¡ç®—oldRectangle,å› ä¸ºCellElementçš„åˆå¹¶ä¼šå˜æˆå¤šå¤§çš„åŒºåŸŸ.
 	 * 
-	 * @param report µ±Ç°¸ñ×Ó±¨±í
-	 * @param oldRectangle Ö®Ç°µÄÑ¡ÖĞÇøÓò
+	 * @param report å½“å‰æ ¼å­æŠ¥è¡¨
+	 * @param oldRectangle ä¹‹å‰çš„é€‰ä¸­åŒºåŸŸ
 	 * 
-	 * @return ²åÈëµÄÇøÓò
+	 * @return æ’å…¥çš„åŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:22:21
+	 * @date 2014-12-21-ä¸‹åˆ6:22:21
 	 * 
 	 */
     public Rectangle caculateIntersectsUnion(ElementCase report, Rectangle oldRectangle) {
@@ -1305,7 +1305,7 @@ public class Grid extends BaseGridComponent {
             }
         }
 
-        // ¼ì²éÊ®·ÖĞèÒª´ÓĞÂÔÙÑ­»·Ò»±é.
+        // æ£€æŸ¥ååˆ†éœ€è¦ä»æ–°å†å¾ªç¯ä¸€é.
         if (!GUICoreUtils.isTheSameRect(newRectangle, oldRectangle)) {
             return this.caculateIntersectsUnion(report, newRectangle);
         }
@@ -1329,10 +1329,10 @@ public class Grid extends BaseGridComponent {
     }
 
     /**
-     * peter:ÖØĞÂµ÷ÕûeditorComponentµÄ¿í¶ÈºÍ¸ß¶È,¼¸ºõÊÇ½çÃæÓĞ±ä»¯¾Íµ÷Õû.
+     * peter:é‡æ–°è°ƒæ•´editorComponentçš„å®½åº¦å’Œé«˜åº¦,å‡ ä¹æ˜¯ç•Œé¢æœ‰å˜åŒ–å°±è°ƒæ•´.
      */
     public void ajustEditorComponentBounds() {
-        // Ã»ÓĞ±à¼­Æ÷»òÕß¶ÔÓÚµ¯³öµÄWindow²»ĞèÒªµ÷ÕûBound.
+        // æ²¡æœ‰ç¼–è¾‘å™¨æˆ–è€…å¯¹äºå¼¹å‡ºçš„Windowä¸éœ€è¦è°ƒæ•´Bound.
         if (this.editorComponent == null || this.editorComponent instanceof Window) {
             return;
         }
@@ -1342,7 +1342,7 @@ public class Grid extends BaseGridComponent {
         DynamicUnitList rowHeightList = ReportHelper.getRowHeightList(report);
         DynamicUnitList columnWidthList = ReportHelper.getColumnWidthList(report);
 
-        // µ÷ÕûX, Y, width, height
+        // è°ƒæ•´X, Y, width, height
         double x, y, width, height;
         Selection s = reportPane.getSelection();
 
@@ -1366,17 +1366,17 @@ public class Grid extends BaseGridComponent {
     }
 
     private void applayRect(double x, double y, double width, double height) {
-        // peter:ĞèÒª¼ì²éLocÀ´µ÷ÕûeditorComponentµÄlocation.
+        // peter:éœ€è¦æ£€æŸ¥Locæ¥è°ƒæ•´editorComponentçš„location.
         if (this.editorComponentLoc == null) {
             this.editorComponent.setLocation((int) (x + 1), (int) (y + 1));
         } else {
             this.editorComponent.setLocation((int) (x + this.editorComponentLoc.getX()), (int) (y + this.editorComponentLoc.getY()));
         }
-        // ×¨ÃÅ´¦ÀíTextField, TextFieldµÄ³¤¶ÈĞèÒª¸ú×ÅÎÄ±¾µÄ×Ü³¤¶ÈÀ´±ä»¯.
+        // ä¸“é—¨å¤„ç†TextField, TextFieldçš„é•¿åº¦éœ€è¦è·Ÿç€æ–‡æœ¬çš„æ€»é•¿åº¦æ¥å˜åŒ–.
         if (this.editorComponent instanceof UITextField) {
             Dimension textPrefSize = this.editorComponent.getPreferredSize();
-            // peter:¶ÔÓÚÎÄ±¾×óÓÒĞèÒªµ÷Õû 4 ¸öÏñËØ£¬À´ÈÃÏÔÊ¾¸ü¼ÓÍêÃÀ.
-            // peter:ĞèÒª¼ì²éLocÀ´µ÷ÕûeditorComponentµÄlocation.
+            // peter:å¯¹äºæ–‡æœ¬å·¦å³éœ€è¦è°ƒæ•´ 4 ä¸ªåƒç´ ï¼Œæ¥è®©æ˜¾ç¤ºæ›´åŠ å®Œç¾.
+            // peter:éœ€è¦æ£€æŸ¥Locæ¥è°ƒæ•´editorComponentçš„location.
             if (this.editorComponentLoc == null) {
                 this.editorComponent.setSize((int) Math.max(width, textPrefSize.getWidth() + 1), (int) height);
             } else {
@@ -1391,7 +1391,7 @@ public class Grid extends BaseGridComponent {
         }
     }
 
-    // CellEditorListener, µ±¿ªÊ¼±à¼­µÄÊ±ºò,Õâ¸öListener»á±»¼ÓÈëÆäÖĞ.Í£Ö¹±à¼­ºóÕâ¸ölistener»á±»É¾³ı.
+    // CellEditorListener, å½“å¼€å§‹ç¼–è¾‘çš„æ—¶å€™,è¿™ä¸ªListenerä¼šè¢«åŠ å…¥å…¶ä¸­.åœæ­¢ç¼–è¾‘åè¿™ä¸ªlistenerä¼šè¢«åˆ é™¤.
     private CellEditorListener innerCellEditorListener = new CellEditorListener() {
 
         /**
@@ -1409,7 +1409,7 @@ public class Grid extends BaseGridComponent {
             Grid.this.cancelEditing();
         }
     };
-    // FloatEditorListener, µ±¿ªÊ¼±à¼­µÄÊ±ºò,Õâ¸öListener»á±»¼ÓÈëÆäÖĞ.Í£Ö¹±à¼­ºóÕâ¸ölistener»á±»É¾³ı.
+    // FloatEditorListener, å½“å¼€å§‹ç¼–è¾‘çš„æ—¶å€™,è¿™ä¸ªListenerä¼šè¢«åŠ å…¥å…¶ä¸­.åœæ­¢ç¼–è¾‘åè¿™ä¸ªlistenerä¼šè¢«åˆ é™¤.
     private FloatEditorListener innerFloatEditorListener = new FloatEditorListener() {
 
         /**

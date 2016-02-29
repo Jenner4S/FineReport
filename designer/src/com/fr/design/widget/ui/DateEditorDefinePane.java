@@ -187,8 +187,8 @@ public class DateEditorDefinePane extends DirectWriteEditorDefinePane<DateEditor
 	}
 
     /**
-     * ³õÊ¼ÆðÖ¹ÈÕÆÚ
-     * @param dateWidgetEditor ÈÕÆÚ¿Ø¼þ
+     * åˆå§‹èµ·æ­¢æ—¥æœŸ
+     * @param dateWidgetEditor æ—¥æœŸæŽ§ä»¶
      */
 	public void populateStartEnd(DateEditor dateWidgetEditor) {
 		Formula startFM = dateWidgetEditor.getStartDateFM();
@@ -208,13 +208,13 @@ public class DateEditorDefinePane extends DirectWriteEditorDefinePane<DateEditor
 	}
 
     /**
-     * ¸üÐÂÈÕÆÚ¿Ø¼þµÄÆðÖ¹ÈÕÆÚ
-     * @param dateWidgetEditor ÈÕÆÚ¿Ø¼þ
+     * æ›´æ–°æ—¥æœŸæŽ§ä»¶çš„èµ·æ­¢æ—¥æœŸ
+     * @param dateWidgetEditor æ—¥æœŸæŽ§ä»¶
      */
 	public void updateStartEnd(DateEditor dateWidgetEditor) {
 		Object startObject = startDv.update();
 		Object endObject = endDv.update();
-		// wei : ¶Ô¹«Ê½µÄ´¦Àí
+		// wei : å¯¹å…¬å¼çš„å¤„ç†
 		Calculator cal = null;
 		if (startObject instanceof Formula) {
 			cal = Calculator.createCalculator();
@@ -231,7 +231,7 @@ public class DateEditorDefinePane extends DirectWriteEditorDefinePane<DateEditor
 	        try {
 	        	dateWidgetEditor.setStartText(startObject == null ? "" : DateUtils.getDate2Str("MM/dd/yyyy", (Date)startObject));
 	        } catch(ClassCastException e) {
-	        	//wei : TODO ËµÃ÷Ó¦ÓÃµÄ¹«Ê½²»ÄÜ×ª»¯³ÉÈÕÆÚ¸ñÊ½£¬Ó¦¸Ã×öÐ©´¦Àí¡£
+	        	//wei : TODO è¯´æ˜Žåº”ç”¨çš„å…¬å¼ä¸èƒ½è½¬åŒ–æˆæ—¥æœŸæ ¼å¼ï¼Œåº”è¯¥åšäº›å¤„ç†ã€‚
 	        }
 		}
 		if (endObject instanceof Formula) {

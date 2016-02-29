@@ -20,14 +20,14 @@ import com.fr.stable.CoreGraphHelper;
 /**
  * @author neil
  *
- * @date: 2015-3-13-ÉÏÎç10:20:43
+ * @date: 2015-3-13-ä¸Šåˆ10:20:43
  */
 public class SplashPane extends JPanel{
 
 	/**
-	 * »ñÈ¡ÒÑ¾­»æÖÆÍê±ÏµÄÆô¶¯»­Ãæ
+	 * è·å–å·²ç»ç»˜åˆ¶å®Œæ¯•çš„å¯åŠ¨ç”»é¢
 	 * 
-	 * @return »æÖÆÍê±ÏµÄÆô¶¯»­Ãæ
+	 * @return ç»˜åˆ¶å®Œæ¯•çš„å¯åŠ¨ç”»é¢
 	 * 
 	 */
 	public BufferedImage getSplashImage() {
@@ -44,9 +44,9 @@ public class SplashPane extends JPanel{
     }
 
     /**
-	 * ÉèÖÃÔÚÆô¶¯¹ı³ÌÖĞ, ¶¯Ì¬¸Ä±äµÄÎÄ±¾, Èç µ±Ç°Æô¶¯µÄÄ£¿éĞÅÏ¢
+	 * è®¾ç½®åœ¨å¯åŠ¨è¿‡ç¨‹ä¸­, åŠ¨æ€æ”¹å˜çš„æ–‡æœ¬, å¦‚ å½“å‰å¯åŠ¨çš„æ¨¡å—ä¿¡æ¯
 	 * 
-	 * @param text Ö¸¶¨µÄÎÄ±¾
+	 * @param text æŒ‡å®šçš„æ–‡æœ¬
 	 * 
 	 */
 	public void setShowText(String text) {
@@ -54,9 +54,9 @@ public class SplashPane extends JPanel{
 	}
 
 	/**
-	 * ´´½¨Æô¶¯»­ÃæµÄ±³¾°Í¼Æ¬
+	 * åˆ›å»ºå¯åŠ¨ç”»é¢çš„èƒŒæ™¯å›¾ç‰‡
 	 * 
-	 * @return ±³¾°Í¼Æ¬
+	 * @return èƒŒæ™¯å›¾ç‰‡
 	 * 
 	 */
 	public Image createSplashBackground() {
@@ -68,7 +68,7 @@ public class SplashPane extends JPanel{
     }
 	
     /**
-	 * ´°¿Ú¹Ø±ÕºóÈ¡Ïû¶¨Ê±»ñÈ¡Ä£¿éĞÅÏ¢µÄtimer
+	 * çª—å£å…³é—­åå–æ¶ˆå®šæ—¶è·å–æ¨¡å—ä¿¡æ¯çš„timer
 	 * 
 	 */
 	public void releaseTimer() {

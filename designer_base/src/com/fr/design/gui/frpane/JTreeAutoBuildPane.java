@@ -42,7 +42,7 @@ public class JTreeAutoBuildPane extends BasicPane implements PreviewLabel.Previe
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     public void initComponent() {
         this.setLayout(FRGUIPaneFactory.createM_BorderLayout());
@@ -123,7 +123,7 @@ public class JTreeAutoBuildPane extends BasicPane implements PreviewLabel.Previe
             }
             this.treeTableDataComboBox.setSelectedTableDataByName(_name);
             tdChange();
-            // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼Ó1
+            // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦åŠ 1
             if (!StringUtils.isEmpty(tableDataDict.getKeyColumnName())) {
                 this.valuePane.populate(tableDataDict.getKeyColumnName());
             } else {
@@ -147,8 +147,8 @@ public class JTreeAutoBuildPane extends BasicPane implements PreviewLabel.Previe
     public TableDataDictionary update() {
         TableDataDictionary tableDataDict = new TableDataDictionary();
         Object object = this.valuePane.update(StringUtils.EMPTY);
-        // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼õ1
-        // carl:¼ÙÈçÕâÀïµÄĞòºÅÒª±ä£¬Çë¿¼ÂÇ6.2µÄ¼æÈİ
+        // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦å‡1
+        // carl:å‡å¦‚è¿™é‡Œçš„åºå·è¦å˜ï¼Œè¯·è€ƒè™‘6.2çš„å…¼å®¹
 
         if (object instanceof Object[]) {
             Object[] temp = (Object[]) object;
@@ -190,7 +190,7 @@ public class JTreeAutoBuildPane extends BasicPane implements PreviewLabel.Previe
     }
 
     /**
-     * Ô¤ÀÀ
+     * é¢„è§ˆ
      */
     public void preview() {
         TableDataWrapper tableDataWrappe = treeTableDataComboBox.getSelectedItem();
@@ -201,19 +201,19 @@ public class JTreeAutoBuildPane extends BasicPane implements PreviewLabel.Previe
     }
 
     /**
-     * ±à¼­
-     * @param jPanel Ãæ°å
+     * ç¼–è¾‘
+     * @param jPanel é¢æ¿
      */
     public void edit(JPanel jPanel) {
         RecursionTableData rtd = null;
         String name = "";
         TableDataTreePane tdtp = TableDataTreePane.getInstance(DesignModelAdapter.getCurrentModelAdapter());
         if (treeTableDataComboBox.getSelectedItem() == null) {
-            //ĞÂ½¨
+            //æ–°å»º
             rtd = new RecursionTableData();
             name = TableDataTreePane.createUnrepeatedName(tdtp.getDataTree(), "Tree");
         } else {
-            //±à¼­
+            //ç¼–è¾‘
             rtd = treeTableDataComboBox.getSelcetedTableData();
             name = treeTableDataComboBox.getSelectedItem().getTableDataName();
         }

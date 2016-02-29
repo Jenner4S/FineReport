@@ -19,7 +19,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 /**
  * 
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:21:02
+ * @since 2012-3-23ä¸‹åˆ3:21:02
  */
 public class ExpandDirectionPane extends JPanel {
 

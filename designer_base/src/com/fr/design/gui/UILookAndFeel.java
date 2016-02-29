@@ -43,7 +43,7 @@ import java.net.URL;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-31
- * Time: ÉÏÎç9:38
+ * Time: ä¸Šåˆ9:38
  */
 public class UILookAndFeel extends MetalLookAndFeel {
 
@@ -174,11 +174,11 @@ public class UILookAndFeel extends MetalLookAndFeel {
 
 
     /**
-     * ¼ÓÔØÍ¼Æ¬
+     * åŠ è½½å›¾ç‰‡
      *
-     * @param fileName ÎÄ¼şÃû
-     * @param invoker  ²ÎÊı
-     * @return ¼ÓÔØµÄÍ¼Æ¬
+     * @param fileName æ–‡ä»¶å
+     * @param invoker  å‚æ•°
+     * @return åŠ è½½çš„å›¾ç‰‡
      */
     public static ImageIcon loadIcon(final String fileName, final Object invoker) {
         // This should work for both applications and applets

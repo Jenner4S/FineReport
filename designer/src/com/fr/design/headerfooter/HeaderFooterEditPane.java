@@ -145,7 +145,7 @@ public class HeaderFooterEditPane extends JPanel {
 		//toolbar.
 		JToolBar toolbar = new JToolBar();
 		toolbar.setFloatable(false);
-		Dimension separatorDimension = new Dimension(6, 18);//Separator·Ö¸ôÏß
+		Dimension separatorDimension = new Dimension(6, 18);//Separatoråˆ†éš”çº¿
 
 		toolbar.add(this.createHFInsertButton(new TextHFElement()));
 		toolbar.add(this.createHFInsertButton(new FormulaHFElement()));
@@ -335,7 +335,7 @@ public class HeaderFooterEditPane extends JPanel {
 			}
 			else
 			{
-				//ÏÔÊ¾»»ĞĞ·û
+				//æ˜¾ç¤ºæ¢è¡Œç¬¦
 				currentHFContainer.addHFComponent(newHFComponent);
 			}
 
@@ -353,7 +353,7 @@ public class HeaderFooterEditPane extends JPanel {
 			Object obj = evt.getSource();
 
 			if (obj instanceof HFContainer) {
-				if (!((HFContainer) obj).isEnabled()) {//ĞèÒªÅĞ¶ÏEnable.
+				if (!((HFContainer) obj).isEnabled()) {//éœ€è¦åˆ¤æ–­Enable.
 					return;
 				}
 
@@ -389,7 +389,7 @@ public class HeaderFooterEditPane extends JPanel {
 		private int firstPageNumber;
 
 		public HFPreviewPane() {
-			//ÓÃÄ¬ÈÏÊıÖµ.
+			//ç”¨é»˜è®¤æ•°å€¼.
 			this(new ReportHF(), 
 					(int)(FU.getInstance(PaperSize.PAPERSIZE_A4.getWidth().toFU() - new INCH(0.75f).toFU() - new INCH(0.75f).toFU()).toPixD(ScreenResolution.getScreenResolution())), 
 					(int)0.53 * ScreenResolution.getScreenResolution(), 1, 100, 1);
@@ -431,7 +431,7 @@ public class HeaderFooterEditPane extends JPanel {
 				g2d.setPaint(Color.WHITE);
 			}
 			g2d.fill(new Rectangle2D.Double(0, 0, size.getWidth(), size.getHeight()));
-			if (!this.isEnabled()) {//²»ÄÜ±à¼­,¾Í²»ĞèÒª»­ÁË.
+			if (!this.isEnabled()) {//ä¸èƒ½ç¼–è¾‘,å°±ä¸éœ€è¦ç”»äº†.
 				return;
 			}
 

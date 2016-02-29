@@ -1,1 +1,1 @@
-package com.fr.design.event;/** * Author : Shockway * Date: 13-7-17 * Time: 上午10:38 */public interface GlobalNameListener {	/**	 * 设置选中的面板或是组件的名字	 * @param name	 */	public void setGlobalName(String name);	/**	 * 得到选中面板或者组件的名字	 * @return	 */	public String getGlobalName();}
+package com.fr.design.event;/** * Author : Shockway * Date: 13-7-17 * Time: 涓婂崍10:38 */public interface GlobalNameListener {	/**	 * 璁剧疆閫変腑鐨勯潰鏉挎垨鏄粍浠剁殑鍚嶅瓧	 * @param name	 */	public void setGlobalName(String name);	/**	 * 寰楀埌閫変腑闈㈡澘鎴栬�呯粍浠剁殑鍚嶅瓧	 * @return	 */	public String getGlobalName();}

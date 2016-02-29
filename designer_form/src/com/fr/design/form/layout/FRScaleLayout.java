@@ -18,9 +18,9 @@ import com.fr.form.ui.container.WLayout;
 public class FRScaleLayout implements FRLayoutManager{
 
 	/**
-	 * Ôö¼Ó×é¼ş
-	 * @param name Ãû×Ö
-	 * @param comp ×é¼ş
+	 * å¢åŠ ç»„ä»¶
+	 * @param name åå­—
+	 * @param comp ç»„ä»¶
 	 */
 	@Override
 	public void addLayoutComponent(String name, Component comp) {
@@ -28,8 +28,8 @@ public class FRScaleLayout implements FRLayoutManager{
 	}
 
 	/**
-	 * ÒÆ³ı×é¼ş
-	 * @param comp ×é¼ş
+	 * ç§»é™¤ç»„ä»¶
+	 * @param comp ç»„ä»¶
 	 */
 	@Override
 	public void removeLayoutComponent(Component comp) {
@@ -37,9 +37,9 @@ public class FRScaleLayout implements FRLayoutManager{
 	}
 
 	/**
-	 * ×îÓÅ´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ´óĞ¡
+	 * æœ€ä¼˜å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤å¤§å°
 	 */
 	@Override
 	public Dimension preferredLayoutSize(Container parent) {
@@ -47,9 +47,9 @@ public class FRScaleLayout implements FRLayoutManager{
 	}
 
 	/**
-	 * ×îĞ¡´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ³õÊ¼´óĞ¡
+	 * æœ€å°å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤åˆå§‹å¤§å°
 	 */
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
@@ -57,8 +57,8 @@ public class FRScaleLayout implements FRLayoutManager{
 	}
 
 	/**
-	 * ²¼¾ÖË¢ĞÂ
-	 * @param target ÈİÆ÷
+	 * å¸ƒå±€åˆ·æ–°
+	 * @param target å®¹å™¨
 	 */
 	@Override
 	public void layoutContainer(Container parent) {
@@ -66,7 +66,7 @@ public class FRScaleLayout implements FRLayoutManager{
 			if (parent.getComponentCount() < 1) {
 				return;
 			}
-			// ¿¼ÂÇ²¼¾ÖÓÃÄÚ±ß¾à£¬ËùÒÔÎÄ±¾¿ò¶¼¿Ø¼şÌØÊâÓÃµÄµ±Ç°layoutË¢ĞÂÏÂ×Ó¿Ø¼ş
+			// è€ƒè™‘å¸ƒå±€ç”¨å†…è¾¹è·ï¼Œæ‰€ä»¥æ–‡æœ¬æ¡†éƒ½æ§ä»¶ç‰¹æ®Šç”¨çš„å½“å‰layoutåˆ·æ–°ä¸‹å­æ§ä»¶
 			Component comp = parent.getComponent(0);
 			if (comp != null) {
 				Rectangle rec = parent.getBounds();
@@ -76,8 +76,8 @@ public class FRScaleLayout implements FRLayoutManager{
 	}
 
 	/**
-	 * ÊÇ·ñÖØÖÃ´óĞ¡
-	 * @return ÊÇ
+	 * æ˜¯å¦é‡ç½®å¤§å°
+	 * @return æ˜¯
 	 */
 	@Override
 	public boolean isResizable() {

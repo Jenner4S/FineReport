@@ -56,15 +56,15 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     private static final String[] CARDNAME = new String[]{FORM_CARD, ELEMENTCASE_CARD};
     private static final int TOOLBARPANEDIMHEIGHT_FORM = 60;
 
-    //±íµ¥Éè¼ÆÆ÷
+    //è¡¨å•è®¾è®¡å™¨
     private FormDesigner formDesign;
-    //¸ñ×ÓÉè¼ÆÆ÷
+    //æ ¼å­è®¾è®¡å™¨
     private FormECDesignerProvider elementCaseDesign;
 
-    //ÖĞ¼ä±à¼­ÇøÓò, carllayout²¼¾Ö
+    //ä¸­é—´ç¼–è¾‘åŒºåŸŸ, carllayoutå¸ƒå±€
     private JPanel tabCenterPane;
     private CardLayout cardLayout;
-    //µ±Ç°±à¼­µÄ×é¼ş¶ÔÏó
+    //å½“å‰ç¼–è¾‘çš„ç»„ä»¶å¯¹è±¡
     private JComponent editingComponent;
     private FormECCompositeProvider reportComposite;
 
@@ -89,24 +89,24 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ÊÇ·ñÊÇ±¨±í
+     * æ˜¯å¦æ˜¯æŠ¥è¡¨
      *
-     * @return ·ñ
+     * @return å¦
      */
     public boolean isJWorkBook() {
         return false;
     }
 
     /**
-     * ·µ»Øµ±Ç°Ö§³ÖµÄ³¬Á´½çÃæpane
+     * è¿”å›å½“å‰æ”¯æŒçš„è¶…é“¾ç•Œé¢pane
      *
-     * @return ³¬Á´Á¬½Ó½çÃæ
+     * @return è¶…é“¾è¿æ¥ç•Œé¢
      */
     public HyperlinkGroupPane getHyperLinkPane() {
         return new FormHyperlinkGroupPane();
     }
 
-    //±íµ¥·µ»Ø FORM_TAB or ELEMENTCASE_TAB
+    //è¡¨å•è¿”å› FORM_TAB or ELEMENTCASE_TAB
     public int getEditingReportIndex() {
         return this.index;
     }
@@ -120,9 +120,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ²Ëµ¥À¸ÉÏµÄÎÄ¼ş°´Å¥
+     * èœå•æ ä¸Šçš„æ–‡ä»¶æŒ‰é’®
      *
-     * @return ²Ëµ¥Êı×é
+     * @return èœå•æ•°ç»„
      */
     public ShortCut[] shortcut4FileMenu() {
         return (ShortCut[]) ArrayUtils.addAll(
@@ -139,14 +139,14 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * È¡Ïû¸ñÊ½
+     * å–æ¶ˆæ ¼å¼
      */
     public void cancelFormat() {
         return;
     }
 
     /**
-     * ÖØĞÂ¼ÆËã´óĞ¡
+     * é‡æ–°è®¡ç®—å¤§å°
      */
     public void doResize() {
         formDesign.getRootComponent().setSize(formDesign.getSize());
@@ -172,7 +172,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
             @Override
             public void targetModified(TargetModifiedEvent e) {
-                JForm.this.fireTargetModified();// µ÷ÓÃ±£´æ*, µ÷ÓÃË¢ĞÂ½çÃæ, Ë¢ĞÂ¹¤¾ßÀ¸°´Å¥
+                JForm.this.fireTargetModified();// è°ƒç”¨ä¿å­˜*, è°ƒç”¨åˆ·æ–°ç•Œé¢, åˆ·æ–°å·¥å…·æ æŒ‰é’®
             }
         });
         formDesign.addDesignerEditListener(new DesignerEditListener() {
@@ -199,7 +199,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * È¥³ıÑ¡Ôñ
+     * å»é™¤é€‰æ‹©
      */
     public void removeTemplateSelection() {
         return;
@@ -210,23 +210,23 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ë¢ĞÂÈİÆ÷
+     * åˆ·æ–°å®¹å™¨
      */
     public void refreshContainer() {
 
     }
 
     /**
-     * È¥³ı²ÎÊıÃæ°åÑ¡Ôñ
+     * å»é™¤å‚æ•°é¢æ¿é€‰æ‹©
      */
     public void removeParameterPaneSelection() {
         return;
     }
 
     /**
-     * ´´½¨È¨ÏŞÏ¸Á£¶È±à¼­Ãæ°å
+     * åˆ›å»ºæƒé™ç»†ç²’åº¦ç¼–è¾‘é¢æ¿
      *
-     * @return È¨ÏŞÏ¸Á£¶È±à¼­Ãæ°å
+     * @return æƒé™ç»†ç²’åº¦ç¼–è¾‘é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         FormWidgetAuthorityEditPane formWidgetAuthorityEditPane = new FormWidgetAuthorityEditPane(formDesign);
@@ -260,7 +260,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     *½¹µã·Åµ½JForm
+     *ç„¦ç‚¹æ”¾åˆ°JForm
      */
     public void requestFocus() {
         super.requestFocus();
@@ -268,7 +268,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ½¹µã·Åµ½JForm
+     * ç„¦ç‚¹æ”¾åˆ°JForm
      */
     public void requestGridFocus() {
         super.requestFocus();
@@ -277,27 +277,27 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * ±£´æÎÄ¼şµÄºó×ºÃû
+     * ä¿å­˜æ–‡ä»¶çš„åç¼€å
      *
-     * @return ·µ»Øºó×ºÃû
+     * @return è¿”å›åç¼€å
      */
     public String suffix() {
-        // daniel¸Ä³ÉÈı¸ö×Ö
+        // danielæ”¹æˆä¸‰ä¸ªå­—
         return ".frm";
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshRoot() {
-        // formDesign×ÓÀàµÄtargetÖØÖÃ
+        // formDesignå­ç±»çš„targeté‡ç½®
         this.formDesign.setTarget(this.getTarget());
         this.formDesign.refreshRoot();
         FormHierarchyTreePane.getInstance().refreshRoot();
     }
 
     /**
-     * Ë¢ĞÂs
+     * åˆ·æ–°s
      */
     public void refreshAllNameWidgets() {
         if (formDesign.getParaComponent() != null) {
@@ -307,7 +307,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshSelectedWidget() {
         formDesign.getEditListenerTable().fireCreatorModified(DesignerEvent.CREATOR_SELECTED);
@@ -315,7 +315,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     *¸´ÖÆ  f
+     *å¤åˆ¶  f
      */
     public void copy() {
         this.formDesign.copy();
@@ -324,8 +324,8 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     @Override
     /**
      *
-     * Õ³Ìù
-     * @return ÊÇ·ñ³É¹¦
+     * ç²˜è´´
+     * @return æ˜¯å¦æˆåŠŸ
      */
     public boolean paste() {
         return this.formDesign.paste();
@@ -334,8 +334,8 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     @Override
     /**
      *
-     * ¼ôÇĞ
-     * @return ÊÇ·ñ³É¹¦
+     * å‰ªåˆ‡
+     * @return æ˜¯å¦æˆåŠŸ
      */
     public boolean cut() {
         return this.formDesign.cut();
@@ -348,9 +348,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * Ä¿±ê²Ëµ¥
+     * ç›®æ ‡èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         return this.index == FORM_TAB ?
@@ -360,9 +360,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     *  Ä£°åµÄ¹¤¾ß
+     *  æ¨¡æ¿çš„å·¥å…·
      *
-     * @return ¹¤¾ß
+     * @return å·¥å…·
      */
     public ToolBarDef[] toolbars4Target() {
         return this.index == FORM_TAB ?
@@ -372,9 +372,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * Ä£°å²Ëµ¥
+     * æ¨¡æ¿èœå•
      *
-     * @return ·µ»Ø²Ëµ¥
+     * @return è¿”å›èœå•
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return this.index == FORM_TAB ? new ShortCut[0] :
@@ -382,10 +382,10 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶ÈÄ£°å²Ëµ¥
-     * ±íµ¥ÖĞÈ¥µô´Ë²Ëµ¥Ïî
+     * æƒé™ç»†ç²’åº¦æ¨¡æ¿èœå•
+     * è¡¨å•ä¸­å»æ‰æ­¤èœå•é¡¹
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[0];
@@ -393,9 +393,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * undoµÄ±íµ¥state
+     * undoçš„è¡¨å•state
      *
-     *  @return ±íµ¥State
+     *  @return è¡¨å•State
      */
     protected FormUndoState createUndoState() {
         FormUndoState cur = new FormUndoState(this, this.formDesign.getArea());
@@ -406,32 +406,32 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ó¦ÓÃUndoState
+     * åº”ç”¨UndoState
      *
-     * @param o undoµÄ×´Ì¬
+     * @param o undoçš„çŠ¶æ€
      */
     public void applyUndoState4Form(BaseUndoState o) {
         this.applyUndoState((FormUndoState) o);
     }
 
     /**
-     * ¿ÉÒÔ³·Ïú
+     * å¯ä»¥æ’¤é”€
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canUndo() {
-        //±¨±í¿é×î¶à³·ÏúÖÁ±à¼­±¨±í¿éµÄµÚÒ»²½£¬²»ÄÜ³·Ïú±íµ¥ÖĞµÄ²Ù×÷
+        //æŠ¥è¡¨å—æœ€å¤šæ’¤é”€è‡³ç¼–è¾‘æŠ¥è¡¨å—çš„ç¬¬ä¸€æ­¥ï¼Œä¸èƒ½æ’¤é”€è¡¨å•ä¸­çš„æ“ä½œ
         boolean inECUndoForm = undoState.getFormReportType() == BaseUndoState.STATE_BEFORE_FORM_REPORT && formDesign.isReportBlockEditing();
         return !inECUndoForm && this.getUndoManager().canUndo();
     }
 
     @Override
     /**
-     * Ó¦ÓÃundoStateµÄ±íµ¥Êı¾İ
+     * åº”ç”¨undoStateçš„è¡¨å•æ•°æ®
      */
     protected void applyUndoState(FormUndoState u) {
         try {
-            //JFormµÄtargetÖØÖÃ
+            //JFormçš„targeté‡ç½®
             this.setTarget((Form) u.getForm().clone());
             if (this.index == FORM_TAB) {
                 JForm.this.refreshRoot();
@@ -439,10 +439,10 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
                 this.formDesign.getSelectionModel().setSelectedCreators(FormSelectionUtils.rebuildSelection(formDesign.getRootComponent(), u.getSelectWidgets()));
             } else {
                 String widgetName = this.formDesign.getElementCaseContainerName();
-                //Õâ¶ùÌ«¿ÓÁË£¬u.getForm() Óë getTargetÄÚÈİ²»Ò»Ñù
+                //è¿™å„¿å¤ªå‘äº†ï¼Œu.getForm() ä¸ getTargetå†…å®¹ä¸ä¸€æ ·
                 FormElementCaseProvider dataTable = getTarget().getElementCaseByName(widgetName);
                 this.reportComposite.setSelectedWidget(dataTable);
-                //ÏÂÃæÕâ¾ä»°ÊÇ·ÀÖ¹³·ÏúÖ®ºóÖ±½ÓÍË³ö±à¼­ÔÙ±à¼­³·ÏúµÄ¶«Î÷»á»ØÀ´,ÒòÎª³·Ïú²»»á±£´æEC
+                //ä¸‹é¢è¿™å¥è¯æ˜¯é˜²æ­¢æ’¤é”€ä¹‹åç›´æ¥é€€å‡ºç¼–è¾‘å†ç¼–è¾‘æ’¤é”€çš„ä¸œè¥¿ä¼šå›æ¥,å› ä¸ºæ’¤é”€ä¸ä¼šä¿å­˜EC
                 formDesign.setElementCase(dataTable);
             }
         } catch (CloneNotSupportedException e) {
@@ -467,9 +467,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * ±íµ¥µÄ¹¤¾ßÀ¸
+     * è¡¨å•çš„å·¥å…·æ 
      *
-     * @return ±íµ¥¹¤¾ßÀ¸
+     * @return è¡¨å•å·¥å…·æ 
      */
     public JPanel[] toolbarPanes4Form() {
         return this.index == FORM_TAB ?
@@ -478,14 +478,14 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ±íµ¥µÄ¹¤¾ß°´Å¥
+     * è¡¨å•çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         return this.index == FORM_TAB ?
                 new JComponent[]{
-                        //×ÔÊÊÓ¦²¼¾ÖÀïµÄ¸´ÖÆÕ³ÌùÒâÒå²»´ó, ÏÈÆÁ±Îµô
+                        //è‡ªé€‚åº”å¸ƒå±€é‡Œçš„å¤åˆ¶ç²˜è´´æ„ä¹‰ä¸å¤§, å…ˆå±è”½æ‰
 //        		new CutAction(formDesign).createToolBarComponent(), 
 //        		new CopyAction(formDesign).createToolBarComponent(), 
 //        		new PasteAction(formDesign).createToolBarComponent(),
@@ -494,9 +494,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶È×´Ì¬ÏÂµÄ¹¤¾ßÃæ°å
+     * æƒé™ç»†ç²’åº¦çŠ¶æ€ä¸‹çš„å·¥å…·é¢æ¿
      *
-     * @return ¹¤¾ßÃæ°å
+     * @return å·¥å…·é¢æ¿
      */
     public JComponent toolBar4Authority() {
         JPanel panel = new JPanel(new BorderLayout()) {
@@ -544,9 +544,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * ´´½¨²Ëµ¥ÏîPreview
+     * åˆ›å»ºèœå•é¡¹Preview
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public UIMenuItem[] createMenuItem4Preview() {
         UIMenuItem form = new UIMenuItem(Inter.getLocText("M-Form_Preview"), UIConstants.RUN_SMALL_ICON);
@@ -560,7 +560,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ë¢ĞÂ²ÎÊı
+     * åˆ·æ–°å‚æ•°
      */
     public void populateParameter() {
         formDesign.populateParameterPropertyPane();
@@ -568,12 +568,12 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
 
     @Override
     /**
-     * Ë¢ĞÂ¹¤¾ßÇøÓò
+     * åˆ·æ–°å·¥å…·åŒºåŸŸ
      */
     public void refreshToolArea() {
         populateParameter();
         DesignerContext.getDesignerFrame().resetToolkitByPlus(JForm.this);
-        //±íµ¥ÇĞ»»ºóÍÏ²»½øÈ¥×é¼şÊÇÒòÎªÕÒ²»µ½designer
+        //è¡¨å•åˆ‡æ¢åæ‹–ä¸è¿›å»ç»„ä»¶æ˜¯å› ä¸ºæ‰¾ä¸åˆ°designer
         WidgetToolBarPane.getInstance(formDesign);
         if (BaseUtils.isAuthorityEditing()) {
             if (formDesign.isSupportAuthority()) {
@@ -625,9 +625,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ñ¡ÔñµÄÊÇ·ñÊÇ±íµ¥Ö÷Ìå
+     * é€‰æ‹©çš„æ˜¯å¦æ˜¯è¡¨å•ä¸»ä½“
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSelectRootPane() {
         return formDesign.getRootComponent() == formDesign.getSelectionModel().getSelection().getSelectedCreator();
@@ -635,9 +635,9 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Ö»ÔÚFormºÍElementCaseÖ®¼äÇĞ»»
+     * åªåœ¨Formå’ŒElementCaseä¹‹é—´åˆ‡æ¢
      *
-     * @param index ÇĞ»»Î»ÖÃ
+     * @param index åˆ‡æ¢ä½ç½®
      */
     public void tabChanged(int index) {
         if (index == ELEMENTCASE_TAB) {
@@ -651,26 +651,26 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
         refreshToolArea();
         this.cardLayout.show(tabCenterPane, CARDNAME[index]);
         if (elementCaseDesign != null && index == ELEMENTCASE_TAB) {
-            //±¨±í¿é±à¼­Ê§½¹£¬½øÈë±¨±í¿é¿ÉÖ±½Ó±à¼­A1
+            //æŠ¥è¡¨å—ç¼–è¾‘å¤±ç„¦ï¼Œè¿›å…¥æŠ¥è¡¨å—å¯ç›´æ¥ç¼–è¾‘A1
             elementCaseDesign.requestFocus();
-            //½øÈë±à¼­±¨±í¿é£¬´¥·¢Ò»´Î±£´æ£¬¼Ç×¡±à¼­±¨±í¿éÇ°µÄ±íµ¥×´Ì¬
-            //·ÀÖ¹±¨±í¿éÖĞ³·Ïúµ½±íµ¥
+            //è¿›å…¥ç¼–è¾‘æŠ¥è¡¨å—ï¼Œè§¦å‘ä¸€æ¬¡ä¿å­˜ï¼Œè®°ä½ç¼–è¾‘æŠ¥è¡¨å—å‰çš„è¡¨å•çŠ¶æ€
+            //é˜²æ­¢æŠ¥è¡¨å—ä¸­æ’¤é”€åˆ°è¡¨å•
             JForm.this.fireTargetModified();
         }
     }
 
     /**
-     * ÔÚFormºÍElementCase, ÒÔ¼°ElementCaseºÍElementCaseÖ®¼äÇĞ»»
+     * åœ¨Formå’ŒElementCase, ä»¥åŠElementCaseå’ŒElementCaseä¹‹é—´åˆ‡æ¢
      *
-     * @param index       ÇĞ»»Î»ÖÃ
-     * @param ecContainer ElementCaseËùÔÚcontainer
+     * @param index       åˆ‡æ¢ä½ç½®
+     * @param ecContainer ElementCaseæ‰€åœ¨container
      */
     public void tabChanged(int index, FormElementCaseContainerProvider ecContainer) {
         if (index == ELEMENTCASE_CHANGE_TAB) {
             saveImage();
-            //¸üĞÂFormDesignÖĞµÄ¿Ø¼şÈİÆ÷
+            //æ›´æ–°FormDesignä¸­çš„æ§ä»¶å®¹å™¨
             formDesign.setElementCaseContainer(ecContainer);
-            //Èç¹ûÖ»ÊÇÄÚ²¿ElementCaseÖ®¼äµÄÇĞ»», ÄÇÃ´²»ĞèÒªÏÂÃæµÄ½çÃæ±ä¶¯
+            //å¦‚æœåªæ˜¯å†…éƒ¨ElementCaseä¹‹é—´çš„åˆ‡æ¢, é‚£ä¹ˆä¸éœ€è¦ä¸‹é¢çš„ç•Œé¢å˜åŠ¨
             return;
         }
 
@@ -678,7 +678,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ¸ñ×Ó±à¼­×é¼ş
+     * æ ¼å­ç¼–è¾‘ç»„ä»¶
      */
     private FormECDesignerProvider initElementCaseDesign() {
         HashMap<String, Class> designerClass = new HashMap<String, Class>();
@@ -689,7 +689,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * Õû¸ö±¨±í¿é±à¼­ÇøÓò
+     * æ•´ä¸ªæŠ¥è¡¨å—ç¼–è¾‘åŒºåŸŸ
      */
     private FormECCompositeProvider initComposite() {
         Object[] compositeArg = new Object[]{this, elementCaseDesign, formDesign.getElementCaseContainer()};
@@ -700,7 +700,7 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     /**
-     * ÇĞ»»¸ñ×Ó±à¼­
+     * åˆ‡æ¢æ ¼å­ç¼–è¾‘
      */
     private void ecTabAction() {
         elementCaseDesign = initElementCaseDesign();
@@ -719,24 +719,24 @@ public class JForm extends JTemplate<Form, FormUndoState> implements BaseJForm {
     }
 
     private void saveImage() {
-        //´¥·¢Ò»´Î±£´æ, °ÑËõÂÔÍ¼±£´æÆğÀ´
+        //è§¦å‘ä¸€æ¬¡ä¿å­˜, æŠŠç¼©ç•¥å›¾ä¿å­˜èµ·æ¥
         JForm.this.fireTargetModified();
-        //ÓÃformDesignµÄsizeÊÇÎªÁËµ±±¨±í¿é±»À­ÉìÊ±, Ëü¶ÔÓ¦µÄ±³¾°Í¼Æ¬ĞèÒª×ã¹»´ó²Å²»»áÏÔÊ¾³É¿Õ°×
+        //ç”¨formDesignçš„sizeæ˜¯ä¸ºäº†å½“æŠ¥è¡¨å—è¢«æ‹‰ä¼¸æ—¶, å®ƒå¯¹åº”çš„èƒŒæ™¯å›¾ç‰‡éœ€è¦è¶³å¤Ÿå¤§æ‰ä¸ä¼šæ˜¾ç¤ºæˆç©ºç™½
         BufferedImage image = elementCaseDesign.getElementCaseImage(formDesign.getSize());
         formDesign.setElementCaseBackground(image);
     }
 
     /**
-     * ÇĞ»»form±à¼­
+     * åˆ‡æ¢formç¼–è¾‘
      */
     private void formTabAction() {
         saveImage();
     }
 
     /**
-     * È¡Ğ¡Í¼±ê£¬Ö÷ÒªÓÃÓÚ¶àTAB±êÇ©À¸
+     * å–å°å›¾æ ‡ï¼Œä¸»è¦ç”¨äºå¤šTABæ ‡ç­¾æ 
      *
-     * @return Í¼±í
+     * @return å›¾è¡¨
      */
     public Icon getIcon() {
         return BaseUtils.readIcon("/com/fr/web/images/form/new_form3.png");

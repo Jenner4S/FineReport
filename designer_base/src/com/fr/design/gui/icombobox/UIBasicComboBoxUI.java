@@ -22,7 +22,7 @@ import java.beans.PropertyChangeListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-18
- * Time: ÉÏÎç10:57
+ * Time: ä¸Šåˆ10:57
  */
 public class UIBasicComboBoxUI extends BasicComboBoxUI {
     private static final int VALUE100=100;
@@ -34,10 +34,10 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
     protected Dimension cachedDisplaySize = new Dimension(0, 0);
 
     /**
-     * ´´½¨UI
+     * åˆ›å»ºUI
      *
-     * @param c ×é¼ş
-     * @return ×é¼şUI
+     * @param c ç»„ä»¶
+     * @return ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIBasicComboBoxUI();
@@ -76,9 +76,9 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
     }
 
     /**
-     * ´´½¨¼àÌı
+     * åˆ›å»ºç›‘å¬
      *
-     * @return ·µ»Ø´´½¨µÄ¼àÌı
+     * @return è¿”å›åˆ›å»ºçš„ç›‘å¬
      */
     public PropertyChangeListener createPropertyChangeListener() {
         return new TinyPropertyChangeListener();
@@ -91,9 +91,9 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
      */
     public class TinyPropertyChangeListener extends BasicComboBoxUI.PropertyChangeHandler {
         /**
-         * ÊôĞÔ¸Ä±ä
+         * å±æ€§æ”¹å˜
          *
-         * @param e ÊôĞÔ¸Ä±äÊÂ¼ş
+         * @param e å±æ€§æ”¹å˜äº‹ä»¶
          */
         public void propertyChange(PropertyChangeEvent e) {
             super.propertyChange(e);
@@ -135,24 +135,24 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
      */
     public class TinyComboBoxLayoutManager implements LayoutManager {
         /**
-         * Ôö¼Ó²¼¾Ö×é¼ş
-         * @param name Ãû×Ö
-         * @param comp ×é¼ş
+         * å¢åŠ å¸ƒå±€ç»„ä»¶
+         * @param name åå­—
+         * @param comp ç»„ä»¶
          */
         public void addLayoutComponent(String name, Component comp) {
         }
 
         /**
-         * È¥³ı²¼¾Ö×é¼ş
-         * @param comp ×é¼ş
+         * å»é™¤å¸ƒå±€ç»„ä»¶
+         * @param comp ç»„ä»¶
          */
         public void removeLayoutComponent(Component comp) {
         }
 
         /**
-         * ×î¼Ñ²¼¾Ö´óĞ¡
-         * @param parent ÈİÆ÷
-         * @return ´óĞ¡
+         * æœ€ä½³å¸ƒå±€å¤§å°
+         * @param parent å®¹å™¨
+         * @return å¤§å°
          */
         public Dimension preferredLayoutSize(Container parent) {
             JComboBox cb = (JComboBox) parent;
@@ -160,9 +160,9 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
         }
 
         /**
-         * ×îĞ¡²¼¾Ö´óĞ¡
-         * @param parent ÈİÆ÷
-         * @return ´óĞ¡
+         * æœ€å°å¸ƒå±€å¤§å°
+         * @param parent å®¹å™¨
+         * @return å¤§å°
          */
         public Dimension minimumLayoutSize(Container parent) {
             JComboBox cb = (JComboBox) parent;
@@ -170,8 +170,8 @@ public class UIBasicComboBoxUI extends BasicComboBoxUI {
         }
 
         /**
-         * ²¼¾ÖÈİÆ÷
-         * @param parent ÈİÆ÷
+         * å¸ƒå±€å®¹å™¨
+         * @param parent å®¹å™¨
          */
         public void layoutContainer(Container parent) {
             JComboBox cb = (JComboBox) parent;

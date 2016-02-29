@@ -26,7 +26,7 @@ import java.io.File;
 
 /**
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:12:06
+ * @since 2012-5-29ä¸‹åˆ1:12:06
  */
 public class ImageBackgroundPane extends BackgroundSettingPane {
 
@@ -134,9 +134,9 @@ public class ImageBackgroundPane extends BackgroundSettingPane {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		changeListener = new ChangeListener() {
@@ -167,17 +167,17 @@ public class ImageBackgroundPane extends BackgroundSettingPane {
 	};
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÊÇÍ¼Æ¬±³¾°
-     * @param background  ±³¾°
-     * @return ÅĞ¶ÏÊÇ·ñÊÇÍ¼Æ¬±³¾°
+     * åˆ¤æ–­æ˜¯å¦æ˜¯å›¾ç‰‡èƒŒæ™¯
+     * @param background  èƒŒæ™¯
+     * @return åˆ¤æ–­æ˜¯å¦æ˜¯å›¾ç‰‡èƒŒæ™¯
      */
 	public boolean accept(Background background) {
 		return background instanceof ImageBackground;
 	}
 
     /**
-     * ±êÌâ
-     * @return ±êÌâ
+     * æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Background_Image");

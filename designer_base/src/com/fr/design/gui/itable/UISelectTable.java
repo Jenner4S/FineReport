@@ -24,9 +24,9 @@ public class UISelectTable extends UITable implements MouseListener {
 	}
 
 	/**
-	 * ¸ø±íÌí¼ÓÑ¡ÔñÊÂ¼ş
+	 * ç»™è¡¨æ·»åŠ é€‰æ‹©äº‹ä»¶
 	 *
-	 * @param listener Ñ¡Ôñ±íÊı¾İÊ±´¥·¢µÄÊÂ¼ş
+	 * @param listener é€‰æ‹©è¡¨æ•°æ®æ—¶è§¦å‘çš„äº‹ä»¶
 	 */
 	public void addSelectionChangeListener(ChangeListener listener) {
 		selectionListeners.add(listener);
@@ -44,9 +44,9 @@ public class UISelectTable extends UITable implements MouseListener {
 	}
 
 	/**
-	 * Êó±êµã»÷ÊÂ¼ş£¬ÒÔ´¥·¢±íµÄÑ¡ÔñÊÂ¼ş
+	 * é¼ æ ‡ç‚¹å‡»äº‹ä»¶ï¼Œä»¥è§¦å‘è¡¨çš„é€‰æ‹©äº‹ä»¶
 	 *
-	 * @param e Êó±êÊÂ¼ş¶ÔÏó
+	 * @param e é¼ æ ‡äº‹ä»¶å¯¹è±¡
 	 */
 	@Override
 	public final void mouseClicked(MouseEvent e) {

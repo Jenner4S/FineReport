@@ -34,10 +34,10 @@ import com.fr.general.Inter;
 import com.fr.stable.StringUtils;
 
 /**
- * µ¥²ãµØÍ¼Ê±: Êı¾İ¼¯ ¶¨Òå½çÃæ
+ * å•å±‚åœ°å›¾æ—¶: æ•°æ®é›† å®šä¹‰ç•Œé¢
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-22 ÉÏÎç11:14:59
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-22 ä¸Šåˆ11:14:59
  */
 public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerTableDefinition> implements UIObserver {
 
@@ -94,7 +94,7 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 		pane.add(titleValuePane, BorderLayout.CENTER);
 	}
 
-	private void refreshAreaNameBox() {// Ë¢ĞÂÇøÓòÃû³ÆÁĞ±í
+	private void refreshAreaNameBox() {// åˆ·æ–°åŒºåŸŸåç§°åˆ—è¡¨
 		TableDataWrapper tableDataWrappe = fromTableData.getTableDataWrapper();
 		if (tableDataWrappe == null) {
 			return;
@@ -112,21 +112,21 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 	}
 
 	/**
-	 * ½çÃæ½ÓÈë
+	 * ç•Œé¢æ¥å…¥
 	 */
 	public boolean accept(Object ob) {
 		return false;
 	}
 
 	/**
-	 * ½çÃæÖØÖÃ
+	 * ç•Œé¢é‡ç½®
 	 */
 	public void reset() {
 
 	}
 
 	/**
-	 * ½çÃæµ¯³ö±êÌâ
+	 * ç•Œé¢å¼¹å‡ºæ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("DS-TableData");
@@ -160,7 +160,7 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 	}
 
 	@Override
-	public MapSingleLayerTableDefinition updateBean() {// ´ÓÒ»ĞĞÄÚÈİÖĞupdate
+	public MapSingleLayerTableDefinition updateBean() {// ä»ä¸€è¡Œå†…å®¹ä¸­update
 		stopEditing();
 
 		MapSingleLayerTableDefinition definition = new MapSingleLayerTableDefinition();
@@ -188,9 +188,9 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		changeListeners.add(new ChangeListener() {
@@ -201,9 +201,9 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
@@ -213,7 +213,7 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 		private JComponent editorComponent;
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
 		 */
 		public Object getCellEditorValue() {
 			if(editorComponent instanceof UITextField) {
@@ -227,7 +227,7 @@ public class MapTableDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerT
 		}
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷..
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨..
 		 */
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 			if (column == table.getModel().getColumnCount()) {

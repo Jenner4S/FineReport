@@ -43,10 +43,10 @@ import com.fr.general.FRLevel;
 import com.fr.general.Inter;
 
 /**
- * Ñ¡Ïî¶Ô»°¿ò
+ * é€‰é¡¹å¯¹è¯æ¡†
  *
  * @editor zhou
- * @since 2012-3-28ÏÂÎç3:39:48
+ * @since 2012-3-28ä¸‹åˆ3:39:48
  */
 public class PreferencePane extends BasicPane {
     private static final int MAX_UNDO_LIMIT_5 = 5;
@@ -89,14 +89,14 @@ public class PreferencePane extends BasicPane {
     	getLocaledLanguage("Japanese_Language", Locale.JAPAN),
     	getLocaledLanguage("Traditional_Chinese_Language", Locale.TRADITIONAL_CHINESE)}; 
 
-    //ÉèÖÃÊÇ·ñÖ§³Öundo
+    //è®¾ç½®æ˜¯å¦æ”¯æŒundo
     private UICheckBox supportUndoCheckBox;
-    //ÉèÖÃ×î´ó³·Ïú´ÎÊı
+    //è®¾ç½®æœ€å¤§æ’¤é”€æ¬¡æ•°
     private UIComboBox maxUndoLimit;
-    //ÊÇ·ÇÖ§³Ö×Ô¶¯¼ÆËã¸¸¸ñ
+    //æ˜¯éæ”¯æŒè‡ªåŠ¨è®¡ç®—çˆ¶æ ¼
     private UICheckBox supportDefaultParentCalculateCheckBox;
 
-    //ÊÇ·ñ×Ô¶¯×ª»¯Îª¹«Ê½
+    //æ˜¯å¦è‡ªåŠ¨è½¬åŒ–ä¸ºå…¬å¼
     private UICheckBox supportStringToFormulaBox;
     private UICheckBox defaultStringToFormulaBox;
 
@@ -128,9 +128,9 @@ public class PreferencePane extends BasicPane {
 
         UITabbedPane jtabPane = new UITabbedPane();
         JPanel generalPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_L_Pane();
-        jtabPane.addTab(Inter.getLocText("General"), generalPane);
+        jtabPane.addTab(Inter.getLocText("FR-Designer_General"), generalPane);
         JPanel advancePane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_L_Pane();
-        jtabPane.addTab(Inter.getLocText("Advanced"), advancePane);
+        jtabPane.addTab(Inter.getLocText("FR-Designer_Advanced"), advancePane);
         contentPane.add(jtabPane, BorderLayout.NORTH);
 
 
@@ -155,12 +155,12 @@ public class PreferencePane extends BasicPane {
 
         String[] message = new String[]{"Display", "Oracle_All_Tables"};
         String[] sign = new String[]{"Oracle"};
-        JPanel oraclePane = FRGUIPaneFactory.createTitledBorderPane("Oracle" + Inter.getLocText("Oracle_All_Tables"));
+        JPanel oraclePane = FRGUIPaneFactory.createTitledBorderPane("Oracle" + Inter.getLocText("FR-Designer_Oracle_All_Tables"));
         oracleSpace = new UICheckBox(Inter.getLocText(message, sign));
         oraclePane.add(oracleSpace);
         
-        JPanel improvePane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("Product_improve"));
-        joinProductImprove = new UICheckBox(Inter.getLocText("Join_Product_improve"));
+        JPanel improvePane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Product_improve"));
+        joinProductImprove = new UICheckBox(Inter.getLocText("FR-Designer_Join_Product_improve"));
         improvePane.add(joinProductImprove);
 
         JPanel spaceUpPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
@@ -177,20 +177,20 @@ public class PreferencePane extends BasicPane {
     }
 
     private void createFunctionPane(JPanel generalPane) {
-        JPanel functionPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("Preference-Function"));
+        JPanel functionPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Preference-Function"));
         generalPane.add(functionPane);
 
-        //Ìí¼ÓsupportUndoÑ¡ÔñÏî
+        //æ·»åŠ supportUndoé€‰æ‹©é¡¹
         supportUndoCheckBox = new UICheckBox(Inter.getLocText("Preference-Support_Undo"));
         functionPane.add(supportUndoCheckBox);
-        //Ìí¼ÓmaxUndoLimit
-        //String[] undoTimes = {"×î´ó³·Ïú´ÎÊı","5´Î","10´Î","15´Î","20´Î","50´Î"};
-        String[] undoTimes = {Inter.getLocText("max_undo_limit"), MAX_UNDO_LIMIT_5 + Inter.getLocText("time(s)"), MAX_UNDO_LIMIT_10 + Inter.getLocText("time(s)")
-                , MAX_UNDO_LIMIT_15 + Inter.getLocText("time(s)"), MAX_UNDO_LIMIT_20 + Inter.getLocText("time(s)"), MAX_UNDO_LIMIT_50 + Inter.getLocText("time(s)")};
+        //æ·»åŠ maxUndoLimit
+        //String[] undoTimes = {"æœ€å¤§æ’¤é”€æ¬¡æ•°","5æ¬¡","10æ¬¡","15æ¬¡","20æ¬¡","50æ¬¡"};
+        String[] undoTimes = {Inter.getLocText("FR-Designer_max_undo_limit"), MAX_UNDO_LIMIT_5 + Inter.getLocText("FR-Designer_time(s)"), MAX_UNDO_LIMIT_10 + Inter.getLocText("FR-Designer_time(s)")
+                , MAX_UNDO_LIMIT_15 + Inter.getLocText("FR-Designer_time(s)"), MAX_UNDO_LIMIT_20 + Inter.getLocText("FR-Designer_time(s)"), MAX_UNDO_LIMIT_50 + Inter.getLocText("FR-Designer_time(s)")};
         maxUndoLimit = new UIComboBox(undoTimes);
         functionPane.add(maxUndoLimit);
 
-        //²»Ö§³Ö³·ÏúÔò²»ÄÜÑ¡Ôñ³·Ïú¿É»º´æ£¬Ò²²»ÄÜÉèÖÃ×î´ó³·Ïú´ÎÊı
+        //ä¸æ”¯æŒæ’¤é”€åˆ™ä¸èƒ½é€‰æ‹©æ’¤é”€å¯ç¼“å­˜ï¼Œä¹Ÿä¸èƒ½è®¾ç½®æœ€å¤§æ’¤é”€æ¬¡æ•°
         supportUndoCheckBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 maxUndoLimit.setEnabled(supportUndoCheckBox.isSelected());
@@ -198,26 +198,26 @@ public class PreferencePane extends BasicPane {
         });
 
 
-        //Ìí¼ÓsupportDefaultParentCalculateÑ¡ÔñÏî
+        //æ·»åŠ supportDefaultParentCalculateé€‰æ‹©é¡¹
         supportDefaultParentCalculateCheckBox = new UICheckBox(
                 Inter.getLocText("Preference-Support_Default_Parent_Calculate"));
         functionPane.add(supportDefaultParentCalculateCheckBox);
     }
 
     private void createEditPane(JPanel generalPane) {
-        //samuel:±à¼­Æ÷ÉèÖÃ
+        //samuel:ç¼–è¾‘å™¨è®¾ç½®
         JPanel editPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText(new String[]{"Editor", "Set"}));
         generalPane.add(editPane);
 
-        //ÉèÖÃÊÇ·ñÖ§³Ö½«×Ö·û´®±à¼­Îª¹«Ê½
-        supportStringToFormulaBox = new UICheckBox(Inter.getLocText("Surport_String_To_Formula"));
+        //è®¾ç½®æ˜¯å¦æ”¯æŒå°†å­—ç¬¦ä¸²ç¼–è¾‘ä¸ºå…¬å¼
+        supportStringToFormulaBox = new UICheckBox(Inter.getLocText("FR-Designer_Surport_String_To_Formula"));
         editPane.add(supportStringToFormulaBox);
 
-        //ÊÇ·ñÄ¬ÈÏ×ª»¯
-        defaultStringToFormulaBox = new UICheckBox(Inter.getLocText("Always"));
+        //æ˜¯å¦é»˜è®¤è½¬åŒ–
+        defaultStringToFormulaBox = new UICheckBox(Inter.getLocText("FR-Designer_Always"));
 
         editPane.add(defaultStringToFormulaBox);
-        //²»Ö§³Ö×ª»¯Ôò²»ÄÜÄ¬ÈÏÖ´ĞĞ
+        //ä¸æ”¯æŒè½¬åŒ–åˆ™ä¸èƒ½é»˜è®¤æ‰§è¡Œ
         supportStringToFormulaBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 defaultStringToFormulaBox.setEnabled(supportStringToFormulaBox.isSelected());
@@ -324,12 +324,12 @@ public class PreferencePane extends BasicPane {
     }
 
     private void createLogPane(JPanel advancePane) {
-        //richer:Ñ¡Ôñµ¼³ölogÎÄ¼şµÄÄ¿Â¼.
+        //richer:é€‰æ‹©å¯¼å‡ºlogæ–‡ä»¶çš„ç›®å½•.
         JPanel logPane = FRGUIPaneFactory.createX_AXISBoxInnerContainer_S_Pane();
         advancePane.add(logPane);
-        JPanel logExportPane = FRGUIPaneFactory.createTitledBorderPane("log" + Inter.getLocText("Export_Setting"));
+        JPanel logExportPane = FRGUIPaneFactory.createTitledBorderPane("log" + Inter.getLocText("FR-Designer_Export_Setting"));
         logPane.add(logExportPane);
-        UILabel logLabel = new UILabel(Inter.getLocText("Select_Export_Log_Directory") + ":");
+        UILabel logLabel = new UILabel(Inter.getLocText("FR-Designer_Select_Export_Log_Directory") + ":");
         logExportPane.add(logLabel, BorderLayout.WEST);
         logExportDirectoryField = new UITextField(24);
         logExportPane.add(logExportDirectoryField, BorderLayout.CENTER);
@@ -348,7 +348,7 @@ public class PreferencePane extends BasicPane {
             }
         });
 
-        JPanel logLevelPane = FRGUIPaneFactory.createTitledBorderPane("log" + Inter.getLocText("Level_Setting"));
+        JPanel logLevelPane = FRGUIPaneFactory.createTitledBorderPane("log" + Inter.getLocText("FR-Designer_Level_Setting"));
         logPane.add(logLevelPane);
         logLevelComboBox = new UIComboBox(LOG);
         logLevelPane.add(logLevelComboBox);
@@ -360,13 +360,13 @@ public class PreferencePane extends BasicPane {
     }
 
     private void createLanPane(JPanel generalPane) {
-        // ben:Ñ¡Ôñ°æ±¾ÓïÑÔ;
+        // ben:é€‰æ‹©ç‰ˆæœ¬è¯­è¨€;
         JPanel languageAndDashBoard_pane = FRGUIPaneFactory.createX_AXISBoxInnerContainer_S_Pane();
-        JPanel LanguagePane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("Choose_Language"));
+        JPanel LanguagePane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Choose_Language"));
         generalPane.add(languageAndDashBoard_pane);
         languageAndDashBoard_pane.add(LanguagePane);
         languageComboBox = new UIComboBox(LANGUAGE);
-        ActionLabel languageLabel = new ActionLabel(Inter.getLocText("Designer_Language"));
+        ActionLabel languageLabel = new ActionLabel(Inter.getLocText("FR-Designer_Designer_Language"));
         languageLabel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -380,7 +380,7 @@ public class PreferencePane extends BasicPane {
                 dlg.setVisible(true);
             }
         });
-        UILabel noticeLabel = new UILabel(Inter.getLocText("Work_After_Restart_Designer"));//sail:ÌáÊ¾ÖØÆôºóÉúĞ§
+        UILabel noticeLabel = new UILabel(Inter.getLocText("FR-Designer_Work_After_Restart_Designer"));//sail:æç¤ºé‡å¯åç”Ÿæ•ˆ
         double p = TableLayout.PREFERRED;
         double rowSize[] = {p};
         double columnSize[] = {p, p, p};
@@ -414,17 +414,17 @@ public class PreferencePane extends BasicPane {
         double p = TableLayout.PREFERRED;
         double rowSize[] = {p};
 
-        // ³¤¶Èµ¥Î»Ñ¡Ôñ
-        JPanel lengthPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("Setting-Ruler-Units"));
+        // é•¿åº¦å•ä½é€‰æ‹©
+        JPanel lengthPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Setting-Ruler-Units"));
         advancePane.add(lengthPane);
-        pageLengthComboBox = new UIComboBox(new String[]{Inter.getLocText("PageSetup-mm"), Inter.getLocText("Unit_CM"), Inter.getLocText("Unit_INCH")});
+        pageLengthComboBox = new UIComboBox(new String[]{Inter.getLocText("FR-Designer_PageSetup-mm"), Inter.getLocText("FR-Designer_Unit_CM"), Inter.getLocText("FR-Designer_Unit_INCH")});
         pageLengthComboBox.setPreferredSize(new Dimension(80, 20));
         pageLengthComboBox.setMinimumSize(new Dimension(80, 20));
-        reportLengthComboBox = new UIComboBox(new String[]{Inter.getLocText("PageSetup-mm"), Inter.getLocText("Unit_CM"), Inter.getLocText("Unit_INCH"), Inter.getLocText("Unit_PT")});
+        reportLengthComboBox = new UIComboBox(new String[]{Inter.getLocText("FR-Designer_PageSetup-mm"), Inter.getLocText("FR-Designer_Unit_CM"), Inter.getLocText("FR-Designer_Unit_INCH"), Inter.getLocText("FR-Designer_Unit_PT")});
         reportLengthComboBox.setPreferredSize(new Dimension(80, 20));
         reportLengthComboBox.setMinimumSize(new Dimension(80, 20));
-        UILabel pagelengthLabel = new UILabel(Inter.getLocText("Page-Setup-Scale-Units") + ":");
-        UILabel reportLengthLabel = new UILabel(Inter.getLocText("Report-Design-Ruler-Units") + ":");
+        UILabel pagelengthLabel = new UILabel(Inter.getLocText("FR-Designer_Page-Setup-Scale-Units") + ":");
+        UILabel reportLengthLabel = new UILabel(Inter.getLocText("FR-Designer_Report-Design-Ruler-Units") + ":");
         Component[][] lengthComponents = {
                 {pagelengthLabel, pageLengthComboBox, reportLengthLabel, reportLengthComboBox},
         };
@@ -437,13 +437,13 @@ public class PreferencePane extends BasicPane {
         double rowSize[] = {p};
         double columnSize[] = {p, p, p};
 
-        JPanel serverPortPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("Web_Preview_Port_Setting"));
+        JPanel serverPortPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Web_Preview_Port_Setting"));
         advancePane.add(serverPortPane);
         portEditor = new IntegerEditor();
         portEditor.setPreferredSize(new Dimension(80, 20));
         portEditor.setMinimumSize(new Dimension(80, 20));
-        UILabel notiJlabel = new UILabel(Inter.getLocText("Work_After_Restart_Designer"));
-        UILabel serverPortLabel = new UILabel(Inter.getLocText("Web_Preview_Port") + ":");
+        UILabel notiJlabel = new UILabel(Inter.getLocText("FR-Designer_Work_After_Restart_Designer"));
+        UILabel serverPortLabel = new UILabel(Inter.getLocText("FR-Designer_Web_Preview_Port") + ":");
         Component[][] portComponents = {
                 {serverPortLabel, portEditor, notiJlabel},
         };
@@ -478,7 +478,7 @@ public class PreferencePane extends BasicPane {
             }
         });
         panel.setPreferredSize(new Dimension(300, 20));
-        UILabel notiJlabel = new UILabel(Inter.getLocText("Work_After_Restart_Designer"));
+        UILabel notiJlabel = new UILabel(Inter.getLocText("FR-Designer_Work_After_Restart_Designer"));
         UILabel serverPortLabel = new UILabel(Inter.getLocText("Preference-JDK_Home") + ":");
         Component[][] portComponents = {
                 {serverPortLabel, panel, notiJlabel},
@@ -617,7 +617,7 @@ public class PreferencePane extends BasicPane {
     }
 
     /*
-     * µÃµ½ËùÑ¡ÓïÑÔµÄintÖµ
+     * å¾—åˆ°æ‰€é€‰è¯­è¨€çš„intå€¼
      */
     private int getLanguageInt() {
         int l = 0;

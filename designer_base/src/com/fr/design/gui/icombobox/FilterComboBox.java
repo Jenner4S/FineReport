@@ -14,9 +14,9 @@ import com.fr.design.gui.icombobox.filter.StartsWithFilter;
 import com.fr.design.gui.itextfield.UITextField;
 
 /**
- * peter:Õâ¸öÀàµÄ´ó²¿·Ö´úÂë¶¼ÊÇ³­µÄ,Ï¸½ÚÎÒÒ²Ã»ÓĞ¼«¶È¹Ø×¢.
- * Ê¹ÓÃµÄÊ±ºò,Ö»ĞèÒª×öÒ»¸öFilterÀà,¾Í¿ÉÒÔÁË.
- * Êı¾İÒÔListµÄĞÎÊ½·Åµ½±¨±íÀïÃæÈ¥
+ * peter:è¿™ä¸ªç±»çš„å¤§éƒ¨åˆ†ä»£ç éƒ½æ˜¯æŠ„çš„,ç»†èŠ‚æˆ‘ä¹Ÿæ²¡æœ‰æåº¦å…³æ³¨.
+ * ä½¿ç”¨çš„æ—¶å€™,åªéœ€è¦åšä¸€ä¸ªFilterç±»,å°±å¯ä»¥äº†.
+ * æ•°æ®ä»¥Listçš„å½¢å¼æ”¾åˆ°æŠ¥è¡¨é‡Œé¢å»
  */
 public class FilterComboBox<T> extends ExtendedComboBox {  
     private Filter filter;

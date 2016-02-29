@@ -26,7 +26,7 @@ import com.fr.general.Inter;
  */
 public class PaddingMarginPane extends BasicPane {
 
-	private static final double MIN_VALUE = 0; // �ڱ߾����Сֵ
+	private static final double MIN_VALUE = 0; // 内边距的最小值
     private UISpinner topSpinner;
     private UISpinner leftSpinner;
     private UISpinner bottomSpinner;

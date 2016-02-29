@@ -12,15 +12,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * ÊôĞÔ±í, ×ø±êÖá, À×´ïÍ¼½çÃæ.
+ * å±æ€§è¡¨, åæ ‡è½´, é›·è¾¾å›¾ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÏÂÎç02:30:36
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸‹åˆ02:30:36
  */
 public class ChartRadarPane extends ChartValuePane{
 	
 	private UIButtonGroup<Boolean> allMaxMin;
 
-	// ·µ»Ø×î´ó×îĞ¡Öµ½çÃæ. À×´ïÖá ÓĞÇĞ»»°´Å¥.
+	// è¿”å›æœ€å¤§æœ€å°å€¼ç•Œé¢. é›·è¾¾è½´ æœ‰åˆ‡æ¢æŒ‰é’®.
 	protected JPanel initMinMaxValue() {
 		
 		JPanel valuePane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();

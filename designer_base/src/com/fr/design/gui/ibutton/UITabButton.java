@@ -22,7 +22,7 @@ import com.fr.design.gui.core.UISelectedComponent;
  * SelectedAble button label
  * 
  * @author zhou
- * @since 2012-5-11ÏÂÎç4:28:24
+ * @since 2012-5-11ä¸‹åˆ4:28:24
  */
 public class UITabButton extends UILabel implements UISelectedComponent {
 	/**
@@ -57,7 +57,7 @@ public class UITabButton extends UILabel implements UISelectedComponent {
 	}
 
 	/**
-	 * ÄÜ´¥·¢ÊÂ¼ş
+	 * èƒ½è§¦å‘äº‹ä»¶
 	 * 
 	 * @param isSelected
 	 */
@@ -72,7 +72,7 @@ public class UITabButton extends UILabel implements UISelectedComponent {
 	}
 
 	/**
-	 * ²»´¥·¢ÊÂ¼ş
+	 * ä¸è§¦å‘äº‹ä»¶
 	 * 
 	 * @param isSelected
 	 */

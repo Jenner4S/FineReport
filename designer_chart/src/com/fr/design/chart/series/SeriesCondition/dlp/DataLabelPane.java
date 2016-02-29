@@ -26,9 +26,9 @@ import com.fr.stable.StringUtils;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÉÏÎç9:12
+ * Time   : ä¸Šåˆ9:12
  * 
- * ÏµÁĞ±êÇ©½çÃæ
+ * ç³»åˆ—æ ‡ç­¾ç•Œé¢
  */
 public class DataLabelPane extends TooltipContentsPane {
 	private static final int SPACE = 4;
@@ -112,7 +112,7 @@ public class DataLabelPane extends TooltipContentsPane {
     }
 
     protected JPanel createJPanel4Position() {
-        // ±êÇ©Î»ÖÃ:ÉÏÏÂ×óÓÒÖĞ.
+        // æ ‡ç­¾ä½ç½®:ä¸Šä¸‹å·¦å³ä¸­.
         bottomButton = new UIRadioButton(Inter.getLocText("StyleAlignment-Bottom"));
         leftButton = new UIRadioButton(Inter.getLocText("StyleAlignment-Left"));
         rigtButton = new UIRadioButton(Inter.getLocText("StyleAlignment-Right"));
@@ -151,7 +151,7 @@ public class DataLabelPane extends TooltipContentsPane {
                     break;
                 }
             }
-            // ÒÔÇ°µÄ»»ĞĞ·û ${BR}
+            // ä»¥å‰çš„æ¢è¡Œç¬¦ ${BR}
             if (delimiterBox != null && dataLabel.contains(ChartConstants.BREAKLINE_PARA)) {
                 delimiterBox.setSelectedItem(ChartConstants.DELIMITERS[3]);
             }
@@ -199,7 +199,7 @@ public class DataLabelPane extends TooltipContentsPane {
     	} else if (delString.contains(ChartConstants.DELIMITERS[SPACE])) {
     		delString = StringUtils.BLANK;
     	}
-    	// ´¦Àí¼ä¸ô·û ÔÚlabelÖĞÌí¼Ó
+    	// å¤„ç†é—´éš”ç¬¦ åœ¨labelä¸­æ·»åŠ 
     	if ((showCategoryNameCB != null && showCategoryNameCB.isSelected())) {
     		contents += ChartConstants.CATEGORY_PARA + delString;
     	}

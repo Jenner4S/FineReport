@@ -21,7 +21,7 @@ public abstract class UserDefinedChartTypePane extends AbstractChartTypePane{
     }
 
     /**
-     * Ä¬ÈÏÃ»ÓĞÃ»ÓĞÑùÊ½²¼¾Ö
+     * é»˜è®¤æ²¡æœ‰æ²¡æœ‰æ ·å¼å¸ƒå±€
      */
     protected List<ChartImagePane> initStyleList() {
         return new ArrayList<ChartImagePane>();
@@ -45,8 +45,8 @@ public abstract class UserDefinedChartTypePane extends AbstractChartTypePane{
     }
 
     /**
-     * µ¯³ö½çÃæµÄ±êÌâ
-     * @return ±êÌâ
+     * å¼¹å‡ºç•Œé¢çš„æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow(){
         return "";

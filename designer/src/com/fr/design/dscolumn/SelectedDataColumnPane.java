@@ -54,9 +54,9 @@ public class SelectedDataColumnPane extends BasicPane {
 	}
 
     /**
-     * ³õÊ¼»¯×é¼ş
+     * åˆå§‹åŒ–ç»„ä»¶
      *
-     * @param showParameterButton ÊÇ·ñÏÔÊ¾²ÎÊı°´Å¥
+     * @param showParameterButton æ˜¯å¦æ˜¾ç¤ºå‚æ•°æŒ‰é’®
      *
      */
 	public void initComponent(boolean showParameterButton) {
@@ -180,9 +180,9 @@ public class SelectedDataColumnPane extends BasicPane {
 	}
 
     /**
-     * ¸üĞÂÃæ°å
+     * æ›´æ–°é¢æ¿
      *
-     * @return ¸üĞÂºóµÄÖµ
+     * @return æ›´æ–°åçš„å€¼
      *
      */
 	public SimpleDSColumn updateColumnPane() {
@@ -216,9 +216,9 @@ public class SelectedDataColumnPane extends BasicPane {
     }
 
     /**
-     * Ìí¼Ó¼àÌıÊÂ¼ş
+     * æ·»åŠ ç›‘å¬äº‹ä»¶
      *
-     * @param i ¼àÌıÊÂ¼ş
+     * @param i ç›‘å¬äº‹ä»¶
      *
      */
 	public void addListener(ItemListener i) {
@@ -228,9 +228,9 @@ public class SelectedDataColumnPane extends BasicPane {
 	}
 
     /**
-     * ÒÆ³ı¼àÌıÊÂ¼ş
+     * ç§»é™¤ç›‘å¬äº‹ä»¶
      *
-     * @param i ¼àÌıÊÂ¼ş
+     * @param i ç›‘å¬äº‹ä»¶
      *
      */
 	public void removeListener(ItemListener i) {

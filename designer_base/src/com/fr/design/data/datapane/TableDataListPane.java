@@ -80,9 +80,9 @@ public class TableDataListPane extends JControlPane {
     }
 
     /**
-     * Ãû×ÖÊÇ·ñÔÊĞí
+     * åå­—æ˜¯å¦å…è®¸
      *
-     * @return ÊÇ/·ñ
+     * @return æ˜¯/å¦
      */
     public boolean isNamePermitted() {
         return isNamePermitted;
@@ -90,7 +90,7 @@ public class TableDataListPane extends JControlPane {
 
 
     /**
-     * ¼ì²é°´Å¥¿ÉÓÃ×´Ì¬ Check button enabled.
+     * æ£€æŸ¥æŒ‰é’®å¯ç”¨çŠ¶æ€ Check button enabled.
      */
     public void checkButtonEnabled() {
         super.checkButtonEnabled();
@@ -102,22 +102,22 @@ public class TableDataListPane extends JControlPane {
     }
 
     /**
-     * ´´½¨·şÎñÆ÷Êı¾İ¼¯ËùĞèÒªµÄNameableCreatorÊı×é
+     * åˆ›å»ºæœåŠ¡å™¨æ•°æ®é›†æ‰€éœ€è¦çš„NameableCreatoræ•°ç»„
      *
-     * @return Êı×é
+     * @return æ•°ç»„
      */
     public NameableCreator[] createNameableCreators() {
         return TableDataCreatorProducer.getInstance().createServerTableDataCreator();
     }
 
 
-    // Ö»ÄÜ±£Ö¤µ±Ç°Ä£°å²»ÖØÃûÁË
+    // åªèƒ½ä¿è¯å½“å‰æ¨¡æ¿ä¸é‡åäº†
 
     /**
-     * ĞÂ½¨²»ÖØÃûµÄÃæ°å
+     * æ–°å»ºä¸é‡åçš„é¢æ¿
      *
-     * @param prefix Ç°×º×Ö·û
-     * @return Éú³ÉµÄÃû×Ö
+     * @param prefix å‰ç¼€å­—ç¬¦
+     * @return ç”Ÿæˆçš„åå­—
      */
     @Override
     public String createUnrepeatedName(String prefix) {
@@ -131,7 +131,7 @@ public class TableDataListPane extends JControlPane {
         for (int i = 0; i < model.size(); i++) {
             all[i] = ((ListModelElement) model.get(i)).wrapper;
         }
-        // richer:Éú³ÉµÄÃû×Ö´Ó1¿ªÊ¼. kunsnat: Ìí¼ÓÊôĞÔ´Ó0¿ªÊ¼.
+        // richer:ç”Ÿæˆçš„åå­—ä»1å¼€å§‹. kunsnat: æ·»åŠ å±æ€§ä»0å¼€å§‹.
         int count = all.length + 1;
         while (true) {
             String name_test = prefix + count;
@@ -222,11 +222,11 @@ public class TableDataListPane extends JControlPane {
     }
 
     /**
-     * ÅĞ¶ÏÊı¾İ¼¯ÊÇ·ñÖØÃû
+     * åˆ¤æ–­æ•°æ®é›†æ˜¯å¦é‡å
      */
     public void checkValid() throws Exception {
         List<String> exsitTableDataNameList = new ArrayList<String>();
-        // _denny: ÅĞ¶ÏÊÇ·ñÓĞÖØ¸´µÄÊı¾İ¼¯Ãû
+        // _denny: åˆ¤æ–­æ˜¯å¦æœ‰é‡å¤çš„æ•°æ®é›†å
         checkRepeatedDSName(exsitTableDataNameList);
 
         Nameable[] tableDataArray = this.update();
@@ -247,9 +247,9 @@ public class TableDataListPane extends JControlPane {
     }
 
     /**
-     * ÔÚJJControlPaneµÄ×ó²àTreeÀïÃæÑ¡ÖĞÄ³Ò»Item
+     * åœ¨JJControlPaneçš„å·¦ä¾§Treeé‡Œé¢é€‰ä¸­æŸä¸€Item
      *
-     * @param name ±»Ñ¡ÔñµÄItemÃû³Æ
+     * @param name è¢«é€‰æ‹©çš„Itemåç§°
      */
     public void selectName(String name) {
         this.setSelectedName(name);

@@ -60,7 +60,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
     private String type = "";
 
     /**
-     * µÃµ½ÊµÀı
+     * å¾—åˆ°å®ä¾‹
      *
      * @param tc
      * @return
@@ -152,7 +152,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
             @Override
             public void keyPressed(KeyEvent e) {
-                //F2ÖØÃüÃûÏÈÆÁ±ÎÁË, ÓĞbugÃ»Ê±¼äÅª
+                //F2é‡å‘½åå…ˆå±è”½äº†, æœ‰bugæ²¡æ—¶é—´å¼„
                 if (e.getKeyCode() == KeyEvent.VK_F2){
                     return;
                 }
@@ -225,7 +225,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public static void refresh() {
         dataTree.refresh();
@@ -275,7 +275,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshDockingView() {
         populate(new TableDataSourceOP(tc));
@@ -293,16 +293,16 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
 
     /**
-     * ×î¼ÑÎ»ÖÃ
+     * æœ€ä½³ä½ç½®
      *
-     * @return ·µ»ØÎ»ÖÃ
+     * @return è¿”å›ä½ç½®
      */
     public Location preferredLocation() {
         return Location.WEST_ABOVE;
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged() {
         fireDSChanged(new HashMap<String, String>());
@@ -310,9 +310,9 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      *
-     * @param map Êı¾İ¼¯±ä»¯Map
+     * @param map æ•°æ®é›†å˜åŒ–Map
      */
     public void fireDSChanged(Map<String, String> map) {
         DesignTableDataManager.fireDSChanged(map);
@@ -343,7 +343,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
                     @Override
                     public void focusLost(FocusEvent e) {
-                        // stopCellEditing Ö´ĞĞ¹ı³ÌÖĞ»áµ÷ÓÃµ½ getCellEditorValue
+                        // stopCellEditing æ‰§è¡Œè¿‡ç¨‹ä¸­ä¼šè°ƒç”¨åˆ° getCellEditorValue
                         stopCellEditing();
                     }
                 });
@@ -367,7 +367,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
             editingNO.setName(newName);
 
-            // Èç¹ûÃ»ÓĞÖØÃüÃû³É¹¦,Ôò»¹Ô­³ÉÔ­À´µÄoldName
+            // å¦‚æœæ²¡æœ‰é‡å‘½åæˆåŠŸ,åˆ™è¿˜åŸæˆåŸæ¥çš„oldName
             if (tc != null && !tc.renameTableData(oldName, newName)) {
                 editingNO.setName(oldName);
             }
@@ -379,7 +379,7 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
         }
 
         /*
-         * ÏÂÃæÁ½¸ö·½·¨ÊÇCellEditorListenerµÄ
+         * ä¸‹é¢ä¸¤ä¸ªæ–¹æ³•æ˜¯CellEditorListenerçš„
          */
         @Override
         public void editingCanceled(ChangeEvent e) {
@@ -392,10 +392,10 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
 
 
     /**
-     * ±à¼­Ãæ°å
+     * ç¼–è¾‘é¢æ¿
      *
-     * @param uPanel       Ãæ°å
-     * @param originalName Ô­Ê¼Ãû×Ö
+     * @param uPanel       é¢æ¿
+     * @param originalName åŸå§‹åå­—
      */
     public void dgEdit(final AbstractTableDataPane<?> uPanel, String originalName) {
         uPanel.addStoreProcedureWorkerListener(new StoreProcedureWorkerListener() {
@@ -450,11 +450,11 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
         dg.setButtonEnabled(true);
         String tempName = nPanel.getObjectName();
         if (StringUtils.isBlank(tempName)) {
-            nPanel.setShowText(Inter.getLocText(new String[]{"DS-TableData", "ISEMPTY", "PLEASE", "GIVE-NAME"}, new String[]{"", "£¬", "", "£¡"}));
+            nPanel.setShowText(Inter.getLocText(new String[]{"DS-TableData", "ISEMPTY", "PLEASE", "GIVE-NAME"}, new String[]{"", "ï¼Œ", "", "ï¼"}));
             dg.setButtonEnabled(false);
         } else if (!ComparatorUtils.equals(oldName, tempName) && isDsNameRepeaded(tempName, allDSNames)) {
             String[] waring = new String[]{"DS-TableData", "Utils-has_been_existed", "PLEASE", "Rename"};
-            String[] sign = new String[]{tempName, "£¬", "", "£¡"};
+            String[] sign = new String[]{tempName, "ï¼Œ", "", "ï¼"};
             nPanel.setShowText(Inter.getLocText(waring, sign));
             dg.setButtonEnabled(false);
         } else if (isProcedureName(oldName)) {
@@ -522,11 +522,11 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
     }
 
     /**
-     * ´´½¨²»ÖØ¸´µÄÃû×Ö¼´³õÊ¼µÄÄ¬ÈÏÃû
+     * åˆ›å»ºä¸é‡å¤çš„åå­—å³åˆå§‹çš„é»˜è®¤å
      *
-     * @param tree   Ê÷
-     * @param prefix ºó×º
-     * @return ·µ»ØÃû×Ö
+     * @param tree   æ ‘
+     * @param prefix åç¼€
+     * @return è¿”å›åå­—
      */
     public static String createUnrepeatedName(TableDataTree tree, String prefix) {
         int count = 1;
@@ -611,10 +611,10 @@ public class TableDataTreePane extends DockingView implements ResponseDataSource
             int returnVal = JOptionPane.showConfirmDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("Utils-Are_you_sure_to_remove_the_selected_item") + ":" + selectedNO.getName() + "?",
                     Inter.getLocText("FR-Designer_Remove"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (returnVal == JOptionPane.OK_OPTION) {
-                // richer:Õâ¸öµØ·½ÎªÊ²Ã´ÒªÔÚDataSourceTreeÀïÃæÈ¥removeÄØ£¿¶à´ËÒ»¾Ù°É
+                // richer:è¿™ä¸ªåœ°æ–¹ä¸ºä»€ä¹ˆè¦åœ¨DataSourceTreeé‡Œé¢å»removeå‘¢ï¼Ÿå¤šæ­¤ä¸€ä¸¾å§
                 op.removeAction(selectedNO.getName());
                 dataTree.refresh();
-                // Richie:Ä¬ÈÏ×îºóÒ»ĞĞ»ñµÃ½¹µã.
+                // Richie:é»˜è®¤æœ€åä¸€è¡Œè·å¾—ç„¦ç‚¹.
                 dataTree.requestFocus();
                 dataTree.setSelectionRow(dataTree.getRowCount() - 1);
                 fireDSChanged();

@@ -13,7 +13,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-30
- * Time: ÏÂÎç3:22
+ * Time: ä¸‹åˆ3:22
  */
 public class DynamicScrollButton extends BasicArrowButton {
 

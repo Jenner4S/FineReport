@@ -16,9 +16,9 @@ import com.fr.design.dialog.DialogActionAdapter;
 import com.fr.general.Inter;
 
 /**
- * ¹«Ê½ÏÂÀ­¿ò±à¼­Æ÷.
+ * å…¬å¼ä¸‹æ‹‰æ¡†ç¼–è¾‘å™¨.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-27 ÉÏÎç01:59:49
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-27 ä¸Šåˆ01:59:49
  */
 public class PresentComboBox extends UIComboBox{
 	private Present present;
@@ -83,14 +83,14 @@ public class PresentComboBox extends UIComboBox{
 	}
 	
 	/**
-	 * ÖØÔØÓÃÓÚ¼ÓÔØ Íê³É±à¼­ºó okµÄÏìÓ¦ÊÂ¼ş
+	 * é‡è½½ç”¨äºåŠ è½½ å®Œæˆç¼–è¾‘å okçš„å“åº”äº‹ä»¶
 	 */
 	protected void fireChange() {
 		
 	}
 	
 	/**
-	 * ¸üĞÂ¹«Ê½Ñ¡Ôñ.
+	 * æ›´æ–°å…¬å¼é€‰æ‹©.
 	 */
 	public void populate(Present present) {
 		if (present instanceof DictPresent) {
@@ -105,7 +105,7 @@ public class PresentComboBox extends UIComboBox{
 	}
 	
 	/**
-	 * ·µ»Ø±à¼­µÄ½á¹û.
+	 * è¿”å›ç¼–è¾‘çš„ç»“æœ.
 	 */
 	public Present update() {
 		return present;

@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA. Author : Richer Version: 6.5.6 Date : 11-11-24 Time
- * : ÏÂÎç3:43
+ * : ä¸‹åˆ3:43
  */
 public class FormDesignerModule extends DesignModule {
 
@@ -47,8 +47,8 @@ public class FormDesignerModule extends DesignModule {
     }
 
     /**
-     *appsÄ£°åµÄOpener
-     * @return  ·µ»Øapp
+     *appsæ¨¡æ¿çš„Opener
+     * @return  è¿”å›app
      */
     public DesignerFrame.App<?>[] apps4TemplateOpener() {
         return new DesignerFrame.App[]{new DesignerFrame.App<Form>() {
@@ -79,9 +79,9 @@ public class FormDesignerModule extends DesignModule {
                 }
 
 
-                // peter:´ò¿ªĞÂ±¨±í.
+                // peter:æ‰“å¼€æ–°æŠ¥è¡¨.
                 Form tpl = new Form();
-                // richer:´ò¿ª±¨±íÍ¨Öª
+                // richer:æ‰“å¼€æŠ¥è¡¨é€šçŸ¥
 //				FRContext.getLogger().info(Inter.getLocText("LOG-Is_Being_Openned") + "\"" + file.getName() + "\"" + "," + Inter.getLocText("LOG-Please_Wait") + "...");
                 FRContext.getLogger().info(Inter.getLocText(new String[]{"LOG-Is_Being_Openned", "LOG-Please_Wait"},
                         new String[]{"\"" + file.getName() + "\"" + ",", "..."}));

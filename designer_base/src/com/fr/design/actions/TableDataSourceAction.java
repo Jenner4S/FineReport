@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * richer:°üÀ¨±¨±íºÍ±íµ¥µÄÊı¾İ¼¯  && Í¼±íµÄÊı¾İ¼¯
+ * richer:åŒ…æ‹¬æŠ¥è¡¨å’Œè¡¨å•çš„æ•°æ®é›†  && å›¾è¡¨çš„æ•°æ®é›†
  */
 public class TableDataSourceAction extends TemplateComponentAction<JTemplate<?, ?>> implements ResponseDataSourceChange {
     public TableDataSourceAction(JTemplate<?, ?> t) {
@@ -30,9 +30,9 @@ public class TableDataSourceAction extends TemplateComponentAction<JTemplate<?, 
     }
 
     /**
-     * Ö´ĞĞ¶¯×÷
+     * æ‰§è¡ŒåŠ¨ä½œ
      *
-     * @return ÊÇ·ñÖ´ĞĞ³É¹¦
+     * @return æ˜¯å¦æ‰§è¡ŒæˆåŠŸ
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         final TableDataSource tds = this.getEditingComponent().getTarget();
@@ -58,25 +58,25 @@ public class TableDataSourceAction extends TemplateComponentAction<JTemplate<?, 
         return false;
     }
 
-    // TODO ALEX_SEP Í¬JWorkBookAction,Ò²²»ÖªµÀÕâ¸öundo¸ÃÈçºÎ´¦Àí
+    // TODO ALEX_SEP åŒJWorkBookAction,ä¹Ÿä¸çŸ¥é“è¿™ä¸ªundoè¯¥å¦‚ä½•å¤„ç†
 
     /**
-     * ³·Ïú
+     * æ’¤é”€
      */
     public void prepare4Undo() {
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged() {
         fireDSChanged(new HashMap<String, String>());
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      *
-     * @param map µØÍ¼
+     * @param map åœ°å›¾
      */
     public void fireDSChanged(Map<String, String> map) {
         DesignTableDataManager.fireDSChanged(map);

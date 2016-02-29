@@ -7,11 +7,11 @@ import java.awt.event.KeyEvent;
 /**
  * 
  * @editor zhou
- * @since 2012-3-23上午10:50:08
+ * @since 2012-3-23涓婂崍10:50:08
  */
 public class KeyEventWork {
 	/**
-	 * 屏蔽一些没有用的键
+	 * 灞忚斀涓�浜涙病鏈夌敤鐨勯敭
 	 * @param evt
 	 * @return
 	 */

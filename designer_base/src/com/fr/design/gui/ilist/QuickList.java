@@ -9,10 +9,10 @@ import javax.swing.ListModel;
 import com.fr.general.ComparatorUtils;
 
 /**
- * 支持键盘输入快速查找项的JList
+ * 鏀寔閿洏杈撳叆蹇�熸煡鎵鹃」鐨凧List
  * 
  * @editor zhou
- * @since 2012-3-28下午3:10:58
+ * @since 2012-3-28涓嬪崍3:10:58
  */
 public class QuickList extends JList {
 	private ListModel listModel;

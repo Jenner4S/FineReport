@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ×éºÏÍ¼ ÊôĞÔ±í Í¼±íÀàĞÍ ½çÃæ.
+ * ç»„åˆå›¾ å±æ€§è¡¨ å›¾è¡¨ç±»å‹ ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-21 ÏÂÎç06:17:40
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-21 ä¸‹åˆ06:17:40
  */
 public class CustomPlotPane extends AbstractChartTypePane {
 	
@@ -44,15 +44,15 @@ public class CustomPlotPane extends AbstractChartTypePane {
     }
 
 	/**
-	 * ½çÃæ ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢ æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("ChartF-Comb_Chart");
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		super.populateBean(chart);
@@ -63,16 +63,16 @@ public class CustomPlotPane extends AbstractChartTypePane {
 	}
 	
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         changePlotWithClone(chart, CustomIndependentChart.createCustomChart().getPlot());
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return super.accept(ob) && ((Chart) ob).getPlot().accept(CustomPlot.class);

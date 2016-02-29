@@ -3,7 +3,7 @@ package com.fr.design.designer.beans.events;
 import java.util.EventListener;
 
 /**
- * 界面设计组件触发的编辑处理器接口
+ * 鐣岄潰璁捐缁勪欢瑙﹀彂鐨勭紪杈戝鐞嗗櫒鎺ュ彛
  * @since 6.5.4
  * @author richer
  */

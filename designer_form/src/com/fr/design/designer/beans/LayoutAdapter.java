@@ -4,70 +4,70 @@ import com.fr.design.beans.GroupModel;
 import com.fr.design.designer.creator.XCreator;
 
 /**
- * ¸Ã½Ó¿ÚÊÇLayoutManagerµÄBeanInfoÀà¡£±ê×¼JavaÆ½Ì¨Ã»ÓĞÌá¹©²¼¾Ö¹ÜÀíÆ÷µÄBeanInfoÀà£¬
- * ¶ÔÓÚ½çÃæÉè¼Æ¹¤¾ßÀ´Ëµ»¹ĞèÒ»Ğ©ÌØÊâµÄĞĞÎª¡£
+ * è¯¥æ¥å£æ˜¯LayoutManagerçš„BeanInfoç±»ã€‚æ ‡å‡†Javaå¹³å°æ²¡æœ‰æä¾›å¸ƒå±€ç®¡ç†å™¨çš„BeanInfoç±»ï¼Œ
+ * å¯¹äºç•Œé¢è®¾è®¡å·¥å…·æ¥è¯´è¿˜éœ€ä¸€äº›ç‰¹æ®Šçš„è¡Œä¸ºã€‚
  * @since 6.5.3
  */
 public interface LayoutAdapter {
 
     /**
-     * ÔÚÌí¼Ó×é¼ş×´Ì¬Ê±£¬µ±Êó±êÒÆ¶¯µ½Ä³¸öÈİÆ÷ÉÏ·½Ê±£¬Èç¹û¸ÃÈİÆ÷ÓĞ²¼¾Ö¹ÜÀíÆ÷£¬Ôò»áµ÷ÓÃ¸Ã²¼¾Ö
-     * ¹ÜÀíÊÊÅäÆ÷µÄacceptÀ´¾ö¶¨µ±Ç°Î»ÖÃÊÇ·ñ¿ÉÒÔ·ÅÖÃ£¬²¢Ìá¹©ÌØÊâµÄ±êÊ¶£¬±ÈÈçºìÉ«ÇøÓò±êÊ¶¡£±È
-     * ÈçÔÚBorderLayoutÖĞ£¬Èç¹ûÄ³¸ö·½Î»ÒÑ¾­·ÅÖÃÁË×é¼ş£¬Ôò´ËÊ±Ó¦¸Ã·µ»Øfalse±êÊ¶¸ÃÇøÓò²»¿ÉÒÔ
-     * ·ÅÖÃ¡£
-     *@param creator ×é¼ş
-     *@param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     *@return ÊÇ·ñ¿ÉÒÔ·ÅÖÃ
+     * åœ¨æ·»åŠ ç»„ä»¶çŠ¶æ€æ—¶ï¼Œå½“é¼ æ ‡ç§»åŠ¨åˆ°æŸä¸ªå®¹å™¨ä¸Šæ–¹æ—¶ï¼Œå¦‚æœè¯¥å®¹å™¨æœ‰å¸ƒå±€ç®¡ç†å™¨ï¼Œåˆ™ä¼šè°ƒç”¨è¯¥å¸ƒå±€
+     * ç®¡ç†é€‚é…å™¨çš„acceptæ¥å†³å®šå½“å‰ä½ç½®æ˜¯å¦å¯ä»¥æ”¾ç½®ï¼Œå¹¶æä¾›ç‰¹æ®Šçš„æ ‡è¯†ï¼Œæ¯”å¦‚çº¢è‰²åŒºåŸŸæ ‡è¯†ã€‚æ¯”
+     * å¦‚åœ¨BorderLayoutä¸­ï¼Œå¦‚æœæŸä¸ªæ–¹ä½å·²ç»æ”¾ç½®äº†ç»„ä»¶ï¼Œåˆ™æ­¤æ—¶åº”è¯¥è¿”å›falseæ ‡è¯†è¯¥åŒºåŸŸä¸å¯ä»¥
+     * æ”¾ç½®ã€‚
+     *@param creator ç»„ä»¶
+     *@param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     *@return æ˜¯å¦å¯ä»¥æ”¾ç½®
      */
     boolean accept(XCreator creator, int x, int y);
 
     /**
-     * ÓĞµÄ¿Ø¼şÔÚÍÏ×§µ÷Õû´óĞ¡ºóĞèÒª¸ù¾İ×ÔÉíÄÚÈİÖØĞÂ¼ÆËãÏÂµ±Ç°µÄ³ß´çÊÇ·ñºÏÊÊ£¬Èç¹û²»ºÏÊÊ£¬¾ÍĞèÒªÖØĞÂfixÒ»ÏÂ
-     * @param creator ×é¼ş
+     * æœ‰çš„æ§ä»¶åœ¨æ‹–æ‹½è°ƒæ•´å¤§å°åéœ€è¦æ ¹æ®è‡ªèº«å†…å®¹é‡æ–°è®¡ç®—ä¸‹å½“å‰çš„å°ºå¯¸æ˜¯å¦åˆé€‚ï¼Œå¦‚æœä¸åˆé€‚ï¼Œå°±éœ€è¦é‡æ–°fixä¸€ä¸‹
+     * @param creator ç»„ä»¶
      */
     void fix(XCreator creator);
 
     /**
-     * ×é¼şµÄComponentAdapterÔÚÌí¼Ó×é¼şÊ±£¬Èç¹û·¢ÏÖ²¼¾Ö¹ÜÀíÆ÷²»Îª¿Õ£¬»á¼Ì¶øµ÷ÓÃ¸Ã²¼¾Ö¹ÜÀíÆ÷µÄ
-     * addComp·½·¨À´Íê³É×é¼şµÄ¾ßÌåÌí¼Ó¡£ÔÚ¸Ã·½·¨ÄÚ£¬²¼¾Ö¹ÜÀíÆ÷¿ÉÒÔÌá¹©¶îÍâµÄ¹¦ÄÜ¡£
-     * @param creator ±»Ìí¼ÓµÄĞÂ×é¼ş
-     * @param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @return ÊÇ·ñÌí¼Ó³É¹¦£¬³É¹¦·µ»Øtrue£¬·ñÔòfalse
+     * ç»„ä»¶çš„ComponentAdapteråœ¨æ·»åŠ ç»„ä»¶æ—¶ï¼Œå¦‚æœå‘ç°å¸ƒå±€ç®¡ç†å™¨ä¸ä¸ºç©ºï¼Œä¼šç»§è€Œè°ƒç”¨è¯¥å¸ƒå±€ç®¡ç†å™¨çš„
+     * addCompæ–¹æ³•æ¥å®Œæˆç»„ä»¶çš„å…·ä½“æ·»åŠ ã€‚åœ¨è¯¥æ–¹æ³•å†…ï¼Œå¸ƒå±€ç®¡ç†å™¨å¯ä»¥æä¾›é¢å¤–çš„åŠŸèƒ½ã€‚
+     * @param creator è¢«æ·»åŠ çš„æ–°ç»„ä»¶
+     * @param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @return æ˜¯å¦æ·»åŠ æˆåŠŸï¼ŒæˆåŠŸè¿”å›trueï¼Œå¦åˆ™false
      */
     boolean addBean(XCreator creator, int x, int y);
 
     /**
-     * ·µ»Ø¸Ã²¼¾Ö¹ÜÀíÊÊÅäÆ÷µÄPainter£¬ÎªÈİÆ÷Ìá¹©·ÅÖÃÎ»ÖÃµÄ±êÊ¶¡£
+     * è¿”å›è¯¥å¸ƒå±€ç®¡ç†é€‚é…å™¨çš„Painterï¼Œä¸ºå®¹å™¨æä¾›æ”¾ç½®ä½ç½®çš„æ ‡è¯†ã€‚
      */
     HoverPainter getPainter();
 
     /**
-     * ÏÔÊ¾parentµÄ×Ö×é¼şchild£¬½â¾öCardLayoutÖĞÏÔÊ¾Ä³¸ö·ÇÏÔÊ¾×é¼şµÄÌØÊâÇé¿ö
-     * @param child ×é¼ş
+     * æ˜¾ç¤ºparentçš„å­—ç»„ä»¶childï¼Œè§£å†³CardLayoutä¸­æ˜¾ç¤ºæŸä¸ªéæ˜¾ç¤ºç»„ä»¶çš„ç‰¹æ®Šæƒ…å†µ
+     * @param child ç»„ä»¶
      */
     void showComponent(XCreator child);
 
     void addNextComponent(XCreator dragged);
 
     /**
-     * ×é¼şµş·ÅË³ĞòÇ°²åÈë
-     * @param target Ä¿±ê×é¼ş
-     * @param added ²åÈë×é¼ş
+     * ç»„ä»¶å æ”¾é¡ºåºå‰æ’å…¥
+     * @param target ç›®æ ‡ç»„ä»¶
+     * @param added æ’å…¥ç»„ä»¶
      */
     void addBefore(XCreator target, XCreator added);
 
     /**
-     * ×é¼şµş·ÅË³Ğòºó²åÈë
-     * @param target Ä¿±ê×é¼ş
-     * @param added ·ÅÖÃ×é¼ş
+     * ç»„ä»¶å æ”¾é¡ºåºåæ’å…¥
+     * @param target ç›®æ ‡ç»„ä»¶
+     * @param added æ”¾ç½®ç»„ä»¶
      */
     void addAfter(XCreator target, XCreator added);
 
     /**
-     * ÄÜ·ñ·ÅÖÃ¸ü¶à×é¼ş
-     * @return ÄÜÔò·µ»Øtrue
+     * èƒ½å¦æ”¾ç½®æ›´å¤šç»„ä»¶
+     * @return èƒ½åˆ™è¿”å›true
      */
     boolean canAcceptMoreComponent();
 
@@ -76,10 +76,10 @@ public interface LayoutAdapter {
     GroupModel getLayoutProperties();
     
     /**
-     * É¾³ı×é¼ş
-     * @param creator ×é¼ş
-     * @param initWidth ×é¼şÖ®Ç°¿í¶È
-     * @param initHeight ×é¼şÖ®Ç°¸ß¶È
+     * åˆ é™¤ç»„ä»¶
+     * @param creator ç»„ä»¶
+     * @param initWidth ç»„ä»¶ä¹‹å‰å®½åº¦
+     * @param initHeight ç»„ä»¶ä¹‹å‰é«˜åº¦
      */
     void removeBean(XCreator creator, int initWidth, int initHeight);
 }

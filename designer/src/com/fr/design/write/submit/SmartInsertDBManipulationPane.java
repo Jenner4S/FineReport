@@ -115,8 +115,8 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 		}
 
 		/**
-		 * Ö´ĞĞÊÂ¼ş
-		 * @param evt ÊÂ¼ş¶ÔÏó
+		 * æ‰§è¡Œäº‹ä»¶
+		 * @param evt äº‹ä»¶å¯¹è±¡
 		 */
 		public void actionPerformed(ActionEvent evt) {
 			BasicPane bPane = new BasicPane() {
@@ -139,7 +139,7 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 					int column_offset = ((Number)columnSpinner.getValue()).intValue();
 					KeyColumnTableModel model = (KeyColumnTableModel)keyColumnValuesTable.getModel();
 					int[] selectedRows = keyColumnValuesTable.getSelectedRows();
-					// Èç¹ûÒ»ĞĞ¶¼Ã»Ñ¡ÖĞ,È¡ËùÓĞµÄĞĞ
+					// å¦‚æœä¸€è¡Œéƒ½æ²¡é€‰ä¸­,å–æ‰€æœ‰çš„è¡Œ
 					if (selectedRows.length == 0) {
 						selectedRows = IntList.range(model.getRowCount());
 					}
@@ -176,8 +176,8 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 		}
 
 		/**
-		 * Ö´ĞĞÊÂ¼ş
-		 * @param evt ÊÂ¼şs
+		 * æ‰§è¡Œäº‹ä»¶
+		 * @param evt äº‹ä»¶s
 		 */
 		public void actionPerformed(ActionEvent evt) {
 
@@ -187,14 +187,14 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 			}
 
 			/*
-			 * ²¼¾Ö
+			 * å¸ƒå±€
 			 */
 			BasicPane bPane = new SmartJTablePane4DB(keyColumnValuesTable.getTableModel4SmartAddCell(), ePane);
 
 			// ReportWriteAttrDialog.this.setVisible(false);
 			hideDialog4AddCellAction();
 			/*
-			 * µ±Ç°µÄReportPane²»¿É±à¼­,²»¿ÉÇĞ»»Sheet,¼ÓGridSelectionChangeListener
+			 * å½“å‰çš„ReportPaneä¸å¯ç¼–è¾‘,ä¸å¯åˆ‡æ¢Sheet,åŠ GridSelectionChangeListener
 			 */
 			ePane.setSelection(NO_SELECTION);
 			ePane.setEditable(false);
@@ -213,8 +213,8 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 		}
 
 		/**
-		 * ÖÇÄÜÌí¼Óµ¥Ôª¸ñ×é
-		 * @param e ÊÂ¼şs
+		 * æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼ç»„
+		 * @param e äº‹ä»¶s
 		 */
 		public void actionPerformed(ActionEvent e) {
 			if (ePane == null) {
@@ -226,7 +226,7 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 			// ReportWriteAttrDialog.this.setVisible(false);
 			hideDialog4AddCellAction();
 			/*
-			 * µ±Ç°µÄReportPane²»¿É±à¼­,²»¿ÉÇĞ»»Sheet,¼ÓGridSelectionChangeListener
+			 * å½“å‰çš„ReportPaneä¸å¯ç¼–è¾‘,ä¸å¯åˆ‡æ¢Sheet,åŠ GridSelectionChangeListener
 			 */
 			ePane.setSelection(NO_SELECTION);
 			ePane.setEditable(false);
@@ -264,14 +264,14 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 			if (dialog instanceof SmartInsertSubmitJobListPane) {
 				((SmartInsertSubmitJobListPane)dialog).hideParentDialog();
 			} else if (dialog instanceof Dialog) {
-				// Ìõ¼şÊôĞÔÖĞÌí¼ÓµÄ¿Ø¼şµÄ»°ÓĞÁ½²ãdialog£¬ĞèÒª¶¼Òş²Ø
+				// æ¡ä»¶å±æ€§ä¸­æ·»åŠ çš„æ§ä»¶çš„è¯æœ‰ä¸¤å±‚dialogï¼Œéœ€è¦éƒ½éšè—
 				dialog.setVisible(false);
 			}
 		}
 	}
 
 	/**
-	 * ¼ì²âÊÇ·ñºÏ·¨
+	 * æ£€æµ‹æ˜¯å¦åˆæ³•
 	 * @throws Exception
 	 */
 	public void checkValid() throws Exception {
@@ -299,10 +299,10 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 
 	private class SmartJTablePane4DB extends SmartJTablePane {
 
-		// ÊÇ·ñÊÇµ¥Ôª¸ñ×é
+		// æ˜¯å¦æ˜¯å•å…ƒæ ¼ç»„
 		private boolean isCellGroup = false;
 
-		// µ¥Ôª¸ñ×éÒª¼ÇÂ¼ÏÂÖ®Ç°µÄÑ¡ÖĞÇé¿ö
+		// å•å…ƒæ ¼ç»„è¦è®°å½•ä¸‹ä¹‹å‰çš„é€‰ä¸­æƒ…å†µ
 		private CellSelection oriCellSelection = null;
 
 		public SmartJTablePane4DB(KeyColumnTableModel model, ElementCasePane actionReportPane) {
@@ -334,13 +334,13 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 			TableColumn column0 = table.getColumnModel().getColumn(0);
 			column0.setMaxWidth(40);
 			/*
-			 * ÉèÖÃColumn 1µÄRenderer
+			 * è®¾ç½®Column 1çš„Renderer
 			 */
 			TableColumn column1 = table.getColumnModel().getColumn(1);
 			column1.setCellRenderer(new ColumnNameTableCellRenderer());
 
 			/*
-			 * ÉèÖÃColumn 2µÄRenderer
+			 * è®¾ç½®Column 2çš„Renderer
 			 */
 			TableColumn column2 = table.getColumnModel().getColumn(2);
 //			column2.setCellRenderer(new SelectedColumnValueTableCellRenderer());
@@ -354,7 +354,7 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 		}
 
 		/**
-		 * ¼ì²éÊÇ·ñºÏ·¨
+		 * æ£€æŸ¥æ˜¯å¦åˆæ³•
 		 * @throws Exception
 		 */
 		public void checkValid() throws Exception {
@@ -391,7 +391,7 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 		};
 
 		/**
-		 * µ¥Ôª¸ñ×éµÄµãÑ¡¸ñ×ÓÊÂ¼ş
+		 * å•å…ƒæ ¼ç»„çš„ç‚¹é€‰æ ¼å­äº‹ä»¶
 		 */
 		private SelectionListener groupListener = new SelectionListener() {
 			@Override
@@ -410,7 +410,7 @@ public class SmartInsertDBManipulationPane extends DBManipulationPane {
 				Object oriValue = kcv.cv.obj;
 				ColumnRowGroup newValue = getColumnRowGroupValue(oriValue);
 
-				// Òª¿¼ÂÇ¶àÑ¡µÄÇé¿ö Òª½áºÏÖ®Ç°µÄ¿´¿´ ¿ÉÄÜÊÇÔö¼Ó Ò²¿ÉÄÜĞèÒª¼õÉÙ
+				// è¦è€ƒè™‘å¤šé€‰çš„æƒ…å†µ è¦ç»“åˆä¹‹å‰çš„çœ‹çœ‹ å¯èƒ½æ˜¯å¢åŠ  ä¹Ÿå¯èƒ½éœ€è¦å‡å°‘
 				ColumnRowGroup add = new ColumnRowGroup();
 				int removeCount = 0;
 				if (oriCellSelection != null && sameStartPoint(cellselection, oriCellSelection)) {

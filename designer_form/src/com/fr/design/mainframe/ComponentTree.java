@@ -69,10 +69,10 @@ public class ComponentTree extends JTree {
     }
 
     /**
-     * ¹¹Ôìº¯Êı
+     * æ„é€ å‡½æ•°
      * 
-     * @param designer Éè¼Æ½çÃæ×é¼ş
-     * @param model ¹¹ÔìJTreeµÄmodel
+     * @param designer è®¾è®¡ç•Œé¢ç»„ä»¶
+     * @param model æ„é€ JTreeçš„model
      */
     public ComponentTree(FormDesigner designer,ComponentTreeModel model) {
     	this(designer);
@@ -83,9 +83,9 @@ public class ComponentTree extends JTree {
 
 
     /**
-     * ÊÇ·ñ¿É±à¼­
-     * @param path Ê÷Â·¾¶
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦å¯ç¼–è¾‘
+     * @param path æ ‘è·¯å¾„
+     * @return æ˜¯åˆ™è¿”å›true
      */
     @Override
     public boolean isPathEditable(TreePath path) {
@@ -97,15 +97,15 @@ public class ComponentTree extends JTree {
     }
 
    /**
-    * ½«Öµ×ª»»ÎªÎÄ±¾
-    * @param value Öµ
-    * @param selected ÊÇ·ñÑ¡ÖĞ
-    * @param expanded À©Õ¹
-    * @param leaf ÊÇ·ñÒ¶×Ó
-    * @param row ĞĞ
-    * @param hasFocus ÊÇ·ñ½¹µã
+    * å°†å€¼è½¬æ¢ä¸ºæ–‡æœ¬
+    * @param value å€¼
+    * @param selected æ˜¯å¦é€‰ä¸­
+    * @param expanded æ‰©å±•
+    * @param leaf æ˜¯å¦å¶å­
+    * @param row è¡Œ
+    * @param hasFocus æ˜¯å¦ç„¦ç‚¹
     * 
-    * @return ·µ»ØÎÄ±¾
+    * @return è¿”å›æ–‡æœ¬
     */
     @Override
     public String convertValueToText(Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
@@ -136,7 +136,7 @@ public class ComponentTree extends JTree {
 	}
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshUI() {
         updateUI();
@@ -193,10 +193,10 @@ public class ComponentTree extends JTree {
 
 
     /**
-     *ËÑË÷Ö¸¶¨Ãû³ÆµÄÂ·¾¶
+     *æœç´¢æŒ‡å®šåç§°çš„è·¯å¾„
      *
-     * @param text Ãû³Æ
-     * @return Ê÷Â·¾¶
+     * @param text åç§°
+     * @return æ ‘è·¯å¾„
      */
     public TreePath[] search(String text) {
         if (StringUtils.isNotEmpty(text)) {
@@ -222,7 +222,7 @@ public class ComponentTree extends JTree {
     private void  setSelectionPath(){
 
         /**
-         * ²»ÈÃ´«null²ÎÊı£¬ËùÒÔÖ»ÓĞ×Ô¼º¶¨Òå
+         * ä¸è®©ä¼ nullå‚æ•°ï¼Œæ‰€ä»¥åªæœ‰è‡ªå·±å®šä¹‰
          */
         super.setSelectionPath(null);
         clearSelection();
@@ -245,14 +245,14 @@ public class ComponentTree extends JTree {
     }
 
     /**
-     * ´¥·¢
+     * è§¦å‘
      */
     public void fireTreeChanged() {
        designer.refreshDesignerUI();
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshTreeRoot() {
         model = new ComponentTreeModel(designer, designer.getTopContainer());

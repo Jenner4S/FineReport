@@ -18,33 +18,33 @@ public class XCreatorConstants {
     private XCreatorConstants() {
     }
     public static final String WIDGETNAME = "widgetName";
-    // ÃèÊöÊôĞÔµÄ·ÖÀà
+    // æè¿°å±æ€§çš„åˆ†ç±»
     public static final String PROPERTY_CATEGORY = "category";
     public static final String DEFAULT_GROUP_NAME = "Form-Basic_Properties";
     public static final Color FORM_BG = new Color(252, 252, 254);
-    // ÍÏ×§±êÊ¶¿éµÄ´óĞ¡
+    // æ‹–æ‹½æ ‡è¯†å—çš„å¤§å°
     public static final int RESIZE_BOX_SIZ = 5;
-    // ÍÏ×§µÄĞ¡·½¿éµÄÄÚ²¿ÑÕÉ«
+    // æ‹–æ‹½çš„å°æ–¹å—çš„å†…éƒ¨é¢œè‰²
     public static final Color RESIZE_BOX_INNER_COLOR = Color.white;
-    // ÍÏ×§µÄĞ¡·½¿éµÄ±ß¿òÑÕÉ«
+    // æ‹–æ‹½çš„å°æ–¹å—çš„è¾¹æ¡†é¢œè‰²
     public static final Color RESIZE_BOX_BORDER_COLOR = new Color(143, 171, 196);
-    // µ±Ç°Ñ¡È¡µÄ×é¼şµÄ±ß¿òÏß×ÅÉ«
+    // å½“å‰é€‰å–çš„ç»„ä»¶çš„è¾¹æ¡†çº¿ç€è‰²
 	public static final Color SELECTION_COLOR = new Color(179, 209, 236);
-    // Éè¼ÆÆ÷ÇøÓòÍâ±ß¿òµÄÑÕÉ«ºÍ´ÖÏ¸
+    // è®¾è®¡å™¨åŒºåŸŸå¤–è¾¹æ¡†çš„é¢œè‰²å’Œç²—ç»†
     public static final Border AREA_BORDER = BorderFactory.createLineBorder(new Color(224, 224, 255), 0);
-    // ²¼¾ÖÍÏ×§Ê±µÄÑÕÉ«
+    // å¸ƒå±€æ‹–æ‹½æ—¶çš„é¢œè‰²
     public static final Color LAYOUT_HOTSPOT_COLOR = new Color(64, 240, 0);
     public static final Color LAYOUT_FORBIDDEN_COLOR = new Color(254, 0, 0);
-    //×ÔÊÊÓ¦²¼¾ÖÍÏ×§ÑÕÉ«
+    //è‡ªé€‚åº”å¸ƒå±€æ‹–æ‹½é¢œè‰²
     public static final Color FIT_LAYOUT_HOTSPOT_COLOR = new Color(154, 195, 233);
-    // ×ÔÊÊÓ¦²¼¾ÖµÄ½»²æµãäÖÈ¾ÑÕÉ«
+    // è‡ªé€‚åº”å¸ƒå±€çš„äº¤å‰ç‚¹æ¸²æŸ“é¢œè‰²
     public static final Color FIT_LAYOUT_POINT_COLOR = new Color(106, 168, 222);
-    // ¸ñ×Ó²¼¾ÖµÄ·Ö¸îÏß
+    // æ ¼å­å¸ƒå±€çš„åˆ†å‰²çº¿
     public static final Color LAYOUT_SEP_COLOR = new Color(210, 210, 210);
     
-    // ÉìËõ±íµ¥²Ù×÷ÌõµÄÑÕÉ«
+    // ä¼¸ç¼©è¡¨å•æ“ä½œæ¡çš„é¢œè‰²
     public static final Color OP_COLOR = new Color(157,228,245);
     
-    // ²»Í¬´ÖÏ¸µÄÏß
+    // ä¸åŒç²—ç»†çš„çº¿
     public static final BasicStroke STROKE = new BasicStroke(2);
 }

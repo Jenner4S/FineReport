@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * É¢µãÍ¼ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İÔ´.
+ * æ•£ç‚¹å›¾ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®æº.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç03:42:37
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ03:42:37
  */
 public class XYScatterPlotReportDataContentPane extends AbstractReportDataContentPane {
 	
@@ -65,7 +65,7 @@ public class XYScatterPlotReportDataContentPane extends AbstractReportDataConten
     }
 	
 	/**
-	 * ±£´æÉ¢µã µ¥Ôª¸ñÊı¾İÄÚÈİµ½ChartCollection.
+	 * ä¿å­˜æ•£ç‚¹ å•å…ƒæ ¼æ•°æ®å†…å®¹åˆ°ChartCollection.
 	 */
 	public void updateBean(ChartCollection collection) {
 		ScatterReportDefinition reportDataDefinition = new ScatterReportDefinition();

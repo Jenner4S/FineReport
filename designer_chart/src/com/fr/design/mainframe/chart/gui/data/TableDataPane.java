@@ -49,7 +49,7 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 	
 	/**
-	 *  ¼ì²éboxÊÇ·ñ¿ÉÓÃ.
+	 *  æ£€æŸ¥boxæ˜¯å¦å¯ç”¨.
 	 */
 	public void checkBoxUse() {
 		TableDataWrapper dataWrap = tableDataPane.getTableDataWrapper();
@@ -74,8 +74,8 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-	 * @return ·µ»Ø±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜
+	 * @return è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText(new String[]{"TableData", "Data"});
@@ -83,24 +83,24 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 
 
 	/**
-	 * ÅĞ¶Ï½çÃæÊÇ·ñ½ÓÊÜ
-	 * @param ob ĞèÒªÅĞ¶ÏµÄ¶ÔÏó
-	 * @return ·µ»ØÊÇ·ñ½ÓÊÜ.
+	 * åˆ¤æ–­ç•Œé¢æ˜¯å¦æ¥å—
+	 * @param ob éœ€è¦åˆ¤æ–­çš„å¯¹è±¡
+	 * @return è¿”å›æ˜¯å¦æ¥å—.
 	 */
 	public boolean accept(Object ob) {
 		return ob instanceof ChartCollection && (((ChartCollection)ob).getSelectedChart().getFilterDefinition() instanceof TableDataDefinition);
 	}
 
 	/**
-	 * ÖØÖÃ½çÃæ
+	 * é‡ç½®ç•Œé¢
 	 */
 	public void reset() {
 
 	}
 
 	/**
-	 * ¸ù¾İÍ¼±íÀàĞÍ Ë¢ĞÂ½çÃæ
-	 * @param collection Í¼±íÊôĞÔµÄ¼¯ºÏ
+	 * æ ¹æ®å›¾è¡¨ç±»å‹ åˆ·æ–°ç•Œé¢
+	 * @param collection å›¾è¡¨å±æ€§çš„é›†åˆ
 	 */
 	public void refreshContentPane(ChartCollection collection) {
 		if(dataContentPane != null) {
@@ -113,7 +113,7 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÊôĞÔ  
+	 * æ›´æ–°ç•Œé¢å±æ€§  
 	 */
 	public void populateBean(ChartCollection collection) {
 		if(collection == null) {
@@ -134,7 +134,7 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔµ½ChartCollection
+	 * ä¿å­˜ç•Œé¢å±æ€§åˆ°ChartCollection
 	 */
 	public void updateBean(ChartCollection collection) {
 		if(dataContentPane != null) {
@@ -151,7 +151,7 @@ public class TableDataPane extends FurtherBasicBeanPane<ChartCollection>{
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ ĞÂ½¨ChartCollection
+	 * ä¿å­˜ç•Œé¢å±æ€§ æ–°å»ºChartCollection
 	 */
 	public ChartCollection updateBean() {
 		return null;

@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-6-5
- * Time: ÏÂÎç3:52
+ * Time: ä¸‹åˆ3:52
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AutoProgressBar implements MonitorCancelWork{

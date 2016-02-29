@@ -17,7 +17,7 @@ import com.fr.general.Inter;
 /**
  * @author richer
  * @since 6.5.3
- * ±à¼­¾ßÓĞÌØ¶¨¸ñÊ½µÄÖµ
+ * ç¼–è¾‘å…·æœ‰ç‰¹å®šæ ¼å¼çš„å€¼
  */
 public class FormattedEditor extends AbstractPropertyEditor {
 

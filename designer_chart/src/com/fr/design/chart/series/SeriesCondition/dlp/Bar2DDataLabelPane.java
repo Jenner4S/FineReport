@@ -15,9 +15,9 @@ import com.fr.stable.Constants;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÏÂÎç2:36
+ * Time   : ä¸‹åˆ2:36
  * 
- * ÖùĞÎºÍÌõĞÎÍ¼µÄ Í¼±íÑùÊ½--"±êÇ©"½çÃæ
+ * æŸ±å½¢å’Œæ¡å½¢å›¾çš„ å›¾è¡¨æ ·å¼--"æ ‡ç­¾"ç•Œé¢
  */
 public class Bar2DDataLabelPane extends DataLabelPane {
 	private static final long serialVersionUID = -1422949139632959981L;
@@ -53,8 +53,8 @@ public class Bar2DDataLabelPane extends DataLabelPane {
         } else if (outSideButton != null && position == Constants.OUTSIDE) {
             outSideButton.setSelected(true);
         } else if (centerButton != null) {
-            //ÖùĞÎÍ¼³ıÁËÄÚÍâ¶¼ÊÇ¾ÓÖĞ¡£
-            //×éºÏÍ¼Ìõ¼şÏÔÊ¾16.1.4Ö®Ç°ÊÇÉÏÏÂ×óÓÒÖĞ£¬ÏÖ¸ÄÎªÄÚÍâÖĞ¡£Ö®Ç°´æµÄÉÏÏÂ×óÓÒ¶¼µ±×öÖĞ¡£
+            //æŸ±å½¢å›¾é™¤äº†å†…å¤–éƒ½æ˜¯å±…ä¸­ã€‚
+            //ç»„åˆå›¾æ¡ä»¶æ˜¾ç¤º16.1.4ä¹‹å‰æ˜¯ä¸Šä¸‹å·¦å³ä¸­ï¼Œç°æ”¹ä¸ºå†…å¤–ä¸­ã€‚ä¹‹å‰å­˜çš„ä¸Šä¸‹å·¦å³éƒ½å½“åšä¸­ã€‚
             centerButton.setSelected(true);
         }
     }

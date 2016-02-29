@@ -18,7 +18,7 @@ import com.fr.form.ui.container.WTitleLayout;
 import com.fr.general.ComparatorUtils;
 
 /**
- * Ò»Ğ©¿Ø¼ş ÈçÍ¼±í¡¢±¨±í¿é£¬ÓĞ±êÌâÉèÖÃ£¬ÇÒ±êÌâµÄ¸ß¶È×ÖÌåµÈ²»±ä
+ * ä¸€äº›æ§ä»¶ å¦‚å›¾è¡¨ã€æŠ¥è¡¨å—ï¼Œæœ‰æ ‡é¢˜è®¾ç½®ï¼Œä¸”æ ‡é¢˜çš„é«˜åº¦å­—ä½“ç­‰ä¸å˜
  * @author jim
  * @date 2014-9-25
  */
@@ -34,17 +34,17 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ÈİÆ÷¹¹Ôìº¯Êı
+	 * å®¹å™¨æ„é€ å‡½æ•°
 	 * 
-	 * @param widget ¿Ø¼şwidget
-	 * @param initSize ³ß´ç´óĞ¡
+	 * @param widget æ§ä»¶widget
+	 * @param initSize å°ºå¯¸å¤§å°
 	 */
 	public XWTitleLayout(WTitleLayout widget, Dimension initSize) {
 		super(widget, initSize);
 	}
 
 	/**
-	 * ³õÊ¼»¯ÈİÆ÷¶ÔÓ¦µÄ²¼¾Ö ÓÉÓÚÊÇÖ»×°Ò»¸öĞèÒª±£³ÖÔ­Ñù¸ß¶ÈµÄ¿Ø¼ş£¬²¼¾ÖÉèÎªabsolute
+	 * åˆå§‹åŒ–å®¹å™¨å¯¹åº”çš„å¸ƒå±€ ç”±äºæ˜¯åªè£…ä¸€ä¸ªéœ€è¦ä¿æŒåŸæ ·é«˜åº¦çš„æ§ä»¶ï¼Œå¸ƒå±€è®¾ä¸ºabsolute
 	 */
 	@Override
 	protected void initLayoutManager() {
@@ -52,7 +52,7 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ÈİÆ÷µÄäÖÈ¾Æ÷
+	 * å®¹å™¨çš„æ¸²æŸ“å™¨
 	 */
 	@Override
 	public LayoutAdapter getLayoutAdapter() {
@@ -60,9 +60,9 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»ØÈİÆ÷¶ÔÓ¦µÄwlayout
+	 * è¿”å›å®¹å™¨å¯¹åº”çš„wlayout
 	 * 
-	 * @return Í¬ÉÏ
+	 * @return åŒä¸Š
 	 */
 	@Override
 	public WTitleLayout toData() {
@@ -70,21 +70,21 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 	
 	/**
-	 * ÖØÖÃ×é¼şµÄÃû³Æ
-	 * @param name Ãû³Æ
+	 * é‡ç½®ç»„ä»¶çš„åç§°
+	 * @param name åç§°
 	 */
 	public void resetCreatorName(String name) {
 		super.resetCreatorName(name);
-		// ÓĞ±êÌâµÄ»°£¬±êÌâµÄÃû×ÖÒ²ÒªÖØÖÃÏÂ
+		// æœ‰æ ‡é¢˜çš„è¯ï¼Œæ ‡é¢˜çš„åå­—ä¹Ÿè¦é‡ç½®ä¸‹
 		if (getXCreatorCount() > 1) {
         	getTitleCreator().toData().setWidgetName(WidgetTitle.TITLE_NAME_INDEX + name);
         }
 	}
 	
 	/**
-	 * ·µ»ØÄ¬ÈÏ×é¼şname
+	 * è¿”å›é»˜è®¤ç»„ä»¶name
 	 * 
-	 * @return ÈİÆ÷Ãû
+	 * @return å®¹å™¨å
 	 */
 	@Override
 	public String createDefaultName() {
@@ -92,8 +92,8 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»Ø±êÌâ×é¼ş
-	 * @return ±êÌâ×é¼ş
+	 * è¿”å›æ ‡é¢˜ç»„ä»¶
+	 * @return æ ‡é¢˜ç»„ä»¶
 	 */
 	public XCreator getTitleCreator() {
 		for (int i=0; i < getXCreatorCount(); i++) {
@@ -106,7 +106,7 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 	
 	/**
-	 * ½«WLayout×ª»»ÎªXLayoutContainer
+	 * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
 	 */
 	@Override
 	public void convert() {
@@ -127,9 +127,9 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ×é¼şÔö¼Ó
+	 * ç»„ä»¶å¢åŠ 
 	 * 
-	 * @param e ÈİÆ÷ÊÂ¼ş
+	 * @param e å®¹å™¨äº‹ä»¶
 	 */
 	@Override
 	public void componentAdded(ContainerEvent e) {
@@ -148,10 +148,10 @@ public class XWTitleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ×é¼şÉ¾³ı
+	 * ç»„ä»¶åˆ é™¤
 	 * 
 	 * @param e
-	 *            ÈİÆ÷ÊÂ¼ş
+	 *            å®¹å™¨äº‹ä»¶
 	 */
 	@Override
 	public void componentRemoved(ContainerEvent e) {

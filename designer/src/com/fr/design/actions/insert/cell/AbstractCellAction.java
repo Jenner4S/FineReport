@@ -20,9 +20,9 @@ public abstract class AbstractCellAction extends CellSelectionAction {
     public abstract Class getCellValueClass();
     
     /*
-     * TODO ALEX_SEP ÕâÀïµÄ·µ»ØbooleanÁ¿±íÊ¾Ä£°åÊÇ·ñ¸Ä±ä,µ¼ÖÂºÜ¶àºÜ¶àµÄ·½·¨µÄboolean·µ»ØÖµ¶¼ÊÇÕâ¸öÒâË¼
+     * TODO ALEX_SEP è¿™é‡Œçš„è¿”å›booleané‡è¡¨ç¤ºæ¨¡æ¿æ˜¯å¦æ”¹å˜,å¯¼è‡´å¾ˆå¤šå¾ˆå¤šçš„æ–¹æ³•çš„booleanè¿”å›å€¼éƒ½æ˜¯è¿™ä¸ªæ„æ€
      * 
-     * ¸Ğ¾õÓĞµãÀË·Ñ
+     * æ„Ÿè§‰æœ‰ç‚¹æµªè´¹
      */
     @Override
     protected boolean executeActionReturnUndoRecordNeededWithCellSelection(
@@ -31,7 +31,7 @@ public abstract class AbstractCellAction extends CellSelectionAction {
         //got simple cell element from column and row.
         TemplateElementCase report = ePane.getEditingElementCase();
 
-        //alex:Èç¹ûÊÇÏßĞÔ±¨±í,ÕâÊ±»¹Òª¼ÆËãÒ»ÏÂÄ¬ÈÏ¸¸¸ñÊÇÊ²Ã´
+        //alex:å¦‚æœæ˜¯çº¿æ€§æŠ¥è¡¨,è¿™æ—¶è¿˜è¦è®¡ç®—ä¸€ä¸‹é»˜è®¤çˆ¶æ ¼æ˜¯ä»€ä¹ˆ
         if (report != null && this instanceof DSColumnCellAction) {
             SheetUtils.calculateDefaultParent(report);
         }

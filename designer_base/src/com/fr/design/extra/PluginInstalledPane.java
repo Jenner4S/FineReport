@@ -90,8 +90,8 @@ public class PluginInstalledPane extends PluginAbstractViewPane {
     }
 
     /**
-     * tab标题
-     * @return 同上
+     * tab鏍囬
+     * @return 鍚屼笂
      */
     public String tabTitle() {
         return Inter.getLocText("FR-Designer-Plugin_Installed") + "(" + num + ")";

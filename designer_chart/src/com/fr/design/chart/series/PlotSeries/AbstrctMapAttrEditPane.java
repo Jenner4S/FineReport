@@ -10,14 +10,14 @@ import com.fr.chart.base.MapSvgAttr;
 public interface AbstrctMapAttrEditPane {
 
     /**
-     * ¸üĞÂ½çÃæ
-     * @param attr  µØÍ¼ÊôĞÔ
+     * æ›´æ–°ç•Œé¢
+     * @param attr  åœ°å›¾å±æ€§
      */
     public void populateMapAttr(MapSvgAttr attr);
 
     /**
-     * ¸üĞÂMapSvgAttr
-     * @return  ·µ»ØÊôĞÔ
+     * æ›´æ–°MapSvgAttr
+     * @return  è¿”å›å±æ€§
      */
     public MapSvgAttr updateCurrentAttr();
 }

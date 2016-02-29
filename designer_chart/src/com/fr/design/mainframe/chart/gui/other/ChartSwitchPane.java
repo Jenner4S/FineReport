@@ -45,10 +45,10 @@ public class ChartSwitchPane extends AbstractAttrNoScrollPane{
 				
 				BasicDialog dlg = chartTypeManager.showWindow4ChartType(SwingUtilities.getWindowAncestor(new JPanel()), new DialogActionAdapter() {
 					public void doOk() {
-						chartTypeManager.update(editingChartCollection);//kunsnat: È·¶¨Ë¢ĞÂ"chartSelectIndex"
+						chartTypeManager.update(editingChartCollection);//kunsnat: ç¡®å®šåˆ·æ–°"chartSelectIndex"
 						
 						if(currentChartEditPane != null) {
-							currentChartEditPane.populate(editingChartCollection);// Ñ¡ÖĞĞÂPlotÖ®ºó Ë¢ĞÂ¶ÔÓ¦½çÃæ, ±ÈÈç³¬¼¶Á´½ÓµÈ, È»ºó²ÅÄÜupdate.
+							currentChartEditPane.populate(editingChartCollection);// é€‰ä¸­æ–°Plotä¹‹å åˆ·æ–°å¯¹åº”ç•Œé¢, æ¯”å¦‚è¶…çº§é“¾æ¥ç­‰, ç„¶åæ‰èƒ½update.
 							currentChartEditPane.GoToPane(PaneTitleConstants.CHART_TYPE_TITLE);
 							currentChartEditPane.GoToPane(PaneTitleConstants.CHART_OTHER_TITLE, PaneTitleConstants.CHART_OTHER_TITLE_CHANGE);
 							currentChartEditPane.fire();
@@ -64,7 +64,7 @@ public class ChartSwitchPane extends AbstractAttrNoScrollPane{
 	}
 	
 	/**
-	 * ×¢²á ÇĞ»»ÊÂ¼şµÄ¸Ä±ä ºÍ³¬Á´²»Í¬.
+	 * æ³¨å†Œ åˆ‡æ¢äº‹ä»¶çš„æ”¹å˜ å’Œè¶…é“¾ä¸åŒ.
 	 * @param listener
 	 */
 	public void registerChartEditPane(ChartEditPane currentChartEditPane) {
@@ -80,8 +80,8 @@ public class ChartSwitchPane extends AbstractAttrNoScrollPane{
 	}
 	
 	/**
-	 * ½çÃæ±êÌâ
-	 * @param ·µ»Ø±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+	 * @param è¿”å›æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Chart-Switch");

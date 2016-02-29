@@ -73,17 +73,17 @@ public abstract class AbstractPropertyGroupModel implements GroupModel, Comparab
 
     private void initRenderer(int row) throws Exception {
         Class rendererCls = (Class) properties[row].getValue(RENDERER);
-        // ÏÈ¿´¿´ÓĞÃ»ÓĞÉè¶¨ºÃµÄäÖÈ¾Æ÷
+        // å…ˆçœ‹çœ‹æœ‰æ²¡æœ‰è®¾å®šå¥½çš„æ¸²æŸ“å™¨
         if (rendererCls != null) {
             renderers[row] = (TableCellRenderer) rendererCls.newInstance();
         } else {
-            // Ã»ÓĞÉè¶¨ºÃµÄäÖÈ¾Æ÷ÄÇÃ´¾Í¸ù¾İÒÑÓĞµÄÀàĞÍ²éÕÒÒ»¸öºÏÊÊµÄäÖÈ¾Æ÷
+            // æ²¡æœ‰è®¾å®šå¥½çš„æ¸²æŸ“å™¨é‚£ä¹ˆå°±æ ¹æ®å·²æœ‰çš„ç±»å‹æŸ¥æ‰¾ä¸€ä¸ªåˆé€‚çš„æ¸²æŸ“å™¨
             Class propType = properties[row].getPropertyType();
             Class<? extends TableCellRenderer> rendererClass = TableUtils.getTableCellRendererClass(propType);
             if (rendererClass != null) {
                 renderers[row] = rendererClass.newInstance();
             } else {
-                // Èç¹ûÒÑÓĞµÄäÖÈ¾Æ÷Ò²²»Æ¥ÅäÄÇÃ´¾Í¸ù¾İ±à¼­Æ÷À´Éú³ÉÒ»¸öäÖÈ¾Æ÷
+                // å¦‚æœå·²æœ‰çš„æ¸²æŸ“å™¨ä¹Ÿä¸åŒ¹é…é‚£ä¹ˆå°±æ ¹æ®ç¼–è¾‘å™¨æ¥ç”Ÿæˆä¸€ä¸ªæ¸²æŸ“å™¨
                 Class<?> editorClass =  properties[row].getPropertyEditorClass();
                 if (editorClass == null) {
                     editorClass = TableUtils.getPropertyEditorClass(propType);

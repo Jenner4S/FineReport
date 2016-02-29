@@ -7,13 +7,13 @@ import java.awt.Color;
 public abstract class GridHeader<T> extends BaseGridComponent {
 	public final static int SIZE_ADJUST = 4;
 	
-    //ÊôÐÔ
+    //å±žæ€§
     private Color separatorLineColor = new Color(172, 168, 153); //separator lines
     private Color selectedForeground = Color.black;
     private Color selectedBackground = new Color(253, 216, 153);
 
     public GridHeader() {
-        //Çå³ýËùÓÐµÄKey Action.
+        //æ¸…é™¤æ‰€æœ‰çš„Key Action.
         this.getInputMap().clear();
         this.getActionMap().clear();
 

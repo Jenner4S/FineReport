@@ -37,7 +37,7 @@ import com.fr.general.FRFont;
 /**
  *
  *
- * @date: 2014-11-27-ÉÏÎç10:28:14
+ * @date: 2014-11-27-ä¸Šåˆ10:28:14
  */
 public class XCardSwitchButton extends XButton {
 
@@ -50,11 +50,11 @@ public class XCardSwitchButton extends XButton {
 	
 	private static final int MIN_SIZE = 1;
 	
-	// É¾³ı°´Å¥Ê¶±ğÇøÓòÆ«ÒÆÁ¿
+	// åˆ é™¤æŒ‰é’®è¯†åˆ«åŒºåŸŸåç§»é‡
 	private static final int RIGHT_OFFSET = 15;
 	private static final int TOP_OFFSET = 25;
 	
-	// tab°´Å¥ÀïµÄ×ÖÌåÒòÎª°´Å¥ÄÚ²¿µÄ²¼¾Ö¿´ÆğÀ´±ÈÕı³£µÄÒªĞ¡£¬¼Ó¸öµ÷ÕûÁ¿
+	// tabæŒ‰é’®é‡Œçš„å­—ä½“å› ä¸ºæŒ‰é’®å†…éƒ¨çš„å¸ƒå±€çœ‹èµ·æ¥æ¯”æ­£å¸¸çš„è¦å°ï¼ŒåŠ ä¸ªè°ƒæ•´é‡
 	private static final int FONT_SIZE_ADJUST = 2;
 	
 	
@@ -90,12 +90,12 @@ public class XCardSwitchButton extends XButton {
 	}
 
 	/**
-	 * ÏìÓ¦µã»÷ÊÂ¼ş
+	 * å“åº”ç‚¹å‡»äº‹ä»¶
 	 * 
 	 * @param editingMouseListener
-	 *            ÊÂ¼ş´¦ÀíÆ÷
+	 *            äº‹ä»¶å¤„ç†å™¨
 	 * @param e
-	 *            µã»÷ÊÂ¼ş
+	 *            ç‚¹å‡»äº‹ä»¶
 	 * 
 	 */
 	public void respondClick(EditingMouseListener editingMouseListener,
@@ -103,19 +103,19 @@ public class XCardSwitchButton extends XButton {
 		FormDesigner designer = editingMouseListener.getDesigner();
 		SelectionModel selectionModel = editingMouseListener.getSelectionModel();
 
-		//¹Ø±ÕÖØĞÂ´ò¿ª£¬Ïà¹ØµÄlayoutÎ´´æµ½xmlÖĞ£¬³õÊ¼»¯
+		//å…³é—­é‡æ–°æ‰“å¼€ï¼Œç›¸å…³çš„layoutæœªå­˜åˆ°xmlä¸­ï¼Œåˆå§‹åŒ–
 		if(cardLayout == null){
 			initRalateLayout(this);
 		}
 		
-		//»ñÈ¡µ±Ç°tabµÄindex
+		//è·å–å½“å‰tabçš„index
 		XCardSwitchButton button = this;
 		CardSwitchButton currentButton = (CardSwitchButton) button.toData();
 		int index = currentButton.getIndex();
 		
-		//µã»÷É¾³ıÍ¼±êÊ±
+		//ç‚¹å‡»åˆ é™¤å›¾æ ‡æ—¶
 		if (isSeletectedClose(e,designer)) {
-			//µ±É¾³ıµ½×îºóÒ»¸ötabÊ±£¬É¾³ıÕû¸ötab²¼¾Ö
+			//å½“åˆ é™¤åˆ°æœ€åä¸€ä¸ªtabæ—¶ï¼Œåˆ é™¤æ•´ä¸ªtabå¸ƒå±€
 			if(tagLayout.getComponentCount() <= MIN_SIZE){
 				deleteTabLayout(selectionModel, designer);
 				return;
@@ -128,10 +128,10 @@ public class XCardSwitchButton extends XButton {
 			return;
 		}
 		
-		//½«µ±Ç°tab°´Å¥¸ÄÎªÑ¡ÖĞ×´Ì¬
+		//å°†å½“å‰tabæŒ‰é’®æ”¹ä¸ºé€‰ä¸­çŠ¶æ€
 		changeButtonState(index);
 		
-		// ÇĞ»»µ½µ±Ç°tab°´Å¥¶ÔÓ¦µÄtabFitLayout
+		// åˆ‡æ¢åˆ°å½“å‰tabæŒ‰é’®å¯¹åº”çš„tabFitLayout
 		XWTabFitLayout tabFitLayout = (XWTabFitLayout) cardLayout.getComponent(index);
 		selectionModel.setSelectedCreator(tabFitLayout);
 		
@@ -144,10 +144,10 @@ public class XCardSwitchButton extends XButton {
 		
 	}
 	
-	//É¾³ıcard£¬Í¬Ê±ĞŞ¸ÄÆäËûswitchbuttonºÍtabfitµÄindex
+	//åˆ é™¤cardï¼ŒåŒæ—¶ä¿®æ”¹å…¶ä»–switchbuttonå’Œtabfitçš„index
 	private void deleteCard(XCardSwitchButton button,int index){
 		tagLayout.remove(button);
-		// ÏÈÇå³ı¸ÃtabÄÚ²¿×é¼ş£¬·ñÔÚÔÙÏÔÊ¾ÉÏÓĞÑùÊ½µÄ²ĞÁô
+		// å…ˆæ¸…é™¤è¯¥tabå†…éƒ¨ç»„ä»¶ï¼Œå¦åœ¨å†æ˜¾ç¤ºä¸Šæœ‰æ ·å¼çš„æ®‹ç•™
 		XWTabFitLayout tabLayout = (XWTabFitLayout)cardLayout.getComponent(index);
 		tabLayout.removeAll();
 		cardLayout.remove(index);
@@ -168,7 +168,7 @@ public class XCardSwitchButton extends XButton {
 	}
 	
 	
-	//SwitchButton¶ÔÓ¦µÄXWCardLayoutºÍXWCardTagLayoutÔİÎ´´æµ½xmlÖĞ,ÖØĞÂ´ò¿ªÊ±¸ù¾İ¸¸×Ó²ã¹ØÏµ»ñÈ¡
+	//SwitchButtonå¯¹åº”çš„XWCardLayoutå’ŒXWCardTagLayoutæš‚æœªå­˜åˆ°xmlä¸­,é‡æ–°æ‰“å¼€æ—¶æ ¹æ®çˆ¶å­å±‚å…³ç³»è·å–
 	private void initRalateLayout(XCardSwitchButton button){
 		this.tagLayout = (XWCardTagLayout)this.getBackupParent();
 		XWCardTitleLayout titleLayout = (XWCardTitleLayout) this.tagLayout.getBackupParent();
@@ -176,7 +176,7 @@ public class XCardSwitchButton extends XButton {
 		this.cardLayout = borderLayout.getCardPart();
 	}
 	
-	//ÊÇ·ñ½øÈëµã»÷¹Ø±Õ°´Å¥ÇøÓò
+	//æ˜¯å¦è¿›å…¥ç‚¹å‡»å…³é—­æŒ‰é’®åŒºåŸŸ
 	private boolean isSeletectedClose(MouseEvent e,FormDesigner designer){
 		
 		int diff = designer.getArea().getHorScrollBar().getValue();
@@ -185,19 +185,19 @@ public class XCardSwitchButton extends XButton {
 		int ex = e.getX() + diff;
 		int ey = e.getY();
 		
-		//»ñÈ¡tab²¼¾ÖµÄÎ»ÖÃ,Êó±êÏà¶ÔÓÚtab°´Å¥µÄÎ»ÖÃ
+		//è·å–tabå¸ƒå±€çš„ä½ç½®,é¼ æ ‡ç›¸å¯¹äºtabæŒ‰é’®çš„ä½ç½®
 		XLayoutContainer mainLayout = cardLayout.getBackupParent();
 		Point point = mainLayout.getLocation();
 		double mainX = point.getX();
 		double mainY = point.getY();
 		
-		// ²ÎÊı½çÃæ¶Ô×ø±êµÄÓ°Ïì
+		// å‚æ•°ç•Œé¢å¯¹åæ ‡çš„å½±å“
 		JForm jform = (JForm)HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
 		if(jform.getFormDesign().getParaComponent() != null){
 			ey -= jform.getFormDesign().getParaHeight();
 		}
 		
-		//¼õµôtab²¼¾ÖµÄÏà¶ÔÎ»ÖÃ
+		//å‡æ‰tabå¸ƒå±€çš„ç›¸å¯¹ä½ç½®
 		ex -= mainX;
 		ey -= mainY;
 		
@@ -207,14 +207,14 @@ public class XCardSwitchButton extends XButton {
 		int width = button.getWidth();
 		int height = button.getHeight();
 		
-		// Êó±ê½øÈë°´Å¥ÓÒ²àÉ¾³ıÍ¼±êÇøÓò
+		// é¼ æ ‡è¿›å…¥æŒ‰é’®å³ä¾§åˆ é™¤å›¾æ ‡åŒºåŸŸ
 		double recX = position.getX() + (width - RIGHT_OFFSET);
 		double recY = position.getY() + (height - TOP_OFFSET);
 		
 		return (recX < ex && ex < recX + RIGHT_OFFSET &&  ey < recY);
 	}
 	
-	//½«µ±Ç°switchButton¸ÄÎªÑ¡ÖĞ×´Ì¬
+	//å°†å½“å‰switchButtonæ”¹ä¸ºé€‰ä¸­çŠ¶æ€
 	private void changeButtonState(int index){
 		for(int i=0;i<this.tagLayout.getComponentCount();i++){
 			XCardSwitchButton temp = (XCardSwitchButton) tagLayout.getComponent(i);
@@ -233,12 +233,12 @@ public class XCardSwitchButton extends XButton {
 		drawCloseIcon(g2d);
     }
 	
-    //»­É¾³ıÍ¼±ê
+    //ç”»åˆ é™¤å›¾æ ‡
 	private void drawCloseIcon(Graphics2D g2d){
 		closeIcon.paintIcon(this, g2d,this.getWidth()-LEFT_GAP,0);
 	}
 	
-	//»­±³¾°
+	//ç”»èƒŒæ™¯
 	private void drawBackgorund(){
         CardSwitchButton button = (CardSwitchButton)this.toData();
         ColorBackground background;
@@ -253,7 +253,7 @@ public class XCardSwitchButton extends XButton {
         }
 	}
 	
-	//»­±êÌâ
+	//ç”»æ ‡é¢˜
 	private void drawTitle() {
 		CardSwitchButton button = (CardSwitchButton) this.toData();
 		this.setButtonText(button.getText());
@@ -263,7 +263,7 @@ public class XCardSwitchButton extends XButton {
 
 		LayoutBorderStyle style = this.cardLayout.toData().getBorderStyle();
 
-		// ±êÌâ²¿·Ö
+		// æ ‡é¢˜éƒ¨åˆ†
 		WidgetTitle title = style.getTitle();
 		FRFont font = title.getFrFont();
 		FRFont newFont = FRFont.getInstance(font.getName(),font.getStyle(),font.getSize() + FONT_SIZE_ADJUST);
@@ -281,7 +281,7 @@ public class XCardSwitchButton extends XButton {
 		}
 	}
 	
-	//É¾³ıtab²¼¾Ö
+	//åˆ é™¤tabå¸ƒå±€
 	private void deleteTabLayout(SelectionModel selectionModel,FormDesigner designer){
 		XLayoutContainer mainLayout = this.cardLayout.getBackupParent();
 		if(mainLayout != null){

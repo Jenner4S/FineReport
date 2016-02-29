@@ -7,7 +7,7 @@ import com.fr.design.mainframe.FormDesigner;
 import com.fr.design.utils.gui.LayoutUtils;
 
 /**
- * 这个类用可以用来拖拽表单最底层容器的大小。目前只用于参数界面
+ * 杩欎釜绫荤敤鍙互鐢ㄦ潵鎷栨嫿琛ㄥ崟鏈�搴曞眰瀹瑰櫒鐨勫ぇ灏忋�傜洰鍓嶅彧鐢ㄤ簬鍙傛暟鐣岄潰
  */
 public abstract class RootResizeDirection implements Direction {
 

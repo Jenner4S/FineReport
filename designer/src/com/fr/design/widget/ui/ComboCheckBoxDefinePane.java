@@ -29,7 +29,7 @@ public class ComboCheckBoxDefinePane extends CustomWritableRepeatEditorPane<Comb
 
         checkBoxDictPane = new CheckBoxDictPane();
 		attrPane.add(contenter);
-        //ÊÇ·ñÒÔ±êÇ©ÐÎÊ½ÏÔÊ¾
+        //æ˜¯å¦ä»¥æ ‡ç­¾å½¢å¼æ˜¾ç¤º
         JPanel tagPane = FRGUIPaneFactory.createMediumHGapFlowInnerContainer_M_Pane();
         supportTagCheckBox = new UICheckBox(Inter.getLocText("Form-SupportTag"), true);
         tagPane.add(supportTagCheckBox);

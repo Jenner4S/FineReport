@@ -63,15 +63,15 @@ public class ParameterArrayPane extends JControlPane {
 	}
 
 	/**
-	 * ´´½¨Ä£°å²ÎÊıÉèÖÃ×é¼ş
+	 * åˆ›å»ºæ¨¡æ¿å‚æ•°è®¾ç½®ç»„ä»¶
 	 *
-	 * @return Ä£°å²ÎÊıÉèÖÃ×é¼ş
+	 * @return æ¨¡æ¿å‚æ•°è®¾ç½®ç»„ä»¶
 	 */
 	public NameableCreator[] createNameableCreators() {
 		return new NameableCreator[]{
 				new NameableSelfCreator(Inter.getLocText("FR-Engine_Parameter_Name"), Parameter.class, ParameterPane.class) {
 					public Parameter createNameable(UnrepeatedNameHelper helper) {
-						// ·µ»Ø²ÎÊıÉèÖÃÃæ°å.
+						// è¿”å›å‚æ•°è®¾ç½®é¢æ¿.
 						return new Parameter(helper.createUnrepeatedName("p"));
 					}
 
@@ -85,12 +85,12 @@ public class ParameterArrayPane extends JControlPane {
 
 
 	/**
-	 * ¸üĞÂ²ÎÊı
+	 * æ›´æ–°å‚æ•°
      *
-     * @return ¸üĞÂºóµÄ²ÎÊı
+     * @return æ›´æ–°åçš„å‚æ•°
 	 */
 	public Parameter[] updateParameters() {
-		// Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉParameter[],Ò»¶¨ÒªÕâÃ´Ğ´...
+		// Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆParameter[],ä¸€å®šè¦è¿™ä¹ˆå†™...
 		Nameable[] res = this.update();
 		Parameter[] res_array = new Parameter[res.length];
 		java.util.Arrays.asList(res).toArray(res_array);

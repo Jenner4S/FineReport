@@ -41,7 +41,7 @@ import java.util.Date;
 import java.util.concurrent.CancellationException;
 
 /**
- * august£º PreviewTablePaneÒ»¹²Ìá¹©5¸ö¹²ÓĞµÄ¾²Ì¬·½·¨£¬ÓÃÀ´Ô¤ÀÀ¡£
+ * augustï¼š PreviewTablePaneä¸€å…±æä¾›5ä¸ªå…±æœ‰çš„é™æ€æ–¹æ³•ï¼Œç”¨æ¥é¢„è§ˆã€‚
  */
 public class PreviewTablePane extends BasicPane {
     private TableData tableData;
@@ -69,7 +69,7 @@ public class PreviewTablePane extends BasicPane {
     private PreviewTablePane() {
         this.setLayout(FRGUIPaneFactory.createBorderLayout());
 
-        // elalke:Ô¤ÀÀĞĞÊı
+        // elalke:é¢„è§ˆè¡Œæ•°
         JPanel previewNumberPanel = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
         this.add(previewNumberPanel, BorderLayout.NORTH);
 
@@ -109,7 +109,7 @@ public class PreviewTablePane extends BasicPane {
             boolean mouseEntered = false;
             boolean buttonPressed = false;
 
-            public void mouseEntered(MouseEvent e) { // µ±Êó±ê½øÈëÊ±ºòµ÷ÓÃ.
+            public void mouseEntered(MouseEvent e) { // å½“é¼ æ ‡è¿›å…¥æ—¶å€™è°ƒç”¨.
                 mouseEntered = true;
                 if (!buttonPressed) {
                     refreshLabel.setBackground(java.awt.Color.WHITE);
@@ -203,7 +203,7 @@ public class PreviewTablePane extends BasicPane {
         return this.worker;
     }
 
-    // elake:ÎªÔ¤ÀÀ±íµÄcolumnIndexÁĞ×ÅcÉ«.
+    // elake:ä¸ºé¢„è§ˆè¡¨çš„columnIndexåˆ—ç€cè‰².
     private void setPreviewTableColumnColor(final int columnIndex, final Color c) {
         addLoadedListener(new LoadedEventListener() {
             @Override
@@ -224,7 +224,7 @@ public class PreviewTablePane extends BasicPane {
     }
 
     /**
-     * ÖØÖÃÃæ°å
+     * é‡ç½®é¢æ¿
      */
     public static void resetPreviewTable() {
         getInstance().preveiwTable = new SortableJTable(new TableSorter());
@@ -245,7 +245,7 @@ public class PreviewTablePane extends BasicPane {
 
 
     /**
-     * Ö±½ÓÔ¤ÀÀÊı¾İ¼¯£¬Ã»ÓĞÊµ¼ÊÖµºÍÏÔÊ¾Öµ
+     * ç›´æ¥é¢„è§ˆæ•°æ®é›†ï¼Œæ²¡æœ‰å®é™…å€¼å’Œæ˜¾ç¤ºå€¼
      *
      * @param tableData tableData
      */
@@ -254,7 +254,7 @@ public class PreviewTablePane extends BasicPane {
     }
 
     /**
-     * Ô¤ÀÀÊı¾İ¼¯£¬keyIndexÎªÊµ¼ÊÖµ¡¢valueIndexÎªÏÔÊ¾Öµ
+     * é¢„è§ˆæ•°æ®é›†ï¼ŒkeyIndexä¸ºå®é™…å€¼ã€valueIndexä¸ºæ˜¾ç¤ºå€¼
      *
      * @param tableData  tableData
      * @param keyIndex
@@ -304,7 +304,7 @@ public class PreviewTablePane extends BasicPane {
     private void populate(TableData tableData) throws Exception {
         this.tableData = tableData;
 
-        // p:Ö±½ÓÔ¤ÀÀ.
+        // p:ç›´æ¥é¢„è§ˆ.
         if (tableData != null) {
             previewTableDataSQL();
         }
@@ -331,7 +331,7 @@ public class PreviewTablePane extends BasicPane {
                     JComponent comp = (JComponent) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                     Font f = table.getFont();
 
-                    //Ä¬ÈÏÔÚÏµÍ³²»Ö§³Ö ÎŞ·¨ÏÔÊ¾Ê±  Èç×ÔÔìµÄ×Ö £¬×ÖÌåÉèÖÃÎª¿Õ.
+                    //é»˜è®¤åœ¨ç³»ç»Ÿä¸æ”¯æŒ æ— æ³•æ˜¾ç¤ºæ—¶  å¦‚è‡ªé€ çš„å­— ï¼Œå­—ä½“è®¾ç½®ä¸ºç©º.
                     Font defaultShowFont = FRFont.getInstance("", f.getStyle(), f.getSize());
                     if (value instanceof String) {
                         String str = (String) value;
@@ -369,7 +369,7 @@ public class PreviewTablePane extends BasicPane {
                 }
                 previewTableData = DesignTableDataManager.previewTableDataNeedInputParameters(tableData, (int) maxPreviewNumberField.getValue(), true);
                 // parameterInputDialog
-                // updateÖ®ºóµÄparameters,×ª³ÉÒ»¸öparameterMap,ÓÃÓÚÔ¤ÀÀTableData
+                // updateä¹‹åçš„parameters,è½¬æˆä¸€ä¸ªparameterMap,ç”¨äºé¢„è§ˆTableData
                 previewModel = new PreviewTableModel(previewTableData.createDataModel(null), (int) maxPreviewNumberField.getValue());
                 for (int i = 0; i < previewTableData.getColumnCount(); i++) {
                     Class<?> cls = previewTableData.getColumnClass(i);
@@ -401,7 +401,7 @@ public class PreviewTablePane extends BasicPane {
     }
 
     /**
-     * Ö±½ÓÔ¤ÀÀ´æ´¢¹ı³ÌµÄÒ»¸ö·µ»ØÊı¾İ¼¯£¬Ã»ÓĞÊµ¼ÊÖµºÍÏÔÊ¾Öµ
+     * ç›´æ¥é¢„è§ˆå­˜å‚¨è¿‡ç¨‹çš„ä¸€ä¸ªè¿”å›æ•°æ®é›†ï¼Œæ²¡æœ‰å®é™…å€¼å’Œæ˜¾ç¤ºå€¼
      *
      * @param storeProcedureDataModel storeProcedureDataModel
      */
@@ -410,11 +410,11 @@ public class PreviewTablePane extends BasicPane {
     }
 
     /**
-     * Ô¤ÀÀ´æ´¢¹ı³ÌµÄÒ»¸ö·µ»ØÊı¾İ¼¯£¬keyIndexÎªÊµ¼ÊÖµ¡¢valueIndexÎªÏÔÊ¾Öµ
+     * é¢„è§ˆå­˜å‚¨è¿‡ç¨‹çš„ä¸€ä¸ªè¿”å›æ•°æ®é›†ï¼ŒkeyIndexä¸ºå®é™…å€¼ã€valueIndexä¸ºæ˜¾ç¤ºå€¼
      *
      * @param storeProcedureDataModel storeProcedureDataModel
-     * @param keyIndex                Êµ¼ÊÖµ
-     * @param valueIndex              ÏÔÊ¾Öµ
+     * @param keyIndex                å®é™…å€¼
+     * @param valueIndex              æ˜¾ç¤ºå€¼
      */
     public static void previewStoreData(final ProcedureDataModel storeProcedureDataModel, final int keyIndex, final int valueIndex) {
         final PreviewTablePane previewTablePane = new PreviewTablePane();
@@ -440,7 +440,7 @@ public class PreviewTablePane extends BasicPane {
     }
 
     /**
-     * Ö±½ÓÔ¤ÀÀ´æ´¢¹ı³ÌµÄËùÓĞ·µ»ØÊı¾İ¼¯£¬Ã»ÓĞÊµ¼ÊÖµºÍÏÔÊ¾Öµ
+     * ç›´æ¥é¢„è§ˆå­˜å‚¨è¿‡ç¨‹çš„æ‰€æœ‰è¿”å›æ•°æ®é›†ï¼Œæ²¡æœ‰å®é™…å€¼å’Œæ˜¾ç¤ºå€¼
      *
      * @param storeProcedureDataModels storeProcedureDataModels
      */

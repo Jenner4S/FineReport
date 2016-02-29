@@ -20,7 +20,7 @@ import java.util.List;
  * Author : Richer
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç2:12
+ * Time: ä¸‹åˆ2:12
  */
 public class ChartDesignerInteractivePane extends ChartInteractivePane {
     public ChartDesignerInteractivePane(ChartOtherPane parent) {

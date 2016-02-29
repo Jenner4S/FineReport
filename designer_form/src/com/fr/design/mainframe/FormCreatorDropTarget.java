@@ -33,17 +33,17 @@ import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
 /**
- * Ìí¼ÓÄ£Ê½ÏÂÊó±êÊÂ¼ş´¦ÀíÆ÷¡£
+ * æ·»åŠ æ¨¡å¼ä¸‹é¼ æ ‡äº‹ä»¶å¤„ç†å™¨ã€‚
  */
 public class FormCreatorDropTarget extends DropTarget {
 
 	private FormDesigner designer;
 	/**
-	 * µ±Ç°Êó±êµÄÉè¼Æ×é¼ş
+	 * å½“å‰é¼ æ ‡çš„è®¾è®¡ç»„ä»¶
 	 */
 	private Component current;
 	/**
-	 * µ±Ç°Ìí¼ÓÄ£Ê½¶ÔÓ¦µÄmodel
+	 * å½“å‰æ·»åŠ æ¨¡å¼å¯¹åº”çš„model
 	 */
 	private AddingModel addingModel;
     private final static int GAP = 30;
@@ -58,19 +58,19 @@ public class FormCreatorDropTarget extends DropTarget {
 	}
 
 	private void adding(int x, int y) {
-		// µ±Ç°Êó±êËùÔÚµÄ×é¼ş
+		// å½“å‰é¼ æ ‡æ‰€åœ¨çš„ç»„ä»¶
 		XCreator hoveredComponent = designer.getComponentAt(x, y);
 
-		// »ñÈ¡¸Ã×é¼şËùÔÚµÄ½¹µãÈİÆ÷
+		// è·å–è¯¥ç»„ä»¶æ‰€åœ¨çš„ç„¦ç‚¹å®¹å™¨
 		XLayoutContainer container = XCreatorUtils.getHotspotContainer(hoveredComponent);
 		
-		//cardTagLayoutÀïÓÃµ½
+		//cardTagLayouté‡Œç”¨åˆ°
 		container.stopAddingState(designer);
 
 		boolean success = false;
 
 		if (container != null) {
-			// Èç¹ûÊÇÈİÆ÷£¬Ôòµ÷ÓÃÆäacceptComponent½ÓÊÜ×é¼ş
+			// å¦‚æœæ˜¯å®¹å™¨ï¼Œåˆ™è°ƒç”¨å…¶acceptComponentæ¥å—ç»„ä»¶
 			AddingModel model = designer.getAddingModel();
 
             boolean chartEnter2Para =!addingModel.getXCreator().canEnterIntoParaPane() && container.acceptType(XWParameterLayout.class);
@@ -83,7 +83,7 @@ public class FormCreatorDropTarget extends DropTarget {
 		}
 
 		if (success) {
-			// Èç¹ûÌí¼Ó³É¹¦£¬Ôò´¥·¢ÏàÓ¦ÊÂ¼ş
+			// å¦‚æœæ·»åŠ æˆåŠŸï¼Œåˆ™è§¦å‘ç›¸åº”äº‹ä»¶
             XCreator xCreator = container.acceptType(XWParameterLayout.class) ? designer.getParaComponent() : designer.getRootComponent();
 			designer.getSelectionModel().setSelectedCreators(
 					FormSelectionUtils.rebuildSelection(xCreator, new Widget[]{addingModel.getXCreator().toData()}));
@@ -92,54 +92,54 @@ public class FormCreatorDropTarget extends DropTarget {
 			Toolkit.getDefaultToolkit().beep();
 		}
 
-		// È¡ÏûÌáÊ¾
+		// å–æ¶ˆæç¤º
 		designer.setPainter(null);
-		// ÇĞ»»Ìí¼Ó×´Ì¬µ½ÆÕÍ¨×´Ì¬
+		// åˆ‡æ¢æ·»åŠ çŠ¶æ€åˆ°æ™®é€šçŠ¶æ€
 		designer.stopAddingState();
 	}
 
 	private void entering(int x, int y) {
-		// ½«ÒªÌí¼ÓµÄ×é¼şÍ¼±êÒÆ¶¯µ½Êó±êÏÂµÄÎ»ÖÃ
+		// å°†è¦æ·»åŠ çš„ç»„ä»¶å›¾æ ‡ç§»åŠ¨åˆ°é¼ æ ‡ä¸‹çš„ä½ç½®
 		addingModel.moveTo(x, y);
 		designer.repaint();
 	}
 
 	private void exiting() {
         cancelPromptWidgetForbidEnter();
-		// Òş²Ø×é¼şÍ¼±ê
+		// éšè—ç»„ä»¶å›¾æ ‡
 		addingModel.reset();
 		designer.setPainter(null);
 		designer.repaint();
 	}
 
 	private void hovering(int x, int y) {
-		// µ±Ç°Î»ÖÃÒÆÖ²Êó±êeËùÔÚµÄÎ»ÖÃ
+		// å½“å‰ä½ç½®ç§»æ¤é¼ æ ‡eæ‰€åœ¨çš„ä½ç½®
 		addingModel.moveTo(x, y);
-		// »ñÈ¡eËùÔÚµÄ½¹µã×é¼ş
+		// è·å–eæ‰€åœ¨çš„ç„¦ç‚¹ç»„ä»¶
 		XCreator hotspot = designer.getComponentAt(x, y);
-		// »ñÈ¡½¹µã×é¼şËùÔÚµÄ½¹µãÈİÆ÷
+		// è·å–ç„¦ç‚¹ç»„ä»¶æ‰€åœ¨çš„ç„¦ç‚¹å®¹å™¨
 		XLayoutContainer container = XCreatorUtils.getHotspotContainer(hotspot);
-        //ÌáÊ¾×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë
+        //æç¤ºç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥
         promptUser(x, y, container);
 		if (container != null) {
 			HoverPainter painter = null;
 
 			if (container != current || designer.getPainter() == null) {
-				// Èç¹û½¹µãÈİÆ÷²»ÊÇµ±Ç°ÈİÆ÷
+				// å¦‚æœç„¦ç‚¹å®¹å™¨ä¸æ˜¯å½“å‰å®¹å™¨
 				if (current != null) {
-					// È¡ÏûÇ°Ò»¸ö½¹µãÈİÆ÷µÄÌáÊ¾äÖÈ¾Æ÷
+					// å–æ¶ˆå‰ä¸€ä¸ªç„¦ç‚¹å®¹å™¨çš„æç¤ºæ¸²æŸ“å™¨
 					designer.setPainter(null);
 				}
 
 				painter = AdapterBus.getContainerPainter(designer, container);
 
-				// Îª½çÃæÉè¼ÆÆ÷ÉèÖÃÌáÊ¾äÖÈ¾ÌáÊ¾Æ÷
+				// ä¸ºç•Œé¢è®¾è®¡å™¨è®¾ç½®æç¤ºæ¸²æŸ“æç¤ºå™¨
 				designer.setPainter(painter);
 
-				// ½«µ±Ç°ÈİÆ÷¸üĞÂÎªĞÂµÄÈİÆ÷
+				// å°†å½“å‰å®¹å™¨æ›´æ–°ä¸ºæ–°çš„å®¹å™¨
 				current = container;
 			} else {
-				// »ñÈ¡µ±Ç°Éè¼Æ½çÃæµÄÌáÊ¾äÖÈ¾Æ÷
+				// è·å–å½“å‰è®¾è®¡ç•Œé¢çš„æç¤ºæ¸²æŸ“å™¨
 				Painter p = designer.getPainter();
 				if (p instanceof HoverPainter) {
 					painter = (HoverPainter) p;
@@ -147,7 +147,7 @@ public class FormCreatorDropTarget extends DropTarget {
 			}
 
 			if (painter != null) {
-				// ÎªÌáÊ¾äÖÈ¾Æ÷ÉèÖÃ½¹µãÎ»ÖÃ¡¢ÇøÓòµÈäÖÈ¾²ÎÊı
+				// ä¸ºæç¤ºæ¸²æŸ“å™¨è®¾ç½®ç„¦ç‚¹ä½ç½®ã€åŒºåŸŸç­‰æ¸²æŸ“å‚æ•°
 				Rectangle rect = ComponentUtils.getRelativeBounds(container);
 				rect.x -= designer.getArea().getHorizontalValue();
 				rect.y -= designer.getArea().getVerticalValue();
@@ -156,7 +156,7 @@ public class FormCreatorDropTarget extends DropTarget {
 				painter.setCreator(addingModel.getXCreator());
 			}
 		} else {
-			// Èç¹ûÊó±ê²»ÔÚÈÎºÎ×é¼şÉÏ£¬ÔòÈ¡ÏûÌáÊ¾Æ÷
+			// å¦‚æœé¼ æ ‡ä¸åœ¨ä»»ä½•ç»„ä»¶ä¸Šï¼Œåˆ™å–æ¶ˆæç¤ºå™¨
 			designer.setPainter(null);
 			current = null;
 		}
@@ -194,8 +194,8 @@ public class FormCreatorDropTarget extends DropTarget {
     }
 
     /**
-     * ÍÏ×§½øÈë
-     * @param dtde     ÊÂ¼ş
+     * æ‹–æ‹½è¿›å…¥
+     * @param dtde     äº‹ä»¶
      */
 	public void dragEnter(DropTargetDragEvent dtde) {
 		Point loc = dtde.getLocation();
@@ -203,8 +203,8 @@ public class FormCreatorDropTarget extends DropTarget {
 	}
 
     /**
-     * ÍÏ×§ÒÆ¶¯¾­¹ı
-     * @param dtde     ÊÂ¼ş
+     * æ‹–æ‹½ç§»åŠ¨ç»è¿‡
+     * @param dtde     äº‹ä»¶
      */
 	public void dragOver(DropTargetDragEvent dtde) {
 		Point loc = dtde.getLocation();
@@ -212,28 +212,28 @@ public class FormCreatorDropTarget extends DropTarget {
 	}
 
     /**
-     * ÍÏ×§ÊÂ¼ş
-     * @param dtde     ÊÂ¼ş
+     * æ‹–æ‹½äº‹ä»¶
+     * @param dtde     äº‹ä»¶
      */
 	public void dropActionChanged(DropTargetDragEvent dtde) {
 	}
 
     /**
-     * ÍÏ×§Àë¿ª
-     * @param dte     ÊÂ¼ş
+     * æ‹–æ‹½ç¦»å¼€
+     * @param dte     äº‹ä»¶
      */
 	public void dragExit(DropTargetEvent dte) {
 		this.exiting();
 	}
 
     /**
-     * ÍÏ×§ÊÍ·Å
-     * @param dtde     ÊÂ¼ş
+     * æ‹–æ‹½é‡Šæ”¾
+     * @param dtde     äº‹ä»¶
      */
 	public void drop(DropTargetDropEvent dtde) {
 		Point loc = dtde.getLocation();
 		this.adding(loc.x, loc.y);
-        //Õë¶ÔÔÚ±íµ¥ÖĞÍÏÈëÒ»¸ö¿Ø¼şÖ±½Óctrl+sÎŞ·´Ó¦
+        //é’ˆå¯¹åœ¨è¡¨å•ä¸­æ‹–å…¥ä¸€ä¸ªæ§ä»¶ç›´æ¥ctrl+sæ— ååº”
         designer.requestFocus();
 	}
 }

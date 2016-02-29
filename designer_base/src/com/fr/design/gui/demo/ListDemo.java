@@ -15,7 +15,7 @@ import com.fr.design.layout.TableLayoutHelper;
  * Created by IntelliJ IDEA.
  * User: Richer
  * Date: 11-6-30
- * Time: 下午9:17
+ * Time: 涓嬪崍9:17
  */
 public class ListDemo extends JPanel {
     public ListDemo() {
@@ -24,7 +24,7 @@ public class ListDemo extends JPanel {
         double f = TableLayout.FILL;
 
         Component[][] coms = new Component[][]{
-                {new UILabel("复选框列表:"), createCheckBoxList()},
+                {new UILabel("澶嶉�夋鍒楄〃:"), createCheckBoxList()},
         };
         double[] rowSize = new double[coms.length];
         double[] columnSize = {p, f};
@@ -36,7 +36,7 @@ public class ListDemo extends JPanel {
     }
 
     private CheckBoxList createCheckBoxList() {
-        CheckBoxList cbl = new CheckBoxList(new Object[] {"张三", "李四", "王五", "赵六"});
+        CheckBoxList cbl = new CheckBoxList(new Object[] {"寮犱笁", "鏉庡洓", "鐜嬩簲", "璧靛叚"});
         return cbl;
     }
 }

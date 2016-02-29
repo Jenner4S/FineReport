@@ -14,9 +14,9 @@ public class PolyBlockProperTable extends AbstractPropertyTable {
 	private PolyDesigner designer;
 
 	/**
-	 * ³õÊ¼»¯ÊôĞÔ±í
+	 * åˆå§‹åŒ–å±æ€§è¡¨
 	 * 
-	 * @param source Ö¸¶¨µÄÊôĞÔÀ´Ô´
+	 * @param source æŒ‡å®šçš„å±æ€§æ¥æº
 	 * 
 	 */
 	public void initPropertyGroups(Object source) {
@@ -34,7 +34,7 @@ public class PolyBlockProperTable extends AbstractPropertyTable {
 	}
 
 	/**
-	 * ´¥·¢×é¼şÊôĞÔ±à¼­ÊÂ¼ş
+	 * è§¦å‘ç»„ä»¶å±æ€§ç¼–è¾‘äº‹ä»¶
 	 * 
 	 */
 	public void firePropertyEdit() {

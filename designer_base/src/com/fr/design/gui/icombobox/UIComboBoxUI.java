@@ -26,7 +26,7 @@ import com.fr.stable.StringUtils;
 
 /**
  * @author zhou                                                                                                                       F
- * @since 2012-5-9ÏÂÎç4:33:07
+ * @since 2012-5-9ä¸‹åˆ4:33:07
  */
 public class UIComboBoxUI extends BasicComboBoxUI implements MouseListener {
 
@@ -71,7 +71,7 @@ public class UIComboBoxUI extends BasicComboBoxUI implements MouseListener {
     }
 
     /**
-     * ¸²¸ÇÖ®
+     * è¦†ç›–ä¹‹
      */
     @Override
     public void paintCurrentValue(Graphics g, Rectangle bounds, boolean hasFocus) {
@@ -185,7 +185,7 @@ public class UIComboBoxUI extends BasicComboBoxUI implements MouseListener {
             return new UIScrollPane(list);
         }
 
-        // august:ÖØÔØpaintBorder·½·¨ À´»­³öÎÒÃÇÏëÒªµÄ±ß¿ò..
+        // august:é‡è½½paintBorderæ–¹æ³• æ¥ç”»å‡ºæˆ‘ä»¬æƒ³è¦çš„è¾¹æ¡†..
         @Override
         public void paintBorder(Graphics g) {
             Graphics2D g2 = (Graphics2D) g;

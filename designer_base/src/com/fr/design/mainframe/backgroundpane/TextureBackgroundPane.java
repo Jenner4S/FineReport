@@ -65,9 +65,9 @@ public class TextureBackgroundPane extends BackgroundSettingPane {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		for (int i = 0, count = textureButtonArray.length; i < count; i++) {

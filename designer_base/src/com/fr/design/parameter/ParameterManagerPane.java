@@ -51,9 +51,9 @@ public class ParameterManagerPane extends BasicPane {
     }
 
     /**
-     * ÊÇ·ñÖØÃüÃû
+     * æ˜¯å¦é‡å‘½å
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isContainsRename() {
         return parameterArrayPane.isContainsRename() || parameterArrayPane.isNameRepeated();

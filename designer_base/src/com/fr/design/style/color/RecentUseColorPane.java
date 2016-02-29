@@ -27,15 +27,15 @@ public class RecentUseColorPane extends BasicPane implements ColorSelectable{
 		// center
 		JPanel centerPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
 		this.add(centerPane, BorderLayout.CENTER);
-		// ×î½üÊ¹ÓÃ
+		// æœ€è¿‘ä½¿ç”¨
 		UsedColorPane pane = new UsedColorPane(2, 10, ColorSelectConfigManager.getInstance().getColors(),this);
 		centerPane.add(pane.getPane());
 	}
 
 	/**
-	 * Ñ¡ÖÐÑÕÉ«
+	 * é€‰ä¸­é¢œè‰²
 	 * 
-	 * @param ÑÕÉ«
+	 * @param é¢œè‰²
 	 */
 	@Override
 	public void colorSetted(ColorCell color) {

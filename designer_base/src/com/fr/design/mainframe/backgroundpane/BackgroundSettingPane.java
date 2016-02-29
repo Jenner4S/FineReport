@@ -6,7 +6,7 @@ import com.fr.general.Background;
 
 /**
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:12:28
+ * @since 2012-5-29ä¸‹åˆ1:12:28
  */
 public abstract class BackgroundSettingPane extends BasicBeanPane<Background> implements UIObserver {
 
@@ -22,9 +22,9 @@ public abstract class BackgroundSettingPane extends BasicBeanPane<Background> im
 	public abstract String title4PopupWindow();
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 

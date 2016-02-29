@@ -13,7 +13,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç2:32
+ * Time: ä¸‹åˆ2:32
  */
 public class ChartUndoState extends BaseUndoState<JChart> {
     private ChartBook chartBook;
@@ -38,7 +38,7 @@ public class ChartUndoState extends BaseUndoState<JChart> {
     }
 
     /**
-     * Ó¦ÓÃ×´Ì¬
+     * åº”ç”¨çŠ¶æ€
      */
     public void applyState() {
         this.getApplyTarget().applyUndoState(this);

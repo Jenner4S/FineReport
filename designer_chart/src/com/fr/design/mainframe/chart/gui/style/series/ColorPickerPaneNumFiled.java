@@ -9,7 +9,7 @@ import com.fr.design.gui.itextfield.UINumberField;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-4-8
- * Time: ÉÏÎç9:18
+ * Time: ä¸Šåˆ9:18
  * To change this template use File | Settings | File Templates.
  */
 public class ColorPickerPaneNumFiled extends UINumberField {
@@ -28,7 +28,7 @@ public class ColorPickerPaneNumFiled extends UINumberField {
             public void run() {
                 runChange();
             }
-        },500);// kuns: Ä¬ÈÏĞŞ¸Ä500, ÔÚµØÍ¼ĞŞ¸ÄÏµÁĞÑÕÉ«textÊ±, ¿ìËÙÏìÓ¦.
+        },500);// kuns: é»˜è®¤ä¿®æ”¹500, åœ¨åœ°å›¾ä¿®æ”¹ç³»åˆ—é¢œè‰²textæ—¶, å¿«é€Ÿå“åº”.
 
     }
 

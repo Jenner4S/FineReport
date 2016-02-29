@@ -9,7 +9,7 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : …œŒÁ9:51
+ * Time   : ‰∏äÂçà9:51
  */
 public class XYChartStyleAxisPane extends BinaryChartStyleAxisPane {
     public XYChartStyleAxisPane(Plot plot) {

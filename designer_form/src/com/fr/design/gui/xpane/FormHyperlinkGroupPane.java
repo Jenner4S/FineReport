@@ -11,10 +11,10 @@ import com.fr.js.EmailJavaScript;
 public class FormHyperlinkGroupPane extends  HyperlinkGroupPane{
 	
 	/**
-     * 生成添加按钮的NameableCreator
-     * 由于表单报表块的单元格超链和单元格条件属性超链中的emailPane都要用表单的emailPane，这里调整下
+     * 鐢熸垚娣诲姞鎸夐挳鐨凬ameableCreator
+     * 鐢变簬琛ㄥ崟鎶ヨ〃鍧楃殑鍗曞厓鏍艰秴閾惧拰鍗曞厓鏍兼潯浠跺睘鎬ц秴閾句腑鐨別mailPane閮借鐢ㄨ〃鍗曠殑emailPane锛岃繖閲岃皟鏁翠笅
      *
-     * @return 返回Nameable按钮数组.
+     * @return 杩斿洖Nameable鎸夐挳鏁扮粍.
      */
 	 public NameableCreator[] createNameableCreators() {
 		 NameableCreator[] creators = super.createNameableCreators();

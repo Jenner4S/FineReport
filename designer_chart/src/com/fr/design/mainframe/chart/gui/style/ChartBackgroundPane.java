@@ -25,9 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Í¼±í  ÊôĞÔ±í.±³¾°ÉèÖÃ ½çÃæ.(°üÀ¨ ÎŞ, ÑÕÉ«, Í¼Æ¬, ½¥±ä)
+ * å›¾è¡¨  å±æ€§è¡¨.èƒŒæ™¯è®¾ç½® ç•Œé¢.(åŒ…æ‹¬ æ— , é¢œè‰², å›¾ç‰‡, æ¸å˜)
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-21 ÏÂÎç03:55:32
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-21 ä¸‹åˆ03:55:32
  */
 public class ChartBackgroundPane extends BasicPane{
 	private static final long serialVersionUID = 6955952013135176051L;
@@ -48,7 +48,7 @@ public class ChartBackgroundPane extends BasicPane{
 		final JPanel centerPane = new JPanel(cardlayout) {
 
 			@Override
-			public Dimension getPreferredSize() {// AUGUST:Ê¹ÓÃµ±Ç°Ãæ°åµÄµÄ¸ß¶È
+			public Dimension getPreferredSize() {// AUGUST:ä½¿ç”¨å½“å‰é¢æ¿çš„çš„é«˜åº¦
 				int index = typeComboBox.getSelectedIndex();
 				return new Dimension(super.getPreferredSize().width, paneList.get(index).getPreferredSize().height);
 			}
@@ -112,8 +112,8 @@ public class ChartBackgroundPane extends BasicPane{
 	}
 
     /**
-     * ·µ»Ø±êÌâ
-     * @return ±êÌâ
+     * è¿”å›æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return "";

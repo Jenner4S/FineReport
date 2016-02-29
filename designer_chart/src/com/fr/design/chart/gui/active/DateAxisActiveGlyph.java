@@ -9,7 +9,7 @@ import com.fr.design.chart.gui.ChartComponent;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ4:03
+ * Time   : ‰∏ãÂçà4:03
  */
 public class DateAxisActiveGlyph extends AxisActiveGlyph {
     public DateAxisActiveGlyph(ChartComponent chartComponent, DateAxisGlyph axis, Glyph parentGlyph) {

@@ -42,7 +42,7 @@ import com.fr.stable.ProductConstants;
  * NameTabPane of sheets
  *
  * @editor zhou
- * @since 2012-3-26ÏÂÎç1:45:53
+ * @since 2012-3-26ä¸‹åˆ1:45:53
  */
 public class SheetNameTabPane extends JComponent implements MouseListener, MouseMotionListener {
 
@@ -60,69 +60,69 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
     private static final int ICON_SEP_DISTANCE = 8;
     private static final int TOOLBAR_HEIGHT = 16;
-    private static final int ADD_WIDTH_BY_SHEETNAME = 20; //sheetÃû×ÖµÄÎÄ±¾µ½Í¼±ê±ß¿òµÄ¾àÀë
-    private static final int GRID_TOSHEET_RIGHT = 20; // Ìí¼Ógrid°´Å¥ÓÒ²à¾àsheetÃæ°åÓÒ²àµÄ¾àÀë
-    private static final int POLY_TOSHEET_LEFT = 30; // Ìí¼Ópoly°´Å¥×ó²à¾àsheetÃæ°åÓÒ²àµÄ¾àÀë
-    private static final int POLY_TOSHEET_RIGHT = 50; // Ìí¼Ópoly°´Å¥ÓÒ²à¾àsheetÃæ°åÓÒ²àµÄ¾àÀë
-    private static final int SHEET_ICON_GAP = 5; // Ã¿¸ösheetÍ¼±êÖ®¼äµÄ¾àÀë
+    private static final int ADD_WIDTH_BY_SHEETNAME = 20; //sheetåå­—çš„æ–‡æœ¬åˆ°å›¾æ ‡è¾¹æ¡†çš„è·ç¦»
+    private static final int GRID_TOSHEET_RIGHT = 20; // æ·»åŠ gridæŒ‰é’®å³ä¾§è·sheeté¢æ¿å³ä¾§çš„è·ç¦»
+    private static final int POLY_TOSHEET_LEFT = 30; // æ·»åŠ polyæŒ‰é’®å·¦ä¾§è·sheeté¢æ¿å³ä¾§çš„è·ç¦»
+    private static final int POLY_TOSHEET_RIGHT = 50; // æ·»åŠ polyæŒ‰é’®å³ä¾§è·sheeté¢æ¿å³ä¾§çš„è·ç¦»
+    private static final int SHEET_ICON_GAP = 5; // æ¯ä¸ªsheetå›¾æ ‡ä¹‹é—´çš„è·ç¦»
 
-    private static final int GRAP = 12; // ¸øÁ½¸öÌí¼Ó°´Å¥ÓëÆäËû×é¼şÔ¤ÁôµÄ¼ä¸ô
-    private static final int LEFT_CORNOR = 0;// ×ó½ÇÂä.
-    private static final int RIGHT_CORNOR = 0;// ÓÒ½ÇÂä
+    private static final int GRAP = 12; // ç»™ä¸¤ä¸ªæ·»åŠ æŒ‰é’®ä¸å…¶ä»–ç»„ä»¶é¢„ç•™çš„é—´éš”
+    private static final int LEFT_CORNOR = 0;// å·¦è§’è½.
+    private static final int RIGHT_CORNOR = 0;// å³è§’è½
 
     /**
-     * ×óÒÆºÍÓÒÒÆ°´Å¥
+     * å·¦ç§»å’Œå³ç§»æŒ‰é’®
      */
     private UIButton leftButton;
     private UIButton rightButton;
     /**
-     * Êó±ê°´ÏÂÊ±µÄ×ø±êÊı×é¡¢Êó±ê·Å¿ªÊ±µÄ×ø±êÊı×é
+     * é¼ æ ‡æŒ‰ä¸‹æ—¶çš„åæ ‡æ•°ç»„ã€é¼ æ ‡æ”¾å¼€æ—¶çš„åæ ‡æ•°ç»„
      */
     private int[] xyPressedCoordinate = {0, 0};
     private int[] xyReleasedCoordinate = {0, 0};
 
     /**
-     * ±£´æÃ¿¸öworkSheetµÄ¿í¶È.
+     * ä¿å­˜æ¯ä¸ªworkSheetçš„å®½åº¦.
      */
     private int[] widthArray;
 
     /**
-     * Õâ¸öÊı×éÓÃÀ´¼ÇÂ¼Êó±êdrag¹ıµÄÇøÓòÀïÃæµÄµã.
+     * è¿™ä¸ªæ•°ç»„ç”¨æ¥è®°å½•é¼ æ ‡dragè¿‡çš„åŒºåŸŸé‡Œé¢çš„ç‚¹.
      */
     private List<Point> lineArray = new ArrayList<Point>();
 
     /**
-     * Êó±êÊÇ·ñÒÑ¾­ÊÍ·Å
+     * é¼ æ ‡æ˜¯å¦å·²ç»é‡Šæ”¾
      */
     private boolean isReleased = false;
 
     /**
-     * ÊÇ·ñÔ½½ç
+     * æ˜¯å¦è¶Šç•Œ
      */
     private boolean isOvertakeWidth = false;
 
     /**
-     * ÄÜÏÔÊ¾µÄtab¸öÊı
+     * èƒ½æ˜¾ç¤ºçš„tabä¸ªæ•°
      */
     private int showCount = 0;
 
     /**
-     * Á½¸öÌí¼ÓÍ¼±êµÄÎ»ÖÃ¡£
+     * ä¸¤ä¸ªæ·»åŠ å›¾æ ‡çš„ä½ç½®ã€‚
      */
     protected int iconLocation;
 
     /**
-     * august£º µ±sheetµÄÊıÁ¿¹ı¶àÁË£¬scrollIndex¾ÍÓĞÓÃÁË£¬ÓÃÀ´±íÊ¾×î×ó±ßµÄsheetµÄIndex
+     * augustï¼š å½“sheetçš„æ•°é‡è¿‡å¤šäº†ï¼ŒscrollIndexå°±æœ‰ç”¨äº†ï¼Œç”¨æ¥è¡¨ç¤ºæœ€å·¦è¾¹çš„sheetçš„Index
      */
     private int scrollIndex = 0;
 
     /**
-     * µ±³¬¹ı×î´ó¿í¶ÈÊ±£¬×îÓÒ±ßµÄsheetµÄindex
+     * å½“è¶…è¿‡æœ€å¤§å®½åº¦æ—¶ï¼Œæœ€å³è¾¹çš„sheetçš„index
      */
     private int lastOneIndex;
 
     /**
-     * ±à¼­µÄ¶ÔÏóÊµÀı
+     * ç¼–è¾‘çš„å¯¹è±¡å®ä¾‹
      */
     private ReportComponentComposite reportComposite;
     
@@ -199,7 +199,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * ÉèÖÃÑ¡Ôñindex
+     * è®¾ç½®é€‰æ‹©index
      *
      * @param newIndex
      */
@@ -210,7 +210,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * ÔÚÈ¨ÏŞÏ¸Á£¶È×´Ì¬ÏÂ£¬µã»÷sheet£¬½øÈë±à¼­sheet¿É¼û²»¿É¼û×´Ì¬
+     * åœ¨æƒé™ç»†ç²’åº¦çŠ¶æ€ä¸‹ï¼Œç‚¹å‡»sheetï¼Œè¿›å…¥ç¼–è¾‘sheetå¯è§ä¸å¯è§çŠ¶æ€
      */
     private void doWithAuthority() {
         AuthoritySheetEditedPane sheetEditedPane = new AuthoritySheetEditedPane(reportComposite.getEditingWorkBook(), selectedIndex);
@@ -222,7 +222,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
     /**
      * /**
-     * selectedIndex ¸Ä±äÖ®Ç°Ëù×öµÄÊÂÇé
+     * selectedIndex æ”¹å˜ä¹‹å‰æ‰€åšçš„äº‹æƒ…
      *
      * @param oldIndex
      */
@@ -231,7 +231,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * selectedIndex ¸Ä±äÖ®ºóËù×öµÄÊÂÇé
+     * selectedIndex æ”¹å˜ä¹‹åæ‰€åšçš„äº‹æƒ…
      *
      * @param newIndex
      */
@@ -240,7 +240,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * µÃµ½Ñ¡ÔñµÄindex
+     * å¾—åˆ°é€‰æ‹©çš„index
      *
      * @return
      */
@@ -249,9 +249,9 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * Êó±êÍÏ×§
+     * é¼ æ ‡æ‹–æ‹½
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseDragged(MouseEvent e) {
         if (isAuthorityEditing) {
@@ -262,9 +262,9 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * Êó±êÒÆ¶¯
+     * é¼ æ ‡ç§»åŠ¨
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseMoved(MouseEvent e) {
     }
@@ -276,13 +276,13 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
     @Override
     /**
-     * »­Tab
+     * ç”»Tab
      */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         isAuthorityEditing = BaseUtils.isAuthorityEditing();
         showCount = 0;
-        // ¿ªÊ¼»­ÄÇĞ©Tab.
+        // å¼€å§‹ç”»é‚£äº›Tab.
         Graphics2D g2d = (Graphics2D) g;
         FontMetrics fm = GraphHelper.getFontMetrics(this.getFont());
         int charWidth = fm.charWidth('M');
@@ -291,16 +291,16 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
         widthArray = calculateWidthArray();
         int operationWidth = GRAP + ADD_WORK_SHEET.getIconWidth() + ICON_SEP_DISTANCE + ADD_POLY_SHEET.getIconWidth();
-        double maxWidth = getWidth() - operationWidth - buttonPane.getWidth();// ×î´ó¿í¶È
+        double maxWidth = getWidth() - operationWidth - buttonPane.getWidth();// æœ€å¤§å®½åº¦
         paintBackgroundAndLine(g2d, textHeight, maxWidth, charWidth, textAscent);
         checkButton(showCount < widthArray.length);
 
-        // richie:µ±linearray²»Îª¿ÕÊ±£¬ËµÃ÷ÓĞÁËÊó±êÍÏ¶¯,ÏÂÃæ»­ÓÉÓÚÊó±êÍÏ¶¯²úÉúµÄĞ§¹û.
+        // richie:å½“linearrayä¸ä¸ºç©ºæ—¶ï¼Œè¯´æ˜æœ‰äº†é¼ æ ‡æ‹–åŠ¨,ä¸‹é¢ç”»ç”±äºé¼ æ ‡æ‹–åŠ¨äº§ç”Ÿçš„æ•ˆæœ.
         if (!lineArray.isEmpty()) {
             paintDragTab(g2d, textHeight, charWidth, textAscent);
         }
 
-        // richie:Êó±êËÉ¿ªÊ±°ÑdragµÄ¹ì¼£Êı×éclearµô.
+        // richie:é¼ æ ‡æ¾å¼€æ—¶æŠŠdragçš„è½¨è¿¹æ•°ç»„clearæ‰.
         if (isReleased) {
             lineArray.clear();
         }
@@ -345,7 +345,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
             }
         }
 
-        // »­Á½¸öÌí¼ÓsheetÍ¼±ê
+        // ç”»ä¸¤ä¸ªæ·»åŠ sheetå›¾æ ‡
         iconLocation = isOvertakeWidth ? (int) (maxWidth) : addIconlocation + GRAP;
         
         paintAddButton(g2d);
@@ -357,7 +357,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * »­Ñ¡ÖĞµÄtab
+     * ç”»é€‰ä¸­çš„tab
      *
      * @param g2d
      * @param sheeticon
@@ -393,13 +393,13 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 //        g2d.draw(new Line2D.Double(x[3], y[3], x[4], y[4]));
 //        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
         sheeticon.paintIcon(this, g2d, (int) textX + charWidth, 2);
-        // peter:»­×Ö·û
+        // peter:ç”»å­—ç¬¦
         g2d.setPaint(getForeground());
         g2d.drawString(sheetName, (int) textX + charWidth + 14, textAscent);
     }
 
     /**
-     * »­²»ÊÇÑ¡ÖĞ×´Ì¬µÄtab
+     * ç”»ä¸æ˜¯é€‰ä¸­çŠ¶æ€çš„tab
      *
      * @param g2d
      * @param sheetIcon
@@ -446,7 +446,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * »­ÍÏ×§µÄ¹ì¼£
+     * ç”»æ‹–æ‹½çš„è½¨è¿¹
      *
      * @param g2d
      * @param textHeight
@@ -457,13 +457,13 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
         g2d.setPaint(UIManager.getColor("TabbedPane.darkShadow"));
         Point lastPoint = lineArray.get(lineArray.size() - 1);
 
-        // richie:Êó±êÍÏ¶¯¿ªÊ¼Ê±µÄx×ø±ê
+        // richie:é¼ æ ‡æ‹–åŠ¨å¼€å§‹æ—¶çš„xåæ ‡
         int startPointX = this.getPressedXY()[0];
 
-        // richie£ºµ±Ç°Ñ¡ÖĞµÄworkSheetµÄ¿í¶È
+        // richieï¼šå½“å‰é€‰ä¸­çš„workSheetçš„å®½åº¦
         int width = widthArray[selectedIndex];
         int totalWidth = 0;
-        // richie:µ±Ç°Ñ¡ÖĞµÄworkSheetÖ®Ç°µÄËùÓĞworkSheetsµÄ×Ü¿í¶È
+        // richie:å½“å‰é€‰ä¸­çš„workSheetä¹‹å‰çš„æ‰€æœ‰workSheetsçš„æ€»å®½åº¦
         for (int i = 0; i < selectedIndex; i++) {
             totalWidth += widthArray[i];
         }
@@ -473,14 +473,14 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
         int[] x = {(int) lastPoint.getX() - distance, (int) lastPoint.getX() - distance, (int) lastPoint.getX() - distance + width, (int) lastPoint.getX() + width - distance};
         int[] y = {0, (int) (textHeight), (int) (textHeight), 0};
         g2d.drawPolygon(x, y, 4);
-        // peter:»­×Ö·û
+        // peter:ç”»å­—ç¬¦
         g2d.setPaint(getForeground());
-        // richie£º°Ñµ±Ç°Ñ¡ÖĞµÄworkSheetµÄÃû×Ö»­µ½Êó±êÍÏ¶¯²úÉúµÄÍ¼ĞÎÉÏ.
+        // richieï¼šæŠŠå½“å‰é€‰ä¸­çš„workSheetçš„åå­—ç”»åˆ°é¼ æ ‡æ‹–åŠ¨äº§ç”Ÿçš„å›¾å½¢ä¸Š.
         g2d.drawString(reportComposite.getEditingWorkBook().getReportName(selectedIndex), (int) lastPoint.getX() - distance + charWidth, textAscent);
     }
 
     /**
-     * ¸ù¾İÃû×ÖºÍ¸öÊı¼ÆËã³öËùÓĞtabµÄ¿í¶È
+     * æ ¹æ®åå­—å’Œä¸ªæ•°è®¡ç®—å‡ºæ‰€æœ‰tabçš„å®½åº¦
      *
      * @return
      */
@@ -516,17 +516,17 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * Êó±êµã»÷ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»äº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
     }
 
     /**
-     * Êó±ê°´ÏÂÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
      *
-     * @param evt Êó±êÊÂ¼ş
+     * @param evt é¼ æ ‡äº‹ä»¶
      */
     public void mousePressed(MouseEvent evt) {
         int reportcount = reportComposite.getEditingWorkBook().getReportCount();
@@ -594,9 +594,9 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
 
     /**
-     * Êó±êÊÍ·ÅÊÂ¼ş
+     * é¼ æ ‡é‡Šæ”¾äº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
         this.isReleased = true;
@@ -609,22 +609,22 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
             return;
         }
         if (this.getPressedXY()[0] != this.getReleasedXY()[0] || this.getPressedXY()[1] != this.getReleasedXY()[1]) {
-            // ÒòÎªÏÂÃæµÄ²Ù×÷»áÊ¹µÃselectedIndex±ä»¯£¬ËùÒÔÒª¸öÁ¿À´±£´æ¿ªÊ¼µÄselectedIndex
+            // å› ä¸ºä¸‹é¢çš„æ“ä½œä¼šä½¿å¾—selectedIndexå˜åŒ–ï¼Œæ‰€ä»¥è¦ä¸ªé‡æ¥ä¿å­˜å¼€å§‹çš„selectedIndex
             int si = selectedIndex;
-            // richie:workSheetÏòÓÒÍÏ¶¯
+            // richie:workSheetå‘å³æ‹–åŠ¨
             int moveRighttDistance = this.getReleasedXY()[0] - this.getPressedXY()[0];
-            // richie:Ïò×óÍÏ¶¯
+            // richie:å‘å·¦æ‹–åŠ¨
             int moveLeftDistance = -moveRighttDistance;
-            // samuel:ÍÏ¶¯·¶Î§³¬¹ı¿í¶ÈµÄÒ»°ë²ÅÒÆ¶¯,²¢ÇÒ²»Ô½½ç
+            // samuel:æ‹–åŠ¨èŒƒå›´è¶…è¿‡å®½åº¦çš„ä¸€åŠæ‰ç§»åŠ¨,å¹¶ä¸”ä¸è¶Šç•Œ
             if (moveRighttDistance > widthArray[si] / 2 && this.getReleasedXY()[0] < width) {
                 move2Right(moveRighttDistance, si);
-                //ÍÏ×§´¥·¢±£´æ
+                //æ‹–æ‹½è§¦å‘ä¿å­˜
                 reportComposite.fireTargetModified();
                 this.repaint(100);
                 return;
             } else if (moveLeftDistance > widthArray[si] / 2) {
                 move2Left(moveLeftDistance, si);
-                //ÍÏ×§´¥·¢±£´æ
+                //æ‹–æ‹½è§¦å‘ä¿å­˜
                 reportComposite.fireTargetModified();
                 this.repaint(100);
                 return;
@@ -637,10 +637,10 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * ÓÒÒÆ¶¯
+     * å³ç§»åŠ¨
      *
-     * @param moveRighttDistance ÓÒ²àÒÆ¶¯¾àÀë
-     * @param si ¿í¶È×ø±ê
+     * @param moveRighttDistance å³ä¾§ç§»åŠ¨è·ç¦»
+     * @param si å®½åº¦åæ ‡
      */
     private void move2Right(int moveRighttDistance, int si) {
         int reportcount = reportComposite.getEditingWorkBook().getReportCount();
@@ -649,7 +649,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
                 int i = selectedIndex;
                 this.exchangeWorkSheet(selectedIndex, selectedIndex + 1);
                 setSelectedIndex(selectedIndex + 1);
-                // richie:ÍÏµ½Ô½¹ıËùÓĞµÄworkSheetÊ±£¬Ö±½Ó¾Í×÷Îª×îºóÒ»¸öworkSheet
+                // richie:æ‹–åˆ°è¶Šè¿‡æ‰€æœ‰çš„workSheetæ—¶ï¼Œç›´æ¥å°±ä½œä¸ºæœ€åä¸€ä¸ªworkSheet
                 if (i > reportcount - 3) {
                     setSelectedIndex(reportcount - 1);
                     return;
@@ -663,10 +663,10 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * ×óÒÆ¶¯
+     * å·¦ç§»åŠ¨
      *
-     * @param moveLeftDistance ×ó²à¾àÀë
-     * @param si ¿í¶È×ø±ê
+     * @param moveLeftDistance å·¦ä¾§è·ç¦»
+     * @param si å®½åº¦åæ ‡
      */
     private void move2Left(int moveLeftDistance, int si) {
         if (selectedIndex > 0) {
@@ -674,7 +674,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
                 int i = selectedIndex;
                 this.exchangeWorkSheet(selectedIndex, selectedIndex - 1);
                 setSelectedIndex(selectedIndex - 1);
-                // richie:ÍÏµ½Ô½¹ıËùÓĞµÄworkSheetÊ±£¬Ö±½Ó¾Í×÷ÎªµÚÒ»¸öworkSheet
+                // richie:æ‹–åˆ°è¶Šè¿‡æ‰€æœ‰çš„workSheetæ—¶ï¼Œç›´æ¥å°±ä½œä¸ºç¬¬ä¸€ä¸ªworkSheet
                 if (i < 2) {
                     setSelectedIndex(0);
                     return;
@@ -687,17 +687,17 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
     }
 
     /**
-     * Êó±ê½øÈëÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥äº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
     }
 
     /**
-     * Êó±êÍË³öÊÂ¼ş
+     * é¼ æ ‡é€€å‡ºäº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
     }
@@ -742,7 +742,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
             reportComposite.getEditingWorkBook().addReport(insertPos, newTemplateReport());
             setSelectedIndex(insertPos);
 
-            // sheetÃû×ÖµÄ¹«Ê½Ò²ĞèÒª×öÏàÓ¦µÄ±ä»¯.
+            // sheetåå­—çš„å…¬å¼ä¹Ÿéœ€è¦åšç›¸åº”çš„å˜åŒ–.
             reportComposite.setComposite();
             reportComposite.fireTargetModified();
             ReportComponent ReportComponent = reportComposite.centerCardPane.editingComponet;
@@ -758,7 +758,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
                 int width = widthArray[i];
                 textX += width + 1;
                 int operationWidth = GRAP + ADD_WORK_SHEET.getIconWidth() + ICON_SEP_DISTANCE + ADD_POLY_SHEET.getIconWidth();
-                double maxWidth = getWidth() - operationWidth - buttonPane.getWidth();// ×î´ó¿í¶È
+                double maxWidth = getWidth() - operationWidth - buttonPane.getWidth();// æœ€å¤§å®½åº¦
                 if (i < widthArray.length - 1 && textX + widthArray[i + 1] + 1 > maxWidth) {
                     isOvertakeWidth = true;
                     scrollIndex++;
@@ -819,7 +819,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
             }
             int count = reportComposite.getEditingWorkBook().getReportCount();
             if (count <= 1) {
-                JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(reportComposite), Inter.getLocText("At_least_one_visual_worksheet") + "£¡");
+                JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(reportComposite), Inter.getLocText("At_least_one_visual_worksheet") + "ï¼");
                 return;
             }
             int returnValue = JOptionPane.showConfirmDialog(SwingUtilities.getWindowAncestor(reportComposite), Inter.getLocText("Des-Remove_WorkSheet"), ProductConstants.APP_NAME,
@@ -876,7 +876,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
 
             String newName = JOptionPane.showInputDialog(reportComposite, Inter.getLocText("Rename") + ":", reportComposite.getEditingWorkBook().getReportName(selectedIndex));
             if (newName != null) {
-                // marks£ºÅĞ¶ÏÊÇ·ñÖØÃû
+                // marksï¼šåˆ¤æ–­æ˜¯å¦é‡å
                 boolean isExisted = false;
                 for (int i = 0; i < reportComposite.getEditingWorkBook().getReportCount(); i++) {
                     if (newName.equalsIgnoreCase(reportComposite.getEditingWorkBook().getReportName(i))) {
@@ -887,7 +887,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
                 if (!isExisted) {
                     reportComposite.getEditingWorkBook().setReportName(selectedIndex, newName);
                     reportComposite.getEditingReportComponent().fireTargetModified();
-                    // sheetÃû×ÖµÄ¹«Ê½Ò²ĞèÒª×öÏàÓ¦µÄ±ä»¯.
+                    // sheetåå­—çš„å…¬å¼ä¹Ÿéœ€è¦åšç›¸åº”çš„å˜åŒ–.
                     reportComposite.repaint();
                 } else {
                     JOptionPane.showMessageDialog(reportComposite, Inter.getLocText("Utils-The_Name_has_been_existed"));
@@ -911,7 +911,7 @@ public class SheetNameTabPane extends JComponent implements MouseListener, Mouse
                 return;
             }
 
-            // ÔÚĞèÒª¸´ÖÆµÄsheetºó¼ÓÉÏ
+            // åœ¨éœ€è¦å¤åˆ¶çš„sheetååŠ ä¸Š
             int index = selectedIndex;
             reportComposite.getEditingWorkBook().addReport(index + 1, tr);
 

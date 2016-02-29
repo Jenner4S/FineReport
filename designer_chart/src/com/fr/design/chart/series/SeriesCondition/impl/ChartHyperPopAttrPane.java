@@ -25,9 +25,9 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * Í¼±íµ¯³ö³¬Á´, Ğü¸¡´°ÊôĞÔÉèÖÃ½çÃæ.
+ * å›¾è¡¨å¼¹å‡ºè¶…é“¾, æ‚¬æµ®çª—å±æ€§è®¾ç½®ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-6 ÉÏÎç09:39:22
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-6 ä¸Šåˆ09:39:22
  */
 public class ChartHyperPopAttrPane extends AbstractChartAttrPane {
 	
@@ -103,7 +103,7 @@ public class ChartHyperPopAttrPane extends AbstractChartAttrPane {
 	}
 
 	/**
-	 * ÊôĞÔ±í ¶ÔÓ¦update
+	 * å±æ€§è¡¨ å¯¹åº”update
 	 */
 	public void updateBean(ChartHyperPoplink chartHyperlink) {
 		String title = titleField.getText();
@@ -142,8 +142,8 @@ public class ChartHyperPopAttrPane extends AbstractChartAttrPane {
 
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Hyperlink_ChartHyperlink");

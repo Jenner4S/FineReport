@@ -53,8 +53,8 @@ public class BBSDialog extends UIDialog {
 
     private void disableLink(final WebEngine eng) {
         try{
-            // webView¶Ë²»Ìø×ª ËäÈ»webView¿ÉÒÔÖ¸¶¨±¾µØä¯ÀÀÆ÷´ò¿ªÄ³¸öÁ´½Ó£¬µ«ÊÇµ±±¾µØä¯ÀÀÆ÷Ìø×ªµ½Ö¸¶¨Á´½ÓµÄÍ¬Ê±£¬webViewÒ²×öÁËÌø×ª£¬
-            // ÎªÁË±ÜÃâ³öÏÖÔÚÒ»¸ö600*400µÄ×ÊÑ¶¿òÀï¼ÓÔØÕû¸öÍøÒ³µÄÇé¿ö£¬webView²»Ìø×ªµ½ĞÂÍøÒ³
+            // webViewç«¯ä¸è·³è½¬ è™½ç„¶webViewå¯ä»¥æŒ‡å®šæœ¬åœ°æµè§ˆå™¨æ‰“å¼€æŸä¸ªé“¾æ¥ï¼Œä½†æ˜¯å½“æœ¬åœ°æµè§ˆå™¨è·³è½¬åˆ°æŒ‡å®šé“¾æ¥çš„åŒæ—¶ï¼ŒwebViewä¹Ÿåšäº†è·³è½¬ï¼Œ
+            // ä¸ºäº†é¿å…å‡ºç°åœ¨ä¸€ä¸ª600*400çš„èµ„è®¯æ¡†é‡ŒåŠ è½½æ•´ä¸ªç½‘é¡µçš„æƒ…å†µï¼ŒwebViewä¸è·³è½¬åˆ°æ–°ç½‘é¡µ
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
@@ -67,8 +67,8 @@ public class BBSDialog extends UIDialog {
     }
 
     /**
-     * ´ò¿ª×ÊÑ¶¿ò
-     * @param url ×ÊÑ¶Á´½Ó
+     * æ‰“å¼€èµ„è®¯æ¡†
+     * @param url èµ„è®¯é“¾æ¥
      */
     public void showWindow(final String url){
         GUICoreUtils.centerWindow(this);
@@ -85,7 +85,7 @@ public class BBSDialog extends UIDialog {
                 view.setMinSize(widthDouble, heightDouble);
                 view.setPrefSize(widthDouble, heightDouble);
                 final WebEngine eng = view.getEngine();
-                //webEngineµÄuserAgentÃ²ËÆÖ§³ÖÒÆ¶¯Éè±¸µÄ£¬ÈÎºÎÆäËûä¯ÀÀÆ÷µÄuserAngent¶¼»áµ¼ÖÂ³ÌĞò±ÀÀ£
+                //webEngineçš„userAgentè²Œä¼¼æ”¯æŒç§»åŠ¨è®¾å¤‡çš„ï¼Œä»»ä½•å…¶ä»–æµè§ˆå™¨çš„userAngentéƒ½ä¼šå¯¼è‡´ç¨‹åºå´©æºƒ
                 //eng.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) Apple/WebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36");
                 eng.load(url);
                 root.getChildren().add(view);
@@ -94,7 +94,7 @@ public class BBSDialog extends UIDialog {
                     public void changed(ObservableValue<? extends String> observable, final String oldValue, String newValue)
                     {
                     	disableLink(eng);
-                    	// webViewºÃÏñÄ¬ÈÏÒÔÊÖ»ú°æÏÔÊ¾ÍøÒ³£¬ä¯ÀÀÆ÷Àï¹ıÂËµôÕâ¸öÌø×ª
+                    	// webViewå¥½åƒé»˜è®¤ä»¥æ‰‹æœºç‰ˆæ˜¾ç¤ºç½‘é¡µï¼Œæµè§ˆå™¨é‡Œè¿‡æ»¤æ‰è¿™ä¸ªè·³è½¬
                 		if(ComparatorUtils.equals(newValue, url) || ComparatorUtils.equals(newValue, BBSConstants.BBS_MOBILE_MOD)){
                 			return;
                 		}
@@ -113,31 +113,31 @@ public class BBSDialog extends UIDialog {
         });
     }
     
-    // ÔÚ±¾µØä¯ÀÀÆ÷Àï´ò¿ªurl
+    // åœ¨æœ¬åœ°æµè§ˆå™¨é‡Œæ‰“å¼€url
     private void openUrlAtLocalWebBrowser(WebEngine eng,String url){
         if(Desktop.isDesktopSupported()){
             try{
-                //´´½¨Ò»¸öURIÊµÀı,×¢Òâ²»ÊÇURL
+                //åˆ›å»ºä¸€ä¸ªURIå®ä¾‹,æ³¨æ„ä¸æ˜¯URL
                 URI uri = URI.create(url);
-                //»ñÈ¡µ±Ç°ÏµÍ³×ÀÃæÀ©Õ¹
+                //è·å–å½“å‰ç³»ç»Ÿæ¡Œé¢æ‰©å±•
                 Desktop desktop = Desktop.getDesktop();
-                //ÅĞ¶ÏÏµÍ³×ÀÃæÊÇ·ñÖ§³ÖÒªÖ´ĞĞµÄ¹¦ÄÜ
+                //åˆ¤æ–­ç³»ç»Ÿæ¡Œé¢æ˜¯å¦æ”¯æŒè¦æ‰§è¡Œçš„åŠŸèƒ½
                 if(desktop.isSupported(Desktop.Action.BROWSE)){
-                    //»ñÈ¡ÏµÍ³Ä¬ÈÏä¯ÀÀÆ÷´ò¿ªÁ´½Ó
+                    //è·å–ç³»ç»Ÿé»˜è®¤æµè§ˆå™¨æ‰“å¼€é“¾æ¥
                 	desktop.browse(uri);
                 }
             }catch(NullPointerException e){
-                //´ËÎªuriÎª¿ÕÊ±Å×³öÒì³£
+                //æ­¤ä¸ºuriä¸ºç©ºæ—¶æŠ›å‡ºå¼‚å¸¸
             	FRLogger.getLogger().error(e.getMessage());
             }catch(IOException e){
-                //´ËÎªÎŞ·¨»ñÈ¡ÏµÍ³Ä¬ÈÏä¯ÀÀÆ÷
+                //æ­¤ä¸ºæ— æ³•è·å–ç³»ç»Ÿé»˜è®¤æµè§ˆå™¨
             	FRLogger.getLogger().error(e.getMessage());
             }
         }
     }
 
     /**
-     * ÂÔ
+     * ç•¥
      */
     @Override
     public void checkValid() throws Exception {

@@ -30,7 +30,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
  * 
- * Õâ¸öÀàÖ÷ÒªÓÃÓÚ²åÈëÍ¼Æ¬Ê±µÄÉèÖÃ
+ * è¿™ä¸ªç±»ä¸»è¦ç”¨äºæ’å…¥å›¾ç‰‡æ—¶çš„è®¾ç½®
  *
  */
 public class SelectImagePane extends BasicPane{
@@ -76,7 +76,7 @@ public class SelectImagePane extends BasicPane{
         JPanel layoutPane=FRGUIPaneFactory.createMediumHGapHighTopFlowInnerContainer_M_Pane();
         selectFilePane.add(layoutPane, BorderLayout.CENTER);
         
-        //²¼¾Ö
+        //å¸ƒå±€
         defaultRadioButton = new UIRadioButton(Inter.getLocText("Default"));
         tiledRadioButton = new UIRadioButton(Inter.getLocText("Image-Titled"));
         extendRadioButton = new UIRadioButton(Inter.getLocText("Image-Extend"));
@@ -134,7 +134,7 @@ public class SelectImagePane extends BasicPane{
         }
     };
     
-    // µ÷ÕûÍ¼Æ¬ÑùÊ½£¬Ö»ÓĞË®Æ½ºÍ´¹Ö±¶ÔÆëÒÔ¼°À­Éì¡£Ïà¶ÔÓÚ±³¾°£¬Æ½ÆÌ²»Óè¿¼ÂÇ¡£
+    // è°ƒæ•´å›¾ç‰‡æ ·å¼ï¼Œåªæœ‰æ°´å¹³å’Œå‚ç›´å¯¹é½ä»¥åŠæ‹‰ä¼¸ã€‚ç›¸å¯¹äºèƒŒæ™¯ï¼Œå¹³é“ºä¸äºˆè€ƒè™‘ã€‚
     private void changeImageStyle() {
     	previewPane.setImageStyle(this.imageStyle);
     	previewPane.repaint();

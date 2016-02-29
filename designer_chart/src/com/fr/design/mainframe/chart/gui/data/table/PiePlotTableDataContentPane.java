@@ -17,8 +17,8 @@ public class PiePlotTableDataContentPane extends AbstractTableDataContentPane{
 	}
 
     /**
-     * 判断时候使用typeChoosePane
-     * @param hasUse 是否使用
+     * 鍒ゆ柇鏃跺�欎娇鐢╰ypeChoosePane
+     * @param hasUse 鏄惁浣跨敤
      */
 	public void checkBoxUse(boolean hasUse) {
 		typeChoosePane.checkUseBox(hasUse);
@@ -29,7 +29,7 @@ public class PiePlotTableDataContentPane extends AbstractTableDataContentPane{
 	}
 
     /**
-     * 清空所有的box设置
+     * 娓呯┖鎵�鏈夌殑box璁剧疆
      */
     public void clearAllBoxList(){
         typeChoosePane.clearAllBoxList();
@@ -46,7 +46,7 @@ public class PiePlotTableDataContentPane extends AbstractTableDataContentPane{
 	}
 
     /**
-     * 重新布局整个面板
+     * 閲嶆柊甯冨眬鏁翠釜闈㈡澘
      */
     public void redoLayoutPane(){
         typeChoosePane.relayoutPane(this.isNeedSummaryCaculateMethod());

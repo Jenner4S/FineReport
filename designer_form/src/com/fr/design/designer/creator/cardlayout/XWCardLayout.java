@@ -50,7 +50,7 @@ public class XWCardLayout extends XLayoutContainer {
 	private CardLayout cardLayout;
 	private boolean initFlag = true;
 	private static final int NORTH = 0;
-	//Ä¬ÈÏÀ¶É«±êÌâ±³¾°
+	//é»˜è®¤è“è‰²æ ‡é¢˜èƒŒæ™¯
 	private static final Color TITLE_COLOR = new Color(51, 132, 240);
 
     public XWCardLayout(WCardLayout widget, Dimension initSize) {
@@ -63,12 +63,12 @@ public class XWCardLayout extends XLayoutContainer {
     }
     
     /**
-	 * »ñÈ¡Ä¬ÈÏÃû×Ö
+	 * è·å–é»˜è®¤åå­—
 	 * 
-	 * @return Ä¬ÈÏÃû
+	 * @return é»˜è®¤å
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:22:40
+	 * @date 2014-11-25-ä¸‹åˆ6:22:40
 	 * 
 	 */
 	public String createDefaultName() {
@@ -76,12 +76,12 @@ public class XWCardLayout extends XLayoutContainer {
     }
 
     /**
-	 * »ñÈ¡µ±Ç°·â×°µÄ²¼¾Ö¶ÔÏó
+	 * è·å–å½“å‰å°è£…çš„å¸ƒå±€å¯¹è±¡
 	 * 
-	 * @return ²¼¾Ö
+	 * @return å¸ƒå±€
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:22:17
+	 * @date 2014-11-25-ä¸‹åˆ6:22:17
 	 * 
 	 */
     public WCardLayout toData() {
@@ -95,10 +95,10 @@ public class XWCardLayout extends XLayoutContainer {
     }
 
     /**
-	 * ½«WLayout×ª»»ÎªXLayoutContainer
+	 * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:21:48
+	 * @date 2014-11-25-ä¸‹åˆ6:21:48
 	 * 
 	 */
 
@@ -113,10 +113,10 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 
 	/**
-	 * Õ¹Ê¾µ±Ç°Ñ¡ÖĞµÄcard
+	 * å±•ç¤ºå½“å‰é€‰ä¸­çš„card
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:21:23
+	 * @date 2014-11-25-ä¸‹åˆ6:21:23
 	 * 
 	 */
 	public void showCard() {
@@ -127,20 +127,20 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°XCreatorµÄÒ»¸ö·â×°¸¸ÈİÆ÷
+	 * è·å–å½“å‰XCreatorçš„ä¸€ä¸ªå°è£…çˆ¶å®¹å™¨
 	 * 
-	 * @param widgetName µ±Ç°×é¼şÃû
+	 * @param widgetName å½“å‰ç»„ä»¶å
 	 * 
-	 * @return ·â×°µÄ¸¸ÈİÆ÷
+	 * @return å°è£…çš„çˆ¶å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:47:23
+	 * @date 2014-11-25-ä¸‹åˆ4:47:23
 	 * 
 	 */
 	protected XLayoutContainer getCreatorWrapper(String widgetName) {
 		initStyle();
 		Dimension dimension = new Dimension();
-		//Ö÷½á¹¹ÊÇÒ»¸öborderlayout, ±êÇ©²¿·ÖÊÇnorth, card²¿·ÖÎªcenter
+		//ä¸»ç»“æ„æ˜¯ä¸€ä¸ªborderlayout, æ ‡ç­¾éƒ¨åˆ†æ˜¯north, cardéƒ¨åˆ†ä¸ºcenter
 		WCardMainBorderLayout border = new WCardMainBorderLayout();
 		XWCardMainBorderLayout xMainBorder = new XWCardMainBorderLayout(border, dimension);
 		this.setBackupParent(xMainBorder);
@@ -151,27 +151,27 @@ public class XWCardLayout extends XLayoutContainer {
 		return xMainBorder;
 	}
 	
-	//±êÌâÀ¸
+	//æ ‡é¢˜æ 
 	private XWCardTitleLayout initTitlePart(String widgetName, XWCardMainBorderLayout xMainBorder){
 		Dimension dimension = new Dimension();
-		//±êÌâ²¿·Ö±¾ÉíÒ²ÊÇÒ»¸öborderlayout²¼¾Ö, tag²¿·Ö·Åcenter, Ìí¼Ó°´Å¥·Åeast
+		//æ ‡é¢˜éƒ¨åˆ†æœ¬èº«ä¹Ÿæ˜¯ä¸€ä¸ªborderlayoutå¸ƒå±€, tagéƒ¨åˆ†æ”¾center, æ·»åŠ æŒ‰é’®æ”¾east
 		WCardTitleLayout titleLayout = new WCardTitleLayout(this.toData().getWidgetName());
 		XWCardTitleLayout xTitle = new XWCardTitleLayout(titleLayout,dimension);
 		xTitle.setBackupParent(xMainBorder);
 		
-		//ÇĞ»»cardµÄ°´Å¥²¿·Ö
+		//åˆ‡æ¢cardçš„æŒ‰é’®éƒ¨åˆ†
 		XWCardTagLayout tagPart = initTagPart(widgetName, xTitle);
-		//Ìí¼Ó°´Å¥
+		//æ·»åŠ æŒ‰é’®
 		XCardAddButton addBtn = initAddButton(widgetName, xTitle, tagPart);
 		
-		//Ìí¼ÓË³ĞòºÜÖØÒª£¬ÏÈaddBtnÔÙtagPart£¬ºóÃæÓÃµ½
+		//æ·»åŠ é¡ºåºå¾ˆé‡è¦ï¼Œå…ˆaddBtnå†tagPartï¼Œåé¢ç”¨åˆ°
 		xTitle.addNewButton(addBtn);
 		xTitle.addTagPart(tagPart);
 		
 		return xTitle;
 	}
 	
-	//Ìí¼Ótab°´Å¥
+	//æ·»åŠ tabæŒ‰é’®
 	private XCardAddButton initAddButton(String widgetName, XWCardTitleLayout xTitle, XWCardTagLayout tagPart){
 		Dimension dimension = new Dimension();
 		CardAddButton addButton = new CardAddButton(widgetName);
@@ -181,10 +181,10 @@ public class XWCardLayout extends XLayoutContainer {
 		return xAddBtn;
 	}
 	
-	//ËùÓĞµÄtabËùÔÚµÄÇøÓò
+	//æ‰€æœ‰çš„tabæ‰€åœ¨çš„åŒºåŸŸ
 	private XWCardTagLayout initTagPart(String widgetName, XWCardTitleLayout xTitle){
 		Dimension dimension = new Dimension();
-		//·ÅÖÃ±êÌâµÄtabÁ÷Ê½²¼¾Ö
+		//æ”¾ç½®æ ‡é¢˜çš„tabæµå¼å¸ƒå±€
 		WCardTagLayout tagLayout = new WCardTagLayout();
 		XWCardTagLayout xTag = new XWCardTagLayout(tagLayout, dimension, this);
 		xTag.setBackupParent(xTitle);
@@ -195,7 +195,7 @@ public class XWCardLayout extends XLayoutContainer {
 		return xTag;
 	}
 	
-	//µÚÒ»¸ötab
+	//ç¬¬ä¸€ä¸ªtab
 	private XCardSwitchButton initFirstButton(String widgetName, XWCardTagLayout xTag){
 		CardSwitchButton firstBtn = new CardSwitchButton(widgetName);
 		firstBtn.setText(Inter.getLocText("FR-Designer_Title") + 0);
@@ -209,27 +209,27 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ÉèÖÃ¸¸ÈİÆ÷µÄÃû×Ö
+	 * è®¾ç½®çˆ¶å®¹å™¨çš„åå­—
 	 * 
-	 * @param parentPanel µ±Ç°¸¸ÈİÆ÷
-	 * @param widgetName µ±Ç°¿Ø¼şÃû
+	 * @param parentPanel å½“å‰çˆ¶å®¹å™¨
+	 * @param widgetName å½“å‰æ§ä»¶å
 	 * 
 	 *
-	 * @date 2014-11-27-ÉÏÎç9:47:00
+	 * @date 2014-11-27-ä¸Šåˆ9:47:00
 	 * 
 	 */
 	protected void setWrapperName(XLayoutContainer parentPanel, String widgetName) {
-		//ÏÈËæ±ãsetÒ»¸ö, ÒÔºó»¹ÊÇÒªÒş²ØµÄ
+		//å…ˆéšä¾¿setä¸€ä¸ª, ä»¥åè¿˜æ˜¯è¦éšè—çš„
 		parentPanel.toData().setWidgetName("border_card_" + widgetName);
 	}
 	
 	/**
-	 * ½«µ±Ç°¶ÔÏóÌí¼Óµ½¸¸ÈİÆ÷ÖĞ
+	 * å°†å½“å‰å¯¹è±¡æ·»åŠ åˆ°çˆ¶å®¹å™¨ä¸­
 	 * 
-	 * @param parentPanel ¸¸ÈİÆ÷×é¼ş
+	 * @param parentPanel çˆ¶å®¹å™¨ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:57:55
+	 * @date 2014-11-25-ä¸‹åˆ4:57:55
 	 * 
 	 */
 	protected void addToWrapper(XLayoutContainer parentPanel, int width, int minHeight){			
@@ -237,12 +237,12 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 
 	/**
-	 * Ìí¼Ó×é¼şµÄ¼àÌıÊÂ¼ş
+	 * æ·»åŠ ç»„ä»¶çš„ç›‘å¬äº‹ä»¶
 	 * 
-	 * @param e ÊÂ¼ş
+	 * @param e äº‹ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç6:20:10
+	 * @date 2014-11-25-ä¸‹åˆ6:20:10
 	 * 
 	 */
     public void componentAdded(ContainerEvent e) {
@@ -262,8 +262,8 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ÊÇ·ñÖ§³Ö±êÌâÑùÊ½
-	 * @return Ä¬ÈÏfalse
+	 * æ˜¯å¦æ”¯æŒæ ‡é¢˜æ ·å¼
+	 * @return é»˜è®¤false
 	 */
 	public boolean hasTitleStyle() {
 		return true;
@@ -271,8 +271,8 @@ public class XWCardLayout extends XLayoutContainer {
 	
 	
 	/**
-	*  µÃµ½ÊôĞÔÃû
-	 * @return ÊôĞÔÃû
+	*  å¾—åˆ°å±æ€§å
+	 * @return å±æ€§å
 	* @throws IntrospectionException
 	*/
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -299,7 +299,7 @@ public class XWCardLayout extends XLayoutContainer {
                     };
 	}
 	
-	//³õÊ¼»¯ÑùÊ½
+	//åˆå§‹åŒ–æ ·å¼
     protected void initStyle() {
     	LayoutBorderStyle style = toData().getBorderStyle();
     	initBorderTitleStyle(style);
@@ -308,7 +308,7 @@ public class XWCardLayout extends XLayoutContainer {
     }
     
     private void initBorderTitleStyle(LayoutBorderStyle style){
-    	//³õÊ¼»¯Ä¬ÈÏ±êÌâÑùÊ½
+    	//åˆå§‹åŒ–é»˜è®¤æ ‡é¢˜æ ·å¼
     	if(!initFlag){
     		return;
     	}
@@ -320,7 +320,7 @@ public class XWCardLayout extends XLayoutContainer {
 		initFlag = false;
     }
 
-    //Òş²Ø»òÏÔÊ¾±êÌâ²¿·Ö
+    //éšè—æˆ–æ˜¾ç¤ºæ ‡é¢˜éƒ¨åˆ†
     protected void clearOrShowTitleLayout(boolean isTitleStyle) {
     	XWCardMainBorderLayout mainLayout = (XWCardMainBorderLayout)this.getBackupParent();
     	if(mainLayout != null){
@@ -333,7 +333,7 @@ public class XWCardLayout extends XLayoutContainer {
     	}
     }
     
-    //ĞŞ¸ÄÏà¹ØSwtchButtonËù°ó¶¨µÄcardLayout¿Ø¼şÃû
+    //ä¿®æ”¹ç›¸å…³SwtchButtonæ‰€ç»‘å®šçš„cardLayoutæ§ä»¶å
 	private void changeRalateSwitchCardname(String cardLayoutName) {
 		XWCardMainBorderLayout borderLayout = (XWCardMainBorderLayout) this.getBackupParent();
 		WCardMainBorderLayout border = borderLayout.toData();
@@ -346,10 +346,10 @@ public class XWCardLayout extends XLayoutContainer {
 	}
 	
     /**
-     * É¾³ıÏà¹Ø×é¼ş
+     * åˆ é™¤ç›¸å…³ç»„ä»¶
      * 
-     * @param creator µ±Ç°×é¼ş
-     * @param designer ±íµ¥Éè¼ÆÆ÷
+     * @param creator å½“å‰ç»„ä»¶
+     * @param designer è¡¨å•è®¾è®¡å™¨
      * 
      */
 	public void deleteRelatedComponent(XCreator creator,FormDesigner designer){

@@ -16,7 +16,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * 这里打算是放一些图表用的界面控件的. 
+ * 杩欓噷鎵撶畻鏄斁涓�浜涘浘琛ㄧ敤鐨勭晫闈㈡帶浠剁殑. 
  */
 public class ChartSwingUtils {
 	

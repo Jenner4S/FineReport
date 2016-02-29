@@ -25,7 +25,7 @@ import com.fr.stable.StringUtils;
 import com.fr.design.style.FormatPane;
 
 /**
- * Êı¾İµãÌáÊ¾ÄÚÈİÃæ°å£¬°üº¬ÏµÁĞÖµ¡¢ÏµÁĞ°Ù·Ö±È
+ * æ•°æ®ç‚¹æç¤ºå†…å®¹é¢æ¿ï¼ŒåŒ…å«ç³»åˆ—å€¼ã€ç³»åˆ—ç™¾åˆ†æ¯”
  * @author jerry
  *
  */
@@ -63,7 +63,7 @@ public class TooltipContentsPane extends BasicPane{
 		showValueCB.setSelected(true);
 
 		JPanel valuePane = new JPanel();
-		valuePane.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));// Ä¬ÈÏ×óÎ´0¶ÔÆë.
+		valuePane.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));// é»˜è®¤å·¦æœª0å¯¹é½.
 
 		valuePane.add(showValueCB);
 
@@ -71,7 +71,7 @@ public class TooltipContentsPane extends BasicPane{
 		valuePane.add(valueFormatButton);
 
 		valueFormatButton.addActionListener(listener);
-		valueFormatButton.setPreferredSize(new Dimension(60, 20));//Ä¬ÈÏÌ«¸ßÁË.
+		valueFormatButton.setPreferredSize(new Dimension(60, 20));//é»˜è®¤å¤ªé«˜äº†.
 		return valuePane;
 	}
 
@@ -83,7 +83,7 @@ public class TooltipContentsPane extends BasicPane{
 		}
 
 		JPanel percentValuePane = new JPanel();
-		percentValuePane.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));// Ä¬ÈÏ×óÎ´0¶ÔÆë.
+		percentValuePane.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));// é»˜è®¤å·¦æœª0å¯¹é½.
 
 		percentValuePane.add(showPercent);
 
@@ -91,7 +91,7 @@ public class TooltipContentsPane extends BasicPane{
 		percentValuePane.add(valueFormatButton);
 
 		valueFormatButton.addActionListener(percentListener);
-		valueFormatButton.setPreferredSize(new Dimension(60, 20));//Ä¬ÈÏÌ«¸ßÁË.
+		valueFormatButton.setPreferredSize(new Dimension(60, 20));//é»˜è®¤å¤ªé«˜äº†.
 		return new Component[]{null, percentValuePane};
 	}
 

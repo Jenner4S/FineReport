@@ -22,19 +22,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * ¸ù¾İTableDataÈ¡¶ÔÓ¦µÄÒ»Ğ©ÊôĞÔ
+ * æ ¹æ®TableDataå–å¯¹åº”çš„ä¸€äº›å±æ€§
  *
  * @author zhou
- * @since 2012-3-28ÏÂÎç10:03:52
+ * @since 2012-3-28ä¸‹åˆ10:03:52
  */
 public abstract class TableDataFactory {
     /**
-     * ÓĞË³ĞòµÄ,ÓÃÀ´ÅÅĞòÓÃ
+     * æœ‰é¡ºåºçš„,ç”¨æ¥æ’åºç”¨
      */
     private static Map<String, TableDataNameObjectCreator> map = new java.util.LinkedHashMap<String, TableDataNameObjectCreator>();
 
     /**
-     * Í¬Ò»ÀàĞÍµÄÖ»ÄÜ¼ÓÒ»´Î,¾Í¼Ó×îÉÏ²ãµÄÀà,ÒòÎªÒªÅÅĞò¡£Èç¹û½«ËùÓĞµÄ FileTableData¶¼¼Ó½øÀ´£¬ÄÇÃ´FileTableDataµÄÅÅĞò¾Í²»ÕıÈ·ÁË
+     * åŒä¸€ç±»å‹çš„åªèƒ½åŠ ä¸€æ¬¡,å°±åŠ æœ€ä¸Šå±‚çš„ç±»,å› ä¸ºè¦æ’åºã€‚å¦‚æœå°†æ‰€æœ‰çš„ FileTableDataéƒ½åŠ è¿›æ¥ï¼Œé‚£ä¹ˆFileTableDataçš„æ’åºå°±ä¸æ­£ç¡®äº†
      */
     static {
         map.put(DBTableData.class.getName(), new TableDataNameObjectCreator(null, "/com/fr/design/images/data/database.png", DBTableData.class, DBTableDataPane.class));
@@ -49,10 +49,10 @@ public abstract class TableDataFactory {
     }
 
     /**
-     * ×¢²á×é¼ş
+     * æ³¨å†Œç»„ä»¶
      *
-     * @param clazz Êı¾İ¼¯Àà
-     * @param creator ×é¼ş
+     * @param clazz æ•°æ®é›†ç±»
+     * @param creator ç»„ä»¶
      */
     public static void register(Class<? extends TableData> clazz, TableDataNameObjectCreator creator) {
         map.put(clazz.getName(), creator);
@@ -67,19 +67,19 @@ public abstract class TableDataFactory {
         if (tableDataNameObjectCreator == null) {
             tableDataNameObjectCreator = map.get(tabledata.getClass().getSuperclass().getName());
             if (tableDataNameObjectCreator == null) {
-                tableDataNameObjectCreator = map.get(tabledata.getClass().getSuperclass().getSuperclass().getName());// ×î¶àÈı²ã°É£¬²»¹»ÔÙ¼Ó
-                // ²»ÓÃÑ­»·ÁË
+                tableDataNameObjectCreator = map.get(tabledata.getClass().getSuperclass().getSuperclass().getName());// æœ€å¤šä¸‰å±‚å§ï¼Œä¸å¤Ÿå†åŠ 
+                // ä¸ç”¨å¾ªç¯äº†
             }
         }
         return tableDataNameObjectCreator;
     }
 
     /**
-     * »ñÈ¡Êı¾İ¼¯Ëù¶ÔÓ¦µÄ±à¼­Ãæ°å
+     * è·å–æ•°æ®é›†æ‰€å¯¹åº”çš„ç¼–è¾‘é¢æ¿
      *
-     * @param tabledata Êı¾İ¼¯
-     * @param name      Ãû×Ö
-     * @return ·µ»ØÊı¾İ¼¯¶ÔÓ¦µÄpane
+     * @param tabledata æ•°æ®é›†
+     * @param name      åå­—
+     * @return è¿”å›æ•°æ®é›†å¯¹åº”çš„pane
      */
     public static AbstractTableDataPane<?> creatTableDataPane(TableData tabledata, String name) {
         AbstractTableDataPane datapane = null;
@@ -94,7 +94,7 @@ public abstract class TableDataFactory {
                 } else {
                     datapane = creatorClass.newInstance();
                 }
-                datapane.populateBean(tabledata); // August:²»¹ÜtabledataÊÇ¸Õ¸ÕĞÂ½¨µÄ»¹ÊÇÔ­À´µÄ£¬Ò»ÂÉpopulate½øÈ¥£¬Èç¹û³ö´í¾ÍÊÇ´úÂëĞ´µÄ²»ºÃ
+                datapane.populateBean(tabledata); // August:ä¸ç®¡tabledataæ˜¯åˆšåˆšæ–°å»ºçš„è¿˜æ˜¯åŸæ¥çš„ï¼Œä¸€å¾‹populateè¿›å»ï¼Œå¦‚æœå‡ºé”™å°±æ˜¯ä»£ç å†™çš„ä¸å¥½
             } catch (Exception e) {
                 FRContext.getLogger().error(e.getMessage(), e);
             }
@@ -103,17 +103,17 @@ public abstract class TableDataFactory {
     }
 
     /**
-     * ´´½¨Êı¾İ¼¯Ãæ°å
+     * åˆ›å»ºæ•°æ®é›†é¢æ¿
      *
-     * @param tabledata Êı¾İ¼¯
-     * @return ·µ»ØÊı¾İ¼¯¶ÔÓ¦µÄpane
+     * @param tabledata æ•°æ®é›†
+     * @return è¿”å›æ•°æ®é›†å¯¹åº”çš„pane
      */
     public static AbstractTableDataPane<?> creatTableDataPane(TableData tabledata) {
         return creatTableDataPane(tabledata, StringUtils.EMPTY);
     }
 
     /**
-     * »ñÈ¡Êı¾İ¼¯Ëù¶ÔÓ¦µÄÍ¼±êÂ·¾¶
+     * è·å–æ•°æ®é›†æ‰€å¯¹åº”çš„å›¾æ ‡è·¯å¾„
      *
      * @param tabledata
      * @return
@@ -127,8 +127,8 @@ public abstract class TableDataFactory {
     }
 
     /**
-     * »ñÈ¡ÒÑ¾­ÅÅºÃË³ĞòµÄÊı×é
-     * ÏÈÊı¾İ¿â²éÑ¯£¬ÔÙ³ÌĞò£¬ÔÙÄÚÖÃÊı¾İ¼¯£¬ÔÙ¹ØÁªÊı¾İ¼¯£¬ÔÙÎÄ¼şÊı¾İ¼¯£»ÕâĞ©ÄÚ²¿°´ÄÚ²¿°´ÏÈÊı×Ö£¨0-9£©¡¢ÔÙ×ÖÄ¸£¨a-z£©¡¢È»ºóºº×Ö£¨Æ´Òô£©½øĞĞÅÅĞò¡£
+     * è·å–å·²ç»æ’å¥½é¡ºåºçš„æ•°ç»„
+     * å…ˆæ•°æ®åº“æŸ¥è¯¢ï¼Œå†ç¨‹åºï¼Œå†å†…ç½®æ•°æ®é›†ï¼Œå†å…³è”æ•°æ®é›†ï¼Œå†æ–‡ä»¶æ•°æ®é›†ï¼›è¿™äº›å†…éƒ¨æŒ‰å†…éƒ¨æŒ‰å…ˆæ•°å­—ï¼ˆ0-9ï¼‰ã€å†å­—æ¯ï¼ˆa-zï¼‰ã€ç„¶åæ±‰å­—ï¼ˆæ‹¼éŸ³ï¼‰è¿›è¡Œæ’åºã€‚
      *
      * @param source
      * @return

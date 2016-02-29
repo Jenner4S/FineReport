@@ -18,7 +18,7 @@ import com.fr.design.designer.properties.EventPropertyTable;
 import com.fr.design.designer.properties.WidgetPropertyTable;
 
 /**
- * ¿Ø¼şÊôĞÔ±íDocking
+ * æ§ä»¶å±æ€§è¡¨Docking
  */
 public class WidgetPropertyPane extends FormDockView implements BaseWidgetPropertyPane {
 

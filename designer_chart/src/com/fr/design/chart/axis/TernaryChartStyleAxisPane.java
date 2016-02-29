@@ -10,8 +10,8 @@ import com.fr.design.mainframe.chart.gui.style.axis.ChartValuePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : 上午8:58
- * 三元坐标设置界面
+ * Time   : 涓婂崍8:58
+ * 涓夊厓鍧愭爣璁剧疆鐣岄潰
  */
 public class TernaryChartStyleAxisPane extends ChartStyleAxisPane {
 	private static final long serialVersionUID = 539802340384090324L;

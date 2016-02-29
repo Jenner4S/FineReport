@@ -22,7 +22,7 @@ import java.util.Map;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-14
- * Time   : ÉÏÎç11:17
+ * Time   : ä¸Šåˆ11:17
  */
 public class WidgetDefinePaneFactory {
     private static Map<Class<? extends Widget>, Appearance> defineMap = new HashMap<Class<? extends Widget>, Appearance>();

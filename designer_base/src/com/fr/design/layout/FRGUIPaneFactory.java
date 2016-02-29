@@ -28,100 +28,100 @@ public class FRGUIPaneFactory {
 	public static final int HEIGHT_OFFSET = 50;
 
     /**
-     * ´´½¨Ò»¸ö¿¿ÓÒ¿¿×óµÄË®Æ½¼äÏ¶Îª2µÄÁ÷Ê½²¼¾Ö
-     * @return FlowLayout¶ÔÏó
+     * åˆ›å»ºä¸€ä¸ªé å³é å·¦çš„æ°´å¹³é—´éš™ä¸º2çš„æµå¼å¸ƒå±€
+     * @return FlowLayoutå¯¹è±¡
      */
-	public static LayoutManager createBoxFlowLayout() { // createBoxFlowLayout Í¼±íÓÃµ½µÄ±È½Ï¶à
+	public static LayoutManager createBoxFlowLayout() { // createBoxFlowLayout å›¾è¡¨ç”¨åˆ°çš„æ¯”è¾ƒå¤š
 		return new FlowLayout(FlowLayout.LEFT, 2, 0);
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×óµÄ²¼¾Ö
-	 * @return FlowLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦çš„å¸ƒå±€
+	 * @return FlowLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createLeftZeroLayout() {
 		return new FlowLayout(FlowLayout.LEFT, 0, 0);
 	}
 
     /**
-     * ´´½¨Ò»¸ö¿¿×óµÄË®Æ½ºÍ´¹Ö±¼äÏ¶¾ùÎª5µÄÁ÷Ê½²¼¾Ö
-     * @return FlowLayout¶ÔÏó
+     * åˆ›å»ºä¸€ä¸ªé å·¦çš„æ°´å¹³å’Œå‚ç›´é—´éš™å‡ä¸º5çš„æµå¼å¸ƒå±€
+     * @return FlowLayoutå¯¹è±¡
      */
 	public static LayoutManager createLabelFlowLayout() { // createLabelFlowLayout
-		return new FlowLayout(FlowLayout.LEFT); // Ä¬ÈÏ 5, 5
+		return new FlowLayout(FlowLayout.LEFT); // é»˜è®¤ 5, 5
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×óÁ÷Ê½²¼¾Ö£¬¼ä¾à10,10
-	 * @return FlowLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦æµå¼å¸ƒå±€ï¼Œé—´è·10,10
+	 * @return FlowLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createL_FlowLayout() {
 		return new FlowLayout(FlowLayout.LEFT, 10, 10); 
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¾ÓÖĞÁ÷Ê½²¼¾Ö
-	 * @return FlowLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªå±…ä¸­æµå¼å¸ƒå±€
+	 * @return FlowLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createCenterFlowLayout() {
 		return new FlowLayout(FlowLayout.CENTER); 
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿ÓÒÁ÷Ê½²¼¾Ö
-	 * @return FlowLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å³æµå¼å¸ƒå±€
+	 * @return FlowLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createRightFlowLayout() {
 		return new FlowLayout(FlowLayout.RIGHT); 
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö±ß¿ò²¼¾Ö
-	 * @return BorderLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªè¾¹æ¡†å¸ƒå±€
+	 * @return BorderLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createBorderLayout() {
 		return new   BorderLayout();
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö±ß¿ò²¼¾Ö£¬¼ä¾à4,4
-	 * @return BorderLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªè¾¹æ¡†å¸ƒå±€ï¼Œé—´è·4,4
+	 * @return BorderLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createM_BorderLayout() {
 		return new   BorderLayout(4,4);
 	}
 	
-	// TODO É¾µô
+	// TODO åˆ æ‰
 
 	/**
-	 * ´´½¨Ò»¸ö1ÁĞµÄÍø¸ñ²¼¾Ö
-	 * @return FRGridLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ª1åˆ—çš„ç½‘æ ¼å¸ƒå±€
+	 * @return FRGridLayoutå¯¹è±¡
 	 */
 	public static LayoutManager create1ColumnGridLayout() {
 		return new    FRGridLayout(1);
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö2ÁĞµÄÍø¸ñ²¼¾Ö
-	 * @return FRGridLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ª2åˆ—çš„ç½‘æ ¼å¸ƒå±€
+	 * @return FRGridLayoutå¯¹è±¡
 	 */
 	public static LayoutManager create2ColumnGridLayout() {
 		return new    FRGridLayout(2);
 	}
 
 	/**
-	 * ´´½¨Ò»¸önÁĞµÄÍø¸ñ²¼¾Ö
-	 * @param nColumn ÁĞÊı
-	 * @return FRGridLayout¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªnåˆ—çš„ç½‘æ ¼å¸ƒå±€
+	 * @param nColumn åˆ—æ•°
+	 * @return FRGridLayoutå¯¹è±¡
 	 */
 	public static LayoutManager createNColumnGridLayout(int nColumn) {
 		return new FRGridLayout(nColumn);
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö´ø±êÌâ±ß¿òÃæ°å
-	 * @param string ±ß¿ò±êÌâ
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªå¸¦æ ‡é¢˜è¾¹æ¡†é¢æ¿
+	 * @param string è¾¹æ¡†æ ‡é¢˜
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createTitledBorderPane(String string) {
 		JPanel jp = new JPanel();
@@ -132,9 +132,9 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö´ø±êÌâ±ß¿òÃæ°å²¢ÇÒ¾ÓÖĞÏÔÊ¾
-	 * @param borderTitle ±ß¿ò±êÌâ
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªå¸¦æ ‡é¢˜è¾¹æ¡†é¢æ¿å¹¶ä¸”å±…ä¸­æ˜¾ç¤º
+	 * @param borderTitle è¾¹æ¡†æ ‡é¢˜
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createTitledBorderPaneCenter(String borderTitle) {
 		JPanel jp = new JPanel();
@@ -145,8 +145,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×ó¿Õ±ß¿ò²¼¾Ö£¬¼ä¸ô´ó
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦ç©ºè¾¹æ¡†å¸ƒå±€ï¼Œé—´éš”å¤§
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createBigHGapFlowInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -156,8 +156,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×ó¿Õ±ß¿òÃæ°å£¬¼ä¸ôÖĞµÈ
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦ç©ºè¾¹æ¡†é¢æ¿ï¼Œé—´éš”ä¸­ç­‰
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createMediumHGapFlowInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -167,8 +167,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×ó¿Õ±ß¿òÃæ°å£¬¼ä¸ôÖĞµÈ
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦ç©ºè¾¹æ¡†é¢æ¿ï¼Œé—´éš”ä¸­ç­‰
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createMediumHGapHighTopFlowInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -178,8 +178,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸öÕı³£¿¿×ó¿Õ±ß¿òÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªæ­£å¸¸é å·¦ç©ºè¾¹æ¡†é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createNormalFlowInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -189,8 +189,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×ó0¼ä¾à±ß¿òÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦0é—´è·è¾¹æ¡†é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createLeftFlowZeroGapBorderPane() {
 		JPanel jp = new JPanel();
@@ -200,8 +200,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×óÁ÷Ê½²¼¾Ö£¬Õı³£Á÷Ê½ÄÚÇ¶
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦æµå¼å¸ƒå±€ï¼Œæ­£å¸¸æµå¼å†…åµŒ
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createNormalFlowInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -210,8 +210,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿×óÁ÷Ê½²¼¾Ö£¬Á÷Ê½ÄÚÇ¶
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å·¦æµå¼å¸ƒå±€ï¼Œæµå¼å†…åµŒ
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createBoxFlowInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -220,8 +220,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¿¿ÓÒÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªé å³é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createRightFlowInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -230,8 +230,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¾ÓÖĞÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªå±…ä¸­é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createCenterFlowInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -240,8 +240,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Ò»¸ö¾ÓÖĞ0¼ä¾àÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºä¸€ä¸ªå±…ä¸­0é—´è·é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createCenterFlowZeroGapBorderPane() {
 		JPanel jp = new JPanel();
@@ -251,8 +251,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨×İÏòÅÅÁĞÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºçºµå‘æ’åˆ—é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createY_AXISBoxInnerContainer_L_Pane() {
 		JPanel jp = new JPanel();
@@ -262,8 +262,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨×İÏò±ß¿òÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºçºµå‘è¾¹æ¡†é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createYBoxEmptyBorderPane() {
 		JPanel jp = new JPanel();
@@ -273,8 +273,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨ºáÏòÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºæ¨ªå‘é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createX_AXISBoxInnerContainer_L_Pane() {
 		JPanel jp = new JPanel();
@@ -284,8 +284,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨×İÏòÃæ°åM
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºçºµå‘é¢æ¿M
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createY_AXISBoxInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -295,8 +295,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨ºáÏòÄÚÖÃboxlayoutµÄÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºæ¨ªå‘å†…ç½®boxlayoutçš„é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createX_AXISBoxInnerContainer_M_Pane() {
 		JPanel jp = new JPanel();
@@ -306,8 +306,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨×İÏòÄÚÖÃboxlayoutµÄÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºçºµå‘å†…ç½®boxlayoutçš„é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createY_AXISBoxInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -316,8 +316,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨ºáÏòÄÚÖÃboxlayoutµÄÃæ°å
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºæ¨ªå‘å†…ç½®boxlayoutçš„é¢æ¿
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createX_AXISBoxInnerContainer_S_Pane() {
 		JPanel jp = new JPanel();
@@ -326,9 +326,9 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨nÁĞÍø¸ñÃæ°å
-	 * @param nColumn ÁĞÊı
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºnåˆ—ç½‘æ ¼é¢æ¿
+	 * @param nColumn åˆ—æ•°
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createNColumnGridInnerContainer_S_Pane(int nColumn) {
 		JPanel jp = new JPanel();
@@ -337,11 +337,11 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨nÁĞÍø¸ñÃæ°å
-	 * @param nColumn ÁĞÊı
-	 * @param h Ë®Æ½¼ä¾à
-	 * @param v ´¹Ö±¼ä¾à
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºnåˆ—ç½‘æ ¼é¢æ¿
+	 * @param nColumn åˆ—æ•°
+	 * @param h æ°´å¹³é—´è·
+	 * @param v å‚ç›´é—´è·
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createNColumnGridInnerContainer_Pane(int nColumn, int h, int v) {
 		JPanel jp = new JPanel();
@@ -350,9 +350,9 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨¶¥¸ñnÁĞÍø¸ñÃæ°å
-	 * @param nColumn ÁĞÊı
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºé¡¶æ ¼nåˆ—ç½‘æ ¼é¢æ¿
+	 * @param nColumn åˆ—æ•°
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createFillColumnPane(int nColumn) {
 		JPanel jp = new JPanel();
@@ -361,8 +361,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨±ß¿òÃæ°åL
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºè¾¹æ¡†é¢æ¿L
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createBorderLayout_L_Pane() {
 		JPanel jp = new JPanel();
@@ -372,8 +372,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨±ß¿òÃæ°åM
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºè¾¹æ¡†é¢æ¿M
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createBorderLayout_M_Pane() {
 		JPanel jp = new JPanel();
@@ -383,8 +383,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨±ß¿òÃæ°åS
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºè¾¹æ¡†é¢æ¿S
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createBorderLayout_S_Pane() {
 		JPanel jp = new JPanel();
@@ -393,8 +393,8 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨¿¨Æ¬Ê½²¼¾Ö
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºå¡ç‰‡å¼å¸ƒå±€
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createCardLayout_S_Pane() {
 		JPanel jp = new JPanel();
@@ -403,10 +403,10 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ´´½¨Í¼±êIconRadioÃæ°å
-	 * @param icon Í¼±ê
-	 * @param jradiobtn °´Å¥
-	 * @return JPanel¶ÔÏó
+	 * åˆ›å»ºå›¾æ ‡IconRadioé¢æ¿
+	 * @param icon å›¾æ ‡
+	 * @param jradiobtn æŒ‰é’®
+	 * @return JPanelå¯¹è±¡
 	 */
 	public static JPanel createIconRadio_S_Pane(Icon icon,
 			JRadioButton jradiobtn) {
@@ -422,9 +422,9 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ¼ÆËã¿í¶È
-	 * @param width ¿í¶ÈÊäÈëÖµ
-	 * @return w ¿í¶ÈÊä³öÖµ
+	 * è®¡ç®—å®½åº¦
+	 * @param width å®½åº¦è¾“å…¥å€¼
+	 * @return w å®½åº¦è¾“å‡ºå€¼
 	 */
 	public static int caculateWidth(int width) {
 		int w = 0;
@@ -442,9 +442,9 @@ public class FRGUIPaneFactory {
 	}
 
 	/**
-	 * ¼ÆËã¸ß¶È
-	 * @param height ¸ß¶ÈÊäÈëÖµ
-	 * @return ¸ß¶ÈÊä³öÖµ
+	 * è®¡ç®—é«˜åº¦
+	 * @param height é«˜åº¦è¾“å…¥å€¼
+	 * @return é«˜åº¦è¾“å‡ºå€¼
 	 */
 	public static int caculateHeight(int height) {
 		int h = 0;

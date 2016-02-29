@@ -14,7 +14,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 /**
  * @author richer
  * @since 6.5.3
- * ×Ö·û´®±à¼­Æ÷
+ * å­—ç¬¦ä¸²ç¼–è¾‘å™¨
  */
 public class StringEditor extends AbstractPropertyEditor {
 

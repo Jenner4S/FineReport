@@ -19,7 +19,7 @@ import com.fr.design.gui.ibutton.UIButton;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.utils.gui.GUICoreUtils;
 
-//august:¾ßÓÐÀ©Õ¹ÉìËõµÄÈÝÆ÷×é¼þ
+//august:å…·æœ‰æ‰©å±•ä¼¸ç¼©çš„å®¹å™¨ç»„ä»¶
 public class JViewContainer extends JPanel implements MouseListener {
 	private static final long serialVersionUID = 1L;
 	private static Icon leftIcon;

@@ -24,12 +24,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Í¼±íÉè¼ÆÆ÷ÄÚÖÃÊı¾İ¼¯Ãæ°å
+ * å›¾è¡¨è®¾è®¡å™¨å†…ç½®æ•°æ®é›†é¢æ¿
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÉÏÎç12:09
+ * Time: ä¸Šåˆ12:09
  */
 public class EmbbeddDataPane extends ChartDesignDataLoadPane {
     private UIButton edit;
@@ -65,7 +65,7 @@ public class EmbbeddDataPane extends ChartDesignDataLoadPane {
         reviewButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                //Ô¤ÀÀÍ¼±íÉè¼ÆÆ÷ÄÚÖÃÊı¾İ¼¯
+                //é¢„è§ˆå›¾è¡¨è®¾è®¡å™¨å†…ç½®æ•°æ®é›†
                 TableDataWrapper tableDataWrappe = getTableDataWrapper();
                 if (tableDataWrappe != null) {
                     try {
@@ -89,9 +89,9 @@ public class EmbbeddDataPane extends ChartDesignDataLoadPane {
     }
 
     /**
-     * ¼ÓÔØÊı¾İ¼¯
+     * åŠ è½½æ•°æ®é›†
      *
-     * @param tableData Êı¾İ¼¯
+     * @param tableData æ•°æ®é›†
      */
     public void populateChartTableData(TableData tableData) {
         if (tableData instanceof EmbeddedTableData) {
@@ -104,10 +104,10 @@ public class EmbbeddDataPane extends ChartDesignDataLoadPane {
     }
 
     /**
-     * ±à¼­Ãæ°å
+     * ç¼–è¾‘é¢æ¿
      *
-     * @param uPanel       Ãæ°å
-     * @param originalName Ô­Ê¼Ãû×Ö
+     * @param uPanel       é¢æ¿
+     * @param originalName åŸå§‹åå­—
      */
     private void dgEdit(final EmbeddedTableDataPane uPanel, String originalName) {
         final BasicPane.NamePane nPanel = uPanel.asNamePane();

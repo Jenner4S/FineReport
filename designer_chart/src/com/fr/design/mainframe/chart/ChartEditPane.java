@@ -41,7 +41,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     private final static int CHANGE_MIN_TIME = 80;
 
     protected ChartCollection collection;
-    protected boolean isDefaultPane = true;//ÊÇ·ñÊÇÄ¬ÈÏµÄ½çÃæ
+    protected boolean isDefaultPane = true;//æ˜¯å¦æ˜¯é»˜è®¤çš„ç•Œé¢
 
     private static ChartEditPane singleton;
     protected List<AbstractChartAttrPane> paneList;
@@ -79,7 +79,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
         registerDSChangeListener();
     }
 
-    //¹¹½¨Ö÷Ãæ°å
+    //æ„å»ºä¸»é¢æ¿
     protected void createTabsPane() {
         Icon[] iconArray = new Icon[paneList.size()];
         card = new CardLayout();
@@ -130,8 +130,8 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     };
 
     /**
-     * ÖØĞÂ¹¹ÔìÃæ°å
-     * @param currentChart Í¼±í
+     * é‡æ–°æ„é€ é¢æ¿
+     * @param currentChart å›¾è¡¨
      */
     public void reLayout(Chart currentChart){
         if(currentChart != null){
@@ -175,7 +175,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñ
+     * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼
      */
     public void setSupportCellData(boolean supportCellData) {
         if (dataPane4SupportCell != null) {
@@ -184,7 +184,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * ·µ»ØÑ¡ÖĞµÄtabÃû³Æ.
+     * è¿”å›é€‰ä¸­çš„tabåç§°.
      */
     public String getSelectedTabName() {
         int index = Math.min(tabsHeaderIconPane.getSelectedIndex(), paneList.size() - 1);
@@ -192,16 +192,16 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * Ìí¼Ó±êÌâ±ä»¯¼àÌıÊÂ¼ş.
+     * æ·»åŠ æ ‡é¢˜å˜åŒ–ç›‘å¬äº‹ä»¶.
      *
-     * @param titleChangeListener ±êÌâµÄChangeListener
+     * @param titleChangeListener æ ‡é¢˜çš„ChangeListener
      */
     public void addTitleChangeListener(TitleChangeListener titleChangeListener) {
         this.titleChangeListener = titleChangeListener;
     }
 
     /**
-     * ÉèÖÃÈİÆ÷.
+     * è®¾ç½®å®¹å™¨.
      */
     public void setContainer(TargetComponentContainer container) {
         this.container = container;
@@ -236,7 +236,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
 
 
     /**
-     * ÏìÓ¦ÊÂ¼ş.
+     * å“åº”äº‹ä»¶.
      */
     public void fire() {
         if (container != null && container.getEPane() != null) {
@@ -257,7 +257,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
         return index;
     }
 
-    //populateµÄÊ±ºò¿´¿´Òª²»ÒªÖØ¹¹Ãæ°å
+    //populateçš„æ—¶å€™çœ‹çœ‹è¦ä¸è¦é‡æ„é¢æ¿
     private boolean checkNeedsReLayout(Chart chart){
         if(chart != null){
             int lastIndex = typePane.getSelectedIndex();
@@ -273,17 +273,17 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * µ±Ç°½çÃæÊÇ·ñÊÇÄ¬ÈÏµÄ½çÃæ
-     * @return ÊÇ·ñÊÇÄ¬ÈÏµÄ½çÃæ
+     * å½“å‰ç•Œé¢æ˜¯å¦æ˜¯é»˜è®¤çš„ç•Œé¢
+     * @return æ˜¯å¦æ˜¯é»˜è®¤çš„ç•Œé¢
      */
     public boolean isDefaultPane(){
         return this.isDefaultPane;
     }
 
     /**
-     * Õ¹¿ªµ½¶ÔÓ¦idµÄpane.
+     * å±•å¼€åˆ°å¯¹åº”idçš„pane.
      *
-     * @param id ½çÃæµÄ±êÖ¾.id
+     * @param id ç•Œé¢çš„æ ‡å¿—.id
      */
     public void GoToPane(String... id) {
         this.setSelectedIndex(id);
@@ -291,9 +291,9 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * ÉèÖÃÑ¡ÖĞµÄid
+     * è®¾ç½®é€‰ä¸­çš„id
      *
-     * @param id ½çÃæµÄ±êÖ¾.id
+     * @param id ç•Œé¢çš„æ ‡å¿—.id
      */
     public void setSelectedIndex(String... id) {
         String firstid = id[0];
@@ -313,15 +313,15 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     *Ö÷ÒªÓÃÓÚÍ¼±íÉè¼ÆÆ÷£¬ÅĞ¶ÏÑùÊ½¸Ä±äÊÇ·ñÀ´×Ô¹¤¾ßÀ¸µÄÈ«¾ÖÑùÊ½°´Å¥
-     * @param isFromToolBar ÊÇ·ñÀ´×Ô¹¤¾ßÀ¸
+     *ä¸»è¦ç”¨äºå›¾è¡¨è®¾è®¡å™¨ï¼Œåˆ¤æ–­æ ·å¼æ”¹å˜æ˜¯å¦æ¥è‡ªå·¥å…·æ çš„å…¨å±€æ ·å¼æŒ‰é’®
+     * @param isFromToolBar æ˜¯å¦æ¥è‡ªå·¥å…·æ 
      */
     public void styleChange(boolean isFromToolBar){
 
     }
 
     /**
-     * Í¼±íÉè¼ÆÆ÷£¬ÏÔÊ¾Ñ¡ÖĞµÄÃæ°å
+     * å›¾è¡¨è®¾è®¡å™¨ï¼Œæ˜¾ç¤ºé€‰ä¸­çš„é¢æ¿
      */
     public void populateSelectedTabPane() {
         int index = tabsHeaderIconPane.getSelectedIndex();
@@ -330,7 +330,7 @@ public class ChartEditPane extends BasicPane implements AttributeChange,Prepare4
     }
 
     /**
-     * Êı¾İ¼¯¸Ä±äµÄÊÂ¼ş¼àÌı
+     * æ•°æ®é›†æ”¹å˜çš„äº‹ä»¶ç›‘å¬
      */
     public void registerDSChangeListener() {
         DesignTableDataManager.addDsChangeListener(new ChangeListener() {

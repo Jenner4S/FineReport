@@ -79,7 +79,7 @@ public class AboutPane extends JPanel {
         addThankPane(contentPane);
     }
     
-    //Ìí¼ÓÃùĞ»Ãæ°å
+    //æ·»åŠ é¸£è°¢é¢æ¿
     private void addThankPane(JPanel contentPane){
         BBSGuestPaneProvider pane = StableFactory.getMarkedInstanceObjectFromClass(BBSGuestPaneProvider.XML_TAG, BBSGuestPaneProvider.class);
         if(pane == null){

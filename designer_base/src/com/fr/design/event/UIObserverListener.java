@@ -7,7 +7,7 @@ import java.util.EventListener;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-22
- * Time: ÏÂÎç5:22
+ * Time: ä¸‹åˆ5:22
  */
 public interface UIObserverListener extends EventListener {
     public void doChange();

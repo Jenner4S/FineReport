@@ -10,10 +10,10 @@ import com.fr.chart.charttypes.BubbleIndependentChart;
 import com.fr.general.Inter;
 
 /**
- * ÆøÅİÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * æ°”æ³¡å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
  * 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç06:56:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ06:56:47
  */
 public class BubblePlotPane extends AbstractChartTypePane {
 	private static final long serialVersionUID = -601566194238908115L;
@@ -48,15 +48,15 @@ public class BubblePlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Chart_BubbleChart");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -68,7 +68,7 @@ public class BubblePlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(0).isPressing = true;
@@ -77,9 +77,9 @@ public class BubblePlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ÅĞ¶Ï½çÃæÊÇ·ñ½øÈë
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñ¶ÔÏóÊÇchart
+	 * åˆ¤æ–­ç•Œé¢æ˜¯å¦è¿›å…¥
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦å¯¹è±¡æ˜¯chart
 	 */
 	public boolean accept(Object ob) {
 		if (!super.accept(ob)) {

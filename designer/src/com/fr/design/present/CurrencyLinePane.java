@@ -31,7 +31,7 @@ import com.fr.design.gui.ispinner.UIBasicSpinner;
 /**
  * 
  * @author zhou
- * @since 2012-6-4ÏÂÎç7:34:52
+ * @since 2012-6-4ä¸‹åˆ7:34:52
  */
 public class CurrencyLinePane extends FurtherBasicBeanPane<CurrencyLinePresent> {
     private static final int VS_NUM = 4;
@@ -75,14 +75,14 @@ public class CurrencyLinePane extends FurtherBasicBeanPane<CurrencyLinePresent> 
 	}
 
 	protected void initComponents() {
-		// ÕûÊıÎ»Ñ¡Ôñ
+		// æ•´æ•°ä½é€‰æ‹©
 		intPartSpinner = new UIBasicSpinner(new SpinnerNumberModel(9, 1, 20, 1));
 		intPartSpinner.setPreferredSize(new Dimension(45, 20));
 
-		// Ğ¡ÊıÎ»Ñ¡Ôñ
+		// å°æ•°ä½é€‰æ‹©
 		deciPartSpinner = new UIBasicSpinner(new SpinnerNumberModel(2, 1, 10, 1));
 		deciPartSpinner.setPreferredSize(new Dimension(45, 20));
-		// Ô¤ÀÀÇøÓò
+		// é¢„è§ˆåŒºåŸŸ
 		textField = new UITextField(10);
 
 		CurrencyLinePreviewPane = new CurrencyLinePreviewPane();
@@ -125,8 +125,8 @@ public class CurrencyLinePane extends FurtherBasicBeanPane<CurrencyLinePresent> 
 
 	@Override
     /**
-     * ´°¿ÚÃû
-     *	@return Í¬ÉÏ
+     * çª—å£å
+     *	@return åŒä¸Š
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Currency_Line");
@@ -200,9 +200,9 @@ public class CurrencyLinePane extends FurtherBasicBeanPane<CurrencyLinePresent> 
 
 	@Override
     /**
-     * ÊÇ·ñÎª¸ÃÀàĞÍ
-     * @param ob ¶ÔÏó
-     * @return Í¬ÉÏ
+     * æ˜¯å¦ä¸ºè¯¥ç±»å‹
+     * @param ob å¯¹è±¡
+     * @return åŒä¸Š
      * 
      */
 	public boolean accept(Object ob) {
@@ -210,7 +210,7 @@ public class CurrencyLinePane extends FurtherBasicBeanPane<CurrencyLinePresent> 
 	}
 
     /**
-    *	ÖØÖÃ
+    *	é‡ç½®
      */
 	public void reset() {
 		this.intPartSpinner.setValue(9);

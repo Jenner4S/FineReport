@@ -32,9 +32,9 @@ public class ReportFontNameAction extends AbstractStyleAction {
         Object object = this.getValue(UIComboBox.class.getName());
         if (object != null && object instanceof UIComboBox) {
             String selectedFontName = (String) ((UIComboBox) object).getSelectedItem();
-            //ÕâÁ½¸öif Óï¾äµÄÒâË¼ÊÇ£ºÈç¹û´«¹ıÀ´µÄcellStyle.getFRFont() ¼´²»Îª¿ÕÒ²ºÍÔ­À´µÄ±»Ñ¡ÔñµÄÏàÍ¬¡£Ôò²»¸Ä±ä¡£
-            // Ê×ÏÈÅĞ¶ÏÊÇ·ñÎª¿Õ,Èç¹û¿Õ³ö´í¡£
-            //È»ºó½«ËüÃÇµÄÀàĞÍ¾ù×ª»¯ÎªdelCellStyleÏàÍ¬¡£È»ºóÔÙ½«Ö®ÅĞ¶ÏÊÇ·ñÓëÑ¡ÔñµÄÏàÍ¬·ñ¡£Èç²»Í¬Ôò×ª»¯ÎªÏàÍ¬¡£
+            //è¿™ä¸¤ä¸ªif è¯­å¥çš„æ„æ€æ˜¯ï¼šå¦‚æœä¼ è¿‡æ¥çš„cellStyle.getFRFont() å³ä¸ä¸ºç©ºä¹Ÿå’ŒåŸæ¥çš„è¢«é€‰æ‹©çš„ç›¸åŒã€‚åˆ™ä¸æ”¹å˜ã€‚
+            // é¦–å…ˆåˆ¤æ–­æ˜¯å¦ä¸ºç©º,å¦‚æœç©ºå‡ºé”™ã€‚
+            //ç„¶åå°†å®ƒä»¬çš„ç±»å‹å‡è½¬åŒ–ä¸ºdelCellStyleç›¸åŒã€‚ç„¶åå†å°†ä¹‹åˆ¤æ–­æ˜¯å¦ä¸é€‰æ‹©çš„ç›¸åŒå¦ã€‚å¦‚ä¸åŒåˆ™è½¬åŒ–ä¸ºç›¸åŒã€‚
             if (ComparatorUtils.equals(style.getFRFont().getName(), defStyle.getFRFont().getName())) {
             	style = StyleUtils.setReportFontName(style, defStyle.getFRFont().getName());
             }
@@ -56,7 +56,7 @@ public class ReportFontNameAction extends AbstractStyleAction {
                 Object item = comboBoxModel.getElementAt(i);
 
                 if (ComparatorUtils.equals(item, fontName)) {
-                    //ÉèÖÃĞÂFont Name
+                    //è®¾ç½®æ–°Font Name
                     comboBox.removeActionListener(this);
                     comboBox.setSelectedIndex(i);
                     comboBox.addActionListener(this);
@@ -72,7 +72,7 @@ public class ReportFontNameAction extends AbstractStyleAction {
         if (object == null || !(object instanceof UIComboBox)) {
             UIComboBox itemComponent = new UIComboBox(Utils.getAvailableFontFamilyNames4Report());
             this.putValue(UIComboBox.class.getName(), itemComponent);
-            //ÉèÖÃ×î¼Ñ¿í¶È.
+            //è®¾ç½®æœ€ä½³å®½åº¦.
             itemComponent.setPreferredSize(new Dimension(
                     Math.min(140, itemComponent.getPreferredSize().width),
                     itemComponent.getPreferredSize().height));

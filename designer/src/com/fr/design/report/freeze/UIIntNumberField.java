@@ -11,7 +11,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: Lenovo
  * Date: 13-3-29
- * Time: ÏÂÎç12:02
+ * Time: ä¸‹åˆ12:02
  * To change this template use File | Settings | File Templates.
  */
 public class UIIntNumberField extends UINumberField {

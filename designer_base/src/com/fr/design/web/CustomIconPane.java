@@ -36,7 +36,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * 
- * carl£º×Ô¶¨ÒåIcon±à¼­
+ * carlï¼šè‡ªå®šä¹‰Iconç¼–è¾‘
  *
  */
 public class CustomIconPane extends BasicPane {
@@ -45,7 +45,7 @@ public class CustomIconPane extends BasicPane {
 	private JPanel iconPane = null;
 	private ButtonGroup bg;
 	private JScrollPane jsPane;
-	// ÀÏÒ»´Î´ÎÈ¥ÄÃÕæÂé·³
+	// è€ä¸€æ¬¡æ¬¡å»æ‹¿çœŸéº»çƒ¦
 	private IconManager iconManager = null;
 
 	private int width = 180;
@@ -66,7 +66,7 @@ public class CustomIconPane extends BasicPane {
 		
 		iconPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		
-		// ¿ªÊ¼¼ÓÍ¼±êÑ¡Ôñ°´Å¥
+		// å¼€å§‹åŠ å›¾æ ‡é€‰æ‹©æŒ‰é’®
 		initIcons();
 
 		jsPane = new JScrollPane(iconPane);
@@ -85,7 +85,7 @@ public class CustomIconPane extends BasicPane {
 		JPanel eastPane = FRGUIPaneFactory.createCenterFlowInnerContainer_S_Pane();
 		JPanel buttonPane = FRGUIPaneFactory.createNColumnGridInnerContainer_S_Pane(1);
 		
-		// Ôö¼Ó¡¢É¾³ı¡¢±à¼­°´Å¥
+		// å¢åŠ ã€åˆ é™¤ã€ç¼–è¾‘æŒ‰é’®
 		initAddButton(buttonPane);
 		initRemoveButton(buttonPane);
 		initEditButton(buttonPane);
@@ -106,7 +106,7 @@ public class CustomIconPane extends BasicPane {
 			if (name == null || !(name instanceof String)) {
 				continue;
 			}
-			// carl:Ä¬ÈÏÑ¡µÚÒ»¸ö
+			// carl:é»˜è®¤é€‰ç¬¬ä¸€ä¸ª
 			if (this.selectedIconName == null) {
 				this.selectedIconName = (String)name;
 			}
@@ -129,7 +129,7 @@ public class CustomIconPane extends BasicPane {
 					public void doOk() {
 						Icon icon = add.update();
 						if (iconManager.addIcon(icon, false)) {
-							IconButton iconButton = null;//³õÊ¼»¯
+							IconButton iconButton = null;//åˆå§‹åŒ–
 
 							addIcon(icon,iconButton);
 
@@ -212,7 +212,7 @@ public class CustomIconPane extends BasicPane {
 							addIcon(icon,iconButton);
 
 						} else {
-							// Ê§°ÜÁËÔÙÅª»ØÈ¥
+							// å¤±è´¥äº†å†å¼„å›å»
 							iconManager.addIcon(oldIcon, true);
 							// edit failed
 							JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(),
@@ -234,10 +234,10 @@ public class CustomIconPane extends BasicPane {
 	}
 
     /**
-     * Ìí¼Ó°´Å¥
+     * æ·»åŠ æŒ‰é’®
      *
-     * @param icon Í¼±ê
-     * @param iconButton °´Å¥
+     * @param icon å›¾æ ‡
+     * @param iconButton æŒ‰é’®
      */
 	public void addIcon(Icon icon,IconButton iconButton){
 		selectedIconName = icon.getName();
@@ -270,13 +270,13 @@ public class CustomIconPane extends BasicPane {
 		return selectedIconName;
 	}
 	
-	// ²»ÖªµÀÔõÃ´¶¯Ì¬²¼¾Ö£¬¾ÍÕâÃ´ÉµÉµµÄµ÷Ò»ÏÂ´óĞ¡
+	// ä¸çŸ¥é“æ€ä¹ˆåŠ¨æ€å¸ƒå±€ï¼Œå°±è¿™ä¹ˆå‚»å‚»çš„è°ƒä¸€ä¸‹å¤§å°
 	private void refreshIconPane(boolean down) {
 		iconPane.setPreferredSize(new Dimension(width, (iconButtonMap.size() / horizontalCount + 1) * heightPer + gap));
 		JScrollBar jsBar = jsPane.getVerticalScrollBar();
 		try {
 			if (down) {
-				// ½«¹ö¶¯Ìõ¹öµ½×îºó
+				// å°†æ»šåŠ¨æ¡æ»šåˆ°æœ€å
 				jsBar.setValue(jsBar.getMaximum() - jsBar.getVisibleAmount());
 			} else {
 				jsBar.setValue(0);
@@ -302,7 +302,7 @@ public class CustomIconPane extends BasicPane {
 		public void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D) g;
             
-            // carl:ÕâÀïËõ·ÅÏÔÊ¾ 16 ¡Á 16
+            // carl:è¿™é‡Œç¼©æ”¾æ˜¾ç¤º 16 Ã— 16
             if (iconImage != null) {
             	g2d.drawImage(iconImage, 4, 4, IconManager.DEFAULT_ICONWIDTH, IconManager.DEFAULT_ICONHEIGHT, null);
             }
@@ -360,13 +360,13 @@ public class CustomIconPane extends BasicPane {
 			browseButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					JFileChooser jf = new JFileChooser();
-					// carl:²»ÖªµÀÊÇ·ñÖ»Òªpng¸ñÊ½,·´Õıµ¼³öÊ±È«²¿¶¼×ª³ÉpngÁË
+					// carl:ä¸çŸ¥é“æ˜¯å¦åªè¦pngæ ¼å¼,åæ­£å¯¼å‡ºæ—¶å…¨éƒ¨éƒ½è½¬æˆpngäº†
 					FileNameExtensionFilter fileFilter = new FileNameExtensionFilter("Icon Image File", "jpg", "jpeg", "png", "gif");
 					jf.setFileFilter(fileFilter);
 
 					if (JFileChooser.APPROVE_OPTION == jf.showOpenDialog(DesignerContext.getDesignerFrame())) {
 						String path = jf.getSelectedFile().getAbsolutePath();
-						// ½«Í¼Æ¬×ª»¯µ½16 ¡Á 16´óĞ¡
+						// å°†å›¾ç‰‡è½¬åŒ–åˆ°16 Ã— 16å¤§å°
 						Image image = BaseUtils.readImage(path);
 						BufferedImage bufferedImage = CoreGraphHelper.createBufferedImage(IconManager.DEFAULT_ICONWIDTH,
                                 IconManager.DEFAULT_ICONHEIGHT, BufferedImage.TYPE_INT_ARGB);
@@ -384,7 +384,7 @@ public class CustomIconPane extends BasicPane {
 			});
 			
 			nameTextField = new UITextField(20);
-			// ½¹µã¶ªÊ§Ê±¿´¿´Ãû³ÆÊÇ·ñÒÑ¾­´æÔÚ
+			// ç„¦ç‚¹ä¸¢å¤±æ—¶çœ‹çœ‹åç§°æ˜¯å¦å·²ç»å­˜åœ¨
 			nameTextField.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e) {
 				}
@@ -421,7 +421,7 @@ public class CustomIconPane extends BasicPane {
 	    	return Inter.getLocText(new String[]{"Add", "Icon"});
 	    }
 	    
-	    // ÓÃ»§×Ô¶¨ÒåµÄÖ»ÓĞname ºÍ imgaeÁ½ÊôĞÔ£¬ path²»ÒªÈ¥¹Ü
+	    // ç”¨æˆ·è‡ªå®šä¹‰çš„åªæœ‰name å’Œ imgaeä¸¤å±æ€§ï¼Œ pathä¸è¦å»ç®¡
 	    public void populate(Icon icon) {
 	    	if (icon == null) {
 				return;
@@ -435,7 +435,7 @@ public class CustomIconPane extends BasicPane {
 	    }
 	    
 	    public Icon update() {
-	    	// ÓĞÒ»¸öÊÇ¿Õ£¬¶¼·µ»Ønull£¬·´Õı²»»áÌí¼ÓµÄ
+	    	// æœ‰ä¸€ä¸ªæ˜¯ç©ºï¼Œéƒ½è¿”å›nullï¼Œåæ­£ä¸ä¼šæ·»åŠ çš„
 	    	if (StringUtils.isBlank(nameTextField.getText()) || iconImage == null) {
 				return null;
 			}

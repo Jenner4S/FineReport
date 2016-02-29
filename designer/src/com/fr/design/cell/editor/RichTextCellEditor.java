@@ -79,10 +79,10 @@ public class RichTextCellEditor extends AbstractCellEditor implements
 	}
 
 	/**
-	 * 确定
+	 * 纭畾
 	 * 
 	 *
-	 * @date 2014-12-7-下午10:39:13
+	 * @date 2014-12-7-涓嬪崍10:39:13
 	 * 
 	 */
 	public void doOk() {
@@ -90,10 +90,10 @@ public class RichTextCellEditor extends AbstractCellEditor implements
 	}
 
 	/**
-	 * 取消
+	 * 鍙栨秷
 	 * 
 	 *
-	 * @date 2014-12-7-下午10:39:01
+	 * @date 2014-12-7-涓嬪崍10:39:01
 	 * 
 	 */
 	public void doCancel() {

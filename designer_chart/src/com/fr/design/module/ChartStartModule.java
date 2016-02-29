@@ -26,7 +26,7 @@ import com.fr.general.ModuleContext;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç2:56
+ * Time: ä¸‹åˆ2:56
  */
 public class ChartStartModule extends ChartDesignerModule {
 
@@ -51,8 +51,8 @@ public class ChartStartModule extends ChartDesignerModule {
    	}
 
     /**
-     * Ó¦ÓÃ´ò¿ªÆ÷
-     * @return Ó¦ÓÃ
+     * åº”ç”¨æ‰“å¼€å™¨
+     * @return åº”ç”¨
      */
     public DesignerFrame.App<?>[] apps4TemplateOpener() {
         return new DesignerFrame.App[]{new DesignerFrame.App<ChartBook>() {
@@ -79,7 +79,7 @@ public class ChartStartModule extends ChartDesignerModule {
 
 
                 ChartBook tpl = new ChartBook();
-                //´ò¿ªÍ¨Öª
+                //æ‰“å¼€é€šçŸ¥
                 FRContext.getLogger().info(Inter.getLocText(new String[]{"LOG-Is_Being_Openned", "LOG-Please_Wait"},
                         new String[]{"\"" + file.getName() + "\"" + ",", "..."}));
                 try {

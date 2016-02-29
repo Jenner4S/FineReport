@@ -3,7 +3,7 @@ package com.fr.design.designer.properties;
 import com.fr.design.Exception.ValidationException;
 
 /**
- * ½«×Ö·û´®×ª»¯³É¿Ø¼ş¿Ø¼şÊôĞÔ,¸¨ÒÔÅĞ¶Ï¸Ã×Ö·û´®ÊÇ·ñºÏºõÊôĞÔ¹æÔò
+ * å°†å­—ç¬¦ä¸²è½¬åŒ–æˆæ§ä»¶æ§ä»¶å±æ€§,è¾…ä»¥åˆ¤æ–­è¯¥å­—ç¬¦ä¸²æ˜¯å¦åˆä¹å±æ€§è§„åˆ™
  * @since 6.5.2
  */
 public interface Decoder<T> {

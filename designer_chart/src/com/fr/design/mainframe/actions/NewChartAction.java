@@ -21,7 +21,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: 下午3:22
+ * Time: 涓嬪崍3:22
  */
 public class NewChartAction extends UpdateAction{
 
@@ -35,8 +35,8 @@ public class NewChartAction extends UpdateAction{
 
 
     /**
-     * 执行事件
-     * @param e 事件
+     * 鎵ц浜嬩欢
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         DesignerContext.getDesignerFrame().addAndActivateJTemplate(new JChart());

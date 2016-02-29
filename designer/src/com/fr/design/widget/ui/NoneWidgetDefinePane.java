@@ -9,7 +9,7 @@ import com.fr.design.widget.DataModify;
 /**
  * 
  * @author Administrator
- * ÓÃÓÚ´¦ÀíÃ»ÓĞ¿Ø¼şµÄÇé¿ö
+ * ç”¨äºå¤„ç†æ²¡æœ‰æ§ä»¶çš„æƒ…å†µ
  */ 
 public class NoneWidgetDefinePane extends AbstractDataModify<NoneWidget> {
 	

@@ -60,7 +60,7 @@ public class ImagePreviewPane extends JComponent implements Scrollable {
 
 				// draw image.
 				if (getImage() != null) {
-					// carl:ÈÃimagePreviewPaneÄÜÔ¤ÀÀÑùÊ½
+					// carl:è®©imagePreviewPaneèƒ½é¢„è§ˆæ ·å¼
 					if (getImageStyle() == null) {
 						g.drawImage(getImage(), 0, 0, this);
 					} else {

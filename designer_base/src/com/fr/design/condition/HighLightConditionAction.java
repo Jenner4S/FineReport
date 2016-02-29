@@ -20,8 +20,8 @@ public class HighLightConditionAction extends UpdateAction {
     }
 
     /**
-     * 响应事件
-     * @param e 事件
+     * 鍝嶅簲浜嬩欢
+     * @param e 浜嬩欢
      */
     @Override
     public void actionPerformed(ActionEvent e) {

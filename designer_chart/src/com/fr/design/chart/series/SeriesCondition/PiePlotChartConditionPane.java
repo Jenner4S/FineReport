@@ -4,9 +4,9 @@ import com.fr.chart.base.ChartConstants;
 
 
 /**
- * ±ıÍ¼ Ìõ¼şÏÔÊ¾ ²ÎÊı.
+ * é¥¼å›¾ æ¡ä»¶æ˜¾ç¤º å‚æ•°.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-11 ÏÂÎç03:48:32
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-11 ä¸‹åˆ03:48:32
  */
 public class PiePlotChartConditionPane extends ChartConditionPane {
 

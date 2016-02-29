@@ -13,7 +13,7 @@ import com.fr.stable.StringUtils;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-28
- * Time: ÉÏÎç9:44
+ * Time: ä¸Šåˆ9:44
  */
 public abstract class MenuAction extends UpdateAction {
 
@@ -24,7 +24,7 @@ public abstract class MenuAction extends UpdateAction {
     }
 
     /**
-     * Ãû×Ö
+     * åå­—
      *
      * @return
      */
@@ -35,7 +35,7 @@ public abstract class MenuAction extends UpdateAction {
     }
 
     /**
-     * Í¼±ê
+     * å›¾æ ‡
      *
      * @return
      */

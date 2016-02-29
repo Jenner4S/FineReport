@@ -7,7 +7,7 @@ import com.fr.file.filetree.IOFileNodeFilter;
 import com.fr.stable.project.ProjectConstants;
 
 /*
- * ÏÔÊ¾EnvÏÂµÄclassesÄ¿Â¼ÏÂÃæµÄËùÓĞclassÎÄ¼ş
+ * æ˜¾ç¤ºEnvä¸‹çš„classesç›®å½•ä¸‹é¢çš„æ‰€æœ‰classæ–‡ä»¶
  */
 public class ClassFileTree extends EnvFileTree {
 	public ClassFileTree() {
@@ -15,7 +15,7 @@ public class ClassFileTree extends EnvFileTree {
 	}
 	
 	/*
-	 * Ñ¡ÖĞclass
+	 * é€‰ä¸­class
 	 */
 	public void setSelectedClassPath(String classPath) {
 		if(classPath == null || !classPath.endsWith(".class")) {
@@ -39,7 +39,7 @@ public class ClassFileTree extends EnvFileTree {
 	}
 	
 	/*
-	 * ·µ»ØÑ¡ÖĞµÄClassµÄÂ·¾¶
+	 * è¿”å›é€‰ä¸­çš„Classçš„è·¯å¾„
 	 */
 	public String getSelectedClassPath() {
 		FileNode fn = this.getSelectedFileNode();
@@ -50,7 +50,7 @@ public class ClassFileTree extends EnvFileTree {
 				String resPath = envPath.substring(ProjectConstants.CLASSES_NAME.length() + 1);
 				
 				resPath = resPath.replaceAll("[/\\\\]", ".");
-				//marks:È¥µô.classºó×º
+				//marks:å»æ‰.classåç¼€
                 if (resPath.toLowerCase().endsWith(".class")) {
                 	resPath = resPath.substring(0,resPath.length() - ".class".length());
                 }

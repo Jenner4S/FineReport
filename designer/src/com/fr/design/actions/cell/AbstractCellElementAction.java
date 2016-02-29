@@ -14,7 +14,7 @@ import com.fr.report.core.SheetUtils;
 import com.fr.report.elementcase.TemplateElementCase;
 import com.fr.report.stable.ReportConstants;
 
-// TODO ALEX_SEP Õâ¸öÀàÓëAbstractCellActionÓĞÊ²Ã´¹ØÏµ?
+// TODO ALEX_SEP è¿™ä¸ªç±»ä¸AbstractCellActionæœ‰ä»€ä¹ˆå…³ç³»?
 public abstract class AbstractCellElementAction extends CellSelectionAction {
 	protected AbstractCellElementAction(ElementCasePane t) {
 		super(t);
@@ -38,7 +38,7 @@ public abstract class AbstractCellElementAction extends CellSelectionAction {
 		dialog.addDialogActionListener(new DialogActionAdapter() {
 			@Override
 			public void doOk() {
-				// ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+				// éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
 				for (int j = 0; j < finalCS.getRowSpan(); j++) {
 					for (int i = 0; i < finalCS.getColumnSpan(); i++) {
 						int column = i + finalCS.getColumn();
@@ -48,17 +48,17 @@ public abstract class AbstractCellElementAction extends CellSelectionAction {
 							editCellElement = new DefaultTemplateCellElement(column, row);
 							tplEC.addCellElement(editCellElement);
 						}
-						// alex:²»¼ÓÕâÒ»¾ä»°»áµ¼ÖÂ¿çĞĞ¿çÁĞµÄ¸ñ×Ó±»¶à´Îupdate
+						// alex:ä¸åŠ è¿™ä¸€å¥è¯ä¼šå¯¼è‡´è·¨è¡Œè·¨åˆ—çš„æ ¼å­è¢«å¤šæ¬¡update
 						if (editCellElement.getColumn() != column || editCellElement.getRow() != row) {
 							continue;
 						}
 						updateBasicPane(bp, editCellElement);
 						// update cell attributes
 						if (isNeedShinkToFit()) {
-							// shink to fit.(Èç¹ûvalueÊÇString)
+							// shink to fit.(å¦‚æœvalueæ˜¯String)
 							Object editElementValue = editCellElement.getValue();
 							if (editElementValue != null && (editElementValue instanceof String || editElementValue instanceof Number)) {
-								// TODO ALEX_SEP ÔİÊ±ÓÃFIT_DEFAULTÌæ´ú,²»È¡reportsettingÀïÃæµÄÉèÖÃ,ÒòÎªÒ²²»ÖªµÀÊÇÓ¦¸Ã·ÅÔÚreportÀïÃæ»¹ÊÇelementcaseÀïÃæ
+								// TODO ALEX_SEP æš‚æ—¶ç”¨FIT_DEFAULTæ›¿ä»£,ä¸å–reportsettingé‡Œé¢çš„è®¾ç½®,å› ä¸ºä¹Ÿä¸çŸ¥é“æ˜¯åº”è¯¥æ”¾åœ¨reporté‡Œé¢è¿˜æ˜¯elementcaseé‡Œé¢
 								GridUtils.shrinkToFit(ReportConstants.AUTO_SHRINK_TO_FIT_DEFAULT, tplEC, editCellElement);
 							}
 						}
@@ -67,14 +67,14 @@ public abstract class AbstractCellElementAction extends CellSelectionAction {
 				ePane.fireTargetModified();
 			}
 		});
-        //¿Ø¼şÉèÖÃ¼Ç×¡dlg£¬Ìá½»Èë¿âÖÇÄÜÌí¼Óµ¥Ôª¸ñºó¿ÉÒÔshow³öÀ´
+        //æ§ä»¶è®¾ç½®è®°ä½dlgï¼Œæäº¤å…¥åº“æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼åå¯ä»¥showå‡ºæ¥
         DesignerContext.setReportWritePane(dialog);
 		dialog.setVisible(true);
 		return false;
 	}
 
 	/**
-	 * ³õÊ¼»¯¶Ô»°¿ò
+	 * åˆå§‹åŒ–å¯¹è¯æ¡†
 	 * 
 	 * @param cellElement
 	 * @return
@@ -82,7 +82,7 @@ public abstract class AbstractCellElementAction extends CellSelectionAction {
 	protected abstract BasicPane populateBasicPane(TemplateCellElement cellElement);
 
 	/**
-	 * ¸üĞÂ¶Ô»°¿òÖ®ºó£¬¸Ä±äÖµ
+	 * æ›´æ–°å¯¹è¯æ¡†ä¹‹åï¼Œæ”¹å˜å€¼
 	 * 
 	 * @param cellElement
 	 * @return
@@ -90,7 +90,7 @@ public abstract class AbstractCellElementAction extends CellSelectionAction {
 	protected abstract void updateBasicPane(BasicPane basicPane, TemplateCellElement cellElement);
 
 	/**
-	 * if isNeedShinkToFit£¬please override this method
+	 * if isNeedShinkToFitï¼Œplease override this method
 	 * 
 	 * @return isNeedShinkToFit
 	 */

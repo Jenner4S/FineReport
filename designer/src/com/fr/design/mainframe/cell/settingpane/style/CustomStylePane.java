@@ -26,10 +26,10 @@ import com.fr.stable.Constants;
 
 
 /**
- * °¥£¬¸´ÔÓµÄÔ­ĞÍÍ¼µ¼ÖÂ¸´ÔÓµÄ»­·¨¡£·ÇÎÒËùÔ¸Ò²
+ * å“ï¼Œå¤æ‚çš„åŸå‹å›¾å¯¼è‡´å¤æ‚çš„ç”»æ³•ã€‚éæˆ‘æ‰€æ„¿ä¹Ÿ
  *
  * @author zhou
- * @since 2012-5-24ÉÏÎç10:36:10
+ * @since 2012-5-24ä¸Šåˆ10:36:10
  */
 public class CustomStylePane extends MultiTabPane<Style> {
 	private static final int LENGTH_FOUR = 4;
@@ -96,7 +96,7 @@ public class CustomStylePane extends MultiTabPane<Style> {
 	 * @return
 	 */
 	public Style updateStyle(Style style) {
-		return ((AbstractBasicStylePane) paneList.get(tabPane.getSelectedIndex())).update(style);//Ö»¸üĞÂµ±Ç°Ñ¡ÖĞÃæ°åµÄÑùÊ½
+		return ((AbstractBasicStylePane) paneList.get(tabPane.getSelectedIndex())).update(style);//åªæ›´æ–°å½“å‰é€‰ä¸­é¢æ¿çš„æ ·å¼
 	}
 
 

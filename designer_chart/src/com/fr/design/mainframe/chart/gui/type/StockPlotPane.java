@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¹É¼ÛÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö ½çÃæ.
+ * è‚¡ä»·å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç10:52:36
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ10:52:36
  */
 public class StockPlotPane extends AbstractChartTypePane {
 	
@@ -45,15 +45,15 @@ public class StockPlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Stock_Chart");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -63,7 +63,7 @@ public class StockPlotPane extends AbstractChartTypePane {
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(STOCK).isPressing = true; 
@@ -72,9 +72,9 @@ public class StockPlotPane extends AbstractChartTypePane {
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return super.accept(ob) && ((Chart) ob).getPlot() instanceof StockPlot;

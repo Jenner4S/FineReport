@@ -48,18 +48,18 @@ public abstract class AbstractExportAction extends JWorkBookAction {
     }
 
     /**
-     * Ö´ĞĞ·½·¨
+     * æ‰§è¡Œæ–¹æ³•
      */
     public void actionPerformed(ActionEvent e) {
         JWorkBook jwb = this.getEditingComponent();
         FILE editingFILE = jwb.getEditingFILE();
         DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
 
-        // µ¯³ö²ÎÊı
+        // å¼¹å‡ºå‚æ•°
         final java.util.Map parameterMap = new java.util.HashMap();
         final TemplateWorkBook tpl = getTemplateWorkBook();
         Parameter[] parameters = tpl.getParameters();
-        if (parameters != null && parameters.length > 0) {// ¼ì²éParameter.
+        if (parameters != null && parameters.length > 0) {// æ£€æŸ¥Parameter.
             final ParameterInputPane pPane = new ParameterInputPane(
                     parameters);
             pPane.showSmallWindow(designerFrame, new DialogActionAdapter() {
@@ -75,7 +75,7 @@ public abstract class AbstractExportAction extends JWorkBookAction {
         FILEChooserPane fileChooserPane = FILEChooserPane.getInstance(false, true);
         fileChooserPane.setFILEFilter(this.getChooseFileFilter());
 
-        // ´ò¿ªÎÄ¼şºóÊä³öÎÄ¼şÃûĞŞ¸Ä£¬eg£ºw.cpt.doc / w.svg.doc£¬È¥µôÖĞ¼äµÄºó×ºÃû~~ w.doc
+        // æ‰“å¼€æ–‡ä»¶åè¾“å‡ºæ–‡ä»¶åä¿®æ”¹ï¼Œegï¼šw.cpt.doc / w.svg.docï¼Œå»æ‰ä¸­é—´çš„åç¼€å~~ w.doc
         String filenName = editingFILE.getName();
         if (filenName.indexOf('.') != -1) {
             filenName = filenName.substring(0, editingFILE.getName().lastIndexOf('.'));
@@ -140,12 +140,12 @@ public abstract class AbstractExportAction extends JWorkBookAction {
             AppExporter appExporter = (AppExporter) exporter;
             if (exporter instanceof ExcelExporter || exporter instanceof CSVExporter
                     || exporter instanceof PDFExporter || exporter instanceof WordExporter) {
-                ReportHelper.clearFormulaResult(tpl);// Çå¿ÕrptÖĞµÄ¹«Ê½¼ÆËã½á¹û
+                ReportHelper.clearFormulaResult(tpl);// æ¸…ç©ºrptä¸­çš„å…¬å¼è®¡ç®—ç»“æœ
 
                 appExporter.export(fileOutputStream, tpl.execute(parameterMap, ActorFactory.getActor(ActorConstants.TYPE_PAGE)
                 ));
             } else {
-                ReportHelper.clearFormulaResult(tpl);// Çå¿ÕcurrentReportÖĞµÄ¹«Ê½¼ÆËã½á¹û
+                ReportHelper.clearFormulaResult(tpl);// æ¸…ç©ºcurrentReportä¸­çš„å…¬å¼è®¡ç®—ç»“æœ
 
                 PageSetProvider pageSet = tpl.execute(parameterMap, ActorFactory.getActor(ActorConstants.TYPE_PAGE)).generateReportPageSet(
                         ReportUtils.getPaperSettingListFromWorkBook(tpl)).traverse4Export();
@@ -158,7 +158,7 @@ public abstract class AbstractExportAction extends JWorkBookAction {
     }
 
     /*
-     * Õâ±ßÅĞ¶ÏÊÇ·ñÓĞ²ãÊ½±¨±í£¬ÓĞ²ãÊ½ĞèÒªÊ¹ÓÃ´óÊı¾İÁ¿µ¼³ö
+     * è¿™è¾¹åˆ¤æ–­æ˜¯å¦æœ‰å±‚å¼æŠ¥è¡¨ï¼Œæœ‰å±‚å¼éœ€è¦ä½¿ç”¨å¤§æ•°æ®é‡å¯¼å‡º
      */
     protected boolean hasLayerReport(TemplateWorkBook tpl) {
         if (tpl == null) {

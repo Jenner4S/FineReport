@@ -69,12 +69,12 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 
     private static final int TIME_SWITCH_GAP = 40;
 
-	private UICheckBox isChartAnimation;// ¶¯Ì¬
-    private UICheckBox isSeriesDragEnable; //ÏµÁĞÍÏ×§
+	private UICheckBox isChartAnimation;// åŠ¨æ€
+    private UICheckBox isSeriesDragEnable; //ç³»åˆ—æ‹–æ‹½
 
-    private UICheckBox isAxisZoom;// Ëõ·Å
+    private UICheckBox isAxisZoom;// ç¼©æ”¾
 
-	private UICheckBox isDatapointValue;// Êı¾İµãÌáÊ¾
+	private UICheckBox isDatapointValue;// æ•°æ®ç‚¹æç¤º
 	private UIButton dataPointValueFormat;
 
 	private UICheckBox isDatapointPercent;
@@ -90,12 +90,12 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
     private UICheckBox isAddress;
     private UICheckBox isAddressName;
 
-	private UICheckBox isAxisShowToolTip;// ×ø±êÖáÌáÊ¾
+	private UICheckBox isAxisShowToolTip;// åæ ‡è½´æç¤º
 
-	protected UICheckBox isAutoRefresh;// ×Ô¶¯Ë¢ĞÂ
+	protected UICheckBox isAutoRefresh;// è‡ªåŠ¨åˆ·æ–°
 	protected UISpinner autoRefreshTime;
 
-	private UICorrelationComboBoxPane superLink;//  ³¬Á´
+	private UICorrelationComboBoxPane superLink;//  è¶…é“¾
 
 	private FormatPane valueFormatPane;
 	private FormatPane percentFormatPane;
@@ -123,8 +123,8 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 	}
 
 	/**
-	 * ½çÃæ±êÌâ.
-     * @return ·µ»Ø±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜.
+     * @return è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Chart-Interactive_Tab");
@@ -245,7 +245,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 	}
 
 	/**
-	 * ·´ÕıºóÃæ»¹ÓĞrelayout,Õâ±ßinitÒ»ÏÂ¾ÍºÃÁË ±£Ö¤ËùÓĞµÄinit ¼ÓÈë½çÃæ ²¢ÇÒ¼ÓÔØÈëÊÂ¼ş.
+	 * åæ­£åé¢è¿˜æœ‰relayout,è¿™è¾¹initä¸€ä¸‹å°±å¥½äº† ä¿è¯æ‰€æœ‰çš„init åŠ å…¥ç•Œé¢ å¹¶ä¸”åŠ è½½å…¥äº‹ä»¶.
 	 * @return
 	 */
 	private JPanel initPaneWithListener() {
@@ -269,7 +269,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
                 new Component[]{autoRefreshPane},
                 new Component[]{superlinkPane}
         };
-        //³õÊ¼»¯½çÃæÊ±  ¼ÓÔØÊÂ¼ş
+        //åˆå§‹åŒ–ç•Œé¢æ—¶  åŠ è½½äº‹ä»¶
         return TableLayoutHelper.createTableLayoutPane(components, rowSize, columnSize);
 	}
 
@@ -281,7 +281,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 
 
     /**
-     * È«²¿³õÊ¼»¯, ¶ÔËùÓĞµÄ½çÃæ ¶¼¼ÓÈë, È»ºó»á¼ÓÔØÊÂ¼şÏìÓ¦. ºóĞøÔÙrelayout.
+     * å…¨éƒ¨åˆå§‹åŒ–, å¯¹æ‰€æœ‰çš„ç•Œé¢ éƒ½åŠ å…¥, ç„¶åä¼šåŠ è½½äº‹ä»¶å“åº”. åç»­å†relayout.
      */
 	private void initDataPointToolTipPane() {
 		double p = TableLayout.PREFERRED;
@@ -310,7 +310,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
             isDatapointPercent.setText(Inter.getLocText("Chart-Value_Conversion"));
         }
         if(plot.isSupportAddress4Gis()) {
-            UIButton tmpButton = new UIButton(); //ÓÃÀ´µ÷Õû¶ÔÆë
+            UIButton tmpButton = new UIButton(); //ç”¨æ¥è°ƒæ•´å¯¹é½
             tmpButton.setVisible(false);
             rowSize = new double[]{p, p, p, p, p};
             Component[][] components = new Component[][]{
@@ -577,7 +577,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 
         timeSwitch.setSelected(false);
         timeSwitch.setEnabled(false);
-        //Ö»ÓĞ×ø±êÖáÎªÊ±¼ä×ø±êÖá,²¢ÇÒ¹´Ñ¡ÁËÍ¼±íËõ·ÅµÄÊ±ºò£¬²ÅÖ§³ÖÊ±¼äÇĞ»»
+        //åªæœ‰åæ ‡è½´ä¸ºæ—¶é—´åæ ‡è½´,å¹¶ä¸”å‹¾é€‰äº†å›¾è¡¨ç¼©æ”¾çš„æ—¶å€™ï¼Œæ‰æ”¯æŒæ—¶é—´åˆ‡æ¢
         if(!plot.isSupportZoomCategoryAxis() || !isAxisZoom.isSelected()){
              return;
         }
@@ -823,7 +823,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
             return (Class<? extends BasicBeanPane>)map.get(key);
         }
 
-        //ÒıÇæÔÚÕâ±ß·ÅÁË¸öprovider¡£¡£
+        //å¼•æ“åœ¨è¿™è¾¹æ”¾äº†ä¸ªproviderã€‚ã€‚
         Iterator iterator = map.keySet().iterator();
         while (iterator.hasNext()){
             Class clz = (Class)iterator.next();
@@ -1034,7 +1034,7 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
             normalMap.put(ChartHyperRelateFloatLink.class, ChartHyperRelateFloatLinkPane.class);
 
             normalMap.put(FormHyperlinkProvider.class, FormHyperlinkPane.CHART.class);
-            //¼æÈİÀÏµÄFormHyperlink.class
+            //å…¼å®¹è€çš„FormHyperlink.class
             if(fp != null){
                 normalMap.put(fp.getClass(), FormHyperlinkPane.CHART.class);
             }
@@ -1048,9 +1048,9 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
 	}
 
     /**
-   	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 *
-   	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 */
     public void registerChangeListener(UIObserverListener listener) {
         timeSwitch.registerChangeListener(listener);
@@ -1058,9 +1058,9 @@ public class ChartInteractivePane extends BasicScrollPane<Chart> implements UIOb
     }
 
     /**
-   	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+   	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
    	 *
-   	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    	 */
     public boolean shouldResponseChangeListener() {
         return true;

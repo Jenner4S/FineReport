@@ -11,7 +11,7 @@ import com.fr.form.ui.WriteUnableRepeatEditor;
 import com.fr.general.Inter;
 
 public abstract class WriteUnableRepeatEditorPane<E extends WriteUnableRepeatEditor> extends FieldEditorDefinePane<WriteUnableRepeatEditor> {
-	// richer:ÊÇ·ñÈ¥³ıÖØ¸´µÄÖµ
+	// richer:æ˜¯å¦å»é™¤é‡å¤çš„å€¼
 	protected UICheckBox removeRepeatCheckBox;
 	
 	public WriteUnableRepeatEditorPane(){

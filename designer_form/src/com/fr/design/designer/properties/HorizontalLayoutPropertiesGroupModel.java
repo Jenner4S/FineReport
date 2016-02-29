@@ -13,7 +13,7 @@ import com.fr.design.form.layout.FRHorizontalLayout;
 import com.fr.form.ui.container.WHorizontalBoxLayout;
 
 /**
- * 流式布局的属性组
+ * 娴佸紡甯冨眬鐨勫睘鎬х粍
  * @author richer
  * @since 6.5.3
  */

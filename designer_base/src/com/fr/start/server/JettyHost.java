@@ -36,7 +36,7 @@ public class JettyHost {
 	private File outLogFile = null;
 	private int currentPort = -1;
 
-	// ÄÚÖÃ·şÎñÆ÷Ò»¸ö¶Ë¿ÚÏÂÃæ¿ÉÒÔÓĞ¶à¸öÓ¦ÓÃ,µ«ÊÇcontent²»ÄÜÖØÃû
+	// å†…ç½®æœåŠ¡å™¨ä¸€ä¸ªç«¯å£ä¸‹é¢å¯ä»¥æœ‰å¤šä¸ªåº”ç”¨,ä½†æ˜¯contentä¸èƒ½é‡å
 	private Map<String, WebApplicationContext> webAppsMap = new HashMap<String, WebApplicationContext>();
 
 	private List<JettyServerListener> listenerList = new ArrayList<JettyServerListener>();
@@ -49,18 +49,18 @@ public class JettyHost {
 
 		initLogFileAndOutputStream();
 
-		// TODO: ½«HostJettyServer·Åµ½ServerTrayÖĞÈ¥
+		// TODO: å°†HostJettyServeræ”¾åˆ°ServerTrayä¸­å»
 		tryStartServerTray();
 	}
 
 	private void initServer() {
-		// alex:²»¼ÓÕâ¾ä»°µÄ»°,jettyÎŞ·¨½ÓÊÕ³¬¹ı200kµÄ²ÎÊı
+		// alex:ä¸åŠ è¿™å¥è¯çš„è¯,jettyæ— æ³•æ¥æ”¶è¶…è¿‡200kçš„å‚æ•°
 		System.setProperty("org.mortbay.http.HttpRequest.maxFormContentSize", "-1");
 		try {
-			// jetty serverµÄÅäÖÃÎÄ¼ş
+			// jetty serverçš„é…ç½®æ–‡ä»¶
 			this.server = new Server("jetty.xml");
 		} catch (IOException e) {
-			// Èç¹ûÃ»ÓĞÅäÖÃÎÄ¼ş£¬ÄÇÃ´¾ÍÓÃÄ¬ÈÏµÄ°É
+			// å¦‚æœæ²¡æœ‰é…ç½®æ–‡ä»¶ï¼Œé‚£ä¹ˆå°±ç”¨é»˜è®¤çš„å§
 			this.server = new Server();
 			SocketListener listener = new SocketListener();
 			listener.setPort(this.currentPort);
@@ -70,13 +70,13 @@ public class JettyHost {
 	}
 
 	private void initLogFileAndOutputStream() {
-		// logÎÄ¼ş·ÅÖÃµÄÎ»ÖÃ
+		// logæ–‡ä»¶æ”¾ç½®çš„ä½ç½®
 		File logDir = null;
 		String installHome = StableUtils.getInstallHome();
-		if (installHome == null) {// Ã»ÓĞinstallHomeµÄÊ±ºò£¬¾Í·Åµ½user.homeÏÂÃæà¶
+		if (installHome == null) {// æ²¡æœ‰installHomeçš„æ—¶å€™ï¼Œå°±æ”¾åˆ°user.homeä¸‹é¢å–½
 			logDir = new File(ProductConstants.getEnvHome() + File.separator + ProjectConstants.LOGS_NAME);
 		} else {
-			// james£ºlogs·ÅÔÚ°²×°Ä¿Â¼ÏÂÃæ
+			// jamesï¼šlogsæ”¾åœ¨å®‰è£…ç›®å½•ä¸‹é¢
 			logDir = new File(installHome + File.separator + ProjectConstants.LOGS_NAME + File.separator + "jetty");
 		}
 		StableUtils.mkdirs(logDir);
@@ -184,7 +184,7 @@ public class JettyHost {
 
 		getServer().destroy();
 		StartServer.currentEnvChanged();
-		server = null;//ÖØÖÃserver
+		server = null;//é‡ç½®server
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class JettyHost {
 	}
 
 	/**
-	 * ³¢ÊÔÆô¶¯ÏµÍ³ÍĞÅÌ
+	 * å°è¯•å¯åŠ¨ç³»ç»Ÿæ‰˜ç›˜
 	 */
 	private void tryStartServerTray() {
 		if (SystemTray.isSupported()) {
@@ -249,7 +249,7 @@ public class JettyHost {
 	}
 
 	/**
-	 * °²×°Ä¿Â¼ÏÂµÄÄ¬ÈÏµÄWebReport£¬Õâ¸öÖ»Ö´ĞĞÒ»´Î,³ıÁËÔ¤ÀÀdemo£¬ÆäËûµÄ²»Òªµ÷ÓÃÕâ¸ö·½·¨
+	 * å®‰è£…ç›®å½•ä¸‹çš„é»˜è®¤çš„WebReportï¼Œè¿™ä¸ªåªæ‰§è¡Œä¸€æ¬¡,é™¤äº†é¢„è§ˆdemoï¼Œå…¶ä»–çš„ä¸è¦è°ƒç”¨è¿™ä¸ªæ–¹æ³•
 	 */
 	public void addAndStartInstallHomeWebApp() {
 		if (!isDemoAppLoaded) {
@@ -264,7 +264,7 @@ public class JettyHost {
 	}
 
 	/**
-	 * ¼ÓÔØEnvÏÂµÄ±¨±íÔËĞĞ»·¾³
+	 * åŠ è½½Envä¸‹çš„æŠ¥è¡¨è¿è¡Œç¯å¢ƒ
 	 */
 	public void addAndStartLocalEnvHomeWebApp() {
 		String name = DesignerEnvManager.getEnvManager().getCurEnvName();

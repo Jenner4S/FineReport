@@ -4,7 +4,7 @@ import com.fr.design.mainframe.widget.accessibles.AccessiblePropertyEditor;
 import com.fr.design.mainframe.widget.accessibles.AccessibleTreeModelEditor;
 
 /**
- * ±à¼­ÊÓÍ¼Ê÷¿Ø¼þºÍÏÂÀ­Ê÷¿Ø¼þ
+ * ç¼–è¾‘è§†å›¾æ ‘æŽ§ä»¶å’Œä¸‹æ‹‰æ ‘æŽ§ä»¶
  * @since 6.5.3
  */
 public class TreeModelEditor extends AccessiblePropertyEditor {

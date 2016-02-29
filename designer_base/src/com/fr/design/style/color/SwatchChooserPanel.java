@@ -525,7 +525,7 @@ public class SwatchChooserPanel extends AbstractColorChooserPanel{
 	  }
 
 	  /**
-	   * ¸üĞÂJcolorChooser
+	   * æ›´æ–°JcolorChooser
 	   */
 	  public void updateChooser()
 	  {
@@ -558,9 +558,9 @@ public class SwatchChooserPanel extends AbstractColorChooserPanel{
 	  }
 
 	  /**
-	   * É¾³ıÑ¡ÔñÆ÷Ãæ°å
+	   * åˆ é™¤é€‰æ‹©å™¨é¢æ¿
 	   *
-	   * @param ÑÕÉ«Ñ¡ÔñÆ÷
+	   * @param é¢œè‰²é€‰æ‹©å™¨
 	   */
 	  public void uninstallChooserPanel(JColorChooser chooser)
 	  {

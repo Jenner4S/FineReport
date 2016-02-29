@@ -76,7 +76,7 @@ public class PageToolBarPane extends AbstractEditToolBarPane {
 		JPanel center = FRGUIPaneFactory.createBorderLayout_S_Pane();
 		center.add(eventPane, BorderLayout.CENTER);
 		allPanel.add(center, BorderLayout.CENTER);
-		//wei : 默认没config.xml的情况下，就有默认工具栏
+		//wei : 榛樿娌onfig.xml鐨勬儏鍐典笅锛屽氨鏈夐粯璁ゅ伐鍏锋爮
 		ToolBarManager toolBarManager = ToolBarManager.createDefaultToolBar();
 		toolBarManager.setToolBarLocation(Location.createTopEmbedLocation());
 		this.toolBarManagers = new ToolBarManager[] {toolBarManager};
@@ -160,7 +160,7 @@ public class PageToolBarPane extends AbstractEditToolBarPane {
 	}
 
     /**
-     *  编辑服务器工具栏窗格
+     *  缂栬緫鏈嶅姟鍣ㄥ伐鍏锋爮绐楁牸
      */
 	@Override
 	public void editServerToolBarPane() {

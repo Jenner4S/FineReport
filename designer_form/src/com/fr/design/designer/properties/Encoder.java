@@ -1,7 +1,7 @@
 package com.fr.design.designer.properties;
 
 /**
- * ½«¿Ø¼şÊôĞÔ ×ª»¯³É×Ö·û´®
+ * å°†æ§ä»¶å±æ€§ è½¬åŒ–æˆå­—ç¬¦ä¸²
  * @since 6.5.2
  */
 public interface Encoder<T> {

@@ -16,7 +16,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 /**
  * 
  * @author zhou
- * @since 2012-5-30ÏÂÎç1:12:00
+ * @since 2012-5-30ä¸‹åˆ1:12:00
  */
 public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 	protected UIButtonGroup<Object> cardNamesPane;
 	protected JPanel cardPane;
 
-	// ·ÅÆúÏÂÃæ´ø·ºĞÍµÄÊı×é,ÓÃlist,ÒòÎªJava²»Ö§³Ö·ºĞÍÊı×é,µ¼ÖÂ³õÊ¼»¯Êı×éÊ±²»ÄÜÓÃ·ºĞÍ¡¢´Ó¶ø²»ÄÜÑÏ¸ñ¿ØÖÆÀàĞÍ,ÄÇÃ´ÓÃ·ºĞÍ¾ÍÃ»ÓĞÊ²Ã´ÒâÒåÁË
+	// æ”¾å¼ƒä¸‹é¢å¸¦æ³›å‹çš„æ•°ç»„,ç”¨list,å› ä¸ºJavaä¸æ”¯æŒæ³›å‹æ•°ç»„,å¯¼è‡´åˆå§‹åŒ–æ•°ç»„æ—¶ä¸èƒ½ç”¨æ³›å‹ã€ä»è€Œä¸èƒ½ä¸¥æ ¼æ§åˆ¶ç±»å‹,é‚£ä¹ˆç”¨æ³›å‹å°±æ²¡æœ‰ä»€ä¹ˆæ„ä¹‰äº†
 	// private FurtherBasicBeanPane<? extends T>[] cards; august
 	private List<FurtherBasicBeanPane<? extends T>> cards;
 
@@ -56,7 +56,7 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 			}
 		});
 		initLayout();
-		cardNamesPane.setSelectedIndex(0);// Ä¬ÈÏÑ¡ÖĞµÚÒ»¸ö
+		cardNamesPane.setSelectedIndex(0);// é»˜è®¤é€‰ä¸­ç¬¬ä¸€ä¸ª
 	}
 	
 	protected UIButtonGroup<Object> getCardNamePane(String[] cardNames) {
@@ -69,7 +69,7 @@ public abstract class UIRadioPane<T> extends BasicBeanPane<T> {
 	}
 
 	/**
-	 * august¡¡Èç¹ûĞèÒªµÄ²¼¾ÖÓĞ±ä»¯£¬¸²¸ÇÖ®
+	 * augustã€€å¦‚æœéœ€è¦çš„å¸ƒå±€æœ‰å˜åŒ–ï¼Œè¦†ç›–ä¹‹
 	 */
 	protected void initLayout() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());

@@ -50,7 +50,7 @@ public class TextCellEditor extends AbstractCellEditor {
             }
         });
         this.textField.getDocument().addDocumentListener(documentlistener);
-        //¼æÈİJDK1.4
+        //å…¼å®¹JDK1.4
         this.textField.setFocusTraversalKeysEnabled(false);
     }
     DocumentListener documentlistener = new DocumentListener() {
@@ -130,7 +130,7 @@ public class TextCellEditor extends AbstractCellEditor {
 
         this.oldValue = Utils.objectToString(value);
         this.textField.setText(oldValue);
-        //peter:Ö»¶Á·½Ê½»ñµÃStyle.
+        //peter:åªè¯»æ–¹å¼è·å¾—Style.
         Style style = null;
         if(cellElement != null) {
             style = cellElement.getStyle();
@@ -167,7 +167,7 @@ public class TextCellEditor extends AbstractCellEditor {
                 evt.consume();
             } else if (code == KeyEvent.VK_ENTER || code == KeyEvent.VK_TAB ||
                     code == KeyEvent.VK_UP || code == KeyEvent.VK_DOWN) {
-                //½«ÊÂ¼ş´«µİ¸øGrid¿Ø¼şÀ´ÊµÏÖ, Enter¼üÏòÏÂÒÆ¶¯ ºÍ Tab¼üÏòÓÒÒÆ¶¯.
+                //å°†äº‹ä»¶ä¼ é€’ç»™Gridæ§ä»¶æ¥å®ç°, Enteré”®å‘ä¸‹ç§»åŠ¨ å’Œ Tabé”®å‘å³ç§»åŠ¨.
                 grid.requestFocus();
                 grid.dispatchEvent(evt);
             }

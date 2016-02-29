@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-20
- * Time: ÏÂÎç5:05
+ * Time: ä¸‹åˆ5:05
  */
 public class PluginManager extends XMLFileManager {
 
@@ -41,8 +41,8 @@ public class PluginManager extends XMLFileManager {
     }
 
     /**
-     * ÎÄ¼şÃû
-     * @return  ÎÄ¼şÃû
+     * æ–‡ä»¶å
+     * @return  æ–‡ä»¶å
      */
     public String fileName() {
         return "plugin.xml";
@@ -101,7 +101,7 @@ public class PluginManager extends XMLFileManager {
                 if ((tmpVal = reader.getAttrAsString("class", null)) != null) {
                     name = tmpVal;
                 }
-                //¶ÁÈ¡Ä£°åÊı¾İ¼¯²Ëµ¥
+                //è¯»å–æ¨¡æ¿æ•°æ®é›†èœå•
                 if (name.isEmpty()) {
                     return;
                 }

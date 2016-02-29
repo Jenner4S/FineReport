@@ -16,7 +16,7 @@ import java.util.Map;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : …œŒÁ11:19
+ * Time   : ‰∏äÂçà11:19
  */
 public class ChartAxisFactory {
     private static final String PERCENT = "Percent";

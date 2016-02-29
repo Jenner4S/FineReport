@@ -10,8 +10,8 @@ import javax.swing.*;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-13 ÉÏÎç10:54:56
- * ÀàËµÃ÷: È«¾àÍ¼µÄ±êÇ©½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-13 ä¸Šåˆ10:54:56
+ * ç±»è¯´æ˜: å…¨è·å›¾çš„æ ‡ç­¾ç•Œé¢
  */
 public class RangeDataLabelPane extends DataLabelPane {
 

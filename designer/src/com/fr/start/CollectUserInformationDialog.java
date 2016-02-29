@@ -183,9 +183,9 @@ public class CollectUserInformationDialog extends UIDialog {
     };
 
     /**
-     * ¼ì²âÊÇ·ñºÏ·¨ÊäÈë
+     * æ£€æµ‹æ˜¯å¦åˆæ³•è¾“å…¥
      *
-     * @throws Exception Å×³öÒì³£
+     * @throws Exception æŠ›å‡ºå¼‚å¸¸
      *
      */
     public void checkValid() throws Exception {

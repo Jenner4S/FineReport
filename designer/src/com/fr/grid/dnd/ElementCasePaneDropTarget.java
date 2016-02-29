@@ -40,7 +40,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 /**
  * the class used for drop an element to the grid
  *
- * @editor zhou 2012-3-22ÏÂÎç2:04:41
+ * @editor zhou 2012-3-22ä¸‹åˆ2:04:41
  */
 public class ElementCasePaneDropTarget extends DropTargetAdapter {
     private static final int LEFT_2_RIGHT = 0;
@@ -49,7 +49,7 @@ public class ElementCasePaneDropTarget extends DropTargetAdapter {
     private static final int BOTTOM_2_TOP = 3;
 
     private ElementCasePane ePane;
-    // AUGUST:notice Õâ¸öcsÖ»ÊÇÊó±ê·ÅÏÂµÄÄÇ¸öÈ¥µÄÄÇ¸öµ¥Ôª¸ñµÄ¸±±¾
+    // AUGUST:notice è¿™ä¸ªcsåªæ˜¯é¼ æ ‡æ”¾ä¸‹çš„é‚£ä¸ªå»çš„é‚£ä¸ªå•å…ƒæ ¼çš„å‰¯æœ¬
     private CellSelection cs;
     private String[][] doubleArray = null;
 
@@ -87,7 +87,7 @@ public class ElementCasePaneDropTarget extends DropTargetAdapter {
                     grid.startCellEditingAt_DEC(cs.getColumn(), cs.getRow(), cls, false);
                 } else if (userObj instanceof String[][]) {
                     doubleArray = (String[][]) userObj;
-                    // marks:µ±ÁĞÊıÎªÒ»Ê±ºò£¬²»ĞèÒª²Ëµ¥
+                    // marks:å½“åˆ—æ•°ä¸ºä¸€æ—¶å€™ï¼Œä¸éœ€è¦èœå•
                     if (doubleArray.length > 1) {
                         JPopupMenu popMenu = new JPopupMenu();
                         GUICoreUtils.showPopupMenu(createPopupMenu(popMenu), ePane.getGrid(), (int) p.getX() + 1, (int) p.getY() + 1);
@@ -158,25 +158,25 @@ public class ElementCasePaneDropTarget extends DropTargetAdapter {
                     CellSelection cs = (CellSelection) ePane.getSelection();
                     if (direction == LEFT_2_RIGHT) {
                         cellElement = ePane.getEditingElementCase().getCellElement(cs.getColumn() + cs.getColumnSpan(), cs.getRow());
-                        // marks:Èç¹ûµ¥Ôª¸ñÎª¿Õ£¬ĞÂ½¨Ò»¸ö
+                        // marks:å¦‚æœå•å…ƒæ ¼ä¸ºç©ºï¼Œæ–°å»ºä¸€ä¸ª
                         if (cellElement == null) {
                             ePane.setSelection(new CellSelection(cs.getColumn() + cs.getColumnSpan(), cs.getRow(), 1, 1));
                         }
                     } else if (direction == RIGHT_2_LEFT) {
                         cellElement = ePane.getEditingElementCase().getCellElement(cs.getColumn() - cs.getColumnSpan(), cs.getRow());
-                        // marks:Èç¹ûµ¥Ôª¸ñÎª¿Õ£¬ĞÂ½¨Ò»¸ö
+                        // marks:å¦‚æœå•å…ƒæ ¼ä¸ºç©ºï¼Œæ–°å»ºä¸€ä¸ª
                         if (cellElement == null) {
                             ePane.setSelection(new CellSelection(cs.getColumn() - cs.getColumnSpan(), cs.getRow(), 1, 1));
                         }
                     } else if (direction == TOP_2_BOTTOM) {
                         cellElement = ePane.getEditingElementCase().getCellElement(cs.getColumn(), cs.getRow() + cs.getRowSpan());
-                        // marks:Èç¹ûµ¥Ôª¸ñÎª¿Õ£¬ĞÂ½¨Ò»¸ö
+                        // marks:å¦‚æœå•å…ƒæ ¼ä¸ºç©ºï¼Œæ–°å»ºä¸€ä¸ª
                         if (cellElement == null) {
                             ePane.setSelection(new CellSelection(cs.getColumn(), cs.getRow() + cs.getRowSpan(), 1, 1));
                         }
                     } else if (direction == BOTTOM_2_TOP) {
                         cellElement = ePane.getEditingElementCase().getCellElement(cs.getColumn(), cs.getRow() - cs.getRowSpan());
-                        // marks:Èç¹ûµ¥Ôª¸ñÎª¿Õ£¬ĞÂ½¨Ò»¸ö
+                        // marks:å¦‚æœå•å…ƒæ ¼ä¸ºç©ºï¼Œæ–°å»ºä¸€ä¸ª
                         if (cellElement == null) {
                             ePane.setSelection(new CellSelection(cs.getColumn(), cs.getRow() - cs.getRowSpan(), 1, 1));
                         }
@@ -255,7 +255,7 @@ public class ElementCasePaneDropTarget extends DropTargetAdapter {
 
                 report.addCellElement(curCellElement);
             } else {
-                // marks:Ö±½Ó¸²¸ÇÖµ
+                // marks:ç›´æ¥è¦†ç›–å€¼
                 curCellElement.setValue(newLinearDSColumn);
                 curCellElement.setCellExpandAttr(cellExPandAttr);
             }

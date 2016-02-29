@@ -68,12 +68,12 @@ public class XWHorizontalBoxLayout extends XLayoutContainer {
 
     @Override
     protected Dimension calculatePreferredSize(Widget wgt) {
-        // ×¢ÒâÕâÀï¼ÆËãPreferredSizeµÄÊ±ºòĞèÒªÈ¡µ±Ç°ÈİÆ÷µÄÊµ¼Ê´óĞ¡
-        // ¸ß¶ÈÊÇ×ÔÊÊÓ¦µÄ£¬Ö±½Ó¾ÍĞ´³É0ÁË
+        // æ³¨æ„è¿™é‡Œè®¡ç®—PreferredSizeçš„æ—¶å€™éœ€è¦å–å½“å‰å®¹å™¨çš„å®é™…å¤§å°
+        // é«˜åº¦æ˜¯è‡ªé€‚åº”çš„ï¼Œç›´æ¥å°±å†™æˆ0äº†
         return new Dimension(this.toData().getWidthAtWidget(wgt), 0);
     }
 
-    // ÔÚÌí¼ÓµÄÊ±ºòĞèÒª°Ñ¿ÉÀ­ÉìµÄ·½ÏòÈ·¶¨£¬ËùÒÔÖØĞ´ÁËadd·½·¨
+    // åœ¨æ·»åŠ çš„æ—¶å€™éœ€è¦æŠŠå¯æ‹‰ä¼¸çš„æ–¹å‘ç¡®å®šï¼Œæ‰€ä»¥é‡å†™äº†addæ–¹æ³•
     @Override
     public Component add(Component comp, int index) {
         super.add(comp, index);

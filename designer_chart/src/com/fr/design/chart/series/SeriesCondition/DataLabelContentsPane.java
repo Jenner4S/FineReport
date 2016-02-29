@@ -19,7 +19,7 @@ public class DataLabelContentsPane extends BasicPane {
         JPanel pane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
         this.add(pane, BorderLayout.NORTH);
 
-        //  ·ÖÀà, ÏµÁĞ, Öµ, °Ù·Ö±È
+        //  åˆ†ç±», ç³»åˆ—, å€¼, ç™¾åˆ†æ¯”
         pane.add(createLabelPane(plotClass), BorderLayout.NORTH);
     }
 
@@ -29,11 +29,11 @@ public class DataLabelContentsPane extends BasicPane {
     }
 
     /**
-     * Ò»°ã: ·ÖÀà ÏµÁĞ Öµ
-     * ±ıÍ¼: ·ÖÀà ÏµÁĞ Öµ °Ù·Ö±È Ç£ÒıÏß.
+     * ä¸€èˆ¬: åˆ†ç±» ç³»åˆ— å€¼
+     * é¥¼å›¾: åˆ†ç±» ç³»åˆ— å€¼ ç™¾åˆ†æ¯” ç‰µå¼•çº¿.
      */
     private JPanel createLabelPane(Class plotClass) {
-        JPanel pane = FRGUIPaneFactory.createBorderLayout_L_Pane();// border ²»ÊÊºÏ
+        JPanel pane = FRGUIPaneFactory.createBorderLayout_L_Pane();// border ä¸é€‚åˆ
         pane.setBorder(BorderFactory.createEmptyBorder(2, 0, 10, 10));
         pane.add(dataLabelPane = ChartPlotFactory.createDataLabelPane4Plot(plotClass), BorderLayout.CENTER);
         return pane;

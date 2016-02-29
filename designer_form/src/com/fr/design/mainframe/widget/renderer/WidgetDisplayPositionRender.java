@@ -6,7 +6,7 @@ import com.fr.design.mainframe.widget.wrappers.WidgetDisplayPositionWrapper;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-8-13
- * Time: ÏÂÎç2:22
+ * Time: ä¸‹åˆ2:22
  */
 public class WidgetDisplayPositionRender extends EncoderCellRenderer {
 

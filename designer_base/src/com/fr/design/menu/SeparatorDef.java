@@ -11,7 +11,7 @@ public class SeparatorDef extends ShortCut  {
 	
 	public static SeparatorDef DEFAULT = new SeparatorDef();
 
-	private static final Dimension SEPARATOR_DIMENSION = new Dimension(2, 16);// Separator·Ö¸ôÏß
+	private static final Dimension SEPARATOR_DIMENSION = new Dimension(2, 16);// Separatoråˆ†éš”çº¿
 	
 	private SeparatorDef() {
 		

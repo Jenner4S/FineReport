@@ -28,7 +28,7 @@ import java.io.OutputStream;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÉÏÎç10:04
+ * Time: ä¸Šåˆ10:04
  */
 public class ImageExporter4Chart implements Exporter4Chart{
     private int resolution = Constants.DEFAULT_WEBWRITE_AND_SCREEN_RESOLUTION;
@@ -40,11 +40,11 @@ public class ImageExporter4Chart implements Exporter4Chart{
     }
 
     /**
-     * µ¼³ö
+     * å¯¼å‡º
      *
-     * @param out  Êä³öÁ÷
-     * @param chart Í¼±íÎÄ¼ş
-     * @throws Exception Òì³£
+     * @param out  è¾“å‡ºæµ
+     * @param chart å›¾è¡¨æ–‡ä»¶
+     * @throws Exception å¼‚å¸¸
      */
     public void export(OutputStream out, JChart chart) throws Exception {
         ChartDesigner designer = chart.getChartDesigner();
@@ -87,5 +87,3 @@ public class ImageExporter4Chart implements Exporter4Chart{
         }
     }
 }
-
-

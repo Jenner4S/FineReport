@@ -26,12 +26,12 @@ import com.fr.report.elementcase.TemplateElementCase;
 
 
 /**
- * �������һ��ȫ�����أ��������ӳټ��ء� ԭ��������򿪵�һ��ģ���ʱ�򣬻��ʼ���������ණ�������������Ҫ�ܳ�ʱ�䣨���3-5s����
- * ��Ԫ�����Ա���ʼ��ȫ�������Ҳ�ò��˶೤ʱ�䣬���������ģ�3-5s���̣ܶ��û���������о�����ʱ�䡣
- * ���Ի�����Ӱ�����顣���ң��Ժ��õ�Ԫ�����Ա�ʱ������ӦΪ����Ĳ������û�г�ʼ�������������ͻȻ��һ��,��������.
+ * 所有组件一次全部加载，不存在延迟加载。 原因：设计器打开第一张模板的时候，会初始化许多许多东西。这个过程需要很长时间（快的3-5s）。
+ * 单元格属性表初始化全部组件，也用不了多长时间，相对于上面的（3-5s）很短，用户根本不会感觉多了时间。
+ * 所以基本不影响体验。而且，以后用单元格属性表时，不会应为里面的部分组件没有初始化而导致设计器突然卡一下,很流畅的.
  *
  * @author zhou
- * @since 2012-5-24����1:50:21
+ * @since 2012-5-24下午1:50:21
  */
 public class CellElementPropertyPane extends DockingView {
 
@@ -131,7 +131,7 @@ public class CellElementPropertyPane extends DockingView {
     }
 
     /**
-     * һЩ�������ж����˵�������˵��̬��
+     * 一些面板可能有二级菜单（比如说形态）
      *
      * @param id
      */

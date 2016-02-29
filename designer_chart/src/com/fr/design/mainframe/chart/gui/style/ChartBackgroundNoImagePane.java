@@ -5,9 +5,9 @@ import com.fr.design.mainframe.backgroundpane.ColorBackgroundPane;
 import com.fr.design.mainframe.backgroundpane.NullBackgroundPane;
 
 /**
- * ±³¾°½çÃæ, ÎŞÍ¼Æ¬ºÍÎÆÀíÑ¡Ïî.
+ * èƒŒæ™¯ç•Œé¢, æ— å›¾ç‰‡å’Œçº¹ç†é€‰é¡¹.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-21 ÏÂÎç04:00:58
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-21 ä¸‹åˆ04:00:58
  */
 public class ChartBackgroundNoImagePane extends ChartBackgroundPane {
 

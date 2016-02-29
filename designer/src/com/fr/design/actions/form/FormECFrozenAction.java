@@ -14,7 +14,7 @@ import com.fr.design.dialog.DialogActionAdapter;
 import com.fr.report.worksheet.FormElementCase;
 
 /**
- * ±íµ¥±¨±í¿é¶³½á
+ * è¡¨å•æŠ¥è¡¨å—å†»ç»“
  */
 public class FormECFrozenAction extends AbastractFormECAction<FormElementCasePaneDelegate>{
     private boolean returnValue;
@@ -28,9 +28,9 @@ public class FormECFrozenAction extends AbastractFormECAction<FormElementCasePan
     }
 
     /**
-     * Ö´ĞĞ¶¯×÷
+     * æ‰§è¡ŒåŠ¨ä½œ
      *
-     * @return ÊÇ·ñÖ´ĞĞ³É¹¦
+     * @return æ˜¯å¦æ‰§è¡ŒæˆåŠŸ
      */
     public boolean executeActionReturnUndoRecordNeeded() {
     	FormElementCasePaneDelegate jws = getEditingComponent();
@@ -53,4 +53,3 @@ public class FormECFrozenAction extends AbastractFormECAction<FormElementCasePan
         return returnValue;
     }
 }
-

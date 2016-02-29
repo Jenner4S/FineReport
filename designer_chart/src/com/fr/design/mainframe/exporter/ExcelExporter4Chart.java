@@ -25,7 +25,7 @@ import java.io.OutputStream;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-22
- * Time: ÉÏÎç10:47
+ * Time: ä¸Šåˆ10:47
  */
 public class ExcelExporter4Chart extends ImageExporter4Chart {
     private static final int PICTURE_TYPE_PNG = 6 ;
@@ -37,11 +37,11 @@ public class ExcelExporter4Chart extends ImageExporter4Chart {
 
 
     /**
-     * µ¼³ö
+     * å¯¼å‡º
      *
-     * @param out   Êä³öÁ÷
-     * @param chart Í¼±íÎÄ¼ş
-     * @throws Exception Òì³£
+     * @param out   è¾“å‡ºæµ
+     * @param chart å›¾è¡¨æ–‡ä»¶
+     * @throws Exception å¼‚å¸¸
      */
     public void export(OutputStream out, JChart chart) throws Exception {
         try {
@@ -75,13 +75,13 @@ public class ExcelExporter4Chart extends ImageExporter4Chart {
     private boolean checkExcelExportVersion() {
         return ExcelUtils.checkPOIJarExist();
     }
-    	// ¼ÓÔØÍ¼Æ¬.
+    	// åŠ è½½å›¾ç‰‡.
 	private int loadPicture(BufferedImage bufferedImage)throws IOException {
 		ByteArrayOutputStream bos = null;
 		try {
 			bos = new ByteArrayOutputStream();
 			IOUtils.writeImage(bufferedImage, "png", bos);
-			//ÒıÓÃÕâ¸ö²ÎÊıÊÇjdk1.5µÄ°æ±¾ XSSFWorkbook.PICTURE_TYPE_PNG, ÔÚ1.4ÏÂÎŞ·¨±àÒë, ËùÓĞÊÖ¶¯È¥µôÕâ¸ö²ÎÊı.
+			//å¼•ç”¨è¿™ä¸ªå‚æ•°æ˜¯jdk1.5çš„ç‰ˆæœ¬ XSSFWorkbook.PICTURE_TYPE_PNG, åœ¨1.4ä¸‹æ— æ³•ç¼–è¯‘, æ‰€æœ‰æ‰‹åŠ¨å»æ‰è¿™ä¸ªå‚æ•°.
             return workbook.addPicture(bos.toByteArray(), PICTURE_TYPE_PNG);
 		} finally {
 			if (bos != null) {

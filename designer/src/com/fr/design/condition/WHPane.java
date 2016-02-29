@@ -59,7 +59,7 @@ public abstract class WHPane extends ConditionAttrSingleConditionPane<HighlightA
             va = width.toMMValue4Scale2();
             unitLabel.setText(Inter.getLocText("FR-Designer_Unit_MM"));
         }
-        // Ö»±£ÁôÁ½Î»
+        // åªä¿ç•™ä¸¤ä½
         Float d = new Float(new BigDecimal(va + "").setScale(2, BigDecimal.ROUND_DOWN).floatValue());
         sp.setValue(d);
     }
@@ -81,7 +81,7 @@ public abstract class WHPane extends ConditionAttrSingleConditionPane<HighlightA
 
     public HighlightAction update(UIBasicSpinner sp) {
         float newWidth = ((Number)sp.getValue()).floatValue();
-        // Ö»±£ÁôÁ½Î»
+        // åªä¿ç•™ä¸¤ä½
         newWidth = new Float(new BigDecimal(newWidth + "").setScale(2, BigDecimal.ROUND_DOWN).floatValue());
         int unitType = DesignerEnvManager.getEnvManager().getReportLengthUnit();
         UNIT width;

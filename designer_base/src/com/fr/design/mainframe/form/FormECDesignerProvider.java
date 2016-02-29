@@ -15,56 +15,56 @@ public interface FormECDesignerProvider {
 	public static final String XML_TAG = "FormElementCaseDesigner";
 
     /**
-     * Ñ¡ÖĞÄ¿±êµÄ ¶ÔÓ¦Menu
-     * @return ·µ»ØMenuDefÊı×é.
+     * é€‰ä¸­ç›®æ ‡çš„ å¯¹åº”Menu
+     * @return è¿”å›MenuDefæ•°ç»„.
      */
 	public MenuDef[] menus4Target();
 
     /**
-     * »ñÈ¡½¹µã
+     * è·å–ç„¦ç‚¹
      */
     public void requestFocus() ;
 
     /**
-     * ¹¤¾ßÀ¸²Ëµ¥×ÖÌå×ÖºÅµÈ
-     * @return   ¹¤¾ßÀ¸²Ëµ¥Êı×é
+     * å·¥å…·æ èœå•å­—ä½“å­—å·ç­‰
+     * @return   å·¥å…·æ èœå•æ•°ç»„
      */
 	public ToolBarDef[] toolbars4Target();
 
     /**
-     * ±íµ¥µÄ±¨±í¿éµÄ¹¤¾ß°´Å¥¸´ÖÆ¼ôÇĞÄÇĞĞ
-     * @return ¹¤¾ß°´Å¥
+     * è¡¨å•çš„æŠ¥è¡¨å—çš„å·¥å…·æŒ‰é’®å¤åˆ¶å‰ªåˆ‡é‚£è¡Œ
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form();
 
     /**
-     * Ä£°å²Ëµ¥
-     * @return    ·µ»Ø²Ëµ¥
+     * æ¨¡æ¿èœå•
+     * @return    è¿”å›èœå•
      */
 	public ShortCut[] shortcut4TemplateMenu();
 
     /**
-     *µ±Ç°ÕıÔÚ±à¼­µÄelementcase
-     * @return   µ±Ç°ÕıÔÚ±à¼­µÄelementcase
+     *å½“å‰æ­£åœ¨ç¼–è¾‘çš„elementcase
+     * @return   å½“å‰æ­£åœ¨ç¼–è¾‘çš„elementcase
      */
 	public FormElementCaseProvider getEditingElementCase();
 
     /**
-     *  ÓÒÉÏ½ÇÊôĞÔ±í
-     * @return     ÊôĞÔÃæ°å
+     *  å³ä¸Šè§’å±æ€§è¡¨
+     * @return     å±æ€§é¢æ¿
      */
 	public JComponent getEastDownPane();
 
     /**
-     *   ÓÒÏÂ½Ç¿Ø¼şÊ÷»òÕßÀ©Õ¹ÊôĞÔ
-     * @return    ÊôĞÔÃæ°å
+     *   å³ä¸‹è§’æ§ä»¶æ ‘æˆ–è€…æ‰©å±•å±æ€§
+     * @return    å±æ€§é¢æ¿
      */
 	public JComponent getEastUpPane();
 
     /**
-     * »ñÈ¡µ±Ç°ElementCaseµÄËõÂÔÍ¼
-     * @param elementCaseContainerSize ËõÂÔÍ¼µÄ´óĞ¡
-     * @return    Í¼
+     * è·å–å½“å‰ElementCaseçš„ç¼©ç•¥å›¾
+     * @param elementCaseContainerSize ç¼©ç•¥å›¾çš„å¤§å°
+     * @return    å›¾
      */
 	public BufferedImage getElementCaseImage(Dimension elementCaseContainerSize);
 

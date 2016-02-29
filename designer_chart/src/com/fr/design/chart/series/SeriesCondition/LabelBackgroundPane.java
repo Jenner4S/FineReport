@@ -40,7 +40,7 @@ public class LabelBackgroundPane extends ConditionAttrSingleConditionPane<DataSe
             public void mousePressed(MouseEvent evt) {
                 final BackgroundPane backgroundPane = new BackgroundPane();
                 BasicDialog styleDialog = backgroundPane.showWindow(
-                        SwingUtilities.getWindowAncestor(conditionAttributesPane)); // µ÷Õû(400,300) ±È½ÏºÏÊÊ.
+                        SwingUtilities.getWindowAncestor(conditionAttributesPane)); // è°ƒæ•´(400,300) æ¯”è¾ƒåˆé€‚.
                 backgroundPane.populate(backgroundPreviewPane.getBackgroundObject());
                 styleDialog.addDialogActionListener(new DialogActionAdapter() {
                     public void doOk() {

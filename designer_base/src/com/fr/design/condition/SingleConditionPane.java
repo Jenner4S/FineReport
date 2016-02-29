@@ -42,7 +42,7 @@ public abstract class SingleConditionPane<T> extends BasicPane {
 	};
 
     /**
-     * È¡Ïû
+     * å–æ¶ˆ
      */
 	public abstract void doCancel();
 

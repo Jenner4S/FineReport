@@ -41,8 +41,8 @@ public class CustomIndependentChartInterface extends AbstractIndependentChartUI 
     }
 
     /**
-     *Í¼±êÂ·¾¶
-     * @return Í¼±êÂ·¾¶
+     *å›¾æ ‡è·¯å¾„
+     * @return å›¾æ ‡è·¯å¾„
      */
     public String getIconPath(){
         return "com/fr/design/images/form/toolbar/ChartF-Comb_Chart.png";

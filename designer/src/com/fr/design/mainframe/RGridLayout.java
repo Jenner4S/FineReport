@@ -44,7 +44,7 @@ public class RGridLayout implements LayoutManager, java.io.Serializable {
         } else if (RGridLayout.Grid.equals(name)) {
             this.grid = comp;
 
-        //¹ö¶¯Ìõ
+        //æ»šåŠ¨æ¡
         } else if (RGridLayout.HorizontalBar.equals(name)) {
             this.horizontalBar = comp;
         } else if (RGridLayout.VerticalBar.equals(name)) {
@@ -69,7 +69,7 @@ public class RGridLayout implements LayoutManager, java.io.Serializable {
             Dimension verScrollBarMinimumSize = this.verticalBar.getMaximumSize();
             Dimension horScrollBarMinimumSize = this.horizontalBar.getMaximumSize();
 
-            //µ÷Õû¸ß¶È.
+            //è°ƒæ•´é«˜åº¦.
             dim.width += gridRowMinimumSize.width + gridMinimumSize.width +
                     verScrollBarMinimumSize.width;
             dim.height = gridColumnMinimumSize.height + gridMinimumSize.height +
@@ -95,7 +95,7 @@ public class RGridLayout implements LayoutManager, java.io.Serializable {
             Dimension verScrollBarPreferredSize = this.verticalBar.getPreferredSize();
             Dimension horScrollBarPreferredSize = this.horizontalBar.getPreferredSize();
 
-            //µ÷Õû¸ß¶È.
+            //è°ƒæ•´é«˜åº¦.
             dim.width += gridRowPreferredSize.width + gridPreferredSize.width +
                     verScrollBarPreferredSize.width;
             dim.height = gridColumnPreferredSize.height + gridPreferredSize.height +
@@ -127,13 +127,13 @@ public class RGridLayout implements LayoutManager, java.io.Serializable {
             this.gridCorner.setBounds(left, top,
                     gridRowPreferredSize.width, gridColumnPreferredSize.height);
 
-            //´¦Àí¹ö¶¯Ìõ.
+            //å¤„ç†æ»šåŠ¨æ¡.
             this.verticalBar.setBounds(right - verScrollBarPreferredSize.width, 0,
                     verScrollBarPreferredSize.width, bottom );
 //            this.horizontalBar.setBounds(0, bottom - horScrollBarPreferredSize.height,
 //                    right - verScrollBarPreferredSize.width, horScrollBarPreferredSize.height);
 
-            //´¦ÀíÁĞºÍĞĞ
+            //å¤„ç†åˆ—å’Œè¡Œ
             this.gridColumn.setBounds(left + gridRowPreferredSize.width, top,
                     right - gridRowPreferredSize.width - verScrollBarPreferredSize.width,
                     gridColumnPreferredSize.height);

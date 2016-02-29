@@ -86,30 +86,30 @@ import com.fr.write.config.InsertConfig;
 import com.fr.write.config.IntelliDMLConfig;
 import com.fr.write.config.UpdateConfig;
 
-//august£ºÕâ¸ö¶«Î÷Ó¦¸Ã·Ö³ÉÁ½Àà£¬Ò»ÀàÊÇÓĞµ¥Ôª¸ñµÄÇé¿ö£¬Ò»ÀàÊÇÃ»ÓĞµ¥Ôª¸ñµÄÇé¿ö
+//augustï¼šè¿™ä¸ªä¸œè¥¿åº”è¯¥åˆ†æˆä¸¤ç±»ï¼Œä¸€ç±»æ˜¯æœ‰å•å…ƒæ ¼çš„æƒ…å†µï¼Œä¸€ç±»æ˜¯æ²¡æœ‰å•å…ƒæ ¼çš„æƒ…å†µ
 public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
     private static final Image ICODS_IMAGE = BaseUtils.readImage("/com/fr/web/core/css/images/icons.png");
     private static final Icon HEIP_ICON = BaseUtils.createIcon(ICODS_IMAGE, 193, 1, 14, 14);
     private static final int DEFAULT_RETURN_VALUE = 4;
 	public KeyColumnNameValueTable keyColumnValuesTable;
-	private UIComboBox columnsComboBox; // ÓÃÓÚ±à¼­ColumnNameµÄEditor
+	private UIComboBox columnsComboBox; // ç”¨äºç¼–è¾‘ColumnNameçš„Editor
     private UICheckBox UpdateCheckBox;
     private JPanel checkBoxUpdatePane;
 	/*
-	 * ¼ÇÂ¼µ±Ç°Ñ¡È¡µÄDS & Table¶ÔÓ¦µÄColumnName[]
-	 * alex:ÒÔÇ°Ã¿µ±tableNameComboBox¸Ä±ä¾ÍË¢ĞÂcolumnsComboBox,ÕâÑùÃ¿ÊäÈëÒ»¸öÎÄ×Ö¾Í»áË¢Ò»±é,ºÜ²»ºÃ
+	 * è®°å½•å½“å‰é€‰å–çš„DS & Tableå¯¹åº”çš„ColumnName[]
+	 * alex:ä»¥å‰æ¯å½“tableNameComboBoxæ”¹å˜å°±åˆ·æ–°columnsComboBox,è¿™æ ·æ¯è¾“å…¥ä¸€ä¸ªæ–‡å­—å°±ä¼šåˆ·ä¸€é,å¾ˆä¸å¥½
 	 */
 	private ColumnName[] currentColumnNames = null;
 
-	// Ö§³Ö¹«Ê½ÊäÈëµÄÊı¾İ±íÑ¡ÔñÃæ°å
+	// æ”¯æŒå…¬å¼è¾“å…¥çš„æ•°æ®è¡¨é€‰æ‹©é¢æ¿
 	private ChoosePaneSupportFormula chooseTable;
 
 	private UIComboBox dmlConfigComboBox = null;
 
-	// Ìá½»ÊÂ¼ş
+	// æäº¤äº‹ä»¶
 	private NameSubmitJob[] jobs = null;
 
-	// Ìá½»Ìõ¼ş
+	// æäº¤æ¡ä»¶
 	private Condition condition = null;
 
 	private JTree conditionsTree;
@@ -131,8 +131,8 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
             Inter.getLocText(new String[]{"Update", "Submit"})};
 
 	/**
-	 * ÎŞµ¥Ôª¸ñ¡£Ã»ÓĞÖÇÄÜÌí¼Óµ¥Ôª¸ñµÈ°´Å¥
-	 * ÓĞµ¥Ôª¸ñµÄ²Î¼ûÆä×ÓÀàSmartInsertDBManipulationPane
+	 * æ— å•å…ƒæ ¼ã€‚æ²¡æœ‰æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼ç­‰æŒ‰é’®
+	 * æœ‰å•å…ƒæ ¼çš„å‚è§å…¶å­ç±»SmartInsertDBManipulationPane
 	 */
 	public DBManipulationPane() {
 		this(ValueEditorPaneFactory.extendedCellGroupEditors());
@@ -158,7 +158,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 
 		northPane.add(chooseTable, BorderLayout.CENTER);
 
-		// peter:±à¼­µÄTablePane
+		// peter:ç¼–è¾‘çš„TablePane
 		JPanel editTablePane = FRGUIPaneFactory.createBorderLayout_S_Pane();
 		this.add(editTablePane, BorderLayout.CENTER);
 		editTablePane.setBorder(BorderFactory.createTitledBorder(new ModLineBorder(ModLineBorder.TOP), Inter.getLocText("FR-Base_Value")));
@@ -187,7 +187,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
     }
 
 	private void addButtons(JPanel editTablePane) {
-		// alex:Ìí¼Ó²Ù×÷°´Å¥
+		// alex:æ·»åŠ æ“ä½œæŒ‰é’®
 		UpdateAction[] actions = this.getActions();
 		if (actions != null && actions.length > 0) {
 			JPanel controlBtnPane = new JPanel(new GridLayout(actions.length + 1, 1, 4, 4));
@@ -397,9 +397,9 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		});
 
 		/*
-		 * µ±DS & Table¸Ä±äÊ±ÒªË¢ĞÂColumnsComboBox.model,²»ÄÜÓÃItemListener,
-		 * ÒòÎªtableNameComboBoxÊÇ¿ÉÒÔ±à¼­µÄ,Ã¿Ğ´Ò»¸öÎÄ×Ö¾ÍÒªÁ¬,Ì«Æµ·±ÁË
-		 * Ò²²»ÄÜÔÚtableNameComboBox.focusLostÊÂ¼şÊ±,ºÃÏñÃ»ÓÃ
+		 * å½“DS & Tableæ”¹å˜æ—¶è¦åˆ·æ–°ColumnsComboBox.model,ä¸èƒ½ç”¨ItemListener,
+		 * å› ä¸ºtableNameComboBoxæ˜¯å¯ä»¥ç¼–è¾‘çš„,æ¯å†™ä¸€ä¸ªæ–‡å­—å°±è¦è¿,å¤ªé¢‘ç¹äº†
+		 * ä¹Ÿä¸èƒ½åœ¨tableNameComboBox.focusLostäº‹ä»¶æ—¶,å¥½åƒæ²¡ç”¨
 		 */
 		keyColumnValuesTable.addFocusListener(new FocusAdapter() {
 
@@ -472,15 +472,15 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
         }
         model.removeAllKeyColumnNameValue();
         Object[] selected = list.getSelectedValues();
-        // Richie:ÓÃÁË´æ´¢ĞÂµÄKeyColumnNameValueµÄList.
+        // Richie:ç”¨äº†å­˜å‚¨æ–°çš„KeyColumnNameValueçš„List.
         List<KeyColumnNameValue> newKeyColumnNameValueList = new ArrayList<KeyColumnNameValue>();
         if (!keyColumnNameValueList.isEmpty()) {
             for (int i = 0; i < selected.length; i++) {
-                // Richie:ÏÈÌîÉÏ¿ÕµÄ.
+                // Richie:å…ˆå¡«ä¸Šç©ºçš„.
                 newKeyColumnNameValueList.add(new KeyColumnNameValue(false, (ColumnName)selected[i], new ColumnValue(""), false));
             }
         }
-        // Richie:³õÊ¼»¯
+        // Richie:åˆå§‹åŒ–
         int returnValue = DEFAULT_RETURN_VALUE;
         int coverNumber = 0;
         for (int i = 0; i < selected.length; i++) {
@@ -491,20 +491,20 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
                 if (ComparatorUtils.equals(selected[i], keyColumnNameValueList.get(j).cn)) {
                     Object[] options = { Inter.getLocText("FR-Designer_Covered_All"), Inter.getLocText("FR-Base_Yes"), Inter.getLocText("FR-Base_No"), Inter.getLocText("FR-Designer_Cover_None") };
                     returnValue = JOptionPane.showOptionDialog(DBManipulationPane.this, keyColumnNameValueList.get(j).cn.name
-                            + Inter.getLocText( new String[] {"Has_Existed", "Want_To_Cover_It"}, new String[] {",",  "£¿"}),
+                            + Inter.getLocText( new String[] {"Has_Existed", "Want_To_Cover_It"}, new String[] {",",  "ï¼Ÿ"}),
                             "", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-                    // Richie:È«²¿¸²¸Ç
+                    // Richie:å…¨éƒ¨è¦†ç›–
                     if (returnValue == 0) {
                         break;
-                        // Richie:¸²¸ÇÖ¸¶¨ĞĞ
+                        // Richie:è¦†ç›–æŒ‡å®šè¡Œ
                     } else if (returnValue == 1) {
                         coverNumber = i;
-                        // Richie:²»¸²¸ÇÖÆ¶¨ĞĞ
+                        // Richie:ä¸è¦†ç›–åˆ¶å®šè¡Œ
                     } else if (returnValue == 2) {
                         coverNumber = i;
                         newKeyColumnNameValueList.remove(i);
                         newKeyColumnNameValueList.add(i, keyColumnNameValueList.get(j));
-                        // Richie:È«²¿²»¸²¸Ç
+                        // Richie:å…¨éƒ¨ä¸è¦†ç›–
                     } else if (returnValue == 3) {
                         coverNumber = i;
                         break;
@@ -518,14 +518,14 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
     private void checkTableModel (int returnValue, int coverNumber, KeyColumnTableModel model, Object[] selected, List<KeyColumnNameValue> keyColumnNameValueList, List<KeyColumnNameValue> newKeyColumnNameValueList) {
         if (returnValue == 0) {
             model.removeAllKeyColumnNameValue();
-            // Richie:È«²¿¸²¸Ç,°´selectedµÄ³¤¶ÈÌí¼ÓÄ¬ÈÏµÄĞĞ
+            // Richie:å…¨éƒ¨è¦†ç›–,æŒ‰selectedçš„é•¿åº¦æ·»åŠ é»˜è®¤çš„è¡Œ
             for (int i = 0; i < selected.length; i++) {
                 model.addKeyColumnNameValue(newKeyColumnNameValueList.get(i));
             }
 
         } else if (returnValue == 3) {
             model.removeAllKeyColumnNameValue();
-            // Richie:È«²¿²»¸²¸Ç,ÒÑ¾­´æÔÚµÄ¾Í±£Áô,²»´æÔÚµÄÌí¼ÓÄ¬ÈÏĞĞ
+            // Richie:å…¨éƒ¨ä¸è¦†ç›–,å·²ç»å­˜åœ¨çš„å°±ä¿ç•™,ä¸å­˜åœ¨çš„æ·»åŠ é»˜è®¤è¡Œ
             for (int i = coverNumber; i < selected.length; i++) {
                 for (int j = 0; j < keyColumnNameValueList.size(); j++) {
                     if (ComparatorUtils.equals(selected[i], keyColumnNameValueList.get(j).cn)) {
@@ -546,7 +546,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
             }
         }
 
-        // Richie:³õÊ¼»¯
+        // Richie:åˆå§‹åŒ–
         if (keyColumnNameValueList.isEmpty()) {
             model.removeAllKeyColumnNameValue();
             for (int i = 0; i < selected.length; i++) {
@@ -593,7 +593,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 			if (returnVal == JOptionPane.OK_OPTION) {
 				KeyColumnTableModel keyColumnNameValueTableModel = (KeyColumnTableModel)keyColumnValuesTable.getModel();
 
-				// °ÑselectedRows´ÓĞ¡µ½´óÅÅ¸öĞò,ÏÈÉ¾´óµÄÔÙÉ¾Ğ¡µÄ
+				// æŠŠselectedRowsä»å°åˆ°å¤§æ’ä¸ªåº,å…ˆåˆ å¤§çš„å†åˆ å°çš„
 				java.util.Arrays.sort(selectedRows);
 				for (int i = selectedRows.length - 1; i >= 0; i--) {
 					keyColumnNameValueTableModel.removeKeyColumnNameValue(selectedRows[i]);
@@ -612,7 +612,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 	}
 
 	/*
-	 * Ë¢ĞÂcolumnsComboBox
+	 * åˆ·æ–°columnsComboBox
 	 */
 	private void refreshColumnsComboBox() {
 		DefaultComboBoxModel model = (DefaultComboBoxModel)this.columnsComboBox.getModel();
@@ -624,9 +624,9 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		}
 	}
 
-	// µÃµ½µ±Ç°µÄColumnName[]
+	// å¾—åˆ°å½“å‰çš„ColumnName[]
 	private ColumnName[] currentColumnNames() {
-		// ben:Çå³ıÔ­ÓĞµÄ
+		// ben:æ¸…é™¤åŸæœ‰çš„
 		if (currentColumnNames != null) {
 			currentColumnNames = null;
 		}
@@ -643,7 +643,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 	}
 
 	/*
-	 * ÉèÖÃJTableµÄColumn
+	 * è®¾ç½®JTableçš„Column
 	 */
 	private void initJTableColumn() {
 		TableColumn column0 = this.keyColumnValuesTable.getColumnModel().getColumn(0);
@@ -655,7 +655,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		TableColumn column2 = this.keyColumnValuesTable.getColumnModel().getColumn(2);
 		column2.setCellRenderer(new ColumnValueTableCellRenderer());
 
-		// ÉèÖÃcolumn1µÄeditor
+		// è®¾ç½®column1çš„editor
 		columnsComboBox = new UIComboBox(new DefaultComboBoxModel());
 		columnsComboBox.setRenderer(new UIComboBoxRenderer() {
 
@@ -681,7 +681,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		});
 		((DefaultCellEditor)column1.getCellEditor()).setClickCountToStart(2);
 
-		//ÉèÖÃColumn 2µÄEditor
+		//è®¾ç½®Column 2çš„Editor
 		column2.setCellEditor(new ColumnValueEditor());
 	}
 
@@ -751,7 +751,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 				ColumnConfig column = dmlConfig.getColumnConfig(i);
 				String columnName = column.getColumnName();
 				if (!acceptPara && column.getColumnValue() instanceof Parameter) {
-					// ±íµ¥ÖĞ,½«ÒÔÇ°µÄ²ÎÊı×ª»»Îª¹«Ê½
+					// è¡¨å•ä¸­,å°†ä»¥å‰çš„å‚æ•°è½¬æ¢ä¸ºå…¬å¼
 					column.setColumnValue(new Formula(((Parameter)column.getColumnValue()).getName()));
 				}
 
@@ -762,7 +762,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		}
 		keyColumnNameValueTableModel.fireTableDataChanged();
 
-		// Ñ¡ÔñµÚÒ»¸ö
+		// é€‰æ‹©ç¬¬ä¸€ä¸ª
 		if (keyColumnNameValueTableModel.getRowCount() > 0) {
 			keyColumnValuesTable.getSelectionModel().setSelectionInterval(0, 0);
 		}
@@ -791,7 +791,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		int rowCount = keyColumnNameValueTableModel.keyColumnNameValueList.size();
 		for (int i = 0; i < rowCount; i++) {
 			KeyColumnNameValue newKeyColumnNameValue = keyColumnNameValueTableModel.keyColumnNameValueList.get(i);
-			// peter:ÏÈÌí¼Ókey column name.
+			// peter:å…ˆæ·»åŠ key column name.
 
 			dmlConfig.addColumnConfig(new ColumnConfig(newKeyColumnNameValue.cn.name, newKeyColumnNameValue.cv.obj, newKeyColumnNameValue.isKey,false));
 		}
@@ -838,7 +838,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 	}
 
 	/*
-	 * alex:ColumnValueµÄ±à¼­Æ÷,µ¯³ö¶Ô»°¿òÀ´±à¼­...¸öÈË¾õµÃ²»´óºÃ
+	 * alex:ColumnValueçš„ç¼–è¾‘å™¨,å¼¹å‡ºå¯¹è¯æ¡†æ¥ç¼–è¾‘...ä¸ªäººè§‰å¾—ä¸å¤§å¥½
 	 */
 	protected class ColumnValueEditor extends AbstractCellEditor implements TableCellEditor {
 		/** The Swing component being edited. */
@@ -874,7 +874,7 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		}
 
 		/*
-		 * Ë«»÷ÒÔ±à¼­
+		 * åŒå‡»ä»¥ç¼–è¾‘
 		 */
 		public boolean isCellEditable(EventObject anEvent) {
 			if (anEvent instanceof MouseEvent) {
@@ -1058,8 +1058,8 @@ public class DBManipulationPane extends BasicBeanPane<DBManipulation> {
 		}
 
 		/**
-		 * ×Ö·û´®
-		 * @return ×Ö·û´®z
+		 * å­—ç¬¦ä¸²
+		 * @return å­—ç¬¦ä¸²z
 		 */
 		public String toString() {
 			return (isKey ? "* " : "") + cn + ":" + cv;

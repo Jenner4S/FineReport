@@ -7,7 +7,7 @@ import javax.swing.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-27
- * Time: ÏÂÎç5:04
+ * Time: ä¸‹åˆ5:04
  */
 public class UIRadioButton extends JRadioButton {
 

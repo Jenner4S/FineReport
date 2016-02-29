@@ -100,7 +100,7 @@ public abstract class ThirdTabPane<T> extends BasicBeanPane<T>{
 
 	/**
 	 * 
-	 * @return 中间的内容面板的指定宽度
+	 * @return 涓棿鐨勫唴瀹归潰鏉跨殑鎸囧畾瀹藉害
 	 */
 	protected int getContentPaneWidth() {
 		return centerPane.getPreferredSize().width;

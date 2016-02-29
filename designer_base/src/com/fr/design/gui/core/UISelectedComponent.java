@@ -3,10 +3,10 @@ package com.fr.design.gui.core;
 import javax.swing.event.ChangeListener;
 
 /**
- * Õâ¸ö½Ó¿ÚËµÃ÷Ò»¸ö»ù±¾×é¼şÊÇ¿ÉÒÔÑ¡ÔñµÄ
+ * è¿™ä¸ªæ¥å£è¯´æ˜ä¸€ä¸ªåŸºæœ¬ç»„ä»¶æ˜¯å¯ä»¥é€‰æ‹©çš„
  * 
  * @author zhou
- * @since 2012-5-17ÏÂÎç4:38:17
+ * @since 2012-5-17ä¸‹åˆ4:38:17
  */
 public interface UISelectedComponent {
 	/**

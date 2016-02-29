@@ -12,10 +12,10 @@ import com.fr.file.filter.ChooseFileFilter;
 import com.fr.general.Inter;
 import com.fr.stable.CoreConstants;
 
-//august£º°´ÀíËµ£¬Õâ¸öÖ»ÓĞÒ»ÁĞ ¾Í²»¸ÃÓÃjtable¡£²»¹ıÕâÑù×Ü±ÈÖ®Ç°ÓÃArrayTableModelºÃ
+//augustï¼šæŒ‰ç†è¯´ï¼Œè¿™ä¸ªåªæœ‰ä¸€åˆ— å°±ä¸è¯¥ç”¨jtableã€‚ä¸è¿‡è¿™æ ·æ€»æ¯”ä¹‹å‰ç”¨ArrayTableModelå¥½
 public abstract class OneListTableModel<T> extends UITableModelAdapter<T> {
 
-	protected Component component = null; ////Ö¸¶¨È·ÈÏ¶Ô»°¿òµÄ¸¸´°¿Ú,bug40340
+	protected Component component = null; ////æŒ‡å®šç¡®è®¤å¯¹è¯æ¡†çš„çˆ¶çª—å£,bug40340
 	public OneListTableModel(String columnName) {
 		this(new String[] { columnName });
 	}
@@ -25,7 +25,7 @@ public abstract class OneListTableModel<T> extends UITableModelAdapter<T> {
 		this.component = component;
 	}
 
-	// ÍâÃæµÄ¾Í²»ÒªÓÃÕâ¸ö·½·¨ÁË
+	// å¤–é¢çš„å°±ä¸è¦ç”¨è¿™ä¸ªæ–¹æ³•äº†
 	protected OneListTableModel(String[] columnNames) {
 		super(columnNames);
 	}

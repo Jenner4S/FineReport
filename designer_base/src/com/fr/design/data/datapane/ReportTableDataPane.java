@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * @author richer
  * @since 6.5.5
- * ´´½¨ÓÚ2011-6-14
+ * åˆ›å»ºäºŽ2011-6-14
  */
 public class ReportTableDataPane extends LoadingBasicPane {
     private TableDataListPane tdListPane;
@@ -48,9 +48,9 @@ public class ReportTableDataPane extends LoadingBasicPane {
     }
 
     /**
-     * ¼ì²étdListPaneÓÐÐ§ÐÔcheck Valid
+     * æ£€æŸ¥tdListPaneæœ‰æ•ˆæ€§check Valid
      *
-     * @throws Exception Òì³£
+     * @throws Exception å¼‚å¸¸
      */
     public void checkValid() throws Exception {
         this.tdListPane.checkValid();
@@ -60,4 +60,3 @@ public class ReportTableDataPane extends LoadingBasicPane {
         return tdListPane.getDsNameChangedMap();
     }
 }
-

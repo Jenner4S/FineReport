@@ -42,7 +42,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 /**
  * the MouseListener of the Grid
  *
- * @editor zhou 2012-3-22ÏÂÎç1:53:59
+ * @editor zhou 2012-3-22ä¸‹åˆ1:53:59
  */
 public class GridMouseAdapter implements MouseListener, MouseWheelListener, MouseMotionListener {
 	private static final int WIDGET_WIDTH = 13;
@@ -52,11 +52,11 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	private static final double COPY_CROSS_INNER_DISTANCE = 1.5;
 	private static final double COPY_CROSS_OUTER_DISTANCE = 2.5;
 	/**
-	 * ÍÏ×§Ê±ºòË¢ĞÂÊ±¼ä¼ä¸ô
+	 * æ‹–æ‹½æ—¶å€™åˆ·æ–°æ—¶é—´é—´éš”
 	 */
 	private static int DRAG_REFRESH_TIME = 10;
 	/**
-	 * ¶ÔÓ¦µÄ±í¸ñ-Grid
+	 * å¯¹åº”çš„è¡¨æ ¼-Grid
 	 */
 	private Grid grid;
 	/**
@@ -67,12 +67,12 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	// the old location, used for Move float element.
 	private int oldLocationX;
 	private int oldLocationY;
-	private long lastMouseMoveTime = 0; // ×îºóµÄMouseMoveÊ±¼ä.
-	// ±£´æ¸÷¸öĞü¸¡ÔªËØµ½oldLocation¾àÀë
+	private long lastMouseMoveTime = 0; // æœ€åçš„MouseMoveæ—¶é—´.
+	// ä¿å­˜å„ä¸ªæ‚¬æµ®å…ƒç´ åˆ°oldLocationè·ç¦»
 	private Map<String, Point> floatNamePointMap;
 	/**
-	 * august:ÒòÎªCellSelectionÀïÃæÃ»ÓĞ¼ÇÂ¼µÄ±äÁ¿ÁË£¬±ØĞëÒªÓĞ¸ö±äÁ¿À´´æ°´×¡shift¼üµÄÎ»ÖÃÖ®Ç°µÄÊó±êµÄÎ»ÖÃ
-	 * ÓÃ»§¿ÉÄÜÒ»Ö±°´×¡shift¼ü²»·Å£¬ËùÒÔ°´×¡shift¼üÖ®Ç°µÄÊó±êÎ»ÖÃÊÇ±ØĞëÓĞµÄ.
+	 * august:å› ä¸ºCellSelectioné‡Œé¢æ²¡æœ‰è®°å½•çš„å˜é‡äº†ï¼Œå¿…é¡»è¦æœ‰ä¸ªå˜é‡æ¥å­˜æŒ‰ä½shifté”®çš„ä½ç½®ä¹‹å‰çš„é¼ æ ‡çš„ä½ç½®
+	 * ç”¨æˆ·å¯èƒ½ä¸€ç›´æŒ‰ä½shifté”®ä¸æ”¾ï¼Œæ‰€ä»¥æŒ‰ä½shifté”®ä¹‹å‰çš„é¼ æ ‡ä½ç½®æ˜¯å¿…é¡»æœ‰çš„.
 	 */
 	private ColumnRow tempOldSelectedCell;
 
@@ -105,7 +105,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 			} else {
 				doWithLeftButtonPressed(evt);
 			}
-			// ÓÃ»§Ã»ÓĞ°´×¡Shift¼üÊ±£¬tempOldSelectedCellÊÇÒ»Ö±±ä»¯µÄ¡£Èç¹ûÒ»Ö±°´×¡shift£¬ÊÇ²»±äµÄ
+			// ç”¨æˆ·æ²¡æœ‰æŒ‰ä½Shifté”®æ—¶ï¼ŒtempOldSelectedCellæ˜¯ä¸€ç›´å˜åŒ–çš„ã€‚å¦‚æœä¸€ç›´æŒ‰ä½shiftï¼Œæ˜¯ä¸å˜çš„
 			ElementCasePane ePane = grid.getElementCasePane();
 			if (!evt.isShiftDown() && ePane.getSelection() instanceof CellSelection) {
 				tempOldSelectedCell = GridUtils.getAdjustEventColumnRow(ePane, oldEvtX, oldEvtY);
@@ -115,7 +115,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * ½«Ğü¸¡ÔªËØ(Ö»ÓĞÎÄ±¾ºÍ¹«Ê½)Ìí¼Óµ½Êó±êµã»÷µÄÎ»ÖÃ
+	 * å°†æ‚¬æµ®å…ƒç´ (åªæœ‰æ–‡æœ¬å’Œå…¬å¼)æ·»åŠ åˆ°é¼ æ ‡ç‚¹å‡»çš„ä½ç½®
 	 */
 	private void doWithDrawingFloatElement() {
 		ElementCasePane reportPane = grid.getElementCasePane();
@@ -140,7 +140,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * ´¦ÀíÓÒ»÷ÊÂ¼ş£¬µ¯³öÓÒ¼ü²Ëµ¥.
+	 * å¤„ç†å³å‡»äº‹ä»¶ï¼Œå¼¹å‡ºå³é”®èœå•.
 	 */
 	private void doWithRightButtonPressed() {
 		ElementCasePane reportPane = grid.getElementCasePane();
@@ -162,7 +162,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * ´¦Àí×ó»÷ÊÂ¼ş
+	 * å¤„ç†å·¦å‡»äº‹ä»¶
 	 */
 	private void doWithLeftButtonPressed(MouseEvent evt) {
 		if(BaseUtils.isAuthorityEditing()){
@@ -174,15 +174,15 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		boolean isShiftDown = evt.isShiftDown();
 		boolean isControlDown = evt.isControlDown();
 		int clickCount = evt.getClickCount();
-		// peter:ĞèÒªÅĞ¶ÏÊÇ·ñÔÚ¿ÉÒÆ¶¯CellSelectionµÄÇøÓò
+		// peter:éœ€è¦åˆ¤æ–­æ˜¯å¦åœ¨å¯ç§»åŠ¨CellSelectionçš„åŒºåŸŸ
 		grid.setDragType(isMoveCellSelection(this.oldEvtX, this.oldEvtY));
 		if (clickCount >= 2) {
 			grid.setDragType(GridUtils.DRAG_NONE);
 		}
-		if (grid.getDragType() != GridUtils.DRAG_NONE) {// DragµÄ±êÖ¾.
+		if (grid.getDragType() != GridUtils.DRAG_NONE) {// Dragçš„æ ‡å¿—.
 			Selection selection = reportPane.getSelection();
 			if (selection instanceof CellSelection) {
-				// peter:ÉèÖÃDragRecatagleµÄ±êÖ¾.
+				// peter:è®¾ç½®DragRecatagleçš„æ ‡å¿—.
 				if (grid.getDragRectangle() == null) {
 					grid.setDragRectangle(new Rectangle());
 				}
@@ -191,9 +191,9 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 				return;
 			}
 		}
-		// peter:Ñ¡ÔñGridSelection,Ö§³ÖShift
+		// peter:é€‰æ‹©GridSelection,æ”¯æŒShift
 		doOneClickSelection(this.oldEvtX, this.oldEvtY, isShiftDown, isControlDown);
-		// µÃµ½µã»÷ËùÔÚµÄcolumn and row
+		// å¾—åˆ°ç‚¹å‡»æ‰€åœ¨çš„column and row
 		ColumnRow columnRow = GridUtils.getEventColumnRow(reportPane, this.oldEvtX, this.oldEvtY);
 		TemplateCellElement cellElement = report.getTemplateCellElement(columnRow.getColumn(), columnRow.getRow());
 		if (clickCount >= 2 && !BaseUtils.isAuthorityEditing()) {
@@ -206,7 +206,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * ÏÔÊ¾¿Ø¼ş±à¼­´°¿Ú
+	 * æ˜¾ç¤ºæ§ä»¶ç¼–è¾‘çª—å£
 	 *
 	 * @param cellElement
 	 * @param report
@@ -252,7 +252,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		if (grid.getDragType() == GridUtils.DRAG_CELLSELECTION) {
 			if (selection instanceof CellSelection) {
 				grid.getElementCasePane().cut();
-				// mouse releaseµÄÊ±ºòÒªÅĞ¶ÏÏÂÊÇ·ñÔÚreportPane·¶Î§ÄÚ
+				// mouse releaseçš„æ—¶å€™è¦åˆ¤æ–­ä¸‹æ˜¯å¦åœ¨reportPaneèŒƒå›´å†…
 				if (outOfBounds(evt, reportPane)) {
 					GridUtils.doSelectCell(reportPane, grid.getDragRectangle().x, grid.getDragRectangle().y);
 				} else {
@@ -264,7 +264,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		} else if (grid.getDragType() == GridUtils.DRAG_CELLSELECTION_BOTTOMRIGHT_CORNER) {
 			if (selection instanceof CellSelection) {
 				CellSelection cs = (CellSelection) selection;
-				// august£ºÖÇÄÜÍÏ×§À©Õ¹µ¥Ôª¸ñÖµ
+				// augustï¼šæ™ºèƒ½æ‹–æ‹½æ‰©å±•å•å…ƒæ ¼å€¼
 				IntelliElements.iterating(reportPane, cs.toRectangle(), grid.getDragRectangle());
 				if (grid.getDragRectangle() != null) {
 					reportPane.setSelection(new CellSelection(grid.getDragRectangle().x, grid.getDragRectangle().y, grid.getDragRectangle().width, grid.getDragRectangle().height));
@@ -327,12 +327,12 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 
 			return;
 		}
-		// peter:Í£ÁôÒ»¶ÎÊ±¼ä.
+		// peter:åœç•™ä¸€æ®µæ—¶é—´.
 		long systemCurrentTime = System.currentTimeMillis();
 		if (systemCurrentTime - lastMouseMoveTime <= TIME_DELAY) {
 			return;
 		}
-		lastMouseMoveTime = systemCurrentTime;// ¼ÇÂ¼×îºóÒ»´ÎµÄÊ±¼ä.
+		lastMouseMoveTime = systemCurrentTime;// è®°å½•æœ€åä¸€æ¬¡çš„æ—¶é—´.
 		mouseMoveOnGrid(evt.getX(), evt.getY());
 	}
 
@@ -378,20 +378,20 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		} else if (grid.getDragType() == GridUtils.DRAG_CELLSELECTION_BOTTOMRIGHT_CORNER && !BaseUtils.isAuthorityEditing()) {
 			doWithCellElementDragged(evtX, evtY, (CellSelection) selection);
 		} else if (grid.getDragType() == GridUtils.DRAG_CELLSELECTION && !BaseUtils.isAuthorityEditing()) {
-			// peter:»ñµÃµ÷Õû¹ıµÄSelected Column Row.
+			// peter:è·å¾—è°ƒæ•´è¿‡çš„Selected Column Row.
 			ColumnRow selectedCellPoint = GridUtils.getAdjustEventColumnRow(reportPane, evtX, evtY);
 			if (selectedCellPoint.getColumn() != grid.getDragRectangle().x || selectedCellPoint.getRow() != grid.getDragRectangle().y) {
 				grid.getDragRectangle().x = selectedCellPoint.getColumn();
 				grid.getDragRectangle().y = selectedCellPoint.getRow();
 			}
-		} else {// august: ÍÏ×§Ñ¡ÖĞ¶à¸öµ¥Ôª¸ñ
+		} else {// august: æ‹–æ‹½é€‰ä¸­å¤šä¸ªå•å…ƒæ ¼
 			doShiftSelectCell(evtX, evtY);
 		}
 		grid.getElementCasePane().repaint();
 	}
 
 	/**
-	 * ÍÏ×§Ğü¸¡ÔªËØ
+	 * æ‹–æ‹½æ‚¬æµ®å…ƒç´ 
 	 *
 	 * @param evtX
 	 * @param evtY
@@ -449,7 +449,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * ÍÏ×§µ¥Ôª¸ñ
+	 * æ‹–æ‹½å•å…ƒæ ¼
 	 *
 	 * @param evtX
 	 * @param evtY
@@ -470,7 +470,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 				grid.getDragRectangle().x = cellRectangle.x;
 				grid.getDragRectangle().width = cellRectangle.width;
 				if (yDistance >= 0) {
-					// ¾ÛºÏ±¨±íÒªÇóÍÏ×§µÄÊ±ºòÒªÔÚ±¾¿éµÄÄÚ²¿½øĞĞ ²»ÄÜÎŞÏŞÍùÏÂÍÏ
+					// èšåˆæŠ¥è¡¨è¦æ±‚æ‹–æ‹½çš„æ—¶å€™è¦åœ¨æœ¬å—çš„å†…éƒ¨è¿›è¡Œ ä¸èƒ½æ— é™å¾€ä¸‹æ‹–
 					if (reportPane instanceof ECBlockPane && evtY > reportPane.getBounds().height - ECBlockGap) {
 						return;
 					}
@@ -518,7 +518,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		int selectedCellPointX = selectedCellPoint.getColumn();
 		int selectedCellPointY = selectedCellPoint.getRow();
 		CellSelection gridSelection = ((CellSelection) s).clone();
-		//·´ÏòÑ¡Ôñµ¥Ôª¸ñ
+		//åå‘é€‰æ‹©å•å…ƒæ ¼
 		int tempOldSelectedCellX = tempOldSelectedCell.getColumn();
 		int tempOldSelectedCellY = tempOldSelectedCell.getRow();
 //		int tempOldSelectedCellX = gridSelection.getEditRectangle().x;
@@ -544,14 +544,14 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	private void doControlSelectCell(double evtX, double evtY) {
 		ElementCasePane reportPane = grid.getElementCasePane();
 		ElementCase report = reportPane.getEditingElementCase();
-		//ÉÏÒ»´ÎÑ¡ÖĞµÄµ¥Ôª¸ñ
+		//ä¸Šä¸€æ¬¡é€‰ä¸­çš„å•å…ƒæ ¼
 		Selection s = reportPane.getSelection();
 		if (s instanceof FloatSelection) {
 			return;
 		}
 
 		ColumnRow selectedCellPoint = GridUtils.getAdjustEventColumnRow(reportPane, evtX, evtY);
-		//¿½±´£¬¶ø²»ÊÇÖ±½ÓÇ¿ÖÆÊ¹ÓÃÒÔ¼àÌıµ¥Ôª¸ñÑ¡Ôñ±ä»¯
+		//æ‹·è´ï¼Œè€Œä¸æ˜¯ç›´æ¥å¼ºåˆ¶ä½¿ç”¨ä»¥ç›‘å¬å•å…ƒæ ¼é€‰æ‹©å˜åŒ–
 		CellSelection gridSelection = ((CellSelection) s).clone();
 		gridSelection.setSelectedType(((CellSelection) s).getSelectedType());
 		CellElement cellElement = report.getCellElement(selectedCellPoint.getColumn(), selectedCellPoint.getRow());
@@ -582,24 +582,24 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 
 
 	/**
-	 * Êó±êÔÚGridÉÏÃæÒÆ¶¯.
+	 * é¼ æ ‡åœ¨Gridä¸Šé¢ç§»åŠ¨.
 	 */
 	private void mouseMoveOnGrid(int evtX, int evtY) {
 		grid.setToolTipText(null);
 		if (grid.getDrawingFloatElement() != null) {
-			grid.setCursor(UIConstants.DRAW_CURSOR); // august£ºÊÇ·ñÊÇ½«Òª»­Ğü¸¡ÔªËØ£¬¾ÍÊÇÄÇ¸ö±ÊµÄĞÎ×´
+			grid.setCursor(UIConstants.DRAW_CURSOR); // augustï¼šæ˜¯å¦æ˜¯å°†è¦ç”»æ‚¬æµ®å…ƒç´ ï¼Œå°±æ˜¯é‚£ä¸ªç¬”çš„å½¢çŠ¶
 		} else {
 			Object[] floatElementCursor = GridUtils.getAboveFloatElementCursor(grid.getElementCasePane(), evtX, evtY);
-			if (!ArrayUtils.isEmpty(floatElementCursor)) {// Êó±êÔÚĞü¸¡ÔªËØÉÏÒÆ¶¯
+			if (!ArrayUtils.isEmpty(floatElementCursor)) {// é¼ æ ‡åœ¨æ‚¬æµ®å…ƒç´ ä¸Šç§»åŠ¨
 				grid.setCursor((Cursor) floatElementCursor[1]);
-			} else {// Êó±êÔÚµ¥Ôª¸ñÉÏÒÆ¶¯
+			} else {// é¼ æ ‡åœ¨å•å…ƒæ ¼ä¸Šç§»åŠ¨
 				doMouseMoveOnCells(evtX, evtY);
 			}
 		}
 	}
 
 	/**
-	 * Êó±êÔÚµ¥Ôª¸ñÉÏÒÆ¶¯
+	 * é¼ æ ‡åœ¨å•å…ƒæ ¼ä¸Šç§»åŠ¨
 	 *
 	 * @param evtX
 	 * @param evtY
@@ -607,7 +607,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	private void doMouseMoveOnCells(int evtX, int evtY) {
 		ElementCasePane reportPane = grid.getElementCasePane();
 		TemplateElementCase report = reportPane.getEditingElementCase();
-		//Èç¹ûÊÇ¸ñÊ½Ë¢×´Ì¬
+		//å¦‚æœæ˜¯æ ¼å¼åˆ·çŠ¶æ€
 		if (DesignerContext.getFormatState() != DesignerContext.FORMAT_STATE_NULL) {
 			grid.setCursor(UIConstants.FORMAT_BRUSH_CURSOR);
 		} else {
@@ -621,9 +621,9 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		}
 
 		int dragType = isMoveCellSelection(evtX, evtY);
-		if (dragType == GridUtils.DRAG_CELLSELECTION) {// ÅĞ¶ÏÊÇ·ñÒÆ¶¯Ñ¡ÖĞµÄÇøÓò.
+		if (dragType == GridUtils.DRAG_CELLSELECTION) {// åˆ¤æ–­æ˜¯å¦ç§»åŠ¨é€‰ä¸­çš„åŒºåŸŸ.
 			grid.setCursor(new Cursor(Cursor.MOVE_CURSOR));
-		} // peter:ÅĞ¶ÏÊÇ·ñ¸´ÖÆÒÆ¶¯µÄ½ÇÂä.
+		} // peter:åˆ¤æ–­æ˜¯å¦å¤åˆ¶ç§»åŠ¨çš„è§’è½.
 		else if (dragType == GridUtils.DRAG_CELLSELECTION_BOTTOMRIGHT_CORNER) {
 			grid.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 		}
@@ -631,14 +631,14 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * Ö»¸ù¾İCellGUIAttrÀïÃæµÄtooltipsÏÔÊ¾ÁË£¬Ô­ÏÈµÄÏÔÊ¾Ìõ¼şÊôĞÔ¡¢ĞÎÌ¬¡¢¿Ø¼şµÈÎŞÒâÒå
+	 * åªæ ¹æ®CellGUIAttré‡Œé¢çš„tooltipsæ˜¾ç¤ºäº†ï¼ŒåŸå…ˆçš„æ˜¾ç¤ºæ¡ä»¶å±æ€§ã€å½¢æ€ã€æ§ä»¶ç­‰æ— æ„ä¹‰
 	 *
 	 * @param curCellElement
 	 * @param report
 	 */
 	private void setCursorAndToolTips(TemplateCellElement curCellElement, TemplateElementCase report) {
 		int resolution = ScreenResolution.getScreenResolution();
-		// ¼ÆËãÏà¶ÔGridµÄÏÔÊ¾Î»ÖÃ.
+		// è®¡ç®—ç›¸å¯¹Gridçš„æ˜¾ç¤ºä½ç½®.
 		DynamicUnitList columnWidthList = ReportHelper.getColumnWidthList(report);
 		DynamicUnitList rowHeightList = ReportHelper.getRowHeightList(report);
 
@@ -650,26 +650,26 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		double tooltipX = columnWidthList.getRangeValue(grid.getHorizontalValue(), curCellElement.getColumn()).toPixD(resolution) + TOOLTIP_X_Y_FIX;
 		double tooltipY = rowHeightList.getRangeValue(grid.getVerticalValue(), curCellElement.getRow() + curCellElement.getRowSpan()).toPixD(resolution) + TOOLTIP_X_Y_FIX;
 
-		// peter:ÏÔÊ¾tooltip
+		// peter:æ˜¾ç¤ºtooltip
 		if (StringUtils.isNotBlank(grid.getToolTipText())) {
 			grid.setTooltipLocation(tooltipX + TOOLTIP_X, tooltipY);
 		}
 	}
 
 	/**
-	 * ÊÇ·ñÒÆ¶¯CellSelection
+	 * æ˜¯å¦ç§»åŠ¨CellSelection
 	 */
 	private int isMoveCellSelection(double evtX, double evtY) {
 		ElementCasePane reportPane = grid.getElementCasePane();
 
-		// p:ÅĞ¶ÏÊÇ·ñÔÚÑ¡ÖĞÇøÓòµÄ±ß¿ò£¬¿ÉÒÔÒÆ¶¯CellSelelctionÑ¡ÖĞÇøÓò
+		// p:åˆ¤æ–­æ˜¯å¦åœ¨é€‰ä¸­åŒºåŸŸçš„è¾¹æ¡†ï¼Œå¯ä»¥ç§»åŠ¨CellSelelctioné€‰ä¸­åŒºåŸŸ
 		Selection selection = reportPane.getSelection();
 		if (!(selection instanceof CellSelection)) {
 			return GridUtils.DRAG_NONE;
 		}
 
 		if ((selection instanceof CellSelection)
-				&& ((CellSelection) selection).getCellRectangleCount() != 1) {// p:Ã»ÓĞÑ¡ÔñCell.
+				&& ((CellSelection) selection).getCellRectangleCount() != 1) {// p:æ²¡æœ‰é€‰æ‹©Cell.
 			return GridUtils.DRAG_NONE;
 		}
 
@@ -677,7 +677,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 
 		ElementCase report = reportPane.getEditingElementCase();
 
-		// peter:¼ÆËãÏà¶ÔGridµÄÏÔÊ¾Î»ÖÃ.
+		// peter:è®¡ç®—ç›¸å¯¹Gridçš„æ˜¾ç¤ºä½ç½®.
 		DynamicUnitList columnWidthList = ReportHelper.getColumnWidthList(report);
 		DynamicUnitList rowHeightList = ReportHelper.getRowHeightList(report);
 
@@ -688,12 +688,12 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		double topRowDistance = rowHeightList.getRangeValue(grid.getVerticalValue(), cs.getRow()).toPixD(resolution);
 		double bottomRowDistance = rowHeightList.getRangeValue(grid.getVerticalValue(), cs.getRow() + cs.getRowSpan()).toPixD(resolution);
 
-		// Ê×ÏÈÅĞ¶ÏÊÇ·ñÔÚ¿ÉÒÔ¸´ÖÆµÄÓÒÏÂ½ÇÂä.
+		// é¦–å…ˆåˆ¤æ–­æ˜¯å¦åœ¨å¯ä»¥å¤åˆ¶çš„å³ä¸‹è§’è½.
 		if (fitCellSelectionBottomRight(evtX, evtY, rightColDistance, bottomRowDistance)) {
 			return GridUtils.DRAG_CELLSELECTION_BOTTOMRIGHT_CORNER;
 		}
 
-		// Õâ¸ödistÖµµ÷Ğ¡Ò»µã,¾¡Á¿ÈÃÓÃ»§²»Ê¹ÓÃdrag and drop À´±à¼­±¨±íÖ§³Ö
+		// è¿™ä¸ªdistå€¼è°ƒå°ä¸€ç‚¹,å°½é‡è®©ç”¨æˆ·ä¸ä½¿ç”¨drag and drop æ¥ç¼–è¾‘æŠ¥è¡¨æ”¯æŒ
 		double dist = 1.0;
 		if (fitCellSelection(evtX, leftColDistance, rightColDistance, dist)) {
 			if (evtY >= (topRowDistance - dist) && evtY <= (bottomRowDistance + dist)) {
@@ -725,7 +725,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 		ElementCasePane reportPane = grid.getElementCasePane();
 		// check float elements.
 		Object[] tmpFloatElementCursor = GridUtils.getAboveFloatElementCursor(reportPane, evtX, evtY);
-		if (!ArrayUtils.isEmpty(tmpFloatElementCursor)) {// p:Ñ¡ÖĞÁËĞü¸¡ÔªËØ.
+		if (!ArrayUtils.isEmpty(tmpFloatElementCursor)) {// p:é€‰ä¸­äº†æ‚¬æµ®å…ƒç´ .
 			doSelectFloatElement(tmpFloatElementCursor, evtX, evtY);
 		} else if (isShiftDown) {
 			doShiftSelectCell(evtX, evtY);
@@ -737,10 +737,10 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 			if (type == ElementCasePane.NO_OVER) {
 				GridUtils.doSelectCell(reportPane, selectedCellPoint.getColumn(), selectedCellPoint.getRow());
 			} else if (type == ElementCasePane.VERTICAL_OVER) {
-				//¾ÛºÏ±¨±í¿éÑ¡ÔÚÏÂ±ß½çµÄÊ±ºò£¬ÓĞÊ±»áÏòÏÂÒÆ£¬×èÖ¹ÏòÏÂÒÆ
+				//èšåˆæŠ¥è¡¨å—é€‰åœ¨ä¸‹è¾¹ç•Œçš„æ—¶å€™ï¼Œæœ‰æ—¶ä¼šå‘ä¸‹ç§»ï¼Œé˜»æ­¢å‘ä¸‹ç§»
 				GridUtils.doSelectCell(reportPane, selectedCellPoint.getColumn(), selectedCellPoint.getRow() - 1);
 			} else if (type == ElementCasePane.HORIZONTAL_OVER) {
-				//¾ÛºÏ±¨±í¿éÑ¡ÔÚÓÒ±ß½çµÄÊ±ºò£¬ÓĞÊ±»áÏòÓÒÒÆ£¬×èÖ¹ÏòÓÒÒÆ
+				//èšåˆæŠ¥è¡¨å—é€‰åœ¨å³è¾¹ç•Œçš„æ—¶å€™ï¼Œæœ‰æ—¶ä¼šå‘å³ç§»ï¼Œé˜»æ­¢å‘å³ç§»
 				GridUtils.doSelectCell(reportPane, selectedCellPoint.getColumn() - 1, selectedCellPoint.getRow());
 			} else {
 				GridUtils.doSelectCell(reportPane, selectedCellPoint.getColumn() - 1, selectedCellPoint.getRow() - 1);
@@ -752,7 +752,7 @@ public class GridMouseAdapter implements MouseListener, MouseWheelListener, Mous
 	}
 
 	/**
-	 * Ñ¡ÖĞĞü¸¡ÔªËØ
+	 * é€‰ä¸­æ‚¬æµ®å…ƒç´ 
 	 *
 	 * @param tmpFloatElementCursor
 	 * @param evtX

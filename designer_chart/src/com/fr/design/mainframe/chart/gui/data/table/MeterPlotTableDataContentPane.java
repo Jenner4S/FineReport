@@ -22,9 +22,9 @@ import com.fr.design.mainframe.chart.gui.data.ChartDataFilterPane;
 import com.fr.general.Inter;
 
 /**
- * ÒÇ±íÅÌ, ÊôĞÔ±í, Êı¾İ¼¯Êı¾İ½çÃæ.
+ * ä»ªè¡¨ç›˜, å±æ€§è¡¨, æ•°æ®é›†æ•°æ®ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-21 ÏÂÎç04:51:50
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-21 ä¸‹åˆ04:51:50
  */
 public class MeterPlotTableDataContentPane extends AbstractTableDataContentPane {
 	private static final String METER_NAME = Inter.getLocText("Chart-Category_Use_Name") + ":";
@@ -71,7 +71,7 @@ public class MeterPlotTableDataContentPane extends AbstractTableDataContentPane 
 	}
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         clearBoxItems(nameBox);
@@ -79,7 +79,7 @@ public class MeterPlotTableDataContentPane extends AbstractTableDataContentPane 
     }
 
 	/**
-	 * ¸üĞÂÒÇ±íÅÌÊı¾İ½çÃæ
+	 * æ›´æ–°ä»ªè¡¨ç›˜æ•°æ®ç•Œé¢
 	 */
 	public void populateBean(ChartCollection ob) {
 		if(ob != null && ob.getSelectedChart().getFilterDefinition() instanceof MeterTableDefinition) {
@@ -92,7 +92,7 @@ public class MeterPlotTableDataContentPane extends AbstractTableDataContentPane 
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ.
+	 * ä¿å­˜ç•Œé¢å±æ€§.
 	 */
 	public void updateBean(ChartCollection ob) {
 		if(ob != null) {
@@ -106,7 +106,7 @@ public class MeterPlotTableDataContentPane extends AbstractTableDataContentPane 
 	}
 
 	/**
-     * ÖØĞÂ²¼¾ÖÕû¸öÃæ°å
+     * é‡æ–°å¸ƒå±€æ•´ä¸ªé¢æ¿
      */
 	public void redoLayoutPane(){
 		filterPane.relayoutPane(this.isNeedSummaryCaculateMethod());

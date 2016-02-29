@@ -13,13 +13,13 @@ import javax.swing.tree.DefaultTreeCellRenderer;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-31
- * Time: 下午4:58
+ * Time: 涓嬪崍4:58
  */
 public class UITreeUI extends MetalTreeUI {
     /**
-     * 创建组件UI
-     * @param x 组件
-     * @return 返回组件UI
+     * 鍒涘缓缁勪欢UI
+     * @param x 缁勪欢
+     * @return 杩斿洖缁勪欢UI
      */
     public static ComponentUI createUI(JComponent x) {
         return new UITreeUI();

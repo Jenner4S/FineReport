@@ -21,7 +21,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: …œŒÁ9:52
+ * Time: ‰∏äÂçà9:52
  */
 public class ExcelExportAction4Chart extends AbstractExportAction4JChart {
 

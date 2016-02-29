@@ -39,17 +39,17 @@ import com.fr.general.Inter;
 import com.fr.third.org.apache.poi.hssf.record.formula.functions.T;
 
 /**
- * µØÍ¼, ¶¨ÒåÇøÓòÃû.
+ * åœ°å›¾, å®šä¹‰åŒºåŸŸå.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-19 ÏÂÎç03:19:53
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-19 ä¸‹åˆ03:19:53
  */
 public class MapDefiAreaNamePane extends BasicBeanPane<String> implements AbstrctMapAttrEditPane{
 
 	private DatabaseTableDataPane tableDataBox;
 	private FilterComboBox columnBox;
 
-	// Ë«ÁĞ:  ×ó²àLabel, Êı¾İÁĞ±í(È«²¿¶¼ÊÇUIComboBox, Ö§³Ö×Ô¶¨Òå).
+	// åŒåˆ—:  å·¦ä¾§Label, æ•°æ®åˆ—è¡¨(å…¨éƒ¨éƒ½æ˜¯UIComboBox, æ”¯æŒè‡ªå®šä¹‰).
 	private UITableEditorPane tableEditorPane;
 	private UIArrayTableModel tableEditorModel;
 
@@ -80,7 +80,7 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 
 		UILabel lable = new UILabel(Inter.getLocText("Chart-DS_TableData") + ":", SwingConstants.RIGHT);
 
-		// Êı¾İ¼¯, ×Ö¶Î, Êı¾İÁĞ±í, Ê¹ÓÃ¸ÃÊı¾İ½øĞĞ×Ô¶¯ÃüÃû
+		// æ•°æ®é›†, å­—æ®µ, æ•°æ®åˆ—è¡¨, ä½¿ç”¨è¯¥æ•°æ®è¿›è¡Œè‡ªåŠ¨å‘½å
 		tableDataBox = new DatabaseTableDataPane(lable) {
 			protected void userEvent() {
 				refreshAreaNameBox();
@@ -122,13 +122,13 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 				initNames = DataCoreUtils.getColValuesInData(source, tableDataWrappe.getTableDataName(), columnName);
 
 				if (tableEditorModel != null) {
-					tableEditorModel.stopCellEditing();// Ö»ÊÇÓÃÀ´Ë¢ĞÂÁĞ±íµÄcombox
+					tableEditorModel.stopCellEditing();// åªæ˜¯ç”¨æ¥åˆ·æ–°åˆ—è¡¨çš„combox
 				}
 			}
 		}
 	};
 
-	private void refreshAreaNameBox() {// Ë¢ĞÂÇøÓòÃû³ÆÁĞ±í
+	private void refreshAreaNameBox() {// åˆ·æ–°åŒºåŸŸåç§°åˆ—è¡¨
 		TableDataWrapper tableDataWrappe = tableDataBox.getTableDataWrapper();
 		if (tableDataWrappe == null) {
 			return;
@@ -138,7 +138,7 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 		columnBox.setItemList(columnNameList);
 	}
 
-	// ¶ÔÓ¦µØÍ¼µÄÃû³Æ
+	// å¯¹åº”åœ°å›¾çš„åç§°
 	public void populateBean(String mapName) {
 		if (MapSvgXMLHelper.getInstance().containsMapName(mapName)) {
 			MapSvgAttr editingMapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
@@ -149,7 +149,7 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 
 	@Override
 	public String updateBean() {
-		// ¹Ì¶¨´æ´¢ ÏÂ ÇøÓòÃû ¶ÔÓ¦Öµ ÁĞ±í  MapHelper
+		// å›ºå®šå­˜å‚¨ ä¸‹ åŒºåŸŸå å¯¹åº”å€¼ åˆ—è¡¨  MapHelper
         updateMapAttr();
 		MapSvgXMLHelper.getInstance().removeMapAttr(currentSvg.getName());
 		MapSvgXMLHelper.getInstance().pushMapAttr(currentSvg.getName(),currentSvg);
@@ -175,8 +175,8 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 	}
 
 	/**
-     * ¸üĞÂ½çÃæ
-     * @param  editingMapAttr µØÍ¼ÊôĞÔ
+     * æ›´æ–°ç•Œé¢
+     * @param  editingMapAttr åœ°å›¾å±æ€§
     */
 	public void populateMapAttr(MapSvgAttr editingMapAttr) {
 		List popuValues = new ArrayList();
@@ -189,7 +189,7 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 		List namesList = new ArrayList();
 		Iterator shapeNames = editingMapAttr.shapeValuesIterator();
 		while (shapeNames.hasNext()) {
-			namesList.add(shapeNames.next());// ÏÈµÃµ½ËùÓĞµÄ´¦ÀíÃû×Ö, È»ºóÔÙ´¦Àí¶ÔÓ¦¹ØÏµ
+			namesList.add(shapeNames.next());// å…ˆå¾—åˆ°æ‰€æœ‰çš„å¤„ç†åå­—, ç„¶åå†å¤„ç†å¯¹åº”å…³ç³»
 		}
 		for (int i = 0; i < namesList.size(); i++) {
 			Object name = namesList.get(i);
@@ -200,8 +200,8 @@ public class MapDefiAreaNamePane extends BasicBeanPane<String> implements Abstrc
 	}
 
 	/**
-     * ¸üĞÂMapSvgAttr
-     * @return  ·µ»ØÊôĞÔ
+     * æ›´æ–°MapSvgAttr
+     * @return  è¿”å›å±æ€§
     */
 	public MapSvgAttr updateCurrentAttr() {
 		updateMapAttr();

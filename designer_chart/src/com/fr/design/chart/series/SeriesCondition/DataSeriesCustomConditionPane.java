@@ -4,16 +4,16 @@ import com.fr.chart.chartattr.CustomPlot;
 import com.fr.chart.chartattr.Plot;
 
 /**
- * ÀàËµÃ÷ ×éºÏÍ¼ Ìõ¼şÊôĞÔ½çÃæ.
+ * ç±»è¯´æ˜ ç»„åˆå›¾ æ¡ä»¶å±æ€§ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-8-19 ÉÏÎç09:50:05
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-8-19 ä¸Šåˆ09:50:05
  */
 public class DataSeriesCustomConditionPane extends DataSeriesConditionPane{
 	private static final long serialVersionUID = -6568508006201353211L;
 
     /**
-     * ·µ»Øclass¶ÔÏó
-     * @return class¶ÔÏó
+     * è¿”å›classå¯¹è±¡
+     * @return classå¯¹è±¡
      */
     public Class<? extends Plot> class4Correspond() {
         return CustomPlot.class;

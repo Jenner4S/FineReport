@@ -31,18 +31,18 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ºó×º
+     * åç¼€
      *
-     * @return ºó×º
+     * @return åç¼€
      */
     public String prefix() {
         return FILEFactory.FILE_PREFIX;
     }
 
     /**
-     * ÊÇ·ñÊÇÄ¿Â¼
+     * æ˜¯å¦æ˜¯ç›®å½•
      *
-     * @returns ÊÇÔò·µ»Øtrue
+     * @returns æ˜¯åˆ™è¿”å›true
      */
     public boolean isDirectory() {
         return file == null ? false : file.isDirectory();
@@ -75,7 +75,7 @@ public class FileFILE implements FILE {
             return view.getSystemIcon(file);
         } catch (Exception e) {
             /*
-             * alex:ÔÚÏÔÊ¾MacÀïÃæÄ³¸öÄ¿Â¼µÄÊ±ºò,¾ÓÈ»»áÅ×
+             * alex:åœ¨æ˜¾ç¤ºMacé‡Œé¢æŸä¸ªç›®å½•çš„æ—¶å€™,å±…ç„¶ä¼šæŠ›
              * java.io.FileNotFoundException: File F:\.HFS+ Private Directory Data
              */
             return FileTreeIcon.BLANK_IMAGE_ICON;
@@ -106,9 +106,9 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ÁĞ³öµ±Ç°Ä¿Â¼ÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ
+     * åˆ—å‡ºå½“å‰ç›®å½•ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹
      *
-     * @return ÎÄ¼ş
+     * @return æ–‡ä»¶
      */
     public FILE[] listFiles() {
         if (file == null) {
@@ -128,7 +128,7 @@ public class FileFILE implements FILE {
         java.util.List<FILE> res_list = new ArrayList<FILE>(file_array.length);
 
         for (int i = 0; i < file_array.length; i++) {
-            // ÒòÎªÓĞÒ»Ğ©ÏµÍ³ÎÄ¼ş,±ÈÈçĞéÄâÄÚ´æµÈ,»áÔÚlistFilesµÄÊ±ºò³öÏÖ,µ«È´not exists
+            // å› ä¸ºæœ‰ä¸€äº›ç³»ç»Ÿæ–‡ä»¶,æ¯”å¦‚è™šæ‹Ÿå†…å­˜ç­‰,ä¼šåœ¨listFilesçš„æ—¶å€™å‡ºç°,ä½†å´not exists
             if (file_array[i].exists()) {
                 res_list.add(new FileFILE(file_array[i]));
             }
@@ -138,10 +138,10 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ĞÂ½¨Ò»¸öÄ¿Â¼
+     * æ–°å»ºä¸€ä¸ªç›®å½•
      *
-     * @param name Ãû×Ö
-     * @return ĞÂ½¨Ä¿Â¼
+     * @param name åå­—
+     * @return æ–°å»ºç›®å½•
      */
     public boolean createFolder(String name) {
         if (file == null || !file.isDirectory()) {
@@ -160,28 +160,28 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñ´æÔÚ
+     * æ˜¯å¦å­˜åœ¨
      *
-     * @return ÊÇ·ñ´æÔÚ
+     * @return æ˜¯å¦å­˜åœ¨
      */
     public boolean exists() {
         return file == null ? false : file.exists();
     }
 
     /**
-     * ÊÇ·ñ´æÔÚ
+     * æ˜¯å¦å­˜åœ¨
      *
-     * @return ÊÇ·ñ´æÔÚ
+     * @return æ˜¯å¦å­˜åœ¨
      */
     public boolean mkfile() throws IOException {
         return StableUtils.makesureFileExist(file);
     }
 
     /**
-     * ×÷ÎªÊäÈëÁ÷
+     * ä½œä¸ºè¾“å…¥æµ
      *
-     * @return ÊäÈëÁ÷
-     * @throws Exception Òì³£
+     * @return è¾“å…¥æµ
+     * @throws Exception å¼‚å¸¸
      */
     public InputStream asInputStream() throws Exception {
         InputStream in = new java.io.FileInputStream(file);
@@ -190,10 +190,10 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ×÷ÎªÊä³öÁ÷
+     * ä½œä¸ºè¾“å‡ºæµ
      *
-     * @return Êä³öÁ÷
-     * @throws Exception Òì³£
+     * @return è¾“å‡ºæµ
+     * @throws Exception å¼‚å¸¸
      */
     public OutputStream asOutputStream() throws Exception {
         if (file == null || !file.exists()) {
@@ -210,9 +210,9 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * ¹Ø±ÕÎÄ¼ş
+     * å…³é—­æ–‡ä»¶
      *
-     * @throws Exception Òì³£
+     * @throws Exception å¼‚å¸¸
      */
     public void closeTemplate() throws Exception {
     }
@@ -227,9 +227,9 @@ public class FileFILE implements FILE {
     }
 
     /**
-         * ·µ»ØhashÂë
+         * è¿”å›hashç 
          *
-         * @return ·µ»ØhashÂë
+         * @return è¿”å›hashç 
          */
     public int hashCode() {
         int hash = 7;
@@ -238,9 +238,9 @@ public class FileFILE implements FILE {
     }
 
     /**
-     * string·½·¨
+     * stringæ–¹æ³•
      *
-     * @return ×Ö·û´®
+     * @return å­—ç¬¦ä¸²
      */
     public String toString() {
         return this.prefix() + (this.file == null ? "" : this.file.getAbsolutePath());
@@ -253,16 +253,16 @@ public class FileFILE implements FILE {
     }
 
     /**
-         * ÊÇ·ñÊÇÄÚ´æÎÄ¼ş
-         * @return ÊÇÔò·µ»Øtrue
+         * æ˜¯å¦æ˜¯å†…å­˜æ–‡ä»¶
+         * @return æ˜¯åˆ™è¿”å›true
          */
     public boolean isMemFile() {
         return false;
     }
 
     /**
-         * ÊÇ·ñÊÇ»·¾³ÎÄ¼ş
-         * @return ÊÇÔò·µ»Øtrue
+         * æ˜¯å¦æ˜¯ç¯å¢ƒæ–‡ä»¶
+         * @return æ˜¯åˆ™è¿”å›true
          */
     public boolean isEnvFile() {
         return false;

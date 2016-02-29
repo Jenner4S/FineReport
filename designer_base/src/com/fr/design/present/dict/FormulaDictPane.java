@@ -33,7 +33,7 @@ public class FormulaDictPane extends FurtherBasicBeanPane<FormulaDictionary> {
         double f = TableLayout.FILL;
 		double[] columnSize = { f };
 		double[] rowSize = { p,p,p,p,p };
-//		ActionLabel tips = new ActionLabel("(¶ÔÓ¦Êµ¼ÊÖµ·¶Î§ÄÚµÄÃ¿¸öÖµ)") {
+//		ActionLabel tips = new ActionLabel("(å¯¹åº”å®é™…å€¼èŒƒå›´å†…çš„æ¯ä¸ªå€¼)") {
 //			@Override
 //			public JToolTip createToolTip() {
 //				MultiLineToolTip tip = new MultiLineToolTip();

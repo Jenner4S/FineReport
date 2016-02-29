@@ -8,7 +8,7 @@ import com.fr.design.mainframe.chart.gui.style.axis.ChartValuePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : …œŒÁ9:02
+ * Time   : ‰∏äÂçà9:02
  */
 public class ValueChartStyleAxisPane extends ChartStyleAxisPane {
 	private static final long serialVersionUID = 8513685484255363315L;

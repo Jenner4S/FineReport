@@ -35,7 +35,7 @@ public class ResultSetGroupPopUpPane extends ResultSetGroupPane {
 		this(true);
 	}
 
-	// ½«½á¹û¼¯½øĞĞ·Ö×é: ·Ö×é£¬ÁĞ±í£¬»ã×Ü£¬×Ô¶¨Òå 
+	// å°†ç»“æœé›†è¿›è¡Œåˆ†ç»„: åˆ†ç»„ï¼Œåˆ—è¡¨ï¼Œæ±‡æ€»ï¼Œè‡ªå®šä¹‰ 
 	public ResultSetGroupPopUpPane(boolean isGroup) {
 		super();
 		this.initComponents(isGroup);
@@ -44,7 +44,7 @@ public class ResultSetGroupPopUpPane extends ResultSetGroupPane {
 	public void initComponents(boolean isGroup) {
 		this.setLayout(FRGUIPaneFactory.create1ColumnGridLayout());
 
-		// ·Ö×é
+		// åˆ†ç»„
 		groupRadioButton = new UIRadioButton(Inter
 				.getLocText("BindColumn-Group(Merger_the_Items_Which_Have_The_Same_Value_in_Column)"));
 		groupRadioButton.addActionListener(checkEnabledActionListener);
@@ -59,14 +59,14 @@ public class ResultSetGroupPopUpPane extends ResultSetGroupPane {
 		this.add(GUICoreUtils.createFlowPane(
 				new JComponent[]{new UILabel(InsertText), groupRadioButton, groupComboBox, advancedButton}, FlowLayout.LEFT));
 
-		// ÁĞ±í
+		// åˆ—è¡¨
 		listRadioButton = new UIRadioButton(Inter
 				.getLocText("BindColumn-Select(Regardless_of_Having_the_Same_Value,Display_all_Item_in_Column)"));
 		listRadioButton.addActionListener(checkEnabledActionListener);
 		this.add(GUICoreUtils.createFlowPane(
 				new JComponent[]{new UILabel(InsertText), listRadioButton}, FlowLayout.LEFT));
 
-		// »ã×Ü		
+		// æ±‡æ€»		
 		summaryRadioButton = new UIRadioButton(Inter
 				.getLocText("BindColumn-Summary(Including_SUM_,_AVERAGE_,_MAX_,_MIN_And_So_On)"), true);
 		summaryRadioButton.addActionListener(checkEnabledActionListener);
@@ -111,14 +111,14 @@ public class ResultSetGroupPopUpPane extends ResultSetGroupPane {
 				this.listRadioButton.setSelected(true);
 			}
 		} else if (recordGrouper instanceof FunctionGrouper && ((FunctionGrouper) recordGrouper).isCustom()) {
-			// ÕâÖÖÇé¿öÒ²·Åµ½×Ô¶¨Òå·Ö×éÀïÃæ
+			// è¿™ç§æƒ…å†µä¹Ÿæ”¾åˆ°è‡ªå®šä¹‰åˆ†ç»„é‡Œé¢
 			this.groupRadioButton.setSelected(true);
 			this.groupComboBox.setSelectedIndex(ADVANCED);
 		} else if (recordGrouper instanceof SummaryGrouper) {
 			this.summaryRadioButton.setSelected(true);
 			this.functionComboBox.setFunction(((SummaryGrouper) recordGrouper).getFunction());
 		} else if (recordGrouper instanceof CustomGrouper) {
-			// ×Ô¶¨Òå·Ö×é or ¸ß¼¶·Ö×é
+			// è‡ªå®šä¹‰åˆ†ç»„ or é«˜çº§åˆ†ç»„
 			this.groupRadioButton.setSelected(true);
 			this.groupComboBox.setSelectedIndex(ADVANCED);
 		}

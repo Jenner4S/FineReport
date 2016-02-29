@@ -10,7 +10,7 @@ import com.fr.design.gui.itextfield.UITextField;
 
 /**
  * @author richer
- * @since 6.5.4 水平方向上的均分布局，左右组件宽度比为ratio : (1 - ratio)
+ * @since 6.5.4 姘村钩鏂瑰悜涓婄殑鍧囧垎甯冨眬锛屽乏鍙崇粍浠跺搴︽瘮涓簉atio : (1 - ratio)
  */
 public class FRHorizontalSplitLayout extends FRSplitLayout {
 	public FRHorizontalSplitLayout() {
@@ -49,7 +49,7 @@ public class FRHorizontalSplitLayout extends FRSplitLayout {
 	public void layoutContainer(Container target) {
 		synchronized (target.getTreeLock()) {
 			Insets insets = target.getInsets();
-			// 这个布局只有两个组件
+			// 杩欎釜甯冨眬鍙湁涓や釜缁勪欢
 			int availableWidth = target.getWidth() - insets.left - insets.right - hgap;
 			int availableHeight = target.getHeight() - insets.top - insets.bottom - 2 * vgap;
 			int asideWidth = 0;
@@ -64,12 +64,12 @@ public class FRHorizontalSplitLayout extends FRSplitLayout {
 	}
 
 	public static void main(String[] args) {
-		JFrame f = new JFrame("水平均分布局测试");
+		JFrame f = new JFrame("姘村钩鍧囧垎甯冨眬娴嬭瘯");
 		JPanel p = (JPanel) f.getContentPane();
 		p.setLayout(new FRHorizontalSplitLayout(0.8, 2, 2));
-		UITextField f1 = new UITextField("左边");
+		UITextField f1 = new UITextField("宸﹁竟");
 		p.add(f1, FRSplitLayout.ASIDE);
-		UITextField f2 = new UITextField("右边");
+		UITextField f2 = new UITextField("鍙宠竟");
 		p.add(f2, FRSplitLayout.CENTER);
 		f.setSize(300, 200);
 		f.setVisible(true);

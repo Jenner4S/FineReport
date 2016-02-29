@@ -81,9 +81,9 @@ import com.fr.stable.StringUtils;
 import com.fr.stable.project.ProjectConstants;
 
 /*
- * FileChooserPaneÒª¸ßÁÁÏÔÊ¾Ä³Button,ÒÔÏÔÊ¾µ±Ç°Â·¾¶
- * ±ß¾àÒªµ÷Õû
- * postfix»¹Ã»ÓĞ´¦Àí
+ * FileChooserPaneè¦é«˜äº®æ˜¾ç¤ºæŸButton,ä»¥æ˜¾ç¤ºå½“å‰è·¯å¾„
+ * è¾¹è·è¦è°ƒæ•´
+ * postfixè¿˜æ²¡æœ‰å¤„ç†
  */
 public class FILEChooserPane extends BasicPane {
     /**
@@ -101,21 +101,21 @@ public class FILEChooserPane extends BasicPane {
 
     private static final FILEChooserPane INSTANCE = new FILEChooserPane();
 
-    public FILE currentDirectory; // µ±Ç°Â·¾¶,ÔÚsubFileListÖĞÏÔÊ¾Õâ¸öÂ·¾¶ÏÂËùÓĞµÄÎÄ¼ş
+    public FILE currentDirectory; // å½“å‰è·¯å¾„,åœ¨subFileListä¸­æ˜¾ç¤ºè¿™ä¸ªè·¯å¾„ä¸‹æ‰€æœ‰çš„æ–‡ä»¶
 
     private List<FILEFilter> filterList = new ArrayList<FILEFilter>();
     private FILEFilter filter;
 
-    private LocationButtonPane locationBtnPane; // ÏÔÊ¾locationµÄPanel
+    private LocationButtonPane locationBtnPane; // æ˜¾ç¤ºlocationçš„Panel
     private UIButton createFolderButton;
 
     private PlaceListModel model;
     private JList placesList; // File.listRoots() + Env + Favourite
-    private JList subFileList; // µ±Ç°Ñ¡ÖĞÄ¿Â¼ÏÂµÄÎÄ¼ş¼Ğ¼°ÎÄ¼ş
+    private JList subFileList; // å½“å‰é€‰ä¸­ç›®å½•ä¸‹çš„æ–‡ä»¶å¤¹åŠæ–‡ä»¶
 
     private JScrollPane scrollPane;
-    private UIAutoCompletionField fileNameTextField; // ÎÄ¼şÃûµÄÎÄ±¾¿ò
-    private UIComboBox postfixComboBox; // ÎÄ¼şºó×ºÃûµÄÏÂÀ­ÁĞ±í¿ò
+    private UIAutoCompletionField fileNameTextField; // æ–‡ä»¶åçš„æ–‡æœ¬æ¡†
+    private UIComboBox postfixComboBox; // æ–‡ä»¶åç¼€åçš„ä¸‹æ‹‰åˆ—è¡¨æ¡†
 
     private UIButton okButton;
     private UIButton cancelButton;
@@ -249,7 +249,7 @@ public class FILEChooserPane extends BasicPane {
         JPanel subFilePanel = FRGUIPaneFactory.createBorderLayout_S_Pane();
         // subFilePanel.setLayout(FRGUIPaneFactory.createBorderLayout()); //
         // TODO alex_GUI
-        // ÒÔºórightPanelÒªÓÃJTable
+        // ä»¥årightPanelè¦ç”¨JTable
         subFileList = new JList(new DefaultListModel());
         subFileList.setCellRenderer(listRenderer);
         subFileList.addMouseListener(subFileListMouseListener);
@@ -258,7 +258,7 @@ public class FILEChooserPane extends BasicPane {
         subFilePanel.add(scrollPane, BorderLayout.CENTER);
         centerRightPane.add(subFilePanel, BorderLayout.CENTER);
 
-        // ÓÃcreateTableLayoutPane²¼¾ÖÏÂfileNamePane
+        // ç”¨createTableLayoutPaneå¸ƒå±€ä¸‹fileNamePane
         Component[][] coms = new Component[][]{
                 new Component[]{GUICoreUtils.createBorderPane(new UILabel(Inter.getLocText("Utils-File_name") + ":"), BorderLayout.WEST),
                         fileNameTextField = new UIAutoCompletionField(), okButton = new UIButton(Inter.getLocText("Utils-Design-File_Open"))
@@ -328,7 +328,7 @@ public class FILEChooserPane extends BasicPane {
 
 
     /**
-     * ·µ»ØÑ¡ÖĞµÄFILE
+     * è¿”å›é€‰ä¸­çš„FILE
      *
      * @return
      */
@@ -352,9 +352,9 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /**
-     * Ôö¼ÓÎÄ¼ş¹ıÂËÆ÷
+     * å¢åŠ æ–‡ä»¶è¿‡æ»¤å™¨
      *
-     * @param filter ¹ıÂËÆ÷
+     * @param filter è¿‡æ»¤å™¨
      */
     public void addChooseFILEFilter(FILEFilter filter) {
         addChooseFILEFilter(filter, filterList.size());
@@ -362,10 +362,10 @@ public class FILEChooserPane extends BasicPane {
 
 
     /**
-     * ÔÚÖ¸¶¨indexÔö¼Ó¹ıÂËÆ÷
+     * åœ¨æŒ‡å®šindexå¢åŠ è¿‡æ»¤å™¨
      *
-     * @param filter ¹ıÂËÆ÷
-     * @param index ĞòºÅ
+     * @param filter è¿‡æ»¤å™¨
+     * @param index åºå·
      */
     public void addChooseFILEFilter(FILEFilter filter, int index) {
         if (filterList.contains(filter)) {
@@ -374,14 +374,14 @@ public class FILEChooserPane extends BasicPane {
         this.filterList.add(index, filter);
     }
 
-    // August:ÉÏÃæµÄ·½·¨ÔÚ°üº¬Ê±Ö±½ÓreturnÁË£¬Ó¦¸Ã°Ñ¸Äfilter·ÅÔÚµÚÒ»¸ö
-    // ²»È»ÔÚ¶à´Î´ò¿ªÁ½¸öFILEchooserpaneÊ±£¬filter»á³ö´í
+    // August:ä¸Šé¢çš„æ–¹æ³•åœ¨åŒ…å«æ—¶ç›´æ¥returnäº†ï¼Œåº”è¯¥æŠŠæ”¹filteræ”¾åœ¨ç¬¬ä¸€ä¸ª
+    // ä¸ç„¶åœ¨å¤šæ¬¡æ‰“å¼€ä¸¤ä¸ªFILEchooserpaneæ—¶ï¼Œfilterä¼šå‡ºé”™
 
     /**
-     * ÈôÊÇÒÑ¾­´æÔÚ£¬Ôò½«Ö®É¾È¥Ö®ºó£¬ÔÚÖ¸¶¨µÄÎ»ÖÃÔö¼Ó
+     * è‹¥æ˜¯å·²ç»å­˜åœ¨ï¼Œåˆ™å°†ä¹‹åˆ å»ä¹‹åï¼Œåœ¨æŒ‡å®šçš„ä½ç½®å¢åŠ 
      *
-     * @param filter ¹ıÂË
-     * @param index ĞòºÅ
+     * @param filter è¿‡æ»¤
+     * @param index åºå·
      */
     public void addChooseFILEFilterToFist(FILEFilter filter, int index) {
         if (filterList.contains(filter)) {
@@ -393,9 +393,9 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /**
-     * É¾³ıÎÄ¼ş¹ıÂËÆ÷
+     * åˆ é™¤æ–‡ä»¶è¿‡æ»¤å™¨
      *
-     * @param filter ¹ıÂË
+     * @param filter è¿‡æ»¤
      */
     public void removeFILEFilter(FILEFilter filter) {
         if (filterList.contains(filter)) {
@@ -404,7 +404,7 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /**
-     * É¾µôÈ«²¿µÄ¹ıÂËÆ÷
+     * åˆ æ‰å…¨éƒ¨çš„è¿‡æ»¤å™¨
      */
     public void removeAllFilter() {
         this.filterList.clear();
@@ -412,9 +412,9 @@ public class FILEChooserPane extends BasicPane {
 
 
     /**
-     * ÉèÖÃfilter,Ë¢ĞÂÓÒ²àsubFileListÖĞµÄitems
+     * è®¾ç½®filter,åˆ·æ–°å³ä¾§subFileListä¸­çš„items
      *
-     * @param filter ¹ıÂË
+     * @param filter è¿‡æ»¤
      */
     public void setFILEFilter(FILEFilter filter) {
         this.filter = filter;
@@ -423,10 +423,10 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /**
-     * richer:Ä¬ÈÏµÄ»°¾ÍÊ¹ÓÃ.cpt×÷Îªºó×ºÃû
+     * richer:é»˜è®¤çš„è¯å°±ä½¿ç”¨.cptä½œä¸ºåç¼€å
      *
-     * @param text ÎÄ±¾
-     * @param suffix ºó×º
+     * @param text æ–‡æœ¬
+     * @param suffix åç¼€
      */
     public void setFileNameTextField(String text, String suffix) {
         if (StringUtils.isEmpty(suffix)) {
@@ -460,50 +460,50 @@ public class FILEChooserPane extends BasicPane {
 
 
     /**
-     * ´ò¿ª¶Ô»°¿ò
-     * @param parent ¸¸Àà
-     * @return ÀàĞÍ
+     * æ‰“å¼€å¯¹è¯æ¡†
+     * @param parent çˆ¶ç±»
+     * @return ç±»å‹
      */
     public int showOpenDialog(Component parent) {
         return showOpenDialog(parent, ".cpt");
     }
 
     /**
-     * ´ò¿ª¶Ô»°¿ò
-     * @param parent ¸¸Àà
-     * @param suffix ºó×º
-     * @return ÀàĞÍ
+     * æ‰“å¼€å¯¹è¯æ¡†
+     * @param parent çˆ¶ç±»
+     * @param suffix åç¼€
+     * @return ç±»å‹
      */
     public int showOpenDialog(Component parent, String suffix) {
         return showDialog(parent, JFileChooser.OPEN_DIALOG, suffix);
     }
 
     /**
-     * ´ò¿ª¶Ô»°¿ò
-     * @param parent ¸¸Àà
-     * @return ÀàĞÍ
+     * æ‰“å¼€å¯¹è¯æ¡†
+     * @param parent çˆ¶ç±»
+     * @return ç±»å‹
      */
     public int showSaveDialog(Component parent) {
         return showSaveDialog(parent, ".cpt");
     }
 
     /**
-     * ´ò¿ª¶Ô»°¿ò
-     * @param parent ¸¸Àà
-     * @param suffix ºó×º
-     * @return ÀàĞÍ
+     * æ‰“å¼€å¯¹è¯æ¡†
+     * @param parent çˆ¶ç±»
+     * @param suffix åç¼€
+     * @return ç±»å‹
      */
     public int showSaveDialog(Component parent, String suffix) {
         return showDialog(parent, JFileChooser.SAVE_DIALOG, suffix);
     }
 
     /**
-     * august:¿Ø¼şµÄÊÂ¼ş¶¼ÔÚÕâÀïÃæÌí¼ÓµÄ ÄÇÃ´ÎÒÃ¿´ÎshowDialog£¬²»¶¼ÒªÖØ¸´Ìí¼ÓÒ»´ÎÊÂ¼şÂğ£¿ÎŞÓïÁË
+     * august:æ§ä»¶çš„äº‹ä»¶éƒ½åœ¨è¿™é‡Œé¢æ·»åŠ çš„ é‚£ä¹ˆæˆ‘æ¯æ¬¡showDialogï¼Œä¸éƒ½è¦é‡å¤æ·»åŠ ä¸€æ¬¡äº‹ä»¶å—ï¼Ÿæ— è¯­äº†
      *
-     * @param parent ¸¸Àà
-     * @param type ÀàĞÍ
-     * @param suffix ºó×º
-     * @return ÀàĞÍ
+     * @param parent çˆ¶ç±»
+     * @param type ç±»å‹
+     * @param suffix åç¼€
+     * @return ç±»å‹
      */
     public int showDialog(Component parent, int type, String suffix) {
         this.type = type;
@@ -515,7 +515,7 @@ public class FILEChooserPane extends BasicPane {
         contentPane.setLayout(FRGUIPaneFactory.createM_BorderLayout());
         contentPane.add(this, BorderLayout.CENTER);
         okButton.setText(dialogName());
-        // kel:´ò¿ª½çÃæµÄÊ±ºòÈÃÎÄ±¾Óò»ñµÃ½¹µã£¬Ö§³Öenter´ò¿ª»ò±£´æ¡£
+        // kel:æ‰“å¼€ç•Œé¢çš„æ—¶å€™è®©æ–‡æœ¬åŸŸè·å¾—ç„¦ç‚¹ï¼Œæ”¯æŒenteræ‰“å¼€æˆ–ä¿å­˜ã€‚
         dialog.addWindowListener(new WindowAdapter() {
             public void windowActivated(WindowEvent e) {
                 fileNameTextField.requestFocusInWindow();
@@ -527,14 +527,14 @@ public class FILEChooserPane extends BasicPane {
             }
         });
 
-        // neil:Ä¬ÈÏ´ò¿ªpaneÀïÏÔÊ¾ËùÓĞÖ§³ÖµÄ¸ñÊ½
-        // daniel ´ÓtemplateFileTreeÖĞÈ¡
+        // neil:é»˜è®¤æ‰“å¼€paneé‡Œæ˜¾ç¤ºæ‰€æœ‰æ”¯æŒçš„æ ¼å¼
+        // daniel ä»templateFileTreeä¸­å–
         if (!showWebReport) {
             fileType();
         }
         chooseType();
-        // richer:µ±ÎÄ¼şÀàĞÍ±»Ñ¡¶¨Ê±,ÏÔÊ¾µÄÎÄ¼ş¾Í½ö½öÏÔÊ¾±»Ñ¡¶¨µÄÀàĞÍ
-        // Èç¹ûÊÇ±£´æ¶Ô»°¿ò,¸ø¸öÄ¬ÈÏÃû×Ö
+        // richer:å½“æ–‡ä»¶ç±»å‹è¢«é€‰å®šæ—¶,æ˜¾ç¤ºçš„æ–‡ä»¶å°±ä»…ä»…æ˜¾ç¤ºè¢«é€‰å®šçš„ç±»å‹
+        // å¦‚æœæ˜¯ä¿å­˜å¯¹è¯æ¡†,ç»™ä¸ªé»˜è®¤åå­—
         if (type == JFileChooser.SAVE_DIALOG) {
             this.getFileNameTextField();
         } else {
@@ -557,17 +557,17 @@ public class FILEChooserPane extends BasicPane {
             String[] fileSuffix_local = LocalEnv.FILE_TYPE;
             String[] fileSuffix = {"cpt", "frm", "form", "cht", "chart"};
             if (type == JFileChooser.OPEN_DIALOG) {
-                if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) { //±¾µØÁ¬½Ó
+                if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) { //æœ¬åœ°è¿æ¥
                     this.addChooseFILEFilter(new ChooseFileFilter(fileSuffix_local, appName + Inter.getLocText(new String[]{"FR-App-Report_Template", "FR-App-All_File"})));
                 } else {
                     this.addChooseFILEFilter(new ChooseFileFilter(fileSuffix, appName + Inter.getLocText(new String[]{"FR-App-Report_Template", "FR-App-All_File"})));
                 }
             }
 
-            // ben:filefilterÉèÖÃ³õÖµÎªcpt¹ıÂË
+            // ben:filefilterè®¾ç½®åˆå€¼ä¸ºcptè¿‡æ»¤
             this.addChooseFILEFilter(new ChooseFileFilter("cpt", appName + Inter.getLocText(new String[]{"FR-App-Report_Template", "FR-App-All_File"})));
 
-            // richer:formÎÄ¼ş daniel ¸Ä³ÉÈı¸ö×Ö
+            // richer:formæ–‡ä»¶ daniel æ”¹æˆä¸‰ä¸ªå­—
             this.addChooseFILEFilter(new ChooseFileFilter("frm", appName + Inter.getLocText(new String[]{"FR-App-Template_Form", "FR-App-All_File"})));
             this.addChooseFILEFilter(new ChooseFileFilter("form", appName + Inter.getLocText(new String[]{"FR-App-Template_Form", "FR-App-All_File"})));
         }else{
@@ -577,8 +577,8 @@ public class FILEChooserPane extends BasicPane {
             }
         }
 
-        // Ìí¼Ó xls ÎÄ¼şÀàĞÍ¹ıÂË kt
-        if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) {  //±¾µØÁ¬½Ó
+        // æ·»åŠ  xls æ–‡ä»¶ç±»å‹è¿‡æ»¤ kt
+        if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) {  //æœ¬åœ°è¿æ¥
             this.addChooseFILEFilter(new ChooseFileFilter("xls", Inter.getLocText("Import-Excel_Source")));
             this.addChooseFILEFilter(new ChooseFileFilter("xlsx", Inter.getLocText("Import-Excel2007_Source")));
         }
@@ -601,21 +601,21 @@ public class FILEChooserPane extends BasicPane {
         for (int i = 0; i < filterList.size(); i++) {
             defaultComboBoxModel.addElement(filterList.get(i));
         }
-        if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) {  //±¾µØÁ¬½Ó
+        if (FRContext.getCurrentEnv().isSupportLocalFileOperate()) {  //æœ¬åœ°è¿æ¥
             if (!showWebReport) {
                 defaultComboBoxModel.addElement(Inter.getLocText("FR-Utils-App_AllFiles") + "(*.*)");
             }
         }
-        // Ä¬ÈÏÑ¡È¡µÄÎÄ¼şÀàĞÍ(.cpt)ÀàĞÍ
+        // é»˜è®¤é€‰å–çš„æ–‡ä»¶ç±»å‹(.cpt)ç±»å‹
         if (!filterList.isEmpty()) {
             setFILEFilter(filterList.get(0));
             defaultComboBoxModel.setSelectedItem(filterList.get(0));
         }
-        // richer:¸ù¾İ²»Í¬µÄÎÄ¼şÀàĞÍÏÔÊ¾²»Í¬µÄºó×ºÃû
-        // daniel ¸Ä³ÉÈı¸ö×Ö±£Ö¤¼æÈİ
+        // richer:æ ¹æ®ä¸åŒçš„æ–‡ä»¶ç±»å‹æ˜¾ç¤ºä¸åŒçš„åç¼€å
+        // daniel æ”¹æˆä¸‰ä¸ªå­—ä¿è¯å…¼å®¹
         if (ComparatorUtils.equals(suffix, ".frm") || ComparatorUtils.equals(suffix, ".form")) {
 //            postfixComboBox.setSelectedIndex(2);
-            // ÏÖÔÚÄ¬ÈÏÓÃµÄÊÇ".frm"
+            // ç°åœ¨é»˜è®¤ç”¨çš„æ˜¯".frm"
             postfixComboBox.setSelectedIndex(suffixIndex("frm"));
         } else if (ComparatorUtils.equals(suffix, ".xls")) {
             postfixComboBox.setSelectedIndex(suffixIndex("xls"));
@@ -634,14 +634,14 @@ public class FILEChooserPane extends BasicPane {
         }else if(ComparatorUtils.equals(suffix,".png")){
             postfixComboBox.setSelectedIndex(suffixIndex("png"));
         }
-        //jerry 26216 Ö»±£Áô.cpt .frmÓĞÓÃµÄ¸ñÊ½£¬²¢ÇÒ²»¿É±à¼­
+        //jerry 26216 åªä¿ç•™.cpt .frmæœ‰ç”¨çš„æ ¼å¼ï¼Œå¹¶ä¸”ä¸å¯ç¼–è¾‘
         if (type == JFileChooser.OPEN_DIALOG) {
             postfixComboBox.setEnabled(true);
         } else {
             postfixComboBox.setEnabled(false);
         }
 
-        //Ö»ÓĞÒ»¸öÀàĞÍÊ±²»¿ÉÏÂÀ­
+        //åªæœ‰ä¸€ä¸ªç±»å‹æ—¶ä¸å¯ä¸‹æ‹‰
         if (filterList.size() == 1) {
             postfixComboBox.setEnabled(false);
         }
@@ -659,7 +659,7 @@ public class FILEChooserPane extends BasicPane {
 
 
     private void doOK() {
-        // Èç¹ûÃ»ÓĞĞ´ÎÄ¼şÃû,²»ÔÊĞí´ò¿ª or save
+        // å¦‚æœæ²¡æœ‰å†™æ–‡ä»¶å,ä¸å…è®¸æ‰“å¼€ or save
         if (fileNameTextField.getText().length() == 0) {
             return;
         }
@@ -676,7 +676,7 @@ public class FILEChooserPane extends BasicPane {
                 }
             }
 
-            // alex:NPEÅĞ¶Ï,ÒòÎª¿ÉÄÜÃ»ÓĞÑ¡ÖĞ×ÓÄ¿Â¼,Ö±½ÓÔÚÎÄ±¾¿òÖĞÊäÈëÎÄ¼şÃû
+            // alex:NPEåˆ¤æ–­,å› ä¸ºå¯èƒ½æ²¡æœ‰é€‰ä¸­å­ç›®å½•,ç›´æ¥åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥æ–‡ä»¶å
             FILE selectedSubFile = (FILE) this.subFileList.getSelectedValue();
             if (selectedSubFile != null && selectedSubFile.isDirectory()) {
                 setSelectedDirectory((FILE) this.subFileList.getSelectedValue());
@@ -750,14 +750,14 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /*
-     * dialogµÄÃû×Ö
+     * dialogçš„åå­—
      */
     private String dialogName() {
         return type == JFileChooser.OPEN_DIALOG ? Inter.getLocText("Utils-Design-File_Open") : Inter.getLocText("FR-App-Template_Save");
     }
 
     /*
-     * ÔÚsubFileListÖĞÑ¡ÖĞÎÄ¼ş
+     * åœ¨subFileListä¸­é€‰ä¸­æ–‡ä»¶
      */
     private void setSelectedFileName(String name) {
         if (name == null) {
@@ -768,7 +768,7 @@ public class FILEChooserPane extends BasicPane {
         for (int i = 0, len = model.getSize(); i < len; i++) {
             if (ComparatorUtils.equals(name, ((FILE) model.getElementAt(i)).getName())) {
                 subFileList.setSelectedIndex(i);
-                // TODO alex_GUI ÔõÃ´ScrollIntoView?
+                // TODO alex_GUI æ€ä¹ˆScrollIntoView?
                 break;
             }
         }
@@ -804,7 +804,7 @@ public class FILEChooserPane extends BasicPane {
             }
             if (FILEChooserPane.this.showLoc) {
 
-                // ×ÀÃæ
+                // æ¡Œé¢
                 File[] desktop = FileSystemView.getFileSystemView().getRoots();
                 if (desktop != null) {
                     for (int i = 0; i < desktop.length; i++) {
@@ -814,7 +814,7 @@ public class FILEChooserPane extends BasicPane {
                     }
                 }
 
-                // C, D, EµÈÅÌ·û
+                // C, D, Eç­‰ç›˜ç¬¦
                 File[] roots = File.listRoots();
                 if (roots != null) {
                     for (int i = 0; i < roots.length; i++) {
@@ -878,7 +878,7 @@ public class FILEChooserPane extends BasicPane {
         if (currentDirectory != null) {
             return;
         }
-        // b:ÕâÀïÓ¦¸ÃÊÇcurrentDirectoryÎª¿ÕÊ±³¢ÊÔ´ÓenvmanagerÈ¡£¬×îºóFileSystemView£¬ºÍthis.envÓĞÉ¶¹ØÏµ
+        // b:è¿™é‡Œåº”è¯¥æ˜¯currentDirectoryä¸ºç©ºæ—¶å°è¯•ä»envmanagerå–ï¼Œæœ€åFileSystemViewï¼Œå’Œthis.envæœ‰å•¥å…³ç³»
         if (StringUtils.isNotBlank(DesignerEnvManager.getEnvManager().getDialogCurrentDirectory())) {
             currentDirectory = FILEFactory.createFolder(DesignerEnvManager.getEnvManager().getDialogCurrentDirectory());
         } else {
@@ -914,7 +914,7 @@ public class FILEChooserPane extends BasicPane {
 
     };
     /*
-     * JListµÄCellRenderer
+     * JListçš„CellRenderer
      */
     private ListCellRenderer listRenderer = new DefaultListCellRenderer() {
 
@@ -978,7 +978,7 @@ public class FILEChooserPane extends BasicPane {
                 // if (((FILE)selValue).isDirectory()) {
                 // fileNameTextField.setText("");
                 // }
-                // Richie:°´ÏÂEnterµÄÊ±ºò´ò¿ªÎÄ¼ş¼Ğ»òÕß´ò¿ªÎÄ¼ş
+                // Richie:æŒ‰ä¸‹Enterçš„æ—¶å€™æ‰“å¼€æ–‡ä»¶å¤¹æˆ–è€…æ‰“å¼€æ–‡ä»¶
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     setSelectedDirectory((FILE) selValue);
                     if (!((FILE) selValue).isDirectory()) {
@@ -990,7 +990,7 @@ public class FILEChooserPane extends BasicPane {
         }
     };
     /*
-     * Êó±êµã»÷JListÊ±µÄlistener
+     * é¼ æ ‡ç‚¹å‡»JListæ—¶çš„listener
      */
     private MouseListener subFileListMouseListener = new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
@@ -1022,7 +1022,7 @@ public class FILEChooserPane extends BasicPane {
     };
 
     /*
-     * Ñ¡ÖĞÎÄ¼ş
+     * é€‰ä¸­æ–‡ä»¶
      */
     private void setFileTextField(FILE file) {
         // clickedFILE = file;
@@ -1078,7 +1078,7 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /*
-     * Set Selected Directory ÔÚÓÒ²àµÄsubFileListÖĞÏÔÊ¾dirÏÂÃæµÄËùÓĞÎÄ¼şºÍÎÄ¼ş¼Ğ
+     * Set Selected Directory åœ¨å³ä¾§çš„subFileListä¸­æ˜¾ç¤ºdirä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶å’Œæ–‡ä»¶å¤¹
      */
     private void setSelectedDirectory(FILE dir) {
         if (ComparatorUtils.equals(currentDirectory, dir) || dir == null || !dir.isDirectory()) {
@@ -1094,7 +1094,7 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /*
-     * Ë¢ĞÂÓÒ²àµÄSubFileList
+     * åˆ·æ–°å³ä¾§çš„SubFileList
      */
     private void refreshSubFileListModel() {
         if (currentDirectory != null) {
@@ -1118,7 +1118,7 @@ public class FILEChooserPane extends BasicPane {
     }
 
     /*
-     * ÉÏÃæµÄLocationButtonPane
+     * ä¸Šé¢çš„LocationButtonPane
      */
     private class LocationButtonPane extends JPanel {
         private FILE popDir;
@@ -1194,7 +1194,7 @@ public class FILEChooserPane extends BasicPane {
             }
 
             String path = dir.getPath();
-            // È·±£×îºóÒ»¸ö×Ö·ûÊÇ·Ö¸ô·û
+            // ç¡®ä¿æœ€åä¸€ä¸ªå­—ç¬¦æ˜¯åˆ†éš”ç¬¦
             if (!path.endsWith("/") && !path.endsWith("\\") && !StringUtils.isBlank(path)) {
                 path = path + "/";
             }
@@ -1203,7 +1203,7 @@ public class FILEChooserPane extends BasicPane {
                 this.buttonList.add(createBlankButton(new SetDirectoryAction(webAppName + '/')));
             }
 
-            Pattern seperatorPattern = Pattern.compile("[/\\\\]+"); // alex:Ö®ËùÒÔÔÚPatternÄÇÀï¼Ó¸ö+,ÊÇÒòÎªÓĞĞ©Â·¾¶»áÓĞÁ½¸öÉõÖÁ¶à¸ö·Ö¸ô·û·ÅÔÚÒ»Æğ
+            Pattern seperatorPattern = Pattern.compile("[/\\\\]+"); // alex:ä¹‹æ‰€ä»¥åœ¨Patterné‚£é‡ŒåŠ ä¸ª+,æ˜¯å› ä¸ºæœ‰äº›è·¯å¾„ä¼šæœ‰ä¸¤ä¸ªç”šè‡³å¤šä¸ªåˆ†éš”ç¬¦æ”¾åœ¨ä¸€èµ·
             Matcher matcher = seperatorPattern.matcher(path);
             int node_start = 0;
             while (matcher.find()) {
@@ -1214,8 +1214,8 @@ public class FILEChooserPane extends BasicPane {
                     btn_text = webAppName;
                 }
                 this.buttonList.add(createBlankButton((new SetDirectoryAction(btn_text + '/',
-                        // alex:dir.prefix²»ºÍbtn_pathÒ»Æğ²ÎÓëpathJoin,ÒòÎªbtn_pathÊÇ·ñÒÔ/´òÍ·ÔÚunix,linux
-                        // OSÖĞÒâÒåºÜ²»Ò»Ñù
+                        // alex:dir.prefixä¸å’Œbtn_pathä¸€èµ·å‚ä¸pathJoin,å› ä¸ºbtn_pathæ˜¯å¦ä»¥/æ‰“å¤´åœ¨unix,linux
+                        // OSä¸­æ„ä¹‰å¾ˆä¸ä¸€æ ·
                         FILEFactory.createFolder(dir.prefix() + StableUtils.pathJoin(new String[]{btn_path, "/"}))))));
                 node_start = matcher.end();
             }
@@ -1225,7 +1225,7 @@ public class FILEChooserPane extends BasicPane {
             this.doLayout();
             this.repaint(10);
 
-            // ¸ßÁÁÏÔÊ¾µ±Ç°Ä¿Â¼
+            // é«˜äº®æ˜¾ç¤ºå½“å‰ç›®å½•
             highLightButton(dir);
         }
 
@@ -1238,7 +1238,7 @@ public class FILEChooserPane extends BasicPane {
             }
 
             int pathWidth = 0;
-            // Ç°×º
+            // å‰ç¼€
             // UILabel prefixLabel = new UILabel(popDir.prefix());
             // this.add(prefixLabel);
             // pathWidth += prefixLabel.getPreferredSize().width;
@@ -1248,7 +1248,7 @@ public class FILEChooserPane extends BasicPane {
                 pathWidth += buttonList.get(i).getPreferredSize().width;
             }
 
-            // µ±path°´Å¥µÄ³¤¶È³¬³öÏÔÊ¾·¶Î§Ê±£¬Òş²Ø
+            // å½“pathæŒ‰é’®çš„é•¿åº¦è¶…å‡ºæ˜¾ç¤ºèŒƒå›´æ—¶ï¼Œéšè—
             if (this.getWidth() < pathWidth) {
                 int tmpWidth = leftArrowButton.getPreferredSize().width + leftArrowButton.getPreferredSize().width;
                 int oldTmpWidth = tmpWidth;
@@ -1285,7 +1285,7 @@ public class FILEChooserPane extends BasicPane {
             }
 
             int pathWidth = 0;
-            // Ç°×º
+            // å‰ç¼€
             UILabel prefixLabel = new UILabel(popDir.prefix());
             pathWidth += prefixLabel.getPreferredSize().width;
 
@@ -1308,7 +1308,7 @@ public class FILEChooserPane extends BasicPane {
 
                 return index;
             }
-            // µ±³¤¶È×ã¹»Ê±£¬²»³öÏÖ×óÓÒµÄ°´Å¥£¬½Ô´Ó0¿ªÊ¼ÏÔÊ¾
+            // å½“é•¿åº¦è¶³å¤Ÿæ—¶ï¼Œä¸å‡ºç°å·¦å³çš„æŒ‰é’®ï¼Œçš†ä»0å¼€å§‹æ˜¾ç¤º
             else {
                 return 0;
             }
@@ -1397,7 +1397,7 @@ public class FILEChooserPane extends BasicPane {
                 refreshSubFileListModel();
 
                 setSelectedFileName(res);
-                // ben:ÕâÀï´¦ÀíÓĞĞ©²»Í×£¬È¡ÎÄ¼şÊ±Ã»ÓĞ¿¼ÂÇfilefilter£¬²»¹ıĞ§¹ûÒ»Ñù£¬È¡µÄÊ±ºòÓ¦¸ÃÓÃsubfilelistµÃdata
+                // ben:è¿™é‡Œå¤„ç†æœ‰äº›ä¸å¦¥ï¼Œå–æ–‡ä»¶æ—¶æ²¡æœ‰è€ƒè™‘filefilterï¼Œä¸è¿‡æ•ˆæœä¸€æ ·ï¼Œå–çš„æ—¶å€™åº”è¯¥ç”¨subfilelistå¾—data
                 FILE[] allFiles = currentDirectory.listFiles();
                 int place = 0;
                 for (int i = 0; i < allFiles.length; i++) {
@@ -1416,7 +1416,7 @@ public class FILEChooserPane extends BasicPane {
 
 
     /*
-     * ĞÂ½¨ÎÄ¼ş¼ĞµÄButton
+     * æ–°å»ºæ–‡ä»¶å¤¹çš„Button
      */
     private UIButton createFolderButton() {
         UIButton folderButton = new UIButton();

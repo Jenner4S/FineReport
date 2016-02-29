@@ -83,9 +83,9 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/**
-	 * Ö¸¶¨Ë÷ÒıÌí¼Ó¶ÔÏó
-	 * @param nameObject ¶ÔÏóÃû
-	 * @param index  Ë÷Òı
+	 * æŒ‡å®šç´¢å¼•æ·»åŠ å¯¹è±¡
+	 * @param nameObject å¯¹è±¡å
+	 * @param index  ç´¢å¼•
 	 */
 	public void addNameObject(NameObject nameObject, int index) {
 		DefaultListModel model = (DefaultListModel) nameableList.getModel();
@@ -98,8 +98,8 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/**
-	 * Ë¢ĞÂ¿Ø¼ş
-	 * @param strings ×Ö·ûÊı×é
+	 * åˆ·æ–°æ§ä»¶
+	 * @param strings å­—ç¬¦æ•°ç»„
 	 */
 	public void refreshNameableCreator(String[] strings) {
 		itemMenu.populate(strings);
@@ -195,7 +195,7 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/*
-	 * Ôö¼ÓÏîµÄMenuDef
+	 * å¢åŠ é¡¹çš„MenuDef
 	 */
 	protected class AddItemMenuDef extends MenuDef {
 		public AddItemMenuDef() {
@@ -246,7 +246,7 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/**
-	 * Ë¢ĞÂ
+	 * åˆ·æ–°
 	 */
 	public void refresh() {
 		int selectionSize = designer.getSelectionModel().getSelection().size();
@@ -275,8 +275,8 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/**
-	 * ¸üĞÂ¿Ø¼şÊÂ¼ş
-	 * @param creator ¿Ø¼ş
+	 * æ›´æ–°æ§ä»¶äº‹ä»¶
+	 * @param creator æ§ä»¶
 	 */
 	public void updateWidgetListener(XCreator creator) {
 		DefaultListModel listModel = (DefaultListModel) this.nameableList.getModel();
@@ -316,7 +316,7 @@ public class EventPropertyTable extends BasicPane {
 		public void actionPerformed(ActionEvent evt) {
 			NameObject selectedNameObject = (NameObject) nameableList.getSelectedValue();
 
-			// p: ÓÃ·´Éä»úÖÆÊµÏÖ
+			// p: ç”¨åå°„æœºåˆ¶å®ç°
 			try {
 				NameObject newNameObject = (NameObject) BaseUtils.cloneObject(selectedNameObject);
 				newNameObject.setName("CopyOf" + selectedNameObject.getName());
@@ -335,9 +335,9 @@ public class EventPropertyTable extends BasicPane {
 	}
 
 	/**
-	 * Éú³É²»ÖØ¸´Ãû×Ö
-	 * @param prefix  ×Ö·û
-	 * @return ·µ»Ø
+	 * ç”Ÿæˆä¸é‡å¤åå­—
+	 * @param prefix  å­—ç¬¦
+	 * @return è¿”å›
 	 */
 	public String createUnrepeatedName(String prefix) {
 		DefaultListModel model = (DefaultListModel) nameableList.getModel();
@@ -458,9 +458,9 @@ public class EventPropertyTable extends BasicPane {
 
 		@Override
 		/**
-		 *ÊÇ·ñÖ§³Ö dataFlavor
-		 *@param DataFlavorÀà
-		 *@return Ö§³Ö·µ»Øtrue
+		 *æ˜¯å¦æ”¯æŒ dataFlavor
+		 *@param DataFlavorç±»
+		 *@return æ”¯æŒè¿”å›true
 		 */
 		public boolean isDataFlavorSupported(DataFlavor flavor) {
 			if (ComparatorUtils.equals(flavor,FLAVOR)) {

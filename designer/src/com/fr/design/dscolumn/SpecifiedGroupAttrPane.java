@@ -48,10 +48,10 @@ public class SpecifiedGroupAttrPane extends BasicPane {
 	private UIComboBox specifiedComboBox;
 	private SpecifiedGroupControlPane specifiedControlPane;
 	
-    //ÏÂÀ­Ñ¡ÔñÁĞÃûĞèÒªµÄ
+    //ä¸‹æ‹‰é€‰æ‹©åˆ—åéœ€è¦çš„
     private  String[] displayNames;
 
-    //other paneµÄ¿Ø¼ş
+    //other paneçš„æ§ä»¶
     private UICheckBox forceCheckBox;
     private UICheckBox moreCheckBox;
     private UIComboBox otherComboBox;
@@ -110,7 +110,7 @@ public class SpecifiedGroupAttrPane extends BasicPane {
         centerCardPane = FRGUIPaneFactory.createCardLayout_S_Pane();
         centerCardPane.setLayout(cardLayout);
         
-        // Ìõ¼ş·Ö×é
+        // æ¡ä»¶åˆ†ç»„
         conditionsGroupPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         specifiedControlPane = new SpecifiedGroupControlPane(displayNames);
 
@@ -129,7 +129,7 @@ public class SpecifiedGroupAttrPane extends BasicPane {
         southPane.add(otherComboBox);
         southPane.add(GUICoreUtils.createFlowPane(new Component[]{label, otherTextField}, FlowLayout.LEFT));
         
-        // ¹«Ê½·Ö×é
+        // å…¬å¼åˆ†ç»„
         formulaGroupPane = new FormulaGroupPane();
         
         
@@ -244,7 +244,7 @@ public class SpecifiedGroupAttrPane extends BasicPane {
             
             customGroup.setOdisplay(this.otherTextField.getText());
            	
-            // Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉNameObject[],Ò»¶¨ÒªÕâÃ´Ğ´...
+            // Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆNameObject[],ä¸€å®šè¦è¿™ä¹ˆå†™...
         	Nameable[] res = specifiedControlPane.update();
         	NameObject[] nameObject_array = new NameObject[res.length];
     		java.util.Arrays.asList(res).toArray(nameObject_array);
@@ -268,7 +268,7 @@ public class SpecifiedGroupAttrPane extends BasicPane {
     	
     	private DSColumnLiteConditionPane liteConditionPane;
     	public ConditionGroupDetailsPane(String[] displayNames) {
-    		//alex:ÓÒ²àµÄ×éÄÚµÄÌõ¼şÏ¸½Ú
+    		//alex:å³ä¾§çš„ç»„å†…çš„æ¡ä»¶ç»†èŠ‚
             this.setLayout(FRGUIPaneFactory.createBorderLayout());
             this.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 

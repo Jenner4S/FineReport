@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 
 /**
- * ÁĞĞòºÅ±à¼­Æ÷£ºÀïÃæÊÇÒ»ÅÅÁ¬ĞøµÄÕûÊı(0-value)
+ * åˆ—åºå·ç¼–è¾‘å™¨ï¼šé‡Œé¢æ˜¯ä¸€æ’è¿ç»­çš„æ•´æ•°(0-value)
  *
  * @author zhou
- * @since 2012-6-1ÏÂÎç2:24:04
+ * @since 2012-6-1ä¸‹åˆ2:24:04
  */
 public class ColumnIndexEditor extends Editor<Object> {
     protected IntComboBox valueColumnIndexComboBox;
@@ -21,7 +21,7 @@ public class ColumnIndexEditor extends Editor<Object> {
     }
 
     /**
-     * Ä¬ÈÏÃû×ÖÊÇ¡°ÁĞĞòºÅ¡±£¬Ò²¿ÉÒÔÍ¨¹ıµÚ¶ş¸ö¹¹Ôìº¯Êı¸Ä±ä
+     * é»˜è®¤åå­—æ˜¯â€œåˆ—åºå·â€ï¼Œä¹Ÿå¯ä»¥é€šè¿‡ç¬¬äºŒä¸ªæ„é€ å‡½æ•°æ”¹å˜
      *
      * @param value
      */
@@ -60,42 +60,42 @@ public class ColumnIndexEditor extends Editor<Object> {
     }
 
     /**
-     * object²ÎÊıÊÇ·ñÊÇInteger
+     * objectå‚æ•°æ˜¯å¦æ˜¯Integer
      *
-     * @param object ´«½øÀ´ÓÃÓÚÅĞ¶ÏµÄ²ÎÊı
-     * @return ·µ»ØÊÇ·ñÊÇIndex
+     * @param object ä¼ è¿›æ¥ç”¨äºåˆ¤æ–­çš„å‚æ•°
+     * @return è¿”å›æ˜¯å¦æ˜¯Index
      */
     public boolean accept(Object object) {
         return object instanceof Integer;
     }
 
     /**
-     * Ôö¼ÓÒ»¸öItemListener
+     * å¢åŠ ä¸€ä¸ªItemListener
      *
-     * @param l ÓÃÓÚÔö¼ÓµÄListener
+     * @param l ç”¨äºå¢åŠ çš„Listener
      */
     public void addItemListener(ItemListener l) {
         valueColumnIndexComboBox.addItemListener(l);
     }
 
     /**
-     * Ôö¼ÓÒ»¸öActionListener
+     * å¢åŠ ä¸€ä¸ªActionListener
      *
-     * @param l ÓÃÓÚÔö¼ÓµÄListener
+     * @param l ç”¨äºå¢åŠ çš„Listener
      */
     public void addActionListener(ActionListener l){
         valueColumnIndexComboBox.addActionListener(l);
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
         valueColumnIndexComboBox.setSelectedIndex(-1);
     }
 
     /**
-     * Çå³ıËùÓĞÏî
+     * æ¸…é™¤æ‰€æœ‰é¡¹
      */
     public void clearData() {
         valueColumnIndexComboBox.removeAllItems();

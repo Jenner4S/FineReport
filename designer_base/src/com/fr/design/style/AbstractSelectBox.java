@@ -23,8 +23,8 @@ import com.fr.design.style.background.BackgroundJComponent;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-10-31 ÏÂÎç03:28:31 ÀàËµÃ÷: ³éÏó³öÀ´µÄµ¯³öbox. ¿ÉÒÔµ¯³öÑÕÉ«Ñ¡Ôñ, Í¼°¸Ñ¡Ôñ, ÎÆÀíÑ¡Ôñ.
- *          Ö÷ÒªÊÇ µ¯³ö½çÃæµÄ²»Í¬
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-10-31 ä¸‹åˆ03:28:31 ç±»è¯´æ˜: æŠ½è±¡å‡ºæ¥çš„å¼¹å‡ºbox. å¯ä»¥å¼¹å‡ºé¢œè‰²é€‰æ‹©, å›¾æ¡ˆé€‰æ‹©, çº¹ç†é€‰æ‹©.
+ *          ä¸»è¦æ˜¯ å¼¹å‡ºç•Œé¢çš„ä¸åŒ
  */
 public abstract class AbstractSelectBox<T> extends AbstractPopBox implements MouseListener {
 	private static final long serialVersionUID = 2355250206956896774L;

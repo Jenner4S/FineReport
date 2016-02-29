@@ -23,8 +23,8 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
     }
 
     /**
-     * ½ÚµãÊÇ·ñ±»Ñ¡ÖĞ
-     * @return  ½ÚµãÊÇ·ñ±»Ñ¡ÖĞ
+     * èŠ‚ç‚¹æ˜¯å¦è¢«é€‰ä¸­
+     * @return  èŠ‚ç‚¹æ˜¯å¦è¢«é€‰ä¸­
      */
     public boolean isSelected()
     {
@@ -32,12 +32,12 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
     }
 
     /**
-     * Ñ¡Ôñ½Úµã
-     * @param _isSelected  ½ÚµãÊÇ·ñ±»Ñ¡ÖĞ
+     * é€‰æ‹©èŠ‚ç‚¹
+     * @param _isSelected  èŠ‚ç‚¹æ˜¯å¦è¢«é€‰ä¸­
      */
     public void setSelected(boolean _isSelected){
         this.isSelected = _isSelected;
-        if(_isSelected){              // Èç¹ûÑ¡ÖĞ£¬Ôò½«ÆäËùÓĞµÄ×Ó½áµã¶¼Ñ¡ÖĞ
+        if(_isSelected){              // å¦‚æœé€‰ä¸­ï¼Œåˆ™å°†å…¶æ‰€æœ‰çš„å­ç»“ç‚¹éƒ½é€‰ä¸­
             if(children != null){
                 for(Object obj : children){
                     CheckBoxTreeNode node = (CheckBoxTreeNode)obj;
@@ -46,8 +46,8 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
                     }
                 }
             }
-            CheckBoxTreeNode pNode = (CheckBoxTreeNode)parent;                // ÏòÉÏ¼ì²é£¬Èç¹û¸¸½áµãµÄËùÓĞ×Ó½áµã¶¼±»Ñ¡ÖĞ£¬ÄÇÃ´½«¸¸½áµãÒ²Ñ¡ÖĞ
-            if(pNode != null){                                                // ¿ªÊ¼¼ì²épNodeµÄËùÓĞ×Ó½ÚµãÊÇ·ñ¶¼±»Ñ¡ÖĞ
+            CheckBoxTreeNode pNode = (CheckBoxTreeNode)parent;                // å‘ä¸Šæ£€æŸ¥ï¼Œå¦‚æœçˆ¶ç»“ç‚¹çš„æ‰€æœ‰å­ç»“ç‚¹éƒ½è¢«é€‰ä¸­ï¼Œé‚£ä¹ˆå°†çˆ¶ç»“ç‚¹ä¹Ÿé€‰ä¸­
+            if(pNode != null){                                                // å¼€å§‹æ£€æŸ¥pNodeçš„æ‰€æœ‰å­èŠ‚ç‚¹æ˜¯å¦éƒ½è¢«é€‰ä¸­
                 int index = 0;
                 for(; index < pNode.children.size(); ++ index){
                     CheckBoxTreeNode pChildNode = (CheckBoxTreeNode)pNode.children.get(index);
@@ -55,13 +55,13 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
                         break;
                     }
                 }
-                if(index == pNode.children.size()){                          	// ±íÃ÷pNodeËùÓĞ×Ó½áµã¶¼ÒÑ¾­Ñ¡ÖĞ£¬ÔòÑ¡ÖĞ¸¸½áµã£¬¸Ã·½·¨ÊÇÒ»¸öµİ¹é·½·¨£¬Òò´ËÔÚ´Ë²»ĞèÒª½øĞĞµü´ú£¬ÒòÎªµ±Ñ¡ÖĞ¸¸½áµãºó£¬¸¸½áµã±¾Éí»áÏòÉÏ¼ì²éµÄ¡£
+                if(index == pNode.children.size()){                          	// è¡¨æ˜pNodeæ‰€æœ‰å­ç»“ç‚¹éƒ½å·²ç»é€‰ä¸­ï¼Œåˆ™é€‰ä¸­çˆ¶ç»“ç‚¹ï¼Œè¯¥æ–¹æ³•æ˜¯ä¸€ä¸ªé€’å½’æ–¹æ³•ï¼Œå› æ­¤åœ¨æ­¤ä¸éœ€è¦è¿›è¡Œè¿­ä»£ï¼Œå› ä¸ºå½“é€‰ä¸­çˆ¶ç»“ç‚¹åï¼Œçˆ¶ç»“ç‚¹æœ¬èº«ä¼šå‘ä¸Šæ£€æŸ¥çš„ã€‚
                     if(pNode.isSelected() != _isSelected){
                         pNode.setSelected(_isSelected);
                     }
                 }
             }
-        }else{                                                                  //Èç¹ûÊÇÈ¡Ïû¸¸½áµãµ¼ÖÂ×Ó½áµãÈ¡Ïû£¬ÄÇÃ´´ËÊ±ËùÓĞµÄ×Ó½áµã¶¼Ó¦¸ÃÊÇÑ¡ÔñÉÏµÄ£» ·ñÔò¾ÍÊÇ×Ó½áµãÈ¡Ïûµ¼ÖÂ¸¸½áµãÈ¡Ïû£¬È»ºó¸¸½áµãÈ¡Ïûµ¼ÖÂĞèÒªÈ¡Ïû×Ó½áµã£¬µ«ÊÇÕâÊ±ºòÊÇ²»ĞèÒªÈ¡Ïû×Ó½áµãµÄ¡£
+        }else{                                                                  //å¦‚æœæ˜¯å–æ¶ˆçˆ¶ç»“ç‚¹å¯¼è‡´å­ç»“ç‚¹å–æ¶ˆï¼Œé‚£ä¹ˆæ­¤æ—¶æ‰€æœ‰çš„å­ç»“ç‚¹éƒ½åº”è¯¥æ˜¯é€‰æ‹©ä¸Šçš„ï¼› å¦åˆ™å°±æ˜¯å­ç»“ç‚¹å–æ¶ˆå¯¼è‡´çˆ¶ç»“ç‚¹å–æ¶ˆï¼Œç„¶åçˆ¶ç»“ç‚¹å–æ¶ˆå¯¼è‡´éœ€è¦å–æ¶ˆå­ç»“ç‚¹ï¼Œä½†æ˜¯è¿™æ—¶å€™æ˜¯ä¸éœ€è¦å–æ¶ˆå­ç»“ç‚¹çš„ã€‚
             if(children != null){
                 int index = 0;
                 for(; index < children.size(); ++ index){
@@ -70,7 +70,7 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
                         break;
                     }
                 }
-                if(index == children.size()){                                  // ´ÓÉÏÏòÏÂÈ¡ÏûµÄÊ±ºò
+                if(index == children.size()){                                  // ä»ä¸Šå‘ä¸‹å–æ¶ˆçš„æ—¶å€™
                     for(int i = 0; i < children.size(); ++ i){
                         CheckBoxTreeNode node = (CheckBoxTreeNode)children.get(i);
                         if(node.isSelected() != _isSelected){
@@ -79,7 +79,7 @@ public class CheckBoxTreeNode extends DefaultMutableTreeNode
                     }
                 }
             }
-            CheckBoxTreeNode pNode = (CheckBoxTreeNode)parent;                   // ÏòÉÏÈ¡Ïû£¬Ö»Òª´æÔÚÒ»¸ö×Ó½Úµã²»ÊÇÑ¡ÉÏµÄ£¬ÄÇÃ´¸¸½Úµã¾Í²»Ó¦¸Ã±»Ñ¡ÉÏ¡£
+            CheckBoxTreeNode pNode = (CheckBoxTreeNode)parent;                   // å‘ä¸Šå–æ¶ˆï¼Œåªè¦å­˜åœ¨ä¸€ä¸ªå­èŠ‚ç‚¹ä¸æ˜¯é€‰ä¸Šçš„ï¼Œé‚£ä¹ˆçˆ¶èŠ‚ç‚¹å°±ä¸åº”è¯¥è¢«é€‰ä¸Šã€‚
             if(pNode != null && pNode.isSelected() != _isSelected){
                 pNode.setSelected(_isSelected);
             }

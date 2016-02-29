@@ -23,7 +23,7 @@ import java.util.Iterator;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : …œŒÁ9:16
+ * Time   : ‰∏äÂçà9:16
  */
 public class DataSeriesConditionPane extends ConditionAttributesPane<ConditionAttr> {
 
@@ -48,9 +48,9 @@ public class DataSeriesConditionPane extends ConditionAttributesPane<ConditionAt
         this.add(pane);
         pane.setBorder(BorderFactory.createEmptyBorder());
 
-        // Ãıº˛ΩÁ√Ê
+        // Êù°‰ª∂ÁïåÈù¢
         pane.add(liteConditionPane = ChartConditionPaneFactory.createChartConditionPane(getClass()), BorderLayout.CENTER);
-        // kunsnat_size  º”‘ÿ Ù–‘÷Æ∫Û ±ª’⁄µ≤, ◊Ó…Ÿµƒ∏ﬂ∂»Œ™300, 5∏ˆ∞¥≈•
+        // kunsnat_size  Âä†ËΩΩÂ±ûÊÄß‰πãÂêé Ë¢´ÈÅÆÊå°, ÊúÄÂ∞ëÁöÑÈ´òÂ∫¶‰∏∫300, 5‰∏™ÊåâÈíÆ
         liteConditionPane.setPreferredSize(new Dimension(300, 300));
     }
 
@@ -76,8 +76,8 @@ public class DataSeriesConditionPane extends ConditionAttributesPane<ConditionAt
     }
 
     /**
-     * ∑µªÿclass∂‘œÛ
-     * @return class∂‘œÛ
+     * ËøîÂõûclassÂØπË±°
+     * @return classÂØπË±°
      */
     public Class<? extends Plot> class4Correspond() {
         return Plot.class;
@@ -93,9 +93,9 @@ public class DataSeriesConditionPane extends ConditionAttributesPane<ConditionAt
     }
 
     /**
-     * ¥¥Ω®Ãıº˛µ•∂¿µƒ Ù–‘.
-     * @param clazz µ•∂¿Ãıº˛ Ù–‘√Ê∞Â
-     * @return µ•∂¿Ãıº˛ Ù–‘√Ê∞Â
+     * ÂàõÂª∫Êù°‰ª∂ÂçïÁã¨ÁöÑÂ±ûÊÄß.
+     * @param clazz ÂçïÁã¨Êù°‰ª∂Â±ûÊÄßÈù¢Êùø
+     * @return ÂçïÁã¨Êù°‰ª∂Â±ûÊÄßÈù¢Êùø
      */
     public ConditionAttrSingleConditionPane createConditionAttrSingleConditionPane(Class<? extends ConditionAttrSingleConditionPane> clazz) {
         try {
@@ -156,8 +156,8 @@ public class DataSeriesConditionPane extends ConditionAttributesPane<ConditionAt
     }
 
     /**
-      * Œ™¡À∏¯DataSeriesCustomConditionPaneµ˜”√,≤ªµ√≤ªº”¡À’‚√¥∏ˆ∑Ω∑®
-     * @param ca Ãıº˛ Ù–‘
+      * ‰∏∫‰∫ÜÁªôDataSeriesCustomConditionPaneË∞ÉÁî®,‰∏çÂæó‰∏çÂä†‰∫ÜËøô‰πà‰∏™ÊñπÊ≥ï
+     * @param ca Êù°‰ª∂Â±ûÊÄß
       */
     public void updateBeanInvoked(ConditionAttr ca) {
     	ca.removeAll();

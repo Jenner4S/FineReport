@@ -4,8 +4,8 @@ import javax.swing.*;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-13 ÉÏÎç11:01:35
- * ÀàËµÃ÷: ÕÛÏßµÄ±êÇ©½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-13 ä¸Šåˆ11:01:35
+ * ç±»è¯´æ˜: æŠ˜çº¿çš„æ ‡ç­¾ç•Œé¢
  */
 public class LineDataLabelPane extends DataLabelPane {
 

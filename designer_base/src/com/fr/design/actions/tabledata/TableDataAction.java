@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-19
- * Time: ÏÂÎç5:21
+ * Time: ä¸‹åˆ5:21
  */
 public abstract class TableDataAction extends UpdateAction {
     public static final String XML_TAG_TEMPLATE = "template_tabledata_Type";
@@ -24,21 +24,21 @@ public abstract class TableDataAction extends UpdateAction {
 
 
     /**
-     * Ãû×Ö
+     * åå­—
      *
      * @return
      */
     public abstract String getDisplayName();
 
     /**
-     * Í¼±ê
+     * å›¾æ ‡
      *
      * @return
      */
     public abstract String getIconPath();
 
     /**
-     * ºó×º
+     * åç¼€
      *
      * @return
      */
@@ -46,21 +46,21 @@ public abstract class TableDataAction extends UpdateAction {
 
 
     /**
-     * µÃµ½TableDataµÄÉùÃ÷Àà
+     * å¾—åˆ°TableDataçš„å£°æ˜ç±»
      *
      * @return
      */
     public abstract Class getTableDataClass();
 
     /**
-     * µÃµ½ÏàÓ¦Ãæ°åµÄÀà
+     * å¾—åˆ°ç›¸åº”é¢æ¿çš„ç±»
      *
      * @return
      */
     public abstract Class getUpdateTableDataPaneClass();
 
     /**
-     * ÓÃÓÚ³õÊ¼»¯µÄÀà¡£ÅµÊÇ²»ĞèÒª³õÊ¼»¯£¬Ôò²»ĞèÒªÊµÏÖ
+     * ç”¨äºåˆå§‹åŒ–çš„ç±»ã€‚è¯ºæ˜¯ä¸éœ€è¦åˆå§‹åŒ–ï¼Œåˆ™ä¸éœ€è¦å®ç°
      *
      * @return
      */
@@ -69,9 +69,9 @@ public abstract class TableDataAction extends UpdateAction {
     }
 
     /**
-     * ¸Ã²Ëµ¥ºóÃæÊÇ·ñĞèÒª²åÈë·Ö¸î·û
+     * è¯¥èœå•åé¢æ˜¯å¦éœ€è¦æ’å…¥åˆ†å‰²ç¬¦
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isNeedInsertSeparator() {
         return false;
@@ -87,8 +87,8 @@ public abstract class TableDataAction extends UpdateAction {
 
 
     /**
-     * ¶¯×÷
-     * @param e ¶¯×÷
+     * åŠ¨ä½œ
+     * @param e åŠ¨ä½œ
      */
     public void actionPerformed(ActionEvent e) {
     }

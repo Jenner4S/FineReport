@@ -16,7 +16,7 @@ import java.awt.event.ItemListener;
  * CellEditor used to edit Boolean object.
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:01:09
+ * @since 2012-3-29ä¸‹åˆ6:01:09
  */
 public class BooleanEditor extends Editor<Boolean> {
 

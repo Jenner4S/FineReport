@@ -26,7 +26,7 @@ import java.awt.event.ActionListener;
  * Author : Richer
  * Version: 6.5.6
  * Date: 14-9-10
- * Time: ÏÂÎç6:00
+ * Time: ä¸‹åˆ6:00
  */
 public class ChartLabelFontPane extends BasicScrollPane<Chart> {
     private ChartTextAttrNoColorPane valueTextAttrPane;

@@ -39,7 +39,7 @@ import com.fr.design.chart.gui.active.ValueAxisActiveGlyph;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-23
- * Time   : …œŒÁ9:08
+ * Time   : ‰∏äÂçà9:08
  */
 public class ActiveGlyphFactory {
     private static Map<String, Class> glyphMap = new HashMap<String, Class>();

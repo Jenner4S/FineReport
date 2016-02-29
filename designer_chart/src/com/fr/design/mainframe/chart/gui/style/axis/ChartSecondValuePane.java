@@ -9,15 +9,15 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * ÊôĞÔ±í, ×ø±êÖá. µÚ¶şÖµÖá½çÃæ.
+ * å±æ€§è¡¨, åæ ‡è½´. ç¬¬äºŒå€¼è½´ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÏÂÎç05:41:11
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸‹åˆ05:41:11
  */
 public class ChartSecondValuePane extends ChartValuePane {
 
 	private UICheckBox isAlignZeroValue;
 
-	protected JPanel aliagnZero4Second() {// Ìí¼Ó 0Öµ¶ÔÆë
+	protected JPanel aliagnZero4Second() {// æ·»åŠ  0å€¼å¯¹é½
 		JPanel pane = new JPanel();
 		pane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		pane.add(isAlignZeroValue = new UICheckBox(Inter.getLocText("Chart_AxisAlignZeroValueLine"), false));
@@ -40,8 +40,8 @@ public class ChartSecondValuePane extends ChartValuePane {
     }
 
     /**
-     * ½çÃæ±êÌâ µÚ¶şÖµÖá
-     * @return µÚ¶şÖµÖá
+     * ç•Œé¢æ ‡é¢˜ ç¬¬äºŒå€¼è½´
+     * @return ç¬¬äºŒå€¼è½´
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText(new String[]{"Second", "Chart_F_Radar_Axis"});

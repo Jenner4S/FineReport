@@ -60,8 +60,8 @@ public class WidgetPane extends BasicPane implements ItemListener {
     }
 
     /**
-     * ×´Ì¬¸Ä±ä
-     * @param e ÊÂ¼ş¶ÔÏó
+     * çŠ¶æ€æ”¹å˜
+     * @param e äº‹ä»¶å¯¹è±¡
      */
     public void itemStateChanged(ItemEvent e) {
         if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -130,7 +130,7 @@ public class WidgetPane extends BasicPane implements ItemListener {
                     if (value == item) {
                         UILabel label = new UILabel(Inter
                                 .getLocText("Widget-User_Defined")
-                                + " ¡ª¡ª¡ª¡ª");
+                                + " â€”â€”â€”â€”");
                         label.setEnabled(false);
                         return label;
                     }
@@ -195,8 +195,8 @@ public class WidgetPane extends BasicPane implements ItemListener {
     }
 
     /**
-     * Ğ£Ñé
-     * @throws Exception Å×³öÒì³£
+     * æ ¡éªŒ
+     * @throws Exception æŠ›å‡ºå¼‚å¸¸
      */
     public void checkValid() throws Exception {
         this.cellEditorCardPane.checkValid();
@@ -221,8 +221,8 @@ public class WidgetPane extends BasicPane implements ItemListener {
         }
 
         /**
-         * ×ª»¯³É×Ö·û´®ĞÎÊ½
-         * @return ·µ»Ø×Ö·û´®
+         * è½¬åŒ–æˆå­—ç¬¦ä¸²å½¢å¼
+         * @return è¿”å›å­—ç¬¦ä¸²
          */
         public String toString() {
             return name;

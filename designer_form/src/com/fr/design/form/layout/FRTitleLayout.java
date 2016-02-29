@@ -13,7 +13,7 @@ import com.fr.form.ui.container.WTitleLayout;
 import com.fr.general.ComparatorUtils;
 
 /**
- * ²¼¾Ö¹ÜÀíÆ÷£¬Ö÷ÒªÎªÒ»Ğ©ĞèÒª¼Ó±êÌâµÄ×é¼şÓÃ£¬Èç±¨±í¿é¡¢Í¼±í¿é
+ * å¸ƒå±€ç®¡ç†å™¨ï¼Œä¸»è¦ä¸ºä¸€äº›éœ€è¦åŠ æ ‡é¢˜çš„ç»„ä»¶ç”¨ï¼Œå¦‚æŠ¥è¡¨å—ã€å›¾è¡¨å—
  * 
  * @author jim
  * @date 2014-9-25
@@ -24,29 +24,29 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
 	
 	public static final String BODY = "Body";
 	
-	// ±êÌâ¿Ø¼ş£¬Ä¬ÈÏÎªÎÄ±¾¿ò
+	// æ ‡é¢˜æ§ä»¶ï¼Œé»˜è®¤ä¸ºæ–‡æœ¬æ¡†
 	private Component title;
-	// Ö÷Ìå¿Ø¼ş£¬ÓĞ±íµ¥±¨±í¿é¡¢Í¼±í¿é
+	// ä¸»ä½“æ§ä»¶ï¼Œæœ‰è¡¨å•æŠ¥è¡¨å—ã€å›¾è¡¨å—
 	private Component body;
 	private int gap;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public FRTitleLayout() {
 		this(0);
 	}
 	
 	/**
-	 * ±êÌâºÍÖ÷Ìå¼äÏ¶gapµÄ²¼¾Ö
-	 * @param gap  ¼äÏ¶Öµ
+	 * æ ‡é¢˜å’Œä¸»ä½“é—´éš™gapçš„å¸ƒå±€
+	 * @param gap  é—´éš™å€¼
 	 */
 	public FRTitleLayout(int gap) {
 		this.gap = gap;
 	}
 	
 	 /**
-	  * ·µ»Ø
+	  * è¿”å›
      * Returns the  gap between components.
      */
     public int getGap() {
@@ -54,7 +54,7 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
     }
 
     /**
-     * ÉèÖÃ
+     * è®¾ç½®
      * Sets the gap between components.
      * @param the gap between components
      */
@@ -63,9 +63,9 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
     }
 	
 	 /**
-	 * Ôö¼Ó×é¼ş
-	 * @param name Ãû×Ö
-	 * @param comp ×é¼ş
+	 * å¢åŠ ç»„ä»¶
+	 * @param name åå­—
+	 * @param comp ç»„ä»¶
 	 */
   	public void addLayoutComponent(String name, Component comp) {
 	      synchronized (comp.getTreeLock()) {
@@ -81,8 +81,8 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
 	 }
 
 	/**
-	 * ÒÆ³ı×é¼ş
-	 * @param comp ×é¼ş
+	 * ç§»é™¤ç»„ä»¶
+	 * @param comp ç»„ä»¶
 	 */
 	@Override
 	public void removeLayoutComponent(Component comp) {
@@ -94,9 +94,9 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ×îÓÅ´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ´óĞ¡
+	 * æœ€ä¼˜å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤å¤§å°
 	 */
 	@Override
 	public Dimension preferredLayoutSize(Container parent) {
@@ -104,19 +104,19 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ×îĞ¡´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ³õÊ¼´óĞ¡
+	 * æœ€å°å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤åˆå§‹å¤§å°
 	 */
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
-		// ÓĞ±êÌâÊ±£¬×îĞ¡¸ß¶ÈÎªÁ½¸ö×é¼ş¸ß¶È
+		// æœ‰æ ‡é¢˜æ—¶ï¼Œæœ€å°é«˜åº¦ä¸ºä¸¤ä¸ªç»„ä»¶é«˜åº¦
 		return new Dimension(WLayout.MIN_WIDTH, title==null? WLayout.MIN_HEIGHT : WLayout.MIN_HEIGHT+WTitleLayout.TITLE_HEIGHT);
 	}
 
 	/**
-	 * ²¼¾ÖË¢ĞÂ
-	 * @param target ÈİÆ÷
+	 * å¸ƒå±€åˆ·æ–°
+	 * @param target å®¹å™¨
 	 */
 	@Override
 	public void layoutContainer(Container target) {
@@ -149,8 +149,8 @@ public class FRTitleLayout implements FRLayoutManager, LayoutManager{
 	 }
 
 	/**
-	 * ÊÇ·ñÖØÖÃ´óĞ¡
-	 * @return ÊÇ
+	 * æ˜¯å¦é‡ç½®å¤§å°
+	 * @return æ˜¯
 	 */
 	@Override
 	public boolean isResizable() {

@@ -6,7 +6,7 @@ import com.fr.design.designer.properties.Decoder;
 import com.fr.design.designer.properties.Encoder;
 
 /**
- *  °ü×°ÏÂÊı¾İ×Öµä
+ *  åŒ…è£…ä¸‹æ•°æ®å­—å…¸
  *  @version 6.5.3
  */
 public class DictionaryWrapper implements Encoder, Decoder {

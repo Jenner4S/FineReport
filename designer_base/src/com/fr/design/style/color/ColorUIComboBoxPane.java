@@ -13,8 +13,8 @@ import com.fr.design.style.background.BackgroundPane4BoxChange;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-3 ÉÏÎç10:32:15
- * ÀàËµÃ÷: ÑÕÉ«Ñ¡ÔñµÄUIComboBoxÇĞ»»·ÖÖ§pane Ô­ĞÍÍ¼bug@5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-3 ä¸Šåˆ10:32:15
+ * ç±»è¯´æ˜: é¢œè‰²é€‰æ‹©çš„UIComboBoxåˆ‡æ¢åˆ†æ”¯pane åŸå‹å›¾bug@5471
  */
 public class ColorUIComboBoxPane extends BackgroundPane4BoxChange {
 	private static final long serialVersionUID = -4613725388689229514L;

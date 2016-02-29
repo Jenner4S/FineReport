@@ -9,8 +9,8 @@ import com.fr.design.chart.series.SeriesCondition.DataSeriesConditionPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-1
- * Time   : ÉÏÎç9:34
- * ÒÇ±íÅÌ Ìõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:34
+ * ä»ªè¡¨ç›˜ æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class MeterPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = -1476436318592049848L;

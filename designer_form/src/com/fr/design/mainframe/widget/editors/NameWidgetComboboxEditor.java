@@ -37,7 +37,7 @@ public class NameWidgetComboboxEditor extends AbstractPropertyEditor {
 	}
 
     /**
-     * У��ֵ
+     * 校验值
      *
      */
 	public void validateValue() throws ValidationException {

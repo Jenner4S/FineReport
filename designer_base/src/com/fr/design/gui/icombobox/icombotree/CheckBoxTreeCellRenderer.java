@@ -21,9 +21,9 @@ public class CheckBoxTreeCellRenderer extends JPanel implements TreeCellRenderer
     }
 
     /**
-     * ·µ»ØµÄÊÇÒ»¸ö<code>JPanel</code>¶ÔÏó£¬¸Ã¶ÔÏóÖĞ°üº¬Ò»¸ö<code>JCheckBox</code>¶ÔÏó
-     * ºÍÒ»¸ö<code>JLabel</code>¶ÔÏó¡£²¢ÇÒ¸ù¾İÃ¿¸ö½áµãÊÇ·ñ±»Ñ¡ÖĞÀ´¾ö¶¨<code>JCheckBox</code>
-     * ÊÇ·ñ±»Ñ¡ÖĞ¡£
+     * è¿”å›çš„æ˜¯ä¸€ä¸ª<code>JPanel</code>å¯¹è±¡ï¼Œè¯¥å¯¹è±¡ä¸­åŒ…å«ä¸€ä¸ª<code>JCheckBox</code>å¯¹è±¡
+     * å’Œä¸€ä¸ª<code>JLabel</code>å¯¹è±¡ã€‚å¹¶ä¸”æ ¹æ®æ¯ä¸ªç»“ç‚¹æ˜¯å¦è¢«é€‰ä¸­æ¥å†³å®š<code>JCheckBox</code>
+     * æ˜¯å¦è¢«é€‰ä¸­ã€‚
      */
     public Component getTreeCellRendererComponent(JTree tree, Object value,
                                                   boolean selected, boolean expanded, boolean leaf, int row,
@@ -55,7 +55,7 @@ public class CheckBoxTreeCellRenderer extends JPanel implements TreeCellRenderer
     }
 
     /**
-     * ÖØĞÂ¼ÆËãcheckºÍlabelÎ»ÖÃ
+     * é‡æ–°è®¡ç®—checkå’Œlabelä½ç½®
      */
     @Override
     public void doLayout()

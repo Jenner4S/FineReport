@@ -12,7 +12,7 @@ import java.util.Vector;
 /**
  * @author richer
  * @since 6.5.3
- * Í¨¹ýÏÂÀ­¿òÑ¡ÔñÌØ¶¨ÖµµÄ±à¼­Æ÷
+ * é€šè¿‡ä¸‹æ‹‰æ¡†é€‰æ‹©ç‰¹å®šå€¼çš„ç¼–è¾‘å™¨
  */
 public class ComboEditor extends AbstractPropertyEditor {
 

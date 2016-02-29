@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
  * Created with IntelliJ IDEA.
  * User: wikky
  * Date: 14-6-20
- * Time: …œŒÁ10:01
+ * Time: ‰∏äÂçà10:01
  * To change this template use File | Settings | File Templates.
  */
 public class SupportQQAction extends UpdateAction {

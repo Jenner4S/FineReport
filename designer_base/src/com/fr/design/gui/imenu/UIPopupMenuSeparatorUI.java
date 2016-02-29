@@ -12,7 +12,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-1-2
- * Time: ÉÏÎç10:00
+ * Time: ä¸Šåˆ10:00
  */
 public class UIPopupMenuSeparatorUI extends MetalSeparatorUI {
     public static ComponentUI createUI(JComponent c) {

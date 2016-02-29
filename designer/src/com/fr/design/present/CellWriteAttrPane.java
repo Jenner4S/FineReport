@@ -36,9 +36,9 @@ public class CellWriteAttrPane extends BasicPane {
     }
 
     /**
-     * ´´½¨cellWriteAttrPane
+     * åˆ›å»ºcellWriteAttrPane
      *
-     * @param elementCasePane Õâ¸öÓÃÓÚ»ñÈ¡Ò»Ğ©ElementCasePaneĞÅÏ¢
+     * @param elementCasePane è¿™ä¸ªç”¨äºè·å–ä¸€äº›ElementCasePaneä¿¡æ¯
      */
     public static void showWidgetWindow(ElementCasePane elementCasePane) {
         final CellWriteAttrPane wp = new CellWriteAttrPane(elementCasePane);
@@ -72,19 +72,19 @@ public class CellWriteAttrPane extends BasicPane {
     }
 
     public void populate(TemplateCellElement cellElement) {
-        if (cellElement == null) {// ÀûÓÃÄ¬ÈÏµÄCellElement.
+        if (cellElement == null) {// åˆ©ç”¨é»˜è®¤çš„CellElement.
             cellElement = new DefaultTemplateCellElement(0, 0, null);
         }
 
         Widget cellWidget = cellElement.getWidget();
 
         if (cellWidget != null && cellWidget instanceof DateEditor) {
-            // p:ÈÕÆÚµÄ¸ñÊ½ĞèÒªÉèÖÃµ½µ¥Ôª¸ñ×ÓÀïÃæ.
+            // p:æ—¥æœŸçš„æ ¼å¼éœ€è¦è®¾ç½®åˆ°å•å…ƒæ ¼å­é‡Œé¢.
             DateEditor dateCellEditorDef = (DateEditor) cellWidget;
 
-            // p:ĞèÒª°ÑÏÂÀ­µÄ±à¼­Æ÷,ÈÕÆÚ¸ñÊ½£¬¶¼·Åµ½CellElementµÄStyleÀïÃæ
-            // Õâ¸öµØ·½ºÜ·½±ãÓÃ»§£¬ÊÇalexÌá³öµÄ.
-            // p:ÈÕÆÚµÄ¸ñÊ½ĞèÒªÉèÖÃµ½µ¥Ôª¸ñ×ÓÀïÃæ.
+            // p:éœ€è¦æŠŠä¸‹æ‹‰çš„ç¼–è¾‘å™¨,æ—¥æœŸæ ¼å¼ï¼Œéƒ½æ”¾åˆ°CellElementçš„Styleé‡Œé¢
+            // è¿™ä¸ªåœ°æ–¹å¾ˆæ–¹ä¾¿ç”¨æˆ·ï¼Œæ˜¯alexæå‡ºçš„.
+            // p:æ—¥æœŸçš„æ ¼å¼éœ€è¦è®¾ç½®åˆ°å•å…ƒæ ¼å­é‡Œé¢.
             Style style = cellElement.getStyle();
             if (style != null) {
                 Format format = style.getFormat();
@@ -94,7 +94,7 @@ public class CellWriteAttrPane extends BasicPane {
                 }
             }
         }
-        // ÕâÀï½øĞĞ¿ËÂ¡µÄÔ­ÒòÊÇÎªÁË±£ÁôÔ­Ê¼µÄWidgetÒÔ±ãºÍĞÂµÄWidget×ö±È½ÏÀ´ÅĞ¶ÏÊÇ·ñ·¢ÉúÁË¸Ä±ä
+        // è¿™é‡Œè¿›è¡Œå…‹éš†çš„åŸå› æ˜¯ä¸ºäº†ä¿ç•™åŸå§‹çš„Widgetä»¥ä¾¿å’Œæ–°çš„Widgetåšæ¯”è¾ƒæ¥åˆ¤æ–­æ˜¯å¦å‘ç”Ÿäº†æ”¹å˜
         if (cellWidget != null) {
             try {
                 cellWidget = (Widget) cellWidget.clone();
@@ -106,14 +106,14 @@ public class CellWriteAttrPane extends BasicPane {
     }
 
     public void update(TemplateCellElement cellElement) {
-        if (cellElement == null) {// ÀûÓÃÄ¬ÈÏµÄCellElement.
+        if (cellElement == null) {// åˆ©ç”¨é»˜è®¤çš„CellElement.
             return;
         }
 
         Widget cellWidget = this.cellEditorDefPane.update();
-        // p:ĞèÒª°ÑÏÂÀ­µÄ±à¼­Æ÷,ÈÕÆÚ¸ñÊ½£¬¶¼·Åµ½CellElementµÄStyleÀïÃæ
+        // p:éœ€è¦æŠŠä¸‹æ‹‰çš„ç¼–è¾‘å™¨,æ—¥æœŸæ ¼å¼ï¼Œéƒ½æ”¾åˆ°CellElementçš„Styleé‡Œé¢
         if (cellWidget instanceof DateEditor) {
-            // p:ÈÕÆÚµÄ¸ñÊ½ĞèÒªÉèÖÃµ½µ¥Ôª¸ñ×ÓÀïÃæ.
+            // p:æ—¥æœŸçš„æ ¼å¼éœ€è¦è®¾ç½®åˆ°å•å…ƒæ ¼å­é‡Œé¢.
             DateEditor dateCellEditorDef = (DateEditor) cellWidget;
             String formatText = dateCellEditorDef.getFormatText();
             if (formatText != null) {
@@ -124,7 +124,7 @@ public class CellWriteAttrPane extends BasicPane {
             }
         }
 
-        // p:×îºó°ÑÕâ¸öcellEditorDefÉèÖÃµ½CellGUIAttr.
+        // p:æœ€åæŠŠè¿™ä¸ªcellEditorDefè®¾ç½®åˆ°CellGUIAttr.
         if (cellWidget instanceof NoneWidget) {
             cellElement.setWidget(null);
         } else {
@@ -151,7 +151,7 @@ public class CellWriteAttrPane extends BasicPane {
 
     @Override
     /**
-     *¼ì²âÊÇ·ñÓĞĞ§
+     *æ£€æµ‹æ˜¯å¦æœ‰æ•ˆ
      */
     public void checkValid() throws Exception {
         this.cellEditorDefPane.checkValid();

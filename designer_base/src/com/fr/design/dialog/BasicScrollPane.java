@@ -67,7 +67,7 @@ public abstract class BasicScrollPane<T> extends BasicBeanPane<T>{
 				ajustValues();
 			}
 		});
-		// august:Êó±ê¹öÂÖ»¬¶¯ÊÂ¼ş
+		// august:é¼ æ ‡æ»šè½®æ»‘åŠ¨äº‹ä»¶
 		this.addMouseWheelListener(new MouseWheelListener() {
 
 			@Override
@@ -82,7 +82,7 @@ public abstract class BasicScrollPane<T> extends BasicBeanPane<T>{
 		layoutContentPane();
 	}
 	
-	//ÉÏ²ãpaneÒÑ¾­ÓĞÁËscroll£¬ĞèÒª°ÑÊÂ¼şÆÁ±Îµô
+	//ä¸Šå±‚paneå·²ç»æœ‰äº†scrollï¼Œéœ€è¦æŠŠäº‹ä»¶å±è”½æ‰
 	protected BasicScrollPane(boolean noScroll) {
 		original = this.getBackground();
 		this.setLayout(new BarLayout());
@@ -117,7 +117,7 @@ public abstract class BasicScrollPane<T> extends BasicBeanPane<T>{
 	}
 
 	/**
-	 * august:²»ÈİÒ×°¡ »¹ÒªÓÃ±Ê»­Í¼Á¢¸ö·½³Ì²Å¼ÆËã³öÀ´
+	 * august:ä¸å®¹æ˜“å•Š è¿˜è¦ç”¨ç¬”ç”»å›¾ç«‹ä¸ªæ–¹ç¨‹æ‰è®¡ç®—å‡ºæ¥
 	 * 
 	 * @param e
 	 */
@@ -187,7 +187,7 @@ public abstract class BasicScrollPane<T> extends BasicBeanPane<T>{
 	}
 	
 	/**
-	 * ÓÃÓÚÔÚµ÷ÓÃremoveAllÒÔºó»Ö¸´Ô­À´paneµÄ½á¹¹£¬·ÅÔÚÕâ±ßÊÇÒòÎªBarLayoutÊÇÄÚ²¿Àà
+	 * ç”¨äºåœ¨è°ƒç”¨removeAllä»¥åæ¢å¤åŸæ¥paneçš„ç»“æ„ï¼Œæ”¾åœ¨è¿™è¾¹æ˜¯å› ä¸ºBarLayoutæ˜¯å†…éƒ¨ç±»
 	 * @param pane
 	 */
 	public void reloaPane(JPanel pane){

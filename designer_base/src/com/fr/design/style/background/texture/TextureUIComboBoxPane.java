@@ -10,8 +10,8 @@ import com.fr.design.style.background.BackgroundPane4BoxChange;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-3 ÉÏÎç10:36:21
- * ÀàËµÃ÷: ÎÆÀíÑ¡ÔñµÄUIComboBoxÇĞ»»·ÖÖ§pane, Ô­ĞÍÍ¼@5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-3 ä¸Šåˆ10:36:21
+ * ç±»è¯´æ˜: çº¹ç†é€‰æ‹©çš„UIComboBoxåˆ‡æ¢åˆ†æ”¯pane, åŸå‹å›¾@5471
  */
 public class TextureUIComboBoxPane extends BackgroundPane4BoxChange {
 	private static final long serialVersionUID = 6730560115446086974L;

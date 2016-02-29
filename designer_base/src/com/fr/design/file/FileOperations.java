@@ -3,43 +3,43 @@ package com.fr.design.file;
 
 public interface FileOperations {
     /**
-     *´ò¿ªÑ¡ÖĞµÄ±¨±íÎÄ¼ş
+     *æ‰“å¼€é€‰ä¸­çš„æŠ¥è¡¨æ–‡ä»¶
      */
 	public void openSelectedReport();
 
     /**
-     *´ò¿ªÎÄ¼ş¼Ğ
+     *æ‰“å¼€æ–‡ä»¶å¤¹
      */
 	public void openContainerFolder();
 
     /**
-     *Ë¢ĞÂ
+     *åˆ·æ–°
      */
 	public void refresh();
 
     /**
-     *É¾³ıÎÄ¼ş
+     *åˆ é™¤æ–‡ä»¶
      */
 	public void deleteFile();
 
     /**
-     *¼ÓÉÏÎÄ¼şËø
+     *åŠ ä¸Šæ–‡ä»¶é”
      */
 	public void lockFile();
 
     /**
-     *ÎÄ¼ş½âËø
+     *æ–‡ä»¶è§£é”
      */
 	public void unLockFile();
 
 	public String getSelectedTemplatePath();
 
     /**
-     *ÎÄ¼şÃûÊÇ·ñ´æÔÚ
-     * @param newName Ô­Ãû
-     * @param oldName ĞÂµÄÎÄ¼şÃû
-     * @param suffix ºó×ºÃû
-     * @return ÊÇ·ñ´æÔÚ
+     *æ–‡ä»¶åæ˜¯å¦å­˜åœ¨
+     * @param newName åŸå
+     * @param oldName æ–°çš„æ–‡ä»¶å
+     * @param suffix åç¼€å
+     * @return æ˜¯å¦å­˜åœ¨
      */
 	public boolean isNameAlreadyExist(String newName, String oldName, String suffix);
 }

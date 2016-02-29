@@ -34,15 +34,15 @@ public class ChartDataPane extends AbstractChartAttrPane {
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
 	 */
 	public String getIconPath() {
 		return "com/fr/design/images/chart/ChartData.png";
 	}
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_DATA_TITLE;
@@ -70,14 +70,14 @@ public class ChartDataPane extends AbstractChartAttrPane {
 	}
 	
 	/**
-	 * ÉèÖÃÊı¾İ½çÃæÊÇ·ñÖ§³Öµ¥Ôª¸ñ
+	 * è®¾ç½®æ•°æ®ç•Œé¢æ˜¯å¦æ”¯æŒå•å…ƒæ ¼
 	 */
 	public void setSupportCellData(boolean supportCellData) {
 		this.supportCellData = supportCellData;
 	}
 	
 	/**
-	 * ¸üĞÂ½çÃæ Êı¾İÄÚÈİ
+	 * æ›´æ–°ç•Œé¢ æ•°æ®å†…å®¹
 	 */
 	public void populate(ChartCollection collection) {
 		repeatLayout(collection);
@@ -90,7 +90,7 @@ public class ChartDataPane extends AbstractChartAttrPane {
 	}
 
 	/**
-	 * ±£´æ Êı¾İ½çÃæÄÚÈİ
+	 * ä¿å­˜ æ•°æ®ç•Œé¢å†…å®¹
 	 */
 	public void update(ChartCollection collection) {
 		if(contentsPane != null) {
@@ -99,11 +99,10 @@ public class ChartDataPane extends AbstractChartAttrPane {
 	}
 
 	/**
-	 * Ë¢ĞÂÍ¼±íÊı¾İ½çÃæ
-	 * @param collection Í¼±íÊÕ¼¯Æ÷
+	 * åˆ·æ–°å›¾è¡¨æ•°æ®ç•Œé¢
+	 * @param collection å›¾è¡¨æ”¶é›†å™¨
 	 */
 	public void refreshChartDataPane(ChartCollection collection){
 		this.populate(collection);
 	}
 }
-

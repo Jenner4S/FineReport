@@ -146,8 +146,8 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 			this.borderPane = new BorderPane();
 			this.borderPane.addChangeListener(this);
 
-			// p:borderPaneÕâ±ß±È½ÏÌØÊâ£¬µ¥Ôª¸ñµÄStyleµÄÊ±ºò£¬
-			// ÓÃreportPane,ÔÚÈ«¾ÖStyleµÄÊ±ºòÓÃoldStyle
+			// p:borderPaneè¿™è¾¹æ¯”è¾ƒç‰¹æ®Šï¼Œå•å…ƒæ ¼çš„Styleçš„æ—¶å€™ï¼Œ
+			// ç”¨reportPane,åœ¨å…¨å±€Styleçš„æ—¶å€™ç”¨oldStyle
 			if (this.reportPane != null) {
 				Object[] fourObjectArray = BorderUtils.createCellBorderObject(reportPane);
 
@@ -189,19 +189,19 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 	 * Populate
 	 */
 	public void populate(ElementCasePane reportPane) {
-		// p:±£ÁôReportPane, ¸øBorderPaneÊ¹ÓÃ.
+		// p:ä¿ç•™ReportPane, ç»™BorderPaneä½¿ç”¨.
 		this.reportPane = reportPane;
 		this.populateBean(this.analyzeCurrentStyle(reportPane));
 		updatePreviewArea();
 	}
 
 	/**
-	 * ·ÖÎöStyle
+	 * åˆ†æStyle
 	 */
 	private Style analyzeCurrentStyle(ElementCasePane reportPane) {
 		Style style = null;
 
-		// p:´ÓÑ¡ÖĞµÄCellElementÄÇÀïÏÈ»ñµÃÔ­Ê¼µÄStyle.
+		// p:ä»é€‰ä¸­çš„CellElementé‚£é‡Œå…ˆè·å¾—åŸå§‹çš„Style.
 		Selection sel = reportPane.getSelection();
 		if (sel instanceof FloatSelection) {
 			// got simple cell element from column and row.
@@ -227,7 +227,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 		}
 
 		if (style == null) {
-			// peter:»ñÈ¡Ä¬ÈÏµÄStyle.
+			// peter:è·å–é»˜è®¤çš„Style.
 			style = Style.DEFAULT_STYLE;
 		}
 
@@ -235,7 +235,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 	}
 
 	/**
-	 * Ê¹ÓÃÈ«¾Ö¶¨ÒåµÄ¸ñÊ½
+	 * ä½¿ç”¨å…¨å±€å®šä¹‰çš„æ ¼å¼
 	 */
 	public boolean updateGlobalStyle(ElementCasePane reportPane) {
 		updatePreviewArea();
@@ -298,7 +298,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 			// Got editCellElement.
 			TemplateCellElement editCellElement;
 
-			// ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+			// éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
 			for (int j = 0; j < cs.getRowSpan(); j++) {
 				for (int i = 0; i < cs.getColumnSpan(); i++) {
 					int column = i + cs.getColumn();
@@ -316,7 +316,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 			}
 		}
 
-		// p:ÒòÎªborderpaneÌØÊâ£¬update borderpane
+		// p:å› ä¸ºborderpaneç‰¹æ®Šï¼Œupdate borderpane
 		if (this.borderPane != null) {
 			BorderUtils.update(reportPane, this.borderPane.update());
 		}
@@ -394,7 +394,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 			JTabbedPane tabbedPane = (JTabbedPane) tabObj;
 
 			int selectedIndex = tabbedPane.getSelectedIndex();
-			if (tabbedPane.getComponentAt(selectedIndex).getClass() == JPanel.class) {// ÊÇJPanel,ĞèÒªÌæ»»
+			if (tabbedPane.getComponentAt(selectedIndex).getClass() == JPanel.class) {// æ˜¯JPanel,éœ€è¦æ›¿æ¢
 				if (selectedIndex == ALIGNMENT_INDEX) {
 					tabbedPane.setComponentAt(selectedIndex, StylePane.this.getAlignmentPane());
 				} else if (selectedIndex == FONT_INDEX) {
@@ -420,7 +420,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 	}
 
 	/**
-	 * Ô¤ÀÀStyleµÄÃæ°å
+	 * é¢„è§ˆStyleçš„é¢æ¿
 	 * 
 	 * @author richer
 	 */
@@ -444,7 +444,7 @@ public class StylePane extends BasicBeanPane<Style> implements ChangeListener {
 			int resolution = ScreenResolution.getScreenResolution();
 
 			if (style == Style.DEFAULT_STYLE) {
-				// Èç¹ûÊÇÄ¬ÈÏµÄstyle,¾ÍÖ»Ğ´"Report"ÉÏÈ¥
+				// å¦‚æœæ˜¯é»˜è®¤çš„style,å°±åªå†™"Report"ä¸Šå»
 				Style.paintContent(g2d, paintText, style, getWidth() - 3, getHeight() - 3, resolution);
 				return;
 			}

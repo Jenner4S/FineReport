@@ -15,7 +15,7 @@ import com.fr.form.ui.Connector;
 import com.fr.form.ui.container.WAbsoluteLayout.BoundsWidget;
 
 public class ConnectorHelper {
-	//Õâ¸öÀàÊÇÓÃÀ´»­Á¬½ÓÏßµÄ£¬ÔİÊ±ÓÃ²»µ½
+	//è¿™ä¸ªç±»æ˜¯ç”¨æ¥ç”»è¿æ¥çº¿çš„ï¼Œæš‚æ—¶ç”¨ä¸åˆ°
 	
 	public static final int NEAR = 5;
 	private static double ratio = 0.5;

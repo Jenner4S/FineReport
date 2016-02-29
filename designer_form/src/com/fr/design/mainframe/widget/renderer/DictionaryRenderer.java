@@ -3,7 +3,7 @@ package com.fr.design.mainframe.widget.renderer;
 import com.fr.design.mainframe.widget.wrappers.DictionaryWrapper;
 
 /**
- * Êı¾İ×ÖµääÖÈ¾Æ÷,ËùÓĞ°üº¬Êı¾İ×ÖµäÊôĞÔµÄ±à¼­Æ÷Í¨ÓÃ´ËäÖÈ¾Æ÷
+ * æ•°æ®å­—å…¸æ¸²æŸ“å™¨,æ‰€æœ‰åŒ…å«æ•°æ®å­—å…¸å±æ€§çš„ç¼–è¾‘å™¨é€šç”¨æ­¤æ¸²æŸ“å™¨
  * @version 6.5.3
  */
 public class DictionaryRenderer extends EncoderCellRenderer {

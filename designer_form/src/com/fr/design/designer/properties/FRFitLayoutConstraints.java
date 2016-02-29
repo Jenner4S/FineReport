@@ -18,9 +18,9 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-23
- * Time: ÉÏÎç10:53
+ * Time: ä¸Šåˆ10:53
  */
-//¿Ø¼şÔÚ×ÔÊÊÓ¦²¼¾ÖÖĞ¿í¶È¡¢¸ß¶ÈÊôĞÔ£¬7.1.1²»¿É±à¼­
+//æ§ä»¶åœ¨è‡ªé€‚åº”å¸ƒå±€ä¸­å®½åº¦ã€é«˜åº¦å±æ€§ï¼Œ7.1.1ä¸å¯ç¼–è¾‘
 public class FRFitLayoutConstraints implements ConstraintsGroupModel {
     private static final int MINHEIGHT = XCreator.SMALL_PREFERRED_SIZE.height;
     private static final int ROWNUM = 2;
@@ -110,9 +110,9 @@ public class FRFitLayoutConstraints implements ConstraintsGroupModel {
     }
 
     /**
-     * ¸ÃĞĞÊÇ·ñ¿É±à¼­
-     * @param row  ĞĞ
-     * @return µÚrowĞĞ¿É±à¼­·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * è¯¥è¡Œæ˜¯å¦å¯ç¼–è¾‘
+     * @param row  è¡Œ
+     * @return ç¬¬rowè¡Œå¯ç¼–è¾‘è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public boolean isEditable(int row) {
         return false;

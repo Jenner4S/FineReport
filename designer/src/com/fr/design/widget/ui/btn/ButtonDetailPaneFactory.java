@@ -20,7 +20,7 @@ import java.util.Map;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç6:29
+ * Time   : ä¸‹åˆ6:29
  */
 public class ButtonDetailPaneFactory {
     private static Map<String, Class> detailMap = new HashMap<String, Class>();

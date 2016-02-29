@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import com.fr.base.FRContext;
 
 /**
- * »­¶¯Ì¬ĞéÏß
+ * ç”»åŠ¨æ€è™šçº¿
  * @author Daniel~
  *
  */
@@ -42,7 +42,7 @@ public class DrawFlowRect implements Runnable {
 	            isReal = !isReal;
 	        }
 			
-			//²»ÊÇÕâ¸ö×´Ì¬¾Í²»Òª¼ÌĞø»­ÁË£¬·ñÔòÌ«¿¨
+			//ä¸æ˜¯è¿™ä¸ªçŠ¶æ€å°±ä¸è¦ç»§ç»­ç”»äº†ï¼Œå¦åˆ™å¤ªå¡
 			if(grid != null && !grid.IsNotShowingTableSelectPane()){
 				grid.repaint();
 			}
@@ -55,7 +55,7 @@ public class DrawFlowRect implements Runnable {
 	}
 
 	/**
-	 * »­¿ò¿ò
+	 * ç”»æ¡†æ¡†
 	 * @param g
 	 * @param x
 	 * @param y
@@ -67,8 +67,8 @@ public class DrawFlowRect implements Runnable {
         
         lenReal = templen;
             
-        boolean oldisReal = isReal;  //±¸·İ
-        int oldlenReal = lenReal; //±¸·İ
+        boolean oldisReal = isReal;  //å¤‡ä»½
+        int oldlenReal = lenReal; //å¤‡ä»½
                 
 		drawTopLine(g, x, y, width, oldisReal, oldlenReal);
             
@@ -78,90 +78,90 @@ public class DrawFlowRect implements Runnable {
                         
 		drawBottomLine(g, x, y, width, height, oldisReal, oldlenReal);
                         
-        isReal = oldisReal;     //»¹Ô­ Êı¾İ                
+        isReal = oldisReal;     //è¿˜åŸ æ•°æ®                
         g.setColor(oldColor);
     }
 
 	private void drawTopLine(Graphics g, int x, int y, int width, boolean oldisReal, int oldlenReal) {
-		g.setColor(Color.black);          //ÉÏ
-		//µÚÒ»¸ùÏßÏÈ»­ºÚÉ«±³¾°
+		g.setColor(Color.black);          //ä¸Š
+		//ç¬¬ä¸€æ ¹çº¿å…ˆç”»é»‘è‰²èƒŒæ™¯
 		g.drawLine(x, y, width, y);
-		//µÚ¶ş¸ùÏßÍ¬ÉÏ
+		//ç¬¬äºŒæ ¹çº¿åŒä¸Š
 		g.drawLine(x-1, y-1, width, y-1);
 		g.setColor(Color.white);
-		//µÚÒ»¸ù°×É«ĞéÏß
+		//ç¬¬ä¸€æ ¹ç™½è‰²è™šçº¿
 		drawFlowLine(g, x, y, width, y);
-		isReal = oldisReal;     //»¹Ô­ Êı¾İ
+		isReal = oldisReal;     //è¿˜åŸ æ•°æ®
 		lenReal = oldlenReal;
-		//µÚ¶ş¸ù°×É«ĞéÏß
+		//ç¬¬äºŒæ ¹ç™½è‰²è™šçº¿
 		drawFlowLine(g, x-1, y-1, width, y-1);
 	}
 
 	private void drawRightLine(Graphics g, int x, int y, int width,int height, boolean oldisReal, int oldlenReal) {
-		g.setColor(Color.black);         //ÓÒ
+		g.setColor(Color.black);         //å³
 		g.drawLine(width, y, width, height);
 		g.drawLine(width-1, y-1, width-1, height);
 		g.setColor(Color.white);
-		isReal = oldisReal;     //»¹Ô­ Êı¾İ
+		isReal = oldisReal;     //è¿˜åŸ æ•°æ®
 		lenReal = oldlenReal;
 		drawFlowLine(g, width, y, width, height);
-		isReal = oldisReal;     //»¹Ô­ Êı¾İ
+		isReal = oldisReal;     //è¿˜åŸ æ•°æ®
 		lenReal = oldlenReal;
 		drawFlowLine(g, width-1, y-1, width-1, height);
 	}
 
 	private void drawLeftLine(Graphics g, int x, int y, int height, boolean oldisReal, int oldlenReal) {
-		//×óÏÂÒª·´¹ıÀ´»­
-        g.setColor(Color.black);          //×ó
+		//å·¦ä¸‹è¦åè¿‡æ¥ç”»
+        g.setColor(Color.black);          //å·¦
         g.drawLine(x, height, x, y);
         g.drawLine(x+1, height-1, x+1, y);
         g.setColor(Color.white);
-        isReal = oldisReal;     //»¹Ô­ Êı¾İ
+        isReal = oldisReal;     //è¿˜åŸ æ•°æ®
         lenReal = oldlenReal;
         drawFlowLine(g, x, height, x, y );
-        isReal = oldisReal;     //»¹Ô­ Êı¾İ
+        isReal = oldisReal;     //è¿˜åŸ æ•°æ®
         lenReal = oldlenReal;
         drawFlowLine(g, x+1, height+1, x+1, y );
 	}
 
 	private void drawBottomLine(Graphics g, int x, int y, int width,int height, boolean oldisReal, int oldlenReal) {
-		g.setColor(Color.black);         //ÏÂ
+		g.setColor(Color.black);         //ä¸‹
 		g.drawLine(width, height, x, height);
 		g.drawLine(width+1, height+1, x, height+1);
 		g.setColor(Color.white);
-		isReal = oldisReal;     //»¹Ô­ Êı¾İ
+		isReal = oldisReal;     //è¿˜åŸ æ•°æ®
 		lenReal = oldlenReal;
 		drawFlowLine(g, width, height, x, height);
-		isReal = oldisReal;     //»¹Ô­ Êı¾İ
+		isReal = oldisReal;     //è¿˜åŸ æ•°æ®
 		lenReal = oldlenReal;
 		drawFlowLine(g, width+1, height+1, x, height+1);
 	}
 	
-    //Á÷¶¯ĞéÏß,Ö§³Ö·´·½Ïò×÷»­
+    //æµåŠ¨è™šçº¿,æ”¯æŒåæ–¹å‘ä½œç”»
     private void drawFlowLine(Graphics g, int x1, int y1, int x2, int y2) {
         int x = x1, y=y1;
-        int n = 4;  //ÊµÏß¶Î³¤¶È
-        int m = 5;  //ĞéÏß¶Î³¤¶È
+        int n = 4;  //å®çº¿æ®µé•¿åº¦
+        int m = 5;  //è™šçº¿æ®µé•¿åº¦
         
         int tx = 0,ty = 0;
         
-        int mark_x = 0;  //±ê¼Ç Èç¹ûÎª1 ±íÊ¾Ë®Æ½Ïß
-        int mark_y = 0;  //±ê¼Ç Èç¹ûÎª1 ±êÊ¶´¹Ö±Ïß
+        int mark_x = 0;  //æ ‡è®° å¦‚æœä¸º1 è¡¨ç¤ºæ°´å¹³çº¿
+        int mark_y = 0;  //æ ‡è®° å¦‚æœä¸º1 æ ‡è¯†å‚ç›´çº¿
         
         int c = 1;
         boolean flag = true;
         
-        //ÕıÏòÎª1·´ÏòÎª-1²»±äÎª0
+        //æ­£å‘ä¸º1åå‘ä¸º-1ä¸å˜ä¸º0
         if(x2-x1 != 0)
             mark_x = x1<x2?1:-1;
         else
             mark_y = y1<y2?1:-1;
         
         
-        //ÏÈ»­Á÷¶¯ĞéÏßµÄµÚÒ»²¿·Ö
+        //å…ˆç”»æµåŠ¨è™šçº¿çš„ç¬¬ä¸€éƒ¨åˆ†
         if(isReal)
         {
-            //ÊµÏß
+            //å®çº¿
             tx = (lenReal*mark_x + x1);
             ty = (lenReal*mark_y + y1);
             g.drawLine(x,y,tx,ty);
@@ -170,13 +170,13 @@ public class DrawFlowRect implements Runnable {
         }
         else
         {
-            //ĞéÏß
+            //è™šçº¿
             x = (lenReal*mark_x + x1);
             y = (lenReal*mark_y + y1);
         }
         
-        int ttx = x; //µÚ¶ş²¿·ÖÆğÊ¼Î»ÖÃ x×ø±ê
-        int tty = y; //µÚ¶ş²¿·ÖÆğÊ¼Î»ÖÃ y×ø±ê
+        int ttx = x; //ç¬¬äºŒéƒ¨åˆ†èµ·å§‹ä½ç½® xåæ ‡
+        int tty = y; //ç¬¬äºŒéƒ¨åˆ†èµ·å§‹ä½ç½® yåæ ‡
         
         
 		drawTheRestPart(g, x, y, x1, y1, x2, y2, m, n, ttx, tty, mark_x, mark_y, tx, ty, flag, c);
@@ -191,7 +191,7 @@ public class DrawFlowRect implements Runnable {
 
 			if(Math.abs(tx-x1) > Math.abs(x2-x1))
 			{
-				lenReal = Math.abs(tx - x2);   //Ö»Ö§³Ö Ë®Æ½ÏßºÍÊúÏß
+				lenReal = Math.abs(tx - x2);   //åªæ”¯æŒ æ°´å¹³çº¿å’Œç«–çº¿
 				isReal = true;
 
 				tx = x2;

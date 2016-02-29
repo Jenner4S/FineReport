@@ -8,7 +8,7 @@ public class EastRegionContainerPane extends UIResizableContainer {
     private static EastRegionContainerPane THIS;
 
     /**
-     * µÃµ½ÊµÀı
+     * å¾—åˆ°å®ä¾‹
      *
      * @return
      */
@@ -28,7 +28,7 @@ public class EastRegionContainerPane extends UIResizableContainer {
     }
 
     /**
-     * Ë¢ĞÂÏÂÃæ°å
+     * åˆ·æ–°ä¸‹é¢æ¿
      */
     public void refreshDownPane() {
         if (this.getDownPane() instanceof DockingView) {

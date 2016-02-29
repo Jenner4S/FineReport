@@ -6,7 +6,7 @@ package com.fr.start;
 /**
  * @author neil
  *
- * @date: 2015-3-13-ÏÂÎç12:56:10
+ * @date: 2015-3-13-ä¸‹åˆ12:56:10
  */
 public interface BBSGuestPaneProvider {
 	

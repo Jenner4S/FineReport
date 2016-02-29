@@ -66,10 +66,10 @@ import com.fr.stable.ArrayUtils;
  * User   : Richer
  * Version: 6.5.5
  * Date   : 11-7-5
- * Time   : ÏÂÎç7:46
- * ±íµ¥ÀàĞÍµÄ²ÎÊıÉè¼ÆÆ÷
+ * Time   : ä¸‹åˆ7:46
+ * è¡¨å•ç±»å‹çš„å‚æ•°è®¾è®¡å™¨
  */
-// TODO ALEX_SEP FormDesignerºÍFormParaDesignEditorÓ¦¸Ã¹²ÓÃFormµÄ±à¼­,µ«ÊÇFormParaDesignEditor²»Ó¦¸ÃÖ±½Ó¾ÍÊÇFormDesigner
+// TODO ALEX_SEP FormDesignerå’ŒFormParaDesignEditoråº”è¯¥å…±ç”¨Formçš„ç¼–è¾‘,ä½†æ˜¯FormParaDesignEditorä¸åº”è¯¥ç›´æ¥å°±æ˜¯FormDesigner
 public class FormParaDesigner extends FormDesigner implements ParameterDesignerProvider {
 	private static final int NUM_IN_A_LINE = 4;
 	private static final int H_COMPONENT_GAP = 165;
@@ -105,7 +105,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ¿ªÊ¼±à¼­²ÎÊıÃæ°åµÄÊ±ºò½øĞĞµÄ³õÊ¼»¯
+	 * å¼€å§‹ç¼–è¾‘å‚æ•°é¢æ¿çš„æ—¶å€™è¿›è¡Œçš„åˆå§‹åŒ–
 	 */
 	public void initBeforeUpEdit() {
 		WidgetToolBarPane.getInstance(this);
@@ -121,24 +121,24 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ´´½¨È¨ÏŞ±à¼­Ãæ°å
-     * @return Ãæ°å
+     * åˆ›å»ºæƒé™ç¼–è¾‘é¢æ¿
+     * @return é¢æ¿
      */
 	public AuthorityEditPane createAuthorityEditPane() {
 		return new FormWidgetAuthorityEditPane(this);
 	}
 
     /**
-     * ÄÚÈİÊôĞÔ±íÃæ°å
-     * @return   ÄÚÈİÊôĞÔ±íÃæ°å
+     * å†…å®¹å±æ€§è¡¨é¢æ¿
+     * @return   å†…å®¹å±æ€§è¡¨é¢æ¿
      */
 	public JPanel getEastUpPane() {
 		return WidgetPropertyPane.getInstance(this);
 	}
 
     /**
-     *   ²ÎÊıÊôĞÔ±í
-     * @return    ²ÎÊıÊôĞÔ±í
+     *   å‚æ•°å±æ€§è¡¨
+     * @return    å‚æ•°å±æ€§è¡¨
      */
 
 	public JPanel getEastDownPane() {
@@ -146,8 +146,8 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * È¨ÏŞ±à¼­Ãæ°å
-     * @return     È¨ÏŞ±à¼­Ãæ°å
+     * æƒé™ç¼–è¾‘é¢æ¿
+     * @return     æƒé™ç¼–è¾‘é¢æ¿
      */
 	public AuthorityEditPane getAuthorityEditPane() {
 		FormWidgetAuthorityEditPane formWidgetAuthorityEditPane = new FormWidgetAuthorityEditPane(this);
@@ -156,9 +156,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ¸ø°üº¬´ËFormParaDesignerµÄParameterDefinitePaneÌí¼ÓÊÂ¼ş
+	 * ç»™åŒ…å«æ­¤FormParaDesignerçš„ParameterDefinitePaneæ·»åŠ äº‹ä»¶
 	 *
-	 * @param paraDefinitePane Ãæ°å
+	 * @param paraDefinitePane é¢æ¿
 	 */
 	public void addListener(final ParaDefinitePane paraDefinitePane) {
 		this.getEditListenerTable().addListener(new DesignerEditListener() {
@@ -180,9 +180,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * °ü¹üÒ»²ãFormArea
+	 * åŒ…è£¹ä¸€å±‚FormArea
 	 *
-	 * @return ÇøÓò
+	 * @return åŒºåŸŸ
 	 */
 	public Component createWrapper() {
 		FormArea area = new FormArea(this, false);
@@ -191,17 +191,17 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * Ë¢ĞÂ¿Ø¼ş
+	 * åˆ·æ–°æ§ä»¶
 	 */
 	public void refreshAllNameWidgets() {
 		XCreatorUtils.refreshAllNameWidgets(this.getRootComponent());
 	}
 
 	/**
-	 * Ë¢ĞÂtableData
+	 * åˆ·æ–°tableData
 	 *
-	 * @param oldName ¾ÉÃû³Æ
-	 * @param newName  ĞÂÃû³Æ
+	 * @param oldName æ—§åç§°
+	 * @param newName  æ–°åç§°
 	 */
 	public void refresh4TableData(String oldName, String newName) {
 		this.getTarget().renameTableData(oldName, newName);
@@ -209,15 +209,15 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * Ë¢ĞÂ²ÎÊı
+	 * åˆ·æ–°å‚æ•°
 	 *
-	 * @param p  ²ÎÊıÃæ°å
+	 * @param p  å‚æ•°é¢æ¿
 	 */
 	public void refreshParameter(ParaDefinitePane p) {
 		XLayoutContainer rootContainer = this.getRootComponent();
 		java.util.List<String> namelist = getAllXCreatorNameList(rootContainer);
-		// parameterArrayÊÇ±¨±íµÄËùÓĞ²ÎÊı, nameListÊÇÒÑ¾­ÔÚ²ÎÊıÃæ°åÌí¼Ó¹ı¿Ø¼şµÄ²ÎÊıÃû
-		// ÓëÒÑÓĞµÄ²ÎÊıÁĞ±í±È½Ï Èç¹ûÒÑ¾­´æÔÚ ¾Í³ıÈ¥
+		// parameterArrayæ˜¯æŠ¥è¡¨çš„æ‰€æœ‰å‚æ•°, nameListæ˜¯å·²ç»åœ¨å‚æ•°é¢æ¿æ·»åŠ è¿‡æ§ä»¶çš„å‚æ•°å
+		// ä¸å·²æœ‰çš„å‚æ•°åˆ—è¡¨æ¯”è¾ƒ å¦‚æœå·²ç»å­˜åœ¨ å°±é™¤å»
 		Parameter[] ps = p.getParameterArray();
 		if (ps != null) {
 			for (Parameter parameter : ps) {
@@ -234,9 +234,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ÅĞ¶ÏÕâ¸ö²ÎÊıÃæ°åÊÇ·ñÃ»ÓĞ¿Ø¼ş
+	 * åˆ¤æ–­è¿™ä¸ªå‚æ•°é¢æ¿æ˜¯å¦æ²¡æœ‰æ§ä»¶
 	 *
-	 * @return   ²ÎÊıÃæ°åÊÇ·ñÃ»ÓĞ¿Ø¼ş
+	 * @return   å‚æ•°é¢æ¿æ˜¯å¦æ²¡æœ‰æ§ä»¶
 	 */
 	public boolean isBlank() {
 		XLayoutContainer rootContainer = this.getRootComponent();
@@ -249,10 +249,10 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
     }
 
 	/**
-	 * ¿´¿´²ÎÊıÃæ°åÖĞµÄ¿Ø¼şÊÇ·ñÓĞºÍÄ£°å²ÎÊıÍ¬ÃûµÄ
+	 * çœ‹çœ‹å‚æ•°é¢æ¿ä¸­çš„æ§ä»¶æ˜¯å¦æœ‰å’Œæ¨¡æ¿å‚æ•°åŒåçš„
 	 *
-	 * @param allParameters ²ÎÊı
-	 * @return ÊÇ·ñÓĞÍ¬Ãû
+	 * @param allParameters å‚æ•°
+	 * @return æ˜¯å¦æœ‰åŒå
 	 */
 	public boolean isWithoutParaXCreator(Parameter[] allParameters) {
 		XLayoutContainer rootContainer = this.getRootComponent();
@@ -269,9 +269,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ²ÎÊıÃæ°å¿Ø¼şµÄÃû×Ö
+	 * å‚æ•°é¢æ¿æ§ä»¶çš„åå­—
 	 *
-	 * @return Ãû×Ö
+	 * @return åå­—
 	 */
 	public List<String> getAllXCreatorNameList() {
 		XLayoutContainer rootContainer = this.getRootComponent();
@@ -299,9 +299,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ÊÇ·ñÓĞ²éÑ¯°´Å¥
+	 * æ˜¯å¦æœ‰æŸ¥è¯¢æŒ‰é’®
 	 *
-	 * @return   ÓĞÎŞ²éÑ¯°´Å¥
+	 * @return   æœ‰æ— æŸ¥è¯¢æŒ‰é’®
 	 */
 	public boolean isWithQueryButton() {
 		XLayoutContainer rootContainer = this.getRootComponent();
@@ -309,8 +309,8 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ·µ»Ø¸´ÖÆÕ³ÌùÉ¾³ıµÈ¶¯×÷
-     * @return Í¬ÉÏ
+     * è¿”å›å¤åˆ¶ç²˜è´´åˆ é™¤ç­‰åŠ¨ä½œ
+     * @return åŒä¸Š
      */
     public Action[] getActions() {
         if (designer_actions == null) {
@@ -333,7 +333,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ¾ÍÊÇgetTarget ÎªÁË·µ»ØParameterUI½Ó¿Ú¶ø²»³åÍ»ÁíĞ´¸ö
+	 * å°±æ˜¯getTarget ä¸ºäº†è¿”å›ParameterUIæ¥å£è€Œä¸å†²çªå¦å†™ä¸ª
 	 *
 	 * @return
 	 */
@@ -342,16 +342,16 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ParameterDefinitePaneÍ¨¹ıParaDesignerÀ´µ÷ÓÃParameterPropertyPane
+	 * ParameterDefinitePaneé€šè¿‡ParaDesigneræ¥è°ƒç”¨ParameterPropertyPane
 	 *
-	 * @param p Ãæ°å
+	 * @param p é¢æ¿
 	 */
 	public void populateParameterPropertyPane(ParaDefinitePane p) {
 		ParameterPropertyPane.getInstance().populateBean(p);
 	}
 
     /**
-     *  ³õÊ¼»¯
+     *  åˆå§‹åŒ–
      */
 	public void initWidgetToolbarPane() {
 		WidgetToolBarPane.getInstance(this);
@@ -375,15 +375,15 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ±¨±íÖ±½ÓÅĞ¶Ïµ×²ãÊÇ·ñÊÇ¾ø¶Ô²¼¾Ö
-     * @return ÊÇÔò·µ»Øtrue
+     * æŠ¥è¡¨ç›´æ¥åˆ¤æ–­åº•å±‚æ˜¯å¦æ˜¯ç»å¯¹å¸ƒå±€
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean hasWAbsoluteLayout() {
         return this.getTarget().getContainer() instanceof WAbsoluteLayout;
     }
 
     /**
-     * Ë¢ĞÂµ×²ãÈİÆ÷
+     * åˆ·æ–°åº•å±‚å®¹å™¨
      */
     public void refreshRoot() {
         XLayoutContainer layoutContainer = (XLayoutContainer) XCreatorUtils.createXCreator(this.getTarget()
@@ -396,8 +396,8 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
     }
 
     /**
-     * ÊÇ·ñÊÇ±¨±íµÄ²ÎÊıÃæ°å
-     * @return     ÊÇ
+     * æ˜¯å¦æ˜¯æŠ¥è¡¨çš„å‚æ•°é¢æ¿
+     * @return     æ˜¯
      */
     public boolean isFormParaDesigner(){
         return true;
@@ -433,7 +433,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * µÃµ½ºÏÊÊµÄ´óĞ¡
+	 * å¾—åˆ°åˆé€‚çš„å¤§å°
 	 *
 	 * @return
 	 */
@@ -446,7 +446,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ÉèÖÃ¸ß¶È
+	 * è®¾ç½®é«˜åº¦
 	 *
 	 * @param height
 	 */
@@ -485,7 +485,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * Ë¢ĞÂ³ß´ç
+	 * åˆ·æ–°å°ºå¯¸
 	 */
 	public void populateRootSize() {
 		((FormParameterUI) getTarget()).setDesignSize(getRootComponent().getSize());
@@ -496,9 +496,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ±£´æ²ÎÊı½çÃæµÄ¿í¶È
+	 * ä¿å­˜å‚æ•°ç•Œé¢çš„å®½åº¦
 	 *
-	 * @param width Ö¸¶¨µÄ¿í¶È
+	 * @param width æŒ‡å®šçš„å®½åº¦
 	 */
 	public void updateWidth(int width) {
 		FormParameterUI parameterUI = ((FormParameterUI) getTarget());
@@ -506,9 +506,9 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ±£´æ²ÎÊı½çÃæµÄ¸ß¶È
+	 * ä¿å­˜å‚æ•°ç•Œé¢çš„é«˜åº¦
 	 *
-	 * @param height Ö¸¶¨µÄ¸ß¶È
+	 * @param height æŒ‡å®šçš„é«˜åº¦
 	 */
 	public void updateHeight(int height) {
 		FormParameterUI parameterUI = ((FormParameterUI) getTarget());
@@ -516,16 +516,16 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ÔÚ²ÎÊıºÜ¶àÊ±£¬È«²¿Ìí¼ÓµÄÊ±ºò£¬¿ÉÒÔÏòÏÂÒ»´ÎÅÅ°æ£¬ÈôÈ¥µô¾Í»áÔÚ²ÎÊıÃæ°å¶Ñµ½Ò»Æğ
+	 * åœ¨å‚æ•°å¾ˆå¤šæ—¶ï¼Œå…¨éƒ¨æ·»åŠ çš„æ—¶å€™ï¼Œå¯ä»¥å‘ä¸‹ä¸€æ¬¡æ’ç‰ˆï¼Œè‹¥å»æ‰å°±ä¼šåœ¨å‚æ•°é¢æ¿å †åˆ°ä¸€èµ·
 	 *
-	 * @param creator ×é¼ş   z
-	 * @param x  ³¤¶È
-	 * @param y ³¤¶È     c
-	 * @param layout ²¼¾Ö
-	 * @return ÊÇ·ñÀ©Õ¹
+	 * @param creator ç»„ä»¶   z
+	 * @param x  é•¿åº¦
+	 * @param y é•¿åº¦     c
+	 * @param layout å¸ƒå±€
+	 * @return æ˜¯å¦æ‰©å±•
 	 */
 	public boolean prepareForAdd(XCreator creator, int x, int y, XWAbsoluteLayout layout) {
-		// ²ÎÊı½çÃæ£¬×Ô¶¯À©Õ¹
+		// å‚æ•°ç•Œé¢ï¼Œè‡ªåŠ¨æ‰©å±•
 		if (!isRoot(layout)) {
 			return false;
 		}
@@ -549,10 +549,10 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ¼ÓÈë²ÎÊı
-     * @param parameter ²ÎÊı        c
-     * @param currentIndex Î»ÖÃ   w
-     * @return ÊÇ·ñ¼ÓÈë   s
+     * åŠ å…¥å‚æ•°
+     * @param parameter å‚æ•°        c
+     * @param currentIndex ä½ç½®   w
+     * @return æ˜¯å¦åŠ å…¥   s
      */
 	public boolean addingParameter2Editor(Parameter parameter, int currentIndex) {
 		com.fr.form.ui.Label label = new com.fr.form.ui.Label();
@@ -575,10 +575,10 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 
 
     /**
-     * ¼ÓÈë²ÎÊı
-     * @param parameter ²ÎÊı        c
-     * @param currentIndex Î»ÖÃ   w
-     * @return ÊÇ·ñ¼ÓÈë   s
+     * åŠ å…¥å‚æ•°
+     * @param parameter å‚æ•°        c
+     * @param currentIndex ä½ç½®   w
+     * @return æ˜¯å¦åŠ å…¥   s
      */
 	public boolean addingParameter2EditorWithQueryButton(Parameter parameter, int currentIndex) {
 		com.fr.form.ui.Label label = new com.fr.form.ui.Label();
@@ -609,10 +609,10 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ¼ÓÈë²ÎÊı
-     * @param parameterArray  ²ÎÊı        c
-     * @param currentIndex Î»ÖÃ   w
-     * @return ÊÇ·ñ¼ÓÈë   s
+     * åŠ å…¥å‚æ•°
+     * @param parameterArray  å‚æ•°        c
+     * @param currentIndex ä½ç½®   w
+     * @return æ˜¯å¦åŠ å…¥   s
      */
 	public void addingAllParameter2Editor(Parameter[] parameterArray, int currentIndex) {
 		for (int i = 0; i < parameterArray.length; i++) {
@@ -625,7 +625,7 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 					+ FIRST_H_LOCATION, FIRST_V_LOCATION + V_COMPONENT_GAP * (currentIndex / NUM_IN_A_LINE)))) {
 				break;
 			}
-			// Ã¿ĞĞÏÔÊ¾5×é
+			// æ¯è¡Œæ˜¾ç¤º5ç»„
 			EditorHolder editor = new EditorHolder(parameterArray[i]);
 			editor.setWidgetName(parameterArray[i].getName());
 			xCreator = XCreatorUtils.createXCreator(editor);
@@ -648,12 +648,12 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
 	/**
-	 * ×Ô¶¯Ìí¼Ó
+	 * è‡ªåŠ¨æ·»åŠ 
 	 *
-	 * @param xCreator  ×é¼ş       z
-	 * @param x Î»ÖÃ    w
-	 * @param y  Î»ÖÃ
-	 * @return ÊÇ·ñÌí¼Ó   s
+	 * @param xCreator  ç»„ä»¶       z
+	 * @param x ä½ç½®    w
+	 * @param y  ä½ç½®
+	 * @return æ˜¯å¦æ·»åŠ    s
 	 */
 	public boolean autoAddComponent(XCreator xCreator, int x, int y) {
 		XWAbsoluteLayout layout = (XWAbsoluteLayout) this.getRootComponent();
@@ -667,16 +667,16 @@ public class FormParaDesigner extends FormDesigner implements ParameterDesignerP
 	}
 
     /**
-     * ¹¤¾ßÀ¸
-     * @return ¹¤¾ßÀ¸Ãæ°å      g
+     * å·¥å…·æ 
+     * @return å·¥å…·æ é¢æ¿      g
      */
 	public JPanel[] toolbarPanes4Form() {
 		return new JPanel[]{FormParaPane.getInstance(this)};
 	}
 
     /**
-     * ¸´ÖÆµÈ°´Å¥
-     * @return °´Å¥×é a
+     * å¤åˆ¶ç­‰æŒ‰é’®
+     * @return æŒ‰é’®ç»„ a
      */
 	public JComponent[] toolBarButton4Form() {
 		return new JComponent[]{new CutAction(this).createToolBarComponent(), new CopyAction(this).createToolBarComponent(), new PasteAction(this).createToolBarComponent(),

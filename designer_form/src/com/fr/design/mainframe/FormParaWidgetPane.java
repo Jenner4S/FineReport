@@ -41,13 +41,13 @@ public class FormParaWidgetPane extends JPanel{
     private int smallGAP = 6;
     private int jsparatorWidth = 2;
     private int jsparatorHeight = 50;
-    //Ô¤¶¨Òå¿Ø¼şÃ¿ĞĞ×î¶àÏÔÊ¾3¸ö
+    //é¢„å®šä¹‰æ§ä»¶æ¯è¡Œæœ€å¤šæ˜¾ç¤º3ä¸ª
     private int preWidgetShowMaxNum = 3;
-    //Ô¤¶¨Òå¿Ø¼ş×î¶àÏÔÊ¾20ĞĞ
+    //é¢„å®šä¹‰æ§ä»¶æœ€å¤šæ˜¾ç¤º20è¡Œ
     private int preWidgetShowMaxRow = 20;
-    //ÏÔÊ¾8¸öÍ¼±í×é¼ş
+    //æ˜¾ç¤º8ä¸ªå›¾è¡¨ç»„ä»¶
     private int commonChartNum = 8;
-    //ÏÔÊ¾10¸öÆÕÍ¨¿Ø¼ş
+    //æ˜¾ç¤º10ä¸ªæ™®é€šæ§ä»¶
     private int commonWidgetNum = 10;
     private JSeparator jSeparatorPara;
     private JSeparator jSeparatorChart;
@@ -93,7 +93,7 @@ public class FormParaWidgetPane extends JPanel{
 
     private void initFormParaComponent() {
         this.removeAll();
-        // ²Ëµ¥ÖĞµÄ²¼¾ÖÏÈ×¢ÊÍµô
+        // èœå•ä¸­çš„å¸ƒå±€å…ˆæ³¨é‡Šæ‰
 
         JPanel reportPane = new JPanel(new FlowLayout());
         reportPane.add(new ToolBarButton(FormWidgetOption.ELEMENTCASE));
@@ -115,7 +115,7 @@ public class FormParaWidgetPane extends JPanel{
         jSeparatorLayout = createJSeparator();
         add(jSeparatorLayout);
 
-        // ³õÊ¼»¯µÄÊ±ºò¸ù¾İÍ¼±íµÄ×Ü¸öÊı»ñµÃµ¥ĞĞÏÔÊ¾Í¼±íµÄ¸öÊı
+        // åˆå§‹åŒ–çš„æ—¶å€™æ ¹æ®å›¾è¡¨çš„æ€»ä¸ªæ•°è·å¾—å•è¡Œæ˜¾ç¤ºå›¾è¡¨çš„ä¸ªæ•°
         int totalChartNums = loadChartOptions().length;
         if (totalChartNums > 0) {
         	commonChartNum = ++totalChartNums/2;
@@ -163,7 +163,7 @@ public class FormParaWidgetPane extends JPanel{
 					continue;
 				}
                 if (!XCreatorUtils.createXCreator(widget).canEnterIntoParaPane()){
-                    //Ô¤¶¨Òå¿Ø¼ş¹¤¾ßÀ¸Õâ¶ù²»ÏÔÊ¾¹¤¾ßÀ¸ÖĞÃ»ÓĞµÄÔ¤¶¨Òå¿Ø¼ş
+                    //é¢„å®šä¹‰æ§ä»¶å·¥å…·æ è¿™å„¿ä¸æ˜¾ç¤ºå·¥å…·æ ä¸­æ²¡æœ‰çš„é¢„å®šä¹‰æ§ä»¶
                     continue;
                 }
 				predifinedwidgeList.add(new UserDefinedWidgetOption(name));
@@ -279,7 +279,7 @@ public class FormParaWidgetPane extends JPanel{
     }
 
     private int calculateWidgetWindowRowNum(){
-        //ÏòÉÏÈ¡Õû
+        //å‘ä¸Šå–æ•´
         int rowNum = (int)Math.ceil((double)predifinedwidgeList.size()/(double)preWidgetShowMaxNum);
         rowNum = Math.max(rowNum,2);
         rowNum = Math.min(rowNum,preWidgetShowMaxRow);
@@ -352,8 +352,8 @@ public class FormParaWidgetPane extends JPanel{
         }
 
         /**
-         *  ÏìÓ¦½çÃæ¸Ä±äÊÂ¼ş
-         * @param evt  ÊÂ¼ş
+         *  å“åº”ç•Œé¢æ”¹å˜äº‹ä»¶
+         * @param evt  äº‹ä»¶
          */
         public void fireCreatorModified(DesignerEvent evt) {
             button.setEnabled(designer.getParaComponent() == null);

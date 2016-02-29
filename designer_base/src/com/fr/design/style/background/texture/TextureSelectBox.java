@@ -9,8 +9,8 @@ import com.fr.design.style.AbstractSelectBox;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-10-31 ÏÂÎç04:20:33
- * ÀàËµÃ÷: ÎÆÀíµÄÑ¡Ôñbox. ÀàËÆ{@code ColorSelectBox}
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-10-31 ä¸‹åˆ04:20:33
+ * ç±»è¯´æ˜: çº¹ç†çš„é€‰æ‹©box. ç±»ä¼¼{@code ColorSelectBox}
  */
 public class TextureSelectBox extends AbstractSelectBox<Background> {
 	private static final long serialVersionUID = -113494509215643549L;

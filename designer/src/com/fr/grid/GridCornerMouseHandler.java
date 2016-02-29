@@ -13,7 +13,7 @@ import com.fr.stable.ColumnRow;
  * the MouseListener of GridCorner
  * 
  * @editor zhou
- * @since 2012-3-22ÏÂÎç4:04:08
+ * @since 2012-3-22ä¸‹åˆ4:04:08
  */
 public class GridCornerMouseHandler extends MouseInputAdapter {
 	GridCorner gridCorner;

@@ -40,7 +40,7 @@ import java.util.Map.Entry;
 
 public class MultiTDTableDataPane extends AbstractTableDataPane<MultiTDTableData> {
 
-    private static final int MAX_LENTH_OF_DATASET = 143; //¹ØÁªÊı¾İ¼¯Ãæ°å×î´óÏÔÊ¾µÄÊı¾İ¼¯³¤¶È£¬³¬³öÕâ¸ö³¤¶ÈÏÔÊ¾Êı¾İ¼¯Ãû³Æ+¡°...¡±
+    private static final int MAX_LENTH_OF_DATASET = 143; //å…³è”æ•°æ®é›†é¢æ¿æœ€å¤§æ˜¾ç¤ºçš„æ•°æ®é›†é•¿åº¦ï¼Œè¶…å‡ºè¿™ä¸ªé•¿åº¦æ˜¾ç¤ºæ•°æ®é›†åç§°+â€œ...â€
     private static final int MIN_BAR_NUMBER = 10;
     private static final int SUB_LENGTH = 4;
     private JPanel centerPanel;
@@ -76,7 +76,7 @@ public class MultiTDTableDataPane extends AbstractTableDataPane<MultiTDTableData
 
         centerPanel = new JPanel();
         JScrollPane js = new JScrollPane(centerPanel);
-        js.getVerticalScrollBar().setUnitIncrement(20);// Êó±ê¹ö¶¯´óĞ¡
+        js.getVerticalScrollBar().setUnitIncrement(20);// é¼ æ ‡æ»šåŠ¨å¤§å°
         js.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         js.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         initAllBarPane(multiName);
@@ -91,7 +91,7 @@ public class MultiTDTableDataPane extends AbstractTableDataPane<MultiTDTableData
         UILabel headLabel = new UILabel(Inter.getLocText("Multi_nam_formula"));
         setResMap();
         int len = resMap.size();
-        // 10¸öÕıºÃ²»»á³öÏÖ¹ö¶¯Ìõ
+        // 10ä¸ªæ­£å¥½ä¸ä¼šå‡ºç°æ»šåŠ¨æ¡
         centerPanel.setLayout(new GridLayout(len < MIN_BAR_NUMBER ? MIN_BAR_NUMBER : len + 1, 1));
         centerPanel.add(headLabel);
 
@@ -217,7 +217,7 @@ public class MultiTDTableDataPane extends AbstractTableDataPane<MultiTDTableData
 
                 editorPane.populate(((ConditionTableData) ob).getDefineParameters());
             } else if (ob instanceof UnionTableData) {
-                // UnionTableDataÔİÊ±²»É¾, Áô×Å×ö¼æÈİ
+                // UnionTableDataæš‚æ—¶ä¸åˆ , ç•™ç€åšå…¼å®¹
                 String name;
                 for (int i = 0; i < ob.getTableDataCount(); i++) {
                     name = ob.getTableDataName(i);

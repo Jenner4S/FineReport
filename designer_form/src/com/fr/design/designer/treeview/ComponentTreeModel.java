@@ -43,9 +43,9 @@ public class ComponentTreeModel implements TreeModel {
         return null;
     }
     /**
-     * ÉèÖÃ¸ù½Úµã
+     * è®¾ç½®æ ¹èŠ‚ç‚¹
      * 
-     * @param root ¸ù½Úµã
+     * @param root æ ¹èŠ‚ç‚¹
      */
     public void setRoot(Component root){
     	this.root=root;
@@ -61,9 +61,9 @@ public class ComponentTreeModel implements TreeModel {
     }
 
     /**
-     * ÊÇ·ñÎªÒ¶×Ó½Úµã
-     * @param node ¶ÔÏó
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦ä¸ºå¶å­èŠ‚ç‚¹
+     * @param node å¯¹è±¡
+     * @return æ˜¯åˆ™è¿”å›true
      */
     @Override
     public boolean isLeaf(Object node) {
@@ -74,9 +74,9 @@ public class ComponentTreeModel implements TreeModel {
     }
 
     /**
-     * Ê÷½ÚµãÖµ¸Ä±ä
-     * @param path Ê÷½á¹¹Â·¾¶
-     * @param newValue ĞÂÖµ
+     * æ ‘èŠ‚ç‚¹å€¼æ”¹å˜
+     * @param path æ ‘ç»“æ„è·¯å¾„
+     * @param newValue æ–°å€¼
      */
     @Override
     public void valueForPathChanged(TreePath path, Object newValue) {
@@ -103,8 +103,8 @@ public class ComponentTreeModel implements TreeModel {
     }
     
     /**
-     * Ìí¼ÓÊ÷ÊÂ¼ş
-     * @param l ÊÂ¼ş
+     * æ·»åŠ æ ‘äº‹ä»¶
+     * @param l äº‹ä»¶
      */
     @Override
     public void addTreeModelListener(TreeModelListener l) {
@@ -114,8 +114,8 @@ public class ComponentTreeModel implements TreeModel {
     }
 
     /**
-     * É¾³ıÊ÷ÊÂ¼ş
-     * @param l ÊÂ¼ş
+     * åˆ é™¤æ ‘äº‹ä»¶
+     * @param l äº‹ä»¶
      */
     @Override
     public void removeTreeModelListener(TreeModelListener l) {

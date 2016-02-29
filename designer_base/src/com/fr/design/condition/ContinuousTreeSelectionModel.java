@@ -13,7 +13,7 @@ import com.fr.general.ComparatorUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * Ò»¸ö²ã´ÎÁ¬Ğø½Úµã.
+ * ä¸€ä¸ªå±‚æ¬¡è¿ç»­èŠ‚ç‚¹.
  */
 public class ContinuousTreeSelectionModel extends DefaultTreeSelectionModel {
     public ContinuousTreeSelectionModel() {
@@ -28,7 +28,7 @@ public class ContinuousTreeSelectionModel extends DefaultTreeSelectionModel {
         Map indexTreePathMap = new HashMap();
 
         TreePath[] oldSelectedPaths = this.getSelectionPaths();
-        //peter:ĞèÒª¼ì²éÊÇ·ñÊÇÍ¬Ò»¸ö¸¸Ç×µÄº¢×Ó
+        //peter:éœ€è¦æ£€æŸ¥æ˜¯å¦æ˜¯åŒä¸€ä¸ªçˆ¶äº²çš„å­©å­
         if (oldSelectedPaths != null && oldSelectedPaths.length > 0) {
         	TreePath parentTreePath = oldSelectedPaths[0].getParentPath();
             DefaultMutableTreeNode parentTreeNode = (DefaultMutableTreeNode) parentTreePath.getLastPathComponent();
@@ -83,7 +83,7 @@ public class ContinuousTreeSelectionModel extends DefaultTreeSelectionModel {
     
     public List resolveNewTreePathList(int firstIndex, Map indexTreePathMap) {
     	List newTreePathList = new ArrayList();
-        //peter: ÏÈÏòÏÂÕÒ.
+        //peter: å…ˆå‘ä¸‹æ‰¾.
         for (int i = firstIndex - 1; i >= 0 && indexTreePathMap.size() > 0; i--) {
             Object obj = indexTreePathMap.get(new Integer(i));
             if (obj == null) {
@@ -94,7 +94,7 @@ public class ContinuousTreeSelectionModel extends DefaultTreeSelectionModel {
             indexTreePathMap.remove(new Integer(i));
         }
 
-        //peter: ÏÈÏòÏÂÕÒ.
+        //peter: å…ˆå‘ä¸‹æ‰¾.
         for (int i = firstIndex; i < Integer.MAX_VALUE && indexTreePathMap.size() > 0; i++) {
             Object obj = indexTreePathMap.get(new Integer(i));
             if (obj == null) {

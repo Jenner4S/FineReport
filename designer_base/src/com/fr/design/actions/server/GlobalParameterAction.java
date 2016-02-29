@@ -34,9 +34,9 @@ public class GlobalParameterAction extends UpdateAction {
     }
 
     /**
-     * ¶¯×÷
+     * åŠ¨ä½œ
      *
-     * @param e ÊÂ¼ş
+     * @param e äº‹ä»¶
      */
     public void actionPerformed(ActionEvent e) {
         final DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
@@ -44,7 +44,7 @@ public class GlobalParameterAction extends UpdateAction {
 
         final BasicDialog parameterManagerDialog = parameterManagerPane.showWindow(designerFrame);
 
-        //marks:¶ÁÈ¡·şÎñÆ÷ÅäÖÃĞÅÏ¢
+        //marks:è¯»å–æœåŠ¡å™¨é…ç½®ä¿¡æ¯
         final ConfigManagerProvider configManager = ConfigManager.getProviderInstance();
 
         parameterManagerPane.populate(configManager);
@@ -52,7 +52,7 @@ public class GlobalParameterAction extends UpdateAction {
             public void doOk() {
                 //apply new parameter list.
                 parameterManagerPane.update(configManager);
-                //marks:±£´æÊı¾İ
+                //marks:ä¿å­˜æ•°æ®
                 Env currentEnv = FRContext.getCurrentEnv();
                 try {
                     currentEnv.writeResource(configManager);

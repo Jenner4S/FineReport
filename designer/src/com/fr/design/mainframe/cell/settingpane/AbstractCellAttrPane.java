@@ -8,11 +8,11 @@ import com.fr.report.cell.TemplateCellElement;
 import com.fr.report.elementcase.TemplateElementCase;
 
 /**
- * µ¥Ôª¸ñÊôĞÔ±íµÄÃ¿¸ötab¶ÔÓ¦µÄpane£¬ÒÑ¾­ÊµÏÖÁË¹ö¶¯Ìõ¹¦ÄÜ£¬Èç¹ûÒ³Ãæ×°²»ÏÂ£¬»á×Ô¶¯³öÀ´
- * ¼¸µã£º×ÓÀà²»ĞèÒªĞ´¹¹Ôìº¯ÊıÁË£¬ËùÓĞµÄ×é¼ş¶¼·ÅÔÚcreateContentPane()·½·¨Éú³ÉµÄpaneÀïÃæ,Ëü²»ĞèÒª¿¼ÂÇborder¡£
+ * å•å…ƒæ ¼å±æ€§è¡¨çš„æ¯ä¸ªtabå¯¹åº”çš„paneï¼Œå·²ç»å®ç°äº†æ»šåŠ¨æ¡åŠŸèƒ½ï¼Œå¦‚æœé¡µé¢è£…ä¸ä¸‹ï¼Œä¼šè‡ªåŠ¨å‡ºæ¥
+ * å‡ ç‚¹ï¼šå­ç±»ä¸éœ€è¦å†™æ„é€ å‡½æ•°äº†ï¼Œæ‰€æœ‰çš„ç»„ä»¶éƒ½æ”¾åœ¨createContentPane()æ–¹æ³•ç”Ÿæˆçš„paneé‡Œé¢,å®ƒä¸éœ€è¦è€ƒè™‘borderã€‚
  *
  * @author zhou
- * @since 2012-5-11ÏÂÎç4:02:18
+ * @since 2012-5-11ä¸‹åˆ4:02:18
  */
 public abstract class AbstractCellAttrPane extends AbstractAttrPane {
 	protected TemplateCellElement cellElement;
@@ -35,13 +35,13 @@ public abstract class AbstractCellAttrPane extends AbstractAttrPane {
 		if (elementCasePane.getSelection() instanceof FloatSelection) {
 			return;
 		}
-		//august£ºÕâ±ß±ØĞë±£´æÒ»¸öCellSelectionµÄ¾µÏñ£¬ÒòÎªµ¥Ôª¸ñÊôĞÔµÄÄ³Ğ©²Ù×÷¿ÉÄÜÊ¹µÃCellSelection·¢Éú±ä»¯£¬ÄÇÃ´elementCasePane.getSelection()»ñÈ¡µÄ¾Í²»ÊÇ×¼È·µÄÁË
+		//augustï¼šè¿™è¾¹å¿…é¡»ä¿å­˜ä¸€ä¸ªCellSelectionçš„é•œåƒï¼Œå› ä¸ºå•å…ƒæ ¼å±æ€§çš„æŸäº›æ“ä½œå¯èƒ½ä½¿å¾—CellSelectionå‘ç”Ÿå˜åŒ–ï¼Œé‚£ä¹ˆelementCasePane.getSelection()è·å–çš„å°±ä¸æ˜¯å‡†ç¡®çš„äº†
 		cs = (CellSelection) elementCasePane.getSelection();
 		populateBean();
 	}
 
 	/**
-	 * ·Ö³ÉÁ½¸ö·½·¨µÄÒâÒåÔÚÓÚ£¬Õâ¸öÃæ°åÈç¹ûÊÇ¸ö¶Ô»°¿ò£¬ÄÇÃ´¿ÉÒÔ´«cellElement½øÀ´update£¬ ·½±ãÖØ¸´Ê¹ÓÃÃæ°å ÎªÁË¶Ô»°¿ò×ö×¼±¸
+	 * åˆ†æˆä¸¤ä¸ªæ–¹æ³•çš„æ„ä¹‰åœ¨äºï¼Œè¿™ä¸ªé¢æ¿å¦‚æœæ˜¯ä¸ªå¯¹è¯æ¡†ï¼Œé‚£ä¹ˆå¯ä»¥ä¼ cellElementè¿›æ¥updateï¼Œ æ–¹ä¾¿é‡å¤ä½¿ç”¨é¢æ¿ ä¸ºäº†å¯¹è¯æ¡†åšå‡†å¤‡
 	 */
 	public void updateBean() {
 		updateBean(this.cellElement);

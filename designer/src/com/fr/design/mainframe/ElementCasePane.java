@@ -144,8 +144,8 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     public static final int HORIZONTAL_OVER = 1;
     public static final int VERTICAL_OVER = 2;
 
-    // alex:¼È¿ÉÒÔÊÇÑ¡ÖĞÒ»Æ¬µ¥Ôª¸ñ,Ò²¿ÉÒÔÊÇÑ¡ÖĞÒ»¸öĞü¸¡ÔªËØ
-    //august:Ä¬ÈÏÊÇ¸ö²»´æÔÚµÄÑ¡Ôñ¡£·½±ã³õÊ¼»¯Ê±´¥·¢GridSelectionChangeListenerÊÂ¼ş
+    // alex:æ—¢å¯ä»¥æ˜¯é€‰ä¸­ä¸€ç‰‡å•å…ƒæ ¼,ä¹Ÿå¯ä»¥æ˜¯é€‰ä¸­ä¸€ä¸ªæ‚¬æµ®å…ƒç´ 
+    //august:é»˜è®¤æ˜¯ä¸ªä¸å­˜åœ¨çš„é€‰æ‹©ã€‚æ–¹ä¾¿åˆå§‹åŒ–æ—¶è§¦å‘GridSelectionChangeListeneräº‹ä»¶
     private Selection selection = new CellSelection(-1, -1, -1, -1);
 
     // alex:
@@ -195,8 +195,8 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
      */
     public ElementCasePane(T t) {
         super(t);
-        // marks:ÄÜ´¥·¢processEvent£¬²»¹ÜÊÇ·ñ¸øcomponentÔö¼Ólistener¡£ÕâÀïÊÇÊ¹ÔÚreportPaneÖĞµÄÈÎÒâÎ»ÖÃ»¬¶¯Êó±êÂÖ¶¼ÄÜ
-        // ÏÂÀ­grid¡£
+        // marks:èƒ½è§¦å‘processEventï¼Œä¸ç®¡æ˜¯å¦ç»™componentå¢åŠ listenerã€‚è¿™é‡Œæ˜¯ä½¿åœ¨reportPaneä¸­çš„ä»»æ„ä½ç½®æ»‘åŠ¨é¼ æ ‡è½®éƒ½èƒ½
+        // ä¸‹æ‹‰gridã€‚
         enableEvents(AWTEvent.MOUSE_WHEEL_EVENT_MASK);
         this.initComponents();
 
@@ -206,7 +206,7 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * È¡Ïû¸ñÊ½»¯
+     * å–æ¶ˆæ ¼å¼åŒ–
      */
     public void cancelFormat() {
         return;
@@ -238,10 +238,10 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
         // Init input/action map defaultly.
         initInputActionMap();
 
-        // ÉèÖÃ×îĞ¡µÄ³ß´ç,·½±ã ScrollPane.
+        // è®¾ç½®æœ€å°çš„å°ºå¯¸,æ–¹ä¾¿ ScrollPane.
         this.setMinimumSize(new Dimension(0, 0));
 
-        // alex:³õÊ¼»¯Editors
+        // alex:åˆå§‹åŒ–Editors
         initDefaultEditors();
         initFormatBrush();
     }
@@ -258,7 +258,7 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
         formatBrush.removeActionListener(formatBrushAction);
         formatBrush.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                //Èç¹ûÃ»ÓĞ¸ñÊ½Ë¢£¬µã»÷Ê±¾ÍÊÇÏëÊ¹ÓÃ¸ñÊ½Ë¢
+                //å¦‚æœæ²¡æœ‰æ ¼å¼åˆ·ï¼Œç‚¹å‡»æ—¶å°±æ˜¯æƒ³ä½¿ç”¨æ ¼å¼åˆ·
                 if (e.getClickCount() == 1) {
                     if (!formatBrush.isSelected()) {
                         DesignerContext.setFormatState(DesignerContext.FORMAT_STATE_ONCE);
@@ -289,10 +289,10 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * È¡Ïû¸ñÊ½Ë¢
+     * å–æ¶ˆæ ¼å¼åˆ·
      */
     public void cancelFormatBrush() {
-        //Èç¹ûÕıÔÚÊ¹ÓÃ¸ñÊ½Ë¢£¬µã»÷¾ÍÊÇÏëÍË³ö¸ñÊ½Ë¢
+        //å¦‚æœæ­£åœ¨ä½¿ç”¨æ ¼å¼åˆ·ï¼Œç‚¹å‡»å°±æ˜¯æƒ³é€€å‡ºæ ¼å¼åˆ·
         setFormatState(DesignerContext.FORMAT_STATE_NULL);
         formatBrush.setSelected(false);
         grid.setCursor(UIConstants.CELL_DEFAULT_CURSOR);
@@ -351,16 +351,16 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
 
     /**
-     * ËùÓĞµÄ²Ù×÷¶¼±ØĞëÔÚ¿É¼û·¶Î§ÄÚ£¬·ñÔò²»×öÈÎºÎ²Ù×÷
+     * æ‰€æœ‰çš„æ“ä½œéƒ½å¿…é¡»åœ¨å¯è§èŒƒå›´å†…ï¼Œå¦åˆ™ä¸åšä»»ä½•æ“ä½œ
      *
-     * @return true ±ØĞëÔÚ¿É¼û·¶Î§ÄÚ.
+     * @return true å¿…é¡»åœ¨å¯è§èŒƒå›´å†….
      */
     public boolean mustInVisibleRange() {
         return true;
     }
 
     /*
-     * ³õÊ¼»¯Ä¬ÈÏµÄEditor
+     * åˆå§‹åŒ–é»˜è®¤çš„Editor
      */
     private void initDefaultEditors() {
         Grid grid = this.getGrid();
@@ -386,7 +386,7 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ·µ»Øµ±Ç°ÕıÔÚ±à¼­µÄÄ£°åµ¥Ôª¸ñ×é¼ş
+     * è¿”å›å½“å‰æ­£åœ¨ç¼–è¾‘çš„æ¨¡æ¿å•å…ƒæ ¼ç»„ä»¶
      */
     public final TemplateElementCase getEditingElementCase() {
         return this.getTarget();
@@ -436,9 +436,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñÖ§³ÖÄ¬ÈÏ¼ÆËã¸¸¸ñ
+     * æ˜¯å¦æ”¯æŒé»˜è®¤è®¡ç®—çˆ¶æ ¼
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportDefaultParentCalculate() {
         return supportDefaultParentCalculate;
@@ -454,9 +454,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ×ª»»Ñ¡Ôñ
+     * è½¬æ¢é€‰æ‹©
      *
-     * @return ×ª»»
+     * @return è½¬æ¢
      */
     public ElementsTransferable transferSelection() {
         ElementsTransferable elementsTransferable = new ElementsTransferable();
@@ -475,8 +475,8 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
     @Override
     /**
-     *  ¼ÓÏÂÃæµÄÅĞ¶ÏÊÇÒòÎª¾ÛºÏ±¨±í>>Ìí¼Ó±¨±í¾ÛºÏ¿é>>Ñ¡ÖĞB1µ¥Ôª¸ñ>>ÔÙÑ¡ÖĞ¸Ã¾ÛºÏ¿é>>ÔÙÑ¡ÖĞB1µ¥Ôª¸ñ£¬·¢ÏÖÊôĞÔ±íÓÒÏÂ²à»¹ÊÇÏÖÊµµÄ¾ÛºÏ¿éµÄÊôĞÔ
-     *  ÒòÎªÕâ±ßÅĞ¶ÏselectionÊÇÒ»¸öselection£¬ËùÒÔ²»»á´¥·¢fireSelectionChanged
+     *  åŠ ä¸‹é¢çš„åˆ¤æ–­æ˜¯å› ä¸ºèšåˆæŠ¥è¡¨>>æ·»åŠ æŠ¥è¡¨èšåˆå—>>é€‰ä¸­B1å•å…ƒæ ¼>>å†é€‰ä¸­è¯¥èšåˆå—>>å†é€‰ä¸­B1å•å…ƒæ ¼ï¼Œå‘ç°å±æ€§è¡¨å³ä¸‹ä¾§è¿˜æ˜¯ç°å®çš„èšåˆå—çš„å±æ€§
+     *  å› ä¸ºè¿™è¾¹åˆ¤æ–­selectionæ˜¯ä¸€ä¸ªselectionï¼Œæ‰€ä»¥ä¸ä¼šè§¦å‘fireSelectionChanged
      */
     public void setSelection(Selection selection) {
         if (!ComparatorUtils.equals(this.selection, selection) ||
@@ -540,25 +540,25 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñÖ»Ñ¡ÖĞÁËÒ»¸öµ¥Ôª¸ñ
+     * æ˜¯å¦åªé€‰ä¸­äº†ä¸€ä¸ªå•å…ƒæ ¼
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSelectedOneCell() {
         return selection.isSelectedOneCell(this);
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         this.getGrid().stopEditing();
     }
 
     /**
-     * ¼ôÇĞ
+     * å‰ªåˆ‡
      *
-     * @return ³É¹¦·µ»Øtrue
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean cut() {
         this.copy();
@@ -567,35 +567,35 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     public void copy() {
         // p:Elements Transferable.
         ElementsTransferable elementsTransferable = this.transferSelection();
 
-        // peter:Õâ¸öµØ·½²úÉúStringĞòÁĞ,·½±ã´ÓFRµ±ÖĞcopyÊı¾İµ½Excelµ±ÖĞ.
+        // peter:è¿™ä¸ªåœ°æ–¹äº§ç”ŸStringåºåˆ—,æ–¹ä¾¿ä»FRå½“ä¸­copyæ•°æ®åˆ°Excelå½“ä¸­.
         Object firstObject = elementsTransferable.getFirstObject();
         if (firstObject instanceof CellElementsClip) {
             elementsTransferable.addObject(((CellElementsClip) firstObject).compateExcelPaste());
         }
 
-        // p:¼Óµ½ClipboardÀïÃæÈ¥.
+        // p:åŠ åˆ°Clipboardé‡Œé¢å».
         Clipboard clipboard = DesignerContext.getClipboard(this.getGrid());
 
         clipboard.setContents(elementsTransferable, elementsTransferable);
     }
 
     /**
-     * ğ¤Ìù
+     * é»è´´
      *
-     * @return ³É¹¦·µ»Ø true
+     * @return æˆåŠŸè¿”å› true
      */
     public boolean paste() {
         if (!this.isEditable()) {
             return false;
         }
         Object clipObject = getClipObject();
-        //Èç¹ûÊÇĞü¸¡ÔªËØ£¬Ôò²»ÔÊĞíÕ³Ìùµ½±íµ¥ 
+        //å¦‚æœæ˜¯æ‚¬æµ®å…ƒç´ ï¼Œåˆ™ä¸å…è®¸ç²˜è´´åˆ°è¡¨å• 
         if (!DesignerContext.getDesignerFrame().getSelectedJTemplate().accept(clipObject)) {
             return false;
         }
@@ -612,18 +612,18 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     private Object getClipObject() {
-        // ĞèÒª¼ì²éÊÇ·ñ¿ÉÒÔ±à¼­¡£
+        // éœ€è¦æ£€æŸ¥æ˜¯å¦å¯ä»¥ç¼–è¾‘ã€‚
         Clipboard clipboard = DesignerContext.getClipboard(this.getGrid());
         Transferable clipData = clipboard.getContents(this);
-        if (clipData == null) {// ¼ôÌù°åÀïÃæÃ»ÓĞÖµ,Ö±½Ó·µ»Ø.
+        if (clipData == null) {// å‰ªè´´æ¿é‡Œé¢æ²¡æœ‰å€¼,ç›´æ¥è¿”å›.
             return null;
         }
         Object clipObject;
         try {
             clipObject = ElementsTransferable.getElementNotStringTransderData(clipData);
         } catch (Exception exp) {
-            // p:Èç¹ûÊÇÆäËû²»Ö§³ÖµÄ¶ÔÏó£¬»áÅ×³öExceptionµÄ,ËùÒÔ±ä³ÉString¡£
-            // ËùÒÔÕâÀï²»´òÓ¡³öException.
+            // p:å¦‚æœæ˜¯å…¶ä»–ä¸æ”¯æŒçš„å¯¹è±¡ï¼Œä¼šæŠ›å‡ºExceptionçš„,æ‰€ä»¥å˜æˆStringã€‚
+            // æ‰€ä»¥è¿™é‡Œä¸æ‰“å°å‡ºException.
             try {
                 clipObject = clipData.getTransferData(DataFlavor.stringFlavor);
             } catch (Exception e) {
@@ -636,11 +636,11 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * È·ÈÏĞĞÁĞÊÇ·ñ¿É¼û
+     * ç¡®è®¤è¡Œåˆ—æ˜¯å¦å¯è§
      *
-     * @param column ÁĞĞòºÅ
-     * @param row    ĞĞĞòºÅ
-     * @return ÀàĞÍ
+     * @param column åˆ—åºå·
+     * @param row    è¡Œåºå·
+     * @return ç±»å‹
      */
     public int ensureColumnRowVisible(int column, int row) {
         Grid grid = this.getGrid();
@@ -649,12 +649,12 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
         int horizontalEndValue = grid.getHorizontalValue() + grid.getHorizontalExtent() + 1;
 
         int overtype = NO_OVER;
-        // ÁĞ.
+        // åˆ—.
         if (grid.getHorizontalValue() > column) {
             this.getHorizontalScrollBar().setValue(column);
         } else if (horizontalEndValue < (column + 1)) {
             if (this instanceof PolyElementCasePane) {
-                //Èç¹ûÊÇ¾ÛºÏ¿éÖĞµÄGird,Ñ¡ÔÚ±ß½çµÄÊ±ºò£¬»á±¨±í»á×Ô¶¯ÏòÓÒÒÆ
+                //å¦‚æœæ˜¯èšåˆå—ä¸­çš„Gird,é€‰åœ¨è¾¹ç•Œçš„æ—¶å€™ï¼Œä¼šæŠ¥è¡¨ä¼šè‡ªåŠ¨å‘å³ç§»
                 overtype += HORIZONTAL_OVER;
             } else {
                 this.getHorizontalScrollBar().setValue(column - grid.getHorizontalExtent() + 1);
@@ -662,12 +662,12 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
         }
 
-        // ĞĞ.
+        // è¡Œ.
         if (grid.getVerticalValue() > row) {
             this.getVerticalScrollBar().setValue(row);
-        } else if (verticalEndValue <= (row + 1)) {// p: +1ÊÇ±£Ö¤×îºóÒ»ĞĞ£¬²»ÄÜÏÔÊ¾°ëĞĞ.
+        } else if (verticalEndValue <= (row + 1)) {// p: +1æ˜¯ä¿è¯æœ€åä¸€è¡Œï¼Œä¸èƒ½æ˜¾ç¤ºåŠè¡Œ.
             if (this instanceof PolyElementCasePane) {
-                //Èç¹ûÊÇ¾ÛºÏ¿éÖĞµÄGird,Ñ¡ÔÚ±ß½çµÄÊ±ºò£¬»á±¨±í»á×Ô¶¯ÏòÏÂÒÆ
+                //å¦‚æœæ˜¯èšåˆå—ä¸­çš„Gird,é€‰åœ¨è¾¹ç•Œçš„æ—¶å€™ï¼Œä¼šæŠ¥è¡¨ä¼šè‡ªåŠ¨å‘ä¸‹ç§»
                 overtype += VERTICAL_OVER;
             } else {
                 this.getVerticalScrollBar().setValue(row - grid.getVerticalExtent() + 1);
@@ -678,9 +678,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Çå¿ÕËùÓĞ.
+     * æ¸…ç©ºæ‰€æœ‰.
      *
-     * @return ·µ»ØÊÇ·ñÇå³ıÈ«²¿.
+     * @return è¿”å›æ˜¯å¦æ¸…é™¤å…¨éƒ¨.
      */
     public boolean clearAll() {
         boolean b = this.selection.clear(Clear.ALL, this);
@@ -689,9 +689,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Çå³ı¸ñÊ½.
+     * æ¸…é™¤æ ¼å¼.
      *
-     * @return ·µ»ØÊÇ·ñÇå³ı¸ñÊ½.
+     * @return è¿”å›æ˜¯å¦æ¸…é™¤æ ¼å¼.
      */
     public boolean clearFormats() {
         boolean b = this.selection.clear(Clear.FORMATS, this);
@@ -700,9 +700,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Çå³ıÄÚÈİ
+     * æ¸…é™¤å†…å®¹
      *
-     * @return ·µ»ØÊÇ·ñÇå³ıÄÚÈİ.
+     * @return è¿”å›æ˜¯å¦æ¸…é™¤å†…å®¹.
      */
     public boolean clearContents() {
         if (BaseUtils.isAuthorityEditing()) {
@@ -714,9 +714,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Çå³ı¿Ø¼ş
+     * æ¸…é™¤æ§ä»¶
      *
-     * @return ·µ»ØÊÇ·ñÇå³ı¿Ø¼ş.
+     * @return è¿”å›æ˜¯å¦æ¸…é™¤æ§ä»¶.
      */
     public boolean clearWidget() {
         boolean b = this.selection.clear(Clear.WIDGETS, this);
@@ -725,18 +725,18 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñÄÜºÏ²¢µ¥Ôª¸ñ
+     * æ˜¯å¦èƒ½åˆå¹¶å•å…ƒæ ¼
      *
-     * @return ·µ»ØÊÇ·ñÄÜºÏ²¢µ¥Ôª¸ñ.
+     * @return è¿”å›æ˜¯å¦èƒ½åˆå¹¶å•å…ƒæ ¼.
      */
     public boolean canMergeCell() {
         return this.selection.canMergeCells(this);
     }
 
     /**
-     * ºÏ²¢µ¥Ôª¸ñ
+     * åˆå¹¶å•å…ƒæ ¼
      *
-     * @return ³É¹¦·µ»Øtrue
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean mergeCell() {
         boolean b = this.selection.mergeCells(this);
@@ -745,18 +745,18 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñ³·ÏúºÏ²¢µ¥Ôª¸ñ
+     * æ˜¯å¦æ’¤é”€åˆå¹¶å•å…ƒæ ¼
      *
-     * @return ·µ»ØÊÇ·ñ³·ÏúºÏ²¢µ¥Ôª¸ñ.
+     * @return è¿”å›æ˜¯å¦æ’¤é”€åˆå¹¶å•å…ƒæ ¼.
      */
     public boolean canUnMergeCell() {
         return this.selection.canUnMergeCells(this);
     }
 
     /**
-     * ³·ÏúºÏ²¢µ¥Ôª¸ñ
+     * æ’¤é”€åˆå¹¶å•å…ƒæ ¼
      *
-     * @return ³É¹¦·µ»Øtrue
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean unMergeCell() {
         boolean b = this.selection.unMergeCells(this);
@@ -773,9 +773,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Ìí¼ÓÑ¡ÖĞµÄSelectionListener
+     * æ·»åŠ é€‰ä¸­çš„SelectionListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void addSelectionChangeListener(SelectionListener selectionListener) {
         this.listenerList.add(SelectionListener.class, selectionListener);
@@ -783,16 +783,16 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
 
     /**
-     * É¾³ıÑ¡ÖĞµÄChangeListener
+     * åˆ é™¤é€‰ä¸­çš„ChangeListener
      *
-     * @param selectionListener Ñ¡ÖĞµÄlistener
+     * @param selectionListener é€‰ä¸­çš„listener
      */
     public void removeSelectionChangeListener(SelectionListener selectionListener) {
         this.listenerList.remove(SelectionListener.class, selectionListener);
     }
 
     /**
-     * ÏìÓ¦Ñ¡ÖĞµÄChangeListener
+     * å“åº”é€‰ä¸­çš„ChangeListener
      */
     public void fireSelectionChangeListener() {
         // Guaranteed to return a non-null array
@@ -808,13 +808,13 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÏìÓ¦Ä¿±ê±ä¶¯.
+     * å“åº”ç›®æ ‡å˜åŠ¨.
      */
     public void fireTargetModified() {
-        // marks:×Ô¶¯¼ÆËã
+        // marks:è‡ªåŠ¨è®¡ç®—
         TemplateElementCase report = this.getEditingElementCase();
 
-        // ¼ÆËã¸¸¸ñ
+        // è®¡ç®—çˆ¶æ ¼
         if (this.isSupportDefaultParentCalculate()) {
             SheetUtils.calculateDefaultParent(report);
             setSupportDefaultParentCalculate(false);
@@ -876,9 +876,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñÁĞ±íÍ·¿É¼û
+     * æ˜¯å¦åˆ—è¡¨å¤´å¯è§
      *
-     * @return boolean ÊÇ·ñÁĞ±íÍ·¿É¼û.
+     * @return boolean æ˜¯å¦åˆ—è¡¨å¤´å¯è§.
      */
     public boolean isColumnHeaderVisible() {
         return this.columnHeaderVisible;
@@ -896,9 +896,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñĞĞ±íÍ·¿É¼û.
+     * æ˜¯å¦è¡Œè¡¨å¤´å¯è§.
      *
-     * @return boolean ÊÇ·ñĞĞ±íÍ·¿É¼û.
+     * @return boolean æ˜¯å¦è¡Œè¡¨å¤´å¯è§.
      */
     public boolean isRowHeaderVisible() {
         return this.rowHeaderVisible;
@@ -916,9 +916,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñ´¹Ö±¹ö¶¯Ìõ¿É¼û
+     * æ˜¯å¦å‚ç›´æ»šåŠ¨æ¡å¯è§
      *
-     * @return boolean ÊÇ·ñ´¹Ö±¹ö¶¯Ìõ¿É¼û.
+     * @return boolean æ˜¯å¦å‚ç›´æ»šåŠ¨æ¡å¯è§.
      */
     public boolean isVerticalScrollBarVisible() {
         return verticalScrollBarVisible;
@@ -935,9 +935,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ÊÇ·ñË®Æ½¹ö¶¯Ìõ¿É¼û.
+     * æ˜¯å¦æ°´å¹³æ»šåŠ¨æ¡å¯è§.
      *
-     * @return boolean  ÊÇ·ñË®Æ½¹ö¶¯Ìõ¿É¼û.
+     * @return boolean  æ˜¯å¦æ°´å¹³æ»šåŠ¨æ¡å¯è§.
      */
     public boolean isHorizontalScrollBarVisible() {
         return horizontalScrollBarVisible;
@@ -956,9 +956,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     // //////////////////////////////Max Row and Column.
 
     /**
-     * ÊÇ·ñ¿É±à¼­.
+     * æ˜¯å¦å¯ç¼–è¾‘.
      *
-     * @return boolean  ÊÇ·ñ¿É±à¼­.
+     * @return boolean  æ˜¯å¦å¯ç¼–è¾‘.
      */
     public boolean isEditable() {
         return this.grid.isEditable();
@@ -967,7 +967,7 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     /**
      * Sets whether to editable.
      *
-     * @param editable ÊÇ·ñ¿É±à¼­.
+     * @param editable æ˜¯å¦å¯ç¼–è¾‘.
      */
     public void setEditable(boolean editable) {
         this.grid.setEditable(editable);
@@ -975,20 +975,20 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
 
     /**
-     * µ¯³öÁĞ±í.
+     * å¼¹å‡ºåˆ—è¡¨.
      *
-     * @return µ¯³öÁĞ±í.
+     * @return å¼¹å‡ºåˆ—è¡¨.
      */
     public JPopupMenu createPopupMenu() {
         return this.selection.createPopupMenu(this);
     }
 
     /**
-     * µ¯³öÁĞ±í
+     * å¼¹å‡ºåˆ—è¡¨
      *
-     * @param evt          Êó±êµÄÏìÓ¦ÊÂ¼ş.
-     * @param selectedRows Ñ¡ÖĞµÄĞĞ..
-     * @return UIPopupMenu ·µ»ØĞĞµÄÁĞ±í
+     * @param evt          é¼ æ ‡çš„å“åº”äº‹ä»¶.
+     * @param selectedRows é€‰ä¸­çš„è¡Œ..
+     * @return UIPopupMenu è¿”å›è¡Œçš„åˆ—è¡¨
      */
     public UIPopupMenu createRowPopupMenu(MouseEvent evt, int selectedRows) {
         UIPopupMenu popupMenu = new UIPopupMenu();
@@ -1076,11 +1076,11 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * µ¯³öÁĞ±í.
+     * å¼¹å‡ºåˆ—è¡¨.
      *
-     * @param evt            Êó±êÊÂ¼ş
-     * @param selectedColumn Ñ¡ÖĞµÄÁĞ.
-     * @return µ¯³öµÄÁĞ±í.
+     * @param evt            é¼ æ ‡äº‹ä»¶
+     * @param selectedColumn é€‰ä¸­çš„åˆ—.
+     * @return å¼¹å‡ºçš„åˆ—è¡¨.
      */
     public UIPopupMenu createColumnPopupMenu(MouseEvent evt, int selectedColumn) {
         UIPopupMenu popupMenu = new UIPopupMenu();
@@ -1154,7 +1154,7 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     protected abstract boolean supportRepeatedHeaderFooter();
 
     /**
-     * ÇëÇó½¹µã
+     * è¯·æ±‚ç„¦ç‚¹
      */
     public void requestFocus() {
         super.requestFocus();
@@ -1170,18 +1170,18 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Ä£°åmenu
+     * æ¨¡æ¿menu
      *
-     * @return ·µ»Øµ¯³öÁĞ±íÊı×é.
+     * @return è¿”å›å¼¹å‡ºåˆ—è¡¨æ•°ç»„.
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return new ShortCut[0];
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶È×´Ì¬ÏÂµÄ²Ëµ¥
+     * æƒé™ç»†ç²’åº¦çŠ¶æ€ä¸‹çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[]{
@@ -1192,18 +1192,18 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * Ä¿±êµÄÏÂÁĞÁĞ±í
+     * ç›®æ ‡çš„ä¸‹åˆ—åˆ—è¡¨
      *
-     * @return ·µ»ØMenuDefÊı×é.
+     * @return è¿”å›MenuDefæ•°ç»„.
      */
     public MenuDef[] menus4Target() {
         return new MenuDef[0];
     }
 
     /**
-     * kunsnat: ¹¤¾ßÀ¸ ¿ì½İ¼ü²Ëµ¥°´Å¥. ×îºóÎ»ÖÃÎª "²åÈëĞü¸¡ÔªËØ"  ÎÄ±¾, ¹«Ê½, Í¼±í, Í¼Æ¬.
+     * kunsnat: å·¥å…·æ  å¿«æ·é”®èœå•æŒ‰é’®. æœ€åä½ç½®ä¸º "æ’å…¥æ‚¬æµ®å…ƒç´ "  æ–‡æœ¬, å…¬å¼, å›¾è¡¨, å›¾ç‰‡.
      *
-     * @return ·µ»Ø¹¤¾ßÀ¸Êı×é.
+     * @return è¿”å›å·¥å…·æ æ•°ç»„.
      */
     public ToolBarDef[] toolbars4Target() {
         return new ToolBarDef[]{
@@ -1215,9 +1215,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ±íµ¥ÏÂµÄ¹¤¾ß°´Å¥
+     * è¡¨å•ä¸‹çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         formatBrush.setSelected(DesignerContext.getFormatState() != DesignerContext.FORMAT_STATE_NULL);
@@ -1275,9 +1275,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
 
 
     /**
-     * ´´½¨È¨ÏŞÏ¬Àû¶Î±à¼­Ãæ°å
+     * åˆ›å»ºæƒé™çŠ€åˆ©æ®µç¼–è¾‘é¢æ¿
      *
-     * @return Ãæ°å
+     * @return é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         return new ElementCasePaneAuthorityEditPane(this);
@@ -1288,9 +1288,9 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
     }
 
     /**
-     * ´´½¨ÕıÔÚ±à¼­µÄ×´Ì¬.
+     * åˆ›å»ºæ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      *
-     * @return ·µ»ØÕıÔÚ±à¼­µÄ×´Ì¬.
+     * @return è¿”å›æ­£åœ¨ç¼–è¾‘çš„çŠ¶æ€.
      */
     public EditingState createEditingState() {
         return new ElementCaseEditingState(this.selection, this.verScrollBar.getValue(), this.horScrollBar.getValue());
@@ -1332,15 +1332,15 @@ public abstract class ElementCasePane<T extends TemplateElementCase> extends Tar
             ElementCasePane.this.getVerticalScrollBar().setValue(this.verticalValue);
             ElementCasePane.this.getHorizontalScrollBar().setValue(this.horizontalValue);
 
-            // ÖØ»æ.
+            // é‡ç»˜.
             ElementCasePane.this.repaint();
         }
     }
 
     /**
-     * Ôö¼ÓĞü¸¡ÔªËØÔÚÃæ°åÖĞ
+     * å¢åŠ æ‚¬æµ®å…ƒç´ åœ¨é¢æ¿ä¸­
      *
-     * @param floatElement ÔªËØ
+     * @param floatElement å…ƒç´ 
      */
     public void addFloatElementToCenterOfElementPane(FloatElement floatElement) {
         ElementCase report = this.getEditingElementCase();

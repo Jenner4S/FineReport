@@ -33,8 +33,8 @@ import com.fr.general.Inter;
 public class XWTabFitLayout extends XWFitLayout {
 	
 	private static final int MIN_SIZE = 1;
-	// tab²¼¾ÖÔÚÍÏ×§µ¼ÖÂµÄËõ·ÅÀï£¨º¬¼ä¸ôÊ±£©£¬Èç¹ûÍÏ×§¿í¸ß´óÓÚ×é¼ş¿í¸ß£¬»áµ¼ÖÂµ÷ÕûµÄÊ±ºòÕÒ²»µ½Ô­À´µÄ×é¼ş
-	// ÕâÀïÏÈ½«ÍÏ×§Ö®Ç°µÄ¿í¸ßÏÈ×ö±¸·İ
+	// tabå¸ƒå±€åœ¨æ‹–æ‹½å¯¼è‡´çš„ç¼©æ”¾é‡Œï¼ˆå«é—´éš”æ—¶ï¼‰ï¼Œå¦‚æœæ‹–æ‹½å®½é«˜å¤§äºç»„ä»¶å®½é«˜ï¼Œä¼šå¯¼è‡´è°ƒæ•´çš„æ—¶å€™æ‰¾ä¸åˆ°åŸæ¥çš„ç»„ä»¶
+	// è¿™é‡Œå…ˆå°†æ‹–æ‹½ä¹‹å‰çš„å®½é«˜å…ˆåšå¤‡ä»½
 	private Dimension referDim;
 	
 
@@ -55,8 +55,8 @@ public class XWTabFitLayout extends XWFitLayout {
 	}
 	
 	/**
-	*  µÃµ½ÊôĞÔÃû
-	 * @return ÊôĞÔÃû
+	*  å¾—åˆ°å±æ€§å
+	 * @return å±æ€§å
 	* @throws IntrospectionException
 	*/
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -75,33 +75,33 @@ public class XWTabFitLayout extends XWFitLayout {
 	}
 	
 	/**
-	 * tab²¼¾ÖÀïÉ¾³ıXWTabFitLayout¶ÔÓ¦µÄtab°´Å¥
+	 * tabå¸ƒå±€é‡Œåˆ é™¤XWTabFitLayoutå¯¹åº”çš„tabæŒ‰é’®
 	 * 
-	 * @param creator µ±Ç°×é¼ş
-	 * @param designer ±íµ¥Éè¼ÆÆ÷
+	 * @param creator å½“å‰ç»„ä»¶
+	 * @param designer è¡¨å•è®¾è®¡å™¨
 	 * 
 	 */
 	public void deleteRelatedComponent(XCreator creator,FormDesigner designer){
-		//Öğ²ã»ØËİÕÒ³öÏà¹ØµÄlayoutºÍ¶ÔÓ¦µÄtab°´Å¥
+		//é€å±‚å›æº¯æ‰¾å‡ºç›¸å…³çš„layoutå’Œå¯¹åº”çš„tabæŒ‰é’®
     	XWTabFitLayout fitLayout = (XWTabFitLayout)creator;
     	WTabFitLayout fit = (WTabFitLayout) fitLayout.toData();
-    	//¹ØÁªtabfitLayoutºÍtab°´Å¥µÄindex
+    	//å…³è”tabfitLayoutå’ŒtabæŒ‰é’®çš„index
     	int index = fit.getIndex();
-    	//·ÅÖÃtabFitLayoutµÄcardLayout
+    	//æ”¾ç½®tabFitLayoutçš„cardLayout
     	XWCardLayout cardLayout = (XWCardLayout) fitLayout.getBackupParent();
     	XWCardMainBorderLayout mainLayout = (XWCardMainBorderLayout) cardLayout.getBackupParent();
     	XWCardTitleLayout titleLayout = mainLayout.getTitlePart();
-    	//·ÅÖÃtab°´Å¥µÄtagLayout
+    	//æ”¾ç½®tabæŒ‰é’®çš„tagLayout
     	XWCardTagLayout tagLayout = titleLayout.getTagPart();
     	WCardTagLayout tag = (WCardTagLayout) tagLayout.toData();
     	
-    	//É¾³ıÕû¸ötab²¼¾Ö
+    	//åˆ é™¤æ•´ä¸ªtabå¸ƒå±€
     	if(tag.getWidgetCount() <= MIN_SIZE){
     		deleteTabLayout(mainLayout,designer);
     		return;
     	}
     	
-    	//ÏÈÉ¾³ı¶ÔÓ¦µÄtab°´Å¥
+    	//å…ˆåˆ é™¤å¯¹åº”çš„tabæŒ‰é’®
     	for(int i=0;i<tagLayout.getComponentCount();i++){
     		CardSwitchButton button = tag.getSwitchButton(i);
     		if(button.getIndex()==index){
@@ -109,7 +109,7 @@ public class XWTabFitLayout extends XWFitLayout {
     			break;
     		}
     	}
-    	//Ë¢ĞÂtab°´Å¥ºÍtabFitLayoutµÄindex
+    	//åˆ·æ–°tabæŒ‰é’®å’ŒtabFitLayoutçš„index
     	refreshIndex(tag,cardLayout,index);
     	
     	LayoutUtils.layoutRootContainer(designer.getRootComponent());
@@ -144,8 +144,8 @@ public class XWTabFitLayout extends XWFitLayout {
 	}
 	
 	/**
-	 * tab²¼¾ÖÀïÇĞ»»µ½ÏàÓ¦µÄtab°´Å¥
-	 * @param comp µ±Ç°×é¼ş
+	 * tabå¸ƒå±€é‡Œåˆ‡æ¢åˆ°ç›¸åº”çš„tabæŒ‰é’®
+	 * @param comp å½“å‰ç»„ä»¶
 	 * void
 	 */
     public void seleteRelatedComponent(XCreator comp){
@@ -165,12 +165,12 @@ public class XWTabFitLayout extends XWFitLayout {
     
     
     /**
-	 * Ñ°ÕÒ×î½üµÄÎª×ÔÊÊÓ¦²¼¾ÖµÄ¸¸ÈİÆ÷
+	 * å¯»æ‰¾æœ€è¿‘çš„ä¸ºè‡ªé€‚åº”å¸ƒå±€çš„çˆ¶å®¹å™¨
 	 * 
-	 * @return ²¼¾ÖÈİÆ÷
+	 * @return å¸ƒå±€å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç3:15:28
+	 * @date 2014-12-30-ä¸‹åˆ3:15:28
 	 * 
 	 */
     public XLayoutContainer findNearestFit(){
@@ -179,16 +179,16 @@ public class XWTabFitLayout extends XWFitLayout {
     } 
     
 	/**
-	 * ·Ç¶¥²ã×ÔÊÊÓ¦²¼¾ÖµÄËõ·Å
-	 * @param percent °Ù·Ö±È
+	 * éé¡¶å±‚è‡ªé€‚åº”å¸ƒå±€çš„ç¼©æ”¾
+	 * @param percent ç™¾åˆ†æ¯”
 	 */
 	public void adjustCompSize(double percent) {
 		this.adjustCreatorsWhileSlide(percent);
 	}
 	
 	/**
-	 * ¸Ã²¼¾ÖĞèÒªÒş²Ø£¬ÎŞĞè¶Ô±ß¿ò½øĞĞ²Ù×÷
-	 * @param ±ß¿ò
+	 * è¯¥å¸ƒå±€éœ€è¦éšè—ï¼Œæ— éœ€å¯¹è¾¹æ¡†è¿›è¡Œæ“ä½œ
+	 * @param è¾¹æ¡†
 	 * 
 	 */
     public void setBorder(Border border) {
@@ -196,13 +196,13 @@ public class XWTabFitLayout extends XWFitLayout {
     }
     
 	/**
-	 * °´ÕÕ°Ù·Ö±ÈËõ·ÅÄÚ²¿×é¼ş¿í¶È
+	 * æŒ‰ç…§ç™¾åˆ†æ¯”ç¼©æ”¾å†…éƒ¨ç»„ä»¶å®½åº¦
 	 * 
-	 * @param percent ¿í¶È±ä»¯µÄ°Ù·Ö±È
+	 * @param percent å®½åº¦å˜åŒ–çš„ç™¾åˆ†æ¯”
 	 */
 	public void adjustCreatorsWidth(double percent) {
 		if (this.getComponentCount()==0) {
-			// ³õÊ¼»¯Ã»ÓĞÍÏÈë¿Ø¼şÊ±£¬Êµ¼Ê¿í¶ÈÒÀÈ»µ÷Õû
+			// åˆå§‹åŒ–æ²¡æœ‰æ‹–å…¥æ§ä»¶æ—¶ï¼Œå®é™…å®½åº¦ä¾ç„¶è°ƒæ•´
 			this.toData().setContainerWidth(this.getWidth());
 			return;
 		}
@@ -218,7 +218,7 @@ public class XWTabFitLayout extends XWFitLayout {
 			modifyEdgemostCreator(true);
 		}
 		addCompInterval(getAcualInterval());
-		// ±¾´ÎËõ·Å½áÊø£¬²ÎÕÕ¿í¸ßÇåµô
+		// æœ¬æ¬¡ç¼©æ”¾ç»“æŸï¼Œå‚ç…§å®½é«˜æ¸…æ‰
 		this.setReferDim(null);
 		updateCompsWidget();
 		this.toData().setContainerWidth(this.getWidth());
@@ -228,13 +228,13 @@ public class XWTabFitLayout extends XWFitLayout {
 	
 	
 	/**
-	 * ²¼¾ÖÈİÆ÷¸ß¶ÈÊÖ¶¯ĞŞ¸ÄÊ±£¬
-	 * Í¬Ê±µ÷ÕûÈİÆ÷ÄÚµÄ×é¼şÃÇ,ËõĞ¡Ê±ĞèÒª¿¼ÂÇÓĞµÄ×é¼ş¸ß¶È²»Âú×ãËõĞ¡¸ß¶È
-	 * @param percent ¸ß¶È±ä»¯µÄ°Ù·Ö±È
+	 * å¸ƒå±€å®¹å™¨é«˜åº¦æ‰‹åŠ¨ä¿®æ”¹æ—¶ï¼Œ
+	 * åŒæ—¶è°ƒæ•´å®¹å™¨å†…çš„ç»„ä»¶ä»¬,ç¼©å°æ—¶éœ€è¦è€ƒè™‘æœ‰çš„ç»„ä»¶é«˜åº¦ä¸æ»¡è¶³ç¼©å°é«˜åº¦
+	 * @param percent é«˜åº¦å˜åŒ–çš„ç™¾åˆ†æ¯”
 	 */
 	public void adjustCreatorsHeight(double percent) {
 		if (this.getComponentCount()==0) {
-			//µ÷Õû¸ß¶Èºó£¬wlayoutÄÇ±ß¼ÇÂ¼ÏÂ
+			//è°ƒæ•´é«˜åº¦åï¼Œwlayouté‚£è¾¹è®°å½•ä¸‹
 			this.toData().setContainerHeight(this.getHeight());
 			return;
 		}
@@ -261,7 +261,7 @@ public class XWTabFitLayout extends XWFitLayout {
 		return cardLayout.getBackupParent();
 	}
 	
-	// ¸üĞÂÄÚ²¿×é¼şµÄwidget
+	// æ›´æ–°å†…éƒ¨ç»„ä»¶çš„widget
 	private void updateCompsWidget(){
 		for(int m=0;m<this.getComponentCount();m++){
 			XCreator childCreator = this.getXCreator(m);
@@ -272,8 +272,8 @@ public class XWTabFitLayout extends XWFitLayout {
 	}
 	
     /**
-     * È¥³ıÔ­ÓĞµÄ¼ä¸ô
-     * @param gap ¼ä¸ô
+     * å»é™¤åŸæœ‰çš„é—´éš”
+     * @param gap é—´éš”
      */
     public void moveCompInterval(int gap) {
     	if (gap == 0) {
@@ -281,7 +281,7 @@ public class XWTabFitLayout extends XWFitLayout {
     	}
     	int val = gap/2;
     	
-    	// ±È½Ï×é¼ş´óĞ¡ºÍtab²¼¾ÖµÄ´óĞ¡µÄ²ÎÕÕ¿í¸ß
+    	// æ¯”è¾ƒç»„ä»¶å¤§å°å’Œtabå¸ƒå±€çš„å¤§å°çš„å‚ç…§å®½é«˜
     	double referWidth = getReferWidth();
     	double referHeight = getReferHeight();
     	
@@ -327,10 +327,10 @@ public class XWTabFitLayout extends XWFitLayout {
     
     
     /**
-     * ¼ä¸ô´óÓÚ0Ê±£¬½çÃæ´¦¼ÓÉÏ¼ä¸ô
-     * ½çÃæµÄ¼ä¸ôÊÇÕë¶ÔÏÔÊ¾£¬Êµ¼Ê±£´æµÄ´óĞ¡²»ÊÜ¼ä¸ôÓ°Ïì
-     * ps:¸Ä±ä²¼¾Ö´óĞ¡»òÕßÍÏÈë¡¢É¾³ı¡¢À­Éì¶¼ÒªÖØĞÂ¿¼ÂÇ¼ä¸ô
-     * @param gap ¼ä¸ô
+     * é—´éš”å¤§äº0æ—¶ï¼Œç•Œé¢å¤„åŠ ä¸Šé—´éš”
+     * ç•Œé¢çš„é—´éš”æ˜¯é’ˆå¯¹æ˜¾ç¤ºï¼Œå®é™…ä¿å­˜çš„å¤§å°ä¸å—é—´éš”å½±å“
+     * ps:æ”¹å˜å¸ƒå±€å¤§å°æˆ–è€…æ‹–å…¥ã€åˆ é™¤ã€æ‹‰ä¼¸éƒ½è¦é‡æ–°è€ƒè™‘é—´éš”
+     * @param gap é—´éš”
      */
     public void addCompInterval(int gap) {
     	if (gap == 0) {

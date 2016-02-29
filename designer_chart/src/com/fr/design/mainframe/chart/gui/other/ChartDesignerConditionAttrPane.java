@@ -9,7 +9,7 @@ package com.fr.design.mainframe.chart.gui.other;
  * Author : DAISY
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç2:17
+ * Time: ä¸‹åˆ2:17
  */
 public class ChartDesignerConditionAttrPane extends ChartConditionAttrPane {
 }

@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: …œŒÁ10:18
+ * Time: ‰∏äÂçà10:18
  */
 public class PNGExportAction4Chart extends AbstractExportAction4JChart {
 

@@ -13,9 +13,9 @@ public class FILEFactory {
     }
 
     /*
-     * 根据path生成FILE
+     * 鏍规嵁path鐢熸垚FILE
      * path might start with env://, file:// or mem://
-     * 也有可能就是一个普通的路径d:/foo/bar
+     * 涔熸湁鍙兘灏辨槸涓�涓櫘閫氱殑璺緞d:/foo/bar
      */
     public static FILE createFILE(String path) {
         String envPath = FRContext.getCurrentEnv().getPath().replaceAll("/", "\\\\");

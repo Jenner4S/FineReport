@@ -26,7 +26,7 @@ public class BiasCellAction extends AbstractCellAction {
     public static final MenuKeySet INSERT_SLOPE_LINE = new MenuKeySet() {
         @Override
         public char getMnemonic() {
-        	//Ö®Ç°ÊÇS, ¸ú×Ó±¨±ísubreportÖØ¸´ÁË
+        	//ä¹‹å‰æ˜¯S, è·Ÿå­æŠ¥è¡¨subreporté‡å¤äº†
             return 'X';
         }
 

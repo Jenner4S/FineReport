@@ -19,8 +19,8 @@ import java.util.List;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-12-28 ÏÂÎç02:51:10
- * ÀàËµÃ÷: Í¼±í³¬Á´ -- ¹ØÁªµ¥Ôª¸ñÍ¼±í.
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-12-28 ä¸‹åˆ02:51:10
+ * ç±»è¯´æ˜: å›¾è¡¨è¶…é“¾ -- å…³è”å•å…ƒæ ¼å›¾è¡¨.
  */
 public class ChartHyperRelateCellLinkPane extends BasicBeanPane<ChartHyperRelateCellLink>{
 	private static final long serialVersionUID = 7874948047886548990L;
@@ -59,8 +59,8 @@ public class ChartHyperRelateCellLinkPane extends BasicBeanPane<ChartHyperRelate
 	}
 
     /**
-     * ÊÇ·ñĞèÒª¼ÓÔØÖØÃüÃûµÄ¿Õ¼ä
-     * @return Ä¬ÈÏĞèÒª¼ÓÔØ
+     * æ˜¯å¦éœ€è¦åŠ è½½é‡å‘½åçš„ç©ºé—´
+     * @return é»˜è®¤éœ€è¦åŠ è½½
      */
     protected boolean needRenamePane(){
         return true;
@@ -99,7 +99,7 @@ public class ChartHyperRelateCellLinkPane extends BasicBeanPane<ChartHyperRelate
 	}
 	
 	/**
-	 * ÊôĞÔ±í ¶ÔÓ¦update
+	 * å±æ€§è¡¨ å¯¹åº”update
 	 */
 	public void updateBean(ChartHyperRelateCellLink chartLink) {
 		chartLink.setRelateCCName(Utils.objectToString(colRowPane.update()));

@@ -27,8 +27,8 @@ public class WidgetManagerAction extends UpdateAction {
     }
 
     /**
-     * ¶¯×÷
-     * @param e ÊÂ¼ş
+     * åŠ¨ä½œ
+     * @param e äº‹ä»¶
      */
     public void actionPerformed(ActionEvent e) {
         final DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
@@ -48,7 +48,7 @@ public class WidgetManagerAction extends UpdateAction {
                 Env currentEnv = FRContext.getCurrentEnv();
                 try {
                     currentEnv.writeResource(widgetManager);
-                    //marks: ÓÉÓÚÕâ¸öÃæ°å»¹¸Ä±äÈ¨ÏŞÏà¹ØµÄ²Ù×÷£¬ËùÒÔÕâ¸öÊ±ºò»¹Òª²Ù×÷È¨ÏŞÅäÖÃ
+                    //marks: ç”±äºè¿™ä¸ªé¢æ¿è¿˜æ”¹å˜æƒé™ç›¸å…³çš„æ“ä½œï¼Œæ‰€ä»¥è¿™ä¸ªæ—¶å€™è¿˜è¦æ“ä½œæƒé™é…ç½®
 //					currentEnv.writeResource(FRContext.getPrivilegeManager());
                 } catch (Exception ex) {
                     FRContext.getLogger().error(ex.getMessage(), ex);

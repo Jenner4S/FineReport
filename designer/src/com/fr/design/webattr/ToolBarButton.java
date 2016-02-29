@@ -42,20 +42,20 @@ public class ToolBarButton extends UIButton implements MouseListener {
 
 
     /**
-     * ¸Ä±ä°´Å¥µÄÈ¨ÏŞÏ¸Á£¶È×´Ì¬
+     * æ”¹å˜æŒ‰é’®çš„æƒé™ç»†ç²’åº¦çŠ¶æ€
      *
-     * @param selectedRole Ñ¡ÔñµÄ½ÇÉ«
-     * @param isVisible    ÊÇ·ñ¿É¼û
+     * @param selectedRole é€‰æ‹©çš„è§’è‰²
+     * @param isVisible    æ˜¯å¦å¯è§
      */
     public void changeAuthorityState(String selectedRole, boolean isVisible) {
         this.widget.changeOnlyVisibleAuthorityState(selectedRole, isVisible);
     }
 
     /**
-     * ÊÇ¶¼×ö¹ıÈ¨ÏŞÏ¸Á£¶È
+     * æ˜¯éƒ½åšè¿‡æƒé™ç»†ç²’åº¦
      *
-     * @param role Ñ¡ÔñµÄ½ÇÉ«
-     * @return ÈôÊÇ¶ÔÓ¦µÄ¸Ã½ÇÉ«×ö¹ıÈ¨ÏŞÏ¸Á£¶È£¬Ôò·µ»Øtrue
+     * @param role é€‰æ‹©çš„è§’è‰²
+     * @return è‹¥æ˜¯å¯¹åº”çš„è¯¥è§’è‰²åšè¿‡æƒé™ç»†ç²’åº¦ï¼Œåˆ™è¿”å›true
      */
     public boolean isDoneAuthorityEdited(String role) {
         return this.widget.isDoneVisibleAuthority(role);
@@ -85,9 +85,9 @@ public class ToolBarButton extends UIButton implements MouseListener {
     }
 
     /**
-     * ´¦ÀíÊó±êµã»÷ÊÂ¼ş
+     * å¤„ç†é¼ æ ‡ç‚¹å‡»äº‹ä»¶
      *
-     * @param e Êó±êµã»÷ÊÂ¼ş
+     * @param e é¼ æ ‡ç‚¹å‡»äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
         if (BaseUtils.isAuthorityEditing()) {
@@ -120,36 +120,36 @@ public class ToolBarButton extends UIButton implements MouseListener {
     }
 
     /**
-     * Êó±ê½øÈëÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥äº‹ä»¶
      *
-     * @param e Êó±ê½øÈëÊÂ¼ş
+     * @param e é¼ æ ‡è¿›å…¥äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÍË³öÊÂ¼ş
+     * é¼ æ ‡é€€å‡ºäº‹ä»¶
      *
-     * @param e Êó±êÍË³öÊÂ¼ş
+     * @param e é¼ æ ‡é€€å‡ºäº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
 
     }
 
     /**
-     * Êó±ê°´ÏÂÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÊÍ·ÅÊÂ¼ş
+     * é¼ æ ‡é‡Šæ”¾äº‹ä»¶
      *
-     * @param e Êó±êÊÂ¼ş
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
 

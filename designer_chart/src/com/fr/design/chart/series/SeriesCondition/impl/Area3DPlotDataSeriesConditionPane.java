@@ -13,8 +13,8 @@ import com.fr.design.chart.series.SeriesCondition.LabelColorPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç9:58
- * ÈıÎ¬Ãæ»ıÍ¼ÖĞµÄÌõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:58
+ * ä¸‰ç»´é¢ç§¯å›¾ä¸­çš„æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class Area3DPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 
@@ -29,8 +29,8 @@ public class Area3DPlotDataSeriesConditionPane extends DataSeriesConditionPane {
     }
 
     /**
-     * ¶ÔÓ¦µÄClass
-     * @return ·µ»Ø¶ÔÓ¦µÄclass
+     * å¯¹åº”çš„Class
+     * @return è¿”å›å¯¹åº”çš„class
      */
     public Class<? extends Plot> class4Correspond() {
         return Area3DPlot.class;

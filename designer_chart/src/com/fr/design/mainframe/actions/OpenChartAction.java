@@ -13,12 +13,12 @@ import java.awt.event.ActionEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-20
- * Time: 下午7:35
+ * Time: 涓嬪崍7:35
  */
 public class OpenChartAction extends OpenTemplateAction {
     /**
-     * 动作
-     * @param evt 事件
+     * 鍔ㄤ綔
+     * @param evt 浜嬩欢
      */
     public void actionPerformed(ActionEvent evt) {
         FILEChooserPane fileChooser = FILEChooserPane4Chart.getInstance(true, true);
@@ -26,7 +26,7 @@ public class OpenChartAction extends OpenTemplateAction {
         if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame(),".crt")
                 == FILEChooserPane.OK_OPTION) {
             final FILE file = fileChooser.getSelectedFILE();
-            if (file == null) {//选择的文件不能是 null
+            if (file == null) {//閫夋嫨鐨勬枃浠朵笉鑳芥槸 null
                 return;
             }
             DesignerContext.getDesignerFrame().openTemplate(file);

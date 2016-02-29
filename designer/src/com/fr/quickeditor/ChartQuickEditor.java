@@ -18,7 +18,7 @@ import java.awt.*;
 public class ChartQuickEditor extends QuickEditor<TargetComponent>{
 	private static ChartQuickEditor THIS;
 
-    // kunsnat: editingPropertyPane³õÊ¼»¯  ±Ü¿ªÉè¼ÆÆ÷Æô¶¯, ÔÚÓÃµ½µÄÊ±ºòÔÙ³õÊ¼»¯.
+    // kunsnat: editingPropertyPaneåˆå§‹åŒ–  é¿å¼€è®¾è®¡å™¨å¯åŠ¨, åœ¨ç”¨åˆ°çš„æ—¶å€™å†åˆå§‹åŒ–.
 	private BaseChartPropertyPane editingPropertyPane = null;
 	
 	public static final ChartQuickEditor getInstance() {

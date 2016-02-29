@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÉÏÎç10:39
+ * Time   : ä¸Šåˆ10:39
  */
 public class PieDataLabelPane extends DataLabelPane {
     private JRadioButton insideButton;

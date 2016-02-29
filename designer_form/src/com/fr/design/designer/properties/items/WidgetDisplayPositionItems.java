@@ -7,10 +7,10 @@ import com.fr.report.stable.FormConstants;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-8-13
- * Time: ÏÂÎç2:13
+ * Time: ä¸‹åˆ2:13
  */
 public class WidgetDisplayPositionItems implements ItemProvider{
-    //ÕâÀïÎªÁËºÍweb¶ËÒ»ÖÂ£¬Ö»ºÃÉèÖÃ³É012ÁË
+    //è¿™é‡Œä¸ºäº†å’Œwebç«¯ä¸€è‡´ï¼Œåªå¥½è®¾ç½®æˆ012äº†
     private static Item[] VALUE_ITEMS = {
             new Item(Inter.getLocText("StyleAlignment-Left"), FormConstants.LEFTPOSITION),
             new Item(Inter.getLocText("Center"), FormConstants.CENTERPOSITION),

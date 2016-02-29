@@ -12,7 +12,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-24
- * Time: ÉÏÎç9:09
+ * Time: ä¸Šåˆ9:09
  */
 public class CoverReportPane extends JPanel{
 

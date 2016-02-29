@@ -45,10 +45,10 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * Êı¾İ×ÖµäµÄÊı¾İ²éÑ¯Ãæ°å
+ * æ•°æ®å­—å…¸çš„æ•°æ®æŸ¥è¯¢é¢æ¿
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç1:49:24
+ * @since 2012-3-29ä¸‹åˆ1:49:24
  */
 public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary> implements Previewable, UIObserver {
     private static final int BEGIN = 1;
@@ -123,17 +123,17 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
     }
 
     /**
-     * Ôö¼ÓListener
+     * å¢åŠ Listener
      *
-     * @param aListener ½«±¾¶ÔÏóµÄListenerÖ¸Ïò¸Ãlistener
+     * @param aListener å°†æœ¬å¯¹è±¡çš„ListeneræŒ‡å‘è¯¥listener
      */
     public void addItemListener(ItemListener aListener) {
         this.itemListener = aListener;
     }
 
     /**
-     * ¸ÃÃæ°å±êÌâ
-     * @return ·µ»ØÊÇ´°¿ÚÏÔÊ¾µÄ±êÌâ
+     * è¯¥é¢æ¿æ ‡é¢˜
+     * @return è¿”å›æ˜¯çª—å£æ˜¾ç¤ºçš„æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Dic-Data_Query");
@@ -202,7 +202,7 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
             this.tableDataNameComboBox.setSelectedTableDataByName(((NameTableData) tableDataDict.getTableData())
                     .getName());
         }
-        // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼Ó1
+        // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦åŠ 1
 
         TableDataWrapper tableDataWrappe = this.tableDataNameComboBox.getSelectedItem();
         if (tableDataWrappe == null) {
@@ -269,8 +269,8 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
     public TableDataDictionary updateBean() {
         TableDataDictionary tableDataDict = new TableDataDictionary();
         Object object = this.valueDictPane.update();
-        // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼õ1
-        // carl:¼ÙÈçÕâÀïµÄĞòºÅÒª±ä£¬Çë¿¼ÂÇ6.2µÄ¼æÈİ
+        // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦å‡1
+        // carl:å‡å¦‚è¿™é‡Œçš„åºå·è¦å˜ï¼Œè¯·è€ƒè™‘6.2çš„å…¼å®¹
         if (object instanceof Integer) {
             int valuleColumnIndex = (Integer) object - 1;
             String valueColumnName = StringUtils.EMPTY;
@@ -303,7 +303,7 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
     }
 
     /**
-     * Ô¤ÀÀ
+     * é¢„è§ˆ
      */
     public void preview() {
         TableDataWrapper tableDataWrappe = tableDataNameComboBox.getSelectedItem();
@@ -318,9 +318,9 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
     }
 
     /**
-     * ÅĞ¶ÏobÊÇ·ñÊÇTableDataDictionaryÀàĞÍ
-     * @param ob ÓÃÓÚÅĞ¶ÏµÄObject
-     * @return Èç¹ûÊÇTableDataDictionaryÀàĞÍ£¬Ôò·µ»Øtrue
+     * åˆ¤æ–­obæ˜¯å¦æ˜¯TableDataDictionaryç±»å‹
+     * @param ob ç”¨äºåˆ¤æ–­çš„Object
+     * @return å¦‚æœæ˜¯TableDataDictionaryç±»å‹ï¼Œåˆ™è¿”å›true
      */
     public boolean accept(Object ob) {
         return ob instanceof TableDataDictionary;
@@ -328,7 +328,7 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
 
     @Override
     /**
-     *ÖØÖÃ
+     *é‡ç½®
      */
     public void reset() {
         GUICoreUtils.setSelectedItemQuietly(tableDataNameComboBox, UIConstants.PENDING);
@@ -338,16 +338,16 @@ public class TableDataDictPane extends FurtherBasicBeanPane<TableDataDictionary>
 
 
     /**
-     *¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     *ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
     }
 
     /**
-     * ÊÇ·ñÓ¦¸ÃÏàÓ¦listenerÊÂ¼ş
-     * @return ÒªÊÇÏìÓ¦listenerÊÂ¼ş£¬Ôò·µ»Øtrue
+     * æ˜¯å¦åº”è¯¥ç›¸åº”listeneräº‹ä»¶
+     * @return è¦æ˜¯å“åº”listeneräº‹ä»¶ï¼Œåˆ™è¿”å›true
      */
     public boolean shouldResponseChangeListener() {
         return true;

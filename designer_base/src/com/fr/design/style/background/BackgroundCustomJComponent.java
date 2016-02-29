@@ -10,8 +10,8 @@ import com.fr.stable.Constants;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-24 ÏÂÎç03:15:05
- * ÀàËµÃ÷: ×Ô¶¨ÒåĞÎ×´ºÍ±³¾°µÄComponent
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-24 ä¸‹åˆ03:15:05
+ * ç±»è¯´æ˜: è‡ªå®šä¹‰å½¢çŠ¶å’ŒèƒŒæ™¯çš„Component
  */
 public class BackgroundCustomJComponent extends BackgroundJComponent {
 	private static final long serialVersionUID = 8038447675721697619L;

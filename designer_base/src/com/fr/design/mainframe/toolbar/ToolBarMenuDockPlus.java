@@ -8,44 +8,44 @@ import com.fr.design.menu.ToolBarDef;
 
 public interface ToolBarMenuDockPlus {
     /**
-     * Ä£°åµÄ¹¤¾ß
+     * æ¨¡æ¿çš„å·¥å…·
      *
-     * @return ¹¤¾ß
+     * @return å·¥å…·
      */
 	public ToolBarDef[] toolbars4Target();
 
     /**
-     * ÎÄ¼ş²Ëµ¥µÄ×Ó²Ëµ¥
+     * æ–‡ä»¶èœå•çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
 	public ShortCut[] shortcut4FileMenu();
 
     /**
-     * Ä¿±êµÄ²Ëµ¥
+     * ç›®æ ‡çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
 	public MenuDef[] menus4Target();
 
     /**
-     * ±íµ¥µÄ¹¤¾ßÀ¸
+     * è¡¨å•çš„å·¥å…·æ 
      *
-     * @return ±íµ¥¹¤¾ßÀ¸
+     * @return è¡¨å•å·¥å…·æ 
      */
 	public JPanel[] toolbarPanes4Form();
 
     /**
-     * ±íµ¥µÄ¹¤¾ß°´Å¥
+     * è¡¨å•çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
 	public JComponent[] toolBarButton4Form();
 
     /**
-     * È¨ÏŞÏ¸Á£¶È×´Ì¬ÏÂµÄ¹¤¾ßÃæ°å
+     * æƒé™ç»†ç²’åº¦çŠ¶æ€ä¸‹çš„å·¥å…·é¢æ¿
      *
-     * @return ¹¤¾ßÃæ°å
+     * @return å·¥å…·é¢æ¿
      */
 	public JComponent toolBar4Authority();
 
@@ -54,9 +54,9 @@ public interface ToolBarMenuDockPlus {
     public int getToolBarHeight();
 
     /**
-     * µ¼³ö²Ëµ¥µÄ×Ó²Ëµ¥ £¬Ä¿Ç°ÓÃÓÚÍ¼±íÉè¼ÆÆ÷
+     * å¯¼å‡ºèœå•çš„å­èœå• ï¼Œç›®å‰ç”¨äºå›¾è¡¨è®¾è®¡å™¨
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
 	public ShortCut[] shortcut4ExportMenu();
 	

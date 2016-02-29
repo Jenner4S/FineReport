@@ -14,7 +14,7 @@ import java.awt.event.*;
 /**
  * Coder: Sean
  * Date: 13-12-30
- * Time: ÉÏÎç11:38
+ * Time: ä¸Šåˆ11:38
  */
 public class UITabbedPaneUI extends BasicTabbedPaneUI {
 
@@ -33,16 +33,16 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     private Color[] tabSelectedColor = {new Color(255, 199, 59), new Color(187, 142, 33), new Color(214, 191, 137)};
 
     /**
-     * ´´½¨UI¶ÔÏó
-     * @param c ÈİÆ÷
-     * @return ·µ»ØUI¶ÔÏó
+     * åˆ›å»ºUIå¯¹è±¡
+     * @param c å®¹å™¨
+     * @return è¿”å›UIå¯¹è±¡
      */
     public static ComponentUI createUI(JComponent c) {
         return new UITabbedPaneUI();
     }
 
     /**
-     * ³õÊ¼»¯¼àÌıÊÂ¼ş
+     * åˆå§‹åŒ–ç›‘å¬äº‹ä»¶
      */
     protected void installListeners() {
         super.installListeners();
@@ -55,8 +55,8 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
 
     public class UIMouseHandler implements MouseListener, MouseMotionListener {
         /**
-         * Êó±ê°´ÏÂ
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡æŒ‰ä¸‹
+         * @param e äº‹ä»¶
          */
         public void mousePressed(MouseEvent e) {
             if (!tabPane.isEnabled()) {
@@ -80,14 +80,14 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
         }
 
         /**
-         * Êó±ê½øÈë
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡è¿›å…¥
+         * @param e äº‹ä»¶
          */
         public void mouseEntered(MouseEvent e) {}
 
         /**
-         * Êó±êÀë¿ª
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡ç¦»å¼€
+         * @param e äº‹ä»¶
          */
         public void mouseExited(MouseEvent e) {
             if (rollover >= tabPane.getTabCount()) {
@@ -100,14 +100,14 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
         }
 
         /**
-         * Êó±êµã»÷
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡ç‚¹å‡»
+         * @param e äº‹ä»¶
          */
         public void mouseClicked(MouseEvent e) {}
 
         /**
-         * Êó±êÊÍ·Å
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡é‡Šæ”¾
+         * @param e äº‹ä»¶
          */
         public void mouseReleased(MouseEvent e) {
             if (addX!= -1 && isMouseInAdd(e.getX(),e.getY())){
@@ -124,14 +124,14 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
         }
 
         /**
-         * Êó±êÍÏ×§
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡æ‹–æ‹½
+         * @param e äº‹ä»¶
          */
         public void mouseDragged(MouseEvent e) {}
 
         /**
-         * Êó±êÒÆ¶¯
-         * @param e ÊÂ¼ş
+         * é¼ æ ‡ç§»åŠ¨
+         * @param e äº‹ä»¶
          */
         public void mouseMoved(MouseEvent e) {
             if (tabPane == null) {
@@ -153,10 +153,10 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * ÅĞ¶ÏÊó±êÊÇ·ñÔÚÌí¼Ó°´Å¥ÉÏ
-     * @param x Êó±ê×ø±êx
-     * @param y Êó±ê×ø±êy
-     * @return ·µ»ØÊó±êÊÇ·ñÔÚÌí¼Ó°´Å¥ÉÏ
+     * åˆ¤æ–­é¼ æ ‡æ˜¯å¦åœ¨æ·»åŠ æŒ‰é’®ä¸Š
+     * @param x é¼ æ ‡åæ ‡x
+     * @param y é¼ æ ‡åæ ‡y
+     * @return è¿”å›é¼ æ ‡æ˜¯å¦åœ¨æ·»åŠ æŒ‰é’®ä¸Š
      */
     private boolean isMouseInAdd(int x, int y){
         int addWidth = addBtn.getIconWidth(),addHeight = addBtn.getIconHeight();
@@ -164,10 +164,10 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * ÅĞ¶ÏÊó±êÊÇ·ñÔÚ¹Ø±Õ°´Å¥ÉÏ
-     * @param x Êó±ê×ø±êx
-     * @param y Êó±ê×ø±êy
-     * @return ·µ»ØÊó±êÊÇ·ñÔÚ¹Ø±Õ°´Å¥ÉÏ
+     * åˆ¤æ–­é¼ æ ‡æ˜¯å¦åœ¨å…³é—­æŒ‰é’®ä¸Š
+     * @param x é¼ æ ‡åæ ‡x
+     * @param y é¼ æ ‡åæ ‡y
+     * @return è¿”å›é¼ æ ‡æ˜¯å¦åœ¨å…³é—­æŒ‰é’®ä¸Š
      */
     private boolean isMouseInClose(int x, int y){
         int closeWidth = closeIcon.getIconWidth(),closeHeight = closeIcon.getIconHeight();
@@ -175,17 +175,17 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * Èç¹ûtabÖ»Ê£ÏÂ×îºóÒ»¸ö£¬Ôò²»»­É¾³ı°´Å¥
-     * @return ·µ»Øµ±Ç°tab»¹¿É·ñ¹Ø±Õ
+     * å¦‚æœtabåªå‰©ä¸‹æœ€åä¸€ä¸ªï¼Œåˆ™ä¸ç”»åˆ é™¤æŒ‰é’®
+     * @return è¿”å›å½“å‰tabè¿˜å¯å¦å…³é—­
      */
     private boolean canClose(){
         return tabPane.getTabCount() > 1 && ((UITabbedPane) tabPane).isClosable();
     }
 
     /**
-     * tabÂÖ×ªÇĞ»»
+     * tabè½®è½¬åˆ‡æ¢
      *
-     * @param tabIndex tabË÷Òı
+     * @param tabIndex tabç´¢å¼•
      */
     private void checkRollOver(int tabIndex) {
         if (rollover >= tabPane.getTabCount()) {
@@ -207,18 +207,18 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * ¸ù¾İÊó±ê×ø±ê»ñÈ¡tab
+     * æ ¹æ®é¼ æ ‡åæ ‡è·å–tab
      *
-     * @param x Êó±ê×ø±êx
-     * @param y Êó±ê×ø±êy
-     * @return ·µ»ØtabË÷Òı
+     * @param x é¼ æ ‡åæ ‡x
+     * @param y é¼ æ ‡åæ ‡y
+     * @return è¿”å›tabç´¢å¼•
      */
     private int getTabAtLocation(int x, int y) {
         return tabForCoordinate(tabPane, x, y);
     }
 
     /**
-     * »æÖÆtabµÄ±ß¿ò
+     * ç»˜åˆ¶tabçš„è¾¹æ¡†
      */
     protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h, boolean isSelected) {
         boolean isEnabled = (tabPane.isEnabledAt(tabIndex));
@@ -230,7 +230,7 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * ¸ù¾İtabµÄ×´Ì¬»æÖÆtabµÄ±ß¿ò
+     * æ ¹æ®tabçš„çŠ¶æ€ç»˜åˆ¶tabçš„è¾¹æ¡†
      */
     private void drawUITabBorder(Graphics g, int tabPlacement, int x, int y, int w, int h,
                                  boolean isSelected, boolean isEnabled, boolean isRollover) {
@@ -257,7 +257,7 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * ¸üĞÂ½çÃæ
+     * æ›´æ–°ç•Œé¢
      * @param g
      * @param c
      */
@@ -316,7 +316,7 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * »æÖÆtabµÄ±ß¿ò
+     * ç»˜åˆ¶tabçš„è¾¹æ¡†
      */
     private void drawUITabBorder(
             Graphics g, Color c, int x, int y, int w, int h, int tabPlacement) {
@@ -368,7 +368,7 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
     }
 
     /**
-     * »æÖÆ±»Ñ¡ÖĞµÄtab
+     * ç»˜åˆ¶è¢«é€‰ä¸­çš„tab
      */
     private void drawSelectedUITabBorder(Graphics g, Color c, int x, int y, int w, int h, int tabPlacement) {
         Color c1 = tabSelectedColor[0];
@@ -379,18 +379,18 @@ public class UITabbedPaneUI extends BasicTabbedPaneUI {
             case SwingConstants.BOTTOM:
                 w -= 1;
                 y -= 2;
-                g.drawLine(x + 2, y + h - 1, x + w - 3, y + h - 1);//ÏÂÌİĞÎ£¬4¸öµã2ºáÏß
+                g.drawLine(x + 2, y + h - 1, x + w - 3, y + h - 1);//ä¸‹æ¢¯å½¢ï¼Œ4ä¸ªç‚¹2æ¨ªçº¿
                 g.drawLine(x + 1, y + h - 2, x + 1, y + h - 2);
                 g.drawLine(x + w - 2, y + h - 2, x + w - 2, y + h - 2);
                 g.drawLine(x, y + h - 3, x, y + h - 3);
                 g.drawLine(x + w - 1, y + h - 3, x + w - 1, y + h - 3);
-                g.setColor(c1);//ÌİĞÎÄÚ²¿£¬2ºáÏß
+                g.setColor(c1);//æ¢¯å½¢å†…éƒ¨ï¼Œ2æ¨ªçº¿
                 g.drawLine(x + 2, y + h - 2, x + w - 3, y + h - 2);
                 g.drawLine(x + 1, y + h - 3, x + w - 2, y + h - 3);
-                g.setColor(c);//×óÓÒµÄ±ß¿ò£¬2ÊúÏß
+                g.setColor(c);//å·¦å³çš„è¾¹æ¡†ï¼Œ2ç«–çº¿
                 g.drawLine(x, y, x, y + h - 4);
                 g.drawLine(x + w - 1, y, x + w - 1, y + h - 4);
-                g.setColor(c3);//½Ç£¬4¸öµã
+                g.setColor(c3);//è§’ï¼Œ4ä¸ªç‚¹
                 g.drawLine(x + 1, y + h - 1, x + 1, y + h - 1);
                 g.drawLine(x, y + h - 2, x, y + h - 2);
                 g.drawLine(x + w - 2, y + h - 1, x + w - 2, y + h - 1);

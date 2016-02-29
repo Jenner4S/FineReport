@@ -11,7 +11,7 @@ import com.fr.design.mainframe.widget.editors.AbstractPropertyEditor;
 /**
  * @author richer
  * @since 6.5.3
- * ¿ÉÒÔÍ¨¹ı°´Å¥»òÆäËû·½Ê½½øÈ¥±à¼­Ãæ°åµÄ±à¼­Æ÷
+ * å¯ä»¥é€šè¿‡æŒ‰é’®æˆ–å…¶ä»–æ–¹å¼è¿›å»ç¼–è¾‘é¢æ¿çš„ç¼–è¾‘å™¨
  */
 public class AccessiblePropertyEditor extends AbstractPropertyEditor {
 

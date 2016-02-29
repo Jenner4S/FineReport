@@ -36,7 +36,7 @@ import java.util.HashMap;
 /**
  * @author neil
  *
- * @date: 2015-3-9-ÏÂÎç3:14:56
+ * @date: 2015-3-9-ä¸‹åˆ3:14:56
  */
 public class ShareButton extends UIButton{
 
@@ -44,7 +44,7 @@ public class ShareButton extends UIButton{
 	private static final String SHARE_KEY = "share";
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public ShareButton() {
     	this.setIcon(BaseUtils.readIcon("/com/fr/design/images/m_edit/share.png"));
@@ -53,7 +53,7 @@ public class ShareButton extends UIButton{
     	this.addActionListener(shareListener);
 	}
 	
-	//´ò¿ªÂÛÌ³, url¿ÉÔÚbbs.propertiesÖĞÅäÖÃ
+	//æ‰“å¼€è®ºå›, urlå¯åœ¨bbs.propertiesä¸­é…ç½®
 	private void openBBS(){
 		try {
 			Desktop.getDesktop().browse(new URI(BBSConstants.SHARE_URL));
@@ -62,13 +62,13 @@ public class ShareButton extends UIButton{
 		}
 	}
 	
-	//µ¼³öÍ¼Æ¬µ½Ö¸¶¨ÎÄ¼ş¼Ğ
+	//å¯¼å‡ºå›¾ç‰‡åˆ°æŒ‡å®šæ–‡ä»¶å¤¹
 	private String exportAsImage(){
-		//Òªµ¼³öÄÚÖÃÊı¾İ¼¯ºó²Å¼ÆËã±¨±í, µ¼³öÍ¼Æ¬, ÒòÎªËûµ¼³öÄÚÖÃºóĞèÒªÊÖ¶¯»ìÏıÊı¾İ
+		//è¦å¯¼å‡ºå†…ç½®æ•°æ®é›†åæ‰è®¡ç®—æŠ¥è¡¨, å¯¼å‡ºå›¾ç‰‡, å› ä¸ºä»–å¯¼å‡ºå†…ç½®åéœ€è¦æ‰‹åŠ¨æ··æ·†æ•°æ®
 		JTemplate<?, ?> jt = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate(); 
 
 		TemplateWorkBook workbook = (TemplateWorkBook) jt.getTarget();
-		//µ¼³öµÄÊ±ºòÒÑ¾­µ¯´°ÈÃËûÊä¹ıÒ»´ÎÃÜÂëÁË, ÔÙµ¯²»ºÃ, ·´ÕıÊı¾İÔ´ÄÇ±ßµÄ²ÎÊıÒÑ¾­ÓĞÁË, ¾Í²»µ¯³öÀ´È¡²ÎÊıÁË
+		//å¯¼å‡ºçš„æ—¶å€™å·²ç»å¼¹çª—è®©ä»–è¾“è¿‡ä¸€æ¬¡å¯†ç äº†, å†å¼¹ä¸å¥½, åæ­£æ•°æ®æºé‚£è¾¹çš„å‚æ•°å·²ç»æœ‰äº†, å°±ä¸å¼¹å‡ºæ¥å–å‚æ•°äº†
 		ResultWorkBook res = workbook.execute(new HashMap<String, Object>(), ActorFactory.getActor(ActorConstants.TYPE_PAGE));
 		ImageExporter exporter = new ImageExporter();
 		File imageFile = new File(getImagePath(jt));
@@ -81,7 +81,7 @@ public class ShareButton extends UIButton{
 		return imageFile.getParent();
 	}
 	
-	//»ñÈ¡Ä¬ÈÏµ¼³öÍ¼Æ¬Î»ÖÃ
+	//è·å–é»˜è®¤å¯¼å‡ºå›¾ç‰‡ä½ç½®
 	private String getImagePath(JTemplate<?, ?> jt){
 		FILE file = jt.getEditingFILE();
 		String envPath = FRContext.getCurrentEnv().getPath();
@@ -98,7 +98,7 @@ public class ShareButton extends UIButton{
 			UIPopupMenu menu = new UIPopupMenu();
 			boolean isSharable = isSharable();
 			
-			//µã»÷ºóµ±Ç°±à¼­Ä£°å»áÌø×ªµ½ÄÚÖÃÊı¾İ¼¯µÄshareÄ£°åÉÏ½øĞĞ»ìÏıÊı¾İ.
+			//ç‚¹å‡»åå½“å‰ç¼–è¾‘æ¨¡æ¿ä¼šè·³è½¬åˆ°å†…ç½®æ•°æ®é›†çš„shareæ¨¡æ¿ä¸Šè¿›è¡Œæ··æ·†æ•°æ®.
 			UIMenuItem directShare = new UIMenuItem(Inter.getLocText("FR-Designer_Share-Template"));
 			directShare.setEnabled(!isSharable);
 			directShare.setIcon(BaseUtils.readIcon("/com/fr/design/images/m_edit/directShare.png"));
@@ -106,7 +106,7 @@ public class ShareButton extends UIButton{
                 directShare.addMouseListener(directShareListener);
             }
 			
-			//Ä¬ÈÏ±ØĞëÊÇÏÈµã»÷·ÖÏíÄ£°å, È»ºóÌø×ªµ½µ¼³öÄÚÖÃÊı¾İ¼¯µÄÄ£°åÉÏ, ²Å¿ÉÒÔµãÍê³ÉĞŞ¸Ä²¢·ÖÏí
+			//é»˜è®¤å¿…é¡»æ˜¯å…ˆç‚¹å‡»åˆ†äº«æ¨¡æ¿, ç„¶åè·³è½¬åˆ°å¯¼å‡ºå†…ç½®æ•°æ®é›†çš„æ¨¡æ¿ä¸Š, æ‰å¯ä»¥ç‚¹å®Œæˆä¿®æ”¹å¹¶åˆ†äº«
 			UIMenuItem modifyShare = new UIMenuItem(Inter.getLocText("FR-Designer_Finish-Modify-Share"));
 			modifyShare.setEnabled(isSharable);
 			modifyShare.setIcon(BaseUtils.readIcon("/com/fr/design/images/m_edit/modifyShare.png"));
@@ -129,19 +129,19 @@ public class ShareButton extends UIButton{
 		}
 	};
 	
-	//Íê³ÉĞŞ¸Äºó·ÖÏí¼àÌı
+	//å®Œæˆä¿®æ”¹ååˆ†äº«ç›‘å¬
 	private MouseListener modifyShareListener = new MouseAdapter() {
 		
 		public void mousePressed(MouseEvent e) {
-			//µ¼³öËõÂÔÍ¼
+			//å¯¼å‡ºç¼©ç•¥å›¾
 			exportAsImage();
-			//´ò¿ªÂÛÌ³
+			//æ‰“å¼€è®ºå›
 			openBBS();
 		};
 		
 	};
 	
-	//µã»÷·ÖÏí¼àÌı
+	//ç‚¹å‡»åˆ†äº«ç›‘å¬
 	private MouseListener directShareListener = new MouseAdapter() {
 		
 		public void mousePressed(MouseEvent e) {
@@ -152,7 +152,7 @@ public class ShareButton extends UIButton{
 	        final ConfusionManagerPane managerPane = new ConfusionManagerPane();
 	        boolean hasEmb = managerPane.populateTabledataManager();
 	        if(!hasEmb){
-	        	//Èç¹ûÃ»ÓĞÄÚÖÃÊı¾İ¼¯, ¾Í²»Õ¹Ê¾»ìÏıµÄ¿ÕÃæ°åÁË.
+	        	//å¦‚æœæ²¡æœ‰å†…ç½®æ•°æ®é›†, å°±ä¸å±•ç¤ºæ··æ·†çš„ç©ºé¢æ¿äº†.
 	        	return;
 	        }
 	        
@@ -160,7 +160,7 @@ public class ShareButton extends UIButton{
 	        		new DialogActionAdapter() {
 	        	
 	        		public void doOk() {
-	        			//µãÈ·¶¨Ê±, ¿ªÊ¼½«»ìÏıµÄÊı¾İÉèÖÃ½øworkbook
+	        			//ç‚¹ç¡®å®šæ—¶, å¼€å§‹å°†æ··æ·†çš„æ•°æ®è®¾ç½®è¿›workbook
 	        			updateManagerDialog(managerPane);
 	        		};
 	        });
@@ -171,22 +171,22 @@ public class ShareButton extends UIButton{
 	};
 	
 	/**
-	 * ½«Ãæ°åÉÏÉèÖÃµÄ»ìÏıÓ¦ÓÃµ½workbookµÄÊı¾İ¼¯ÖĞ
+	 * å°†é¢æ¿ä¸Šè®¾ç½®çš„æ··æ·†åº”ç”¨åˆ°workbookçš„æ•°æ®é›†ä¸­
 	 * 
-	 * @param managerPane µ±Ç°¹ÜÀí»ìÏıµÄÃæ°å
+	 * @param managerPane å½“å‰ç®¡ç†æ··æ·†çš„é¢æ¿
 	 * 
 	 */
     public void updateManagerDialog(ConfusionManagerPane managerPane) {
     	Nameable[] confusionArray = managerPane.update();
     	for (int i = 0, length = confusionArray.length; i < length; i++) {
-    		//»ìÏıµÄtabledataÃû³Æ
+    		//æ··æ·†çš„tabledataåç§°
 			String name = confusionArray[i].getName();
-			//»ìÏıµÄÏà¹ØĞÅÏ¢
+			//æ··æ·†çš„ç›¸å…³ä¿¡æ¯
 			ConfusionInfo info = (ConfusionInfo) ((NameObject)confusionArray[i]).getObject();
 			JTemplate<?, ?> template = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
 			TableDataSource workbook = template.getTarget();
 			EmbeddedTableData tabledata = (EmbeddedTableData) workbook.getTableData(name);
-			//»ìÏıÊı¾İ¼¯ÀïµÄÊı¾İ
+			//æ··æ·†æ•°æ®é›†é‡Œçš„æ•°æ®
 			new ConfuseTabledataAction().confuse(info, tabledata);
     	}
     }

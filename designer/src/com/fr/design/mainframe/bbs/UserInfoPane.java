@@ -24,19 +24,19 @@ import com.fr.stable.StringUtils;
 /**
  * @author neil
  *
- * @date: 2015-3-5-ÉÏÎç11:19:50
+ * @date: 2015-3-5-ä¸Šåˆ11:19:50
  */
 public class UserInfoPane extends BasicPane{
 	
-	//Ä¬ÈÏÎ´µÇÂ¼ÑÕÉ«
+	//é»˜è®¤æœªç™»å½•é¢œè‰²
 	private static final Color UN_LOGIN_BACKGROUND = new Color(210, 210, 210);
 	private static final Color LOGIN_BACKGROUND = new Color(184, 220, 242);
 	private static final int WIDTH = 104;
 	private static final int HEIGHT = 24;
 	
-	// µÇÂ¼¿òµ¯³ö¼ä¸ôÊ±¼ä
+	// ç™»å½•æ¡†å¼¹å‡ºé—´éš”æ—¶é—´
 	private static final int LOGIN_DIFF_DAY = 7;
-	// µÈ´ı¹ú¼Ê»¯µÈÏà¹Ø³õÊ¼»¯¹¤×÷Íê³ÉÖ®ºóÔÙµ¯³öµÇÂ¼¿ò
+	// ç­‰å¾…å›½é™…åŒ–ç­‰ç›¸å…³åˆå§‹åŒ–å·¥ä½œå®Œæˆä¹‹åå†å¼¹å‡ºç™»å½•æ¡†
 	private static final int WAIT_TIME = 10000;
 	
 	private UserInfoLabel userInfoLabel;
@@ -60,7 +60,7 @@ public class UserInfoPane extends BasicPane{
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public UserInfoPane() {
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -77,7 +77,7 @@ public class UserInfoPane extends BasicPane{
 		this.add(switchAccountLabel, BorderLayout.EAST);
 	}
 	
-	// ºóÌ¨×Ô¶¯µÇÂ¼
+	// åå°è‡ªåŠ¨ç™»å½•
 	private void autoLogin(){
 		Thread bbsAutoLoginThread = new Thread(new Runnable() {
 
@@ -95,7 +95,7 @@ public class UserInfoPane extends BasicPane{
 		bbsAutoLoginThread.start();
 	}
 	
-	// ¼ÆËãxml±£´æµÄÉÏ´Îµ¯¿òÊ±¼äºÍµ±Ç°Ê±¼äµÄÊ±¼ä²î
+	// è®¡ç®—xmlä¿å­˜çš„ä¸Šæ¬¡å¼¹æ¡†æ—¶é—´å’Œå½“å‰æ—¶é—´çš„æ—¶é—´å·®
 	private int getDiffFromLastLogin(){
 		String lastBBSTime = DesignerEnvManager.getEnvManager().getLastShowBBSTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -124,13 +124,13 @@ public class UserInfoPane extends BasicPane{
 			@Override
 			public void run() {
 				try {
-					// µÈ¹ú¼Ê»¯µÈ¼ÓÔØÍê±ÏÔÙÆô¶¯Ïß³Ìµ¯³öµÇÂ¼¿ò
+					// ç­‰å›½é™…åŒ–ç­‰åŠ è½½å®Œæ¯•å†å¯åŠ¨çº¿ç¨‹å¼¹å‡ºç™»å½•æ¡†
 					Thread.sleep(WAIT_TIME);
 					if(!FRContext.isChineseEnv()){
 						return;
 					}
 
-					//ÆßÌìµ¯Ò»´Î, Èç¹ûxmlÖĞºÍµ±Ç°Ê±¼äÏà²îĞ¡ÓÚ7Ìì, ¾Í²»µ¯ÁË
+					//ä¸ƒå¤©å¼¹ä¸€æ¬¡, å¦‚æœxmlä¸­å’Œå½“å‰æ—¶é—´ç›¸å·®å°äº7å¤©, å°±ä¸å¼¹äº†
 					if(getDiffFromLastLogin() < LOGIN_DIFF_DAY){
 						return;
 					}
@@ -159,7 +159,7 @@ public class UserInfoPane extends BasicPane{
 	}
 	
 	/**
-	 * ±êÖ¾Î´µÇÂ¼×´Ì¬, Ãæ°åÉèÖÃÎª»ÒÉ«
+	 * æ ‡å¿—æœªç™»å½•çŠ¶æ€, é¢æ¿è®¾ç½®ä¸ºç°è‰²
 	 * 
 	 */
 	public void markUnSignIn(){
@@ -172,8 +172,8 @@ public class UserInfoPane extends BasicPane{
 	}
 	
 	/**
-	 * ±êÖ¾µÇÂ½×´Ì¬, Ãæ°üÉèÖÃÎªÀ¶É«
-	 * @param userName ÓÃ»§Ãû
+	 * æ ‡å¿—ç™»é™†çŠ¶æ€, é¢åŒ…è®¾ç½®ä¸ºè“è‰²
+	 * @param userName ç”¨æˆ·å
 	 * 
 	 */
 	public void markSignIn(String userName){

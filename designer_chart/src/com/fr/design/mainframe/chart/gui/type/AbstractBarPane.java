@@ -5,9 +5,9 @@ import com.fr.chart.chartattr.BarPlot;
 import com.fr.chart.chartattr.Chart;
 
 /**
- * ³éÏóµÄ ÖùĞÎ ÌõĞÎÑ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * æŠ½è±¡çš„ æŸ±å½¢ æ¡å½¢é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç04:55:05
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ04:55:05
  */
 public abstract class AbstractBarPane extends AbstractChartTypePane {
 	

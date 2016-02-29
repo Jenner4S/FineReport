@@ -47,7 +47,7 @@ public class LinePlotPane extends AbstractChartTypePane{
         };
     }
 	/**
-	 * ¸üĞÂÕÛÏßµÄÀàĞÍÑ¡Ôñ½çÃæ
+	 * æ›´æ–°æŠ˜çº¿çš„ç±»å‹é€‰æ‹©ç•Œé¢
 	 */
 	public void populateBean(Chart chart) {
 		super.populateBean(chart);
@@ -57,7 +57,7 @@ public class LinePlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ: ÕÛÏßµÄÑ¡ÔñÀàĞÍ½çÃæ
+	 * ä¿å­˜ç•Œé¢å±æ€§: æŠ˜çº¿çš„é€‰æ‹©ç±»å‹ç•Œé¢
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -85,17 +85,17 @@ public class LinePlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("I-LineStyle_Line");
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		return super.accept(ob) && ((Chart) ob).getPlot().accept(LinePlot.class);

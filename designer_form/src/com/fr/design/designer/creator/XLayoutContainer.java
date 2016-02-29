@@ -33,13 +33,13 @@ import java.util.List;
  */
 public abstract class XLayoutContainer extends XBorderStyleWidgetCreator implements ContainerListener, ParameterBridge {
 	
-	// ²¼¾ÖÄÚ²¿×é¼şÄ¬ÈÏ×îĞ¡¿í¶È36£¬×îĞ¡¸ß¶È21
+	// å¸ƒå±€å†…éƒ¨ç»„ä»¶é»˜è®¤æœ€å°å®½åº¦36ï¼Œæœ€å°é«˜åº¦21
 	public static int MIN_WIDTH = 36;
 	public static int MIN_HEIGHT = 21; 
 	
 	protected static final Dimension LARGEPREFERREDSIZE = new Dimension(200, 200);
     protected boolean isRefreshing;
-    protected int default_Length = 5; // È¡Ö¸¶¨µã×øÔÚµÄ×é¼ş£¬Ä¬ÈÏÎª5±£Ö¤È¡ËÄ²àÏàÁÚµÄ×é¼şÊ±x¡¢yÔÚ×é¼şÄÚ·Ç±ß¿òÉÏ
+    protected int default_Length = 5; // å–æŒ‡å®šç‚¹ååœ¨çš„ç»„ä»¶ï¼Œé»˜è®¤ä¸º5ä¿è¯å–å››ä¾§ç›¸é‚»çš„ç»„ä»¶æ—¶xã€yåœ¨ç»„ä»¶å†…éè¾¹æ¡†ä¸Š
 
     public XLayoutContainer(WLayout widget, Dimension initSize) {
         super(widget, initSize);
@@ -47,8 +47,8 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     *  µÃµ½ÊôĞÔÃû
-     * @return ÊôĞÔÃû
+     *  å¾—åˆ°å±æ€§å
+     * @return å±æ€§å
      * @throws IntrospectionException
      */
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -72,8 +72,8 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
 	}
 
     /**
-     *   ·µ»Ø¶ÔÓ¦µÄwlayout
-     * @return wlayout¿Ø¼ş
+     *   è¿”å›å¯¹åº”çš„wlayout
+     * @return wlayoutæ§ä»¶
      */
     public WLayout toData() {
         return (WLayout) data;
@@ -93,10 +93,10 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
 	}
 
 	/**
-	 * µ±Ç°×é¼şzorderÎ»ÖÃÌæ»»ĞÂµÄ¿Ø¼ş
-	 * @param widget ¿Ø¼ş
-	 * @param  oldcreator ¾É×é¼ş
-	 * @return ×é¼ş
+	 * å½“å‰ç»„ä»¶zorderä½ç½®æ›¿æ¢æ–°çš„æ§ä»¶
+	 * @param widget æ§ä»¶
+	 * @param  oldcreator æ—§ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	public XCreator replace(Widget widget, XCreator oldcreator) {
 		int i = this.getComponentZOrder(oldcreator);
@@ -111,8 +111,8 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
 	}
 
     /**
-     *  ³õÊ¼»¯Ê±Ä¬ÈÏµÄ×é¼ş´óĞ¡
-     * @return   Ä¬ÈÏDimension
+     *  åˆå§‹åŒ–æ—¶é»˜è®¤çš„ç»„ä»¶å¤§å°
+     * @return   é»˜è®¤Dimension
      */
     public Dimension initEditorSize() {
         return LARGEPREFERREDSIZE;
@@ -121,7 +121,7 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     protected abstract void initLayoutManager();
 
     /**
-     * ½«WLayout×ª»»ÎªXLayoutContainer
+     * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
      */
     public void convert() {
         isRefreshing = true;
@@ -142,8 +142,8 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * Éè¼Æ½çÃæÖĞÓĞ×é¼şÌí¼ÓÊ±£¬ÒªÍ¨ÖªWLayoutÈİÆ÷ÖØĞÂpaint
-     * @param e     ´ıËµÃ÷
+     * è®¾è®¡ç•Œé¢ä¸­æœ‰ç»„ä»¶æ·»åŠ æ—¶ï¼Œè¦é€šçŸ¥WLayoutå®¹å™¨é‡æ–°paint
+     * @param e     å¾…è¯´æ˜
      */
     @Override
     public void componentAdded(ContainerEvent e) {
@@ -158,8 +158,8 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * Éè¼Æ½çÃæÖĞÓĞ×é¼şÌí¼ÓÊ±£¬ÒªÍ¨ÖªWLayoutÈİÆ÷ÖØĞÂpaint
-     * @param e     ´ıËµÃ÷
+     * è®¾è®¡ç•Œé¢ä¸­æœ‰ç»„ä»¶æ·»åŠ æ—¶ï¼Œè¦é€šçŸ¥WLayoutå®¹å™¨é‡æ–°paint
+     * @param e     å¾…è¯´æ˜
      */
     @Override
     public void componentRemoved(ContainerEvent e) {
@@ -173,7 +173,7 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * ¸ù¾İwidgetµÄÊôĞÔÖµÀ´»ñÈ¡
+     * æ ¹æ®widgetçš„å±æ€§å€¼æ¥è·å–
      * @param wgt
      * @return
      */
@@ -182,7 +182,7 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * ÖØĞÂµ÷Õû×Ó×é¼şµÄ´óĞ¡
+     * é‡æ–°è°ƒæ•´å­ç»„ä»¶çš„å¤§å°
      */
     public void recalculateChildrenPreferredSize() {
         for (int i = 0; i < this.getComponentCount(); i++) {
@@ -203,16 +203,16 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;
     }
     
     /**
-	 * ÊÇ·ñ×÷Îª¿Ø¼şÊ÷µÄÒ¶×Ó½Úµã
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦ä½œä¸ºæ§ä»¶æ ‘çš„å¶å­èŠ‚ç‚¹
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isComponentTreeLeaf() {
 		return false;
@@ -227,9 +227,9 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * ÊÇ·ñÓĞ²éÑ¯°´Å¥
-     * @param xCreator  ¿Ø¼ş»òÈİÆ÷
-     * @return  ÓĞÎŞ²éÑ¯°´Å¥
+     * æ˜¯å¦æœ‰æŸ¥è¯¢æŒ‰é’®
+     * @param xCreator  æ§ä»¶æˆ–å®¹å™¨
+     * @return  æœ‰æ— æŸ¥è¯¢æŒ‰é’®
      */
     public boolean SearchQueryCreators(XCreator xCreator) {
         for (int i = 0; i < ((XLayoutContainer)xCreator).getXCreatorCount(); i++) {
@@ -264,106 +264,106 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
 	}
 	
 	/**
-	 * Ö÷ÒªÎª×ÔÊÊÓ¦ÓÃ
-	 * ·µ»ØÖ¸¶¨pointµÄÉÏ·½×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * ä¸»è¦ä¸ºè‡ªé€‚åº”ç”¨
+	 * è¿”å›æŒ‡å®špointçš„ä¸Šæ–¹ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getTopComp(int x, int y) {
 		return this.getComponentAt(x, y-default_Length);
 	}
 	
 	/**
-	 * Ö÷ÒªÎª×ÔÊÊÓ¦ÓÃ
-	 * ·µ»ØÖ¸¶¨pointµÄ×ó·½×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * ä¸»è¦ä¸ºè‡ªé€‚åº”ç”¨
+	 * è¿”å›æŒ‡å®špointçš„å·¦æ–¹ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getLeftComp(int x, int y) {
 		return this.getComponentAt(x-default_Length, y);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄÓÒ·½×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param w  ¿í¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„å³æ–¹ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param w  å®½åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getRightComp(int x, int y, int w) {
 		return this.getComponentAt(x+w+default_Length, y);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄÏÂ·½×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param h ¸ß¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„ä¸‹æ–¹ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param h é«˜åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getBottomComp(int x, int y, int h) {
 		return this.getComponentAt(x, y+h+default_Length);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄÉÏ·½ÇÒÊÇÓÒ²àµÄ×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param w ¿í¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„ä¸Šæ–¹ä¸”æ˜¯å³ä¾§çš„ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param w å®½åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getRightTopComp(int x, int y, int w) {
 		return this.getComponentAt(x+w-default_Length, y-default_Length);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄ×ó·½ÇÒÊÇÏÂ²àµÄ×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param h ¸ß¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„å·¦æ–¹ä¸”æ˜¯ä¸‹ä¾§çš„ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param h é«˜åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getBottomLeftComp(int x, int y, int h) {
 		return this.getComponentAt(x-default_Length, y+h-default_Length);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄÓÒ·½ÇÒÊÇÏÂ²àµÄ×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param h ¸ß¶È
-	 * @param w ¿í¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„å³æ–¹ä¸”æ˜¯ä¸‹ä¾§çš„ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param h é«˜åº¦
+	 * @param w å®½åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getBottomRightComp(int x, int y, int h, int w) {
 		return this.getComponentAt(x+w+default_Length, y+h-default_Length);
 	}
 	
 	/**
-	 * ·µ»ØÖ¸¶¨pointµÄÏÂ·½ÇÒÊÇÓÒ²àµÄ×é¼ş
-	 * @param x  xÎ»ÖÃ
-	 * @param y  yÎ»ÖÃ
-	 * @param h ¸ß¶È
-	 * @param w ¿í¶È
-	 * @return Ö¸¶¨Î»ÖÃµÄ×é¼ş
+	 * è¿”å›æŒ‡å®špointçš„ä¸‹æ–¹ä¸”æ˜¯å³ä¾§çš„ç»„ä»¶
+	 * @param x  xä½ç½®
+	 * @param y  yä½ç½®
+	 * @param h é«˜åº¦
+	 * @param w å®½åº¦
+	 * @return æŒ‡å®šä½ç½®çš„ç»„ä»¶
 	 */
 	public Component getRightBottomComp(int x, int y, int h, int w) {
 		return this.getComponentAt(x+w-default_Length, y+h+default_Length);
 	}
 
     /**
-     * ÊÇ·ñÑÓ³ÙÕ¹Ê¾±¨±íÄÚÈİ£¬Ò²¾ÍÊÇËµÊÇ·ñÒªµÈµã»÷ÁË²éÑ¯Ö®ºó²ÅÖ´ĞĞ±¨±í
-     * @return Èç¹ûÊÇtrue£¬Ôò±íÊ¾µã»÷Ö®ºó²Å¿ªÊ¼¼ÆËã£¬falseÔò±íÊ¾»á¸ù¾İ²ÎÊıÄ¬ÈÏÖµÖ±½Ó¼ÆËã±¨±í²¢Õ¹ÏÖ
+     * æ˜¯å¦å»¶è¿Ÿå±•ç¤ºæŠ¥è¡¨å†…å®¹ï¼Œä¹Ÿå°±æ˜¯è¯´æ˜¯å¦è¦ç­‰ç‚¹å‡»äº†æŸ¥è¯¢ä¹‹åæ‰æ‰§è¡ŒæŠ¥è¡¨
+     * @return å¦‚æœæ˜¯trueï¼Œåˆ™è¡¨ç¤ºç‚¹å‡»ä¹‹åæ‰å¼€å§‹è®¡ç®—ï¼Œfalseåˆ™è¡¨ç¤ºä¼šæ ¹æ®å‚æ•°é»˜è®¤å€¼ç›´æ¥è®¡ç®—æŠ¥è¡¨å¹¶å±•ç°
      */
     public boolean isDelayDisplayContent() {
         return false;
     }
 
     /**
-     * ÊÇ·ñÏÔÊ¾²ÎÊı½çÃæ
-     * @return ÏÔÊ¾²ÎÊı½çÃæÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * æ˜¯å¦æ˜¾ç¤ºå‚æ•°ç•Œé¢
+     * @return æ˜¾ç¤ºå‚æ•°ç•Œé¢åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public boolean isDisplay() {
         return false;
@@ -374,58 +374,58 @@ public abstract class XLayoutContainer extends XBorderStyleWidgetCreator impleme
     }
 
     /**
-     * »ñÈ¡²ÎÊı½çÃæµÄ¿í¶È
-     * @return ¿í¶È
+     * è·å–å‚æ•°ç•Œé¢çš„å®½åº¦
+     * @return å®½åº¦
      */
     public int getDesignWidth() {
         return 0;
     }
 
     /**
-     * »ñÈ¡²ÎÊıÃæ°åµÄ¶ÔÆë·½Ê½
-     * @return ×óÖĞÓÒÈıÖÖ¶ÔÆë·½Ê½
+     * è·å–å‚æ•°é¢æ¿çš„å¯¹é½æ–¹å¼
+     * @return å·¦ä¸­å³ä¸‰ç§å¯¹é½æ–¹å¼
      */
     public int getPosition() {
         return 0;
     }
 	
     /**
-     * ÇĞ»»µ½·ÇÌí¼Ó×´Ì¬
+     * åˆ‡æ¢åˆ°éæ·»åŠ çŠ¶æ€
      * 
-     * @param designer ±íµ¥Éè¼ÆÆ÷
+     * @param designer è¡¨å•è®¾è®¡å™¨
      */
     public void stopAddingState(FormDesigner designer){
     	return;
     }
     
     /**
-	 * Ñ°ÕÒ×î½üµÄÎª×ÔÊÊÓ¦²¼¾ÖµÄ¸¸ÈİÆ÷
+	 * å¯»æ‰¾æœ€è¿‘çš„ä¸ºè‡ªé€‚åº”å¸ƒå±€çš„çˆ¶å®¹å™¨
 	 * 
-	 * @return ²¼¾ÖÈİÆ÷
+	 * @return å¸ƒå±€å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç3:15:28
+	 * @date 2014-12-30-ä¸‹åˆ3:15:28
 	 * 
 	 */
     public XLayoutContainer findNearestFit(){
-    	//Ò»²ãÒ»²ãÍøÉÏÕÒ, ÕÒµ½×î½üµÄfitÄÇÒ»²ã¾Íreturn
+    	//ä¸€å±‚ä¸€å±‚ç½‘ä¸Šæ‰¾, æ‰¾åˆ°æœ€è¿‘çš„fité‚£ä¸€å±‚å°±return
     	XLayoutContainer parent = this.getBackupParent();
     	return parent == null ? null : parent.findNearestFit();
     } 
     
     /**
-     * »ñÈ¡ÈİÆ÷ËùÓĞÄÚ²¿×é¼şºá×ø±êÖµ
+     * è·å–å®¹å™¨æ‰€æœ‰å†…éƒ¨ç»„ä»¶æ¨ªåæ ‡å€¼
      * 
-     * @return ºá×ø±êÊı×é
+     * @return æ¨ªåæ ‡æ•°ç»„
      */
     public int[] getHors(){
     	return ArrayUtils.EMPTY_INT_ARRAY;
     }
     
     /**
-     * »ñÈ¡ÈİÆ÷ËùÓĞÄÚ²¿×é¼ş×İ×ø±êÖµ
+     * è·å–å®¹å™¨æ‰€æœ‰å†…éƒ¨ç»„ä»¶çºµåæ ‡å€¼
      * 
-     * @return ×İ×ø±êÊı×é
+     * @return çºµåæ ‡æ•°ç»„
      */
     public int[] getVeris(){
     	return ArrayUtils.EMPTY_INT_ARRAY;

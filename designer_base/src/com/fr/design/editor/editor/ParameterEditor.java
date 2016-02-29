@@ -8,10 +8,10 @@ import com.fr.general.Inter;
 import java.awt.*;
 
 /**
- * ²ÎÊıEditor
+ * å‚æ•°Editor
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç5:24:41
+ * @since 2012-3-29ä¸‹åˆ5:24:41
  */
 public class ParameterEditor extends Editor<Parameter> {
 

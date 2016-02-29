@@ -63,8 +63,8 @@ public class WidgetPropertyTable extends AbstractPropertyTable {
 	}
 
     /**
-     * ³õÊ¼»¯ÊôĞÔ±í×é
-     * @param source    ¿Ø¼ş
+     * åˆå§‹åŒ–å±æ€§è¡¨ç»„
+     * @param source    æ§ä»¶
      */
 	public void initPropertyGroups(Object source) {
 		int size = designer.getSelectionModel().getSelection().size();
@@ -95,11 +95,11 @@ public class WidgetPropertyTable extends AbstractPropertyTable {
 
 
 	/**
-	 * µ¥Ôª¸ñtooltip
-	 * ÊôĞÔÃûĞü¸¡ÌáÊ¾ 
+	 * å•å…ƒæ ¼tooltip
+	 * å±æ€§åæ‚¬æµ®æç¤º 
 	 * 
-	 * @param Êó±êµã»÷ÊÂ¼ş
-	 * @return µ¥Ôª¸ñtooltip
+	 * @param é¼ æ ‡ç‚¹å‡»äº‹ä»¶
+	 * @return å•å…ƒæ ¼tooltip
 	 */
 	public String getToolTipText(MouseEvent event) {
 		int row = WidgetPropertyTable.super.rowAtPoint(event.getPoint());
@@ -111,7 +111,7 @@ public class WidgetPropertyTable extends AbstractPropertyTable {
 	}
 	
     /**
-     * ´ıËµÃ÷
+     * å¾…è¯´æ˜
      */
 	public void firePropertyEdit() {
 		designer.getEditListenerTable().fireCreatorModified(DesignerEvent.CREATOR_EDITED);

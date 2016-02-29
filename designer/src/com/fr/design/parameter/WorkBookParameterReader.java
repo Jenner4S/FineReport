@@ -9,7 +9,7 @@ import com.fr.main.TemplateWorkBook;
  * @author richie
  * @date 14/11/10
  * @since 8.0
- * 从报表模板中读取参数
+ * 浠庢姤琛ㄦā鏉夸腑璇诲彇鍙傛暟
  */
 public class WorkBookParameterReader extends AbstractParameterReader {
 

@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ñ¡ÔñµØÍ¼ÀàĞÍºó Ê¹ÓÃµÄµØÍ¼Êı¾İ½çÃæ
+ * é€‰æ‹©åœ°å›¾ç±»å‹å ä½¿ç”¨çš„åœ°å›¾æ•°æ®ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-21 ÏÂÎç10:49:13
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-21 ä¸‹åˆ10:49:13
  */
 public class MapDataPane extends DataContentsPane {
 	
@@ -40,7 +40,7 @@ public class MapDataPane extends DataContentsPane {
 	}
 	
 	/**
-	 * ¼ÓÔØ½çÃæ, ¸üĞÂµØÍ¼Êı¾İ
+	 * åŠ è½½ç•Œé¢, æ›´æ–°åœ°å›¾æ•°æ®
 	 */
 	public void populate(ChartCollection collection) {
 		TopDefinitionProvider definition = collection.getSelectedChart().getFilterDefinition();
@@ -67,7 +67,7 @@ public class MapDataPane extends DataContentsPane {
 	}
 	
 	/**
-	 * ÏÂÔØ±£´æÊı¾İ 
+	 * ä¸‹è½½ä¿å­˜æ•°æ® 
 	 */
 	public void update(ChartCollection collection) {
 		if(mainPane.getSelectedIndex() == 0) {
@@ -117,15 +117,15 @@ public class MapDataPane extends DataContentsPane {
 
 
 	/**
-	 * ·µ»Ø½çÃæÊ¹ÓÃÍ¼±êÂ·¾¶
+	 * è¿”å›ç•Œé¢ä½¿ç”¨å›¾æ ‡è·¯å¾„
 	 */
 	public String getIconPath() {
 		return "com/fr/design/images/chart/ChartData.png";
 	}
 
     /**
-     * ·µ»Ø½çÃæ±êÌâ
-     * @return ±êÌâ
+     * è¿”å›ç•Œé¢æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText(new String[]{"Chart-Map", "Data"});

@@ -47,16 +47,16 @@ public class TableDataManagerPane extends LoadingBasicPane {
 
 
     /**
-     * Ãû×ÖÊÇ·ñÔÊĞí
-     * @return ÊÇÔò·µ»Øtrue
+     * åå­—æ˜¯å¦å…è®¸
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public  boolean isNamePermitted(){
         return tableDataListPane.isNamePermitted();
     }
 
     /**
-     * ¼ì²é
-     * @throws Exception Òì³£
+     * æ£€æŸ¥
+     * @throws Exception å¼‚å¸¸
      */
 	public void checkValid() throws Exception {
 		tableDataListPane.checkValid();
@@ -82,9 +82,9 @@ public class TableDataManagerPane extends LoadingBasicPane {
     }
 
     /**
-     * ÉèÖÃÑ¡ÖĞÏî
+     * è®¾ç½®é€‰ä¸­é¡¹
      *
-     * @param index Ñ¡ÖĞÏîµÄĞòÁĞºÅ
+     * @param index é€‰ä¸­é¡¹çš„åºåˆ—å·
      */
     public void setSelectedIndex(int index) {
         this.tableDataListPane.setSelectedIndex(index);

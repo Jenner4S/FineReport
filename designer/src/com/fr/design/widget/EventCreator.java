@@ -35,7 +35,7 @@ public class EventCreator extends NameableSelfCreator {
 	}
 
 	/*
-	 * richer:国际化事件名称，所有需要国际化的事件都应按格式Event-eventName来进行国际化
+	 * richer:鍥介檯鍖栦簨浠跺悕绉帮紝鎵�鏈夐渶瑕佸浗闄呭寲鐨勪簨浠堕兘搴旀寜鏍煎紡Event-eventName鏉ヨ繘琛屽浗闄呭寲
 	 */
 	public static final String switchLang(String eventName) {
 		try {

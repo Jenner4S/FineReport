@@ -13,7 +13,7 @@ import com.fr.form.ui.container.WLayout;
 public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	
 	private int interval;
-	// ÉÏ´ÎµÄ²¼¾ÖÄÚ±ß¾à
+	// ä¸Šæ¬¡çš„å¸ƒå±€å†…è¾¹è·
 	private Insets lastInset;
 
 	public FRFitLayout() {
@@ -29,9 +29,9 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * Ôö¼Ó×é¼ş
-	 * @param name Ãû×Ö
-	 * @param comp ×é¼ş
+	 * å¢åŠ ç»„ä»¶
+	 * @param name åå­—
+	 * @param comp ç»„ä»¶
 	 */
 	@Override
 	public void addLayoutComponent(String name, Component comp) {
@@ -39,8 +39,8 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ÒÆ³ı×é¼ş
-	 * @param comp ×é¼ş
+	 * ç§»é™¤ç»„ä»¶
+	 * @param comp ç»„ä»¶
 	 */
 	@Override
 	public void removeLayoutComponent(Component comp) {
@@ -48,9 +48,9 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ×îÓÅ´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ´óĞ¡
+	 * æœ€ä¼˜å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤å¤§å°
 	 */
 	@Override
 	public Dimension preferredLayoutSize(Container parent) {
@@ -58,9 +58,9 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ×îĞ¡´óĞ¡
-	 * @param parent ¸¸ÈİÆ÷
-	 * @return Ä¬ÈÏ³õÊ¼´óĞ¡
+	 * æœ€å°å¤§å°
+	 * @param parent çˆ¶å®¹å™¨
+	 * @return é»˜è®¤åˆå§‹å¤§å°
 	 */
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
@@ -68,8 +68,8 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 
 	/**
-	 * ²¼¾ÖË¢ĞÂ
-	 * @param target ÈİÆ÷
+	 * å¸ƒå±€åˆ·æ–°
+	 * @param target å®¹å™¨
 	 */
 	@Override
 	public void layoutContainer(Container target) {
@@ -81,7 +81,7 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 			if (insetNotChange(insets, lastInset)) {
 				return;
 			}
-			// ÉèÖÃÄÚ±ß¾àÊ±ÒÑ¾­ÅĞ¶Ï¹ı£¬´Ë´¦Ö±½Ó¼ÓÉÏÄÚ±ß¾à
+			// è®¾ç½®å†…è¾¹è·æ—¶å·²ç»åˆ¤æ–­è¿‡ï¼Œæ­¤å¤„ç›´æ¥åŠ ä¸Šå†…è¾¹è·
 			for (int i=0, len=target.getComponentCount(); i<len; i++ ) {
 				Component comp = target.getComponent(i);
 				Rectangle rec = comp.getBounds();
@@ -128,8 +128,8 @@ public class FRFitLayout implements FRLayoutManager, LayoutManager{
 	}
 	
 	/**
-	 * ÊÇ·ñÖØÖÃ´óĞ¡
-	 * @return ÊÇ
+	 * æ˜¯å¦é‡ç½®å¤§å°
+	 * @return æ˜¯
 	 */
 	@Override
 	public boolean isResizable() {

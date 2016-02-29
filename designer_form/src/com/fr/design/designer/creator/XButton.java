@@ -77,9 +77,9 @@ public class XButton extends XWidgetCreator {
 	}
     
     /**
-     *¸ù¾İÏÂÀ­¿òÑ¡Ôñ·µ»Ø°´Å¥ÑùÊ½µÄÄ¬ÈÏÉèÖÃ»ò×Ô¶¨ÒåÉèÖÃÁĞ±í
-     * @return  ÁĞ±í
-     * @throws IntrospectionException   Å×´í
+     *æ ¹æ®ä¸‹æ‹‰æ¡†é€‰æ‹©è¿”å›æŒ‰é’®æ ·å¼çš„é»˜è®¤è®¾ç½®æˆ–è‡ªå®šä¹‰è®¾ç½®åˆ—è¡¨
+     * @return  åˆ—è¡¨
+     * @throws IntrospectionException   æŠ›é”™
      */
 	@Override
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -206,7 +206,7 @@ public class XButton extends XWidgetCreator {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-        //²»¿É¼ûÊ±£¬°´Å¥.4fÍ¸Ã÷
+        //ä¸å¯è§æ—¶ï¼ŒæŒ‰é’®.4fé€æ˜
         AlphaComposite composite = this.data.isVisible() ? (AlphaComposite)((Graphics2D)g).getComposite() : AlphaComposite.getInstance(AlphaComposite.SRC_OVER,HALF_OPACITY);
         ((Graphics2D)g).setComposite(composite);
 		Dimension panelSize = (contentLabel).getSize();
@@ -271,8 +271,8 @@ public class XButton extends XWidgetCreator {
 	}
 
     /**
-     * ³õÊ¼»¯°´Å¥µÄSize
-     * @return   ³ß´ç
+     * åˆå§‹åŒ–æŒ‰é’®çš„Size
+     * @return   å°ºå¯¸
      */
 	public Dimension initEditorSize() {
 		FreeButton button = (FreeButton) data;

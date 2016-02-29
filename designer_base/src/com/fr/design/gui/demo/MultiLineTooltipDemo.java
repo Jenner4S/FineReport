@@ -13,12 +13,12 @@ import com.fr.design.layout.FRGUIPaneFactory;
  * Created by IntelliJ IDEA.
  * User: Richer
  * Date: 11-6-30
- * Time: ÏÂÎç9:14
+ * Time: ä¸‹åˆ9:14
  */
 public class MultiLineTooltipDemo extends JPanel {
     public MultiLineTooltipDemo() {
         setLayout(FRGUIPaneFactory.createBorderLayout());
-        UIButton button = new UIButton("Êó±êÒÆ¶¯ÔÚ´Ë°´Å¥ÉÏ²é¿´¶àĞĞÌáÊ¾") {
+        UIButton button = new UIButton("é¼ æ ‡ç§»åŠ¨åœ¨æ­¤æŒ‰é’®ä¸ŠæŸ¥çœ‹å¤šè¡Œæç¤º") {
 
             @Override
             public JToolTip createToolTip() {

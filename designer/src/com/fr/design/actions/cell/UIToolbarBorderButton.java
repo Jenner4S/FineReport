@@ -36,7 +36,7 @@ import com.fr.design.style.color.TransparentPane;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * Õâ¸öPaneÓÃÀ´ÏÔÊ¾³£ÓÃ±ß¿òºÍÉèÖÃ×Ô¶¨Òå±ß¿ò
+ * è¿™ä¸ªPaneç”¨æ¥æ˜¾ç¤ºå¸¸ç”¨è¾¹æ¡†å’Œè®¾ç½®è‡ªå®šä¹‰è¾¹æ¡†
  * 
  * @author richer
  * 
@@ -139,7 +139,7 @@ public class UIToolbarBorderButton extends UICombinationButton implements PopupH
 		}
 	}
 
-	// richer:³£ÓÃ±ß¿òÏßÀàĞÍÕ¹ÏÖÃæ°å
+	// richer:å¸¸ç”¨è¾¹æ¡†çº¿ç±»å‹å±•ç°é¢æ¿
 	class NormalBorderPane extends TransparentPane {
 		PopupHider popupHider;
 

@@ -130,7 +130,7 @@ public class UIColorButton extends UIButton implements PopupHider, UIObserver, G
 	}
 
 	/**
-	 * Òş²Øpopupmenu
+	 * éšè—popupmenu
 	 */
 	public void hidePopupMenu() {
 		if (popupWin != null) {
@@ -157,25 +157,25 @@ public class UIColorButton extends UIButton implements PopupHider, UIObserver, G
 	}
 
 	/**
-	 * Ìí¼Ó¼àÌı
+	 * æ·»åŠ ç›‘å¬
 	 * 
-	 * @param changeListener ¼àÌıÁĞ±í
+	 * @param changeListener ç›‘å¬åˆ—è¡¨
 	 */
 	public void addColorChangeListener(ChangeListener changeListener) {
 		colorChangeListenerList.add(ChangeListener.class, changeListener);
 	}
 
 	/**
-	 * ÒÆ³ı¼àÌı
+	 * ç§»é™¤ç›‘å¬
 	 *  Removes an old ColorChangeListener.
-	 * @param changeListener ¼àÌıÁĞ±í
+	 * @param changeListener ç›‘å¬åˆ—è¡¨
 	 */
 	public void removeColorChangeListener(ChangeListener changeListener) {
 		colorChangeListenerList.remove(ChangeListener.class, changeListener);
 	}
 
 	/**
-	 * ÑÕÉ«×´Ì¬¸Ä±ä
+	 * é¢œè‰²çŠ¶æ€æ”¹å˜
 	 */
 	public void fireColorStateChanged() {
 		Object[] listeners = colorChangeListenerList.getListenerList();
@@ -193,45 +193,45 @@ public class UIColorButton extends UIButton implements PopupHider, UIObserver, G
 
 
 	/**
-	 * ×¢²á×´Ì¬¸Ä±ä¼àÌı
+	 * æ³¨å†ŒçŠ¶æ€æ”¹å˜ç›‘å¬
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiObserverListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñĞèÒªÏìÓ¦¼àÌı
+	 * æ˜¯å¦éœ€è¦å“åº”ç›‘å¬
 	 *
-	 * @return ÊÇ·ñÏìÓ¦
+	 * @return æ˜¯å¦å“åº”
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
 	}
 
 	/**
-	 * ×¢²á¼àÌı
+	 * æ³¨å†Œç›‘å¬
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñĞèÒªÏàÓ¦
+	 * æ˜¯å¦éœ€è¦ç›¸åº”
 	 *
-	 * @return ÊÇ·ñÏìÓ¦
+	 * @return æ˜¯å¦å“åº”
 	 */
 	public boolean shouldResponseNameListener() {
 		return true;
 	}
 
 	/**
-	 * Ö÷º¯Êı
+	 * ä¸»å‡½æ•°
 	 * 
-	 * @param args ²ÎÊı
+	 * @param args å‚æ•°
 	 */
 	public static void main(String... args) {
 		LayoutManager layoutManager = null;

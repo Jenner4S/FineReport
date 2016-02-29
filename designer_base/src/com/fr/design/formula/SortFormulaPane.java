@@ -21,7 +21,7 @@ public abstract class SortFormulaPane extends JPanel {
 	
 	protected SortOrderComboBox sortOrderComboBox;
 	protected UITextField sortFormulaTextField;
-    // ÆÁ±Îµô¡°×Ô¶¨Òå±È½Ï¹æÔò¡±ºÍ¡°Ñ¡Ôñ¡±°´Å¥£¬Ö»ÏÔÊ¾¹«Ê½ÊäÈëÎÄ±¾ºÍ¹«Ê½°´Å¥
+    // å±è”½æ‰â€œè‡ªå®šä¹‰æ¯”è¾ƒè§„åˆ™â€å’Œâ€œé€‰æ‹©â€æŒ‰é’®ï¼Œåªæ˜¾ç¤ºå…¬å¼è¾“å…¥æ–‡æœ¬å’Œå…¬å¼æŒ‰é’®
 	protected UIButton sortFormulaTextFieldButton;
 
     public SortFormulaPane() {
@@ -36,7 +36,7 @@ public abstract class SortFormulaPane extends JPanel {
         });
 
         sortFormulaTextField = new UITextField(16);
-        //Lance:Ìí¼ÓÒ»¹«Ê½±à¼­Æ÷°´Å¥
+        //Lance:æ·»åŠ ä¸€å…¬å¼ç¼–è¾‘å™¨æŒ‰é’®
         sortFormulaTextFieldButton = new UIButton("...");
         sortFormulaTextFieldButton.setToolTipText(Inter.getLocText("Formula") + "...");
         sortFormulaTextFieldButton.setPreferredSize(new Dimension(25, sortFormulaTextFieldButton.getPreferredSize().height));

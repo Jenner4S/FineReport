@@ -20,8 +20,8 @@ import com.fr.design.chart.gui.ChartComponent;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : ÏÂÎç3:51
- * Ñ¡ÖĞµÄGlyph
+ * Time   : ä¸‹åˆ3:51
+ * é€‰ä¸­çš„Glyph
  */
 public abstract class ActiveGlyph {
     protected Glyph parentGlyph;
@@ -42,13 +42,13 @@ public abstract class ActiveGlyph {
 	};
     
     /**
-     * ÊôĞÔ±íÖĞ, Í¨¹ıµã»÷ Õ¹¿ªµ½¶ÔÓ¦µÄ½çÃæ.
+     * å±æ€§è¡¨ä¸­, é€šè¿‡ç‚¹å‡» å±•å¼€åˆ°å¯¹åº”çš„ç•Œé¢.
      */
     public abstract void goRightPane();
 
     /**
-     * »­µÄÆ«ÒÆµÄ
-     * @return Æ«ÒÆµÄ
+     * ç”»çš„åç§»çš„
+     * @return åç§»çš„
      */
     public Point2D offset4Paint() {
         return new Point2D.Double(
@@ -85,10 +85,10 @@ public abstract class ActiveGlyph {
 
 
     /**
-     *µ±Ç°µÄActiveGlyphÊÇ·ñ°üº¬×ø±êmouseX, mouseY
-     * @param mouseX ×ø±êX
-     * @param mouseY ×ø±êY
-     * @return °üº¬Ôò·µ»Øtrue
+     *å½“å‰çš„ActiveGlyphæ˜¯å¦åŒ…å«åæ ‡mouseX, mouseY
+     * @param mouseX åæ ‡X
+     * @param mouseY åæ ‡Y
+     * @return åŒ…å«åˆ™è¿”å›true
      */
     public boolean contains(int mouseX, int mouseY) {
         if (getGlyph() == null || getGlyph().getShape() == null){
@@ -98,21 +98,21 @@ public abstract class ActiveGlyph {
         Point2D offset = this.offset4Paint();
 
         /*
-        * alex:ÒòÎªLine2D.contains(x, y)±ØÈ»·µ»Øfalse
-        * ËùÒÔÓÃintersectÒ»¸öÇøÓò,Õâ¸öÇøÓò´óĞ¡ÓÃ4 * 4µÄ,ÇøÓò´óÒ»Ğ©,¾ÍÁéÃôÒ»Ğ©
+        * alex:å› ä¸ºLine2D.contains(x, y)å¿…ç„¶è¿”å›false
+        * æ‰€ä»¥ç”¨intersectä¸€ä¸ªåŒºåŸŸ,è¿™ä¸ªåŒºåŸŸå¤§å°ç”¨4 * 4çš„,åŒºåŸŸå¤§ä¸€äº›,å°±çµæ•ä¸€äº›
         */
         return getGlyph().getShape().intersects(mouseX - offset.getX() - 2, mouseY - offset.getY() - 2, 4, 4);
     }
 
     /**
-     * ÔÚµ±Ç°Ñ¡ÖĞµÄActiveGlyphÖĞ,½ö½öÔÚÆäChildrenÖĞÕÒÓëmouseX, mouseYÆ¥ÅäµÄActiveGlyph
-     * @param mouseX ×ø±êX
-     * @param mouseY ×ø±êY
-     * @return µ±Ç°ativeGlyph
+     * åœ¨å½“å‰é€‰ä¸­çš„ActiveGlyphä¸­,ä»…ä»…åœ¨å…¶Childrenä¸­æ‰¾ä¸mouseX, mouseYåŒ¹é…çš„ActiveGlyph
+     * @param mouseX åæ ‡X
+     * @param mouseY åæ ‡Y
+     * @return å½“å‰ativeGlyph
      */
     public ActiveGlyph findActionGlyphFromChildren(int mouseX, int mouseY) {
         Glyph currentGlyph = getGlyph();
-        // ±¨´íÓ¦¶Ô.
+        // æŠ¥é”™åº”å¯¹.
         if (currentGlyph == null) {
             return null;
         }
@@ -122,18 +122,18 @@ public abstract class ActiveGlyph {
         while (selectableChildren.hasNext() && resAG == null) {
             ActiveGlyph childActiveGlyph = ActiveGlyphFactory.createActiveGlyph(chartComponent, selectableChildren.next(), currentGlyph);
 
-            // Èç¹ûchildActiveGlyph²»Îªnull,ÕÒÒ»ÏÂÆä×Ó±²ÓĞÃ»ÓĞ·ûºÏÌõ¼ş
+            // å¦‚æœchildActiveGlyphä¸ä¸ºnull,æ‰¾ä¸€ä¸‹å…¶å­è¾ˆæœ‰æ²¡æœ‰ç¬¦åˆæ¡ä»¶
             if (childActiveGlyph != null) {
                 resAG = childActiveGlyph.findActionGlyphFromChildren(mouseX, mouseY);
             }
 
-            // Èç¹ûchildActiveGlyphµÄ×Ó±²Ã»ÓĞ·ûºÏÌõ¼şµÄ,¾Í¿´Ò»ÏÂÕâ¸öchildGlyphÊÇ·ñ·ûºÏÌõ¼ş
+            // å¦‚æœchildActiveGlyphçš„å­è¾ˆæ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„,å°±çœ‹ä¸€ä¸‹è¿™ä¸ªchildGlyphæ˜¯å¦ç¬¦åˆæ¡ä»¶
             if (resAG == null && childActiveGlyph != null && childActiveGlyph.contains(mouseX, mouseY)) {
                 resAG = childActiveGlyph;
             }
         }
 
-        // Èç¹ûµ±Ç°ActiveGlyphµÄËùÓĞ×Ó±²¶¼Ã»ÓĞÓëmouseX, mouseYÏàÆ¥ÅäµÄ,¿´Ò»ÏÂËü×Ô¼ºÊÇ·ñÆ¥Åä
+        // å¦‚æœå½“å‰ActiveGlyphçš„æ‰€æœ‰å­è¾ˆéƒ½æ²¡æœ‰ä¸mouseX, mouseYç›¸åŒ¹é…çš„,çœ‹ä¸€ä¸‹å®ƒè‡ªå·±æ˜¯å¦åŒ¹é…
         if (resAG == null) {
             if (this.contains(mouseX, mouseY)) {
                 resAG = this;
@@ -144,16 +144,16 @@ public abstract class ActiveGlyph {
     }
 
     /**
-     * ÍÏ×§
-     * @param e ÊÂ¼ş
+     * æ‹–æ‹½
+     * @param e äº‹ä»¶
      */
     public void onMouseDragged(MouseEvent e) {
 
     }
 
     /**
-     * ÒÆ¶¯ÊÂ¼ş
-     * @param e ÊÂ¼ş
+     * ç§»åŠ¨äº‹ä»¶
+     * @param e äº‹ä»¶
      */
     public void onMouseMove(MouseEvent e) {
 

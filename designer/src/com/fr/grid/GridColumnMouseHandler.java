@@ -18,7 +18,7 @@ import com.fr.report.elementcase.ElementCase;
 import com.fr.stable.ColumnRow;
 
 /**
- * peter:处理对GridColumn的Mouse事件.
+ * peter:澶勭悊瀵笹ridColumn鐨凪ouse浜嬩欢.
  */
 public class GridColumnMouseHandler extends AbstractGridHeaderMouseHandler {
 

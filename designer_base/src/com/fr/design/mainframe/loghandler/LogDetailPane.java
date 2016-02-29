@@ -20,7 +20,7 @@ public class LogDetailPane extends JPanel{
 		fr.setSize(600, 400);
 		GUICoreUtils.centerWindow(fr);
 		fr.setResizable(false);
-		fr.setTitle("ÈÕÖ¾");
+		fr.setTitle("æ—¥å¿—");
 		fr.setIconImage(BaseUtils.readImageWithCache("com/fr/design/images/buttonicon/history.png"));
 		fr.getContentPane().setLayout(new BorderLayout());
 		fr.getContentPane().add(this, BorderLayout.CENTER);

@@ -47,14 +47,14 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
         RestartHelper.deleteRecordFilesWhenStart();
 
         DesignUtils.setPort(getStartPort());
-        // Èç¹û¶Ë¿Ú±»Õ¼ÓÃÁË ËµÃ÷³ÌĞòÒÑ¾­ÔËĞĞÁËÒ»´Î,Ò²¾ÍÊÇËµ£¬ÒÑ¾­½¨Á¢Ò»¸ö¼àÌı·şÎñÆ÷£¬ÏÖÔÚÖ»Òª¸ø·şÎñÆ÷·¢ËÍÃüÁî¾ÍºÃÁË
+        // å¦‚æœç«¯å£è¢«å ç”¨äº† è¯´æ˜ç¨‹åºå·²ç»è¿è¡Œäº†ä¸€æ¬¡,ä¹Ÿå°±æ˜¯è¯´ï¼Œå·²ç»å»ºç«‹ä¸€ä¸ªç›‘å¬æœåŠ¡å™¨ï¼Œç°åœ¨åªè¦ç»™æœåŠ¡å™¨å‘é€å‘½ä»¤å°±å¥½äº†
         if (DesignUtils.isStarted()) {
             DesignUtils.clientSend(args);
             return;
         }
         BuildContext.setBuildFilePath(buildPropertiesPath());
 
-        //ÏÂÃæÕâÁ½¾äµÄÎ»ÖÃ²»ÄÜËæ±ãµ÷»»£¬ÒòÎª»áÓ°ÏìÓïÑÔÇĞ»»µÄÎÊÌâ
+        //ä¸‹é¢è¿™ä¸¤å¥çš„ä½ç½®ä¸èƒ½éšä¾¿è°ƒæ¢ï¼Œå› ä¸ºä¼šå½±å“è¯­è¨€åˆ‡æ¢çš„é—®é¢˜
         initLanguage();
 
         SplashWindow splashWindow = new SplashWindow(createSplashPane());
@@ -68,22 +68,22 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
             }
         }
 
-        // ³õÊ¼»¯look and feel.Õâ¸öÔÚÔ¤¼ÓÔØÖ®Ç°Ö´ĞĞÊÇÒòÎªlookAndFeelÀïµÄ¶«Î÷£¬Ô¤¼ÓÔØÊ±Ò²ÒªÓÃµ½
+        // åˆå§‹åŒ–look and feel.è¿™ä¸ªåœ¨é¢„åŠ è½½ä¹‹å‰æ‰§è¡Œæ˜¯å› ä¸ºlookAndFeelé‡Œçš„ä¸œè¥¿ï¼Œé¢„åŠ è½½æ—¶ä¹Ÿè¦ç”¨åˆ°
         DesignUtils.initLookAndFeel();
 
         DesignUtils.creatListeningServer(getStartPort(), startFileSuffix());
-        // ³õÊ¼»¯Log Handler
+        // åˆå§‹åŒ–Log Handler
         DesignerEnvManager.loadLogSetting();
         DesignerFrame df = createDesignerFrame();
 
-        // Ä¬ÈÏ¼ÓÔØ¹¤×÷Ä¿Â¼£¬ÓÃÓÚ¶ÁÈ¡License
+        // é»˜è®¤åŠ è½½å·¥ä½œç›®å½•ï¼Œç”¨äºè¯»å–License
         switch2LastEnv();
 
         initDefaultFont();
-        // ±ØĞëÏÈ³õÊ¼»¯EnvÔÙÈ¥startModule, ²»È»»áµ¼ÖÂlic¶ÁÈ¡²»µ½
+        // å¿…é¡»å…ˆåˆå§‹åŒ–Envå†å»startModule, ä¸ç„¶ä¼šå¯¼è‡´licè¯»å–ä¸åˆ°
         ModuleContext.startModule(module2Start());
 
-        // ÔÙ´Î¼ÓÔØ¹¤×÷Ä¿Â¼£¬ÓÃÓÚ¶ÁÈ¡¹¤×÷Ä¿Â¼ÏÂµÄ¸÷ÖÖ²å¼ş
+        // å†æ¬¡åŠ è½½å·¥ä½œç›®å½•ï¼Œç”¨äºè¯»å–å·¥ä½œç›®å½•ä¸‹çš„å„ç§æ’ä»¶
         switch2LastEnv();
 
         ModuleContext.clearModuleListener();
@@ -121,7 +121,7 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
     }
 
     protected void initLanguage() {
-        //ÕâÁ½¾äµÄÎ»ÖÃ²»ÄÜËæ±ãµ÷»»£¬ÒòÎª»áÓ°ÏìÓïÑÔÇĞ»»µÄÎÊÌâ
+        //è¿™ä¸¤å¥çš„ä½ç½®ä¸èƒ½éšä¾¿è°ƒæ¢ï¼Œå› ä¸ºä¼šå½±å“è¯­è¨€åˆ‡æ¢çš„é—®é¢˜
         FRContext.setLanguage(DesignerEnvManager.getEnvManager().getLanguage());
     }
 
@@ -130,9 +130,9 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
     }
 
     /**
-     * buildµÃÂ·¾¶
+     * buildå¾—è·¯å¾„
      *
-     * @return buildµÃÂ·¾¶
+     * @return buildå¾—è·¯å¾„
      */
     public String buildPropertiesPath() {
         return "/com/fr/stable/build.properties";
@@ -143,14 +143,14 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
         return new SplashPane();
     }
 
-    //ÔÚVM optionsÀï¼ÓÈë-Ddebug=true¼¤»î
+    //åœ¨VM optionsé‡ŒåŠ å…¥-Ddebug=trueæ¿€æ´»
     private boolean isDebug() {
         return "true".equals(System.getProperty("debug"));
     }
 
     private static final int DEBUG_PORT = 51463;
 
-    //¶Ë¿Ú¸ÄÒ»ÏÂ£¬»·¾³ÅäÖÃÎÄ¼ş¸ÄÒ»ÏÂ¡£±ãÓÚÆô¶¯Á½¸öÉè¼ÆÆ÷£¬½øĞĞ¶Ô±Èµ÷ÊÔ
+    //ç«¯å£æ”¹ä¸€ä¸‹ï¼Œç¯å¢ƒé…ç½®æ–‡ä»¶æ”¹ä¸€ä¸‹ã€‚ä¾¿äºå¯åŠ¨ä¸¤ä¸ªè®¾è®¡å™¨ï¼Œè¿›è¡Œå¯¹æ¯”è°ƒè¯•
     private void setDebugEnv() {
         DesignUtils.setPort(DEBUG_PORT);
         DesignerEnvManager.setEnvFile(new File(ProductConstants.getEnvHome() + File.separator + ProductConstants.APP_NAME + "Env_debug.xml"));
@@ -173,7 +173,7 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
         try {
             FILE file = null;
             if (args != null && args.length > 0) {
-                // p:ĞèÒª´ò¿ªÕâ¸ö±¨±íÎÄ¼ş,Õâ¸ö´úÂë²»ÄÜÉ¾³ı.
+                // p:éœ€è¦æ‰“å¼€è¿™ä¸ªæŠ¥è¡¨æ–‡ä»¶,è¿™ä¸ªä»£ç ä¸èƒ½åˆ é™¤.
                 for (String arg : args) {
                     if (ComparatorUtils.equals("demo", arg)) {
                         file = FILEFactory.createFILE(FILEFactory.ENV_PREFIX + DesignerEnvManager.getEnvManager().getLastOpenFile());
@@ -242,7 +242,7 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
 
     protected abstract String module2Start();
 
-    // ÊÕ¼¯ÓÃ»§ĞÅÏ¢Âë
+    // æ”¶é›†ç”¨æˆ·ä¿¡æ¯ç 
     protected void collectUserInformation() {
 
     }

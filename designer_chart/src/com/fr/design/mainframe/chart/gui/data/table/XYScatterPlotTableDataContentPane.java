@@ -21,9 +21,9 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í  Êı¾İ½çÃæ É¢µãÍ¼  Êı¾İ¼¯Êı¾İ½çÃæ.
+ * å±æ€§è¡¨  æ•°æ®ç•Œé¢ æ•£ç‚¹å›¾  æ•°æ®é›†æ•°æ®ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-27 ÏÂÎç04:12:59
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-27 ä¸‹åˆ04:12:59
  */
 public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentPane{
 	
@@ -69,8 +69,8 @@ public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentP
 	}
 	
 	/**
-	 * Áª¶¯ boxÊÇ·ñ¿ÉÓÃ.
-     * @param hasUse  ÊÇ·ñÊ¹ÓÃ.
+	 * è”åŠ¨ boxæ˜¯å¦å¯ç”¨.
+     * @param hasUse  æ˜¯å¦ä½¿ç”¨.
 	 */
 	public void checkBoxUse(boolean hasUse) {
 		seriesName.setEnabled(hasUse);
@@ -86,7 +86,7 @@ public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentP
 	}
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         clearBoxItems(seriesName);
@@ -96,7 +96,7 @@ public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentP
     }
 
 	/**
-	 * ±£´æÉ¢µãÍ¼ µÄÊı¾İ¼¯Êı¾İ½çÃæ.
+	 * ä¿å­˜æ•£ç‚¹å›¾ çš„æ•°æ®é›†æ•°æ®ç•Œé¢.
 	 */
 	public void updateBean(ChartCollection collection) {
 		
@@ -125,7 +125,7 @@ public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentP
 	}
 
 	/**
-	 * ¸üĞÂÉ¢µãÍ¼µÄÊı¾İ¼¯Êı¾İ.
+	 * æ›´æ–°æ•£ç‚¹å›¾çš„æ•°æ®é›†æ•°æ®.
 	 */
 	public void populateBean(ChartCollection collection) {
 		TopDefinitionProvider top = collection.getSelectedChart().getFilterDefinition();
@@ -145,7 +145,7 @@ public class XYScatterPlotTableDataContentPane extends AbstractTableDataContentP
 	}
 
 	/**
-	 * ÖØĞÂ²¼¾Ö
+	 * é‡æ–°å¸ƒå±€
 	 */
 	public void redoLayoutPane(){
 		dataScreeningPane.relayoutPane(this.isNeedSummaryCaculateMethod());

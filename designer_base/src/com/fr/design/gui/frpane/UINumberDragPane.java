@@ -22,8 +22,8 @@ public class UINumberDragPane extends BasicBeanPane<Double> implements GlobalNam
 	private GlobalNameListener globalNameListener = null;
 
     /**
-     * ´øËµÃ÷
-     * @param value ´øËµÃ÷
+     * å¸¦è¯´æ˜
+     * @param value å¸¦è¯´æ˜
      */
 	public void userEvent(double value) {
 
@@ -63,8 +63,8 @@ public class UINumberDragPane extends BasicBeanPane<Double> implements GlobalNam
 	}
 
 	/**
-     * Ìí¼ÓÊÂ¼ş
-	 * @param l ÊÂ¼ş
+     * æ·»åŠ äº‹ä»¶
+	 * @param l äº‹ä»¶
 	 */
 	public void addChangeListener(ChangeListener l) {
 		spinner.addChangeListener(l);
@@ -72,8 +72,8 @@ public class UINumberDragPane extends BasicBeanPane<Double> implements GlobalNam
 	}
 
 	/**
-     * ÒÆ³ıÊÂ¼ş
-	 * @param l ÊÂ¼ş
+     * ç§»é™¤äº‹ä»¶
+	 * @param l äº‹ä»¶
 	 */
 
 	public void removeChangeListener(ChangeListener l) {
@@ -119,16 +119,16 @@ public class UINumberDragPane extends BasicBeanPane<Double> implements GlobalNam
 	}
 
 	/**
-	 * ×¢²á
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * æ³¨å†Œ
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñÓ¦¸ÃÏìÓ¦
-	 * @return ÊÇ·ñÓ¦¸ÃÏìÓ¦
+	 * æ˜¯å¦åº”è¯¥å“åº”
+	 * @return æ˜¯å¦åº”è¯¥å“åº”
 	 */
 	public boolean shouldResponseNameListener() {
 		return true;

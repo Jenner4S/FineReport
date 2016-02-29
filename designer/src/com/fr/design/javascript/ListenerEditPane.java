@@ -40,9 +40,9 @@ public class ListenerEditPane extends BasicBeanPane<Listener> {
 	private JavaScriptImplPane javaScriptPane;
 	private FormSubmitJavaScriptPane formSubmitScriptPane;
 	private Commit2DBJavaScriptPane commit2DBJavaScriptPane;
-	// ×Ô¶¨ÒåÊÂ¼ş
+	// è‡ªå®šä¹‰äº‹ä»¶
 	private CustomActionPane customActionPane;
-	// ·¢ËÍÓÊ¼ş
+	// å‘é€é‚®ä»¶
 	private EmailPane emailPane;
 	
 	private static final String JS = Inter.getLocText("JavaScript");
@@ -62,8 +62,8 @@ public class ListenerEditPane extends BasicBeanPane<Listener> {
 	}
 
 	/**
-	 * ³õÊ¼»¯¸÷¸ö×é¼ş
-	 * @param defaultArgs ³õÊ¼»¯²ÎÊı
+	 * åˆå§‹åŒ–å„ä¸ªç»„ä»¶
+	 * @param defaultArgs åˆå§‹åŒ–å‚æ•°
 	 */
 	public void initComponents(String[] defaultArgs) {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -87,17 +87,17 @@ public class ListenerEditPane extends BasicBeanPane<Listener> {
 //		formSubmitScriptPane = new FormSubmitJavaScriptPane(JavaScriptActionPane.defaultJavaScriptActionPane
 //				.createCallButton());
 //		hyperlinkPane.add(FORMSUBMIT, formSubmitScriptPane);
-		// Ìá½»Èë¿â
+		// æäº¤å…¥åº“
         List dbmaniList = new ArrayList();
         dbmaniList.add(autoCreateDBManipulationPane());
 		commit2DBJavaScriptPane = new Commit2DBJavaScriptPane(JavaScriptActionPane.defaultJavaScriptActionPane,
                 dbmaniList);
 		hyperlinkPane.add(DBCOMMIT, commit2DBJavaScriptPane);
-		// ×Ô¶¨ÒåÊÂ¼ş
+		// è‡ªå®šä¹‰äº‹ä»¶
 		customActionPane = new CustomActionPane();
 		hyperlinkPane.add(CUSTOMACTION, customActionPane);
 		
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		emailPane = new EmailPane();
 		hyperlinkPane.add(EMAIL,emailPane);
 	
@@ -112,8 +112,8 @@ public class ListenerEditPane extends BasicBeanPane<Listener> {
 	}
 	
     /**
-     *  ¸ù¾İÓĞÎŞµ¥Ôª¸ñ´´½¨ DBManipulationPane
-     * @return   ÓĞµ¥Ôª¸ñ¡£ÓĞÖÇÄÜÌí¼Óµ¥Ôª¸ñµÈ°´Å¥£¬·µ»Ø SmartInsertDBManipulationPane
+     *  æ ¹æ®æœ‰æ— å•å…ƒæ ¼åˆ›å»º DBManipulationPane
+     * @return   æœ‰å•å…ƒæ ¼ã€‚æœ‰æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼ç­‰æŒ‰é’®ï¼Œè¿”å› SmartInsertDBManipulationPane
      */
 	private DBManipulationPane autoCreateDBManipulationPane() {
 		JTemplate jTemplate = DesignerContext.getDesignerFrame().getSelectedJTemplate();

@@ -35,7 +35,7 @@ public class Demo {
                 FRContext.getLogger().error(e.getMessage(), e);
             }
         } else {
-        	// ProcessBuilderÕâÖÖ·½Ê½ÔÚwindowÏÂ±¨´í£ºÏµÍ³ÕÒ²»µ½Ö¸¶¨ÎÄ¼ş
+        	// ProcessBuilderè¿™ç§æ–¹å¼åœ¨windowä¸‹æŠ¥é”™ï¼šç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šæ–‡ä»¶
         	Runtime rt = Runtime.getRuntime();
         	try {
 				rt.exec(executorPath);

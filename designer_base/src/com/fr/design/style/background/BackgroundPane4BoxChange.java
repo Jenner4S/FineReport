@@ -6,13 +6,13 @@ import com.fr.design.dialog.BasicPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-3 ÏÂÎç03:22:48
- * ÀàËµÃ÷: ³éÏóµÄ, ±³¾°ÇĞ»»µÄ½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-3 ä¸‹åˆ03:22:48
+ * ç±»è¯´æ˜: æŠ½è±¡çš„, èƒŒæ™¯åˆ‡æ¢çš„ç•Œé¢
  */
 public abstract class BackgroundPane4BoxChange extends BasicPane {
 	private static final long serialVersionUID = -4014704617562056964L;
 	
-	// TODO ¼Ì³ĞUIComboBox Öµ²»¸Ä±ä.
+	// TODO ç»§æ‰¿UIComboBox å€¼ä¸æ”¹å˜.
 	
 	private void initBox() {
 //		selectBox = new UIComboBox(BackgroundUIComboBoxPane.selectTypes);

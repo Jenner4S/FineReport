@@ -77,7 +77,7 @@ public class JFileTree extends AbstractFileTree {
                 node.add(new DefaultMutableTreeNode(Boolean.TRUE));
             }
         }
-        // richer:²»ÊÇLocalEnv¸ù±¾¾Í²»»áÔËĞĞµ½Õâ¶ù
+        // richer:ä¸æ˜¯LocalEnvæ ¹æœ¬å°±ä¸ä¼šè¿è¡Œåˆ°è¿™å„¿
         m_model.reload(rootTreeNode);
 
         if (rootFiles.length == 1) {
@@ -103,14 +103,14 @@ public class JFileTree extends AbstractFileTree {
         DefaultMutableTreeNode currentTreeNode = this.getMutableTreeNode(selectedTreePath);
         StringBuffer fBuf = new StringBuffer();
         while (true) {
-        	// Èç¹ûÒÑ¾­µ½ÁË¸ù½Úµã,Ö±½ÓÍË³ö.
+        	// å¦‚æœå·²ç»åˆ°äº†æ ¹èŠ‚ç‚¹,ç›´æ¥é€€å‡º.
             if (currentTreeNode == null) {
                 break;
             }
 
             Object object = currentTreeNode.getUserObject();
             if (object instanceof RootFile) {
-            	// µ±Ç°ÎÄ¼ş.
+            	// å½“å‰æ–‡ä»¶.
             	RootFile rootFileNode = (RootFile) object;
                 return new File(rootFileNode.getFile() + fBuf.toString());
             }
@@ -119,7 +119,7 @@ public class JFileTree extends AbstractFileTree {
             fBuf.insert(0, nameNode.getName());
             fBuf.insert(0, "/");
 
-            // Öğ²ã·µ»Ø
+            // é€å±‚è¿”å›
             currentTreeNode = (DefaultMutableTreeNode) currentTreeNode.getParent();
         }
 
@@ -127,8 +127,8 @@ public class JFileTree extends AbstractFileTree {
     }
 
     /**
-     * Í¨¹ıÎÄ¼ş¼ĞÑ°ÕÒÕ¹¿ªÂ·¾¶
-     * @param currentFile µ±Ç°ÎÄ¼ş
+     * é€šè¿‡æ–‡ä»¶å¤¹å¯»æ‰¾å±•å¼€è·¯å¾„
+     * @param currentFile å½“å‰æ–‡ä»¶
      */
     public void selectFile(File currentFile) {
         if (currentFile == null) {
@@ -141,9 +141,9 @@ public class JFileTree extends AbstractFileTree {
             DefaultMutableTreeNode rootChildTreeNode = (DefaultMutableTreeNode) rootTreeNode.getChildAt(i);
             RootFile rootLocalFile = (RootFile) rootChildTreeNode.getUserObject();
             File rootFile = rootLocalFile.getFile();
-            // ÊÇ¸¸×Ó¹ØÏµ,¿ªÊ¼ÕÒº¢×Ó.
+            // æ˜¯çˆ¶å­å…³ç³»,å¼€å§‹æ‰¾å­©å­.
             if (AbstractFileTree.isParentFile(rootFile, currentFile)) {
-                Stack nameStack = new Stack(); // ½«ËùÓĞµÄÃû×Ö¼ÓÈëStack.
+                Stack nameStack = new Stack(); // å°†æ‰€æœ‰çš„åå­—åŠ å…¥Stack.
                 while (true) {
                     if (ComparatorUtils.equals(rootFile, currentFile)) {
                         break;
@@ -164,7 +164,7 @@ public class JFileTree extends AbstractFileTree {
                         FileDirectoryNode tmpNameNode = (FileDirectoryNode) tmpChildTreeNode.getUserObject();
                         if (ComparatorUtils.equals(name, tmpNameNode.getName())) {
                             curChildTreeNode = tmpChildTreeNode;
-                            // Ñ¡Ôñµ±Ç°µÄ½Úµã.
+                            // é€‰æ‹©å½“å‰çš„èŠ‚ç‚¹.
                             this.setSelectionPath(new TreePath(m_model.getPathToRoot(curChildTreeNode)));
                             break;
                         }
@@ -180,63 +180,63 @@ public class JFileTree extends AbstractFileTree {
     }
 
     /**
-     * ÁĞ³öµ±Ç°ËùÓĞµÄFile
-     * @param currentTreeNode µ±Ç°ÎÄ¼ş½Úµã
-     * @return µ±Ç°½ÚµãÏÂµÄËùÓĞFile
+     * åˆ—å‡ºå½“å‰æ‰€æœ‰çš„File
+     * @param currentTreeNode å½“å‰æ–‡ä»¶èŠ‚ç‚¹
+     * @return å½“å‰èŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰File
      */
     public FileDirectoryNode[] listFileNodes(DefaultMutableTreeNode currentTreeNode) {
         StringBuffer fBuf = new StringBuffer();
         while (true) {
-        	// Èç¹ûÒÑ¾­µ½ÁË¸ù½Úµã,Ö±½ÓÍË³ö.
+        	// å¦‚æœå·²ç»åˆ°äº†æ ¹èŠ‚ç‚¹,ç›´æ¥é€€å‡º.
             if (currentTreeNode == null) {
                 break;
             }
             Object object = currentTreeNode.getUserObject();
             if (object instanceof RootFile) {
             	RootFile rootFileNode = (RootFile) object;
-                // µ±Ç°ÎÄ¼ş. (rootFileNode + fBuf.toString = Path¡¡¡¡localµØÖ·)
+                // å½“å‰æ–‡ä»¶. (rootFileNode + fBuf.toString = Pathã€€ã€€localåœ°å€)
                 File currentFile = new File(rootFileNode.getFile() + fBuf.toString());
-                // ÁĞ³öµ±Ç°ÎÄ¼şµÄËùÓĞ×ÓÎÄ¼ş,ÒªÅĞ¶ÏÏÂÊÇ·ñÊÇÏµÍ³±£»¤µÄÎÄ¼ş ÄÜ·ñ´ò¿ª. ´ò²»¿ªµÄ»°ÏÔÊ¾Îªnull
+                // åˆ—å‡ºå½“å‰æ–‡ä»¶çš„æ‰€æœ‰å­æ–‡ä»¶,è¦åˆ¤æ–­ä¸‹æ˜¯å¦æ˜¯ç³»ç»Ÿä¿æŠ¤çš„æ–‡ä»¶ èƒ½å¦æ‰“å¼€. æ‰“ä¸å¼€çš„è¯æ˜¾ç¤ºä¸ºnull
                 File[] files = currentFile.listFiles();
-                // Èç¹ûÎÄ¼şÁĞ±íÎªnull »òÕßÎªFile[0] = []·µ»Ønull
+                // å¦‚æœæ–‡ä»¶åˆ—è¡¨ä¸ºnull æˆ–è€…ä¸ºFile[0] = []è¿”å›null
                 if (files == null ) {
                 	return new FileDirectoryNode[0];
                 }
                 List fileNodeList = new ArrayList();
                 for (int k = 0; k < files.length; k++) {
                     File tmpFile = files[k];
-                    // ÎÄ¼şÊôĞÔÎªÒş²ØµÄ»°  ²»·ÅÈëÁĞ±í
+                    // æ–‡ä»¶å±æ€§ä¸ºéšè—çš„è¯  ä¸æ”¾å…¥åˆ—è¡¨
                     if (tmpFile.isHidden()) {
                         continue;
                     }
-                    // ¹ıÂËÖ»ÏÔÊ¾ÎÄ¼ş¼Ğ ²¢½øĞĞ Ãû×Ö¼ò»¯
+                    // è¿‡æ»¤åªæ˜¾ç¤ºæ–‡ä»¶å¤¹ å¹¶è¿›è¡Œ åå­—ç®€åŒ–
                     if (fileFilter.accept(tmpFile)) {
-                    	// newNode ´«µİ isDirectoryÊôĞÔ ²¢ÇÒÖ»ÏÔÊ¾ÎÄ¼ş¼ĞÃû×Ö
+                    	// newNode ä¼ é€’ isDirectoryå±æ€§ å¹¶ä¸”åªæ˜¾ç¤ºæ–‡ä»¶å¤¹åå­—
                     	FileDirectoryNode newNode = FileDirectoryNode.createFileDirectoryNode(tmpFile);
                         fileNodeList.add(newNode);
                     }
                 }
-                // ½Úµã¼ÓÈëÁĞ±í
+                // èŠ‚ç‚¹åŠ å…¥åˆ—è¡¨
                 FileDirectoryNode[] fileNodes = new FileDirectoryNode[fileNodeList.size()];
                 fileNodeList.toArray(fileNodes);
-                // ¶ÔÎÄ¼ş¼Ğ½øĞĞÅÅĞò
+                // å¯¹æ–‡ä»¶å¤¹è¿›è¡Œæ’åº
                 Arrays.sort(fileNodes, new FileNodeComparator());
                 return fileNodes;
             }
-            // Ãû×Ö½øĞĞÖğ²ã·´ĞòµÄ»Ø¼Ó. Àı:  Doload ==> C:\java\Doload ,·µ»Øµ½ÎÄ¼ş¼ĞµÄpath,ÒòÎªÓĞ¿ÉÄÜÊÇString. ËùÒÔ¼ÓÉÏinstanceof
+            // åå­—è¿›è¡Œé€å±‚ååºçš„å›åŠ . ä¾‹:  Doload ==> C:\java\Doload ,è¿”å›åˆ°æ–‡ä»¶å¤¹çš„path,å› ä¸ºæœ‰å¯èƒ½æ˜¯String. æ‰€ä»¥åŠ ä¸Šinstanceof
             if (object instanceof FileDirectoryNode) {
             	FileDirectoryNode nameNode = (FileDirectoryNode)object;
             	fBuf.insert(0, nameNode.getName());
             	fBuf.insert(0, "/");
             }
-            // Öğ²ã·µ»Ø
+            // é€å±‚è¿”å›
             currentTreeNode = (DefaultMutableTreeNode) currentTreeNode.getParent();
         }
         return new FileDirectoryNode[0];
     }
     
     /**
-     *  cellRenderer: treeÖĞÏÔÊ¾ÎÄ¼şµÄÀàĞÍÍ¼±ê
+     *  cellRenderer: treeä¸­æ˜¾ç¤ºæ–‡ä»¶çš„ç±»å‹å›¾æ ‡
      */
 	private DefaultTreeCellRenderer fileTreeCellRenderer = new DefaultTreeCellRenderer() {
 		
@@ -255,11 +255,11 @@ public class JFileTree extends AbstractFileTree {
 				Object userObj = treeNode.getUserObject();
 				if (userObj instanceof RootFile) {
 					RootFile rootFileNode = (RootFile) userObj;
-					// µ±Ç°ÎÄ¼şµÄÈ«²¿Â·¾¶. (rootFileNode + fBuf.toString = Path¡¡¡¡localµØÖ·)
+					// å½“å‰æ–‡ä»¶çš„å…¨éƒ¨è·¯å¾„. (rootFileNode + fBuf.toString = Pathã€€ã€€localåœ°å€)
 					File currentFile = new File(rootFileNode.getFile() + fBuf.toString());
 					FileSystemView view = FileSystemView.getFileSystemView();
-					// FileµÄÈ«²¿Â·¾¶.
-					// µÃµ½±¾µØtreeÍ¼±ê
+					// Fileçš„å…¨éƒ¨è·¯å¾„.
+					// å¾—åˆ°æœ¬åœ°treeå›¾æ ‡
 					Icon tmpIcon = view.getSystemIcon(currentFile);
                     if (currentFile.isDirectory() && fBuf.length() > 0) {
                         tmpIcon=BaseUtils.readIcon("/com/fr/design/images/gui/folder.png");
@@ -274,13 +274,13 @@ public class JFileTree extends AbstractFileTree {
 						this.setFont(new Font(oldFont.getName(),0,oldFont.getSize()));
 					}
 				}
-				// Ãû×Ö½øĞĞÖğ²ã·´ĞòµÄ»Ø¼Ó. Àı:  Doload ==> C:\java\Doload 
+				// åå­—è¿›è¡Œé€å±‚ååºçš„å›åŠ . ä¾‹:  Doload ==> C:\java\Doload 
 				if (userObj instanceof FileDirectoryNode ) {
 					FileDirectoryNode nameNode = (FileDirectoryNode)userObj;
 					fBuf.insert(0, nameNode.getName());
 					fBuf.insert(0, "/");
 				}
-				// Öğ²ãÍùÉÏ µ¹ÍË·µ»Ø
+				// é€å±‚å¾€ä¸Š å€’é€€è¿”å›
 				treeNode = (DefaultMutableTreeNode) treeNode.getParent();
 			}
 			return this;
@@ -288,7 +288,7 @@ public class JFileTree extends AbstractFileTree {
 	};
     
     /**
-     *  ¶ÔÎÄ¼ş¼Ğ½øĞĞÅÅĞò ÏÈÎÄ¼ş¼Ğ È»ºó¸÷ÖÖÀàĞÍÎÄ¼ş
+     *  å¯¹æ–‡ä»¶å¤¹è¿›è¡Œæ’åº å…ˆæ–‡ä»¶å¤¹ ç„¶åå„ç§ç±»å‹æ–‡ä»¶
      * @author kunsnat
      */
     public class FileNodeComparator implements Comparator {
@@ -296,11 +296,11 @@ public class JFileTree extends AbstractFileTree {
          * This method should return > 0 if v1 is greater than v2, 0 if
          * v1 is equal to v2, or < 0 if v1 is less than v2.
          * It must handle null values for the comparison values.
-         * ÈçÉÏËùÊö
+         * å¦‚ä¸Šæ‰€è¿°
          *
-         * @param v1 comparison value.Öµ1
-         * @param v2 comparison value.Öµ2
-         * @return < 0, 0, or > 0 for v1<v2, v1==v2, or v1>v2 .Öµ1´óÓÚÖµ2·µ»Ø´óÓÚ0£¬ÏàµÈ·µ»Ø0£¬Ğ¡ÓÚºÍ´óÓÚÏà·´
+         * @param v1 comparison value.å€¼1
+         * @param v2 comparison value.å€¼2
+         * @return < 0, 0, or > 0 for v1<v2, v1==v2, or v1>v2 .å€¼1å¤§äºå€¼2è¿”å›å¤§äº0ï¼Œç›¸ç­‰è¿”å›0ï¼Œå°äºå’Œå¤§äºç›¸å
          */
         public int compare(Object v1, Object v2) {
             FileDirectoryNode nameNode1 = (FileDirectoryNode) v1;

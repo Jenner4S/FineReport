@@ -23,7 +23,7 @@ import java.awt.event.MouseEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç4:55
+ * Time: ä¸‹åˆ4:55
  */
 public class ChartDesignerUI extends ComponentUI {
     private static final Icon ADD = BaseUtils.readIcon("/com/fr/design/images/add.png");
@@ -35,9 +35,9 @@ public class ChartDesignerUI extends ComponentUI {
     private Rectangle add;
     private Rectangle del;
     private UILabel tooltipLabel;
-    private int overIndex = -1;//Êó±êĞü¸¡ÉÏÈ¥µÄÍ¼±íµÄINDEX
+    private int overIndex = -1;//é¼ æ ‡æ‚¬æµ®ä¸Šå»çš„å›¾è¡¨çš„INDEX
 
-    // Í¼±íµ±Ç°µÄÉè¼ÆÆ÷
+    // å›¾è¡¨å½“å‰çš„è®¾è®¡å™¨
     private ChartDesigner designer;
 
     public ChartDesignerUI() {
@@ -46,19 +46,19 @@ public class ChartDesignerUI extends ComponentUI {
     }
 
     /**
-     * ¼ÓÔØ½çÃæ
+     * åŠ è½½ç•Œé¢
      *
-     * @param c ×é¼ş
+     * @param c ç»„ä»¶
      */
     public void installUI(JComponent c) {
         designer = (ChartDesigner) c;
     }
 
     /**
-     * äÖÈ¾µ±Ç°µÄÉè¼Æ½çÃæÒÔ¼°Éè¼Æ¸¨Öú×´Ì¬
+     * æ¸²æŸ“å½“å‰çš„è®¾è®¡ç•Œé¢ä»¥åŠè®¾è®¡è¾…åŠ©çŠ¶æ€
      *
-     * @param g »­Í¼Àà
-     * @param c ×é¼ş
+     * @param g ç”»å›¾ç±»
+     * @param c ç»„ä»¶
      */
     @Override
     public void paint(Graphics g, JComponent c) {
@@ -84,7 +84,7 @@ public class ChartDesignerUI extends ComponentUI {
     }
 
 
-    //»æÖÆÇĞ»»µÄ¶«Î÷
+    //ç»˜åˆ¶åˆ‡æ¢çš„ä¸œè¥¿
     private void paintChange(Graphics g, JComponent c) {
         int chartWidth = designer.getArea().getCustomWidth();
         ChartCollection collection = (ChartCollection) designer.getTarget().getChartCollection();
@@ -92,7 +92,7 @@ public class ChartDesignerUI extends ComponentUI {
         iconLocations = new Rectangle[chartCount];
         int startX = chartWidth - V_GAP - ICON_SIZE;
         if (chartCount == 1) {
-            //Ö»ÓĞÒ»¸öÊ±£¬Ö»»æÖÆĞÂÔö°´Å¥£¬²»»æÖÆÉ¾³ı°´Å¥
+            //åªæœ‰ä¸€ä¸ªæ—¶ï¼Œåªç»˜åˆ¶æ–°å¢æŒ‰é’®ï¼Œä¸ç»˜åˆ¶åˆ é™¤æŒ‰é’®
             ADD.paintIcon(c, g, startX, H_GAP);
             add = new Rectangle(startX, H_GAP, ICON_SIZE, ICON_SIZE);
             del = null;
@@ -135,9 +135,9 @@ public class ChartDesignerUI extends ComponentUI {
     }
 
     /**
-     * Êó±êµã»÷
+     * é¼ æ ‡ç‚¹å‡»
      *
-     * @param e ÊÂ¼ş
+     * @param e äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
         Point clikPoint = new Point(e.getPoint().x + designer.getArea().getHorizontalValue(), e.getPoint().y + designer.getArea().getVerticalValue());
@@ -184,9 +184,9 @@ public class ChartDesignerUI extends ComponentUI {
     }
 
     /**
-     * Êó±êĞü¸¡ÉÏÊ±µÄÊı¾İµãÌáÊ¾
+     * é¼ æ ‡æ‚¬æµ®ä¸Šæ—¶çš„æ•°æ®ç‚¹æç¤º
      *
-     * @param e ÊÂ¼ş
+     * @param e äº‹ä»¶
      */
     public void mouseMoved(MouseEvent e) {
         Point clikPoint = new Point(e.getPoint().x + designer.getArea().getHorizontalValue(), e.getPoint().y + designer.getArea().getVerticalValue());

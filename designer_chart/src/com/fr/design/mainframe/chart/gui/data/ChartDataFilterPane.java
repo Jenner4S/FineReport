@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Í¼±íÊı¾İ ·ÖÀà ÏµÁĞ ¹ıÂË½çÃæ.
+ * å›¾è¡¨æ•°æ® åˆ†ç±» ç³»åˆ— è¿‡æ»¤ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç04:40:21
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ04:40:21
  */
 public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     private static final long serialVersionUID = 3650522989381790194L;
@@ -67,7 +67,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     }
 
     /**
-     * ¼ì²é½çÃæboxÊ¹ÓÃ.
+     * æ£€æŸ¥ç•Œé¢boxä½¿ç”¨.
      */
     public void checkBoxUse() {
         if (categoryPane != null) {
@@ -79,17 +79,17 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     }
 
     /**
-     * ½çÃæ±êÌâ: Êı¾İÉ¸Ñ¡.
+     * ç•Œé¢æ ‡é¢˜: æ•°æ®ç­›é€‰.
      *
-     * @return ·µ»Ø±êÌâ.
+     * @return è¿”å›æ ‡é¢˜.
      */
     public String title4PopupWindow() {
         return Inter.getLocText("FR-Chart-Data_Filter");
     }
 
     /**
-     * ÖØĞÂ²¼¾ÖÃæ°å
-     * @param isNeedPresent ÊÇ·ñĞèÒªĞÎÌ¬£¨Í¼±íÉè¼ÆÆ÷²»ĞèÒª£©
+     * é‡æ–°å¸ƒå±€é¢æ¿
+     * @param isNeedPresent æ˜¯å¦éœ€è¦å½¢æ€ï¼ˆå›¾è¡¨è®¾è®¡å™¨ä¸éœ€è¦ï¼‰
      */
     public void relayoutPane(boolean isNeedPresent) {
         if (this.isNeedPresent == isNeedPresent) {
@@ -128,14 +128,14 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     }
 
     /**
-     * ¸üĞÂ½çÃæ Êı¾İÉ¸Ñ¡.
+     * æ›´æ–°ç•Œé¢ æ•°æ®ç­›é€‰.
      */
     public void populateBean(ChartCollection collection) {
         this.populateBean(collection, true);
     }
 
     /**
-     * ±£´æ½çÃæÊı¾İÉ¸Ñ¡.
+     * ä¿å­˜ç•Œé¢æ•°æ®ç­›é€‰.
      */
     public void updateBean(ChartCollection collection) {
         if (categoryPane != null) {
@@ -147,10 +147,10 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     }
 
     /**
-     * ·ÖÀà¹ıÂË.
+     * åˆ†ç±»è¿‡æ»¤.
      *
      * @author kunsnat E-mail:kunsnat@gmail.com
-     * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç04:41:35
+     * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ04:41:35
      */
     private class CategoryFilterPane extends AbstractChartTabPane<TopDefinitionProvider> {
         private UICheckBox onlyPreData;
@@ -235,14 +235,14 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ½çÃæ±êÌâ "·ÖÀà"
+         * ç•Œé¢æ ‡é¢˜ "åˆ†ç±»"
          */
         public String title4PopupWindow() {
             return Inter.getLocText("FR-Chart-Style_Category");
         }
 
         /**
-         * ¼ì²é·ÖÀà¹ıÂË½çÃæ BoxÊÇ·ñ¿ÉÓÃ.
+         * æ£€æŸ¥åˆ†ç±»è¿‡æ»¤ç•Œé¢ Boxæ˜¯å¦å¯ç”¨.
          */
         public void checkBoxUse() {
             preDataNum.setEnabled(onlyPreData.isSelected());
@@ -251,7 +251,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ¸üĞÂ·ÖÀà¹ıÂË½çÃæÄÚÈİ
+         * æ›´æ–°åˆ†ç±»è¿‡æ»¤ç•Œé¢å†…å®¹
          */
         public void populateBean(TopDefinitionProvider topDefinition) {
             if (topDefinition == null) {
@@ -264,7 +264,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ±£´æ·ÖÀà¸üĞÂÄÚÈİµ½TopDefinition
+         * ä¿å­˜åˆ†ç±»æ›´æ–°å†…å®¹åˆ°TopDefinition
          */
         public void updateBean(TopDefinitionProvider topDefinition) {
             updateBean4NoPresent(topDefinition);
@@ -306,10 +306,10 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
     }
 
     /**
-     * ÏµÁĞ¹ıÂË.
+     * ç³»åˆ—è¿‡æ»¤.
      *
      * @author kunsnat E-mail:kunsnat@gmail.com
-     * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç04:41:24
+     * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ04:41:24
      */
     private class SeriesFilterPane extends AbstractChartTabPane<TopDefinitionProvider> {
         private UICheckBox onlyPreData;
@@ -399,14 +399,14 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
 
 
         /**
-         * ½çÃæ±êÌâ
+         * ç•Œé¢æ ‡é¢˜
          */
         public String title4PopupWindow() {
             return Inter.getLocText("FR-Chart-Data_Series");
         }
 
         /**
-         * ¼ì²éBoxÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥Boxæ˜¯å¦å¯ç”¨
          */
         public void checkBoxUse() {
             preDataNum.setEnabled(onlyPreData.isSelected());
@@ -414,7 +414,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ÏµÁĞ É¸Ñ¡Æ÷½çÃæ ¸üĞÂÊôĞÔ
+         * ç³»åˆ— ç­›é€‰å™¨ç•Œé¢ æ›´æ–°å±æ€§
          */
         public void populateBean(TopDefinitionProvider topDefinition) {
             if (topDefinition == null) {
@@ -440,7 +440,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ÏµÁĞ É¸Ñ¡Æ÷½çÃæ  ±£´æÊôĞÔµ½TopDefinition
+         * ç³»åˆ— ç­›é€‰å™¨ç•Œé¢  ä¿å­˜å±æ€§åˆ°TopDefinition
          */
         public void updateBean(TopDefinitionProvider topDefinition) {
             update4NoPresent(topDefinition);
@@ -489,7 +489,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ÏµÁĞ É¸Ñ¡Æ÷½çÃæ ¸üĞÂÊôĞÔ
+         * ç³»åˆ— ç­›é€‰å™¨ç•Œé¢ æ›´æ–°å±æ€§
          */
         public void populateBean(TopDefinition topDefinition) {
             if (topDefinition == null) {
@@ -499,7 +499,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ÏµÁĞ É¸Ñ¡Æ÷½çÃæ  ±£´æÊôĞÔµ½TopDefinition
+         * ç³»åˆ— ç­›é€‰å™¨ç•Œé¢  ä¿å­˜å±æ€§åˆ°TopDefinition
          */
         public void updateBean(TopDefinition topDefinition) {
             update4NoPresent(topDefinition);
@@ -525,7 +525,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ¸üĞÂ·ÖÀà¹ıÂË½çÃæÄÚÈİ
+         * æ›´æ–°åˆ†ç±»è¿‡æ»¤ç•Œé¢å†…å®¹
          */
         public void populateBean(TopDefinition topDefinition) {
             if (topDefinition == null) {
@@ -535,7 +535,7 @@ public class ChartDataFilterPane extends ThirdTabPane<ChartCollection> {
         }
 
         /**
-         * ±£´æ·ÖÀà¸üĞÂÄÚÈİµ½TopDefinition
+         * ä¿å­˜åˆ†ç±»æ›´æ–°å†…å®¹åˆ°TopDefinition
          */
         public void updateBean(TopDefinitionProvider topDefinition) {
             updateBean4NoPresent(topDefinition);

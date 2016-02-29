@@ -34,4 +34,3 @@ public class DSColumnAdvancedAction extends AbstractCellElementAction {
 		((DSColumnAdvancedPane)basicPane).update(editCellElement);
 	}
 }
-

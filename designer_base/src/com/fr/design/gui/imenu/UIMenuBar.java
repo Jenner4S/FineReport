@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-30
- * Time: ÉÏÎç10:30
+ * Time: ä¸Šåˆ10:30
  */
 public class UIMenuBar extends JMenuBar {
 
@@ -21,7 +21,7 @@ public class UIMenuBar extends JMenuBar {
     }
 
     /**
-     * ¸üĞÂUI
+     * æ›´æ–°UI
      */
     public void updateUI() {
         setUI(new UIMenuBarUI());

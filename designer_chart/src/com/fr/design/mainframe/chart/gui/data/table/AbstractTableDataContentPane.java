@@ -16,16 +16,16 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
 	public abstract void updateBean(ChartCollection ob);
 	
 	/**
-	 * ¼ì²éboxÊÇ·ñ ÐèÒªÊ¹ÓÃ ±ÈÈç: ÖùÐÎÍ¼, ÔÚ·ÖÀàÖáÎ´Ñ¡ÔñÊ±, ²»ÄÜÑ¡ÔñÊ¹ÓÃ ÏµÁÐÃû ÏµÁÐÖµ "ÏµÁÐÃûÊ¹ÓÃ"
-     * @param hasUse ÊÇ·ñÊ¹ÓÃ
+	 * æ£€æŸ¥boxæ˜¯å¦ éœ€è¦ä½¿ç”¨ æ¯”å¦‚: æŸ±å½¢å›¾, åœ¨åˆ†ç±»è½´æœªé€‰æ‹©æ—¶, ä¸èƒ½é€‰æ‹©ä½¿ç”¨ ç³»åˆ—å ç³»åˆ—å€¼ "ç³»åˆ—åä½¿ç”¨"
+     * @param hasUse æ˜¯å¦ä½¿ç”¨
 	 */
 	public void checkBoxUse(boolean hasUse) {
 		
 	}
 	
 	/**
-	 * Êý¾Ý¼¯±ä¸üÊ±, Ë¢ÐÂbox
-     * @param dataWrapper ¶þÎ¬±í
+	 * æ•°æ®é›†å˜æ›´æ—¶, åˆ·æ–°box
+     * @param dataWrapper äºŒç»´è¡¨
 	 */
 	public void onSelectTableData(TableDataWrapper dataWrapper) {
 		List<String> columnNameList = dataWrapper.calculateColumnNameList();
@@ -33,14 +33,14 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
 	}
 
     /**
-     * Çå¿ÕËùÓÐµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public abstract void clearAllBoxList();
 
 	protected abstract void refreshBoxListWithSelectTableData(List columnNameList);
 	
 	/**
-	 * Ë¢ÐÂBoxµÄÑ¡Ïî.
+	 * åˆ·æ–°Boxçš„é€‰é¡¹.
 	 */
 	protected void refreshBoxItems(UIComboBox box, List list) {
 		if(box == null) {
@@ -59,8 +59,8 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
 	}
 
     /**
-     * Çå¿ÕboxÀïËùÓÐ¶«Î÷
-     * @param box ÈÝÆ÷
+     * æ¸…ç©ºboxé‡Œæ‰€æœ‰ä¸œè¥¿
+     * @param box å®¹å™¨
      */
     protected void clearBoxItems(UIComboBox box){
         if(box == null){
@@ -85,7 +85,7 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
     };
 	
 	/**
-	 *  ¼æÈÝÒÔÇ° ×Ô¶¨ÒåµÄÊý¾Ý×Ö¶Î
+	 *  å…¼å®¹ä»¥å‰ è‡ªå®šä¹‰çš„æ•°æ®å­—æ®µ
 	 */
 	protected void combineCustomEditValue(UIComboBox comBox, String value) {
 		if(comBox != null) {
@@ -108,7 +108,7 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
 	}
 
     /**
-     * ÖØÐÂlayoutÕû¸öÃæ°å
+     * é‡æ–°layoutæ•´ä¸ªé¢æ¿
      */
     public void redoLayoutPane(){
 
@@ -120,16 +120,16 @@ public abstract class AbstractTableDataContentPane extends BasicBeanPane<ChartCo
 	}
 
     /**
-     * ÉèÖÃÊÇ·ñÐèÒª»ã×Ü·½Ê½
-     * @param isNeedSummaryCaculateMethod ÊÇ·ñÐèÒª»ã×Ü
+     * è®¾ç½®æ˜¯å¦éœ€è¦æ±‡æ€»æ–¹å¼
+     * @param isNeedSummaryCaculateMethod æ˜¯å¦éœ€è¦æ±‡æ€»
      */
     public void setNeedSummaryCaculateMethod(boolean isNeedSummaryCaculateMethod){
         this.isNeedSummaryCaculateMethod = isNeedSummaryCaculateMethod;
     }
 
     /**
-     * ·µ»ØÊÇ·ñÐèÒª»ã×Ü·½Ê½
-     * @return ÊÇ·ñÐèÒª»ã×Ü·½Ê½
+     * è¿”å›žæ˜¯å¦éœ€è¦æ±‡æ€»æ–¹å¼
+     * @return æ˜¯å¦éœ€è¦æ±‡æ€»æ–¹å¼
      */
     public boolean isNeedSummaryCaculateMethod(){
         return this.isNeedSummaryCaculateMethod;

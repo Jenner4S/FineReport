@@ -30,7 +30,7 @@ public class MenuDef extends ShortCut {
 	protected String tooltip;
 	//item List.
 	private List<ShortCut> shortcutList = new ArrayList<ShortCut>();
-	// peter:²úÉúµÄJMenu, UIButtonÒÔ¼°enabled±äÁ¿¶¼ÊÇÎªÓÉMenuDef²úÉúµÄ¿Ø¼şËùÓÃµÄ
+	// peter:äº§ç”Ÿçš„JMenu, UIButtonä»¥åŠenabledå˜é‡éƒ½æ˜¯ä¸ºç”±MenuDefäº§ç”Ÿçš„æ§ä»¶æ‰€ç”¨çš„
 	protected boolean enabled = true;
 	protected UIMenu createdJMenu;
 	protected UIButton createdButton;
@@ -96,9 +96,9 @@ public class MenuDef extends ShortCut {
 	}
 
 	/**
-	 * ²åÈë²Ëµ¥Ïî
-	 * @param index ²åÈëµÄÎ»ÖÃ
-	 * @param shortCut ²Ëµ¥ĞÅÏ¢
+	 * æ’å…¥èœå•é¡¹
+	 * @param index æ’å…¥çš„ä½ç½®
+	 * @param shortCut èœå•ä¿¡æ¯
 	 */
 	public void insertShortCut(int index, ShortCut shortCut) {
         int size = this.shortcutList.size();
@@ -107,8 +107,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * ÓÃ¿É±ä²ÎÊı£¬·½±ãÌí¼ÓÊı×é
-     * @param shortcut ²ÎÊı   ´æ´¢²Ëµ¥ÏîĞÅÏ¢
+     * ç”¨å¯å˜å‚æ•°ï¼Œæ–¹ä¾¿æ·»åŠ æ•°ç»„
+     * @param shortcut å‚æ•°   å­˜å‚¨èœå•é¡¹ä¿¡æ¯
      */
 	public void addShortCut(ShortCut... shortcut) {
 		for (ShortCut i : shortcut) {
@@ -117,15 +117,15 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * ÇåÀí
+     * æ¸…ç†
      */
     public void clearShortCuts() {
 		this.shortcutList.clear();
 	}
 
     /**
-     * Éú³ÉUIButton
-     * @return  ²Ëµ¥°´Å¥
+     * ç”ŸæˆUIButton
+     * @return  èœå•æŒ‰é’®
      */
 	public UIButton createUIButton() {
 		if (createdButton == null) {
@@ -135,7 +135,7 @@ public class MenuDef extends ShortCut {
 			} else {
 				createdButton = new UIButton(name);
 			}
-			// Ìí¼ÓÃû×ÖÒÔ×÷×Ô¶¯»¯²âÊÔ
+			// æ·»åŠ åå­—ä»¥ä½œè‡ªåŠ¨åŒ–æµ‹è¯•
 			createdButton.setName(name);
 			createdButton.setToolTipText(tooltip);
 			createdButton.addMouseListener(mouseListener);
@@ -149,8 +149,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * Éú³ÉJMenu
-     * @return     ²Ëµ¥
+     * ç”ŸæˆJMenu
+     * @return     èœå•
      */
 	public UIMenu createJMenu() {
 		if (createdJMenu == null) {
@@ -170,8 +170,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * Éú³É JPopupMenu
-     * @return       µ¯³ö²Ëµ¥
+     * ç”Ÿæˆ JPopupMenu
+     * @return       å¼¹å‡ºèœå•
      */
 	public JPopupMenu createJPopupMenu() {
 		UIMenu menu = createJMenu();
@@ -180,8 +180,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * ÉèÖÃÊÇ·ñ¿ÉÓÃ
-     * @param b ²¼¶ûĞÍ
+     * è®¾ç½®æ˜¯å¦å¯ç”¨
+     * @param b å¸ƒå°”å‹
      */
 	@Override
 	public void setEnabled(boolean b) {
@@ -197,8 +197,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * °´Å¥×´Ì¬
-     * @return ×´Ì¬
+     * æŒ‰é’®çŠ¶æ€
+     * @return çŠ¶æ€
      */
 	@Override
 	public boolean isEnabled() {
@@ -206,13 +206,13 @@ public class MenuDef extends ShortCut {
 	}
 
 	/**
-	 * ¸üĞÂ²Ëµ¥
+	 * æ›´æ–°èœå•
 	 */
 	public void updateMenu() {
-		//peter:Õâ¸ö·½·¨ÓÃÀ´²úÉúJMenuµÄº¢×Ó¿Ø¼ş,µ«ÊÇ²»update,action.
+		//peter:è¿™ä¸ªæ–¹æ³•ç”¨æ¥äº§ç”ŸJMenuçš„å­©å­æ§ä»¶,ä½†æ˜¯ä¸update,action.
 		this.updatePopupMenu(this.createJMenu().getPopupMenu());
 
-		//peter:ĞèÒªÉèÖÃJMenuµÄenabledÊôĞÔ.
+		//peter:éœ€è¦è®¾ç½®JMenuçš„enabledå±æ€§.
 		if (createdJMenu != null) {
 			createdJMenu.setEnabled(createdJMenu.getPopupMenu().getComponentCount() > 0 && enabled);
 			createdJMenu.repaint(10);
@@ -220,20 +220,20 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * ¸üĞÂ²Ëµ¥
-     * @param popupMenu ²Ëµ¥
+     * æ›´æ–°èœå•
+     * @param popupMenu èœå•
      */
 	protected void updatePopupMenu(JPopupMenu popupMenu) {
         removeComponent(popupMenu);
 		this.popupMenu = popupMenu;
-		// Ò»¿ªÊ¼ÊÇ²»ÄÜ²åÈë·Ö¸ô·ûµÄ
+		// ä¸€å¼€å§‹æ˜¯ä¸èƒ½æ’å…¥åˆ†éš”ç¬¦çš„
 		boolean nec_seperator = false;
 		boolean isFirstItem = true;
 		int actionCount = this.getShortCutCount();
 		for (int i = 0; i < actionCount; i++) {
 			ShortCut shortcut = this.getShortCut(i);
 
-			// Èç¹ûshortcutÊÇSeparatorDef,ÏÈ²»¼Ó,ÏÈ±ê¼ÇÒ»ÏÂnec_seperatorÎªtrue,µÈÏÂÒ»¸öshortcutĞèÒª¼Óµ½PopupMenuÊ±ÔÙ¼Ó
+			// å¦‚æœshortcutæ˜¯SeparatorDef,å…ˆä¸åŠ ,å…ˆæ ‡è®°ä¸€ä¸‹nec_seperatorä¸ºtrue,ç­‰ä¸‹ä¸€ä¸ªshortcutéœ€è¦åŠ åˆ°PopupMenuæ—¶å†åŠ 
 			if (shortcut instanceof SeparatorDef) {
 				nec_seperator = true;
 				continue;
@@ -255,8 +255,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * É¾³ıËùÓĞ×é¼ş ³ıÁË¹ö¶¯Ìõ
-     * @param popupMenu ²Ëµ¥
+     * åˆ é™¤æ‰€æœ‰ç»„ä»¶ é™¤äº†æ»šåŠ¨æ¡
+     * @param popupMenu èœå•
      */
     public void removeComponent(JPopupMenu popupMenu){
         UIScrollBar uiScrollBar = new UIScrollBar();
@@ -274,8 +274,8 @@ public class MenuDef extends ShortCut {
     }
 
     /**
-     * Ìí¼Ó²Ëµ¥Ïî
-     * @param menu ²Ëµ¥
+     * æ·»åŠ èœå•é¡¹
+     * @param menu èœå•
      */
 	@Override
 	public void intoJPopupMenu(JPopupMenu menu) {
@@ -285,8 +285,8 @@ public class MenuDef extends ShortCut {
 	}
 
     /**
-     * Ìí¼Ó
-     * @param toolBar ²Ëµ¥Ìõ
+     * æ·»åŠ 
+     * @param toolBar èœå•æ¡
      */
 	@Override
 	public void intoJToolBar(JToolBar toolBar) {

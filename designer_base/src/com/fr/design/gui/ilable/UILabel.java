@@ -10,7 +10,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-1-23
- * Time: ÏÂÎç3:15
+ * Time: ä¸‹åˆ3:15
  */
 public class UILabel extends JLabel {
 

@@ -27,22 +27,22 @@ import java.util.HashMap;
 /**
  * @author neil
  *
- * @date: 2015-3-4-ÉÏÎç9:05:52
+ * @date: 2015-3-4-ä¸Šåˆ9:05:52
  */
 public class UserInfoLabel extends UILabel{
 	
-	//Ä¬ÈÏ²éÑ¯ÏûÏ¢Ê±¼ä, 30s
+	//é»˜è®¤æŸ¥è¯¢æ¶ˆæ¯æ—¶é—´, 30s
 	private static final long CHECK_MESSAGE_TIME = 30 * 1000L;
-    //Ä¬ÈÏÂÛÌ³¼ì²âµ½¸üĞÂºóµÄµ¯³öÑÓ³ÙÊ±¼ä
+    //é»˜è®¤è®ºå›æ£€æµ‹åˆ°æ›´æ–°åçš„å¼¹å‡ºå»¶è¿Ÿæ—¶é—´
 	private static final long DELAY_TIME = 2 * 1000L;
 	private static final String MESSAGE_KEY = "messageCount";
 	
 	private static final int MIN_MESSAGE_COUNT = 1;
 	
 
-	//ÓÃ»§Ãû
+	//ç”¨æˆ·å
 	private String userName;
-	//ÏûÏ¢ÌõÊı
+	//æ¶ˆæ¯æ¡æ•°
 	private int messageCount;
 	
 	private UserInfoPane userInfoPane;
@@ -75,7 +75,7 @@ public class UserInfoLabel extends UILabel{
 	}
 
 	/**
-	 * showBBSDialog µ¯³öBBS×ÊÑ¶¿ò
+	 * showBBSDialog å¼¹å‡ºBBSèµ„è®¯æ¡†
 	 */
 	public static void showBBSDialog(){
 		Thread showBBSThread = new Thread(new Runnable() {
@@ -129,7 +129,7 @@ public class UserInfoLabel extends UILabel{
 	}
 
 	/**
-	 * ÖØÖÃµ±Ç°ÓÃ»§Ãû
+	 * é‡ç½®å½“å‰ç”¨æˆ·å
 	 *
 	 */
 	public void resetUserName(){
@@ -145,20 +145,20 @@ public class UserInfoLabel extends UILabel{
 			updateMessageCount();
 		}
 
-		//ÍùdesignerenvmangerÀïĞ´Ò»ÏÂ
+		//å¾€designerenvmangeré‡Œå†™ä¸€ä¸‹
 		DesignerEnvManager.getEnvManager().setBBSName(userName);
 		this.userName = userName;
 	}
 
 	private void updateMessageCount(){
-		//Æô¶¯»ñÈ¡ÏûÏ¢¸üĞÂµÄÏß³Ì
-		//µÇÂ½×´Ì¬, ¸ù¾İ´æÆğÀ´µÄÓÃ»§ÃûÃÜÂë, Ã¿1·ÖÖÓ·¢ÆğÒ»´ÎÇëÇó, ¸üĞÂÏûÏ¢ÌõÊı.
+		//å¯åŠ¨è·å–æ¶ˆæ¯æ›´æ–°çš„çº¿ç¨‹
+		//ç™»é™†çŠ¶æ€, æ ¹æ®å­˜èµ·æ¥çš„ç”¨æˆ·åå¯†ç , æ¯1åˆ†é’Ÿå‘èµ·ä¸€æ¬¡è¯·æ±‚, æ›´æ–°æ¶ˆæ¯æ¡æ•°.
 		Thread updateMessageThread = new Thread(new Runnable() {
 
 			@Override
 			public void run() {
                 sleep(CHECK_MESSAGE_TIME);
-				//´ÓenvÖĞ»ñÈ¡username, ÒòÎªÈç¹û×¢ÏúµÄ»°, envµÄÀïusername»á±»Çå¿Õ.
+				//ä»envä¸­è·å–username, å› ä¸ºå¦‚æœæ³¨é”€çš„è¯, envçš„é‡Œusernameä¼šè¢«æ¸…ç©º.
 				while(StringUtils.isNotEmpty(DesignerEnvManager.getEnvManager().getBBSName())){
 					HashMap<String, String> para = new HashMap<String, String>();
 					para.put("username", encode(encode(userName)));
@@ -194,7 +194,7 @@ public class UserInfoLabel extends UILabel{
 	}
 
 	public void setMessageCount(int messageCount) {
-		// µ±Ö»ÓĞÒ»ÌõÏûÏ¢Ê±£¬ÔÄ¶ÁÖ®ºó£¬ÏûÏ¢Ãæ°åÖØÖÃÎªÖ»º¬ÓÃ»§ÃûµÄ×´Ì¬
+		// å½“åªæœ‰ä¸€æ¡æ¶ˆæ¯æ—¶ï¼Œé˜…è¯»ä¹‹åï¼Œæ¶ˆæ¯é¢æ¿é‡ç½®ä¸ºåªå«ç”¨æˆ·åçš„çŠ¶æ€
 		if(this.messageCount == MIN_MESSAGE_COUNT && messageCount < MIN_MESSAGE_COUNT){
 			this.setText(this.userName);
 			return;
@@ -205,12 +205,12 @@ public class UserInfoLabel extends UILabel{
 
 		this.messageCount = messageCount;
 		StringBuilder sb = new StringBuilder();
-		//ÄÚÈİeg: aaa(11)
+		//å†…å®¹eg: aaa(11)
 		sb.append(StringUtils.BLANK).append(this.userName)
 		  .append("(").append(this.messageCount)
 		  .append(")").append(StringUtils.BLANK);
 
-		//¸üĞÂÃæ°åText
+		//æ›´æ–°é¢æ¿Text
 		this.setText(sb.toString());
 	}
 

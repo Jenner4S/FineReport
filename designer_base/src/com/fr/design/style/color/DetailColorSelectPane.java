@@ -104,4 +104,3 @@ public class DetailColorSelectPane extends BasicPane {
         }
     };
 }
-

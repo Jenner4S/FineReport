@@ -3,10 +3,10 @@ package com.fr.design.editor.editor;
 import com.fr.base.Utils;
 
 /**
- * 长整形编辑器
+ * 闀挎暣褰㈢紪杈戝櫒
  * 
  * @author zhou
- * @since 2012-3-29下午4:50:31
+ * @since 2012-3-29涓嬪崍4:50:31
  */
 public class LongEditor extends NumberEditor<Long> {
 

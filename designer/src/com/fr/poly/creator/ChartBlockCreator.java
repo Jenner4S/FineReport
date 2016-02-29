@@ -24,13 +24,13 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-10
+ * @since 6.5.4 åˆ›å»ºäº2011-5-10
  */
 public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 	private MiddleChartComponent cpm;
 	private ChartBlockEditor editor;
 	
-	//Í¼±íÄ¬ÈÏ¿í¸ß330*240
+	//å›¾è¡¨é»˜è®¤å®½é«˜330*240
 	private static final UNIT DEFAULT_WIDTH = FU.getInstance(12573000);
 	private static final UNIT DEFAULT_HEIGHT = FU.getInstance(9144000);
 
@@ -43,8 +43,8 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 	}
 
 	/**
-	 * ³õÊ¼»¯
-	 * @return ³õÊ¼»¯µÄ¿Ø¼ş.
+	 * åˆå§‹åŒ–
+	 * @return åˆå§‹åŒ–çš„æ§ä»¶.
 	 */
 	public JComponent initMonitor() {
 		cpm = DesignModuleFactory.getChartComponent(getValue().getChartCollection());
@@ -66,9 +66,9 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 
 
 	/**
-	 * ¼ì²â°´Å¥×´Ì¬
+	 * æ£€æµ‹æŒ‰é’®çŠ¶æ€
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:33:46
+	 * @date 2015-2-5-ä¸Šåˆ11:33:46
 	 * 
 	 */
 	public void checkButtonEnable() {
@@ -92,11 +92,11 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 
 
 	/**
-	 * »ñÈ¡µ±Ç°¹¤¾ßÀ¸×é
+	 * è·å–å½“å‰å·¥å…·æ ç»„
 	 * 
-	 * @return ¹¤¾ßÀ¸×é
+	 * @return å·¥å…·æ ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:29:07
+	 * @date 2015-2-5-ä¸Šåˆ11:29:07
 	 * 
 	 */
 	public ToolBarDef[] toolbars4Target() {
@@ -104,11 +104,11 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 	}
 
 	/**
-	 * ÔÚFormµÄ¹¤¾ßÀ¸×é
+	 * åœ¨Formçš„å·¥å…·æ ç»„
 	 * 
-	 * @return ×é¼şÊı×é
+	 * @return ç»„ä»¶æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:31:46
+	 * @date 2015-2-5-ä¸Šåˆ11:31:46
 	 * 
 	 */
 	public JComponent[] toolBarButton4Form() {
@@ -116,8 +116,8 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
 	}
 
 	/**
-	 * Ä¿±êµÄÁĞ±í
-	 * @return ·µ»ØÁĞ±í.
+	 * ç›®æ ‡çš„åˆ—è¡¨
+	 * @return è¿”å›åˆ—è¡¨.
 	 */
 	public MenuDef[] menus4Target() {
 		return new MenuDef[0];
@@ -128,8 +128,8 @@ public class ChartBlockCreator extends BlockCreator<PolyChartBlock> {
     }
 
 	/**
-	 * Ä£°åµÄMenu
-	 * @return Ä£°åµÄmenu
+	 * æ¨¡æ¿çš„Menu
+	 * @return æ¨¡æ¿çš„menu
 	 */
 	public ShortCut[] shortcut4TemplateMenu() {
 		return new ShortCut[0];

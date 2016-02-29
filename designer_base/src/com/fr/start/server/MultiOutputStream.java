@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * p: 这是为了将一个OutputStream输出多个OutputStream
+ * p: 杩欐槸涓轰簡灏嗕竴涓狾utputStream杈撳嚭澶氫釜OutputStream
  */
 public class MultiOutputStream extends OutputStream {
   	private List outList = new ArrayList();
@@ -60,4 +60,3 @@ public class MultiOutputStream extends OutputStream {
 		}		
 	}
 }
-

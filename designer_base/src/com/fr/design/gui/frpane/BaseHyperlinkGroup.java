@@ -4,15 +4,15 @@ import com.fr.design.gui.controlpane.NameableCreator;
 import com.fr.design.module.DesignModuleFactory;
 
 /**
- * »ù´¡µÄ³¬¼¶Á´½ÓÀàĞÍ, ²»°üÀ¨Í¼±íÏà¹Ø³¬Á´.
+ * åŸºç¡€çš„è¶…çº§é“¾æ¥ç±»å‹, ä¸åŒ…æ‹¬å›¾è¡¨ç›¸å…³è¶…é“¾.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-26 ÏÂÎç04:46:02
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-26 ä¸‹åˆ04:46:02
  */
 public class BaseHyperlinkGroup implements HyperlinkGroupType {
 
 	/**
-	 * ·µ»ØÖ§³ÖµÄ³¬¼¶Á´½ÓÀàĞÍ
+	 * è¿”å›æ”¯æŒçš„è¶…çº§é“¾æ¥ç±»å‹
 	 *
 	 * @return
 	 */

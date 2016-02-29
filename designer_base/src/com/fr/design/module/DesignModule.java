@@ -13,8 +13,8 @@ import com.fr.stable.plugin.ExtraDesignClassManagerProvider;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-24
- * Time   : ÏÂÎç2:52
- * ËùÓĞÉè¼ÆÆ÷Ä£¿éµÄ¸¸Àà
+ * Time   : ä¸‹åˆ2:52
+ * æ‰€æœ‰è®¾è®¡å™¨æ¨¡å—çš„çˆ¶ç±»
  */
 public abstract class DesignModule extends TopModule {
 	public void start() {
@@ -32,15 +32,15 @@ public abstract class DesignModule extends TopModule {
     }
 
 	/**
-	 * ·µ»ØÉè¼ÆÆ÷ÄÜ´ò¿ªµÄÄ£°åÀàĞÍµÄÒ»¸öÊı×éÁĞ±í
+	 * è¿”å›è®¾è®¡å™¨èƒ½æ‰“å¼€çš„æ¨¡æ¿ç±»å‹çš„ä¸€ä¸ªæ•°ç»„åˆ—è¡¨
 	 *
-	 * @return ¿ÉÒÔ´ò¿ªµÄÄ£°åÀàĞÍµÄÊı×é
+	 * @return å¯ä»¥æ‰“å¼€çš„æ¨¡æ¿ç±»å‹çš„æ•°ç»„
 	 */
 	public abstract DesignerFrame.App<?>[] apps4TemplateOpener();
 
 	/**
-	 * ¹ú¼Ê»¯ÎÄ¼şÂ·¾¶
-	 * @return ¹ú¼Ê»¯ÎÄ¼şÂ·¾¶
+	 * å›½é™…åŒ–æ–‡ä»¶è·¯å¾„
+	 * @return å›½é™…åŒ–æ–‡ä»¶è·¯å¾„
 	 */
 	public String[] getLocaleFile() {
 		return ArrayUtils.EMPTY_STRING_ARRAY;

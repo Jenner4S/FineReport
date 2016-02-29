@@ -23,29 +23,29 @@ public class LogHandlerBarUI extends ComponentUI implements MouseListener, Focus
 	private boolean armed;
 	private int textLeadingGap = TEXT_LEADING_GAP;
 
-	// ½¥±äÉ«ÆğÊ¼É«
+	// æ¸å˜è‰²èµ·å§‹è‰²
 	private Color lightColor;
-	// ½¥±äÉ«½áÊøÉ«
+	// æ¸å˜è‰²ç»“æŸè‰²
 	private Color darkColor;
 
-	// ¸ÃUIÊµÀı¶ÔÓ¦µÄCaptionButton
+	// è¯¥UIå®ä¾‹å¯¹åº”çš„CaptionButton
 	protected LogHandlerBar button;
 
 	public LogHandlerBarUI() {
 	}
 
     /**
-     * ´´½¨UI
-     * @param c ×é¼ş
-     * @return ×é¼şUI
+     * åˆ›å»ºUI
+     * @param c ç»„ä»¶
+     * @return ç»„ä»¶UI
      */
 	public static ComponentUI createUI(JComponent c) {
 		return new LogHandlerBarUI();
 	}
 
     /**
-     *ÅäÖÃ×é¼ş
-     * @param c ×é¼ş
+     *é…ç½®ç»„ä»¶
+     * @param c ç»„ä»¶
      */
 	public void installUI(JComponent c) {
 		button = (LogHandlerBar) c;
@@ -57,8 +57,8 @@ public class LogHandlerBarUI extends ComponentUI implements MouseListener, Focus
 	}
 
     /**
-     * ½â³ı×é¼şÅäÖÃ
-     * @param c ×é¼ş
+     * è§£é™¤ç»„ä»¶é…ç½®
+     * @param c ç»„ä»¶
      */
 	public void uninstallUI(JComponent c) {
 		button.removeMouseListener(this);
@@ -106,8 +106,8 @@ public class LogHandlerBarUI extends ComponentUI implements MouseListener, Focus
 	}
 
     /**
-     * Êó±êµã»÷
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mousePressed(MouseEvent e) {
 		armed = true;
@@ -115,43 +115,43 @@ public class LogHandlerBarUI extends ComponentUI implements MouseListener, Focus
 	}
 
     /**
-     * Êó±ê°´ÏÂ²¢ÊÍ·Å
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹å¹¶é‡Šæ”¾
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseEntered(MouseEvent e) {
 
 	}
 
     /**
-     *ÊÂ¼ş½áÊø
-     * @param e Êó±êÊÂ¼ş
+     *äº‹ä»¶ç»“æŸ
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseExited(MouseEvent e) {
 		button.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
     /**
-     *Ê§È¥¼üÅÌ½¹µã
-     * @param e ½¹µãÊÂ¼ş
+     *å¤±å»é”®ç›˜ç„¦ç‚¹
+     * @param e ç„¦ç‚¹äº‹ä»¶
      */
 	public void focusLost(FocusEvent e) {
 		armed = false;
 	}
     /**
-     *Êó±êµã»÷
-     * @param e Êó±êÊÂ¼ş
+     *é¼ æ ‡ç‚¹å‡»
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseClicked(MouseEvent e) {
 	}
     /**
-     *Êó±êÊÍ·Å
-     * @param e Êó±êÊÂ¼ş
+     *é¼ æ ‡é‡Šæ”¾
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseReleased(MouseEvent e) {
 	}
     /**
-     *»ñÈ¡¼üÅÌ½¹µã
-     * @param e ½¹µãÊÂ¼ş
+     *è·å–é”®ç›˜ç„¦ç‚¹
+     * @param e ç„¦ç‚¹äº‹ä»¶
      */
 	public void focusGained(FocusEvent e) {
 	}

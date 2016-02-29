@@ -26,7 +26,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-5 ¾ÛºÏ¿é±à¼­Æ÷
+ * @since 6.5.4 åˆ›å»ºäº2011-5-5 èšåˆå—ç¼–è¾‘å™¨
  */
 public abstract class BlockCreator<T extends TemplateBlock> extends JComponent implements java.io.Serializable, SelectableElement {
 	protected PolyDesigner designer;
@@ -75,10 +75,10 @@ public abstract class BlockCreator<T extends TemplateBlock> extends JComponent i
 		LayoutUtils.layoutContainer(this);
 	}
 
-	//Ä¬ÈÏ´óĞ¡, ±¨±í¿éÄ¬ÈÏ3ÁĞ6ĞĞ, Í¼±í¿éÄ¬ÈÏ330*240
+	//é»˜è®¤å¤§å°, æŠ¥è¡¨å—é»˜è®¤3åˆ—6è¡Œ, å›¾è¡¨å—é»˜è®¤330*240
 	public abstract UnitRectangle getDefaultBlockBounds();
 	
-	// ²»Í¬µÄBlockÓĞ²»Í¬µÄÏÔÊ¾Æ÷
+	// ä¸åŒçš„Blockæœ‰ä¸åŒçš„æ˜¾ç¤ºå™¨
 	protected abstract JComponent initMonitor();
 
 	public abstract PolyElementCasePane getEditingElementCasePane();
@@ -87,9 +87,9 @@ public abstract class BlockCreator<T extends TemplateBlock> extends JComponent i
 
 
 	/**
-	 * ¼ì²â°´Å¥×´Ì¬
+	 * æ£€æµ‹æŒ‰é’®çŠ¶æ€
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:33:46
+	 * @date 2015-2-5-ä¸Šåˆ11:33:46
 	 * 
 	 */
 	public abstract void checkButtonEnable();
@@ -122,31 +122,31 @@ public abstract class BlockCreator<T extends TemplateBlock> extends JComponent i
 
 
 	/**
-	 * »ñÈ¡µ±Ç°¹¤¾ßÀ¸×é
+	 * è·å–å½“å‰å·¥å…·æ ç»„
 	 * 
-	 * @return ¹¤¾ßÀ¸×é
+	 * @return å·¥å…·æ ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:29:07
+	 * @date 2015-2-5-ä¸Šåˆ11:29:07
 	 * 
 	 */
 	public abstract ToolBarDef[] toolbars4Target();
 
 	/**
-	 * ÔÚFormµÄ¹¤¾ßÀ¸×é
+	 * åœ¨Formçš„å·¥å…·æ ç»„
 	 * 
-	 * @return ×é¼şÊı×é
+	 * @return ç»„ä»¶æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:31:46
+	 * @date 2015-2-5-ä¸Šåˆ11:31:46
 	 * 
 	 */
 	public abstract JComponent[] toolBarButton4Form();
 	
 	/**
-	 * »ñÈ¡µ±Ç°²Ëµ¥À¸×é
+	 * è·å–å½“å‰èœå•æ ç»„
 	 * 
-	 * @return ²Ëµ¥À¸×é
+	 * @return èœå•æ ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:29:07
+	 * @date 2015-2-5-ä¸Šåˆ11:29:07
 	 * 
 	 */
 	public abstract MenuDef[] menus4Target();
@@ -155,11 +155,11 @@ public abstract class BlockCreator<T extends TemplateBlock> extends JComponent i
 
 
     /**
-	 * »ñÈ¡²Ëµ¥ÀïµÄ¿ì½İ·½Ê½Êı×é
+	 * è·å–èœå•é‡Œçš„å¿«æ·æ–¹å¼æ•°ç»„
 	 * 
-	 * @return ²Ëµ¥ÀïµÄ¿ì½İ·½Ê½Êı×é
+	 * @return èœå•é‡Œçš„å¿«æ·æ–¹å¼æ•°ç»„
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:27:08
+	 * @date 2015-2-5-ä¸Šåˆ11:27:08
 	 * 
 	 */
 	public abstract ShortCut[] shortcut4TemplateMenu();

@@ -92,14 +92,14 @@ public abstract class ProcessJSImplPane extends FurtherBasicBeanPane<ProcessJSIm
 	}
 	
 	/**
-	 * ¸üÐÂ±íµ¥ÔÚÁ÷³ÌÀï¿ÉÒÔÍùÇ°½øµÄ·ÖÖ§¡£
+	 * æ›´æ–°è¡¨å•åœ¨æµç¨‹é‡Œå¯ä»¥å¾€å‰è¿›çš„åˆ†æ”¯ã€‚
 	 */
 	public void refreshTransitions() {
 		comboBox.setData(this.getTransitions());
 	}
 	
 	/**
-	 * ÖØÖÃ½çÃæ
+	 * é‡ç½®ç•Œé¢
 	 */
 	public void reset() {
 		populateBean(null);
@@ -110,7 +110,7 @@ public abstract class ProcessJSImplPane extends FurtherBasicBeanPane<ProcessJSIm
 		if (ob == null) {			
 			ob = new ProcessJSImpl();
 		}
-		//b:Ã¿´ÎPopÊÇË¢ÐÂtransitions		
+		//b:æ¯æ¬¡Popæ˜¯åˆ·æ–°transitions		
 		this.refreshTransitions();
 		comboBox.getModel().setSelectedItem(ob.getTransitionNames());
 		paraPane.populate(ob.getParameters());
@@ -135,8 +135,8 @@ public abstract class ProcessJSImplPane extends FurtherBasicBeanPane<ProcessJSIm
 
 	@Override
 	/**
-	 * µ¯³öµÄ´°¿ÚµÄ±êÌâ
-	 * @return ±êÌâ
+	 * å¼¹å‡ºçš„çª—å£çš„æ ‡é¢˜
+	 * @return æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("ProcessManager");
@@ -207,9 +207,9 @@ public abstract class ProcessJSImplPane extends FurtherBasicBeanPane<ProcessJSIm
 
 	@Override
 	/**
-	 * ÅÐ¶Ï´«½øµÄ¶ÔÏóÊÇ·ñÊÇÃæ°åÖ§³Ö£¨ÄÜÏÔÊ¾£©µÄ¶ÔÏó
-	 * @ob ÐèÒªÕ¹Ê¾µÄ¶ÔÏó
-	 * @return ÊÇ·ñÊÇÖ§³ÖµÄ¶ÔÏó
+	 * åˆ¤æ–­ä¼ è¿›çš„å¯¹è±¡æ˜¯å¦æ˜¯é¢æ¿æ”¯æŒï¼ˆèƒ½æ˜¾ç¤ºï¼‰çš„å¯¹è±¡
+	 * @ob éœ€è¦å±•ç¤ºçš„å¯¹è±¡
+	 * @return æ˜¯å¦æ˜¯æ”¯æŒçš„å¯¹è±¡
 	 */
 	public boolean accept(Object ob) {
 		return ob instanceof ProcessJSImpl;

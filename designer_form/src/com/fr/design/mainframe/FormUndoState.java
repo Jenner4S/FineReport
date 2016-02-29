@@ -34,56 +34,56 @@ public class FormUndoState extends BaseUndoState<BaseJForm> {
 	}
 
 	/**
-	 * ·µ»Øform
+	 * è¿”å›form
 	 */
 	public Form getForm() {
 		return form;
 	}
 
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄ¿Ø¼ş
+	 * è¿”å›é€‰ä¸­çš„æ§ä»¶
 	 */
 	public Widget[] getSelectWidgets() {
 		return selectWidgets;
 	}
 
 	/**
-	 * ·µ»ØdesignÇøÓò´óĞ¡
+	 * è¿”å›designåŒºåŸŸå¤§å°
 	 */
 	public Dimension getAreaSize() {
 		return designerSize;
 	}
 
 	/**
-	 * ·µ»ØºáÏò¹ö¶¯ÌõÖµ
+	 * è¿”å›æ¨ªå‘æ»šåŠ¨æ¡å€¼
 	 */
 	public int getHorizontalValue() {
 		return hValue;
 	}
 
 	/**
-	 * ·µ»Ø×İÏò¹ö¶¯ÌõÖµ
+	 * è¿”å›çºµå‘æ»šåŠ¨æ¡å€¼
 	 */
 	public int getVerticalValue() {
 		return vValue;
 	}
 	
 	/**
-	 * ·µ»ØÈİÆ÷Êµ¼Ê¿í¶È
+	 * è¿”å›å®¹å™¨å®é™…å®½åº¦
 	 */
 	public double getWidthValue() {
 		return this.widthValue;
 	}
 	
 	/**
-	 * ·µ»ØÈİÆ÷Êµ¼Ê¸ß¶È
+	 * è¿”å›å®¹å™¨å®é™…é«˜åº¦
 	 */
 	public double getHeightValue() {
 		return this.heightValue;
 	}
 	
 	/**
-	 * ·µ»ØÉè¶¨µÄ°Ù·Ö±ÈÖµ
+	 * è¿”å›è®¾å®šçš„ç™¾åˆ†æ¯”å€¼
 	 */
 	public double getSlideValue() {
 		return this.slideValue;

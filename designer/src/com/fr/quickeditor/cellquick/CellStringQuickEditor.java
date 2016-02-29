@@ -34,7 +34,7 @@ public class CellStringQuickEditor extends CellQuickEditor {
         return THIS;
     }
 
-    // august£ºÈç¹ûÊÇÔ­À´±à¼­µÄÊÇ¹«Ê½,Òª±£Áô¹«Ê½ÀïµÄÕâĞ©ÊôĞÔ,²»È»ÔÚ¹«Ê½ºÍ×Ö·û´®×ª»¯Ê±,¾Í»á¶ªÊ§ÕâĞ©ÊôĞÔÉèÖÃ
+    // augustï¼šå¦‚æœæ˜¯åŸæ¥ç¼–è¾‘çš„æ˜¯å…¬å¼,è¦ä¿ç•™å…¬å¼é‡Œçš„è¿™äº›å±æ€§,ä¸ç„¶åœ¨å…¬å¼å’Œå­—ç¬¦ä¸²è½¬åŒ–æ—¶,å°±ä¼šä¸¢å¤±è¿™äº›å±æ€§è®¾ç½®
     private boolean reserveInResult = false;
     private boolean reserveOnWriteOrAnaly = true;
 
@@ -83,7 +83,7 @@ public class CellStringQuickEditor extends CellQuickEditor {
 
     protected void changeReportPaneCell(String tmpText) {
 		isEditing = true;
-        //refreshÒ»ÏÂ£¬Èç¹ûµ¥Ôª¸ñÄÚÓĞĞÂÌí¼ÓµÄ¿Ø¼ş£¬´ËÊ±²¢²»ÖªµÀ
+        //refreshä¸€ä¸‹ï¼Œå¦‚æœå•å…ƒæ ¼å†…æœ‰æ–°æ·»åŠ çš„æ§ä»¶ï¼Œæ­¤æ—¶å¹¶ä¸çŸ¥é“
         CellSelection cs1 = (CellSelection) tc.getSelection();
         ColumnRow columnRow = ColumnRow.valueOf(cs1.getColumn(), cs1.getRow());
         columnRowTextField.setText(columnRow.toString());
@@ -139,7 +139,7 @@ public class CellStringQuickEditor extends CellQuickEditor {
      * @param str
      */
     public void showText(String str) {
-		// ±¾±à¼­¿òÔÚÊäÈë¹ı³ÌÖĞÒı·¢µÄºóĞøÊÂ¼şÈç¹û»¹µ÷ÓÃÁË±¾¿òµÄsetText·½·¨²»ÄÜÖ´ĞĞ
+		// æœ¬ç¼–è¾‘æ¡†åœ¨è¾“å…¥è¿‡ç¨‹ä¸­å¼•å‘çš„åç»­äº‹ä»¶å¦‚æœè¿˜è°ƒç”¨äº†æœ¬æ¡†çš„setTextæ–¹æ³•ä¸èƒ½æ‰§è¡Œ
 		if (isEditing) {
 			return;
 		}

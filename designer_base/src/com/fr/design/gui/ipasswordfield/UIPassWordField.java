@@ -6,9 +6,9 @@ import javax.swing.text.Document;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-7-22
- * Time: ÏÂÎç4:44
+ * Time: ä¸‹åˆ4:44
  * To change this template use File | Settings | File Templates.
  */
 public class UIPassWordField extends JPasswordField {

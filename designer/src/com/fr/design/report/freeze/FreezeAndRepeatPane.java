@@ -10,7 +10,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.stable.FT;
 
 /**
- * ÖØ¸´Óë¶³½á
+ * é‡å¤ä¸å†»ç»“
  * 
  * @author Daniel~
  * 
@@ -53,14 +53,14 @@ public abstract class FreezeAndRepeatPane extends BasicBeanPane<FT> {
 
 	@Override
 /**
- *  ·µ»Ø×é¼şÊÇ·ñ¿ÉÓÃ
+ *  è¿”å›ç»„ä»¶æ˜¯å¦å¯ç”¨
  */
 	public boolean isEnabled() {
 		return this.isEnalbed;
 	}
 
 /**
- * ¸øUISpinnerÌí¼ÓListener
+ * ç»™UISpinneræ·»åŠ Listener
  */
 	public void addListener(ChangeListener l) {
 		if (end instanceof UISpinner) {

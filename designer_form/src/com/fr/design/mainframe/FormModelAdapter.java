@@ -22,7 +22,7 @@ public class FormModelAdapter extends DesignModelAdapter<Form, BaseJForm> {
 	}
 
     /**
-     * »·¾³¸Ä±ä.
+     * ç¯å¢ƒæ”¹å˜.
      */
 	public void envChanged() {
 		WidgetToolBarPane.refresh();
@@ -30,15 +30,15 @@ public class FormModelAdapter extends DesignModelAdapter<Form, BaseJForm> {
 	}
 
     /**
-     * ²ÎÊı¸Ä±ä.
+     * å‚æ•°æ”¹å˜.
      */
 	public void parameterChanged() {
-	//ÊµÊ±¸üĞÂ²ÎÊı
+	//å®æ—¶æ›´æ–°å‚æ•°
       jTemplate.populateParameter();
 	}
 
     /**
-     * ¿Ø¼şÅäÖÃ¸Ä±ä.
+     * æ§ä»¶é…ç½®æ”¹å˜.
      */
 	public void widgetConfigChanged() {
 		WidgetToolBarPane.refresh();
@@ -46,11 +46,11 @@ public class FormModelAdapter extends DesignModelAdapter<Form, BaseJForm> {
 	}
 
     /**
-     * ÖØÃüÃûTableDataºóµÄÒ»Ğ©²Ù×÷
+     * é‡å‘½åTableDataåçš„ä¸€äº›æ“ä½œ
      *
-     * @param oldName ¾ÉÃû×Ö
-     * @param newName ĞÂÃû×Ö.
-     * @return ·µ»ØÊÇ·ñÃû×ÖÒ»Ñù.
+     * @param oldName æ—§åå­—
+     * @param newName æ–°åå­—.
+     * @return è¿”å›æ˜¯å¦åå­—ä¸€æ ·.
      */
 	public boolean renameTableData(String oldName, String newName) {
 		if (super.renameTableData(oldName, newName)) {
@@ -76,7 +76,7 @@ public class FormModelAdapter extends DesignModelAdapter<Form, BaseJForm> {
 	}
 	
 	/**
-	 * »ñÈ¡¿ÉÒÔ±»³¬Á´µÄ¶ÔÏó,±íµ¥Ö÷ÌåÖĞµÄËùÓĞ¿Ø¼ş
+	 * è·å–å¯ä»¥è¢«è¶…é“¾çš„å¯¹è±¡,è¡¨å•ä¸»ä½“ä¸­çš„æ‰€æœ‰æ§ä»¶
 	 */
 	public Widget[] getLinkableWidgets() {
 		final ArrayList<Widget> linkAbleList = new ArrayList<Widget>();
@@ -90,8 +90,8 @@ public class FormModelAdapter extends DesignModelAdapter<Form, BaseJForm> {
 			
 			public void dealWith(Widget widget) {
                 boolean isSupportAsHypelink = widget.acceptType(ElementCaseEditor.class) || widget.acceptType(ChartEditorProvider.class);
-                //¿ÉÒÔ³¬Á´µÄ¶ÔÏó²»°üº¬±¾Éí; Ä¿Ç°Ö»ÓĞÍ¼±íºÍ±¨±í¿é¿ÉÒÔ
-                // bug66182 É¾ÁËÌõ¼ş£º!ComparatorUtils.equals(editingECName, widget.getWidgetName())  ÈÃµ±Ç°±íµ¥¶ÔÏó¿ÉÒÔÑ¡µ½×Ô¼º
+                //å¯ä»¥è¶…é“¾çš„å¯¹è±¡ä¸åŒ…å«æœ¬èº«; ç›®å‰åªæœ‰å›¾è¡¨å’ŒæŠ¥è¡¨å—å¯ä»¥
+                // bug66182 åˆ äº†æ¡ä»¶ï¼š!ComparatorUtils.equals(editingECName, widget.getWidgetName())  è®©å½“å‰è¡¨å•å¯¹è±¡å¯ä»¥é€‰åˆ°è‡ªå·±
                  if (isSupportAsHypelink){
 			    	linkAbleList.add( widget);
                 }

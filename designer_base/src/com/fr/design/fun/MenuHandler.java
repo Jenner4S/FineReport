@@ -7,7 +7,7 @@ import com.fr.design.menu.ShortCut;
  * @author richie
  * @date 2015-04-01
  * @since 8.0
- * Éè¼ÆÆ÷²Ëµ¥À¸²å¼ş½Ó¿Ú
+ * è®¾è®¡å™¨èœå•æ æ’ä»¶æ¥å£
  */
 public interface MenuHandler {
 
@@ -23,50 +23,50 @@ public interface MenuHandler {
     String CELL = "cell";
 
     /**
-     * ²åÈë²Ëµ¥µÄÎ»ÖÃ
+     * æ’å…¥èœå•çš„ä½ç½®
      *
-     * @param total ²åÈëµÄÎ»ÖÃ
+     * @param total æ’å…¥çš„ä½ç½®
      *
-     * @return ²åÈëÎ»ÖÃ£¬Èç¹ûÏë·Åµ½×îºó£¬Ôò·µ»Ø-1
+     * @return æ’å…¥ä½ç½®ï¼Œå¦‚æœæƒ³æ”¾åˆ°æœ€åï¼Œåˆ™è¿”å›-1
      */
     int insertPosition(int total);
 
     /**
-     * ÊÇ·ñÔÚ²åÈëµÄ²Ëµ¥Ç°²åÈëÒ»¸ö·Ö¸î·û
-     * @return ÊÇ·ñ²åÈë·Ö¸ô·û
+     * æ˜¯å¦åœ¨æ’å…¥çš„èœå•å‰æ’å…¥ä¸€ä¸ªåˆ†å‰²ç¬¦
+     * @return æ˜¯å¦æ’å…¥åˆ†éš”ç¬¦
      */
     boolean insertSeparatorBefore();
 
     /**
-     * ÊÇ·ñÔÚ²åÈëµÄ²Ëµ¥ºó²åÈëÒ»¸ö·Ö¸î·û
-     * @return ÊÇ·ñ²åÈë·Ö¸ô·û
+     * æ˜¯å¦åœ¨æ’å…¥çš„èœå•åæ’å…¥ä¸€ä¸ªåˆ†å‰²ç¬¦
+     * @return æ˜¯å¦æ’å…¥åˆ†éš”ç¬¦
      */
     boolean insertSeparatorAfter();
 
     /**
-     * ËùÊôµÄ·ÖÀà²Ëµ¥
-     * @return ·ÖÀà²Ëµ¥Ãû
+     * æ‰€å±çš„åˆ†ç±»èœå•
+     * @return åˆ†ç±»èœå•å
      */
     String category();
 
     /**
-     * ¾ßÌåµÄ²Ëµ¥ÏîÄÚÈİ
-     * @return ²Ëµ¥ÏîÄÚÈİ
+     * å…·ä½“çš„èœå•é¡¹å†…å®¹
+     * @return èœå•é¡¹å†…å®¹
      */
     ShortCut shortcut();
 
     /**
-     * ¾ßÌåµÄ²Ëµ¥ÏîÄÚÈİ
-     * @param plus µ±Ç°Ä£°å
+     * å…·ä½“çš„èœå•é¡¹å†…å®¹
+     * @param plus å½“å‰æ¨¡æ¿
      *
-     * @return ²Ëµ¥ÏîÄÚÈİ
+     * @return èœå•é¡¹å†…å®¹
      */
     ShortCut shortcut(ToolBarMenuDockPlus plus);
 
     /**
-     * Á½¸ö²Ëµ¥ÏîÏàµÈµÈÇé¿ö
-     * @param obj ±È½Ï¶ÔÏó
-     * @return ÏàµÈÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * ä¸¤ä¸ªèœå•é¡¹ç›¸ç­‰ç­‰æƒ…å†µ
+     * @param obj æ¯”è¾ƒå¯¹è±¡
+     * @return ç›¸ç­‰åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     boolean equals(Object obj);
 }

@@ -24,12 +24,12 @@ public class CellRichTextEditor extends CellQuickEditor {
 	}
 
 	/**
-	 * 创建界面上中间的部分
+	 * 鍒涘缓鐣岄潰涓婁腑闂寸殑閮ㄥ垎
 	 * 
-	 * @return 界面元素
+	 * @return 鐣岄潰鍏冪礌
 	 * 
 	 *
-	 * @date 2014-12-7-下午9:41:52
+	 * @date 2014-12-7-涓嬪崍9:41:52
 	 * 
 	 */
 	public JComponent createCenterBody() {

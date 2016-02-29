@@ -23,7 +23,7 @@ import com.fr.report.elementcase.ElementCase;
 
 /**
  * @editor zhou
- * @since 2012-3-22ÏÂÎç5:54:21
+ * @since 2012-3-22ä¸‹åˆ5:54:21
  */
 public class GridRowUI extends ComponentUI {
     private Color detailsBackground = Color.lightGray;
@@ -52,7 +52,7 @@ public class GridRowUI extends ComponentUI {
         int resolution = ScreenResolution.getScreenResolution();
 
         // use background to paint first.
-        // denny: ÓÃÀ´±êÊ¶ÒÑÓĞÊı¾İ
+        // denny: ç”¨æ¥æ ‡è¯†å·²æœ‰æ•°æ®
         int rowCount = elementCase.getRowCount();
         double rowTopHeight = 0;
         if (rowCount > verticalBeginValue) {
@@ -71,7 +71,7 @@ public class GridRowUI extends ComponentUI {
         // draw row
         double tmpHeight2 = 0;
         drawRow(verticalBeginValue, verticalEndValue, rowHeightList, resolution, tmpHeight2, gridRow, g2d);
-        // »­×ó±ßµÄ±ß¿òÏß.
+        // ç”»å·¦è¾¹çš„è¾¹æ¡†çº¿.
         g2d.setColor(gridRow.getSeparatorLineColor());
         GraphHelper.drawLine(g2d, 0, 0, 0, tmpHeight2);
     }
@@ -111,7 +111,7 @@ public class GridRowUI extends ComponentUI {
             g2d.setColor(gridRow.getSeparatorLineColor());
             GraphHelper.drawLine(g2d, 0, tmpHeight2, size.getWidth(), tmpHeight2);
             // draw content
-            // marks: Ä¿Ç°Ö»Ö§³Ö´¦ÀíÎÄ×ÖºÍÍ¼Ïñ¡£
+            // marks: ç›®å‰åªæ”¯æŒå¤„ç†æ–‡å­—å’Œå›¾åƒã€‚
             Integer rowContent = gridRow.getDisplay(i);
             String paintText = rowContent.toString();
             if (elementCase.getReportPageAttr() != null) {
@@ -149,13 +149,13 @@ public class GridRowUI extends ComponentUI {
         float fmAscent = GraphHelper.getFontMetrics(gridRow.getFont()).getAscent();
         double stringWidth = gridRow.getFont().getStringBounds(paintText, fontRenderContext).getWidth();
         double stringHeight = gridRow.getFont().getStringBounds(paintText, fontRenderContext).getHeight();
-        // AUGUST:Èç¹û¸ß¶ÈÌ«Ğ¡ÁË¾Í²»»­ÁË
+        // AUGUST:å¦‚æœé«˜åº¦å¤ªå°äº†å°±ä¸ç”»äº†
         if (stringHeight <= tmpIncreaseHeight + 2) {
 
             if (isSelectedBounds) {
                 g2d.setColor(gridRow.getSelectedForeground());
             } else {
-                // p:¼ì²éeanbled
+                // p:æ£€æŸ¥eanbled
                 if (gridRow.isEnabled()) {
                     g2d.setColor(gridRow.getForeground());
                 } else {

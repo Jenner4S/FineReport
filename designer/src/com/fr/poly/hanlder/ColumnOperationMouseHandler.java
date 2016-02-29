@@ -23,8 +23,8 @@ import com.fr.stable.unit.UnitRectangle;
 /**
  * @author richer
  * @since 6.5.4
- *        ´´½¨ÓÚ2011-4-8
- *        Ìí¼ÓÉ¾³ıÁĞ
+ *        åˆ›å»ºäº2011-4-8
+ *        æ·»åŠ åˆ é™¤åˆ—
  */
 public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends BlockOperationMouseHandler {
 
@@ -49,11 +49,11 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 	}
 
 	/**
-	 * Êó±ê°´ÏÂÊÂ¼ş
+	 * é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
 	 * 
-	 * @param e Êó±êÊÂ¼ş
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:32:04
+	 * @date 2015-2-12-ä¸‹åˆ2:32:04
 	 * 
 	 */
 	public void mousePressed(MouseEvent e) {
@@ -66,11 +66,11 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 	}
 
 	/**
-	 * Êó±êÍÏ×§ÊÂ¼ş
+	 * é¼ æ ‡æ‹–æ‹½äº‹ä»¶
 	 * 
-	 * @param e Êó±êÊÂ¼ş
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:32:04
+	 * @date 2015-2-12-ä¸‹åˆ2:32:04
 	 * 
 	 */
 	public void mouseDragged(MouseEvent e) {
@@ -99,11 +99,11 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 		}
 
 		/**
-		 * Êó±êÊÍ·ÅÊÂ¼ş
+		 * é¼ æ ‡é‡Šæ”¾äº‹ä»¶
 		 * 
-		 * @param e Êó±êÊÂ¼ş
+		 * @param e é¼ æ ‡äº‹ä»¶
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:32:04
+		 * @date 2015-2-12-ä¸‹åˆ2:32:04
 		 * 
 		 */
 		public void mouseReleased(MouseEvent e) {
@@ -121,11 +121,11 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 		}
 
 		/**
-		 * Êó±ê°´ÏÂÊÂ¼ş
+		 * é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
 		 * 
-		 * @param e Êó±êÊÂ¼ş
+		 * @param e é¼ æ ‡äº‹ä»¶
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:32:04
+		 * @date 2015-2-12-ä¸‹åˆ2:32:04
 		 * 
 		 */
 		public void mousePressed(MouseEvent e) {
@@ -134,11 +134,11 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 		}
 
 		/**
-		 * Êó±êÊÍ·ÅÊÂ¼ş
+		 * é¼ æ ‡é‡Šæ”¾äº‹ä»¶
 		 * 
-		 * @param e Êó±êÊÂ¼ş
+		 * @param e é¼ æ ‡äº‹ä»¶
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:32:04
+		 * @date 2015-2-12-ä¸‹åˆ2:32:04
 		 * 
 		 */
 		public void mouseReleased(MouseEvent e) {
@@ -148,4 +148,3 @@ public abstract class ColumnOperationMouseHandler<T extends BlockEditor> extends
 		}
 	}
 }
-

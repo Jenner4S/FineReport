@@ -15,7 +15,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * chart ÍøÒ³Á´½Ó ¶¨ÒåÊôĞÔ target url ÌØÕ÷µÄ ½çÃæ
+ * chart ç½‘é¡µé“¾æ¥ å®šä¹‰å±æ€§ target url ç‰¹å¾çš„ ç•Œé¢
  * 
  * @author kunsnat
  */
@@ -34,7 +34,7 @@ public class WebHyperNorthPane extends AbstractHyperlinkPane<WebHyperlink> {
 	}
 
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 * 
 	 * @date 2014-4-11
 	 */

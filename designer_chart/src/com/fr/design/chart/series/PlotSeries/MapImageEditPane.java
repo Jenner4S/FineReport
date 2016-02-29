@@ -46,10 +46,10 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * µØÍ¼ Í¼Æ¬±à¼­½çÃæ Ñ¡ÖĞÍ¼Æ¬ ±à¼­. Ö§³ÖÊó±êÑ¡ÖĞµÈÊÂ¼ş
+ * åœ°å›¾ å›¾ç‰‡ç¼–è¾‘ç•Œé¢ é€‰ä¸­å›¾ç‰‡ ç¼–è¾‘. æ”¯æŒé¼ æ ‡é€‰ä¸­ç­‰äº‹ä»¶
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-15 ÏÂÎç04:17:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-15 ä¸‹åˆ04:17:28
  */
 public class MapImageEditPane extends BasicBeanPane<String> {
 	private static final long serialVersionUID = -5925535686784344616L;
@@ -60,11 +60,11 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	
 	private ImageEditPane imageEditPane;
 	private UISelectTable recordTable;
-	private int editType = 0;// Ö»±ê¼Çmark»òÕß±ê¼Ç³öÂ·¾¶
-	private List<String> fromDataList = new ArrayList<String>();// ±à¼­Ê±´ÓÊı¾İ¼¯ÖĞÈ¡³öµÄÊ¹ÓÃ×Ö¶Î.
+	private int editType = 0;// åªæ ‡è®°markæˆ–è€…æ ‡è®°å‡ºè·¯å¾„
+	private List<String> fromDataList = new ArrayList<String>();// ç¼–è¾‘æ—¶ä»æ•°æ®é›†ä¸­å–å‡ºçš„ä½¿ç”¨å­—æ®µ.
 
-	private HashMap<String, ArrayList<String>> resultAreaShape = new HashMap<String, ArrayList<String>>();// Ãû×Ö ¶ÔÓ¦Í¼ĞÎ // ÒÑ±à¼­ÇøÈ«¶¼ÓÃÖ¸¶¨ÑÕÉ«
-    private String currentNodeName ; //µ±Ç°Ñ¡ÖĞµÄ½ÚµãµÄÃû×Ö
+	private HashMap<String, ArrayList<String>> resultAreaShape = new HashMap<String, ArrayList<String>>();// åå­— å¯¹åº”å›¾å½¢ // å·²ç¼–è¾‘åŒºå…¨éƒ½ç”¨æŒ‡å®šé¢œè‰²
+    private String currentNodeName ; //å½“å‰é€‰ä¸­çš„èŠ‚ç‚¹çš„åå­—
     private String typeName = "";
     private String mapName = "";
 
@@ -83,7 +83,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 
 		recordTable = new UISelectTable(1){
 			public int columnAtPoint(Point point) {
-				//Ö»ÓĞÒ»ÁĞ
+				//åªæœ‰ä¸€åˆ—
 				return 0;
 			}
 		};
@@ -101,7 +101,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 
 		recordTable.addChangeListener(new javax.swing.event.ChangeListener() {
 			public void stateChanged(javax.swing.event.ChangeEvent e) {
-				List<Object[]> names = recordTable.updateBean();//  µÃµ½ËùÓĞµÄList
+				List<Object[]> names = recordTable.updateBean();//  å¾—åˆ°æ‰€æœ‰çš„List
 
 				List<String> test = new ArrayList<String>();
 				for (int i = 0; i < names.size(); i++) {
@@ -128,21 +128,21 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
 	/**
-	 * ÉèÖÃ±à¼­µÄÀàĞÍ: ÇøÓò »òÕß µã
+	 * è®¾ç½®ç¼–è¾‘çš„ç±»å‹: åŒºåŸŸ æˆ–è€… ç‚¹
 	 */
 	public void setEditType(int editType) {
 		this.editType = editType;
 	}
 
 	/**
-	 * ·µ»Ø±à¼­µÄÀàĞÍ: ÇøÓò »òÕß µã
+	 * è¿”å›ç¼–è¾‘çš„ç±»å‹: åŒºåŸŸ æˆ–è€… ç‚¹
 	 */
 	public int getEditType() {
 		return editType;
 	}
 
     /**
-     * ÉèÖÃÕıÔÚ±à¼­µÄsvgÎÄ¼ş
+     * è®¾ç½®æ­£åœ¨ç¼–è¾‘çš„svgæ–‡ä»¶
      */
     public void setSvgMap(String filePath){
         resultAreaShape.clear();
@@ -156,7 +156,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
     }
 
 	/**
-	 * Çå¿ÕÍ¼Æ¬ÄÚÈİ
+	 * æ¸…ç©ºå›¾ç‰‡å†…å®¹
 	 */
 	public void clearSvgMap(){
 		resultAreaShape.clear();
@@ -170,8 +170,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
     /**
-     * ÉèÖÃÕıÔÚ±à¼­µÄsvgÎÄ¼ş
-     * @param attr ÒÑ¾­¶ÁÈ¡¹ıµÄÎÄ¼ş
+     * è®¾ç½®æ­£åœ¨ç¼–è¾‘çš„svgæ–‡ä»¶
+     * @param attr å·²ç»è¯»å–è¿‡çš„æ–‡ä»¶
      */
     public void setSvgMap(MapSvgAttr attr){
         resultAreaShape.clear();
@@ -185,8 +185,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
     }
 
 	/**
-	 * Ë¢ĞÂÊı¾İÁĞ±íÖĞµÄÊı¾İ
-     * @param list ÁĞ±í
+	 * åˆ·æ–°æ•°æ®åˆ—è¡¨ä¸­çš„æ•°æ®
+     * @param list åˆ—è¡¨
 	 */
 	public void refreshFromDataList(List list) {
 		fromDataList.clear();
@@ -197,9 +197,9 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
     /**
-     * µ±Ç°ÕıÔÚ±à¼­µÄÌõÄ¿µÄÀà±ğ(¹ú¼Ò£¬Ê¡ÊĞ)ÃûºÍµØÍ¼Ãû
-     * @param typeName Àà±ğÃû
-     * @param mapName µØÍ¼Ãû
+     * å½“å‰æ­£åœ¨ç¼–è¾‘çš„æ¡ç›®çš„ç±»åˆ«(å›½å®¶ï¼Œçœå¸‚)åå’Œåœ°å›¾å
+     * @param typeName ç±»åˆ«å
+     * @param mapName åœ°å›¾å
      */
     public void setTypeNameAndMapName(String typeName, String mapName){
         this.typeName = typeName;
@@ -208,15 +208,15 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 
 	private class ImageEditPane extends JComponent implements MouseListener, MouseMotionListener {
 
-        private MapSvgAttr currentSvgMap;//µ±Ç°Ñ¡ÖĞµÄsvgµØÍ¼
-		private GeneralPath selectedShape; // µ±Ç°Ñ¡ÖĞµÄShape
-		private Image image = BaseUtils.readImage("");// ËùÑ¡ÔñµÄÍ¼Æ¬
+        private MapSvgAttr currentSvgMap;//å½“å‰é€‰ä¸­çš„svgåœ°å›¾
+		private GeneralPath selectedShape; // å½“å‰é€‰ä¸­çš„Shape
+		private Image image = BaseUtils.readImage("");// æ‰€é€‰æ‹©çš„å›¾ç‰‡
 
-        //Æ½ÒÆµÄÎ»ÖÃ
+        //å¹³ç§»çš„ä½ç½®
 		private double moveLeft = 0;
 		private double moveTop = 0;
 
-        //Êó±êÂäµãµÄÎ»ÖÃ
+        //é¼ æ ‡è½ç‚¹çš„ä½ç½®
 		private double mouseStartX;
 		private double mouseStartY;
 
@@ -227,7 +227,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			this.addMouseMotionListener(this);
 		}
 
-		public void paintComponent(Graphics g) {// Ñ¡ÖĞÍ¼Æ¬Ö®ºó, ¼ÇÂ¼Ñ¡ÖĞµÄÇøÓò, µãÖĞµÄ ±ê¼Çµã
+		public void paintComponent(Graphics g) {// é€‰ä¸­å›¾ç‰‡ä¹‹å, è®°å½•é€‰ä¸­çš„åŒºåŸŸ, ç‚¹ä¸­çš„ æ ‡è®°ç‚¹
 			Rectangle bounds = this.getBounds();
 			if (bounds == null || this.image == null) {
 				return;
@@ -239,8 +239,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			int imageHeight = this.image.getHeight(new JPanel());
 
 			Graphics2D g2d = (Graphics2D) g;
-			if (this.image != null) {// Ì«Ğ¡»á·Å´ó, Ì«´ó, ÔòÄ¬ÈÏÍÏ¶¯
-				g2d.drawImage(this.image, (int) moveLeft, (int) moveTop, imageWidth, imageHeight, new JPanel()); // Ö»ÊÇÒÆ¶¯ÆğÊ¼Î»ÖÃ
+			if (this.image != null) {// å¤ªå°ä¼šæ”¾å¤§, å¤ªå¤§, åˆ™é»˜è®¤æ‹–åŠ¨
+				g2d.drawImage(this.image, (int) moveLeft, (int) moveTop, imageWidth, imageHeight, new JPanel()); // åªæ˜¯ç§»åŠ¨èµ·å§‹ä½ç½®
 			}
 
 			g2d.translate(moveLeft, moveTop);
@@ -255,7 +255,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			}
 
 			g2d.setColor(Color.blue);
-			if (StringUtils.isNotEmpty(mouseSelectListName) && resultAreaShape.containsKey(mouseSelectListName)) {// µ±Ç°Ğü¸¡Ñ¡ÖĞµÄ list, ×Ô¼º»­µÄĞü¸¡ÌáÊ¾, ±³¾° ±ß¿ò, ÎÄ×Ö
+			if (StringUtils.isNotEmpty(mouseSelectListName) && resultAreaShape.containsKey(mouseSelectListName)) {// å½“å‰æ‚¬æµ®é€‰ä¸­çš„ list, è‡ªå·±ç”»çš„æ‚¬æµ®æç¤º, èƒŒæ™¯ è¾¹æ¡†, æ–‡å­—
 				GeneralPath highSelect = getSelectedNodePath(mouseSelectListName);
 				if (highSelect != null) {
                     g2d.fill(highSelect);
@@ -279,7 +279,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 		}
 
 
-        //³õÊ¼»¯ÏÂÍ¼Æ¬µÄ×´Ì¬
+        //åˆå§‹åŒ–ä¸‹å›¾ç‰‡çš„çŠ¶æ€
 		private void initImage() {
             this.image = currentSvgMap.getMapImage();
             CoreGraphHelper.waitForImage(this.image);
@@ -290,8 +290,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 		}
 
         /**
-         * ÉèÖÃµ±Ç°ÕıÔÚ±à¼­µÄÎÄ¼ş
-         * @param filePath ÎÄ¼şÂ·¾¶
+         * è®¾ç½®å½“å‰æ­£åœ¨ç¼–è¾‘çš„æ–‡ä»¶
+         * @param filePath æ–‡ä»¶è·¯å¾„
          */
         public void setSvgMap(String filePath){
             currentSvgMap = new MapSvgAttr(filePath);
@@ -300,8 +300,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
         }
 
         /**
-         * ÉèÖÃµ±Ç°ÕıÔÚ±à¼­µÄÎÄ¼ş
-         * @param attr ¶ÁÈ¡¹ıµÄÎÄ¼ş
+         * è®¾ç½®å½“å‰æ­£åœ¨ç¼–è¾‘çš„æ–‡ä»¶
+         * @param attr è¯»å–è¿‡çš„æ–‡ä»¶
          */
         public void setSvgMap(MapSvgAttr attr){
             currentSvgMap = attr;
@@ -328,7 +328,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			drawSelectShape(e);
-			if (e.getClickCount() == 2) {// 2´Î±à¼­, ²»È»ºÜÈİÒ×´íÂÒ ºÍ update ´íÎó
+			if (e.getClickCount() == 2) {// 2æ¬¡ç¼–è¾‘, ä¸ç„¶å¾ˆå®¹æ˜“é”™ä¹± å’Œ update é”™è¯¯
 				showEditNamePane(e);
 			}
 		}
@@ -400,7 +400,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			this.dragged = false;
 		}
 
-        //»­Êó±êµã»÷µÄÇøÓò
+        //ç”»é¼ æ ‡ç‚¹å‡»çš„åŒºåŸŸ
 		private void drawSelectShape(MouseEvent e) {
 			selectedShape = null;
 			mouseSelectListName = StringUtils.EMPTY;
@@ -409,7 +409,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			}
 
 			Point ePoint = e.getPoint();
-			Point select = new Point((int) (ePoint.getX() - moveLeft), (int) (ePoint.getY() - moveTop));// Ö§³Öctrl Ñ¡¶¨Ê±µÄ¶àÑ¡..  Ö»ÊÇ¼ÇÂ¼¶à¸öÊó±êÎ»ÖÃ È»ºóshapeºÏ²¢
+			Point select = new Point((int) (ePoint.getX() - moveLeft), (int) (ePoint.getY() - moveTop));// æ”¯æŒctrl é€‰å®šæ—¶çš„å¤šé€‰..  åªæ˜¯è®°å½•å¤šä¸ªé¼ æ ‡ä½ç½® ç„¶åshapeåˆå¹¶
 			boolean gotSelectedShape = false;
 			for (String key : resultAreaShape.keySet()) {
 				GeneralPath mapSelect = getSelectedNodePath(key);
@@ -421,13 +421,13 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 				}
 			}
 
-			if (!gotSelectedShape) {// ¸ù¾İ×ø±êÖØĞÂÔÚÍ¼Æ¬ÖĞÑ¡È¡Shape
+			if (!gotSelectedShape) {// æ ¹æ®åæ ‡é‡æ–°åœ¨å›¾ç‰‡ä¸­é€‰å–Shape
 
 				if (getEditType() == MapShapeValue.AREA) {
 					selectedShape = currentSvgMap.getSelectPath(select);
                     currentNodeName = currentSvgMap.getSelectedPathName(select);
 				} else {
-                    //±ê¼ÇµãÀàĞÍµÄÒª²»Òª´ı¶¨
+                    //æ ‡è®°ç‚¹ç±»å‹çš„è¦ä¸è¦å¾…å®š
 
 				}
 			}
@@ -484,11 +484,11 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			bg.setVisible(true);
 		}
 
-		// viewList ¸ù¾İÄÚÈİÃû³Æ µÃµ½ÊÇÄÄÒ»ĞĞ.
+		// viewList æ ¹æ®å†…å®¹åç§° å¾—åˆ°æ˜¯å“ªä¸€è¡Œ.
 		public int getEditViewRow(Point point) {
-			int rowIndex = recordTable.getRowCount();// ×î²î Ã»ÓĞÕÒµ½Ó¦¸ÃÒ²ÊÇ·µ»Ø row + 1
+			int rowIndex = recordTable.getRowCount();// æœ€å·® æ²¡æœ‰æ‰¾åˆ°åº”è¯¥ä¹Ÿæ˜¯è¿”å› row + 1
 
-			// ¸ù¾İ±à¼­µÄÎ»ÖÃ, ÊÇ·ñÓĞshape¶ÔÓ¦, ÓĞÔòÕÒ³ö, Ã»ÓĞÔòÊÇĞÂµÄĞĞ
+			// æ ¹æ®ç¼–è¾‘çš„ä½ç½®, æ˜¯å¦æœ‰shapeå¯¹åº”, æœ‰åˆ™æ‰¾å‡º, æ²¡æœ‰åˆ™æ˜¯æ–°çš„è¡Œ
 			String isSelectName = StringUtils.EMPTY;
 			for (String name : resultAreaShape.keySet()) {
 				GeneralPath shape = getSelectedNodePath(name);
@@ -506,22 +506,22 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 						break;
 					}
 				}
-			}// Ã»ÓĞÔòÌí¼ÓÒ»ĞĞ
+			}// æ²¡æœ‰åˆ™æ·»åŠ ä¸€è¡Œ
 
 			return rowIndex;
 		}
 	}
 
-	// Í¼Æ¬½çÃæ  Ğü¸¡µã»÷µ¯³öµÄÃû³ÆÁĞ±í
-	private class EditNamePane extends BasicBeanPane<String> {// µã»÷±à¼­Ãû³Æ
+	// å›¾ç‰‡ç•Œé¢  æ‚¬æµ®ç‚¹å‡»å¼¹å‡ºçš„åç§°åˆ—è¡¨
+	private class EditNamePane extends BasicBeanPane<String> {// ç‚¹å‡»ç¼–è¾‘åç§°
 
-		private UITextField nameText; //  ÎÄ±¾¿ò
+		private UITextField nameText; //  æ–‡æœ¬æ¡†
 		private JList dataList;
 		private String startName;
 
 		private JList hasNamedList;
 
-		private int editViewRow = -1;// Ëù¶ÔÓ¦µÄviewµÄindexĞĞ ,  È·¶¨µ±Ç°ÕıÔÚ±à¼­µÄviewListµÄĞĞ, È»ºó¸Ä±äÖµ
+		private int editViewRow = -1;// æ‰€å¯¹åº”çš„viewçš„indexè¡Œ ,  ç¡®å®šå½“å‰æ­£åœ¨ç¼–è¾‘çš„viewListçš„è¡Œ, ç„¶åæ”¹å˜å€¼
 
 		private UILabel namedLabel = new BoldFontTextLabel(Inter.getLocText("FR-Chart-Pre_Defined") + "------");
 		private JPanel listPane = new JPanel();
@@ -550,7 +550,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 				public void mouseClicked(MouseEvent e) {
 					if (e.getClickCount() >= 2 && dataList.getSelectedValue() != null) {
 						String value = Utils.objectToString(dataList.getSelectedValue());
-						nameText.setText(value);// Ö±½Ó¶ÔÎÄ±¾Öµ¸Ä±ä, ÈÃÎÄ±¾È¥´¥·¢ÊÂ¼ş
+						nameText.setText(value);// ç›´æ¥å¯¹æ–‡æœ¬å€¼æ”¹å˜, è®©æ–‡æœ¬å»è§¦å‘äº‹ä»¶
 					}
 				}
 			});
@@ -580,10 +580,10 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 		}
 
 
-        //ÁĞ±í¸Ä±ä£¬Ñ¡ÖĞµÄÊ±ºòÌí¼ÓshapeĞÅÏ¢
+        //åˆ—è¡¨æ”¹å˜ï¼Œé€‰ä¸­çš„æ—¶å€™æ·»åŠ shapeä¿¡æ¯
 		private void changeList() {
 			String textValue = nameText.getText();
-			if (editViewRow >= recordTable.getRowCount()) {// Ìí¼ÓÒ»ĞĞ  È·¶¨µÄĞĞÊı ¼´Ê±´óÓÚviewCount
+			if (editViewRow >= recordTable.getRowCount()) {// æ·»åŠ ä¸€è¡Œ  ç¡®å®šçš„è¡Œæ•° å³æ—¶å¤§äºviewCount
 				recordTable.addLine(new String[]{textValue});
 			} else if (editViewRow > -1) {
 				recordTable.setValueAt(textValue, editViewRow, 0);
@@ -594,7 +594,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 			resetPaneWithNewNameList(fromDataList);
 		}
 
-		public void resetPaneWithNewNameList(List<String> list) {// ½çÃæ²»±ä, Ö»ÊÇË¢ĞÂÖØÖÃlist
+		public void resetPaneWithNewNameList(List<String> list) {// ç•Œé¢ä¸å˜, åªæ˜¯åˆ·æ–°é‡ç½®list
 			DefaultListModel model = (DefaultListModel) dataList.getModel();
 			model.removeAllElements();
 
@@ -640,10 +640,10 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
 	/**
-	 * ¸üĞÂµØÍ¼ Ãû³ÆÁĞ±íÒÔ¼°ÕıÔÚ±à¼­µÄÍ¼Æ¬
+	 * æ›´æ–°åœ°å›¾ åç§°åˆ—è¡¨ä»¥åŠæ­£åœ¨ç¼–è¾‘çš„å›¾ç‰‡
 	 */
-	public void populateBean(String ob) {// È·¶¨Òª±à¼­µÄµØÍ¼Ãû³Æ
-		this.editMapName = ob;// µ±Ç°±à¼­µÄµØÍ¼Ãû³Æ
+	public void populateBean(String ob) {// ç¡®å®šè¦ç¼–è¾‘çš„åœ°å›¾åç§°
+		this.editMapName = ob;// å½“å‰ç¼–è¾‘çš„åœ°å›¾åç§°
         MapSvgXMLHelper mapHelper = MapSvgXMLHelper.getInstance();
 		if (mapHelper.containsMapName(editMapName)) {
             MapSvgAttr svgAttr = mapHelper.getMapAttr(editMapName);
@@ -657,13 +657,13 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
 	/**
-	 * ±£´æ±à¼­µÄµØÍ¼ ĞÎ×´µÈĞÅÏ¢.
+	 * ä¿å­˜ç¼–è¾‘çš„åœ°å›¾ å½¢çŠ¶ç­‰ä¿¡æ¯.
 	 */
 	public String updateBean() {
 		if(imageEditPane.currentSvgMap !=null){
 			this.editMapName = imageEditPane.currentSvgMap.getName();
 		}
-		// ½«µØÍ¼¼ÓÈëhelper ¹Ì¶¨´æ´¢   ¼ÇÂ¼¹Ì¶¨µÄhShape  Ô­Í¼Æ¬µÄ×ø±êÎ»ÖÃ, È»ºóÔÚ¸ù¾İÏÖÔÚÏÖÊµµÄ Êµ¼Ê×ø±ê Õ¹Ê¾
+		// å°†åœ°å›¾åŠ å…¥helper å›ºå®šå­˜å‚¨   è®°å½•å›ºå®šçš„hShape  åŸå›¾ç‰‡çš„åæ ‡ä½ç½®, ç„¶ååœ¨æ ¹æ®ç°åœ¨ç°å®çš„ å®é™…åæ ‡ å±•ç¤º
 		if (StringUtils.isNotEmpty(editMapName) && this.imageEditPane.getImage() != null) {
             MapSvgXMLHelper mapHelper = MapSvgXMLHelper.getInstance();
             MapSvgAttr mapAttr = imageEditPane.currentSvgMap;
@@ -672,11 +672,11 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 				mapHelper.pushMapAttr(editMapName,mapAttr);
 			}
             if(mapHelper.containsMapName(editMapName)){
-                //´¦ÀíÏÂmapAttr´æ½ÚµãnameÊôĞÔ
+                //å¤„ç†ä¸‹mapAttrå­˜èŠ‚ç‚¹nameå±æ€§
                 updateMapShapePath(mapAttr);
                 mapHelper.addCustomSvgMap(editMapName, mapAttr);
 
-                //ÉèÖÃÒÔºóÒªĞ´»Ø
+                //è®¾ç½®ä»¥åè¦å†™å›
                 mapAttr.writeBack(editMapName);
             }
 		}
@@ -685,8 +685,8 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
 	/**
-      * ¸üĞÂ½çÃæ
-      * @param svgAttr  µØÍ¼ÊôĞÔ
+      * æ›´æ–°ç•Œé¢
+      * @param svgAttr  åœ°å›¾å±æ€§
 	 * */
 	public void populateMapSvgAttr(MapSvgAttr svgAttr){
 		if(svgAttr == null || svgAttr.getMapImage() == null){
@@ -707,14 +707,14 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 	}
 
 	/**
-      * ¸üĞÂMapSvgAttr
-      * @return  ·µ»ØÊôĞÔ
+      * æ›´æ–°MapSvgAttr
+      * @return  è¿”å›å±æ€§
 	 * */
 	public MapSvgAttr updateWithOutSave(){
 		if(imageEditPane.currentSvgMap !=null){
 			this.editMapName = imageEditPane.currentSvgMap.getName();
 		}
-		// ½«µØÍ¼¼ÓÈëhelper ¹Ì¶¨´æ´¢   ¼ÇÂ¼¹Ì¶¨µÄhShape  Ô­Í¼Æ¬µÄ×ø±êÎ»ÖÃ, È»ºóÔÚ¸ù¾İÏÖÔÚÏÖÊµµÄ Êµ¼Ê×ø±ê Õ¹Ê¾
+		// å°†åœ°å›¾åŠ å…¥helper å›ºå®šå­˜å‚¨   è®°å½•å›ºå®šçš„hShape  åŸå›¾ç‰‡çš„åæ ‡ä½ç½®, ç„¶ååœ¨æ ¹æ®ç°åœ¨ç°å®çš„ å®é™…åæ ‡ å±•ç¤º
 		if (StringUtils.isNotEmpty(editMapName) && this.imageEditPane.getImage() != null) {
             MapSvgXMLHelper mapHelper = MapSvgXMLHelper.getInstance();
             MapSvgAttr mapAttr = imageEditPane.currentSvgMap;
@@ -723,7 +723,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 				mapHelper.pushMapAttr(editMapName,mapAttr);
 			}
             if(mapHelper.containsMapName(editMapName)){
-                //´¦ÀíÏÂmapAttr´æ½ÚµãnameÊôĞÔ
+                //å¤„ç†ä¸‹mapAttrå­˜èŠ‚ç‚¹nameå±æ€§
                 updateMapShapePath(mapAttr);
                 mapHelper.addCustomSvgMap(editMapName, mapAttr);
             }
@@ -752,7 +752,7 @@ public class MapImageEditPane extends BasicBeanPane<String> {
 		MapSvgAttr attr = imageEditPane.currentSvgMap;
 		ArrayList<String> pathsID = resultAreaShape.get(nodeName);
 		GeneralPath unionPath =new GeneralPath();
-        //Õâ±ß±ØĞëÔÚĞÂ½¨µÄÒ»¸öpathÉÏappend£¬²»È»Ö±½ÓÔÚ´æµÄpathÉÏappend£¬²»È»ºóÃæÉ¾³ı×éºÏÁË£¬Ò²²»ÄÜÕı³£µÄÑ¡µ¥¸ö
+        //è¿™è¾¹å¿…é¡»åœ¨æ–°å»ºçš„ä¸€ä¸ªpathä¸Šappendï¼Œä¸ç„¶ç›´æ¥åœ¨å­˜çš„pathä¸Šappendï¼Œä¸ç„¶åé¢åˆ é™¤ç»„åˆäº†ï¼Œä¹Ÿä¸èƒ½æ­£å¸¸çš„é€‰å•ä¸ª
         for(String id :pathsID){
 			unionPath.append(attr.getPath4PathID(id),false);
 

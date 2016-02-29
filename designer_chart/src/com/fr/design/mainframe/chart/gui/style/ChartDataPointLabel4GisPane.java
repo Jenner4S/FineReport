@@ -117,7 +117,7 @@ public class ChartDataPointLabel4GisPane extends ChartDatapointLabelPane{
                     break;
                 }
             }
-            // 以前的换行符 ${BR}
+            // 浠ュ墠鐨勬崲琛岀 ${BR}
             if (divideComoBox != null && dataLabel.contains(ChartConstants.BREAKLINE_PARA)) {
                 divideComoBox.setSelectedItem(ChartConstants.DELIMITERS[3]);
             }

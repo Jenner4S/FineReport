@@ -11,11 +11,11 @@ import com.fr.design.icon.IconPathConstants;
 import com.fr.general.Inter;
 
 /**
- * ½ûÖ¹¿éÖØµşµÄÌáÊ¾´°¿Ú
+ * ç¦æ­¢å—é‡å çš„æç¤ºçª—å£
  * 
  * @author neil
  *
- * @date: 2015-2-27-ÉÏÎç10:49:42
+ * @date: 2015-2-27-ä¸Šåˆ10:49:42
  */
 public class BlockForbiddenWindow extends JWindow{
 	
@@ -25,7 +25,7 @@ public class BlockForbiddenWindow extends JWindow{
     private UIButton promptButton = new UIButton(Inter.getLocText("FR-Designer_Block-intersect"), BaseUtils.readIcon(IconPathConstants.FORBID_ICON_PATH));
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public BlockForbiddenWindow() {
 		this.add(promptButton);
@@ -34,10 +34,10 @@ public class BlockForbiddenWindow extends JWindow{
 	}
 	
 	/**
-	 * ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾´°¿Ú, Ä¬ÈÏ½«windowµÄÖĞĞÄµã·Åµ½Ö¸¶¨Î»ÖÃÉÏ
+	 * åœ¨æŒ‡å®šä½ç½®æ˜¾ç¤ºçª—å£, é»˜è®¤å°†windowçš„ä¸­å¿ƒç‚¹æ”¾åˆ°æŒ‡å®šä½ç½®ä¸Š
 	 * 
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
 	 * 
 	 */
 	public void showWindow(int x, int y){
@@ -46,7 +46,7 @@ public class BlockForbiddenWindow extends JWindow{
 	}
 	
 	/**
-	 * Òş²Øµ±Ç°´°¿Ú
+	 * éšè—å½“å‰çª—å£
 	 * 
 	 */
 	public void hideWindow(){

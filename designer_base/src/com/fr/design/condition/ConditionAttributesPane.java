@@ -23,19 +23,19 @@ public abstract class ConditionAttributesPane<T> extends BasicBeanPane<T> {
 
     protected java.util.Map<Class, ConditionAttrSingleConditionPane> classPaneMap = new HashMap<Class, ConditionAttrSingleConditionPane>();
 
-    //¿ÉÓÃµÄActions.
+    //å¯ç”¨çš„Actions.
     protected java.util.List<UpdateAction> useAbleActionList = new java.util.ArrayList<UpdateAction>();
 
     protected void initComponents() {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        // ÊôĞÔ ½çÃæ
+        // å±æ€§ ç•Œé¢
         JPanel propertyChangePane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
         this.add(propertyChangePane);
 
         propertyChangePane.setBorder(GUICoreUtils.createTitledBorder(Inter.getLocText("Property") + ":", null));
 
-        // Ñ¡ÔñÒª¸Ä±äµÄÊôĞÔ.
+        // é€‰æ‹©è¦æ”¹å˜çš„å±æ€§.
         JPanel addItemPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
         ToolBarDef toolbarDef = new ToolBarDef();
 
@@ -57,7 +57,7 @@ public abstract class ConditionAttributesPane<T> extends BasicBeanPane<T> {
         selectedItemPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
 //		selectedItemPane.setLayout(new BoxLayout(selectedItemPane,BoxLayout.Y_AXIS));
 
-        // Ñ¡ÖĞµÄÌí¼ÓItempane
+        // é€‰ä¸­çš„æ·»åŠ Itempane
         JScrollPane selectedItemScrollPane = new JScrollPane();
         selectedItemScrollPane.setViewportView(selectedItemPane);
         selectedItemScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

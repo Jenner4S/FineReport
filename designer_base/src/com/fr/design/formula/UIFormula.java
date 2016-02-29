@@ -14,29 +14,29 @@ import java.awt.*;
 public interface UIFormula {
 
     /**
-     * ´ÓÒÑÓĞµÄ¹«Ê½»¹Ô­¹«Ê½Ãæ°å
-     * @param formula ¹«Ê½
+     * ä»å·²æœ‰çš„å…¬å¼è¿˜åŸå…¬å¼é¢æ¿
+     * @param formula å…¬å¼
      */
     void populate(Formula formula);
 
     /**
-     * ¸ù¾İÖ¸¶¨µÄ±äÁ¿´¦ÀíºÍ¹«Ê½»¹Ô­¹«Ê½Ãæ°å
-     * @param formula ¹«Ê½
-     * @param variableResolver ±äÁ¿´¦ÀíÆ÷
+     * æ ¹æ®æŒ‡å®šçš„å˜é‡å¤„ç†å’Œå…¬å¼è¿˜åŸå…¬å¼é¢æ¿
+     * @param formula å…¬å¼
+     * @param variableResolver å˜é‡å¤„ç†å™¨
      */
     void populate(Formula formula, VariableResolver variableResolver);
 
     /**
-     * »ñÈ¡¹«Ê½Ãæ°åµÄ²ÎÊı
-     * @return ¹«Ê½
+     * è·å–å…¬å¼é¢æ¿çš„å‚æ•°
+     * @return å…¬å¼
      */
     Formula update();
 
     /**
-     * ÏÔÊ¾´°¿Ú
-     * @param window ´°¿Ú
-     * @param l ¶Ô»°¿ò¼àÌıÆ÷
-     * @return ¶Ô»°¿ò
+     * æ˜¾ç¤ºçª—å£
+     * @param window çª—å£
+     * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+     * @return å¯¹è¯æ¡†
      */
     BasicDialog showLargeWindow(Window window, DialogActionListener l);
 }

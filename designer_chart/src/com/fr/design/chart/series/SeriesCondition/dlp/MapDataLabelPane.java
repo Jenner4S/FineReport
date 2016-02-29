@@ -8,8 +8,8 @@ import javax.swing.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : 上午10:34
- * 地图系列标签界面
+ * Time   : 涓婂崍10:34
+ * 鍦板浘绯诲垪鏍囩鐣岄潰
  */
 public class MapDataLabelPane extends DataLabelPane {
 

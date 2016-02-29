@@ -3,7 +3,7 @@ package com.fr.design.fun;
 import javax.swing.*;
 
 /**
- * µ¼³ö²Ëµ¥Éè¼ÆÆ÷¶ËÍØÕ¹£¬ÓÃÓÚ¿ØÖÆ¸Ã²Ëµ¥ÊÇ·ñÔÚweb¶ËÏÔÊ¾
+ * å¯¼å‡ºèœå•è®¾è®¡å™¨ç«¯æ‹“å±•ï¼Œç”¨äºæ§åˆ¶è¯¥èœå•æ˜¯å¦åœ¨webç«¯æ˜¾ç¤º
  * @author focus
  * @date Jul 2, 2015
  * @since 8.0
@@ -15,21 +15,21 @@ public interface ExportToolBarProvider {
 	
 	/**
 	 *
-	 * ÓÃÓÚÌí¼Ó ¿ØÖÆweb¶ËÊÇ·ñÏÔÊ¾¸Ã²Ëµ¥µÄcheckboxµÄÃæ°å
+	 * ç”¨äºæ·»åŠ  æ§åˆ¶webç«¯æ˜¯å¦æ˜¾ç¤ºè¯¥èœå•çš„checkboxçš„é¢æ¿
 	 * 
-	 * @param pane Ãæ°å
-	 * @return ¸ÃÃæ°å
+	 * @param pane é¢æ¿
+	 * @return è¯¥é¢æ¿
 	 */
 	public JPanel updateCenterPane(JPanel pane);
 	
 	/**
-	 * ¸ù¾İxmlÀïÃæ´æµÄweb¶Î°´Å¥ÏÔÊ¾×´Ì¬¸üĞÂ¶ÔÓ¦µÄcheckbox
+	 * æ ¹æ®xmlé‡Œé¢å­˜çš„webæ®µæŒ‰é’®æ˜¾ç¤ºçŠ¶æ€æ›´æ–°å¯¹åº”çš„checkbox
 	 * 
 	 */
 	public void populate();
 	
 	/**
-	 * ¸ù¾İcheckbox¿ØÖÆweb¶Î²Ëµ¥ÊÇ·ñÏÔÊ¾
+	 * æ ¹æ®checkboxæ§åˆ¶webæ®µèœå•æ˜¯å¦æ˜¾ç¤º
 	 * 
 	 * @return
 	 */

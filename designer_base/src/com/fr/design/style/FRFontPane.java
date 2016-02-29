@@ -79,42 +79,42 @@ public class FRFontPane extends BasicPane {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
         this.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
         
-        // ×İÏò²¼¾Ö ·ÅÖÃlist ºÍ ÏÂ»®Ïß ÑÕÉ«
+        // çºµå‘å¸ƒå±€ æ”¾ç½®list å’Œ ä¸‹åˆ’çº¿ é¢œè‰²
         JPanel listVPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_S_Pane();
         this.add(listVPane, BorderLayout.NORTH);
         
         JPanel listHPane =FRGUIPaneFactory.createNColumnGridInnerContainer_S_Pane(2);
         listVPane.add(listHPane);
 
-        // Ãû×Ö
+        // åå­—
         familyPane = new FontFamilyPane();
         listHPane.add(familyPane);
         
-        // ×ÖĞÎºÍ´óĞ¡
+        // å­—å½¢å’Œå¤§å°
         fontSizeStylePane = new FontSizeStylePane();
         listHPane.add(fontSizeStylePane);
         
         fontSizeStylePane.getStyleList().addListSelectionListener(listSelectionListener);
         
-        //Richie:Ö±½ÓÊäÈëFRFontµÄsize.
+        //Richie:ç›´æ¥è¾“å…¥FRFontçš„size.
         fontSizeStylePane.getSizeField().getDocument().addDocumentListener(documentListener);
         fontSizeStylePane.getSizeField().getDocument().addDocumentListener(new DocumentListener() {
-			public void changedUpdate(DocumentEvent e) {// ÕâÊÇ¸ü¸Ä²Ù×÷µÄ´¦Àí
+			public void changedUpdate(DocumentEvent e) {// è¿™æ˜¯æ›´æ”¹æ“ä½œçš„å¤„ç†
 				updatePreviewLabel();
 			}
 
-			public void insertUpdate(DocumentEvent e) {// ÕâÊÇ²åÈë²Ù×÷µÄ´¦Àí
+			public void insertUpdate(DocumentEvent e) {// è¿™æ˜¯æ’å…¥æ“ä½œçš„å¤„ç†
 				updatePreviewLabel();
 			}
 
-			public void removeUpdate(DocumentEvent e) {// ÕâÊÇÉ¾³ı²Ù×÷µÄ´¦Àí
+			public void removeUpdate(DocumentEvent e) {// è¿™æ˜¯åˆ é™¤æ“ä½œçš„å¤„ç†
 				updatePreviewLabel();
 			}
 		}); 
         
         fontSizeStylePane.getSizeList().addListSelectionListener(listSelectionListener);
         
-        // ÏÂ»®Ïß ºÍ ÑÕÉ«
+        // ä¸‹åˆ’çº¿ å’Œ é¢œè‰²
         JPanel listVBottomPane = FRGUIPaneFactory.createNColumnGridInnerContainer_S_Pane(2);
         listVPane.add(listVBottomPane);
         
@@ -207,7 +207,7 @@ public class FRFontPane extends BasicPane {
             }
         });
 
-        //peteter:ÕâÀïÖ÷¶¯´ÓContext, »ñµÃÄ¬ÈÏµÄFRFontµÄÖµ.
+        //peteter:è¿™é‡Œä¸»åŠ¨ä»Context, è·å¾—é»˜è®¤çš„FRFontçš„å€¼.
         DefaultValues defaultValues = FRContext.getDefaultValues();
         populate(defaultValues.getFRFont());
     }
@@ -299,7 +299,7 @@ public class FRFontPane extends BasicPane {
         this.isSuperscriptCheckBox.setSelected(frFont.isSuperscript());
         this.isSubscriptCheckBox.setSelected(frFont.isSubscript());
 
-        //Ìí¼ÓListHandler.
+        //æ·»åŠ ListHandler.
         ListHandler listHandler = new ListHandler();
         
         familyPane.addListSelectionListener(listHandler);

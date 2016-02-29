@@ -16,14 +16,14 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.bridge.StableFactory;
 
 /**
- *  Í¼±íµÄ³¬¼¶Á´½Ó½çÃæ. ±ÈÒ»°ãµÄHyperlinkGroupPane¶àÁËÍ¼±íµÄÏà¹Ø³¬¼¶Á´½Ó
+ *  å›¾è¡¨çš„è¶…çº§é“¾æ¥ç•Œé¢. æ¯”ä¸€èˆ¬çš„HyperlinkGroupPaneå¤šäº†å›¾è¡¨çš„ç›¸å…³è¶…çº§é“¾æ¥
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-26 ÏÂÎç04:55:10
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-26 ä¸‹åˆ04:55:10
  */
 public class ChartHyperlinkGroup extends BaseHyperlinkGroup {
 
 	/**
-	 * ·µ»ØÖ§³ÖµÄ³¬¼¶Á´½ÓÀàĞÍ
+	 * è¿”å›æ”¯æŒçš„è¶…çº§é“¾æ¥ç±»å‹
 	 * @return NameableCreator[]
 	 */
 	public NameableCreator[] getHyperlinkCreators() {

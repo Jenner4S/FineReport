@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 系列属性的设置界面.
- * 主要是对系列的DataSeriesCondition进行设置.
+ * 绯诲垪灞炴�х殑璁剧疆鐣岄潰.
+ * 涓昏鏄绯诲垪鐨凞ataSeriesCondition杩涜璁剧疆.
  *
  * @see DataSeriesConditionPane
  */

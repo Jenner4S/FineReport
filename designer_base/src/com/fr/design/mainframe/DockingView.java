@@ -11,17 +11,17 @@ import com.fr.design.dialog.BasicPane;
 /**
  * @author richer
  * @since 6.5.5
- *        ´´½¨ÓÚ
- *        ËùÓĞµÄÓÃÓÚDockingµÄViewÀïÃæµÄÃæ°å¶¼¼Ì³Ğ×Ô´ËÀà
- *        ´ËÀàµÄ×÷ÓÃÊÇÔÚÈÎºÎÊ±ºò´ò¿ª¸ÃDockingµÄÊ±ºò¶¼ÄÜºÍÏàÓ¦µÄÉè¼Æ½çÃæ¹ØÁªÆğÀ´
+ *        åˆ›å»ºäº
+ *        æ‰€æœ‰çš„ç”¨äºDockingçš„Viewé‡Œé¢çš„é¢æ¿éƒ½ç»§æ‰¿è‡ªæ­¤ç±»
+ *        æ­¤ç±»çš„ä½œç”¨æ˜¯åœ¨ä»»ä½•æ—¶å€™æ‰“å¼€è¯¥Dockingçš„æ—¶å€™éƒ½èƒ½å’Œç›¸åº”çš„è®¾è®¡ç•Œé¢å…³è”èµ·æ¥
  */
-// TODO ALEX_SEP ÓĞËÄ¸öÎ»ÖÃ¿ÉÒÔ·ÅDocking,ÄÜ²»ÄÜ°Ñ¸ÃDockingµÄPreferredµÄÎ»ÖÃÊôĞÔ·ÅÔÚDockingÀïÃæÄØ?
+// TODO ALEX_SEP æœ‰å››ä¸ªä½ç½®å¯ä»¥æ”¾Docking,èƒ½ä¸èƒ½æŠŠè¯¥Dockingçš„Preferredçš„ä½ç½®å±æ€§æ”¾åœ¨Dockingé‡Œé¢å‘¢?
 public abstract class DockingView extends BasicPane {
     /**
      * Generally speaking, invoke this method when need refresh the content of the docking.
      * @param agrs
      */
-    // TODO ALEX_SEP Õâ¸ö·½·¨²»Ïë´«ÈÎºÎ²ÎÊı
+    // TODO ALEX_SEP è¿™ä¸ªæ–¹æ³•ä¸æƒ³ä¼ ä»»ä½•å‚æ•°
     public abstract void refreshDockingView();
 
     public abstract String getViewTitle();

@@ -65,7 +65,7 @@ public class ReportletPane extends BasicPane {
     }
 
     /*
-     * ÇĞ»»CardPane
+     * åˆ‡æ¢CardPane
      */
     private void switchCardPane(boolean switch2Class) {
         if (switch2Class) {
@@ -78,9 +78,9 @@ public class ReportletPane extends BasicPane {
     }
 
     /**
-     * ¼ì²éÊÇ·ñ·ûºÏ¹æ·¶
+     * æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„èŒƒ
      *
-     * @throws Exception  Å×´í
+     * @throws Exception  æŠ›é”™
      */
     public void checkValid() throws Exception {
         String path = this.getSelectedReportletPath();
@@ -91,8 +91,8 @@ public class ReportletPane extends BasicPane {
 
 
     /**
-     * Ë¢ĞÂEnv
-     * @param env   »·¾³
+     * åˆ·æ–°Env
+     * @param env   ç¯å¢ƒ
      */
     public void refreshEnv(Env env) {
         this.templateReportletTree.refreshEnv(env);
@@ -105,7 +105,7 @@ public class ReportletPane extends BasicPane {
     }
 
     /*
-     * ·µ»ØÑ¡ÖĞµÄReportletµÄÂ·¾¶
+     * è¿”å›é€‰ä¸­çš„Reportletçš„è·¯å¾„
      */
     public String getSelectedReportletPath() {
         if (t_panel.isVisible()) {
@@ -118,7 +118,7 @@ public class ReportletPane extends BasicPane {
     }
 
     /*
-     * Ñ¡ÖĞÄ³Reportlet
+     * é€‰ä¸­æŸReportlet
      */
     public void setSelectedReportletPath(String reportletPath) {
         if (reportletPath == null) {

@@ -81,9 +81,9 @@ public class XMultiFileUploader extends XFieldEditor {
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * ÕâÀï¿ØÖÆ ÎÄ¼şÔ¤¶¨Òå¿Ø¼şÔÚ¹¤¾ßÀ¸²»ÏÔÊ¾
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * è¿™é‡Œæ§åˆ¶ æ–‡ä»¶é¢„å®šä¹‰æ§ä»¶åœ¨å·¥å…·æ ä¸æ˜¾ç¤º
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;

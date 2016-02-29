@@ -33,7 +33,7 @@ import com.fr.report.elementcase.TemplateElementCase;
 
 /**
  * @author zhou
- * @since 2012-5-11ÏÂÎç5:24:31
+ * @since 2012-5-11ä¸‹åˆ5:24:31
  */
 public class CellOtherSetPane extends AbstractCellAttrPane {
     // normal
@@ -49,7 +49,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
 
     private UITextField fileNameTextField;
 
-    // ·ÖÒ³
+    // åˆ†é¡µ
     private UICheckBox pageBeforeRowCheckBox;
     private UICheckBox pageAfterRowCheckBox;
     private UICheckBox pageBeforeColumnCheckBox;
@@ -58,7 +58,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
     private UICheckBox canBreakOnPaginateCheckBox;
     private UICheckBox repeatCheckBox;
 
-    // ²åÈëĞĞ²ßÂÔ
+    // æ’å…¥è¡Œç­–ç•¥
     private UIButtonGroup insertRowPolicy;
     private ValueEditorPane valueEditor;
 
@@ -66,8 +66,8 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
     private JPanel defaultValuePane;
 
     /**
-     * ³õÊ¼»¯
-     * @return   Ãæ°å
+     * åˆå§‹åŒ–
+     * @return   é¢æ¿
      */
     public JPanel createContentPane() {
         final JPanel fileNamePane = createNormal();
@@ -159,7 +159,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
     }
 
     private void createOthers() {
-        // ·ÖÒ³
+        // åˆ†é¡µ
         pageBeforeRowCheckBox = new UICheckBox(Inter.getLocText("CellWrite-Page_Before_Row"));
         pageAfterRowCheckBox = new UICheckBox(Inter.getLocText("CellWrite-Page_After_Row"));
         pageBeforeColumnCheckBox = new UICheckBox(Inter.getLocText("CellWrite-Page_Before_Column"));
@@ -168,7 +168,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
         canBreakOnPaginateCheckBox = new UICheckBox(Inter.getLocText("CellPage-Can_Break_On_Paginate"));
         repeatCheckBox = new UICheckBox(Inter.getLocText("CellWrite-Repeat_Content_When_Paging"));
 
-        // ²åÈëĞĞ²ßÂÔ
+        // æ’å…¥è¡Œç­–ç•¥
         insertRowPolicy = new UIButtonGroup(new String[]{Inter.getLocText("CellWrite-InsertRow_NULL"), Inter.getLocText("CellWrite-InsertRow_DEFAULT"),
                 Inter.getLocText("CellWrite-InsertRow_COPY")});
         defaultValuePane = new JPanel(new BorderLayout(4, 0));
@@ -230,7 +230,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
             showContent.setSelectedItem(Inter.getLocText("Default"));
         }
         tooltipTextField.setText(cellGUIAttr.getTooltipText());
-        CellPageAttr cellPageAttr = cellElement.getCellPageAttr(); // ·ÖÒ³
+        CellPageAttr cellPageAttr = cellElement.getCellPageAttr(); // åˆ†é¡µ
         if (cellPageAttr == null) {
             cellPageAttr = new CellPageAttr();
         }
@@ -240,7 +240,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
         this.pageAfterColumnCheckBox.setSelected(cellPageAttr.isPageAfterColumn());
         this.canBreakOnPaginateCheckBox.setSelected(cellPageAttr.isCanBreakOnPaginate());
         this.repeatCheckBox.setSelected(cellPageAttr.isRepeat());
-        CellInsertPolicyAttr cellInsertPolicyAttr = cellElement.getCellInsertPolicyAttr();// ²åÈë
+        CellInsertPolicyAttr cellInsertPolicyAttr = cellElement.getCellInsertPolicyAttr();// æ’å…¥
         if (cellInsertPolicyAttr == null) {
             cellInsertPolicyAttr = new CellInsertPolicyAttr();
         }
@@ -256,7 +256,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
         defaultValuePane.setVisible(insertRowPolicy.getSelectedIndex() == 1);
         southContentPane.setVisible(true);
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
-        if (!jTemplate.isJWorkBook()){ //±íµ¥ÖĞ±¨±í¿é±à¼­ÆÁ±Îµô  ²åÈëĞĞ²ßÂÔ
+        if (!jTemplate.isJWorkBook()){ //è¡¨å•ä¸­æŠ¥è¡¨å—ç¼–è¾‘å±è”½æ‰  æ’å…¥è¡Œç­–ç•¥
             southContentPane.setVisible(false);
         }
     }
@@ -307,7 +307,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
                 cellGUIAttr.setTooltipText(tooltipTextField.getText());
             }
         }
-        // Èç¹ûÓëÄ¬ÈÏµÄCellGUIAttrÏàÍ¬,¾Í²»ÓÃ±£´æÕâ¸öÊôĞÔÁË
+        // å¦‚æœä¸é»˜è®¤çš„CellGUIAttrç›¸åŒ,å°±ä¸ç”¨ä¿å­˜è¿™ä¸ªå±æ€§äº†
         if (ComparatorUtils.equals(cellGUIAttr, CellGUIAttr.DEFAULT_CELLGUIATTR)) {
             cellElement.setCellGUIAttr(cellNullGUIAttr);
         } else {
@@ -319,7 +319,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
 
     private void updatePageAttr(TemplateCellElement cellElement) {
 
-        // ·ÖÒ³ÊôĞÔ
+        // åˆ†é¡µå±æ€§
         CellPageAttr cellPageAttr = cellElement.getCellPageAttr();
         if (cellPageAttr == null) {
             cellPageAttr = new CellPageAttr();
@@ -347,7 +347,7 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
         cellElement.setCellPageAttr(cellPageAttr);
 
         if (ComparatorUtils.equals(getGlobalName(), Inter.getLocText("CellWrite-InsertRow_Policy"))) {
-            // ²åÈë
+            // æ’å…¥
             CellInsertPolicyAttr cellInsertPolicyAttr = new CellInsertPolicyAttr();
 
             if (insertRowPolicy.getSelectedIndex() == 2) {
@@ -364,14 +364,14 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
     }
 
     /**
-     *´æ´¢
+     *å­˜å‚¨
      */
     public void updateBeans() {
         TemplateElementCase elementCase = elementCasePane.getEditingElementCase();
         int cellRectangleCount = cs.getCellRectangleCount();
         for (int rect = 0; rect < cellRectangleCount; rect++) {
             Rectangle cellRectangle = cs.getCellRectangle(rect);
-            // ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+            // éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
             for (int j = 0; j < cellRectangle.height; j++) {
                 for (int i = 0; i < cellRectangle.width; i++) {
                     int column = i + cellRectangle.x;
@@ -388,8 +388,8 @@ public class CellOtherSetPane extends AbstractCellAttrPane {
     }
 
     /**
-     * ·µ»Ø½çÃæµÄ±êÌâ
-     * @return    ±êÌâ
+     * è¿”å›ç•Œé¢çš„æ ‡é¢˜
+     * @return    æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Datasource-Other_Attributes");

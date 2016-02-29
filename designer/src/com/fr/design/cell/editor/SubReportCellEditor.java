@@ -31,7 +31,7 @@ public class SubReportCellEditor extends AbstractCellEditor implements
 		TemplateElementCase parentTplEC = grid.getElementCasePane()
 				.getEditingElementCase();
 
-		// alex:Èç¹ûÊÇÏßĞÔ±¨±í,ÕâÊ±»¹Òª¼ÆËãÒ»ÏÂÄ¬ÈÏ¸¸¸ñÊÇÊ²Ã´
+		// alex:å¦‚æœæ˜¯çº¿æ€§æŠ¥è¡¨,è¿™æ—¶è¿˜è¦è®¡ç®—ä¸€ä¸‹é»˜è®¤çˆ¶æ ¼æ˜¯ä»€ä¹ˆ
 		if (parentTplEC != null
 				&& (parentTplEC instanceof WorkSheet || parentTplEC instanceof PolyECBlock)) {
 			SheetUtils.calculateDefaultParent(parentTplEC);

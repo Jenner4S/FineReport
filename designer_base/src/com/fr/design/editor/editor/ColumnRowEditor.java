@@ -10,7 +10,7 @@ import java.awt.*;
  * the editor to edit ColumnRow
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:01:37
+ * @since 2012-3-29ä¸‹åˆ6:01:37
  */
 public class ColumnRowEditor extends Editor<ColumnRow> {
 

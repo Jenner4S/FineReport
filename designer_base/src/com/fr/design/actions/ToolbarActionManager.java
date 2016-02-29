@@ -11,7 +11,7 @@ import com.fr.design.menu.MenuDef;
 public class ToolbarActionManager {
 
     private static ToolbarActionManager toolbarActionManager = null; //key map
-    //ËùÓÐµÄAction Map.
+    //æ‰€æœ‰çš„Action Map.
     private List<UpdateAction> actionList = new ArrayList<UpdateAction>();
     private List<MenuDef> menuList=new ArrayList<MenuDef>();
 

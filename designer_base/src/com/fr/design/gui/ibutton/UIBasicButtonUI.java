@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-19
- * Time: ÉÏÎç9:29
+ * Time: ä¸Šåˆ9:29
  */
 public class UIBasicButtonUI extends MetalButtonUI {
 
@@ -46,9 +46,9 @@ public class UIBasicButtonUI extends MetalButtonUI {
     }
 
     /**
-     * ³õÊ¼»¯UI
+     * åˆå§‹åŒ–UI
      *
-     * @param c ×é¼şc
+     * @param c ç»„ä»¶c
      */
     public void installUI(JComponent c) {
         super.installUI(c);
@@ -70,9 +70,9 @@ public class UIBasicButtonUI extends MetalButtonUI {
     }
 
     /**
-     * ¼ÓÔØÄ¬ÈÏµÄ
+     * åŠ è½½é»˜è®¤çš„
      *
-     * @param button °´Å¥
+     * @param button æŒ‰é’®
      */
     public void installDefaults(AbstractButton button) {
         super.installDefaults(button);
@@ -106,10 +106,10 @@ public class UIBasicButtonUI extends MetalButtonUI {
     }
 
     /**
-     * ´´½¨UI
+     * åˆ›å»ºUI
      *
-     * @param c ×é¼ş
-     * @return ´´½¨µÄUI
+     * @param c ç»„ä»¶
+     * @return åˆ›å»ºçš„UI
      */
     public static ComponentUI createUI(final JComponent c) {
         return BUTTON_UI;
@@ -319,17 +319,17 @@ public class UIBasicButtonUI extends MetalButtonUI {
         }
     }
 
-    //harry: »­´øÓĞ¸ß¹âµÄ°´Å¥¡£
+    //harry: ç”»å¸¦æœ‰é«˜å…‰çš„æŒ‰é’®ã€‚
     private void drawHighLightButton(Graphics2D g2, Color color1, Color color2, int w, int h) {
         GradientPaint buttonPaint = new GradientPaint(0, 0, color1, 0, h - 1, color2);
         GradientPaint buttonHighLightPaint = new GradientPaint(0, 0, new Color(1.0f, 1.0f, 1.0f, 0.6f), 0, h / 2, new Color(1.0f, 1.0f, 1.0f, 0.2f));
         GradientPaint buttonHighLightLinePaint = new GradientPaint(1, 1, new Color(1.0f, 1.0f, 1.0f, 0.8f), 0, h / 2, new Color(1.0f, 1.0f, 1.0f, 0.4f));
         g2.setPaint(buttonPaint);
         g2.fillRoundRect(0, 0, w - 1, h - 1, 3, 3);
-        g2.setPaint(buttonHighLightLinePaint);//°´Å¥ÄÚ²à¸ß¹âÏß£¨ÄÚ·¢¹â£¬0%×èÈû£©
+        g2.setPaint(buttonHighLightLinePaint);//æŒ‰é’®å†…ä¾§é«˜å…‰çº¿ï¼ˆå†…å‘å…‰ï¼Œ0%é˜»å¡ï¼‰
         g2.drawRoundRect(1, 1, w - 3, h - 3, 2, 2);
         g2.setPaint(buttonHighLightPaint);
-        g2.fillRoundRect(0, 0, w - 1, h / 2, 3, 3);//°´Å¥¸ß¹â£¬¸²¸Ç°´Å¥µÄÉÏ°ë²¿·Ö¡£
+        g2.fillRoundRect(0, 0, w - 1, h / 2, 3, 3);//æŒ‰é’®é«˜å…‰ï¼Œè¦†ç›–æŒ‰é’®çš„ä¸ŠåŠéƒ¨åˆ†ã€‚
     }
 
 

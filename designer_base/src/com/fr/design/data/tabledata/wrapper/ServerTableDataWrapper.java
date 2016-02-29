@@ -41,12 +41,12 @@ public final class ServerTableDataWrapper extends AbstractTableDataWrapper {
 	}
 
     /**
-     * �Ƿ��쳣
+     * 是否异常
      * @return
      */
 	@Override
 	public boolean isUnusual() {
-		//Ŀǰֻ�ж�DBTableData���쳣
+		//目前只判断DBTableData的异常
 		if (tabledata instanceof DBTableData && StringUtils.isBlank(((DBTableData) tabledata).getQuery())) {
 			return true;
 		}

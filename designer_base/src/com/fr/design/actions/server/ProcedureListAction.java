@@ -25,9 +25,9 @@ public class ProcedureListAction extends UpdateAction {
 	}
 
     /**
-     * 事件触发操作
+     * 浜嬩欢瑙﹀彂鎿嶄綔
      *
-     * @param evt 事件
+     * @param evt 浜嬩欢
      *
      */
 	public void actionPerformed(ActionEvent evt) {
@@ -45,7 +45,7 @@ public class ProcedureListAction extends UpdateAction {
 				DesignTableDataManager.clearGlobalDs();
 				databaseManagerPane.update(datasourceManager);
 
-				// marks:保存数据
+				// marks:淇濆瓨鏁版嵁
                 try {
                     FRContext.getCurrentEnv().writeResource(datasourceManager);
                 } catch (Exception e) {

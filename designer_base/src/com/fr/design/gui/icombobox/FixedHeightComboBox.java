@@ -10,7 +10,7 @@ import javax.swing.plaf.basic.ComboPopup;
 
 
 /*
- * ÏÂÀ­¿ò¸ß¶È¹Ì¶¨
+ * ä¸‹æ‹‰æ¡†é«˜åº¦å›ºå®š
  */
 public class FixedHeightComboBox<T> extends FilterComboBox<T> {
     private static final long serialVersionUID = 1L;
@@ -26,7 +26,7 @@ public class FixedHeightComboBox<T> extends FilterComboBox<T> {
     }
 
     /**
-     * ¸üÐÂUI
+     * æ›´æ–°UI
      */
     public void updateUI() {
         setUI(new UI());

@@ -4,7 +4,7 @@ import com.fr.design.mainframe.widget.accessibles.AccessibleDictionaryEditor;
 import com.fr.design.mainframe.widget.accessibles.AccessiblePropertyEditor;
 
 /**
- * ËùÓĞ¾ßÓĞÊı¾İ×ÖµäÊôĞÔµÄ¿Ø¼ş¶¼Ê¹ÓÃ´Ë±à¼­Æ÷
+ * æ‰€æœ‰å…·æœ‰æ•°æ®å­—å…¸å±æ€§çš„æ§ä»¶éƒ½ä½¿ç”¨æ­¤ç¼–è¾‘å™¨
  * @version 6.5.3
  */
 public class DictionaryEditor extends AccessiblePropertyEditor {

@@ -7,18 +7,18 @@ import com.fr.main.impl.WorkBook;
 import com.fr.report.poly.PolyWorkSheet;
 
 /**
- * ¾ÛºÏ±¨±íBook, ¸úWorkBookÇø±ğÔÚÓÚ²»ÄÜ·ÅÈëWorkSheet.
+ * èšåˆæŠ¥è¡¨Book, è·ŸWorkBookåŒºåˆ«åœ¨äºä¸èƒ½æ”¾å…¥WorkSheet.
  * 
  * @author neil
  *
- * @date: 2015-2-5-ÉÏÎç8:58:39
+ * @date: 2015-2-5-ä¸Šåˆ8:58:39
  */
 public class JPolyWorkBook extends JWorkBook {
 	
 	private static final String DEFAULT_NAME = "Poly";
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public JPolyWorkBook() {
         super(new WorkBook(new PolyWorkSheet()), DEFAULT_NAME);
@@ -27,13 +27,13 @@ public class JPolyWorkBook extends JWorkBook {
 	
     
     /**
-	 * ´´½¨sheetÃû³ÆtabÃæ°å
+	 * åˆ›å»ºsheetåç§°tabé¢æ¿
 	 * 
-	 * @param reportCompositeX µ±Ç°×é¼ş¶ÔÏó
+	 * @param reportCompositeX å½“å‰ç»„ä»¶å¯¹è±¡
 	 * 
-	 * @return sheetÃû³ÆtabÃæ°å
+	 * @return sheetåç§°tabé¢æ¿
 	 * 
-	 * @date 2015-2-5-ÉÏÎç11:42:12
+	 * @date 2015-2-5-ä¸Šåˆ11:42:12
 	 * 
 	 */
     public SheetNameTabPane createSheetNameTabPane(ReportComponentComposite reportCompositeX){

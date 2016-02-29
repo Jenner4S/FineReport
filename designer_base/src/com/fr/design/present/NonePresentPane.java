@@ -7,7 +7,7 @@ import com.fr.general.Inter;
 /**
  * 
  * @author zhou
- * @since 2012-6-1ÏÂÎç3:46:24
+ * @since 2012-6-1ä¸‹åˆ3:46:24
  */
 public class NonePresentPane extends FurtherBasicBeanPane<Present> {
 

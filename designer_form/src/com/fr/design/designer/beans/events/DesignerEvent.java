@@ -3,7 +3,7 @@ package com.fr.design.designer.beans.events;
 import com.fr.design.designer.creator.XComponent;
 
 /**
- * 设计事件
+ * 璁捐浜嬩欢
  */
 public class DesignerEvent {
 

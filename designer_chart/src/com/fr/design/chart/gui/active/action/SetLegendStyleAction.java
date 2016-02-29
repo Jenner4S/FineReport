@@ -12,7 +12,7 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ4:56
+ * Time   : ‰∏ãÂçà4:56
  */
 public class SetLegendStyleAction extends ChartComponentAction {
     private static final long serialVersionUID = 3253190503195130478L;

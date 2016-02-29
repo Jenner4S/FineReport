@@ -21,12 +21,12 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * Í¼±íÉè¼ÆÆ÷ ¹¤¾ßÀ¸Ãæ°å
+ * å›¾è¡¨è®¾è®¡å™¨ å·¥å…·æ é¢æ¿
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç5:17
+ * Time: ä¸‹åˆ5:17
  */
 public abstract class PlotPane4ToolBar extends JPanel{
     private static final int COM_GAP = 14;
@@ -37,7 +37,7 @@ public abstract class PlotPane4ToolBar extends JPanel{
 
     protected abstract List<ChartDesignerImagePane> initDemoList();
 
-    private int selectedIndex = 0;//Ä¬ÈÏÑ¡ÖĞµÚÒ»¸ö
+    private int selectedIndex = 0;//é»˜è®¤é€‰ä¸­ç¬¬ä¸€ä¸ª
     private ChartDesigner chartDesigner;
     private ChangeListener changeListener = new ChangeListener() {
         @Override
@@ -59,7 +59,7 @@ public abstract class PlotPane4ToolBar extends JPanel{
     }
 
     /**
-     * Çå³ıÑ¡ÖĞ
+     * æ¸…é™¤é€‰ä¸­
      */
     public void clearChoose(){
         if(typeDemo == null){
@@ -81,13 +81,13 @@ public abstract class PlotPane4ToolBar extends JPanel{
         return this.selectedIndex;
     }
 
-        //×ÓÀà¸²¸Ç
+        //å­ç±»è¦†ç›–
     protected Plot getSelectedClonedPlot(){
         return null;
     }
 
     /**
-     * ÇĞ»»Í¼±íÀàĞÍ
+     * åˆ‡æ¢å›¾è¡¨ç±»å‹
      */
     public void fireChange(){
         ChartCollection chartCollection = (ChartCollection)chartDesigner.getTarget().getChartCollection();

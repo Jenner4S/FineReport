@@ -14,58 +14,58 @@ import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
 /**
  * Created by eason on 14/12/29.
  * @since 8.0
- * ×Ô¶¨ÒåÍ¼±íÀàĞÍÉèÉè¼Æ½çÃæ½Ó¿Ú
+ * è‡ªå®šä¹‰å›¾è¡¨ç±»å‹è®¾è®¾è®¡ç•Œé¢æ¥å£
  */
 public interface IndependentChartUIProvider {
 
     public static final String XML_TAG = "IndependentChartUIProvider";
     /**
-     *Í¼±íµÄÀàĞÍ¶¨Òå½çÃæÀàĞÍ£¬¾ÍÊÇÊôĞÔ±íµÄµÚÒ»¸ö½çÃæ
-     * @return Í¼±íµÄÀàĞÍ¶¨Òå½çÃæÀàĞÍ
+     *å›¾è¡¨çš„ç±»å‹å®šä¹‰ç•Œé¢ç±»å‹ï¼Œå°±æ˜¯å±æ€§è¡¨çš„ç¬¬ä¸€ä¸ªç•Œé¢
+     * @return å›¾è¡¨çš„ç±»å‹å®šä¹‰ç•Œé¢ç±»å‹
      */
     public AbstractChartTypePane getPlotTypePane();
 
     /**
-     * Êı¾İ¼¯Êı¾İÔ´µÄ½çÃæ
-     * @return Êı¾İ¼¯Êı¾İÔ´µÄ½çÃæ
+     * æ•°æ®é›†æ•°æ®æºçš„ç•Œé¢
+     * @return æ•°æ®é›†æ•°æ®æºçš„ç•Œé¢
      */
     public AbstractTableDataContentPane getTableDataSourcePane(Plot plot, ChartDataPane parent);
 
 
     /**
-     * µ¥Ôª¸ñÊı¾İÔ´µÄ½çÃæ
-     * @return µ¥Ôª¸ñÊı¾İÔ´µÄ½çÃæ
+     * å•å…ƒæ ¼æ•°æ®æºçš„ç•Œé¢
+     * @return å•å…ƒæ ¼æ•°æ®æºçš„ç•Œé¢
      */
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent);
 
     /**
-     * Ìõ¼şÊôĞÔ½çÃæ
-     * @return Ìõ¼şÊôĞÔ½çÃæ
+     * æ¡ä»¶å±æ€§ç•Œé¢
+     * @return æ¡ä»¶å±æ€§ç•Œé¢
      */
     public ConditionAttributesPane getPlotConditionPane(Plot plot);
 
     /**
-     * ÏµÁĞ½çÃæ
-     * @return ÏµÁĞ½çÃæ
+     * ç³»åˆ—ç•Œé¢
+     * @return ç³»åˆ—ç•Œé¢
      */
     public BasicBeanPane<Plot> getPlotSeriesPane(ChartStylePane parent, Plot plot);
 
 
     /**
-     * Í¼±íµÄÊôĞÔ½çÃæÊı×é
-     * @return ÊôĞÔ½çÃæ
+     * å›¾è¡¨çš„å±æ€§ç•Œé¢æ•°ç»„
+     * @return å±æ€§ç•Œé¢
      */
     public AbstractChartAttrPane[] getAttrPaneArray(AttributeChangeListener listener);
 
     /**
-     * ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ£¬ÎªÁË±ÜÃâ½çÃæÀ´»ØÇĞ»»
-     * @return ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ
+     * æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢ï¼Œä¸ºäº†é¿å…ç•Œé¢æ¥å›åˆ‡æ¢
+     * @return æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢
      */
     public boolean isUseDefaultPane();
 
     /**
-     *Í¼±êÂ·¾¶
-     * @return Í¼±êÂ·¾¶
+     *å›¾æ ‡è·¯å¾„
+     * @return å›¾æ ‡è·¯å¾„
      */
     public String getIconPath();
 }

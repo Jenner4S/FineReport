@@ -20,12 +20,12 @@ import com.fr.design.mainframe.chart.gui.data.table.Factory4TableDataContentPane
 import javax.swing.*;
 
 /**
- * Êı¾İµ¼ÈëÊı¾İÉèÖÃÃæ°å
+ * æ•°æ®å¯¼å…¥æ•°æ®è®¾ç½®é¢æ¿
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç2:35
+ * Time: ä¸‹åˆ2:35
  */
 public class ImportSetChartDataPane  extends AbstractChartDataPane4Chart {
 
@@ -37,7 +37,7 @@ public class ImportSetChartDataPane  extends AbstractChartDataPane4Chart {
 
 
     /**
-     * ¸üĞÂ½çÃæ Êı¾İÄÚÈİ
+     * æ›´æ–°ç•Œé¢ æ•°æ®å†…å®¹
      */
     public void populate(ChartCollection collection) {
         dataContentPane = getContentPane(collection.getSelectedChart().getPlot());
@@ -97,7 +97,7 @@ public class ImportSetChartDataPane  extends AbstractChartDataPane4Chart {
     }
 
     /**
-     * Êı¾İ¼¯Êı¾İ¸Ä±ä
+     * æ•°æ®é›†æ•°æ®æ”¹å˜
      */
     public void fireTableDataChange() {
         if (dataContentPane != null) {
@@ -106,7 +106,7 @@ public class ImportSetChartDataPane  extends AbstractChartDataPane4Chart {
     }
 
     /**
-     * Çå¿ÕÊı¾İ¼¯µÄÉèÖÃ
+     * æ¸…ç©ºæ•°æ®é›†çš„è®¾ç½®
      */
     public void clearTableDataSetting(){
         if(dataContentPane != null){

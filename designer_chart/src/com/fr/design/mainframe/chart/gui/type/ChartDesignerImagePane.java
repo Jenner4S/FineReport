@@ -15,12 +15,12 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 /**
- * Í¼±íÉè¼ÆÆ÷£¬¹¤¾ßÀ¸ÉÏµÄÍ¼±íÀàĞÍÑ¡ÔñÓÃµÄµ¥¸öĞ¡Í¼Ãæ°å
+ * å›¾è¡¨è®¾è®¡å™¨ï¼Œå·¥å…·æ ä¸Šçš„å›¾è¡¨ç±»å‹é€‰æ‹©ç”¨çš„å•ä¸ªå°å›¾é¢æ¿
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç4:24
+ * Time: ä¸‹åˆ4:24
  */
 public class ChartDesignerImagePane extends JPanel implements MouseListener{
 
@@ -31,7 +31,7 @@ public class ChartDesignerImagePane extends JPanel implements MouseListener{
 
     private String iconPath;
     private int chartType;
-    private String state = NOMAL;//×´Ì¬£¬°´ÏÂ¡¢Ğü¸¡¡¢Õı³£
+    private String state = NOMAL;//çŠ¶æ€ï¼ŒæŒ‰ä¸‹ã€æ‚¬æµ®ã€æ­£å¸¸
     private Icon mode;
     private boolean isSelected;
     private PlotPane4ToolBar parent;
@@ -67,15 +67,15 @@ public class ChartDesignerImagePane extends JPanel implements MouseListener{
 
 
     /**
-     * Êó±êµã»÷
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
     }
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
         parent.clearChoose();
@@ -89,15 +89,15 @@ public class ChartDesignerImagePane extends JPanel implements MouseListener{
     }
 
     /**
-     * Êó±êÊÍ·Å
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡é‡Šæ”¾
+     * @param e äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
     }
 
     /**
-     * Êó±êµã»÷
-     * @param e ½øÈë
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e è¿›å…¥
      */
     public void mouseEntered(MouseEvent e) {
         if (this.isSelected) {
@@ -109,8 +109,8 @@ public class ChartDesignerImagePane extends JPanel implements MouseListener{
     }
 
     /**
-     * Êó±êµã»÷
-     * @param e Àë¿ª
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e ç¦»å¼€
      */
     public void mouseExited(MouseEvent e) {
         if (this.isSelected) {
@@ -128,8 +128,8 @@ public class ChartDesignerImagePane extends JPanel implements MouseListener{
    	}
 
     /**
-     * ×¢²áÊÂ¼ş¼àÌı
-     * @param listener  ¼àÌı
+     * æ³¨å†Œäº‹ä»¶ç›‘å¬
+     * @param listener  ç›‘å¬
      */
     public void registeChangeListener(ChangeListener listener){
         changeListeners.add(listener);

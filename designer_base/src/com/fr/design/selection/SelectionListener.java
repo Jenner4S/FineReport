@@ -5,7 +5,7 @@ import java.util.EventListener;
 /**
  * 
  * @author zhou
- * @since 2012-7-25ÏÂÎç3:45:33
+ * @since 2012-7-25ä¸‹åˆ3:45:33
  */
 public interface SelectionListener extends EventListener {
 

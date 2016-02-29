@@ -20,7 +20,7 @@ import java.util.Date;
  * CellEditor used to edit Date object.
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:03:03
+ * @since 2012-3-29ä¸‹åˆ6:03:03
  */
 public class DateEditor extends Editor<Date> {
 
@@ -75,7 +75,7 @@ public class DateEditor extends Editor<Date> {
 		this.setName(name);
 	}
 	
-	//uidatepickerµÄsetstyle·½·¨²»Æğ×÷ÓÃ£¬ÏÈ´Ö±©µØ¼Ó¸ö¹¹Ôì·½·¨
+	//uidatepickerçš„setstyleæ–¹æ³•ä¸èµ·ä½œç”¨ï¼Œå…ˆç²—æš´åœ°åŠ ä¸ªæ„é€ æ–¹æ³•
 	public DateEditor(Date value, boolean format, String name, int dateFormat) {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		uiDatePicker = new UIDatePicker(dateFormat);
@@ -143,7 +143,7 @@ public class DateEditor extends Editor<Date> {
 	}
 
 	/**
-	 * ValueEditorPane(ÎŞ ÈÕÆÚ ¹«Ê½)ÇĞ»»³É¹«Ê½Ê±Ö´ĞĞ´Ë·½·¨
+	 * ValueEditorPane(æ—  æ—¥æœŸ å…¬å¼)åˆ‡æ¢æˆå…¬å¼æ—¶æ‰§è¡Œæ­¤æ–¹æ³•
 	 */
 	public void selected() {
 		this.uiDatePicker.setSelectedItem(new Date());

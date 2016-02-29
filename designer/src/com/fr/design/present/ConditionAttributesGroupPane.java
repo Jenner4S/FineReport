@@ -31,7 +31,7 @@ public class ConditionAttributesGroupPane extends JControlPane {
 	 * Populate
 	 */
 	public void populate(HighlightGroup highlightGroup) {
-		// marksÕâ¸ö±ØĞë·ÅÔÚÇ°Ãæ£¬²»ÂÛÊÇ·ñÓĞ¸ßÁÁ·Ö×é¶¼¿ÉÒÔ²Ù×÷
+		// marksè¿™ä¸ªå¿…é¡»æ”¾åœ¨å‰é¢ï¼Œä¸è®ºæ˜¯å¦æœ‰é«˜äº®åˆ†ç»„éƒ½å¯ä»¥æ“ä½œ
 		if (highlightGroup == null || highlightGroup.size() <= 0) {
 			return;
 		}
@@ -51,7 +51,7 @@ public class ConditionAttributesGroupPane extends JControlPane {
 		Nameable[] res = this.update();
 		Highlight[] res_array = new Highlight[res.length];
 		for (int i = 0; i < res.length; i++) {
-			// carl:update³öÀ´µÄÊÇÒ»¸ö¶ÔÏó£¬ÔÚ¿é²Ù×÷Ê±¾ÍĞèÒªclone
+			// carl:updateå‡ºæ¥çš„æ˜¯ä¸€ä¸ªå¯¹è±¡ï¼Œåœ¨å—æ“ä½œæ—¶å°±éœ€è¦clone
 			Highlight highlight = (Highlight)((NameObject)res[i]).getObject();
 			highlight.setName(((NameObject)res[i]).getName());
 			try {

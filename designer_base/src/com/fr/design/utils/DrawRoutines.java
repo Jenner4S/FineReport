@@ -15,7 +15,7 @@ import java.awt.image.PixelGrabber;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: 下午4:26
+ * Time: 涓嬪崍4:26
  */
 public class DrawRoutines {
     private static final int DISPLACEMENT = 8;
@@ -182,14 +182,14 @@ public class DrawRoutines {
     }
 
     /**
-     * 颜色画法规则
+     * 棰滆壊鐢绘硶瑙勫垯
      *
-     * @param img          图片
-     * @param hue          画法
-     * @param sat          值sat
-     * @param bri          亮度
-     * @param preserveGrey 灰度
-     * @return 处理过的图片
+     * @param img          鍥剧墖
+     * @param hue          鐢绘硶
+     * @param sat          鍊約at
+     * @param bri          浜害
+     * @param preserveGrey 鐏板害
+     * @return 澶勭悊杩囩殑鍥剧墖
      */
     public static ImageIcon colorize(Image img, int hue, int sat, int bri, boolean preserveGrey) {
         ColorRoutines nc = new ColorRoutines(hue, sat, bri, preserveGrey);
@@ -242,7 +242,7 @@ public class DrawRoutines {
         g.drawLine(x, y + 3, x, h - 4);            // left
         g.drawLine(x + 3, y, w - 1, y);            // top
         g.drawLine(x + 3, h - 1, w - 1, h - 1);    // bottom
-        // edges verl鋘gerungen 1
+        // edges verl閶榞erungen 1
         Color c2 = new Color(c.getRed(), c.getGreen(), c.getBlue(), 216);
         g.setColor(c2);
         // oben
@@ -254,7 +254,7 @@ public class DrawRoutines {
         // unten
         g.drawLine(x + 2, y + h - 1, x + 2, y + h - 1);
         g.drawLine(x + w - 3, y + h - 1, x + w - 3, y + h - 1);
-        // edges verl鋘gerungen 2
+        // edges verl閶榞erungen 2
         c2 = new Color(c.getRed(), c.getGreen(), c.getBlue(), 130);
         g.setColor(c2);
         // oben
@@ -290,7 +290,7 @@ public class DrawRoutines {
         g.drawLine(x + 3, y + h - 1, x + w - 4, y + h - 1);    // bottom
         g.drawLine(x, y + 3, x, y + h - 4);                    // left
         g.drawLine(x + w - 1, y + 3, x + w - 1, y + h - 4);    // right
-        // edges verl鋘gerungen 1
+        // edges verl閶榞erungen 1
         Color c2 = new Color(c.getRed(), c.getGreen(), c.getBlue(), 216);
         g.setColor(c2);
         // oben
@@ -305,7 +305,7 @@ public class DrawRoutines {
         // rechts
         g.drawLine(x + w - 1, y + 2, x + w - 1, y + 2);
         g.drawLine(x + w - 1, y + h - 3, x + w - 1, y + h - 3);
-        // edges verl鋘gerungen 2
+        // edges verl閶榞erungen 2
         c2 = new Color(c.getRed(), c.getGreen(), c.getBlue(), 130);
         g.setColor(c2);
         g.drawLine(x + 1, y, x + 1, y);

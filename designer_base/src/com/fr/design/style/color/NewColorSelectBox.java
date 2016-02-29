@@ -41,12 +41,12 @@ public class NewColorSelectBox extends AbstractSelectBox<Color> implements UIObs
     }
 
     /**
-     * ³õÊ¼»¯ÏÂÀ­Ãæ°å
-     * @param preferredWidth Ãæ°å´óĞ¡
-     * @return Ãæ°å
+     * åˆå§‹åŒ–ä¸‹æ‹‰é¢æ¿
+     * @param preferredWidth é¢æ¿å¤§å°
+     * @return é¢æ¿
      */
     public JPanel initWindowPane(double preferredWidth) {
-    	// ÏÂÀ­µÄÊ±ºòÖØĞÂÉú³ÉÃæ°å£¬ÒÔË¢ĞÂ×î½üÊ¹ÓÃÑÕÉ«
+    	// ä¸‹æ‹‰çš„æ—¶å€™é‡æ–°ç”Ÿæˆé¢æ¿ï¼Œä»¥åˆ·æ–°æœ€è¿‘ä½¿ç”¨é¢œè‰²
     	colorPane = new NewColorSelectPane();
     	colorPane.addChangeListener(new ChangeListener() {
     		public void stateChanged(ChangeEvent e) {
@@ -78,8 +78,8 @@ public class NewColorSelectBox extends AbstractSelectBox<Color> implements UIObs
 
     @Override
     /**
-     * ×æ²á¼àÌı
-     * @param listener ¼àÌı
+     * ç¥–å†Œç›‘å¬
+     * @param listener ç›‘å¬
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
@@ -87,8 +87,8 @@ public class NewColorSelectBox extends AbstractSelectBox<Color> implements UIObs
 
     @Override
     /**
-     * ÊÇ·ñÏìÓ¦¼àÌı
-     * @return Í¬ÉÏ
+     * æ˜¯å¦å“åº”ç›‘å¬
+     * @return åŒä¸Š
      */
     public boolean shouldResponseChangeListener() {
         return true;

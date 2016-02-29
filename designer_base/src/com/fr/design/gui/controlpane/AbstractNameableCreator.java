@@ -108,4 +108,4 @@ public abstract class AbstractNameableCreator implements NameableCreator {
 				&& ComparatorUtils.equals(menuName, ((AbstractNameableCreator) obj).menuName)
 				&& ComparatorUtils.equals(clazzOfObject, ((AbstractNameableCreator) obj).clazzOfObject);
 	}
-}	
+}

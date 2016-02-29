@@ -41,9 +41,9 @@ public class XPassword extends XWrapperedFieldEditor {
     }
     
     /**
-     * ¿Ø¼şµÄÊôĞÔÁĞ±í
-     * @return ´Ë¿Ø¼şËùÓÃµÄÊôĞÔÁĞ±í
-     * @throws IntrospectionException Òì³£
+     * æ§ä»¶çš„å±æ€§åˆ—è¡¨
+     * @return æ­¤æ§ä»¶æ‰€ç”¨çš„å±æ€§åˆ—è¡¨
+     * @throws IntrospectionException å¼‚å¸¸
      */
 	@Override
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {

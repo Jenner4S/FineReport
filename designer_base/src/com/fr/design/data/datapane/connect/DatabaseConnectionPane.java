@@ -28,7 +28,7 @@ import java.awt.event.WindowEvent;
  */
 public abstract class DatabaseConnectionPane<E extends com.fr.data.impl.Connection> extends BasicBeanPane<com.fr.data.impl.Connection> {
 
-    // ±àÂë×ª»».
+    // ç¼–ç è½¬æ¢.
     private UIComboBox originalCharSetComboBox;
     private UIComboBox newCharSetComboBox;
     private UILabel message;
@@ -51,7 +51,7 @@ public abstract class DatabaseConnectionPane<E extends com.fr.data.impl.Connecti
         JPanel northPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_L_Pane();
         this.add(northPane, BorderLayout.NORTH);
 
-        // °´Å¥.
+        // æŒ‰é’®.
         JPanel testPane = FRGUIPaneFactory.createNormalFlowInnerContainer_M_Pane();
         northPane.add(testPane, BorderLayout.NORTH);
         UIButton testButton = new UIButton(Inter.getLocText("Datasource-Test_Connection"));

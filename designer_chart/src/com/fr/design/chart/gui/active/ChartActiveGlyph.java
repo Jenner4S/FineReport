@@ -12,7 +12,7 @@ import com.fr.design.chart.gui.active.action.SetChartStyleAciton;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ3:54
+ * Time   : ‰∏ãÂçà3:54
  */
 public class ChartActiveGlyph extends ActiveGlyph {
     private BaseChartGlyph glyphChart;

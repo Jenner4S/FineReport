@@ -26,8 +26,8 @@ public class SaveTemplateAction extends JTemplateAction<JTemplate<?, ?>> {
 	}
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
 	public void actionPerformed(ActionEvent e) {
 		JTemplate<?, ?> jt = this.getEditingComponent();

@@ -13,9 +13,9 @@ import com.fr.design.editor.editor.TextEditor;
 import com.fr.general.Inter;
 
 /**
- * ¼òÒªÌá¹© ÎÄ±¾ºÍ¹«Ê½Á½ÖÖ±à¼­Æ÷
+ * ç®€è¦æä¾› æ–‡æœ¬å’Œå…¬å¼ä¸¤ç§ç¼–è¾‘å™¨
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-23 ÉÏÎç10:30:16
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-23 ä¸Šåˆ10:30:16
  */
 public class MapReportRenderer extends DefaultTableCellRenderer {
 	private ValueEditorPane cellEditor;

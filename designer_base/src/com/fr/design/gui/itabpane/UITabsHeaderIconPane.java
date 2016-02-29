@@ -33,10 +33,10 @@ import com.fr.design.gui.ibutton.UITabButton;
 import com.fr.stable.StringUtils;
 
 /**
- * ±¾À´ÏëÅª¸öÑÓ³Ù¼ÓÔØµÄ£¬·¢ÏÖÔÚµ¥Ôª¸ñÊôĞÔ±íÄÇ±ßÃ»ÓĞÒâÒå£¬¾ÍËãÁË.Õâ¸öÃæ°åÊÇ´¿´âµÄ£¬Ã»ÓĞÓëÄ£°åµÄÈÎºÎ½»»¥²Ù×÷(±ÈÈçËµpopulate() update())
+ * æœ¬æ¥æƒ³å¼„ä¸ªå»¶è¿ŸåŠ è½½çš„ï¼Œå‘ç°åœ¨å•å…ƒæ ¼å±æ€§è¡¨é‚£è¾¹æ²¡æœ‰æ„ä¹‰ï¼Œå°±ç®—äº†.è¿™ä¸ªé¢æ¿æ˜¯çº¯ç²¹çš„ï¼Œæ²¡æœ‰ä¸æ¨¡æ¿çš„ä»»ä½•äº¤äº’æ“ä½œ(æ¯”å¦‚è¯´populate() update())
  * 
  * @author zhou
- * @since 2012-5-11ÏÂÎç3:30:18
+ * @since 2012-5-11ä¸‹åˆ3:30:18
  */
 public class UITabsHeaderIconPane extends JPanel implements UITabComponent {
 	private static final long serialVersionUID = 1L;
@@ -82,7 +82,7 @@ public class UITabsHeaderIconPane extends JPanel implements UITabComponent {
 		northTabsPane.add(tabsPane, BorderLayout.CENTER);
 		labels = new ArrayList<UITabButton>(creators.length);
 		for (int i = 0; i < creators.length; i++) {
-			String iconpath = creators[i].getIconPath();// august:Èç¹ûÍ¼±êÂ·¾¶Îª¿Õ£¬¾ÍËµÃ÷ÒªÓÃÎÄ±¾ÁË
+			String iconpath = creators[i].getIconPath();// august:å¦‚æœå›¾æ ‡è·¯å¾„ä¸ºç©ºï¼Œå°±è¯´æ˜è¦ç”¨æ–‡æœ¬äº†
 			final UITabButton label = StringUtils.isEmpty(iconpath) ? new UITabButton(creators[i].getTabName()) : new IconTabLabel(BaseUtils.readIcon(creators[i]
 					.getIconPath()));
 			tabsPane.add(label);
@@ -139,28 +139,28 @@ public class UITabsHeaderIconPane extends JPanel implements UITabComponent {
 		});
 	}
 
-	// august: »¬¶¯Ğ§¹û·½·¨
+	// august: æ»‘åŠ¨æ•ˆæœæ–¹æ³•
 	private void show(final JPanel panel) {
-		int count = centerPane.getComponentCount();// »ñÈ¡centerPanelÖĞ¿Ø¼şÊı
+		int count = centerPane.getComponentCount();// è·å–centerPanelä¸­æ§ä»¶æ•°
 		List<Component> list = new ArrayList<Component>();//
 		for (Component comp : centerPane.getComponents()) {
 			list.add(comp);
 		}
-		if (count > 0) {// Èç¹ûcenterPanelÖĞ¿Ø¼şÊı´óÓÚ0¾ÍÖ´ĞĞĞ§¹û
+		if (count > 0) {// å¦‚æœcenterPanelä¸­æ§ä»¶æ•°å¤§äº0å°±æ‰§è¡Œæ•ˆæœ
 			for (int i = 0; i < count; i++) {
-				Component comp = centerPane.getComponent(i);// »ñµÃ¸ÃÎ»ÖÃµÄ¿Ø¼ş
+				Component comp = centerPane.getComponent(i);// è·å¾—è¯¥ä½ç½®çš„æ§ä»¶
 
 				if (comp instanceof JPanel) {
-					final JPanel currentPanel = (JPanel)comp;// »ñµÃµ±Ç°panel
+					final JPanel currentPanel = (JPanel)comp;// è·å¾—å½“å‰panel
 
-					// augsut:±ØĞëÓÃ¶àÏß³Ì£¬ÒòÎªswingÊÇµ¥Ïß³ÌµÄ£¬²»ÓÃ¾ÍÊµÏÖ²»ÁË¶¯Ì¬Ğ§¹û
+					// augsut:å¿…é¡»ç”¨å¤šçº¿ç¨‹ï¼Œå› ä¸ºswingæ˜¯å•çº¿ç¨‹çš„ï¼Œä¸ç”¨å°±å®ç°ä¸äº†åŠ¨æ€æ•ˆæœ
 					new Thread() {
 						public void run() {
 							int height = centerPane.getHeight();
 							int width = centerPane.getWidth();
 							int y = -height;
 							for (int i = 0; i <= height; i += 30) {
-								// ÉèÖÃÃæ°åÎ»ÖÃ
+								// è®¾ç½®é¢æ¿ä½ç½®
 								currentPanel.setBounds(0, i, width, height);
 								panel.setBounds(0, y, width, height);
 								y += 30;
@@ -170,7 +170,7 @@ public class UITabsHeaderIconPane extends JPanel implements UITabComponent {
 								}
 							}
 							if (currentPanel != panel) {
-								centerPane.remove(currentPanel);// ÒÆ³ıµ±Ç°Ãæ°å
+								centerPane.remove(currentPanel);// ç§»é™¤å½“å‰é¢æ¿
 							}
 							panel.setBounds(0, 0, width, height);
 
@@ -180,15 +180,15 @@ public class UITabsHeaderIconPane extends JPanel implements UITabComponent {
 				}
 			}
 		} else {
-			panel.setBounds(0, 0, centerPane.getWidth(), centerPane.getHeight());// ÉèÖÃ»¬¶¯³õÊ¼Î»ÖÃ
+			panel.setBounds(0, 0, centerPane.getWidth(), centerPane.getHeight());// è®¾ç½®æ»‘åŠ¨åˆå§‹ä½ç½®
 		}
 
 		if (!list.contains(panel)) {
-			centerPane.add(panel);// Ìí¼ÓÒªÇĞ»»µÄÃæ°å
+			centerPane.add(panel);// æ·»åŠ è¦åˆ‡æ¢çš„é¢æ¿
 		}
 
-		centerPane.validate();// ÖØ¹¹ÄÚÈİÃæ°å
-		centerPane.repaint();// ÖØ»æÄÚÈİÃæ°å
+		centerPane.validate();// é‡æ„å†…å®¹é¢æ¿
+		centerPane.repaint();// é‡ç»˜å†…å®¹é¢æ¿
 	}
 
 	/**

@@ -13,7 +13,7 @@ import com.fr.design.mainframe.chart.gui.style.axis.ChartValuePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : ÉÏÎç8:57
+ * Time   : ä¸Šåˆ8:57
  */
 public class BinaryChartStyleAxisPane extends ChartStyleAxisPane {
 
@@ -22,9 +22,9 @@ public class BinaryChartStyleAxisPane extends ChartStyleAxisPane {
     }
 
     /**
-     * ´´½¨×ø±êÖáÑùÊ½Ãæ°å
-     * @param plot Í¼±í
-     * @return Ãæ°å
+     * åˆ›å»ºåæ ‡è½´æ ·å¼é¢æ¿
+     * @param plot å›¾è¡¨
+     * @return é¢æ¿
      */
     public final AxisStyleObject[] createAxisStyleObjects(Plot plot) {
         return new AxisStyleObject[]{
@@ -34,7 +34,7 @@ public class BinaryChartStyleAxisPane extends ChartStyleAxisPane {
     }
 
     protected AxisStyleObject getXAxisPane(final Plot plot) {
-        //ÊÇ·ñÖ§³Ö×ø±êÖáÖáÑùÊ½
+        //æ˜¯å¦æ”¯æŒåæ ‡è½´è½´æ ·å¼
         return new AxisStyleObject(CATE_AXIS, new ChartCategoryPane(){
             protected boolean isSupportLineStyle(){
            		return plot.isSupportAxisLineStyle();
@@ -44,7 +44,7 @@ public class BinaryChartStyleAxisPane extends ChartStyleAxisPane {
 
     protected AxisStyleObject getYAxisPane(final Plot plot) {
     	Axis axis = plot.getyAxis();
-    	// ¶Ñ»ıÇé¿öÊ±
+    	// å †ç§¯æƒ…å†µæ—¶
     	boolean isStack = false;
     	if(plot instanceof CategoryPlot) {
     		isStack = ((CategoryPlot)plot).isStacked();

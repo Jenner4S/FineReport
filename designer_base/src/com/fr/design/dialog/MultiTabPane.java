@@ -13,9 +13,9 @@ import com.fr.design.gui.ibutton.UITabGroup;
 
 /**
  * 
- * ±ê×¼µÄ¶à²ãTabÇĞ»»ÀàĞÍ.
+ * æ ‡å‡†çš„å¤šå±‚Tabåˆ‡æ¢ç±»å‹.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-4-22 ÉÏÎç10:31:03
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-4-22 ä¸Šåˆ10:31:03
  */
 public abstract class MultiTabPane<T> extends FurtherBasicBeanPane<T>{
 	private static final long serialVersionUID = 2298609199400393886L;
@@ -40,7 +40,7 @@ public abstract class MultiTabPane<T> extends FurtherBasicBeanPane<T>{
 	}
 	
 	/**
-	 * µ±ListÖĞµÄ½çÃæ±ä»¯Ê±, ÖØĞÂ²¼¾Ö
+	 * å½“Listä¸­çš„ç•Œé¢å˜åŒ–æ—¶, é‡æ–°å¸ƒå±€
 	 */
 	public void relayoutWhenListChange() {
 		centerPane = new JPanel(cardLayout) {

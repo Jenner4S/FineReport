@@ -18,7 +18,7 @@ import java.awt.*;
 
 /**
  * @author zhou
- * @since 2012-5-30ÉÏÎç10:36:21
+ * @since 2012-5-30ä¸Šåˆ10:36:21
  */
 public class GradientPane extends BackgroundSettingPane {
 	private static final long serialVersionUID = -6854603990673031897L;
@@ -93,9 +93,9 @@ public class GradientPane extends BackgroundSettingPane {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 	   gradientBar.addChangeListener(new ChangeListener() {

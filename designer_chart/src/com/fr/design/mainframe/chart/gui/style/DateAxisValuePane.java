@@ -36,9 +36,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
- * ÊôĞÔ±í, ×ø±êÖá,  ÈÕÆÚ·¶Î§¶¨Òå½çÃæ
+ * å±æ€§è¡¨, åæ ‡è½´,  æ—¥æœŸèŒƒå›´å®šä¹‰ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÉÏÎç10:25:15
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸Šåˆ10:25:15
  */
 public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
 
@@ -68,7 +68,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
     	INTS.put(ChartConstants.SECOND_TYPE, Inter.getLocText("Sche-Second"));
     }
    
-    // ×î´ó×îĞ¡Öµ
+    // æœ€å¤§æœ€å°å€¼
     private UICheckBox maxCheckBox;
     private ValueEditorPane maxValueField;
     private UICheckBox minCheckBox;
@@ -88,7 +88,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
     }
     
     private void initMin() {
-    	// ×îĞ¡Öµ.
+    	// æœ€å°å€¼.
         minCheckBox = new UICheckBox(Inter.getLocText("Min_Value"));
         Date tmp = null;
         DateEditor dateEditor = new DateEditor(tmp, true, Inter.getLocText("Date"), UIDatePicker.STYLE_CN_DATETIME1);
@@ -104,7 +104,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
     }
     
     private void initMax() {
-    	 // ×î´óÖµ
+    	 // æœ€å¤§å€¼
         maxCheckBox = new UICheckBox(Inter.getLocText("Max_Value"));
         Date tmp = null;
         DateEditor dateEditor = new DateEditor(tmp, true, Inter.getLocText("Date"), UIDatePicker.STYLE_CN_DATETIME1);
@@ -120,7 +120,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
     }
     
     private void initMain() {
-    	// Ö÷Òª¿Ì¶Èµ¥Î»
+    	// ä¸»è¦åˆ»åº¦å•ä½
         mainTickBox = new UICheckBox(Inter.getLocText("MainGraduationUnit"));
         mainUnitField = new UITextField();
         mainUnitField.setPreferredSize(new Dimension(30, 20));
@@ -261,7 +261,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
         if (!axis.isDate()) {
             return;
         }
-        // ×îĞ¡Öµ
+        // æœ€å°å€¼
         if (axis.isCustomMinValue() && axis.getMinValue() != null) {
             minCheckBox.setSelected(true);
             String dateStr = axis.getMinValue().getPureContent();
@@ -275,7 +275,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
         }
             
         
-        // ×î´óÖµ
+        // æœ€å¤§å€¼
         if (axis.isCustomMaxValue() && axis.getMaxValue() != null) {
             maxCheckBox.setSelected(true);
             String dateStr = axis.getMaxValue().getPureContent();
@@ -293,7 +293,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
 	
 	private boolean isDateForm(String form){
 		form = Pattern.compile("\"").matcher(form).replaceAll(StringUtils.EMPTY);
-		//È«²¿ÊÇÊı×ÖµÄ»°Ö±½Ó·µ»Ø£¬string2Date»á°ÑÈ«²¿ÊÇÊı×ÖÒ²»á×ª»¯³ÉÈÕÆÚ
+		//å…¨éƒ¨æ˜¯æ•°å­—çš„è¯ç›´æ¥è¿”å›ï¼Œstring2Dateä¼šæŠŠå…¨éƒ¨æ˜¯æ•°å­—ä¹Ÿä¼šè½¬åŒ–æˆæ—¥æœŸ
 		if(form.matches("^[+-]?[0-9]*[0-9]$")){
 			return false;
 		}
@@ -302,7 +302,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
 	
 	public void updateBean(CategoryAxis axis) {
         updateMain(axis);
-        //×îĞ¡Öµ
+        //æœ€å°å€¼
         if (minCheckBox.isSelected()) {
         	if(minValueField.getCurrentEditor() instanceof FormulaEditor){
         		Formula min = (Formula)minValueField.update();
@@ -319,7 +319,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
             axis.setCustomMinValue(false);
         }
        
-        //×î´óÖµ
+        //æœ€å¤§å€¼
         if (maxCheckBox.isSelected()) {
         	if(maxValueField.getCurrentEditor() instanceof FormulaEditor){
         		Formula max = (Formula)maxValueField.update();
@@ -344,7 +344,7 @@ public class DateAxisValuePane extends FurtherBasicBeanPane<CategoryAxis>{
 		return null;
 	}
 	
-	//½«´Óformula¶Á³öÀ´µÄÄÚÈİ×ª»¯ÎªÖ¸¶¨¸ñÊ½µÄÈÕÆÚ
+	//å°†ä»formulaè¯»å‡ºæ¥çš„å†…å®¹è½¬åŒ–ä¸ºæŒ‡å®šæ ¼å¼çš„æ—¥æœŸ
 	private static final Date getDateFromFormula(Formula dateFormula){
 		String dateStr = dateFormula.getPureContent();
 		dateStr = Pattern.compile("\"").matcher(dateStr).replaceAll(StringUtils.EMPTY);

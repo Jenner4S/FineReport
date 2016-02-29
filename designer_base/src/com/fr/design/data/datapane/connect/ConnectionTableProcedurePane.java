@@ -21,10 +21,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Êı¾İ¼¯±à¼­Ãæ°å×ó±ßµÄ²¿·Ö
+ * æ•°æ®é›†ç¼–è¾‘é¢æ¿å·¦è¾¹çš„éƒ¨åˆ†
  *
  * @editor zhou
- * @since 2012-3-28ÏÂÎç10:14:59
+ * @since 2012-3-28ä¸‹åˆ10:14:59
  */
 public class ConnectionTableProcedurePane extends BasicPane {
 	private static int WIDTH = 155;
@@ -105,7 +105,7 @@ public class ConnectionTableProcedurePane extends BasicPane {
 	}
 
     /**
-     * ¸ø itemComboBox ¼ÓÉÏ itemListener
+     * ç»™ itemComboBox åŠ ä¸Š itemListener
      * @param itemListener
      */
     public void addItemListener(ItemListener itemListener) {
@@ -138,7 +138,7 @@ public class ConnectionTableProcedurePane extends BasicPane {
 	};
 
 	/**
-	 * Ñ¡Ïî¸Ä±ä£¬ĞèÒªÖØĞÂË¢ĞÂÏÂÀ­ÁĞ±íÀïÃæµÄÏî
+	 * é€‰é¡¹æ”¹å˜ï¼Œéœ€è¦é‡æ–°åˆ·æ–°ä¸‹æ‹‰åˆ—è¡¨é‡Œé¢çš„é¡¹
 	 */
 	protected void search() {
 		String selectedObj = connectionComboBox.getSelectedItem();
@@ -180,7 +180,7 @@ public class ConnectionTableProcedurePane extends BasicPane {
 
 	public static interface DoubleClickSelectedNodeOnTreeListener {
         /**
-         * ´¦ÀíË«»÷ÊÂ¼ş
+         * å¤„ç†åŒå‡»äº‹ä»¶
          * @param target
          */
         public void actionPerformed(TableProcedure target);

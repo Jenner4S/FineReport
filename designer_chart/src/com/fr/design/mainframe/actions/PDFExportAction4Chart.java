@@ -19,7 +19,7 @@ import javax.swing.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: …œŒÁ10:16
+ * Time: ‰∏äÂçà10:16
  */
 public class PDFExportAction4Chart extends AbstractExportAction4JChart {
 

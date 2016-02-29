@@ -15,11 +15,11 @@ import com.fr.stable.ColumnRow;
 import com.fr.stable.FCloneable;
 
 /*
- * TODO ALEX_SEP SelectionÊÇ¸úElementCasePane°ó¶¨µÄ,ÄÜ²»ÄÜ°ÑElementCasePane±£´æÔÚSelectionÀïÃæÄØ?
+ * TODO ALEX_SEP Selectionæ˜¯è·ŸElementCasePaneç»‘å®šçš„,èƒ½ä¸èƒ½æŠŠElementCasePaneä¿å­˜åœ¨Selectioné‡Œé¢å‘¢?
  * 
- * ÕâÑù,ÓëSelectionÏà¹ØµÄ¼¸¸öÖ÷Òªº¯ÊıÒ²¾Í²»ÓÃ´«ElementCasePaneÁË
+ * è¿™æ ·,ä¸Selectionç›¸å…³çš„å‡ ä¸ªä¸»è¦å‡½æ•°ä¹Ÿå°±ä¸ç”¨ä¼ ElementCasePaneäº†
  * 
- * µ«ÊÇ,²»ÖªµÀ³Ö¾Ã»¯»á²»»áÓĞÎÊÌâ(ß×?SelectionÔÚÄÄÀï»áĞèÒª³Ö¾Ã»¯? redo & undo?)
+ * ä½†æ˜¯,ä¸çŸ¥é“æŒä¹…åŒ–ä¼šä¸ä¼šæœ‰é—®é¢˜(å’¦?Selectionåœ¨å“ªé‡Œä¼šéœ€è¦æŒä¹…åŒ–? redo & undo?)
  */
 public abstract class Selection implements FCloneable, Serializable , SelectableElement {
 	public abstract boolean isSelectedOneCell(ElementCasePane ePane);

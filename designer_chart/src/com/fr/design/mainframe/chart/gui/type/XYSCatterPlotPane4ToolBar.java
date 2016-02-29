@@ -16,7 +16,7 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-29
- * Time: ÏÂÎç1:54
+ * Time: ä¸‹åˆ1:54
  */
 public class XYSCatterPlotPane4ToolBar extends PlotPane4ToolBar {
 
@@ -54,8 +54,8 @@ public class XYSCatterPlotPane4ToolBar extends PlotPane4ToolBar {
     }
 
     /**
-     * ÉèÖÃÒ»Ğ©¼¸±¾µÄÊôĞÔ
-     * @param plot »æÍ¼Çø¶ÔÏó
+     * è®¾ç½®ä¸€äº›å‡ æœ¬çš„å±æ€§
+     * @param plot ç»˜å›¾åŒºå¯¹è±¡
      */
 	public static void setChartFontAttr(XYPlot plot) {
 		if (plot.getxAxis() != null) {

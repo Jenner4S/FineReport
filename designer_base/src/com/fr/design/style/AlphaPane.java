@@ -45,7 +45,7 @@ public class AlphaPane extends JPanel {
 	private void inits() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		
-		// Í¸Ã÷Ñ¡Ïî
+		// é€æ˜é€‰é¡¹
 		JPanel alphaPane = FRGUIPaneFactory.createLeftFlowZeroGapBorderPane();
 		alphaPane.setBorder(BorderFactory.createEmptyBorder());
 		this.add(alphaPane, BorderLayout.CENTER);

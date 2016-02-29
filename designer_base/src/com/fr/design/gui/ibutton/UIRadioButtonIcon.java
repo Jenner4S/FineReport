@@ -16,7 +16,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: ÏÂÎç2:52
+ * Time: ä¸‹åˆ2:52
  */
 public class UIRadioButtonIcon extends UICheckBoxIcon {
     private static HashMap cache = new HashMap();

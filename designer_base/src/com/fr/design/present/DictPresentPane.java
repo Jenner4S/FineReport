@@ -11,7 +11,7 @@ import com.fr.general.Inter;
 /**
  * 
  * @author zhou
- * @since 2012-5-31ÉÏÎç10:54:20
+ * @since 2012-5-31ä¸Šåˆ10:54:20
  */
 public class DictPresentPane extends FurtherBasicBeanPane<DictPresent> {
 	private DictionaryPane dictionaryPane;

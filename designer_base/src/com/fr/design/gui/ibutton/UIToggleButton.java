@@ -21,7 +21,7 @@ import com.fr.stable.StringUtils;
  * SelectedAble button label
  *
  * @author zhou
- * @since 2012-5-11ÏÂÎç4:28:24
+ * @since 2012-5-11ä¸‹åˆ4:28:24
  */
 public class UIToggleButton extends UIButton implements GlobalNameObserver{
 	private boolean isSelected;
@@ -59,7 +59,7 @@ public class UIToggleButton extends UIButton implements GlobalNameObserver{
 	}
 
 	/**
-	 * ÄÜ´¥·¢ÊÂ¼ş
+	 * èƒ½è§¦å‘äº‹ä»¶
 	 *
 	 * @param isSelected
 	 */
@@ -149,9 +149,9 @@ public class UIToggleButton extends UIButton implements GlobalNameObserver{
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
@@ -159,7 +159,7 @@ public class UIToggleButton extends UIButton implements GlobalNameObserver{
 
 	/**
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
        globalNameListener = listener;

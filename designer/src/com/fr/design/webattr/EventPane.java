@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * richer:µ÷ÓÃ¸ÃÀà²¢ÇÒ¶ÔÊÂ¼şÃû×Ö¹ú¼Ê»¯Ê±ĞèÒªÑÏ¸ñ°´ÕÕ"Event-ÊÂ¼şÃû"À´½øĞĞÃüÃû
+ * richer:è°ƒç”¨è¯¥ç±»å¹¶ä¸”å¯¹äº‹ä»¶åå­—å›½é™…åŒ–æ—¶éœ€è¦ä¸¥æ ¼æŒ‰ç…§"Event-äº‹ä»¶å"æ¥è¿›è¡Œå‘½å
  */
 public class EventPane extends BasicPane {
 	private DefaultListModel listModel;
@@ -74,7 +74,7 @@ public class EventPane extends BasicPane {
 		super.setEnabled(enabled);
 		this.eventList.setEnabled(enabled);
 		this.addAction.setEnabled(enabled); // TODO ALEX_SEP
-											// ËÆºõUpdateAction.enableÊôĞÔ»¹ÊÇÓĞÓÃµÄ...
+											// ä¼¼ä¹UpdateAction.enableå±æ€§è¿˜æ˜¯æœ‰ç”¨çš„...
 		this.editAction.setEnabled(enabled);
 		this.removeAction.setEnabled(enabled);
 
@@ -145,7 +145,7 @@ public class EventPane extends BasicPane {
 			}
 
 			if (SwingUtilities.isRightMouseButton(e)) {
-				// ben:Õâ¸ö·½·¨²»ÊÇºÜºÃ£¬ĞèÒª¸Ä½ø
+				// ben:è¿™ä¸ªæ–¹æ³•ä¸æ˜¯å¾ˆå¥½ï¼Œéœ€è¦æ”¹è¿›
 				int h = e.getY();
 				eventList.setSelectedIndex((int) Math.floor(h / itemHeight));
 				JPopupMenu popupMenu = new JPopupMenu();
@@ -203,7 +203,7 @@ public class EventPane extends BasicPane {
 		final ListenerEditPane jsPane= new ListenerEditPane(WebContent.getDefaultArg(lis.getEventName()));
 		jsPane.populateBean(lis);
 //		BasicDialog dialog = jsPane.showWindow(DesignerContext.getDesignerFrame());
-		// ²»ÄÜÖ±½Ó½¨Á¢ÔÚDesignerFrame ²»È»ÀïÃæÊÂ¼şÀïÓĞÌá½»Èë¿â½øĞĞÖÇÄÜÌí¼Óµ¥Ôª¸ñ¾ÍÂé·³ÁË
+		// ä¸èƒ½ç›´æ¥å»ºç«‹åœ¨DesignerFrame ä¸ç„¶é‡Œé¢äº‹ä»¶é‡Œæœ‰æäº¤å…¥åº“è¿›è¡Œæ™ºèƒ½æ·»åŠ å•å…ƒæ ¼å°±éº»çƒ¦äº†
 		BasicDialog dialog = jsPane.showWindow(SwingUtilities.getWindowAncestor(EventPane.this));
 		dialog.addDialogActionListener(new DialogActionAdapter() {
 			@Override

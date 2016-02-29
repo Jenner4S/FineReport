@@ -20,7 +20,7 @@ import com.fr.general.Inter;
  * Created by IntelliJ IDEA.
  * User: Richer
  * Date: 11-7-1
- * Time: ÉÏÎç8:54
+ * Time: ä¸Šåˆ8:54
  */
 public class LabelDemo extends JPanel {
     public LabelDemo() {
@@ -30,7 +30,7 @@ public class LabelDemo extends JPanel {
 
         Component[][] coms = new Component[][]{
                 {new UILabel(Inter.getLocText(new String[]{"Hyperlink", "Label"})+":"), createActionLabel()},
-                {new UILabel("¶àĞĞ×ÖµÄ±êÇ©:"), createMultilineLabel()}
+                {new UILabel("å¤šè¡Œå­—çš„æ ‡ç­¾:"), createMultilineLabel()}
         };
         double[] rowSize = new double[coms.length];
         double[] columnSize = {p, f};
@@ -45,18 +45,18 @@ public class LabelDemo extends JPanel {
     }
 
     private ActionLabel createActionLabel() {
-        ActionLabel al = new ActionLabel("µãÎÒ£¬ÎÒ¿´µÄ·´Ó¦");
+        ActionLabel al = new ActionLabel("ç‚¹æˆ‘ï¼Œæˆ‘çœ‹çš„ååº”");
         al.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(LabelDemo.this, "ÎÒÄÜ¶Ôµã»÷×ö³ö·´Ó¦!");
+                JOptionPane.showMessageDialog(LabelDemo.this, "æˆ‘èƒ½å¯¹ç‚¹å‡»åšå‡ºååº”!");
             }
         });
         return al;
     }
 
     private MultilineLabel createMultilineLabel() {
-        MultilineLabel mll = new MultilineLabel("abc\nÒÁ¶û");
+        MultilineLabel mll = new MultilineLabel("abc\nä¼Šå°”");
         return mll;
     }
 }

@@ -9,7 +9,7 @@ import com.fr.stable.core.PropertyChangeListener;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-7-10 ÉÏÎç09:19:36
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-7-10 ä¸Šåˆ09:19:36
  */
 public abstract class MiddleChartComponent extends JComponent {
 

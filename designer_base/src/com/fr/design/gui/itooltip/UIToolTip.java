@@ -12,7 +12,7 @@ import java.awt.event.*;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-16
- * Time: ÏÂÎç2:40
+ * Time: ä¸‹åˆ2:40
  * To change this template use File | Settings | File Templates.
  */
 public class UIToolTip extends JToolTip{

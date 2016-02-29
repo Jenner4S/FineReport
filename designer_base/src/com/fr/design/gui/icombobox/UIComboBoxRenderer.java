@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 /**
  * 
  * @author zhou
- * @since 2012-5-18ÉÏÎç11:18:30
+ * @since 2012-5-18ä¸Šåˆ11:18:30
  */
 public class UIComboBoxRenderer extends DefaultListCellRenderer {
 

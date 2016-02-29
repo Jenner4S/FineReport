@@ -4,11 +4,11 @@ package com.fr.design.data.tabledata.tabledatapane;
  * Created with IntelliJ IDEA.
  * User: wikky
  * Date: 14-1-21
- * Time: ÏÂÎç12:30
+ * Time: ä¸‹åˆ12:30
  * To change this template use File | Settings | File Templates.
  */
 public class FileTableDataSmallPane extends FileTableDataPane{
-    //wikky:ÎÄ¼şÊı¾İ¼¯ÔÚ·şÎñÆ÷Êı¾İ¼¯ÏÂÃæµÄ½çÃæ²ÎÊı¡£
+    //wikky:æ–‡ä»¶æ•°æ®é›†åœ¨æœåŠ¡å™¨æ•°æ®é›†ä¸‹é¢çš„ç•Œé¢å‚æ•°ã€‚
     private static final int SETPANELWIDTH = 265;
     private static final int WIDTH = 245;
     private static final int HEIGHT = 436;

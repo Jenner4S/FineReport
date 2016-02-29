@@ -35,7 +35,7 @@ public class UIMenuNameableCreator implements Nameable{
 	}
 	
 	/**
-	 * 覆盖的clone方法
+	 * 瑕嗙洊鐨刢lone鏂规硶
 	 */
 	public UIMenuNameableCreator clone() {
 		Object cloneObj = null;

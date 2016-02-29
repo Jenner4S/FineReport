@@ -93,7 +93,7 @@ public class CardTagLayoutBorderPane extends LayoutBorderPane {
 	        rightPane.add(initRightBottomPane(), BorderLayout.CENTER);
 	        JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
 	        if (!jTemplate.isJWorkBook() && ((JForm)jTemplate).isSelectRootPane()){
-	            //½çÃæÉÏ±íµ¥Ö÷ÌåÖ»ÓĞ±³¾°ºÍÍ¸Ã÷¶È¿ÉÒÔÉèÖÃ
+	            //ç•Œé¢ä¸Šè¡¨å•ä¸»ä½“åªæœ‰èƒŒæ™¯å’Œé€æ˜åº¦å¯ä»¥è®¾ç½®
 	            rightPane.add(initBodyRightTopPane(), BorderLayout.NORTH);
 	        } else {
 	            rightPane.add(initRightTopPane(), BorderLayout.NORTH);

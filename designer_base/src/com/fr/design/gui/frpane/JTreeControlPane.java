@@ -31,9 +31,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JTreeControlPane extends ControlPane {
-    // Ìí¼ÓÒ»¸ötreeNode
+    // æ·»åŠ ä¸€ä¸ªtreeNode
     private AddTreeNodeAction addTreeNode;
-    // ÒÆ³ıÒ»¸ötreeNode
+    // ç§»é™¤ä¸€ä¸ªtreeNode
     private RemoveTreeNodeAction removeTreeNode;
 
     private BasicBeanPane updatePane;
@@ -75,7 +75,7 @@ public class JTreeControlPane extends ControlPane {
         tree.setPreferredSize(new Dimension(170, 350));
         tree.setCellRenderer(renderer);
 
-        // JTreeControlPane¿ØÖÆÀ¸
+        // JTreeControlPaneæ§åˆ¶æ 
         ToolBarDef toolbarDef = new ToolBarDef();
         toolbarDef.addShortCut(addTreeNode = new AddTreeNodeAction(creators));
         toolbarDef.addShortCut(removeTreeNode = new RemoveTreeNodeAction());
@@ -103,7 +103,7 @@ public class JTreeControlPane extends ControlPane {
         this.addTreeNode.setEnabled(true);
         this.removeTreeNode.setEnabled(true);
 
-        // richer:µ±Ñ¡ÔñÁËÊ÷¸ù½ÚµãÊ±,²»ÄÜ±»É¾³ı¡¢ÉÏÒÆºÍÏÂÒÆ
+        // richer:å½“é€‰æ‹©äº†æ ‘æ ¹èŠ‚ç‚¹æ—¶,ä¸èƒ½è¢«åˆ é™¤ã€ä¸Šç§»å’Œä¸‹ç§»
         DefaultMutableTreeNode root = (DefaultMutableTreeNode) defaultTreeModel.getRoot();
         TreePath rootPath = new TreePath(defaultTreeModel.getPathToRoot(root));
         if (ComparatorUtils.equals(rootPath, tree.getSelectionPath())) {
@@ -112,7 +112,7 @@ public class JTreeControlPane extends ControlPane {
     }
 
     public void populate(NameObject nameObject) {
-        // ÖØĞÂÌí¼Ótree½ÚµãµÄÊ±ºòĞèÒªremoveµôÔ­À´µÄËùÓĞ×Ó½Úµã
+        // é‡æ–°æ·»åŠ treeèŠ‚ç‚¹çš„æ—¶å€™éœ€è¦removeæ‰åŸæ¥çš„æ‰€æœ‰å­èŠ‚ç‚¹
         ((DefaultMutableTreeNode) defaultTreeModel.getRoot()).removeAllChildren();
         Object obj = nameObject.getObject();
         TreeNodeAttr[] treeNodeAttr = null;
@@ -129,7 +129,7 @@ public class JTreeControlPane extends ControlPane {
         }
 
         int count = treeNodeAttr == null ? 0 : treeNodeAttr.length;
-        //½«Ê÷µÄ²ã´ÎÒ»²ãÒ»²ãµÄ¼ÓÉÏÈ¥
+        //å°†æ ‘çš„å±‚æ¬¡ä¸€å±‚ä¸€å±‚çš„åŠ ä¸Šå»
         DefaultMutableTreeNode node4root = (DefaultMutableTreeNode) defaultTreeModel.getRoot();
         for (int i = 0; i < count; i++) {
 

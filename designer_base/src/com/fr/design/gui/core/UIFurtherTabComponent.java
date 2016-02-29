@@ -1,10 +1,10 @@
 package com.fr.design.gui.core;
 
 /**
- * 带render功能
+ * 甯ender鍔熻兘
  * 
  * @author zhou
- * @since 2012-5-28下午4:27:24
+ * @since 2012-5-28涓嬪崍4:27:24
  */
 public interface UIFurtherTabComponent<T> extends UITabComponent {
 

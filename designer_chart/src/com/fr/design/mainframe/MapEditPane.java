@@ -21,7 +21,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/2
- * Time: 下午7:17
+ * Time: 涓嬪崍7:17
  */
 public class MapEditPane extends BasicBeanPane<MapSvgAttr>{
 
@@ -97,8 +97,8 @@ public class MapEditPane extends BasicBeanPane<MapSvgAttr>{
     }
 
     /**
-   	 * 再图片面板设置类型和名字
-   	 * @param mapType 地图类型
+   	 * 鍐嶅浘鐗囬潰鏉胯缃被鍨嬪拰鍚嶅瓧
+   	 * @param mapType 鍦板浘绫诲瀷
    	 */
     public void dealWidthMap(String mapType){
         areaPane.setTypeNameAndMapName(mapType,currentMapName);

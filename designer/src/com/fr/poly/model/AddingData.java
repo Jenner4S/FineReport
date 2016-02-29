@@ -10,12 +10,12 @@ import com.fr.poly.creator.BlockCreator;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-1
+ * @since 6.5.4 åˆ›å»ºäº2011-4-1
  */
 public class AddingData {
 
 	private BlockCreator creator;
-	// ¼ÇÂ¼µ±Ç°Êó±êµÄÎ»ÖÃĞÅÏ¢
+	// è®°å½•å½“å‰é¼ æ ‡çš„ä½ç½®ä¿¡æ¯
 	private int current_x;
 	private int current_y;
 
@@ -25,7 +25,7 @@ public class AddingData {
 		current_y = -this.creator.getHeight();
 	}
 	
-	// Òş²Øµ±Ç°×é¼şµÄÍ¼±ê
+	// éšè—å½“å‰ç»„ä»¶çš„å›¾æ ‡
 	public void reset() {
 		current_x = -this.creator.getWidth();
 		current_y = -this.creator.getHeight();
@@ -39,7 +39,7 @@ public class AddingData {
 		return current_y;
 	}
 
-	// ÒÆ¶¯×é¼şÍ¼±êµ½Êó±êÊÂ¼ş·¢ÉúµÄÎ»ÖÃ
+	// ç§»åŠ¨ç»„ä»¶å›¾æ ‡åˆ°é¼ æ ‡äº‹ä»¶å‘ç”Ÿçš„ä½ç½®
 	public void moveTo(MouseEvent e) {
 		current_x = e.getX() - (this.creator.getWidth() / 2);
 		current_y = e.getY() - (this.creator.getHeight() / 2);

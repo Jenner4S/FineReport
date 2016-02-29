@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /*
- *august: ¿Ø¼ş°´Å¥
+ *august: æ§ä»¶æŒ‰é’®
  */
 public class ToolBarButton extends UIButton implements MouseListener, MouseMotionListener, Serializable {
 
@@ -36,7 +36,7 @@ public class ToolBarButton extends UIButton implements MouseListener, MouseMotio
 		this.setOpaque(false);
 		this.setRequestFocusEnabled(false);
 		this.set4ToolbarButton();
-		// FormEditorÄÇ±ßÓÃµÄDNDµÄ¸´ÔÓ·½Ê½ Õâ±ß»¹±ØĞëÒ²ÓÃ£¬²»È»¾Í·½±ã¶àÁË
+		// FormEditoré‚£è¾¹ç”¨çš„DNDçš„å¤æ‚æ–¹å¼ è¿™è¾¹è¿˜å¿…é¡»ä¹Ÿç”¨ï¼Œä¸ç„¶å°±æ–¹ä¾¿å¤šäº†
 		new DragAndDropDragGestureListener(this, DnDConstants.ACTION_COPY_OR_MOVE);
 	}
 

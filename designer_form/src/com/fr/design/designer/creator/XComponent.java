@@ -10,22 +10,22 @@ import com.fr.design.mainframe.FormDesigner;
 public interface XComponent {
 
 	/**
-	 * ·µ»Ø×é¼şµÄÎ»ÖÃ´óĞ¡
-	 * @return ·µ»Øbound
+	 * è¿”å›ç»„ä»¶çš„ä½ç½®å¤§å°
+	 * @return è¿”å›bound
 	 */
 	Rectangle getBounds();
 
 	/**
-	 * ÉèÖÃ×é¼şµÄÎ»ÖÃ´óĞ¡
-	 * @param oldbounds  bound´óĞ¡
+	 * è®¾ç½®ç»„ä»¶çš„ä½ç½®å¤§å°
+	 * @param oldbounds  boundå¤§å°
 	 */
 	void setBounds(Rectangle oldbounds);
 
 	/**
-	 * Éú³É¹¤¾ß²Ëµ¥½çÃæ
-	 * @param jform BaseJFormÀà
-	 * @param formeditor Éè¼Æ½çÃæ×é¼ş
-	 * @return ·µ»Ø¹¤¾ß½çÃæ
+	 * ç”Ÿæˆå·¥å…·èœå•ç•Œé¢
+	 * @param jform BaseJFormç±»
+	 * @param formeditor è®¾è®¡ç•Œé¢ç»„ä»¶
+	 * @return è¿”å›å·¥å…·ç•Œé¢
 	 */
 	JComponent createToolPane(BaseJForm jform, FormDesigner formeditor);
 	

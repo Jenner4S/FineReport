@@ -24,8 +24,8 @@ public class FormECBackgroundAction extends AbastractFormECAction<FormElementCas
     }
 
     /**
-     * 执行动作
-     * @return 是否执行成功
+     * 鎵ц鍔ㄤ綔
+     * @return 鏄惁鎵ц鎴愬姛
      */
 	public boolean executeActionReturnUndoRecordNeeded() {
         final FormElementCasePaneDelegate elementCasePane = this.getEditingComponent();

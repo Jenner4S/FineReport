@@ -21,7 +21,7 @@ public class GridCorner extends BaseGridComponent {
 
     public GridCorner() {
         this.setOpaque(true);
-        //james Çå³ýËùÓÐµÄKey Action
+        //james æ¸…é™¤æ‰€æœ‰çš„Key Action
         this.getInputMap().clear();
         this.getActionMap().clear();
         MouseInputListener l = new GridCornerMouseHandler(this);
@@ -52,11 +52,11 @@ public class GridCorner extends BaseGridComponent {
         
         paintArc(g2d, size);
            
-        //»­×ó±ßµÄ±ß¿òÏß.
+        //ç”»å·¦è¾¹çš„è¾¹æ¡†çº¿.
         g2d.setColor(reportPane.getGridColumn().getSeparatorLineColor());
         GraphHelper.drawLine(g2d, 0, 0, 0, size.getHeight());
 
-        //»­ÉÏ±ßµÄ±ß¿òÏß.
+        //ç”»ä¸Šè¾¹çš„è¾¹æ¡†çº¿.
         g2d.setColor(reportPane.getGridRow().getSeparatorLineColor());
         GraphHelper.drawLine(g2d, 0, 0, size.getWidth(), 0);
     }

@@ -5,9 +5,9 @@ import java.awt.event.MouseEvent;
 import javax.swing.event.MouseInputListener;
 
 /**
- * É¾³ı°´Å¥ ÎŞÌáÊ¾¿ò
+ * åˆ é™¤æŒ‰é’® æ— æç¤ºæ¡†
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-14 ÏÂÎç12:57:53
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-14 ä¸‹åˆ12:57:53
  */
 public class UITableNoOptionUI extends UITableUI {
 	

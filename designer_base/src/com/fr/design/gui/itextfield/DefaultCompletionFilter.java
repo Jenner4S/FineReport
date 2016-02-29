@@ -14,7 +14,7 @@ public class DefaultCompletionFilter implements CompletionFilter {
 
 	public ArrayList filter(String text) {
 		ArrayList list = new ArrayList();
-		//不区分大小写
+		//涓嶅尯鍒嗗ぇ灏忓啓
 		String txt = text.trim().toLowerCase();
 		int length = txt.length();
 		for (int i = 0; i < vector.length; i++) {

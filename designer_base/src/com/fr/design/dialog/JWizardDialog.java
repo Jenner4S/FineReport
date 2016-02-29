@@ -130,7 +130,7 @@ public class JWizardDialog extends BasicDialog {
 		});
 		JPanel buttons = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
 		
-		//p:¼¸¸ö°´Å¥±ØĞëÒªµÈ¾à,ËùÒÔ²ÅĞèÒªÓÃGridLayout.
+		//p:å‡ ä¸ªæŒ‰é’®å¿…é¡»è¦ç­‰è·,æ‰€ä»¥æ‰éœ€è¦ç”¨GridLayout.
 		JPanel bbPane = FRGUIPaneFactory.createMediumHGapFlowInnerContainer_M_Pane();
 		buttons.add(bbPane);	
 		bbPane.add(buttonBack);

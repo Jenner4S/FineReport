@@ -38,16 +38,16 @@ public class XWBorderLayout extends XLayoutContainer {
     }
 
     /**
-     * Ä¬ÈÏÃû³Æ
-     * @return      Ãû³Æ
+     * é»˜è®¤åç§°
+     * @return      åç§°
      */
 	public String createDefaultName() {
     	return "border";
     }
 
     /**
-     * ×ª»¯³ÉÏàÓ¦ WBorderLayout
-     * @return   ÏàÓ¦ WBorderLayout
+     * è½¬åŒ–æˆç›¸åº” WBorderLayout
+     * @return   ç›¸åº” WBorderLayout
      */
     public WBorderLayout toData() {
         return (WBorderLayout) data;
@@ -58,17 +58,17 @@ public class XWBorderLayout extends XLayoutContainer {
         this.setLayout(new FRBorderLayout(toData().getHgap(), toData().getVgap()));
     }
     /**
-     *  ³õÊ¼´óĞ¡
-     * @return   ³õÊ¼´óĞ¡
+     *  åˆå§‹å¤§å°
+     * @return   åˆå§‹å¤§å°
      */
     public Dimension initEditorSize() {
         return new Dimension(WBorderLayout.DEFAULT_WIDTH, WBorderLayout.DEFAULT_HEIGHT);
     }
 
     /**
-     *  µÃµ½ÊôĞÔÃû
-     * @return ÊôĞÔÃû
-     * @throws java.beans.IntrospectionException    Å×´í
+     *  å¾—åˆ°å±æ€§å
+     * @return å±æ€§å
+     * @throws java.beans.IntrospectionException    æŠ›é”™
      */
     public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
         return  new CRPropertyDescriptor[] {
@@ -78,7 +78,7 @@ public class XWBorderLayout extends XLayoutContainer {
     }
 
     /**
-     * ½«WLayout×ª»»ÎªXLayoutContainer
+     * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
      */
     public void convert() {
         isRefreshing = true;
@@ -98,8 +98,8 @@ public class XWBorderLayout extends XLayoutContainer {
     
 
     /**
-     * Éè¼Æ½çÃæÖĞÓĞ×é¼şÌí¼ÓÊ±£¬ÒªÍ¨ÖªWLayoutÈİÆ÷ÖØĞÂpaint
-     * @param e    ÊÂ¼ş
+     * è®¾è®¡ç•Œé¢ä¸­æœ‰ç»„ä»¶æ·»åŠ æ—¶ï¼Œè¦é€šçŸ¥WLayoutå®¹å™¨é‡æ–°paint
+     * @param e    äº‹ä»¶
      */
     public void componentAdded(ContainerEvent e) {
         if (isRefreshing) {
@@ -136,10 +136,10 @@ public class XWBorderLayout extends XLayoutContainer {
     }
 
     /**
-     * ¼ÓÈë¿Ø¼ş
-     * @param layout      ²¼¾Ö
-     * @param wgt   ¿Ø¼ş
-     * @param constraints    ·½Î»
+     * åŠ å…¥æ§ä»¶
+     * @param layout      å¸ƒå±€
+     * @param wgt   æ§ä»¶
+     * @param constraints    æ–¹ä½
      */
     public static void add(WBorderLayout layout, Widget wgt, Object constraints) {
         if (ComparatorUtils.equals(WBorderLayout.NORTH,constraints)) {
@@ -156,7 +156,7 @@ public class XWBorderLayout extends XLayoutContainer {
     }
 
     /**
-     * ÖØĞÂ¼ÆËã´óĞ¡
+     * é‡æ–°è®¡ç®—å¤§å°
      */
     public void recalculateChildrenSize() {
         Dimension d = getSize();
@@ -169,9 +169,9 @@ public class XWBorderLayout extends XLayoutContainer {
 
 
     /**
-     * ÔÚÌí¼ÓµÄÊ±ºòĞèÒª°Ñ¿ÉÀ­ÉìµÄ·½ÏòÈ·¶¨£¬ËùÒÔÖØĞ´ÁËadd·½·¨
-     * @param comp        ×é¼ş
-     * @param constraints         ·½Î»
+     * åœ¨æ·»åŠ çš„æ—¶å€™éœ€è¦æŠŠå¯æ‹‰ä¼¸çš„æ–¹å‘ç¡®å®šï¼Œæ‰€ä»¥é‡å†™äº†addæ–¹æ³•
+     * @param comp        ç»„ä»¶
+     * @param constraints         æ–¹ä½
      */
     public void add(Component comp, Object constraints) {
         super.add(comp, constraints);
@@ -179,16 +179,16 @@ public class XWBorderLayout extends XLayoutContainer {
             return;
         }
         XCreator creator = (XCreator) comp;
-        // Ìí¼Óµ½±±±ßÊ±¿ÉÀ­Éìµ×²¿
+        // æ·»åŠ åˆ°åŒ—è¾¹æ—¶å¯æ‹‰ä¼¸åº•éƒ¨
         if (ComparatorUtils.equals(BorderLayout.NORTH, constraints)) {
             creator.setDirections(new int[]{Direction.BOTTOM});
-            // Ìí¼Óµ½ÄÏ²¿Ê±¿ÉÀ­Éì¶¥²¿
+            // æ·»åŠ åˆ°å—éƒ¨æ—¶å¯æ‹‰ä¼¸é¡¶éƒ¨
         } else if (ComparatorUtils.equals(BorderLayout.SOUTH, constraints)) {
             creator.setDirections(new int[]{Direction.TOP});
-            // Ìí¼Óµ½¶«²¿µÄÊ±ºò¿ÉÏò×ó±ßÀ­Éì
+            // æ·»åŠ åˆ°ä¸œéƒ¨çš„æ—¶å€™å¯å‘å·¦è¾¹æ‹‰ä¼¸
         } else if (ComparatorUtils.equals(BorderLayout.EAST, constraints)) {
             creator.setDirections(new int[]{Direction.LEFT});
-            // Ìí¼Óµ½Î÷²¿µÄÊ±ºò¿ÉÏòÓÒ±ßÀ­Éì
+            // æ·»åŠ åˆ°è¥¿éƒ¨çš„æ—¶å€™å¯å‘å³è¾¹æ‹‰ä¼¸
         } else if (ComparatorUtils.equals(BorderLayout.WEST, constraints)) {
             creator.setDirections(new int[]{Direction.RIGHT});
         }

@@ -7,15 +7,15 @@ package com.fr.design.chart.series.SeriesCondition;
 import com.fr.chart.base.ChartConstants;
 
 /**
- * ÆøÅİÍ¼ Ìõ¼şÏÔÊ¾  ²ÎÊı ¿ØÖÆ½çÃæ.
+ * æ°”æ³¡å›¾ æ¡ä»¶æ˜¾ç¤º  å‚æ•° æ§åˆ¶ç•Œé¢.
  * Created by kunsnat on 14-3-11.
  * kunsnat@gmail.com
  */
 public class BubblePlotChartConditionPane extends ChartConditionPane{
 
     /**
-     * ½çÃæÌõ¼şĞòºÅ ÁĞ±í
-     * @return ·µ»ØÌõ¼şÁĞ±í.
+     * ç•Œé¢æ¡ä»¶åºå· åˆ—è¡¨
+     * @return è¿”å›æ¡ä»¶åˆ—è¡¨.
      */
     public String[] columns2Populate() {
         return new String[]{

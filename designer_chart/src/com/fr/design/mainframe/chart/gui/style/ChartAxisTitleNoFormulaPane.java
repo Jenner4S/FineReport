@@ -105,13 +105,13 @@ public class ChartAxisTitleNoFormulaPane extends BasicPane {
                 axisTitleAttrPane.populate(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 9));
             }
             Title title = axis.getTitle();
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             title.setTextObject(axisTitleContentPane.getText());
             axisTitleAttrPane.update(title.getTextAttr());
             title.setPosition(titleAlignmentPane.getSelectedItem());
         } else {
             if(axis.getTitle() != null) {
-                axis.getTitle().setTitleVisble(false);
+                axis.getTitle().setTitleVisible(false);
             }
         }
         makeTitleAlignText(axis);
@@ -127,7 +127,7 @@ public class ChartAxisTitleNoFormulaPane extends BasicPane {
     }
 
     public void populate(Axis axis){
-        isAxisTitleVisable.setSelected(axis.getTitle() != null && axis.getTitle().isTitleVisble());
+        isAxisTitleVisable.setSelected(axis.getTitle() != null && axis.getTitle().isTitleVisible());
         if(isAxisTitleVisable.isSelected()) {
             axisTitleContentPane.setText(Utils.objectToString(axis.getTitle().getTextObject()));
             axisTitleAttrPane.populate(axis.getTitle().getTextAttr());

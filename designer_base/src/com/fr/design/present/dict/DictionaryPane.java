@@ -18,7 +18,7 @@ import com.fr.general.Inter;
 /**
  * 
  * @author zhou
- * @since 2012-5-31ÏÂÎç12:20:41
+ * @since 2012-5-31ä¸‹åˆ12:20:41
  */
 public class DictionaryPane extends UIComboBoxPane<Dictionary> implements DataCreatorUI {
 	private TableDataDictPane tableDataDictPane;

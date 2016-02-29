@@ -10,25 +10,25 @@ import java.util.Properties;
 /**
  * @author neil
  *
- * @date: 2015-3-10-ÉÏÎç9:50:13
+ * @date: 2015-3-10-ä¸Šåˆ9:50:13
  */
 public class BBSConstants {
 
-	//»ñÈ¡µ±Ç°µÇÂ½ÓÃ»§Î´¶ÁÈ¡ÏûÏ¢ÌõÊı
+	//è·å–å½“å‰ç™»é™†ç”¨æˆ·æœªè¯»å–æ¶ˆæ¯æ¡æ•°
 	public static final String GET_MESSAGE_URL = loadAttribute("GET_MESSAGE_URL", "http://bbs.finereport.com?op=bbs&cmd=checkMessageCount");
-	//Ä¬ÈÏ´ò¿ªµÄÂÛÌ³´°¿Ú
+	//é»˜è®¤æ‰“å¼€çš„è®ºå›çª—å£
 	public static final String DEFAULT_URL = loadAttribute("DEFAULT_URL", "http://bbs.finereport.com/home.php?mod=space&do=pm");
-	//Ä¬ÈÏÄ£°å·ÖÏíµÄurl
+	//é»˜è®¤æ¨¡æ¿åˆ†äº«çš„url
 	public static final String SHARE_URL = loadAttribute("SHARE_URL", "http://bbs.finereport.com/");
-	//ÊÕ¼¯Éè¼ÆÆ÷µÄĞÅÏ¢url
+	//æ”¶é›†è®¾è®¡å™¨çš„ä¿¡æ¯url
 	public static final String COLLECT_URL = loadAttribute("COLLECT_URL", "http://bbs.finereport.com/");
-	//ÔÚÏßÑéÖ¤¼¤»îÂë
+	//åœ¨çº¿éªŒè¯æ¿€æ´»ç 
 	public static final String VERIFY_URL = loadAttribute("VERIFY_URL", "http://bbs.finereport.com/");
-    //»ñÈ¡ÂÛÌ³¸üĞÂĞÅÏ¢, ÅĞ¶ÏÊÇ·ñĞèÒªµ¯´°
+    //è·å–è®ºå›æ›´æ–°ä¿¡æ¯, åˆ¤æ–­æ˜¯å¦éœ€è¦å¼¹çª—
     public static final String UPDATE_INFO_URL = loadAttribute("UPDATE_INFO_URL", "http://bbs.finereport.com/");
-    //ÂÛÌ³ÊÖ»ú°æ
+    //è®ºå›æ‰‹æœºç‰ˆ
     public static final String BBS_MOBILE_MOD = loadAttribute("BBS_MOBILE_MOD", "http://bbs.finereport.com/forum.php?mobile=1");
-    //ÅĞ¶ÏÊÇ·ñ¸üĞÂµÄ¹Ø¼ü×Ö
+    //åˆ¤æ–­æ˜¯å¦æ›´æ–°çš„å…³é”®å­—
     public static final String UPDATE_KEY = loadAttribute("UPDATE_KEY", "newIsPopup");
    
 
@@ -36,14 +36,14 @@ public class BBSConstants {
 	private static final String LINK_KEY = "LINK";
 	private static final int GUEST_NUM = 5;
 	
-	//ÓÃ»§ÃûĞÅÏ¢Êı×é
+	//ç”¨æˆ·åä¿¡æ¯æ•°ç»„
 	public static final String[] ALL_GUEST = loadAllGuestsInfo(GUEST_KEY);
-	//ÓÃ»§ÂÛÌ³Á´½ÓĞÅÏ¢
+	//ç”¨æˆ·è®ºå›é“¾æ¥ä¿¡æ¯
 	public static final String[] ALL_LINK = loadAllGuestsInfo(LINK_KEY);
 	
 	private static Properties PROP = null;
 	
-	//¼ÓÔØËùÓĞÓÃ»§µÄĞÅÏ¢, ÓÃ»§Ãû, ÂÛÌ³Á¬½Ó
+	//åŠ è½½æ‰€æœ‰ç”¨æˆ·çš„ä¿¡æ¯, ç”¨æˆ·å, è®ºå›è¿æ¥
 	private static String[] loadAllGuestsInfo(String key){
 		String[] allGuests = new String[GUEST_NUM];
 		for (int i = 0; i < GUEST_NUM; i++) {
@@ -52,7 +52,7 @@ public class BBSConstants {
 		
 		return allGuests;
 	}
-	//Èç¹ûÒª¶¨ÖÆ, Ö±½Ó¸Äbbs.properties¾ÍĞĞÁË
+	//å¦‚æœè¦å®šåˆ¶, ç›´æ¥æ”¹bbs.propertieså°±è¡Œäº†
 	private static String loadAttribute(String key, String defaultValue) {
 		if (PROP == null) {
 			PROP = new Properties();

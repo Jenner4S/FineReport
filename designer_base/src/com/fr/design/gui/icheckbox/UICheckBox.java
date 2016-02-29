@@ -66,9 +66,9 @@ public class UICheckBox extends JCheckBox implements UIObserver, GlobalNameObser
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		this.uiObserverListener = listener;
@@ -80,25 +80,25 @@ public class UICheckBox extends JCheckBox implements UIObserver, GlobalNameObser
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
 	}
 
 	/**
-	 * ×¢²á¹Û²ìÕß¼àÌıÊÂ¼ş
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * æ³¨å†Œè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
 	/**
-	 *  ×é¼şÊÇ·ñĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼ş
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 *  ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseNameListener() {
 		return true;
@@ -180,8 +180,8 @@ public class UICheckBox extends JCheckBox implements UIObserver, GlobalNameObser
 	}
 
 	/**
-	 * ²âÊÔ
-	 * @param args ²ÎÊı
+	 * æµ‹è¯•
+	 * @param args å‚æ•°
 	 */
 	public static void main(String... args) {
 		LayoutManager layoutManager = null;

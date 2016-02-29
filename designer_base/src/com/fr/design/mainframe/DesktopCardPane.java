@@ -13,7 +13,7 @@ import com.fr.general.Inter;
 
 /**
  * Created by IntelliJ IDEA. User : Richer Version: 6.5.5 Date : 11-7-21 Time :
- * ÏÂÎç5:09
+ * ä¸‹åˆ5:09
  */
 public class DesktopCardPane extends BasicPane implements TargetModifiedListener {
 

@@ -18,7 +18,7 @@ import com.fr.design.editor.ValueEditorPaneFactory;
 import com.fr.general.Inter;
 
 /**
- * Ä£°åµÄ²ÎÊıÌí¼ÓÃæ°å
+ * æ¨¡æ¿çš„å‚æ•°æ·»åŠ é¢æ¿
  * @since 6.5.4
  */
 public class TemplateParameterPane extends BasicPane {

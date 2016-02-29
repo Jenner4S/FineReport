@@ -8,7 +8,7 @@ import com.fr.chart.chartattr.Plot;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-1
- * Time   : …œŒÁ9:27
+ * Time   : ‰∏äÂçà9:27
  */
 public class Bar3DPlotDataSeriesConditionPane extends BarPlotDataSeriesConditionPane {
 	private static final long serialVersionUID = -2701123736889274105L;

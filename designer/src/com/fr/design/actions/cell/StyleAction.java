@@ -23,12 +23,11 @@ public class StyleAction extends UpdateAction {
 	}
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
 	public void actionPerformed(ActionEvent e) {
 		CellElementPropertyPane.getInstance().GoToPane(new String[] { Inter.getLocText("Style"), Inter.getLocText("Custom") });
 	}
 
 }
-

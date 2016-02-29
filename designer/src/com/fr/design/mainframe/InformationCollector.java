@@ -10,7 +10,6 @@ import com.fr.data.core.db.dml.Delete;
 import com.fr.data.core.db.dml.Select;
 import com.fr.data.core.db.dml.Table;
 import com.fr.design.DesignerEnvManager;
-import com.fr.design.mainframe.bbs.BBSConstants;
 import com.fr.general.*;
 import com.fr.general.http.HttpClient;
 import com.fr.json.JSONArray;
@@ -32,11 +31,11 @@ import java.util.*;
 /**
  * @author neil
  *
- * @date: 2015-4-8-ÏÂÎç5:11:46
+ * @date: 2015-4-8-ä¸‹åˆ5:11:46
  */
 public class InformationCollector implements XMLReadable, XMLWriter {
 	
-	//3ÌìÉÏ´«Ò»´Î
+	//3å¤©ä¸Šä¼ ä¸€æ¬¡
 	private static final long DELTA = 3 * 24 * 3600 * 1000L;
 	private static final long SEND_DELAY = 30 * 1000L;
 	private static final String FILE_NAME = "fr.info";
@@ -53,15 +52,15 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 	private static final String XML_OS = "OS";
 
     public static final String FUNCTIONS_INFO = "http://feedback.finedevelop.com:3000/monitor/function/record";
-
+	public static final String USER_INFO = "http://feedback.finedevelop.com:3000/monitor/userinfo/record";
     public static final String TABLE_NAME = "fr_functionrecord";
     public static final String FUNC_COLUMNNAME = "func";
 
 	private static InformationCollector collector;
 	
-	//Æô¶¯Ê±¼äÓë¹Ø±ÕÊ±¼äÁĞ±í
+	//å¯åŠ¨æ—¶é—´ä¸å…³é—­æ—¶é—´åˆ—è¡¨
 	private List<StartStopTime> startStop = new ArrayList<StartStopTime>();
-	//ÉÏÒ»´ÎµÄ·¢ËÍÊ±¼ä
+	//ä¸Šä¸€æ¬¡çš„å‘é€æ—¶é—´
 	private String lastTime;
 	private StartStopTime current = new StartStopTime();
 	
@@ -155,14 +154,15 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 			return;
 		}
 		byte[] content = getJSONContentAsByte();
-		HttpClient hc = new HttpClient(BBSConstants.COLLECT_URL);
+		HttpClient hc = new HttpClient(USER_INFO);
 		hc.setContent(content);
 		if (!hc.isServerAlive()) {
 			return;
 		}
 		String res = hc.getResponseText();
-		//·şÎñÆ÷·µ»Øtrue, ËµÃ÷ÒÑ¾­»ñÈ¡³É¹¦, Çå¿Õµ±Ç°¼ÇÂ¼µÄĞÅÏ¢
-		if (Boolean.valueOf(res)) {
+		//æœåŠ¡å™¨è¿”å›trueï¼Œè¯´æ˜å·²ç»å–å¾—æˆåŠŸï¼Œæ¸…ç©ºå½“å‰è®°å½•çš„ä¿¡æ¯
+		boolean success = ComparatorUtils.equals(new JSONObject(res).get("status"), "success");
+		if (success){
 			this.reset();
 		}
 	}
@@ -202,10 +202,10 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 
         String res =  httpClient.getResponseText();
         boolean success = ComparatorUtils.equals(new JSONObject(res).get("status"), "success");
-        //·şÎñÆ÷·µ»Øtrue, ËµÃ÷ÒÑ¾­»ñÈ¡³É¹¦, Çå¿Õµ±Ç°¼ÇÂ¼µÄĞÅÏ¢
+        //æœåŠ¡å™¨è¿”å›true, è¯´æ˜å·²ç»è·å–æˆåŠŸ, æ¸…ç©ºå½“å‰è®°å½•çš„ä¿¡æ¯
         if (success) {
             deleteLogDB(conn, table);
-            //ÊÕ¼¯Éè¼ÆÆ÷ĞÅÏ¢µÄ·şÎñÆ÷ÏÂÏßÁË, Ä¿²â»¹ÒªÒ»¶ÎÊ±¼ä, ²»ÔÚÄÇ±ßÒ»ÆğsetLastTimeÁË.
+            //æ”¶é›†è®¾è®¡å™¨ä¿¡æ¯çš„æœåŠ¡å™¨ä¸‹çº¿äº†, ç›®æµ‹è¿˜è¦ä¸€æ®µæ—¶é—´, ä¸åœ¨é‚£è¾¹ä¸€èµ·setLastTimeäº†.
             this.lastTime = dateToString();
         }
 
@@ -244,7 +244,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
             }
             rs.close();
         } catch (SQLException e) {
-            //Õâ±ß²»¼Ç£¬¿ÉÄÜ»¹Ã»½¨±í
+            //è¿™è¾¹ä¸è®°ï¼Œå¯èƒ½è¿˜æ²¡å»ºè¡¨
         }
 
         JSONArray functionArray = new JSONArray();
@@ -285,7 +285,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
             try {
                 ps.close();
             } catch (SQLException e1) {
-                //Õâ±ß²»¼Ç£¬¿ÉÄÜ»¹Ã»½¨±í
+                //è¿™è¾¹ä¸è®°ï¼Œå¯èƒ½è¿˜æ²¡å»ºè¡¨
             }
             return null;
         }
@@ -294,7 +294,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 
 
     /**
-     * ÊÕ¼¯¿ªÊ¼Ê¹ÓÃÊ±¼ä£¬·¢ËÍĞÅÏ¢
+     * æ”¶é›†å¼€å§‹ä½¿ç”¨æ—¶é—´ï¼Œå‘é€ä¿¡æ¯
      */
 	public void collectStartTime(){
 		this.current.setStartDate(dateToString());
@@ -312,7 +312,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 			@Override
 			public void run() {
 				try {
-					//¶ÁÈ¡XMLµÄ5·ÖÖÓºó¿ªÊ¼·¢ÇëÇóÁ¬½Ó·şÎñÆ÷.
+					//è¯»å–XMLçš„5åˆ†é’Ÿåå¼€å§‹å‘è¯·æ±‚è¿æ¥æœåŠ¡å™¨.
 					Thread.sleep(SEND_DELAY);
 				} catch (InterruptedException e) {
 					FRContext.getLogger().error(e.getMessage());
@@ -325,7 +325,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 	}
 
     /**
-     * ÊÕ¼¯½áÊøÊ¹ÓÃÊ±¼ä
+     * æ”¶é›†ç»“æŸä½¿ç”¨æ—¶é—´
      */
 	public void collectStopTime(){
 		this.current.setStopDate(dateToString());
@@ -346,7 +346,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
     }
 
     /**
-     * ±£´æxmlÎÄ¼ş
+     * ä¿å­˜xmlæ–‡ä»¶
      */
     public void saveXMLFile() {
     	File xmlFile = this.getInfoFile();
@@ -365,7 +365,7 @@ public class InformationCollector implements XMLReadable, XMLWriter {
     
 	
 	/**
-	 * ½«ÎÄ¼şÄÚÈİĞ´µ½Êä³öÁ÷ÖĞ
+	 * å°†æ–‡ä»¶å†…å®¹å†™åˆ°è¾“å‡ºæµä¸­
 	 */
 	private static void writeEncodeContentToFile(String fileContent, File file){
 		BufferedWriter bw = null;
@@ -391,16 +391,16 @@ public class InformationCollector implements XMLReadable, XMLWriter {
 	public void writeXML(XMLPrintWriter writer) {
 		startStop.add(current);
 		writer.startTAG("Info");
-		//ÆôÍ£ĞÅÏ¢
+		//å¯åœä¿¡æ¯
 		writeStartStopList(writer);
-		//ÉÏÒ»´Î¸üĞÂµÄÊ±¼ä
+		//ä¸Šä¸€æ¬¡æ›´æ–°çš„æ—¶é—´
 		writeTag(XML_LAST_TIME, this.lastTime, writer);
 		
 		writer.end();
 	}
 	
 	private void writeStartStopList(XMLPrintWriter writer){
-		//ÆôÍ£
+		//å¯åœ
     	writer.startTAG(XML_START_STOP_LIST);
     	for (int i = 0; i < startStop.size(); i++) {
     		startStop.get(i).writeXML(writer);

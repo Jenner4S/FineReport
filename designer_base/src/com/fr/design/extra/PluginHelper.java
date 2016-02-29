@@ -39,10 +39,10 @@ public class PluginHelper {
     private static final String TEMP_FILE = "temp.zip";
 
     /**
-     * ÏÂÔØ²å¼ş
+     * ä¸‹è½½æ’ä»¶
      *
-     * @param id ²å¼şid
-     * @param p  ÏÂÔØ°Ù·Ö±È´¦Àí
+     * @param id æ’ä»¶id
+     * @param p  ä¸‹è½½ç™¾åˆ†æ¯”å¤„ç†
      */
     public static void downloadPluginFile(String id, Process<Double> p) throws Exception {
         HttpClient httpClient = new HttpClient(getDownloadPath(id));
@@ -84,14 +84,14 @@ public class PluginHelper {
     }
 
     /**
-     * ´ÓÑ¹ËõÎÄ¼şÖĞ¶ÁÈ¡²å¼şĞÅÏ¢
+     * ä»å‹ç¼©æ–‡ä»¶ä¸­è¯»å–æ’ä»¶ä¿¡æ¯
      *
-     * @param chosenFile Ñ¡ÔñµÄÑ¹ËõÎÄ¼ş
-     * @return ·µ»Ø²å¼ş¶ÔÏó
-     * @throws Exception ¶ÁÈ¡²å¼şĞÅÏ¢Ê§°ÜÔòÅ×³öÒì³£
+     * @param chosenFile é€‰æ‹©çš„å‹ç¼©æ–‡ä»¶
+     * @return è¿”å›æ’ä»¶å¯¹è±¡
+     * @throws Exception è¯»å–æ’ä»¶ä¿¡æ¯å¤±è´¥åˆ™æŠ›å‡ºå¼‚å¸¸
      */
     public static Plugin readPlugin(File chosenFile) throws Exception {
-        // ĞèÒªÏÈÉ¾³ıÁÙÊ±Ä¿Â¼±£Ö¤¼ÓÑ¹³öÀ´µÄÎÄ¼ş²»»áºÍ°²×°Ê§°ÜµÄÎÄ¼ş»ìºÏµ½Ò»Æğ
+        // éœ€è¦å…ˆåˆ é™¤ä¸´æ—¶ç›®å½•ä¿è¯åŠ å‹å‡ºæ¥çš„æ–‡ä»¶ä¸ä¼šå’Œå®‰è£…å¤±è´¥çš„æ–‡ä»¶æ··åˆåˆ°ä¸€èµ·
         StableUtils.deleteFile(new File(TEMP_PATH));
 
         IOUtils.unzip(chosenFile, TEMP_PATH);
@@ -121,11 +121,11 @@ public class PluginHelper {
     }
 
     /**
-     * ´ÓÑ¡ÖĞµÄÑ¹ËõÎÄ¼şÖĞ°²×°²å¼ş
+     * ä»é€‰ä¸­çš„å‹ç¼©æ–‡ä»¶ä¸­å®‰è£…æ’ä»¶
      *
-     * @param chosenFile Ñ¡ÔñµÄÑ¹ËõÎÄ¼ş
-     * @param after      ²Ù×÷Íê³ÉÊÂ¼ş
-     * @throws Exception °²×°Ê§°ÜÔòÅ×³öÒì³£
+     * @param chosenFile é€‰æ‹©çš„å‹ç¼©æ–‡ä»¶
+     * @param after      æ“ä½œå®Œæˆäº‹ä»¶
+     * @throws Exception å®‰è£…å¤±è´¥åˆ™æŠ›å‡ºå¼‚å¸¸
      */
     public static void installPluginFromDisk(File chosenFile, After after) throws Exception {
         Plugin plugin = readPlugin(chosenFile);
@@ -133,10 +133,10 @@ public class PluginHelper {
     }
 
     /**
-     * ´ÓÑ¹ËõÎÄ¼şÖĞ¸´ÖÆRestart*.classºÍrestart.exeµ½binÄ¿Â¼ÏÂ
+     * ä»å‹ç¼©æ–‡ä»¶ä¸­å¤åˆ¶Restart*.classå’Œrestart.exeåˆ°binç›®å½•ä¸‹
      *
-     * @param file   ²å¼şÎÄ¼ş
-     * @param plugin ²å¼ş
+     * @param file   æ’ä»¶æ–‡ä»¶
+     * @param plugin æ’ä»¶
      * @throws Exception
      */
     public static void copyFilesToBinFolder(File file, Plugin plugin) throws Exception {
@@ -150,11 +150,11 @@ public class PluginHelper {
     }
 
     /**
-     * ´Ó²å¼şÑ¹Ëõ°ü½âÑ¹µ½µÃÁÙÊ±ÎÄ¼şÖĞ°²×°²å¼ş
+     * ä»æ’ä»¶å‹ç¼©åŒ…è§£å‹åˆ°å¾—ä¸´æ—¶æ–‡ä»¶ä¸­å®‰è£…æ’ä»¶
      *
-     * @param env    ±¨±íÔËĞĞ»·¾³
-     * @param plugin ²å¼ş
-     * @param after  ²Ù×÷Íê³ÉÊÂ¼ş
+     * @param env    æŠ¥è¡¨è¿è¡Œç¯å¢ƒ
+     * @param plugin æ’ä»¶
+     * @param after  æ“ä½œå®Œæˆäº‹ä»¶
      * @throws Exception
      */
     public static void installPluginFromUnzippedTempDir(Env env, final Plugin plugin, final After after) throws Exception {
@@ -165,7 +165,7 @@ public class PluginHelper {
             copyFilesToBinFolder(file, plugin);
             env.movePluginEmbFile(file, plugin);
         }
-        // É¾³ı·Å½âÑ¹ÎÄ¼şµÄÁÙÊ±ÎÄ¼ş¼Ğ
+        // åˆ é™¤æ”¾è§£å‹æ–‡ä»¶çš„ä¸´æ—¶æ–‡ä»¶å¤¹
         StableUtils.deleteFile(new File(TEMP_PATH));
         new SwingWorker<String, Void>() {
 
@@ -211,7 +211,7 @@ public class PluginHelper {
         }
         File oldfile = new File(StableUtils.pathJoin(FRContext.getCurrentEnv().getPath(), ProjectConstants.PLUGINS_NAME, "plugin-" + plugin.getId()));
         if (!PluginManagerHelper.checkLic(plugin, fileToCheck)) {
-            if (!PluginManagerHelper.checkLic(plugin, oldfile)) {//°²×°Ê±,ÔÚ°²×°Ä¿Â¼ÏÂºÍÑ¹Ëõ°üÀï¶¼Ã»ÓĞ²Åµ¯¿ò
+            if (!PluginManagerHelper.checkLic(plugin, oldfile)) {//å®‰è£…æ—¶,åœ¨å®‰è£…ç›®å½•ä¸‹å’Œå‹ç¼©åŒ…é‡Œéƒ½æ²¡æœ‰æ‰å¼¹æ¡†
                 String checkLicFail = Inter.getLocText("FR-Designer-PluginLicense_Check_Failed");
                 FRLogger.getLogger().error(checkLicFail);
                 throw new com.fr.design.extra.PluginVerifyException(checkLicFail);
@@ -220,9 +220,9 @@ public class PluginHelper {
     }
 
     /**
-     * »ñÈ¡²å¼ş½âÑ¹µÄÁÙÊ±ÎÄ¼ş¼Ğ
+     * è·å–æ’ä»¶è§£å‹çš„ä¸´æ—¶æ–‡ä»¶å¤¹
      *
-     * @return ÁÙÊ±ÎÄ¼ş
+     * @return ä¸´æ—¶æ–‡ä»¶
      */
     public static File getTempPluginFileDirectory() {
         File file = new File(TEMP_PATH);
@@ -255,12 +255,12 @@ public class PluginHelper {
     }
 
     /**
-     * ´ÓÔËĞĞ»·¾³ÖĞĞ¶ÔØ²å¼ş
+     * ä»è¿è¡Œç¯å¢ƒä¸­å¸è½½æ’ä»¶
      *
-     * @param env    ±¨±íÔËĞĞ»·¾³
-     * @param plugin ²å¼ş
-     * @return ·µ»ØÃ»ÓĞÉ¾³ıµôµÄÎÄ¼şµÄ¼¯ºÏ
-     * @throws Exception Ğ¶ÔØ³ö´íµÄÊ±ºòÅ×³ö´ËÒì³£
+     * @param env    æŠ¥è¡¨è¿è¡Œç¯å¢ƒ
+     * @param plugin æ’ä»¶
+     * @return è¿”å›æ²¡æœ‰åˆ é™¤æ‰çš„æ–‡ä»¶çš„é›†åˆ
+     * @throws Exception å¸è½½å‡ºé”™çš„æ—¶å€™æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public static String[] uninstallPlugin(Env env, Plugin plugin) throws Exception {
         if (plugin == null || env == null) {
@@ -271,12 +271,12 @@ public class PluginHelper {
     }
 
     /**
-     * ±È½Ï²å¼şµÄ°æ±¾£¬ÕâÀï¼òµ¥µÄ±È¼Û×Ö·û´®£¬²»ĞèÒªÓÃÊı×Ö×÷Îª±êºÅ
-     * °æ±¾ºÅÏàÍ¬Ò²ÈÏÎªÊÇ¸üĞÂ
+     * æ¯”è¾ƒæ’ä»¶çš„ç‰ˆæœ¬ï¼Œè¿™é‡Œç®€å•çš„æ¯”ä»·å­—ç¬¦ä¸²ï¼Œä¸éœ€è¦ç”¨æ•°å­—ä½œä¸ºæ ‡å·
+     * ç‰ˆæœ¬å·ç›¸åŒä¹Ÿè®¤ä¸ºæ˜¯æ›´æ–°
      *
-     * @param plugin    µ±Ç°µÄ²å¼ş
-     * @param oldPlugin ÀÏµÄ²å¼ş
-     * @return µ±Ç°²å¼ş±ÈÀÏµÄ²å¼ş°æ±¾¸ßÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @param plugin    å½“å‰çš„æ’ä»¶
+     * @param oldPlugin è€çš„æ’ä»¶
+     * @return å½“å‰æ’ä»¶æ¯”è€çš„æ’ä»¶ç‰ˆæœ¬é«˜åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isNewThan(Plugin plugin, Plugin oldPlugin) {
         return ComparatorUtils.compare(plugin.getVersion(), oldPlugin.getVersion()) >= 0;

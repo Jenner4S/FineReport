@@ -18,7 +18,7 @@ public class ChartBeautyPane extends BasicBeanPane<Integer>{
 	public ChartBeautyPane() {
 		String[] nameArray = {Inter.getLocText("Common"),
                 Inter.getLocText("Plane3D"),Inter.getLocText(new String[]{"Gradient", "HighLight"}),
-                Inter.getLocText("TopDownShade"),Inter.getLocText("Transparent")   //ĞÂ¼ÓµÄÁ½ÖÖ·ç¸ñ£¬×¢Òâ¼æÈİ´¦Àí
+                Inter.getLocText("TopDownShade"),Inter.getLocText("Transparent")   //æ–°åŠ çš„ä¸¤ç§é£æ ¼ï¼Œæ³¨æ„å…¼å®¹å¤„ç†
            };
 
 		styleBox = new UIComboBox(nameArray);
@@ -36,9 +36,9 @@ public class ChartBeautyPane extends BasicBeanPane<Integer>{
 	}
 	@Override
 	public void populateBean(Integer ob) {
-        //¼æÈİ´¦Àí
+        //å…¼å®¹å¤„ç†
         int finalIndex = 0;
-        switch (ob){ //obÊÇstyleµÄ±àºÅ
+        switch (ob){ //obæ˜¯styleçš„ç¼–å·
             case 0: finalIndex = 0; break;
             case 1: finalIndex = 1; break;
             case 2: finalIndex = 2; break;

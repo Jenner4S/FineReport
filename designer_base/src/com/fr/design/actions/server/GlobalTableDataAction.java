@@ -56,8 +56,8 @@ public class GlobalTableDataAction extends UpdateAction implements ResponseDataS
     };
 
     /**
-     * ¶¯×÷
-     * @param evt ÊÂ¼ş
+     * åŠ¨ä½œ
+     * @param evt äº‹ä»¶
      */
     public void actionPerformed(ActionEvent evt) {
         final DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
@@ -86,12 +86,12 @@ public class GlobalTableDataAction extends UpdateAction implements ResponseDataS
                 DesignTableDataManager.clearGlobalDs();
                 globalTableDataPane.update(datasourceManager);
                 if (!doWithDatasourceManager(datasourceManager, backupManager, globalTableDataPane, globalTableDataDialog)) {
-                    //Èç¹û¸üĞÂÊ§°Ü£¬Ôò²»¹Ø±Õ¶Ô»°¿ò£¬Ò²²»Ğ´xmlÎÄ¼ş£¬²¢ÇÒ½«¶Ô»°¿ò¶¨Î»ÔÚÇëÖØÃüÃûµÄÄÇ¸ö¶ÔÏóÒ³Ãæ
+                    //å¦‚æœæ›´æ–°å¤±è´¥ï¼Œåˆ™ä¸å…³é—­å¯¹è¯æ¡†ï¼Œä¹Ÿä¸å†™xmlæ–‡ä»¶ï¼Œå¹¶ä¸”å°†å¯¹è¯æ¡†å®šä½åœ¨è¯·é‡å‘½åçš„é‚£ä¸ªå¯¹è±¡é¡µé¢
                     return;
                 }
 
                 writeFile(datasourceManager);
-                // Ë¢ĞÂ¹²ÓĞÊı¾İ¼¯
+                // åˆ·æ–°å…±æœ‰æ•°æ®é›†
                 TableDataTreePane.getInstance(DesignModelAdapter.getCurrentModelAdapter());
                 fireDSChanged(globalTableDataPane.getDsChangedNameMap());
             }
@@ -118,7 +118,7 @@ public class GlobalTableDataAction extends UpdateAction implements ResponseDataS
 
 
     /**
-     * ÊÇ·ñÕı³£¸üĞÂÍêdatasourceManager
+     * æ˜¯å¦æ­£å¸¸æ›´æ–°å®ŒdatasourceManager
      *
      * @param datasourceManager
      * @param databaseManagerPane
@@ -132,40 +132,40 @@ public class GlobalTableDataAction extends UpdateAction implements ResponseDataS
         ModifiedTable localModifiedTable = datasourceManager.checkTableDataModifyTable(backupManager, currentEnv.getUserID());
         boolean isFailed = false;
         if (currentEnv.isSupportLocalFileOperate() && !((LocalEnv) currentEnv).isNoRemoteUser()) {
-            //Èç¹ûÊÇ±¾µØ£¬²¢ÇÒÓĞÔ¶³ÌÓÃ»§Ê±Ôò¸üĞÂ×Ô¼ºµÄĞŞ¸Ä±í
+            //å¦‚æœæ˜¯æœ¬åœ°ï¼Œå¹¶ä¸”æœ‰è¿œç¨‹ç”¨æˆ·æ—¶åˆ™æ›´æ–°è‡ªå·±çš„ä¿®æ”¹è¡¨
             datasourceManager.updateSelfTableDataTotalModifiedTable(localModifiedTable, ModifiedTable.LOCAL_MODIFIER);
         } else {
             if (!currentEnv.isSupportLocalFileOperate()) {
-                //Èç¹ûÊÇÔ¶³Ì£¬ÔòÈ¥È¡·şÎñÆ÷µÄ×îĞÂµÄĞŞ¸Ä±í,¼ì²éÓĞÃ»ÓĞ³åÍ»
+                //å¦‚æœæ˜¯è¿œç¨‹ï¼Œåˆ™å»å–æœåŠ¡å™¨çš„æœ€æ–°çš„ä¿®æ”¹è¡¨,æ£€æŸ¥æœ‰æ²¡æœ‰å†²çª
                 ModifiedTable currentServerModifyTable = currentEnv.getDataSourceModifiedTables(DatasourceManager.TABLEDATA);
                 if (localModifiedTable.checkModifiedTableConflictWithServer(currentServerModifyTable, currentEnv.getUserID())) {
-                    //ÓĞ³åÍ»£¬½øĞĞÌáÊ¾
+                    //æœ‰å†²çªï¼Œè¿›è¡Œæç¤º
                     String title = Inter.getLocText(new String[]{"Select", "Single", "Setting"});
                     int returnVal = JOptionPane.showConfirmDialog(DesignerContext.getDesignerFrame(), localModifiedTable.getWaringMessage(), title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (returnVal == JOptionPane.YES_OPTION) {
-                        //µã»÷ÊÇ£¬½øĞĞÏàÓ¦Ë¢ĞÂÈ¥³åÍ»
+                        //ç‚¹å‡»æ˜¯ï¼Œè¿›è¡Œç›¸åº”åˆ·æ–°å»å†²çª
                         datasourceManager.synchronizedWithServer(backupManager, DatasourceManager.TABLEDATA);
-                        //ÒªÊÇÓĞÖØÃüÃû³åÍ»µÄ£¬Ôò¶ÔÏêÏ¸µÄĞŞ¸Ä±íÏÈ½øĞĞĞŞ¸Ä
+                        //è¦æ˜¯æœ‰é‡å‘½åå†²çªçš„ï¼Œåˆ™å¯¹è¯¦ç»†çš„ä¿®æ”¹è¡¨å…ˆè¿›è¡Œä¿®æ”¹
                         datasourceManager.doWithTableDataConfilct(localModifiedTable);
                         localModifiedTable.removeConfilct();
                         modifyDetails.clear();
-                        //¸üĞÂÃæ°å
+                        //æ›´æ–°é¢æ¿
                         tableDataManagerPane.populate(datasourceManager);
                     } else {
-                        //¸üĞÂÊ§°Ü£¬¼ÌĞøÍ£ÁôÒ³Ãæ
+                        //æ›´æ–°å¤±è´¥ï¼Œç»§ç»­åœç•™é¡µé¢
                         isFailed = true;
                     }
                 }
             }
         }
-        //´æÔÚÇëÖØÃüÃûÔò²»ÄÜ¸üĞÂ
+        //å­˜åœ¨è¯·é‡å‘½ååˆ™ä¸èƒ½æ›´æ–°
         int index = datasourceManager.isTableDataMapContainsRename();
         if (index != -1) {
             isFailed = true;
             tableDataManagerPane.setSelectedIndex(index);
         }
         databaseListDialog.setDoOKSucceed(!isFailed);
-        //Èç¹ûĞŞ¸Ä³É¹¦£¬ÔòÈ¥Ô¶³Ì¶ËÔöÁ¿ĞŞ¸ÄĞŞ¸Ä±í
+        //å¦‚æœä¿®æ”¹æˆåŠŸï¼Œåˆ™å»è¿œç¨‹ç«¯å¢é‡ä¿®æ”¹ä¿®æ”¹è¡¨
         if (!isFailed && !currentEnv.isSupportLocalFileOperate()) {
             currentEnv.writeDataSourceModifiedTables(localModifiedTable, DatasourceManager.TABLEDATA);
             localModifiedTable.clear();
@@ -180,16 +180,16 @@ public class GlobalTableDataAction extends UpdateAction implements ResponseDataS
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged() {
         fireDSChanged(new HashMap<String, String>());
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      *
-     * @param map ¶ÔÓ¦¼¯
+     * @param map å¯¹åº”é›†
      */
     public void fireDSChanged(Map<String, String> map) {
         DesignTableDataManager.fireDSChanged(map);

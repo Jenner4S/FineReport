@@ -30,7 +30,7 @@ import java.beans.PropertyChangeListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-4
- * Time: 下午3:11
+ * Time: 涓嬪崍3:11
  */
 public class UIBasicMenuItemUI extends MenuItemUI {
     /* diagnostic aids -- should be false for production builds. */
@@ -72,9 +72,9 @@ public class UIBasicMenuItemUI extends MenuItemUI {
     static final String MAX_ICON_WIDTH = "maxIconWidth";
 
     /**
-     * 加载UI
+     * 鍔犺浇UI
      *
-     * @param c 组件
+     * @param c 缁勪欢
      */
     public void installUI(JComponent c) {
         menuItem = (JMenuItem) c;
@@ -124,9 +124,9 @@ public class UIBasicMenuItemUI extends MenuItemUI {
     }
 
     /**
-     * 去除UI
+     * 鍘婚櫎UI
      *
-     * @param c 组件
+     * @param c 缁勪欢
      */
     public void uninstallUI(JComponent c) {
         menuItem = (JMenuItem) c;
@@ -578,10 +578,10 @@ public class UIBasicMenuItemUI extends MenuItemUI {
     }
 
     /**
-     * 创建UI
+     * 鍒涘缓UI
      *
-     * @param c 组件
-     * @return 组件UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIBasicMenuItemUI();

@@ -19,7 +19,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-19
- * Time: …œŒÁ10:30
+ * Time: ‰∏äÂçà10:30
  */
 public class UIButtonBorder extends AbstractBorder implements UIResource {
     protected final Insets borderInsets = new Insets(2, 2, 2, 2);

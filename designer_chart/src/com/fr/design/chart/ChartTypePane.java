@@ -93,7 +93,7 @@ public class ChartTypePane extends ChartCommonWizardPane {
                 this.setIcon((ChartIcon) value);
                 setHorizontalAlignment(UILabel.CENTER);
                 if (isSelected) {
-                    // …Ó¿∂…´.
+                    // Ê∑±ËìùËâ≤.
                     this.setBackground(new Color(57, 107, 181));
                 }
                 ChartIcon chartIcon = (ChartIcon) value;
@@ -135,7 +135,7 @@ public class ChartTypePane extends ChartCommonWizardPane {
                 if (charts[j].getPlot().match4GUI(plot)) {
                     mainIndex = i;
                     subIndex = j;
-                    // “ªµ©∆•≈‰ ¡¢¬Ì÷–∂œ
+                    // ‰∏ÄÊó¶ÂåπÈÖç Á´ãÈ©¨‰∏≠Êñ≠
                     break;
                 }
             }

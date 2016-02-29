@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ±ıÍ¼ µ¥Ôª¸ñÊı¾İ ÊôĞÔ±í ½çÃæ
+ * é¥¼å›¾ å•å…ƒæ ¼æ•°æ® å±æ€§è¡¨ ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÉÏÎç10:42:27
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸Šåˆ10:42:27
  */
 public class PiePlotReportDataContentPane extends AbstractReportDataContentPane {
 	

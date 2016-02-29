@@ -42,7 +42,7 @@ import java.util.concurrent.CancellationException;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-18
- * Time: ÉÏÎç9:50
+ * Time: ä¸Šåˆ9:50
  */
 public class FeedBackPane extends BasicPane {
 
@@ -151,7 +151,7 @@ public class FeedBackPane extends BasicPane {
                 }
                 detailField.setForeground(Color.black);
                 String text = detailField.getText();
-                // ÅĞ¶ÏÔÚÖĞÎÄÊäÈë×´Ì¬ÊÇ·ñ»¹°üº¬ÌáÊ¾·û ÒªÉ¾µô
+                // åˆ¤æ–­åœ¨ä¸­æ–‡è¾“å…¥çŠ¶æ€æ˜¯å¦è¿˜åŒ…å«æç¤ºç¬¦ è¦åˆ æ‰
                 String tip = Inter.getLocText("feedback_tip");
                 if (text.contains(tip)) {
                     text = text.substring(0, text.indexOf(tip));
@@ -286,7 +286,7 @@ public class FeedBackPane extends BasicPane {
                     ok.setEnabled(true);
                     cancle.setEnabled(!model);
                     if (model) {
-                        //·¢ËÍ³É¹¦
+                        //å‘é€æˆåŠŸ
                         isSendSuccessful = true;
                         send.setMessage(Inter.getLocText("HJS-Send_Successfully") + "!");
                     } else {
@@ -314,8 +314,8 @@ public class FeedBackPane extends BasicPane {
 
     private class LimitedDocument extends PlainDocument {
         private static final long serialVersionUID = 1L;
-        private int maxLength = -1;// ÔÊĞíµÄ×î´ó³¤¶È
-        private String allowCharAsString = null;// ÔÊĞíµÄ×Ö·û´®¸ñÊ½£¨0123456789£©
+        private int maxLength = -1;// å…è®¸çš„æœ€å¤§é•¿åº¦
+        private String allowCharAsString = null;// å…è®¸çš„å­—ç¬¦ä¸²æ ¼å¼ï¼ˆ0123456789ï¼‰
 
         public LimitedDocument(int maxLength) {
             super();
@@ -328,16 +328,16 @@ public class FeedBackPane extends BasicPane {
             }
             if (allowCharAsString != null && str.length() == 1) {
                 if (allowCharAsString.indexOf(str) == -1) {
-                    Toolkit.getDefaultToolkit().beep();// ·¢³öÒ»¸ö¾¯¸æÉù
-                    return;// ²»ÊÇËùÒªÇóµÄ×Ö·û¸ñÊ½£¬¾ÍÖ±½Ó·µ»Ø£¬²»½øĞĞÏÂÃæµÄÌí¼Ó
+                    Toolkit.getDefaultToolkit().beep();// å‘å‡ºä¸€ä¸ªè­¦å‘Šå£°
+                    return;// ä¸æ˜¯æ‰€è¦æ±‚çš„å­—ç¬¦æ ¼å¼ï¼Œå°±ç›´æ¥è¿”å›ï¼Œä¸è¿›è¡Œä¸‹é¢çš„æ·»åŠ 
                 }
             }
             char[] charVal = str.toCharArray();
             String strOldValue = getText(0, getLength());
             char[] tmp = strOldValue.toCharArray();
             if (maxLength != -1 && (tmp.length + charVal.length > maxLength)) {
-                Toolkit.getDefaultToolkit().beep();// ·¢³öÒ»¸ö¾¯¸æÉù
-                return;// ³¤¶È´óÓÚÖ¸¶¨µÄ³¤¶ÈmaxLength£¬Ò²Ö±½Ó·µ»Ø£¬²»½øĞĞÏÂÃæµÄÌí¼Ó
+                Toolkit.getDefaultToolkit().beep();// å‘å‡ºä¸€ä¸ªè­¦å‘Šå£°
+                return;// é•¿åº¦å¤§äºæŒ‡å®šçš„é•¿åº¦maxLengthï¼Œä¹Ÿç›´æ¥è¿”å›ï¼Œä¸è¿›è¡Œä¸‹é¢çš„æ·»åŠ 
             }
             super.insertString(offset, str, attrSet);
         }

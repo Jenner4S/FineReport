@@ -19,7 +19,7 @@ import com.fr.stable.StringUtils;
 public class FloatStringQuickEditor extends FloatQuickEditor {
 	private UITextField stringTextField;
 
-	// august£ºÈç¹ûÊÇÔ­À´±à¼­µÄÊÇ¹«Ê½,Òª±£Áô¹«Ê½ÀïµÄÕâĞ©ÊôĞÔ,²»È»ÔÚ¹«Ê½ºÍ×Ö·û´®×ª»¯Ê±,¾Í»á¶ªÊ§ÕâĞ©ÊôĞÔÉèÖÃ
+	// augustï¼šå¦‚æœæ˜¯åŸæ¥ç¼–è¾‘çš„æ˜¯å…¬å¼,è¦ä¿ç•™å…¬å¼é‡Œçš„è¿™äº›å±æ€§,ä¸ç„¶åœ¨å…¬å¼å’Œå­—ç¬¦ä¸²è½¬åŒ–æ—¶,å°±ä¼šä¸¢å¤±è¿™äº›å±æ€§è®¾ç½®
 	private boolean reserveInResult = false;
 	private boolean reserveOnWriteOrAnaly = true;
 

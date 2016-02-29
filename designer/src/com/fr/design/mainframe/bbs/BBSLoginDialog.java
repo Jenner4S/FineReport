@@ -76,7 +76,7 @@ public class BBSLoginDialog extends UIDialog {
     	}
 	};
     
-    // ÓÃ»§µÇÂ¼×´Ì¬label
+    // ç”¨æˆ·ç™»å½•çŠ¶æ€label
     private UserInfoLabel userInfoLabel;
     
 
@@ -90,9 +90,9 @@ public class BBSLoginDialog extends UIDialog {
 
 
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param parent ¸¸´°¿Ú
-	 * @param userInfoLabel µÇÂ¼×´Ì¬label
+	 * æ„é€ å‡½æ•°
+	 * @param parent çˆ¶çª—å£
+	 * @param userInfoLabel ç™»å½•çŠ¶æ€label
 	 */
 	public BBSLoginDialog(Frame parent,UserInfoLabel userInfoLabel) {
         super(parent);
@@ -103,7 +103,7 @@ public class BBSLoginDialog extends UIDialog {
     }
 
     private void initComponents(JPanel contentPane) {
-        this.setTitle(Inter.getLocText("FR-Designer-BBSLogin_Login"));
+        this.setTitle(Inter.getLocText("FR-Designer-BBSLogin_Login-Title"));
         tipLabel = new UILabel(Inter.getLocText("FR-Designer-BBSLogin_Login-Failure-Tip"));
         userLabel = new UILabel(Inter.getLocText("FR-Designer-BBSLogin_Account")+":");
         passLabel = new UILabel(Inter.getLocText("FR-Designer-BBSLogin_Password")+":");
@@ -211,7 +211,7 @@ public class BBSLoginDialog extends UIDialog {
         mainPane.add(southPane,BorderLayout.SOUTH);
     }
     
-    // µÇÂ¼³É¹¦
+    // ç™»å½•æˆåŠŸ
     private void loginSuccess(){
 		DesignerEnvManager.getEnvManager().setBBSPassword(String.valueOf(passField.getPassword()));
 		userInfoLabel.setUserName(nameField.getText());
@@ -220,7 +220,7 @@ public class BBSLoginDialog extends UIDialog {
 		BBSLoginDialog.this.setVisible(false);
     }
     
-    // µÇÂ¼Ê§°Ü
+    // ç™»å½•å¤±è´¥
     private void loginFailure(){
 		setLoginFailureTxt(Inter.getLocText("FR-Designer-BBSLogin_Login-Failure-Tip"));
     }
@@ -240,13 +240,13 @@ public class BBSLoginDialog extends UIDialog {
 		tipLabel.setVisible(true);
     }
     
-    // Á¬½ÓÊ§°Ü
+    // è¿æ¥å¤±è´¥
     private void connectionFailue(){
 		setLoginFailureTxt(Inter.getLocText("FR-Designer-BBSLogin_Connection-Failure"));
     }
     
     /**
-     * Çå³şµÇÂ¼ĞÅÏ¢
+     * æ¸…æ¥šç™»å½•ä¿¡æ¯
      */
     public void clearLoginInformation(){
     	tipLabel.setText(StringUtils.EMPTY);
@@ -255,7 +255,7 @@ public class BBSLoginDialog extends UIDialog {
     }
 
 	/**
-     * ÏÔÊ¾µÇÂ¼´°¿Ú
+     * æ˜¾ç¤ºç™»å½•çª—å£
      */
     public void showWindow(){
         GUICoreUtils.centerWindow(this);
@@ -263,7 +263,7 @@ public class BBSLoginDialog extends UIDialog {
     }
 
     /**
-     * ÎŞ
+     * æ— 
      */
     @Override
     public void checkValid() throws Exception {
@@ -271,10 +271,10 @@ public class BBSLoginDialog extends UIDialog {
     }
     
     /**
-     * ÊÇ·ñµÇÂ½³É¹¦
-     * @param username ÓÃ»§Ãû
-     * @param password ÃÜÂë
-     * @return Í¬ÉÏ
+     * æ˜¯å¦ç™»é™†æˆåŠŸ
+     * @param username ç”¨æˆ·å
+     * @param password å¯†ç 
+     * @return åŒä¸Š
      */
     public static boolean login(String username,String password){
 		String url = URL + "&username=" + username + "&password=" + password;

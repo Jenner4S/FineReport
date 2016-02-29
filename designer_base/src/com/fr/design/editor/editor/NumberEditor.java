@@ -18,7 +18,7 @@ import java.awt.event.KeyListener;
  * CellEditor used to edit Number object.
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç1:35:12
+ * @since 2012-3-29ä¸‹åˆ1:35:12
  */
 public abstract class NumberEditor<T extends Number> extends Editor<T> {
 	private static final long serialVersionUID = 1L;
@@ -47,7 +47,7 @@ public abstract class NumberEditor<T extends Number> extends Editor<T> {
 	}
 
 	/**
-	 * ¸ønumberField¼Ó¼üÅÌÊÂ¼ş
+	 * ç»™numberFieldåŠ é”®ç›˜äº‹ä»¶
 	 *
 	 * @param keylistener
 	 */

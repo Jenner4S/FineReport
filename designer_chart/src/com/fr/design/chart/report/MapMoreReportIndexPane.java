@@ -32,9 +32,9 @@ import com.fr.stable.StableUtils;
 import com.fr.stable.StringUtils;
 
 /**
- * ¶à²ãµØÍ¼, µ¥Ôª¸ñ, ¶à²ãÇĞ»» µ¥½çÃæ.
+ * å¤šå±‚åœ°å›¾, å•å…ƒæ ¼, å¤šå±‚åˆ‡æ¢ å•ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-4-22 ÏÂÎç04:26:10
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-4-22 ä¸‹åˆ04:26:10
  */
 public class MapMoreReportIndexPane extends BasicBeanPane<MapSingleLayerReportDefinition> implements UIObserver{
 	private String title = StringUtils.EMPTY;
@@ -126,7 +126,7 @@ public class MapMoreReportIndexPane extends BasicBeanPane<MapSingleLayerReportDe
 		private JComponent editorComponent;
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
 		 */
 		public Object getCellEditorValue() {
 			if(editorComponent instanceof TinyFormulaPane) {
@@ -139,7 +139,7 @@ public class MapMoreReportIndexPane extends BasicBeanPane<MapSingleLayerReportDe
 		}
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷..
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨..
 		 */
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 			if (column == table.getModel().getColumnCount()) {
@@ -169,7 +169,7 @@ public class MapMoreReportIndexPane extends BasicBeanPane<MapSingleLayerReportDe
 				tinyPane.getUITextField().addFocusListener(new FocusAdapter() {
 					@Override
 					public void focusLost(FocusEvent e) {
-//						tabPane.stopCellEditing();//kunsnat: ²»stopÊÇÒòÎª¿ÉÄÜÖ±½Óµã»÷¹«Ê½±à¼­°´Å¥, ·ñÔòĞèÒªµã»÷Á½´Î²ÅÄÜµ¯³ö.
+//						tabPane.stopCellEditing();//kunsnat: ä¸stopæ˜¯å› ä¸ºå¯èƒ½ç›´æ¥ç‚¹å‡»å…¬å¼ç¼–è¾‘æŒ‰é’®, å¦åˆ™éœ€è¦ç‚¹å‡»ä¸¤æ¬¡æ‰èƒ½å¼¹å‡º.
 						tabPane.fireTargetChanged();
 					}
 				});

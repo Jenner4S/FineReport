@@ -14,7 +14,7 @@ import com.fr.design.mainframe.chart.PaneTitleConstants;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : 下午3:59
+ * Time   : 涓嬪崍3:59
  */
 public class DataSeriesActiveGlyph extends ActiveGlyph {
     private DataSeries series;
@@ -29,7 +29,7 @@ public class DataSeriesActiveGlyph extends ActiveGlyph {
     }
 
     /**
-     * 界面条状
+     * 鐣岄潰鏉＄姸
      */
     public void goRightPane() {
     	if(chartComponent.getEditingChart() == null) {

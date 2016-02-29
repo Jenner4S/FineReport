@@ -57,7 +57,7 @@ public class DSColumnCellEditor extends AbstractCellEditor implements DialogActi
 	public Component getCellEditorComponent(Grid grid, TemplateCellElement cellElement, int resolution) {
 		TemplateElementCase tplEC = grid.getElementCasePane().getEditingElementCase();
 
-		//alex:Èç¹ûÊÇÏßĞÔ±¨±í,ÕâÊ±»¹Òª¼ÆËãÒ»ÏÂÄ¬ÈÏ¸¸¸ñÊÇÊ²Ã´
+		//alex:å¦‚æœæ˜¯çº¿æ€§æŠ¥è¡¨,è¿™æ—¶è¿˜è¦è®¡ç®—ä¸€ä¸‹é»˜è®¤çˆ¶æ ¼æ˜¯ä»€ä¹ˆ
 		if (tplEC != null && (tplEC instanceof WorkSheet || tplEC instanceof PolyECBlock)) {
 			SheetUtils.calculateDefaultParent(tplEC);
 		}

@@ -37,7 +37,7 @@ import com.fr.stable.unit.UNIT;
 
 /**
  * @author richer
- * @since 6.5.3 ¾ÛºÏ±¨±íÉè¼Æ¿éµÄuiÀà
+ * @since 6.5.3 èšåˆæŠ¥è¡¨è®¾è®¡å—çš„uiç±»
  */
 public class PolyDesignUI extends ComponentUI {
     private static final Color PAGINATE_LINE_COLOR = Color.GRAY;
@@ -54,11 +54,11 @@ public class PolyDesignUI extends ComponentUI {
     }
 
     /**
-	 * ´Ó×é¼şÖĞ»ñÈ¡Éè¼ÆÆ÷, ²¢¸³Öµ
+	 * ä»ç»„ä»¶ä¸­è·å–è®¾è®¡å™¨, å¹¶èµ‹å€¼
 	 * 
-	 * @param c ×é¼ş¶ÔÏó
+	 * @param c ç»„ä»¶å¯¹è±¡
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:38:05
+	 * @date 2015-2-12-ä¸‹åˆ2:38:05
 	 * 
 	 */
     public void installUI(JComponent c) {
@@ -87,7 +87,7 @@ public class PolyDesignUI extends ComponentUI {
         Graphics2D g2d = (Graphics2D) g;
         paintAddedData(g2d);
         AddingData addData = designer.getAddingData();
-        // »­×¼±¸Ìí¼Óµ½¾ÛºÏ±¨±íÉÏµÄÉè¼Æ¿é
+        // ç”»å‡†å¤‡æ·»åŠ åˆ°èšåˆæŠ¥è¡¨ä¸Šçš„è®¾è®¡å—
         if (addData != null && addData.getCreator() != null) {
             paintAddingData(g2d, addData);
         }
@@ -98,15 +98,15 @@ public class PolyDesignUI extends ComponentUI {
         AddedData addedData = designer.getAddedData();
         for (int i = 0, count = addedData.getAddedCount(); i < count; i++) {
             BlockCreator creator = addedData.getAddedAt(i);
-            // richer:Èç¹ûµ±Ç°Õâ¸ö×é¼şÕıÔÚ±à¼­£¬ÄÇÃ´ËûÊÇÍêÈ«±»ËûµÄ±à¼­Æ÷ËùÕÚµ²µÄ£¬²»ĞèÒª»­³öÀ´
+            // richer:å¦‚æœå½“å‰è¿™ä¸ªç»„ä»¶æ­£åœ¨ç¼–è¾‘ï¼Œé‚£ä¹ˆä»–æ˜¯å®Œå…¨è¢«ä»–çš„ç¼–è¾‘å™¨æ‰€é®æŒ¡çš„ï¼Œä¸éœ€è¦ç”»å‡ºæ¥
 			if (creator == designer.getSelection()) {
 				paintPositionLine(g, creator.getX(), creator.getY(), designer.getHorizontalValue(), designer
 						.getVerticalValue());
 				if (creator.getEditor().isDragging()) {
 					creator.getEditor().paintAbsorptionline(g);
-					//Èç¹ûÓëÆäËû¿éÖØºÏÁË, ĞèÒª»­³öÌáÊ¾½ûÖ¹ÖØµş
+					//å¦‚æœä¸å…¶ä»–å—é‡åˆäº†, éœ€è¦ç”»å‡ºæç¤ºç¦æ­¢é‡å 
 					changeForbiddenWindowVisibility(creator);
-					//µ½±ßÔµµØ´ø×Ô¶¯¹ö¶¯
+					//åˆ°è¾¹ç¼˜åœ°å¸¦è‡ªåŠ¨æ»šåŠ¨
 					scrollWhenCreatorAtCorner(creator);
 				}else{
 					creator.getEditor().hideForbiddenWindow();
@@ -156,7 +156,7 @@ public class PolyDesignUI extends ComponentUI {
 					int scrollX = designer.getWidth() + horizonBar.getValue();
 					int scrollY = designer.getHeight() + verticalBar.getValue();
 
-					//µ±blockµÄÓÒÏÂ½ÇĞ¡ÓÚµ±Ç°Ãæ°åµÄ-SCROLL_POINTÊ±, ¿ªÊ¼¹ö¶¯
+					//å½“blockçš„å³ä¸‹è§’å°äºå½“å‰é¢æ¿çš„-SCROLL_POINTæ—¶, å¼€å§‹æ»šåŠ¨
 					if(rightCornerX > scrollX - SCROLL_POINT){
 						horizonBar.setValue(horizonBar.getValue() + SCROLL_DISTANCE);
 					}
@@ -212,7 +212,7 @@ public class PolyDesignUI extends ComponentUI {
 
     private void paintCreator(Graphics g, JComponent comp, int x, int y, int width, int height) {
         ArrayList<JComponent> dbcomponents = new ArrayList<JComponent>();
-        // richer:½ûÖ¹Ë«»º³åĞĞÎª,·ñÔò»á³öÏÖÁ½¸öÍ¼Ïñ
+        // richer:ç¦æ­¢åŒç¼“å†²è¡Œä¸º,å¦åˆ™ä¼šå‡ºç°ä¸¤ä¸ªå›¾åƒ
         ComponentUtils.disableBuffer(comp, dbcomponents);
         Graphics clipg = g.create(x, y, width, height);
         comp.paint(clipg);
@@ -220,7 +220,7 @@ public class PolyDesignUI extends ComponentUI {
         ComponentUtils.resetBuffer(dbcomponents);
     }
 
-    // »­·ÖÒ³Ïß
+    // ç”»åˆ†é¡µçº¿
     private void paintPaginateLine(Graphics2D g2d) {
         Graphics2D newG2D = (Graphics2D) g2d.create();
         GraphHelper.setStroke(newG2D, GraphHelper.getStroke(Constants.LINE_DASH_DOT));

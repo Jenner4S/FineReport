@@ -24,7 +24,7 @@ import java.awt.event.ItemListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-1-17
- * Time: ÉÏÎç10:56
+ * Time: ä¸Šåˆ10:56
  */
 public class SheetAuthorityEditPane extends AuthorityEditPane {
     private static final int TOP_GAP = 11;
@@ -108,7 +108,7 @@ public class SheetAuthorityEditPane extends AuthorityEditPane {
 
 
     /**
-     * ¸üĞÂÈ¨ÏŞ±à¼­Ãæ°åµÄ¾ßÌåÄÚÈİ£ºÀàĞÍ¡¢Ãû³Æ¡¢È¨ÏŞÃæ°å
+     * æ›´æ–°æƒé™ç¼–è¾‘é¢æ¿çš„å…·ä½“å†…å®¹ï¼šç±»å‹ã€åç§°ã€æƒé™é¢æ¿
      */
     public void populateDetials() {
         if (workBook.getTemplateReport(selectedIndex) instanceof WorkSheet) {
@@ -126,23 +126,23 @@ public class SheetAuthorityEditPane extends AuthorityEditPane {
     }
 
     /**
-     * Ë¢ĞÂÀàĞÍ
+     * åˆ·æ–°ç±»å‹
      */
     public void populateType() {
         type.setText("sheet");
     }
 
     /**
-     * ¸üĞÂÃû×Ö
+     * æ›´æ–°åå­—
      */
     public void populateName() {
         name.setText(workBook.getReportName(selectedIndex));
     }
 
     /**
-     * ¸üĞÂ¸´Ñ¡¿òÃæ°å
+     * æ›´æ–°å¤é€‰æ¡†é¢æ¿
      *
-     * @return ·µ»ØÃæ°å
+     * @return è¿”å›é¢æ¿
      */
     public JPanel populateCheckPane() {
         double f = TableLayout.FILL;

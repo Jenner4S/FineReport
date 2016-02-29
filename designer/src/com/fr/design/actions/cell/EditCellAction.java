@@ -33,7 +33,7 @@ public class EditCellAction extends ElementCaseAction {
     	}
     }
     
-    // TODO ALEX_SEP ÕâÀïµÄundo redoÓÖÊÇÔõÃ´»ØÊÂÄØ?
+    // TODO ALEX_SEP è¿™é‡Œçš„undo redoåˆæ˜¯æ€ä¹ˆå›äº‹å‘¢?
     @Override
     public boolean executeActionReturnUndoRecordNeeded() {
     	return false;

@@ -8,8 +8,8 @@ import com.fr.design.module.FormDesignerModule;
 public class Designer4Form extends BaseDesigner {
 
     /**
-     * Ö÷º¯Êı
-     * @param args Èë¿Ú²ÎÊı
+     * ä¸»å‡½æ•°
+     * @param args å…¥å£å‚æ•°
      */
 	public static void main(String[] args) {
 		new Designer4Form(args);
@@ -25,8 +25,8 @@ public class Designer4Form extends BaseDesigner {
 	}
 
     /**
-     * ´´½¨ĞÂ½¨ÎÄ¼ş²Ëµ¥
-     * @return ²Ëµ¥
+     * åˆ›å»ºæ–°å»ºæ–‡ä»¶èœå•
+     * @return èœå•
      */
 	public ShortCut[] createNewFileShortCuts() {
 		return new ShortCut[]{

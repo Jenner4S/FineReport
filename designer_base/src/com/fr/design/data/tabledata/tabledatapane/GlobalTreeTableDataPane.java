@@ -7,7 +7,7 @@ import com.fr.design.data.datapane.GlobalTreeTableDataDictPane;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-4-20
- * Time: ÉÏÎç11:30
+ * Time: ä¸Šåˆ11:30
  * To change this template use File | Settings | File Templates.
  */
 public class GlobalTreeTableDataPane extends TreeTableDataPane {

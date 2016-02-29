@@ -13,7 +13,7 @@ import com.fr.design.gui.icombobox.UIComboBoxRenderer;
 /**
  * Int combobox.
  * @author zhou
- * @since 2012-6-1œ¬ŒÁ2:00:14
+ * @since 2012-6-1‰∏ãÂçà2:00:14
  */
 public class IntComboBox extends UIComboBox {
     public IntComboBox() {
@@ -49,4 +49,3 @@ public class IntComboBox extends UIComboBox {
         this.setSelectedIndex(index);
     }
 }
-

@@ -10,7 +10,7 @@ import com.fr.design.layout.TableLayoutHelper;
 import com.fr.general.Inter;
 
 /**
- * 表单的邮件pane
+ * 琛ㄥ崟鐨勯偖浠秔ane
  * 
  * @author jim
  *
@@ -32,4 +32,3 @@ public class FormEmailPane extends EmailPane{
 	}
 
 }
-

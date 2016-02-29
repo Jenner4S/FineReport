@@ -16,7 +16,7 @@ import com.fr.report.web.button.write.AppendRowButton;
 
 /**
  * Created by IntelliJ IDEA. Author : Richer Version: 6.5.6 Date : 11-11-16 Time
- * : …œŒÁ9:34
+ * : ‰∏äÂçà9:34
  */
 public class DefineAppendColumnRowPane extends BasicPane {
 	private ColumnRowEditor crEditor;

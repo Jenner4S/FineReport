@@ -29,7 +29,7 @@ import com.fr.general.Inter;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-8
- * Time: ÏÂÎç8:18
+ * Time: ä¸‹åˆ8:18
  */
 public class FormWidgetDetailPane extends FormDockView{
     public static final String PARA = "para";
@@ -75,7 +75,7 @@ public class FormWidgetDetailPane extends FormDockView{
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     public void refreshDockingView(){
         FormDesigner designer = this.getEditingFormDesigner();
@@ -124,9 +124,9 @@ public class FormWidgetDetailPane extends FormDockView{
     }
 
     /**
-     * Ñ¡ÖĞµÄ×é¼şÊÇ·ñÔÚ²ÎÊıÃæ°åÀï
-     * @param designer   Éè¼ÆÆ÷
-     * @return     ÊÇÔò·µ»Øtrue
+     * é€‰ä¸­çš„ç»„ä»¶æ˜¯å¦åœ¨å‚æ•°é¢æ¿é‡Œ
+     * @param designer   è®¾è®¡å™¨
+     * @return     æ˜¯åˆ™è¿”å›true
      */
     public boolean hasSelectParaPane(FormDesigner designer){
         XCreator xCreator = designer.getSelectionModel().getSelection().getSelectedCreator();
@@ -138,7 +138,7 @@ public class FormWidgetDetailPane extends FormDockView{
     }
 
     /**
-     * Çå³ıÊı¾İ
+     * æ¸…é™¤æ•°æ®
      */
     public void clearDockingView() {
         parameterPropertyPane = null;
@@ -154,8 +154,8 @@ public class FormWidgetDetailPane extends FormDockView{
         }
 
         /**
-         *  ÏìÓ¦½çÃæ¸Ä±äÊÂ¼ş
-         * @param evt  ÊÂ¼ş
+         *  å“åº”ç•Œé¢æ”¹å˜äº‹ä»¶
+         * @param evt  äº‹ä»¶
          */
         public void fireCreatorModified(DesignerEvent evt) {
             if (evt.getCreatorEventID() == DesignerEvent.CREATOR_RESIZED
@@ -170,18 +170,18 @@ public class FormWidgetDetailPane extends FormDockView{
                     cardLayout.show(centerPane,BODY);
                     mobileBodyWidgetTable.refresh();
                 }
-                //³öÏÖ¹ö¶¯Ìõ
+                //å‡ºç°æ»šåŠ¨æ¡
                 downPanel.doLayout();
-                //¿Ø¼şÁĞ±íÑ¡ÖĞÄ³×é¼ş£¬´¥·¢±íµ¥ÖĞÑ¡ÖĞ¿Ø¼ş£¬Ñ¡ÖĞÊÂ¼şÓÖ´¥·¢ÁĞ±íË¢ĞÂ£¬¹ö¶¯Ìõ»Øµ½0
-                //´Ë´¦ÉèÖÃ¹ö¶¯ÌõÖµÎªË¢ĞÂÇ°
+                //æ§ä»¶åˆ—è¡¨é€‰ä¸­æŸç»„ä»¶ï¼Œè§¦å‘è¡¨å•ä¸­é€‰ä¸­æ§ä»¶ï¼Œé€‰ä¸­äº‹ä»¶åˆè§¦å‘åˆ—è¡¨åˆ·æ–°ï¼Œæ»šåŠ¨æ¡å›åˆ°0
+                //æ­¤å¤„è®¾ç½®æ»šåŠ¨æ¡å€¼ä¸ºåˆ·æ–°å‰
                 downPanel.getVerticalScrollBar().setValue(value);
             }
         }
     }
 
     /**
-     * ¶¨Î»
-     * @return  Î»ÖÃ
+     * å®šä½
+     * @return  ä½ç½®
      */
     public Location preferredLocation() {
         return Location.WEST_BELOW;

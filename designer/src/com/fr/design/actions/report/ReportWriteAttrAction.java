@@ -23,14 +23,14 @@ public class ReportWriteAttrAction extends ReportComponentAction<WorkSheetDesign
         this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_report/reportWriteAttr.png"));
     }
 
-    // ben:用来判断是否update
+    // ben:鐢ㄦ潵鍒ゆ柇鏄惁update
     private boolean isChange;
     private boolean hasActionPerformed;
 
     /**
-     * 执行动作
+     * 鎵ц鍔ㄤ綔
      *
-     * @return 是否执行成功
+     * @return 鏄惁鎵ц鎴愬姛
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         hasActionPerformed = false;

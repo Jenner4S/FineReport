@@ -36,7 +36,7 @@ public class Plot3DAxisAreaPane extends ChartAxisAreaPane {
 	}
 
 	/**
-	 * ¸üĞÂ¼ä¸ô±³¾°½çÃæ.
+	 * æ›´æ–°é—´éš”èƒŒæ™¯ç•Œé¢.
 	 */
 	public void populateBean(Plot plot) {
 		gridLine.setSelected(plot.getyAxis().getMainGridStyle() != Constants.LINE_NONE);
@@ -44,7 +44,7 @@ public class Plot3DAxisAreaPane extends ChartAxisAreaPane {
 	}
 
 	/**
-	 * ±£´æ¼ä¸ô±³¾°µÄ½çÃæÊôĞÔ.
+	 * ä¿å­˜é—´éš”èƒŒæ™¯çš„ç•Œé¢å±æ€§.
 	 */
 	public void updateBean(Plot plot) {
 		if(gridLine.isSelected()) {

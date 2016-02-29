@@ -96,7 +96,7 @@ public class LineComboBox extends UIComboBox {
                 GraphHelper.drawLine(g2d, 4, d.height / 2, d.width - 8, d.height / 2, style);
             }
             
-            if(isShowAxisWithLineStyle()) { //  ´øÓĞ×ø±êÖá¼ıÍ·µÄÑùÊ½. 
+            if(isShowAxisWithLineStyle()) { //  å¸¦æœ‰åæ ‡è½´ç®­å¤´çš„æ ·å¼. 
             	drawArrow(g2d, new Point2D.Double(4, d.height / 2), new Point2D.Double(d.width - 8, d.height/2));
             }
         }
@@ -105,7 +105,7 @@ public class LineComboBox extends UIComboBox {
         	Point2D s = new Point2D.Double(p1.getX() - p0.getX(), p1.getY() - p0.getY());
         	Point2D t = new Point2D.Double();
         	double d1 = p0.distance(p1);
-        	//d2-d5Éè¶¨¼ıÍ·µÄ´óĞ¡,p1-p2Îª×ø±êÖáµÄÑÓ³¤Ïß,p2-p5-p3-p6Îª¼ıÍ·4¸öµãµÄ¾ßÌåÎ»ÖÃ
+        	//d2-d5è®¾å®šç®­å¤´çš„å¤§å°,p1-p2ä¸ºåæ ‡è½´çš„å»¶é•¿çº¿,p2-p5-p3-p6ä¸ºç®­å¤´4ä¸ªç‚¹çš„å…·ä½“ä½ç½®
         	double d2 = 9;
         	double d3 = 15;
         	double d4 = 7;

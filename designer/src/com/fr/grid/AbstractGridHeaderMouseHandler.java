@@ -35,7 +35,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
  * @editor zhou
- * @since 2012-3-23ÉÏÎç11:54:14
+ * @since 2012-3-23ä¸Šåˆ11:54:14
  */
 public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
     protected static final int SEPARATOR_GAP = 5;
@@ -43,7 +43,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
     private GridHeader gHeader;
 
     private int dragType = GridUtils.DRAG_NONE;
-    //james ÊÇ·ñÎªÑ¡¶¨¶àĞĞµÄdrag
+    //james æ˜¯å¦ä¸ºé€‰å®šå¤šè¡Œçš„drag
     private boolean isMultiSelectDragPermited = false;
     private int startMultiSelectIndex = 0;
     private int endMultiSelectIndex = 0;
@@ -99,7 +99,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
         public boolean run(MouseEvent evt, int index, double tmpSize1, double tmpSize2, int tmpIncreaseSize, int oldEndValueSize, ElementCase report, DynamicUnitList sizeList) {
 
             int resolution = ScreenResolution.getScreenResolution();
-            // richer:Õâ±ßÕâÃ´×öµÄÔ­ÒòÊÇµ÷ÕûÁËĞĞ¸ßÁĞ¿íºóĞèÒªÍ¨Öª¾ÛºÏ¿é¸Ä±ä±ß½ç
+            // richer:è¿™è¾¹è¿™ä¹ˆåšçš„åŸå› æ˜¯è°ƒæ•´äº†è¡Œé«˜åˆ—å®½åéœ€è¦é€šçŸ¥èšåˆå—æ”¹å˜è¾¹ç•Œ
             Method method = null;
             try {
                 method = ElementCase.class.getMethod(methodName(), int.class, UNIT.class);
@@ -212,9 +212,9 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
         }
 
         ElementCasePane ePane = this.gHeader.getElementCasePane();
-        ePane.getGrid().stopEditing();// james Í£Ö¹µ±Ç°µÄËùÓĞ±à¼­
+        ePane.getGrid().stopEditing();// james åœæ­¢å½“å‰çš„æ‰€æœ‰ç¼–è¾‘
 
-        // peter:Ñ¡ÖĞ¸ñ×ÓÎ»ÖÃ.
+        // peter:é€‰ä¸­æ ¼å­ä½ç½®.
         ColumnRow selectedCellPoint = GridUtils.getAdjustEventColumnRow(ePane, evt.getX(), evt.getY());
 
         iterateScrollBar(ePane, evt, PRESS_ACTION);
@@ -238,7 +238,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
                 }
             }
         }
-        // p:ÔÚÁíÍâÒ»¸öÏß³ÌÀïÃæ»°,¶øÇÒÑÓ³Ù»­.
+        // p:åœ¨å¦å¤–ä¸€ä¸ªçº¿ç¨‹é‡Œé¢è¯,è€Œä¸”å»¶è¿Ÿç”».
         ePane.repaint();
     }
 
@@ -248,7 +248,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
     protected abstract int doChooseFrom();
 
     /**
-     * Ñ¡ÖĞ¶àĞĞ»òÕß¶àÁĞ
+     * é€‰ä¸­å¤šè¡Œæˆ–è€…å¤šåˆ—
      *
      * @param ePane
      * @param evtX
@@ -265,7 +265,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
         int row = 0;
         int columnSpan = 0;
         int rowSpan = 0;
-        //august Í¬ÁĞºÍÍ¬ĞĞ
+        //august åŒåˆ—å’ŒåŒè¡Œ
         if (selectedCellPointX == tempOldSelectedCellX) {
             column = selectedCellPointX;
             row = Math.min(selectedCellPointY, tempOldSelectedCellY);
@@ -359,12 +359,12 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
 
         ElementCasePane ePane = gHeader.getElementCasePane();
 
-        ePane.getGrid().stopEditing();// james Í£Ö¹µ±Ç°µÄËùÓĞ±à¼­
+        ePane.getGrid().stopEditing();// james åœæ­¢å½“å‰çš„æ‰€æœ‰ç¼–è¾‘
         this.isMultiSelectDragPermited = false;
         this.isDragPermited = false;
         this.hideToolTip();// hide tooltip first.
         if (dragType == GridUtils.DRAG_CELL_SIZE) {// read changed column width.
-            // ĞèÒªrevalidate scrollbar.
+            // éœ€è¦revalidate scrollbar.
             JScrollBar vBar = ePane.getVerticalScrollBar();
             if (vBar != null) {
                 vBar.setValue(vBar.getValue());
@@ -395,9 +395,9 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
             return;
         }
         CellSelection cs = ((CellSelection) ePane.getSelection()).clone();
-        ePane.getGrid().stopEditing();// james Í£Ö¹µ±Ç°µÄËùÓĞ±à¼­
+        ePane.getGrid().stopEditing();// james åœæ­¢å½“å‰çš„æ‰€æœ‰ç¼–è¾‘
 
-        if (this.dragType == GridUtils.DRAG_SELECT_UNITS) {// james ¶àÁĞÑ¡¶¨Ê±
+        if (this.dragType == GridUtils.DRAG_SELECT_UNITS) {// james å¤šåˆ—é€‰å®šæ—¶
             if (!this.isMultiSelectDragPermited) {
                 return;
             }
@@ -411,7 +411,7 @@ public abstract class AbstractGridHeaderMouseHandler extends MouseInputAdapter {
             }
             this.setToolTipText2(this.getSelectedHeaderTooltip(Math.abs(startMultiSelectIndex - endMultiSelectIndex) + 1));
         } else if (dragType == GridUtils.DRAG_CELL_SIZE) {
-            //È¨ÏŞ±à¼­×´Ì¬²»¿ÉÒÔ¸Ä±äĞĞÁĞµÄ¿í¶È
+            //æƒé™ç¼–è¾‘çŠ¶æ€ä¸å¯ä»¥æ”¹å˜è¡Œåˆ—çš„å®½åº¦
             if (BaseUtils.isAuthorityEditing()) {
                 return;
             }

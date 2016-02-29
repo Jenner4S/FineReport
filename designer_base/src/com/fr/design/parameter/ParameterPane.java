@@ -18,16 +18,16 @@ import com.fr.general.Inter;
 
 public class ParameterPane extends BasicBeanPane<Parameter> {
 	/*
-	 * richer:²ÎÊı¶¨ÒåÃæ°å
-	 * ¡ª¡ª¡ª¡ª¡ª¡ª6.5ÖĞ£¬²ÎÊıÃæ°å×ö³ö½Ï´ó¸Ä¶¯£¬È¡ÏûÁËÔÚ²ÎÊı¶¨ÒåµÄµØ·½ÉèÖÃ±à¼­Æ÷µÄ×ö·¨
-	 * ¡ª¡ª¡ª¡ª¡ª¡ªÄ¬ÈÏ²ÎÊı½çÃæÒ²×Ô¶¯Éú³É£¬²¢ÇÒÄÜ¸øÓÃ»§¿´
-	 * ¡ª¡ª¡ª¡ª¡ª¡ª²ÎÊıÃæ°åµÄ´óĞ¡¾¡Á¿Ê¹ÓÃ(600, 350),¿ÉÒÔÍ³Ò»
+	 * richer:å‚æ•°å®šä¹‰é¢æ¿
+	 * â€”â€”â€”â€”â€”â€”6.5ä¸­ï¼Œå‚æ•°é¢æ¿åšå‡ºè¾ƒå¤§æ”¹åŠ¨ï¼Œå–æ¶ˆäº†åœ¨å‚æ•°å®šä¹‰çš„åœ°æ–¹è®¾ç½®ç¼–è¾‘å™¨çš„åšæ³•
+	 * â€”â€”â€”â€”â€”â€”é»˜è®¤å‚æ•°ç•Œé¢ä¹Ÿè‡ªåŠ¨ç”Ÿæˆï¼Œå¹¶ä¸”èƒ½ç»™ç”¨æˆ·çœ‹
+	 * â€”â€”â€”â€”â€”â€”å‚æ•°é¢æ¿çš„å¤§å°å°½é‡ä½¿ç”¨(600, 350),å¯ä»¥ç»Ÿä¸€
 	 */
 
-	// ²ÎÊıÃû×Ö
+	// å‚æ•°åå­—
 	private UITextField nameTextField;
 
-	// ²ÎÊıÄ¬ÈÏÖµ
+	// å‚æ•°é»˜è®¤å€¼
 	private ValueEditorPane valueEditor;
 
 	public ParameterPane() {
@@ -44,7 +44,7 @@ public class ParameterPane extends BasicBeanPane<Parameter> {
 		
 		valueEditor = ValueEditorPaneFactory.createBasicValueEditorPane();
 
-		// richer:ÒªÅÅÁĞÏÔÊ¾µÄ¿Ø¼ş
+		// richer:è¦æ’åˆ—æ˜¾ç¤ºçš„æ§ä»¶
 		Component[][] components = {{null},
 				{ null, new UILabel(Inter.getLocText("Name") + ":"),textFieldPanel },
 				{ null, new UILabel(Inter.getLocText("Utils-Default_Value") + ":"),valueEditor }

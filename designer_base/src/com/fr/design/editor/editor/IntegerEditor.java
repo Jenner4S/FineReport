@@ -4,10 +4,10 @@ import com.fr.base.Utils;
 import com.fr.general.Inter;
 
 /**
- * ÕûÊı±à¼­Æ÷
+ * æ•´æ•°ç¼–è¾‘å™¨
  *
  * @author zhou
- * @since 2012-3-29ÏÂÎç4:02:06
+ * @since 2012-3-29ä¸‹åˆ4:02:06
  */
 public class IntegerEditor extends NumberEditor<Integer> {
 

@@ -18,7 +18,7 @@ import java.util.List;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç6:21
+ * Time   : ä¸‹åˆ6:21
  */
 public abstract class ButtonDetailPane<T extends Button> extends BasicPane {
     private List<ChangeListener> ls = new ArrayList<ChangeListener>();

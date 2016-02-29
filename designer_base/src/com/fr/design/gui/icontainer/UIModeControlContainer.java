@@ -149,7 +149,7 @@ public class UIModeControlContainer extends JLayeredPane {
             if (notUpEditMode) {
                 return;
             }
-            // ÍÏ¶¯µÄ¾àÀë£¬ÎªÕıÖµ±íÊ¾ÍùÏÂÍÏ¶¯£¬Îª¸ºÖµ±íÊ¾ÍùÉÏÍÏ¶¯
+            // æ‹–åŠ¨çš„è·ç¦»ï¼Œä¸ºæ­£å€¼è¡¨ç¤ºå¾€ä¸‹æ‹–åŠ¨ï¼Œä¸ºè´Ÿå€¼è¡¨ç¤ºå¾€ä¸Šæ‹–åŠ¨
             int deltaY = e.getY();
             toolPaneY += deltaY;
             onResize(toolPaneY);

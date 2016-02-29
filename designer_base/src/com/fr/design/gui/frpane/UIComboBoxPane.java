@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 
  * @author zhou
- * @since 2012-5-31ÏÂÎç12:25:21
+ * @since 2012-5-31ä¸‹åˆ12:25:21
  */
 public abstract class UIComboBoxPane<T> extends BasicBeanPane<T> {
 
@@ -43,7 +43,7 @@ public abstract class UIComboBoxPane<T> extends BasicBeanPane<T> {
 			}
 		};
 		for (int i = 0; i < this.cards.size(); i++) {
-			String name = this.cards.get(i).title4PopupWindow();// Name´Ó¸÷×ÔµÄpaneÀïÃæ»ñÈ¡
+			String name = this.cards.get(i).title4PopupWindow();// Nameä»å„è‡ªçš„paneé‡Œé¢è·å–
 			cardNames[i] = name;
 			cardPane.add(this.cards.get(i), cardNames[i]);
             addComboBoxItem(cards, i);
@@ -72,7 +72,7 @@ public abstract class UIComboBoxPane<T> extends BasicBeanPane<T> {
 	}
 	
 	/**
-	 * ÉèÖÃÖ»Ö§³ÖÆäÖĞµÄÄ³¸öÑ¡Ïî, 
+	 * è®¾ç½®åªæ”¯æŒå…¶ä¸­çš„æŸä¸ªé€‰é¡¹, 
 	 */
 	public void justSupportOneSelect(boolean surpport) {
 		if(!surpport) {
@@ -82,7 +82,7 @@ public abstract class UIComboBoxPane<T> extends BasicBeanPane<T> {
 	}
 
 	/**
-	 * august¡¡Èç¹ûĞèÒªµÄ²¼¾ÖÓĞ±ä»¯£¬¸²¸ÇÖ®
+	 * augustã€€å¦‚æœéœ€è¦çš„å¸ƒå±€æœ‰å˜åŒ–ï¼Œè¦†ç›–ä¹‹
 	 */
 	protected void initLayout() {
 		this.setLayout(new BorderLayout(0,6));

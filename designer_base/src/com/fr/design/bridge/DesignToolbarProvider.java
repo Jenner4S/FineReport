@@ -4,14 +4,14 @@ package com.fr.design.bridge;
  * @author richie
  * @date 14/11/10
  * @since 8.0
- * ¹¤¾ßÀ¸½çÃæ½Ó¿Ú
+ * å·¥å…·æ ç•Œé¢æ¥å£
  */
 public interface DesignToolbarProvider {
 
     public static final String STRING_MARKED = "DesignToolbarProvider";
 
     /**
-     * Ë¢ĞÂ¹¤¾ßÀ¸
+     * åˆ·æ–°å·¥å…·æ 
      */
     public void refreshToolbar();
 }

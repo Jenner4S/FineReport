@@ -21,7 +21,7 @@ import com.fr.stable.StringUtils;
 /**
  * @author neil
  *
- * @date: 2015-3-5-ÉÏÎç11:52:58
+ * @date: 2015-3-5-ä¸Šåˆ11:52:58
  */
 public class ExitLabel extends UILabel{
 	
@@ -30,7 +30,7 @@ public class ExitLabel extends UILabel{
 	private UserInfoPane infoPane;
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public ExitLabel(UserInfoPane infoPane) {
 		this.infoPane = infoPane;

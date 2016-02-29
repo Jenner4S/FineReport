@@ -31,7 +31,7 @@ public class ReportWriteAttrPane extends LoadingBasicPane {
 		final UITabbedPane tabbedPane = new UITabbedPane(SwingConstants.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
 		container.add(tabbedPane, BorderLayout.CENTER);
 
-		// peter: writeSQLAttrListµÄ±à¼­.
+		// peter: writeSQLAttrListçš„ç¼–è¾‘.
 		if (submiterListPane == null) {
 			submiterListPane = new SubmiterListPane(ePane);
 		}
@@ -48,8 +48,8 @@ public class ReportWriteAttrPane extends LoadingBasicPane {
 //		tabbedPane.addChangeListener(new ChangeListener() {
 //			@Override
 //			public void stateChanged(ChangeEvent e) {
-//				// ÇĞ»»µÄÊ±ºòÕâÀï»áÏÈÓÚUITabbedPaneUIµÄMousePressedÊÂ¼ş
-//				// »áµ¼ÖÂµ¯´°Á½´Î
+//				// åˆ‡æ¢çš„æ—¶å€™è¿™é‡Œä¼šå…ˆäºUITabbedPaneUIçš„MousePressedäº‹ä»¶
+//				// ä¼šå¯¼è‡´å¼¹çª—ä¸¤æ¬¡
 //				int idx = ReportWriteAttrPane.this.getInvalidIndex();
 //				if (idx >= 0 && idx != tabbedPane.getSelectedIndex()) {
 //					try {
@@ -96,8 +96,8 @@ public class ReportWriteAttrPane extends LoadingBasicPane {
     }
 
 	/**
-	 * ¼ì²éÊÇ·ñºÏ·¨
-	 * Í¨¹ı¼ì²éÌî±¨ÉèÖÃÃæ°åºÍĞ£ÑéÉèÖÃÃæ°å
+	 * æ£€æŸ¥æ˜¯å¦åˆæ³•
+	 * é€šè¿‡æ£€æŸ¥å¡«æŠ¥è®¾ç½®é¢æ¿å’Œæ ¡éªŒè®¾ç½®é¢æ¿
 	 * @throws Exception
 	 */
 	public void checkValid() throws Exception {

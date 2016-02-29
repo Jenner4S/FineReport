@@ -43,8 +43,8 @@ public class HyperlinkAction extends ElementCaseAction {
     }
 
     /**
-     * 计算Action, 
-     * @return 返回是否需要记录undo
+     * 璁＄畻Action, 
+     * @return 杩斿洖鏄惁闇�瑕佽褰晆ndo
      */
 	public boolean executeActionReturnUndoRecordNeeded() {
     	b = true;

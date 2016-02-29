@@ -9,8 +9,8 @@ public interface FormECCompositeProvider {
 
     public void setSelectedWidget(FormElementCaseProvider fc);
     /**
-     *  Ìí¼ÓÄ¿±ê¸Ä±äµÄ¼àÌı
-     * @param targetModifiedListener     Ä¿±ê¸Ä±äÊÂ¼ş
+     *  æ·»åŠ ç›®æ ‡æ”¹å˜çš„ç›‘å¬
+     * @param targetModifiedListener     ç›®æ ‡æ”¹å˜äº‹ä»¶
      */
 	public void addTargetModifiedListener(TargetModifiedListener targetModifiedListener);
 

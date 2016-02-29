@@ -12,7 +12,7 @@ import com.fr.design.mainframe.RGridLayout;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-8
+ * @since 6.5.4 åˆ›å»ºäºŽ2011-4-8
  */
 public class PolyEditorLayout extends RGridLayout {
 	public static final String BottomCorner = "BottomCorner";

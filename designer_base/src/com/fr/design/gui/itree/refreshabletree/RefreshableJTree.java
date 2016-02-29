@@ -17,7 +17,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 
 public abstract class RefreshableJTree extends JTree {
-    private static final int WIDTH_BETWEEN_NODES = 20; //tree¸¸×Ó½ÚµãÖ®¼ä×î×ó²àºáÏòÏñËØµÄ²î
+    private static final int WIDTH_BETWEEN_NODES = 20; //treeçˆ¶å­èŠ‚ç‚¹ä¹‹é—´æœ€å·¦ä¾§æ¨ªå‘åƒç´ çš„å·®
     private Icon icon;
 
     public static final Object PENDING = new Object() {
@@ -83,7 +83,7 @@ public abstract class RefreshableJTree extends JTree {
             final ExpandMutableTreeNode treeNode = ((ExpandMutableTreeNode) treePath.getLastPathComponent());
 
             if (treeNode.getChildCount() == 1 && ((ExpandMutableTreeNode) treeNode.getFirstChild()).getUserObject() == PENDING) {
-                //Èç¹û¿ÕÎÄ¼ş¼ĞÊÇÖ»ÓĞÒ»¸öÄ¬ÈÏÔö¼ÓµÄÕıÔÚ¼ÓÔØµÄ×Ó½Úµã£¬Ôò²»ÏÔÊ¾ÕıÔÚ¼ÓÔØ£¬¾ÍÊÇ¿Õ¾ÍĞĞÁË
+                //å¦‚æœç©ºæ–‡ä»¶å¤¹æ˜¯åªæœ‰ä¸€ä¸ªé»˜è®¤å¢åŠ çš„æ­£åœ¨åŠ è½½çš„å­èŠ‚ç‚¹ï¼Œåˆ™ä¸æ˜¾ç¤ºæ­£åœ¨åŠ è½½ï¼Œå°±æ˜¯ç©ºå°±è¡Œäº†
                 new SwingWorker<Long, Void>() {
 
                     @Override
@@ -94,7 +94,7 @@ public abstract class RefreshableJTree extends JTree {
                             treeNode.add(nodes[i]);
                         }
                         DefaultTreeModel treeModel = (DefaultTreeModel) RefreshableJTree.this.getModel();
-                        // Ö÷ÒªºÄÊ±ÊÇÓÃÔÚÁËtreeUIµÄäÖÈ¾ÉÏÁË£¬ËùÒÔ°ÑÕâ¸ö·Åµ½¹¤×÷Ïß³ÌÀïÃæ
+                        // ä¸»è¦è€—æ—¶æ˜¯ç”¨åœ¨äº†treeUIçš„æ¸²æŸ“ä¸Šäº†ï¼Œæ‰€ä»¥æŠŠè¿™ä¸ªæ”¾åˆ°å·¥ä½œçº¿ç¨‹é‡Œé¢
                         if (treeNode.getChildCount() >= 1 && ((ExpandMutableTreeNode) treeNode.getFirstChild()).getUserObject() == PENDING) {
                             treeNode.remove(0);
                         }
@@ -106,7 +106,7 @@ public abstract class RefreshableJTree extends JTree {
                     @Override
                     protected void done() {
                         RefreshableJTree.this.updateUI();
-                        // »Ö¸´TreeµÄ¿ÉÓÃĞÔ
+                        // æ¢å¤Treeçš„å¯ç”¨æ€§
                         RefreshableJTree.this.setEnabled(true);
                     }
 
@@ -123,7 +123,7 @@ public abstract class RefreshableJTree extends JTree {
     }
 
     /*
-      * Ë¢ĞÂ
+      * åˆ·æ–°
       */
     public void refresh() {
         refresh((ExpandMutableTreeNode) this.getModel().getRoot(), StringUtils.EMPTY);
@@ -134,7 +134,7 @@ public abstract class RefreshableJTree extends JTree {
     }
 
     /*
-      * Ë¢ĞÂexpandRoot½ÚµãÏÂËùÓĞÒÑ´ò¿ªµÄ½ÚµãµÄUserObject,²¢´ò¿ªisExpandedÎªtrueµÄTreeNode
+      * åˆ·æ–°expandRootèŠ‚ç‚¹ä¸‹æ‰€æœ‰å·²æ‰“å¼€çš„èŠ‚ç‚¹çš„UserObject,å¹¶æ‰“å¼€isExpandedä¸ºtrueçš„TreeNode
       */
     private void refresh(ExpandMutableTreeNode expandRoot, String childName) {
         if (expandRoot == null) {
@@ -145,25 +145,25 @@ public abstract class RefreshableJTree extends JTree {
         // model.reload, then do expand treenode that isExpanded is true
         ((DefaultTreeModel) this.getModel()).reload(expandRoot);
 
-        // Õ¹¿ªËùÓĞisExpandedÎªtrueµÄTreeNode
+        // å±•å¼€æ‰€æœ‰isExpandedä¸ºtrueçš„TreeNode
         expandRoot.expandCurrentTreeNode(this);
     }
 
     /*
-      * Ë¢ĞÂeTreeNodeÏÂÃæËùÓĞµÄÒÑÍê³É¹ıÈ¡ÊıµÄ·ÇÒ¶×Ó½ÚµãµÄ×ÓÒ¶ÄÚÈİUserObject
+      * åˆ·æ–°eTreeNodeä¸‹é¢æ‰€æœ‰çš„å·²å®Œæˆè¿‡å–æ•°çš„éå¶å­èŠ‚ç‚¹çš„å­å¶å†…å®¹UserObject
       */
     protected void refreshTreeNode(ExpandMutableTreeNode eTreeNode, String childName) {
-        // Èç¹ûeTreeNodeÊÇÎ´È¡Êı×´Ì¬,²»ÓÃexpand
+        // å¦‚æœeTreeNodeæ˜¯æœªå–æ•°çŠ¶æ€,ä¸ç”¨expand
         if (interceptRefresh(eTreeNode)) {
             return;
         }
 
-        // Ë¢ĞÂµ±Ç°eTreeNodeÏÂÃæµÄ×Ó½ÚµãµÄUserObjectµÄÊı×é
+        // åˆ·æ–°å½“å‰eTreeNodeä¸‹é¢çš„å­èŠ‚ç‚¹çš„UserObjectçš„æ•°ç»„
         ExpandMutableTreeNode[] new_nodes = loadChildTreeNodes(eTreeNode);
 
         /*
-           * ±£´æÏÂµ±Ç°eTreeNodeÏÂµÄChildTreeNodeÓÚchildTreeNodeList ÒÆ³ıËùÓĞChildTreeNode
-           * ¸ù¾İchildUserObjectsÓëchildTreeNodeListµÄ±È¶Ô,ÖØĞÂ¹¹½¨eTreeNode
+           * ä¿å­˜ä¸‹å½“å‰eTreeNodeä¸‹çš„ChildTreeNodeäºchildTreeNodeList ç§»é™¤æ‰€æœ‰ChildTreeNode
+           * æ ¹æ®childUserObjectsä¸childTreeNodeListçš„æ¯”å¯¹,é‡æ–°æ„å»ºeTreeNode
            */
         java.util.List<DefaultMutableTreeNode> childTreeNodeList = new java.util.ArrayList<DefaultMutableTreeNode>();
         for (int i = 0, len = eTreeNode.getChildCount(); i < len; i++) {
@@ -192,12 +192,12 @@ public abstract class RefreshableJTree extends JTree {
     }
 
     /*
-      * ÅĞ¶ÏeTreeNodeÊÇ·ñĞèÒªRefresh,¿ÉÌáÇ°ÖĞÖ¹,·µ»ØtrueÔò±íÊ¾ÌáÇ°ÖĞÖ¹,²»ĞèÒªRefresh
+      * åˆ¤æ–­eTreeNodeæ˜¯å¦éœ€è¦Refresh,å¯æå‰ä¸­æ­¢,è¿”å›trueåˆ™è¡¨ç¤ºæå‰ä¸­æ­¢,ä¸éœ€è¦Refresh
       */
     protected abstract boolean interceptRefresh(ExpandMutableTreeNode eTreeNode);
 
     /*
-      * µÃµ½treeNodeµÄ×Ó½ÚµãExpandMutableTreeNodeµÄÊı×é
+      * å¾—åˆ°treeNodeçš„å­èŠ‚ç‚¹ExpandMutableTreeNodeçš„æ•°ç»„
       */
     protected abstract ExpandMutableTreeNode[] loadChildTreeNodes(ExpandMutableTreeNode treeNode);
 
@@ -231,7 +231,7 @@ public abstract class RefreshableJTree extends JTree {
             TreeCellRenderer r = getCellRenderer();
 
             if (selRow != -1 && r != null) {
-                int i = 0;              //tree½ÚµãµÄ¼¶Êı
+                int i = 0;              //treeèŠ‚ç‚¹çš„çº§æ•°
                 TreePath path = getPathForRow(selRow);
                 Object lastPath = path.getLastPathComponent();
                 if (lastPath instanceof TreeNode) {

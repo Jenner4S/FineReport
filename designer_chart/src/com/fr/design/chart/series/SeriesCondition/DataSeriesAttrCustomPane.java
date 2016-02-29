@@ -13,7 +13,7 @@ public class DataSeriesAttrCustomPane extends DataSeriesAttrPane {
 	public DataSeriesAttrCustomPane() {
 		super();
 
-		// 重新设定大小. JControlPane中的(450, 450) 稍小  @ChartSize
+		// 閲嶆柊璁惧畾澶у皬. JControlPane涓殑(450, 450) 绋嶅皬  @ChartSize
 		this.setPreferredSize(new Dimension(640,450));
 	}
 	

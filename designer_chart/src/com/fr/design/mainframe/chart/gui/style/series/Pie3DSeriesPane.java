@@ -6,9 +6,9 @@ import com.fr.chart.chartattr.Plot;
 import com.fr.design.mainframe.chart.gui.ChartStylePane;
 
 /**
- * ÈıÎ¬±ıÍ¼µÄÏµÁĞÊôĞÔ½çÃæ, Ã»ÓĞ·ç¸ñ, Ã»ÓĞµÚ¶ş»æÍ¼Çø.
+ * ä¸‰ç»´é¥¼å›¾çš„ç³»åˆ—å±æ€§ç•Œé¢, æ²¡æœ‰é£æ ¼, æ²¡æœ‰ç¬¬äºŒç»˜å›¾åŒº.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-10-30 ÉÏÎç09:59:31
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-10-30 ä¸Šåˆ09:59:31
  */
 public class Pie3DSeriesPane extends Pie2DSeriesPane {
 

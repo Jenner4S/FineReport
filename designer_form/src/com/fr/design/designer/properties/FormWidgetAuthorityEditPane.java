@@ -29,7 +29,7 @@ import com.fr.general.Inter;
 /**
  * Author : daisy
  * Date: 13-9-16
- * Time: ÉÏÎç10:45
+ * Time: ä¸Šåˆ10:45
  */
 public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
     private FormDesigner designer;
@@ -88,10 +88,10 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
     }
 
     /**
-	 * ¸üĞÂÀàĞÍÃæ°å
+	 * æ›´æ–°ç±»å‹é¢æ¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:19:43
+	 * @date 2014-12-21-ä¸‹åˆ6:19:43
 	 * 
 	 */
     public void populateType() {
@@ -99,10 +99,10 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
     }
 
     /**
-	 * ¸üĞÂÃû³ÆÃæ°å
+	 * æ›´æ–°åç§°é¢æ¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç7:12:27
+	 * @date 2014-12-21-ä¸‹åˆ7:12:27
 	 * 
 	 */
     public void populateName() {
@@ -117,12 +117,12 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
     }
 
     /**
-	 * ¸üĞÂcheckboxËùÔÚµÄÃæ°å
+	 * æ›´æ–°checkboxæ‰€åœ¨çš„é¢æ¿
 	 * 
-	 * @return Ãæ°å
+	 * @return é¢æ¿
 	 * 
 	 *
-	 * @date 2014-12-21-ÏÂÎç6:19:03
+	 * @date 2014-12-21-ä¸‹åˆ6:19:03
 	 * 
 	 */
     public JPanel populateCheckPane() {
@@ -144,15 +144,15 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
 
 
     /**
-     * ¶Ôµ¥Ôª¸ñÇøÓò½øĞĞ²Ù×÷Ê±µÄÈ¨ÏŞ±à¼­Ò³Ãæ
+     * å¯¹å•å…ƒæ ¼åŒºåŸŸè¿›è¡Œæ“ä½œæ—¶çš„æƒé™ç¼–è¾‘é¡µé¢
      */
     public void populateDetials() {
-        //¸üĞÂËµÃ÷ÒªÊÇJWorkBookµÄ»°£¬ËµÃ÷Êó±ê½¹µãÓÖ¸Ä±äÁË
+        //æ›´æ–°è¯´æ˜è¦æ˜¯JWorkBookçš„è¯ï¼Œè¯´æ˜é¼ æ ‡ç„¦ç‚¹åˆæ”¹å˜äº†
         HistoryTemplateListPane.getInstance().getCurrentEditingTemplate().setAuthorityMode(true);
         signelSelection();
 
         refreshCreator();
-        //Èç¹ûÊÇ²¼¾ÖÑ¡ÖĞ²»Ö§³ÖµÄÔªËØÔòÏÔÊ¾¡°¸ÃÔªËØ²»Ö§³ÖÈ¨ÏŞ¿ØÖÆ¡±
+        //å¦‚æœæ˜¯å¸ƒå±€é€‰ä¸­ä¸æ”¯æŒçš„å…ƒç´ åˆ™æ˜¾ç¤ºâ€œè¯¥å…ƒç´ ä¸æ”¯æŒæƒé™æ§åˆ¶â€
         populateType();
         populateName();
         checkPane.removeAll();
@@ -175,7 +175,7 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
         	return;
         }
         
-        //Ñ¡ÖĞ¶à¸ö, ½çÃæÉÏÖ»È¡µÚÒ»¸ö
+        //é€‰ä¸­å¤šä¸ª, ç•Œé¢ä¸Šåªå–ç¬¬ä¸€ä¸ª
         Widget widget = widgets[0];
     	
         if(widget.isVisible()){
@@ -192,17 +192,17 @@ public class FormWidgetAuthorityEditPane extends AuthorityEditPane {
     }
 
 
-    //ÊµÏÖµ¥Ñ¡
+    //å®ç°å•é€‰
 
     private void signelSelection() {
         if (HistoryTemplateListPane.getInstance().getCurrentEditingTemplate().isJWorkBook()) {
-            //Çå¹¤¾ßÀ¸
+            //æ¸…å·¥å…·æ 
             JComponent component = DesignerContext.getDesignerFrame().getToolbarComponent();
             if (component instanceof AuthorityEditToolBarComponent) {
                 ((AuthorityEditToolBarComponent) component).removeSelection();
             }
 
-            //Çå¿Õ±¨±íÖ÷ÌåµÄµ¥Ôª¸ñÑ¡Ôñ
+            //æ¸…ç©ºæŠ¥è¡¨ä¸»ä½“çš„å•å…ƒæ ¼é€‰æ‹©
             HistoryTemplateListPane.getInstance().getCurrentEditingTemplate().removeTemplateSelection();
         }
     }

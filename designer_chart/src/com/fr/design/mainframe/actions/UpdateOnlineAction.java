@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 7.1.1
- * Í¼±íÉè¼ÆÆ÷ÔÚÏß¸üÐÂ
+ * å›¾è¡¨è®¾è®¡å™¨åœ¨çº¿æ›´æ–°
  */
 public class UpdateOnlineAction extends UpdateAction {
 
@@ -50,8 +50,8 @@ public class UpdateOnlineAction extends UpdateAction {
 
 
     /**
-     *¶¯×÷
-     * @param e ÊÂ¼þ
+     *åŠ¨ä½œ
+     * @param e äº‹ä»¶
      */
     public void actionPerformed(ActionEvent e) {
         new UpdateVersion(){

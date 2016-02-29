@@ -37,7 +37,7 @@ public class UIButtonGroup<T> extends JPanel implements GlobalNameObserver {
 	private static final long serialVersionUID = 1L;
 	protected List<UIToggleButton> labelButtonList;
 	protected int selectedIndex = -1;
-	private List<T> objectList;// Æğµ½Ò»¸örenderµÄ×÷ÓÃ
+	private List<T> objectList;// èµ·åˆ°ä¸€ä¸ªrenderçš„ä½œç”¨
 	private GlobalNameListener globalNameListener = null;
 	private String buttonGroupName = "";
 	private boolean isToolBarComponent = false;
@@ -196,7 +196,7 @@ public class UIButtonGroup<T> extends JPanel implements GlobalNameObserver {
 	}
 
 	/**
-	 * ÖØÔØBorder»­·¨
+	 * é‡è½½Borderç”»æ³•
 	 *
 	 * @param g
 	 */
@@ -320,7 +320,7 @@ public class UIButtonGroup<T> extends JPanel implements GlobalNameObserver {
 	}
 
 	/**
-	 * ¸øËùÓĞµÄButtonÌí¼ÓTips
+	 * ç»™æ‰€æœ‰çš„Buttonæ·»åŠ Tips
 	 *
 	 * @param tips
 	 */
@@ -332,16 +332,16 @@ public class UIButtonGroup<T> extends JPanel implements GlobalNameObserver {
 
 
 	/**
-	 * ×¢²áÈ«¾ÖÊôĞÔÃû×Ö¼àÌıÆ÷
+	 * æ³¨å†Œå…¨å±€å±æ€§åå­—ç›‘å¬å™¨
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñÏìÓ¦Ãû×Ö¼àÌıÊÂ¼ş
+	 * æ˜¯å¦å“åº”åå­—ç›‘å¬äº‹ä»¶
 	 *
 	 * @return
 	 */

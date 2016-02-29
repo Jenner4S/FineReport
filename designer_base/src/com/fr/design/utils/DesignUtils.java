@@ -43,9 +43,9 @@ public class DesignUtils {
 
 
     /**
-     * Í¨¹ı¶Ë¿ÚÊÇ·ñ±»Õ¼ÓÃÅĞ¶ÏÉè¼ÆÆ÷ÓĞÃ»ÓĞÆô¶¯
+     * é€šè¿‡ç«¯å£æ˜¯å¦è¢«å ç”¨åˆ¤æ–­è®¾è®¡å™¨æœ‰æ²¡æœ‰å¯åŠ¨
      *            s
-     * @return Æô¶¯ÁË·µ»Øtrue
+     * @return å¯åŠ¨äº†è¿”å›true
      */
     public static boolean isStarted() {
         try {
@@ -58,9 +58,9 @@ public class DesignUtils {
     }
 
     /**
-     * Ïò·şÎñÆ÷·¢ËÍÃüÁîĞĞ£¬¸ø·şÎñÆ÷¶Ë´¦Àí
+     * å‘æœåŠ¡å™¨å‘é€å‘½ä»¤è¡Œï¼Œç»™æœåŠ¡å™¨ç«¯å¤„ç†
      *
-     * @param lines ÃüÁîĞĞ
+     * @param lines å‘½ä»¤è¡Œ
      */
     public static void clientSend(String[] lines) {
         if (lines != null && lines.length <= 0) {
@@ -90,9 +90,9 @@ public class DesignUtils {
     }
 
     /**
-     *½¨Á¢¼àÌı¶Ë¿Ú
-     * @param startPort  ¶Ë¿Ú
-     * @param suffixs ÎÄ¼şºó×º
+     *å»ºç«‹ç›‘å¬ç«¯å£
+     * @param startPort  ç«¯å£
+     * @param suffixs æ–‡ä»¶åç¼€
      */
     public static void creatListeningServer(final int startPort,final String[] suffixs) {
         Thread serverSocketThread = new Thread() {
@@ -105,7 +105,7 @@ public class DesignUtils {
                 }
                 while (true) {
                     try {
-                        Socket socket = serverSocket.accept(); // ½ÓÊÕ¿Í»§Á¬½Ó
+                        Socket socket = serverSocket.accept(); // æ¥æ”¶å®¢æˆ·è¿æ¥
                         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                         String line = null;
                         while ((line = reader.readLine()) != null) {
@@ -137,9 +137,9 @@ public class DesignUtils {
     }
 
     /**
-     * µ¯³ö¶Ô»°¿ò,ÏÔÊ¾±¨´í
+     * å¼¹å‡ºå¯¹è¯æ¡†,æ˜¾ç¤ºæŠ¥é”™
      *
-     * @param message ±¨´íĞÅÏ¢
+     * @param message æŠ¥é”™ä¿¡æ¯
      */
     public static void errorMessage(String message) {
         final String final_msg = message;
@@ -154,9 +154,9 @@ public class DesignUtils {
 
 
     /**
-     * µ±Ç°µÄ±¨±íÔËĞĞ»·¾³ÇĞ»»µ½env
+     * å½“å‰çš„æŠ¥è¡¨è¿è¡Œç¯å¢ƒåˆ‡æ¢åˆ°env
      *
-     * @param env ĞèÒªÇĞ»»È¥µÄ»·¾³
+     * @param env éœ€è¦åˆ‡æ¢å»çš„ç¯å¢ƒ
      */
     public static void switchToEnv(Env env) {
         if (env == null) {
@@ -166,7 +166,7 @@ public class DesignUtils {
         Env oldEnv = FRContext.getCurrentEnv();
         String oldEnvPath = oldEnv == null ? null : oldEnv.getPath();
 
-        // ¿´Ò»ÏÂÕâ¸öenvÔÚDesignerEnvManagerÀïÃæÓĞÃ»ÓĞ¶ÔÓ¦µÄ,ÓĞµÄ»°¾ÍsetCurrentEnvName
+        // çœ‹ä¸€ä¸‹è¿™ä¸ªenvåœ¨DesignerEnvManageré‡Œé¢æœ‰æ²¡æœ‰å¯¹åº”çš„,æœ‰çš„è¯å°±setCurrentEnvName
         DesignerEnvManager envManager = DesignerEnvManager.getEnvManager();
         java.util.Iterator<String> nameIt = envManager.getEnvNameIterator();
         while (nameIt.hasNext()) {
@@ -177,12 +177,12 @@ public class DesignUtils {
             }
         }
 
-        // ¸üĞÂCurrentEnvÓÚFRContext & DesignerEnvManager
+        // æ›´æ–°CurrentEnväºFRContext & DesignerEnvManager
         FRContext.setCurrentEnv(env);
 
         final Env run_env = env;
 
-        // Ë¢ĞÂDesignerFrameÀïÃæµÄÃæ°å
+        // åˆ·æ–°DesignerFrameé‡Œé¢çš„é¢æ¿
         SwingUtilities.invokeLater(new Runnable() {
 
             public void run() {
@@ -190,28 +190,28 @@ public class DesignUtils {
                     return;
                 }
                 DesignerContext.getDesignerFrame().refreshEnv(run_env);
-                DesignerContext.getDesignerFrame().repaint();// kunsnat: ÇĞ»»»·¾³ºó Ë¢ĞÂÏÂ ±¨±í. ±ÈÈçÍ¼±íÄ³Ğ©·ç¸ñ¸Ä±ä.
+                DesignerContext.getDesignerFrame().repaint();// kunsnat: åˆ‡æ¢ç¯å¢ƒå åˆ·æ–°ä¸‹ æŠ¥è¡¨. æ¯”å¦‚å›¾è¡¨æŸäº›é£æ ¼æ”¹å˜.
             }
         });
-        // µ±»»ÁËÔËĞĞ»·¾³,ÖØÖÃ·şÎñÆ÷£¬ÈÃËüÏÂ´ÎÔ¤ÀÀÊ±ÖØÆô
+        // å½“æ¢äº†è¿è¡Œç¯å¢ƒ,é‡ç½®æœåŠ¡å™¨ï¼Œè®©å®ƒä¸‹æ¬¡é¢„è§ˆæ—¶é‡å¯
         if (env instanceof LocalEnv && !ComparatorUtils.equals(env.getPath(), oldEnvPath)) {
             StartServer.currentEnvChanged();
         }
     }
 
     /**
-     * p:³õÊ¼»¯look and feel, °ÑÒ»ÇĞ·Åµ½Õâ¸öÀïÃæ.¿ÉÒÔÈÃ¶à¸öµØ·½µ÷ÓÃ.
+     * p:åˆå§‹åŒ–look and feel, æŠŠä¸€åˆ‡æ”¾åˆ°è¿™ä¸ªé‡Œé¢.å¯ä»¥è®©å¤šä¸ªåœ°æ–¹è°ƒç”¨.
      */
     public static void initLookAndFeel() {
-        // p:Òş²Ø¶Ô»°¿òµÄÏµÍ³±êÌâ·ç¸ñ£¬ÓÃlook and feel¶¨ÒåµÄ±êÌâ·ç¸ñ.
+        // p:éšè—å¯¹è¯æ¡†çš„ç³»ç»Ÿæ ‡é¢˜é£æ ¼ï¼Œç”¨look and feelå®šä¹‰çš„æ ‡é¢˜é£æ ¼.
         try {
             UIManager.setLookAndFeel(UILookAndFeel.class.getName());
         } catch (Exception e) {
             FRLogger.getLogger().log(Level.WARNING, "Substance Raven Graphite failed to initialize");
         }
-        //»ñÈ¡µ±Ç°ÏµÍ³ÓïÑÔÏÂÉè¼ÆÆ÷ÓÃµÄÄ¬ÈÏ×ÖÌå
+        //è·å–å½“å‰ç³»ç»Ÿè¯­è¨€ä¸‹è®¾è®¡å™¨ç”¨çš„é»˜è®¤å­—ä½“
         FRFont guiFRFont = getCurrentLocaleFont();
-        //Ö¸¶¨UIManagerÖĞ×ÖÌå
+        //æŒ‡å®šUIManagerä¸­å­—ä½“
         Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             String key = keys.nextElement().toString();
@@ -238,13 +238,13 @@ public class DesignUtils {
             guiFRFont = getNamedFont("Tahoma");
         }
         
-        //ÏÈ³õÊ¼»¯µÄÉè¼ÆÆ÷locale, ºó³õÊ¼»¯lookandfeel.Èç¹ûË³Ğò¸ÄÁË, Õâ±ßÒ²Òªµ÷Õû.
+        //å…ˆåˆå§‹åŒ–çš„è®¾è®¡å™¨locale, ååˆå§‹åŒ–lookandfeel.å¦‚æœé¡ºåºæ”¹äº†, è¿™è¾¹ä¹Ÿè¦è°ƒæ•´.
         Locale designerLocale = FRContext.getLocale();
         String file = Inter.getLocText("FR-Designer_File");
         char displayChar = file.charAt(0);
         if (!guiFRFont.canDisplay(displayChar)) {
-			//Èç¹û²»ÄÜÓÃÄ¬ÈÏµÄÓïÑÔÏÔÊ¾×ÖÌå, ±ÈÈçÏëÔÚÓ¢ÎÄÏµÍ³ÀïÓÃÖĞÎÄÉè¼ÆÆ÷
-        	//Ä¬ÈÏÓïÑÔ(ÖĞÎÄ:ËÎÌå, Ó¢ÎÄ:Tahoma, ÆäËû:Dialog)
+			//å¦‚æœä¸èƒ½ç”¨é»˜è®¤çš„è¯­è¨€æ˜¾ç¤ºå­—ä½“, æ¯”å¦‚æƒ³åœ¨è‹±æ–‡ç³»ç»Ÿé‡Œç”¨ä¸­æ–‡è®¾è®¡å™¨
+        	//é»˜è®¤è¯­è¨€(ä¸­æ–‡:å®‹ä½“, è‹±æ–‡:Tahoma, å…¶ä»–:Dialog)
         	guiFRFont = getNamedFont("SimSun");
         	if (!guiFRFont.canDisplay(displayChar)) {
 				FRContext.getLogger().error(Inter.getLocText("FR-Base_SimSun_Not_Found"));
@@ -270,18 +270,18 @@ public class DesignUtils {
     }
 
     /**
-     * ·ÃÎÊ·şÎñÆ÷»·¾³
+     * è®¿é—®æœåŠ¡å™¨ç¯å¢ƒ
      *
-     * @param names  ²ÎÊıÃû×Ö
-     * @param values ²ÎÊıÖµ
+     * @param names  å‚æ•°åå­—
+     * @param values å‚æ•°å€¼
      */
     public static void visitEnvServerByParameters(String[] names, String[] values) {
         int len = Math.min(ArrayUtils.getLength(names), ArrayUtils.getLength(values));
         String[] segs = new String[len];
         for (int i = 0; i < len; i++) {
             try {
-                //Éè¼ÆÆ÷ÀïÃæ¾İËµÎªÁË¸ÄÊ²Ã´½çÃæÍ³Ò», °Ñ·Ö¸ô·ûÍ³Ò»ÓÃFile.separator, ÒâÎ¶×ÅÔÚwindowsÀïÃæ±¨±íÂ·¾¶±ä³ÉÁË\
-                //ÒÔÇ°µÄ³¬Á´, ÒÔ¼°Ô¤ÀÀurlÊ²Ã´µÄ¶¼ÊÇ/, ²úÆ·×éµÄÒâË¼¾ÍÊÇÓÃµ½µÄµØ·½Ìæ»»ÏÂ, Õæ¶ñĞÄ.
+                //è®¾è®¡å™¨é‡Œé¢æ®è¯´ä¸ºäº†æ”¹ä»€ä¹ˆç•Œé¢ç»Ÿä¸€, æŠŠåˆ†éš”ç¬¦ç»Ÿä¸€ç”¨File.separator, æ„å‘³ç€åœ¨windowsé‡Œé¢æŠ¥è¡¨è·¯å¾„å˜æˆäº†\
+                //ä»¥å‰çš„è¶…é“¾, ä»¥åŠé¢„è§ˆurlä»€ä¹ˆçš„éƒ½æ˜¯/, äº§å“ç»„çš„æ„æ€å°±æ˜¯ç”¨åˆ°çš„åœ°æ–¹æ›¿æ¢ä¸‹, çœŸæ¶å¿ƒ.
                 String value = values[i].replaceAll("\\\\", "/");
                 segs[i] = URLEncoder.encode(CodeUtils.cjkEncode(names[i]), EncodeConstants.ENCODING_UTF_8) + "=" + URLEncoder.encode(CodeUtils.cjkEncode(value), "UTF-8");
             } catch (UnsupportedEncodingException e) {
@@ -314,10 +314,10 @@ public class DesignUtils {
         }
     }
 
-    //TODO:august:ÏÂ¸ö°æ±¾£¬Òª°ÑÏÂÃæµÄÍ¼Æ¬¶¼·ÅÔÚÒ»¸öpreloadÎÄ¼ş¼ĞÏÂ£¬±íÊ¾¿ÉÒÔÔ¤ÏÈ¼ÓÔØ¡£È»ºó±éÀúÒ»ÏÂ¾Í¿ÉÒÔÁË£¬²»ÓÃÕâÃ´Ò»¸öÒ»¸öµÄĞ´ÁË
+    //TODO:august:ä¸‹ä¸ªç‰ˆæœ¬ï¼Œè¦æŠŠä¸‹é¢çš„å›¾ç‰‡éƒ½æ”¾åœ¨ä¸€ä¸ªpreloadæ–‡ä»¶å¤¹ä¸‹ï¼Œè¡¨ç¤ºå¯ä»¥é¢„å…ˆåŠ è½½ã€‚ç„¶åéå†ä¸€ä¸‹å°±å¯ä»¥äº†ï¼Œä¸ç”¨è¿™ä¹ˆä¸€ä¸ªä¸€ä¸ªçš„å†™äº†
 
     /**
-     * Ô¤¼ÓÔØ
+     * é¢„åŠ è½½
      */
     public static void preLoadingImages() {
         BaseUtils.readIcon("com/fr/design/images/custombtn/baobiaozhuti.png");
@@ -396,17 +396,17 @@ public class DesignUtils {
 
 
     /**
-     * ½«ÓÃ»§·´À¡·¢ËÍÖÁ·şÎñÆ÷
+     * å°†ç”¨æˆ·åé¦ˆå‘é€è‡³æœåŠ¡å™¨
      *
-     * @param feedBackInfo ÓÃ»§·´À¡
-     * @return ·¢ËÍ³É¹¦·µ»Øtrue
-     * @throws Exception Òì³£
+     * @param feedBackInfo ç”¨æˆ·åé¦ˆ
+     * @return å‘é€æˆåŠŸè¿”å›true
+     * @throws Exception å¼‚å¸¸
      */
     public static boolean sendFeedBack(FeedBackInfo feedBackInfo) throws Exception {
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // °ÑtableDataĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠtableDataå†™æˆxmlæ–‡ä»¶åˆ°out
         DavXMLUtils.writeXMLFeedBackInfo(feedBackInfo, out);
         InputStream input = postBytes2ServerB(out.toByteArray());
         return input != null;
@@ -423,7 +423,7 @@ public class DesignUtils {
 
 
     /**
-     * execute methodÖ®ºó,È¡·µ»ØµÄinputstream
+     * execute methodä¹‹å,å–è¿”å›çš„inputstream
      */
     private static ByteArrayInputStream execute4InputStream(HttpClient client) throws Exception {
         int statusCode = client.getResponseCode();
@@ -438,9 +438,9 @@ public class DesignUtils {
         try {
             Utils.copyBinaryTo(in, out);
 
-            // ¿´Ò»ÏÂ´«¹ıÀ´µÄbyte[]ÊÇ²»ÊÇDesignProcessor.INVALID,Èç¹ûÊÇµÄ»°,¾ÍÅ×Exception
+            // çœ‹ä¸€ä¸‹ä¼ è¿‡æ¥çš„byte[]æ˜¯ä¸æ˜¯DesignProcessor.INVALID,å¦‚æœæ˜¯çš„è¯,å°±æŠ›Exception
             byte[] bytes = out.toByteArray();
-            // carl£º¸ñÊ½Ò»ÖÂ´«ÖĞÎÄ
+            // carlï¼šæ ¼å¼ä¸€è‡´ä¼ ä¸­æ–‡
             String message = new String(bytes, EncodeConstants.ENCODING_UTF_8);
             if (ComparatorUtils.equals(message, RemoteDeziConstants.NO_SUCH_RESOURCE)) {
                 return null;

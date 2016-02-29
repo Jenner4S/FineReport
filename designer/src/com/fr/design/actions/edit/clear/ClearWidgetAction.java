@@ -3,7 +3,7 @@ package com.fr.design.actions.edit.clear;
 import com.fr.general.Inter;
 import com.fr.design.mainframe.ElementCasePane;
 
-//:jackie 用于清除控件
+//:jackie 鐢ㄤ簬娓呴櫎鎺т欢
 public class ClearWidgetAction extends ClearAction {
 
     /**

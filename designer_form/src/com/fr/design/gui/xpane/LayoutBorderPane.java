@@ -52,7 +52,7 @@ import java.awt.geom.RoundRectangle2D;
  */
 public class LayoutBorderPane extends BasicPane {
 
-    //Ô²½Ç 7.1.1ÔİÊ±²»×ö
+    //åœ†è§’ 7.1.1æš‚æ—¶ä¸åš
     private static final int NO_BORDERS = 0;
     private static final int RIGHTANGLE_BORDERS = 1;
     private static final int ROUNDED_BORDERS = 2;
@@ -61,22 +61,22 @@ public class LayoutBorderPane extends BasicPane {
     private LayoutBorderStyle borderStyle = new LayoutBorderStyle();
 
     private LayoutBorderPreviewPane layoutBorderPreviewPane;
-    //±ß¿òÀàĞÍ
+    //è¾¹æ¡†ç±»å‹
     private UIComboBox borderTypeCombo;
-    //äÖÈ¾·ç¸ñ
+    //æ¸²æŸ“é£æ ¼
     private UIComboBox borderStyleCombo;
-    //±ß¿ò´ÖÏ¸
+    //è¾¹æ¡†ç²—ç»†
     private LineComboBox currentLineCombo;
     
-    //±ß¿òÑÕÉ«
+    //è¾¹æ¡†é¢œè‰²
     private UIColorButton currentLineColorPane;
-    //Ö÷Ìå±³¾°
+    //ä¸»ä½“èƒŒæ™¯
     private BackgroundSpecialPane backgroundPane;
-    //Í¸Ã÷¶È
+    //é€æ˜åº¦
     private UINumberDragPane numberDragPane;
-    //±êÌâÄÚÈİ
+    //æ ‡é¢˜å†…å®¹
     private TinyFormulaPane formulaPane;
-    //±êÌâ¸ñÊ½
+    //æ ‡é¢˜æ ¼å¼
     private UIComboBox fontNameComboBox;
     private UIComboBox fontSizeComboBox;
     private UIColorButton colorSelectPane;
@@ -84,9 +84,9 @@ public class LayoutBorderPane extends BasicPane {
     private UIToggleButton italic;
     private UIToggleButton underline;
     private LineComboBox underlineCombo;
-    //¶ÔÆë·½Ê½
+    //å¯¹é½æ–¹å¼
     private UIButtonGroup hAlignmentPane;
-    //±êÌâ±³¾°
+    //æ ‡é¢˜èƒŒæ™¯
     private BackgroundNoImagePane titleBackgroundPane;
 
     private UIScrollPane titlePane;
@@ -313,7 +313,7 @@ public class LayoutBorderPane extends BasicPane {
         rightPane.add(initRightBottomPane(), BorderLayout.CENTER);
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
         if (!jTemplate.isJWorkBook() && ((JForm)jTemplate).isSelectRootPane()){
-            //½çÃæÉÏ±íµ¥Ö÷ÌåÖ»ÓĞ±³¾°ºÍÍ¸Ã÷¶È¿ÉÒÔÉèÖÃ
+            //ç•Œé¢ä¸Šè¡¨å•ä¸»ä½“åªæœ‰èƒŒæ™¯å’Œé€æ˜åº¦å¯ä»¥è®¾ç½®
             rightPane.add(initBodyRightTopPane(), BorderLayout.NORTH);
         } else {
             rightPane.add(initRightTopPane(), BorderLayout.NORTH);

@@ -15,10 +15,10 @@ import com.fr.report.report.TemplateReport;
 import com.fr.report.worksheet.WorkSheet;
 
 /**
- * ÖĞ¼äµÄÕû¸ö±¨±í±à¼­ÇøÓò
+ * ä¸­é—´çš„æ•´ä¸ªæŠ¥è¡¨ç¼–è¾‘åŒºåŸŸ
  *
  * @editor zhou
- * @since 2012-3-27ÏÂÎç12:12:11
+ * @since 2012-3-27ä¸‹åˆ12:12:11
  */
 public class ReportComponentCardPane extends JComponent implements TargetModifiedListener {
     protected ReportComponent editingComponet;
@@ -65,11 +65,11 @@ public class ReportComponentCardPane extends JComponent implements TargetModifie
         return false;
     }
 
-    // TODO ALEX_SEP ÆÚÍûÓëTargetComponentÄÇ±ßºÏ²¢,»òÕß¼õÉÙÓëJWorkBookÖ®¼äµÄ²ã´Î
+    // TODO ALEX_SEP æœŸæœ›ä¸TargetComponenté‚£è¾¹åˆå¹¶,æˆ–è€…å‡å°‘ä¸JWorkBookä¹‹é—´çš„å±‚æ¬¡
     private java.util.List<TargetModifiedListener> targetModifiedList = new java.util.ArrayList<TargetModifiedListener>();
 
     /**
-     * Ìí¼Ó TargetModifiedListener
+     * æ·»åŠ  TargetModifiedListener
      *
      * @param l TargetModifiedListener
      */

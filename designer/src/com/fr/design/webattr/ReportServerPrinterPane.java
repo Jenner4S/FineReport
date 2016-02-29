@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.report.web.Printer;
 /**
- * ´òÓ¡»úÉèÖÃÃæ°å
+ * æ‰“å°æœºè®¾ç½®é¢æ¿
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:55:18
+ * @since 2012-3-23ä¸‹åˆ3:55:18
  */
 public class ReportServerPrinterPane extends JPanel {
     private ServerPrinterPane serverPrinterPane;

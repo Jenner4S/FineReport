@@ -5,13 +5,13 @@ import com.fr.design.chart.series.SeriesCondition.DataSeriesConditionPane;
 import com.fr.design.chart.series.SeriesCondition.LabelAxisPositionPane;
 
 /**
- * ×éºÏÍ¼ Ìõ¼şÊôĞÔ½çÃæ.
+ * ç»„åˆå›¾ æ¡ä»¶å±æ€§ç•Œé¢.
  * 
  * Created by IntelliJ IDEA.
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç10:01
+ * Time   : ä¸Šåˆ10:01
  */
 public class CustomPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = -6140023104743692628L;

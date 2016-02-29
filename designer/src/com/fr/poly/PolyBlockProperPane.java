@@ -7,9 +7,9 @@ import javax.swing.Icon;
 import com.fr.design.mainframe.DockingView;
 import com.fr.general.Inter;
 /**
- * 聚合报表的聚合块属性编辑docking
+ * 鑱氬悎鎶ヨ〃鐨勮仛鍚堝潡灞炴�х紪杈慸ocking
  * @editor zhou
- * @since 2012-3-23下午3:41:33
+ * @since 2012-3-23涓嬪崍3:41:33
  */
 public class PolyBlockProperPane extends DockingView {
 	public static PolyBlockProperPane getInstance(PolyDesigner designer) {

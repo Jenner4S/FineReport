@@ -4,7 +4,7 @@ package com.fr.design.gui.itableeditorpane;
 
 public interface UITableEditorLoader {
 
-	// august:生成工具栏上的一系列动作按钮
+	// august:鐢熸垚宸ュ叿鏍忎笂鐨勪竴绯诲垪鍔ㄤ綔鎸夐挳
 	UITableEditAction[] createAction();
 
 	void stopCellEditing();

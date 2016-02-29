@@ -18,7 +18,7 @@ import java.util.List;
  * Author : DAISY
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç5:37
+ * Time: ä¸‹åˆ5:37
  */
 public class LinePlotPane4ToolBar extends PlotPane4ToolBar {
 

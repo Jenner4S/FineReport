@@ -40,18 +40,18 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     protected List<ChartImagePane> typeDemo;
     protected List<ChartImagePane> styleList;
 
-    protected JPanel stylePane; //ÑùÊ½²¼¾ÖµÄÃæ°å
+    protected JPanel stylePane; //æ ·å¼å¸ƒå±€çš„é¢æ¿
     protected abstract List<ChartImagePane> initDemoList();
     protected abstract List<ChartImagePane> initStyleList();
     protected abstract String[] getTypeIconPath();
     protected abstract String[] getTypeLayoutPath();
     protected int lastStyleIndex = -1;
     protected int lastTypeIndex = -1;
-    protected boolean typeChanged = false;//Í¼±íÀàĞÍÊÇ·ñ·¢Éú±ä»¯
+    protected boolean typeChanged = false;//å›¾è¡¨ç±»å‹æ˜¯å¦å‘ç”Ÿå˜åŒ–
 
     /**
-     * ËÄÖÖ·ç¸ñµÄ²¼¾Ö
-     * @return Í¼Æ¬µÄlist
+     * å››ç§é£æ ¼çš„å¸ƒå±€
+     * @return å›¾ç‰‡çš„list
      */
     protected List<ChartImagePane> initNormalStyleList(){
         List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
@@ -124,7 +124,7 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         this.add(panel,BorderLayout.CENTER);
     }
 
-    //×ÓÀà¸²¸Ç
+    //å­ç±»è¦†ç›–
     protected Plot getSelectedClonedPlot(){
         return null;
     }
@@ -142,7 +142,7 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         }
     }
     /**
-     * ¸üĞÂ½çÃæÊôĞÔ
+     * æ›´æ–°ç•Œé¢å±æ€§
      */
     public void populateBean(Chart chart) {
         for(ChartImagePane imagePane : typeDemo) {
@@ -228,10 +228,10 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     }
 
     /**
-     * ±£´æ·ç¸ñ,¶ÔÑ¡ÖĞµÄ·ç¸ñ×öÉèÖÃ
+     * ä¿å­˜é£æ ¼,å¯¹é€‰ä¸­çš„é£æ ¼åšè®¾ç½®
      */
     public void updateBean(Chart chart) {
-        checkTypeChange();//ÅĞ¶ÏÍ¼±íµÄÀàĞÍÊÇ·ñ·¢Éú±ä»¯
+        checkTypeChange();//åˆ¤æ–­å›¾è¡¨çš„ç±»å‹æ˜¯å¦å‘ç”Ÿå˜åŒ–
         Plot newPlot = this.setSelectedClonedPlotWithCondition(chart.getPlot());
         if(styleList != null && !styleList.isEmpty()){
             if(styleList.get(STYLE_SHADE).isPressing && lastStyleIndex != STYLE_SHADE){
@@ -309,13 +309,13 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     }
 
     /**
-     * ¸üĞÂÕû¸öĞÂµÄChartÀàĞÍ
+     * æ›´æ–°æ•´ä¸ªæ–°çš„Chartç±»å‹
      */
     public Chart updateBean() {
         return null;
     }
 
-    //Í¼±íÇøÊôĞÔÇå¿Õ
+    //å›¾è¡¨åŒºå±æ€§æ¸…ç©º
     protected void resetChart(Chart chart){
         chart.setTitle(new Title(chart.getTitle().getTextObject()));
         chart.setBorderStyle(Constants.LINE_NONE);
@@ -332,22 +332,22 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
     }
 
     public boolean accept(Object ob) {
-        return ob instanceof Chart;
+        return ob instanceof Chart && ((Chart)ob).getPlot() != null;
     }
 
-        //¸ß¹â½¥±äµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+        //é«˜å…‰æ¸å˜çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4HighLight(Chart chart){
         if(chart != null){
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -356,17 +356,17 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
             title.setPosition(Constants.LEFT);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(51, 51, 51)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(138,140,139)));
             legend.setPosition(Constants.RIGHT_TOP);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if(chart.getPlot() instanceof CategoryPlot){
                 CategoryPlot plot = (CategoryPlot)chart.getPlot();
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(204, 220, 228));
@@ -375,7 +375,7 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(138,140,139)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setAxisStyle(Constants.NONE);
                 valueAxis.setAxisColor(null);
@@ -384,7 +384,7 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.getTextAttr().setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 10f, new Color(138,140,139)));
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.setBorderStyle(Constants.LINE_THIN);
                 plot.setBorderColor(new Color(204, 220, 228));
                 plot.setBackground(ColorBackground.getInstance(new Color(248, 247, 245)));
@@ -395,13 +395,13 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         }
     }
 
-    //Æ½Ãæ3DµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //å¹³é¢3Dçš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Plane3D(Chart chart){
         if(chart != null){
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -410,16 +410,16 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
             title.setPosition(Constants.CENTER);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 16f, new Color(51,51,51)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(128,128,128)));
             legend.setPosition(Constants.TOP);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if(chart.getPlot() instanceof CategoryPlot){
                 CategoryPlot plot = (CategoryPlot)chart.getPlot();
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(57, 57, 57));
@@ -428,19 +428,19 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(57,57,57)));
 
-                //ÖµÖáÉèÖÃ
+                //å€¼è½´è®¾ç½®
                 Axis  valueAxis = plot.getyAxis();
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
                 valueAxis.setTickMarkType(Constants.TICK_MARK_NONE);
                 valueAxis.setSecTickMarkType(Constants.TICK_MARK_NONE);
                 valueAxis.setShowAxisLabel(false);
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.getyAxis().setMainGridStyle(Constants.LINE_THIN);
                 plot.getyAxis().setMainGridColor(new Color(192,192,192));
                 chart.setBorderStyle(Constants.LINE_NONE);
 
-                //Êı¾İ±êÇ©
+                //æ•°æ®æ ‡ç­¾
                 ConditionAttr attrList = plot.getConditionCollection().getDefaultAttr();
                 DataSeriesCondition attr = attrList.getExisted(AttrContents.class);
                 if(attr != null) {
@@ -455,13 +455,13 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         }
     }
 
-    //Í¸Ã÷·ç¸ñµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //é€æ˜é£æ ¼çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Transparent(Chart chart){
         if(chart != null){
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -470,23 +470,23 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
             title.setPosition(Constants.LEFT);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(192,192,192)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(138,140,139)));
             legend.setPosition(Constants.RIGHT_TOP);
             chart.getPlot().setLegend(legend);
 
             Plot plot = chart.getPlot();
-            //»æÍ¼Çø
+            //ç»˜å›¾åŒº
             chart.setBackground(ColorBackground.getInstance(new Color(51,51,51)));
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if(plot instanceof CategoryPlot){
-                //±ß¿ò
+                //è¾¹æ¡†
                 plot.setBorderStyle(Constants.LINE_THIN);
                 plot.setBorderColor(new Color(65,65,65));
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(192,192,192));
@@ -495,7 +495,7 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(150,150,150)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
@@ -506,13 +506,13 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         }
     }
 
-    //½¥±äµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //æ¸å˜çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Shade(Chart chart){
         if(chart != null){
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -521,17 +521,17 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
             title.setPosition(Constants.CENTER);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(0,51,102)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(128,128,128)));
             legend.setPosition(Constants.BOTTOM);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if(chart.getPlot() instanceof CategoryPlot){
                 CategoryPlot plot = (CategoryPlot)chart.getPlot();
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(73, 100, 117));
@@ -540,13 +540,13 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(128,128,128)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.getTextAttr().setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 10f, new Color(128,128,128)));
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.getyAxis().setMainGridStyle(Constants.LINE_THIN);
                 plot.getyAxis().setMainGridColor(new Color(192,192,192));
                 plot.setHorizontalIntervalBackgroundColor(new Color(243,243,243));

@@ -4,20 +4,20 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-8-5
- * Time: ÉÏÎç11:24
+ * Time: ä¸Šåˆ11:24
  * To change this template use File | Settings | File Templates.
  */
 public interface ResponseDataSourceChange {
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged();
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged(Map<String, String> map);
 

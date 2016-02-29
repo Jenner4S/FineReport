@@ -19,11 +19,11 @@ public class FRAbsoluteLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * ÊÇ·ñÄÜÔÚÖ¸¶¨Î»ÖÃÌí¼Ó×é¼ş
-     * @param creator ×é¼ş
-     * @param x ×ø±êx
-     * @param y ×ø±êy
-     * @return ÄÜÔò·µ»Øtrue
+     * æ˜¯å¦èƒ½åœ¨æŒ‡å®šä½ç½®æ·»åŠ ç»„ä»¶
+     * @param creator ç»„ä»¶
+     * @param x åæ ‡x
+     * @param y åæ ‡y
+     * @return èƒ½åˆ™è¿”å›true
      */
     @Override
 	public boolean accept(XCreator creator, int x, int y) {
@@ -51,8 +51,8 @@ public class FRAbsoluteLayoutAdapter extends AbstractLayoutAdapter {
 	}
     
     /**
-     * ×é¼şÍÏ×§ºóµ÷Õû´óĞ¡
-     * @param creator ×é¼ş
+     * ç»„ä»¶æ‹–æ‹½åè°ƒæ•´å¤§å°
+     * @param creator ç»„ä»¶
      */
     @Override
 	public void fix(XCreator creator) {
@@ -62,10 +62,10 @@ public class FRAbsoluteLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-     * µ÷Õû×é¼ş´óĞ¡µ½ºÏÊÊ³ß´çÎ»ÖÃ
-     * @param creator ×é¼ş
-     * @param x ×ø±êx
-     * @param y ×ø±êy
+     * è°ƒæ•´ç»„ä»¶å¤§å°åˆ°åˆé€‚å°ºå¯¸ä½ç½®
+     * @param creator ç»„ä»¶
+     * @param x åæ ‡x
+     * @param y åæ ‡y
      */
     public void fix(XCreator creator ,int x, int y) {
     	if (x < 0) {

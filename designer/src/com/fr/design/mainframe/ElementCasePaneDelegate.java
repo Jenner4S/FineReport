@@ -30,10 +30,10 @@ import com.fr.stable.ArrayUtils;
 import javax.swing.*;
 
 /**
- * ÀàËµÃ÷: Éè¼ÆÃæ°åÖĞ×îÉÏ·½µÄ"²åÈë" "µ¥Ôª¸ñ"ÏÂÀ­ÁĞ±íMenuÄ£¿é.
+ * ç±»è¯´æ˜: è®¾è®¡é¢æ¿ä¸­æœ€ä¸Šæ–¹çš„"æ’å…¥" "å•å…ƒæ ¼"ä¸‹æ‹‰åˆ—è¡¨Menuæ¨¡å—.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-25 ÉÏÎç09:56:57
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-25 ä¸Šåˆ09:56:57
  */
 public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
 
@@ -43,7 +43,7 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
 
             @Override
             public void selectionChanged(SelectionEvent e) {
-                //ÔÚ±à¼­È¨ÏŞ£¬ËùÒÔÒª¸üĞÂÈ¨ÏŞ±à¼­Ãæ°å
+                //åœ¨ç¼–è¾‘æƒé™ï¼Œæ‰€ä»¥è¦æ›´æ–°æƒé™ç¼–è¾‘é¢æ¿
                 if (BaseUtils.isAuthorityEditing()) {
                     AuthorityPropertyPane authorityPropertyPane = new AuthorityPropertyPane(ElementCasePaneDelegate.this);
                     authorityPropertyPane.populate();
@@ -75,9 +75,9 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
     }
 
     /**
-     * Ñ¡ÖĞÄ¿±êµÄ ¶ÔÓ¦Menu
+     * é€‰ä¸­ç›®æ ‡çš„ å¯¹åº”Menu
      *
-     * @return ·µ»ØMenuDefÊı×é.
+     * @return è¿”å›MenuDefæ•°ç»„.
      */
     public MenuDef[] menus4Target() {
         if (BaseUtils.isAuthorityEditing()) {
@@ -91,19 +91,19 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
     }
 
     /**
-     * ÊÇ·ñ±ØĞëÎª¿É¼û·¶Î§.
+     * æ˜¯å¦å¿…é¡»ä¸ºå¯è§èŒƒå›´.
      *
-     * @return ²»ÊÇ±ØĞëÔÚ¿É¼û·¶Î§.
+     * @return ä¸æ˜¯å¿…é¡»åœ¨å¯è§èŒƒå›´.
      */
     public boolean mustInVisibleRange() {
         return false;
     }
 
-    // ²åÈë²Ëµ¥
+    // æ’å…¥èœå•
     private MenuDef createInsertMenuDef() {
         MenuDef menuDef = new MenuDef(Inter.getLocText("M-Insert"), 'I');
         menuDef.setAnchor(MenuHandler.INSERT);
-        // µ¥Ôª¸ñ²Ëµ¥
+        // å•å…ƒæ ¼èœå•
         menuDef.addShortCut(DeprecatedActionManager.getCellMenu(this));
 
         addInsertFloatMenuDef(menuDef);
@@ -127,7 +127,7 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
 
 
     private void addInsertFloatMenuDef(MenuDef menuDef) {
-        // Ğü¸¡ÔªËØ²Ëµ¥
+        // æ‚¬æµ®å…ƒç´ èœå•
         MenuDef subMenuDef = new MenuDef(KeySetUtils.INSERT_FLOAT.getMenuName());
         subMenuDef.setIconPath("/com/fr/design/images/m_insert/float.png");
         menuDef.addShortCut(subMenuDef);
@@ -137,7 +137,7 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
         }
     }
 
-    // ¸ñÊ½²Ëµ¥
+    // æ ¼å¼èœå•
     private MenuDef createCellMenuDef() {
         MenuDef menuDef = new MenuDef(KeySetUtils.CELL.getMenuKeySetName(), KeySetUtils.CELL.getMnemonic());
 
@@ -146,7 +146,7 @@ public class ElementCasePaneDelegate extends ElementCasePane<WorkSheet> {
         menuDef.addShortCut(new GlobalStyleMenuDef(this));
         menuDef.addShortCut(new ConditionAttributesAction(this));
 
-        // µ¥Ôª¸ñĞÎÌ¬
+        // å•å…ƒæ ¼å½¢æ€
         menuDef.addShortCut(DeprecatedActionManager.getPresentMenu(this));
 
         menuDef.addShortCut(new HyperlinkAction(this));

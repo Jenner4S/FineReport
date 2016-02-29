@@ -31,7 +31,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 /**
  * the component to edit ColumnRow
  *
- * @editor zhou 2012-3-22ÏÂÎç3:55:53
+ * @editor zhou 2012-3-22ä¸‹åˆ3:55:53
  */
 public class ColumnRowPane extends JPanel implements UIObserver {
 
@@ -92,7 +92,7 @@ public class ColumnRowPane extends JPanel implements UIObserver {
 
 
 	/**
-	 * ³õÊ¼»¯ÔªËØ
+	 * åˆå§‹åŒ–å…ƒç´ 
 	 */
 	public void initComponents() {
 		this.setLayout(new GridLayout(0, 2, 0, 0));
@@ -172,7 +172,7 @@ public class ColumnRowPane extends JPanel implements UIObserver {
 	}
 
 	/**
-	 * columnSpinnerÓërowSpinnerÓ¦¸ÃÕûÌå¿¼ÂÇ£¬ÉèÖÃColumnRowÓ¦¸ÃÖ»´¥·¢Ò»´ÎÊÂ¼ş
+	 * columnSpinnerä¸rowSpinneråº”è¯¥æ•´ä½“è€ƒè™‘ï¼Œè®¾ç½®ColumnRowåº”è¯¥åªè§¦å‘ä¸€æ¬¡äº‹ä»¶
 	 *
 	 * @param columnRow
 	 */
@@ -199,7 +199,7 @@ public class ColumnRowPane extends JPanel implements UIObserver {
 		removeDocumentListener(d);
 		columnSpinner.setValue(StableUtils.convertIntToABC(column + 1));
 		int row = columnRow.getRow();
-		// shoc Ğ¡ÓÚ0¾Í±ÄÁË
+		// shoc å°äº0å°±è¹¦äº†
 		if (row < 0) {
 			row = 0;
 		}
@@ -214,16 +214,16 @@ public class ColumnRowPane extends JPanel implements UIObserver {
 	}
 
 	/**
-	 * Ìí¼ÓÒ»¸ölistenerµ½listenerListÖĞ
-	 * @param l ¼àÌı
+	 * æ·»åŠ ä¸€ä¸ªlisteneråˆ°listenerListä¸­
+	 * @param l ç›‘å¬
 	 */
 	public void addChangeListener(ChangeListener l) {
 		this.listenerList.add(ChangeListener.class, l);
 	}
 
 	/**
-	 * ´ÓlistenerListÖĞÒÆ³ıÒ»¸ölistener
-	 * @param l ¼àÌı
+	 * ä»listenerListä¸­ç§»é™¤ä¸€ä¸ªlistener
+	 * @param l ç›‘å¬
 	 */
 	public void removeChangeListener(ChangeListener l) {
 		this.listenerList.remove(ChangeListener.class, l);
@@ -241,16 +241,16 @@ public class ColumnRowPane extends JPanel implements UIObserver {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
-	 * @param listener ¼àÌı
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
+	 * @param listener ç›‘å¬
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiObserverListener = listener;
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;

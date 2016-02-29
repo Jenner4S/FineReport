@@ -53,20 +53,20 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
- * ±¨±íÉè¼ÆºÍ±íµ¥Éè¼ÆµÄ±à¼­ÇøÓò(Éè¼ÆÆ÷±à¼­µÄIOÎÄ¼ş)
+ * æŠ¥è¡¨è®¾è®¡å’Œè¡¨å•è®¾è®¡çš„ç¼–è¾‘åŒºåŸŸ(è®¾è®¡å™¨ç¼–è¾‘çš„IOæ–‡ä»¶)
  */
 public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> extends TargetComponent<T> implements ToolBarMenuDockPlus, JTemplateProvider {
-    // TODO ALEX_SEP editingFILEÕâ¸öÊôĞÔÒ»¶¨ÒªÂğ?Èç¹û·ÇÒª²»¿É,ÓĞÃ»ÓĞ¿ÉÄÜ±£Ö¤²»Îªnull
+    // TODO ALEX_SEP editingFILEè¿™ä¸ªå±æ€§ä¸€å®šè¦å—?å¦‚æœéè¦ä¸å¯,æœ‰æ²¡æœ‰å¯èƒ½ä¿è¯ä¸ä¸ºnull
     private static final int PREFIX_NUM = 3000;
     private FILE editingFILE = null;
-    // alex:³õÊ¼×´Ì¬Îªsaved,ÕâÑù²»¹ÜÊÇĞÂ½¨Ä£°å,»¹ÊÇ´ò¿ªÄ£°å,Èç¹ûÎ´×öÈÎºÎ²Ù×÷Ö±½Ó¹Ø±Õ,²»ÌáÊ¾±£´æ
+    // alex:åˆå§‹çŠ¶æ€ä¸ºsaved,è¿™æ ·ä¸ç®¡æ˜¯æ–°å»ºæ¨¡æ¿,è¿˜æ˜¯æ‰“å¼€æ¨¡æ¿,å¦‚æœæœªåšä»»ä½•æ“ä½œç›´æ¥å…³é—­,ä¸æç¤ºä¿å­˜
     private boolean saved = true;
     private boolean authoritySaved = true;
     private UndoManager undoMananger;
     private UndoManager authorityUndoManager;
     protected U undoState;
     protected U authorityUndoState = null;
-    private static short currentIndex = 0;// ´Ë±äÁ¿ÓÃÓÚ¶à´ÎĞÂ½¨Ä£°åÊ±£¬ÈÃÃû×Ö²»ÖØ¸´
+    private static short currentIndex = 0;// æ­¤å˜é‡ç”¨äºå¤šæ¬¡æ–°å»ºæ¨¡æ¿æ—¶ï¼Œè®©åå­—ä¸é‡å¤
     private DesignModelAdapter<T, ?> designModel;
     private PreviewProvider previewType;
 
@@ -90,14 +90,14 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ³õÊ¼»¯È¨ÏŞÏ¸Á£¶È³·Ïú×´Ì¬
+     * åˆå§‹åŒ–æƒé™ç»†ç²’åº¦æ’¤é”€çŠ¶æ€
      */
     public void iniAuthorityUndoState() {
         this.authorityUndoState = createUndoState();
     }
 
     /**
-     * ÓĞÌõ¼şÈ¡Ïû¸ñÊ½Ë¢
+     * æœ‰æ¡ä»¶å–æ¶ˆæ ¼å¼åˆ·
      */
     public void doConditionCancelFormat() {
         return;
@@ -108,13 +108,13 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * È¡Ïû¸ñÊ½
+     * å–æ¶ˆæ ¼å¼
      */
     public void cancelFormat() {
         return;
     }
 
-    //ÒòÎª±¨±íµÄtab´Ó0¿ªÊ¼£¬ËùÒÔ±íµ¥Ä¬ÈÏÎª-1°É
+    //å› ä¸ºæŠ¥è¡¨çš„tabä»0å¼€å§‹ï¼Œæ‰€ä»¥è¡¨å•é»˜è®¤ä¸º-1å§
     public int getEditingReportIndex() {
         return -1;
     }
@@ -130,7 +130,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     protected abstract JComponent createCenterPane();
 
     /**
-     * È¥³ıÑ¡Ôñ
+     * å»é™¤é€‰æ‹©
      */
     public abstract void removeTemplateSelection();
 
@@ -140,30 +140,30 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÔÚÈ¨ÏŞ±à¼­µÄ×´Ì¬ÏÂ£¬ÇĞ»»×óÏÂ½Ç½ÇÉ«Ê÷µÄ½ÇÉ«Ê±£¬ÅĞ¶Ï¶ÔÓ¦µÄ¶îsheetÊÇ²»ÊÇĞèÒªcorver
+     * åœ¨æƒé™ç¼–è¾‘çš„çŠ¶æ€ä¸‹ï¼Œåˆ‡æ¢å·¦ä¸‹è§’è§’è‰²æ ‘çš„è§’è‰²æ—¶ï¼Œåˆ¤æ–­å¯¹åº”çš„é¢sheetæ˜¯ä¸æ˜¯éœ€è¦corver
      *
-     * @param roles ½ÇÉ«
+     * @param roles è§’è‰²
      */
     public void judgeSheetAuthority(String roles) {
 
     }
 
     /**
-     * Ë¢ĞÂÈİÆ÷
+     * åˆ·æ–°å®¹å™¨
      */
     public abstract void refreshContainer();
 
     /**
-     * È¥³ı²ÎÊıÃæ°åÑ¡Ôñ
+     * å»é™¤å‚æ•°é¢æ¿é€‰æ‹©
      */
     public abstract void removeParameterPaneSelection();
 
     protected abstract DesignModelAdapter<T, ?> createDesignModel();
 
     /**
-     * ´´½¨²Ëµ¥ÏîPreview
+     * åˆ›å»ºèœå•é¡¹Preview
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public abstract UIMenuItem[] createMenuItem4Preview();
 
@@ -175,25 +175,25 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÖØĞÂ¼ÆËã´óĞ¡
+     * é‡æ–°è®¡ç®—å¤§å°
      */
     public void doResize() {
 
     }
 
     /**
-     * ÊÇ·ñ±£´æÁË
+     * æ˜¯å¦ä¿å­˜äº†
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSaved() {
         return BaseUtils.isAuthorityEditing() ? this.authoritySaved : this.saved;
     }
 
     /**
-     * ÊÇ·ñ¶¼±£´æÁË
+     * æ˜¯å¦éƒ½ä¿å­˜äº†
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isALLSaved() {
         return this.saved && this.authoritySaved;
@@ -201,9 +201,9 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
 
 
     /**
-     * ÊÇ·ñÔÚÈ¨ÏŞ±à¼­Ê±×ö¹ı²Ù×÷
+     * æ˜¯å¦åœ¨æƒé™ç¼–è¾‘æ—¶åšè¿‡æ“ä½œ
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDoSomethingInAuthority() {
         return authorityUndoManager != null && authorityUndoManager.canUndo();
@@ -242,7 +242,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Çå³ıÈ¨ÏŞÏ¸Á£¶È³·Ïú
+     * æ¸…é™¤æƒé™ç»†ç²’åº¦æ’¤é”€
      */
     public void cleanAuthorityUndo() {
         authorityUndoManager = null;
@@ -252,25 +252,25 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
 
 
     /**
-     * ¿ÉÒÔ³·Ïú
+     * å¯ä»¥æ’¤é”€
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canUndo() {
         return this.getUndoManager().canUndo();
     }
 
     /**
-     * ¿ÉÒÔÖØ×ö
+     * å¯ä»¥é‡åš
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canRedo() {
         return this.getUndoManager().canRedo();
     }
 
     /**
-     * ³·Ïú
+     * æ’¤é”€
      */
     public void undo() {
         this.getUndoManager().undo();
@@ -278,7 +278,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÖØ×ö
+     * é‡åš
      */
     public void redo() {
         this.getUndoManager().redo();
@@ -287,14 +287,14 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Ä£°å¸üĞÂ
+     * æ¨¡æ¿æ›´æ–°
      */
     public void fireTargetModified() {
         U newState = createUndoState();
         if (newState == null) {
             return;
         }
-        //Èç¹ûÊÇÔÚ²»Í¬µÄÄ£Ê½ÏÂ²úÉúµÄ
+        //å¦‚æœæ˜¯åœ¨ä¸åŒçš„æ¨¡å¼ä¸‹äº§ç”Ÿçš„
         if (BaseUtils.isAuthorityEditing()) {
             this.getUndoManager().addEdit(new UndoStateEdit(authorityUndoState, newState));
             authorityUndoState = newState;
@@ -306,7 +306,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÓÃÓÚÔÚÍË³öÈ¨ÏŞ±à¼­µÄÊ±ºò£¬½«ËùÓĞ²Ù×÷µÄÓĞÈ¨ÏŞ±à¼­µÄĞ§¹û×÷ÎªÒ»¸ö¶¯×÷·ÅÈëÕı³£±¨±íundoManagerÖĞ
+     * ç”¨äºåœ¨é€€å‡ºæƒé™ç¼–è¾‘çš„æ—¶å€™ï¼Œå°†æ‰€æœ‰æ“ä½œçš„æœ‰æƒé™ç¼–è¾‘çš„æ•ˆæœä½œä¸ºä¸€ä¸ªåŠ¨ä½œæ”¾å…¥æ­£å¸¸æŠ¥è¡¨undoManagerä¸­
      */
     public void fireAuthorityStateToNomal() {
         U newState = createUndoState();
@@ -338,7 +338,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     protected abstract void applyUndoState(U u);
 
     /**
-     * Í£Ö¹±à¼­, ÅĞ¶Ï±£´æÊôĞÔ *
+     * åœæ­¢ç¼–è¾‘, åˆ¤æ–­ä¿å­˜å±æ€§ *
      */
     public void stopEditing() {
     }
@@ -347,7 +347,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
 
 
     /**
-     * µÃµ½ÕıÔÚ±à¼­µÄFILE
+     * å¾—åˆ°æ­£åœ¨ç¼–è¾‘çš„FILE
      *
      * @return
      */
@@ -357,64 +357,64 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
 
 
     /**
-     * richer:±£´æÎÄ¼şµÄºó×ºÃû
+     * richer:ä¿å­˜æ–‡ä»¶çš„åç¼€å
      *
-     * @return ·µ»Øºó×ºÃû
+     * @return è¿”å›åç¼€å
      */
     public abstract String suffix();
 
     /**
-     * ÊÇ·ñ±£´æ
+     * æ˜¯å¦ä¿å­˜
      *
-     * @return ±£´æÄ£°å
+     * @return ä¿å­˜æ¨¡æ¿
      */
     public boolean saveTemplate() {
         return this.saveTemplate(true);
     }
 
     /**
-     * ±£´æ
+     * ä¿å­˜
      *
-     * @return ±£´æ³É¹¦·µ»Øtrue
+     * @return ä¿å­˜æˆåŠŸè¿”å›true
      */
     public boolean saveTemplate2Env() {
         return this.saveTemplate(false);
     }
 
     /**
-     * Áí´æ
+     * å¦å­˜
      *
-     * @return ±£´æ³É¹¦·µ»Øtrue
+     * @return ä¿å­˜æˆåŠŸè¿”å›true
      */
     public boolean saveAsTemplate() {
         return this.saveAsTemplate(true);
     }
 
     /**
-     * Áí´æ
+     * å¦å­˜
      *
-     * @return ±£´æ³É¹¦·µ»Øtrue
+     * @return ä¿å­˜æˆåŠŸè¿”å›true
      */
     public boolean saveAsTemplate2Env() {
         return this.saveAsTemplate(false);
     }
 
     /**
-     * WebÔ¤ÀÀµÄÊ±ºòĞèÒªÒş²Øµô³ı¡°±¨±íÔËĞĞ»·¾³¡±ÍâµÄÂ·¾¶(CÅÌDÅÌµÈ) isShowLoc = false
+     * Webé¢„è§ˆçš„æ—¶å€™éœ€è¦éšè—æ‰é™¤â€œæŠ¥è¡¨è¿è¡Œç¯å¢ƒâ€å¤–çš„è·¯å¾„(Cç›˜Dç›˜ç­‰) isShowLoc = false
      *
-     * @param isShowLoc ÊÇ·ñ±¾µØ
-     * @return ±£´æ³É¹¦·µ»Øtrue
+     * @param isShowLoc æ˜¯å¦æœ¬åœ°
+     * @return ä¿å­˜æˆåŠŸè¿”å›true
      */
     public boolean saveTemplate(boolean isShowLoc) {
         FILE editingFILE = this.getEditingFILE();
-        // carl:editingFILEÃ»ÓĞ£¬µ±È»²»´æÁË,ËäÈ»²»»áÓĞÕâÖÖÇé¿ö
+        // carl:editingFILEæ²¡æœ‰ï¼Œå½“ç„¶ä¸å­˜äº†,è™½ç„¶ä¸ä¼šæœ‰è¿™ç§æƒ…å†µ
         if (editingFILE == null) {
             return false;
         }
-        //¼ì²éÒ»ÏÂÁ¬½ÓÊÇ·ñ³É¹¦
+        //æ£€æŸ¥ä¸€ä¸‹è¿æ¥æ˜¯å¦æˆåŠŸ
         try {
             if (FRContext.getCurrentEnv() != null && !FRContext.getCurrentEnv().testServerConnectionWithOutShowMessagePane()) {
-                //Á¬½Ó²»³É¹¦£¬ÌáÊ¾
+                //è¿æ¥ä¸æˆåŠŸï¼Œæç¤º
                 JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(),
                         Inter.getLocText(new String[]{"server_disconnected", "template_unsaved"}, new String[]{",", "!"})
                         , Inter.getLocText("FR-Designer_Error"), JOptionPane.ERROR_MESSAGE);
@@ -425,7 +425,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
         }
 
 
-        // ¼ì²éÒ»ÏÂeditingFILEÊÇ²»ÊÇÒÑ´æÔÚµÄÎÄ¼ş,Èç¹û²»´æÔÚÔòÓÃsaveAs
+        // æ£€æŸ¥ä¸€ä¸‹editingFILEæ˜¯ä¸æ˜¯å·²å­˜åœ¨çš„æ–‡ä»¶,å¦‚æœä¸å­˜åœ¨åˆ™ç”¨saveAs
         if (!editingFILE.exists()) {
             return saveAsTemplate(isShowLoc);
         }
@@ -452,7 +452,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
             return false;
         }
         String oldName = this.getFullPathName();
-        // alex:Èç¹ûÊÇSaveAsµÄ»°ĞèÒªÈÃÓÃ»§À´Ñ¡ÔñÂ·¾¶ÁË
+        // alex:å¦‚æœæ˜¯SaveAsçš„è¯éœ€è¦è®©ç”¨æˆ·æ¥é€‰æ‹©è·¯å¾„äº†
         FILEChooserPane fileChooser = getFILEChooserPane(isShowLoc);
         fileChooser.setFileNameTextField(editingFILE.getName(), this.suffix());
         int chooseResult = fileChooser.showSaveDialog(DesignerContext.getDesignerFrame(), this.suffix());
@@ -482,7 +482,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
         if (result) {
             DesignerFrameFileDealerPane.getInstance().refresh();
         }
-        //¸ü»»×î½ü´ò¿ª
+        //æ›´æ¢æœ€è¿‘æ‰“å¼€
         DesignerEnvManager.getEnvManager().replaceRecentOpenedFilePath(oldName, this.getFullPathName());
         return result;
     }
@@ -496,9 +496,9 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
     
     /**
-	 * ½«Ä£°åÁí´æÎª¿ÉÒÔ·ÖÏí³öÈ¥µÄ»ìÏıºóÄÚÖÃÊı¾İ¼¯Ä£°å
+	 * å°†æ¨¡æ¿å¦å­˜ä¸ºå¯ä»¥åˆ†äº«å‡ºå»çš„æ··æ·†åå†…ç½®æ•°æ®é›†æ¨¡æ¿
 	 * 
-	 * @return ÊÇ·ñÁí´æ³É¹¦
+	 * @return æ˜¯å¦å¦å­˜æˆåŠŸ
 	 * 
 	 */
     public boolean saveShareFile(){
@@ -521,7 +521,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
             }
 
             if (BaseUtils.isAuthorityEditing()) {
-                //´¥·¢±£´æ·şÎñÆ÷¹¤¾ßÀ¸
+                //è§¦å‘ä¿å­˜æœåŠ¡å™¨å·¥å…·æ 
                 try {
                     FRContext.getCurrentEnv().writeResource(ConfigManager.getProviderInstance());
                 } catch (Exception e1) {
@@ -544,8 +544,8 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     private static String newTemplateNameByIndex(String prefix) {
-        // ÓÃÓÚ»ñÈ¡×ó²àÄ£°åµÄÎÄ¼şÃû£¬Èç×ó²àÒÑ°üº¬"WorkBook1.cpt, WorkBook12.cpt, WorkBook177.cpt"
-        // ÄÇÃ´ĞÂ½¨µÄÎÄ¼şÃû½«±»ÃüÃûÎª"WorkBook178.cpt",¼´È¡×î´óÊı+1
+        // ç”¨äºè·å–å·¦ä¾§æ¨¡æ¿çš„æ–‡ä»¶åï¼Œå¦‚å·¦ä¾§å·²åŒ…å«"WorkBook1.cpt, WorkBook12.cpt, WorkBook177.cpt"
+        // é‚£ä¹ˆæ–°å»ºçš„æ–‡ä»¶åå°†è¢«å‘½åä¸º"WorkBook178.cpt",å³å–æœ€å¤§æ•°+1
         TemplateFileTree tt = TemplateTreePane.getInstance().getTemplateFileTree();
         DefaultMutableTreeNode gen = (DefaultMutableTreeNode) tt.getModel().getRoot();
         String[] str = new String[gen.getChildCount()];
@@ -579,9 +579,9 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     // /////////////////////////////toolbarMenuDock//////////////////////////////////
 
     /**
-     * ÎÄ¼şµÄ4¸ö²Ëµ¥
+     * æ–‡ä»¶çš„4ä¸ªèœå•
      *
-     * @return ·µ»Ø²Ëµ¥
+     * @return è¿”å›èœå•
      */
     public ShortCut[] shortcut4FileMenu() {
         if (BaseUtils.isAuthorityEditing()) {
@@ -593,9 +593,9 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Ä¿±ê²Ëµ¥
+     * ç›®æ ‡èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         MenuDef tplMenu = new MenuDef(Inter.getLocText("FR-Designer_M-Template"), 'T');
@@ -611,41 +611,41 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Ä£°å²Ëµ¥
+     * æ¨¡æ¿èœå•
      *
-     * @return ·µ»Ø²Ëµ¥
+     * @return è¿”å›èœå•
      */
     public abstract ShortCut[] shortcut4TemplateMenu();
 
     /**
-     * È¨ÏŞÏ¸Á£¶ÈÄ£°å²Ëµ¥
+     * æƒé™ç»†ç²’åº¦æ¨¡æ¿èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public abstract ShortCut[] shortCuts4Authority();
 
     // /////////////////////////////JTemplateActionListener//////////////////////////////////
 
     /**
-     * Ôö¼ÓÄ£°åListener
+     * å¢åŠ æ¨¡æ¿Listener
      *
-     * @param l Ä£°åListener
+     * @param l æ¨¡æ¿Listener
      */
     public void addJTemplateActionListener(JTemplateActionListener l) {
         this.listenerList.add(JTemplateActionListener.class, l);
     }
 
     /**
-     * ÒÆ³ıÄ£°åListener
+     * ç§»é™¤æ¨¡æ¿Listener
      *
-     * @param l Ä£°åListener
+     * @param l æ¨¡æ¿Listener
      */
     public void removeJTemplateActionListener(JTemplateActionListener l) {
         this.listenerList.remove(JTemplateActionListener.class, l);
     }
 
     /**
-     * ´¥·¢Ä£°å¹Ø±Õ
+     * è§¦å‘æ¨¡æ¿å…³é—­
      */
     public void fireJTemplateClosed() {
         // Guaranteed to return a non-null array
@@ -663,7 +663,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ´¥·¢Ä£°å±£´æ
+     * è§¦å‘æ¨¡æ¿ä¿å­˜
      */
     public void fireJTemplateSaved() {
         // Guaranteed to return a non-null array
@@ -681,7 +681,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ´¥·¢Ä£°å´ò¿ª
+     * è§¦å‘æ¨¡æ¿æ‰“å¼€
      */
     public void fireJTemplateOpened() {
         // Guaranteed to return a non-null array
@@ -699,7 +699,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Ä£°åÇĞ»»Ê±£¬»Ö¸´Ô­À´µÄ×´Ì¬
+     * æ¨¡æ¿åˆ‡æ¢æ—¶ï¼Œæ¢å¤åŸæ¥çš„çŠ¶æ€
      */
     public void revert() {
 
@@ -709,7 +709,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
         if (StringUtils.isBlank(versionString)) {
             return 0;
         }
-        //8.0.0¿ÉÒÔ´ò¿ª8.0.1µÄÄ£°å.
+        //8.0.0å¯ä»¥æ‰“å¼€8.0.1çš„æ¨¡æ¿.
         int len = ProductConstants.DESIGNER_VERSION.length() - 1;
         return ComparatorUtils.compare(versionString.substring(0, len), ProductConstants.DESIGNER_VERSION.substring(0, len));
 
@@ -736,8 +736,8 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÊÇĞÂ°æÉè¼ÆÆ÷
-     * @return    ÊÇ·µ»Øtrue
+     * åˆ¤æ–­æ˜¯å¦æ˜¯æ–°ç‰ˆè®¾è®¡å™¨
+     * @return    æ˜¯è¿”å›true
      */
     public boolean isNewDesigner() {
         String xmlDesignerVersion = getTarget().getXMLDesignerVersion();
@@ -751,9 +751,9 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÊÇ·ñÊÇ¾Í°æ±¾Éè¼ÆÆ÷
+     * æ˜¯å¦æ˜¯å°±ç‰ˆæœ¬è®¾è®¡å™¨
      *
-     * @return ÊÇ¾Í·µ»Øtrue
+     * @return æ˜¯å°±è¿”å›true
      */
     public boolean isOldDesigner() {
         String xmlDesignerVersion = getTarget().getXMLDesignerVersion();
@@ -783,7 +783,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * Ë¢ĞÂ¹¤¾ßÇøÓò
+     * åˆ·æ–°å·¥å…·åŒºåŸŸ
      */
     public void refreshToolArea() {
 
@@ -791,24 +791,24 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
 
 
     /**
-     * ÊÇ·ñÊÇ¹¤×÷±¡
+     * æ˜¯å¦æ˜¯å·¥ä½œè–„
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public abstract boolean isJWorkBook();
     
     /**
-     * ·µ»Øµ±Ç°Ö§³ÖµÄ³¬Á´½çÃæpane
-     * @return ³¬Á´Á¬½Ó½çÃæ
+     * è¿”å›å½“å‰æ”¯æŒçš„è¶…é“¾ç•Œé¢pane
+     * @return è¶…é“¾è¿æ¥ç•Œé¢
      */
     public HyperlinkGroupPane getHyperLinkPane() {
     	return new HyperlinkGroupPane();
     }
 
     /**
-     * ÊÇ·ñÊÇÍ¼±í
+     * æ˜¯å¦æ˜¯å›¾è¡¨
      *
-     * @return Ä¬ÈÏ²»ÊÇ
+     * @return é»˜è®¤ä¸æ˜¯
      */
     public boolean isChartBook(){
         return false;
@@ -817,16 +817,16 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     public abstract void setAuthorityMode(boolean isUpMode);
 
     /**
-     * ÊÇ·ñÊÇ²ÎÊıÃæ°åµÄÄ£Ê½
+     * æ˜¯å¦æ˜¯å‚æ•°é¢æ¿çš„æ¨¡å¼
      *
-     * @return ²»ÊÇ
+     * @return ä¸æ˜¯
      */
     public boolean isUpMode() {
         return false;
     }
 
     /**
-     * ÉèÖÃÔ¤ÀÀ·½Ê½
+     * è®¾ç½®é¢„è§ˆæ–¹å¼
      *
      * @param previewType
      */
@@ -839,7 +839,7 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * µÃµ½Ô¤ÀÀµÄ´óÍ¼±ê
+     * å¾—åˆ°é¢„è§ˆçš„å¤§å›¾æ ‡
      *
      * @return
      */
@@ -852,66 +852,66 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÇëÇó±íµ¥½¹µã
+     * è¯·æ±‚è¡¨å•ç„¦ç‚¹
      */
     public void requestGridFocus() {
 
     }
     
     /**
-	 * ´´½¨ÄÚÖÃsqlÌá½»µÄpane
+	 * åˆ›å»ºå†…ç½®sqlæäº¤çš„pane
 	 * 
-	 * @return ÄÚÖÃsqlÌá½»µÄpane
+	 * @return å†…ç½®sqlæäº¤çš„pane
 	 * 
 	 *
-	 * @date 2014-10-14-ÏÂÎç7:39:27
+	 * @date 2014-10-14-ä¸‹åˆ7:39:27
 	 */
     public DBManipulationPane createDBManipulationPane(){
     	return new DBManipulationPane();
     }
     
     /**
-     * ´´½¨¿Ø¼şÊÂ¼şÀïÄÚÖÃsqlÌá½»µÄpane
+     * åˆ›å»ºæ§ä»¶äº‹ä»¶é‡Œå†…ç½®sqlæäº¤çš„pane
      * 
-     * @return ÄÚÖÃsqlÌá½»µÄpane
+     * @return å†…ç½®sqlæäº¤çš„pane
      * 
      *
-     * @date 2014-10-14-ÏÂÎç7:39:27
+     * @date 2014-10-14-ä¸‹åˆ7:39:27
      */
     public DBManipulationPane createDBManipulationPaneInWidget(){
     	return new DBManipulationInWidgetEventPane();
     }
 
     /**
-     * È¡Ğ¡Í¼±ê£¬Ö÷ÒªÓÃÓÚ¶àTAB±êÇ©À¸
-     * @return Í¼±í
+     * å–å°å›¾æ ‡ï¼Œä¸»è¦ç”¨äºå¤šTABæ ‡ç­¾æ 
+     * @return å›¾è¡¨
      */
     public abstract Icon getIcon();
 
     /**
-     * µ¼³ö²Ëµ¥Ïî
-     * @return ²Ëµ¥Ïî
+     * å¯¼å‡ºèœå•é¡¹
+     * @return èœå•é¡¹
      */
     public ShortCut[] shortcut4ExportMenu() {
         return new ShortCut[0];
     }
 
     /**
-     * ¸´ÖÆJS´úÂë
+     * å¤åˆ¶JSä»£ç 
      */
     public void copyJS(){}
 
     /**
-     * ÏµÁĞ·ç¸ñ¸Ä¶¯
+     * ç³»åˆ—é£æ ¼æ”¹åŠ¨
      */
     public void styleChange(){
 
     }
     
     /**
-	 * ´´½¨·ÖÏíÄ£°åµÄ°´Å¥, Ä¿Ç°Ö»ÓĞjworkbookÊµÏÖÁË
+	 * åˆ›å»ºåˆ†äº«æ¨¡æ¿çš„æŒ‰é’®, ç›®å‰åªæœ‰jworkbookå®ç°äº†
 	 * 
-	 * @return ·ÖÏíÄ£°å°´Å¥
+	 * @return åˆ†äº«æ¨¡æ¿æŒ‰é’®
 	 * 
 	 */
     public UIButton[] createShareButton(){
@@ -919,25 +919,25 @@ public abstract class JTemplate<T extends IOFile, U extends BaseUndoState<?>> ex
     }
 
     /**
-     * ÂÔ
-     * @param provider Ô¤ÀÀÄ£Ê½
+     * ç•¥
+     * @param provider é¢„è§ˆæ¨¡å¼
      */
     public void previewMenuActionPerformed(PreviewProvider provider) {
 
     }
 
     /**
-     * Ö§³ÖµÄÔ¤ÀÀÄ£Ê½
-     * @return Ô¤ÀÀÄ£Ê½
+     * æ”¯æŒçš„é¢„è§ˆæ¨¡å¼
+     * @return é¢„è§ˆæ¨¡å¼
      */
     public PreviewProvider[] supportPreview() {
         return new PreviewProvider[0];
     }
 
     /**
-     * Ô¤ÀÀÄ£Ê½×ª»»
-     * @param typeCode ÀàĞÍ
-     * @return Ô¤ÀÀÄ£Ê½
+     * é¢„è§ˆæ¨¡å¼è½¬æ¢
+     * @param typeCode ç±»å‹
+     * @return é¢„è§ˆæ¨¡å¼
      */
     public PreviewProvider parserPreviewProvider(int typeCode) {
         PreviewProvider pp = null;

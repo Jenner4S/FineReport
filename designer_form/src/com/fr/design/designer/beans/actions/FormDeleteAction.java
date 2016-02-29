@@ -24,15 +24,15 @@ public class FormDeleteAction extends FormUndoableAction {
 
 		this.setName(Inter.getLocText("M_Edit-Delete"));
 		this.setMnemonic('D');
-		// Richie:删除菜单图标
+		// Richie:鍒犻櫎鑿滃崟鍥炬爣
 		this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_report/delete.png"));
 		this.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
 	}
 
 	/**
-	 * 删除
+	 * 鍒犻櫎
 	 * 
-	 * @return 是否删除成功
+	 * @return 鏄惁鍒犻櫎鎴愬姛
 	 */
 	@Override
 	public boolean executeActionReturnUndoRecordNeeded() {

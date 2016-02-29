@@ -3,7 +3,7 @@ package com.fr.design.mainframe.widget.editors;
 import java.awt.event.ActionListener;
 
 /**
- * ¾ßÓĞÏÔÊ¾ÖµºÍÊµ¼ÊÖµµÄÏÔÊ¾Æ÷
+ * å…·æœ‰æ˜¾ç¤ºå€¼å’Œå®é™…å€¼çš„æ˜¾ç¤ºå™¨
  * 
  * @since 6.5.2
  */

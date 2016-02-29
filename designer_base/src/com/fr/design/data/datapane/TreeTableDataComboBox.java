@@ -38,14 +38,14 @@ public class TreeTableDataComboBox extends UIComboBox {
 	}
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
 	public void refresh() {
 		java.util.Iterator<String> nameIt;
 		DefaultComboBoxModel model = new DefaultComboBoxModel();
 		this.setModel(model);
 		if (source != null) {
-			// ±¨±íÊı¾İ¼¯
+			// æŠ¥è¡¨æ•°æ®é›†
 			nameIt = source.getTableDataNameIterator();
 			while (nameIt.hasNext()) {
 				String name = nameIt.next();
@@ -57,7 +57,7 @@ public class TreeTableDataComboBox extends UIComboBox {
 			}
 		}
 
-		// È«¾ÖÊı¾İ¼¯
+		// å…¨å±€æ•°æ®é›†
         DatasourceManagerProvider mgr = DatasourceManager.getProviderInstance();
 		nameIt = mgr.getTableDataNameIterator();
 		while (nameIt.hasNext()) {

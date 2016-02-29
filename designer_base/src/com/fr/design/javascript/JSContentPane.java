@@ -90,7 +90,7 @@ public class JSContentPane extends BasicPane {
 	}
 
 	/**
-	 * ÓÃhtml£¬·½±ã»»ĞĞ
+	 * ç”¨htmlï¼Œæ–¹ä¾¿æ¢è¡Œ
 	 *
 	 * @param args
 	 * @return
@@ -115,7 +115,7 @@ public class JSContentPane extends BasicPane {
 						}
 					} else {
 						tempwidth = 0;
-						i = i - 1;// ºóÍËÒ»²½
+						i = i - 1;// åé€€ä¸€æ­¥
 						sb.append("</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp;");
 					}
 				} else {

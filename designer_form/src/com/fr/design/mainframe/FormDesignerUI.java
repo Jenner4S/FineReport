@@ -33,12 +33,12 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.Constants;
 
 /**
- * FormDesignerµÄUIÀà£¬ÊÇÒ»¸öÓĞ×´Ì¬µÄUIÀà£¬Ëü¸ù¾İFormDesignerµÄµ±Ç°×´Ì¬»­³ö
- * ¾ßÓĞËù¼û¼´ËùµÃµÄÉè¼Æ½çÃæ£¬ÒÔ¼°µ±Ç°Éè¼Æ½çÃæµÄÒ»Ğ©¸¨Öú×´Ì¬£¬±ÈÈçÑ¡Ôñ±êÊ¶¡¢ÍÏ¶¯ÇøÓò ÒÔ¼°µ±Ç°ÕıÔÚÌí¼ÓµÄ×é¼ş
+ * FormDesignerçš„UIç±»ï¼Œæ˜¯ä¸€ä¸ªæœ‰çŠ¶æ€çš„UIç±»ï¼Œå®ƒæ ¹æ®FormDesignerçš„å½“å‰çŠ¶æ€ç”»å‡º
+ * å…·æœ‰æ‰€è§å³æ‰€å¾—çš„è®¾è®¡ç•Œé¢ï¼Œä»¥åŠå½“å‰è®¾è®¡ç•Œé¢çš„ä¸€äº›è¾…åŠ©çŠ¶æ€ï¼Œæ¯”å¦‚é€‰æ‹©æ ‡è¯†ã€æ‹–åŠ¨åŒºåŸŸ ä»¥åŠå½“å‰æ­£åœ¨æ·»åŠ çš„ç»„ä»¶
  */
 public class FormDesignerUI extends ComponentUI {
 
-    // µ±Ç°µÄÉè¼ÆÆ÷
+    // å½“å‰çš„è®¾è®¡å™¨
     private FormDesigner designer;
     private SelectionModel selectionModel;
     private Rectangle2D.Double back_or_selection_rect = new Rectangle2D.Double(0, 0, 0, 0);
@@ -47,8 +47,8 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     *  ³õÊ¼»¯½çÃæ
-     * @param c      ×é¼ş
+     *  åˆå§‹åŒ–ç•Œé¢
+     * @param c      ç»„ä»¶
      */
     public void installUI(JComponent c) {
         designer = (FormDesigner) c;
@@ -56,20 +56,20 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * äÖÈ¾µ±Ç°µÄÉè¼Æ½çÃæÒÔ¼°Éè¼Æ¸¨Öú×´Ì¬
-     * @param g »­Í¼Àà
-     * @param c ×é¼ş
+     * æ¸²æŸ“å½“å‰çš„è®¾è®¡ç•Œé¢ä»¥åŠè®¾è®¡è¾…åŠ©çŠ¶æ€
+     * @param g ç”»å›¾ç±»
+     * @param c ç»„ä»¶
      */
     @Override
     public void paint(Graphics g, JComponent c) {
         XCreator rootComponent = designer.getRootComponent();
         if (rootComponent != null) {
-            // Éè¼Æ×ÔÊÊÓ¦½çÃæ
+            // è®¾è®¡è‡ªé€‚åº”ç•Œé¢
             repaintFit(g, rootComponent, c);
         }
         XCreator paraComponent = designer.getParaComponent();
         if (paraComponent != null) {
-            // Éè¼Æ²ÎÊıÃæ°å
+            // è®¾è®¡å‚æ•°é¢æ¿
             repaintPara(g, paraComponent, c);
         }
 
@@ -87,22 +87,22 @@ public class FormDesignerUI extends ComponentUI {
         Rectangle hotspot_bounds = selectionModel.getHotspotBounds();
 
         if (hotspot_bounds != null) {
-            // µ±Ç°ÇøÓòÑ¡Ôñ¿ò
+            // å½“å‰åŒºåŸŸé€‰æ‹©æ¡†
             g.setColor(XCreatorConstants.SELECTION_COLOR);
             g.drawRect(hotspot_bounds.x - designer.getArea().getHorizontalValue(), hotspot_bounds.y
                     - designer.getArea().getVerticalValue(), hotspot_bounds.width, hotspot_bounds.height);
         }
 
         if (designer.getPainter() != null) {
-            // ComponentAdapterºÍLayoutAdapterÌá¹©µÄ¶îÍâµÄPainter£¬¸ÃPainterÒ»°ãÓÃÓÚÌáÊ¾×÷ÓÃ£¬
-            // Ïàµ±ÓÚÒ»¸ö¸¡¶¯²ã
+            // ComponentAdapterå’ŒLayoutAdapteræä¾›çš„é¢å¤–çš„Painterï¼Œè¯¥Painterä¸€èˆ¬ç”¨äºæç¤ºä½œç”¨ï¼Œ
+            // ç›¸å½“äºä¸€ä¸ªæµ®åŠ¨å±‚
             designer.getPainter().paint(g, designer.getArea().getHorizontalValue(),
                     designer.getArea().getVerticalValue());
         }
         AddingModel addingModel = designer.getAddingModel();
 
         if ((addingModel != null) && (addingModel.getXCreator() != null)) {
-            // µ±Ç°ÕıÔÚÌí¼ÓµÄ×é¼ş
+            // å½“å‰æ­£åœ¨æ·»åŠ çš„ç»„ä»¶
             paintAddingBean(g, addingModel);
         }
     }
@@ -166,7 +166,7 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * äÖÈ¾µ±Ç°ÕıÔÚÌí¼ÓµÄ×é¼ş£¬²ÉÓÃRendererÔ­Àí
+     * æ¸²æŸ“å½“å‰æ­£åœ¨æ·»åŠ çš„ç»„ä»¶ï¼Œé‡‡ç”¨RendereråŸç†
      */
     private void paintAddingBean(Graphics g, final AddingModel addingModel) {
         XCreator bean = addingModel.getXCreator();
@@ -176,14 +176,14 @@ public class FormDesignerUI extends ComponentUI {
         int height = bean.getHeight();
         Graphics clipg = g.create(x, y, width, height);
         ArrayList<JComponent> dbcomponents = new ArrayList<JComponent>();
-        // ½ûÖ¹Ë«»º³åĞĞÎª
+        // ç¦æ­¢åŒç¼“å†²è¡Œä¸º
         ComponentUtils.disableBuffer(bean, dbcomponents);
 
         ComponentAdapter adapter = AdapterBus.getComponentAdapter(designer, bean);
-        // µ÷ÓÃComponentAdapterµÄpaintComponentMascot·½·¨äÖÈ¾¸Ã×é¼şÌí¼ÓÌáÊ¾
+        // è°ƒç”¨ComponentAdapterçš„paintComponentMascotæ–¹æ³•æ¸²æŸ“è¯¥ç»„ä»¶æ·»åŠ æç¤º
         adapter.paintComponentMascot(clipg);
         clipg.dispose();
-        // »Ö¸´Ë«»º³å
+        // æ¢å¤åŒç¼“å†²
         ComponentUtils.resetBuffer(dbcomponents);
     }
 
@@ -196,9 +196,9 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     *  »­È¨ÏŞ±à¼­µÄ
-     * @param g             »­Í¼Àà
-     * @param xCreator  ×é¼ş
+     *  ç”»æƒé™ç¼–è¾‘çš„
+     * @param g             ç”»å›¾ç±»
+     * @param xCreator  ç»„ä»¶
      */
     public void paintAuthorityDetails(Graphics g, XCreator xCreator) {
         String selectedRoles = ReportAndFSManagePane.getInstance().getRoleTree().getSelectedRoleName();
@@ -226,8 +226,8 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * »­Ñ¡ÖĞ·¶Î§
-     * @param g »­Í¼
+     * ç”»é€‰ä¸­èŒƒå›´
+     * @param g ç”»å›¾
      */
     public void paintSelection(Graphics g) {
         if (!selectionModel.hasSelectionComponent()) {
@@ -243,9 +243,9 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * »­³öµ±Ç°Ñ¡Ôñ¡¢ÍÏ×§×´Ì¬¿ò
+     * ç”»å‡ºå½“å‰é€‰æ‹©ã€æ‹–æ‹½çŠ¶æ€æ¡†
      *
-     * @param g  Í¼ĞÎ
+     * @param g  å›¾å½¢
      */
     private void paintResizing(Graphics g) {
         Rectangle bounds = selectionModel.getSelection().getRelativeBounds();
@@ -277,7 +277,7 @@ public class FormDesignerUI extends ComponentUI {
     }
     
     /**
-     * ³õÊ¼Îª×ÔÊÊÓ¦Ê±£¬´¦ÀíÑ¡ÖĞµÄ·¶Î§
+     * åˆå§‹ä¸ºè‡ªé€‚åº”æ—¶ï¼Œå¤„ç†é€‰ä¸­çš„èŒƒå›´
      * @param bound
      */
     private void resetFitlayoutBounds( Rectangle bound) {
@@ -307,7 +307,7 @@ public class FormDesignerUI extends ComponentUI {
     
 
     /**
-     * »­³ö°Ë¸öÍÏ×§¿ò
+     * ç”»å‡ºå…«ä¸ªæ‹–æ‹½æ¡†
      */
     private void drawResizingThumbs(Graphics g, int[] directions, int x, int y, int w, int h) {
         int bx = x - XCreatorConstants.RESIZE_BOX_SIZ;
@@ -352,7 +352,7 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * »­Ã¿Ò»¸öĞ¡ÍÏ×§¿ò
+     * ç”»æ¯ä¸€ä¸ªå°æ‹–æ‹½æ¡†
      */
     private void drawBox(Graphics g, int x, int y) {
         g.setColor(XCreatorConstants.RESIZE_BOX_INNER_COLOR);
@@ -362,7 +362,7 @@ public class FormDesignerUI extends ComponentUI {
     }
 
     /**
-     * »­×ÔÊÊÓ¦²¼¾Ö
+     * ç”»è‡ªé€‚åº”å¸ƒå±€
      */
     private void repaintFit(Graphics g, Component component, Component parent) {
         try {
@@ -370,7 +370,7 @@ public class FormDesignerUI extends ComponentUI {
         } catch (Exception ex) {
         }
         ArrayList<JComponent> dbcomponents = new ArrayList<JComponent>();
-        // ½ûÖ¹Ë«»º³å
+        // ç¦æ­¢åŒç¼“å†²
         ComponentUtils.disableBuffer(component, dbcomponents);
         Graphics clipg;
         clipg = g.create(-designer.getArea().getHorizontalValue(), -designer.getArea().getVerticalValue() + designer.getParaHeight(), parent
@@ -380,13 +380,13 @@ public class FormDesignerUI extends ComponentUI {
         designer.paintContent(clipg);
         clipg.dispose();
 
-        // »Ö¸´Ë«»º³å
+        // æ¢å¤åŒç¼“å†²
         ComponentUtils.resetBuffer(dbcomponents);
         designer.resetEditorComponentBounds();
     }
     
     /**
-     * »­²ÎÊıÃæ°å
+     * ç”»å‚æ•°é¢æ¿
      */
     private void repaintPara(Graphics g, Component component, Component parent) {
         try {
@@ -394,7 +394,7 @@ public class FormDesignerUI extends ComponentUI {
         } catch (Exception ex) {
         }
         ArrayList<JComponent> dbcomponents = new ArrayList<JComponent>();
-        // ½ûÖ¹Ë«»º³å
+        // ç¦æ­¢åŒç¼“å†²
         ComponentUtils.disableBuffer(component, dbcomponents);
         Graphics clipg1;
         clipg1 = g.create(-designer.getArea().getHorizontalValue(), -designer.getArea().getVerticalValue() , parent
@@ -404,7 +404,7 @@ public class FormDesignerUI extends ComponentUI {
         designer.paintPara(clipg1);
         clipg1.dispose();
 
-        // »Ö¸´Ë«»º³å
+        // æ¢å¤åŒç¼“å†²
         ComponentUtils.resetBuffer(dbcomponents);
     }
     

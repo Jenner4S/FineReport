@@ -8,45 +8,45 @@ import java.util.Map;
  * @author richie
  * @date 2015-03-19
  * @since 8.0
- * ×Ô¶¨ÒåÔ¤ÀÀ·½Ê½½Ó¿Ú
+ * è‡ªå®šä¹‰é¢„è§ˆæ–¹å¼æ¥å£
  */
 public interface PreviewProvider {
 
     public static final String MARK_STRING = "PreviewProvider";
 
     /**
-     * ÏÂÀ­µ¯³ö²Ëµ¥µÄÃû×Ö
-     * @return µ¯³ö²Ëµ¥Ãû×Ö
+     * ä¸‹æ‹‰å¼¹å‡ºèœå•çš„åå­—
+     * @return å¼¹å‡ºèœå•åå­—
      */
     public String nameForPopupItem();
 
     /**
-     * ÏÂÀ­µ¯³ö²Ëµ¥µÄÍ¼±êÂ·¾¶
-     * @return Í¼±êÂ·¾¶
+     * ä¸‹æ‹‰å¼¹å‡ºèœå•çš„å›¾æ ‡è·¯å¾„
+     * @return å›¾æ ‡è·¯å¾„
      */
     public String iconPathForPopupItem();
 
     /**
-     * ´óÍ¼±êÂ·¾¶
-     * @return ´óÍ¼±êÂ·¾¶
+     * å¤§å›¾æ ‡è·¯å¾„
+     * @return å¤§å›¾æ ‡è·¯å¾„
      */
     public String iconPathForLarge();
 
     /**
-     * µã»÷ÏÂÀ­²Ëµ¥Ê±´¥·¢µÄÊÂ¼ş
-     * @param jt µ±Ç°µÄÄ£°å¶ÔÏó
+     * ç‚¹å‡»ä¸‹æ‹‰èœå•æ—¶è§¦å‘çš„äº‹ä»¶
+     * @param jt å½“å‰çš„æ¨¡æ¿å¯¹è±¡
      */
     public void onClick(JTemplate<?, ?> jt);
 
     /**
-     * ÓÃÓÚ±ê¼ÇÔ¤ÀÀÀàĞÍµÄÕûÊı
-     * @return Ô¤ÀÀÀàĞÍ
+     * ç”¨äºæ ‡è®°é¢„è§ˆç±»å‹çš„æ•´æ•°
+     * @return é¢„è§ˆç±»å‹
      */
     public int previewTypeCode();
 
     /**
-     * ¸ÃÖÖÔ¤ÀÀ·½Ê½ËùĞ¯´øµÄÄ¬ÈÏ²ÎÊı¼¯ºÏ
-     * @return ²ÎÊı¼¯ºÏ
+     * è¯¥ç§é¢„è§ˆæ–¹å¼æ‰€æºå¸¦çš„é»˜è®¤å‚æ•°é›†åˆ
+     * @return å‚æ•°é›†åˆ
      */
     public Map<String, Object> parametersForPreview();
 

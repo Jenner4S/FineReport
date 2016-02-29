@@ -19,12 +19,12 @@ import com.fr.design.dialog.BasicDialog;
  * user   : Richer
  * version: 6.5.5
  * Date   : 11-7-1
- * Time   : ÏÂÎç3:32
+ * Time   : ä¸‹åˆ3:32
  */
 public class LoadingPaneDemo extends JPanel {
     public LoadingPaneDemo() {
         setLayout(FRGUIPaneFactory.createCenterFlowLayout());
-        UIButton btn = new UIButton("µãÎÒ¿´Ğ§¹û");
+        UIButton btn = new UIButton("ç‚¹æˆ‘çœ‹æ•ˆæœ");
         add(btn);
         btn.addActionListener(new ActionListener() {
             @Override
@@ -43,7 +43,7 @@ public class LoadingPaneDemo extends JPanel {
                     
                     @Override
                     protected String title4PopupWindow() {
-                    	return "²âÊÔ";
+                    	return "æµ‹è¯•";
                     }
                 };
 

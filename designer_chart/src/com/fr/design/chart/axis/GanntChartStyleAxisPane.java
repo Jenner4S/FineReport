@@ -9,7 +9,7 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-6
- * Time   : …œŒÁ9:50
+ * Time   : ‰∏äÂçà9:50
  */
 public class GanntChartStyleAxisPane extends BinaryChartStyleAxisPane {
     public GanntChartStyleAxisPane(Plot plot) {

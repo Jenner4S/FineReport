@@ -23,8 +23,8 @@ import com.fr.design.style.color.ColorUIComboBoxPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-3 ÉÏÎç10:03:03
- * ÀàËµÃ÷: Í¨¹ıÑ¡ÔñboxÇĞ»»½çÃæµÄ±³¾°Ñ¡Ôñpane. bugÔ­ĞÍÍ¼@5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-3 ä¸Šåˆ10:03:03
+ * ç±»è¯´æ˜: é€šè¿‡é€‰æ‹©boxåˆ‡æ¢ç•Œé¢çš„èƒŒæ™¯é€‰æ‹©pane. bugåŸå‹å›¾@5471
  */
 public class BackgroundUIComboBoxPane extends BasicPane {
 	private static final long serialVersionUID = -3751191424737067321L;

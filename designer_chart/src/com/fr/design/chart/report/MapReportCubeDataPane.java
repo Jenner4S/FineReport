@@ -8,10 +8,10 @@ import com.fr.general.Inter;
 import java.awt.*;
 
 /**
- * ¶à²ã×êÈ¡  µ¥Ôª¸ñµÄÊı¾İÉèÖÃ½çÃæ
+ * å¤šå±‚é’»å–  å•å…ƒæ ¼çš„æ•°æ®è®¾ç½®ç•Œé¢
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-23 ÉÏÎç10:07:41
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-23 ä¸Šåˆ10:07:41
  */
 public class MapReportCubeDataPane extends FurtherBasicBeanPane<MapMoreLayerReportDefinition> {
 
@@ -25,31 +25,31 @@ public class MapReportCubeDataPane extends FurtherBasicBeanPane<MapMoreLayerRepo
 	}
 
 	/**
-	 * ÄÜ¹»Õ¹Ê¾½çÃæµÄÅĞ¶Ï.
-     * @param ob  ½çÃæÀàĞÍ
-     *            @return  ·µ»ØÊÇ·ñ·ûºÏ.
+	 * èƒ½å¤Ÿå±•ç¤ºç•Œé¢çš„åˆ¤æ–­.
+     * @param ob  ç•Œé¢ç±»å‹
+     *            @return  è¿”å›æ˜¯å¦ç¬¦åˆ.
 	 */
 	public boolean accept(Object ob) {
 		return ob instanceof MapMoreLayerReportDefinition;
 	}
 
 	/**
-	 * ½çÃæÖØÖÃ
+	 * ç•Œé¢é‡ç½®
 	 */
 	public void reset() {
 
 	}
 
 	/**
-	 * ½çÃæµ¯³ö±êÌâ
-     * @return  ·µ»Ø±êÌâ.
+	 * ç•Œé¢å¼¹å‡ºæ ‡é¢˜
+     * @return  è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Cell");
 	}
 
 	@Override
-	public void populateBean(MapMoreLayerReportDefinition ob) {// ¸ù¾İPopulate ¾ö¶¨²ã¼¶µÄ¸öÊı,  ±íÏÖÎªrowµÄ¸öÊı
+	public void populateBean(MapMoreLayerReportDefinition ob) {// æ ¹æ®Populate å†³å®šå±‚çº§çš„ä¸ªæ•°,  è¡¨ç°ä¸ºrowçš„ä¸ªæ•°
 
 		if (ob != null) {
 

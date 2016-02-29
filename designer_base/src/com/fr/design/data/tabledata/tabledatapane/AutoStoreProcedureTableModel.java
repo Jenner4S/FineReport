@@ -23,7 +23,7 @@ import java.util.*;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-24
- * Time: ÏÂÎç1:07
+ * Time: ä¸‹åˆ1:07
  * To change this template use File | Settings | File Templates.
  */
 public class AutoStoreProcedureTableModel extends StoreProcedureTableModel {

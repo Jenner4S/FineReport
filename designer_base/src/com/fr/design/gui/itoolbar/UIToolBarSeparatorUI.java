@@ -12,7 +12,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-14
- * Time: 下午5:25
+ * Time: 涓嬪崍5:25
  */
 public class UIToolBarSeparatorUI extends BasicToolBarSeparatorUI {
 
@@ -20,10 +20,10 @@ public class UIToolBarSeparatorUI extends BasicToolBarSeparatorUI {
     private int defaultSize = YQ_SIZE;
 
     /**
-     * 创建组件UI
+     * 鍒涘缓缁勪欢UI
      *
-     * @param c 组件
-     * @return 组件UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIToolBarSeparatorUI();

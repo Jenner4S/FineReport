@@ -28,7 +28,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * ×éºÏÍ¼¶Ôµ¥¶ÀÄ³¸öÏµÁĞÉèÖÃµÄ½çÃæ
+ * ç»„åˆå›¾å¯¹å•ç‹¬æŸä¸ªç³»åˆ—è®¾ç½®çš„ç•Œé¢
  * Created by eason on 15/2/10.
  */
 public class CustomTypeConditionSeriesPane extends BasicBeanPane<CustomAttr>{

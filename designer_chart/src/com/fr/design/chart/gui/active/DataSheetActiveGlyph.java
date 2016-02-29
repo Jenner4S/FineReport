@@ -10,7 +10,7 @@ import com.fr.design.chart.gui.active.action.SetDataSheetAction;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ3:57
+ * Time   : ‰∏ãÂçà3:57
  */
 public class DataSheetActiveGlyph extends ActiveGlyph {
     private DataSheetGlyph dataSheetGlyph;

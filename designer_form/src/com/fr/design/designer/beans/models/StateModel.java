@@ -26,16 +26,16 @@ import com.fr.design.designer.creator.XWAbsoluteLayout;
 import com.fr.design.utils.ComponentUtils;
 
 /**
- * ÆÕÍ¨Ä£Ê½ÏÂµÄ×´Ì¬model
+ * æ™®é€šæ¨¡å¼ä¸‹çš„çŠ¶æ€model
  */
 public class StateModel {
-	// ¶ÔÓ¦µÄselection model
+	// å¯¹åº”çš„selection model
 
 	private SelectionModel selectionModel;
-	// µ±Ç°Êó±ê½øÈëÍÏ×§ÇøÓòµÄÎ»ÖÃÀàĞÍ
+	// å½“å‰é¼ æ ‡è¿›å…¥æ‹–æ‹½åŒºåŸŸçš„ä½ç½®ç±»å‹
 	private Direction driection;
 
-	// µ±Ç°ÍÏ×§µÄÆğÊ¼Î»ÖÃ
+	// å½“å‰æ‹–æ‹½çš„èµ·å§‹ä½ç½®
 	private int current_x;
 	private int current_y;
 
@@ -45,7 +45,7 @@ public class StateModel {
 	private Absorptionline lineInX;
 	private Absorptionline lineInY;
 
-	// µ±Ç°ÊÇ·ñ´¦ÓÚÍÏ×§Ñ¡Ôñ×´Ì¬
+	// å½“å‰æ˜¯å¦å¤„äºæ‹–æ‹½é€‰æ‹©çŠ¶æ€
 	private boolean selecting;
 	private boolean dragging;
 	
@@ -59,34 +59,34 @@ public class StateModel {
 	}
 
 	/**
-	 * ·µ»Ødirection
-	 * @return direction·½Ïò
+	 * è¿”å›direction
+	 * @return directionæ–¹å‘
 	 */
 	public Direction getDirection() {
 		return driection;
 	}
 
 	/**
-	 * ÊÇ·ñÓĞ×é¼şÕı±»Ñ¡ÖĞ
+	 * æ˜¯å¦æœ‰ç»„ä»¶æ­£è¢«é€‰ä¸­
 	 * 
-	 * @return true Èç¹ûÖÁÉÙÒ»¸ö×é¼ş±»Ñ¡ÖĞ
+	 * @return true å¦‚æœè‡³å°‘ä¸€ä¸ªç»„ä»¶è¢«é€‰ä¸­
 	 */
 	public boolean isSelecting() {
 		return selecting;
 	}
 
     /**
-     *ÊÇ·ñÄÜÍÏ×§
-     * @return ·ÇouterÇÒÑ¡ÖĞÎª¿Õ
+     *æ˜¯å¦èƒ½æ‹–æ‹½
+     * @return éouterä¸”é€‰ä¸­ä¸ºç©º
      */
 	public boolean dragable() {
 		return ((driection != Location.outer) && !selecting);
 	}
 
 	/**
-	 * ÍÏ×§ÖĞÊÇ·ñ¿ÉÒÔ×ª»»ÎªÌí¼ÓÄ£Ê½£º
-	 * Èç¹ûÍÏ×§×é¼şÖ»ÓĞÒ»¸ö£¬Êó±êµ±Ç°ËùÔÚÎ»ÖÃµÄ×îµ×²ã±íµ¥ÈİÆ÷ÓëÕâ¸ö×é¼şµÄÈİÆ÷²»Í¬£»
-	 * Èç¹ûÍÏ×§×é¼şÎª¶à¸ö£¬Êó±êµ±Ç°ËùÔÚÎ»ÖÃµÄ×îµ×²ã±íµ¥ÈİÆ÷³ıÁËÒªÇóÒª¸úÕâĞ©×é¼şµÄÈİÆ÷²»Í¬Íâ£¬»¹±ØĞëÊÇ¾ø¶Ô¶¨Î»²¼¾Ö
+	 * æ‹–æ‹½ä¸­æ˜¯å¦å¯ä»¥è½¬æ¢ä¸ºæ·»åŠ æ¨¡å¼ï¼š
+	 * å¦‚æœæ‹–æ‹½ç»„ä»¶åªæœ‰ä¸€ä¸ªï¼Œé¼ æ ‡å½“å‰æ‰€åœ¨ä½ç½®çš„æœ€åº•å±‚è¡¨å•å®¹å™¨ä¸è¿™ä¸ªç»„ä»¶çš„å®¹å™¨ä¸åŒï¼›
+	 * å¦‚æœæ‹–æ‹½ç»„ä»¶ä¸ºå¤šä¸ªï¼Œé¼ æ ‡å½“å‰æ‰€åœ¨ä½ç½®çš„æœ€åº•å±‚è¡¨å•å®¹å™¨é™¤äº†è¦æ±‚è¦è·Ÿè¿™äº›ç»„ä»¶çš„å®¹å™¨ä¸åŒå¤–ï¼Œè¿˜å¿…é¡»æ˜¯ç»å¯¹å®šä½å¸ƒå±€
     */
 	private void checkAddable(MouseEvent e) {
 		addable = false;
@@ -130,16 +130,16 @@ public class StateModel {
 	}
 	
 	private void adding(int x, int y) {
-        // µ±Ç°Êó±êËùÔÚµÄ×é¼ş
+        // å½“å‰é¼ æ ‡æ‰€åœ¨çš„ç»„ä»¶
 		XCreator hoveredComponent = designer.getComponentAt(x, y, selectionModel.getSelection().getSelectedCreators());
 
-        // »ñÈ¡¸Ã×é¼şËùÔÚµÄ½¹µãÈİÆ÷
+        // è·å–è¯¥ç»„ä»¶æ‰€åœ¨çš„ç„¦ç‚¹å®¹å™¨
         XLayoutContainer container = XCreatorUtils.getHotspotContainer(hoveredComponent);
 
         boolean success = false;
 
 		if (container != null) {
-			// Èç¹ûÊÇÈİÆ÷£¬Ôòµ÷ÓÃÆäacceptComponent½ÓÊÜ×é¼ş
+			// å¦‚æœæ˜¯å®¹å™¨ï¼Œåˆ™è°ƒç”¨å…¶acceptComponentæ¥å—ç»„ä»¶
 			success = addBean(container, x, y);
 		}
 
@@ -151,53 +151,53 @@ public class StateModel {
 			Toolkit.getDefaultToolkit().beep();
 		}
 
-        // È¡ÏûÌáÊ¾
+        // å–æ¶ˆæç¤º
         designer.setPainter(null);
     }
 
     /**
-     *ÊÇ·ñÍÏ×§
-     * @return dragging×´Ì¬
+     *æ˜¯å¦æ‹–æ‹½
+     * @return draggingçŠ¶æ€
      */
 	public boolean isDragging() {
 		return dragging;
 	}
 
     /**
-     *ÊÇ·ñ¿ÉÒÔ¿ªÊ¼»­Ïß
-     * @return startPoint²»Îª¿Õ·µ»Øtrue
+     *æ˜¯å¦å¯ä»¥å¼€å§‹ç”»çº¿
+     * @return startPointä¸ä¸ºç©ºè¿”å›true
      */
 	public boolean prepareForDrawLining() {
 		return startPoint != null;
 	}
 
     /**
-     *ÉèÖÃ¿ªÊ¼Î»ÖÃ
-     * @param p pointÎ»ÖÃ
+     *è®¾ç½®å¼€å§‹ä½ç½®
+     * @param p pointä½ç½®
      */
 	public void setStartPoint(Point p) {
 		this.startPoint = p;
 	}
 
     /**
-     *·µ»Ø¿ªÊ¼Î»ÖÃ
-     * @return µãÎ»ÖÃ
+     *è¿”å›å¼€å§‹ä½ç½®
+     * @return ç‚¹ä½ç½®
      */
 	public Point getStartPoint() {
 		return startPoint;
 	}
 
     /**
-     *·µ»Øµ±Ç°µãÎ»ÖÃ
-     * @return µãÎ»ÖÃ
+     *è¿”å›å½“å‰ç‚¹ä½ç½®
+     * @return ç‚¹ä½ç½®
      */
     public Point getEndPoint() {
 		return currentPoint;
 	}
 
     /**
-     *µ±Ç°Ñ¡ÖĞ×é¼ş
-     * @param e Êó±êÊÂ¼ş
+     *å½“å‰é€‰ä¸­ç»„ä»¶
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void startSelecting(MouseEvent e) {
 		selecting = true;
@@ -207,8 +207,8 @@ public class StateModel {
 	}
 
     /**
-     *µ±Ç°Êó±êµÄxy
-     * @param e Êó±êÊÂ¼ş
+     *å½“å‰é¼ æ ‡çš„xy
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void startResizing(MouseEvent e) {
 		if (!selectionModel.getSelection().isEmpty()) {
@@ -219,8 +219,8 @@ public class StateModel {
 	}
 
     /**
-     *ÆğÊ¼µã¿ªÊ¼DrawLine
-     * @param p µãÎ»ÖÃ
+     *èµ·å§‹ç‚¹å¼€å§‹DrawLine
+     * @param p ç‚¹ä½ç½®
      */
 	public void startDrawLine(Point p) {
 		this.startPoint = p;
@@ -235,8 +235,8 @@ public class StateModel {
 	}
 
     /**
-     *Êó±êÊÍ·ÅÊ±ËùÔÚµÄÇøÓò¼°È¦ÖĞµÄ×é¼ş
-     * @param e Êó±êÊÂ¼ş
+     *é¼ æ ‡é‡Šæ”¾æ—¶æ‰€åœ¨çš„åŒºåŸŸåŠåœˆä¸­çš„ç»„ä»¶
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void selectCreators(MouseEvent e) {
 		int x = getMouseXY(e).x;
@@ -251,8 +251,8 @@ public class StateModel {
 	}
 
     /**
-     *»­ËùÔÚÇøÓòÏß
-     * @param e Êó±êÊÂ¼ş
+     *ç”»æ‰€åœ¨åŒºåŸŸçº¿
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void drawLine(MouseEvent e) {
 		designer.getDrawLineHelper().setDrawLine(true);
@@ -306,7 +306,7 @@ public class StateModel {
 
 
     /**
-     *ÖØÖÃmodel
+     *é‡ç½®model
      */
 	public void resetModel() {
 		dragging = false;
@@ -314,7 +314,7 @@ public class StateModel {
 	}
 
     /**
-     *ÖØÖÃ
+     *é‡ç½®
      */
 	public void reset() {
 		driection = Location.outer;
@@ -323,7 +323,7 @@ public class StateModel {
 	}
 
     /**
-     *È¡ÏûÍÏ×§
+     *å–æ¶ˆæ‹–æ‹½
      */
 	public void draggingCancel() {
 		designer.repaint();
@@ -331,8 +331,8 @@ public class StateModel {
 	}
 
     /**
-     *ÉèÖÃ¿ÉÀ­Éì·½Ïò
-     * @param dir À­Éì·½Ïò
+     *è®¾ç½®å¯æ‹‰ä¼¸æ–¹å‘
+     * @param dir æ‹‰ä¼¸æ–¹å‘
      */
 	public void setDirection(Direction dir) {
 		if(driection != dir) {
@@ -342,24 +342,24 @@ public class StateModel {
 	}
 
     /**
-     *xÎü¸½Ïß¸³Öµ
-     * @param line Ïß
+     *xå¸é™„çº¿èµ‹å€¼
+     * @param line çº¿
      */
 	public void setXAbsorptionline(Absorptionline line) {
 		this.lineInX = line;
 	}
 
     /**
-     *yÎü¸½Ïß¸³Öµ
-     * @param line Ïß
+     *yå¸é™„çº¿èµ‹å€¼
+     * @param line çº¿
      */
 	public void setYAbsorptionline(Absorptionline line) {
 		this.lineInY = line;
 	}
 
     /**
-     *»­Îü¸½Ïß
-     * @param g GraphicsÀà
+     *ç”»å¸é™„çº¿
+     * @param g Graphicsç±»
      */
 	public void paintAbsorptionline(Graphics g) {
 		if(lineInX != null) {
@@ -371,8 +371,8 @@ public class StateModel {
 	}
 
     /**
-     *ÍÏ×§
-     * @param e Êó±êÊÂ¼ş
+     *æ‹–æ‹½
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void dragging(MouseEvent e) {
 		checkAddable(e);
@@ -381,7 +381,7 @@ public class StateModel {
 		this.dragging = true;
 	}
 	
-	// ÍÏ×§Ê±»­ÒÀ¸½ÏßÓÃµ½µÄpainter
+	// æ‹–æ‹½æ—¶ç”»ä¾é™„çº¿ç”¨åˆ°çš„painter
 	private void setDependLinePainter(MouseEvent e){
 		XCreator comp = designer.getComponentAt(e.getX(), e.getY(), selectionModel.getSelection().getSelectedCreators());
 		XLayoutContainer container = XCreatorUtils.getHotspotContainer(comp);
@@ -395,8 +395,8 @@ public class StateModel {
 	}
 
     /**
-     *ÊÍ·Å²¶»ñ
-     * @param e Êó±êÊÂ¼ş
+     *é‡Šæ”¾æ•è·
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void releaseDragging(MouseEvent e) {
 		this.dragging = false;
@@ -409,9 +409,9 @@ public class StateModel {
 	}
 
     /**
-     *¸Ä±äÑ¡ÔñÇøÓò
+     *æ”¹å˜é€‰æ‹©åŒºåŸŸ
      *
-     * @param e  Êó±êÊÂ¼ş
+     * @param e  é¼ æ ‡äº‹ä»¶
      */
 	public void changeSelection(MouseEvent e) {
 		Rectangle bounds = createCurrentBounds(getMouseXY(e).x, getMouseXY(e).y);
@@ -419,10 +419,10 @@ public class StateModel {
 	}
 
     /**
-     *·µ»ØÊó±êËùÔÚµÄx¡¢y  ¿¼ÂÇ¹ö¶¯ÌõµÄÖµ
+     *è¿”å›é¼ æ ‡æ‰€åœ¨çš„xã€y  è€ƒè™‘æ»šåŠ¨æ¡çš„å€¼
      *
-     * @param e Êó±êÊÂ¼ş
-     * @return xyÖµ
+     * @param e é¼ æ ‡äº‹ä»¶
+     * @return xyå€¼
      */
 	public Point getMouseXY(MouseEvent e) {
 		Point p1 = new Point(e.getX() + designer.getArea().getHorizontalValue(), e.getY()

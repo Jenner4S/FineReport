@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ×î½üÊ¹ÓÃÑÕÉ«
+ * æœ€è¿‘ä½¿ç”¨é¢œè‰²
  * @author focus
  *
  */
 public class ColorSelectConfigManager{
 	
-	// ×î½üÊ¹ÓÃµÄÑÕÉ«¸öÊı
+	// æœ€è¿‘ä½¿ç”¨çš„é¢œè‰²ä¸ªæ•°
 	private int colorNums = 20;
-	// ×î½üÊ¹ÓÃÑÕÉ«
+	// æœ€è¿‘ä½¿ç”¨é¢œè‰²
 	private List<Color> colors;
 	
 	private static ColorSelectConfigManager colorSelectConfigManager = null;
@@ -40,14 +40,14 @@ public class ColorSelectConfigManager{
 	}
 
 	/**
-	 * Ìí¼ÓÑÕÉ«µ½×î½üÊ¹ÓÃ¶ÓÁĞÖĞ
+	 * æ·»åŠ é¢œè‰²åˆ°æœ€è¿‘ä½¿ç”¨é˜Ÿåˆ—ä¸­
 	 * 
-	 * @param color ÑÕÉ«
+	 * @param color é¢œè‰²
 	 * 
 	 */
 	public void addToColorQueue(Color color){
-		// ¹ıÂËÖØ¸´µÄ×î½üÊ¹ÓÃÑÕÉ«
-		// ÒòÎªÓĞ¸öºó½øÏÈ³öµÄÎÊÌâ£¬×î½üÊ¹ÓÃµÄÑÕÉ«ĞèÒª·Åµ½×îÇ°ÃæËùÒÔÃ»ÓÃset
+		// è¿‡æ»¤é‡å¤çš„æœ€è¿‘ä½¿ç”¨é¢œè‰²
+		// å› ä¸ºæœ‰ä¸ªåè¿›å…ˆå‡ºçš„é—®é¢˜ï¼Œæœ€è¿‘ä½¿ç”¨çš„é¢œè‰²éœ€è¦æ”¾åˆ°æœ€å‰é¢æ‰€ä»¥æ²¡ç”¨set
 		if(colors.contains(color)){
 			colors.remove(color);
 		}

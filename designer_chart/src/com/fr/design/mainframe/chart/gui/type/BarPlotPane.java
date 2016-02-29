@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÌõĞÎÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * æ¡å½¢å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç06:55:58
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ06:55:58
  */
 public class BarPlotPane extends AbstractBarPane{
 	private static final long serialVersionUID = 503770883396447032L;
@@ -64,8 +64,8 @@ public class BarPlotPane extends AbstractBarPane{
 	}
 	
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Bar");
@@ -107,21 +107,21 @@ public class BarPlotPane extends AbstractBarPane{
     }
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         chart.switchPlot(getSelectedClonedPlot());
 		super.updateBean(chart);
 
-        // check ÊÇ·ñÀàĞÍ·¢Éú±ä»¯,  Èç¹û²»ÊÇ, ¸Ä±ä·ç¸ñµÄ»°, ¾ÍÖ±½ÓÓÃÔ­plot½øĞĞ¸Ä±ä.
+        // check æ˜¯å¦ç±»å‹å‘ç”Ÿå˜åŒ–,  å¦‚æœä¸æ˜¯, æ”¹å˜é£æ ¼çš„è¯, å°±ç›´æ¥ç”¨åŸplotè¿›è¡Œæ”¹å˜.
 
-        // ÁíÍâ Ä¿Ç°·ç¸ñ populate ²»ÊÇ°´ÕÕÃû³ÆÀ´µÄ.  TODO
+        // å¦å¤– ç›®å‰é£æ ¼ populate ä¸æ˜¯æŒ‰ç…§åç§°æ¥çš„.  TODO
 	}
 
 	/**
-	 * ÅĞ¶Ï½çÃæ½øÈë
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñ½ÓÊÜ
+	 * åˆ¤æ–­ç•Œé¢è¿›å…¥
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ¥å—
 	 */
 	public boolean accept(Object ob) {
 		if(!(ob instanceof Chart)) {

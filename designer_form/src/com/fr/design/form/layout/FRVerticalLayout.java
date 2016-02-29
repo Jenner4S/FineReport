@@ -10,7 +10,7 @@ import java.awt.Insets;
 
 /**
  * @author richer
- * @since 6.5.3 ´¹Ö±²¼¾Ö ËùÓÐ²¼¾ÖÄÚµÄ¿Ø¼þµÄ¿í¶È½«ºÍÈÝÆ÷µÄ¿í¶ÈÒ»Ñù
+ * @since 6.5.3 åž‚ç›´å¸ƒå±€ æ‰€æœ‰å¸ƒå±€å†…çš„æŽ§ä»¶çš„å®½åº¦å°†å’Œå®¹å™¨çš„å®½åº¦ä¸€æ ·
  */
 public class FRVerticalLayout extends FRFlowLayout {
 

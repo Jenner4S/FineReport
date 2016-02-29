@@ -7,7 +7,7 @@ import com.fr.design.mainframe.chart.gui.style.AbstractChartTabPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÏÂÎç05:02:23
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸‹åˆ05:02:23
  */
 public abstract class ChartAxisUsePane<T> extends AbstractChartTabPane<T>{
 	

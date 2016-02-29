@@ -1,15 +1,15 @@
 package com.fr.design.mainframe;
 
 public abstract class BaseUndoState<T> {
-    //ÕâÈı¸öÊÇÕë¶ÔÕı³£±¨±í±à¼­×´Ì¬ÏÂµÄundostateµÄÊôĞÔ£¬
+    //è¿™ä¸‰ä¸ªæ˜¯é’ˆå¯¹æ­£å¸¸æŠ¥è¡¨ç¼–è¾‘çŠ¶æ€ä¸‹çš„undostateçš„å±æ€§ï¼Œ
     public static final int NORMAL_STATE = 0;
-    //È«Ïß±à¼­µÄstate
+    //å…¨çº¿ç¼–è¾‘çš„state
     public static final int AUTHORITY_STATE = 1;
-    //È¨ÏŞ±à¼­×´Ì¬Ç°µÄÒ»¸östate
+    //æƒé™ç¼–è¾‘çŠ¶æ€å‰çš„ä¸€ä¸ªstate
     public static final int STATE_BEFORE_AUTHORITY = 2;
-    //±¨±í¿é±à¼­µÄstate
+    //æŠ¥è¡¨å—ç¼–è¾‘çš„state
     public static final int STATE_FORM_REPORT = 3;
-    //±¨±í¿é±à¼­×´Ì¬Ç°µÄÒ»¸östate
+    //æŠ¥è¡¨å—ç¼–è¾‘çŠ¶æ€å‰çš„ä¸€ä¸ªstate
     public static final int STATE_BEFORE_FORM_REPORT = 4;
     private T applyTarget;
     private int isAuthorityType = NORMAL_STATE;
@@ -39,7 +39,7 @@ public abstract class BaseUndoState<T> {
         return isFormReportType;
     }
     /**
-     * Ó¦ÓÃ×´Ì¬
+     * åº”ç”¨çŠ¶æ€
      */
     public abstract void applyState();
 }

@@ -26,7 +26,7 @@ import java.awt.event.MouseEvent;
 /**
  * 
  * @author zhou
- * @since 2012-7-23ÏÂÎç5:16:53
+ * @since 2012-7-23ä¸‹åˆ5:16:53
  */
 public abstract class CellQuickEditor extends QuickEditor<ElementCasePane> {
 
@@ -69,21 +69,21 @@ public abstract class CellQuickEditor extends QuickEditor<ElementCasePane> {
 
 	protected UITextField initColumnRowTextField() {
 		final UITextField columnRowTextField = new UITextField(4);
-		// barry:ÊäÈëÎ»ÖÃ¶¨Î»µ¥Ôª¸ñ
+		// barry:è¾“å…¥ä½ç½®å®šä½å•å…ƒæ ¼
 		columnRowTextField.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ColumnRow columnRowEdit = ColumnRow.valueOf(columnRowTextField.getText());
 
-				// barry:¼ì²éÊäÈëÊÇ·ñÕıÈ·
+				// barry:æ£€æŸ¥è¾“å…¥æ˜¯å¦æ­£ç¡®
 				if (!ColumnRow.validate(columnRowEdit)) {
 
 					Object[] options = { Inter.getLocText("OK") };
 					JOptionPane.showOptionDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("Please_Input_Letters+Numbers(A1,AA1,A11....)"), Inter.getLocText("Warning"),
 							JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
 
-					// ÖØĞÂÑ¡ÖĞµ±Ç°µÄselection,°ÑcolumnRowTextField
+					// é‡æ–°é€‰ä¸­å½“å‰çš„selection,æŠŠcolumnRowTextField
 					tc.setSelection(tc.getSelection());
 					return;
 				}

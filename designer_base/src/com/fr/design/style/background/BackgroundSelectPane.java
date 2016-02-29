@@ -17,8 +17,8 @@ import com.fr.design.style.background.BackgroundPane.BackgroundSettingPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-1 ÏÂÎç02:56:15
- * ÀàËµÃ÷:  ±³¾°µ¯³öÉèÖÃ½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-1 ä¸‹åˆ02:56:15
+ * ç±»è¯´æ˜:  èƒŒæ™¯å¼¹å‡ºè®¾ç½®ç•Œé¢
  */
 public abstract class BackgroundSelectPane extends BasicPane {
 	private static final long serialVersionUID = 1984800362352721869L;

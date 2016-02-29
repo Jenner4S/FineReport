@@ -18,16 +18,16 @@ public abstract class AbstractChartAttrPane extends AbstractAttrNoScrollPane {
 	}
 	
 	/**
-	 * ×¢²áÍ¼±íÇĞ»»°´Å¥ ¸Ä±äµÄ ÊÂ¼ş. 
-	 * @param isFromChartHyper ±à¼­Ãæ°å
+	 * æ³¨å†Œå›¾è¡¨åˆ‡æ¢æŒ‰é’® æ”¹å˜çš„ äº‹ä»¶. 
+	 * @param isFromChartHyper ç¼–è¾‘é¢æ¿
 	 */
 	public void registerChartEditPane(ChartEditPane isFromChartHyper) {
 		
 	}
 
 	/**
-	 * Ë¢ĞÂÍ¼±íÊı¾İ½çÃæ
-	 * @param collection Í¼±íÊÕ¼¯Æ÷
+	 * åˆ·æ–°å›¾è¡¨æ•°æ®ç•Œé¢
+	 * @param collection å›¾è¡¨æ”¶é›†å™¨
 	 */
 	public void refreshChartDataPane(ChartCollection collection){
 

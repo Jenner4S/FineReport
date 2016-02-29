@@ -16,7 +16,7 @@ import com.fr.design.designer.creator.XWAbsoluteLayout;
 import com.fr.form.ui.container.WAbsoluteLayout;
 
 /**
- * ¾ø¶Ô²¼¾ÖÊ±ºòµÄÊôĞÔ×é
+ * ç»å¯¹å¸ƒå±€æ—¶å€™çš„å±æ€§ç»„
  */
 public class BoundsGroupModel implements ConstraintsGroupModel {
     private static final int MINHEIGHT = 21;
@@ -127,13 +127,13 @@ public class BoundsGroupModel implements ConstraintsGroupModel {
     }
 
     /**
-     * ÊôĞÔ×éÊÇ·ñ¿É±à¼­
-     * @param row µÚ¼¸ĞĞ
-     * @return ×é¼ş¿É±à¼­
+     * å±æ€§ç»„æ˜¯å¦å¯ç¼–è¾‘
+     * @param row ç¬¬å‡ è¡Œ
+     * @return ç»„ä»¶å¯ç¼–è¾‘
      */
 	@Override
 	public boolean isEditable(int row) {
-        //ÕâÀï²»ĞèÒªÎª×Ô¶¨Òå°´Å¥ÆÁ±Î´óĞ¡ÊôĞÔ
+        //è¿™é‡Œä¸éœ€è¦ä¸ºè‡ªå®šä¹‰æŒ‰é’®å±è”½å¤§å°å±æ€§
 		return true;
 	}
 }

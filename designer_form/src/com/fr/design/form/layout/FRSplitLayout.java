@@ -8,7 +8,7 @@ import java.awt.LayoutManager2;
 public abstract class FRSplitLayout implements FRLayoutManager, LayoutManager2, java.io.Serializable {
 	public static final String CENTER = "center";
 	public static final String ASIDE = "aside";
-	// ·Ö¸î±ÈÂÊ
+	// åˆ†å‰²æ¯”çŽ‡
 	protected double ratio;
 	protected int hgap;
 	protected int vgap;

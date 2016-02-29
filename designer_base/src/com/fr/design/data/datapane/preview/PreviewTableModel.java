@@ -15,7 +15,7 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.DesignUtils;
 
 /**
- * Õâ¸öTableModelÖ÷ÒªÊÇÔ¤ÀÀÊı¾İµÄ. ×Ö¶ÎTableData±ØĞë×ª»¯ÎªÄÚÖÃµÄ
+ * è¿™ä¸ªTableModelä¸»è¦æ˜¯é¢„è§ˆæ•°æ®çš„. å­—æ®µTableDataå¿…é¡»è½¬åŒ–ä¸ºå†…ç½®çš„
  */
 public class PreviewTableModel extends AbstractTableModel {
     private DataModel dataModel;
@@ -24,7 +24,7 @@ public class PreviewTableModel extends AbstractTableModel {
     public IntList dateIndexs = new IntList(4);
 
     public PreviewTableModel(int maxRowCount) {
-        // peter:Ä¬ÈÏ±ØĞëÏÔÊ¾´íÎóµÄÊı¾İÔ´.
+        // peter:é»˜è®¤å¿…é¡»æ˜¾ç¤ºé”™è¯¯çš„æ•°æ®æº.
         this(new ErrorResultSet(), maxRowCount);
     }
 
@@ -137,8 +137,8 @@ public class PreviewTableModel extends AbstractTableModel {
     }
 
     /*
-     * peter:ÓÉÓÚÈç¹ûÔ¤ÀÀµÄTableData·¢Éú´íÎó,½çÃæÓĞµãÏóËÀ»úÁËÒ»Ñù,ÔÎ°¡.
-     * ¾ÍÊÇÓÉÓÚÔ¤ÀÀµÄJTableÔÚ²»Í£µÄgetRowCountÀ´ÏÔÊ¾Êı¾İ.
+     * peter:ç”±äºå¦‚æœé¢„è§ˆçš„TableDataå‘ç”Ÿé”™è¯¯,ç•Œé¢æœ‰ç‚¹è±¡æ­»æœºäº†ä¸€æ ·,æ™•å•Š.
+     * å°±æ˜¯ç”±äºé¢„è§ˆçš„JTableåœ¨ä¸åœçš„getRowCountæ¥æ˜¾ç¤ºæ•°æ®.
      */
     private static class ErrorResultSet extends AbstractDataModel {
         public ErrorResultSet() {

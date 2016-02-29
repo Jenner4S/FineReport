@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 
 import com.fr.form.ui.Widget;
 
-//避免意外的发生导致整个模板打不开，尤其是不同版本之间
+//閬垮厤鎰忓鐨勫彂鐢熷鑷存暣涓ā鏉挎墦涓嶅紑锛屽挨鍏舵槸涓嶅悓鐗堟湰涔嬮棿
 public class NullCreator extends XWidgetCreator {
 
 	public NullCreator(Widget widget, Dimension initSize) {

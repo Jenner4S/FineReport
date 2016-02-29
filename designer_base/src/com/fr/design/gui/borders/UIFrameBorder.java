@@ -19,7 +19,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÏÂÎç3:08
+ * Time: ä¸‹åˆ3:08
  */
 public class UIFrameBorder extends AbstractBorder implements UIResource {
 

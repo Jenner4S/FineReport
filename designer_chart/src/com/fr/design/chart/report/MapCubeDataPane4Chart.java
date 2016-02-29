@@ -39,7 +39,7 @@ public class MapCubeDataPane4Chart extends UIComboBoxPane<TopDefinitionProvider>
    	}
 
    	/**
-   	 * ¶ÔÊı¾İ¼¯»òÕßµ¥Ôª¸ñÊı¾İ¼ÓÔØ½çÃæ
+   	 * å¯¹æ•°æ®é›†æˆ–è€…å•å…ƒæ ¼æ•°æ®åŠ è½½ç•Œé¢
    	 */
    	public void populateBean(TopDefinitionProvider definition) {
        if(definition instanceof MapMoreLayerTableDefinition) {
@@ -50,15 +50,15 @@ public class MapCubeDataPane4Chart extends UIComboBoxPane<TopDefinitionProvider>
    	}
 
    	/**
-   	 * ¸ù¾İ½çÃæ ÏÂÔØ±£´æÊı¾İ
+   	 * æ ¹æ®ç•Œé¢ ä¸‹è½½ä¿å­˜æ•°æ®
    	 */
    	public TopDefinitionProvider update() {
         return tablePane.updateBean();
    	}
 
 	/**
-     * ³ö·¢Êı¾İ¼¯¸Ä±ä
-     * @param tableDataWrapper Êı¾İ¼¯
+     * å‡ºå‘æ•°æ®é›†æ”¹å˜
+     * @param tableDataWrapper æ•°æ®é›†
      */
 	public void fireTableDataChanged(TableDataWrapper tableDataWrapper) {
 		tablePane.setTableDataWrapper(tableDataWrapper);

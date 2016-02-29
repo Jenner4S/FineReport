@@ -36,7 +36,7 @@ public class LabelContentsPane extends ConditionAttrSingleConditionPane<DataSeri
         if (isRemove) {
             this.removeAll();
             this.setLayout(FRGUIPaneFactory.createBorderLayout());
-            // 重新布局
+            // 閲嶆柊甯冨眬
             JPanel northPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
             northPane.setPreferredSize(new Dimension(300, 30));
             this.add(northPane, BorderLayout.NORTH);
@@ -65,7 +65,7 @@ public class LabelContentsPane extends ConditionAttrSingleConditionPane<DataSeri
     }
 
     /**
-     * 检查是否使用牵引线box.
+     * 妫�鏌ユ槸鍚︿娇鐢ㄧ壍寮曠嚎box.
      */
     public void checkGuidBox() {
         if (this.dataLabelContentsPane != null) {

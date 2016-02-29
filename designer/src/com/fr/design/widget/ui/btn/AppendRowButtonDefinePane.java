@@ -12,7 +12,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç8:02
+ * Time   : ä¸‹åˆ8:02
  */
 public class AppendRowButtonDefinePane<T extends AppendRowButton> extends ButtonWithHotkeysDetailPane<AppendRowButton> {
     private DefineAppendColumnRowPane defineColumnRowPane;

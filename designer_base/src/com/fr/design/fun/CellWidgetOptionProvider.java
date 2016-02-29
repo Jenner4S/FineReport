@@ -7,15 +7,15 @@ import com.fr.form.ui.Widget;
  * @author richie
  * @date 2015-01-29
  * @since 8.0
- * ¸ñ×ÓÖĞµÄ×Ô¶¨Òå¿Ø¼ş½Ó¿Ú
+ * æ ¼å­ä¸­çš„è‡ªå®šä¹‰æ§ä»¶æ¥å£
  */
 public interface CellWidgetOptionProvider extends ParameterWidgetOptionProvider {
 
     public static final String XML_TAG = "CellWidgetOptionProvider";
 
     /**
-     * ×Ô¶¨Òå¸ñ×Ó¿Ø¼şµÄÉè¼Æ½çÃæÀà
-     * @return ¿Ø¼şÉè¼Æ½çÃæÀà
+     * è‡ªå®šä¹‰æ ¼å­æ§ä»¶çš„è®¾è®¡ç•Œé¢ç±»
+     * @return æ§ä»¶è®¾è®¡ç•Œé¢ç±»
      */
     public Class<? extends BasicBeanPane<? extends Widget>> appearanceForWidget();
 

@@ -27,9 +27,9 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 
 
     /**
-     * Ìí¼ÓÊó±ê¼àÌı
+     * æ·»åŠ é¼ æ ‡ç›‘å¬
      *
-     * @param mouselistener Êó±ê¼àÌı
+     * @param mouselistener é¼ æ ‡ç›‘å¬
      */
 	public void addAuthorityListener(MouseListener mouselistener) {
 		List<ToolBarButton> list = ftoolbar.getButtonlist();
@@ -45,7 +45,7 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 	}
 
     /**
-     * ³õÊ¼»¯×é¼ş
+     * åˆå§‹åŒ–ç»„ä»¶
      */
 	public void initComponent() {
 		this.addMouseListener(listener);
@@ -55,7 +55,7 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 	}
 
     /**
-     * É¾³ıÊó±êÊÂ¼ş
+     * åˆ é™¤é¼ æ ‡äº‹ä»¶
      */
 	public void removeDefaultMouseListener() {
 		this.removeMouseListener(listener);
@@ -71,11 +71,11 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 	}
 
     /**
-     * Ìí¼Ó×é¼ş
+     * æ·»åŠ ç»„ä»¶
      *
-     * @param comp ×é¼ş
+     * @param comp ç»„ä»¶
      *
-     * @return ±»Ìí¼ÓµÄ×é¼ş
+     * @return è¢«æ·»åŠ çš„ç»„ä»¶
      */
 	public Component add(Component comp) {
 		if (comp instanceof ToolBarButton) {
@@ -134,7 +134,7 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 			Widget widget = toolbar.getWidget(j);
 			WidgetOption no = WidgetOption.getToolBarButton(widget.getClass());
             if (no == null){
-                //Èç¹û×°ÁËÊ²Ã´²å¼ş, ·Åµ½ÁË¹¤¾ßÀ¸ÉÏ, ºóÀ´É¾³ıÁË²å¼ş, Ä£°åÀï»¹´æ×ÅÖ®Ç°µÄ¿Ø¼ş
+                //å¦‚æœè£…äº†ä»€ä¹ˆæ’ä»¶, æ”¾åˆ°äº†å·¥å…·æ ä¸Š, åæ¥åˆ é™¤äº†æ’ä»¶, æ¨¡æ¿é‡Œè¿˜å­˜ç€ä¹‹å‰çš„æ§ä»¶
                 continue;
             }
 
@@ -173,7 +173,7 @@ public class ToolBarPane extends BasicBeanPane<ToolBar> {
 
 
 	/*
-	 * ÍÏ×§ÊôĞÔÉèÖÃ
+	 * æ‹–æ‹½å±æ€§è®¾ç½®
 	 */
 	private class ToolBarHandler extends TransferHandler {
 		private int action;

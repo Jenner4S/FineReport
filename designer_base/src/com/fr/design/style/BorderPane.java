@@ -220,7 +220,7 @@ public class BorderPane extends BasicPane {
 	}
 
 	// p:populate Style
-	// ÔÚ±à¼­È«¾ÖstyleµÄÊ±ºòµ÷ÓÃÕâ¸ö·½·¨.
+	// åœ¨ç¼–è¾‘å…¨å±€styleçš„æ—¶å€™è°ƒç”¨è¿™ä¸ªæ–¹æ³•.
 	public void populate(Style style) {
 		if (style == null) {
 			style = Style.DEFAULT_STYLE;
@@ -248,7 +248,7 @@ public class BorderPane extends BasicPane {
 			FRContext.getLogger().error(e.getMessage(), e);
 		}
 		this.insideMode = insideMode;
-		// ben ÕâÀïÒ²ÓĞÎÊÌâ£¬CellBorderStyleµÄ linestyleºÍcolorºÜ¿ÉÄÜ²»Ö¹Ò»ÖÖ
+		// ben è¿™é‡Œä¹Ÿæœ‰é—®é¢˜ï¼ŒCellBorderStyleçš„ linestyleå’Œcolorå¾ˆå¯èƒ½ä¸æ­¢ä¸€ç§
 		this.currentLineCombo.setSelectedLineStyle(currentStyle == Constants.LINE_NONE ? Constants.LINE_THIN : currentStyle);
 		this.currentLineColorPane.setSelectObject(currentColor);
 
@@ -260,8 +260,8 @@ public class BorderPane extends BasicPane {
 	}
 
 	// p:update Style
-	// ÔÚ±à¼­È«¾ÖstyleµÄÊ±ºòµ÷ÓÃÕâ¸ö·½·¨,
-	// Í¨¹ıCellStyleÉèÖÃStyle
+	// åœ¨ç¼–è¾‘å…¨å±€styleçš„æ—¶å€™è°ƒç”¨è¿™ä¸ªæ–¹æ³•,
+	// é€šè¿‡CellStyleè®¾ç½®Style
 	public Style update(Style style) {
 		if (style == null) {
 			style = Style.DEFAULT_STYLE;
@@ -407,7 +407,7 @@ public class BorderPane extends BasicPane {
 			// If the border is already active needs to deactivate and unset it
 			addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent me) {
-					if (me.getX() <= 24) {// Left ÓÅÏÈ
+					if (me.getX() <= 24) {// Left ä¼˜å…ˆ
 						if (cellBorderStyle.getLeftColor() == currentLineColorPane.getSelectObject() && cellBorderStyle.getLeftStyle() == currentLineCombo.getSelectedLineStyle()) {
 							cellBorderStyle.setLeftColor(Color.BLACK);
 							cellBorderStyle.setLeftStyle(Constants.LINE_NONE);
@@ -417,7 +417,7 @@ public class BorderPane extends BasicPane {
 							cellBorderStyle.setLeftColor(currentLineColorPane.getSelectObject());
 							cellBorderStyle.setLeftStyle(currentLineCombo.getSelectedLineStyle());
 						}
-					} else if (me.getY() <= 24) {// Top ÓÅÏÈ¡£
+					} else if (me.getY() <= 24) {// Top ä¼˜å…ˆã€‚
 						if (cellBorderStyle.getTopColor() == currentLineColorPane.getSelectObject() && cellBorderStyle.getTopStyle() == currentLineCombo.getSelectedLineStyle()) {
 							cellBorderStyle.setTopColor(Color.BLACK);
 							cellBorderStyle.setTopStyle(Constants.LINE_NONE);
@@ -427,7 +427,7 @@ public class BorderPane extends BasicPane {
 							cellBorderStyle.setTopColor(currentLineColorPane.getSelectObject());
 							cellBorderStyle.setTopStyle(currentLineCombo.getSelectedLineStyle());
 						}
-					} else if (me.getY() > (getHeight() - 24)) {// Bottom ÓÅÏÈ
+					} else if (me.getY() > (getHeight() - 24)) {// Bottom ä¼˜å…ˆ
 						if (cellBorderStyle.getBottomColor() == currentLineColorPane.getSelectObject()
 								&& cellBorderStyle.getBottomStyle() == currentLineCombo.getSelectedLineStyle()) {
 							cellBorderStyle.setBottomColor(Color.BLACK);
@@ -438,7 +438,7 @@ public class BorderPane extends BasicPane {
 							cellBorderStyle.setBottomColor(currentLineColorPane.getSelectObject());
 							cellBorderStyle.setBottomStyle(currentLineCombo.getSelectedLineStyle());
 						}
-					} else if (me.getX() > (getWidth() - 24)) {// Right ×îºó
+					} else if (me.getX() > (getWidth() - 24)) {// Right æœ€å
 						if (cellBorderStyle.getRightColor() == currentLineColorPane.getSelectObject() && cellBorderStyle.getRightStyle() == currentLineCombo.getSelectedLineStyle()) {
 							cellBorderStyle.setRightColor(Color.BLACK);
 							cellBorderStyle.setRightStyle(Constants.LINE_NONE);
@@ -450,7 +450,7 @@ public class BorderPane extends BasicPane {
 						}
 					} else {
 						if (insideMode) {
-							if (me.getX() > (getWidth() / 2 - 8) && me.getX() < (getWidth() / 2 + 8)) { // ÊúÏß
+							if (me.getX() > (getWidth() / 2 - 8) && me.getX() < (getWidth() / 2 + 8)) { // ç«–çº¿
 								if (cellBorderStyle.getVerticalColor() == currentLineColorPane.getSelectObject()
 										&& cellBorderStyle.getVerticalStyle() == currentLineCombo.getSelectedLineStyle()) {
 									cellBorderStyle.setVerticalColor(Color.BLACK);
@@ -461,7 +461,7 @@ public class BorderPane extends BasicPane {
 									cellBorderStyle.setVerticalColor(currentLineColorPane.getSelectObject());
 									cellBorderStyle.setVerticalStyle(currentLineCombo.getSelectedLineStyle());
 								}
-							} else if (me.getY() > (getHeight() / 2 - 8) && me.getY() < (getHeight() / 2 + 8)) {// ºáÏß
+							} else if (me.getY() > (getHeight() / 2 - 8) && me.getY() < (getHeight() / 2 + 8)) {// æ¨ªçº¿
 								if (cellBorderStyle.getHorizontalColor() == currentLineColorPane.getSelectObject()
 										&& cellBorderStyle.getHorizontalStyle() == currentLineCombo.getSelectedLineStyle()) {
 									cellBorderStyle.setHorizontalColor(Color.BLACK);

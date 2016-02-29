@@ -19,7 +19,7 @@ import com.fr.report.cell.cellattr.core.group.DSColumn;
 import com.fr.report.cell.cellattr.core.group.FunctionGrouper;
 import com.fr.report.cell.cellattr.core.group.RecordGrouper;
 
-//august:1:31 我又改回以前的样子了 neil那个方法还是有bug 9922
+//august:1:31 鎴戝張鏀瑰洖浠ュ墠鐨勬牱瀛愪簡 neil閭ｄ釜鏂规硶杩樻槸鏈塨ug 9922
 public abstract class ResultSetGroupPane extends JPanel {
 	
 	protected static final int COMMON = 0;

@@ -7,7 +7,7 @@ import javax.swing.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÏÂÎç2:44
+ * Time   : ä¸‹åˆ2:44
  */
 public class AreaDataLabelPane extends DataLabelPane {
     protected JPanel createJPanel4Position() {

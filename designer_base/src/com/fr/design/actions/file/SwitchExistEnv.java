@@ -77,25 +77,25 @@ public class SwitchExistEnv extends MenuDef {
         }
 
         /**
-         * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+         * å“åº”æ•°æ®é›†æ”¹å˜
          */
         public void fireDSChanged() {
             fireDSChanged(new HashMap<String, String>());
         }
 
         /**
-         * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+         * å“åº”æ•°æ®é›†æ”¹å˜
          *
-         * @param map Êı¾İ¼¯
+         * @param map æ•°æ®é›†
          */
         public void fireDSChanged(Map<String, String> map) {
             DesignTableDataManager.fireDSChanged(map);
         }
 
         /**
-         * ¶¯×÷
+         * åŠ¨ä½œ
          *
-         * @param e ÊÂ¼ş
+         * @param e äº‹ä»¶
          */
         public void actionPerformed(ActionEvent e) {
             DesignerEnvManager envManager = DesignerEnvManager.getEnvManager();

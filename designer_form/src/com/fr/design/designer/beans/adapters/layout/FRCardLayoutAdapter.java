@@ -20,16 +20,16 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-	 * µ±Ç°ÈİÆ÷ÊÇ·ñ½ÓÊÜ×é¼şcreator
+	 * å½“å‰å®¹å™¨æ˜¯å¦æ¥å—ç»„ä»¶creator
 	 * 
-	 * @param creator ÍÏÈëµÄ×é¼ş
-	 * @param x ×ø±êx
-	 * @param y ×ø±êy
+	 * @param creator æ‹–å…¥çš„ç»„ä»¶
+	 * @param x åæ ‡x
+	 * @param y åæ ‡y
 	 * 
-	 * @return ÊÇ·ñ½ÓÊÜ
+	 * @return æ˜¯å¦æ¥å—
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:13:28
+	 * @date 2014-12-30-ä¸‹åˆ5:13:28
 	 * 
 	 */
     public boolean accept(XCreator creator, int x, int y) {
@@ -37,14 +37,14 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-	 * ½«Ö¸¶¨×é¼şÌí¼Óµ½µ±Ç°²¼¾Ö
+	 * å°†æŒ‡å®šç»„ä»¶æ·»åŠ åˆ°å½“å‰å¸ƒå±€
 	 * 
-	 * @param creator ´ıÌí¼Ó×é¼ş
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
+	 * @param creator å¾…æ·»åŠ ç»„ä»¶
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:17:46
+	 * @date 2014-12-30-ä¸‹åˆ5:17:46
 	 * 
 	 */
     public void addComp(XCreator creator, int x, int y) {
@@ -53,12 +53,12 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-	 * ½«Ö¸¶¨×é¼şÌí¼Óµ½µ±Ç°²¼¾Ö
+	 * å°†æŒ‡å®šç»„ä»¶æ·»åŠ åˆ°å½“å‰å¸ƒå±€
 	 * 
-	 * @param dragged ´ıÌí¼Ó×é¼ş
+	 * @param dragged å¾…æ·»åŠ ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:17:46
+	 * @date 2014-12-30-ä¸‹åˆ5:17:46
 	 * 
 	 */
     public void addNextComponent(XCreator dragged) {
@@ -66,13 +66,13 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-	 * ½«Ö¸¶¨×é¼şÌí¼Óµ½Ä¿±ê×é¼şÇ°Ãæ
+	 * å°†æŒ‡å®šç»„ä»¶æ·»åŠ åˆ°ç›®æ ‡ç»„ä»¶å‰é¢
 	 * 
-	 * @param target Ä¿±ê×é¼ş
-	 * @param added ´ıÌí¼Ó×é¼ş
+	 * @param target ç›®æ ‡ç»„ä»¶
+	 * @param added å¾…æ·»åŠ ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:17:46
+	 * @date 2014-12-30-ä¸‹åˆ5:17:46
 	 * 
 	 */
     public void addBefore(XCreator target, XCreator added) {
@@ -88,13 +88,13 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
 
     /**
-	 * ½«Ö¸¶¨×é¼şÌí¼Óµ½Ä¿±ê×é¼şºóÃæ
+	 * å°†æŒ‡å®šç»„ä»¶æ·»åŠ åˆ°ç›®æ ‡ç»„ä»¶åé¢
 	 * 
-	 * @param target Ä¿±ê×é¼ş
-	 * @param added ´ıÌí¼Ó×é¼ş
+	 * @param target ç›®æ ‡ç»„ä»¶
+	 * @param added å¾…æ·»åŠ ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:17:46
+	 * @date 2014-12-30-ä¸‹åˆ5:17:46
 	 * 
 	 */
     public void addAfter(XCreator target, XCreator added) {
@@ -116,12 +116,12 @@ public class FRCardLayoutAdapter extends AbstractLayoutAdapter {
     }
     
     /**
-	 * Õ¹Ê¾×é¼ş
+	 * å±•ç¤ºç»„ä»¶
 	 * 
-	 * @param child ĞèÒªÕ¹Ê¾µÄ×é¼ş
+	 * @param child éœ€è¦å±•ç¤ºçš„ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:17:13
+	 * @date 2014-12-30-ä¸‹åˆ5:17:13
 	 * 
 	 */
     public void showComponent(XCreator child) {

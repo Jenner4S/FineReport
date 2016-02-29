@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.concurrent.CancellationException;
 
 /**
- * ±í»òÕßÊÓÍ¼»òÕß´æ´¢¹ı³Ì×é³ÉµÄÒ»¸öÏÂÀ­ÁĞ±í
+ * è¡¨æˆ–è€…è§†å›¾æˆ–è€…å­˜å‚¨è¿‡ç¨‹ç»„æˆçš„ä¸€ä¸ªä¸‹æ‹‰åˆ—è¡¨
  *
  * @author zhou
- * @since 2012-3-28ÏÂÎç10:07:34
+ * @since 2012-3-28ä¸‹åˆ10:07:34
  */
 public class TableViewList extends UIList {
 
@@ -66,8 +66,8 @@ public class TableViewList extends UIList {
     }
 
     /**
-     * august£ºdatabaseNameÊÇÊı¾İ¿âÃû×Ö£¬searchFilterÊÇÊäÈëµÄ¹ıÂËÌõ¼ş,typesFilterÊÇÊÓÍ¼¡¢±í¡¢
-     * ´æ´¢¹ı³ÌÖĞµÄÒ»Õß»òÕß¼¸Õß
+     * augustï¼šdatabaseNameæ˜¯æ•°æ®åº“åå­—ï¼ŒsearchFilteræ˜¯è¾“å…¥çš„è¿‡æ»¤æ¡ä»¶,typesFilteræ˜¯è§†å›¾ã€è¡¨ã€
+     * å­˜å‚¨è¿‡ç¨‹ä¸­çš„ä¸€è€…æˆ–è€…å‡ è€…
      *
      * @param databaseName
      * @param searchFilter
@@ -89,7 +89,7 @@ public class TableViewList extends UIList {
                 Connection datasource = DatasourceManager.getProviderInstance().getConnection(databaseName);
                 boolean status = false;
                 int count = 3;
-                //×Ü¹²¸ø3´ÎÁ¬½ÓµÄ»ú»á
+                //æ€»å…±ç»™3æ¬¡è¿æ¥çš„æœºä¼š
                 while (!status && count > 0) {
                     status = FRContext.getCurrentEnv().testConnection(datasource);
                     count--;
@@ -118,8 +118,8 @@ public class TableViewList extends UIList {
     }
 
     /**
-     * august£ºdatabaseNameÊÇÊı¾İ¿âÃû×Ö£¬searchFilterÊÇÊäÈëµÄ¹ıÂËÌõ¼ş,typesFilterÊÇÊÓÍ¼¡¢±í¡¢
-     * ´æ´¢¹ı³ÌÖĞµÄÒ»Õß»òÕß¼¸Õß
+     * augustï¼šdatabaseNameæ˜¯æ•°æ®åº“åå­—ï¼ŒsearchFilteræ˜¯è¾“å…¥çš„è¿‡æ»¤æ¡ä»¶,typesFilteræ˜¯è§†å›¾ã€è¡¨ã€
+     * å­˜å‚¨è¿‡ç¨‹ä¸­çš„ä¸€è€…æˆ–è€…å‡ è€…
      *
      * @param databaseName
      * @param searchFilter
@@ -139,7 +139,7 @@ public class TableViewList extends UIList {
 
         boolean isOracle = FRContext.getCurrentEnv().isOracle(datasource);
         boolean isOracleSystemSpace = DesignerEnvManager.getEnvManager().isOracleSystemSpace();
-        // oracleb²»¹´Ñ¡ÏÔÊ¾ËùÓĞ±í£¬ÔòÖ»ÏÔÊ¾ÓÃ»§ÏÂµÄ(°üÀ¨´æ´¢¹ı³ÌºÍtable±í)
+        // oraclebä¸å‹¾é€‰æ˜¾ç¤ºæ‰€æœ‰è¡¨ï¼Œåˆ™åªæ˜¾ç¤ºç”¨æˆ·ä¸‹çš„(åŒ…æ‹¬å­˜å‚¨è¿‡ç¨‹å’Œtableè¡¨)
         if (isOracle && !isOracleSystemSpace) {
         	java.sql.Connection connection = datasource.createConnection();
         	OracleDialect orcDialect = (OracleDialect)DialectFactory.generateDialect(connection);
@@ -179,7 +179,7 @@ public class TableViewList extends UIList {
         if (!isOracle) {
             String schema = null;
             for (String type : typesFilter) {
-            	//·ÇoracleÊı¾İ¿â£¬Ä¬ÈÏ¶¼ÊÇÏÔÊ¾ËùÓĞ±íµÄ£¬²ÎÊıÎªtrue
+            	//éoracleæ•°æ®åº“ï¼Œé»˜è®¤éƒ½æ˜¯æ˜¾ç¤ºæ‰€æœ‰è¡¨çš„ï¼Œå‚æ•°ä¸ºtrue
                 TableProcedure[] sqlTables = DataCoreUtils.getTables(datasource, type, schema, true);
                 for (int i = 0; i < sqlTables.length; i++) {
                     if (isBlank || sqlTables[i].getName().toLowerCase().indexOf(searchFilter) != -1) {
@@ -191,7 +191,7 @@ public class TableViewList extends UIList {
             for (String type : typesFilter) {
             	for (String schema : schemas) {
         			TableProcedure[] sqlTables = DataCoreUtils.getTables(datasource, type, schema, isOracleSystemSpace);
-        			// oracleµÄ±íÃû¼ÓÉÏÄ£Ê½
+        			// oracleçš„è¡¨ååŠ ä¸Šæ¨¡å¼
         			for (int i = 0; i < sqlTables.length; i++) {
         				TableProcedure ta = sqlTables[i];
         				String name = ta.getSchema() + '.' + ta.getName();
@@ -206,10 +206,10 @@ public class TableViewList extends UIList {
     }
 
     /**
-     * ÏÔÊ¾Æ÷
+     * æ˜¾ç¤ºå™¨
      *
      * @editor zhou
-     * @since 2012-3-28ÏÂÎç10:11:58
+     * @since 2012-3-28ä¸‹åˆ10:11:58
      */
     private class TableListCellRenderer extends DefaultListCellRenderer {
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -239,10 +239,10 @@ public class TableViewList extends UIList {
     }
 
     /**
-     * ÍÏ×§
+     * æ‹–æ‹½
      *
      * @editor zhou
-     * @since 2012-3-28ÏÂÎç10:11:36
+     * @since 2012-3-28ä¸‹åˆ10:11:36
      */
     private class TableProcessorTreeDragSource extends DragSourceAdapter implements DragGestureListener {
         private DragSource source;

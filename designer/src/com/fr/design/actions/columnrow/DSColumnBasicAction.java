@@ -43,7 +43,7 @@ public class DSColumnBasicAction extends CellSelectionAction {
         dsColumnBasicPane.putElementcase(getEditingComponent());
         dsColumnBasicPane.putCellElement(editCellElement);
 
-        // alex:Èç¹ûÊÇÏßĞÔ±¨±í,ÕâÊ±»¹Òª¼ÆËãÒ»ÏÂÄ¬ÈÏ¸¸¸ñÊÇÊ²Ã´z
+        // alex:å¦‚æœæ˜¯çº¿æ€§æŠ¥è¡¨,è¿™æ—¶è¿˜è¦è®¡ç®—ä¸€ä¸‹é»˜è®¤çˆ¶æ ¼æ˜¯ä»€ä¹ˆz
         if (report != null) {
             SheetUtils.calculateDefaultParent(report);
         }
@@ -53,7 +53,7 @@ public class DSColumnBasicAction extends CellSelectionAction {
 
             @Override
             public void doOk() {
-                // ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+                // éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
                 for (int j = 0; j < finalCS.getRowSpan(); j++) {
                     for (int i = 0; i < finalCS.getColumnSpan(); i++) {
                         int column = i + finalCS.getColumn();

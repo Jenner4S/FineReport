@@ -33,14 +33,14 @@ public class StyleArrayPane extends JControlPane {
 	}
 
 	/**
-	 * ´´½¨ÑùÊ½ÉèÖÃ×é¼ş
+	 * åˆ›å»ºæ ·å¼è®¾ç½®ç»„ä»¶
 	 *
-	 * @return ÑùÊ½ÉèÖÃ×é¼ş
+	 * @return æ ·å¼è®¾ç½®ç»„ä»¶
 	 */
 	public NameableCreator[] createNameableCreators() {
 		return new NameableCreator[] { new AbstractNameableCreator(Inter.getLocText("FR-Engine_Style_Name"), Style.class, StylePane.class) {
 			public NameObject createNameable(UnrepeatedNameHelper helper) {
-				// ·µ»Ø²ÎÊıÉèÖÃÃæ°å.
+				// è¿”å›å‚æ•°è®¾ç½®é¢æ¿.
 				return new NameObject(helper.createUnrepeatedName("H"), Style.getInstance());
 			}
 
@@ -93,7 +93,7 @@ public class StyleArrayPane extends JControlPane {
 	public void update(ConfigManagerProvider configManager) {
 		configManager.clearAllStyle();
 
-		// Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉParameter[],Ò»¶¨ÒªÕâÃ´Ğ´...
+		// Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆParameter[],ä¸€å®šè¦è¿™ä¹ˆå†™...
 		Nameable[] nameables = this.update();
 
 		for (int i = 0; i < nameables.length; i++) {

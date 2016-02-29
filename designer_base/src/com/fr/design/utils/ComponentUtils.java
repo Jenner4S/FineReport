@@ -8,7 +8,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 /**
- * ¹¤¾ßÀà£¬Ìá¹©³£ÓÃµÄ¹¤¾ß·½·¨
+ * å·¥å…·ç±»ï¼Œæä¾›å¸¸ç”¨çš„å·¥å…·æ–¹æ³•
  */
 public class ComponentUtils {
 
@@ -23,7 +23,7 @@ public class ComponentUtils {
 	}
 
 	/**
-	 * »ñÈ¡componentËùÔÚµÄÈİÆ÷µÄ¾ø¶ÔÎ»ÖÃ
+	 * è·å–componentæ‰€åœ¨çš„å®¹å™¨çš„ç»å¯¹ä½ç½®
 	 */
 	public static Rectangle getRelativeBounds(Component component) {
 		Rectangle bounds = new Rectangle(0, 0, component.getWidth(), component.getHeight());
@@ -40,7 +40,7 @@ public class ComponentUtils {
 	}
 
 	/**
-	 * »Ö¸´Ë«»º³å×´Ì¬£¬dbcomponents±£´æ×Å³õÊ¼×´Ì¬ÎªÆô¶¯Ë«»º³åµÄ×é¼ş
+	 * æ¢å¤åŒç¼“å†²çŠ¶æ€ï¼Œdbcomponentsä¿å­˜ç€åˆå§‹çŠ¶æ€ä¸ºå¯åŠ¨åŒç¼“å†²çš„ç»„ä»¶
 	 */
 	public static void resetBuffer(ArrayList<JComponent> dbcomponents) {
 		for (JComponent jcomponent : dbcomponents) {
@@ -49,7 +49,7 @@ public class ComponentUtils {
 	}
 
 	/**
-	 * ½ûÖ¹Ë«»º³å×´Ì¬£¬²¢½«³õÊ¼×´Ì¬ÎªÆô¶¯Ë«»º³åµÄ×é¼ş±£´æµ½dbcomponentsÖĞ
+	 * ç¦æ­¢åŒç¼“å†²çŠ¶æ€ï¼Œå¹¶å°†åˆå§‹çŠ¶æ€ä¸ºå¯åŠ¨åŒç¼“å†²çš„ç»„ä»¶ä¿å­˜åˆ°dbcomponentsä¸­
 	 */
 	public static void disableBuffer(Component comp, ArrayList<JComponent> dbcomponents) {
 		if ((comp instanceof JComponent) && comp.isDoubleBuffered()) {
@@ -88,7 +88,7 @@ public class ComponentUtils {
 	}
 
 	/**
-	 * ¼ÆËã×é¼şrootÏà¶ÔÓÚÆä¶¥²ãÈİÆ÷µÄ¿É¼ûÇøÓò
+	 * è®¡ç®—ç»„ä»¶rootç›¸å¯¹äºå…¶é¡¶å±‚å®¹å™¨çš„å¯è§åŒºåŸŸ
 	 */
 	public static Rectangle computeVisibleRectRel2Root(Component root) {
 		Container container = findAncestorScrollPane(root);
@@ -96,13 +96,13 @@ public class ComponentUtils {
 		if (container == null) {
 			return getRelativeBounds(root);
 		} else {
-			// Èç¹ûÊÇJScrollPaneµÄ×Ó×é¼ş£¬ĞèÒª¼ÆËãÆäviewportÓë¸Ä×é¼şµÄ½»²æµÄ¿É¼ûÇøÓò
+			// å¦‚æœæ˜¯JScrollPaneçš„å­ç»„ä»¶ï¼Œéœ€è¦è®¡ç®—å…¶viewportä¸æ”¹ç»„ä»¶çš„äº¤å‰çš„å¯è§åŒºåŸŸ
 			return getBoundsRel2Parent(root, container);
 		}
 	}
 
 	/**
-	 * ¼ÆËã×é¼şrootÏà¶ÔÓÚÆä¶¥²ãÈİÆ÷µÄ¿É¼ûÇøÓò
+	 * è®¡ç®—ç»„ä»¶rootç›¸å¯¹äºå…¶é¡¶å±‚å®¹å™¨çš„å¯è§åŒºåŸŸ
 	 */
 	public static Rectangle computeVisibleRect(JComponent root) {
 		Rectangle root_bounds = ComponentUtils.getRelativeBounds(root);

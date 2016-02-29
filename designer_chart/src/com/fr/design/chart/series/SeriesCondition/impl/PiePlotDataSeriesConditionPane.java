@@ -11,8 +11,8 @@ import com.fr.design.chart.series.SeriesCondition.LabelBorderPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç10:01
- * ±ıÍ¼ Ìõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ10:01
+ * é¥¼å›¾ æ¡ä»¶å±æ€§ç•Œé¢
  */
 
 public class PiePlotDataSeriesConditionPane extends DataSeriesConditionPane {

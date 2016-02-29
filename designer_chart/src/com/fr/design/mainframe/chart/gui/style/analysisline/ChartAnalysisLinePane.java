@@ -34,7 +34,7 @@ import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
 /**
- * Õâ¸öÃæ°åÊÇ°ÑÔ­À´ÖµÖáÄÇ±ßµÄ¾¯½äÏßºÍÏµÁĞÄÇ±ßµÄÇ÷ÊÆÏß·ÖÀë³öÀ´
+ * è¿™ä¸ªé¢æ¿æ˜¯æŠŠåŸæ¥å€¼è½´é‚£è¾¹çš„è­¦æˆ’çº¿å’Œç³»åˆ—é‚£è¾¹çš„è¶‹åŠ¿çº¿åˆ†ç¦»å‡ºæ¥
  * @author eason
  *
  */
@@ -70,7 +70,7 @@ public class ChartAnalysisLinePane extends BasicScrollPane<Chart>{
 			double[] col = {f};
 			trendLine = TableLayoutHelper.createTableLayoutPane4Chart(new String[]{"Chart_TrendLine"}, new Component[][]{new Component[]{trendLinePane}}, row, col);
 		}
-		//×î¶àÓĞÁ½Ìõ×ø±êÖáÊÇÖµÀàĞÍµÄ
+		//æœ€å¤šæœ‰ä¸¤æ¡åæ ‡è½´æ˜¯å€¼ç±»å‹çš„
 		if(plot.getAlertLinePaneTitle().length == 2){
 			String[] title = plot.getAlertLinePaneTitle();
 			firstAlertPane = this.createAlertLinePane(new String[]{title[0], "ChartF-Alert-Line"}, true);
@@ -139,14 +139,14 @@ public class ChartAnalysisLinePane extends BasicScrollPane<Chart>{
 			parent.initAllListeners();
 		}
 		
-		//¸üĞÂÇ÷ÊÆÏß
+		//æ›´æ–°è¶‹åŠ¿çº¿
 		if(this.trendLinePane != null && plot.isSupportTrendLine()){
 			ConditionCollection collection = plot.getConditionCollection();
 			AttrTrendLine trendLineList = (AttrTrendLine)collection.getDefaultAttr().getExisted(AttrTrendLine.class);
 			popTrendLine(trendLineList);
 		}
 		
-		//¸üĞÂ¾¯½äÏß
+		//æ›´æ–°è­¦æˆ’çº¿
 		if(plot.getAlertLinePaneTitle().length != 0){
 			if(plot instanceof XYPlot){
 				popuAlert((NumberAxis)plot.getxAxis(), xAlertPane);
@@ -264,7 +264,7 @@ public class ChartAnalysisLinePane extends BasicScrollPane<Chart>{
 	}
 	
 	/**
-	 * Ìí¼ÓÇ÷ÊÆÏß½çÃæ
+	 * æ·»åŠ è¶‹åŠ¿çº¿ç•Œé¢
 	 */
 	protected void createTrendLinePane() {
 		List<UIMenuNameableCreator> list = new ArrayList<UIMenuNameableCreator>();

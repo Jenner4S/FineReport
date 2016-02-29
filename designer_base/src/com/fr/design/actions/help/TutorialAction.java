@@ -54,8 +54,8 @@ public class TutorialAction extends UpdateAction {
         }
     }
     /**
-     * 动作
-     * @param evt 事件
+     * 鍔ㄤ綔
+     * @param evt 浜嬩欢
      */
     public void actionPerformed(ActionEvent evt) {
         Locale locale = FRContext.getLocale();
@@ -66,7 +66,7 @@ public class TutorialAction extends UpdateAction {
                     Desktop.getDesktop().browse(new URI(ProductConstants.HELP_URL));
                     return;
                 } catch (Exception e) {
-                    //出了异常的话, 依然打开本地教程
+                    //鍑轰簡寮傚父鐨勮瘽, 渚濈劧鎵撳紑鏈湴鏁欑▼
                 }
             }
         }

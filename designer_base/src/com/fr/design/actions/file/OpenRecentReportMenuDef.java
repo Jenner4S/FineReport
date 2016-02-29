@@ -33,7 +33,7 @@ public class OpenRecentReportMenuDef extends MenuDef {
     }
 
     /**
-     * 更新菜单
+     * 鏇存柊鑿滃崟
      */
     public void updateMenu() {
         UIMenu createdMenu = this.createJMenu();
@@ -64,8 +64,8 @@ public class OpenRecentReportMenuDef extends MenuDef {
         }
 
         /**
-         * 动作
-         * @param e 事件
+         * 鍔ㄤ綔
+         * @param e 浜嬩欢
          */
         public void actionPerformed(ActionEvent e) {
             DesignerContext.getDesignerFrame().openTemplate(FILEFactory.createFILE(this.getPath()));

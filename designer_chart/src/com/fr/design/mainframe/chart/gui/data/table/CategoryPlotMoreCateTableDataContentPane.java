@@ -25,9 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¶à·ÖÀàÖá µÄÊı¾İ¼¯¶¨Òå½çÃæ.
+ * å¤šåˆ†ç±»è½´ çš„æ•°æ®é›†å®šä¹‰ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-9-3 ÉÏÎç10:00:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-9-3 ä¸Šåˆ10:00:28
  */
 public class CategoryPlotMoreCateTableDataContentPane extends CategoryPlotTableDataContentPane implements UIObserver{
 	private static final long serialVersionUID = -3305681053750642843L;
@@ -154,8 +154,8 @@ public class CategoryPlotMoreCateTableDataContentPane extends CategoryPlotTableD
 	
 
 	/**
-	 *¼ì²é Ä³Ğ©BoxÊÇ·ñ¿ÉÓÃ
-	 * @param hasUse  ÊÇ·ñÊ¹ÓÃ.
+	 *æ£€æŸ¥ æŸäº›Boxæ˜¯å¦å¯ç”¨
+	 * @param hasUse  æ˜¯å¦ä½¿ç”¨.
 	 */
 	public void checkBoxUse(boolean hasUse) {
 		super.checkBoxUse(hasUse);
@@ -172,25 +172,25 @@ public class CategoryPlotMoreCateTableDataContentPane extends CategoryPlotTableD
     }
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiobListener = listener;
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
 	}
 
 	/**
-	 * ¸üĞÂ ¶à·ÖÀàÏà¹Ø½çÃæ
+	 * æ›´æ–° å¤šåˆ†ç±»ç›¸å…³ç•Œé¢
 	 * @param collection
 	 */
 	public void populateBean(ChartCollection collection) {
@@ -213,7 +213,7 @@ public class CategoryPlotMoreCateTableDataContentPane extends CategoryPlotTableD
 	}
 	
 	/**
-	 * ±£´æ¶à·ÖÀà½çÃæµ½collection
+	 * ä¿å­˜å¤šåˆ†ç±»ç•Œé¢åˆ°collection
 	 * @param  collection
 	 */
 	public void updateBean(ChartCollection collection) {

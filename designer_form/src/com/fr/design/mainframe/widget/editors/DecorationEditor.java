@@ -6,7 +6,7 @@ package com.fr.design.mainframe.widget.editors;
 /**
  * @author richer
  * @since 6.5.3
- * ÏÂ»®Ïß±à¼­Æ÷
+ * ä¸‹åˆ’çº¿ç¼–è¾‘å™¨
  */
 public class DecorationEditor {
 

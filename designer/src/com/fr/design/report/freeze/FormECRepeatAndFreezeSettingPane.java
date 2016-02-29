@@ -5,19 +5,19 @@ import javax.swing.JPanel;
 import com.fr.general.Inter;
 
 /**
- * ±íµ¥µÄÖØ¸´±êÌâĞĞÒÔ¼°¶³½áÉèÖÃµÄPane
+ * è¡¨å•çš„é‡å¤æ ‡é¢˜è¡Œä»¥åŠå†»ç»“è®¾ç½®çš„Pane
  * 
- * Ä¿Ç°Ö»Ö§³ÖÉèÖÃ¶³½áĞĞ, ²»Ö§³ÖºáÏòµÄ¶³½áÁĞÓëÌî±¨
+ * ç›®å‰åªæ”¯æŒè®¾ç½®å†»ç»“è¡Œ, ä¸æ”¯æŒæ¨ªå‘çš„å†»ç»“åˆ—ä¸å¡«æŠ¥
  */
 public class FormECRepeatAndFreezeSettingPane extends RepeatAndFreezeSettingPane {
 	
 	/**
-	 * »ñÈ¡·ÖÒ³¶³½áµÄ±êÌâ(±íµ¥ÖĞ²»ĞèÒªĞ´·ÖÒ³¶ş×Ö)
+	 * è·å–åˆ†é¡µå†»ç»“çš„æ ‡é¢˜(è¡¨å•ä¸­ä¸éœ€è¦å†™åˆ†é¡µäºŒå­—)
 	 * 
-	 * @return ·ÖÒ³¶³½áµÄ±êÌâ
+	 * @return åˆ†é¡µå†»ç»“çš„æ ‡é¢˜
 	 * 
 	 *
-	 * @date 2014-11-14-ÏÂÎç1:32:08
+	 * @date 2014-11-14-ä¸‹åˆ1:32:08
 	 * 
 	 */
 	protected String getPageFrozenTitle(){

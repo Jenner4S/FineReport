@@ -11,8 +11,8 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
 /**
- * µ¥Ôª¸ñÊôĞÔ±íµÄÃ¿¸ötab¶ÔÓ¦µÄpane£¬ÒÑ¾­ÊµÏÖÁË¹ö¶¯Ìõ¹¦ÄÜ£¬Èç¹ûÒ³Ãæ×°²»ÏÂ£¬»á×Ô¶¯³öÀ´
- * ¼¸µã£º×ÓÀà²»ĞèÒªĞ´¹¹Ôìº¯ÊıÁË£¬ËùÓĞµÄ×é¼ş¶¼·ÅÔÚcreateContentPane()·½·¨Éú³ÉµÄpaneÀïÃæ,Ëü²»ĞèÒª¿¼ÂÇborder¡£
+ * å•å…ƒæ ¼å±æ€§è¡¨çš„æ¯ä¸ªtabå¯¹åº”çš„paneï¼Œå·²ç»å®ç°äº†æ»šåŠ¨æ¡åŠŸèƒ½ï¼Œå¦‚æœé¡µé¢è£…ä¸ä¸‹ï¼Œä¼šè‡ªåŠ¨å‡ºæ¥
+ * å‡ ç‚¹ï¼šå­ç±»ä¸éœ€è¦å†™æ„é€ å‡½æ•°äº†ï¼Œæ‰€æœ‰çš„ç»„ä»¶éƒ½æ”¾åœ¨createContentPane()æ–¹æ³•ç”Ÿæˆçš„paneé‡Œé¢,å®ƒä¸éœ€è¦è€ƒè™‘borderã€‚
  */
 public abstract class AbstractAttrPane extends AbstractAttrNoScrollPane {
 	private static final int MAXVALUE = 100;
@@ -53,7 +53,7 @@ public abstract class AbstractAttrPane extends AbstractAttrNoScrollPane {
 				adjustValues();
 			}
 		});
-		// august:Êó±ê¹öÂÖ»¬¶¯ÊÂ¼ş
+		// august:é¼ æ ‡æ»šè½®æ»‘åŠ¨äº‹ä»¶
 		this.addMouseWheelListener(new MouseWheelListener() {
 
 			@Override
@@ -67,7 +67,7 @@ public abstract class AbstractAttrPane extends AbstractAttrNoScrollPane {
 	}
 
 	/**
-	 * ÊôĞÔÃæ°åµÄ¹ö¶¯ÌõºÍÄÚÈİÇøÓòµÄ²¼¾Ö¹ÜÀíÀà
+	 * å±æ€§é¢æ¿çš„æ»šåŠ¨æ¡å’Œå†…å®¹åŒºåŸŸçš„å¸ƒå±€ç®¡ç†ç±»
 	 */
 	protected class BarLayout implements LayoutManager {
 

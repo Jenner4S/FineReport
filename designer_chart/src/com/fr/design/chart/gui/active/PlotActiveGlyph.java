@@ -10,7 +10,7 @@ import com.fr.design.chart.gui.active.action.SetPlotStyleAction;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ3:55
+ * Time   : ‰∏ãÂçà3:55
  */
 public class PlotActiveGlyph extends ActiveGlyph {
     private PlotGlyph plotGlyph;

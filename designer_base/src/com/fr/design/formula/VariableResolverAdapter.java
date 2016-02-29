@@ -16,19 +16,19 @@ public abstract class VariableResolverAdapter implements VariableResolver {
 	private static final int REPORT_DATA_PARA = 1;
 
     /**
-     * »ñÈ¡Ä£°åÄÚÖÃµÄÒ»Ğ©²ÎÊı
+     * è·å–æ¨¡æ¿å†…ç½®çš„ä¸€äº›å‚æ•°
      *
-     * @return ÄÚÖÃ²ÎÊı
+     * @return å†…ç½®å‚æ•°
      */
 	public String[] resolveCurReportVariables() {
 		return new String[] { ScriptConstants.SUMMARY_TAG + "page_number",
 				ScriptConstants.SUMMARY_TAG + "totalPage_number",
-				// ÏÂÃæÊÇÈ¨ÏŞÏà¹ØµÄ²ÎÊı
+				// ä¸‹é¢æ˜¯æƒé™ç›¸å…³çš„å‚æ•°
 				ScriptConstants.DETAIL_TAG + Constants.P.PRIVILEGE_USERNAME, ScriptConstants.DETAIL_TAG + Constants.P.PRIVILEGE_AUTHORITY,
 				ScriptConstants.DETAIL_TAG + Constants.P.PRIVILEGE_DEPARTMETN_AND_POST,
-				// ¿ÕÖµ²ÎÊı
+				// ç©ºå€¼å‚æ•°
 				"NULL", "NOFILTER",
-				// request±äÁ¿
+				// requestå˜é‡
 				CalculatorProvider.REPORT_NAME, CalculatorProvider.SERVLET_URL, CalculatorProvider.SERVER_SCHEMA, CalculatorProvider.SERVER_NAME,
 				CalculatorProvider.SERVER_PORT, CalculatorProvider.SERVER_URL, CalculatorProvider.CONTEXT_PATH, CalculatorProvider.SESSION_ID
 		};
@@ -49,9 +49,9 @@ public abstract class VariableResolverAdapter implements VariableResolver {
 	}
 
     /**
-     * »ñÈ¡Êı¾İ¼¯²ÎÊı
+     * è·å–æ•°æ®é›†å‚æ•°
      *
-     * @return ËùÓĞ²ÎÊı
+     * @return æ‰€æœ‰å‚æ•°
      */
 	public String[] resolveTableDataParameterVariables() {
 		Parameter[] parameters = getCurrentModeParameters(TABLE_DATA_PARA);
@@ -63,9 +63,9 @@ public abstract class VariableResolverAdapter implements VariableResolver {
 	}
 
     /**
-     * »ñÈ¡Ä£°å²ÎÊı
+     * è·å–æ¨¡æ¿å‚æ•°
      *
-     * @return ËùÓĞ²ÎÊı
+     * @return æ‰€æœ‰å‚æ•°
      */
 	public String[] resolveReportParameterVariables() {
 		Parameter[] parameters = getCurrentModeParameters(REPORT_DATA_PARA);
@@ -77,12 +77,12 @@ public abstract class VariableResolverAdapter implements VariableResolver {
 	}
 
 	/**
-	 * »ñÈ¡È«¾Ö²ÎÊı
+	 * è·å–å…¨å±€å‚æ•°
      *
-     * @return ËùÓĞ²ÎÊı
+     * @return æ‰€æœ‰å‚æ•°
 	 */
 	public String[] resolveGlobalParameterVariables() {
-		// ¼ÓÉÏÈ«¾ÖµÄ²ÎÊı
+		// åŠ ä¸Šå…¨å±€çš„å‚æ•°
         ConfigManagerProvider reportServerManager = ConfigManager.getProviderInstance();
 		Parameter[] globalParameters = reportServerManager.getGlobal_Parameters();
 

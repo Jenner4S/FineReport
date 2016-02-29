@@ -13,7 +13,7 @@ import com.fr.design.selection.QuickEditor;
  * QuickEditorRegion
  * 
  * @editor zhou
- * @since 2012-3-23œ¬ŒÁ3:21:36
+ * @since 2012-3-23‰∏ãÂçà3:21:36
  */
 
 public class QuickEditorRegion extends JPanel {
@@ -40,7 +40,7 @@ public class QuickEditorRegion extends JPanel {
 	}
 
 	/**
-	 * ¥´÷µ
+	 * ‰º†ÂÄº
 	 * 
 	 * @param ePane
 	 */

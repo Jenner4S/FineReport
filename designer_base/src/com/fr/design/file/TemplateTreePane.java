@@ -91,7 +91,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refreshDockingView() {
         reportletsTree.setFileNodeFilter(new IOFileNodeFilter(FRContext.getCurrentEnv().getSupportedTypes()));
@@ -123,7 +123,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
 
 
     /**
-     * ´ò¿ªÑ¡ÖĞµÄ±¨±íÎÄ¼ş
+     * æ‰“å¼€é€‰ä¸­çš„æŠ¥è¡¨æ–‡ä»¶
      */
     public void openSelectedReport() {
         String reportPath = reportletsTree.getSelectedTemplatePath();
@@ -132,7 +132,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * ´ò¿ªÎÄ¼ş¼Ğ
+     * æ‰“å¼€æ–‡ä»¶å¤¹
      */
     public void openContainerFolder() {
         FileNode fn = TemplateTreePane.this.reportletsTree.getSelectedFileNode();
@@ -147,7 +147,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * Ë¢ĞÂ
+     * åˆ·æ–°
      */
     public void refresh() {
         reportletsTree.refresh();
@@ -155,7 +155,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * É¾³ıÎÄ¼ş
+     * åˆ é™¤æ–‡ä»¶
      */
     public void deleteFile() {
         String[] reportPaths = reportletsTree.getSelectedTemplatePaths();
@@ -194,7 +194,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
         if (index == -1) {
             return;
         }
-        //Èç¹û´ò¿ª¹ı£¬ÔòÉ¾³ı£¬ÊµÊ±Ë¢ĞÂ¶àtabÃæ°å
+        //å¦‚æœæ‰“å¼€è¿‡ï¼Œåˆ™åˆ é™¤ï¼Œå®æ—¶åˆ·æ–°å¤štabé¢æ¿
         HistoryTemplateListPane.getInstance().getHistoryList().remove(index);
         int openfileCount = HistoryTemplateListPane.getInstance().getHistoryCount();
         if (openfileCount == 0) {
@@ -202,19 +202,19 @@ public class TemplateTreePane extends JPanel implements FileOperations {
         }
         MutilTempalteTabPane.getInstance().repaint();
         if (size == index + 1 && index != 0) {
-            //Èç¹ûÉ¾³ıµÄÊÇ×îºóÒ»¸öTab£¬Ôò¶¨Î»µ½Ç°Ò»¸ö
+            //å¦‚æœåˆ é™¤çš„æ˜¯æœ€åä¸€ä¸ªTabï¼Œåˆ™å®šä½åˆ°å‰ä¸€ä¸ª
             MutilTempalteTabPane.getInstance().setSelectedIndex(index - 1);
         }
         JTemplate selectedfile = MutilTempalteTabPane.getInstance().getSelectedFile();
         if (!HistoryTemplateListPane.getInstance().isCurrentEditingFile(selectedfile.getFullPathName())) {
-            //Èç¹û´ËÊ±Ãæ°åÉÏµÄÊµÊ±Ë¢ĞÂµÄselectedIndexµÃµ½µÄºÍÀúÊ·µÄ²»Ò»Ñù
+            //å¦‚æœæ­¤æ—¶é¢æ¿ä¸Šçš„å®æ—¶åˆ·æ–°çš„selectedIndexå¾—åˆ°çš„å’Œå†å²çš„ä¸ä¸€æ ·
             DesignerContext.getDesignerFrame().activateJTemplate(selectedfile);
         }
         MutilTempalteTabPane.getInstance().repaint();
     }
 
     /**
-     * ¼ÓÉÏÎÄ¼şËø
+     * åŠ ä¸Šæ–‡ä»¶é”
      */
     public void lockFile() {
         FileNode fn = reportletsTree.getSelectedFileNode();
@@ -232,7 +232,7 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * ÎÄ¼ş½âËø
+     * æ–‡ä»¶è§£é”
      */
     public void unLockFile() {
         FileNode fn = reportletsTree.getSelectedFileNode();
@@ -258,12 +258,12 @@ public class TemplateTreePane extends JPanel implements FileOperations {
     }
 
     /**
-     * ÎÄ¼şÃûÊÇ·ñ´æÔÚ
+     * æ–‡ä»¶åæ˜¯å¦å­˜åœ¨
      *
-     * @param newName Ô­Ãû
-     * @param oldName ĞÂµÄÎÄ¼şÃû
-     * @param suffix  ºó×ºÃû
-     * @return ÊÇ·ñ´æÔÚ
+     * @param newName åŸå
+     * @param oldName æ–°çš„æ–‡ä»¶å
+     * @param suffix  åç¼€å
+     * @return æ˜¯å¦å­˜åœ¨
      */
     public boolean isNameAlreadyExist(String newName, String oldName, String suffix) {
         boolean isNameAlreadyExist = false;

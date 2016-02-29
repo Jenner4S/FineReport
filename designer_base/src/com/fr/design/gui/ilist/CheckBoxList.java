@@ -30,10 +30,10 @@ import com.fr.stable.StringUtils;
  */
 public class CheckBoxList extends JComponent {
 	/**
-	 * Ñ¡Ôñ×´Ì¬----È«Ñ¡ºÍÈ«²»Ñ¡
+	 * é€‰æ‹©çŠ¶æ€----å…¨é€‰å’Œå…¨ä¸é€‰
 	 * 
 	 * @editor zhou
-	 * @since 2012-4-1ÏÂÎç2:39:10
+	 * @since 2012-4-1ä¸‹åˆ2:39:10
 	 */
 	public static enum SelectedState {
 		ALL, NONE
@@ -104,7 +104,7 @@ public class CheckBoxList extends JComponent {
 	}
 
 	/*
-	 * ÓÃÓÚCellRendererÏÔÊ¾valueÎªtext
+	 * ç”¨äºCellRendereræ˜¾ç¤ºvalueä¸ºtext
 	 */
 	protected String value2Text(Object value) {
 		return value != null ? value.toString() : StringUtils.EMPTY;
@@ -227,11 +227,11 @@ public class CheckBoxList extends JComponent {
 	}
 
 	private void doCheck() {
-		// p:ÕâÀï±ØĞë¸Ä±äËùÓĞÑ¡Ôñcheckbox.
+		// p:è¿™é‡Œå¿…é¡»æ”¹å˜æ‰€æœ‰é€‰æ‹©checkbox.
 		int index = jlist.getSelectedIndex();
 		boolean sValue = !selects[index];
 
-		// p:¿ªÊ¼ÉèÖÃËùÓĞÑ¡ÔñµÄcheckbox.
+		// p:å¼€å§‹è®¾ç½®æ‰€æœ‰é€‰æ‹©çš„checkbox.
 		int[] indices = jlist.getSelectedIndices();
 		for (int i = 0; i < indices.length; i++) {
 			setSelected(indices[i], sValue);

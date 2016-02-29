@@ -21,8 +21,8 @@ public class PreferenceAction extends UpdateAction {
 	}
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
 	public void actionPerformed(ActionEvent e) {
 		final DesignerFrame designerFrame = DesignerContext.getDesignerFrame();

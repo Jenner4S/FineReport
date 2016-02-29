@@ -11,8 +11,8 @@ import com.fr.design.chart.series.SeriesCondition.LabelBorderPane;
  * Author : Richer
  * Version: 6.5.6r
  * Date   : 11-11-30
- * Time   : ÉÏÎç9:59
- * ÖùĞÎÍ¼ÖĞµÄÌõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:59
+ * æŸ±å½¢å›¾ä¸­çš„æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class BarPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = 7887246749323167953L;

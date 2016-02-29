@@ -111,13 +111,13 @@ public class ChartAndWidgetPropertyPane extends MiddleChartPropertyPane {
 	}
 
     /**
-     * ¸Ğ¾õChartCollection¼ÓÔØÍ¼±íÊôĞÔ½çÃæ.
-     * @param collection  ÊÕ¼¯Í¼±í
-     * @param ePane  Ãæ°å
+     * æ„Ÿè§‰ChartCollectionåŠ è½½å›¾è¡¨å±æ€§ç•Œé¢.
+     * @param collection  æ”¶é›†å›¾è¡¨
+     * @param ePane  é¢æ¿
      */
     public void populateChartPropertyPane(ChartCollection collection, TargetComponent<?> ePane) {
         super.populateChartPropertyPane(collection, ePane);
-        //±íµ¥ÖĞµÄÍ¼±íÇĞ»»½çÃæÉÏµÃ¸üĞÂ
+        //è¡¨å•ä¸­çš„å›¾è¡¨åˆ‡æ¢ç•Œé¢ä¸Šå¾—æ›´æ–°
         resetChartEditPane();
     }
 

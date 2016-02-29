@@ -32,27 +32,27 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.StringUtils;
 
 /**
- * Êı¾İ¼¯»ìÏıµÄÃæ°å
+ * æ•°æ®é›†æ··æ·†çš„é¢æ¿
  * 
  * @author neil
  *
- * @date: 2015-3-7-ÉÏÎç11:04:16
+ * @date: 2015-3-7-ä¸Šåˆ11:04:16
  */
 public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 	
 	private static final int TABLE_WIDTH = 300;
 	private static final int TABLE_HEIGHT = 20;
 	
-	//»ìÏıµÄÏà¹ØĞÅÏ¢
+	//æ··æ·†çš„ç›¸å…³ä¿¡æ¯
 	private ConfusionInfo info;
 	
 	private Component centerPane;
 
-	//»ìÏı¹Ø¼ü×ÖµÄËùÓĞÃæ°å, ÓÃÓÚupdate
+	//æ··æ·†å…³é”®å­—çš„æ‰€æœ‰é¢æ¿, ç”¨äºupdate
 	private UITextField[] keyFields;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public ConfusionTableDataPane() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
@@ -74,7 +74,7 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 		return northPane;
 	}
 	
-	//Ô¤ÀÀ°´Å¥
+	//é¢„è§ˆæŒ‰é’®
 	private UIButton initPreviewButton(){
 		UIButton previewBtn = new UIButton();
 		previewBtn.setIcon(BaseUtils.readIcon("/com/fr/web/images/preview.png"));
@@ -96,7 +96,7 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
         double columnSize[] = {p, p, p};
         keyFields = new UITextField[columnCount];
         
-        //¸ù¾İ²»Í¬µÄÄÚÈİ, Éú³ÉtableÄÚ²¿×é¼ş
+        //æ ¹æ®ä¸åŒçš„å†…å®¹, ç”Ÿæˆtableå†…éƒ¨ç»„ä»¶
         Component[][] portComponents = initTableComponents(columnCount, columnSize.length);
         centerPane = new UIScrollPane(TableLayoutHelper.createTableLayoutPane(portComponents, rowSize, columnSize));
         this.add(centerPane, BorderLayout.CENTER);
@@ -105,12 +105,12 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 	}
 	
 	private Component[][] initTableComponents(int rowCount, int columnCount){
-        //Ä¬ÈÏÓĞÒ»ĞĞ±êÌâĞĞ ËùÒÔ+1
+        //é»˜è®¤æœ‰ä¸€è¡Œæ ‡é¢˜è¡Œ æ‰€ä»¥+1
         Component[][] portComponents = new Component[rowCount + 1][columnCount];
         
         for (int i = 0; i < portComponents.length; i++) {
         	if(i == 0){
-        		//±í¸ñÍ·²¿: ×Ö¶ÎÃû³Æ + »ìÏı¹Ø¼ü×Ö + Ô¤ÀÀ°´Å¥
+        		//è¡¨æ ¼å¤´éƒ¨: å­—æ®µåç§° + æ··æ·†å…³é”®å­— + é¢„è§ˆæŒ‰é’®
         		portComponents[i] = initTableHeaderPanel();
         		continue;
         	}
@@ -133,15 +133,15 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 	
 	private Component[] initTableContentRow(int i){
 		String[] columnNameArray = info.getColumnNames();
-    	//¿ÛÈ¥±íÍ·Ò»ĞĞ
+    	//æ‰£å»è¡¨å¤´ä¸€è¡Œ
     	int colIndex = i - 1;
     	boolean isNumberColumn = info.isNumberColumn(colIndex);
     	Component keyComponent = getKeyComponent(isNumberColumn, colIndex);
     	return  new Component[]{new UILabel(), new UILabel(columnNameArray[colIndex]), keyComponent};
 	}
 	
-	//»ñÈ¡·ÅÖÃ»ìÏıkeyµÄÃæ°å×é¼ş, Èç¹ûÊÇ×Ö·û´®, ·µ»ØUITextField; 
-	//Èç¹ûÊÇÊı×Ö¾Í·µ»ØUINumberField+UIBasicSpinner
+	//è·å–æ”¾ç½®æ··æ·†keyçš„é¢æ¿ç»„ä»¶, å¦‚æœæ˜¯å­—ç¬¦ä¸², è¿”å›UITextField; 
+	//å¦‚æœæ˜¯æ•°å­—å°±è¿”å›UINumberField+UIBasicSpinner
 	private Component getKeyComponent(boolean isNumberColumn, int colIndex){
 		String[] confusionKeyArray = info.getConfusionKeys();
 		if(!isNumberColumn){
@@ -162,7 +162,7 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 	private UIBasicSpinner populateNumberSpinner(String[] confusionKeyArray, int colIndex){
 		UIBasicSpinner spinner = new UIBasicSpinner();
     	Number spinnerValue = GeneralUtils.objectToNumber(confusionKeyArray[colIndex], false);
-    	//Êı×ÖÄ¬ÈÏ»ìÏı¹Ø¼ü×ÖÎª1
+    	//æ•°å­—é»˜è®¤æ··æ·†å…³é”®å­—ä¸º1
     	spinner.setValue(spinnerValue.intValue() == 0 ? 1 : spinnerValue);
     	
     	return spinner;
@@ -235,7 +235,7 @@ public class ConfusionTableDataPane extends BasicBeanPane<ConfusionInfo>{
 		}
 	};
 	
-	//SpinnerµÄÒ»¸ö·â×°, ÎªÁË·½±ãupdateÊ±¶¼ÓÃtextfieldµÄgetText·½·¨, ²»È»Òª¼Ó½Ó¿Ú, Ã»±ØÒª
+	//Spinnerçš„ä¸€ä¸ªå°è£…, ä¸ºäº†æ–¹ä¾¿updateæ—¶éƒ½ç”¨textfieldçš„getTextæ–¹æ³•, ä¸ç„¶è¦åŠ æ¥å£, æ²¡å¿…è¦
 	private class SpinnerWapper extends UITextField{
 		
 		private UIBasicSpinner spinner;

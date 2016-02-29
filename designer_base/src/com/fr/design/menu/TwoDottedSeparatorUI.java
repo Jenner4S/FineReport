@@ -17,9 +17,9 @@ public class TwoDottedSeparatorUI extends BasicSeparatorUI {
 	protected static final Dimension HORZ_DIMENSION = new Dimension(2, 0);
 
     /**
-     * 创建组件UI
-     * @param c 组件
-     * @return 组件UI
+     * 鍒涘缓缁勪欢UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
 	public static ComponentUI createUI(JComponent c) {
 		return new UISeparatorUI();

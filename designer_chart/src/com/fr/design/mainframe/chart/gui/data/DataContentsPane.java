@@ -4,34 +4,34 @@ import com.fr.design.mainframe.chart.AbstractChartAttrPane;
 import com.fr.design.mainframe.chart.PaneTitleConstants;
 
 /**
- * Í¼±íÊı¾İÄÚÈİ½çÃæ, ÊôĞÔ±í ÑùÊ½Êı¾İ.
+ * å›¾è¡¨æ•°æ®å†…å®¹ç•Œé¢, å±æ€§è¡¨ æ ·å¼æ•°æ®.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-18 ÏÂÎç03:42:20
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-18 ä¸‹åˆ03:42:20
  */
 public abstract class DataContentsPane extends AbstractChartAttrPane {
 
 
 	/**
-	 * ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
 	 */
 	public String getIconPath() {
 		return "com/fr/design/images/chart/ChartData.png";
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_DATA_TITLE;
 	}
 	
 	/**
-	 * ÉèÖÃÊÇ·ñ¹ØÁªµ¥Ôª¸ñÊı¾İ.
+	 * è®¾ç½®æ˜¯å¦å…³è”å•å…ƒæ ¼æ•°æ®.
 	 */
 	public abstract void setSupportCellData(boolean surpportCellData);
 	
 	/**
-	 * Çå³ıµôÏìÓ¦ÊÂ¼ş.
+	 * æ¸…é™¤æ‰å“åº”äº‹ä»¶.
 	 */
 //	public void removeAttributeListener() {
 //		super.removeAttributeChangeListener();

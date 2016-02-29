@@ -11,9 +11,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * ÊôĞÔ±í, Í¼±íÑùÊ½ -- ÏµÁĞ ½çÃæ. Í¨¹ıinitDiffer ¼ÓÔØ²»Í¬Plot ²»Í¬µÄPane.
+ * å±æ€§è¡¨, å›¾è¡¨æ ·å¼ -- ç³»åˆ— ç•Œé¢. é€šè¿‡initDiffer åŠ è½½ä¸åŒPlot ä¸åŒçš„Pane.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-5 ÉÏÎç10:31:50
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-5 ä¸Šåˆ10:31:50
  */
 public class ChartSeriesPane extends BasicScrollPane<Chart>{
 
@@ -28,8 +28,8 @@ public class ChartSeriesPane extends BasicScrollPane<Chart>{
 		this.parent = parent;
 	}
 	/**
-	 * ½çÃæ±êÌâ
-	 * @return ÏµÁĞ
+	 * ç•Œé¢æ ‡é¢˜
+	 * @return ç³»åˆ—
 	 */
 	@Override
 	public String title4PopupWindow() {
@@ -50,7 +50,7 @@ public class ChartSeriesPane extends BasicScrollPane<Chart>{
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	@Override
 	public void updateBean(Chart chart) {
@@ -64,7 +64,7 @@ public class ChartSeriesPane extends BasicScrollPane<Chart>{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæ
+	 * æ›´æ–°ç•Œé¢
 	 */
 	@Override
 	public void populateBean(Chart chart) {
@@ -81,11 +81,10 @@ public class ChartSeriesPane extends BasicScrollPane<Chart>{
 	}
 	
 	/**
-	 * ³õÊ¼»¯²»Í¬µÄPlotÏµÁĞ½çÃæ.
+	 * åˆå§‹åŒ–ä¸åŒçš„Plotç³»åˆ—ç•Œé¢.
 	 */
 	public void initDifferentPlotPane() {
         seriesStyleContentPane =  (AbstractPlotSeriesPane)ChartTypeInterfaceManager.getInstance().getPlotSeriesPane(parent, this.chart.getPlot());
 	}
 
 }
-

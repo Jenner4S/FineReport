@@ -80,7 +80,7 @@ public class FunctionManagerPane extends BasicPane {
      * Update.
      */
     public void update(FunctionManagerProvider functionManager) {
-        // Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉNameObject[],Ò»¶¨ÒªÕâÃ´Ğ´...
+        // Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆNameObject[],ä¸€å®šè¦è¿™ä¹ˆå†™...
         Nameable[] res = this.functionControlPane.update();
         NameObject[] res_array = new NameObject[res.length];
         java.util.Arrays.asList(res).toArray(res_array);

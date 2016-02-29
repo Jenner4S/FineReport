@@ -7,7 +7,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JList;
 
 /*
- * 显示和选择的项不同的下拉框
+ * 鏄剧ず鍜岄�夋嫨鐨勯」涓嶅悓鐨勪笅鎷夋
  */
 public class DictionaryComboBox<T> extends UIComboBox {
 	/**

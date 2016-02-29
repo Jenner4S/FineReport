@@ -31,10 +31,10 @@ public class XEditorHolder extends XWidgetCreator {
 	}
 	
 	/**
-	 * ÏìÓ¦µã»÷ÊÂ¼ş
+	 * å“åº”ç‚¹å‡»äº‹ä»¶
 	 * 
-	 * @param editingMouseListener ÊÂ¼ş´¦ÀíÆ÷
-	 * @param e µã»÷ÊÂ¼ş
+	 * @param editingMouseListener äº‹ä»¶å¤„ç†å™¨
+	 * @param e ç‚¹å‡»äº‹ä»¶
 	 * 
 	 */
 	public void respondClick(EditingMouseListener editingMouseListener,MouseEvent e){

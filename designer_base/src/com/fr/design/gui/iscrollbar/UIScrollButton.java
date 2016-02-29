@@ -14,7 +14,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-17
- * Time: ÉÏÎç10:00
+ * Time: ä¸Šåˆ10:00
  */
 public class UIScrollButton extends BasicArrowButton {
 

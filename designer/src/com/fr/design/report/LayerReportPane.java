@@ -29,7 +29,7 @@ import com.fr.stable.ProductConstants;
 /**
  * 
  * @editor zhou
- * @since 2012-3-23ÏÂÎç3:00:28
+ * @since 2012-3-23ä¸‹åˆ3:00:28
  */
 public class LayerReportPane extends BasicBeanPane<LayerReportAttr> {
     private static final int LABEL_HEIGHT = 55;

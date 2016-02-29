@@ -51,11 +51,11 @@ public class ProcedureListPane extends JControlPane {
 	}
 
     /**
-     * ´´½¨²»ÖØ¸´µÄÃû³Æ
+     * åˆ›å»ºä¸é‡å¤çš„åç§°
      *
-     * @param prefix Ç°×º
+     * @param prefix å‰ç¼€
      *
-     * @return ²»ÖØ¸´µÄÃû³Æ
+     * @return ä¸é‡å¤çš„åç§°
      */
 	public String createUnrepeatedName(String prefix) {
 		TableDataSource source = DesignTableDataManager.getEditingTableDataSource();
@@ -68,7 +68,7 @@ public class ProcedureListPane extends JControlPane {
 		for (int i = 0; i < model.size(); i++) {
 			all[i] = ((ListModelElement) model.get(i)).wrapper;
 		}
-		// richer:Éú³ÉµÄÃû×Ö´Ó1¿ªÊ¼. kunsnat: Ìí¼ÓÊôĞÔ´Ó0¿ªÊ¼.
+		// richer:ç”Ÿæˆçš„åå­—ä»1å¼€å§‹. kunsnat: æ·»åŠ å±æ€§ä»0å¼€å§‹.
 		int count = all.length + 1;
 		while (true) {
 			String name_test = prefix + count;
@@ -96,9 +96,9 @@ public class ProcedureListPane extends JControlPane {
 	}
 
 	/**
-	 * ´´½¨¶ÔÏó×é¼ş
+	 * åˆ›å»ºå¯¹è±¡ç»„ä»¶
 	 *
-	 * @return Ãæ°å×é¼ş
+	 * @return é¢æ¿ç»„ä»¶
 	 */
 	public NameableCreator[] createNameableCreators() {
 		return new NameableCreator[] { new NameObjectCreator("Proc", "/com/fr/design/images/data/store_procedure.png", StoreProcedure.class,
@@ -132,7 +132,7 @@ public class ProcedureListPane extends JControlPane {
 	 * Update.
 	 */
 	public void update(DatasourceManagerProvider datasourceManager) {
-		// Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉNameObject[],Ò»¶¨ÒªÕâÃ´Ğ´...
+		// Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆNameObject[],ä¸€å®šè¦è¿™ä¹ˆå†™...
 		Nameable[] res = this.update();
 		NameObject[] res_array = new NameObject[res.length];
 		java.util.Arrays.asList(res).toArray(res_array);

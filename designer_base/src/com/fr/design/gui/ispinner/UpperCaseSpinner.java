@@ -17,7 +17,7 @@ import javax.swing.text.DocumentFilter;
 
 import com.fr.stable.StableUtils;
 
-//_denny: 实在是没有办法处理让Spinner,小写转大写。这个UpperCaseSpinner在其他地方最好不要用
+//_denny: 瀹炲湪鏄病鏈夊姙娉曞鐞嗚Spinner,灏忓啓杞ぇ鍐欍�傝繖涓猆pperCaseSpinner鍦ㄥ叾浠栧湴鏂规渶濂戒笉瑕佺敤
 public class UpperCaseSpinner extends UIBasicSpinner {
 	public UpperCaseSpinner(SpinnerModel model) {
 		super(model);
@@ -64,7 +64,7 @@ public class UpperCaseSpinner extends UIBasicSpinner {
 
 			public Object stringToValue(String string)
 					throws ParseException {
-				//add将行数转换成ABC
+				//add灏嗚鏁拌浆鎹㈡垚ABC
 				try {
 					int num = Integer.parseInt(string);
 					if (num > 0) {

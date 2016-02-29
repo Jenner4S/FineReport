@@ -21,10 +21,10 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í, ÒÇ±íÅÌ, Í¼±íÑùÊ½-ÏµÁĞ ½çÃæ.
+ * å±æ€§è¡¨, ä»ªè¡¨ç›˜, å›¾è¡¨æ ·å¼-ç³»åˆ— ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-6 ÉÏÎç12:41:54
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-6 ä¸Šåˆ12:41:54
  */
 public class MeterSeriesPane extends AbstractPlotSeriesPane {
 

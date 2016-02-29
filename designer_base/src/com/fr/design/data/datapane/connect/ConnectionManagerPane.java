@@ -59,17 +59,17 @@ public class ConnectionManagerPane extends LoadingBasicPane {
     }
 
     /**
-     * ÉèÖÃÑ¡ÖĞÏî
+     * è®¾ç½®é€‰ä¸­é¡¹
      *
-     * @param index Ñ¡ÖĞÏîµÄĞòÁĞºÅ
+     * @param index é€‰ä¸­é¡¹çš„åºåˆ—å·
      */
     public void setSelectedIndex(int index) {
         this.connectionListPane.setSelectedIndex(index);
     }
 
     /**
-     * Ãû×ÖÊÇ·ñÔÊĞí
-     * @return ÔÊĞí·µ»Øtrue
+     * åå­—æ˜¯å¦å…è®¸
+     * @return å…è®¸è¿”å›true
      */
     public boolean isNamePermitted() {
         return connectionListPane.isNamePermitted();

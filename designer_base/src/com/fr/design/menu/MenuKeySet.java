@@ -4,12 +4,12 @@ package com.fr.design.menu;
 import javax.swing.*;
 
 /**
- * ¿ì½İ¼üÉèÖÃ½Ó¿Ú
+ * å¿«æ·é”®è®¾ç½®æ¥å£
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-13
- * Time: ÉÏÎç10:50
+ * Time: ä¸Šåˆ10:50
  */
 public abstract class MenuKeySet {
     private String menuName;

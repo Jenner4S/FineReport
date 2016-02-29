@@ -12,7 +12,7 @@ import java.awt.event.MouseWheelListener;
 /**
  * Author : daisy
  * Date: 13-8-27
- * Time: 上午9:12
+ * Time: 涓婂崍9:12
  */
 public class UIScrollPopUpMenu extends UIPopupMenu {
     private static final int MAX_SHOW_NUM = 27;
@@ -45,10 +45,10 @@ public class UIScrollPopUpMenu extends UIPopupMenu {
     }
 
     /**
-     * 展现 popupmenu
-     * @param invoker 组件
-     * @param x 定位
-     * @param y   定位
+     * 灞曠幇 popupmenu
+     * @param invoker 缁勪欢
+     * @param x 瀹氫綅
+     * @param y   瀹氫綅
      */
     public void show(Component invoker, int x, int y) {
         UIScrollBar scrollBar = getScrollBar();
@@ -112,8 +112,8 @@ public class UIScrollPopUpMenu extends UIPopupMenu {
         }
     }
     /**
-     * 移除
-     * @param index 指定位置
+     * 绉婚櫎
+     * @param index 鎸囧畾浣嶇疆
      */
     public void remove(int index) {
         // can't remove the scrollbar

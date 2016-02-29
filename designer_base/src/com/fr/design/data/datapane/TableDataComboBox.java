@@ -23,17 +23,17 @@ import com.fr.general.ComparatorUtils;
 import com.fr.stable.StringUtils;
 
 /**
- * °üº¬ËùÓĞÊı¾İ¼¯µÄÏÂÀ­¿ò
+ * åŒ…å«æ‰€æœ‰æ•°æ®é›†çš„ä¸‹æ‹‰æ¡†
  * 
  * @author zhou
- * @since 2012-4-20ÉÏÎç10:34:30
+ * @since 2012-4-20ä¸Šåˆ10:34:30
  */
 public class TableDataComboBox extends UIComboBox implements Prepare4DataSourceChange {
     protected java.util.Map<String, TableDataWrapper> resMap;
     private java.util.Map<String, TableDataWrapper> dsMap;
     private static final long serialVersionUID = 1L;
 	private boolean refresModel = false;
-    private String treeName; //Ê÷Êı¾İ¼¯±¾ÉíµÄÃû×Ö
+    private String treeName; //æ ‘æ•°æ®é›†æœ¬èº«çš„åå­—
 
     public TableDataComboBox(TableDataSource source){
         this(source,StringUtils.EMPTY);
@@ -103,9 +103,9 @@ public class TableDataComboBox extends UIComboBox implements Prepare4DataSourceC
 
 
     /**
-     * ÏòresMapÖĞÌí¼ÓTableDataĞÅÏ¢
-     * @param name Êı¾İ¼¯Ãû×Ö
-     * @param templateTableDataWrappe Êı¾İ¼¯
+     * å‘resMapä¸­æ·»åŠ TableDataä¿¡æ¯
+     * @param name æ•°æ®é›†åå­—
+     * @param templateTableDataWrappe æ•°æ®é›†
      */
 	public void putTableDataIntoMap(String name, TemplateTableDataWrapper templateTableDataWrappe) {
 		if (dsMap.containsKey(name)) {
@@ -128,7 +128,7 @@ public class TableDataComboBox extends UIComboBox implements Prepare4DataSourceC
 		return null;
 	}
 
-	//august:addElement·½·¨¾¹È»»áfireItemStateChanged£¬µ°ÌÛ
+	//august:addElementæ–¹æ³•ç«Ÿç„¶ä¼šfireItemStateChangedï¼Œè›‹ç–¼
 	@Override
 	protected void fireItemStateChanged(ItemEvent e) {
 		if (!refresModel) {
@@ -137,7 +137,7 @@ public class TableDataComboBox extends UIComboBox implements Prepare4DataSourceC
 	}
 
     /**
-     *×¢²álistener,ÏàÓ¦Êı¾İ¼¯¸Ä±ä
+     *æ³¨å†Œlistener,ç›¸åº”æ•°æ®é›†æ”¹å˜
      */
     public void registerDSChangeListener() {
         DesignTableDataManager.addDsChangeListener(new ChangeListener() {

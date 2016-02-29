@@ -41,7 +41,7 @@ public class DesignerLogHandler {
         private static DesignerLogHandler singleton = new DesignerLogHandler();
     }
 
-    // 所有的面板
+    // 鎵�鏈夌殑闈㈡澘
     private LogHandlerBar caption;
     private JCheckBoxMenuItem showInfo;
     private JCheckBoxMenuItem showError;
@@ -172,7 +172,7 @@ public class DesignerLogHandler {
                 }
             });
 
-            // 写到日志面板上面的Log和日志工具栏
+            // 鍐欏埌鏃ュ織闈㈡澘涓婇潰鐨凩og鍜屾棩蹇楀伐鍏锋爮
             FRContext.getLogger().addLogHandler(new Handler() {
                 public void publish(LogRecord logRecord) {
                     Date date = new Date();

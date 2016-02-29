@@ -115,8 +115,8 @@ public class ChartCategoryPane extends ChartAxisUsePane<Axis>{
     }
 
 	/**
-	 * 弹出框的界面标题.
-	 * @return 标题
+	 * 寮瑰嚭妗嗙殑鐣岄潰鏍囬.
+	 * @return 鏍囬
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("ChartF-Category_Axis");
@@ -201,7 +201,7 @@ public class ChartCategoryPane extends ChartAxisUsePane<Axis>{
 		}
 	}
 	
-	//把轴逆序拿掉
+	//鎶婅酱閫嗗簭鎷挎帀
 	private void relayoutWithPlot(Plot plot){
 		this.removeAll();
         JPanel pane = isSupportLineStyle() ? getPaneWithOutAxisRevert() : getPaneWithOutAxisRevertAndLineStyle();

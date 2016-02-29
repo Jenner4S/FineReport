@@ -17,7 +17,7 @@ import com.fr.design.gui.imenu.UIMenuItem;
 /**
  * 
  * @author zhou
- * @since 2012-6-6ÏÂÎç12:02:58
+ * @since 2012-6-6ä¸‹åˆ12:02:58
  */
 public class NameSeparator extends UpdateAction {
 	private String text;

@@ -10,7 +10,7 @@ import java.util.EventListener;
  * User   : Richer
  * Version: 6.5.5
  * Date   : 11-7-7
- * Time   : ÏÂÎç5:32
+ * Time   : ä¸‹åˆ5:32
  */
 public interface LoadedEventListener extends EventListener {
 

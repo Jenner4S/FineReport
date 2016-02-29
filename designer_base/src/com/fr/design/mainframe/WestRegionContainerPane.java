@@ -11,7 +11,7 @@ public class WestRegionContainerPane extends UIResizableContainer {
     private static WestRegionContainerPane THIS;
 
     /**
-     * µÃµ½ÊµÀý
+     * å¾—åˆ°å®žä¾‹
      * @return
      */
     public static final WestRegionContainerPane getInstance() {

@@ -8,7 +8,7 @@ public class DisplayThread extends Thread {
     Object sem = new Object();
  
     /**
-	 * ÔËĞĞ
+	 * è¿è¡Œ
 	 * 
 	 */
     public void run() {

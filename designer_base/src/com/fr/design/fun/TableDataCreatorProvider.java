@@ -19,22 +19,22 @@ public interface TableDataCreatorProvider {
     public static final String XML_TAG = "TableDataCreatorProvider";
 
     /**
-     * »ñÈ¡±¨±íÊı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
-     * @param creators ÄÚÖÃµÄÊı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
-     * @return ÍêÕûµÄ±¨±íÊı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
+     * è·å–æŠ¥è¡¨æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
+     * @param creators å†…ç½®çš„æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
+     * @return å®Œæ•´çš„æŠ¥è¡¨æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
      */
     public TableDataNameObjectCreator[] produceReportTableDataCreator(TableDataNameObjectCreator[] creators);
 
     /**
-     * »ñÈ¡·şÎñÆ÷Êı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
-     * @param creators ÄÚÖÃµÄÊı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
-     * @return ÍêÕûµÄ·şÎñÆ÷Êı¾İ¼¯Éè¼Æ½çÃæÀàĞÍÊı×é
+     * è·å–æœåŠ¡å™¨æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
+     * @param creators å†…ç½®çš„æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
+     * @return å®Œæ•´çš„æœåŠ¡å™¨æ•°æ®é›†è®¾è®¡ç•Œé¢ç±»å‹æ•°ç»„
      */
     public TableDataNameObjectCreator[] produceServerTableDataCreator(TableDataNameObjectCreator[] creators);
 
     /**
-     * ĞèÒª½«¶îÍâÊ¹ÓÃµÄÊı¾İ¼¯ÒÔ¼°ÆäÉè¼Æ½çÃæ×öÒ»¸ö¼ÇÂ¼
-     * @return ¶îÍâ¼ÇÂ¼¶ÔÓ¦
+     * éœ€è¦å°†é¢å¤–ä½¿ç”¨çš„æ•°æ®é›†ä»¥åŠå…¶è®¾è®¡ç•Œé¢åšä¸€ä¸ªè®°å½•
+     * @return é¢å¤–è®°å½•å¯¹åº”
      */
     public Map<String, TableDataNameObjectCreator> registerMap();
 }

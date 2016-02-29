@@ -57,13 +57,13 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * August:Ò»°ãµÄcursorµÄ pngÍ¼Æ¬¶¼ÊÇ32*32µÄ£¬ÏÂÃæµÄ·½·¨ÊÇÓÃÀ´Éú³É16*16µÄÍ¼Æ¬Ëù¶ÔÓ¦µÄcursorÍ¼±ê
+	 * August:ä¸€èˆ¬çš„cursorçš„ pngå›¾ç‰‡éƒ½æ˜¯32*32çš„ï¼Œä¸‹é¢çš„æ–¹æ³•æ˜¯ç”¨æ¥ç”Ÿæˆ16*16çš„å›¾ç‰‡æ‰€å¯¹åº”çš„cursorå›¾æ ‡
 	 *
-	 * @param cursor ¹â±ê
-	 * @param hotSpot ÈÈµã
-	 * @param name Ãû³Æ
-	 * @param ob ¹Û²ìÕß
-	 * @return ¹â±ê
+	 * @param cursor å…‰æ ‡
+	 * @param hotSpot çƒ­ç‚¹
+	 * @param name åç§°
+	 * @param ob è§‚å¯Ÿè€…
+	 * @return å…‰æ ‡
 	 */
 	public static Cursor createCustomCursor(Image cursor, Point hotSpot, String name, ImageObserver ob) {
 
@@ -82,9 +82,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ³õÊ¼»¯ÖĞÑëÃæ°å
-	 * @param centerPane ÖĞÑëÃæ°å
-	 * @param colorSelectable ÑÕÉ«Ñ¡Ôñ
+	 * åˆå§‹åŒ–ä¸­å¤®é¢æ¿
+	 * @param centerPane ä¸­å¤®é¢æ¿
+	 * @param colorSelectable é¢œè‰²é€‰æ‹©
 	 */
 	public static void initCenterPaneChildren(JPanel centerPane, ColorSelectable colorSelectable) {
 		JPanel menuColorPane1 = new JPanel();
@@ -100,15 +100,15 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * µ÷ÕûÑùÊ½
-	 * @param style ÑùÊ½
-	 * @param textField ÎÄ±¾¿ò
-	 * @param resolution µ÷ÕûÁ¿
-	 * @param value ¶ÔÆë·½Ê½
+	 * è°ƒæ•´æ ·å¼
+	 * @param style æ ·å¼
+	 * @param textField æ–‡æœ¬æ¡†
+	 * @param resolution è°ƒæ•´é‡
+	 * @param value å¯¹é½æ–¹å¼
 	 */
 	public static void adjustStyle(Style style, EditTextField textField, int resolution, Object value) {
 		if (style == null) {
-			// peter:»ñÈ¡Ä¬ÈÏµÄStyle.
+			// peter:è·å–é»˜è®¤çš„Style.
 			style = Style.DEFAULT_STYLE;
 		}
 
@@ -136,10 +136,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Éú³ÉÒ»¸ö±ß½ç²¼¾Ö
+	 * ç”Ÿæˆä¸€ä¸ªè¾¹ç•Œå¸ƒå±€
 	 *
-	 * @param args ²¼¾ÖÄÚ²¿µÄÔªËØ£¬Î»ÖÃµÈ
-	 * @return ¾ßÓĞ±ß½ç²¼¾ÖµÄÃæ°å
+	 * @param args å¸ƒå±€å†…éƒ¨çš„å…ƒç´ ï¼Œä½ç½®ç­‰
+	 * @return å…·æœ‰è¾¹ç•Œå¸ƒå±€çš„é¢æ¿
 	 */
 	public static JPanel createBorderLayoutPane(Object... args) {
 		if (args.length % 2 != 0) {
@@ -164,10 +164,10 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * set color title border
-	 * ÉèÖÃ´øÑÕÉ«µÄ±ß¿ò
-	 * @param s ±êÌâ
-	 * @param c ÑÕÉ«
-	 * @return Í¬ÉÏ
+	 * è®¾ç½®å¸¦é¢œè‰²çš„è¾¹æ¡†
+	 * @param s æ ‡é¢˜
+	 * @param c é¢œè‰²
+	 * @return åŒä¸Š
 	 */
 	public static TitledBorder createTitledBorder(String s, Color c) {
 		UITitledBorder tb = UITitledBorder.createBorderWithTitle(s);
@@ -179,19 +179,19 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÉèÖÃ´øÑÕÉ«µÄ±ß¿ò
+	 * è®¾ç½®å¸¦é¢œè‰²çš„è¾¹æ¡†
 	 * set color title border
-	 * @param s ±êÌâ
-	 * @return Í¬ÉÏ
+	 * @param s æ ‡é¢˜
+	 * @return åŒä¸Š
 	 */
 	public static TitledBorder createTitledBorder(String s) {
 		return createTitledBorder(s, new Color(102, 153, 255));
 	}
 
 	/**
-	 * ´´½¨¹¤¾ßÀ¸×é¼ş
-	 * @param updateAction ¸üĞÂ¶¯×÷
-	 * @return UIToggleButton °´Å¥
+	 * åˆ›å»ºå·¥å…·æ ç»„ä»¶
+	 * @param updateAction æ›´æ–°åŠ¨ä½œ
+	 * @return UIToggleButton æŒ‰é’®
 	 * 
 	 */
 	public static UIToggleButton createToolBarComponent(UpdateAction updateAction) {
@@ -222,9 +222,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÉèÖÃÒ»¸ö´°¿Ú
+	 * è®¾ç½®ä¸€ä¸ªçª—å£
 	 *
-	 * @param win the current window august:ÏÖÔÚÒª¿¼ÂÇ×ó±ßÈÕÖ¾Ä£°åµÄÓ°Ïì
+	 * @param win the current window august:ç°åœ¨è¦è€ƒè™‘å·¦è¾¹æ—¥å¿—æ¨¡æ¿çš„å½±å“
 	 */
 	public static void centerWindow(Window win) {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -242,8 +242,8 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * Gets window/frame to screen center.
-	 * @param owerWin ¸¸´°¿Ú
-	 * @param win ´°¿Ú
+	 * @param owerWin çˆ¶çª—å£
+	 * @param win çª—å£
 	 */
 	public static void setWindowCenter(Window owerWin, Window win) {
 		Point owerPoint = owerWin.getLocation();
@@ -255,7 +255,7 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * Gets window/frame to screen center.
-	 * @param ´°¿Ú
+	 * @param çª—å£
 	 */
 	public static void setWindowFullScreen(Window win) {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -270,9 +270,9 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * Shows down component.
-	 * ÏÔÊ¾µ¯³ö¹Ø±Õ²Ëµ¥
-	 * @param popup µ¯³ö²Ëµ¥
-	 * @param ¸¸×é¼ş
+	 * æ˜¾ç¤ºå¼¹å‡ºå…³é—­èœå•
+	 * @param popup å¼¹å‡ºèœå•
+	 * @param çˆ¶ç»„ä»¶
 	 */
 	public static void showPopupCloseMenu(JPopupMenu popup, Component parentComponent) {
 		if (popup == null) {// check null.
@@ -293,11 +293,11 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÏÔÊ¾µ¯³ö²Ëµ¥
-	 * @param popup µ¯³ö²Ëµ¥
-	 * @param parentComponent ¸¸×é¼ş
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
+	 * æ˜¾ç¤ºå¼¹å‡ºèœå•
+	 * @param popup å¼¹å‡ºèœå•
+	 * @param parentComponent çˆ¶ç»„ä»¶
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
 	 */
 	public static void showPopMenuWithParentWidth(JPopupMenu popup, Component parentComponent, int x, int y) {
 		if (popup == null) {// check null.
@@ -310,11 +310,11 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÏÔÊ¾µ¯³ö²Ëµ¥
-	 * @param popup µ¯³ö²Ëµ¥
-	 * @param parentComponent ¸¸×é¼ş
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
+	 * æ˜¾ç¤ºå¼¹å‡ºèœå•
+	 * @param popup å¼¹å‡ºèœå•
+	 * @param parentComponent çˆ¶ç»„ä»¶
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
 	 */
 	public static void showPopupMenu(JPopupMenu popup, Component parentComponent, int x, int y) {
 		if (popup == null) {// check null.
@@ -328,12 +328,12 @@ public abstract class GUICoreUtils{
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		screen.setSize(screen.getSize().width, screen.height - HEIGHT_GAP);
 
-		// peter:µ÷ÕûXµÄ¸ß¶È.
+		// peter:è°ƒæ•´Xçš„é«˜åº¦.
 		if (point.x + size.width > screen.width && size.width < screen.width) {
 			x += (screen.width - point.x - size.width);
 		}
 
-		// peter:µ÷Õûy¸ß¶È.
+		// peter:è°ƒæ•´yé«˜åº¦.
 		if (point.y + size.height > screen.height && size.height < screen.height) {
 			y -= size.height;
 		}
@@ -344,8 +344,8 @@ public abstract class GUICoreUtils{
 	/**
 	 * Set enabled.<br>
 	 * With the enabled of all children component.
-	 * @param parentComponent ¸¸×é¼ş
-	 * @param enabled ÊÇ·ñ¿ÉÓÃ
+	 * @param parentComponent çˆ¶ç»„ä»¶
+	 * @param enabled æ˜¯å¦å¯ç”¨
 	 */
 	public static void setEnabled(JComponent parentComponent, boolean enabled) {
 		// check the border of comp.
@@ -374,9 +374,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Ôö¼Ó¼àÌı
-	 * @param parentComponent ¸¸×é¼ş
-	 * @param changeListener ¼àÌı
+	 * å¢åŠ ç›‘å¬
+	 * @param parentComponent çˆ¶ç»„ä»¶
+	 * @param changeListener ç›‘å¬
 	 * @author kunsnat E-mail kunsnat@gmail.com
 	 */
 	public static void addChangeListener(JComponent parentComponent, ChangeListener changeListener) {
@@ -397,9 +397,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Ôö¼Ó¼àÌı
-	 * @param parentComponent ¸¸×é¼ş
-	 * @param actionListener ¼àÌı
+	 * å¢åŠ ç›‘å¬
+	 * @param parentComponent çˆ¶ç»„ä»¶
+	 * @param actionListener ç›‘å¬
 	 */
 	public static void addActionListener(JComponent parentComponent, ActionListener actionListener) {
 		for (int i = 0; i < parentComponent.getComponentCount(); i++) {
@@ -414,10 +414,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Éú³ÉÒ»¸ö×ó±ßÊÇÃû×Ö,ÓÒ±ßÊÇcompµÄÒ»¸öJPanel
-	 * @param comp ×é¼ş
-	 * @param name Ãû³Æ
-	 * @return Ãæ°å
+	 * ç”Ÿæˆä¸€ä¸ªå·¦è¾¹æ˜¯åå­—,å³è¾¹æ˜¯compçš„ä¸€ä¸ªJPanel
+	 * @param comp ç»„ä»¶
+	 * @param name åç§°
+	 * @return é¢æ¿
 	 */
 	public static JPanel createNamedPane(JComponent comp, String name) {
 		JPanel mainPane = new JPanel();
@@ -430,10 +430,10 @@ public abstract class GUICoreUtils{
 	}
 
 	 /**
-	  * Éú³ÉÒ»¸öÉÏ±ßÊÇÃû×Ö,ÏÂ±ßÊÇcompµÄÒ»¸öJPanel
-	  * @param comp ×é¼ş
-	  * @param name Ãû³Æ
-	  * @return Ãæ°å
+	  * ç”Ÿæˆä¸€ä¸ªä¸Šè¾¹æ˜¯åå­—,ä¸‹è¾¹æ˜¯compçš„ä¸€ä¸ªJPanel
+	  * @param comp ç»„ä»¶
+	  * @param name åç§°
+	  * @return é¢æ¿
 	  */
 	public static JPanel createVerticalNamedPane(JComponent comp, String name) {
 		JPanel mainPane = new JPanel();
@@ -446,31 +446,31 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ²úÉúÒ»¸öFlow Pane, flowAligmentÊÇFlowLayout.LEFT, CENTER, RIGHT.
-	 * @param comp ×é¼ş
-	 * @param flowAlignment ¶ÔÆë·½Ê½
-	 * @return Ãæ°å
+	 * äº§ç”Ÿä¸€ä¸ªFlow Pane, flowAligmentæ˜¯FlowLayout.LEFT, CENTER, RIGHT.
+	 * @param comp ç»„ä»¶
+	 * @param flowAlignment å¯¹é½æ–¹å¼
+	 * @return é¢æ¿
 	 */
 	public static JPanel createFlowPane(Component comp, int flowAlignment) {// by
 		return GUICoreUtils.createFlowPane(new Component[]{comp}, flowAlignment);
 	}
 
 	/**
-	 * ²úÉúÒ»¸öFlow Pane, flowAligmentÊÇFlowLayout.LEFT, CENTER, RIGHT.
-	 * @param comps ×é¼ş
-	 * @param flowAlignment ¶ÔÆë·½Ê½
-	 * @return Ãæ°å
+	 * äº§ç”Ÿä¸€ä¸ªFlow Pane, flowAligmentæ˜¯FlowLayout.LEFT, CENTER, RIGHT.
+	 * @param comps ç»„ä»¶
+	 * @param flowAlignment å¯¹é½æ–¹å¼
+	 * @return é¢æ¿
 	 */
 	public static JPanel createFlowPane(Component[] comps, int flowAlignment) {// by
 		return GUICoreUtils.createFlowPane(comps, flowAlignment, 0);
 	}
 
 	/**
-	 * ²úÉúÒ»¸öFlow Pane, flowAligmentÊÇFlowLayout.LEFT, CENTER, RIGHT.
-	 * @param comps ×é¼ş
-	 * @param flowAlignement ¶ÔÆë·½Ê½
-	 * @param hSpace Ë®Æ½¼ä¸ô
-	 * @return Ãæ°å
+	 * äº§ç”Ÿä¸€ä¸ªFlow Pane, flowAligmentæ˜¯FlowLayout.LEFT, CENTER, RIGHT.
+	 * @param comps ç»„ä»¶
+	 * @param flowAlignement å¯¹é½æ–¹å¼
+	 * @param hSpace æ°´å¹³é—´éš”
+	 * @return é¢æ¿
 	 */
 	public static JPanel createFlowPane(Component[] comps, int flowAlignment, int hSpace) {// by
 		// peter
@@ -478,12 +478,12 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ²úÉúÒ»¸öFlow Pane, flowAligmentÊÇFlowLayout.LEFT, CENTER, RIGHT,
-	 * @param comps ×é¼ş
-	 * @param flowAlignment ¶ÔÆë·½Ê½
-	 * @param hSpace ´¹Ö±¼ä¸ô
-	 * @param vSpace Ë®Æ½¼ä¸ô
-	 * @return  Ãæ°å
+	 * äº§ç”Ÿä¸€ä¸ªFlow Pane, flowAligmentæ˜¯FlowLayout.LEFT, CENTER, RIGHT,
+	 * @param comps ç»„ä»¶
+	 * @param flowAlignment å¯¹é½æ–¹å¼
+	 * @param hSpace å‚ç›´é—´éš”
+	 * @param vSpace æ°´å¹³é—´éš”
+	 * @return  é¢æ¿
 	 */
 	public static JPanel createFlowPane(Component[] comps, int flowAlignment, int hSpace, int vSpace) {
 		JPanel leftPane = new /**/JPanel();
@@ -496,9 +496,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Éú³ÉÒ»¸öÒÔÁ÷Ê½²¼¾ÖÎª²¼¾ÖµÄÃæ°å
-	 * @param comps Ãæ°åÖĞµÄ×é¼şÒÔ¼°²¼¾ÖµÄ²ÎÊı£¬ºó3Î»²ÎÊı£¨¿ÉÑ¡£©·Ö±ğ±íÊ¾¶ÔÆë·½Ê½£¬Ë®Æ½¼äÏ¶£¬´¹Ö±¼äÏ¶
-	 * @return  Ãæ°å
+	 * ç”Ÿæˆä¸€ä¸ªä»¥æµå¼å¸ƒå±€ä¸ºå¸ƒå±€çš„é¢æ¿
+	 * @param comps é¢æ¿ä¸­çš„ç»„ä»¶ä»¥åŠå¸ƒå±€çš„å‚æ•°ï¼Œå3ä½å‚æ•°ï¼ˆå¯é€‰ï¼‰åˆ†åˆ«è¡¨ç¤ºå¯¹é½æ–¹å¼ï¼Œæ°´å¹³é—´éš™ï¼Œå‚ç›´é—´éš™
+	 * @return  é¢æ¿
 	 */
 	public static JPanel createFlowPane(Object... comps) {
 		int len = comps.length;
@@ -523,10 +523,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ²úÉúÒ»¸öBorderPane, boderPosition=BoderLayout.CENTER, NORTH, SOUNTH, RIGHT.
-	 * @param comp ×é¼ş
-	 * @param boderPosition Î»ÖÃ
-	 * @return Ãæ°å
+	 * äº§ç”Ÿä¸€ä¸ªBorderPane, boderPosition=BoderLayout.CENTER, NORTH, SOUNTH, RIGHT.
+	 * @param comp ç»„ä»¶
+	 * @param boderPosition ä½ç½®
+	 * @return é¢æ¿
 	 */
 	public static JPanel createBorderPane(JComponent comp, String boderPosition) {// by
 		// peter
@@ -538,10 +538,10 @@ public abstract class GUICoreUtils{
 	}
 
     /**
-     * Éú³ÉÒ»¸ö±ß½ç²¼¾ÖµÄÃæ°å
-     * @param components  Ãæ°åÖĞµÄ×é¼ş£¬µÚÒ»¸ö×é¼şÎ»ÖÃÔÚÖĞ¼ä£¬µÚ¶ş¸ö×é¼şÎ»ÖÃÔÙ¶«±ß£¬
-     *        µÚÈı¸ö×é¼şÎ»ÖÃÔÚÄÏ±ß£¬µÚËÄ¸ö×é¼şÎ»ÖÃÔÚÎ÷±ß£¬µÚÎå¸ö×é¼şÎ»ÖÃÔÚ±±±ß
-     * @return  ¾ßÓĞ±ß½ç²¼¾ÖµÄÈİÆ÷
+     * ç”Ÿæˆä¸€ä¸ªè¾¹ç•Œå¸ƒå±€çš„é¢æ¿
+     * @param components  é¢æ¿ä¸­çš„ç»„ä»¶ï¼Œç¬¬ä¸€ä¸ªç»„ä»¶ä½ç½®åœ¨ä¸­é—´ï¼Œç¬¬äºŒä¸ªç»„ä»¶ä½ç½®å†ä¸œè¾¹ï¼Œ
+     *        ç¬¬ä¸‰ä¸ªç»„ä»¶ä½ç½®åœ¨å—è¾¹ï¼Œç¬¬å››ä¸ªç»„ä»¶ä½ç½®åœ¨è¥¿è¾¹ï¼Œç¬¬äº”ä¸ªç»„ä»¶ä½ç½®åœ¨åŒ—è¾¹
+     * @return  å…·æœ‰è¾¹ç•Œå¸ƒå±€çš„å®¹å™¨
      */
     public static JPanel createBorderLayoutPane(Component[] components) {
 		JPanel pane = new JPanel(new BorderLayout());
@@ -579,13 +579,13 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * it's a very good method, user can get treePath from treeNode.
-	 * @param ½Úµã
-	 * @return Â·¾¶
+	 * @param èŠ‚ç‚¹
+	 * @return è·¯å¾„
 	 */
 	public static TreePath getTreePath(TreeNode treeNode) {
 		List<TreeNode> objectList = new ArrayList<TreeNode>();
 
-		// peter:ĞèÒªÅĞ¶Ïtreenode²»Îª¿Õ.
+		// peter:éœ€è¦åˆ¤æ–­treenodeä¸ä¸ºç©º.
 		if (treeNode != null) {
 			objectList.add(treeNode);
 			while ((treeNode = treeNode.getParent()) != null) {
@@ -596,7 +596,7 @@ public abstract class GUICoreUtils{
 		Object[] objects = new Object[objectList.size()];
 		objectList.toArray(objects);
 
-		// peter:ÎªÁË²»Å×³öException,Ö±½Ó·µ»Ønull.
+		// peter:ä¸ºäº†ä¸æŠ›å‡ºException,ç›´æ¥è¿”å›null.
 		if (objects.length <= 0) {
 			return null;
 		}
@@ -605,10 +605,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * peter:»ñµÃ×îÉÏÃæµÄÄÇ¸öÑ¡ÖĞµÄTreePath
-	 * @param tree Ê÷
-	 * @param treePaths Â·¾¶
-	 * @return Â·¾¶
+	 * peter:è·å¾—æœ€ä¸Šé¢çš„é‚£ä¸ªé€‰ä¸­çš„TreePath
+	 * @param tree æ ‘
+	 * @param treePaths è·¯å¾„
+	 * @return è·¯å¾„
 	 */
 	public static TreePath getTopTreePath(JTree tree, TreePath[] treePaths) {
 		if (tree == null || treePaths == null || treePaths.length == 0) {
@@ -617,7 +617,7 @@ public abstract class GUICoreUtils{
 
 		TreePath topTreePath = null;
 
-		// peter:¿ªÊ¼±È½ÏĞĞ.
+		// peter:å¼€å§‹æ¯”è¾ƒè¡Œ.
 		int row = Integer.MAX_VALUE;
 		for (int i = 0; i < treePaths.length; i++) {
 			int tmpRow = tree.getRowForPath(treePaths[i]);
@@ -631,8 +631,8 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * »ñµÃUIµÄTitledBorder,Ä¬ÈÏµÄLineBorderµÄÑÕÉ«.
-	 * @return ÑÕÉ«
+	 * è·å¾—UIçš„TitledBorder,é»˜è®¤çš„LineBorderçš„é¢œè‰².
+	 * @return é¢œè‰²
 	 */
 	public static Color getTitleLineBorderColor() {
 		Border b = UIManager.getBorder("TitledBorder.border");
@@ -644,10 +644,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * peter: É¾³ıÑ¡ÖĞµÄËùÓĞ½Úµã
-	 * @param ancestorWindow ¸¸´°¿Ú
-	 * @param nodeList ½ÚµãÁĞ±í
-	 * @return ²¼¶ûÖµ
+	 * peter: åˆ é™¤é€‰ä¸­çš„æ‰€æœ‰èŠ‚ç‚¹
+	 * @param ancestorWindow çˆ¶çª—å£
+	 * @param nodeList èŠ‚ç‚¹åˆ—è¡¨
+	 * @return å¸ƒå°”å€¼
 	 */
 	public static boolean removeJListSelectedNodes(Window ancestorWindow, JList nodeList) {
 		int selectedIndex = nodeList.getSelectedIndex();
@@ -660,7 +660,7 @@ public abstract class GUICoreUtils{
 		if (returnVal == JOptionPane.OK_OPTION) {
 			int minSelectedIndex = nodeList.getMinSelectionIndex();
 			int[] selectedIndices = nodeList.getSelectedIndices();
-			// peter:ÏÈÅÅĞò£¬È»ºó´ÓºóÍùÇ°É¾³ı£¬ÕâÑù²»»á·¢Éú´íÂÒ.
+			// peter:å…ˆæ’åºï¼Œç„¶åä»åå¾€å‰åˆ é™¤ï¼Œè¿™æ ·ä¸ä¼šå‘ç”Ÿé”™ä¹±.
 			Arrays.sort(selectedIndices);
 			for (int i = selectedIndices.length - 1; i >= 0; i--) {
 				((DefaultListModel) nodeList.getModel()).remove(selectedIndices[i]);
@@ -684,9 +684,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * µÃµ½SpinnerµÄ±à¼­Æ÷
+	 * å¾—åˆ°Spinnerçš„ç¼–è¾‘å™¨
 	 * @param spinner spinner
-	 * @return ÎÄ±¾Óò
+	 * @return æ–‡æœ¬åŸŸ
 	 */
 	public static JFormattedTextField getSpinnerTextField(JSpinner spinner) {
 		JComponent editor = spinner.getEditor();
@@ -699,9 +699,9 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * Îªµ½SpinnerµÄ±à¼­Æ÷ÉèÖÃ¿í¶È
+	 * ä¸ºåˆ°Spinnerçš„ç¼–è¾‘å™¨è®¾ç½®å®½åº¦
 	 * @param spinner spinner
-	 * @columns ÁĞÊı
+	 * @columns åˆ—æ•°
 	 */
 	public static void setColumnForSpinner(JSpinner spinner, int columns) {
 		JFormattedTextField cftf = getSpinnerTextField(spinner);
@@ -713,9 +713,9 @@ public abstract class GUICoreUtils{
 
 	/**
 	 * ************************************************************************
-	 * peter:ÖØ»æ.
+	 * peter:é‡ç»˜.
 	 *
-	 * @param component ×é¼ş
+	 * @param component ç»„ä»¶
 	 */
 	public static void repaint(final Component component) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -729,11 +729,11 @@ public abstract class GUICoreUtils{
 
 	
 	/**
-	 * harry£º´´½¨×Ô¶¨Òå°´Å¥(Ö¸²»ÊÜÆ¤·ô¿ØÖÆµÄ°´Å¥)
-	 * @param icon Í¼±ê
-	 * @param roverIcon Ğü¸¡Í¼±ê
-	 * @param pressedIcon µã»÷Í¼±ê
-	 * @return °´Å¥
+	 * harryï¼šåˆ›å»ºè‡ªå®šä¹‰æŒ‰é’®(æŒ‡ä¸å—çš®è‚¤æ§åˆ¶çš„æŒ‰é’®)
+	 * @param icon å›¾æ ‡
+	 * @param roverIcon æ‚¬æµ®å›¾æ ‡
+	 * @param pressedIcon ç‚¹å‡»å›¾æ ‡
+	 * @return æŒ‰é’®
 	 */
 	public static UIButton createTransparentButton(Icon icon, Icon roverIcon, Icon pressedIcon) {
 		UIButton button = new UIButton();
@@ -755,8 +755,8 @@ public abstract class GUICoreUtils{
 	public static DataFunction[] FunctionArray = null;
 
 	/**
-	 * »ñÈ¡º¯Êı
-	 * @return DataFunction[] º¯Êı
+	 * è·å–å‡½æ•°
+	 * @return DataFunction[] å‡½æ•°
 	 * 
 	 */
 	public static DataFunction[] getFunctionArray() {
@@ -768,10 +768,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÈÃUIComboBoxÔÚ²»´¥·¢ItemListenerµÄÇé¿öÏÂÑ¡ÖĞÄ³Ïî
+	 * è®©UIComboBoxåœ¨ä¸è§¦å‘ItemListenerçš„æƒ…å†µä¸‹é€‰ä¸­æŸé¡¹
 	 *
-	 * @param jcb ¸´Ñ¡¿ò
-	 * @param item Ñ¡Ïî
+	 * @param jcb å¤é€‰æ¡†
+	 * @param item é€‰é¡¹
 	 */
 	public static void setSelectedItemQuietly(UIComboBox jcb, Object item) {
 		ItemListener[] listeners = jcb.getItemListeners();
@@ -787,10 +787,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÈÃUIComboBoxÔÚ²»´¥·¢ItemListenerµÄÇé¿öÏÂÑ¡ÖĞÄ³Ïî
+	 * è®©UIComboBoxåœ¨ä¸è§¦å‘ItemListenerçš„æƒ…å†µä¸‹é€‰ä¸­æŸé¡¹
 	 *
-	 * @param jcb ¸´Ñ¡¿ò
-	 * @param index Ñ¡ÏîĞòºÅ
+	 * @param jcb å¤é€‰æ¡†
+	 * @param index é€‰é¡¹åºå·
 	 */
 	public static void setSelectedItemQuietly(UIComboBox jcb, int index) {
 		ItemListener[] listeners = jcb.getItemListeners();
@@ -806,10 +806,10 @@ public abstract class GUICoreUtils{
 	}
 
 	/**
-	 * ÊÇ·ñÔÚÍ¬Ò»ÇøÓò
-	 * @param oneRect ¾ØĞÎ¿ò
-	 * @param otherRect ÆäËû¾ØĞÎ¿ò
-	 * @return Í¬ÉÏ
+	 * æ˜¯å¦åœ¨åŒä¸€åŒºåŸŸ
+	 * @param oneRect çŸ©å½¢æ¡†
+	 * @param otherRect å…¶ä»–çŸ©å½¢æ¡†
+	 * @return åŒä¸Š
 	 */
 	public static boolean isTheSameRect(Rectangle oneRect, Rectangle otherRect) {
 		return oneRect.getX() == otherRect.getX()

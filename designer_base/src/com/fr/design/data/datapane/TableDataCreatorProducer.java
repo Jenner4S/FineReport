@@ -116,13 +116,13 @@ public class TableDataCreatorProducer {
         List<TableDataNameObjectCreator> coverCreators = new ArrayList<>();
         for (TableDataNameObjectCreator ex : extraCreators) {
             int index = ArrayUtils.indexOf(creators, ex);
-            // ËµÃ÷ÒÑ¾­´æÔÚÁËÒ»¸öÍ¬ÀàĞÍµÄÊı¾İ¼¯£¬ĞèÒªÓÃ²å¼şµÄ¸²¸ÇµôÔ­ÏÈµÄ
+            // è¯´æ˜å·²ç»å­˜åœ¨äº†ä¸€ä¸ªåŒç±»å‹çš„æ•°æ®é›†ï¼Œéœ€è¦ç”¨æ’ä»¶çš„è¦†ç›–æ‰åŸå…ˆçš„
             if (index != ArrayUtils.INDEX_NOT_FOUND) {
-                // ĞèÒªÌæ»»µ½ÁĞ±íÀïµÄ
+                // éœ€è¦æ›¿æ¢åˆ°åˆ—è¡¨é‡Œçš„
                 coverIndexList.add(index);
                 coverCreators.add(ex);
             } else {
-                // ĞèÒªÌí¼Óµ½ÁĞ±íÖĞÈ¥µÄ
+                // éœ€è¦æ·»åŠ åˆ°åˆ—è¡¨ä¸­å»çš„
                 list.add(ex);
             }
         }

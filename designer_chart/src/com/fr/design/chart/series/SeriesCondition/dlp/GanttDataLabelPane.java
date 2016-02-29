@@ -10,9 +10,9 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : 上午10:35
+ * Time   : 涓婂崍10:35
  * 
- * 甘特图的标签界面
+ * 鐢樼壒鍥剧殑鏍囩鐣岄潰
  */
 public class GanttDataLabelPane extends DataLabelPane {
 	private static final long serialVersionUID = 5409845868543668181L;

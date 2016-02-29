@@ -11,8 +11,8 @@ import com.fr.design.chart.series.SeriesCondition.LabelContentsPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-1
- * Time   : ÉÏÎç9:32
- * µØÍ¼ Ìõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:32
+ * åœ°å›¾ æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class MapPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = 3698292568618077981L;
@@ -22,8 +22,8 @@ public class MapPlotDataSeriesConditionPane extends DataSeriesConditionPane {
     }
     
     /**
-     * ·µ»Ø½çÃæ¶ÔÓ¦µÄclass
-     * @return  ·µ»Ø½çÃæ¶ÔÓ¦class
+     * è¿”å›ç•Œé¢å¯¹åº”çš„class
+     * @return  è¿”å›ç•Œé¢å¯¹åº”class
      */
 	public Class<? extends Plot> class4Correspond() {
         return MapPlot.class;

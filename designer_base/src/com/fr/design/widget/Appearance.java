@@ -4,7 +4,7 @@ import com.fr.design.beans.BasicBeanPane;
 import com.fr.form.ui.Widget;
 
 /**
- * ¸ñ×ÓÖĞ¿Ø¼şµÄÉè¼Æ½çÃæ
+ * æ ¼å­ä¸­æ§ä»¶çš„è®¾è®¡ç•Œé¢
  */
 public class Appearance {
 
@@ -14,9 +14,9 @@ public class Appearance {
     private String displayName;
 
     /**
-     * ¹¹Ôìº¯Êı£¬¹¹Ôì³öÓÃÓÚ¿Ø¼ş½çÃæ
-     * @param defineClass ¹¹Ôì¸ÃÉè¼Æ½çÃæµÄÀà
-     * @param displayName ÏÔÊ¾Öµ
+     * æ„é€ å‡½æ•°ï¼Œæ„é€ å‡ºç”¨äºæ§ä»¶ç•Œé¢
+     * @param defineClass æ„é€ è¯¥è®¾è®¡ç•Œé¢çš„ç±»
+     * @param displayName æ˜¾ç¤ºå€¼
      */
     public Appearance(Class<? extends BasicBeanPane<? extends Widget>> defineClass, String displayName) {
         this.defineClass = defineClass;

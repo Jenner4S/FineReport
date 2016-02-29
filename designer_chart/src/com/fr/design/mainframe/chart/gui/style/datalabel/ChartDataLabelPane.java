@@ -17,7 +17,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * 这个面板是从系列那边分出来的
+ * 杩欎釜闈㈡澘鏄粠绯诲垪閭ｈ竟鍒嗗嚭鏉ョ殑
  * @author eason
  *
  */
@@ -80,7 +80,7 @@ public class ChartDataLabelPane extends BasicScrollPane<Chart>{
 		return PaneTitleConstants.CHART_STYLE_LABEL_TITLE;
 	}
 
-    // 代码整理.
+    // 浠ｇ爜鏁寸悊.
 	protected ChartDatapointLabelPane getLabelPane() {
         if(chart.getPlot().isMapKindLabel()) {
             return new ChartDataPointLabel4MapPane(parent);

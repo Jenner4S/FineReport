@@ -25,7 +25,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-11
+ * @since 6.5.4 åˆ›å»ºäº2011-4-11
  */
 public class BottomCornerMouseHanlder extends MouseInputAdapter {
 	private PolyDesigner designer;
@@ -40,11 +40,11 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 	}
 
 	/**
-	 * Êó±ê°´ÏÂÊÂ¼ş
+	 * é¼ æ ‡æŒ‰ä¸‹äº‹ä»¶
 	 * 
-	 * @param e Êó±êÊÂ¼ş
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:32:04
+	 * @date 2015-2-12-ä¸‹åˆ2:32:04
 	 * 
 	 */
 	public void mousePressed(MouseEvent e) {
@@ -57,11 +57,11 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 	}
 
 	/**
-	 * Êó±êÊÍ·ÅÊÂ¼ş
+	 * é¼ æ ‡é‡Šæ”¾äº‹ä»¶
 	 * 
-	 * @param e Êó±êÊÂ¼ş
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:32:04
+	 * @date 2015-2-12-ä¸‹åˆ2:32:04
 	 * 
 	 */
 	public void mouseReleased(MouseEvent e) {
@@ -71,7 +71,7 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 		editor.setDragging(false);
 
 		if(designer.intersectsAllBlock(editor.getValue())){
-			//¼ì²âÖØµş
+			//æ£€æµ‹é‡å 
 			editor.getValue().setBounds(oldBounds);
 			return;
 		}
@@ -83,11 +83,11 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 	}
 
 	/**
-	 * Êó±êÍÏ×§ÊÂ¼ş
+	 * é¼ æ ‡æ‹–æ‹½äº‹ä»¶
 	 * 
-	 * @param e Êó±êÊÂ¼ş
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:32:04
+	 * @date 2015-2-12-ä¸‹åˆ2:32:04
 	 * 
 	 */
 	public void mouseDragged(MouseEvent e) {
@@ -126,9 +126,9 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 		}
 		
 		/**
-		 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄ´¹Ö±ÏßÊı×é
+		 * è·å–å½“å‰é€‰ä¸­å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄ´¹Ö±ÏßÊı×é
+		 * @return å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
 		 */
 		public int[] getVerticalLine(){
@@ -136,9 +136,9 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 		}
 		
 		/**
-		 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄË®Æ½ÏßÊı×é
+		 * è·å–å½“å‰é€‰ä¸­å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄË®Æ½ÏßÊı×é
+		 * @return å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
 		 */
 		public int[] getHorizontalLine(){
@@ -153,25 +153,25 @@ public class BottomCornerMouseHanlder extends MouseInputAdapter {
 	
 			@Override
 			public boolean hasNext() {
-				//ÊÇ·ñ³¬ÁË
+				//æ˜¯å¦è¶…äº†
 				boolean isOverFlow = i >= designer.getTarget().getBlockCount();
 				if(isOverFlow){
 					return false;
 				}
 				
-				//ÊÇ·ñÎªµ±Ç°ÒÑ¾­Ñ¡ÖĞµÄ¿é
+				//æ˜¯å¦ä¸ºå½“å‰å·²ç»é€‰ä¸­çš„å—
 				boolean isSelf = designer.getTarget().getBlock(i) == editor.getValue();
 				if(!isSelf){
 					return true;
 				}
 				
-				//Èç¹ûÊÇ×ÔÉí, ÔòÅĞ¶ÏÒ»ÏÂÒ»¸ö¿é
+				//å¦‚æœæ˜¯è‡ªèº«, åˆ™åˆ¤æ–­ä¸€ä¸‹ä¸€ä¸ªå—
 				boolean isNextOverFlow = ++i < designer.getTarget().getBlockCount();
 				return isNextOverFlow;
 			}
 			
 			public int[] getHorizontalLine(){
-				//ÒòÎªÈ¡nextµÄÊ±ºòÒÑ¾­i++ÁË, ËùÒÔÕâ±ß»ñÈ¡¿éµÄÖµÒª-1
+				//å› ä¸ºå–nextçš„æ—¶å€™å·²ç»i++äº†, æ‰€ä»¥è¿™è¾¹è·å–å—çš„å€¼è¦-1
 				TemplateBlock block = (TemplateBlock) designer.getTarget().getBlock(i - 1);
 				if(block == null){
 					return ArrayUtils.EMPTY_INT_ARRAY;

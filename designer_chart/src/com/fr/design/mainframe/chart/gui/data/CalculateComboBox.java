@@ -13,9 +13,9 @@ import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 
 /**
- * ¹«Ê½Ñ¡Ôñ.
+ * å…¬å¼é€‰æ‹©.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-8 ÉÏÎç09:52:15
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-8 ä¸Šåˆ09:52:15
  */
 public class CalculateComboBox extends UIComboBox{
 
@@ -35,7 +35,7 @@ public class CalculateComboBox extends UIComboBox{
 	}
 	
 	/**
-	 * ¸üĞÂ¹«Ê½Ñ¡Ôñ.
+	 * æ›´æ–°å…¬å¼é€‰æ‹©.
 	 */
 	public void populateBean(AbstractDataFunction function) {
 		for(int i = 0; i < CLASS_ARRAY.length; i++) {
@@ -47,7 +47,7 @@ public class CalculateComboBox extends UIComboBox{
 	}
 	
 	/**
-	 * ·µ»Øµ±Ç°Ñ¡ÔñµÄ¹«Ê½
+	 * è¿”å›å½“å‰é€‰æ‹©çš„å…¬å¼
 	 */
 	public AbstractDataFunction updateBean() {
 		try {

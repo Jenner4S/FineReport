@@ -23,11 +23,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * ¸»ÎÄ±¾µÄ±à¼­ÇøÓò
+ * å¯Œæ–‡æœ¬çš„ç¼–è¾‘åŒºåŸŸ
  * 
  *
  *
- * @date: 2014-12-24-ÉÏÎç9:42:15
+ * @date: 2014-12-24-ä¸Šåˆ9:42:15
  */
 public class RichTextEditingPane extends UITextPane{
 	
@@ -36,23 +36,23 @@ public class RichTextEditingPane extends UITextPane{
 	// = FLAG.length() + PREFIX.length()
 	private static final int PREFIX_LEN = 2;
 	
-	//ÊÇ·ñÕıÔÚ±à¼­ÎÄ±¾ÄÚÈİ, Ö÷ÒªÓĞÁ½¸ö¼àÌıÆ÷, ¿ÉÄÜ»á»¥Ïà¸²¸Ç, Ò»¸öÊÇ¼àÌıÊäÈëµÄ, Ò»¸öÊÇ¼àÌı¹â±êµÄ
+	//æ˜¯å¦æ­£åœ¨ç¼–è¾‘æ–‡æœ¬å†…å®¹, ä¸»è¦æœ‰ä¸¤ä¸ªç›‘å¬å™¨, å¯èƒ½ä¼šäº’ç›¸è¦†ç›–, ä¸€ä¸ªæ˜¯ç›‘å¬è¾“å…¥çš„, ä¸€ä¸ªæ˜¯ç›‘å¬å…‰æ ‡çš„
 	private boolean updating = false;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public RichTextEditingPane() {
 		this.addMouseListener(doubleClickFormulaListener);
 	}
 
 	/**
-	 * ÊÇ·ñÓĞÆäËû½ø³ÌÕıÔÚ¸üĞÂ±à¼­ÇøÓò
+	 * æ˜¯å¦æœ‰å…¶ä»–è¿›ç¨‹æ­£åœ¨æ›´æ–°ç¼–è¾‘åŒºåŸŸ
 	 * 
-	 * @return ÊÇ·ñÓĞÆäËû½ø³ÌÕıÔÚ¸üĞÂ±à¼­ÇøÓò
+	 * @return æ˜¯å¦æœ‰å…¶ä»–è¿›ç¨‹æ­£åœ¨æ›´æ–°ç¼–è¾‘åŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-24-ÉÏÎç10:01:49
+	 * @date 2014-12-24-ä¸Šåˆ10:01:49
 	 * 
 	 */
 	public boolean isUpdating() {
@@ -60,12 +60,12 @@ public class RichTextEditingPane extends UITextPane{
 	}
 
 	/**
-	 * ÉèÖÃ¸üĞÂ×´Ì¬
+	 * è®¾ç½®æ›´æ–°çŠ¶æ€
 	 * 
-	 * @param updating ÊÇ·ñÕıÔÚ¸üĞÂ
+	 * @param updating æ˜¯å¦æ­£åœ¨æ›´æ–°
 	 * 
 	 *
-	 * @date 2014-12-24-ÉÏÎç10:02:13
+	 * @date 2014-12-24-ä¸Šåˆ10:02:13
 	 * 
 	 */
 	public void setUpdating(boolean updating) {
@@ -73,10 +73,10 @@ public class RichTextEditingPane extends UITextPane{
 	}
 	
 	/**
-	 * ¿ªÊ¼¸üĞÂ
+	 * å¼€å§‹æ›´æ–°
 	 * 
 	 *
-	 * @date 2014-12-24-ÉÏÎç10:02:31
+	 * @date 2014-12-24-ä¸Šåˆ10:02:31
 	 * 
 	 */
 	public void startUpdating(){
@@ -84,29 +84,29 @@ public class RichTextEditingPane extends UITextPane{
 	}
 	
 	/**
-	 * ½áÊø¸üĞÂ
+	 * ç»“æŸæ›´æ–°
 	 * 
 	 *
-	 * @date 2014-12-24-ÉÏÎç10:02:41
+	 * @date 2014-12-24-ä¸Šåˆ10:02:41
 	 * 
 	 */
 	public void finishUpdating(){
 		this.updating = false;
 	}
 	
-	//Ë«»÷Ñ¡È¡¹«Ê½¼àÌıÆ÷
+	//åŒå‡»é€‰å–å…¬å¼ç›‘å¬å™¨
 	private MouseListener doubleClickFormulaListener = new MouseAdapter() {
 		
 		private int findFormulaStart(int start, StyledDocument doc) throws BadLocationException{
-			//ÍùÇ°»ØËİ, Ñ°ÕÒ${, Èç¹û·¢ÏÖÏÈÕÒµ½ÁË}, ËµÃ÷²»ÔÚ¹«Ê½ÄÚ²¿, Ö±½Óreturn.
-			//ÓĞ¿ÉÄÜµ±Ç°×Ö·û¸ÕºÃ´¦ÓÚ{ºóÃæ, ËùÒÔÒª-1
+			//å¾€å‰å›æº¯, å¯»æ‰¾${, å¦‚æœå‘ç°å…ˆæ‰¾åˆ°äº†}, è¯´æ˜ä¸åœ¨å…¬å¼å†…éƒ¨, ç›´æ¥return.
+			//æœ‰å¯èƒ½å½“å‰å­—ç¬¦åˆšå¥½å¤„äº{åé¢, æ‰€ä»¥è¦-1
 			for (int i = start - 1; i >= 0; i--) {
 				String _char = doc.getText(i, 1);
 				if(ComparatorUtils.equals(_char, RichText.SUFFIX)){
 					return - 1;
 				}
 				
-				//·¢ÏÖ´óÀ¨ºÅÁË, ÔÙÕÒ$
+				//å‘ç°å¤§æ‹¬å·äº†, å†æ‰¾$
 				if(ComparatorUtils.equals(_char, RichText.PREFIX)){
 					if(i - 1 >= 0 && ComparatorUtils.equals(doc.getText(i - 1, 1), RichText.FLAG)){
 						return i - 1;
@@ -118,17 +118,17 @@ public class RichTextEditingPane extends UITextPane{
 		}
 		
 		private int findFormulaEnd(int start, StyledDocument doc) throws BadLocationException{
-			//ÔÙÍùºóÕÒ"}"
+			//å†å¾€åæ‰¾"}"
 			int total = doc.getLength();
 			for (int j = start; j < total; j++) {
 				String _char = doc.getText(j, 1);
-				//·¢ÏÖ×ó´óÀ¨ºÅÁË, ¿Ï¶¨Òì³£
+				//å‘ç°å·¦å¤§æ‹¬å·äº†, è‚¯å®šå¼‚å¸¸
 				if(ComparatorUtils.equals(_char, RichText.PREFIX)){
 					return -1;
 				}
 				
 				if(ComparatorUtils.equals(_char, RichText.SUFFIX)){
-					//Òª°Ñºó×º°ü½øÈ¥, ËùÒÔ+1
+					//è¦æŠŠåç¼€åŒ…è¿›å», æ‰€ä»¥+1
 					return j + 1;
 				}
 			}
@@ -159,7 +159,7 @@ public class RichTextEditingPane extends UITextPane{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			if(e.getClickCount() == 2){
-				// È¡µÃÑ¡ÔñÎÄ±¾µÄÆğÊ¼Î»ÖÃºÍ½áÊøÎ»ÖÃ
+				// å–å¾—é€‰æ‹©æ–‡æœ¬çš„èµ·å§‹ä½ç½®å’Œç»“æŸä½ç½®
 				int start = RichTextEditingPane.this.getSelectionStart();
 				
 				if(start <= 0){
@@ -168,26 +168,26 @@ public class RichTextEditingPane extends UITextPane{
 				
 				StyledDocument doc = (StyledDocument) RichTextEditingPane.this.getDocument();
 				try {
-					//¹«Ê½Æğµã
+					//å…¬å¼èµ·ç‚¹
 					final int formulaStart = findFormulaStart(start, doc);
 					if(formulaStart == -1){
 						return;
 					}
 					
-					//¹«Ê½ÖÕµã
+					//å…¬å¼ç»ˆç‚¹
 					int formulaEnd = findFormulaEnd(start, doc);
 					if(formulaEnd == -1){
 						return;
 					}
 					
-					//ÕÒµ½¹«Ê½µÄÆğµãÓëÖÕµãÁË, ÏÂÃæ¾ÍÊÇÑ¡ÖĞ, ²¢µ¯³ö±à¼­´°¿Ú
+					//æ‰¾åˆ°å…¬å¼çš„èµ·ç‚¹ä¸ç»ˆç‚¹äº†, ä¸‹é¢å°±æ˜¯é€‰ä¸­, å¹¶å¼¹å‡ºç¼–è¾‘çª—å£
 					RichTextEditingPane.this.select(formulaStart, formulaEnd);
-					//»º´æµÚÒ»¸ö×Ö·ûµÄÑùÊ½, ÓÃÓÚ¸øĞÂ¹«Ê½ÉèÖÃÑùÊ½
+					//ç¼“å­˜ç¬¬ä¸€ä¸ªå­—ç¬¦çš„æ ·å¼, ç”¨äºç»™æ–°å…¬å¼è®¾ç½®æ ·å¼
 					Element ele = doc.getCharacterElement(formulaStart);
 					final AttributeSet attrs = ele.getAttributes();
 					
 					final String formulaContent = doc.getText(formulaStart + PREFIX_LEN, formulaEnd - formulaStart - WRAPPER_LEN);
-					//µ¯³ö¹«Ê½±à¼­´°¿Ú
+					//å¼¹å‡ºå…¬å¼ç¼–è¾‘çª—å£
 					popUpFormulaEditPane(formulaContent, formulaStart, attrs);
 				} catch (BadLocationException e1) {
 					FRContext.getLogger().error(e1.getMessage());

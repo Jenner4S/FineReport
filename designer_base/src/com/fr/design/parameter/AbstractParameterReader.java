@@ -6,15 +6,15 @@ import com.fr.stable.StringUtils;
  * @author richie
  * @date 14/11/10
  * @since 8.0
- * ²ÎÊı¶ÁÈ¡µÄ³éÏóÊµÏÖ
+ * å‚æ•°è¯»å–çš„æŠ½è±¡å®ç°
  */
 public abstract class AbstractParameterReader implements ParameterReader {
 
     /**
-     * ½ÓÊÜµÄÀàĞÍ
-     * @param tplPath Ä£°åÂ·¾¶
-     * @param acceptTypes ÀàĞÍ
-     * @return Èç¹û½ÓÊÜ¸ÃÖÖÀàĞÍ£¬¾ÍÖ´ĞĞ¶ÁÈ¡²Ù×÷
+     * æ¥å—çš„ç±»å‹
+     * @param tplPath æ¨¡æ¿è·¯å¾„
+     * @param acceptTypes ç±»å‹
+     * @return å¦‚æœæ¥å—è¯¥ç§ç±»å‹ï¼Œå°±æ‰§è¡Œè¯»å–æ“ä½œ
      */
     public boolean accept(String tplPath, String... acceptTypes) {
         if (StringUtils.isEmpty(tplPath)) {

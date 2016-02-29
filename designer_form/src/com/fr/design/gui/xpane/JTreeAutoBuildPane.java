@@ -126,7 +126,7 @@ public class JTreeAutoBuildPane extends BasicPane implements Previewable, Editab
             }
             this.treeTableDataComboBox.setSelectedTableDataByName(_name);
             tdChange();
-            // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼Ó1
+            // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦åŠ 1
             this.textPane.populate(tableDataDict.getKeyColumnIndex() + 1);
             Object value = null;
             if ((tableDataDict).getFormula() != null) {
@@ -142,8 +142,8 @@ public class JTreeAutoBuildPane extends BasicPane implements Previewable, Editab
     public TableDataDictionary update() {
         TableDataDictionary tableDataDict = new TableDataDictionary();
         Object object = this.valuePane.update();
-        // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼õ1
-        // carl:¼ÙÈçÕâÀïµÄĞòºÅÒª±ä£¬Çë¿¼ÂÇ6.2µÄ¼æÈİ
+        // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦å‡1
+        // carl:å‡å¦‚è¿™é‡Œçš„åºå·è¦å˜ï¼Œè¯·è€ƒè™‘6.2çš„å…¼å®¹
         if (object instanceof Integer) {
             tableDataDict.setValueColumnIndex((Integer) object - 1);
         } else {
@@ -178,11 +178,11 @@ public class JTreeAutoBuildPane extends BasicPane implements Previewable, Editab
         String name = "";
         TableDataTreePane tdtp = TableDataTreePane.getInstance(DesignModelAdapter.getCurrentModelAdapter());
         if (treeTableDataComboBox.getSelectedItem() == null) {
-            //ĞÂ½¨
+            //æ–°å»º
             rtd = new RecursionTableData();
             name = TableDataTreePane.createUnrepeatedName(tdtp.getDataTree(), "Tree");
         } else {
-            //±à¼­
+            //ç¼–è¾‘
             rtd = treeTableDataComboBox.getSelcetedTableData();
             name = treeTableDataComboBox.getSelectedItem().getTableDataName();
         }

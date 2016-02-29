@@ -137,7 +137,7 @@ public class JavaEditorPane extends BasicPane {
         javaText.setCloseMarkupTags(true);
     }
 
-    private class SaveAction extends AbstractAction { //ĞÂ½¨ÎÄ¼şÃüÁî
+    private class SaveAction extends AbstractAction { //æ–°å»ºæ–‡ä»¶å‘½ä»¤
         public SaveAction() {
             super(Inter.getLocText("Save"));
         }
@@ -159,11 +159,11 @@ public class JavaEditorPane extends BasicPane {
             writer.write(text);
             writer.flush();
             writer.close();
-            JOptionPane.showMessageDialog(null, Inter.getLocText(new String[]{"Save", "Successfully"}) + "£¡");
+            JOptionPane.showMessageDialog(null, Inter.getLocText(new String[]{"Save", "Successfully"}) + "ï¼");
             fireSaveActionListener();
         } catch (Exception e) {
             FRLogger.getLogger().error(e.getMessage(), e);
-            JOptionPane.showMessageDialog(null, Inter.getLocText(new String[]{"Save", "Failed"}) + "£¡");
+            JOptionPane.showMessageDialog(null, Inter.getLocText(new String[]{"Save", "Failed"}) + "ï¼");
         }
 
     }
@@ -216,8 +216,8 @@ public class JavaEditorPane extends BasicPane {
             "    }\n" +
             "\n" +
             "    /**\n" +
-            "     * »ñÈ¡Êı¾İ¼¯µÄÁĞÊı\n" +
-            "     * @return Êı¾İ¼¯µÄÁĞ\n" +
+            "     * è·å–æ•°æ®é›†çš„åˆ—æ•°\n" +
+            "     * @return æ•°æ®é›†çš„åˆ—\n" +
             "     * @throws TableDataException\n" +
             "     */\n" +
             "    public int getColumnCount() throws TableDataException {\n" +
@@ -225,9 +225,9 @@ public class JavaEditorPane extends BasicPane {
             "    }\n" +
             "\n" +
             "    /**\n" +
-            "     * »ñÈ¡Êı¾İ¼¯Ö¸¶¨ÁĞµÄÁĞÃû\n" +
-            "     * @param columnIndex Ö¸¶¨ÁĞµÄË÷Òı\n" +
-            "     * @return Ö¸¶¨ÁĞµÄÁĞÃû\n" +
+            "     * è·å–æ•°æ®é›†æŒ‡å®šåˆ—çš„åˆ—å\n" +
+            "     * @param columnIndex æŒ‡å®šåˆ—çš„ç´¢å¼•\n" +
+            "     * @return æŒ‡å®šåˆ—çš„åˆ—å\n" +
             "     * @throws TableDataException\n" +
             "     */\n" +
             "    public String getColumnName(int columnIndex) throws TableDataException {\n" +
@@ -235,8 +235,8 @@ public class JavaEditorPane extends BasicPane {
             "    }\n" +
             "\n" +
             "    /**\n" +
-            "     * »ñÈ¡Êı¾İ¼¯µÄĞĞÊı\n" +
-            "     * @return Êı¾İ¼¯Êı¾İĞĞÊı\n" +
+            "     * è·å–æ•°æ®é›†çš„è¡Œæ•°\n" +
+            "     * @return æ•°æ®é›†æ•°æ®è¡Œæ•°\n" +
             "     * @throws TableDataException\n" +
             "     */\n" +
             "    public int getRowCount() throws TableDataException {\n" +
@@ -244,10 +244,10 @@ public class JavaEditorPane extends BasicPane {
             "    }\n" +
             "\n" +
             "    /**\n" +
-            "     * »ñÈ¡Êı¾İ¼¯Ö¸¶¨Î»ÖÃÉÏµÄÖµ\n" +
-            "     * @param rowIndex Ö¸¶¨µÄĞĞË÷Òı\n" +
-            "     * @param columnIndex  Ö¸¶¨µÄÁĞË÷Òı\n" +
-            "     * @return  Ö¸¶¨Î»ÖÃµÄÖµ\n" +
+            "     * è·å–æ•°æ®é›†æŒ‡å®šä½ç½®ä¸Šçš„å€¼\n" +
+            "     * @param rowIndex æŒ‡å®šçš„è¡Œç´¢å¼•\n" +
+            "     * @param columnIndex  æŒ‡å®šçš„åˆ—ç´¢å¼•\n" +
+            "     * @return  æŒ‡å®šä½ç½®çš„å€¼\n" +
             "     */\n" +
             "    public Object getValueAt(int rowIndex, int columnIndex) {\n" +
             "        return null;\n" +
@@ -259,12 +259,12 @@ public class JavaEditorPane extends BasicPane {
             "import com.fr.script.AbstractFunction;\n" +
             "\n" +
             "/**\n" +
-            " * ×Ô¶¨Òåº¯Êı\n" +
+            " * è‡ªå®šä¹‰å‡½æ•°\n" +
             " */\n" +
             "public class CustomFun extends AbstractFunction {\n" +
             "    /**\n" +
-            "     * @param args º¯ÊıµÄ²ÎÊı£¬ÊÇ¾­¹ıÁËËã×Ó´¦ÀíÁËÆäÖĞÌØÊâ²ÎÊıµÄ\n" +
-            "     * @return ¾­¹ıº¯Êı´¦ÀíµÄÖµ£¬ÓÃÓÚ²ÎÓë×îÖÕ¼ÆËã\n" +
+            "     * @param args å‡½æ•°çš„å‚æ•°ï¼Œæ˜¯ç»è¿‡äº†ç®—å­å¤„ç†äº†å…¶ä¸­ç‰¹æ®Šå‚æ•°çš„\n" +
+            "     * @return ç»è¿‡å‡½æ•°å¤„ç†çš„å€¼ï¼Œç”¨äºå‚ä¸æœ€ç»ˆè®¡ç®—\n" +
             "     */\n" +
             "    public Object run(Object[] args) {\n" +
             "        return null;\n" +

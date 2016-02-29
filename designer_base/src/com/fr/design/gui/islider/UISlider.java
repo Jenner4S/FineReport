@@ -7,7 +7,7 @@ import javax.swing.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-28
- * Time: ÏÂÎç1:30
+ * Time: ä¸‹åˆ1:30
  */
 public class UISlider extends JSlider {
 

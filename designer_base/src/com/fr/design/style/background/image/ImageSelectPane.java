@@ -27,14 +27,14 @@ import com.fr.design.style.background.BackgroundPane4BoxChange;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-1 ÏÂÎç03:50:02
- * ÀàËµÃ÷ : ±³¾°Í¼Æ¬µÄĞÂÑ¡Ôñ½çÃæ , UIComboBoxÇĞ»»µÄ·ÖÖ§pane. bugÔ­ĞÍÍ¼@5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-1 ä¸‹åˆ03:50:02
+ * ç±»è¯´æ˜ : èƒŒæ™¯å›¾ç‰‡çš„æ–°é€‰æ‹©ç•Œé¢ , UIComboBoxåˆ‡æ¢çš„åˆ†æ”¯pane. bugåŸå‹å›¾@5471
  */
 public class ImageSelectPane extends BackgroundPane4BoxChange {
 	private static final long serialVersionUID = -3938766570998917557L;
 	private static String layoutCenter = Inter.getLocText("Default");
 	private static String layoutTitled = Inter.getLocText("Image-Titled");
-	//²úÆ·Éè¼ÆËµ£ºÖ»ĞèÒª¾ÓÖĞ£¨Ä¬ÈÏµÄ£©ºÍÆ½ÆÌÁ½ÖÖ·½Ê½
+	//äº§å“è®¾è®¡è¯´ï¼šåªéœ€è¦å±…ä¸­ï¼ˆé»˜è®¤çš„ï¼‰å’Œå¹³é“ºä¸¤ç§æ–¹å¼
 	private static final String[] layoutTypes = {
 		layoutCenter,
 		layoutTitled,
@@ -62,7 +62,7 @@ public class ImageSelectPane extends BackgroundPane4BoxChange {
         testPane1.add(selectFilePane, BorderLayout.CENTER);
         pane.add(testPane1);
         
-        // Ñ¡ÔñÍ¼Æ¬°´Å¥
+        // é€‰æ‹©å›¾ç‰‡æŒ‰é’®
         UIButton selectPictureButton = new UIButton(Inter.getLocText("Image-Select_Picture"));
         selectFilePane.add(selectPictureButton);
         
@@ -73,7 +73,7 @@ public class ImageSelectPane extends BackgroundPane4BoxChange {
         selectPictureButton.setMnemonic('S');
         selectPictureButton.addActionListener(selectPictureActionListener);
         
-        //²¼¾Ö
+        //å¸ƒå±€
         selectFilePane.add(new UILabel(Inter.getLocText("Form-Layout") + ":"));
         layoutComboBox = new UIComboBox(layoutTypes);
         selectFilePane.add(layoutComboBox);

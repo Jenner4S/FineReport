@@ -84,7 +84,7 @@ public class CustomDefaultSeriesPane extends BasicPane{
     }
 
     /**
-     * ÅĞ¶ÏÀàĞÍ, ¸üĞÂ½çÃæÊôĞÔ
+     * åˆ¤æ–­ç±»å‹, æ›´æ–°ç•Œé¢å±æ€§
      */
     public void populateBean(CustomAttr attr) {
         boxPane.setSelectedIndex(COM_MAP.get(attr.getRenderer()));
@@ -93,7 +93,7 @@ public class CustomDefaultSeriesPane extends BasicPane{
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔ.
+     * ä¿å­˜ç•Œé¢å±æ€§.
      */
     public void updateBean(CustomAttr attr) {
         int selectedIndex = boxPane.getSelectedIndex();
@@ -107,7 +107,7 @@ public class CustomDefaultSeriesPane extends BasicPane{
             pane.populateBean(attr);
         }
 
-        //»Ö¸´ÏÂÔ­À´µÄĞÎ×´
+        //æ¢å¤ä¸‹åŸæ¥çš„å½¢çŠ¶
         attr.setUseRenderer(attr.getRenderer());
     }
 
@@ -365,6 +365,3 @@ public class CustomDefaultSeriesPane extends BasicPane{
 
     }
 }
-
-
-

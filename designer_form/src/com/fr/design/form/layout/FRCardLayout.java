@@ -25,9 +25,9 @@ public class FRCardLayout extends CardLayout implements FRLayoutManager{
     }
 
     /**
-     * ÊÇ·ñ¿ÉÖØÖÃ´óĞ¡
+     * æ˜¯å¦å¯é‡ç½®å¤§å°
      * 
-     * @return ÊÇ·ñ¿ÉÖØÖÃ´óĞ¡
+     * @return æ˜¯å¦å¯é‡ç½®å¤§å°
      * 
      */
     @Override
@@ -36,10 +36,10 @@ public class FRCardLayout extends CardLayout implements FRLayoutManager{
     }
     
     /**
-     * Õ¹ÏÖµ±Ç°card
+     * å±•ç°å½“å‰card
      * 
-     * @param parent ¸¸ÈİÆ÷
-     * @param name µ±Ç°card
+     * @param parent çˆ¶å®¹å™¨
+     * @param name å½“å‰card
      * 
      */
     public void show(Container parent, String name) {

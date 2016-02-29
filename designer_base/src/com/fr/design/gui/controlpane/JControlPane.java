@@ -41,7 +41,7 @@ import java.util.Comparator;
 
 public abstract class JControlPane extends BasicPane implements UnrepeatedNameHelper {
     public static final String LIST_NAME = "JControl_List";
-    private static final int SHORT_WIDTH = 30; //Ã¿¼ÓÒ»¸öshort DividerÎ»ÖÃ¼Ó30
+    private static final int SHORT_WIDTH = 30; //æ¯åŠ ä¸€ä¸ªshort Dividerä½ç½®åŠ 30
 
     private ShortCut4JControlPane[] shorts;
     private NameableCreator[] creators;
@@ -51,7 +51,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     private ToolBarDef toolbarDef;
     private UIToolbar toolBar;
 
-    // peter:ÕâÊÇÕûÌåµÄÒ»¸öcardLayout Pane
+    // peter:è¿™æ˜¯æ•´ä½“çš„ä¸€ä¸ªcardLayout Pane
     private CardLayout cardLayout;
     private JPanel cardPane;
     protected int editingIndex;
@@ -63,8 +63,8 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * Éú³ÉÌí¼Ó°´Å¥µÄNameableCreator
-     * @return °´Å¥µÄNameableCreator
+     * ç”Ÿæˆæ·»åŠ æŒ‰é’®çš„NameableCreator
+     * @return æŒ‰é’®çš„NameableCreator
      */
     public abstract NameableCreator[] createNameableCreators();
 
@@ -77,7 +77,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         this.cardLayout = new CardLayout();
         cardPane = FRGUIPaneFactory.createCardLayout_S_Pane();
         cardPane.setLayout(this.cardLayout);
-        // p:Ñ¡ÔñµÄLabel
+        // p:é€‰æ‹©çš„Label
         UILabel selectLabel = new UILabel();
         cardPane.add(selectLabel, "SELECT");
         cardPane.add(controlUpdatePane, "EDIT");
@@ -124,9 +124,9 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         nameableList.addMouseListener(listMouseListener);
         nameableList.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent evt) {
-                // richie:±ÜÃâ¶à´ÎupdateºÍpopulate´ó´ó½µµÍĞ§ÂÊ
+                // richie:é¿å…å¤šæ¬¡updateå’Œpopulateå¤§å¤§é™ä½æ•ˆç‡
                 if (!evt.getValueIsAdjusting()) {
-                    // shoc ÇĞ»»µÄÊ±ºò¼Ó¼ìÑé
+                    // shoc åˆ‡æ¢çš„æ—¶å€™åŠ æ£€éªŒ
                     if (hasInvalid(false)) {
                         return;
                     }
@@ -234,32 +234,32 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * Ìí¼ÓÃû×Ö¸Ä±äÊ±µÄlistener
+     * æ·»åŠ åå­—æ”¹å˜æ—¶çš„listener
      *
-     * @param l Ãû×Ö¸Ä±äÊ±µÄ¼àÌı
+     * @param l åå­—æ”¹å˜æ—¶çš„ç›‘å¬
      */
     public void addModNameActionListener(ModNameActionListener l) {
         this.nameableList.addModNameActionListener(l);
     }
 
     /**
-     * Ìí¼ÓEditinglistener
+     * æ·»åŠ Editinglistener
      *
-     * @param l ¼àÌı
+     * @param l ç›‘å¬
      */
     public void addEditingListner(PropertyChangeAdapter l) {
         this.nameableList.addEditingListner(l);
     }
 
     /*
-     * Ë¢ĞÂµ±Ç°µÄÑ¡ÖĞµÄUpdatePane
+     * åˆ·æ–°å½“å‰çš„é€‰ä¸­çš„UpdatePane
      */
     protected void populateSelectedValue() {
         JControlPane.this.controlUpdatePane.populate();
     }
 
     /**
-     * ¸ù¾İname,Ñ¡ÖĞJNameEdListÖĞµÄitem
+     * æ ¹æ®name,é€‰ä¸­JNameEdListä¸­çš„item
      */
     public void setSelectedName(String name) {
         DefaultListModel listModel = (DefaultListModel) this.nameableList.getModel();
@@ -285,7 +285,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * »ñÈ¡Ñ¡ÖĞµÄÃû×Ö
+     * è·å–é€‰ä¸­çš„åå­—
      */
     public String getSelectedName() {
         ListModelElement el = (ListModelElement) this.nameableList.getSelectedValue();
@@ -294,9 +294,9 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * Ë¢ĞÂ NameableCreator
+     * åˆ·æ–° NameableCreator
      *
-     * @param creators Éú³ÉÆ÷
+     * @param creators ç”Ÿæˆå™¨
      */
     public void refreshNameableCreator(NameableCreator[] creators) {
         this.creators = creators;
@@ -324,18 +324,18 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * Ãû×ÖÊÇ·ñÖØ¸´
-     * @return    ÖØ¸´Ôò·µ»Øtrue
+     * åå­—æ˜¯å¦é‡å¤
+     * @return    é‡å¤åˆ™è¿”å›true
      */
     public boolean isNameRepeated() {
         return isNameRepeated;
     }
 
     /**
-     * Ìí¼Ó Nameable
+     * æ·»åŠ  Nameable
      *
-     * @param nameable Ìí¼ÓµÄNameable
-     * @param index    ĞòºÅ
+     * @param nameable æ·»åŠ çš„Nameable
+     * @param index    åºå·
      */
     public void addNameable(Nameable nameable, int index) {
         JNameEdList nameEdList = JControlPane.this.nameableList;
@@ -350,8 +350,8 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * ÊÇ·ñÖØÃüÃû
-     * @return ÊÇÔòtrue
+     * æ˜¯å¦é‡å‘½å
+     * @return æ˜¯åˆ™true
      */
     public boolean isContainsRename() {
         String rename = Inter.getLocText("FR-Please_Rename") + "!";
@@ -383,10 +383,10 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
 
 
     /**
-     * Éú³É²»ÖØ¸´µÄÃû×Ö
+     * ç”Ÿæˆä¸é‡å¤çš„åå­—
      *
-     * @param prefix Ãû×ÖÇ°×º
-     * @return Ãû×Ö
+     * @param prefix åå­—å‰ç¼€
+     * @return åå­—
      */
     public String createUnrepeatedName(String prefix) {
         DefaultListModel model = this.getModel();
@@ -394,7 +394,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         for (int i = 0; i < model.size(); i++) {
             all[i] = ((ListModelElement) model.get(i)).wrapper;
         }
-        // richer:Éú³ÉµÄÃû×Ö´Ó1¿ªÊ¼. kunsnat: Ìí¼ÓÊôĞÔ´Ó0¿ªÊ¼.
+        // richer:ç”Ÿæˆçš„åå­—ä»1å¼€å§‹. kunsnat: æ·»åŠ å±æ€§ä»0å¼€å§‹.
         int count = all.length + 1;
         while (true) {
             String name_test = prefix + count;
@@ -416,7 +416,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * Ôö¼ÓÏîµÄUpdateAction
+     * å¢åŠ é¡¹çš„UpdateAction
      */
     protected class AddItemUpdateAction extends UpdateAction {
         final NameableCreator creator;
@@ -436,7 +436,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /*
-     * Ôö¼ÓÏîµÄMenuDef
+     * å¢åŠ é¡¹çš„MenuDef
      */
     protected class AddItemMenuDef extends MenuDef {
         public AddItemMenuDef(NameableCreator[] creators) {
@@ -483,7 +483,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
             if (jTemplate == null) {
                 return  false;
             }
-            //ÏÈÆÁ±ÎµôÕâ¸ö£¬Ö®ºó»¹ÓĞ±ğµÄ
+            //å…ˆå±è”½æ‰è¿™ä¸ªï¼Œä¹‹åè¿˜æœ‰åˆ«çš„
             String[] names = {Inter.getLocText("FR-Hyperlink_Chart_Float")};
             for (String name : names){
                 if(!jTemplate.isJWorkBook() && ComparatorUtils.equals(itemName, name)){
@@ -496,7 +496,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /*
-     * ÒÆ³ıitem
+     * ç§»é™¤item
      */
     private class RemoveItemAction extends UpdateAction {
         public RemoveItemAction() {
@@ -512,7 +512,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
                         .stopCellEditing();
             } catch (Exception ignored) {
             }
-            // bug:ÔÚÑ¡ÖĞÒ»¸öNameObject²¢É¾³ı£¬»áÒÅÁôÏÂName.
+            // bug:åœ¨é€‰ä¸­ä¸€ä¸ªNameObjectå¹¶åˆ é™¤ï¼Œä¼šé—ç•™ä¸‹Name.
             doBeforeRemove();
             if (GUICoreUtils.removeJListSelectedNodes(SwingUtilities
                     .getWindowAncestor(JControlPane.this), nameableList)) {
@@ -534,7 +534,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         public void actionPerformed(ActionEvent evt) {
-            // p:Ñ¡ÖĞµÄÖµ.
+            // p:é€‰ä¸­çš„å€¼.
             ListModelElement selectedValue = (ListModelElement) nameableList.getSelectedValue();
             if (selectedValue == null) {
                 return;
@@ -544,7 +544,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
 
             Nameable selectedNameable = selectedValue.wrapper;
 
-            // p: ÓÃ·´Éä»úÖÆÊµÏÖ
+            // p: ç”¨åå°„æœºåˆ¶å®ç°
             try {
                 Nameable newNameable = (Nameable) BaseUtils.cloneObject(selectedNameable);
                 newNameable.setName(createUnrepeatedCopyName(selectedNameable.getName()));
@@ -557,7 +557,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /*
-     * ÉÏÒÆItem
+     * ä¸Šç§»Item
      */
     private class MoveUpItemAction extends UpdateAction {
         public MoveUpItemAction() {
@@ -573,7 +573,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
                 return;
             }
 
-            // ÉÏÒÆ
+            // ä¸Šç§»
             if (selectedIndex > 0) {
                 DefaultListModel listModel = (DefaultListModel) nameableList
                         .getModel();
@@ -589,7 +589,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /*
-     * ÏÂÒÆItem
+     * ä¸‹ç§»Item
      */
     private class MoveDownItemAction extends UpdateAction {
         public MoveDownItemAction() {
@@ -630,7 +630,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         public void actionPerformed(ActionEvent evt) {
-            // p:Ñ¡ÖĞµÄÖµ.
+            // p:é€‰ä¸­çš„å€¼.
             Object selectedValue = nameableList.getSelectedValue();
 
             DefaultListModel listModel = (DefaultListModel) nameableList
@@ -644,7 +644,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
                 nameableArray[i] = ((ListModelElement) listModel.getElementAt(i)).wrapper;
             }
 
-            // p:ÅÅĞò.
+            // p:æ’åº.
             if (isAtoZ) {
                 Comparator<Nameable> nameableComparator = new Comparator<Nameable>() {
                     public int compare(Nameable o1, Nameable o2) {
@@ -669,19 +669,19 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
                 listModel.set(i, new ListModelElement(nameableArray[i]));
             }
 
-            // p:ĞèÒªÑ¡ÖĞÒÔÇ°µÄÄÇ¸öÖµ.
+            // p:éœ€è¦é€‰ä¸­ä»¥å‰çš„é‚£ä¸ªå€¼.
             if (selectedValue != null) {
                 nameableList.setSelectedValue(selectedValue, true);
             }
 
             checkButtonEnabled();
-            // p:ĞèÒªrepaint.
+            // p:éœ€è¦repaint.
             nameableList.repaint();
         }
     }
 
     /*
-     * JNameEdListµÄÊó±êÊÂ¼ş
+     * JNameEdListçš„é¼ æ ‡äº‹ä»¶
      */
     private MouseListener listMouseListener = new MouseAdapter() {
         public void mouseReleased(MouseEvent evt) {
@@ -692,22 +692,22 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
                 selectedName = nameableList.getNameAt(editingIndex);
                 nameableList.editItemAt(nameableList.getSelectedIndex());
             }
-            // peter:´¦ÀíÓÒ¼üµÄµ¯³ö²Ëµ¥
+            // peter:å¤„ç†å³é”®çš„å¼¹å‡ºèœå•
             if (!SwingUtilities.isRightMouseButton(evt)) {
                 return;
             }
 
-            // peter: ×¢Òâ,ÔÚcheckButtonEnabled()·½·¨ÀïÃæ,ÉèÖÃÁËËùÓĞµÄActionµÄEnabled.
+            // peter: æ³¨æ„,åœ¨checkButtonEnabled()æ–¹æ³•é‡Œé¢,è®¾ç½®äº†æ‰€æœ‰çš„Actionçš„Enabled.
             checkButtonEnabled();
 
-            // p:ÓÒ¼ü²Ëµ¥.
+            // p:å³é”®èœå•.
             JPopupMenu popupMenu = new JPopupMenu();
 
             for (ShortCut4JControlPane sj : shorts) {
                 sj.getShortCut().intoJPopupMenu(popupMenu);
             }
 
-            // peter: Ö»ÓĞµ¯³ö²Ëµ¥ÓĞ×Ó²Ëµ¥µÄÊ±ºò,²ÅĞèÒªµ¯³öÀ´.
+            // peter: åªæœ‰å¼¹å‡ºèœå•æœ‰å­èœå•çš„æ—¶å€™,æ‰éœ€è¦å¼¹å‡ºæ¥.
             GUICoreUtils.showPopupMenu(popupMenu, nameableList, evt.getX() - 1,
                     evt.getY() - 1);
         }
@@ -718,7 +718,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     };
 
     /**
-     * ¼ì²é°´Å¥¿ÉÓÃ×´Ì¬ Check button enabled.
+     * æ£€æŸ¥æŒ‰é’®å¯ç”¨çŠ¶æ€ Check button enabled.
      */
     public void checkButtonEnabled() {
         int selectedIndex = nameableList.getSelectedIndex();
@@ -745,7 +745,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /*
-     * NameableµÄListCellRenerer
+     * Nameableçš„ListCellRenerer
      */
     private class NameableListCellRenderer extends
             DefaultListCellRenderer {
@@ -782,7 +782,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         /**
-         * ¼ì²éÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥æ˜¯å¦å¯ç”¨
          */
         public void checkEnable() {
             this.shortCut.setEnabled(true);
@@ -795,7 +795,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         /**
-         * ¼ì²éÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥æ˜¯å¦å¯ç”¨
          */
         public void checkEnable() {
             this.shortCut.setEnabled(getModel()
@@ -810,7 +810,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         /**
-         * ¼ì²éÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥æ˜¯å¦å¯ç”¨
          */
         @Override
         public void checkEnable() {
@@ -825,7 +825,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         /**
-         * ¼ì²éÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥æ˜¯å¦å¯ç”¨
          */
         @Override
         public void checkEnable() {
@@ -841,7 +841,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
         }
 
         /**
-         * ¼ì²éÊÇ·ñ¿ÉÓÃ
+         * æ£€æŸ¥æ˜¯å¦å¯ç”¨
          */
         @Override
         public void checkEnable() {
@@ -962,7 +962,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
 
     }
 
-    // Ñ¡ÏîÌí¼Ó¸öÊıÓĞÏŞÖÆµÈÇé¿öÏÂ ÒªÇóÄÜ¿ØÖÆ¿ì½İ°´Å¥µÄ×´Ì¬
+    // é€‰é¡¹æ·»åŠ ä¸ªæ•°æœ‰é™åˆ¶ç­‰æƒ…å†µä¸‹ è¦æ±‚èƒ½æ§åˆ¶å¿«æ·æŒ‰é’®çš„çŠ¶æ€
     protected void setToolbarDefEnable(int shortCutIndex, int itemIndex, boolean enabled) {
         if (this.toolbarDef.getShortCutCount() > shortCutIndex) {
             ShortCut sc = this.toolbarDef.getShortCut(shortCutIndex);
@@ -976,7 +976,7 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
     }
 
     /**
-     * ¼ì²éÊÇ·ñ·ûºÏ¹æ·¶
+     * æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„èŒƒ
      *
      * @throws Exception
      */
@@ -1016,9 +1016,9 @@ public abstract class JControlPane extends BasicPane implements UnrepeatedNameHe
 
 
     /**
-     * ÉèÖÃÑ¡ÖĞÏî
+     * è®¾ç½®é€‰ä¸­é¡¹
      *
-     * @param index Ñ¡ÖĞÏîµÄĞòÁĞºÅ
+     * @param index é€‰ä¸­é¡¹çš„åºåˆ—å·
      */
     public void setSelectedIndex(int index) {
         nameableList.setSelectedIndex(index);

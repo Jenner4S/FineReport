@@ -10,7 +10,7 @@ public abstract class ShortCut4JControlPane {
 	}
 
     /**
-     * ¼ì²éÊÇ·ñ¿ÉÓÃ
+     * æ£€æŸ¥æ˜¯å¦å¯ç”¨
      */
 	public abstract void checkEnable();
 }

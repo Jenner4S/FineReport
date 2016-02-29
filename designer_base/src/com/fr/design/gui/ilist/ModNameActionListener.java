@@ -1,11 +1,11 @@
 package com.fr.design.gui.ilist;
 
 /*
- * ×¨ÃÅ¸øJNameEdListÓÃµÄ,µ±Ãû×Ö¸Ä±äÊ±µÄÖ´ĞĞµÄAction
+ * ä¸“é—¨ç»™JNameEdListç”¨çš„,å½“åå­—æ”¹å˜æ—¶çš„æ‰§è¡Œçš„Action
  */
 public interface ModNameActionListener {
 	/*
-	 * µÚindex¸öitemµÄÃû×ÖÓÉoldName¸ÄÎªnewNameÁË
+	 * ç¬¬indexä¸ªitemçš„åå­—ç”±oldNameæ”¹ä¸ºnewNameäº†
 	 */
 	public void nameModed(int index, String oldName, String newName);
 }

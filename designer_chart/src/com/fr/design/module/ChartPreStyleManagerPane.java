@@ -18,16 +18,16 @@ import java.util.Iterator;
 
 
 /**
- * Í¼±íÔ¤¶¨Òå¹ÜÀí ½çÃæ, ÔÚ¹¤¾ßÀ¸-·şÎñÆ÷¹ÜÀíÖĞ.
+ * å›¾è¡¨é¢„å®šä¹‰ç®¡ç† ç•Œé¢, åœ¨å·¥å…·æ -æœåŠ¡å™¨ç®¡ç†ä¸­.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-21 ÏÂÎç02:33:48
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-21 ä¸‹åˆ02:33:48
  */
 public class ChartPreStyleManagerPane extends JControlPane {
 
 	@Override
     /**
-     * ´´½¨ÓĞÃû×ÖµÄcreator
-     * @return ÓĞÃû×ÖµÄcreatorÊı×é
+     * åˆ›å»ºæœ‰åå­—çš„creator
+     * @return æœ‰åå­—çš„creatoræ•°ç»„
      */
 	public NameableCreator[] createNameableCreators() {
 		return new NameableCreator[]{
@@ -77,7 +77,7 @@ public class ChartPreStyleManagerPane extends JControlPane {
 		
 		manager.writerPreChartStyle();
 		
-		// Í¨Öª±¨±íÕû¸öË¢ĞÂ. 
+		// é€šçŸ¥æŠ¥è¡¨æ•´ä¸ªåˆ·æ–°. 
 		DesignerFrame frame = DesignerContext.getDesignerFrame();
 		if(frame != null) {
 			frame.repaint();

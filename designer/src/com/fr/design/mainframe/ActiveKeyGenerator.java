@@ -11,23 +11,23 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 /**
- * 	ÏŞ¶¨ÒÔ"-"·Ö¸îµÃµ½Êı×é³¤¶È=4;
- *	ÖÁÉÙ°üº¬10¸öÒÔÉÏ²»Í¬µÄ×Ö·û
- *	Ã¿7Î»×Ö·û, ÒªÇó¿ÉÒÔ±»7Õû³ı
- *	ÏŞ¶¨Í¬Ò»¸ö×Ö·û, ²»¿ÉÒÔ³öÏÖ10´ÎÒÔÉÏ
- *	ÏŞ¶¨²»ÄÜ³öÏÖ7¸ö×Ö·ûÄÚÈ«ÊÇ×ÖÄ¸µÄÇé¿ö
+ * 	é™å®šä»¥"-"åˆ†å‰²å¾—åˆ°æ•°ç»„é•¿åº¦=4;
+ *	è‡³å°‘åŒ…å«10ä¸ªä»¥ä¸Šä¸åŒçš„å­—ç¬¦
+ *	æ¯7ä½å­—ç¬¦, è¦æ±‚å¯ä»¥è¢«7æ•´é™¤
+ *	é™å®šåŒä¸€ä¸ªå­—ç¬¦, ä¸å¯ä»¥å‡ºç°10æ¬¡ä»¥ä¸Š
+ *	é™å®šä¸èƒ½å‡ºç°7ä¸ªå­—ç¬¦å†…å…¨æ˜¯å­—æ¯çš„æƒ…å†µ
  * 
  * @author neil
  *
- * @date: 2015-4-8-ÉÏÎç8:49:05
+ * @date: 2015-4-8-ä¸Šåˆ8:49:05
  */
 public class ActiveKeyGenerator {
 	
-	//Ã»ÍøµÄÇé¿ö, ·µ»ØÈÏÖ¤´íÎó, ÏÂ´ÎÆô¶¯ÔÙÈ¥ÈÏÖ¤
+	//æ²¡ç½‘çš„æƒ…å†µ, è¿”å›è®¤è¯é”™è¯¯, ä¸‹æ¬¡å¯åŠ¨å†å»è®¤è¯
 	public static final int AUTH_ERROR = -1;
-	//ÈÏÖ¤³É¹¦
+	//è®¤è¯æˆåŠŸ
 	public static final int AUTH_SUCCESS = 0;
-	//ÈÏÖ¤Ê§°Ü
+	//è®¤è¯å¤±è´¥
 	public static final int AUTH_FAILED = 1;
 
 	private static final int CONNECT_LEN = 4;
@@ -38,9 +38,9 @@ public class ActiveKeyGenerator {
 	private static final int MAX_TRY_COUNT = 100;
 	
 	/**
-	 * Éú³É¼¤»îÂë, ÓÃÓÚ´ÓÀÏµÄ¼¤»îÂëÉú³ÉĞÂµÄ
+	 * ç”Ÿæˆæ¿€æ´»ç , ç”¨äºä»è€çš„æ¿€æ´»ç ç”Ÿæˆæ–°çš„
 	 * 
-	 * @return 8.0ĞÂµÄ¼¤»îÂë
+	 * @return 8.0æ–°çš„æ¿€æ´»ç 
 	 * 
 	 */
 	public static String generateActiveKey(){
@@ -60,7 +60,7 @@ public class ActiveKeyGenerator {
 			}
 			
 			String activeKey = new String(keyChar);
-			//ÅÜ³öÀ´µÄkey, ×Ô¼ºÔÙÈ¥ÈÏÖ¤ÏÂ
+			//è·‘å‡ºæ¥çš„key, è‡ªå·±å†å»è®¤è¯ä¸‹
 			if(!localVerify(activeKey)){
 				continue;
 			}
@@ -71,12 +71,12 @@ public class ActiveKeyGenerator {
 	}
 	
 	/**
-	 * ÑéÖ¤keyºÏ·¨ĞÔ, °üÀ¨±¾µØºÍÔÚÏßÑéÖ¤
+	 * éªŒè¯keyåˆæ³•æ€§, åŒ…æ‹¬æœ¬åœ°å’Œåœ¨çº¿éªŒè¯
 	 * 
-	 * @param key ¼¤»îÂë
-	 * @param timeout ÑéÖ¤³¬Ê±Ê±¼ä
+	 * @param key æ¿€æ´»ç 
+	 * @param timeout éªŒè¯è¶…æ—¶æ—¶é—´
 	 * 
-	 * @return ÊÇ·ñºÏ·¨
+	 * @return æ˜¯å¦åˆæ³•
 	 * 
 	 */
 	public static boolean verify(String key, int timeout){
@@ -84,18 +84,18 @@ public class ActiveKeyGenerator {
 	}
 	
 	/**
-	 * ÔÚÏßĞ£Ñé¼¤»îÂë(³¬Ê±Ò²ËãÑéÖ¤Í¨¹ı, µ«ÊÇ»áÔÚÏÂ´ÎÁªÍøÊ±¼ÌĞøÑéÖ¤)
+	 * åœ¨çº¿æ ¡éªŒæ¿€æ´»ç (è¶…æ—¶ä¹Ÿç®—éªŒè¯é€šè¿‡, ä½†æ˜¯ä¼šåœ¨ä¸‹æ¬¡è”ç½‘æ—¶ç»§ç»­éªŒè¯)
 	 * 
-	 * @param key ¼¤»îÂë
+	 * @param key æ¿€æ´»ç 
 	 * 
-	 * @return ÊÇ·ñÑéÖ¤Í¨¹ı
+	 * @return æ˜¯å¦éªŒè¯é€šè¿‡
 	 * 
 	 */
 	public static boolean onLineVerify(String key){
 		return onLineVerify(key, -1);
 	}
 	
-	//×¼±¸ÑéÖ¤µÄHttpClient
+	//å‡†å¤‡éªŒè¯çš„HttpClient
 	private static HttpClient prepareVerifyConnect(DesignerEnvManager envManager, int timeout, String key){
 		HashMap<String, String> para = new HashMap<String, String>();
 		para.put("uuid", envManager.getUUID());
@@ -110,30 +110,30 @@ public class ActiveKeyGenerator {
 	}
 	
 	/**
-	 * ÔÚÏßĞ£Ñé¼¤»îÂë(³¬Ê±Ò²ËãÑéÖ¤Í¨¹ı, µ«ÊÇ»áÔÚÏÂ´ÎÁªÍøÊ±¼ÌĞøÑéÖ¤)
+	 * åœ¨çº¿æ ¡éªŒæ¿€æ´»ç (è¶…æ—¶ä¹Ÿç®—éªŒè¯é€šè¿‡, ä½†æ˜¯ä¼šåœ¨ä¸‹æ¬¡è”ç½‘æ—¶ç»§ç»­éªŒè¯)
 	 * 
-	 * @param key ¼¤»îÂë
-	 * @param timeout ³¬Ê±Ê±¼ä
+	 * @param key æ¿€æ´»ç 
+	 * @param timeout è¶…æ—¶æ—¶é—´
 	 * 
-	 * @return ÊÇ·ñÑéÖ¤Í¨¹ı
+	 * @return æ˜¯å¦éªŒè¯é€šè¿‡
 	 * 
 	 */
 	public static boolean onLineVerify(String key, int timeout){
 		DesignerEnvManager envManager = DesignerEnvManager.getEnvManager();
 		HttpClient hc = prepareVerifyConnect(envManager, timeout, key);
 
-        //ÏÈ¹Ø±ÕµôÔÚÏßÑéÖ¤, ·şÎñÆ÷¿¸²»×¡, ÏÈÄÚÍøÅÜ²¢·¢²âÊÔÏÂĞÔÄÜ, È·¶¨ÁËÎÊÌâÔÚ¿ª·Å.
+        //å…ˆå…³é—­æ‰åœ¨çº¿éªŒè¯, æœåŠ¡å™¨æ‰›ä¸ä½, å…ˆå†…ç½‘è·‘å¹¶å‘æµ‹è¯•ä¸‹æ€§èƒ½, ç¡®å®šäº†é—®é¢˜åœ¨å¼€æ”¾.
 		if (true || !hc.isServerAlive()) {
-			//Á¬²»ÉÏ·şÎñÆ÷µÄ»°, ÏÈËãÍ¨¹ı, ÏÂ´ÎÖØÆô»¹»á¼ÌĞøÔÚÏßÑéÖ¤
+			//è¿ä¸ä¸ŠæœåŠ¡å™¨çš„è¯, å…ˆç®—é€šè¿‡, ä¸‹æ¬¡é‡å¯è¿˜ä¼šç»§ç»­åœ¨çº¿éªŒè¯
 			return true;
 		}
 		
 		boolean res = Boolean.valueOf(hc.getResponseText());
 		if (res) {
-			//ÁªÍøÑéÖ¤Í¨¹ıÁË, ¾Í°ÑÑéÖ¤Í¨¹ıµÄ×´Ì¬´æÆğÀ´, ÏÂ´Î¾Í²»ÓÃÁªÍøÑéÖ¤ÁË.
+			//è”ç½‘éªŒè¯é€šè¿‡äº†, å°±æŠŠéªŒè¯é€šè¿‡çš„çŠ¶æ€å­˜èµ·æ¥, ä¸‹æ¬¡å°±ä¸ç”¨è”ç½‘éªŒè¯äº†.
 			envManager.setActiveKeyStatus(AUTH_SUCCESS);
 		} else {
-			//Èç¹ûÃ»ÑéÖ¤Í¨¹ı, Çå¿Õµôµ±Ç°activekey.µ±ËûÖØÆôºó, ÖØĞÂÊäÈë¼¤»îÂë
+			//å¦‚æœæ²¡éªŒè¯é€šè¿‡, æ¸…ç©ºæ‰å½“å‰activekey.å½“ä»–é‡å¯å, é‡æ–°è¾“å…¥æ¿€æ´»ç 
 			envManager.setActivationKey(StringUtils.EMPTY);
 		}
 		
@@ -141,11 +141,11 @@ public class ActiveKeyGenerator {
 	}
 	
 	/**
-	 * ±¾µØĞ£Ñé¼¤»îÂë
+	 * æœ¬åœ°æ ¡éªŒæ¿€æ´»ç 
 	 * 
-	 * @param key ¼¤»îÂë
+	 * @param key æ¿€æ´»ç 
 	 * 
-	 * @return ÊÇ·ñÑéÖ¤Í¨¹ı
+	 * @return æ˜¯å¦éªŒè¯é€šè¿‡
 	 * 
 	 */
 	public static boolean localVerify(String key){
@@ -164,11 +164,11 @@ public class ActiveKeyGenerator {
 		if (count != KEY_LEN) {
 			return false;
 		}
-		//¼ì²âÓàÊı
+		//æ£€æµ‹ä½™æ•°
 		return validRemain(count, numArray);
 	}
 	
-	//ÊÇ·ñÈ«×ÖÄ¸
+	//æ˜¯å¦å…¨å­—æ¯
 	private static boolean isCharAllNum(int len, int[] numArray, char[] keyChar){
 		int count = len / MAGIC_NUM;
 		for (int j = 0; j < count; j++) {
@@ -186,12 +186,12 @@ public class ActiveKeyGenerator {
 		return false;
 	}
 	
-	//ÊÇ·ñ·ûºÏ¹æ¶¨µÄsplit¸ñÊ½
+	//æ˜¯å¦ç¬¦åˆè§„å®šçš„splitæ ¼å¼
 	private static boolean invalidSplitLength(String key){
 		return key.split(SPLIT_CHAR).length != CONNECT_LEN;
 	}
 	
-	//»ñÈ¡char¶ÔÓ¦µÄintÖµ
+	//è·å–charå¯¹åº”çš„intå€¼
 	private static int getCharIntValue(char charStr){
 		if (!BaseUtils.isNum(charStr)) {
 			return 0;
@@ -199,7 +199,7 @@ public class ActiveKeyGenerator {
 		return Character.getNumericValue(charStr);
 	}
 	
-	//Ğ£ÑéÓàÊı
+	//æ ¡éªŒä½™æ•°
 	private static boolean validRemain(int count, int[] numArray){
 		for (int j = 0; j < count; j++) {
 			int temp = 0;
@@ -218,7 +218,7 @@ public class ActiveKeyGenerator {
 		return true;
 	}
 	
-	//ÅĞ¶ÏÊÇ·ñ´æÔÚ²»ºÏ·¨(¹ı¶à)µÄÄ³Ò»¸ö×Ö·û
+	//åˆ¤æ–­æ˜¯å¦å­˜åœ¨ä¸åˆæ³•(è¿‡å¤š)çš„æŸä¸€ä¸ªå­—ç¬¦
 	private static boolean invalidEachCharCount(int len, char[] keyChar, int[] numArray){
 		HashMap<Character, Integer> hs = new HashMap<Character, Integer>();
 		for (int j = 0; j < len; j++) {
@@ -242,9 +242,9 @@ public class ActiveKeyGenerator {
 		return false;
 	}
 	
-	//¸üĞÂÓàÊı
+	//æ›´æ–°ä½™æ•°
 	private static void updateRemain(int temp, int[] numArray, int j, char[] keyChar){
-		//ÓàÊı
+		//ä½™æ•°
 		int remain = temp % MAGIC_NUM;
 		int lastMagicIndex = MAGIC_NUM - 1 + j * MAGIC_NUM;
 		int newNum = numArray[lastMagicIndex] - remain;

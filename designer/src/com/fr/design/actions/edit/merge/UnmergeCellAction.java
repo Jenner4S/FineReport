@@ -31,8 +31,8 @@ public class UnmergeCellAction extends ElementCaseAction {
 	}
 
     /**
-     * 执行动作
-     * @return 是则返回true
+     * 鎵ц鍔ㄤ綔
+     * @return 鏄垯杩斿洖true
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         ElementCasePane reportPane = getEditingComponent();

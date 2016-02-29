@@ -7,9 +7,9 @@ import com.fr.base.BaseUtils;
 public class ChartSplashPane extends SplashPane{
 
 	/**
-	 * ´´½¨Æô¶¯»­ÃæµÄ±³¾°Í¼Æ¬
+	 * åˆ›å»ºå¯åŠ¨ç”»é¢çš„èƒŒæ™¯å›¾ç‰‡
 	 * 
-	 * @return ±³¾°Í¼Æ¬
+	 * @return èƒŒæ™¯å›¾ç‰‡
 	 * 
 	 */
 	public Image createSplashBackground() {

@@ -31,7 +31,7 @@ import com.fr.stable.StringUtils;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-15
- * Time: ÏÂÎç4:52
+ * Time: ä¸‹åˆ4:52
  */
 public class MobileBodyWidgetTable extends JTable {
 
@@ -118,7 +118,7 @@ public class MobileBodyWidgetTable extends JTable {
             int width = getColumnModel().getColumn(0).getWidth();
             if (getCursor().getType() == Cursor.MOVE_CURSOR){
                 draging = true;
-                //ÏÂÃæÕâ¾ä»°Ì«ÖØÒªÁË£¬ÍÏ×§¹ý³ÌÖÐÑ¡ÖÐµÄ²»±ä
+                //ä¸‹é¢è¿™å¥è¯å¤ªé‡è¦äº†ï¼Œæ‹–æ‹½è¿‡ç¨‹ä¸­é€‰ä¸­çš„ä¸å˜
                 getInstance().setRowSelectionInterval(selectedRow,selectedRow);
                 moveComponent.setText(getValueAt(getSelectedRow(), getSelectedColumn()).toString());
                 moveComponent.setLocation(0, e.getY() - GAP);
@@ -154,7 +154,7 @@ public class MobileBodyWidgetTable extends JTable {
     }
 
     /**
-     * Ë¢ÐÂ
+     * åˆ·æ–°
      */
     public void refresh(){
         XCreator creator = designer.getSelectionModel().getSelection().getSelectedCreator();
@@ -199,7 +199,7 @@ public class MobileBodyWidgetTable extends JTable {
                                                        boolean hasFocus, int row, int column) {
             if (getCursor().getType() == Cursor.MOVE_CURSOR){
                 if(selectedRow  > -1 && selectedRow < getRowCount()){
-                    //ÍÏ×§¹ý³ÌÖÐÑ¡ÖÐµÄ²»±ä
+                    //æ‹–æ‹½è¿‡ç¨‹ä¸­é€‰ä¸­çš„ä¸å˜
                     getInstance().setRowSelectionInterval(selectedRow,selectedRow);
                 }
             }
@@ -253,10 +253,10 @@ public class MobileBodyWidgetTable extends JTable {
         }
 
         /**
-         *  ÊÇ·ñ¿É±à¼­
-         * @param row ÐÐºÅ
-         * @param column    ÁÐºÅ
-         * @return ÊÇ·ñ¿É±à¼­
+         *  æ˜¯å¦å¯ç¼–è¾‘
+         * @param row è¡Œå·
+         * @param column    åˆ—å·
+         * @return æ˜¯å¦å¯ç¼–è¾‘
          */
         public boolean isCellEditable(int row, int column) {
                 return false;

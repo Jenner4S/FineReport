@@ -9,7 +9,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: zheng
  * Date: 14-4-24
- * Time: ÉÏÎç10:48
+ * Time: ä¸Šåˆ10:48
  */
 public class SmartInsertDBManipulationInWidgetEventPane extends SmartInsertDBManipulationPane {
 

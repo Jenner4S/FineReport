@@ -5,7 +5,7 @@ import java.util.EventObject;
 /**
  * 
  * @author zhou
- * @since 2012-7-25ÏÂÎç3:45:39
+ * @since 2012-7-25ä¸‹åˆ3:45:39
  */
 public class SelectionEvent extends EventObject {
 

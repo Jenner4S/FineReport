@@ -6,20 +6,20 @@ import com.fr.design.formula.UIFormula;
  * @author richie
  * @date 2015-04-17
  * @since 8.0
- * ¹«Ê½±à¼­Æ÷½çÃæ´¦Àí½Ó¿Ú
+ * å…¬å¼ç¼–è¾‘å™¨ç•Œé¢å¤„ç†æ¥å£
  */
 public interface UIFormulaProcessor {
     String MARK_STRING = "UIFormulaProcessor";
 
     /**
-     * ÆÕÍ¨µÄ¹«Ê½±à¼­Æ÷½çÃæÀà
-     * @return ¹«Ê½±à¼­Æ÷½çÃæÀà
+     * æ™®é€šçš„å…¬å¼ç¼–è¾‘å™¨ç•Œé¢ç±»
+     * @return å…¬å¼ç¼–è¾‘å™¨ç•Œé¢ç±»
      */
     UIFormula appearanceFormula();
 
     /**
-     * µ±ĞèÒªÏÔÊ¾¡°±£Áô¹«Ê½¡±ÏîÊ±µÄ¹«Ê½±à¼­Æ÷½çÃæÀà
-     * @return ¹«Ê½±à¼­Æ÷½çÃæÀà
+     * å½“éœ€è¦æ˜¾ç¤ºâ€œä¿ç•™å…¬å¼â€é¡¹æ—¶çš„å…¬å¼ç¼–è¾‘å™¨ç•Œé¢ç±»
+     * @return å…¬å¼ç¼–è¾‘å™¨ç•Œé¢ç±»
      */
     UIFormula appearanceWhenReserveFormula();
 }

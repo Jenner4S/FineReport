@@ -10,9 +10,9 @@ import com.fr.chart.charttypes.RadarIndependentChart;
 import com.fr.general.Inter;
 
 /**
- * À×´ïÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * é›·è¾¾å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç09:55:01
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ09:55:01
  */
 public class RadarPlotPane extends AbstractChartTypePane{
 	private static final long serialVersionUID = -601566194238908115L;
@@ -46,15 +46,15 @@ public class RadarPlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ½çÃæµ¯³ö±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢å¼¹å‡ºæ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Radar_Chart");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -64,7 +64,7 @@ public class RadarPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(RADAR).isPressing = true;
@@ -73,9 +73,9 @@ public class RadarPlotPane extends AbstractChartTypePane{
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

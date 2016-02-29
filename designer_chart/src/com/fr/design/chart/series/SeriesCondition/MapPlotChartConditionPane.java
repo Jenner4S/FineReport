@@ -3,9 +3,9 @@ package com.fr.design.chart.series.SeriesCondition;
 import com.fr.chart.base.ChartConstants;
 
 /**
- * µØÍ¼µÄÌõ¼ş ²ÎÊıÏÂÀ­.
+ * åœ°å›¾çš„æ¡ä»¶ å‚æ•°ä¸‹æ‹‰.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-11 ÏÂÎç03:44:40
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-11 ä¸‹åˆ03:44:40
  */
 public class MapPlotChartConditionPane extends ChartConditionPane {
 

@@ -14,10 +14,10 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * µØÍ¼ ¶à²ã×êÈ¡ Êı¾İ¼¯¶¨Òå½çÃæ
+ * åœ°å›¾ å¤šå±‚é’»å– æ•°æ®é›†å®šä¹‰ç•Œé¢
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-23 ÉÏÎç10:55:39
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-23 ä¸Šåˆ10:55:39
  */
 public class MapTableCubeDataPane extends FurtherBasicBeanPane<MapMoreLayerTableDefinition> {
 
@@ -47,7 +47,7 @@ public class MapTableCubeDataPane extends FurtherBasicBeanPane<MapMoreLayerTable
 		this.add(tablePane, BorderLayout.CENTER);
 	}
 
-	private void refreshAreaNameBox() {// Ë¢ĞÂÇøÓòÃû³ÆÁĞ±í
+	private void refreshAreaNameBox() {// åˆ·æ–°åŒºåŸŸåç§°åˆ—è¡¨
 		TableDataWrapper tableDataWrappe = dataFromBox.getTableDataWrapper();
 		if (tableDataWrappe == null) {
 			return;
@@ -58,23 +58,23 @@ public class MapTableCubeDataPane extends FurtherBasicBeanPane<MapMoreLayerTable
 	}
 
 	/**
-	 * ½çÃæ½ÓÈë
-     * @param ob  ½çÃæ
-     *            @return  ·µ»Ø½ÓÈë.
+	 * ç•Œé¢æ¥å…¥
+     * @param ob  ç•Œé¢
+     *            @return  è¿”å›æ¥å…¥.
 	 */
 	public boolean accept(Object ob) {
 		return true;
 	}
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	public void reset() {
 	}
 
 	/**
-	 * ½çÃæµ¯³ö±êÌâ
-     * @return  ·µ»Ø±êÌâ.
+	 * ç•Œé¢å¼¹å‡ºæ ‡é¢˜
+     * @return  è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("DS-TableData");

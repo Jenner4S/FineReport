@@ -41,7 +41,7 @@ public class ChartCellEditor extends AbstractCellEditor implements DialogActionL
         }
 
         BaseChartCollection cc = this.chartCellEditorDialog.getChartCollection();
-        // ÅĞ¶ÏÌõ¼şÒÔ¼°·µ»ØÖµ
+        // åˆ¤æ–­æ¡ä»¶ä»¥åŠè¿”å›å€¼
         if (cc != null) {
             return cc;
         } else {
@@ -58,7 +58,7 @@ public class ChartCellEditor extends AbstractCellEditor implements DialogActionL
                     @Override
                     public void propertyChange() {
                         stopCellEditing();
-                        grid.requestFocus();// kunsnat: ²¹³ä, ±à¼­Í¼±íresetÖ®ºó, GridÒ²ËãÍ£Ö¹±à¼­ ÖØ»ñ½¹µã bug20443SS
+                        grid.requestFocus();// kunsnat: è¡¥å……, ç¼–è¾‘å›¾è¡¨resetä¹‹å, Gridä¹Ÿç®—åœæ­¢ç¼–è¾‘ é‡è·ç„¦ç‚¹ bug20443SS
                     }
                 });
             } else {

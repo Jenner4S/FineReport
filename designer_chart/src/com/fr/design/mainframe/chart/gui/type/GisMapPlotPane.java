@@ -76,7 +76,7 @@ public class GisMapPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ²¼¾Ö
+	 * å¸ƒå±€
 	 */
 	protected List<ChartImagePane> initStyleList() {
 		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
@@ -104,7 +104,7 @@ public class GisMapPlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -155,7 +155,7 @@ public class GisMapPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(0).isPressing = true; 
@@ -176,9 +176,9 @@ public class GisMapPlotPane extends AbstractChartTypePane{
 	}
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ¶ÔÏó
-     * @return  true±íÊ¾½ÓÊÜ
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob å¯¹è±¡
+     * @return  trueè¡¨ç¤ºæ¥å—
      */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {
@@ -191,16 +191,16 @@ public class GisMapPlotPane extends AbstractChartTypePane{
 
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return "gis"+Inter.getLocText("FR-Chart-Map_Map");
 	}
 
     /**
-     * ÊÇ·ñÓĞ×ø±êÖá
-     * @return Ã»ÓĞ×ø±êÖá
+     * æ˜¯å¦æœ‰åæ ‡è½´
+     * @return æ²¡æœ‰åæ ‡è½´
      */
 	public boolean isHaveAxis() {
     	return false;

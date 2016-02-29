@@ -18,7 +18,7 @@ import com.fr.general.Inter;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-23 ÉÏÎç10:31:22
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-23 ä¸Šåˆ10:31:22
  */
 public class MapReportEditor extends AbstractCellEditor implements TableCellEditor {
 	private ValueEditorPane cellEditor;

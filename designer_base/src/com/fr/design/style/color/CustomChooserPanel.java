@@ -41,7 +41,7 @@ import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 
 /**
- * ÑÕÉ«Ñ¡ÔñÆ÷×Ô¶¨ÒåÃæ°å
+ * é¢œè‰²é€‰æ‹©å™¨è‡ªå®šä¹‰é¢æ¿
  * @author focus
  *
  */
@@ -125,7 +125,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
   private static final int TWENTY_FOUR = 24;
   private static final int HEX_FF = 0xff;
   
-  // Õ¼Î»label
+  // å ä½label
   private static final UILabel PLACE_HOLDER_LABEL = new UILabel();
   
   private ImageRGBScrollListener rgbScroll = new ImageRGBScrollListener();
@@ -161,10 +161,10 @@ class CustomChooserPanel extends AbstractColorChooserPanel
    */
   private transient boolean handlingMouse;
   
-  // ÎÄ±¾¼àÌıÆ÷£¬¼àÌıÊ®Áù½øÖÆÎÄ±¾ÊäÈë
+  // æ–‡æœ¬ç›‘å¬å™¨ï¼Œç›‘å¬åå…­è¿›åˆ¶æ–‡æœ¬è¾“å…¥
   class TextDocumentListener implements DocumentListener{
 
-	// Ê®Áù½øÖÆÑÕÉ«ÑéÖ¤µÄÕıÔò±í´ïÊ½
+	// åå…­è¿›åˆ¶é¢œè‰²éªŒè¯çš„æ­£åˆ™è¡¨è¾¾å¼
 	private static final String HEX_PATTERN = "([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
 	private Pattern pattern;
 	private Matcher matcher;
@@ -404,7 +404,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
   }
 
   /**
-   * hsl ¼àÌı
+   * hsl ç›‘å¬
    */
   class ImageScrollListener implements ChangeListener
   {
@@ -425,7 +425,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
   }
   
   /**
-   * rgb ¼àÌı
+   * rgb ç›‘å¬
    */
   class ImageRGBScrollListener implements ChangeListener
   {
@@ -678,7 +678,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
     JPanel container = new JPanel();
     container.setLayout(new FlowLayout(FlowLayout.RIGHT));
     
-    // Ö÷Ãæ°å
+    // ä¸»é¢æ¿
     JPanel mainPanel = new JPanel();
     mainPanel.setLayout(new BorderLayout(0, 10));
     UILabel label = new UILabel();
@@ -686,13 +686,13 @@ class CustomChooserPanel extends AbstractColorChooserPanel
     container.add(label);
     container.add(mainPanel);
     
-    // hslºÍrgbÃæ°å
+    // hslå’Œrgbé¢æ¿
     JPanel hslAndRgbPanel = new JPanel();
     hslAndRgbPanel.setLayout(new BorderLayout(0,16));
     hslAndRgbPanel.add(initialHSLPanel(),BorderLayout.CENTER);
     hslAndRgbPanel.add(initialRGBPanel(),BorderLayout.SOUTH);
     
-    // Ê®Áù½øÖÆÃæ°å
+    // åå…­è¿›åˆ¶é¢æ¿
     JPanel hexPanel = new JPanel();
     hexPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 8, 0));
     hexPanel.add(new UILabel("#"));
@@ -704,7 +704,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
     return container;
   }
   
-  //³õÊ¼»¯HSL²¿·Ö
+  //åˆå§‹åŒ–HSLéƒ¨åˆ†
   private JPanel initialHSLPanel(){
 	    hRadio = new UIRadioButton("H");
 	    sRadio = new UIRadioButton("S");
@@ -757,7 +757,7 @@ class CustomChooserPanel extends AbstractColorChooserPanel
   }
   
   private JPanel initialRGBPanel(){
-	    // ³õÊ¼»¯RGB²¿·Ö
+	    // åˆå§‹åŒ–RGBéƒ¨åˆ†
 	    rSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, 255, 1));
 	    gSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, 255, 1));
 	    bbSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, 255, 1));
@@ -943,8 +943,8 @@ class CustomChooserPanel extends AbstractColorChooserPanel
     try{
     	field.setText(R + G + B);
     }catch(Exception e){
-    	// ÒòÎªÓĞÁËDocumentListenerµÄ¼àÌı£¬µ¼ÖÂsetText()µÄÊ±ºò±¨´íµ«²»Ó°ÏìÊ¹ÓÃ
-    	// ËùÒÔÖ»²¶×½£¬²»´¦Àí
+    	// å› ä¸ºæœ‰äº†DocumentListenerçš„ç›‘å¬ï¼Œå¯¼è‡´setText()çš„æ—¶å€™æŠ¥é”™ä½†ä¸å½±å“ä½¿ç”¨
+    	// æ‰€ä»¥åªæ•æ‰ï¼Œä¸å¤„ç†
     }
     repaint();
   }

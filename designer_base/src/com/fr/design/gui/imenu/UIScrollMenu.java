@@ -4,7 +4,7 @@ package com.fr.design.gui.imenu;
  * Created with IntelliJ IDEA.
  * User: richie
  * Date: 13-12-5
- * Time: ÉÏÎç11:11
+ * Time: ä¸Šåˆ11:11
  */
 
 import javax.swing.*;
@@ -62,7 +62,7 @@ public class UIScrollMenu extends UIMenu {
 //////////////////////////////
 
     /**
-     *»­½çÃæ
+     *ç”»ç•Œé¢
      */
     public void updateUI() {
       setUI(new UIMenuUI());
@@ -70,8 +70,8 @@ public class UIScrollMenu extends UIMenu {
 
 
     /**
-     * ÅĞ¶ÏpopupmeuÊÇ·ñÒş²Ø
-     * @return  Èç¹ûÒş²Ø ·µ»Øtrue
+     * åˆ¤æ–­popupmeuæ˜¯å¦éšè—
+     * @return  å¦‚æœéšè— è¿”å›true
      */
     public boolean isPopupMenuVisible() {
         ensurePopupMenuCreated();
@@ -80,7 +80,7 @@ public class UIScrollMenu extends UIMenu {
 
 
     /**
-     * ÉèÖÃpopupmenuÎ»ÖÃ
+     * è®¾ç½®popupmenuä½ç½®
      * @param x
      * @param y
      */
@@ -92,9 +92,9 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÏòpopupmenuÌí¼Ó JMenuItem
-     * @param menuItem ²Ëµ¥Ïî
-     * @return    ²Ëµ¥Ïî
+     * å‘popupmenuæ·»åŠ  JMenuItem
+     * @param menuItem èœå•é¡¹
+     * @return    èœå•é¡¹
      */
     public JMenuItem add(JMenuItem menuItem) {
         ensurePopupMenuCreated();
@@ -102,9 +102,9 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * Ìí¼Ó×é¼ş
-     * @param c   ×é¼ş
-     * @return    ×é¼ş
+     * æ·»åŠ ç»„ä»¶
+     * @param c   ç»„ä»¶
+     * @return    ç»„ä»¶
      */
     public Component add(Component c) {
         ensurePopupMenuCreated();
@@ -113,10 +113,10 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÏòÖ¸¶¨Î»ÖÃÌí¼Ó×é¼ş
-     * @param c       ×é¼ş
-     * @param index     Î»ÖÃ
-     * @return   ×é¼ş
+     * å‘æŒ‡å®šä½ç½®æ·»åŠ ç»„ä»¶
+     * @param c       ç»„ä»¶
+     * @param index     ä½ç½®
+     * @return   ç»„ä»¶
      */
     public Component add(Component c, int index) {
         ensurePopupMenuCreated();
@@ -126,7 +126,7 @@ public class UIScrollMenu extends UIMenu {
 
 
     /**
-     * Ìí¼Ó·Ö¸ô·û
+     * æ·»åŠ åˆ†éš”ç¬¦
      */
     public void addSeparator() {
         ensurePopupMenuCreated();
@@ -134,9 +134,9 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * Ìí¼Ómenuitemµ½Ö¸¶¨Î»ÖÃ
-     * @param s      ×Ö·û
-     * @param pos     Î»ÖÃ
+     * æ·»åŠ menuitemåˆ°æŒ‡å®šä½ç½®
+     * @param s      å­—ç¬¦
+     * @param pos     ä½ç½®
      */
     public void insert(String s, int pos) {
         if (pos < 0) {
@@ -148,10 +148,10 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * Ìí¼ÓÃ´»áÌØÃ´µ½Ö¸¶¨Î»ÖÃ
-     * @param mi     ²Ëµ¥Ïî
-     * @param pos   Î»ÖÃ
-     * @return       ²Ëµ¥Ïî
+     * æ·»åŠ ä¹ˆä¼šç‰¹ä¹ˆåˆ°æŒ‡å®šä½ç½®
+     * @param mi     èœå•é¡¹
+     * @param pos   ä½ç½®
+     * @return       èœå•é¡¹
      */
     public JMenuItem insert(JMenuItem mi, int pos) {
         if (pos < 0) {
@@ -163,10 +163,10 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * Ìí¼Óµ½Ö¸¶¨Î»ÖÃ
-     * @param a      ÊÂ¼ş
-     * @param pos   Î»ÖÃ
-     * @return       ²Ëµ¥Ïî
+     * æ·»åŠ åˆ°æŒ‡å®šä½ç½®
+     * @param a      äº‹ä»¶
+     * @param pos   ä½ç½®
+     * @return       èœå•é¡¹
      */
     public JMenuItem insert(Action a, int pos) {
         if (pos < 0) {
@@ -182,8 +182,8 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     *  Ìí¼Ó·Ö¸ô·ûµ½Ö¸¶¨Î»ÖÃ
-     * @param index  Ö¸¶¨Î»ÖÃ
+     *  æ·»åŠ åˆ†éš”ç¬¦åˆ°æŒ‡å®šä½ç½®
+     * @param index  æŒ‡å®šä½ç½®
      */
     public void insertSeparator(int index) {
         if (index < 0) {
@@ -196,8 +196,8 @@ public class UIScrollMenu extends UIMenu {
 
 
     /**
-     * ÒÆ³ı
-     * @param item   ²Ëµ¥Ïî
+     * ç§»é™¤
+     * @param item   èœå•é¡¹
      */
     public void remove(JMenuItem item) {
         if (popupMenu != null) {
@@ -206,8 +206,8 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÒÆ³ıÖ¸¶¨Î»ÖÃ²Ëµ¥Ïî
-     * @param pos  Ö¸¶¨Î»ÖÃ
+     * ç§»é™¤æŒ‡å®šä½ç½®èœå•é¡¹
+     * @param pos  æŒ‡å®šä½ç½®
      */
     public void remove(int pos) {
         if (pos < 0) {
@@ -222,8 +222,8 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÒÆ³ı×é¼ş
-     * @param c  ×é¼ş
+     * ç§»é™¤ç»„ä»¶
+     * @param c  ç»„ä»¶
      */
     public void remove(Component c) {
         if (popupMenu != null) {
@@ -232,7 +232,7 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÒÆ³ıËùÓĞ
+     * ç§»é™¤æ‰€æœ‰
      */
     public void removeAll() {
         if (popupMenu != null) {
@@ -241,33 +241,33 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     *  ×é¼ş×ÜÊı
-     * @return   ×é¼ş×ÜÊı
+     *  ç»„ä»¶æ€»æ•°
+     * @return   ç»„ä»¶æ€»æ•°
      */
     public int getMenuComponentCount() {
         return (popupMenu == null) ? 0 : popupMenu.getComponentCount();
     }
 
     /**
-     * Ö¸¶¨Î»ÖÃ×é¼ş
-     * @param n   Ö¸¶¨Î»ÖÃ
-     * @return    ×é¼ş
+     * æŒ‡å®šä½ç½®ç»„ä»¶
+     * @param n   æŒ‡å®šä½ç½®
+     * @return    ç»„ä»¶
      */
     public Component getMenuComponent(int n) {
         return (popupMenu == null) ? null : popupMenu.getComponent(n);
     }
 
     /**
-     * ËùÓĞ×é¼ş
-     * @return   ËùÓĞ×é¼ş
+     * æ‰€æœ‰ç»„ä»¶
+     * @return   æ‰€æœ‰ç»„ä»¶
      */
     public Component[] getMenuComponents() {
         return (popupMenu == null) ? new Component[0] : popupMenu.getComponents();
     }
 
     /**
-     * È¡µÃµ¯³ö²Ëµ¥
-     * @return  ²Ëµ¥
+     * å–å¾—å¼¹å‡ºèœå•
+     * @return  èœå•
      */
     public JPopupMenu getPopupMenu() {
         ensurePopupMenuCreated();
@@ -275,8 +275,8 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * µÃµ½×ÓÔªËØ
-     * @return  ×ÓÔªËØ
+     * å¾—åˆ°å­å…ƒç´ 
+     * @return  å­å…ƒç´ 
      */
     public MenuElement[] getSubElements() {
         return popupMenu == null ? new MenuElement[0] : new MenuElement[]{popupMenu};
@@ -284,8 +284,8 @@ public class UIScrollMenu extends UIMenu {
 
 
     /**
-     *   ÉèÖÃËùÓĞ×é¼ş·½Î»
-     * @param o ·½Î»
+     *   è®¾ç½®æ‰€æœ‰ç»„ä»¶æ–¹ä½
+     * @param o æ–¹ä½
      */
     public void applyComponentOrientation(ComponentOrientation o) {
         super.applyComponentOrientation(o);
@@ -300,8 +300,8 @@ public class UIScrollMenu extends UIMenu {
     }
 
     /**
-     * ÉèÖÃËùÓĞ×é¼ş·½Î»
-     * @param o ·½Î»
+     * è®¾ç½®æ‰€æœ‰ç»„ä»¶æ–¹ä½
+     * @param o æ–¹ä½
      */
     public void setComponentOrientation(ComponentOrientation o) {
         super.setComponentOrientation(o);

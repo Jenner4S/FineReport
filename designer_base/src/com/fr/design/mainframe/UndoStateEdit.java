@@ -11,8 +11,8 @@ import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 
 /*
- * alex: UndoManagerÖĞ±£´æµÄEdit
- * richer: ²»¹ÜÊÇ±íµ¥£¬»¹ÊÇ±¨±í£¬¶¼ĞèÒªÓÃµ½´ËÀà£¬ËùÒÔ·Åµ½com.fr.designÏÂ
+ * alex: UndoManagerä¸­ä¿å­˜çš„Edit
+ * richer: ä¸ç®¡æ˜¯è¡¨å•ï¼Œè¿˜æ˜¯æŠ¥è¡¨ï¼Œéƒ½éœ€è¦ç”¨åˆ°æ­¤ç±»ï¼Œæ‰€ä»¥æ”¾åˆ°com.fr.designä¸‹
  */
 public class UndoStateEdit extends AbstractUndoableEdit {
     /**
@@ -37,8 +37,8 @@ public class UndoStateEdit extends AbstractUndoableEdit {
     }
 
     /**
-     * ³·Ïú
-     * @throws CannotUndoException   ±¨´íĞÅÏ¢
+     * æ’¤é”€
+     * @throws CannotUndoException   æŠ¥é”™ä¿¡æ¯
      */
     public void undo() throws CannotUndoException {
         super.undo();
@@ -58,8 +58,8 @@ public class UndoStateEdit extends AbstractUndoableEdit {
     }
 
     /**
-     * ÖØ×ö
-     * @throws CannotUndoException   ±¨´íĞÅÏ¢
+     * é‡åš
+     * @throws CannotUndoException   æŠ¥é”™ä¿¡æ¯
      */
     public void redo() throws CannotRedoException {
         super.redo();

@@ -8,7 +8,7 @@ import com.fr.design.selection.QuickEditor;
 /**
  * 
  * @author zhou
- * @since 2012-7-23œ¬ŒÁ5:17:23
+ * @since 2012-7-23‰∏ãÂçà5:17:23
  */
 public abstract class FloatQuickEditor extends QuickEditor<ElementCasePane> {
 	protected FloatElement floatElement;

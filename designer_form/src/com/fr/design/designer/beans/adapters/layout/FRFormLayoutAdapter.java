@@ -13,7 +13,7 @@ import com.fr.design.utils.gui.LayoutUtils;
 /**
  * @author richer
  * @since 6.5.3
- * ±íµ¥²¼¾ÖÊÊÅäÆ÷
+ * è¡¨å•å¸ƒå±€é€‚é…å™¨
  */
 public class FRFormLayoutAdapter extends AbstractLayoutAdapter {
 

@@ -20,10 +20,10 @@ import java.util.List;
 public class MapPlotPane extends AbstractChartTypePane {
 
 
-	private boolean isSvgMap = true; // Ä¬ÈÏÊÇsvgµØÍ¼
+	private boolean isSvgMap = true; // é»˜è®¤æ˜¯svgåœ°å›¾
 	private MapGroupExtensionPane groupExtensionPane;
 
-	public MapPlotPane() {// ÍêÈ«ºÍÆäËûÍ¼±íÀàĞÍ²»Í¬µÄ½çÃæ.
+	public MapPlotPane() {// å®Œå…¨å’Œå…¶ä»–å›¾è¡¨ç±»å‹ä¸åŒçš„ç•Œé¢.
 		setLayout(new BorderLayout());
 		typeDemo = initDemoList();
 		groupExtensionPane = new MapGroupExtensionPane();
@@ -78,15 +78,15 @@ public class MapPlotPane extends AbstractChartTypePane {
     }
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Map_Map");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -101,7 +101,7 @@ public class MapPlotPane extends AbstractChartTypePane {
                 FRContext.getLogger().error(e.getMessage(), e);
             }
         }
-		plot.setMapName(groupExtensionPane.updateBean(plot));// Ãû×ÖÎÊÌâ
+		plot.setMapName(groupExtensionPane.updateBean(plot));// åå­—é—®é¢˜
 
 		if(typeDemo.get(ChartEnumDefinitions.MapType.Map_Normal.ordinal()).isPressing){
 			plot.setMapType(ChartEnumDefinitions.MapType.Map_Normal);
@@ -130,7 +130,7 @@ public class MapPlotPane extends AbstractChartTypePane {
     }
 
 	/**
-	 * ¸üĞÂµØÍ¼Ãû³Æ ½çÃæ
+	 * æ›´æ–°åœ°å›¾åç§° ç•Œé¢
 	 */
 	public void populateBean(Chart chart) {
 		Plot plot = chart.getPlot();
@@ -143,7 +143,7 @@ public class MapPlotPane extends AbstractChartTypePane {
 				imagePane.isPressing = false;
 			}
 			typeDemo.get(mapPlot.getMapType().ordinal()).isPressing = true;
-			lastTypeIndex = mapPlot.getMapType().ordinal();//todo Õâ¸öÊôĞÔÊÇ²»ÊÇ¿ÉÒÔÉ¾ÁË£¬eason
+			lastTypeIndex = mapPlot.getMapType().ordinal();//todo è¿™ä¸ªå±æ€§æ˜¯ä¸æ˜¯å¯ä»¥åˆ äº†ï¼Œeason
 		}
 
 		checkDemosBackground();
@@ -159,9 +159,9 @@ public class MapPlotPane extends AbstractChartTypePane {
     }
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		if (!super.accept(ob)) {

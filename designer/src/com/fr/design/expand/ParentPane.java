@@ -94,7 +94,7 @@ public class ParentPane extends BasicPane {
 				if (ePane == null || oldCellElement == null) {
 					return;
 				}
-				// ÉèÖÃ±êÖ¾£¬ÎªÁË²»ÈÃgrid disposeÒ»Ğ©¶«Î÷
+				// è®¾ç½®æ ‡å¿—ï¼Œä¸ºäº†ä¸è®©grid disposeä¸€äº›ä¸œè¥¿
 				ePane.getGrid().setNotShowingTableSelectPane(false);
 
 				ColumnRowTableModel model = new ColumnRowTableModel();
@@ -292,7 +292,7 @@ public class ParentPane extends BasicPane {
 			@Override
 			public void doOk() {
 				GridUtils.doSelectCell(ePane, ParentPane.this.oldCellElement.getColumn(), ParentPane.this.oldCellElement.getRow());
-				// ÊÍ·Å±êÖ¾
+				// é‡Šæ”¾æ ‡å¿—
 				ePane.getGrid().setNotShowingTableSelectPane(true);
 				ePane.repaint(10);
 				ParentPane.this.cardLayout.show(parentCardPane, "Custom");

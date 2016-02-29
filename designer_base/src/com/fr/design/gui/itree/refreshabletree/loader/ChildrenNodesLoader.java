@@ -4,15 +4,15 @@ import com.fr.design.gui.itree.refreshabletree.ExpandMutableTreeNode;
 
 
 /**
- * Éú³ÉÊ÷ÉÏµÄ×Ó½Úµã
+ * ç”Ÿæˆæ ‘ä¸Šçš„å­èŠ‚ç‚¹
  * 
  * @editor zhou
- * @since 2012-3-28ÏÂÎç9:57:40
+ * @since 2012-3-28ä¸‹åˆ9:57:40
  */
 public interface ChildrenNodesLoader {
 
 	/**
-	 * Éú³É×Ó½Úµã
+	 * ç”Ÿæˆå­èŠ‚ç‚¹
 	 * 
 	 * @return
 	 */

@@ -38,7 +38,7 @@ public class SubReportCellAction extends AbstractCellAction {
 	};
 
 	/**
-	 * equals ±È½Ï
+	 * equals æ¯”è¾ƒ
 	 * @param object
 	 * @return true false
 	 */

@@ -20,9 +20,9 @@ import java.awt.event.MouseListener;
 import java.awt.geom.Rectangle2D;
 
 /**
- * Í¼±íÑÕÉ«Ìî³ä--32ÖÖ¾«È·ÑÕÉ«Ñ¡Ôñ½çÃæ.
+ * å›¾è¡¨é¢œè‰²å¡«å……--32ç§ç²¾ç¡®é¢œè‰²é€‰æ‹©ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-22 ÉÏÎç09:27:03
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-22 ä¸Šåˆ09:27:03
  */
 public class ChartAccColorPane extends BasicPane implements MouseListener, UIObserver,ColorSelectable{
 	private static final long serialVersionUID = 7536620547840565075L;
@@ -103,8 +103,8 @@ public class ChartAccColorPane extends BasicPane implements MouseListener, UIObs
 	}
 
     /**
-     * Êó±êµã»÷
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseClicked(MouseEvent e) {
 		int x = e.getX();
@@ -134,32 +134,32 @@ public class ChartAccColorPane extends BasicPane implements MouseListener, UIObs
 	}
 
     /**
-     * Êó±ê½øÈë
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseEntered(MouseEvent e) {
 		
 	}
 
     /**
-     * Êó±êÀë¿ª
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseExited(MouseEvent e) {
 		
 	}
 
     /**
-     * Êó±ê°´Ñ¹
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡æŒ‰å‹
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mousePressed(MouseEvent e) {
 		
 	}
 
     /**
-     * Êó±êÊÍ·Å
-     * @param e Êó±êÊÂ¼ş
+     * é¼ æ ‡é‡Šæ”¾
+     * @param e é¼ æ ‡äº‹ä»¶
      */
 	public void mouseReleased(MouseEvent e) {
 		
@@ -181,23 +181,23 @@ public class ChartAccColorPane extends BasicPane implements MouseListener, UIObs
 	}
 	
     /**
-    * ¸ù¾İ½Ó¿Ú ×¢²áÊÂ¼ş.
-    * @param listener ¼àÌıÊÂ¼ş
+    * æ ¹æ®æ¥å£ æ³¨å†Œäº‹ä»¶.
+    * @param listener ç›‘å¬äº‹ä»¶
     */
    public void registerChangeListener(UIObserverListener listener) {
        uiObserverListener = listener;
    }
 
    /**
-    * ÊÇ·ñÏìÓ¦ÊÂ¼ş.
-    * @return boolean ÏìÓ¦
+    * æ˜¯å¦å“åº”äº‹ä»¶.
+    * @return boolean å“åº”
     */
    public boolean shouldResponseChangeListener() {
        return true;
    }
    
    /**
-   * ÊôĞÔ¸Ä±äÊ±, ÏìÓ¦ChangeListener
+   * å±æ€§æ”¹å˜æ—¶, å“åº”ChangeListener
    */
   public void stateChanged() {
       if (changeListener != null)  {
@@ -206,8 +206,8 @@ public class ChartAccColorPane extends BasicPane implements MouseListener, UIObs
   }
 
   /**
-   *Ìí¼Ó¸Ä±äÊÂ¼ş.
-   * @param changeListener ¸Ä±äÊÂ¼ş
+   *æ·»åŠ æ”¹å˜äº‹ä»¶.
+   * @param changeListener æ”¹å˜äº‹ä»¶
    */
   public void addChangeListener(ChangeListener changeListener) {
       this.changeListener = changeListener;
@@ -225,9 +225,9 @@ public Color getColor() {
 
 @Override
 /**
- * ²»´¦Àí
+ * ä¸å¤„ç†
  * 
- * @param colorCell ÑÕÉ«µ¥Ôª¸ñ
+ * @param colorCell é¢œè‰²å•å…ƒæ ¼
  */
 public void colorSetted(ColorCell colorCell) {
 	

@@ -31,15 +31,15 @@ public class ReportPageSetupAction extends ReportComponentAction<ReportComponent
     }
     
     /**
-     * Ö´ÐÐ¶¯×÷
-     * @return ÊÇ·ñÖ´ÐÐ³É¹¦
+     * æ‰§è¡ŒåŠ¨ä½œ
+     * @return æ˜¯å¦æ‰§è¡ŒæˆåŠŸ
      */
     public boolean executeActionReturnUndoRecordNeeded() {
     	ReportComponent rc = getEditingComponent();
         if (rc == null) {
             return false;
         }
-        final TemplateReport report = rc.getTemplateReport();//µ±Ç°µÄ±¨±í.
+        final TemplateReport report = rc.getTemplateReport();//å½“å‰çš„æŠ¥è¡¨.
         final PageSetupPane pageSetupPane = new PageSetupPane();
         pageSetupPane.populate(report, DesignerEnvManager.getEnvManager().getPageLengthUnit());
         BasicDialog dlg = pageSetupPane.showWindow(SwingUtilities.getWindowAncestor(rc));

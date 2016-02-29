@@ -14,14 +14,14 @@ import java.awt.event.ItemListener;
 
 /**
  * @author zhou
- * @since 2012-5-11ÏÂÎç5:24:35
+ * @since 2012-5-11ä¸‹åˆ5:24:35
  */
 public class CellPresentPane extends AbstractCellAttrPane {
 	private PresentPane presentPane;
 
     /**
-     * ³õÊ¼»¯Ãæ°å
-     * @return   Ãæ°å
+     * åˆå§‹åŒ–é¢æ¿
+     * @return   é¢æ¿
      */
 	public JPanel createContentPane() {
 		presentPane = new PresentPane();
@@ -48,7 +48,7 @@ public class CellPresentPane extends AbstractCellAttrPane {
 	}
 
     /**
-     * ±£´æ
+     * ä¿å­˜
      */
 	public void updateBeans() {
         Present present = presentPane.updateBean();
@@ -56,7 +56,7 @@ public class CellPresentPane extends AbstractCellAttrPane {
         int cellRectangleCount = cs.getCellRectangleCount();
         for (int rect = 0; rect < cellRectangleCount; rect++) {
             Rectangle cellRectangle = cs.getCellRectangle(rect);
-            // ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+            // éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
             for (int j = 0; j < cellRectangle.height; j++) {
                 for (int i = 0; i < cellRectangle.width; i++) {
                     int column = i + cellRectangle.x;
@@ -74,15 +74,15 @@ public class CellPresentPane extends AbstractCellAttrPane {
 
 	@Override
 	protected void populateBean() {
-        //Ñ¡ÖĞµÄËùÓĞµ¥Ôª¸ñ¶¼ÓĞĞÎÌ¬£¬ÊôĞÔ±í²Å»áÓĞÄÚÈİ£¬·ñÔòÊÇ³õÊ¼Öµ
-        //Ö÷ÒªÊÇ½â¾ö37664
+        //é€‰ä¸­çš„æ‰€æœ‰å•å…ƒæ ¼éƒ½æœ‰å½¢æ€ï¼Œå±æ€§è¡¨æ‰ä¼šæœ‰å†…å®¹ï¼Œå¦åˆ™æ˜¯åˆå§‹å€¼
+        //ä¸»è¦æ˜¯è§£å†³37664
 		Present present = getSelectCellPresent();
         presentPane.populateBean(present);
 	}
 
     private Present getSelectCellPresent(){
         TemplateElementCase elementCase = elementCasePane.getEditingElementCase();
-        //°´×¡ctrlÑ¡ÖĞ¶à¸öcell¿é
+        //æŒ‰ä½ctrlé€‰ä¸­å¤šä¸ªcellå—
         int cellRectangleCount = cs.getCellRectangleCount();
         
         for (int rect = 0; rect < cellRectangleCount; rect++) {
@@ -102,8 +102,8 @@ public class CellPresentPane extends AbstractCellAttrPane {
     }
 
     /**
-     * ¶Ô»°¿ò±êÌâ
-     * @return    ±êÌâ
+     * å¯¹è¯æ¡†æ ‡é¢˜
+     * @return    æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Style_Present");

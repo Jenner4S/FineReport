@@ -17,7 +17,7 @@ public class ToolBarDef  {
     private List<ShortCut> shortcutList = new ArrayList<ShortCut>();
     
     /*
-     * 一个static的方法生成一个JToolBar
+     * 涓�涓猻tatic鐨勬柟娉曠敓鎴愪竴涓狫ToolBar
      */
     public static UIToolbar createJToolBar() {
     	UIToolbar toolbar = new UIToolbar(FlowLayout.LEFT);
@@ -36,7 +36,7 @@ public class ToolBarDef  {
         return this.shortcutList.get(index);
     }
 
-//  用可变参数，方便添加数组
+//  鐢ㄥ彲鍙樺弬鏁帮紝鏂逛究娣诲姞鏁扮粍
     public void addShortCut(ShortCut... shortcut) {
     	for(ShortCut i : shortcut){
     		this.shortcutList.add(i);
@@ -48,7 +48,7 @@ public class ToolBarDef  {
     }
 
     /*
-     * 根据当前的ToolBarDef,更新toolBar
+     * 鏍规嵁褰撳墠鐨凾oolBarDef,鏇存柊toolBar
      */
     public void updateToolBar(UIToolbar toolBar) {
         toolBar.removeAll();

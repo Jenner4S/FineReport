@@ -105,7 +105,7 @@ public class TimeSwitchPane extends JPanel implements UIObserver {
     }
 
     /**
-     * @return Ìí¼Ó°´Å¥µÄÊÂ¼ş½Ó¿Ú
+     * @return æ·»åŠ æŒ‰é’®çš„äº‹ä»¶æ¥å£
      */
     protected ActionListener getAddButtonListener() {
         return new ActionListener() {
@@ -161,18 +161,18 @@ public class TimeSwitchPane extends JPanel implements UIObserver {
 
 
     /**
-   	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 *
-   	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+   	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
    	 */
    	public void registerChangeListener(final UIObserverListener listener){
          this.observerListener = listener;
     }
 
    	/**
-   	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+   	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
    	 *
-   	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+   	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
    	 */
    	public boolean shouldResponseChangeListener(){
         return true;

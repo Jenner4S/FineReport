@@ -24,9 +24,9 @@ import java.util.ArrayList;
 
 
 /**
- * ¶à·ÖÀà µ¥Ôª¸ñÊı¾İ¼¯ ½çÃæ.
+ * å¤šåˆ†ç±» å•å…ƒæ ¼æ•°æ®é›† ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-9-4 ÏÂÎç02:23:46
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-9-4 ä¸‹åˆ02:23:46
  */
 public class CategoryPlotMoreCateReportDataContentPane extends CategoryPlotReportDataContentPane implements UIObserver{
 	private static final long serialVersionUID = -1122313353777460534L;
@@ -75,7 +75,7 @@ public class CategoryPlotMoreCateReportDataContentPane extends CategoryPlotRepor
 	}
 	
     /**
-     * ¼ì²ébox ÊÇ·ñÓ¦¸Ã¿ÉÓÃ×´Ì¬.
+     * æ£€æŸ¥box æ˜¯å¦åº”è¯¥å¯ç”¨çŠ¶æ€.
      */
     public void checkBoxUse() {
         super.checkBoxUse();
@@ -127,18 +127,18 @@ public class CategoryPlotMoreCateReportDataContentPane extends CategoryPlotRepor
 	}
 
     /**
-     * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+     * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiobListener = listener;
 	}
 
     /**
-     * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+     * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
      *
-     * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
 	public boolean shouldResponseChangeListener() {
 		return true;

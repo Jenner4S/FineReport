@@ -25,7 +25,7 @@ import java.util.Iterator;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-8
- * Time: ÉÏÎç10:09
+ * Time: ä¸Šåˆ10:09
  * To change this template use File | Settings | File Templates.
  */
 
@@ -126,7 +126,7 @@ public class FormParaPane extends JPanel {
                     continue;
                 }
                 if (!XCreatorUtils.createXCreator(widget).canEnterIntoParaPane()){
-                    //Ô¤¶¨Òå¿Ø¼ş¹¤¾ßÀ¸Õâ¶ù²»ÏÔÊ¾¹¤¾ßÀ¸ÖĞÃ»ÓĞµÄÔ¤¶¨Òå¿Ø¼ş
+                    //é¢„å®šä¹‰æ§ä»¶å·¥å…·æ è¿™å„¿ä¸æ˜¾ç¤ºå·¥å…·æ ä¸­æ²¡æœ‰çš„é¢„å®šä¹‰æ§ä»¶
                     continue;
                 }
                 predifinedwidgeList.add(new UserDefinedWidgetOption(name));

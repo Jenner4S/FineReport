@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÆøÅİÍ¼ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İÔ´½çÃæ.
+ * æ°”æ³¡å›¾ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®æºç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç03:47:56
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ03:47:56
  */
 public class BubblePlotReportDataContentPane extends AbstractReportDataContentPane {
 	private static final int BUBBLE = 4;
@@ -43,7 +43,7 @@ public class BubblePlotReportDataContentPane extends AbstractReportDataContentPa
 	}
 
 	/**
-	 * ¸üĞÂÆøÅİÍ¼ µ¥Ôª¸ñ½çÃæÄÚÈİ
+	 * æ›´æ–°æ°”æ³¡å›¾ å•å…ƒæ ¼ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(ChartCollection collection) {
 		if(collection != null) {
@@ -70,7 +70,7 @@ public class BubblePlotReportDataContentPane extends AbstractReportDataContentPa
     }
 	
 	/**
-	 * ±£´æÆøÅİÍ¼ µ¥Ôª¸ñ½çÃæÄÚÈİµ½collection
+	 * ä¿å­˜æ°”æ³¡å›¾ å•å…ƒæ ¼ç•Œé¢å†…å®¹åˆ°collection
 	 */
 	public void updateBean(ChartCollection collection) {
 		if(collection != null) {

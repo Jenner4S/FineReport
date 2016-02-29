@@ -15,7 +15,7 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-31
- * Time: ÏÂÎç2:14
+ * Time: ä¸‹åˆ2:14
  */
 public class UIDefaultTheme extends DefaultMetalTheme {
 
@@ -35,9 +35,9 @@ public class UIDefaultTheme extends DefaultMetalTheme {
     private static final ColorUIResource SECONDARY_2 = new ColorUIResource(167, 165, 163);
 
     /**
-     * Ôö¼ÓÒ»Ğ©×Ô¶¨ÒåµÄÖµµ½Ä¬ÈÏ±íÖĞ
+     * å¢åŠ ä¸€äº›è‡ªå®šä¹‰çš„å€¼åˆ°é»˜è®¤è¡¨ä¸­
      *
-     * @param table Ä¬ÈÏ±í
+     * @param table é»˜è®¤è¡¨
      */
     public void addCustomEntriesToTable(UIDefaults table) {
         super.addCustomEntriesToTable(table);

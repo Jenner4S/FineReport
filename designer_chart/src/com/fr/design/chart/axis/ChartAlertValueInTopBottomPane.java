@@ -4,9 +4,9 @@ import com.fr.general.Inter;
 
 
 /**
- * ¾¯½äÏß ¾ÓÉÏ ¾ÓÏÂ½çÃæ. 
+ * è­¦æˆ’çº¿ å±…ä¸Š å±…ä¸‹ç•Œé¢. 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-5-22 ÉÏÎç09:53:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-5-22 ä¸Šåˆ09:53:28
  */
 public class ChartAlertValueInTopBottomPane extends ChartAlertValuePane {
 	

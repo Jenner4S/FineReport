@@ -20,7 +20,7 @@ public abstract class AbstractFloatElementOrderAction extends FloatSelectionActi
 
         ElementCase report = ePane.getEditingElementCase();
 
-        //p:»ñµÃ×îºóÒ»¸öÑ¡ÖĞµÄĞü¸¡ÔªËØ.
+        //p:è·å¾—æœ€åä¸€ä¸ªé€‰ä¸­çš„æ‚¬æµ®å…ƒç´ .
         FloatElement selectedFloatElement = report.getFloatElement(fs.getSelectedFloatName());
         orderWithSelectedFloatElement(report, selectedFloatElement);
 

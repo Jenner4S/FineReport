@@ -63,19 +63,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Éè¼Æ½çÃæ×é¼ş¡£¸Ã×é¼şÊÇ½çÃæÉè¼Æ¹¤¾ßµÄºËĞÄ£¬Ö÷Òª¸ºÔğµÄÊÇ±»Éè¼Æ½çÃæµÄÏÔÊ¾£¬½çÃæÉè¼Æ²Ù×÷×´Ì¬µÄ ÏÔÊ¾£¬±à¼­×´Ì¬µÄÏÔÊ¾µÈµÈ¡£
+ * è®¾è®¡ç•Œé¢ç»„ä»¶ã€‚è¯¥ç»„ä»¶æ˜¯ç•Œé¢è®¾è®¡å·¥å…·çš„æ ¸å¿ƒï¼Œä¸»è¦è´Ÿè´£çš„æ˜¯è¢«è®¾è®¡ç•Œé¢çš„æ˜¾ç¤ºï¼Œç•Œé¢è®¾è®¡æ“ä½œçŠ¶æ€çš„ æ˜¾ç¤ºï¼Œç¼–è¾‘çŠ¶æ€çš„æ˜¾ç¤ºç­‰ç­‰ã€‚
  */
 public class FormDesigner extends TargetComponent<Form> implements TreeSelectionListener, InvocationHandler, BaseFormDesigner ,ParaDefinitePane{
     protected static final ArrayList<String> NAME_ARRAY_LIST = new ArrayList<String>(
             Arrays.asList(new String[]{Inter.getLocText("M_Edit-Cut"), Inter.getLocText("M_Edit-Copy"), Inter.getLocText("M_Edit-Delete")})
     );
     private static final int BORDER_WIDTH = 6;
-    //µ×²ãÈİÆ÷µÄÄ¬ÈÏ´óĞ¡
+    //åº•å±‚å®¹å™¨çš„é»˜è®¤å¤§å°
     protected static final Dimension LARGE_PREFERRED_SIZE = new Dimension(WBorderLayout.DEFAULT_WIDTH, WBorderLayout.DEFAULT_HEIGHT);
     private int paraHeight = 0;
     /**
-     * µ±Ç°ÕıÔÚÉè¼ÆµÄ×é¼şÊ÷µÄ¸ù½Úµã¡£Ä¿Ç°Ö»Ö§³ÖJPanel×÷Îª¸ù½Úµã¡£¿ÉÒÔºÜÈİÒ×µÄĞŞ¸ÄÊ¹ÆäÖ§³ÖÆäËû
-     * ÈİÆ÷¡£±»Éè¼ÆµÄ×é¼şÆänameÊôĞÔ¶¼²»Îª¿Õ£¬ÆäÖµÎª¸Ã×é¼şµÄ±äÁ¿Ãû³Æ¡£
+     * å½“å‰æ­£åœ¨è®¾è®¡çš„ç»„ä»¶æ ‘çš„æ ¹èŠ‚ç‚¹ã€‚ç›®å‰åªæ”¯æŒJPanelä½œä¸ºæ ¹èŠ‚ç‚¹ã€‚å¯ä»¥å¾ˆå®¹æ˜“çš„ä¿®æ”¹ä½¿å…¶æ”¯æŒå…¶ä»–
+     * å®¹å™¨ã€‚è¢«è®¾è®¡çš„ç»„ä»¶å…¶nameå±æ€§éƒ½ä¸ä¸ºç©ºï¼Œå…¶å€¼ä¸ºè¯¥ç»„ä»¶çš„å˜é‡åç§°ã€‚
      */
     private XLayoutContainer rootComponent;
     private XLayoutContainer paraComponent;
@@ -85,28 +85,28 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     private boolean isReportBlockEditing = false;
 
     /**
-     * ÏÂÃæµÄ±äÁ¿¶¼ÊÇ·ÇĞòÁĞ»¯³ÉÔ±£¬²»¼ÇÂ¼Éè¼Æ×´Ì¬£¬Ö»×÷ÎªÉè¼ÆÊ±ÁÙÊ±×´Ì¬Ê¹ÓÃ¡£
+     * ä¸‹é¢çš„å˜é‡éƒ½æ˜¯éåºåˆ—åŒ–æˆå‘˜ï¼Œä¸è®°å½•è®¾è®¡çŠ¶æ€ï¼Œåªä½œä¸ºè®¾è®¡æ—¶ä¸´æ—¶çŠ¶æ€ä½¿ç”¨ã€‚
      */
-    // ±à¼­×´Ì¬Ê±Êó±ê´¦ÀíÆ÷
+    // ç¼–è¾‘çŠ¶æ€æ—¶é¼ æ ‡å¤„ç†å™¨
     private transient EditingMouseListener editingMouseListener;
-    // ±à¼­×´Ì¬ÏÂµÄmodel£¬´æ´¢±à¼­×´Ì¬ÏÂµÄÁÙÊ±×´Ì¬£¬±ÈÈçÍÏ×§ÇøÓò¡¢Êó±êÈÈµãµÈµÈ
+    // ç¼–è¾‘çŠ¶æ€ä¸‹çš„modelï¼Œå­˜å‚¨ç¼–è¾‘çŠ¶æ€ä¸‹çš„ä¸´æ—¶çŠ¶æ€ï¼Œæ¯”å¦‚æ‹–æ‹½åŒºåŸŸã€é¼ æ ‡çƒ­ç‚¹ç­‰ç­‰
     private transient StateModel stateModel;
-    // Ìí¼Ó×´Ì¬ÏÂµÄmodel£¬´æ´¢Ìí¼Ó×´Ì¬ÏÂµÄÁÙÊ±×´Ì¬£¬±ÈÈçÒªÌí¼ÓµÄ×é¼ş¡¢µ±Ç°Êó±êÎ»ÖÃµÈµÈ
+    // æ·»åŠ çŠ¶æ€ä¸‹çš„modelï¼Œå­˜å‚¨æ·»åŠ çŠ¶æ€ä¸‹çš„ä¸´æ—¶çŠ¶æ€ï¼Œæ¯”å¦‚è¦æ·»åŠ çš„ç»„ä»¶ã€å½“å‰é¼ æ ‡ä½ç½®ç­‰ç­‰
     private transient AddingModel addingModel;
-    // µ±Ç°¸ºÔğ¶îÍâäÖÈ¾µÄpainter£¬Ö÷ÒªÄ¿µÄÓÃÀ´äÖÈ¾Ìí¼Ó×é¼şµÄÎ»ÖÃÌáÊ¾£¬ËüÍ¨³£ÓÉÍâ²¿ÀàÉèÖÃ£¬ÔÚ
-    // Éè¼ÆÆ÷äÖÈ¾Ê±±»µ÷ÓÃäÖÈ¾ÕâĞ©Î»ÖÃÌáÊ¾¡£
+    // å½“å‰è´Ÿè´£é¢å¤–æ¸²æŸ“çš„painterï¼Œä¸»è¦ç›®çš„ç”¨æ¥æ¸²æŸ“æ·»åŠ ç»„ä»¶çš„ä½ç½®æç¤ºï¼Œå®ƒé€šå¸¸ç”±å¤–éƒ¨ç±»è®¾ç½®ï¼Œåœ¨
+    // è®¾è®¡å™¨æ¸²æŸ“æ—¶è¢«è°ƒç”¨æ¸²æŸ“è¿™äº›ä½ç½®æç¤ºã€‚
     private transient Painter painter;
-    // ´æ´¢±»Ñ¡Ôñ×é¼şºÍ¼ôÇĞ°åµÄmodel
+    // å­˜å‚¨è¢«é€‰æ‹©ç»„ä»¶å’Œå‰ªåˆ‡æ¿çš„model
     private transient SelectionModel selectionModel;
 
-    // ±à¼­×´Ì¬µÄÊÂ¼ş±í
+    // ç¼–è¾‘çŠ¶æ€çš„äº‹ä»¶è¡¨
     private CreatorEventListenerTable edit;
     protected Action[] designer_actions;
     private FormDesignerModeForSpecial<?> desigerMode;
     private Action switchAction;
     private FormElementCaseContainerProvider elementCaseContainer;
     private Parameter[] parameterArray;
-    //¿ØÖÆÌí¼Ó²ÎÊıÎ»ÖÃ
+    //æ§åˆ¶æ·»åŠ å‚æ•°ä½ç½®
     private int currentIndex;
     private static final int NUM_IN_A_LINE = 4;
     private static final int H_COMPONENT_GAP = 165;
@@ -124,35 +124,35 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     public FormDesigner(Form form, Action switchAction) {
         super(form);
         setDoubleBuffered(true);
-        // ÎªÁË´¦Àí¼üÅÌÊÂ¼ş£¬ĞèÒªFormDesignerÄÜ¹»»ñÈ¡½¹µã
+        // ä¸ºäº†å¤„ç†é”®ç›˜äº‹ä»¶ï¼Œéœ€è¦FormDesignerèƒ½å¤Ÿè·å–ç„¦ç‚¹
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
         this.setOpaque(true);
         this.setBackground(Color.WHITE);
 
-        // ³õÊ¼»¯
+        // åˆå§‹åŒ–
         edit = new CreatorEventListenerTable();
         selectionModel = new SelectionModel(this);
         stateModel = new StateModel(this);
         desigerMode = createFormDesignerTargetMode();
-        updateUI();// ³õÊ¼»¯½çÃæÉè¼Æ¹¤¾ßµÄUIÊµÀı
-        refreshRoot();// ³õÊ¼»¯È±Ê¡µÄÉè¼Æ×é¼ş
-        initializeListener();// ³õÊ¼»¯ÊÂ¼ş´¦ÀíÆ÷
+        updateUI();// åˆå§‹åŒ–ç•Œé¢è®¾è®¡å·¥å…·çš„UIå®ä¾‹
+        refreshRoot();// åˆå§‹åŒ–ç¼ºçœçš„è®¾è®¡ç»„ä»¶
+        initializeListener();// åˆå§‹åŒ–äº‹ä»¶å¤„ç†å™¨
 
-        new FormDesignerDropTarget(this);// Ìí¼ÓDrag and Drop.
+        new FormDesignerDropTarget(this);// æ·»åŠ Drag and Drop.
 
         this.switchAction = switchAction;
         populateParameterPropertyPane();
     }
 
     /**
-     * Ë¢ĞÂ¿Ø¼şÊ÷Ãæ°å
+     * åˆ·æ–°æ§ä»¶æ ‘é¢æ¿
      */
     public void populateParameterPropertyPane() {
-        //²ÎÊı
+        //å‚æ•°
         setParameterArray(getNoRepeatParas(getTarget().getParameters()));
         refreshParameter();
-        //ÈİÆ÷
+        //å®¹å™¨
         ParameterPropertyPane.getInstance().populateBean(this);
     }
 
@@ -178,15 +178,15 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ë¢ĞÂ²ÎÊı
+     * åˆ·æ–°å‚æ•°
      */
     public void refreshParameter(){
         XLayoutContainer rootContainer = this.getParaComponent();
         if (rootContainer != null){
         java.util.List<String> namelist = new ArrayList<String>();
         rootContainer.getAllXCreatorNameList(rootContainer,namelist);
-        // parameterArrayÊÇ±¨±íµÄËùÓĞ²ÎÊı, nameListÊÇÒÑ¾­ÔÚ²ÎÊıÃæ°åÌí¼Ó¹ı¿Ø¼şµÄ²ÎÊıÃû
-        // ÓëÒÑÓĞµÄ²ÎÊıÁĞ±í±È½Ï Èç¹ûÒÑ¾­´æÔÚ ¾Í³ıÈ¥
+        // parameterArrayæ˜¯æŠ¥è¡¨çš„æ‰€æœ‰å‚æ•°, nameListæ˜¯å·²ç»åœ¨å‚æ•°é¢æ¿æ·»åŠ è¿‡æ§ä»¶çš„å‚æ•°å
+        // ä¸å·²æœ‰çš„å‚æ•°åˆ—è¡¨æ¯”è¾ƒ å¦‚æœå·²ç»å­˜åœ¨ å°±é™¤å»
         Parameter[] ps = getParameterArray();
         if (ps != null) {
             removeSame(ps, namelist);
@@ -209,8 +209,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
 
     /**
-     * ÊÇ·ñÓĞ²éÑ¯°´Å¥
-     * @return   ÓĞÎŞ²éÑ¯°´Å¥
+     * æ˜¯å¦æœ‰æŸ¥è¯¢æŒ‰é’®
+     * @return   æœ‰æ— æŸ¥è¯¢æŒ‰é’®
      */
     public boolean isWithQueryButton(){
         XLayoutContainer rootContainer = this.getParaComponent();
@@ -218,9 +218,9 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¼ÓÈë²ÎÊıµ½²ÎÊıÃæ°å
-     * @param parameter ²ÎÊı
-     * @return ÊÇ·ñ¼ÓÈë
+     * åŠ å…¥å‚æ•°åˆ°å‚æ•°é¢æ¿
+     * @param parameter å‚æ•°
+     * @return æ˜¯å¦åŠ å…¥
      */
     public void addingParameter2Editor(Parameter parameter){
         if(getParaComponent() == null){
@@ -251,9 +251,9 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¼ÓÈë²ÎÊıµ½²ÎÊıÃæ°å£¬ÓĞ²éÑ¯°´Å¥
-     * @param parameter ²ÎÊı
-     * @return ÊÇ·ñ¼ÓÈë
+     * åŠ å…¥å‚æ•°åˆ°å‚æ•°é¢æ¿ï¼Œæœ‰æŸ¥è¯¢æŒ‰é’®
+     * @param parameter å‚æ•°
+     * @return æ˜¯å¦åŠ å…¥
      */
     public void addingParameter2EditorWithQueryButton(Parameter parameter){
         if(getParaComponent() == null){
@@ -294,7 +294,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ò»¼üÌí¼ÓËùÓĞ²ÎÊı
+     * ä¸€é”®æ·»åŠ æ‰€æœ‰å‚æ•°
      */
     public void addingAllParameter2Editor(){
         if(getParaComponent() == null){
@@ -311,7 +311,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
             label.setWidgetValue(new WidgetValue(parameterArray[i].getName() + ":"));
             XCreator xLabel = XCreatorUtils.createXCreator(label);
 
-            // Ã¿ĞĞÏÔÊ¾5×é
+            // æ¯è¡Œæ˜¾ç¤º5ç»„
             EditorHolder editor = new EditorHolder(parameterArray[i]);
             editor.setWidgetName(parameterArray[i].getName());
             XCreator xCreator = XCreatorUtils.createXCreator(editor);
@@ -340,7 +340,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
         parameterArray = null;
         refreshParameter();
-        //²»ÖªµÀÎªÊ²Ã´Ìí¼ÓÍê²ÎÊıºó¿Ø¼şÊ÷Ö»ÓĞÒ»¸ölabel£¬Õâ¶ùË¢ĞÂÒ»ÏÂ¿Ø¼şÊ÷ºÃÁË
+        //ä¸çŸ¥é“ä¸ºä»€ä¹ˆæ·»åŠ å®Œå‚æ•°åæ§ä»¶æ ‘åªæœ‰ä¸€ä¸ªlabelï¼Œè¿™å„¿åˆ·æ–°ä¸€ä¸‹æ§ä»¶æ ‘å¥½äº†
         EastRegionContainerPane.getInstance().refreshDownPane();
     }
 
@@ -350,11 +350,11 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ×Ô¶¯Ìí¼Ó×é¼ş
-     * @param xCreator  ×é¼ş
-     * @param x ºá×ø±ê
-     * @param y  ×İ×ø±ê
-     * @return ÊÇ·ñÌí¼Ó³É¹¦
+     * è‡ªåŠ¨æ·»åŠ ç»„ä»¶
+     * @param xCreator  ç»„ä»¶
+     * @param x æ¨ªåæ ‡
+     * @param y  çºµåæ ‡
+     * @return æ˜¯å¦æ·»åŠ æˆåŠŸ
      */
     public boolean autoAddComponent(XCreator xCreator, int x, int y) {
         XWParameterLayout layout = (XWParameterLayout) this.getParaComponent();
@@ -368,15 +368,15 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÔÚ²ÎÊıºÜ¶àÊ±£¬È«²¿Ìí¼ÓµÄÊ±ºò£¬¿ÉÒÔÏòÏÂÒ»´ÎÅÅ°æ£¬ÈôÈ¥µô¾Í»áÔÚ²ÎÊıÃæ°å¶Ñµ½Ò»Æğ
-     * @param creator ×é¼ş
-     * @param x  ³¤¶È
-     * @param y ³¤¶È
-     * @param layout ²¼¾Ö
-     * @return ÊÇ·ñÀ©Õ¹
+     * åœ¨å‚æ•°å¾ˆå¤šæ—¶ï¼Œå…¨éƒ¨æ·»åŠ çš„æ—¶å€™ï¼Œå¯ä»¥å‘ä¸‹ä¸€æ¬¡æ’ç‰ˆï¼Œè‹¥å»æ‰å°±ä¼šåœ¨å‚æ•°é¢æ¿å †åˆ°ä¸€èµ·
+     * @param creator ç»„ä»¶
+     * @param x  é•¿åº¦
+     * @param y é•¿åº¦
+     * @param layout å¸ƒå±€
+     * @return æ˜¯å¦æ‰©å±•
      */
     public boolean prepareForAdd(XCreator creator, int x, int y, XWParameterLayout layout) {
-        // ²ÎÊı½çÃæ£¬×Ô¶¯À©Õ¹
+        // å‚æ•°ç•Œé¢ï¼Œè‡ªåŠ¨æ‰©å±•
         Dimension size = layout.getSize();
         Boolean needResize = false;
 
@@ -396,7 +396,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¼ÓÈë²ÎÊıÃæ°å
+     * åŠ å…¥å‚æ•°é¢æ¿
      */
     public void addParaComponent(){
     	if (paraComponent != null) {
@@ -409,7 +409,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
         XWBorderLayout formLayoutContainer = (XWBorderLayout) rootComponent.getParent();
         formLayoutContainer.toData().setNorthSize(paraHeight);
         formLayoutContainer.add(paraComponent,WBorderLayout.NORTH);
-        //ÉèÏÂnorthSize£¬Ôö¼Óparaºó£¬ÖØÖÃborder´óĞ¡£¬ÕâÊ±ºòparaºÍrootµÄ´óĞ¡»á×ÔÊÊÓ¦µ÷Õû
+        //è®¾ä¸‹northSizeï¼Œå¢åŠ paraåï¼Œé‡ç½®borderå¤§å°ï¼Œè¿™æ—¶å€™paraå’Œrootçš„å¤§å°ä¼šè‡ªé€‚åº”è°ƒæ•´
         formLayoutContainer.setSize(formLayoutContainer.getWidth(), formLayoutContainer.getHeight() + paraHeight);
         selectionModel.reset();
         selectionModel.setSelectedCreator(paraComponent);
@@ -418,28 +418,28 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     *  ·µ»Ø¸ù½Úµã¸¸ÈİÆ÷
-     * @return  ¸¸ÈİÆ÷
+     *  è¿”å›æ ¹èŠ‚ç‚¹çˆ¶å®¹å™¨
+     * @return  çˆ¶å®¹å™¨
      */
     public Component getTopContainer(){
     	 if(rootComponent != null){
-    		 // ·µ»ØrootËùÔÚµÄ¸¸ÈİÆ÷£¬·Çdesigner
+    		 // è¿”å›rootæ‰€åœ¨çš„çˆ¶å®¹å™¨ï¼Œédesigner
     	     return LayoutUtils.getTopContainer(rootComponent);
     	 }
         return  XCreatorUtils.createXCreator(this.getTarget().getContainer());
     }
 
     /**
-     * ·µ»Ø²ÎÊı½çÃæ¸ß¶È
-     * @return  para¸ß¶È
+     * è¿”å›å‚æ•°ç•Œé¢é«˜åº¦
+     * @return  paraé«˜åº¦
      */
     public int getParaHeight(){
         return paraHeight;
     }
 
     /**
-     * ÖØÖÃparaµÄ¸ß¶È
-     * @param height  ¸ß¶È
+     * é‡ç½®paraçš„é«˜åº¦
+     * @param height  é«˜åº¦
      */
     public void setParaHeight(int height){
     	XWBorderLayout container = (XWBorderLayout) getTopContainer();
@@ -449,7 +449,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * É¾³ı²ÎÊı½çÃæ
+     * åˆ é™¤å‚æ•°ç•Œé¢
      */
     public void removeParaComponent(){
         XWBorderLayout formLayoutContainer = (XWBorderLayout) getTopContainer();
@@ -458,13 +458,13 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
         paraComponent = null;
         formLayoutContainer.setSize(rootComponent.getWidth(), rootComponent.getHeight());
         EastRegionContainerPane.getInstance().replaceDownPane(this.getEastDownPane());
-        //É¾³ıºóÖØ»æÏÂ
+        //åˆ é™¤åé‡ç»˜ä¸‹
         invalidateLayout();
     }
 
     /**
-     * ÇĞ»»
-     * @param elementCaseContainer       ÈİÆ÷
+     * åˆ‡æ¢
+     * @param elementCaseContainer       å®¹å™¨
      */
     public void switchTab(FormElementCaseContainerProvider elementCaseContainer){
     	if(this.switchAction == null){
@@ -515,23 +515,23 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ôö¼Ó¼àÌıÊÂ¼ş
-     * @param listener ½çÃæ×é¼ş±à¼­ÊÂ¼ş
+     * å¢åŠ ç›‘å¬äº‹ä»¶
+     * @param listener ç•Œé¢ç»„ä»¶ç¼–è¾‘äº‹ä»¶
      */
     public void addDesignerEditListener(DesignerEditListener listener) {
         getEditListenerTable().addListener(listener);
     }
 
     /**
-     * È¡Ïû¸ñÊ½
+     * å–æ¶ˆæ ¼å¼
      */
     public void cancelFormat() {
         return;
     }
 
     /**
-     * ±íµ¥ÔòÅĞ¶Ï²ÎÊıÃæ°åÊÇ·ñÎª¾ø¶Ô²¼¾Ö
-     * @return ÊÇÔò·µ»Øtrue
+     * è¡¨å•åˆ™åˆ¤æ–­å‚æ•°é¢æ¿æ˜¯å¦ä¸ºç»å¯¹å¸ƒå±€
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean hasWAbsoluteLayout() {
         if (paraComponent != null && paraComponent.acceptType(XWParameterLayout.class)){
@@ -541,26 +541,26 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     *  ÉèÖÃÊÇ·ñÎª±¨±í¿é±à¼­
-     * @param isEditing ÊÇ·ñÎª±¨±í¿é±à¼­
+     *  è®¾ç½®æ˜¯å¦ä¸ºæŠ¥è¡¨å—ç¼–è¾‘
+     * @param isEditing æ˜¯å¦ä¸ºæŠ¥è¡¨å—ç¼–è¾‘
      */
     public void setReportBlockEditing(boolean isEditing) {
         this.isReportBlockEditing = isEditing;
     }
 
     /**
-     * ÊÇ·ñÎª±¨±í¿é±à¼­
-     * @return ÊÇ·ñÎª±¨±í¿é±à¼­
+     * æ˜¯å¦ä¸ºæŠ¥è¡¨å—ç¼–è¾‘
+     * @return æ˜¯å¦ä¸ºæŠ¥è¡¨å—ç¼–è¾‘
      */
     public boolean isReportBlockEditing() {
         return this.isReportBlockEditing;
     }
 
     /**
-     * ÊÇ·ñÖØÃüÃû¿Ø¼ş
-     * @param creator ×é¼ş
-     * @param newName ĞÂµÄ×é¼şÃû
-     * @return  ×é¼şÃûÓĞ±ä»¯£¬ÇÒ²»ºÍÆäËûÒ»Ñù·µ»Øtrue
+     * æ˜¯å¦é‡å‘½åæ§ä»¶
+     * @param creator ç»„ä»¶
+     * @param newName æ–°çš„ç»„ä»¶å
+     * @return  ç»„ä»¶åæœ‰å˜åŒ–ï¼Œä¸”ä¸å’Œå…¶ä»–ä¸€æ ·è¿”å›true
      */
     public boolean renameCreator(XCreator creator, String newName) {
         if (ComparatorUtils.equals(creator.toData().getWidgetName(), newName)) {
@@ -577,20 +577,20 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ±£´æ²ÎÊı½çÃæµÄ¿í¶È
+     * ä¿å­˜å‚æ•°ç•Œé¢çš„å®½åº¦
      *
-     * @param width Ö¸¶¨µÄ¿í¶È
+     * @param width æŒ‡å®šçš„å®½åº¦
      */
     public void updateWidth(int width) {
        //TODO
     }
 
     /**
-     * ¸üĞÂ½çÃæ²¼¾Ö£¬ÖØ»æ
-     * @param proxy ¶¯Ì¬´úÀíÀà
-     * @param method ½Ó¿Ú·½·¨
-     * @param args ²ÎÊı
-     * @return ²»·µ»ØÈÎºÎ¶ÔÏó
+     * æ›´æ–°ç•Œé¢å¸ƒå±€ï¼Œé‡ç»˜
+     * @param proxy åŠ¨æ€ä»£ç†ç±»
+     * @param method æ¥å£æ–¹æ³•
+     * @param args å‚æ•°
+     * @return ä¸è¿”å›ä»»ä½•å¯¹è±¡
      */
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
     	if(rootComponent != null){
@@ -604,11 +604,11 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ³õÊ¼»¯ÊÂ¼ş´¦ÀíÆ÷£¬³õÊ¼×´Ì¬Îª±à¼­×´Ì¬£¬ËùÒÔÏÂ³õÊ¼»¯²¢Ìí¼Ó±à¼­ÀàµÄÊÂ¼ş´¦ÀíÆ÷
+     * åˆå§‹åŒ–äº‹ä»¶å¤„ç†å™¨ï¼Œåˆå§‹çŠ¶æ€ä¸ºç¼–è¾‘çŠ¶æ€ï¼Œæ‰€ä»¥ä¸‹åˆå§‹åŒ–å¹¶æ·»åŠ ç¼–è¾‘ç±»çš„äº‹ä»¶å¤„ç†å™¨
      */
     private void initializeListener() {
         addKeyListener(new FormEditorKeyListener(this));
-        // µã»÷
+        // ç‚¹å‡»
         editingMouseListener = new EditingMouseListener(this);
         addMouseMotionListener(editingMouseListener);
         addMouseListener(editingMouseListener);
@@ -618,7 +618,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
             @Override
             public void fireCreatorModified(DesignerEvent evt) {
-            	// Ö»ÓĞÑ¡Ôñ×é¼şÊ±²»´¥·¢Ä£°æ¸üĞÂ£¬ÆäËû¶¼Òª´¥·¢
+            	// åªæœ‰é€‰æ‹©ç»„ä»¶æ—¶ä¸è§¦å‘æ¨¡ç‰ˆæ›´æ–°ï¼Œå…¶ä»–éƒ½è¦è§¦å‘
                 if (evt.getCreatorEventID() != DesignerEvent.CREATOR_SELECTED) {
                     FormDesigner.this.fireTargetModified();
                     //bug59192
@@ -631,8 +631,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ôö¼Ó×é¼şÊÂ¼ş
-     * @param h ¶¯Ì¬´úÀí
+     * å¢åŠ ç»„ä»¶äº‹ä»¶
+     * @param h åŠ¨æ€ä»£ç†
      */
     public void addInvocationHandler(InvocationHandler h) {
         ClassLoader loader = getClass().getClassLoader();
@@ -643,20 +643,20 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Í£Ö¹Ìí¼ÓÄ£Ê½¡¢·µ»Ø±à¼­Ä£Ê½
+     * åœæ­¢æ·»åŠ æ¨¡å¼ã€è¿”å›ç¼–è¾‘æ¨¡å¼
      */
     public void stopAddingState() {
-        // »Ö¸´Îª¿Õ£¬UIÀà¸ù¾İaddingModelÊÇ·ñ¿Õ¾ö¶¨ÊÇ·ñÍ£Ö¹äÖÈ¾ÒªÌí¼ÓµÄ×é¼ş
+        // æ¢å¤ä¸ºç©ºï¼ŒUIç±»æ ¹æ®addingModelæ˜¯å¦ç©ºå†³å®šæ˜¯å¦åœæ­¢æ¸²æŸ“è¦æ·»åŠ çš„ç»„ä»¶
         addingModel = null;
         painter = null;
-        // DropTargetÒÀÈ»ÊÇaddingMouseListener,¸Ä³ÉÕâ¸ö,Êı¾İÔ´ÍÏ×§ÓÃ
+        // DropTargetä¾ç„¶æ˜¯addingMouseListener,æ”¹æˆè¿™ä¸ª,æ•°æ®æºæ‹–æ‹½ç”¨
         new FormDesignerDropTarget(this);
-        // ´¥·¢Í£Ö¹Ìí¼ÓÄ£Ê½µÄÊÂ¼ş
+        // è§¦å‘åœæ­¢æ·»åŠ æ¨¡å¼çš„äº‹ä»¶
         repaint();
     }
 
     /**
-     *  ÉèÖÃÆäUIÀàÎªDesignerUI£¬¸ºÔğäÖÈ¾
+     *  è®¾ç½®å…¶UIç±»ä¸ºDesignerUIï¼Œè´Ÿè´£æ¸²æŸ“
      */
     @Override
     public void updateUI() {
@@ -664,20 +664,20 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÔÚÍÏ×§ÇøÓòÑ¡Ôñ·½Ê½Êó±êÊÍ·ÅÊ±µ÷ÓÃ´Ëº¯ÊıÀ´¸üĞÂËùÑ¡ÔñµÄ×é¼ş
+     * åœ¨æ‹–æ‹½åŒºåŸŸé€‰æ‹©æ–¹å¼é¼ æ ‡é‡Šæ”¾æ—¶è°ƒç”¨æ­¤å‡½æ•°æ¥æ›´æ–°æ‰€é€‰æ‹©çš„ç»„ä»¶
      *
-     * @param e µ±Ç°Êó±êÊÂ¼ş£¬ÓÃÀ´ºÍÆğÊ¼µã¹¹³ÉÑ¡Ôñ¿ò£¬¼ÆËã±»È¦ÈëµÄ×é¼ş
+     * @param e å½“å‰é¼ æ ‡äº‹ä»¶ï¼Œç”¨æ¥å’Œèµ·å§‹ç‚¹æ„æˆé€‰æ‹©æ¡†ï¼Œè®¡ç®—è¢«åœˆå…¥çš„ç»„ä»¶
      */
     public void selectComponents(MouseEvent e) {
-        // µ÷ÓÃstateModelµÄselectComponent¸üĞÂ±»Ñ¡ÔñµÄ×é¼ş£¬stateModel¶¨ÒåÁËÍÏ×§ÆğÊ¼µã
+        // è°ƒç”¨stateModelçš„selectComponentæ›´æ–°è¢«é€‰æ‹©çš„ç»„ä»¶ï¼ŒstateModelå®šä¹‰äº†æ‹–æ‹½èµ·å§‹ç‚¹
         stateModel.selectCreators(e);
-        // Çå³ıstateModelÎª·ÇÍÏ×§×´Ì¬
+        // æ¸…é™¤stateModelä¸ºéæ‹–æ‹½çŠ¶æ€
         stateModel.reset();
         repaint();
     }
 
     /**
-     * ´Óroot×é¼şµİ¹é²éÕÒx,yËùÔÚµÄ×é¼ş£¬×¢ÒâÊÇÕıÔÚ±»Éè¼ÆµÄ×é¼ş£¬Òò´ËÆänameÊôĞÔ±ØĞë²»Îª¿Õ
+     * ä»rootç»„ä»¶é€’å½’æŸ¥æ‰¾x,yæ‰€åœ¨çš„ç»„ä»¶ï¼Œæ³¨æ„æ˜¯æ­£åœ¨è¢«è®¾è®¡çš„ç»„ä»¶ï¼Œå› æ­¤å…¶nameå±æ€§å¿…é¡»ä¸ä¸ºç©º
      */
     private XCreator xCreatorAt(int x, int y, XCreator root, XCreator[] except) {
     	if (root == null || !root.isVisible()) {
@@ -694,7 +694,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
                 if (ArrayUtils.contains(except, child)) {
                     continue;
                 }
-                // Ö»ÓĞname²»Îª¿ÕµÄ×é¼ş²ÅÊÇËÑË÷·¶Î§£¬Õâ¶ùµİ¹éÏÂËİµ÷ÓÃ
+                // åªæœ‰nameä¸ä¸ºç©ºçš„ç»„ä»¶æ‰æ˜¯æœç´¢èŒƒå›´ï¼Œè¿™å„¿é€’å½’ä¸‹æº¯è°ƒç”¨
                 XCreator dest = xCreatorAt(x, y, child, except);
 
                 if (dest != null && !ArrayUtils.contains(except, child)) {
@@ -705,7 +705,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
         Rectangle rect = ComponentUtils.computeVisibleRect(root);
         if (isIntersectArea(x, y, rect)) {
-            // ÅĞ¶ÏÊÇ·ñ´¦ÓÚ½»²æÇøÓò
+            // åˆ¤æ–­æ˜¯å¦å¤„äºäº¤å‰åŒºåŸŸ
             return root;
         }
 
@@ -718,8 +718,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¸üĞÂ±ß¿òÏß×´Ì¬
-     * @param e Êó±êÊÂ¼ş
+     * æ›´æ–°è¾¹æ¡†çº¿çŠ¶æ€
+     * @param e é¼ æ ‡äº‹ä»¶
      */
     public void updateDrawLineMode(MouseEvent e) {
         Point p = ConnectorHelper.getNearWidgetPoint(e);
@@ -733,15 +733,15 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ë¢ĞÂµ×²ãÈİÆ÷
+     * åˆ·æ–°åº•å±‚å®¹å™¨
      */
     public void refreshRoot() {
-    	// ³·Ïú»Ö¸´²Ù×÷¶¼»árefreshRoot£¬ÕâÊ±ºòµÄtarget.getContainerÀïµÄwidget»áºÍÖ®Ç°²»Ò»Ñù£¬ËùÒÔ²»ÓÃrootÅĞ¶ÏÀ´È¡
+    	// æ’¤é”€æ¢å¤æ“ä½œéƒ½ä¼šrefreshRootï¼Œè¿™æ—¶å€™çš„target.getContaineré‡Œçš„widgetä¼šå’Œä¹‹å‰ä¸ä¸€æ ·ï¼Œæ‰€ä»¥ä¸ç”¨rootåˆ¤æ–­æ¥å–
     	XLayoutContainer formLayoutContainer = (XLayoutContainer) XCreatorUtils.createXCreator(this.getTarget().getContainer());
         if(ExtraClassManager.getInstance().getDebugLogProviders().length != 0){
             formDesignerDebug();
         }
-        // ²¼¾ÖÄ¬ÈÏ¶¼ÊÇ1£¬µ×²ãµÄborder¸ÄÎª0£¬²»È»Ã»ÒâÒå
+        // å¸ƒå±€é»˜è®¤éƒ½æ˜¯1ï¼Œåº•å±‚çš„borderæ”¹ä¸º0ï¼Œä¸ç„¶æ²¡æ„ä¹‰
         this.getTarget().getContainer().setMargin(new PaddingMargin(0,0,0,0));
         formLayoutContainer.setBorder(null);
         if (formLayoutContainer.acceptType(XWBorderLayout.class)) {
@@ -749,7 +749,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
             Widget northWidget = borderLayout.getLayoutWidget(WBorderLayout.NORTH);
         	Widget centerWidget = borderLayout.getLayoutWidget(WBorderLayout.CENTER);
-            //±¾Éíº¬ÓĞ£¬Õâ¶ùµÃÏÈÇå¿ÕÔÙ¼Ó
+            //æœ¬èº«å«æœ‰ï¼Œè¿™å„¿å¾—å…ˆæ¸…ç©ºå†åŠ 
             formLayoutContainer.removeAll();
 
             refreshNorth(northWidget, formLayoutContainer);
@@ -762,7 +762,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     private void refreshNorth(Widget northWidget, XLayoutContainer formLayoutContainer) {
-    		// Èç¹ûÃ»ÓĞ²ÎÊı½çÃæ, ÄÇÃ´¾Í´¦ÀíÏÂ¸ß¶ÈÒÔ¼°²ÎÊı½çÃæµÄ°´Å¥ÒªµãÁÁ
+    		// å¦‚æœæ²¡æœ‰å‚æ•°ç•Œé¢, é‚£ä¹ˆå°±å¤„ç†ä¸‹é«˜åº¦ä»¥åŠå‚æ•°ç•Œé¢çš„æŒ‰é’®è¦ç‚¹äº®
     		if (northWidget == null) {
     			paraComponent = null;
     			paraHeight = 0;
@@ -778,7 +778,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     	}
 
     	private void refreshCenter(Widget centerWidget, XLayoutContainer formLayoutContainer) {
-    		// ²»´æÔÚcenter¿é, ËµÃ÷ÊÇĞÂ½¨µÄÄ£°å
+    		// ä¸å­˜åœ¨centerå—, è¯´æ˜æ˜¯æ–°å»ºçš„æ¨¡æ¿
     		if (centerWidget == null) {
     			XLayoutContainer layoutContainer = (XLayoutContainer) XCreatorUtils.createXCreator(new WFitLayout("body"));
     			layoutContainer.setSize(LARGE_PREFERRED_SIZE);
@@ -794,7 +794,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     		centerContainer.setSize(d);
     		formLayoutContainer.setSize(d.width, d.height + paraHeight);
     		setRootComponent(centerContainer);
-    		// ÔÙ´Î´ò¿ªÊ±£¬layoutÏÂroot£¬ÓĞÄÚ±ß¾àµÄ»°×é¼ş¼ÓÉÏ
+    		// å†æ¬¡æ‰“å¼€æ—¶ï¼Œlayoutä¸‹rootï¼Œæœ‰å†…è¾¹è·çš„è¯ç»„ä»¶åŠ ä¸Š
     		LayoutUtils.layoutContainer(centerContainer);
     		formLayoutContainer.add(rootComponent, WBorderLayout.CENTER);
             if(ExtraClassManager.getInstance().getDebugLogProviders().length != 0){
@@ -824,23 +824,23 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÊÇ·ñÊÇ±¨±íµÄ²ÎÊıÃæ°å
-     * @return       ·ñ(±íµ¥µÄ)
+     * æ˜¯å¦æ˜¯æŠ¥è¡¨çš„å‚æ•°é¢æ¿
+     * @return       å¦(è¡¨å•çš„)
      */
     public boolean isFormParaDesigner(){
         return false;
     }
 
     /**
-     *  ÊÇ·ñÎªµ×²ãÈİÆ÷
-     * @param comp ×é¼ş
-     * @return ÊÇÔò·µ»Øtrue
+     *  æ˜¯å¦ä¸ºåº•å±‚å®¹å™¨
+     * @param comp ç»„ä»¶
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isRoot(XCreator comp) {
         return comp == rootComponent;
     }
 
-    // ¼ÆËãÊó±êÊÂ¼şeËù·¢ÉúµÄÎ»ÖÃÏà¶Ô¸ù×é¼şµÄÎ»ÖÃ¹ØÏµ
+    // è®¡ç®—é¼ æ ‡äº‹ä»¶eæ‰€å‘ç”Ÿçš„ä½ç½®ç›¸å¯¹æ ¹ç»„ä»¶çš„ä½ç½®å…³ç³»
     public Direction getLoc2Root(MouseEvent e) {
         int x = e.getX() + formArea.getHorizontalValue();
         int y = e.getY() + formArea.getVerticalValue();
@@ -872,7 +872,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
         component.setOpaque(true);
         component.setBackground(XCreatorConstants.FORM_BG);
         selectionModel.reset();
-        // Ä¬ÈÏ»¹ÊÇÑ¡ÖĞRootPane°É
+        // é»˜è®¤è¿˜æ˜¯é€‰ä¸­RootPaneå§
         selectionModel.setSelectedCreator(rootComponent);
         invalidateLayout();
     }
@@ -916,7 +916,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÒÆ³ıÑ¡ÖĞ×´Ì¬
+     * ç§»é™¤é€‰ä¸­çŠ¶æ€
      */
     public void removeSelection() {
         selectionModel.reset();
@@ -924,28 +924,28 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÍÏ×§×¼±¸
-     * @param xCreator ×é¼ş
+     * æ‹–æ‹½å‡†å¤‡
+     * @param xCreator ç»„ä»¶
      */
     public void startDraggingBean(XCreator xCreator) {
-        // ¸ù¾İËùÑ¡ÔñµÄ×é¼şµÄBeanInfoÉú³ÉÏàÓ¦µÄAddingModel
-        // AddingModelºÍStateModel²»Ò»Ñù£¬ÊÊºÏµ±Ç°Ñ¡ÔñµÄ×é¼şÏà¹ØµÄ
+        // æ ¹æ®æ‰€é€‰æ‹©çš„ç»„ä»¶çš„BeanInfoç”Ÿæˆç›¸åº”çš„AddingModel
+        // AddingModelå’ŒStateModelä¸ä¸€æ ·ï¼Œé€‚åˆå½“å‰é€‰æ‹©çš„ç»„ä»¶ç›¸å…³çš„
         addingModel = new AddingModel(this, xCreator);
         this.setDropTarget(new FormCreatorDropTarget(this));
-        // ´¥·¢×´Ì¬Ìí¼ÓÄ£Ê½ÊÂ¼ş
+        // è§¦å‘çŠ¶æ€æ·»åŠ æ¨¡å¼äº‹ä»¶
         repaint();
     }
 
     /**
-     *  ÍÏ×§Ê±Ïà¹Ø´¦Àí
-     * @param xCreator ×é¼ş
-     * @param lastPressEvent Êó±êÊÂ¼ş
-     * @param x ×ø±êx
-     * @param y ×ø±êy
+     *  æ‹–æ‹½æ—¶ç›¸å…³å¤„ç†
+     * @param xCreator ç»„ä»¶
+     * @param lastPressEvent é¼ æ ‡äº‹ä»¶
+     * @param x åæ ‡x
+     * @param y åæ ‡y
      */
     public void startDraggingComponent(XCreator xCreator, MouseEvent lastPressEvent, int x, int y) {
-        // ¸ù¾İËùÑ¡ÔñµÄ×é¼şµÄBeanInfoÉú³ÉÏàÓ¦µÄAddingModel
-        // AddingModelºÍStateModel²»Ò»Ñù£¬ÊÊºÏµ±Ç°Ñ¡ÔñµÄ×é¼şÏà¹ØµÄ
+        // æ ¹æ®æ‰€é€‰æ‹©çš„ç»„ä»¶çš„BeanInfoç”Ÿæˆç›¸åº”çš„AddingModel
+        // AddingModelå’ŒStateModelä¸ä¸€æ ·ï¼Œé€‚åˆå½“å‰é€‰æ‹©çš„ç»„ä»¶ç›¸å…³çš„
     	int creatorWidth = xCreator.getWidth();
     	int creatorHeight = xCreator.getHeight();
         this.addingModel = new AddingModel(xCreator, x, y);
@@ -956,13 +956,13 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
         selectionModel.removeCreator(xCreator, creatorWidth, creatorHeight);
         selectionModel.setSelectedCreator(parent);
         this.setDropTarget(new FormCreatorDropTarget(this));
-        // ´¥·¢×´Ì¬Ìí¼ÓÄ£Ê½ÊÂ¼ş
+        // è§¦å‘çŠ¶æ€æ·»åŠ æ¨¡å¼äº‹ä»¶
         repaint();
     }
 
     /**
-     * ¸Ä±ä×é¼şÖµ
-     * @param e ×é¼şÑ¡ÔñÊÂ¼ş
+     * æ”¹å˜ç»„ä»¶å€¼
+     * @param e ç»„ä»¶é€‰æ‹©äº‹ä»¶
      */
     @Override
     public void valueChanged(TreeSelectionEvent e) {
@@ -986,13 +986,13 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
             } else {
                 showAuthorityEditPane();
             }
-            //ÏÈÑ¡ÖĞÔÙ¼ì²é
+            //å…ˆé€‰ä¸­å†æ£€æŸ¥
             setToolbarButtons(paths.length == 1 && tree.getSelectionPath().getParentPath() == null);
         }
     }
 
 	/**
-	 * ÏÔÊ¾È¨ÏŞ±à¼­½çÃæ
+	 * æ˜¾ç¤ºæƒé™ç¼–è¾‘ç•Œé¢
 	 */
     public void showAuthorityEditPane() {
         HistoryTemplateListPane.getInstance().getCurrentEditingTemplate().setAuthorityMode(true);
@@ -1007,8 +1007,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-	 * ÊÇ·ñÖ§³ÖÈ¨ÏŞ±à¼­
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æ”¯æŒæƒé™ç¼–è¾‘
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
     public boolean isSupportAuthority() {
         int size = getSelectionModel().getSelection().size();
@@ -1019,7 +1019,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
 
 
     protected void setToolbarButtons(boolean flag) {
-        //×ÔÊÊÓ¦²¼¾ÖºÍµ×²ã¶¼²»ÄÜÉ¾³ı
+        //è‡ªé€‚åº”å¸ƒå±€å’Œåº•å±‚éƒ½ä¸èƒ½åˆ é™¤
           DesignerContext.getDesignerFrame().checkCombineUp(!(isRoot(getSelectionModel().getSelection().getSelectedCreator()) || flag), NAME_ARRAY_LIST);
     }
 
@@ -1032,17 +1032,17 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     *  ÊÇ·ñº¬ÓĞactionÃû
-     * @param name actionÃû
-     * @return ÓĞÔò·µ»Øtrue
+     *  æ˜¯å¦å«æœ‰actionå
+     * @param name actionå
+     * @return æœ‰åˆ™è¿”å›true
      */
     public boolean isRootRelatedAction(String name) {
         return NAME_ARRAY_LIST.contains(name);
     }
 
     /**
-     * ÏÔÊ¾×é¼ş
-     * @param comp ×é¼ş
+     * æ˜¾ç¤ºç»„ä»¶
+     * @param comp ç»„ä»¶
      */
     public void makeVisible(XCreator comp) {
         XCreator parent = AdapterBus.getFirstInvisibleParent(comp);
@@ -1063,7 +1063,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ë¢ĞÂ½çÃæäÖÈ¾ÈİÆ÷
+     * åˆ·æ–°ç•Œé¢æ¸²æŸ“å®¹å™¨
      */
     public void refreshDesignerUI() {
         LayoutUtils.layoutRootContainer(getRootComponent());
@@ -1092,12 +1092,12 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ·µ»Ø¸´ÖÆÕ³ÌùÉ¾³ıµÈ¶¯×÷
-     * @return Í¬ÉÏ
+     * è¿”å›å¤åˆ¶ç²˜è´´åˆ é™¤ç­‰åŠ¨ä½œ
+     * @return åŒä¸Š
      */
     public Action[] getActions() {
         if (designer_actions == null) {
-           //ÏÈ°Ñ¸´ÖÆÕ³Ìù°´Å¥È¥µô£¬Ö»ÁôÏÂÉ¾³ı
+           //å…ˆæŠŠå¤åˆ¶ç²˜è´´æŒ‰é’®å»æ‰ï¼Œåªç•™ä¸‹åˆ é™¤
 //            designer_actions = new Action[]{new CutAction(this), new CopyAction(this), new PasteAction(this),
 //                    new FormDeleteAction(this)};
             designer_actions = new Action[]{new FormDeleteAction(this)};
@@ -1117,31 +1117,31 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Í¬²½
+     * åŒæ­¥
      */
     public void populateRootSize() {
 
     }
 
     /**
-     * ·µ»Ø±íµ¥ÇøÓò
-     * @return ±íµ¥ÇøÓò
+     * è¿”å›è¡¨å•åŒºåŸŸ
+     * @return è¡¨å•åŒºåŸŸ
      */
     public FormArea getArea() {
         return formArea;
     }
 
     /**
-     * ÉèÖÃÉÏ²ãÇøÓò
-     * @param formArea ±íµ¥ÇøÓò
+     * è®¾ç½®ä¸Šå±‚åŒºåŸŸ
+     * @param formArea è¡¨å•åŒºåŸŸ
      */
     public void setParent(FormArea formArea) {
         this.formArea = formArea;
     }
 
     /**
-     * »æÖÆ×é¼ş¸ù½Úµã
-     * @param clipg Í¼ĞÎ
+     * ç»˜åˆ¶ç»„ä»¶æ ¹èŠ‚ç‚¹
+     * @param clipg å›¾å½¢
      */
     public void paintContent(Graphics clipg) {
         rootComponent.paint(clipg);
@@ -1154,41 +1154,41 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ÖØÖÃ×é¼ş±ß½ç
+     * é‡ç½®ç»„ä»¶è¾¹ç•Œ
      */
     public void resetEditorComponentBounds() {
         editingMouseListener.resetEditorComponentBounds();
     }
 
     /**
-     * ·µ»ØÁ¬ÏßÀà
-     * @return ConnectorHelperÀà
+     * è¿”å›è¿çº¿ç±»
+     * @return ConnectorHelperç±»
      */
     public ConnectorHelper getDrawLineHelper() {
         return ConnectorHelper;
     }
 
     /**
-     *  ÊÇ·ñ»­ÏßÄ£Ê½
-     * @return ÊÇÔò·µ»Øtrue
+     *  æ˜¯å¦ç”»çº¿æ¨¡å¼
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDrawLineMode() {
         return this.drawLineMode;
     }
 
     /**
-     * ÉèÖÃDrawLineMode
-     * @param mode ÊÇor»ò
+     * è®¾ç½®DrawLineMode
+     * @param mode æ˜¯oræˆ–
      */
     public void setDrawLineMode(boolean mode) {
         this.drawLineMode = mode;
     }
 
     /**
-     * Êó±ê°´¶¨Î»ÖÃ(evtX, evtY).
+     * é¼ æ ‡æŒ‰å®šä½ç½®(evtX, evtY).
      *
-     * @param evtX event x position ×ø±ê
-     * @param evtY event y position ×ø±ê
+     * @param evtX event x position åæ ‡
+     * @param evtY event y position åæ ‡
      */
     public void doMousePress(double evtX, double evtY) {
         dispatchEvent(new MouseEvent(this, MouseEvent.MOUSE_PRESSED, System.currentTimeMillis(), 0, (int) evtX,
@@ -1196,15 +1196,15 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * TODO ALEX_SEP ÔİÊ±²»×öÊ²Ã´ÊÂ
+     * TODO ALEX_SEP æš‚æ—¶ä¸åšä»€ä¹ˆäº‹
      */
     @Override
     public void stopEditing() {
     }
 
     /**
-     * ·µ»Ø±íµ¥¿Ø¼şÈ¨ÏŞ±à¼­pane
-     * @return Í¬ÉÏ
+     * è¿”å›è¡¨å•æ§ä»¶æƒé™ç¼–è¾‘pane
+     * @return åŒä¸Š
      */
     public AuthorityEditPane createAuthorityEditPane() {
         return new FormWidgetAuthorityEditPane(this);
@@ -1245,7 +1245,7 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     @Override
     public void copy() {
@@ -1253,8 +1253,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Õ³Ìù
-     * @return ·ñ
+     * ç²˜è´´
+     * @return å¦
      */
     @Override
     public boolean paste() {
@@ -1263,8 +1263,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ¼ôÇĞ
-     * @return ·ñ
+     * å‰ªåˆ‡
+     * @return å¦
      */
     @Override
     public boolean cut() {
@@ -1277,8 +1277,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     // ////////////////////////////////////////////////////////////////////
 
     /**
-     * ¹¤¾ßÀ¸²Ëµ¥
-     * @return Í¬ÉÏ
+     * å·¥å…·æ èœå•
+     * @return åŒä¸Š
      */
     @Override
     public MenuDef[] menus4Target() {
@@ -1290,8 +1290,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * Ä£°æ²Ëµ¥
-     * @return Í¬ÉÏ
+     * æ¨¡ç‰ˆèœå•
+     * @return åŒä¸Š
      */
     @Override
     public ShortCut[] shortcut4TemplateMenu() {
@@ -1299,8 +1299,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * È¨ÏŞ²Ëµ¥
-     * @return Í¬ÉÏ
+     * æƒé™èœå•
+     * @return åŒä¸Š
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[0];
@@ -1308,8 +1308,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ·µ»ØToolBarDef
-     * @return Í¬ÉÏ
+     * è¿”å›ToolBarDef
+     * @return åŒä¸Š
      */
     @Override
     public ToolBarDef[] toolbars4Target() {
@@ -1317,8 +1317,8 @@ public class FormDesigner extends TargetComponent<Form> implements TreeSelection
     }
 
     /**
-     * ·µ»Ø¹¤¾ßÀ¸°´Å¥×é¼ş
-     * @return Í¬ÉÏ
+     * è¿”å›å·¥å…·æ æŒ‰é’®ç»„ä»¶
+     * @return åŒä¸Š
      */
     public JComponent[] toolBarButton4Form() {
         return new JComponent[0];

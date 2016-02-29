@@ -22,7 +22,7 @@ import java.awt.event.ItemListener;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/1
- * Time: 上午11:57
+ * Time: 涓婂崍11:57
  */
 public class MapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar{
 
@@ -114,8 +114,8 @@ public class MapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar{
     }
 
     /**
-     * 更新地图面板
-     * @param mapType 地图名字
+     * 鏇存柊鍦板浘闈㈡澘
+     * @param mapType 鍦板浘鍚嶅瓧
      */
     public void populateMapPane(String mapType){
         super.populateMapPane(mapType);
@@ -126,7 +126,7 @@ public class MapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar{
     }
 
     /**
-     * 触发地图改变
+     * 瑙﹀彂鍦板浘鏀瑰彉
      */
     public void fireMapChange(){
         MapPlot plot = new MapPlot();
@@ -134,7 +134,7 @@ public class MapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar{
         if(detailMaps.getSelectedItem() !=null ){
            selectedName = detailMaps.getSelectedItem().toString();
         }
-      	plot.setMapName(selectedName);// 名字问题
+      	plot.setMapName(selectedName);// 鍚嶅瓧闂
         ChartCollection chartCollection = (ChartCollection)chartDesigner.getTarget().getChartCollection();
         Chart chart =chartCollection.getSelectedChart();
       	chart.setPlot(plot);
@@ -144,7 +144,7 @@ public class MapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar{
 
 
 
-    //默认选中国家地图
+    //榛樿閫変腑鍥藉鍦板浘
     protected void calculateDetailMaps(int mapType){
         switch (mapType) {
             case WORLD_MAP:

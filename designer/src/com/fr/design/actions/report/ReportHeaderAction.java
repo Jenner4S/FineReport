@@ -37,8 +37,8 @@ public class ReportHeaderAction extends ReportComponentAction<ReportComponent> {
     }
 
     /**
-     * 执行动作
-     * @return 是否执行成功
+     * 鎵ц鍔ㄤ綔
+     * @return 鏄惁鎵ц鎴愬姛
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         final ReportComponent reportPane = this.getEditingComponent();
@@ -49,7 +49,7 @@ public class ReportHeaderAction extends ReportComponentAction<ReportComponent> {
         final EditHeaderPane headerEditDialog = new EditHeaderPane();
         final ReportSettingsProvider set = ReportUtils.getReportSettings(report);
 
-        //Clone 给当前hashtable.
+        //Clone 缁欏綋鍓峢ashtable.
         Hashtable cloneeportHFHash = new Hashtable();
         for (int i = 0; i != ReportConstants.PAGE_INFO.length; i++){
             this.cloneReportHFHashHeadtable(cloneeportHFHash, report, ReportConstants.PAGE_INFO[i]);

@@ -23,7 +23,7 @@ import com.fr.design.selection.Selectedable;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-19 ±¨±í±à¼­Ãæ°å
+ * @since 6.5.4 åˆ›å»ºäº2011-4-19 æŠ¥è¡¨ç¼–è¾‘é¢æ¿
  */
 public abstract class ReportComponent<T extends TemplateReport, E extends ElementCasePane, S extends SelectableElement> extends TargetComponent<T> implements Selectedable<S> {
 	protected E elementCasePane;
@@ -34,7 +34,7 @@ public abstract class ReportComponent<T extends TemplateReport, E extends Elemen
 		super(t);
 	}
 
-	// TODO ALEX_SEP Õâ¸ö·½·¨ÓĞÃ»ÓĞ¿ÉÄÜÉ¾µô
+	// TODO ALEX_SEP è¿™ä¸ªæ–¹æ³•æœ‰æ²¡æœ‰å¯èƒ½åˆ æ‰
 	public T getTemplateReport() {
 		return this.getTarget();
 	}

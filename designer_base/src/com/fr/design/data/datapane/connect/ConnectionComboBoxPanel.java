@@ -20,17 +20,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ñ¡ÔñÊı¾İÁ¬½ÓµÄÏÂÀ­¿ò
+ * é€‰æ‹©æ•°æ®è¿æ¥çš„ä¸‹æ‹‰æ¡†
  *
  * @editor zhou
- * @since 2012-3-28ÏÂÎç3:02:30
+ * @since 2012-3-28ä¸‹åˆ3:02:30
  */
 public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
     /**
      *
      */
     private static final long serialVersionUID = 1L;
-    private Class<? extends Connection> cls; // ËùÈ¡µÄConnection¶¼ÊÇcls¼°Æä×ÓÀà
+    private Class<? extends Connection> cls; // æ‰€å–çš„Connectionéƒ½æ˜¯clsåŠå…¶å­ç±»
     private java.util.List<String> nameList = new ArrayList<String>();
 
     public ConnectionComboBoxPanel(Class<? extends Connection> cls) {
@@ -38,7 +38,7 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
 
         this.cls = cls;
 
-        // alex:Ìí¼Óitem change¼àÌı,µ±¸Ä±äÊ±¸Ä±äDesignerEnvManagerÖĞµÄ×î½üÑ¡ÖĞµÄÊı¾İÁ¬½Ó
+        // alex:æ·»åŠ item changeç›‘å¬,å½“æ”¹å˜æ—¶æ”¹å˜DesignerEnvManagerä¸­çš„æœ€è¿‘é€‰ä¸­çš„æ•°æ®è¿æ¥
         this.itemComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 String selected = ConnectionComboBoxPanel.this.getSelectedItem();
@@ -51,7 +51,7 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
     }
 
     /*
-     * Ë¢ĞÂComboBox.items
+     * åˆ·æ–°ComboBox.items
      */
     protected java.util.Iterator<String> items() {
         nameList = new ArrayList<String>();
@@ -81,7 +81,7 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
     }
 
     /*
-     * µ¯³ö¶Ô»°¿ò±à¼­Items
+     * å¼¹å‡ºå¯¹è¯æ¡†ç¼–è¾‘Items
      */
     protected void editItems() {
         final ConnectionListPane connectionListPane = new ConnectionListPane();
@@ -91,7 +91,7 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
                 SwingUtilities.getWindowAncestor(ConnectionComboBoxPanel.this), new DialogActionAdapter() {
             public void doOk() {
                 connectionListPane.update(datasourceManager);
-                // marks:±£´æÊı¾İ
+                // marks:ä¿å­˜æ•°æ®
                 Env currentEnv = FRContext.getCurrentEnv();
                 try {
                     currentEnv.writeResource(datasourceManager);
@@ -119,7 +119,7 @@ public class ConnectionComboBoxPanel extends ItemEditableComboBoxPanel {
                     }
                 }
             }
-            // alex:Èç¹ûÕâ¸öComboBox»¹ÊÇÃ»ÓĞÑ¡ÖĞ,ÄÇÃ´Ñ¡ÖĞµÚÒ»¸ö
+            // alex:å¦‚æœè¿™ä¸ªComboBoxè¿˜æ˜¯æ²¡æœ‰é€‰ä¸­,é‚£ä¹ˆé€‰ä¸­ç¬¬ä¸€ä¸ª
             if (StringUtils.isBlank(this.getSelectedItem()) && this.getConnectionSize() > 0) {
                 this.setSelectedItem(this.getConnection(0));
             }

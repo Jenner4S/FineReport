@@ -17,7 +17,7 @@ import java.util.Vector;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-16
- * Time: ÏÂÎç2:42
+ * Time: ä¸‹åˆ2:42
  * To change this template use File | Settings | File Templates.
  */
 public class UIToolTipUI extends ToolTipUI {

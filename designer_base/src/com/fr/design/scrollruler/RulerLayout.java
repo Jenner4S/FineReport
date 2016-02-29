@@ -28,10 +28,10 @@ public class RulerLayout implements LayoutManager, java.io.Serializable {
 	}
 
     /**
-     * ÈİÆ÷Ôö¼Ó×é¼ş
+     * å®¹å™¨å¢åŠ ç»„ä»¶
      * 
-     * @param name   ×é¼şÃû
-     * @param comp   ×é ¼ş
+     * @param name   ç»„ä»¶å
+     * @param comp   ç»„ ä»¶
      */
 	public void addLayoutComponent(String name, Component comp) {
 		if (ComparatorUtils.equals(name, CENTER)) {
@@ -50,9 +50,9 @@ public class RulerLayout implements LayoutManager, java.io.Serializable {
 	}
 
     /**
-     * È¥³ı×é¼ş
+     * å»é™¤ç»„ä»¶
      * 
-     * @param comp     ×é¼ş
+     * @param comp     ç»„ä»¶
      */
 	public void removeLayoutComponent(Component comp) {
 		if (ComparatorUtils.equals(comp, designer)) {
@@ -71,10 +71,10 @@ public class RulerLayout implements LayoutManager, java.io.Serializable {
 	}
 
     /**
-     * ÊÊºÏ³ß´ç
+     * é€‚åˆå°ºå¯¸
      * 
-     * @param target     ÈİÆ÷
-     * @return    ³ß´ç
+     * @param target     å®¹å™¨
+     * @return    å°ºå¯¸
      */
 	public Dimension preferredLayoutSize(Container target) {
 		synchronized (target.getTreeLock()) {
@@ -92,9 +92,9 @@ public class RulerLayout implements LayoutManager, java.io.Serializable {
 	}
 
     /**
-     * ¼ÆËã×îĞ¡³ß´ç
-     * @param target     ÈİÆ÷
-     * @return ³ß´ç
+     * è®¡ç®—æœ€å°å°ºå¯¸
+     * @param target     å®¹å™¨
+     * @return å°ºå¯¸
      */
 	public Dimension minimumLayoutSize(Container target) {
 		synchronized (target.getTreeLock()) {
@@ -114,9 +114,9 @@ public class RulerLayout implements LayoutManager, java.io.Serializable {
 	}
 
     /**
-     * ²¼¾Ö¹ÜÀíÆ÷ÖØĞÂµ÷ÕûÄÚ²¿×é¼şÎ»ÖÃ
+     * å¸ƒå±€ç®¡ç†å™¨é‡æ–°è°ƒæ•´å†…éƒ¨ç»„ä»¶ä½ç½®
      * 
-     * @param target    ÈİÆ÷
+     * @param target    å®¹å™¨
      */
 	public void layoutContainer(Container target) {
 		synchronized (target.getTreeLock()) {

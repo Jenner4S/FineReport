@@ -10,7 +10,7 @@ import com.fr.file.filetree.FileNode;
  * Directory is in the first. and  normal file  the  in the  last.
  */
 public class FileNodeComparator implements Comparator<FileNode> {
-	// 正序还是倒序
+	// 姝ｅ簭杩樻槸鍊掑簭
 	private boolean isReverse = false;
 	
 	public FileNodeComparator() {
@@ -52,7 +52,7 @@ public class FileNodeComparator implements Comparator<FileNode> {
     }
 
     /**
-     * 一个简单的递归判断算法
+     * 涓�涓畝鍗曠殑閫掑綊鍒ゆ柇绠楁硶
      * @param nameNode1
      * @param nameNode2
      * @param i
@@ -76,5 +76,3 @@ public class FileNodeComparator implements Comparator<FileNode> {
 				return -1;
 		}
 	}
-
-

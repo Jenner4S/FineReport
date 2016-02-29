@@ -27,8 +27,8 @@ public class OpenTemplateAction extends UpdateAction {
     }
 
     /**
-     * 动作
-     * @param evt 事件
+     * 鍔ㄤ綔
+     * @param evt 浜嬩欢
      */
     public void actionPerformed(ActionEvent evt) {
         FILEChooserPane fileChooser = FILEChooserPane.getInstance(true, true);
@@ -36,7 +36,7 @@ public class OpenTemplateAction extends UpdateAction {
         if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame())
                 == FILEChooserPane.OK_OPTION) {
             final FILE file = fileChooser.getSelectedFILE();
-            if (file == null) {//选择的文件不能是 null
+            if (file == null) {//閫夋嫨鐨勬枃浠朵笉鑳芥槸 null
                 return;
             }
             DesignerContext.getDesignerFrame().openTemplate(file);

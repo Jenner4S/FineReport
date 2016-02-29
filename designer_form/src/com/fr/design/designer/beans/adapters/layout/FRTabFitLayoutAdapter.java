@@ -19,25 +19,25 @@ import com.fr.form.ui.container.cardlayout.WCardMainBorderLayout;
 import com.fr.general.ComparatorUtils;
 
 /**
- * tab²¼¾ÖtabFitÊÊÅäÆ÷
+ * tabå¸ƒå±€tabFité€‚é…å™¨
  * 
  * @author focus
  * @date 2014-6-24
  */
 public class FRTabFitLayoutAdapter extends FRFitLayoutAdapter {
-	//±êÌâÀ¸¸ß¶È¶Ôtab²¼¾ÖÄÚ²¿×é¼şµÄy×ø±êÔì³ÉÁËÆ«ÒÆ
+	//æ ‡é¢˜æ é«˜åº¦å¯¹tabå¸ƒå±€å†…éƒ¨ç»„ä»¶çš„yåæ ‡é€ æˆäº†åç§»
 	private static int TAB_HEIGHT = 40;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param container XWTabFitLayoutÈİÆ÷
+	 * æ„é€ å‡½æ•°
+	 * @param container XWTabFitLayoutå®¹å™¨
 	 */
 	public FRTabFitLayoutAdapter(XLayoutContainer container) {
 		super(container);
 	}
 	
 	/**
-	 * ·µ»Ø²¼¾Ö×ÔÉíÊôĞÔ£¬·½±ãÒ»Ğ©ÌØÓĞÉèÖÃÔÚlayoutË¢ĞÂÊ±´¦Àí
+	 * è¿”å›å¸ƒå±€è‡ªèº«å±æ€§ï¼Œæ–¹ä¾¿ä¸€äº›ç‰¹æœ‰è®¾ç½®åœ¨layoutåˆ·æ–°æ—¶å¤„ç†
 	 */
 	@Override
     public GroupModel getLayoutProperties() {
@@ -46,16 +46,16 @@ public class FRTabFitLayoutAdapter extends FRFitLayoutAdapter {
     }
 	
     /**
-     * ×é¼şµÄComponentAdapterÔÚÌí¼Ó×é¼şÊ±£¬Èç¹û·¢ÏÖ²¼¾Ö¹ÜÀíÆ÷²»Îª¿Õ£¬»á¼Ì¶øµ÷ÓÃ¸Ã²¼¾Ö¹ÜÀíÆ÷µÄ
-     * addComp·½·¨À´Íê³É×é¼şµÄ¾ßÌåÌí¼Ó¡£ÔÚ¸Ã·½·¨ÄÚ£¬²¼¾Ö¹ÜÀíÆ÷¿ÉÒÔÌá¹©¶îÍâµÄ¹¦ÄÜ¡£
-     * @param creator ±»Ìí¼ÓµÄĞÂ×é¼ş
-     * @param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-     * @return ÊÇ·ñÌí¼Ó³É¹¦£¬³É¹¦·µ»Øtrue£¬·ñÔòfalse
+     * ç»„ä»¶çš„ComponentAdapteråœ¨æ·»åŠ ç»„ä»¶æ—¶ï¼Œå¦‚æœå‘ç°å¸ƒå±€ç®¡ç†å™¨ä¸ä¸ºç©ºï¼Œä¼šç»§è€Œè°ƒç”¨è¯¥å¸ƒå±€ç®¡ç†å™¨çš„
+     * addCompæ–¹æ³•æ¥å®Œæˆç»„ä»¶çš„å…·ä½“æ·»åŠ ã€‚åœ¨è¯¥æ–¹æ³•å†…ï¼Œå¸ƒå±€ç®¡ç†å™¨å¯ä»¥æä¾›é¢å¤–çš„åŠŸèƒ½ã€‚
+     * @param creator è¢«æ·»åŠ çš„æ–°ç»„ä»¶
+     * @param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+     * @return æ˜¯å¦æ·»åŠ æˆåŠŸï¼ŒæˆåŠŸè¿”å›trueï¼Œå¦åˆ™false
      */
     @Override
   	public boolean addBean(XCreator creator, int x, int y) {
-    	// ¾­¹ıacceptÅĞ¶Ïºó£¬container»á±»¸Ä±ä£¬ÏÈ±¸·İ
+    	// ç»è¿‡acceptåˆ¤æ–­åï¼Œcontainerä¼šè¢«æ”¹å˜ï¼Œå…ˆå¤‡ä»½
     	XLayoutContainer backUpContainer = container;
   	  	Rectangle rect = ComponentUtils.getRelativeBounds(container);
   	  	
@@ -64,8 +64,8 @@ public class FRTabFitLayoutAdapter extends FRFitLayoutAdapter {
   		if (!accept(creator, posX, posY)) {
   			return false;
   		}
-  		// posX£¬posYÊÇĞÂÍÏÈë×é¼şÏà¶ÔÓÚÈİÆ÷µÄÎ»ÖÃ£¬ÈôÔÚtab²¼¾ÖµÄ±ßÔµ£¬ÔòĞèÒª°ÑĞÂ×é¼şÌí¼Óµ½
-  		// ¸¸²ã×ÔÊÊÓ¦²¼¾ÖÖĞ£¬ÕâÊ±ºòµÄÌí¼ÓÎ»ÖÃ¾ÍÊÇtab²¼¾ÖËùÔÚµÄÎ»ÖÃ
+  		// posXï¼ŒposYæ˜¯æ–°æ‹–å…¥ç»„ä»¶ç›¸å¯¹äºå®¹å™¨çš„ä½ç½®ï¼Œè‹¥åœ¨tabå¸ƒå±€çš„è¾¹ç¼˜ï¼Œåˆ™éœ€è¦æŠŠæ–°ç»„ä»¶æ·»åŠ åˆ°
+  		// çˆ¶å±‚è‡ªé€‚åº”å¸ƒå±€ä¸­ï¼Œè¿™æ—¶å€™çš„æ·»åŠ ä½ç½®å°±æ˜¯tabå¸ƒå±€æ‰€åœ¨çš„ä½ç½®
   		if(this.intersectsEdge(posX, posY, backUpContainer)){
   			if(!ComparatorUtils.equals(backUpContainer.getOuterLayout(), backUpContainer.getBackupParent())){
   				XWTabFitLayout tabLayout = (XWTabFitLayout)backUpContainer;
@@ -75,14 +75,14 @@ public class FRTabFitLayoutAdapter extends FRFitLayoutAdapter {
   	  		((XWidgetCreator) creator).recalculateChildrenSize();
   	  		return true;
   		}
-  		// Èç¹û²»ÔÚ±ßÔµ£¬ÈİÆ÷Îª±¾×ÔÊÊÓ¦²¼¾Ö£¬Ôö¼Ó×é¼şµÄÎ»ÖÃ¾ÍÊÇÏà¶ÔÓÚÈİÆ÷µÄÎ»ÖÃ
+  		// å¦‚æœä¸åœ¨è¾¹ç¼˜ï¼Œå®¹å™¨ä¸ºæœ¬è‡ªé€‚åº”å¸ƒå±€ï¼Œå¢åŠ ç»„ä»¶çš„ä½ç½®å°±æ˜¯ç›¸å¯¹äºå®¹å™¨çš„ä½ç½®
   		addComp(creator, posX, posY);
   		((XWidgetCreator) creator).recalculateChildrenSize();
   		return true;
   	}
     
-    // tab²¼¾ÖµÄ×İ×ø±êÊÜµ½tab¸ß¶ÈµÄÓ°Ïì£¬ÅĞ¶ÏµÄÉÏ±ß½çÈ¡µÃÊÇÀïÃæXWTabFitLayoutµÄÉÏ±ß½ç£¬
-    // Êµ¼Ê¼ÆËãµÄÊ±ºòµÄ×İ×ø±êÓÃÁËÍâ²ãµÄCardMainBorerLayout£¬ĞèÒª½«tab¸ß¶È¼õµô
+    // tabå¸ƒå±€çš„çºµåæ ‡å—åˆ°tabé«˜åº¦çš„å½±å“ï¼Œåˆ¤æ–­çš„ä¸Šè¾¹ç•Œå–å¾—æ˜¯é‡Œé¢XWTabFitLayoutçš„ä¸Šè¾¹ç•Œï¼Œ
+    // å®é™…è®¡ç®—çš„æ—¶å€™çš„çºµåæ ‡ç”¨äº†å¤–å±‚çš„CardMainBorerLayoutï¼Œéœ€è¦å°†tabé«˜åº¦å‡æ‰
     private int adjustY(int y,XWTabFitLayout tabLayout){
 		XWCardLayout cardLayout = (XWCardLayout) tabLayout.getBackupParent();
 		LayoutBorderStyle style = cardLayout.toData().getBorderStyle();

@@ -15,9 +15,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * Í¼±íÔ¤¶¨ÒåÑùÊ½Action.
+ * å›¾è¡¨é¢„å®šä¹‰æ ·å¼Action.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-20 ÏÂÎç04:38:48
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-20 ä¸‹åˆ04:38:48
  */
 public class ChartPreStyleAction extends UpdateAction {
 
@@ -29,8 +29,8 @@ public class ChartPreStyleAction extends UpdateAction {
 	}
 
     /**
-     * ¶¯×÷
-     * @param e ÊÂ¼ş
+     * åŠ¨ä½œ
+     * @param e äº‹ä»¶
      */
 	public void actionPerformed(ActionEvent e) {
 		DesignerFrame designerFrame = DesignerContext.getDesignerFrame();

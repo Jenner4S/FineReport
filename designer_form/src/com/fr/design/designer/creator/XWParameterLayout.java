@@ -21,7 +21,7 @@ import java.awt.*;
 import java.beans.IntrospectionException;
 
 /**
- * ±íµ¥²ÎÊı½çÃæcontainer
+ * è¡¨å•å‚æ•°ç•Œé¢container
  */
 public class XWParameterLayout extends XWAbsoluteLayout {
 	
@@ -38,16 +38,16 @@ public class XWParameterLayout extends XWAbsoluteLayout {
 	}
 
     /**
-     * ³õÊ¼»¯³ß´ç
-     * @return    ³ß´ç
+     * åˆå§‹åŒ–å°ºå¯¸
+     * @return    å°ºå¯¸
      */
     public Dimension initEditorSize() {
         return new Dimension(WFitLayout.DEFAULT_WIDTH, WBorderLayout.DEFAULT_SIZE);
     }
 
     /**
-     * ²ÎÊıÃæ°åÊôĞÔ±í
-     * @return ÊôĞÔ
+     * å‚æ•°é¢æ¿å±æ€§è¡¨
+     * @return å±æ€§
      * @throws java.beans.IntrospectionException
      */
     public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -75,16 +75,16 @@ public class XWParameterLayout extends XWAbsoluteLayout {
 	}
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏ×§(±íµ¥ÖĞ²ÎÊıÃæ°åºÍ×ÔÊÊÓ¦²¼¾Ö²»¿ÉÒÔÍÏ×§)
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–æ‹½(è¡¨å•ä¸­å‚æ•°é¢æ¿å’Œè‡ªé€‚åº”å¸ƒå±€ä¸å¯ä»¥æ‹–æ‹½)
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportDrag(){
         return false;
@@ -92,48 +92,48 @@ public class XWParameterLayout extends XWAbsoluteLayout {
 
 
     /**
-     *  ·µ»Ø¶ÔÓ¦µÄwidgetÈİÆ÷
-     * @return   ¶ÔÓ¦ÈİÆ÷
+     *  è¿”å›å¯¹åº”çš„widgetå®¹å™¨
+     * @return   å¯¹åº”å®¹å™¨
      */
     public WParameterLayout toData() {
         return (WParameterLayout) data;
     }
 
     /**
-     * ¿Ø¼şÄ¬ÈÏÃû³Æ
-     * @return   Ãû³Æ
+     * æ§ä»¶é»˜è®¤åç§°
+     * @return   åç§°
      */
     public String createDefaultName() {
         return "para";
     }
 
     /**
-     * ÊÇ·ñÑÓ³ÙÕ¹Ê¾±¨±íÄÚÈİ£¬Ò²¾ÍÊÇËµÊÇ·ñÒªµÈµã»÷ÁË²éÑ¯Ö®ºó²ÅÖ´ĞĞ±¨±í
-     * @return Èç¹ûÊÇtrue£¬Ôò±íÊ¾µã»÷Ö®ºó²Å¿ªÊ¼¼ÆËã£¬falseÔò±íÊ¾»á¸ù¾İ²ÎÊıÄ¬ÈÏÖµÖ±½Ó¼ÆËã±¨±í²¢Õ¹ÏÖ
+     * æ˜¯å¦å»¶è¿Ÿå±•ç¤ºæŠ¥è¡¨å†…å®¹ï¼Œä¹Ÿå°±æ˜¯è¯´æ˜¯å¦è¦ç­‰ç‚¹å‡»äº†æŸ¥è¯¢ä¹‹åæ‰æ‰§è¡ŒæŠ¥è¡¨
+     * @return å¦‚æœæ˜¯trueï¼Œåˆ™è¡¨ç¤ºç‚¹å‡»ä¹‹åæ‰å¼€å§‹è®¡ç®—ï¼Œfalseåˆ™è¡¨ç¤ºä¼šæ ¹æ®å‚æ•°é»˜è®¤å€¼ç›´æ¥è®¡ç®—æŠ¥è¡¨å¹¶å±•ç°
      */
     public boolean isDelayDisplayContent() {
         return toData().isDelayDisplayContent();
     }
 
     /**
-     * ÊÇ·ñÏÔÊ¾²ÎÊı½çÃæ
-     * @return ÏÔÊ¾²ÎÊı½çÃæÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * æ˜¯å¦æ˜¾ç¤ºå‚æ•°ç•Œé¢
+     * @return æ˜¾ç¤ºå‚æ•°ç•Œé¢åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public boolean isDisplay() {
         return toData().isDisplay();
     }
 
     /**
-     * »ñÈ¡²ÎÊı½çÃæµÄ¿í¶È
-     * @return ¿í¶È
+     * è·å–å‚æ•°ç•Œé¢çš„å®½åº¦
+     * @return å®½åº¦
      */
     public int getDesignWidth() {
         return toData().getDesignWidth();
     }
 
     /**
-     * »ñÈ¡²ÎÊıÃæ°åµÄ¶ÔÆë·½Ê½
-     * @return ×óÖĞÓÒÈıÖÖ¶ÔÆë·½Ê½
+     * è·å–å‚æ•°é¢æ¿çš„å¯¹é½æ–¹å¼
+     * @return å·¦ä¸­å³ä¸‰ç§å¯¹é½æ–¹å¼
      */
     public int getPosition() {
         return toData().getPosition();

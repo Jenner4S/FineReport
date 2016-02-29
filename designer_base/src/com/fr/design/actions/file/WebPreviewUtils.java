@@ -32,20 +32,20 @@ public final class WebPreviewUtils {
 
         jt.stopEditing();
         /*
-		 * alex:Èç¹ûÃ»ÓĞ±£´æ,ÏÈ±£´æµ½Env
+		 * alex:å¦‚æœæ²¡æœ‰ä¿å­˜,å…ˆä¿å­˜åˆ°Env
 		 * 
-		 * Èç¹û±£´æÊ§°Ü,²»Ö´ĞĞÏÂÃæµÄWebPreview
+		 * å¦‚æœä¿å­˜å¤±è´¥,ä¸æ‰§è¡Œä¸‹é¢çš„WebPreview
 		 */
         if (!jt.isSaved() && !jt.saveTemplate2Env()) {
             return;
         }
 
         FILE currentTemplate = jt.getEditingFILE();
-        // carl:ÊÇ·ñÊÇ±£´æÔÚÔËĞĞ»·¾³ÏÂµÄÄ£°å£¬²»ÊÇ¾Í²»ÄÜ±»Ô¤ÀÀ
+        // carl:æ˜¯å¦æ˜¯ä¿å­˜åœ¨è¿è¡Œç¯å¢ƒä¸‹çš„æ¨¡æ¿ï¼Œä¸æ˜¯å°±ä¸èƒ½è¢«é¢„è§ˆ
         if (currentTemplate instanceof FileNodeFILE) {
             browseUrl(currentTemplate, map, actionType, jt);
         } else {
-            // ËµÃ÷Ä£°åÃ»ÓĞ±£´æÔÚ±¨±íÔËĞĞ»·¾³ÏÂÃæ,ÌáÊ¾ÓÃ»§
+            // è¯´æ˜æ¨¡æ¿æ²¡æœ‰ä¿å­˜åœ¨æŠ¥è¡¨è¿è¡Œç¯å¢ƒä¸‹é¢,æç¤ºç”¨æˆ·
             int selVal = JOptionPane.showConfirmDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("Web_Preview_Message"),
                     Inter.getLocText("Preview_ToolTips"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 

@@ -4,9 +4,9 @@ import com.fr.chart.base.AttrAxisPosition;
 import com.fr.design.chart.series.SeriesCondition.LabelAxisPositionPane;
 
 /**
- * ÀàËµÃ÷: ×éºÏÍ¼ÖĞ ÕÛÏßÀàĞÍ ·Ç¶Ñ»ı ´øÇ÷ÊÆÏßµÄÌõ¼şÊôĞÔ½çÃæ.
+ * ç±»è¯´æ˜: ç»„åˆå›¾ä¸­ æŠ˜çº¿ç±»å‹ éå †ç§¯ å¸¦è¶‹åŠ¿çº¿çš„æ¡ä»¶å±æ€§ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-20 ÏÂÎç05:27:35
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-20 ä¸‹åˆ05:27:35
  */
 public class CustomPlot4LineConditionPane extends LinePlotDataSeriesConditionPane {
 	private static final long serialVersionUID = -5614266090158187836L;

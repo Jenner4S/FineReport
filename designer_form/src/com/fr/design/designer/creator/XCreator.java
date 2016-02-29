@@ -25,7 +25,7 @@ import java.util.List;
 
 /**
  * @author richer
- * @since 6.5.3 com.fr.base.listener.OBµÄÉè¼Æ×é¼ş
+ * @since 6.5.3 com.fr.base.listener.OBçš„è®¾è®¡ç»„ä»¶
  * 
  */
 public abstract class XCreator extends JPanel implements XComponent, XCreatorTools {
@@ -34,13 +34,13 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	public static final Dimension SMALL_PREFERRED_SIZE = new Dimension(80, 21);
 	protected static final Dimension MIDDLE_PREFERRED_SIZE = new Dimension(80, 50);
 	protected static final Dimension BIG_PREFERRED_SIZE = new Dimension(80, 80);
-	// barry: ÍÏ×§¿Ø¼şÊ±£¬¿Ø¼şÒª»Ö¸´Ô­Ê¼´óĞ¡£¬¾ÍÏÈ°Ñ¿Ø¼şµ±Ç°´óĞ¡±¸·İµ½ÕâÀï¡£
+	// barry: æ‹–æ‹½æ§ä»¶æ—¶ï¼Œæ§ä»¶è¦æ¢å¤åŸå§‹å¤§å°ï¼Œå°±å…ˆæŠŠæ§ä»¶å½“å‰å¤§å°å¤‡ä»½åˆ°è¿™é‡Œã€‚
 	protected Dimension backupSize;
 	protected XLayoutContainer backupParent;
 
 	protected Widget data;
 	protected JComponent editor;
-	// XCreator¼ÓÈëµ½Ä³Ğ©XLayoutContainerÖĞÊ±£¬ÄÜµ÷Õû¿í¶È»òÕß¸ß¶È
+	// XCreatoråŠ å…¥åˆ°æŸäº›XLayoutContainerä¸­æ—¶ï¼Œèƒ½è°ƒæ•´å®½åº¦æˆ–è€…é«˜åº¦
 	private int[] directions;
 	private Rectangle backupBound;
 
@@ -75,7 +75,7 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 
 	/**
-	 * Ó¦ÓÃ±¸·İµÄ´óĞ¡
+	 * åº”ç”¨å¤‡ä»½çš„å¤§å°
 	 */
 	public void useBackupSize() {
 		if (this.backupSize != null) {
@@ -84,7 +84,7 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ±¸·İµ±Ç°´óĞ¡
+	 * å¤‡ä»½å½“å‰å¤§å°
 	 */
 	public void backupCurrentSize() {
 		this.backupSize = getSize();
@@ -99,21 +99,21 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 
 	/**
-	 * ±¸·İµ±Ç°parentÈİÆ÷
+	 * å¤‡ä»½å½“å‰parentå®¹å™¨
 	 */
 	public void backupParent() {
 		setBackupParent(XCreatorUtils.getParentXLayoutContainer(this));
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°XCreatorµÄÒ»¸ö·â×°¸¸ÈİÆ÷
+	 * è·å–å½“å‰XCreatorçš„ä¸€ä¸ªå°è£…çˆ¶å®¹å™¨
 	 * 
-	 * @param widgetName µ±Ç°×é¼şÃû
+	 * @param widgetName å½“å‰ç»„ä»¶å
 	 * 
-	 * @return ·â×°µÄ¸¸ÈİÆ÷
+	 * @return å°è£…çš„çˆ¶å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:47:23
+	 * @date 2014-11-25-ä¸‹åˆ4:47:23
 	 * 
 	 */
 	protected XLayoutContainer getCreatorWrapper(String widgetName){
@@ -121,12 +121,12 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ½«µ±Ç°¶ÔÏóÌí¼Óµ½¸¸ÈİÆ÷ÖĞ
+	 * å°†å½“å‰å¯¹è±¡æ·»åŠ åˆ°çˆ¶å®¹å™¨ä¸­
 	 * 
-	 * @param parentPanel ¸¸ÈİÆ÷×é¼ş
+	 * @param parentPanel çˆ¶å®¹å™¨ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç4:57:55
+	 * @date 2014-11-25-ä¸‹åˆ4:57:55
 	 * 
 	 */
 	protected void addToWrapper(XLayoutContainer parentPanel, int width, int minHeight){			
@@ -134,13 +134,13 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ÉèÖÃ¸¸ÈİÆ÷µÄÃû×Ö
+	 * è®¾ç½®çˆ¶å®¹å™¨çš„åå­—
 	 * 
-	 * @param parentPanel µ±Ç°¸¸ÈİÆ÷
-	 * @param widgetName µ±Ç°¿Ø¼şÃû
+	 * @param parentPanel å½“å‰çˆ¶å®¹å™¨
+	 * @param widgetName å½“å‰æ§ä»¶å
 	 * 
 	 *
-	 * @date 2014-11-27-ÉÏÎç9:47:00
+	 * @date 2014-11-27-ä¸Šåˆ9:47:00
 	 * 
 	 */
 	protected void setWrapperName(XLayoutContainer parentPanel, String widgetName){
@@ -148,15 +148,15 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ³õÊ¼»¯µ±Ç°×é¼şµÄ¸¸ÈİÆ÷
-	 * ´óÌå·ÖÎªÈıÖÖ: ScaleËõ·ÅĞÍ, Title±êÌâĞÍ, Border×Ô¶¨Òå±êÌâÀ¸
+	 * åˆå§‹åŒ–å½“å‰ç»„ä»¶çš„çˆ¶å®¹å™¨
+	 * å¤§ä½“åˆ†ä¸ºä¸‰ç§: Scaleç¼©æ”¾å‹, Titleæ ‡é¢˜å‹, Borderè‡ªå®šä¹‰æ ‡é¢˜æ 
 	 * 
-	 * @param minHeight ×îĞ¡¸ß¶È
+	 * @param minHeight æœ€å°é«˜åº¦
 	 * 
-	 * @return ¸¸ÈİÆ÷
+	 * @return çˆ¶å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-11-25-ÏÂÎç5:15:23
+	 * @date 2014-11-25-ä¸‹åˆ5:15:23
 	 * 
 	 */
 	public XLayoutContainer initCreatorWrapper(int minHeight){
@@ -178,22 +178,22 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 
 	/**
-	 * ³õÊ¼»¯creatorµÄÊôĞÔÖµ
+	 * åˆå§‹åŒ–creatorçš„å±æ€§å€¼
 	 */
 	public void rebuid() {
 		initXCreatorProperties();
 	}
 
 	/**
-	 * ·µ»Ø×é¼şÊôĞÔÖµ
-	 * @return ·µ»Ø×é¼şÊôĞÔÖµ
-	 * @throws IntrospectionException Òì³£
+	 * è¿”å›ç»„ä»¶å±æ€§å€¼
+	 * @return è¿”å›ç»„ä»¶å±æ€§å€¼
+	 * @throws IntrospectionException å¼‚å¸¸
 	 */
 	public abstract CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException;
 
 	/**
-	 * Éú³Écreator¶ÔÓ¦µÄ¿Ø¼şwidget
-	 * @return ¿Ø¼şwidget
+	 * ç”Ÿæˆcreatorå¯¹åº”çš„æ§ä»¶widget
+	 * @return æ§ä»¶widget
 	 */
 	public Widget toData() {
 		return this.data;
@@ -202,13 +202,13 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	protected abstract JComponent initEditor();
 
 	/**
-	 * ¸ù¾İWidgetµÄÊôĞÔÖµ³õÊ¼»¯XCreatorµÄÊôĞÔÖµ
+	 * æ ¹æ®Widgetçš„å±æ€§å€¼åˆå§‹åŒ–XCreatorçš„å±æ€§å€¼
 	 */
 	protected abstract void initXCreatorProperties();
 
 	/**
-	 * ·µ»ØXCreatorµÄÄ¬ÈÏ´óĞ¡80x21
-	 * @return Ä¬ÈÏµÄ×îĞ¡´óĞ¡
+	 * è¿”å›XCreatorçš„é»˜è®¤å¤§å°80x21
+	 * @return é»˜è®¤çš„æœ€å°å¤§å°
 	 */
 	public Dimension initEditorSize() {
 		return SMALL_PREFERRED_SIZE;
@@ -223,8 +223,8 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 
 	/**
-	 * ·µ»Ø×é¼şÄ¬ÈÏÃû
-	 * @return ×é¼şÀàÃû(Ğ¡Ğ´)
+	 * è¿”å›ç»„ä»¶é»˜è®¤å
+	 * @return ç»„ä»¶ç±»å(å°å†™)
 	 */
 	public String createDefaultName() {
 		String name = this.getClass().getSimpleName();
@@ -236,7 +236,7 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 		Dimension size = this.getMinimumSize();
 		if (bounds.getWidth() < size.width) {
 			bounds.width = size.width;
-			//Õë¶ÔÍÏ¶¯£¬²»´óºÃ¡£
+			//é’ˆå¯¹æ‹–åŠ¨ï¼Œä¸å¤§å¥½ã€‚
 			bounds.x = this.getX();
 		}
 		if (bounds.getHeight() < size.height) {
@@ -251,21 +251,21 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 
 	/**
-	 * ¸ù¾İÈ¨ÏŞ±à¼­¹¤¾ß½çÃæ
-	 * @param jform ±íµ¥ÈİÆ÷
-	 *@param formEditor Éè¼Æ½çÃæ×é¼ş
-	 *@return ¹¤¾ß½çÃæ
+	 * æ ¹æ®æƒé™ç¼–è¾‘å·¥å…·ç•Œé¢
+	 * @param jform è¡¨å•å®¹å™¨
+	 *@param formEditor è®¾è®¡ç•Œé¢ç»„ä»¶
+	 *@return å·¥å…·ç•Œé¢
 	 */
 	public JComponent createToolPane(BaseJForm jform, FormDesigner formEditor) {
 		if (!BaseUtils.isAuthorityEditing()) {
 			if (isDedicateContainer()) {
-				// Í¼±í¿éºÍ±¨±í¿éÓÉÓÚ¿Ø¼şÊ÷´¦²»ÏÔÊ¾£¬µ«¶ÔÓ¦µÄÊôĞÔ±íÒªÏÔÊ¾£¬´Ë´¦´¦ÀíÏÂ
+				// å›¾è¡¨å—å’ŒæŠ¥è¡¨å—ç”±äºæ§ä»¶æ ‘å¤„ä¸æ˜¾ç¤ºï¼Œä½†å¯¹åº”çš„å±æ€§è¡¨è¦æ˜¾ç¤ºï¼Œæ­¤å¤„å¤„ç†ä¸‹
 				XCreator child = ((XLayoutContainer) this).getXCreator(0);
 				return child.createToolPane(jform, formEditor);
 			}
 			return WidgetPropertyPane.getInstance(formEditor);
 		} else {
-			//ÅĞ¶ÏÊÇ²»ÊÇ²¼¾Ö£¬²¼¾Ö²»Ö§³ÖÈ¨ÏŞ±à¼­
+			//åˆ¤æ–­æ˜¯ä¸æ˜¯å¸ƒå±€ï¼Œå¸ƒå±€ä¸æ”¯æŒæƒé™ç¼–è¾‘
 			if (formEditor.isSupportAuthority()) {
 				AuthorityPropertyPane authorityPropertyPane = new AuthorityPropertyPane(formEditor);
 				authorityPropertyPane.populate();
@@ -284,32 +284,32 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ÊÇ·ñÖ§³ÖÇĞ»»µ½±¨±í½çÃæ±à¼­
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æ”¯æŒåˆ‡æ¢åˆ°æŠ¥è¡¨ç•Œé¢ç¼–è¾‘
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isReport(){
 		return false;
 	}
     
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return true;
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë±íµ¥Ö÷Ìå
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥è¡¨å•ä¸»ä½“
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoAdaptPane(){
         return true;
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏ×§(±íµ¥ÖĞ²ÎÊıÃæ°åºÍ×ÔÊÊÓ¦²¼¾Ö²»¿ÉÒÔÍÏ×§)
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–æ‹½(è¡¨å•ä¸­å‚æ•°é¢æ¿å’Œè‡ªé€‚åº”å¸ƒå±€ä¸å¯ä»¥æ‹–æ‹½)
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportDrag(){
         return true;
@@ -321,9 +321,9 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
     }
 
     /**
-     * ÊÇ·ñÓĞ²éÑ¯°´Å¥
-     * @param xCreator  ¿Ø¼ş»òÈİÆ÷
-     * @return  ÓĞÎŞ²éÑ¯°´Å¥
+     * æ˜¯å¦æœ‰æŸ¥è¯¢æŒ‰é’®
+     * @param xCreator  æ§ä»¶æˆ–å®¹å™¨
+     * @return  æœ‰æ— æŸ¥è¯¢æŒ‰é’®
      */
     public boolean SearchQueryCreators(XCreator xCreator) {
         return false;
@@ -344,65 +344,65 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ¿Ø¼şÊ÷²»ÏÔÊ¾´Ë×é¼ş
-	 * @param path ¿Ø¼şÊ÷list
+	 * æ§ä»¶æ ‘ä¸æ˜¾ç¤ºæ­¤ç»„ä»¶
+	 * @param path æ§ä»¶æ ‘list
 	 */
 	public void notShowInComponentTree(ArrayList<Component> path) {
 		return;
 	}
 	
 	/**
-	 * ÖØÖÃ×é¼şµÄÃû³Æ
-	 * @param name Ãû³Æ
+	 * é‡ç½®ç»„ä»¶çš„åç§°
+	 * @param name åç§°
 	 */
 	public void resetCreatorName(String name) {
 		toData().setWidgetName(name);
 	}
 	
 	/**
-	 * ·µ»Ø±à¼­µÄ×Ó×é¼ş£¬scaleÎªÆäÄÚ²¿×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›ç¼–è¾‘çš„å­ç»„ä»¶ï¼Œscaleä¸ºå…¶å†…éƒ¨ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	public XCreator getEditingChildCreator() {
 		return this;
 	}
 	
 	/**
-	 * ·µ»Ø¶ÔÓ¦ÊôĞÔ±íµÄ×é¼ş£¬scaleºÍtitle·µ»ØÆä×Ó×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›å¯¹åº”å±æ€§è¡¨çš„ç»„ä»¶ï¼Œscaleå’Œtitleè¿”å›å…¶å­ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	public XCreator getPropertyDescriptorCreator() {
 		return this;
 	}
 	
 	/**
-	 * ¸üĞÂ×Ó×é¼şµÄBound; Ã»ÓĞ²»´¦Àí
-	 * @param minHeight ×îĞ¡¸ß¶È
+	 * æ›´æ–°å­ç»„ä»¶çš„Bound; æ²¡æœ‰ä¸å¤„ç†
+	 * @param minHeight æœ€å°é«˜åº¦
 	 */
 	public void updateChildBound(int minHeight) {
 		return;
 	}
 	
 	/**
-	 * ÊÇ·ñ×÷Îª¿Ø¼şÊ÷µÄÒ¶×Ó½Úµã
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦ä½œä¸ºæ§ä»¶æ ‘çš„å¶å­èŠ‚ç‚¹
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isComponentTreeLeaf() {
 		return true;
 	}
 	
 	/**
-	 *  ÊÇ·ñÎªsclaeºÍtitle×¨ÊôÈİÆ÷
-	 * @return ÊÇÔò·µ»Øtrue
+	 *  æ˜¯å¦ä¸ºsclaeå’Œtitleä¸“å±å®¹å™¨
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isDedicateContainer() {
 		return false;
 	}
 	
 	/**
-     * ÊÇ·ñ½ÓÊÕÕâÖÖÀàĞÍ
-     * @param acceptTypes ½ÓÊÕµÄÀàĞÍ
-     * @return ½ÓÊÕÖ¸¶¨µÄÀàĞÍÔò·µ»Øtrue,·ñÔò·µ»Øfalse
+     * æ˜¯å¦æ¥æ”¶è¿™ç§ç±»å‹
+     * @param acceptTypes æ¥æ”¶çš„ç±»å‹
+     * @return æ¥æ”¶æŒ‡å®šçš„ç±»å‹åˆ™è¿”å›true,å¦åˆ™è¿”å›false
      */
     public boolean acceptType(Class<?>... acceptTypes) {
         for (Class<?> type : acceptTypes) {
@@ -414,27 +414,27 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
     }
 
 	/**
-	 * ÊÇ·ñ×é¼şÒªËõ·Å(×ÔÊÊÓ¦Àï²¿·Ö×é¼şĞèÒª, ÈçÊı×Ö¡¢ÎÄ±¾¡¢ÏÂÀ­¿ò¡¢ÏÂÀ­¸´Ñ¡¿ò¡¢ÃÜÂë¡¢ÏÂÀ­Ê÷¡¢ÏÂÀ­¸´Ñ¡Ê÷¡¢ÈÕÆÚ)
+	 * æ˜¯å¦ç»„ä»¶è¦ç¼©æ”¾(è‡ªé€‚åº”é‡Œéƒ¨åˆ†ç»„ä»¶éœ€è¦, å¦‚æ•°å­—ã€æ–‡æœ¬ã€ä¸‹æ‹‰æ¡†ã€ä¸‹æ‹‰å¤é€‰æ¡†ã€å¯†ç ã€ä¸‹æ‹‰æ ‘ã€ä¸‹æ‹‰å¤é€‰æ ‘ã€æ—¥æœŸ)
 	 * 
-	 * @return ÊÇÔò·µ»Øtrue
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean shouldScaleCreator() {
 		return false;
 	}
 	
 	/**
-	 * ÊÇ·ñÖ§³Ö±êÌâÑùÊ½
-	 * @return Ä¬ÈÏfalse
+	 * æ˜¯å¦æ”¯æŒæ ‡é¢˜æ ·å¼
+	 * @return é»˜è®¤false
 	 */
 	public boolean hasTitleStyle() {
 		return false;
 	}
 	
 	/**
-	 * ÏìÓ¦µã»÷ÊÂ¼ş
+	 * å“åº”ç‚¹å‡»äº‹ä»¶
 	 * 
-	 * @param editingMouseListener Êó±êµã»÷£¬Î»ÖÃ´¦ÀíÆ÷
-	 * @param e Êó±êµã»÷ÊÂ¼ş
+	 * @param editingMouseListener é¼ æ ‡ç‚¹å‡»ï¼Œä½ç½®å¤„ç†å™¨
+	 * @param e é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 */
 	public void respondClick(EditingMouseListener editingMouseListener,MouseEvent e){
 		FormDesigner designer = editingMouseListener.getDesigner();
@@ -453,10 +453,10 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * É¾³ıÏà¹Ø×é¼ş
+	 * åˆ é™¤ç›¸å…³ç»„ä»¶
 	 * 
-	 * @param creator µ±Ç°×é¼ş
-	 * @param designer ±íµ¥Éè¼ÆÆ÷
+	 * @param creator å½“å‰ç»„ä»¶
+	 * @param designer è¡¨å•è®¾è®¡å™¨
 	 *
 	 */
 	public void deleteRelatedComponent(XCreator creator,FormDesigner designer){
@@ -464,9 +464,9 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * Ñ¡ÔñÏà¹Ø×é¼ş
+	 * é€‰æ‹©ç›¸å…³ç»„ä»¶
 	 * 
-	 * @param creator µ±Ç°×é¼ş
+	 * @param creator å½“å‰ç»„ä»¶
 	 * 
 	 */
 	public void seleteRelatedComponent(XCreator creator){
@@ -474,7 +474,7 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ·µ»Ø×é¼ş
+	 * è¿”å›ç»„ä»¶
 	 * @return
 	 * String
 	 */
@@ -483,8 +483,8 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * °´°Ù·Ö±Èµ÷Õû×é¼ş
-	 * @param percent °Ù·Ö±È
+	 * æŒ‰ç™¾åˆ†æ¯”è°ƒæ•´ç»„ä»¶
+	 * @param percent ç™¾åˆ†æ¯”
 	 * void
 	 */
 	public void adjustCompSize(double percent){
@@ -492,8 +492,8 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ·µ»ØÒ»Ğ©ĞèÒªµÄ×Ó×é¼ş
-	 * @return ·µ»ØÒ»Ğ©ĞèÒªµÄ×Ó×é¼ş
+	 * è¿”å›ä¸€äº›éœ€è¦çš„å­ç»„ä»¶
+	 * @return è¿”å›ä¸€äº›éœ€è¦çš„å­ç»„ä»¶
 	 * ArrayList<?>
 	 */
 	public ArrayList<?> getTargetChildrenList(){
@@ -505,15 +505,15 @@ public abstract class XCreator extends JPanel implements XComponent, XCreatorToo
 	}
 	
 	/**
-	 * ÖØĞÂµ÷Õû×Ó×é¼ş¿í¶È
-	 * @param width ¿í¶È
+	 * é‡æ–°è°ƒæ•´å­ç»„ä»¶å®½åº¦
+	 * @param width å®½åº¦
 	 */
 	public void recalculateChildWidth(int width){
 		return;
 	}
 	/**
-	 * ÖØĞÂµ÷Õû×Ó×é¼ş¸ß¶È
-	 * @param height ¸ß¶È
+	 * é‡æ–°è°ƒæ•´å­ç»„ä»¶é«˜åº¦
+	 * @param height é«˜åº¦
 	 */
 	public void recalculateChildHeight(int height){
 		return;

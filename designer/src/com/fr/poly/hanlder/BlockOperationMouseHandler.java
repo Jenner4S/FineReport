@@ -10,16 +10,16 @@ import com.fr.report.poly.PolyWorkSheet;
 /**
  * @author neil
  *
- * @date: 2015-2-11-下午3:48:29
+ * @date: 2015-2-11-涓嬪崍3:48:29
  */
 public abstract class BlockOperationMouseHandler extends MouseInputAdapter {
 	
 	/**
-	 * 获取当期编辑对象
+	 * 鑾峰彇褰撴湡缂栬緫瀵硅薄
 	 * 
-	 * @return 编辑对象
+	 * @return 缂栬緫瀵硅薄
 	 * 
-	 * @date 2015-2-12-下午3:20:49
+	 * @date 2015-2-12-涓嬪崍3:20:49
 	 * 
 	 */
 	protected abstract PolyWorkSheet getTarget();

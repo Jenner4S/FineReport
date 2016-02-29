@@ -14,7 +14,7 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-29
- * Time: ÏÂÎç2:13
+ * Time: ä¸‹åˆ2:13
  */
 public class RangePlotPane4ToolBar extends PlotPane4ToolBar {
 

@@ -28,7 +28,7 @@ public class ChartEmailPane extends EmailPane{
 		double[] columnSize = { preferred, fill};
 		itemNameTextField = new UITextField();
 		JTemplate jTemplate = DesignerContext.getDesignerFrame().getSelectedJTemplate();
-		// 是否支持导出控制图表的超链邮件是否显示showTplContent
+		// 鏄惁鏀寔瀵煎嚭鎺у埗鍥捐〃鐨勮秴閾鹃偖浠舵槸鍚︽樉绀簊howTplContent
 		boolean supportExport = jTemplate.isJWorkBook();
 		if (supportExport) {
 			double[] rSizes = { preferred, preferred, preferred, preferred, preferred, preferred, fill, preferred, preferred};
@@ -79,4 +79,3 @@ public class ChartEmailPane extends EmailPane{
 	}
 	
 }
-

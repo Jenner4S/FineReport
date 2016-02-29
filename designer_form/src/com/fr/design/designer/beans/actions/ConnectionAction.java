@@ -10,7 +10,7 @@ import com.fr.design.mainframe.FormDesigner;
 import com.fr.general.Inter;
 import com.fr.design.utils.gui.GUICoreUtils;
 
-//marro : Á¬½ÓÏß°´Å¥£¬Ä¿Ç°ÓÃ²»µ½£¬µ«ÊÇÀàÏÈÁô×Å¡£2012-3-26
+//marro : è¿æ¥çº¿æŒ‰é’®ï¼Œç›®å‰ç”¨ä¸åˆ°ï¼Œä½†æ˜¯ç±»å…ˆç•™ç€ã€‚2012-3-26
 public class ConnectionAction extends UpdateAction implements ToggleButtonUpdateAction {
 	private FormDesigner fd;
 

@@ -79,8 +79,8 @@ public class BubblePlotTableDataContentPane extends AbstractTableDataContentPane
     }
 
     /**
-     * 检查box是否使用, donothing
-     * @param hasUse  是否使用.
+     * 妫�鏌ox鏄惁浣跨敤, donothing
+     * @param hasUse  鏄惁浣跨敤.
      */
     public void checkBoxUse(boolean hasUse) {
 
@@ -95,7 +95,7 @@ public class BubblePlotTableDataContentPane extends AbstractTableDataContentPane
     }
 
     /**
-     * 清空所有的box设置
+     * 娓呯┖鎵�鏈夌殑box璁剧疆
      */
     public void clearAllBoxList(){
         clearBoxItems(seriesName);
@@ -157,7 +157,7 @@ public class BubblePlotTableDataContentPane extends AbstractTableDataContentPane
     }
 
     /**
-     * 重新布局
+     * 閲嶆柊甯冨眬
      */
     public void redoLayoutPane(){
       dataScreeningPane.relayoutPane(this.isNeedSummaryCaculateMethod());

@@ -4,21 +4,21 @@ import com.fr.design.mainframe.JChart;
 import java.io.OutputStream;
 
 /**
- * Í¼±íÉè¼ÆÆ÷crtÎÄ¼şµÄµ¼³ö³ÉÆäËûÀàĞÍÎÄ¼şµÄ½Ó¿Ú
+ * å›¾è¡¨è®¾è®¡å™¨crtæ–‡ä»¶çš„å¯¼å‡ºæˆå…¶ä»–ç±»å‹æ–‡ä»¶çš„æ¥å£
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-21
- * Time: ÏÂÎç7:14
+ * Time: ä¸‹åˆ7:14
  */
 public interface Exporter4Chart {
 
     /**
-   	 * ½«½á¹ûcrtµ¼³ö³ÉÄ¿±êÎÄ¼ş
+   	 * å°†ç»“æœcrtå¯¼å‡ºæˆç›®æ ‡æ–‡ä»¶
    	 *
-   	 * @param out      Êä³öÁ÷
-   	 * @param chart    chartÎÄ¼ş
-   	 * @throws Exception µ¼³öÊ§°ÜÔòÅ×³ö´ËÒì³£
+   	 * @param out      è¾“å‡ºæµ
+   	 * @param chart    chartæ–‡ä»¶
+   	 * @throws Exception å¯¼å‡ºå¤±è´¥åˆ™æŠ›å‡ºæ­¤å¼‚å¸¸
    	 */
    	public void export(OutputStream out, JChart chart) throws Exception;
 

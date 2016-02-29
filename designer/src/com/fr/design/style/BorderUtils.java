@@ -70,34 +70,34 @@ public abstract class BorderUtils {
         Hashtable<ColumnRow, BorderStyleColor> bottomBorderHash = new Hashtable<ColumnRow, BorderStyleColor>();
         Hashtable<ColumnRow, BorderStyleColor> leftBorderHash = new Hashtable<ColumnRow, BorderStyleColor>();
         Hashtable<ColumnRow, BorderStyleColor> rightBorderHash = new Hashtable<ColumnRow, BorderStyleColor>();
-        // Cell×ª»»Æ÷.
-        // ¼ì²éÉÏÃæ±ß.
+        // Cellè½¬æ¢å™¨.
+        // æ£€æŸ¥ä¸Šé¢è¾¹.
         checkUp(row, column, columnSpan, report, bottomBorderHash);
-        // ¼ì²é×î×ó±ß.
+        // æ£€æŸ¥æœ€å·¦è¾¹.
         checkLeft(row, column, rowSpan, report, rightBorderHash);
-        // ¼ì²é×îÏÂ±ß.
+        // æ£€æŸ¥æœ€ä¸‹è¾¹.
         checkDown(row, column, rowSpan, columnSpan, report, topBorderHash);
-        // ¼ì²é×îÓÒ±ß.
+        // æ£€æŸ¥æœ€å³è¾¹.
         checkRight(row, column, rowSpan, columnSpan, report, leftBorderHash);
-        // ËùÑ¡ÇøÓòÄÚ²¿¼ì²é.
+        // æ‰€é€‰åŒºåŸŸå†…éƒ¨æ£€æŸ¥.
         checkAll(row, column, rowSpan, columnSpan, report, topBorderHash, bottomBorderHash, leftBorderHash, rightBorderHash);
         List<BorderStyleColor> tmpBorderStyleColorList = new ArrayList<BorderStyleColor>();
-        // ¼ì²éTop.
+        // æ£€æŸ¥Top.
         inspectUp(row, column, columnSpan, topBorderHash, cellBorderStyle, tmpBorderStyleColorList, isDrag);
-        // ¼ì²éLeft.
+        // æ£€æŸ¥Left.
         inspectLeft(row, column, rowSpan, leftBorderHash, cellBorderStyle, tmpBorderStyleColorList, isDrag);
-        // ¼ì²éBottom.
+        // æ£€æŸ¥Bottom.
         inspectDown(row, column, rowSpan, columnSpan, bottomBorderHash, cellBorderStyle, tmpBorderStyleColorList, isDrag);
-        // ¼ì²éRight.
+        // æ£€æŸ¥Right.
         inspectRight(row, column, rowSpan, columnSpan, rightBorderHash, cellBorderStyle, tmpBorderStyleColorList, isDrag);
-        // peter:¿ªÊ¼¼ÆËãinsideModel.
+        // peter:å¼€å§‹è®¡ç®—insideModel.
         inspectInsideModel(row, column, rowSpan, columnSpan, topBorderHash, bottomBorderHash, leftBorderHash, rightBorderHash, cellBorderStyle, tmpBorderStyleColorList, isDrag);
     }
 
     private static void inspectInsideModel(int row, int column, int rowSpan, int columnSpan, Hashtable<ColumnRow, BorderStyleColor> topBorderHash, Hashtable<ColumnRow, BorderStyleColor> bottomBorderHash, Hashtable<ColumnRow, BorderStyleColor> leftBorderHash, Hashtable<ColumnRow, BorderStyleColor> rightBorderHash, CellBorderStyle cellBorderStyle, List<BorderStyleColor> tmpBorderStyleColorList, boolean isDrag) {
         if (columnSpan > 1 || rowSpan > 1) {
             insideModel = true;
-            // ¼ì²éVerticalºÍHorizontal.
+            // æ£€æŸ¥Verticalå’ŒHorizontal.
             tmpBorderStyleColorList.clear();
             for (int i = column + 1; i < column + columnSpan; i++) {
                 for (int j = row; j < row + rowSpan; j++) {
@@ -314,7 +314,7 @@ public abstract class BorderUtils {
 
                 Style style = tmpCellElement.getStyle();
                 if (style.getBorderBottom() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getColumn(); k < tmpCellElement.getColumn() + tmpCellElement.getColumnSpan(); k++) {
                         bottomBorderHash.put(new ColumnRow(k, row, false), new BorderStyleColor(style.getBorderBottom(), style.getBorderBottomColor()));
                     }
@@ -333,7 +333,7 @@ public abstract class BorderUtils {
 
                 Style style = tmpCellElement.getStyle();
                 if (style.getBorderRight() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getRow(); k < tmpCellElement.getRow() + tmpCellElement.getRowSpan(); k++) {
                         rightBorderHash.put(new ColumnRow(column, k, true), new BorderStyleColor(style.getBorderRight(), style.getBorderRightColor()));
                     }
@@ -351,7 +351,7 @@ public abstract class BorderUtils {
 
             Style style = tmpCellElement.getStyle();
             if (style.getBorderTop() != Constants.LINE_NONE) {
-                // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                 for (int k = tmpCellElement.getColumn(); k < tmpCellElement.getColumn() + tmpCellElement.getColumnSpan(); k++) {
                     topBorderHash.put(new ColumnRow(k, row + rowSpan, false), new BorderStyleColor(style.getBorderTop(), style.getBorderTopColor()));
                 }
@@ -368,7 +368,7 @@ public abstract class BorderUtils {
 
             Style style = tmpCellElement.getStyle();
             if (style.getBorderLeft() != Constants.LINE_NONE) {
-                // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                 for (int k = tmpCellElement.getRow(); k < tmpCellElement.getRow() + tmpCellElement.getRowSpan(); k++) {
                     leftBorderHash.put(new ColumnRow(column + columnSpan, k, true), new BorderStyleColor(style.getBorderLeft(), style.getBorderLeftColor()));
                 }
@@ -389,26 +389,26 @@ public abstract class BorderUtils {
                 Style style = tmpCellElement.getStyle();
 
                 if (style.getBorderTop() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getColumn(); k < tmpCellElement.getColumn() + tmpCellElement.getColumnSpan(); k++) {
                         topBorderHash.put(new ColumnRow(k, tmpCellElement.getRow(), false), new BorderStyleColor(style.getBorderTop(), style.getBorderTopColor()));
                     }
                 }
                 if (style.getBorderLeft() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getRow(); k < tmpCellElement.getRow() + tmpCellElement.getRowSpan(); k++) {
                         leftBorderHash.put(new ColumnRow(tmpCellElement.getColumn(), k, true), new BorderStyleColor(style.getBorderLeft(), style.getBorderLeftColor()));
                     }
                 }
                 if (style.getBorderBottom() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getColumn(); k < tmpCellElement.getColumn() + tmpCellElement.getColumnSpan(); k++) {
                         bottomBorderHash.put(new ColumnRow(k, tmpCellElement.getRow() + tmpCellElement.getRowSpan(), false), new BorderStyleColor(style.getBorderBottom(),
                                 style.getBorderBottomColor()));
                     }
                 }
                 if (style.getBorderRight() != Constants.LINE_NONE) {
-                    // ĞèÒªÖ¸¶¨ËùÓĞµÄÁĞºÍĞĞ.
+                    // éœ€è¦æŒ‡å®šæ‰€æœ‰çš„åˆ—å’Œè¡Œ.
                     for (int k = tmpCellElement.getRow(); k < tmpCellElement.getRow() + tmpCellElement.getRowSpan(); k++) {
                         rightBorderHash.put(new ColumnRow(tmpCellElement.getColumn() + tmpCellElement.getColumnSpan(), k, true), new BorderStyleColor(style.getBorderRight(),
                                 style.getBorderRightColor()));
@@ -474,10 +474,10 @@ public abstract class BorderUtils {
         Selection sel = reportPane.getSelection();
         if (sel instanceof FloatSelection) {
             FloatElement selectedFloatElement = report.getFloatElement(((FloatSelection) sel).getSelectedFloatName());
-            // Border±ä»¯ÁË.
+            // Borderå˜åŒ–äº†.
             if (!ComparatorUtils.equals(cellBorderStyle, newCellBorderStyle)) {
                 isBorderColorStyleChanged = true;
-                // peter:¸´ÖÆ±ß¿ò.
+                // peter:å¤åˆ¶è¾¹æ¡†.
                 Style style = selectedFloatElement.getStyle();
 
                 selectedFloatElement.setStyle(style.deriveBorder(newCellBorderStyle.getTopStyle(), newCellBorderStyle.getTopColor(), newCellBorderStyle.getBottomStyle(),
@@ -495,7 +495,7 @@ public abstract class BorderUtils {
                 int columnSpan = cellRectangle.width;
                 int rowSpan = cellRectangle.height;
 
-                // Border±ä»¯ÁË.
+                // Borderå˜åŒ–äº†.
                 if (!ComparatorUtils.equals(cellBorderStyle, newCellBorderStyle)) {
                     isBorderColorStyleChanged = true;
                     setStyle(row, column, rowSpan, columnSpan, report, cellBorderStyle, newCellBorderStyle);
@@ -580,7 +580,7 @@ public abstract class BorderUtils {
     }
 
     /**
-     * ÕâÊÇÒ»¸ö¾Ö²¿Àà£¬ÓÃÀ´°ïÖú±£´æ¸÷¸öBorder Style ºÍ Color.
+     * è¿™æ˜¯ä¸€ä¸ªå±€éƒ¨ç±»ï¼Œç”¨æ¥å¸®åŠ©ä¿å­˜å„ä¸ªBorder Style å’Œ Color.
      */
     public static class ColumnRow {
         private int column = -1;

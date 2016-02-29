@@ -17,7 +17,7 @@ public class FormTargetMode extends FormDesignerModeForSpecial<FormDesigner> {
 	}
 
 	/**
-	 * 获取预定义的查询按钮
+	 * 鑾峰彇棰勫畾涔夌殑鏌ヨ鎸夐挳
 	 */
 	public WidgetOption[] getPredefinedWidgetOptions() {
         return new WidgetOption[]{

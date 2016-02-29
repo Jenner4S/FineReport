@@ -9,8 +9,8 @@ import com.fr.general.Background;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-1 ÉÏÎç10:08:53
- * ÀàËµÃ÷: ÓÃÓÚ»­¸÷ÖÖ±³¾°µÄJComponent, Ò»°ãµÄJComponentÖ»ÄÜÓÃColor
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-1 ä¸Šåˆ10:08:53
+ * ç±»è¯´æ˜: ç”¨äºç”»å„ç§èƒŒæ™¯çš„JComponent, ä¸€èˆ¬çš„JComponentåªèƒ½ç”¨Color
  */
 public class BackgroundJComponent extends JComponent {
 	private static final long serialVersionUID = 6592722025414985376L;

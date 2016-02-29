@@ -13,11 +13,11 @@ public class UIDayLabel extends UILabel {
     private Date date = null;
 
     /**
-     * ÈÕÆÚ¸ñÊ½£¨TODAY/TIPÓÃ£©
+     * æ—¥æœŸæ ¼å¼ï¼ˆTODAY/TIPç”¨ï¼‰
      */
     final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     /**
-     * ÈÕ¸ñÊ½
+     * æ—¥æ ¼å¼
      */
     final SimpleDateFormat dayFormat = new SimpleDateFormat("d");
 

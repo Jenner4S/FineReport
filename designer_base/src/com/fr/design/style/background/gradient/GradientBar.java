@@ -30,7 +30,7 @@ import com.fr.design.style.color.ColorSelectDialog;
 import com.fr.design.style.color.ColorSelectable;
 
 /**
- * TODO:Ãæ°åËõ·ÅµÄ¹¦ÄÜÃ»ÓĞ¿¼ÂÇ£¨¾ÍÊÇÎ²Öµ¹ı´ó£¬µ¼ÖÂ³¬¹ı½çÃæÏÔÊ¾µÄÇé¿ö£©£¬Ô­À´µÄÄÇ¸öÊµÏÖÍêÈ«ÊÇ¸öBUG¡£ÒªËõ·ÅµÄÇé¿öÒ²±È½ÏÉÙ£¬¾Í¸É´àÒÔºóÅª°É
+ * TODO:é¢æ¿ç¼©æ”¾çš„åŠŸèƒ½æ²¡æœ‰è€ƒè™‘ï¼ˆå°±æ˜¯å°¾å€¼è¿‡å¤§ï¼Œå¯¼è‡´è¶…è¿‡ç•Œé¢æ˜¾ç¤ºçš„æƒ…å†µï¼‰ï¼ŒåŸæ¥çš„é‚£ä¸ªå®ç°å®Œå…¨æ˜¯ä¸ªBUGã€‚è¦ç¼©æ”¾çš„æƒ…å†µä¹Ÿæ¯”è¾ƒå°‘ï¼Œå°±å¹²è„†ä»¥åå¼„å§
  */
 public class GradientBar extends JComponent implements UIObserver,ColorSelectable{
 
@@ -43,10 +43,10 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
     private SelectColorPointBtn p1;
     private SelectColorPointBtn p2;
 
-    private int index;// Ñ¡ÖĞÁËp1»¹ÊÇp2
+    private int index;// é€‰ä¸­äº†p1è¿˜æ˜¯p2
 
-    private final int min;// ×îĞ¡Öµ
-    private final int max;// ×î´óÖµ
+    private final int min;// æœ€å°å€¼
+    private final int max;// æœ€å¤§å€¼
 
     private UINumberField startLabel;
     private UINumberField endLabel;
@@ -58,7 +58,7 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
     
     private static final int MAX_VERTICAL = 45;
     
-    // Ñ¡ÖĞµÄÑÕÉ«
+    // é€‰ä¸­çš„é¢œè‰²
     private Color color;
 
     public GradientBar(int minvalue, int maxvalue) {
@@ -194,7 +194,7 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
     }
 
     /**
-     * ×´Ì¬¸Ä±ä
+     * çŠ¶æ€æ”¹å˜
      */
     public void stateChanged() {
         if (changeListener != null)  {
@@ -203,17 +203,17 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
     }
 
     /**
-     * Ôö¼Ó¼àÌı
+     * å¢åŠ ç›‘å¬
      *	
-     * @param changeListener ¼àÌı
+     * @param changeListener ç›‘å¬
      */
     public void addChangeListener(ChangeListener changeListener) {
         this.changeListener = changeListener;
     }
 
     /**
-     * Èç¹û×óÓÒÁ½¸ö°´Å¥»¹ÔÚ³õÊ¼Î»ÖÃ£¬¾ÍÎªtrue
-     *  @return Í¬ÉÏ
+     * å¦‚æœå·¦å³ä¸¤ä¸ªæŒ‰é’®è¿˜åœ¨åˆå§‹ä½ç½®ï¼Œå°±ä¸ºtrue
+     *  @return åŒä¸Š
      */
     public boolean isOriginalPlace() {
         return startLabel.getValue() == min && endLabel.getValue() == max;
@@ -269,8 +269,8 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
 
     @Override
     /**
-     * ×¢²á¼àÌı
-     * @param UIObserverListener ¼àÌı
+     * æ³¨å†Œç›‘å¬
+     * @param UIObserverListener ç›‘å¬
      *
      */
     public void registerChangeListener(UIObserverListener listener) {
@@ -279,8 +279,8 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
 
     @Override
     /**
-     * ÊÇ·ñÏìÓ¦¼àÌı
-     * @return Í¬ÉÏ
+     * æ˜¯å¦å“åº”ç›‘å¬
+     * @return åŒä¸Š
      */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -297,8 +297,8 @@ public class GradientBar extends JComponent implements UIObserver,ColorSelectabl
 	}
 
 	/**
-	 * Ñ¡ÖĞÑÕÉ«
-	 * @param ColorCell ÑÕÉ«µ¥Ôª¸ñ
+	 * é€‰ä¸­é¢œè‰²
+	 * @param ColorCell é¢œè‰²å•å…ƒæ ¼
 	 */
 	@Override
 	public void colorSetted(ColorCell colorCell) {

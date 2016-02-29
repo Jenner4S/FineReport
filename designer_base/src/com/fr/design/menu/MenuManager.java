@@ -17,13 +17,13 @@ import java.util.ArrayList;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-23
- * Time: ÏÂÎç5:25
+ * Time: ä¸‹åˆ5:25
  */
 public class MenuManager extends XMLFileManager {
 
 
     private static MenuManager menuManager = null;
-    //ÎÄ¼ş¡¢Ä£°å¡¢²åÈë¡¢µ¥Ôª¸ñ¡¢·şÎñÆ÷¡¢°ïÖúÁù´ó²Ëµ¥
+    //æ–‡ä»¶ã€æ¨¡æ¿ã€æ’å…¥ã€å•å…ƒæ ¼ã€æœåŠ¡å™¨ã€å¸®åŠ©å…­å¤§èœå•
     public static final int FILE = 0;
     public static final int TEMPLATE = 1;
     public static final int INSERT = 2;
@@ -59,7 +59,7 @@ public class MenuManager extends XMLFileManager {
     }
 
 
-    //²Ëµ¥µÄ16ÖÖÇé¿ö
+    //èœå•çš„16ç§æƒ…å†µ
     public void setMenus4Designer(DesignState state) {
         topMenuVisibleGroup = DEFAULT_TOP_MENUS;
         int designSate = state.getDesignState();
@@ -69,22 +69,22 @@ public class MenuManager extends XMLFileManager {
             topMenuVisibleGroup[CELL] = false;
         }
 
-        //È¨ÏŞ±à¼­×´Ì¬ÏÂ£¬½«²åÈëºÍµ¥Ôª¸ñ²Ëµ¥ÆÁ±Î
+        //æƒé™ç¼–è¾‘çŠ¶æ€ä¸‹ï¼Œå°†æ’å…¥å’Œå•å…ƒæ ¼èœå•å±è”½
         if (state.isAuthority()) {
             topMenuVisibleGroup[INSERT] = false;
             topMenuVisibleGroup[CELL] = false;
         }
 
 
-        //ÆÕÍ¨ÓÃ»§µÇÂ¼£¬½²·şÎñÆ÷ÆÁ±Î
+        //æ™®é€šç”¨æˆ·ç™»å½•ï¼Œè®²æœåŠ¡å™¨å±è”½
         topMenuVisibleGroup[SERVER] = state.isRoot();
 
     }
 
 
     /**
-     * ÎÄ¼şÃû
-     * @return  ÎÄ¼şÃû
+     * æ–‡ä»¶å
+     * @return  æ–‡ä»¶å
      */
     public String fileName() {
         return "menu.xml";
@@ -105,7 +105,7 @@ public class MenuManager extends XMLFileManager {
     private void readTopMenus(XMLableReader reader) {
         if (reader.isChildNode()) {
             if (reader.getTagName().equals("Menu")) {
-                //×î¶¥¶ËµÄMenus
+                //æœ€é¡¶ç«¯çš„Menus
                 final MenuDef topMenu = new MenuDef();
                 String tmpVal;
                 if ((tmpVal = reader.getAttrAsString("name", StringUtils.EMPTY)) != StringUtils.EMPTY) {
@@ -135,7 +135,7 @@ public class MenuManager extends XMLFileManager {
                 if ((tmpVal = reader.getAttrAsString("class", StringUtils.EMPTY)) != StringUtils.EMPTY) {
                     name = tmpVal;
                 }
-                //¶ÁÈ¡Ä£°åÊı¾İ¼¯²Ëµ¥
+                //è¯»å–æ¨¡æ¿æ•°æ®é›†èœå•
                 if (name.isEmpty()) {
                     return;
                 }

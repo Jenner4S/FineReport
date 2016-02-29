@@ -30,7 +30,7 @@ public class EditReportServerParameterPane extends LoadingBasicPane {
 
     private PageToolBarPane pagePane;
     private ViewToolBarPane viewPane;
-    //TODO ±Ìµ•
+    //TODO Ë°®Âçï
 //    private FormToolBarPane formPane;
     private WriteToolBarPane writePane;
     private ReportWebAttr webAttr ;

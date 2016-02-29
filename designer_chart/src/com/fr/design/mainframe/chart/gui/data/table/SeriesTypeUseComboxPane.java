@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í: ÖùĞÎ, ±ıÍ¼ Êı¾İ¼¯½çÃæ, "ÏµÁĞÃûÊ¹ÓÃ"½çÃæ.
+ * å±æ€§è¡¨: æŸ±å½¢, é¥¼å›¾ æ•°æ®é›†ç•Œé¢, "ç³»åˆ—åä½¿ç”¨"ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-26 ÏÂÎç03:17:08
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸‹åˆ03:17:08
  */
 public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
 
@@ -57,8 +57,8 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * ¼ì²ébox ÊÇ·ñÊ¹ÓÃ, hasUse, ±íÊ¾ÉÏ²ãÒÑ¾­Ê¹ÓÃ, ·ñÔò, Ôò´Ë½çÃæ¶¼¿ÉÊ¹ÓÃ
-     * @param hasUse ÊÇ·ñÊ¹ÓÃ
+     * æ£€æŸ¥box æ˜¯å¦ä½¿ç”¨, hasUse, è¡¨ç¤ºä¸Šå±‚å·²ç»ä½¿ç”¨, å¦åˆ™, åˆ™æ­¤ç•Œé¢éƒ½å¯ä½¿ç”¨
+     * @param hasUse æ˜¯å¦ä½¿ç”¨
      */
     public void checkUseBox(boolean hasUse) {
         jcb.setEnabled(hasUse);
@@ -67,8 +67,8 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * ÇĞ»» ±ä¸üÊı¾İ¼¯Ê±, Ë¢ĞÂBoxÑ¡ÖĞÏîÄ¿
-     * @param list ÁĞ±í
+     * åˆ‡æ¢ å˜æ›´æ•°æ®é›†æ—¶, åˆ·æ–°Boxé€‰ä¸­é¡¹ç›®
+     * @param list åˆ—è¡¨
      */
     public void refreshBoxListWithSelectTableData(List list) {
         nameFieldValuePane.refreshBoxListWithSelectTableData(list);
@@ -76,7 +76,7 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         nameFieldValuePane.clearAllBoxList();
@@ -84,8 +84,8 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
      */
     protected String title4PopupWindow() {
         return Inter.getLocText("ChartF-Series_Name_From");
@@ -115,8 +115,8 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * ÖØĞÂ²¼¾ÖÕû¸öÃæ°å
-     * @param isNeedSummary ÊÇ·ñĞèÒª»ã×Ü
+     * é‡æ–°å¸ƒå±€æ•´ä¸ªé¢æ¿
+     * @param isNeedSummary æ˜¯å¦éœ€è¦æ±‡æ€»
      */
     public void relayoutPane(boolean isNeedSummary) {
         this.isNeedSummary = isNeedSummary;
@@ -143,7 +143,7 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔµ½Ob-ChartCollection
+     * ä¿å­˜ç•Œé¢å±æ€§åˆ°Ob-ChartCollection
      */
     public void updateBean(ChartCollection ob) {
         if (this.getSelectedIndex() == 0) {

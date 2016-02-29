@@ -96,7 +96,7 @@ public class DBTableDataPane extends AbstractTableDataPane<DBTableData> {
 		JPanel sqlSplitPane = new JPanel(new BorderLayout(4, 4));
 		sqlSplitPane.add(box, BorderLayout.CENTER);
 
-		// ×ó±ßµÄPanel,ÉÏÃæÊÇÑ¡ÔñDatabaseConnectionµÄComboBox,ÏÂÃæDatabaseConnection¶ÔÓ¦µÄTable
+		// å·¦è¾¹çš„Panel,ä¸Šé¢æ˜¯é€‰æ‹©DatabaseConnectionçš„ComboBox,ä¸‹é¢DatabaseConnectionå¯¹åº”çš„Table
 		connectionTableProcedurePane = new ConnectionTableProcedurePane();
 		connectionTableProcedurePane.addDoubleClickListener(new DoubleClickSelectedNodeOnTreeListener() {
 
@@ -108,8 +108,8 @@ public class DBTableDataPane extends AbstractTableDataPane<DBTableData> {
 				} catch (BadLocationException e) {
 					FRContext.getLogger().error(e.getMessage(), e);
 				}
-				// ÕâÀï¿ªÊ¼×÷É«,±¾À´¿ÉÒÔ¸øsqlTextPaneÌí¼ÓDocumentListenerÀ´ÊµÏÖµÄ£¬
-				// ºóÀ´·¢ÏÖinsertStringµÄÊ±ºò£¬Ëø¶¨ÁËJTextPane,²»ÄÜµ÷ÓÃsetXXXÀ´×÷É«,ÏÈÕâÑùÁË.
+				// è¿™é‡Œå¼€å§‹ä½œè‰²,æœ¬æ¥å¯ä»¥ç»™sqlTextPaneæ·»åŠ DocumentListeneræ¥å®ç°çš„ï¼Œ
+				// åæ¥å‘ç°insertStringçš„æ—¶å€™ï¼Œé”å®šäº†JTextPane,ä¸èƒ½è°ƒç”¨setXXXæ¥ä½œè‰²,å…ˆè¿™æ ·äº†.
 //				sqlTextPane.syntaxTexts();
 				sqlTextPane.requestFocus();
 			}
@@ -155,7 +155,7 @@ public class DBTableDataPane extends AbstractTableDataPane<DBTableData> {
 	}
 
 	private JToolBar createToolBar() {
-		// p:¹¤¾ßÀ¸.
+		// p:å·¥å…·æ .
 		ToolBarDef toolBarDef = new ToolBarDef();
 		toolBarDef.addShortCut(new PreviewAction());
 		toolBarDef.addShortCut(SeparatorDef.DEFAULT);
@@ -195,7 +195,7 @@ public class DBTableDataPane extends AbstractTableDataPane<DBTableData> {
 		if (list.size() == parameters.length && isIn) {
 			return;
 		}
-		// bug:34175  É¾ÁËÊÇ·ñË¢ĞÂ¶Ô»°¿ò£¬ ¾ùÖ±½ÓË¢ĞÂ
+		// bug:34175  åˆ äº†æ˜¯å¦åˆ·æ–°å¯¹è¯æ¡†ï¼Œ å‡ç›´æ¥åˆ·æ–°
 		refresh();
 	}
 
@@ -246,7 +246,7 @@ public class DBTableDataPane extends AbstractTableDataPane<DBTableData> {
 		DBTableData dbTableData = new DBTableData();
 		dbTableData.setDatabase(new NameDatabaseConnection(dbName));
 
-		// p:±ØĞëÏÈÉèÖÃParametersÊı×é£¬ÒòÎªsetQueryÀïÃæ»á×Ô¶¯ÉèÖÃµÄ
+		// p:å¿…é¡»å…ˆè®¾ç½®Parametersæ•°ç»„ï¼Œå› ä¸ºsetQueryé‡Œé¢ä¼šè‡ªåŠ¨è®¾ç½®çš„
 
 		dbTableData.setParameters(parameters);
 		dbTableData.setQuery(this.sqlTextPane.getText());

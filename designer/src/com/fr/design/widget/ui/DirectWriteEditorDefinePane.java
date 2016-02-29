@@ -7,7 +7,7 @@ import com.fr.general.Inter;
 
 import javax.swing.*;
 
-//richer:��Ҫ�ṩ�ܷ�ֱ�ӱ༭�Ŀؼ�������塪�������򡢸�ѡ��ʱ�䡢���ڡ�������
+//richer:需要提供能否直接编辑的控件设置面板——下拉框、复选框、时间、日期、下拉树
 public abstract class DirectWriteEditorDefinePane<T extends DirectWriteEditor> extends FieldEditorDefinePane<T> {
 	public UICheckBox directWriteCheckBox;
 	private WaterMarkDictPane waterMarkDictPane;

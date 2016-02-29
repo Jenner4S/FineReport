@@ -13,7 +13,7 @@ public class ChartImagePane extends ChartSelectDemoPane {
 	private boolean isDrawRightLine = false;
     public boolean isDoubleClicked = false;
 	
-	public ChartImagePane(String iconPath, String tipName) {// ½¨Á¢Ì«¸´ÔÓ? ºÄ·ÑÄÚ´æ..
+	public ChartImagePane(String iconPath, String tipName) {// å»ºç«‹å¤ªå¤æ‚? è€—è´¹å†…å­˜..
 		UILabel image = new UILabel(new ImageIcon(getClass().getResource(iconPath)));
 		this.setLayout(new BorderLayout());
 		this.add(image, BorderLayout.CENTER);
@@ -40,8 +40,8 @@ public class ChartImagePane extends ChartSelectDemoPane {
     }
 
     /**
-     * Êó±êµã»÷
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
         if(this.isPressing){

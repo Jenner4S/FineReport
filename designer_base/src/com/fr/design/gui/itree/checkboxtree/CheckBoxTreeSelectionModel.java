@@ -19,7 +19,7 @@ import javax.swing.tree.TreeSelectionModel;
  */
 public class CheckBoxTreeSelectionModel extends DefaultTreeSelectionModel {
     private TreeModel _model;
-    private boolean _digIn = false;//james:°ÑÕâ¸öÄ¬ÈÏÖµ¸ÄµôÁË£¬·½±ãÊ¹ÓÃ
+    private boolean _digIn = false;//james:æŠŠè¿™ä¸ªé»˜è®¤å€¼æ”¹æ‰äº†ï¼Œæ–¹ä¾¿ä½¿ç”¨
     private CheckBoxTree _tree;
 
     private boolean _singleEventMode = false;

@@ -15,16 +15,16 @@ import com.fr.design.dialog.BasicPane;
 import com.fr.stable.ArrayUtils;
 
 /**
- *  Í¼±íÑ¡ÖĞdemoµÄÀà. ÓÃÓÚ Ñ¡ÖĞµã»÷, Ğü¸¡×´Ì¬, ¿ÉÒÔ¼Ì³Ğ, ¸Ä±ä»­µÄÄÚÈİ.
+ *  å›¾è¡¨é€‰ä¸­demoçš„ç±». ç”¨äº é€‰ä¸­ç‚¹å‡», æ‚¬æµ®çŠ¶æ€, å¯ä»¥ç»§æ‰¿, æ”¹å˜ç”»çš„å†…å®¹.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-10-27 ÏÂÎç03:50:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-10-27 ä¸‹åˆ03:50:28
  */
 public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseListener {
 	private static final long serialVersionUID = 7715973616632567352L;
 
 	public boolean isPressing;
 
-	// ËùÓĞÍ³Ò»²ÎÓëµÄµã»÷×´Ì¬Àà. Ïàµ±ÓÚGroup
+	// æ‰€æœ‰ç»Ÿä¸€å‚ä¸çš„ç‚¹å‡»çŠ¶æ€ç±». ç›¸å½“äºGroup
 	protected ChartSelectDemoPane[] demoList = new ChartSelectDemoPane[0];
 
 	private boolean isRollOver;
@@ -40,11 +40,11 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
     /**
-     * Êó±êµã»÷
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e äº‹ä»¶
      */
 	public void mouseClicked(MouseEvent e) {
-		// listÖĞµÄËùÓĞµÄ¶¼Åª³É·ÇÑ¡ÖĞ×´Ì¬.
+		// listä¸­çš„æ‰€æœ‰çš„éƒ½å¼„æˆéé€‰ä¸­çŠ¶æ€.
 		if(this.isEnabled()){
             for (int i = 0; i < ArrayUtils.getLength(demoList); i++) {
                 demoList[i].isRollOver = false;
@@ -63,8 +63,8 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
     /**
-     * ×¢²á¼àÌı
-     * @param l ¼àÌı
+     * æ³¨å†Œç›‘å¬
+     * @param l ç›‘å¬
      */
 	public void addChangeListener(ChangeListener l) {
 		changeListeners.add(l);
@@ -77,22 +77,22 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
     /**
-     * Êó±ê°´Ñ¹
-     * @param me ÊÂ¼ş
+     * é¼ æ ‡æŒ‰å‹
+     * @param me äº‹ä»¶
      */
 	public void mousePressed(MouseEvent me) {
 	}
 
     /**
-     * Êó±ê·Å¿ª
-     * @param me ÊÂ¼ş
+     * é¼ æ ‡æ”¾å¼€
+     * @param me äº‹ä»¶
      */
 	public void mouseReleased(MouseEvent me) {
 	}
 
     /**
-     * Êó±ê½øÈë
-     * @param me ÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param me äº‹ä»¶
      */
 	public void mouseEntered(MouseEvent me) {
 		if(this.isEnabled()){
@@ -109,11 +109,11 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
     /**
-     * Êó±êÒÆ³ö
-     * @param me ÊÂ¼ş
+     * é¼ æ ‡ç§»å‡º
+     * @param me äº‹ä»¶
      */
 	public void mouseExited(MouseEvent me) {
-		// ÏŞÖÆÔÚpane·¶Î§ÄÚ!
+		// é™åˆ¶åœ¨paneèŒƒå›´å†…!
 		if(this.isEnabled()){
             int x = me.getX();
             int y = me.getY();
@@ -137,9 +137,9 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		changeListeners.add(new ChangeListener() {
@@ -150,16 +150,16 @@ public class ChartSelectDemoPane extends BasicPane implements UIObserver, MouseL
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
 	}
 
     /**
-     * ĞŞ¸Ä±³¾°ÑÕÉ«
+     * ä¿®æ”¹èƒŒæ™¯é¢œè‰²
      */
 	public void checkBackground() {
 		if (!isRollOver &&  !isPressing) {

@@ -32,22 +32,22 @@ public class ReportWebWidgetConstants {
 
     public static WidgetOption[] getWriteToolBarInstance() {
         return new WidgetOption[]{SUBMIT, VERIFY, EMAIL, EXPORT, PDF, EXCELP, EXCELO, EXCELS, WORD, PRINT, FLASHPRINT, APPLETPRINT, PDFPRINT, IMPORTEXCELDATA, SHOWCELLVALUE,
-                APPENDCOLUMNROW, DELETECOLUMNROW, SETPRINTEROFFSET, WRITEOFFLINEHTML, CUSTOM_BUTTON};
+                APPENDCOLUMNROW, DELETECOLUMNROW, SETPRINTEROFFSET, WRITEOFFLINEHTML, CUSTOM_BUTTON, WRITESTASH, WRITESTASHCLEAR};
     }
 
     public static WidgetOption[] getFormToolBarInstance() {
         return new WidgetOption[]{EMAIL, EXPORT, PDF, EXCELP, EXCELO, EXCELS, WORD, PRINT, FLASHPRINT, APPLETPRINT, PDFPRINT, SETPRINTEROFFSET, CUSTOM_BUTTON};
     }
 
-    // ²éÑ¯
+    // æŸ¥è¯¢
     public static final WidgetOption SEARCH = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"Query", "Form-Button"}),
             BaseUtils.readIcon("/com/fr/web/images/form/resources/preview_16.png"), StableFactory.getMarkedClass(BridgeMark.SUBMIT_BUTTON, Widget.class));
 
-    // Ìá½»°´Å¥
+    // æäº¤æŒ‰é’®
     public static final WidgetOption SUBMIT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Utils-Submit"), BaseUtils.readIcon("/com/fr/web/images/save.png"),
             Submit.class);
 
-    // flash´òÓ¡°´Å¥
+    // flashæ‰“å°æŒ‰é’®
     public static final WidgetOption FLASHPRINT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Utils-Print[Client]"),
             BaseUtils.readIcon("/com/fr/web/images/flashPrint.png"), FlashPrint.class);
 
@@ -55,59 +55,59 @@ public class ReportWebWidgetConstants {
     public static final WidgetOption APPLETPRINT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Applet_Print"),
             BaseUtils.readIcon("/com/fr/web/images/appletPrint.png"), AppletPrint.class);
 
-    // PDFµ¼³ö
+    // PDFå¯¼å‡º
     public static final WidgetOption PDF = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-PDF"), BaseUtils.readIcon("/com/fr/web/images/pdf.png"),
             PDF.class);
 
-    // PDFµ¼³ö£¬½â¾ölinuxÏÂÎŞÖĞÎÄ×ÖÌåµÄµ¼³ö×ÖÌå»ìÂÒ
+    // PDFå¯¼å‡ºï¼Œè§£å†³linuxä¸‹æ— ä¸­æ–‡å­—ä½“çš„å¯¼å‡ºå­—ä½“æ··ä¹±
     public static final WidgetOption PDF2 = WidgetOptionFactory.createByWidgetClass(
             Inter.getLocText(new String[]{"ReportServerP-PDF", "ReportServerP-PDF2-INFO"}, new String[]{"(", ")"}), BaseUtils.readIcon("/com/fr/web/images/pdf.png"), PDF2.class);
 
-    // ¿Í»§¶ËPDF´òÓ¡
+    // å®¢æˆ·ç«¯PDFæ‰“å°
     public static final WidgetOption PDFPRINT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Utils-Print[Client]"),
             BaseUtils.readIcon("/com/fr/web/images/pdfPrint.png"), PDFPrint.class);
 
-    // ·şÎñÆ÷¶Ë´òÓ¡
+    // æœåŠ¡å™¨ç«¯æ‰“å°
     public static final WidgetOption SERVERPRINT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-Print[Server]"),
             BaseUtils.readIcon("/com/fr/web/images/serverPrint.png"), ServerPrint.class);
-    // ÓÊ¼ş·¢ËÍ
+    // é‚®ä»¶å‘é€
     public static final WidgetOption EMAIL = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Email"), BaseUtils.readIcon("/com/fr/web/images/email.png"), Email.class);
     public static final WidgetOption PRINTPREVIEW = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("PrintP-Print_Preview"),
             BaseUtils.readIcon("/com/fr/web/images/preview.png"), PrintPreview.class);
 
     public static final WidgetOption EDIT = WidgetOptionFactory.createByWidgetClass("Edit", Edit.class);
 
-    // µ¼³ö³ÉExcel ·ÖÒ³µ¼³ö
+    // å¯¼å‡ºæˆExcel åˆ†é¡µå¯¼å‡º
     public static final WidgetOption EXCELP = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"Excel", "Export-Excel-Page"}, new String[]{"(", ")"}),
             BaseUtils.readIcon("/com/fr/web/images/excel.png"), ExcelP.class);
-    // µ¼³ö³ÉExcel Ô­Ñùµ¼³ö
+    // å¯¼å‡ºæˆExcel åŸæ ·å¯¼å‡º
     public static final WidgetOption EXCELO = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"Excel", "Export-Excel-Simple"}, new String[]{"(", ")"}),
             BaseUtils.readIcon("/com/fr/web/images/excel.png"), ExcelO.class);
-    // µ¼³ö³ÉExcel ·ÖÒ³·ÖSheetµ¼³ö
+    // å¯¼å‡ºæˆExcel åˆ†é¡µåˆ†Sheetå¯¼å‡º
     public static final WidgetOption EXCELS = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"Excel", "Export-Excel-PageToSheet"}, new String[]{"(", ")"}),
             BaseUtils.readIcon("/com/fr/web/images/excel.png"), ExcelS.class);
 
-    // µ¼³ö³ÉWord
+    // å¯¼å‡ºæˆWord
     public static final WidgetOption WORD = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Word"), BaseUtils.readIcon("/com/fr/web/images/word.png"), Word.class);
-    // Ò³ÃæÉèÖÃ
+    // é¡µé¢è®¾ç½®
     public static final WidgetOption PAGESETUP = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("PageSetup-Page_Setup"), BaseUtils.readIcon("/com/fr/web/images/pageSetup.png"), PageSetup.class);
-    // µ¼³ö
+    // å¯¼å‡º
     public static final WidgetOption EXPORT = WidgetOptionFactory
             .createByWidgetClass(Inter.getLocText("FR-Engine_Export"), BaseUtils.readIcon("/com/fr/web/images/export.png"), Export.class);
 
-    // µ±Ç°Ò³/×ÜÒ³Êı
+    // å½“å‰é¡µ/æ€»é¡µæ•°
     public static final WidgetOption PAGENAVI = WidgetOptionFactory.createByWidgetClass(Inter.getLocText(new String[]{"HJS-Current_Page", "HF-Number_of_Page"}, new String[]{"/", ""}),
             BaseUtils.readIcon("/com/fr/web/images/pageNumber.png"), PageNavi.class);
-    // Ê×Ò³
+    // é¦–é¡µ
     public static final WidgetOption FIRST = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-First"), BaseUtils.readIcon("/com/fr/web/images/first.png"),
             First.class);
-    // Ä©Ò³
+    // æœ«é¡µ
     public static final WidgetOption LAST = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-Last"), BaseUtils.readIcon("/com/fr/web/images/last.png"),
             Last.class);
-    // Ç°Ò»Ò³
+    // å‰ä¸€é¡µ
     public static final WidgetOption PREVIOUS = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-Previous"),
             BaseUtils.readIcon("/com/fr/web/images/previous.png"), Previous.class);
-    // ºóÒ»Ò³
+    // åä¸€é¡µ
     public static final WidgetOption NEXT = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_ReportServerP-Next"), BaseUtils.readIcon("/com/fr/web/images/next.png"),
             Next.class);
     public static final WidgetOption SCALE = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_Enlarge_Or_Reduce"), BaseUtils.readIcon("/com/fr/web/images/scale.png"),
@@ -131,14 +131,20 @@ public class ReportWebWidgetConstants {
     public static final WidgetOption IMPORTEXCELDATA = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("Utils-Import_Excel_Data"),
             BaseUtils.readIcon("/com/fr/web/images/excel.png"), ImportExcelData.class);
 
-    // ´òÓ¡»úÆ«ÒÆÉèÖÃ
+    // æ‰“å°æœºåç§»è®¾ç½®
     public static final WidgetOption SETPRINTEROFFSET = WidgetOptionFactory.createByWidgetClass(Inter.getLocText("FR-Engine_SetPrinterOffset"), BaseUtils.readIcon("/com/fr/web/images/pianyi.png"), SetPrinterOffset.class);
 
     public static final WidgetOption CUSTOM_BUTTON = WidgetOptionFactory
             .createByWidgetClass(Inter.getLocText(new String[]{"Custom", "Form-Button"}), CustomToolBarButton.class);
 
-    // Êä³öÀëÏßhtml±¨±í
+    // è¾“å‡ºç¦»çº¿htmlæŠ¥è¡¨
     public static final WidgetOption WRITEOFFLINEHTML = WidgetOptionFactory
             .createByWidgetClass(Inter.getLocText("FR-Engine_Export-Offline-Html"), BaseUtils.readIcon("/com/fr/web/images/writeOffline.png"), WriteOfflineHTML.class);
+    // æ•°æ®æš‚å­˜
+    public static final WidgetOption WRITESTASH = WidgetOptionFactory
+            .createByWidgetClass(Inter.getLocText("FR-Engine-Write_Stash"), BaseUtils.readIcon("/com/fr/web/images/edit/stash.png"), StashButton.class);
+    // æ•°æ®æ¸…ç©º
+    public static final WidgetOption WRITESTASHCLEAR = WidgetOptionFactory
+            .createByWidgetClass(Inter.getLocText("FR-Engine-Write_Clear"), BaseUtils.readIcon("/com/fr/web/images/edit/clearstash.png"), ClearStashedButton.class);
 
 }

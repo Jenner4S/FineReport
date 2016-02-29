@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:12:24
+ * @since 2012-5-29ä¸‹åˆ1:12:24
  */
 public class NullBackgroundPane extends BackgroundSettingPane {
 
@@ -25,9 +25,9 @@ public class NullBackgroundPane extends BackgroundSettingPane {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 
@@ -35,17 +35,17 @@ public class NullBackgroundPane extends BackgroundSettingPane {
 
 
     /**
-     * ÊÇ·ñ½ÓÊÜ
-     * @param background     ±³¾°
-     * @return    ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æ¥å—
+     * @param background     èƒŒæ™¯
+     * @return    æ˜¯åˆ™è¿”å›true
      */
 	public boolean accept(Background background) {
 		return background == null;
 	}
 
     /**
-     * Ãû³Æ
-     * @return     Ãû³Æ
+     * åç§°
+     * @return     åç§°
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Background-Null");

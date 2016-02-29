@@ -92,8 +92,8 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     private UIRadioButton urlFileRadioButton;
     private UITableEditorPane<ParameterProvider> editorPane;
     private UILabel tips;
-    private UIComboBox xmlKyePoint;// xml¹Ø¼ü½Úµã
-    private UIComboBox encodingComboBox;// xml±àÂë
+    private UIComboBox xmlKyePoint;// xmlå…³é”®èŠ‚ç‚¹
+    private UIComboBox encodingComboBox;// xmlç¼–ç 
     private FileTableData fileTableData;
     private UIButton chooseFile;
     private UIButton testConnection;
@@ -102,13 +102,13 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     private JPanel filePath;
     private XMLNodeTreePane nodeTreePane;
 
-    private UICheckBox needColumnNameCheckBox;// µÚÒ»ĞĞÊÇ·ñ×÷Îª±êÌâ
-    private UIRadioButton tableDismemberRadioButton;// ÖÆ±í·û
-    private UIRadioButton spaceDismenberRadioButton;// ¿Õ¸ñ·û,Ò²ÊÇÄ¬ÈÏµÄ·Ö¸ô·û
-    private UIRadioButton commaDismenberRadioButton;// ¶ººÅ
-    private UIRadioButton otherDismenberRadioButton;// ÆäËû
-    private UITextField otherDismenberTextField;// ÆäËû·Ö¸ô·û±à¼­
-    private UICheckBox igoreOneMoreDelimiterCheckBox;// Á¬Ğø·Ö¸ô·ûÊÇ·ñ×÷Îªµ¥Ò»
+    private UICheckBox needColumnNameCheckBox;// ç¬¬ä¸€è¡Œæ˜¯å¦ä½œä¸ºæ ‡é¢˜
+    private UIRadioButton tableDismemberRadioButton;// åˆ¶è¡¨ç¬¦
+    private UIRadioButton spaceDismenberRadioButton;// ç©ºæ ¼ç¬¦,ä¹Ÿæ˜¯é»˜è®¤çš„åˆ†éš”ç¬¦
+    private UIRadioButton commaDismenberRadioButton;// é€—å·
+    private UIRadioButton otherDismenberRadioButton;// å…¶ä»–
+    private UITextField otherDismenberTextField;// å…¶ä»–åˆ†éš”ç¬¦ç¼–è¾‘
+    private UICheckBox igoreOneMoreDelimiterCheckBox;// è¿ç»­åˆ†éš”ç¬¦æ˜¯å¦ä½œä¸ºå•ä¸€
     private UIComboBox charsetComboBox;
     private UILabel encodeLabel;
     private UILabel dismenberLabel;
@@ -139,13 +139,13 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         type.add(fileTypeComboBox);
         northPanel.add(type, BorderLayout.WEST);
 
-        // ×îÉÏÃæµÄpane£¬ÎÄ¼şÑ¡Ôñ
+        // æœ€ä¸Šé¢çš„paneï¼Œæ–‡ä»¶é€‰æ‹©
         JPanel centerPanel = new JPanel();
         centerPanel.setPreferredSize(new Dimension(522, 200));
         centerPanel.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer-File_address")));
         addToCenterPanel(centerPanel);
 
-        // ÏÂÃæµÄpane£¬²ÎÊıÃæ°å
+        // ä¸‹é¢çš„paneï¼Œå‚æ•°é¢æ¿
         ParameterTableModel model = new ParameterTableModel() {
             @Override
             public UITableEditAction[] createAction() {
@@ -190,7 +190,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
 
         testConnection = new UIButton(Inter.getLocText("Datasource-Test_Connection"));
         testConnection.setEnabled(false);
-        testConnection.addActionListener(testConnectionListener);// ²âÊÔÁ¬½Ó°´Å¥
+        testConnection.addActionListener(testConnectionListener);// æµ‹è¯•è¿æ¥æŒ‰é’®
 
         JPanel textPanel = new JPanel(new GridLayout(2, 1, 15, 15));
         JPanel textFieldPanel = new JPanel(new GridLayout(2, 1, 15, 15));
@@ -207,7 +207,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         filePath.add(buttonPanel, BorderLayout.EAST);
         centerPanel.add(filePath, BorderLayout.NORTH);
 
-        // ÖĞ¼äµÄpane£¬ÌáÊ¾ĞÅÏ¢
+        // ä¸­é—´çš„paneï¼Œæç¤ºä¿¡æ¯
         String tipContent = Inter.getLocText("FR-Designer-Type_Parameter") + "reportlets/excel/FineReport${abc}." + "txt" + "<br>"
                 + "http://192.168.100.120:8080/XXServer/Report/excel${abc}.jsp<br>" + "&nbsp</body> </html> ";
         tips = new UILabel(tipContent);
@@ -255,7 +255,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     }
 
     private JPanel xmlSetPanel(int width,int height) {
-        // xmlÉèÖÃpane
+        // xmlè®¾ç½®pane
         JPanel controlPane = new JPanel();
         JPanel northPane = new JPanel(new BorderLayout(8,8));
         JPanel northTopPane = new JPanel(new BorderLayout(8,8));
@@ -290,7 +290,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     }
 
     private JPanel excelSetPanel(int width,int height) {
-        // excelÉèÖÃpane
+        // excelè®¾ç½®pane
         int checkBoxWidth = width - EIGHT;
         JPanel controlPane = new JPanel();
         JPanel northPane = new JPanel(new BorderLayout(8,8));
@@ -340,7 +340,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     }
 
     /**
-     * ¼ì²éÁ´½ÓÊÇ·ñ¿ÉÓÃ
+     * æ£€æŸ¥é“¾æ¥æ˜¯å¦å¯ç”¨
      *
      * @throws Exception
      */
@@ -359,7 +359,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     }
 
     private JPanel textSetPanel(int width,int height) {
-        // textÉèÖÃpane
+        // textè®¾ç½®pane
         JPanel controlPane = new JPanel();
         controlPane.setLayout(new BorderLayout());
         controlPane.setPreferredSize(new Dimension(width,height));
@@ -457,7 +457,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
 
             if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame()) == FILEChooserPane.OK_OPTION) {
                 final FILE file = fileChooser.getSelectedFILE();
-                if (file == null) {// Ñ¡ÔñµÄÎÄ¼ş²»ÄÜÊÇ null
+                if (file == null) {// é€‰æ‹©çš„æ–‡ä»¶ä¸èƒ½æ˜¯ null
                     return;
                 }
                 localText.setText(file.getPath());
@@ -544,7 +544,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         needColumnNameCheckBox.setSelected(etd.needColumnName());
     }
 
-    //wikky:ÎªÁËÊ¹Ê÷ÄÜ¹»Õı³£Õ¹¿ª£¬ºÏ·¨µÄxmlÎÄ¼ş°ÑpathÖĞÌí¼ÓµÄXML½ÚµãÈ¥µô£¬¶ø²»ºÏ·¨µÄxmlĞèÒª°Ñ¸ù½ÚµãÖµ»¹Ô­ÎªÌí¼ÓµÄROOTTAGÖµ¡£
+    //wikky:ä¸ºäº†ä½¿æ ‘èƒ½å¤Ÿæ­£å¸¸å±•å¼€ï¼Œåˆæ³•çš„xmlæ–‡ä»¶æŠŠpathä¸­æ·»åŠ çš„XMLèŠ‚ç‚¹å»æ‰ï¼Œè€Œä¸åˆæ³•çš„xmléœ€è¦æŠŠæ ¹èŠ‚ç‚¹å€¼è¿˜åŸä¸ºæ·»åŠ çš„ROOTTAGå€¼ã€‚
     private void populate2XML(XMLTableData xtd) {
         setTextField(xtd);
         editorPane.populate(xtd.getParams());
@@ -574,7 +574,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
                             xmlNodeTree.expandPath(treepath);
                         }
                     }
-                    //·ÀÖ¹Ä³ÖÖ²Ù×÷µ¼ÖÂÌí¼ÓµÄtag×÷Îªroot³öÏÖ¡£
+                    //é˜²æ­¢æŸç§æ“ä½œå¯¼è‡´æ·»åŠ çš„tagä½œä¸ºrootå‡ºç°ã€‚
                     if(ComparatorUtils.equals(root.toString(),ROOTTAG)){
                             root.setUserObject(StringUtils.EMPTY);
                     }
@@ -695,7 +695,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         return xtd;
     }
 
-    //wikky:¹¹½¨Ê÷Ê±ÎªÁËÃÀ¹Û°ÑÌí¼ÓµÄ¸ù½ÚµãÖµ¸³Îª¿ÕÏÔÊ¾£¬ÏÖÔÚ»¹µÃ¸Ã»ØÈ¥Ê¹µÃÔ¤ÀÀÊ±ÄÜ¹»Ë³ÀûÈ¡µ½Êı¾İ¡£
+    //wikky:æ„å»ºæ ‘æ—¶ä¸ºäº†ç¾è§‚æŠŠæ·»åŠ çš„æ ¹èŠ‚ç‚¹å€¼èµ‹ä¸ºç©ºæ˜¾ç¤ºï¼Œç°åœ¨è¿˜å¾—è¯¥å›å»ä½¿å¾—é¢„è§ˆæ—¶èƒ½å¤Ÿé¡ºåˆ©å–åˆ°æ•°æ®ã€‚
     private String[] getPaths(){
         TreePath treePath = GUICoreUtils.getTreePath(finalSelectedNode);
         String path = StringUtils.EMPTY;
@@ -854,12 +854,12 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
                     return;
                 }
                 int selRow = XMLNodeTree.this.getRowForLocation(e.getX(), e.getY());
-                if (selRow == -1) {//Ã»ÓĞÑ¡ÖĞÄ³¸öÊ÷½Úµã£¬¾ÍÖ±½Ó·µ»ØÀ²
+                if (selRow == -1) {//æ²¡æœ‰é€‰ä¸­æŸä¸ªæ ‘èŠ‚ç‚¹ï¼Œå°±ç›´æ¥è¿”å›å•¦
                     return;
                 }
                 TreePath selPath = XMLNodeTree.this.getPathForLocation(e.getX(), e.getY());
                 if (selPath == null || selPath.getLastPathComponent() == null) {
-                    return;//Ã»ÓĞÑ¡ÖĞÄ³¸öÊ÷½Úµã£¬¾ÍÖ±½Ó·µ»ØÀ²
+                    return;//æ²¡æœ‰é€‰ä¸­æŸä¸ªæ ‘èŠ‚ç‚¹ï¼Œå°±ç›´æ¥è¿”å›å•¦
                 }
                 Object selObject = selPath.getLastPathComponent();
                 if (selObject instanceof ExpandMutableTreeNode ) {
@@ -874,7 +874,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         };
 
         public void waitRefresh() {
-            // »»¸öroot£¬µÈ´ıÓÃ»§µã»÷root½Úµãºó£¬Õ¹¿ªË¢ĞÂ
+            // æ¢ä¸ªrootï¼Œç­‰å¾…ç”¨æˆ·ç‚¹å‡»rootèŠ‚ç‚¹åï¼Œå±•å¼€åˆ·æ–°
             if (waitTreeModel == null) {
                 ExpandMutableTreeNode rootTreeNode = new ExpandMutableTreeNode();
                 rootTreeNode.setExpanded(false);
@@ -890,7 +890,7 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
             return treeModel;
         }
 
-        //·ÀÖ¹½çÃæ¿¨ËÀ¡£
+        //é˜²æ­¢ç•Œé¢å¡æ­»ã€‚
         public void refreshData() {
             Thread thread = new Thread(new Runnable() {
                 @Override
@@ -901,9 +901,9 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
             thread.start();
         }
 
-        //wikky:ÎªÂú×ã706Éè¼ÆÊ±¶Ô²»ºÏ·¨µÄxmlÎÄ¼ş£¨ÓĞ¶à¸ö¸ù½Úµã£©µÄ´¦Àí£¬°ÑÄÃµ½µÄInputStreamÇ¿ÖÆÔÚ×îÍâ²ãÌí¼Ó<XML></XML>×÷ÎªÎ¨Ò»¸ù½Úµã¶ø½«ÎÄ¼ş×ª»»ÎªºÏ·¨µÄxml¡£
+        //wikky:ä¸ºæ»¡è¶³706è®¾è®¡æ—¶å¯¹ä¸åˆæ³•çš„xmlæ–‡ä»¶ï¼ˆæœ‰å¤šä¸ªæ ¹èŠ‚ç‚¹ï¼‰çš„å¤„ç†ï¼ŒæŠŠæ‹¿åˆ°çš„InputStreamå¼ºåˆ¶åœ¨æœ€å¤–å±‚æ·»åŠ <XML></XML>ä½œä¸ºå”¯ä¸€æ ¹èŠ‚ç‚¹è€Œå°†æ–‡ä»¶è½¬æ¢ä¸ºåˆæ³•çš„xmlã€‚
         private void initData() {
-            params = getEditorPaneParameter();  // Éú³Étree½á¹¹·ÅÄÄ¶ùÄØ£¿·ÅÕâÀï¸Ğ¾õ²»¶ÔÈö
+            params = getEditorPaneParameter();  // ç”Ÿæˆtreeç»“æ„æ”¾å“ªå„¿å‘¢ï¼Ÿæ”¾è¿™é‡Œæ„Ÿè§‰ä¸å¯¹æ’’
             treeModel = null;
             selectedNode = null;
             xmlColumnsList.clear();

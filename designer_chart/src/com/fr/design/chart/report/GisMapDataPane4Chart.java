@@ -61,7 +61,7 @@ public class GisMapDataPane4Chart extends AbstractChartDataPane4Chart {
 
 
     /**
-     * Êı¾İ¼¯Êı¾İ¸Ä±ä
+     * æ•°æ®é›†æ•°æ®æ”¹å˜
      */
     public void fireTableDataChange() {
         tablePane.fireTableDataChange(choosePane.getTableDataWrapper());

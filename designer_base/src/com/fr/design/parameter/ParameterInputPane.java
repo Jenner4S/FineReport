@@ -42,7 +42,7 @@ import com.fr.stable.StringUtils;
 /**
  * The dialog used to input parameter.
  * @editor zhou
- * @since 2012-3-26ÉÏÎç11:09:45
+ * @since 2012-3-26ä¸Šåˆ11:09:45
  */
 public class ParameterInputPane extends BasicPane {
 	/**
@@ -50,7 +50,7 @@ public class ParameterInputPane extends BasicPane {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// alex:±£´æ±à¼­Æ÷¶ÔÓ¦µÄ²ÎÊıµÄÃû×Ö
+	// alex:ä¿å­˜ç¼–è¾‘å™¨å¯¹åº”çš„å‚æ•°çš„åå­—
 	private java.util.Map<ValueEditorPane,String> editorNameMap; // Map<Editor, Name>
 
 	private boolean allowBlank = true;
@@ -80,12 +80,12 @@ public class ParameterInputPane extends BasicPane {
         editorNameMap = new java.util.HashMap<ValueEditorPane,String>();
         
         //Parameter list.
-        java.util.List<String> nameAddedList = new java.util.ArrayList<String>(); // alex:ÒÑ¾­¼Óµ½½çÃæÖĞÈ¥µÄ²ÎÊıÃû
+        java.util.List<String> nameAddedList = new java.util.ArrayList<String>(); // alex:å·²ç»åŠ åˆ°ç•Œé¢ä¸­å»çš„å‚æ•°å
         if (parameters != null && parameters.length > 0) {
             for (int i = 0; i < parameters.length; i++) {
                 ParameterProvider parameter = parameters[i];
                 
-                // alex:ÒÑ¾­ÔÚ½çÃæÖĞµÄ²ÎÊı,²»¼ÓÁË
+                // alex:å·²ç»åœ¨ç•Œé¢ä¸­çš„å‚æ•°,ä¸åŠ äº†
                 if (nameAddedList.contains(parameter.getName())) {
                 	continue;
 				}

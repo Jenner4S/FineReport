@@ -24,7 +24,7 @@ public class FontFamilyPane extends JPanel {
     
     private void init() {
     	this.setLayout(FRGUIPaneFactory.createBorderLayout());
-    	// Ãû×Ö
+    	// åå­—
         familyField = new UITextField();
         familyField.setEditable(false);
         

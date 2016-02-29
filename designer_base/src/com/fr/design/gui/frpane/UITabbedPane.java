@@ -12,13 +12,13 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-28
- * Time: ÉÏÎç9:14
+ * Time: ä¸Šåˆ9:14
  */
 public class UITabbedPane extends JTabbedPane{
 
-    private boolean isClosable = false; //TabÊÇ·ñ¿É¹Ø±Õ
-    private String classPath;  //panel¶ÔÏóµÄÀàÃû
-    private String tabName;  //TabÃû³Æ
+    private boolean isClosable = false; //Tabæ˜¯å¦å¯å…³é—­
+    private String classPath;  //panelå¯¹è±¡çš„ç±»å
+    private String tabName;  //Tabåç§°
     private  int tabSize = 0;
     public UITabbedPane() {
         super();
@@ -40,9 +40,9 @@ public class UITabbedPane extends JTabbedPane{
     }
 
     /**
-     * Ìí¼Ótab
-     * @param s tabÃû
-     * @param component ×é¼ş
+     * æ·»åŠ tab
+     * @param s tabå
+     * @param component ç»„ä»¶
      */
     public void addTab(String s, Component component) {
         if(isClosable() && ComparatorUtils.equals(s, getTabName())){
@@ -54,16 +54,16 @@ public class UITabbedPane extends JTabbedPane{
     }
 
     /**
-     * ÉèÖÃtab¿É¹Ø±Õ/Ìí¼Ó
-     * @param isClosable ÊÇ·ñ¿É¹Ø±Õ/Ìí¼Ó
+     * è®¾ç½®tabå¯å…³é—­/æ·»åŠ 
+     * @param isClosable æ˜¯å¦å¯å…³é—­/æ·»åŠ 
      */
     public void setClosable(boolean isClosable){
         this.isClosable = isClosable;
     }
 
     /**
-     * tab¿É¹Ø±Õ
-     * @return ·µ»ØÊÇ·ñtab¿É¹Ø±Õ
+     * tabå¯å…³é—­
+     * @return è¿”å›æ˜¯å¦tabå¯å…³é—­
      */
     public boolean isClosable(){
         return this.isClosable;
@@ -94,7 +94,7 @@ public class UITabbedPane extends JTabbedPane{
     }
     @Override
     /**
-     * »ñÈ¡UI¶ÔÏó
+     * è·å–UIå¯¹è±¡
      */
     public TabbedPaneUI getUI(){
         return new UITabbedPaneUI();
@@ -102,15 +102,15 @@ public class UITabbedPane extends JTabbedPane{
 
     @Override
     /**
-     * ¸üĞÂUI
+     * æ›´æ–°UI
      */
     public void updateUI() {
         setUI(getUI());
     }
 
     /**
-     * É¾³ıtab£¬²»ÄÜÖ±½Ó¸´Ğ´removeTabAt
-     * @param i tabË÷Òı
+     * åˆ é™¤tabï¼Œä¸èƒ½ç›´æ¥å¤å†™removeTabAt
+     * @param i tabç´¢å¼•
      */
     public void doRemoveTab(int i){
         int re = JOptionPane.showConfirmDialog(SwingUtilities.getWindowAncestor(UITabbedPane.this), Inter.getLocText("sure_to_delete")+ "?", Inter.getLocText("Remove")

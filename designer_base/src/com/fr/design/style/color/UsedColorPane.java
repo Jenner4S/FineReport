@@ -12,13 +12,13 @@ public class UsedColorPane extends BasicPane{
 
 	public static final Color DEFAULT_COLOR = new Color(222,222,222);
 	
-	// ×î½üÊ¹ÓÃÃæ°åÁĞÊı
+	// æœ€è¿‘ä½¿ç”¨é¢æ¿åˆ—æ•°
 	private int columns;
-	// ×î½üÊ¹ÓÃÃæ°åĞĞÊı
+	// æœ€è¿‘ä½¿ç”¨é¢æ¿è¡Œæ•°
 	private int rows;
-	// ×î½üÊ¹ÓÃÑÕÉ«
+	// æœ€è¿‘ä½¿ç”¨é¢œè‰²
 	private Object[] colors;
-	// ×î½üÊ¹ÓÃÃæ°å
+	// æœ€è¿‘ä½¿ç”¨é¢æ¿
 	private JPanel pane;
 	
 	private ColorSelectable selectable;
@@ -36,11 +36,11 @@ public class UsedColorPane extends BasicPane{
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * 
-	 * @param rows ĞĞ
-	 * @param columns ÁĞ
-	 * @param colors ×î½üÊ¹ÓÃµÄÑÕÉ«
+	 * @param rows è¡Œ
+	 * @param columns åˆ—
+	 * @param colors æœ€è¿‘ä½¿ç”¨çš„é¢œè‰²
 	 */
 	public UsedColorPane(int rows,int columns,Object[] colors,ColorSelectable selectable){
 		this.columns = columns;
@@ -65,7 +65,7 @@ public class UsedColorPane extends BasicPane{
 	}
 	
 	/**
-	 * ¸üĞÂ×î½üÊ¹ÓÃÑÕÉ«
+	 * æ›´æ–°æœ€è¿‘ä½¿ç”¨é¢œè‰²
 	 * 
 	 */
 	public void updateUsedColor(){

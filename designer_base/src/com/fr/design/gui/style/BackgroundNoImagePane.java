@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-17
- * Time: ÏÂÎç4:34
+ * Time: ä¸‹åˆ4:34
  */
 public class BackgroundNoImagePane extends BackgroundPane{
 

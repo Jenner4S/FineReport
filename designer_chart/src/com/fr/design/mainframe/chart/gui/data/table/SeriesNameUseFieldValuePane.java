@@ -23,10 +23,10 @@ import java.awt.event.ItemListener;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í Êı¾İ¼¯ ÏµÁĞÃûÊ¹ÓÃ ÏµÁĞÖµ  ½çÃæ.
+ * å±æ€§è¡¨ æ•°æ®é›† ç³»åˆ—åä½¿ç”¨ ç³»åˆ—å€¼  ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-26 ÏÂÎç03:29:53
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸‹åˆ03:29:53
  */
 public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartCollection> {
     private UIComboBox seriesName;
@@ -121,8 +121,8 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * ¼ì²éboxÊÇ·ñÒÑ¾­Ê¹ÓÃ.
-     * @param hasUse ÊÇ·ñÊ¹ÓÃ
+     * æ£€æŸ¥boxæ˜¯å¦å·²ç»ä½¿ç”¨.
+     * @param hasUse æ˜¯å¦ä½¿ç”¨
      */
     public void checkUse(boolean hasUse) {
         seriesName.setEnabled(hasUse);
@@ -131,8 +131,8 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * Êı¾İ¼¯±ä¸üÊ±, Ë¢ĞÂBoxÑ¡ÖĞÏî
-     * @param list ÁĞ±í
+     * æ•°æ®é›†å˜æ›´æ—¶, åˆ·æ–°Boxé€‰ä¸­é¡¹
+     * @param list åˆ—è¡¨
      */
     public void refreshBoxListWithSelectTableData(List list) {
         refreshBoxItems(seriesName, list);
@@ -140,7 +140,7 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         clearBoxItems(seriesName);
@@ -184,9 +184,9 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * ÅĞ¶Ï½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ½ÓÊÜµÄ¶ÔÏó
-     * @return ÅĞ¶ÏÊÇ·ñ½ÓÊÜ
+     * åˆ¤æ–­ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob æ¥å—çš„å¯¹è±¡
+     * @return åˆ¤æ–­æ˜¯å¦æ¥å—
      */
     public boolean accept(Object ob) {
         ChartCollection collection = (ChartCollection) ob;
@@ -194,23 +194,23 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * ½çÃæ±êÌâ.
-     * @return ½çÃæ±êÌâ
+     * ç•Œé¢æ ‡é¢˜.
+     * @return ç•Œé¢æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText(new String[]{"Use", "Field", "Value"});
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
 
     }
 
     /**
-     * ÖØĞÂ²¼¾ÖÕû¸öÃæ°å
-     * @param isNeedSummary ÊÇ·ñĞèÒª»ã×Ü
+     * é‡æ–°å¸ƒå±€æ•´ä¸ªé¢æ¿
+     * @param isNeedSummary æ˜¯å¦éœ€è¦æ±‡æ€»
      */
     public void relayoutPane(boolean isNeedSummary){
         if(this.isNeedSummary != isNeedSummary){
@@ -245,14 +245,14 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * ¸üĞÂ½çÃæÄÚÈİ: ×Ö¶ÎÖµ
+     * æ›´æ–°ç•Œé¢å†…å®¹: å­—æ®µå€¼
      */
     public void populateBean(ChartCollection ob) {
         populateBean(ob,true);
     }
 
     /**
-     * ±£´æ½çÃæÄÚÈİ ×Ö¶ÎÖµ
+     * ä¿å­˜ç•Œé¢å†…å®¹ å­—æ®µå€¼
      */
     public void updateBean(ChartCollection collection) {
         OneValueCDDefinition oneDefinition = new OneValueCDDefinition();
@@ -270,7 +270,7 @@ public class SeriesNameUseFieldValuePane extends FurtherBasicBeanPane<ChartColle
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔ ĞÂµÄChartCollection
+     * ä¿å­˜ç•Œé¢å±æ€§ æ–°çš„ChartCollection
      */
     public ChartCollection updateBean() {
         return null;

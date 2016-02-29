@@ -6,18 +6,18 @@ import javax.swing.JPanel;
 import com.fr.chart.chartattr.Plot;
 
 /**
- * ÊôĞÔ±í, Í¼±íÑùÊ½-ÇøÓò-»æÍ¼Çø ¼ä¸ô±³¾°½çÃæ.
+ * å±æ€§è¡¨, å›¾è¡¨æ ·å¼-åŒºåŸŸ-ç»˜å›¾åŒº é—´éš”èƒŒæ™¯ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-9 ÏÂÎç12:28:47
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-9 ä¸‹åˆ12:28:47
  */
 public abstract class ChartAxisAreaPane extends JPanel {
 	/**
-	 * ¸üĞÂ¼ä¸ô±³¾°½çÃæ.
+	 * æ›´æ–°é—´éš”èƒŒæ™¯ç•Œé¢.
 	 */
 	public abstract void populateBean(Plot plot);
 
 	/**
-	 * ±£´æ¼ä¸ô±³¾°µÄ½çÃæÊôĞÔ.
+	 * ä¿å­˜é—´éš”èƒŒæ™¯çš„ç•Œé¢å±æ€§.
 	 */
 	public abstract void updateBean(Plot plot);
 }

@@ -14,10 +14,10 @@ import com.fr.general.ComparatorUtils;
 import com.fr.stable.js.WidgetName;
 
 /**
- * µ±Ç°µÄÉè¼ÆÆ÷Ä£Ê½
+ * å½“å‰çš„è®¾è®¡å™¨æ¨¡å¼
  *
  * @author zhou
- * @since 2012-7-26ÉÏÎç11:24:54
+ * @since 2012-7-26ä¸Šåˆ11:24:54
  */
 public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplateProvider> {
 
@@ -42,7 +42,7 @@ public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplatePr
     }
 
     /**
-     * ÏìÓ¦Ä¿±ê¸Ä±äÊÂ¼ş.
+     * å“åº”ç›®æ ‡æ”¹å˜äº‹ä»¶.
      */
     public void fireTargetModified() {
         ((JTemplate) this.jTemplate).fireTargetModified();
@@ -56,13 +56,13 @@ public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplatePr
         return new Parameter[0];
     }
 
-    // ±¨±í²ÎÊı
+    // æŠ¥è¡¨å‚æ•°
     public Parameter[] getReportParameters() {
         return new Parameter[0];
     }
 
     /**
-     * Êı¾İÔ´²ÎÊı
+     * æ•°æ®æºå‚æ•°
      *
      * @return
      */
@@ -71,12 +71,12 @@ public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplatePr
     }
 
     /**
-     * ÖØÃüÃûÊı¾İ¼¯
+     * é‡å‘½åæ•°æ®é›†
      *
-     * @param oldName            ¾ÉÃû×Ö
-     * @param newName            ĞÂÃû×Ö
-     * @param isNeedFireModified ÊÇ·ñĞèÒª´¥·¢±£´æ
-     * @return ÖØÃüÃû³É¹¦·µ»ØTrue
+     * @param oldName            æ—§åå­—
+     * @param newName            æ–°åå­—
+     * @param isNeedFireModified æ˜¯å¦éœ€è¦è§¦å‘ä¿å­˜
+     * @return é‡å‘½åæˆåŠŸè¿”å›True
      */
     public boolean renameTableData(String oldName, String newName, boolean isNeedFireModified) {
         if (!ComparatorUtils.equals(oldName, newName)) {
@@ -94,20 +94,20 @@ public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplatePr
     }
 
     /**
-     * ÖØÃüÃûTableDataºóµÄÒ»Ğ©²Ù×÷
+     * é‡å‘½åTableDataåçš„ä¸€äº›æ“ä½œ
      *
-     * @param oldName ¾ÉÃû×Ö
-     * @param newName ĞÂÃû×Ö.
-     * @return ·µ»ØÊÇ·ñÃû×ÖÒ»Ñù.
+     * @param oldName æ—§åå­—
+     * @param newName æ–°åå­—.
+     * @return è¿”å›æ˜¯å¦åå­—ä¸€æ ·.
      */
     public boolean renameTableData(String oldName, String newName) {
         return renameTableData(oldName, newName, true);
     }
 
     /**
-     * ÖØÃüÃûtabledata
+     * é‡å‘½åtabledata
      *
-     * @param map ĞÂÃû×Ö
+     * @param map æ–°åå­—
      */
     public void renameTableData(Map<String, String> map) {
         if (map.isEmpty()) {
@@ -125,17 +125,17 @@ public abstract class DesignModelAdapter<T extends IOFile, S extends JTemplatePr
     public abstract List<WidgetName> getWidgetsName();
 
     /**
-     * »·¾³¸Ä±ä.
+     * ç¯å¢ƒæ”¹å˜.
      */
     public abstract void envChanged();
 
     /**
-     * ²ÎÊı¸Ä±ä.
+     * å‚æ•°æ”¹å˜.
      */
     public abstract void parameterChanged();
 
     /**
-     * ¿Ø¼şÅäÖÃ¸Ä±ä.
+     * æ§ä»¶é…ç½®æ”¹å˜.
      */
     public abstract void widgetConfigChanged();
 }

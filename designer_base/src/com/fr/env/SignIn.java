@@ -9,12 +9,12 @@ import com.fr.general.GeneralContext;
 
 
 public class SignIn {
-    public static Env lastSelectedEnv;// ¼ÇÂ¼×îºóµÇÂ¼µÄEnv
+    public static Env lastSelectedEnv;// è®°å½•æœ€åç™»å½•çš„Env
 
     /**
-     * ×¢²áÈë»·¾³
-     * @param selectedEnv Ñ¡ÔñµÄ»·¾³
-     * @throws Exception Òì³£
+     * æ³¨å†Œå…¥ç¯å¢ƒ
+     * @param selectedEnv é€‰æ‹©çš„ç¯å¢ƒ
+     * @throws Exception å¼‚å¸¸
      */
     public static void signIn(Env selectedEnv) throws Exception {
         boolean validServer;
@@ -28,7 +28,7 @@ public class SignIn {
     }
 
     private static void signOutOldEnv(Env newEnv) {
-        // »·¾³ÏàÍ¬Ö±½Ó·µ»Ø£¬±ÜÃâÀË·Ñ¹ı¶àÊ±¼ä
+        // ç¯å¢ƒç›¸åŒç›´æ¥è¿”å›ï¼Œé¿å…æµªè´¹è¿‡å¤šæ—¶é—´
         if (lastSelectedEnv == null || ComparatorUtils.equals(lastSelectedEnv, newEnv)) {
             return;
         }

@@ -19,7 +19,7 @@ import com.fr.design.gui.ibutton.UIButton;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-6
+ * @since 6.5.4 åˆ›å»ºäºŽ2011-5-6
  */
 public class BlockEditorLayout implements LayoutManager, java.io.Serializable {
 	public static final String CENTER = "center";

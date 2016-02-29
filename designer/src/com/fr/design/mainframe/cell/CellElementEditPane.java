@@ -28,10 +28,10 @@ import com.fr.report.elementcase.TemplateElementCase;
 import com.fr.design.utils.DesignUtils;
 
 /**
- * the new µ¥Ôª¸ñÊôĞÔ±í !!!:Ö»¶Ôµ±Ç°Ñ¡ÖĞµÄÉèÖÃÃæ°å½øĞĞÊı¾İµÄpopulateºÍupdate²Ù×÷
+ * the new å•å…ƒæ ¼å±æ€§è¡¨ !!!:åªå¯¹å½“å‰é€‰ä¸­çš„è®¾ç½®é¢æ¿è¿›è¡Œæ•°æ®çš„populateå’Œupdateæ“ä½œ
  *
  * @author zhou
- * @since 2012-5-8ÏÂÎç12:18:53
+ * @since 2012-5-8ä¸‹åˆ12:18:53
  */
 public class CellElementEditPane extends BasicPane {
     private static int TIME_GAP = 80;
@@ -66,7 +66,7 @@ public class CellElementEditPane extends BasicPane {
             @Override
             public void tabChanged(int index) {
                 card.show(center, paneList.get(index).title4PopupWindow());
-                paneList.get(index).populateBean(cellelement, ePane);// ÉèÖÃÃæ°å±äÁË£¬Ò²Òªpopulate
+                paneList.get(index).populateBean(cellelement, ePane);// è®¾ç½®é¢æ¿å˜äº†ï¼Œä¹Ÿè¦populate
                 paneList.get(index).addAttributeChangeListener(listener);
                 if (titleChangeListener != null) {
                     titleChangeListener.fireTitleChange(getSelectedTabName());
@@ -105,20 +105,20 @@ public class CellElementEditPane extends BasicPane {
         final TemplateElementCase elementCase = ePane.getEditingElementCase();
         if (elementCase != null && selection instanceof CellSelection) {
             CellSelection cs = (CellSelection) selection;
-            // isSelectedOneCell()·½·¨·ÅÔÚÍâÃæÕâ¶ùÒ»ÆğËã£¬ÒòÎªËüÊÇ±È½ÏºÄÊ±¼äµÄ
-            // Èç¹ûÖ±½ÓÖ»´«µİelementCasePane£¬ÄÇÃ´Ã¿¸öAbstratCellAttrPane¶¼ÒªËãÒ»´Î£¬ºÜÀË·ÑÊ±¼ä
+            // isSelectedOneCell()æ–¹æ³•æ”¾åœ¨å¤–é¢è¿™å„¿ä¸€èµ·ç®—ï¼Œå› ä¸ºå®ƒæ˜¯æ¯”è¾ƒè€—æ—¶é—´çš„
+            // å¦‚æœç›´æ¥åªä¼ é€’elementCasePaneï¼Œé‚£ä¹ˆæ¯ä¸ªAbstratCellAttrPaneéƒ½è¦ç®—ä¸€æ¬¡ï¼Œå¾ˆæµªè´¹æ—¶é—´
 
             CellElement cellElement = elementCase.getCellElement(cs.getColumn(), cs.getRow());
             if (cellElement == null) {
                 cellElement = new DefaultTemplateCellElement(cs.getColumn(), cs.getRow());
-                //Ä¬ÈÏÑ¡ÖĞµÄÊÇA1µ¥Ôª¸ñ£¬ËùÒÔÈôÊÇA1µ¥Ôª¸ñÃ»ÓĞ¼Óµ½ÁĞ±íÊ±Òª¼ÓÉÏ£¬·ñÔòÔÚ¾ÛºÏ±¨±íÊ±»á³ö´í
+                //é»˜è®¤é€‰ä¸­çš„æ˜¯A1å•å…ƒæ ¼ï¼Œæ‰€ä»¥è‹¥æ˜¯A1å•å…ƒæ ¼æ²¡æœ‰åŠ åˆ°åˆ—è¡¨æ—¶è¦åŠ ä¸Šï¼Œå¦åˆ™åœ¨èšåˆæŠ¥è¡¨æ—¶ä¼šå‡ºé”™
                 if (cs.isSelectedOneCell(elementCasePane) && (cs.getColumn() + cs.getRow() == 0)) {
                     elementCase.addCellElement((TemplateCellElement) cellElement);
                 }
             }
 
             cellelement = (TemplateCellElement) cellElement;
-            // Õâ¶ùÖ»¶Ôµ±Ç°Ñ¡ÖĞµÄÃæ°åpopulate
+            // è¿™å„¿åªå¯¹å½“å‰é€‰ä¸­çš„é¢æ¿populate
             paneList.get(tabsHeaderIconPane.getSelectedIndex()).populateBean(cellelement, ePane);
             paneList.get(tabsHeaderIconPane.getSelectedIndex()).addAttributeChangeListener(listener);
         }
@@ -155,9 +155,9 @@ public class CellElementEditPane extends BasicPane {
     }
 
     /**
-     * Ìí¼ÓTitleChangeListener
+     * æ·»åŠ TitleChangeListener
      *
-     * @param titleChangeListener titleChangeListener ¼àÌı
+     * @param titleChangeListener titleChangeListener ç›‘å¬
      */
     public void addTitleChangeListner(TitleChangeListener titleChangeListener) {
         this.titleChangeListener = titleChangeListener;

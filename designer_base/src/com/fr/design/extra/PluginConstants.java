@@ -10,17 +10,17 @@ public class PluginConstants {
     public static final String PLUGIN_INSTALL_INFO = "http://feedback.finedevelop.com:3000/plugin";
 
     /**
-     * »ñÈ¡ËùÓÐ²å¼þµÄ·þÎñÆ÷µØÖ·
+     * èŽ·å–æ‰€æœ‰æ’ä»¶çš„æœåŠ¡å™¨åœ°å€
      */
     public static final String PLUGIN_STORE_URL = "http://shop.finereport.com/ShopServer?pg=all_plugin";
 
     /**
-     * »ñÈ¡²å¼þ¸üÐÂÐÅÏ¢µÄ·þÎñÆ÷µØÖ·
+     * èŽ·å–æ’ä»¶æ›´æ–°ä¿¡æ¯çš„æœåŠ¡å™¨åœ°å€
      */
     public static final String PLUGIN_CHECK_UPDATE_URL = "http://shop.finereport.com/ShopServer?pg=all_plugin";
 
     /**
-     * ²å¼þÏÂÔØ·þÎñÆ÷µØÖ·
+     * æ’ä»¶ä¸‹è½½æœåŠ¡å™¨åœ°å€
      */
     public static final String PLUGIN_DOWNLOAD_URL = "http://shop.finereport.com/ShopServer?pg=plugin";
 

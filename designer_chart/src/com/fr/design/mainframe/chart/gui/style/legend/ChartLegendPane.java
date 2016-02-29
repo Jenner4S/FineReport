@@ -24,9 +24,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * ÊôĞÔ±í, Í¼±íÑùÊ½-Í¼Àı ½çÃæ.
+ * å±æ€§è¡¨, å›¾è¡¨æ ·å¼-å›¾ä¾‹ ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-5 ÏÂÎç03:36:44
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-5 ä¸‹åˆ03:36:44
  */
 public class ChartLegendPane extends BasicScrollPane<Chart>{
 	private UICheckBox isLegendVisible;
@@ -104,8 +104,8 @@ public class ChartLegendPane extends BasicScrollPane<Chart>{
 	}
 
     /**
-     * ±êÌâ
-     * @return ±êÌâ
+     * æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_LEGNED_TITLE;

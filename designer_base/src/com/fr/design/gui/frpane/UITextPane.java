@@ -14,7 +14,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-3-27
- * Time: …œŒÁ10:50
+ * Time: ‰∏äÂçà10:50
  */
 public class UITextPane extends JTextPane implements UIObserver {
 

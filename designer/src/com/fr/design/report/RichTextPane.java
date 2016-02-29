@@ -36,12 +36,12 @@ import com.fr.stable.StringUtils;
 
 public class RichTextPane extends BasicPane {
 	
-	//12ºÅ×ÖÌåÓĞ¸öÆæ¹ÖµÄbug, ×ÖÌåÏÂ²¿·ÖäÖÈ¾»á½Ø¶ÏÒ»²¿·Ö, »»ÆäËû×ÖÌåÃ»ÎÊÌâ, ×ÖÌå¸Ä´óĞ¡Ò²Ã»ÎÊÌâ.
-	//Ö±½ÓÅª¸öjtexarea·Åµ½jframeÀïÒ²ÓĞÍ¬ÑùÎÊÌâ, ²»ÖªµÀÊÇ×ÖÌåäÖÈ¾bug»¹ÊÇjdkÎÊÌâ
+	//12å·å­—ä½“æœ‰ä¸ªå¥‡æ€ªçš„bug, å­—ä½“ä¸‹éƒ¨åˆ†æ¸²æŸ“ä¼šæˆªæ–­ä¸€éƒ¨åˆ†, æ¢å…¶ä»–å­—ä½“æ²¡é—®é¢˜, å­—ä½“æ”¹å¤§å°ä¹Ÿæ²¡é—®é¢˜.
+	//ç›´æ¥å¼„ä¸ªjtexareaæ”¾åˆ°jframeé‡Œä¹Ÿæœ‰åŒæ ·é—®é¢˜, ä¸çŸ¥é“æ˜¯å­—ä½“æ¸²æŸ“bugè¿˜æ˜¯jdké—®é¢˜
 	public static final FRFont DEFAUL_FONT = FRFont.getInstance().applySize(13);
 	
 	private RichTextEditingPane textPane;
-	//ÓÃÓÚpopulateÊ±¶¯Ì¬¸üĞÂ°´Å¥
+	//ç”¨äºpopulateæ—¶åŠ¨æ€æ›´æ–°æŒ‰é’®
 	private RichTextToolBar toolBar;
 	
 	public RichTextPane() {
@@ -68,13 +68,13 @@ public class RichTextPane extends BasicPane {
     }
 
     /**
-	 * Õ¹Ê¾¸»ÎÄ±¾
+	 * å±•ç¤ºå¯Œæ–‡æœ¬
 	 * 
-	 * @param report µ±Ç°±¨±í
-	 * @param cellElment µ±Ç°¸ñ×Ó
+	 * @param report å½“å‰æŠ¥è¡¨
+	 * @param cellElment å½“å‰æ ¼å­
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:42:02
+	 * @date 2014-12-6-ä¸‹åˆ6:42:02
 	 * 
 	 */
     public void populate(ElementCase report, CellElement cellElment) {
@@ -90,15 +90,15 @@ public class RichTextPane extends BasicPane {
     		cellValue = StableUtils.convertNumberStringToString(((Number) cellValue), false);
     	}
     	
-    	//²»ÊÇ¸»ÎÄ±¾µÄ, ¾Í×ªÎª×Ö·û´®, ÔÙ×ªÎª¸»ÎÄ±¾.
+    	//ä¸æ˜¯å¯Œæ–‡æœ¬çš„, å°±è½¬ä¸ºå­—ç¬¦ä¸², å†è½¬ä¸ºå¯Œæ–‡æœ¬.
     	if(!(cellValue instanceof RichText)){
-    		//ÓÃ°×Ãûµ¥À´¹ıÂËµ¥Ôª¸ñÖµ, ÏŞ¶¨×Ö·û´®, Êı×ÖÓë¹«Ê½, ÆäËûÀàĞÍµÄ¶¼return.
+    		//ç”¨ç™½åå•æ¥è¿‡æ»¤å•å…ƒæ ¼å€¼, é™å®šå­—ç¬¦ä¸², æ•°å­—ä¸å…¬å¼, å…¶ä»–ç±»å‹çš„éƒ½return.
     		if(!(cellValue instanceof String)){
     			return;
     		}
     		
     		CellGUIAttr guiAttr = cellElment.getCellGUIAttr();
-    		//²»¸Ä±äÔ­ÓĞµÄstyle, Ö±½ÓÓÃĞÂµÄ
+    		//ä¸æ”¹å˜åŸæœ‰çš„style, ç›´æ¥ç”¨æ–°çš„
     		Style style = Style.DEFAULT_STYLE;
     		FRFont font = cellElment.getStyle().getFRFont();
     		double dpi96 = Constants.FR_PAINT_RESOLUTION;
@@ -120,12 +120,12 @@ public class RichTextPane extends BasicPane {
 	}
     
     /**
-	 * ¸üĞÂ¸»ÎÄ±¾
+	 * æ›´æ–°å¯Œæ–‡æœ¬
 	 * 
-	 * @return ¸»ÎÄ±¾Êı¾İ
+	 * @return å¯Œæ–‡æœ¬æ•°æ®
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:41:43
+	 * @date 2014-12-6-ä¸‹åˆ6:41:43
 	 * 
 	 */
     public RichText update() {
@@ -149,7 +149,7 @@ public class RichTextPane extends BasicPane {
 			
 	    	try{
 	    		String charStr = doc.getText(i, 1);
-	    		//´¦Àí¹«Ê½
+	    		//å¤„ç†å…¬å¼
 	    		String formulaContent = parseFormula(charStr, doc, i, len);
 	    		if(StringUtils.isNotEmpty(formulaContent)){
 	    			lastChar = new RichChar(formulaContent, style);
@@ -158,7 +158,7 @@ public class RichTextPane extends BasicPane {
 	        		continue;
 	    		}
 	    		
-	    		//ºÏ²¢ÏàÍ¬ÑùÊ½µÄ×Ö·û
+	    		//åˆå¹¶ç›¸åŒæ ·å¼çš„å­—ç¬¦
 	    		if(lastChar.styleEquals(style)){
 	    			lastChar.appendText(charStr);
 	    			continue;
@@ -172,14 +172,14 @@ public class RichTextPane extends BasicPane {
 		}
     }
     
-    //×ª»»¹«Ê½
+    //è½¬æ¢å…¬å¼
     private String parseFormula(String charStr, DefaultStyledDocument doc, int i, int len){
     	String formula = StringUtils.EMPTY;
 		if(!ComparatorUtils.equals(charStr, "$")){
 			return formula;
 		}
 		try{
-			//$ºóÃæµÄ×Ö·û
+			//$åé¢çš„å­—ç¬¦
 			String restContent= doc.getText(i, len - i);
 			int end = restContent.indexOf("}");
 			
@@ -193,12 +193,12 @@ public class RichTextPane extends BasicPane {
     }
     
     /**
-	 * Éú³É¸»ÎÄ±¾ÎÄµµ
+	 * ç”Ÿæˆå¯Œæ–‡æœ¬æ–‡æ¡£
 	 * 
-	 * @param richText ¸»ÎÄ±¾Êı¾İ
+	 * @param richText å¯Œæ–‡æœ¬æ•°æ®
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:40:32
+	 * @date 2014-12-6-ä¸‹åˆ6:40:32
 	 * 
 	 */
     private void populateDocContent(RichText richText){
@@ -223,13 +223,13 @@ public class RichTextPane extends BasicPane {
     }
     
     /**
-	 * ½«Style×ªÎªswing¸»ÎÄ±¾ÑùÊ½
+	 * å°†Styleè½¬ä¸ºswingå¯Œæ–‡æœ¬æ ·å¼
 	 * 
-	 * @param style µ±Ç°×Ö·ûÑùÊ½
-	 * @param attrs ¸»ÎÄ±¾ÑùÊ½
+	 * @param style å½“å‰å­—ç¬¦æ ·å¼
+	 * @param attrs å¯Œæ–‡æœ¬æ ·å¼
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:39:54
+	 * @date 2014-12-6-ä¸‹åˆ6:39:54
 	 * 
 	 */
     private void populateRichTextStye(Style style, SimpleAttributeSet attrs){
@@ -252,14 +252,14 @@ public class RichTextPane extends BasicPane {
     }
     
     /**
-	 * ¼ÆËã×ÖÌå
+	 * è®¡ç®—å­—ä½“
 	 * 
-	 * @param attrs ÑùÊ½ÊôĞÔ
+	 * @param attrs æ ·å¼å±æ€§
 	 * 
-	 * @return FR×ÖÌå
+	 * @return FRå­—ä½“
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:39:23
+	 * @date 2014-12-6-ä¸‹åˆ6:39:23
 	 * 
 	 */
     private FRFont evalFont(AttributeSet attrs){
@@ -278,14 +278,14 @@ public class RichTextPane extends BasicPane {
     }
     
     /**
-	 * ¼ÆËãÏÂ»®Ïß, Ä¬ÈÏÖ»Ö§³Ö1ÖÖTHIN
+	 * è®¡ç®—ä¸‹åˆ’çº¿, é»˜è®¤åªæ”¯æŒ1ç§THIN
 	 * 
-	 * @param attrs ÑùÊ½ÊôĞÔ
+	 * @param attrs æ ·å¼å±æ€§
 	 * 
-	 * @return ÏÂ»®ÏßÑùÊ½
+	 * @return ä¸‹åˆ’çº¿æ ·å¼
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:38:25
+	 * @date 2014-12-6-ä¸‹åˆ6:38:25
 	 * 
 	 */
     private int evalUnderLine(AttributeSet attrs){
@@ -300,14 +300,14 @@ public class RichTextPane extends BasicPane {
     }
     
     /**
-	 * ¼ÆËã×ÖÌåÑùÊ½, Ä¬ÈÏ0, ¼Ó´Ö1, Ğ±Ìå2
+	 * è®¡ç®—å­—ä½“æ ·å¼, é»˜è®¤0, åŠ ç²—1, æ–œä½“2
 	 * 
-	 * @param attrs ÑùÊ½ÊôĞÔ
+	 * @param attrs æ ·å¼å±æ€§
 	 * 
-	 * @return ×ÖÌåÑùÊ½
+	 * @return å­—ä½“æ ·å¼
 	 * 
 	 *
-	 * @date 2014-12-6-ÏÂÎç6:37:50
+	 * @date 2014-12-6-ä¸‹åˆ6:37:50
 	 * 
 	 */
     private int evalFontStyle(AttributeSet attrs){

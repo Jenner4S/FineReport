@@ -17,11 +17,11 @@ import com.fr.form.ui.container.WAbsoluteLayout.BoundsWidget;
 import com.fr.form.ui.container.cardlayout.WCardMainBorderLayout;
 
 /**
- * card²¼¾ÖÖ÷Ìå¿ò¼Ü
+ * cardå¸ƒå±€ä¸»ä½“æ¡†æ¶
  * 
  *
  *
- * @date: 2014-12-9-ÏÂÎç9:59:31
+ * @date: 2014-12-9-ä¸‹åˆ9:59:31
  */
 public class XWCardMainBorderLayout extends XWBorderLayout{
 	
@@ -33,19 +33,19 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
 	private static final int NORMAL_STYLE = 1;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public XWCardMainBorderLayout(WCardMainBorderLayout border, Dimension dimension) {
 		super(border, dimension);
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°×é¼şÀïµÄ¿Ø¼ş
+	 * è·å–å½“å‰ç»„ä»¶é‡Œçš„æ§ä»¶
 	 * 
-	 * @return ¿Ø¼ş
+	 * @return æ§ä»¶
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:46:33
+	 * @date 2014-12-10-ä¸‹åˆ1:46:33
 	 * 
 	 */
 	public WCardMainBorderLayout toData() {
@@ -53,12 +53,12 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
 	}
 	
 	/**
-	 * Ìí¼Ó±êÌâÇøÓò
+	 * æ·»åŠ æ ‡é¢˜åŒºåŸŸ
 	 * 
-	 * @param title ±êÌâÇøÓò
+	 * @param title æ ‡é¢˜åŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:50:56
+	 * @date 2014-12-10-ä¸‹åˆ1:50:56
 	 * 
 	 */
 	public void addTitlePart(XWCardTitleLayout title){
@@ -66,12 +66,12 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
 	}
 	
 	/**
-	 * Ìí¼ÓcardÇøÓò
+	 * æ·»åŠ cardåŒºåŸŸ
 	 * 
-	 * @param card cardÇøÓò
+	 * @param card cardåŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:50:37
+	 * @date 2014-12-10-ä¸‹åˆ1:50:37
 	 * 
 	 */
 	public void addCardPart(XWCardLayout card){
@@ -87,10 +87,10 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
 	}
 	
     /**
-     * ¿Ø¼şÊ÷ÀïĞèÒªÒş²ØxwcardmainLayout£¬·µ»ØÆä×Ó×é¼şxwcardLayout£»
-     * ±êÌâÑùÊ½ÏÂ£¬this.getComponent(1)==xwcardLayout
-     * ±ê×¼ÑùÊ½ÏÂ£¬this.getComponent(0)==xwcardLayout
-     * @return ×Ó×é¼şxwcardLayout
+     * æ§ä»¶æ ‘é‡Œéœ€è¦éšè—xwcardmainLayoutï¼Œè¿”å›å…¶å­ç»„ä»¶xwcardLayoutï¼›
+     * æ ‡é¢˜æ ·å¼ä¸‹ï¼Œthis.getComponent(1)==xwcardLayout
+     * æ ‡å‡†æ ·å¼ä¸‹ï¼Œthis.getComponent(0)==xwcardLayout
+     * @return å­ç»„ä»¶xwcardLayout
      */
     @Override
     public XCreator getXCreator() {
@@ -104,8 +104,8 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
     	}
     }
 	/**
-	 * ¿Ø¼şÊ÷²»ÏÔÊ¾´Ë×é¼ş
-	 * @param path ¿Ø¼şÊ÷list
+	 * æ§ä»¶æ ‘ä¸æ˜¾ç¤ºæ­¤ç»„ä»¶
+	 * @param path æ§ä»¶æ ‘list
 	 */
 	public void notShowInComponentTree(ArrayList<Component> path) {
 		path.remove(LAYOUT_INDEX);
@@ -123,8 +123,8 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
     }
     
     /**
-     * ÖØĞÂµ÷Õû×Ó×é¼şµÄ¿í¶È
-     * @param ¿í¶È
+     * é‡æ–°è°ƒæ•´å­ç»„ä»¶çš„å®½åº¦
+     * @param å®½åº¦
      */
     public void recalculateChildWidth(int width){
 		ArrayList<?> childrenList = this.getTargetChildrenList();
@@ -154,8 +154,8 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
     }
     
     /**
-     * ÖØĞÂµ÷Õû×Ó×é¼şµÄ¸ß¶È
-     * @param height ¸ß¶È
+     * é‡æ–°è°ƒæ•´å­ç»„ä»¶çš„é«˜åº¦
+     * @param height é«˜åº¦
      */
     public void recalculateChildHeight(int height){
 		ArrayList<?> childrenList = this.getTargetChildrenList();
@@ -168,7 +168,7 @@ public class XWCardMainBorderLayout extends XWBorderLayout{
 				int refSize = tabLayout.getHeight();
 				int offset = height - refSize - WCardMainBorderLayout.TAB_HEIGHT;
 		    	if(offset < 0){
-		    		// Ëõ·ÅÊ±ĞèÒª±¸·İÔ­tab²¼¾Ö¿í¸ß
+		    		// ç¼©æ”¾æ—¶éœ€è¦å¤‡ä»½åŸtabå¸ƒå±€å®½é«˜
 		    		tabLayout.setReferDim(new Dimension(tabLayout.getWidth(),tabLayout.getHeight()));
 		    	}
 				double percent = (double) offset / refSize;

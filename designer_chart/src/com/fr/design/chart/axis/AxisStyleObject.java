@@ -8,7 +8,7 @@ import com.fr.design.mainframe.chart.gui.style.axis.ChartAxisUsePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-2
- * Time   : ÏÂÎç2:40
+ * Time   : ä¸‹åˆ2:40
  */
 public class AxisStyleObject {
     private String name;

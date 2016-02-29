@@ -7,8 +7,8 @@ import com.fr.design.style.color.ColorUIComboBoxPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-24 ÏÂÎç03:42:10
- * ÀàËµÃ÷: Ã»ÓĞÍ¼Æ¬Ñ¡ÔñµÄ±³¾° box
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-24 ä¸‹åˆ03:42:10
+ * ç±»è¯´æ˜: æ²¡æœ‰å›¾ç‰‡é€‰æ‹©çš„èƒŒæ™¯ box
  */
 public class BackgroundUIComboBoxNoImagePane extends BackgroundUIComboBoxPane {
 	private static final long serialVersionUID = 7083594227200640469L;

@@ -21,7 +21,7 @@ public class AccessibleColorEditor extends BaseAccessibleEditor implements Color
     private ColorPalette palette;
     private Color defaultColor;
     
-    // Ñ¡ÖĞÑÕÉ«
+    // é€‰ä¸­é¢œè‰²
     private Color choosedColor;
 
     public AccessibleColorEditor() {
@@ -103,9 +103,9 @@ public class AccessibleColorEditor extends BaseAccessibleEditor implements Color
 
 	@Override
 	/**
-	 * ²»´¦Àí
+	 * ä¸å¤„ç†
 	 * 
-	 * @param colorCell ÑÕÉ«µ¥Ôª¸ñ
+	 * @param colorCell é¢œè‰²å•å…ƒæ ¼
 	 * 
 	 */
 	public void colorSetted(ColorCell colorCell) {

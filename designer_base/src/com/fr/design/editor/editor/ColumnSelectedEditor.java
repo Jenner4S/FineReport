@@ -16,10 +16,10 @@ import java.awt.event.ItemListener;
 import java.util.regex.Pattern;
 
 /**
- * 选择数据列编辑器
+ * 閫夋嫨鏁版嵁鍒楃紪杈戝櫒
  *
  * @author zhou
- * @since 2012-3-29下午6:05:08
+ * @since 2012-3-29涓嬪崍6:05:08
  */
 public class ColumnSelectedEditor extends Editor<SimpleDSColumn> {
 	TableDataComboBox tableDataComboBox;

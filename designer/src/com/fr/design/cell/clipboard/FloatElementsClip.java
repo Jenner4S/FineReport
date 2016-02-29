@@ -26,10 +26,10 @@ public class FloatElementsClip implements Cloneable, java.io.Serializable,FloatE
     }
     
     /**
-     * Ğü¸¡ÔªËØµÄÕ³Ìù
+     * æ‚¬æµ®å…ƒç´ çš„ç²˜è´´
      * 
-     * @param ec µ¥Ôª¸ñ
-     * @return Õ³ÌùµÄĞü¸¡ÔªËØ
+     * @param ec å•å…ƒæ ¼
+     * @return ç²˜è´´çš„æ‚¬æµ®å…ƒç´ 
      */
     public FloatSelection pasteAt(TemplateElementCase ec) {
     	if (floatEl == null) {

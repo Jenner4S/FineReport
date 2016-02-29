@@ -1,55 +1,43 @@
 package com.fr.design.webattr;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
-
-import javax.swing.Icon;
-
-import com.fr.design.ExtraDesignClassManager;
-import com.fr.design.gui.ilable.UILabel;
-
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-
 import com.fr.base.BaseUtils;
+import com.fr.design.ExtraDesignClassManager;
+import com.fr.design.gui.core.WidgetOption;
 import com.fr.design.gui.ibutton.UIButton;
 import com.fr.design.gui.icheckbox.UICheckBox;
+import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.mainframe.DesignerContext;
-import com.fr.design.gui.core.WidgetOption;
+import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.form.ui.Widget;
 import com.fr.general.Inter;
 import com.fr.report.web.Location;
 import com.fr.report.web.ToolBarManager;
 import com.fr.stable.ArrayUtils;
 import com.fr.stable.StringUtils;
-import com.fr.design.utils.gui.GUICoreUtils;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.ImageObserver;
 
 /**
- * ĞÂµÄÍÏ×§ToolBar buttonÒÔÊµÏÖ×Ô¶¨Òå¹¤¾ßÀ¸ ±¨±íwebÉèÖÃÄÇ¶ùµÄ.Ó¦¸Ã²»½ĞToolBarDragPane£¬ÒòÎªÊµ¼ÊÃ»ÓĞÌá¹©drag¹¦ÄÜ
+ * æ–°çš„æ‹–æ‹½ToolBar buttonä»¥å®ç°è‡ªå®šä¹‰å·¥å…·æ  æŠ¥è¡¨webè®¾ç½®é‚£å„¿çš„.åº”è¯¥ä¸å«ToolBarDragPaneï¼Œå› ä¸ºå®é™…æ²¡æœ‰æä¾›dragåŠŸèƒ½
  * 
- * @editor zhou 2012-3-22ÏÂÎç3:57:22
+ * @editor zhou 2012-3-22ä¸‹åˆ3:57:22
  */
 
 public class ToolBarDragPane extends WidgetToolBarPane {
 	private static final int COLUMN = 4;
-	private int row = 5;
+	private int row = 6;
 	private DefaultTableModel toolbarButtonTableModel;
 	private JTable layoutTable;
-	private UICheckBox isUseToolBarCheckBox = new UICheckBox(Inter.getLocText("Use_ToolBar") + ":"); // ÊÇ·ñÊ¹ÓÃ¹¤¾ßÀ¸
+	private UICheckBox isUseToolBarCheckBox = new UICheckBox(Inter.getLocText("FR-Designer_Use_ToolBar") + ":"); // æ˜¯å¦ä½¿ç”¨å·¥å…·æ 
 	private boolean isEnabled;
 
 	public ToolBarDragPane() {
@@ -61,8 +49,8 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 		toolbarButtonTableModel = new TableModel(row ,COLUMN);
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		JPanel north = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		UIButton defaultButton = new UIButton(Inter.getLocText("Restore-Default"));
-		// »Ö¸´Ä¬ÈÏ°´Å¥
+		UIButton defaultButton = new UIButton(Inter.getLocText("FR-Designer_Restore_Default"));
+		// æ¢å¤é»˜è®¤æŒ‰é’®
 		defaultButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				northToolBar.removeButtonList();
@@ -110,7 +98,7 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 					northToolBar.validate();
 					northToolBar.repaint();
 				} else {
-					JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("ChooseOneButton"));
+					JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("FR-Designer_ChooseOneButton"));
 				}
 			}
 		});
@@ -134,7 +122,7 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 					southToolBar.validate();
 					southToolBar.repaint();
 				} else {
-					JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("ChooseOneButton"));
+					JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), Inter.getLocText("FR-Designer_ChooseOneButton"));
 				}
 			}
 		});
@@ -171,13 +159,13 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 		southToolBar.setBackground(Color.lightGray);
 		JPanel movePane = FRGUIPaneFactory.createBorderLayout_S_Pane();
 		JPanel northContentPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		SettingToolBar top = new SettingToolBar(Inter.getLocText("ToolBar_Top"), northToolBar);
+		SettingToolBar top = new SettingToolBar(Inter.getLocText("FR-Designer_ToolBar_Top"), northToolBar);
 		northContentPane.add(top, BorderLayout.EAST);
 		northContentPane.add(northToolBar, BorderLayout.CENTER);
 		northContentPane.setBackground(Color.lightGray);
 
 		JPanel southContentPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
-		SettingToolBar bottom = new SettingToolBar(Inter.getLocText("ToolBar_Bottom"), southToolBar);
+		SettingToolBar bottom = new SettingToolBar(Inter.getLocText("FR-Designer_ToolBar_Bottom"), southToolBar);
 		southContentPane.add(bottom, BorderLayout.EAST);
 		southContentPane.add(southToolBar, BorderLayout.CENTER);
 		southContentPane.setBackground(Color.lightGray);
@@ -205,8 +193,8 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 	}
 
 	/**
-	 * ÊÇ·ñ±»Ñ¡ÖĞ
-	 * @return Í¬ÉÏ
+	 * æ˜¯å¦è¢«é€‰ä¸­
+	 * @return åŒä¸Š
 	 */
 	public boolean isUseToolbar() {
 		return this.isUseToolBarCheckBox.isSelected();
@@ -217,7 +205,7 @@ public class ToolBarDragPane extends WidgetToolBarPane {
 			super(i, j);
 		}
 
-		// ½ûÖ¹jtableµÄË«»÷±à¼­¹¦ÄÜ
+		// ç¦æ­¢jtableçš„åŒå‡»ç¼–è¾‘åŠŸèƒ½
 		public boolean isCellEditable(int row, int column) {
 			return false;
 		}

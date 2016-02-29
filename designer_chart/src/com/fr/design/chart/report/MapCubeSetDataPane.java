@@ -19,13 +19,13 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * µØÍ¼, ÏÂ²ã×êÈ¡ÉèÖÃ
+ * åœ°å›¾, ä¸‹å±‚é’»å–è®¾ç½®
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-19 ÏÂÎç03:19:53
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-19 ä¸‹åˆ03:19:53
  */
 public class MapCubeSetDataPane extends BasicBeanPane<List>{
 	
-	private UITableEditorPane tableEditorPane;// µØÍ¼Ãû³Æ  +  µØÍ¼ÀàĞÍÁĞ±í
+	private UITableEditorPane tableEditorPane;// åœ°å›¾åç§°  +  åœ°å›¾ç±»å‹åˆ—è¡¨
 	
 	private String[] initNames = new String[]{""};
 	
@@ -51,20 +51,20 @@ public class MapCubeSetDataPane extends BasicBeanPane<List>{
 	}
 	
 	/**
-	 * Ë¢ĞÂÏÂÀ­ÁĞ±í
+	 * åˆ·æ–°ä¸‹æ‹‰åˆ—è¡¨
 	 */
 	public void freshComboxNames() {
 		initNames = MapSvgXMLHelper.getInstance().mapAllNames();
 	}
 
     /**
-     * Î»Í¼µØÍ¼Ë¢ĞÂÏÂÀ­ÁĞ±í
+     * ä½å›¾åœ°å›¾åˆ·æ–°ä¸‹æ‹‰åˆ—è¡¨
      */
     public void freshBitMapComboxNames() {
         initNames = MapXMLHelper.getInstance().mapAllNames();
     }
 	
-	// ĞèÒªµÃµ½µØÍ¼ ËùÓĞÇøÓòÃû³Æ. ÒÔ¼°¶ÔÓ¦ºÃµÄÃû×Ö.
+	// éœ€è¦å¾—åˆ°åœ°å›¾ æ‰€æœ‰åŒºåŸŸåç§°. ä»¥åŠå¯¹åº”å¥½çš„åå­—.
 	@Override
 	public void populateBean(List ob) {
 		tableEditorPane.populate(ob.toArray());
@@ -81,9 +81,9 @@ public class MapCubeSetDataPane extends BasicBeanPane<List>{
 	}
 	
 	/**
-	 * refresh TODO Ö»ÊÇĞèÒªËæÊ±¸üĞÂinitNames
+	 * refresh TODO åªæ˜¯éœ€è¦éšæ—¶æ›´æ–°initNames
 	* @author kunsnat E-mail:kunsnat@gmail.com
-	* @version ´´½¨Ê±¼ä£º2012-11-20 ÏÂÎç05:12:20
+	* @version åˆ›å»ºæ—¶é—´ï¼š2012-11-20 ä¸‹åˆ05:12:20
 	 */
 	
 	private class DefaultComboBoxEditor extends AbstractCellEditor implements TableCellEditor {

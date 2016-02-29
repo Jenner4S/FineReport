@@ -22,7 +22,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * µ¥Ôª¸ñÀ©Õ¹ÊôĞÔÃæ°å£¬ÊÇÊôĞÔ±íÃæ°åµÄÒ»¸öÖÖÀà
+ * å•å…ƒæ ¼æ‰©å±•å±æ€§é¢æ¿ï¼Œæ˜¯å±æ€§è¡¨é¢æ¿çš„ä¸€ä¸ªç§ç±»
  */
 public class CellExpandAttrPane extends AbstractCellAttrPane {
 	private UIButtonGroup<Byte> expandDirectionButton;
@@ -172,7 +172,7 @@ public class CellExpandAttrPane extends AbstractCellAttrPane {
 		int cellRectangleCount = cs.getCellRectangleCount();
 		for (int rect = 0; rect < cellRectangleCount; rect++) {
 			Rectangle cellRectangle = cs.getCellRectangle(rect);
-			// ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
+			// éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
 			for (int j = 0; j < cellRectangle.height; j++) {
 				for (int i = 0; i < cellRectangle.width; i++) {
 					int column = i + cellRectangle.x;

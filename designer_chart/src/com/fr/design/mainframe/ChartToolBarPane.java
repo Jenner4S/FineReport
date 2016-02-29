@@ -33,7 +33,7 @@ import java.awt.event.MouseEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç8:32
+ * Time: ä¸‹åˆ8:32
  */
 public class ChartToolBarPane extends JPanel {
     public static final int TOTAL_HEIGHT = 42;
@@ -103,9 +103,9 @@ public class ChartToolBarPane extends JPanel {
             }
         }
     };
-    private PlotPane4ToolBar subChartTypesPane;//Ä¬ÈÏÖùĞÎÍ¼
+    private PlotPane4ToolBar subChartTypesPane;//é»˜è®¤æŸ±å½¢å›¾
 
-    private AbstractMapPlotPane4ToolBar mapTypePane;//µØÍ¼ÀàĞÍÑ¡ÔñµÄÃæ°å
+    private AbstractMapPlotPane4ToolBar mapTypePane;//åœ°å›¾ç±»å‹é€‰æ‹©çš„é¢æ¿
     private JPanel centerPane;
 
     private ChartDesigner chartDesigner;
@@ -123,7 +123,7 @@ public class ChartToolBarPane extends JPanel {
             newPlot = subChartTypesPane.setSelectedClonedPlotWithCondition(chart.getPlot());
             chartDesigner.fireTargetModified();
             UIButton button = (UIButton)e.getSource();
-            //Èç¹ûÊÇµÚ¶ş´ÎÑ¡ÖĞ£¬¾ÍÊÇÏû³ı
+            //å¦‚æœæ˜¯ç¬¬äºŒæ¬¡é€‰ä¸­ï¼Œå°±æ˜¯æ¶ˆé™¤
             if(button.isSelected()){
                 button.setSelected(false);
                 chart.setPlot(newPlot);
@@ -177,7 +177,7 @@ public class ChartToolBarPane extends JPanel {
 
     public ChartToolBarPane(ChartDesigner designer) {
         chartDesigner = designer;
-        subChartTypesPane = new ColumnPlotPane4ToolBar(designer);//Ä¬ÈÏÖùĞÎÍ¼
+        subChartTypesPane = new ColumnPlotPane4ToolBar(designer);//é»˜è®¤æŸ±å½¢å›¾
         this.setLayout(new BorderLayout());
         this.setBorder(new EmptyBorder(GAP, COM_GAP, GAP, 0));
         plotTypeComboBoxPane = new JPanel();
@@ -185,7 +185,7 @@ public class ChartToolBarPane extends JPanel {
         plotTypeComboBoxPane.setLayout(new BorderLayout());
         plotTypeComboBoxPane.add(chooseComboBox, BorderLayout.CENTER);
         chooseComboBox.addItemListener(itemListener);
-        //Ä¬ÈÏÑ¡ÔñµÚÒ»¸ö
+        //é»˜è®¤é€‰æ‹©ç¬¬ä¸€ä¸ª
         chooseComboBox.setSelectedIndex(0);
         this.add(plotTypeComboBoxPane, BorderLayout.WEST);
         initStylePane();
@@ -214,7 +214,7 @@ public class ChartToolBarPane extends JPanel {
     }
 
     /**
-     * Çå³ı¹¤¾ßÀ¸ÉÏÃæÈ«¾Ö·ç¸ñ°´Å¥µÄÑ¡ÖĞ
+     * æ¸…é™¤å·¥å…·æ ä¸Šé¢å…¨å±€é£æ ¼æŒ‰é’®çš„é€‰ä¸­
      */
     public void clearStyleChoose() {
         topDownShade.setSelected(false);
@@ -243,7 +243,7 @@ public class ChartToolBarPane extends JPanel {
         }
     }
 
-    //Í¼±íÇøÊôĞÔÇå¿Õ
+    //å›¾è¡¨åŒºå±æ€§æ¸…ç©º
     private void resetChart(Chart chart) {
         chart.setTitle(new Title(chart.getTitle().getTextObject()));
         chart.setBorderStyle(Constants.LINE_NONE);
@@ -252,13 +252,13 @@ public class ChartToolBarPane extends JPanel {
         setPlotFillStyle(chart);
     }
 
-    //¸ß¹â½¥±äµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //é«˜å…‰æ¸å˜çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4HighLight(Chart chart) {
         if (chart != null) {
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -267,17 +267,17 @@ public class ChartToolBarPane extends JPanel {
             title.setPosition(Constants.LEFT);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(51, 51, 51)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(138, 140, 139)));
             legend.setPosition(Constants.RIGHT_TOP);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if (chart.getPlot() instanceof CategoryPlot) {
                 CategoryPlot plot = (CategoryPlot) chart.getPlot();
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(204, 220, 228));
@@ -286,7 +286,7 @@ public class ChartToolBarPane extends JPanel {
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(138, 140, 139)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setAxisStyle(Constants.NONE);
                 valueAxis.setAxisColor(null);
@@ -295,7 +295,7 @@ public class ChartToolBarPane extends JPanel {
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.getTextAttr().setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 10f, new Color(138, 140, 139)));
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.setBorderStyle(Constants.LINE_THIN);
                 plot.setBorderColor(new Color(204, 220, 228));
                 plot.setBackground(ColorBackground.getInstance(new Color(248, 247, 245)));
@@ -306,13 +306,13 @@ public class ChartToolBarPane extends JPanel {
         }
     }
 
-    //Æ½Ãæ3DµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //å¹³é¢3Dçš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Plane3D(Chart chart) {
         if (chart != null) {
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -321,16 +321,16 @@ public class ChartToolBarPane extends JPanel {
             title.setPosition(Constants.CENTER);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 16f, new Color(51, 51, 51)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(128, 128, 128)));
             legend.setPosition(Constants.TOP);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if (chart.getPlot() instanceof CategoryPlot) {
                 CategoryPlot plot = (CategoryPlot) chart.getPlot();
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(57, 57, 57));
@@ -339,19 +339,19 @@ public class ChartToolBarPane extends JPanel {
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(57, 57, 57)));
 
-                //ÖµÖáÉèÖÃ
+                //å€¼è½´è®¾ç½®
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
                 valueAxis.setTickMarkType(Constants.TICK_MARK_NONE);
                 valueAxis.setSecTickMarkType(Constants.TICK_MARK_NONE);
                 valueAxis.setShowAxisLabel(false);
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.getyAxis().setMainGridStyle(Constants.LINE_THIN);
                 plot.getyAxis().setMainGridColor(new Color(192, 192, 192));
                 chart.setBorderStyle(Constants.LINE_NONE);
 
-                //Êı¾İ±êÇ©
+                //æ•°æ®æ ‡ç­¾
                 ConditionAttr attrList = plot.getConditionCollection().getDefaultAttr();
                 DataSeriesCondition attr = attrList.getExisted(AttrContents.class);
                 if (attr != null) {
@@ -366,13 +366,13 @@ public class ChartToolBarPane extends JPanel {
         }
     }
 
-    //Í¸Ã÷·ç¸ñµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //é€æ˜é£æ ¼çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Transparent(Chart chart) {
         if (chart != null) {
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -381,23 +381,23 @@ public class ChartToolBarPane extends JPanel {
             title.setPosition(Constants.LEFT);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(192, 192, 192)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(138, 140, 139)));
             legend.setPosition(Constants.RIGHT_TOP);
             chart.getPlot().setLegend(legend);
 
             Plot plot = chart.getPlot();
-            //»æÍ¼Çø
+            //ç»˜å›¾åŒº
             chart.setBackground(ColorBackground.getInstance(new Color(51, 51, 51)));
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if (plot instanceof CategoryPlot) {
-                //±ß¿ò
+                //è¾¹æ¡†
                 plot.setBorderStyle(Constants.LINE_THIN);
                 plot.setBorderColor(new Color(65, 65, 65));
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(192, 192, 192));
@@ -406,7 +406,7 @@ public class ChartToolBarPane extends JPanel {
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(150, 150, 150)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
@@ -417,13 +417,13 @@ public class ChartToolBarPane extends JPanel {
         }
     }
 
-    //½¥±äµÄÄ¬ÈÏÊôĞÔÉèÖÃ
+    //æ¸å˜çš„é»˜è®¤å±æ€§è®¾ç½®
     private void createCondition4Shade(Chart chart) {
         if (chart != null) {
-            //±êÌâ
+            //æ ‡é¢˜
             Title title = new Title(chart.getTitle().getTextObject());
             chart.setTitle(title);
-            title.setTitleVisble(true);
+            title.setTitleVisible(true);
             TextAttr textAttr = title.getTextAttr();
             if (textAttr == null) {
                 textAttr = new TextAttr();
@@ -432,17 +432,17 @@ public class ChartToolBarPane extends JPanel {
             title.setPosition(Constants.CENTER);
             textAttr.setFRFont(FRFont.getInstance("Microsoft YaHei", Font.BOLD, 16f, new Color(0, 51, 102)));
 
-            //Í¼Àı
+            //å›¾ä¾‹
             Legend legend = new Legend();
             legend.setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 9f, new Color(128, 128, 128)));
             legend.setPosition(Constants.BOTTOM);
             chart.getPlot().setLegend(legend);
 
-            //·ÖÀàÖá,ÏÖÔÚÖ»ÓĞÖùĞÎÍ¼£¬ÌõĞÎÍ¼£¬Ãæ»ıÍ¼
+            //åˆ†ç±»è½´,ç°åœ¨åªæœ‰æŸ±å½¢å›¾ï¼Œæ¡å½¢å›¾ï¼Œé¢ç§¯å›¾
             if (chart.getPlot() instanceof CategoryPlot) {
                 CategoryPlot plot = (CategoryPlot) chart.getPlot();
 
-                //·ÖÀàÖáÉèÖÃ
+                //åˆ†ç±»è½´è®¾ç½®
                 Axis cateAxis = plot.getxAxis();
                 cateAxis.setAxisStyle(Constants.LINE_THICK);
                 cateAxis.setAxisColor(new Color(73, 100, 117));
@@ -451,13 +451,13 @@ public class ChartToolBarPane extends JPanel {
                 cateAxis.setShowAxisLabel(true);
                 cateAxis.getTextAttr().setFRFont(FRFont.getInstance("Microsoft YaHei", Font.PLAIN, 10f, new Color(128, 128, 128)));
 
-                //ÖµÖá
+                //å€¼è½´
                 Axis valueAxis = plot.getyAxis();
                 valueAxis.setShowAxisLabel(true);
                 valueAxis.getTextAttr().setFRFont(FRFont.getInstance("SimSun", Font.PLAIN, 10f, new Color(128, 128, 128)));
                 valueAxis.setAxisStyle(Constants.LINE_NONE);
 
-                //»æÍ¼Çø
+                //ç»˜å›¾åŒº
                 plot.getyAxis().setMainGridStyle(Constants.LINE_THIN);
                 plot.getyAxis().setMainGridColor(new Color(192, 192, 192));
                 plot.setHorizontalIntervalBackgroundColor(new Color(243, 243, 243));

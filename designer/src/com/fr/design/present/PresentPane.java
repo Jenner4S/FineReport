@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author zhou
- * @since 2012-5-31ÉÏÎç11:22:28
+ * @since 2012-5-31ä¸Šåˆ11:22:28
  */
 public class PresentPane extends UIComboBoxPane<Present> {
 	private DictPresentPane dictPresentPane;
@@ -37,8 +37,8 @@ public class PresentPane extends UIComboBoxPane<Present> {
 	}
 
     /**
-     * Ôö¼Ótab¸Ä±ä¼àÌıÊÂ¼ş
-     * @param l   ¼àÌıÊÂ¼ş
+     * å¢åŠ tabæ”¹å˜ç›‘å¬äº‹ä»¶
+     * @param l   ç›‘å¬äº‹ä»¶
      */
 	public void addTabChangeListener(ItemListener l) {
 		super.addTabChangeListener(l);
@@ -103,6 +103,6 @@ public class PresentPane extends UIComboBoxPane<Present> {
 
 	@Override
 	protected void addComboBoxItem(List<FurtherBasicBeanPane<? extends Present>> cards, int index) {
-		// ³õÊ¼»¯µÄÊ±ºòÒÑ¾­¼ÓÁË£¬ËùÒÔÕâÀï²»ÓÃ¼ÓÁË
+		// åˆå§‹åŒ–çš„æ—¶å€™å·²ç»åŠ äº†ï¼Œæ‰€ä»¥è¿™é‡Œä¸ç”¨åŠ äº†
 	}
 }

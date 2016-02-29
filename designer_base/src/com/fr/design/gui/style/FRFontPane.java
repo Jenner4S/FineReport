@@ -156,8 +156,8 @@ public class FRFontPane extends AbstractBasicStylePane implements GlobalNameObse
         boolean isSuper = frFont.isSuperscript();
         boolean isSub = frFont.isSubscript();
         if (ComparatorUtils.equals(globalNameListener.getGlobalName(), Inter.getLocText("FRFont-Superscript"))) {
-            //Èç¹ûÉÏ±êÃ»ÓĞÑ¡ÖĞ,µã»÷ÔòÑ¡ÖĞÉÏ±ê£¬²¢ÇÒÏÂ±êÒ»¶¨ÊÇ²»Ñ¡ÖĞ×´Ì¬
-            //Èç¹ûÉÏ±êÑ¡ÖĞ£¬µã»÷ÔòÈ¡ÏûÑ¡ÖĞÉÏ±ê£¬×ÖÌå»Ø¸´Õı³£
+            //å¦‚æœä¸Šæ ‡æ²¡æœ‰é€‰ä¸­,ç‚¹å‡»åˆ™é€‰ä¸­ä¸Šæ ‡ï¼Œå¹¶ä¸”ä¸‹æ ‡ä¸€å®šæ˜¯ä¸é€‰ä¸­çŠ¶æ€
+            //å¦‚æœä¸Šæ ‡é€‰ä¸­ï¼Œç‚¹å‡»åˆ™å–æ¶ˆé€‰ä¸­ä¸Šæ ‡ï¼Œå­—ä½“å›å¤æ­£å¸¸
             if (superPane.isSelected() && !isSuper) {
                 frFont = frFont.applySuperscript(true);
                 frFont = frFont.applySubscript(false);
@@ -326,7 +326,7 @@ public class FRFontPane extends AbstractBasicStylePane implements GlobalNameObse
     }
 
     /**
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerNameListener(GlobalNameListener listener) {
         globalNameListener = listener;

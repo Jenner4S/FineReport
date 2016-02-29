@@ -28,9 +28,9 @@ import com.fr.general.Inter;
 import com.fr.stable.StringUtils;
 
 /**
- * ¶à²ãµØÍ¼, Êı¾İ¼¯¶¨Òå, ¶à²ãÇĞ»» ½çÃæ.
+ * å¤šå±‚åœ°å›¾, æ•°æ®é›†å®šä¹‰, å¤šå±‚åˆ‡æ¢ ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-4-22 ÏÂÎç03:27:51
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-4-22 ä¸‹åˆ03:27:51
  */
 public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefinition> implements UIObserver{
 	private static final long serialVersionUID = 8135457041761804584L;
@@ -38,7 +38,7 @@ public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefi
 	private String title = StringUtils.EMPTY;
 	
 	private UIComboBox areaNameBox;
-	private UICorrelationPane tabPane;// ÎÄ±¾¿ò + ÏÂÀ­¿ò
+	private UICorrelationPane tabPane;// æ–‡æœ¬æ¡† + ä¸‹æ‹‰æ¡†
 	
 	private Object[] boxItems = new Object[]{""};
 	
@@ -79,7 +79,7 @@ public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefi
 	}
 	
 	/**
-	 * ³õÊ¼»¯ BoxµÄÑ¡Ïî.
+	 * åˆå§‹åŒ– Boxçš„é€‰é¡¹.
 	 */
 	public void initAreaComBox(Object[] values) {
 		Object oldSelected = areaNameBox.getSelectedItem();
@@ -113,7 +113,7 @@ public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefi
 		}
 	}
 	
-	public MapSingleLayerTableDefinition updateBean() {// ²»ĞèÒªÊı¾İ¼¯, 
+	public MapSingleLayerTableDefinition updateBean() {// ä¸éœ€è¦æ•°æ®é›†, 
 		MapSingleLayerTableDefinition definition = new MapSingleLayerTableDefinition();
 		
 		if(areaNameBox.getSelectedItem() != null) {
@@ -134,11 +134,11 @@ public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefi
 		return definition;
 	}
 	
-	private class InnerTableEditor extends UITableEditor {// ÎÄ±¾¿ò  + ÏÂÀ­¿ò
+	private class InnerTableEditor extends UITableEditor {// æ–‡æœ¬æ¡†  + ä¸‹æ‹‰æ¡†
 		private JComponent editorComponent;
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
 		 */
 		public Object getCellEditorValue() {
 			if(editorComponent instanceof UIComboBox) {
@@ -151,7 +151,7 @@ public class MapMoreTableIndexPane extends BasicBeanPane<MapSingleLayerTableDefi
 		}
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷..
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨..
 		 */
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 			if (column == table.getModel().getColumnCount()) {

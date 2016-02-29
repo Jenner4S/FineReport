@@ -32,7 +32,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
 	private static final int DEPEND_LINE_SOCOPE = 3;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * @param container
 	 */
 	public FRFitLayoutPainter(XLayoutContainer container) {
@@ -40,10 +40,10 @@ public class FRFitLayoutPainter extends AbstractPainter{
 	}
 	
 	/**
-	 * ×é¼şäÖÈ¾
-	 * @param g »­Í¼Àà
-	 * @param startX ¿ªÊ¼Î»ÖÃx
-	 * @param startY ¿ªÊ¼Î»ÖÃy
+	 * ç»„ä»¶æ¸²æŸ“
+	 * @param g ç”»å›¾ç±»
+	 * @param startX å¼€å§‹ä½ç½®x
+	 * @param startY å¼€å§‹ä½ç½®y
 	 */
 	@Override
     public void paint(Graphics g, int startX, int startY) {
@@ -71,7 +71,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
         	Rectangle rec = currentComp.getBounds();
         	hot_rec = currentComp == container ? new int[]{x, y, 0, 0} : new int[]{rec.x, rec.y, rec.width, rec.height};
         }
-        // tab²¼¾ÖµÄ±ß½çÌáÊ¾ÇøÓò
+        // tabå¸ƒå±€çš„è¾¹ç•Œæç¤ºåŒºåŸŸ
         if(!ComparatorUtils.equals(container.getBackupParent(),container.getOuterLayout()) && adapter.intersectsEdge(x, y, container)){
         	dealHotspotOfTab(hot_rec,container,x,y,bColor,g,accept);
         	return;
@@ -80,8 +80,8 @@ public class FRFitLayoutPainter extends AbstractPainter{
         hot_rec[Y] += hotspot_bounds.y;
         drawRegionBackground(g, hot_rec[X], hot_rec[Y], hot_rec[WIDTH], hot_rec[HEIGHT], bColor, accept);
         if (accept) {
-        	//»­½»²æÇøÓòºÍÖĞ¼äµãÇøÓò
-        	// ÍÏÈëµÄÇøÓòÒ²¸ÄÎªÕû¸öäÖÈ¾£¬µãÇøÓòµÄºó»­ÏÂ£¬²»È»±»ÕÚ×¡ÁË
+        	//ç”»äº¤å‰åŒºåŸŸå’Œä¸­é—´ç‚¹åŒºåŸŸ
+        	// æ‹–å…¥çš„åŒºåŸŸä¹Ÿæ”¹ä¸ºæ•´ä¸ªæ¸²æŸ“ï¼Œç‚¹åŒºåŸŸçš„åç”»ä¸‹ï¼Œä¸ç„¶è¢«é®ä½äº†
         	paintCrossPoint(currentComp, g, x, y);
         }
     }
@@ -91,9 +91,9 @@ public class FRFitLayoutPainter extends AbstractPainter{
 		int containerY = container.getY();
 		int containerWidth = container.getWidth();
 		int containerHeight = container.getHeight();
-		// µ±Ç°×ø±êµã
+		// å½“å‰åæ ‡ç‚¹
 		Rectangle currentXY = new Rectangle(x, y, 1, 1);
-		// ÉÏ±ßÔµ
+		// ä¸Šè¾¹ç¼˜
 		Rectangle upEdge = new Rectangle(containerX, containerY, containerWidth, BORDER_PROPORTION);
 		if(upEdge.intersects(currentXY)){
 			hotspot_bounds.y -= WCardMainBorderLayout.TAB_HEIGHT;
@@ -102,7 +102,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
 		}
 		
 		int bottomY = containerY + containerHeight - BORDER_PROPORTION;
-		// ÏÂ±ßÔµ
+		// ä¸‹è¾¹ç¼˜
 		Rectangle bottomEdge = new Rectangle(containerX, bottomY, containerWidth, BORDER_PROPORTION);
 		if(bottomEdge.intersects(currentXY)){
 			hotspot_bounds.y -= WCardMainBorderLayout.TAB_HEIGHT/2;
@@ -111,10 +111,10 @@ public class FRFitLayoutPainter extends AbstractPainter{
     		accept = false;
 		}
 		
-		//×óÓÒ±ßÔµµÄ¸ß¶È -10*2 ÊÇÎªÁË²»ºÍÉÏÏÂ±ßÔµÖØºÏ
+		//å·¦å³è¾¹ç¼˜çš„é«˜åº¦ -10*2 æ˜¯ä¸ºäº†ä¸å’Œä¸Šä¸‹è¾¹ç¼˜é‡åˆ
 		int verticalHeight = containerHeight - BORDER_PROPORTION * 2;
 		int leftY = containerY + BORDER_PROPORTION;
-		// ×ó±ßÔµ 
+		// å·¦è¾¹ç¼˜ 
 		Rectangle leftEdge = new Rectangle(containerX, leftY, BORDER_PROPORTION, verticalHeight);
 		if(leftEdge.intersects(currentXY)){
 			hotspot_bounds.y -= WCardMainBorderLayout.TAB_HEIGHT;
@@ -124,7 +124,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
 		
 		int rightY = containerY + BORDER_PROPORTION;
 		int rightX = containerX + containerWidth - BORDER_PROPORTION;
-		// ÓÒ±ßÔµ
+		// å³è¾¹ç¼˜
 		Rectangle rightEdge = new Rectangle(rightX, rightY, BORDER_PROPORTION, verticalHeight);
 		if(rightEdge.intersects(currentXY)){
 			hotspot_bounds.y -= WCardMainBorderLayout.TAB_HEIGHT;
@@ -144,11 +144,11 @@ public class FRFitLayoutPainter extends AbstractPainter{
 		Color bColor = XCreatorConstants.FIT_LAYOUT_POINT_COLOR;
 		int cX = currentComp.getX(), cY = currentComp.getY(), cH = currentComp.getHeight(), cW = currentComp.getWidth();
     	int defaultWidth = cW/BORDER_PROPORTION, defaultHeight = cH/BORDER_PROPORTION;
-    	// ½»²æµãÌáÊ¾ÇøÓò×î´óÖµÎª10px
+    	// äº¤å‰ç‚¹æç¤ºåŒºåŸŸæœ€å¤§å€¼ä¸º10px
     	int defaultLength = Math.min(BORDER_PROPORTION, Math.min(defaultWidth, defaultHeight));
     	Component topComp = container.getTopComp(cX, cY);
     	Component bottomComp = container.getBottomComp(cX, cY, cH);
-		Component rightComp = container.getRightComp(cX, cY, cW); //×é¼şµÄ×óÓÒ×é¼şÒªÇø·ÖÉÏ²àºÍÏÂ²à
+		Component rightComp = container.getRightComp(cX, cY, cW); //ç»„ä»¶çš„å·¦å³ç»„ä»¶è¦åŒºåˆ†ä¸Šä¾§å’Œä¸‹ä¾§
 		Component leftComp = container.getLeftComp(cX, cY);
 		boolean top = topComp!=null && topComp!=container, left = leftComp!=null && leftComp!=container,bottom = bottomComp!=null && bottomComp!=container,right = rightComp!=null && rightComp!=container;
 		if (top || left) {
@@ -167,7 +167,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
 			if (leftComp.getY()==cY && rightComp.getY()==cY) {
 				drawRegionBackground(g, cX+cW/2-defaultWidth+hotspot_bounds.x, cY+hotspot_bounds.y, defaultWidth*2, defaultLength, bColor,true);
 			}
-			//µ×±ßÏßÎ»ÖÃ£¬×óÓÒ×é¼ş¶¼²»ÎªnullÇÒµÍ¶Ë¶ÔÆë£¬È¡×ó¡¢ÓÒ¿¿ÏÂ²à×é¼şÅĞ¶Ï
+			//åº•è¾¹çº¿ä½ç½®ï¼Œå·¦å³ç»„ä»¶éƒ½ä¸ä¸ºnullä¸”ä½ç«¯å¯¹é½ï¼Œå–å·¦ã€å³é ä¸‹ä¾§ç»„ä»¶åˆ¤æ–­
 			leftComp = container.getBottomLeftComp(cX, cY, cH);
 			rightComp = container.getBottomRightComp(cX, cY, cH, cW);
 			if (leftComp.getY()+leftComp.getHeight()==cY+cH && rightComp.getY()+rightComp.getHeight()==cY+cH) {
@@ -178,7 +178,7 @@ public class FRFitLayoutPainter extends AbstractPainter{
 			if (topComp.getX()==cX && bottomComp.getX()==cX) {
 				drawRegionBackground(g, cX+hotspot_bounds.x, cY+cH/2-defaultHeight+hotspot_bounds.y, defaultLength, defaultHeight*2, bColor,true);
 			}
-			// ÓÒ±ßÏßÎ»ÖÃ£¬ÉÏÏÂ×é¼ş²»ÎªnullÇÒÓÒ¶Ë¶ÔÆë£¬È¡ÉÏ¡¢ÏÂ¿¿ÓÒ²à×é¼şÅĞ¶Ï
+			// å³è¾¹çº¿ä½ç½®ï¼Œä¸Šä¸‹ç»„ä»¶ä¸ä¸ºnullä¸”å³ç«¯å¯¹é½ï¼Œå–ä¸Šã€ä¸‹é å³ä¾§ç»„ä»¶åˆ¤æ–­
 			topComp = container.getRightTopComp(cX, cY, cW);
 			bottomComp = container.getRightBottomComp(cX, cY, cH, cW);
 			if (topComp.getX()+topComp.getWidth()==cX+cW && bottomComp.getX()+bottomComp.getWidth()==cX+cW) {
@@ -187,28 +187,28 @@ public class FRFitLayoutPainter extends AbstractPainter{
 		}
 	}
 	
-	// »­ÒÀ¸½Ïß
+	// ç”»ä¾é™„çº¿
 	private void drawDependingLine(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
         Stroke backup = g2d.getStroke();
         
-        // µ±Ç°ÍÏ×§×é¼şµÄ×ø±ê
+        // å½“å‰æ‹–æ‹½ç»„ä»¶çš„åæ ‡
         int oriX = creator.getX();
         int oriY = creator.getY();
         
-        // ÍÏ×§Î»ÖÃµÄ¼´Ê±×ø±ê
+        // æ‹–æ‹½ä½ç½®çš„å³æ—¶åæ ‡
         double x = hotspot.getX();
         double y = hotspot.getY();
         
-        // ÈİÆ÷ËùÓĞµÄÄÚ²¿×é¼şµÄºá×İ×ø±êÖµ
+        // å®¹å™¨æ‰€æœ‰çš„å†…éƒ¨ç»„ä»¶çš„æ¨ªçºµåæ ‡å€¼
         int[] posXs = container.getHors();
         int[] posYs = container.getVeris();
         
-        // ÒÀ¸½ÏßµÄ×ø±ê
+        // ä¾é™„çº¿çš„åæ ‡
         int lineX = 0;
         int lineY = 0;
         
-        // ¸ù¾İÍÏ×§Î»ÖÃµ÷ÕûÒÀ¸½ÏßµÄ×ø±ê
+        // æ ¹æ®æ‹–æ‹½ä½ç½®è°ƒæ•´ä¾é™„çº¿çš„åæ ‡
         lineX = getDependLinePos(lineX, posXs, oriX, x);
         lineY = getDependLinePos(lineY, posYs, oriY, y);
         
@@ -225,13 +225,13 @@ public class FRFitLayoutPainter extends AbstractPainter{
 	}
 	
 	/**
-	 * ¸ù¾İÈİÆ÷ÄÚ²¿×é¼şµÄºá×İ×ø±êÖµ»­ÒÀ¸½Ïß
+	 * æ ¹æ®å®¹å™¨å†…éƒ¨ç»„ä»¶çš„æ¨ªçºµåæ ‡å€¼ç”»ä¾é™„çº¿
 	 * 
-	 * @param lineCoordinate ÒÀ¸½Ïß×ø±êÖµ
-	 * @param referCoordinates ÈİÆ÷ÄÚ²¿ËùÓĞ×é¼ş×ø±êÖµ
-	 * @param oriCoordinate µ±Ç°ÍÏ×§×é¼ş×ø±ê
-	 * @param currentCoordinate ÍÏ×§Î»ÖÃµÄ¼´Ê±×ø±ê
-	 * @return ÒÀ¸½ÏßµÄ×ø±ê
+	 * @param lineCoordinate ä¾é™„çº¿åæ ‡å€¼
+	 * @param referCoordinates å®¹å™¨å†…éƒ¨æ‰€æœ‰ç»„ä»¶åæ ‡å€¼
+	 * @param oriCoordinate å½“å‰æ‹–æ‹½ç»„ä»¶åæ ‡
+	 * @param currentCoordinate æ‹–æ‹½ä½ç½®çš„å³æ—¶åæ ‡
+	 * @return ä¾é™„çº¿çš„åæ ‡
 	 * 
 	 */
 	private int getDependLinePos(int lineCoordinate,int referCoordinates[],int oriCoordinate,double currentCoordinate){

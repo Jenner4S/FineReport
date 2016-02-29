@@ -4,10 +4,10 @@ import com.fr.base.Utils;
 import com.fr.general.Inter;
 
 /**
- * Ë«¾«¶È±à¼­Æ÷
+ * åŒç²¾åº¦ç¼–è¾‘å™¨
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç4:51:03
+ * @since 2012-3-29ä¸‹åˆ4:51:03
  */
 public class DoubleEditor extends NumberEditor<Double> {
 

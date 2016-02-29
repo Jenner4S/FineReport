@@ -19,9 +19,9 @@ import javax.swing.event.PopupMenuListener;
 import javax.swing.tree.*;
 
 /**
- * ÏÂÀ­ÁĞ±í
+ * ä¸‹æ‹‰åˆ—è¡¨
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-22 ÏÂÎç03:14:25
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-22 ä¸‹åˆ03:14:25
  */
 public class ComboBoxUseEditor extends Editor<String> {
 	private FRTreeComboBox comBox;
@@ -106,9 +106,9 @@ public class ComboBoxUseEditor extends Editor<String> {
 	}
 
 	/**
-	 * ÊÇ·ñÊÇStringÀàĞÍ
-	 * @param object ÒªÅĞ¶ÏµÄ
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æ˜¯Stringç±»å‹
+	 * @param object è¦åˆ¤æ–­çš„
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean accept(Object object) {
 		return object instanceof String;

@@ -13,7 +13,7 @@ import javax.swing.plaf.basic.BasicTableUI;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-4-24
- * Time: ÉÏÎç10:03
+ * Time: ä¸Šåˆ10:03
  */
 public class UIBasicTableUI extends BasicTableUI {
 
@@ -30,9 +30,9 @@ public class UIBasicTableUI extends BasicTableUI {
     }
 
     /**
-     * ´´½¨UI½çÃæ
-     * @param table ±í
-     * @return ×é¼şUI
+     * åˆ›å»ºUIç•Œé¢
+     * @param table è¡¨
+     * @return ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent table) {
         return new UIBasicTableUI(table);

@@ -73,9 +73,9 @@ public abstract class MiddleChartPropertyPane extends BaseChartPropertyPane{
 	};
 
     /**
-     * ¸Ğ¾õChartCollection¼ÓÔØÍ¼±íÊôĞÔ½çÃæ.
-     * @param collection  ÊÕ¼¯Í¼±í
-     * @param ePane  Ãæ°å
+     * æ„Ÿè§‰ChartCollectionåŠ è½½å›¾è¡¨å±æ€§ç•Œé¢.
+     * @param collection  æ”¶é›†å›¾è¡¨
+     * @param ePane  é¢æ¿
      */
 	public void populateChartPropertyPane(ChartCollection collection, TargetComponent<?> ePane) {
 		this.container.setEPane(ePane);
@@ -83,9 +83,9 @@ public abstract class MiddleChartPropertyPane extends BaseChartPropertyPane{
 	}
 
     /**
-     * ¸Ğ¾õChartCollection¼ÓÔØÍ¼±íÊôĞÔ½çÃæ.
-     * @param collection  ÊÕ¼¯Í¼±í
-     * @param ePane  Ãæ°å
+     * æ„Ÿè§‰ChartCollectionåŠ è½½å›¾è¡¨å±æ€§ç•Œé¢.
+     * @param collection  æ”¶é›†å›¾è¡¨
+     * @param ePane  é¢æ¿
      */
 	public void populateChartPropertyPane(BaseChartCollection collection, TargetComponent<?> ePane) {
 		if (collection instanceof ChartCollection) {
@@ -94,37 +94,37 @@ public abstract class MiddleChartPropertyPane extends BaseChartPropertyPane{
 	}
 
 	/**
-	 * ·µ»ØViewµÄ±êÌâ.
+	 * è¿”å›Viewçš„æ ‡é¢˜.
 	 */
 	public String getViewTitle() {
 		return Inter.getLocText("CellElement-Property_Table");
 	}
 
 	/**
-	 * ·µ»ØViewµÄIconµØÖ·.
+	 * è¿”å›Viewçš„Iconåœ°å€.
 	 */
 	public Icon getViewIcon() {
 		return BaseUtils.readIcon("/com/fr/design/images/m_report/qb.png");
 	}
 
     /**
-     *  Ô¤¶¨Òå¶¨Î»
-     * @return    ¶¨Î»
+     *  é¢„å®šä¹‰å®šä½
+     * @return    å®šä½
      */
 	public Location preferredLocation() {
 		return Location.WEST_BELOW;
 	}
 
     /**
-     * ´´½¨±êÌâPanel
-     * @return  ±êÌâpanel
+     * åˆ›å»ºæ ‡é¢˜Panel
+     * @return  æ ‡é¢˜panel
      */
 	public UITitlePanel createTitlePanel() {
 		return new UITitlePanel(this);
 	}
 
 	/**
-	 * Ë¢ĞÂDockview
+	 * åˆ·æ–°Dockview
 	 */
 	public void refreshDockingView() {
 		// TODO Auto-generated method stub
@@ -132,7 +132,7 @@ public abstract class MiddleChartPropertyPane extends BaseChartPropertyPane{
 	}
 	
 	/**
-	 * ÉèÖÃÊÇ·ñÖ§³Öµ¥Ôª¸ñÊı¾İ.
+	 * è®¾ç½®æ˜¯å¦æ”¯æŒå•å…ƒæ ¼æ•°æ®.
 	 */
 	public void setSupportCellData(boolean supportCellData) {
 		if(chartEditPane != null) {
@@ -140,4 +140,3 @@ public abstract class MiddleChartPropertyPane extends BaseChartPropertyPane{
 		}
 	}
 }
-

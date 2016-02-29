@@ -14,7 +14,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-12
- * Time: ÏÂÎç4:50
+ * Time: ä¸‹åˆ4:50
  */
 public class UISplitPaneDivider extends BasicSplitPaneDivider {
 
@@ -160,9 +160,9 @@ public class UISplitPaneDivider extends BasicSplitPaneDivider {
      */
     public class MetalDividerLayout implements LayoutManager {
         /**
-         * ²¼¾Ö
+         * å¸ƒå±€
          *
-         * @param c ÈİÆ÷
+         * @param c å®¹å™¨
          */
         public void layoutContainer(Container c) {
             JButton leftButton = getLeftButtonFromSuper();
@@ -208,35 +208,35 @@ public class UISplitPaneDivider extends BasicSplitPaneDivider {
         }
 
         /**
-         * ×îĞ¡²¼¾Ö
+         * æœ€å°å¸ƒå±€
          *
-         * @param c ÈİÆ÷
-         * @return ×îĞ¡
+         * @param c å®¹å™¨
+         * @return æœ€å°
          */
         public Dimension minimumLayoutSize(Container c) {
             return new Dimension(0, 0);
         }
 
         /**
-         *ºÏÊÊµÄ²¼¾Ö´óĞ¡
-         * @param c ÈİÆ÷
-         * @return ´óĞ¡
+         *åˆé€‚çš„å¸ƒå±€å¤§å°
+         * @param c å®¹å™¨
+         * @return å¤§å°
          */
         public Dimension preferredLayoutSize(Container c) {
             return new Dimension(0, 0);
         }
 
         /**
-         * È¥µô²¼¾Ö×é¼ş
-         * @param c ×é¼ş
+         * å»æ‰å¸ƒå±€ç»„ä»¶
+         * @param c ç»„ä»¶
          */
         public void removeLayoutComponent(Component c) {
         }
 
         /**
-         * Ôö¼Ó²¼¾Ö×é¼ş
-         * @param string Ãû×Ö
-         * @param c ×é¼ş
+         * å¢åŠ å¸ƒå±€ç»„ä»¶
+         * @param string åå­—
+         * @param c ç»„ä»¶
          */
         public void addLayoutComponent(String string, Component c) {
         }

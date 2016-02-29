@@ -37,10 +37,10 @@ public class ProcessParameterTableModel extends UITableModelAdapter<ParameterPro
 	}
 
 	/**
-	 * µ¥Ôª¸ñÊÇ·ñ¿É±à¼­
-	 * @row µ¥Ôª¸ñµÄÐÐºÅ
-	 * @col µ¥Ôª¸ñµÄÁÐºÅ
-	 * @return ÊÇ·ñ¿É±à¼­
+	 * å•å…ƒæ ¼æ˜¯å¦å¯ç¼–è¾‘
+	 * @row å•å…ƒæ ¼çš„è¡Œå·
+	 * @col å•å…ƒæ ¼çš„åˆ—å·
+	 * @return æ˜¯å¦å¯ç¼–è¾‘
 	 */
 	public boolean isCellEditable(int row, int col) {
 		if (col == 0) {
@@ -67,8 +67,8 @@ public class ProcessParameterTableModel extends UITableModelAdapter<ParameterPro
 	
 	@Override
 	/**
-	 * ¿ÉÒÔ×öµÄ²Ù×÷£¨ÐÂÔö²ÎÊýºÍÉ¾³ý²ÎÊý£©
-	 * @return ¿ÉÒÔ½øÐÐµÄ²Ù×÷£¨Êý×é£©
+	 * å¯ä»¥åšçš„æ“ä½œï¼ˆæ–°å¢žå‚æ•°å’Œåˆ é™¤å‚æ•°ï¼‰
+	 * @return å¯ä»¥è¿›è¡Œçš„æ“ä½œï¼ˆæ•°ç»„ï¼‰
 	 */
 	public UITableEditAction[] createAction() {
 		return new UITableEditAction[] { new AddParameterAction(), new DeleteAction()};
@@ -106,7 +106,7 @@ public class ProcessParameterTableModel extends UITableModelAdapter<ParameterPro
 		}
 		
 		private String getEditFilePath() {
-			//wei : ÔÚÎÄ¼þ¼ÐÏÂµÄÄ£°å¶ÁÈ¡²»µ½Á÷³Ì²ÎÊý
+			//wei : åœ¨æ–‡ä»¶å¤¹ä¸‹çš„æ¨¡æ¿è¯»å–ä¸åˆ°æµç¨‹å‚æ•°
 			String path = DesignerContext.getDesignerFrame().getSelectedJTemplate().getEditingFILE().getPath();
 			if(path.startsWith(ProjectConstants.REPORTLETS_NAME)) {
 				path = path.substring(ProjectConstants.REPORTLETS_NAME.length() + 1);
@@ -117,7 +117,7 @@ public class ProcessParameterTableModel extends UITableModelAdapter<ParameterPro
 	}
 	
 	/**
-	 * Ë¢ÐÂ²ÎÊý
+	 * åˆ·æ–°å‚æ•°
 	 * @param names
 	 */
 	public void refreshParas(String[] names) {

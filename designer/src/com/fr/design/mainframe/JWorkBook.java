@@ -128,9 +128,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÅĞ¶ÏsheetÈ¨ÏŞ
+     * åˆ¤æ–­sheetæƒé™
      *
-     * @param rolsName ½ÇÉ«
+     * @param rolsName è§’è‰²
      */
     public void judgeSheetAuthority(String rolsName) {
         boolean isCovered = reportComposite.getEditingTemplateReport().getWorkSheetPrivilegeControl().checkInvisible(rolsName);
@@ -139,7 +139,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÔÚ±à¼­µÄÃæ°åÊÇ±»²Î¿¼µÄÃæ°åÊ±£¬È¡Ïû¸ñÊ½Ë¢
+     * åœ¨ç¼–è¾‘çš„é¢æ¿æ˜¯è¢«å‚è€ƒçš„é¢æ¿æ—¶ï¼Œå–æ¶ˆæ ¼å¼åˆ·
      */
     public void doConditionCancelFormat() {
         if (ComparatorUtils.equals(reportComposite.centerCardPane.editingComponet.elementCasePane, DesignerContext.getReferencedElementCasePane())) {
@@ -148,7 +148,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÎŞÌõ¼şÈ¡Ïû¸ñÊ½Ë¢
+     * æ— æ¡ä»¶å–æ¶ˆæ ¼å¼åˆ·
      */
     public void cancelFormat() {
         DesignerContext.setFormatState(DesignerContext.FORMAT_STATE_NULL);
@@ -165,9 +165,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ´´½¨È¨ÏŞÏ¸Á£¶ÈÃæ°å
+     * åˆ›å»ºæƒé™ç»†ç²’åº¦é¢æ¿
      *
-     * @return ·µ»ØÈ¨ÏŞÏ¸Á£¶ÈÃæ°å
+     * @return è¿”å›æƒé™ç»†ç²’åº¦é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         if (centerPane.isUpEditMode()) {
@@ -226,9 +226,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     private JPanel allowAuthorityUpPane() {
-        //³õÊ¼Ê±ÏÔÊ¾²»Ö§³ÖÈ¨ÏŞ±à¼­µÄÇé¿ö
-        //1.±à¼­²ÎÊıÃæ°å£¬²ÎÊıÃæ°åÊ²Ã´Ò²Ã»ÓĞÑ¡ÖĞ
-        //2.ÔÚ±¨±íÖ÷ÌåÑ¡ÖĞµÄ¾ÛºÏ¿é²»ÊÇ±¨±í¾ÛºÏ¿é£¬ÊÇÍ¼±ê¾ÛºÏ¿é
+        //åˆå§‹æ—¶æ˜¾ç¤ºä¸æ”¯æŒæƒé™ç¼–è¾‘çš„æƒ…å†µ
+        //1.ç¼–è¾‘å‚æ•°é¢æ¿ï¼Œå‚æ•°é¢æ¿ä»€ä¹ˆä¹Ÿæ²¡æœ‰é€‰ä¸­
+        //2.åœ¨æŠ¥è¡¨ä¸»ä½“é€‰ä¸­çš„èšåˆå—ä¸æ˜¯æŠ¥è¡¨èšåˆå—ï¼Œæ˜¯å›¾æ ‡èšåˆå—
         boolean isParameterNotSuppportAuthority = centerPane.isUpEditMode() && !parameterPane.getParaDesigner().isSupportAuthority();
         boolean isReportNotSupportAuthority = reportComposite.getEditingReportComponent() instanceof PolyDesigner
                 && !((PolyDesigner) reportComposite.getEditingReportComponent()).isSelectedECBolck();
@@ -281,7 +281,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÒÆ³ıÑ¡Ôñ
+     * ç§»é™¤é€‰æ‹©
      */
     public void removeTemplateSelection() {
         this.reportComposite.removeSelection();
@@ -292,14 +292,14 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ë¢ĞÂÈİÆ÷
+     * åˆ·æ–°å®¹å™¨
      */
     public void refreshContainer() {
         centerPane.refreshContainer();
     }
 
     /**
-     * ÒÆ³ı²ÎÊıÃæ°åÑ¡Ôñ
+     * ç§»é™¤å‚æ•°é¢æ¿é€‰æ‹©
      */
     public void removeParameterPaneSelection() {
         parameterPane.getParaDesigner().removeSelection();
@@ -310,7 +310,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ¸üĞÂ±¨±í²ÎÊıÊôĞÔ
+     * æ›´æ–°æŠ¥è¡¨å‚æ•°å±æ€§
      */
     public void populateReportParameterAttr() {
         if (hasParameterPane()) {
@@ -320,7 +320,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ¸üĞÂReportParameterAttr
+     * æ›´æ–°ReportParameterAttr
      */
     public void updateReportParameterAttr() {
         if (hasParameterPane()) {
@@ -330,7 +330,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ¼ì²éÌá½»°´Å¥
+     * æ£€æŸ¥æäº¤æŒ‰é’®
      */
     public void checkHasSubmitButton() {
         if (parameterPane != null) {
@@ -363,32 +363,32 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     public void copy() {
         this.delegate4ToolbarMenuAdapter().copy();
     }
 
     /**
-     * ¼ôÇĞ
+     * å‰ªåˆ‡
      *
-     * @return ¼ôÇĞ³É¹¦·µ»Øtrue
+     * @return å‰ªåˆ‡æˆåŠŸè¿”å›true
      */
     public boolean cut() {
         return this.delegate4ToolbarMenuAdapter().cut();
     }
 
     /**
-     * ğ¤Ìù
+     * é»è´´
      *
-     * @return ğ¤Ìù³É¹¦·µ»Øtrue
+     * @return é»è´´æˆåŠŸè¿”å›true
      */
     public boolean paste() {
         return this.delegate4ToolbarMenuAdapter().paste();
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         reportComposite.stopEditing();
@@ -399,9 +399,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ºó×º
+     * åç¼€
      *
-     * @return ºó×ºµÄ×Ö·û´®
+     * @return åç¼€çš„å­—ç¬¦ä¸²
      */
     public String suffix() {
         return ".cpt";
@@ -413,9 +413,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     // ////////////////////////////////////////////////////////////////////
 
     /**
-     * ÎÄ¼ş²Ëµ¥µÄ×Ó²Ëµ¥
+     * æ–‡ä»¶èœå•çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
     public ShortCut[] shortcut4FileMenu() {
         return (ShortCut[]) ArrayUtils.addAll(
@@ -425,9 +425,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ä¿±êµÄ²Ëµ¥
+     * ç›®æ ‡çš„èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         return (MenuDef[]) ArrayUtils.addAll(
@@ -455,9 +455,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶ÈÇé¿öÏÂµÄ×Ó²Ëµ¥
+     * æƒé™ç»†ç²’åº¦æƒ…å†µä¸‹çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[]{
@@ -468,9 +468,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ä£°åµÄ×Ó²Ëµ¥
+     * æ¨¡æ¿çš„å­èœå•
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return (ShortCut[]) ArrayUtils.addAll(new ShortCut[]{
@@ -482,9 +482,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ä£°åµÄ¹¤¾ß
+     * æ¨¡æ¿çš„å·¥å…·
      *
-     * @return ¹¤¾ß
+     * @return å·¥å…·
      */
     public ToolBarDef[] toolbars4Target() {
         return this.delegate4ToolbarMenuAdapter().toolbars4Target();
@@ -521,7 +521,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
                 }
                 this.undoState = u;
             } else {
-                //²ÎÊıÃæ°å
+                //å‚æ•°é¢æ¿
                 applyAll(u);
                 this.authorityUndoState = u;
             }
@@ -536,16 +536,16 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
             parameterPane.populate(u.getApplyTarget());
             DesignModuleFactory.getFormHierarchyPane().refreshRoot();
         }
-        //±¨±íÖ÷Ìå
+        //æŠ¥è¡¨ä¸»ä½“
         reportComposite.setSelectedIndex(u.getSelectedReportIndex());
         u.getSelectedEditingState().revert();
         TableDataTreePane.getInstance(DesignModelAdapter.getCurrentModelAdapter()).refreshDockingView();
-        //Èç¹ûÊÇÔÚÈ¨ÏŞ±à¼­×´Ì¬ÏÂ£¬ÔòÓĞ¹¤¾ßÀ¸
+        //å¦‚æœæ˜¯åœ¨æƒé™ç¼–è¾‘çŠ¶æ€ä¸‹ï¼Œåˆ™æœ‰å·¥å…·æ 
         DesignerContext.getDesignerFrame().resetToolkitByPlus(HistoryTemplateListPane.getInstance().getCurrentEditingTemplate());
     }
 
     /**
-     * ÇëÇó½¹µã
+     * è¯·æ±‚ç„¦ç‚¹
      */
     public void requestFocus() {
         super.requestFocus();
@@ -561,7 +561,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * »ñÈ¡µ±Ç°workBookÖĞµÄÕıÔÚ±à¼­µÄcomponent¶ÔÓ¦µÄelementCasePane
+     * è·å–å½“å‰workBookä¸­çš„æ­£åœ¨ç¼–è¾‘çš„componentå¯¹åº”çš„elementCasePane
      *
      * @return
      */
@@ -570,7 +570,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ë¢ĞÂËùÓĞµÄ¿Ø¼ş
+     * åˆ·æ–°æ‰€æœ‰çš„æ§ä»¶
      */
     public void refreshAllNameWidgets() {
         if (parameterPane != null) {
@@ -579,10 +579,10 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÎªÊı¾İ¼¯Ë¢ĞÂ²ÎÊıÃæ°å
+     * ä¸ºæ•°æ®é›†åˆ·æ–°å‚æ•°é¢æ¿
      *
-     * @param oldName ¾ÉÃû×Ö
-     * @param newName ĞÂÃû×Ö
+     * @param oldName æ—§åå­—
+     * @param newName æ–°åå­—
      */
     public void refreshParameterPane4TableData(String oldName, String newName) {
         if (parameterPane != null) {
@@ -591,7 +591,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * »Ö¸´
+     * æ¢å¤
      */
     public void revert() {
         ElementCasePane epane = reportComposite.getEditingReportComponent().elementCasePane;
@@ -617,9 +617,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ±íµ¥µÄ¹¤¾ßÀ¸
+     * è¡¨å•çš„å·¥å…·æ 
      *
-     * @return ±íµ¥¹¤¾ßÀ¸
+     * @return è¡¨å•å·¥å…·æ 
      */
     public JPanel[] toolbarPanes4Form() {
         if (centerPane.isUpEditMode() && hasParameterPane()) {
@@ -629,9 +629,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ±íµ¥µÄ¹¤¾ß°´Å¥
+     * è¡¨å•çš„å·¥å…·æŒ‰é’®
      *
-     * @return ¹¤¾ß°´Å¥
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         centerPane.needToShowCoverAndHidPane();
@@ -643,18 +643,18 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * È¨ÏŞÏ¸Á£¶È×´Ì¬ÏÂµÄ¹¤¾ßÃæ°å
+     * æƒé™ç»†ç²’åº¦çŠ¶æ€ä¸‹çš„å·¥å…·é¢æ¿
      *
-     * @return ¹¤¾ßÃæ°å
+     * @return å·¥å…·é¢æ¿
      */
     public JComponent toolBar4Authority() {
         return new AuthorityToolBarPane();
     }
 
     /**
-     * ÊÇ·ñÖ§³ÖÔ¤ÀÀ
+     * æ˜¯å¦æ”¯æŒé¢„è§ˆ
      *
-     * @return Ô¤ÀÀ½Ó¿Ú
+     * @return é¢„è§ˆæ¥å£
      *
      */
     public PreviewProvider[] supportPreview() {
@@ -664,9 +664,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ô¤ÀÀ²Ëµ¥Ïî
+     * é¢„è§ˆèœå•é¡¹
      *
-     * @return Ô¤ÀÀ²Ëµ¥Ïî
+     * @return é¢„è§ˆèœå•é¡¹
      */
     public UIMenuItem[] createMenuItem4Preview() {
         List<UIMenuItem> menuItems = new ArrayList<UIMenuItem>();
@@ -685,9 +685,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * Ô¤ÀÀ°´Å¥µã»÷ÊÂ¼ş
+     * é¢„è§ˆæŒ‰é’®ç‚¹å‡»äº‹ä»¶
      *
-     * @param provider Ô¤ÀÀ½Ó¿Ú
+     * @param provider é¢„è§ˆæ¥å£
      */
     public void previewMenuActionPerformed(PreviewProvider provider) {
         setPreviewType(provider);
@@ -695,9 +695,9 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÊÇ²»ÊÇÄ£°å
+     * æ˜¯ä¸æ˜¯æ¨¡æ¿
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isJWorkBook() {
         return true;
@@ -708,16 +708,16 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÊÇ²»ÊÇÕıÔÚ±à¼­²ÎÊıÃæ°å
+     * æ˜¯ä¸æ˜¯æ­£åœ¨ç¼–è¾‘å‚æ•°é¢æ¿
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isUpMode() {
         return centerPane.isUpEditMode();
     }
 
     /**
-     * Ë¢ĞÂ²ÎÊıºÍ¹¤¾ßÇøÓò
+     * åˆ·æ–°å‚æ•°å’Œå·¥å…·åŒºåŸŸ
      */
     public void refreshToolArea() {
         populateReportParameterAttr();
@@ -762,8 +762,8 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * »ñÈ¡µ±Ç°workBookµÄ²ÎÊı¼°Ä¬ÈÏÖµ
-     * Í¬Ãû²ÎÊıµÄ»°Ä£°å²ÎÊı¸²¸ÇÈ«¾Ö²ÎÊı
+     * è·å–å½“å‰workBookçš„å‚æ•°åŠé»˜è®¤å€¼
+     * åŒåå‚æ•°çš„è¯æ¨¡æ¿å‚æ•°è¦†ç›–å…¨å±€å‚æ•°
      *
      * @return
      */
@@ -781,7 +781,7 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ÇëÇóµ¥Ôª¸ñÇøÓòµÄ½¹µã
+     * è¯·æ±‚å•å…ƒæ ¼åŒºåŸŸçš„ç„¦ç‚¹
      */
     public void requestGridFocus() {
         reportComposite.centerCardPane.requestGrifFocus();
@@ -789,10 +789,10 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
 
 
     /**
-     * ´´½¨ÄÚÖÃsqlÌá½»µÄpane
+     * åˆ›å»ºå†…ç½®sqlæäº¤çš„pane
      *
-     * @return ÄÚÖÃsqlÌá½»µÄpane
-     * @date 2014-10-14-ÏÂÎç7:39:27
+     * @return å†…ç½®sqlæäº¤çš„pane
+     * @date 2014-10-14-ä¸‹åˆ7:39:27
      */
     public DBManipulationPane createDBManipulationPane() {
         ElementCasePane<TemplateElementCase> epane = this.getEditingElementCasePane();
@@ -800,10 +800,10 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ´´½¨¿Ø¼şÊÂ¼şÀïÄÚÖÃsqlÌá½»µÄpane
+     * åˆ›å»ºæ§ä»¶äº‹ä»¶é‡Œå†…ç½®sqlæäº¤çš„pane
      *
-     * @return ÄÚÖÃsqlÌá½»µÄpane
-     * @date 2014-10-14-ÏÂÎç7:39:27
+     * @return å†…ç½®sqlæäº¤çš„pane
+     * @date 2014-10-14-ä¸‹åˆ7:39:27
      */
     public DBManipulationPane createDBManipulationPaneInWidget() {
         ElementCasePane<TemplateElementCase> epane = this.getEditingElementCasePane();
@@ -815,27 +815,27 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ´´½¨sheetÃû³ÆtabÃæ°å
+     * åˆ›å»ºsheetåç§°tabé¢æ¿
      *
-     * @param reportCompositeX µ±Ç°×é¼ş¶ÔÏó
-     * @return sheetÃû³ÆtabÃæ°å
-     * @date 2015-2-5-ÉÏÎç11:42:12
+     * @param reportCompositeX å½“å‰ç»„ä»¶å¯¹è±¡
+     * @return sheetåç§°tabé¢æ¿
+     * @date 2015-2-5-ä¸Šåˆ11:42:12
      */
     public SheetNameTabPane createSheetNameTabPane(ReportComponentComposite reportCompositeX) {
         return new SheetNameTabPane(reportCompositeX);
     }
 
     /**
-     * ½«Ä£°åÁí´æÎª¿ÉÒÔ·ÖÏí³öÈ¥µÄ»ìÏıºóÄÚÖÃÊı¾İ¼¯Ä£°å
+     * å°†æ¨¡æ¿å¦å­˜ä¸ºå¯ä»¥åˆ†äº«å‡ºå»çš„æ··æ·†åå†…ç½®æ•°æ®é›†æ¨¡æ¿
      *
-     * @return ÊÇ·ñÁí´æ³É¹¦
+     * @return æ˜¯å¦å¦å­˜æˆåŠŸ
      */
     public boolean saveShareFile() {
         FILE newFile = createNewEmptyFile();
-        //Èç¹ûÎÄ¼şÒÑ¾­´ò¿ª, ÄÇÃ´¾Í¸²¸Ç¹Ø±ÕµôËû
+        //å¦‚æœæ–‡ä»¶å·²ç»æ‰“å¼€, é‚£ä¹ˆå°±è¦†ç›–å…³é—­æ‰ä»–
         MutilTempalteTabPane.getInstance().closeFileTemplate(newFile);
         final TemplateWorkBook tpl = this.getTarget();
-        // µ¯³öÊäÈë²ÎÊı
+        // å¼¹å‡ºè¾“å…¥å‚æ•°
         java.util.Map<String, Object> parameterMap = inputParameters(tpl);
 
         try {
@@ -847,12 +847,12 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
             FRContext.getLogger().error(e1.getMessage());
         }
 
-        //´ò¿ªµ¼³öµÄÄÚÖÃÄ£°å
+        //æ‰“å¼€å¯¼å‡ºçš„å†…ç½®æ¨¡æ¿
         DesignerContext.getDesignerFrame().openTemplate(newFile);
         return true;
     }
 
-    //´´½¨ĞÂµÄ¿Õ°×Ä£°å
+    //åˆ›å»ºæ–°çš„ç©ºç™½æ¨¡æ¿
     private FILE createNewEmptyFile() {
         String oldName = this.getEditingFILE().getName();
         oldName = oldName.replaceAll(ProjectConstants.CPT_SUFFIX, StringUtils.EMPTY);
@@ -866,12 +866,12 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
         return newFile;
     }
 
-    //ÊäÈëµ¼³öÄÚÖÃÊı¾İ¼¯ĞèÒªµÄ²ÎÊı
+    //è¾“å…¥å¯¼å‡ºå†…ç½®æ•°æ®é›†éœ€è¦çš„å‚æ•°
     private Map<String, Object> inputParameters(final TemplateWorkBook tpl) {
         final java.util.Map<String, Object> parameterMap = new java.util.HashMap<String, Object>();
         DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
         Parameter[] parameters = tpl.getParameters();
-        if (!ArrayUtils.isEmpty(parameters)) {// ¼ì²éParameter.
+        if (!ArrayUtils.isEmpty(parameters)) {// æ£€æŸ¥Parameter.
             final ParameterInputPane pPane = new ParameterInputPane(
                     parameters);
             pPane.showSmallWindow(designerFrame, new DialogActionAdapter() {
@@ -887,13 +887,13 @@ public class JWorkBook extends JTemplate<WorkBook, WorkBookUndoState> {
     }
 
     /**
-     * ´´½¨·ÖÏíÄ£°åµÄ°´Å¥, Ä¿Ç°Ö»ÓĞjworkbookÊµÏÖÁË
+     * åˆ›å»ºåˆ†äº«æ¨¡æ¿çš„æŒ‰é’®, ç›®å‰åªæœ‰jworkbookå®ç°äº†
      *
-     * @return ·ÖÏíÄ£°å°´Å¥
+     * @return åˆ†äº«æ¨¡æ¿æŒ‰é’®
      */
     public UIButton[] createShareButton() {
         return new UIButton[0];
-        //²úÆ·ÏëÒªÖØĞÂÉè¼ÆÏÂ, 1ÏÖÔÚµÄ·ÖÏí¶àÁĞÊı¾İ¼¯ºÜÂé·³, 2Ïë×ö³É×Ô¶¯ÉÏ´«¸½¼ş.
+        //äº§å“æƒ³è¦é‡æ–°è®¾è®¡ä¸‹, 1ç°åœ¨çš„åˆ†äº«å¤šåˆ—æ•°æ®é›†å¾ˆéº»çƒ¦, 2æƒ³åšæˆè‡ªåŠ¨ä¸Šä¼ é™„ä»¶.
 //        return new UIButton[]{new ShareButton()};
     }
 

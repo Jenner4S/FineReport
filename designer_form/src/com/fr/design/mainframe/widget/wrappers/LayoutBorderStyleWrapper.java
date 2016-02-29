@@ -15,9 +15,9 @@ public class LayoutBorderStyleWrapper implements Encoder, Decoder {
     }
 
     /**
-     * ½«ÊôĞÔ×ª»¯³É×Ö·û´®
-     * @param v    ÊôĞÔ¶ÔÏó
-     * @return      ×Ö·û´®
+     * å°†å±æ€§è½¬åŒ–æˆå­—ç¬¦ä¸²
+     * @param v    å±æ€§å¯¹è±¡
+     * @return      å­—ç¬¦ä¸²
      */
     public String encode(Object v) {
        if (v == null) {
@@ -28,18 +28,18 @@ public class LayoutBorderStyleWrapper implements Encoder, Decoder {
     }
 
     /**
-     * ½«×Ö·û´®×ª»¯³ÉÊôĞÔ
-     * @param txt  ×Ö·û´®
-     * @return  ÊôĞÔ¶ÔÏó
+     * å°†å­—ç¬¦ä¸²è½¬åŒ–æˆå±æ€§
+     * @param txt  å­—ç¬¦ä¸²
+     * @return  å±æ€§å¯¹è±¡
      */
     public Object decode(String txt) {
         return null;
     }
 
     /**
-     *  ·ûºÏ¹æÔò
-     * @param txt   ×Ö·û´®
-     * @throws ValidationException    Å×´í
+     *  ç¬¦åˆè§„åˆ™
+     * @param txt   å­—ç¬¦ä¸²
+     * @throws ValidationException    æŠ›é”™
      */
     public void validate(String txt) throws ValidationException {
         

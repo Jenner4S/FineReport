@@ -35,10 +35,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í Êı¾İ¼¯½çÃæ: ÏµÁĞÃû Ê¹ÓÃ×Ö¶ÎÃû.
+ * å±æ€§è¡¨ æ•°æ®é›†ç•Œé¢: ç³»åˆ—å ä½¿ç”¨å­—æ®µå.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-26 ÏÂÎç04:39:46
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸‹åˆ04:39:46
  */
 public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollection> {
     private static final String[] HEADS = {Inter.getLocText("FR-Chart-Field_Name"), Inter.getLocText("FR-Chart-Series_Name"), Inter.getLocText("FR-Chart-Data_Summary")};
@@ -99,9 +99,9 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ÅĞ¶ÏÊÇ¶¼½ÓÊÜ
-     * @param ob ´«¹ıÀ´µÃ
-     * @return ÊÇÔò·µ»Øtrue
+     * åˆ¤æ–­æ˜¯éƒ½æ¥å—
+     * @param ob ä¼ è¿‡æ¥å¾—
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean accept(Object ob) {
         ChartCollection collection = (ChartCollection) ob;
@@ -109,15 +109,15 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ±êÌâ
-     * @return ±êÌâ
+     * æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText(new String[]{"FR-Chart-Data_Use", "FR-Chart-Field_Name"});
     }
 
     /**
-     * ÖØÖÃ.
+     * é‡ç½®.
      */
     public void reset() {
 
@@ -125,8 +125,8 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
 
 
     /**
-     * Êı¾İ¼¯±ä¸üÊ±
-     * @param list  Êı¾İ¼¯
+     * æ•°æ®é›†å˜æ›´æ—¶
+     * @param list  æ•°æ®é›†
      */
     public void refreshBoxListWithSelectTableData(List list) {
         field.clear();
@@ -140,7 +140,7 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         field.clear();
@@ -152,8 +152,8 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ÖØĞÂ²¼¾ÖÃæ°å
-     * @param isNeedSummary ÊÇ¶¼ĞèÒª»ã×Ü£¨Í¼±íÉè¼ÆÆ÷µÃÊ±ºò²»ĞèÒª£©
+     * é‡æ–°å¸ƒå±€é¢æ¿
+     * @param isNeedSummary æ˜¯éƒ½éœ€è¦æ±‡æ€»ï¼ˆå›¾è¡¨è®¾è®¡å™¨å¾—æ—¶å€™ä¸éœ€è¦ï¼‰
      */
     public void relayoutPane(boolean isNeedSummary){
         if(this.isNeedSummary != isNeedSummary){
@@ -198,7 +198,7 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ¸ù¾İChartCollection ¸üĞÂ½çÃæ
+     * æ ¹æ®ChartCollection æ›´æ–°ç•Œé¢
      */
     public void populateBean(ChartCollection collection) {
         this.populateBean(collection,true);
@@ -215,7 +215,7 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔµ½ChartCollection
+     * ä¿å­˜ç•Œé¢å±æ€§åˆ°ChartCollection
      */
     public void updateBean(ChartCollection collection) {
         TopDefinitionProvider normalDefinition = collection.getSelectedChart().getFilterDefinition();
@@ -261,7 +261,7 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
     }
 
     /**
-     * ±£´æÎªĞÂµÄChartCollection
+     * ä¿å­˜ä¸ºæ–°çš„ChartCollection
      */
     public ChartCollection updateBean() {
         return null;
@@ -344,7 +344,7 @@ public class SeriesNameUseFieldNamePane extends FurtherBasicBeanPane<ChartCollec
             uiTextField.registerChangeListener(new UIObserverListener() {
                 @Override
                 public void doChange() {
-                    seriesDataPane.fireTargetChanged();// kunsnat: ²»ÄÜÍ£Ö¹±à¼­, ÒòÎªÊäÈë»áÖĞ¶Ï.
+                    seriesDataPane.fireTargetChanged();// kunsnat: ä¸èƒ½åœæ­¢ç¼–è¾‘, å› ä¸ºè¾“å…¥ä¼šä¸­æ–­.
                 }
             });
 

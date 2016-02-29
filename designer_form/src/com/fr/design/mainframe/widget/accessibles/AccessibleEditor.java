@@ -7,30 +7,30 @@ import javax.swing.event.ChangeListener;
 import com.fr.design.Exception.ValidationException;
 
 /**
- * ÊôĞÔ±à¼­Æ÷
+ * å±æ€§ç¼–è¾‘å™¨
  * @since 6.5.2
  */
 public interface AccessibleEditor {
 
     /**
-     * ÅĞ¶ÏÊäÈëµÄÖµÊÇ·ñ·ûºÏÒªÇó
+     * åˆ¤æ–­è¾“å…¥çš„å€¼æ˜¯å¦ç¬¦åˆè¦æ±‚
      * @throws ValidationException
      */
     public void validateValue() throws ValidationException;
 
     /**
-     * »ñÈ¡±à¼­Æ÷ÀïÃæµÄÖµ
+     * è·å–ç¼–è¾‘å™¨é‡Œé¢çš„å€¼
      */
     public Object getValue();
 
     /**
-     * ¸ø±à¼­Æ÷ÉèÖÃÖµ
+     * ç»™ç¼–è¾‘å™¨è®¾ç½®å€¼
      * @param v
      */
     public void setValue(Object v);
 
     /**
-     * ×Ô¶¨Òå±à¼­Æ÷
+     * è‡ªå®šä¹‰ç¼–è¾‘å™¨
      * @return
      */
     public Component getEditor();

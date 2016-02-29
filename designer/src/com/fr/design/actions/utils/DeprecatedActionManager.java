@@ -36,10 +36,10 @@ import com.fr.report.cell.cellattr.CurrencyLinePresent;
 import javax.swing.*;
 
 /**
- * peter: Õâ¸ö·½·¨Ö»ÊÇÁÙÊ±·ÅÔÚÕâ±ßµÄ, µÈ²å¼şÏµÍ³È«²¿ÍêÉÆºó,Á¢¿ÌÉ¾³ı.
+ * peter: è¿™ä¸ªæ–¹æ³•åªæ˜¯ä¸´æ—¶æ”¾åœ¨è¿™è¾¹çš„, ç­‰æ’ä»¶ç³»ç»Ÿå…¨éƒ¨å®Œå–„å,ç«‹åˆ»åˆ é™¤.
  */
 public class DeprecatedActionManager {
-    // TODO ALEX_SEP ÕâÀïµÄËùÓĞ·½·¨,¶¼ºÍTemplateComponent¶ÔÓ¦µÄToolbarMenuAdapterÓĞÖØ¸´
+    // TODO ALEX_SEP è¿™é‡Œçš„æ‰€æœ‰æ–¹æ³•,éƒ½å’ŒTemplateComponentå¯¹åº”çš„ToolbarMenuAdapteræœ‰é‡å¤
 
     /**
      * Clear menu.
@@ -60,7 +60,7 @@ public class DeprecatedActionManager {
         clearMenu.add(ReportComponentAction.createMenuItem());
 
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
-        if (jTemplate.isJWorkBook()){  //±íµ¥ÖĞ±¨±í¿é±à¼­ÆÁ±Îµô  Çå³ı¿Ø¼ş
+        if (jTemplate.isJWorkBook()){  //è¡¨å•ä¸­æŠ¥è¡¨å—ç¼–è¾‘å±è”½æ‰  æ¸…é™¤æ§ä»¶
             ReportComponentAction = new ClearWidgetAction(ePane);
             clearMenu.add(ReportComponentAction.createMenuItem());
         }
@@ -88,7 +88,7 @@ public class DeprecatedActionManager {
      * Cell Style.
      */
     public static MenuDef getCellMenu(final ElementCasePane ePane) {
-        // µ¥Ôª¸ñ²Ëµ¥
+        // å•å…ƒæ ¼èœå•
         final MenuDef subMenuDef = new MenuDef(KeySetUtils.CELL_ELEMENT.getMenuName());
         subMenuDef.setIconPath("/com/fr/design/images/m_insert/cell.png");
 

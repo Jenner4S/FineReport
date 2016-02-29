@@ -36,7 +36,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 
 
 /**
- * ÏÔÊ¾±íµ¥²ã´Î½á¹¹µÄÊ÷
+ * æ˜¾ç¤ºè¡¨å•å±‚æ¬¡ç»“æ„çš„æ ‘
  */
 public class FormHierarchyTreePane extends FormDockView implements HierarchyTreePane {
 
@@ -45,7 +45,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 	public static final int BODY = 1;
 	
 	private ComponentTree componentTree;
-	// richer:ËÑÑ°Ê÷½ÚµãµÄµÄÎÄ±¾¿ò
+	// richer:æœå¯»æ ‘èŠ‚ç‚¹çš„çš„æ–‡æœ¬æ¡†
 	private UITextField searchTextField;
 	private SearchResultPane searchResult;
 
@@ -82,7 +82,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 	}
 
 	/**
-	 * Çå³ı
+	 * æ¸…é™¤
 	 */
 	public void clearDockingView() {
 		this.componentTree = null;
@@ -93,7 +93,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 
 	@Override
 	/**
-	 * Ë¢ĞÂ
+	 * åˆ·æ–°
 	 */
 	public void refreshDockingView() {
 		FormDesigner formDesigner = this.getEditingFormDesigner();
@@ -107,7 +107,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 		ComponentTreeModel treeModel = (ComponentTreeModel) componentTree.getModel();
 		XCreator root = (XCreator)treeModel.getRoot();
 		int childCount = treeModel.getChildCount(root);
-		//°´ÕÕ½ÚµãÌí¼ÓparaÔÚÏÂµÄ£¬µ«ÕâÀïĞèÒªpara½ÚµãÔÚÉÏ£¬µ÷ÕûÒ»ÏÂÎ»ÖÃ
+		//æŒ‰ç…§èŠ‚ç‚¹æ·»åŠ paraåœ¨ä¸‹çš„ï¼Œä½†è¿™é‡Œéœ€è¦paraèŠ‚ç‚¹åœ¨ä¸Šï¼Œè°ƒæ•´ä¸€ä¸‹ä½ç½®
 		if(childCount == NODE_LENGTH){
 			adjustPosition(treeModel,formDesigner);
 		}
@@ -148,7 +148,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 	}
 	
 	/**
-	 * µ÷Õû½á¹¹Ê÷paraºÍbodyµÄÎ»ÖÃ
+	 * è°ƒæ•´ç»“æ„æ ‘paraå’Œbodyçš„ä½ç½®
 	 * 
 	 * @param treeModel
 	 * @param formDesigner
@@ -164,7 +164,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 	}
 
 	/**
-	 * Ë¢ĞÂÊ÷
+	 * åˆ·æ–°æ ‘
 	 */
 	public void refreshRoot() {
 		if (componentTree == null) {
@@ -174,7 +174,7 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 	}
 
 	/**
-	 * É¾³ıËÑË÷½á¹û
+	 * åˆ é™¤æœç´¢ç»“æœ
 	 */
 	public void removeSearchResult() {
 		componentTree.setSelectionPath(null);
@@ -282,13 +282,11 @@ public class FormHierarchyTreePane extends FormDockView implements HierarchyTree
 
 	@Override
 	/**
-	 * Î»ÖÃ
+	 * ä½ç½®
 	 * 
-	 * @return Î»ÖÃ
+	 * @return ä½ç½®
 	 */
 	public Location preferredLocation() {
 		return Location.WEST_BELOW;
 	}
 }
-
-

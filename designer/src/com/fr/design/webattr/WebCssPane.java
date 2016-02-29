@@ -76,7 +76,7 @@ public class WebCssPane extends BasicPane {
 
 			if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame()) == FILEChooserPane.OK_OPTION) {
 				final FILE file = fileChooser.getSelectedFILE();
-				if (file == null) {// 选择的文件不能是 null
+				if (file == null) {// 閫夋嫨鐨勬枃浠朵笉鑳芥槸 null
 					return;
 				}
 

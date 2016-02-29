@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ò»°ãÊı¾İ½çÃæ
+ * ä¸€èˆ¬æ•°æ®ç•Œé¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-18 ÏÂÎç03:45:25
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-18 ä¸‹åˆ03:45:25
  */
 public class NormalChartDataPane extends DataContentsPane {
 
@@ -97,7 +97,7 @@ public class NormalChartDataPane extends DataContentsPane {
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæ Êı¾İÄÚÈİ
+	 * æ›´æ–°ç•Œé¢ æ•°æ®å†…å®¹
 	 */
 	public void populate(ChartCollection collection) {
 		reportDataPane.refreshContentPane(collection);
@@ -112,7 +112,7 @@ public class NormalChartDataPane extends DataContentsPane {
 	}
 
 	/**
-	 * ±£´æ Êı¾İ½çÃæÄÚÈİ
+	 * ä¿å­˜ æ•°æ®ç•Œé¢å†…å®¹
 	 */
 	public void update(ChartCollection collection) {
 		if(dataPane.getSelectedIndex() == 0) {
@@ -123,7 +123,7 @@ public class NormalChartDataPane extends DataContentsPane {
 	}
 
 	/**
-	 * ÊÇ·ñÖ§³Öµ¥Ôª¸ñÊı¾İ
+	 * æ˜¯å¦æ”¯æŒå•å…ƒæ ¼æ•°æ®
 	 */
 	public void setSupportCellData(boolean supportCellData) {
 		dataPane.justSupportOneSelect(supportCellData);

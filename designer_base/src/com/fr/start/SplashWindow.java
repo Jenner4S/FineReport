@@ -21,7 +21,7 @@ public class SplashWindow extends JFrame {
 
     @SuppressWarnings("LeakingThisInConstructor")
     public SplashWindow(SplashPane splashPane) {
-        // alex:必须设置这个属性为true,才可以用透明背景
+        // alex:蹇呴』璁剧疆杩欎釜灞炴�т负true,鎵嶅彲浠ョ敤閫忔槑鑳屾櫙
         System.setProperty("sun.java2d.noddraw", "true");
 
         this.setIconImage(BaseUtils.readImage("/com/fr/base/images/oem/logo.png"));
@@ -46,7 +46,7 @@ public class SplashWindow extends JFrame {
         this.setAlwaysOnTop(false);
         this.setUndecorated(true);
         
-        //使窗体背景透明
+        //浣跨獥浣撹儗鏅�忔槑
         if (OperatingSystem.isWindows()) {
             this.setBackground(new Color(0,0,0,0));
         }
@@ -56,7 +56,7 @@ public class SplashWindow extends JFrame {
     }
 
     /**
-     * 注销窗口
+     * 娉ㄩ攢绐楀彛
      */
     public void dispose() {
         super.dispose();

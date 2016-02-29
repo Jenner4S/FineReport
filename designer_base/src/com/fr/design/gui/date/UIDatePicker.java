@@ -25,7 +25,7 @@ import java.util.Date;
  */
 public class UIDatePicker extends UIComboBox implements Serializable {
 	/**
-	 * ÈÕÆÚ¸ñÊ½ÀàĞÍ
+	 * æ—¥æœŸæ ¼å¼ç±»å‹
 	 */
 	public static final int STYLE_CN_DATE = 0;
 	public static final int STYLE_CN_DATE1 = 1;
@@ -33,22 +33,22 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 	public static final int STYLE_CN_DATETIME1 = 3;
     public boolean isWillHide = false;
 	/**
-	 * ÈÕÆÚ¸ñÊ½ÀàĞÍ
+	 * æ—¥æœŸæ ¼å¼ç±»å‹
 	 */
 	private int formatStyle = STYLE_CN_DATETIME;
 	/**
-	 * µ±Ç°ÉèÖÃÈÕÆÚ¸ñÊ½
+	 * å½“å‰è®¾ç½®æ—¥æœŸæ ¼å¼
 	 */
 	private SimpleDateFormat dateFormat = null;
 
 	/**
-	 * Ö»ÓĞÒ»¸öÖµµÄComboBoxModel
+	 * åªæœ‰ä¸€ä¸ªå€¼çš„ComboBoxModel
 	 */
 	private SingleObjectComboBoxModel model = new SingleObjectComboBoxModel();
 	JDateDocument dateDocument = null;
 
 	/**
-	 * ¹¹ÔìÊ½
+	 * æ„é€ å¼
 	 */
 	public UIDatePicker() throws UnsupportedOperationException {
 		this(STYLE_CN_DATE);
@@ -60,25 +60,25 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 
 	public UIDatePicker(int formatStyle, Date initialDatetime) throws UnsupportedOperationException {
 		this.setStyle(formatStyle);
-		//ÉèÖÃ¿É±à¼­
+		//è®¾ç½®å¯ç¼–è¾‘
 		this.setEditable(true);
 
 		this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 
-		//ÉèÖÃ±à¼­Æ÷ÊôĞÔ(Ö»ÄÜÊäÈëÕıÈ·ÈÕÆÚ)
+		//è®¾ç½®ç¼–è¾‘å™¨å±æ€§(åªèƒ½è¾“å…¥æ­£ç¡®æ—¥æœŸ)
 		JTextField textField = ((JTextField) getEditor().getEditorComponent());
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		dateDocument = new JDateDocument(textField, this.dateFormat);
 		textField.setDocument(dateDocument);
-		//ÉèÖÃModelÎªµ¥ÖµModel
+		//è®¾ç½®Modelä¸ºå•å€¼Model
 		this.setModel(model);
-		//ÉèÖÃµ±Ç°Ñ¡ÔñÈÕÆÚ
+		//è®¾ç½®å½“å‰é€‰æ‹©æ—¥æœŸ
 		this.setSelectedItem(initialDatetime == null ? new Date() : initialDatetime);
         updateUI();
 	}
 
 	/**
-	 * ÉèÖÃÈÕÆÚ¸ñÊ½
+	 * è®¾ç½®æ—¥æœŸæ ¼å¼
 	 * STYLE_CN_DATE
 	 * STYLE_CN_DATE1
 	 * STYLE_CN_DATETIME
@@ -96,7 +96,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 	}
 
 	/**
-	 * È¡µÃÖ¸¶¨ÀàĞÍµÄÈÕÆÚ¸ñÊ½
+	 * å–å¾—æŒ‡å®šç±»å‹çš„æ—¥æœŸæ ¼å¼
 	 *
 	 * @param formatStyle int
 	 * @return SimpleDateFormat
@@ -120,7 +120,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 	}
 
 	/**
-	 * È¡µÃÈÕÆÚ¸ñÊ½
+	 * å–å¾—æ—¥æœŸæ ¼å¼
 	 * STYLE_CN_DATE
 	 * STYLE_CN_DATE1
 	 * STYLE_CN_DATETIME
@@ -133,7 +133,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 	}
 
 	/**
-	 * È¡µÃµ±Ç°Ñ¡ÔñµÄÈÕÆÚ
+	 * å–å¾—å½“å‰é€‰æ‹©çš„æ—¥æœŸ
 	 *
 	 * @return Date
 	 */
@@ -144,7 +144,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°Ñ¡ÔñµÄÈÕÆÚ
+	 * è®¾ç½®å½“å‰é€‰æ‹©çš„æ—¥æœŸ
 	 */
 	public void setSelectedDate(Date date) throws ParseException {
 		this.setSelectedItem(dateFormat.format(date));
@@ -157,7 +157,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 
 	/**
 	 * <p>Title: UIDatePicker</p>
-	 * <p>Description: DatePopup Ñ¡Ôñ¿òµ¯³öµÄÈÕÆÚÑ¡ÔñÃæ°å</p>
+	 * <p>Description: DatePopup é€‰æ‹©æ¡†å¼¹å‡ºçš„æ—¥æœŸé€‰æ‹©é¢æ¿</p>
 	 * <p>Copyright: Copyright (c) 2004</p>
 	 * <p>Company: </p>
 	 *
@@ -194,7 +194,7 @@ public class UIDatePicker extends UIComboBox implements Serializable {
         }
 
 		/**
-		 * ÏÔÊ¾µ¯³öÃæ°å
+		 * æ˜¾ç¤ºå¼¹å‡ºé¢æ¿
 		 */
 		protected void firePropertyChange(String propertyName,
 										  Object oldValue,
@@ -252,12 +252,12 @@ public class UIDatePicker extends UIComboBox implements Serializable {
 
 
 	
-	//ÉèÖÃdataFormat
+	//è®¾ç½®dataFormat
 	public void setDateFormat(SimpleDateFormat format){
 		this.dateFormat = format;
 	}
 	
-	//»ñÈ¡dateFormat
+	//è·å–dateFormat
 	public SimpleDateFormat getDateFormat(){
 		return this.dateFormat;
 	}

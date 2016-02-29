@@ -4,53 +4,53 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 
 /**
- * richer:ÊôĞÔºÍÊÂ¼ş·Ö×é
+ * richer:å±æ€§å’Œäº‹ä»¶åˆ†ç»„
  * @since 6.5.3
  */
 public interface GroupModel {
     /**
-     * ¸ÃÊôĞÔËùÊôµÄ·ÖÀà,ÆÕÍ¨ÊôĞÔ·ÖÎª»ù±¾ÊôĞÔºÍÆäËü,ÊÂ¼şÊôĞÔ¸ù¾İÊÂ¼şÃû³Æ²»Í¬½øĞĞ·ÖÀà
+     * è¯¥å±æ€§æ‰€å±çš„åˆ†ç±»,æ™®é€šå±æ€§åˆ†ä¸ºåŸºæœ¬å±æ€§å’Œå…¶å®ƒ,äº‹ä»¶å±æ€§æ ¹æ®äº‹ä»¶åç§°ä¸åŒè¿›è¡Œåˆ†ç±»
      */
     String getGroupName();
 
     /**
-     * ×Ü¹²µÄÊôĞÔĞĞÊı
+     * æ€»å…±çš„å±æ€§è¡Œæ•°
      */
     int getRowCount();
     
     /**
-     * »ñÈ¡ÊôĞÔ±íÖĞµÚrowĞĞµÄäÖÈ¾Æ÷
+     * è·å–å±æ€§è¡¨ä¸­ç¬¬rowè¡Œçš„æ¸²æŸ“å™¨
      * @param row
      */
     TableCellRenderer getRenderer(int row);
 
     /**
-     * »ñÈ¡ÊôĞÔ±íÖĞµÚrowĞĞµÄ±à¼­Æ÷
+     * è·å–å±æ€§è¡¨ä¸­ç¬¬rowè¡Œçš„ç¼–è¾‘å™¨
      * @param row
      */
     TableCellEditor getEditor(int row);
 
     /**
-     * »ñÈ¡ÊôĞÔ±íÖĞµÚrowĞĞµÚcolumnÁĞµÄÖµ
+     * è·å–å±æ€§è¡¨ä¸­ç¬¬rowè¡Œç¬¬columnåˆ—çš„å€¼
      * @param row
      * @param column
-     * @return ±í¸ñÖĞµÄÖµ
+     * @return è¡¨æ ¼ä¸­çš„å€¼
      */
     Object getValue(int row, int column);
 
     /**
-     * ÉèÖÃÊôĞÔ±íÖĞµÚrowĞĞµÚcolumnÁĞµÄÖµÎªvalue
+     * è®¾ç½®å±æ€§è¡¨ä¸­ç¬¬rowè¡Œç¬¬columnåˆ—çš„å€¼ä¸ºvalue
      * @param value
      * @param row
      * @param column
-     * @return ÉèÖÃ³É¹¦Ôò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return è®¾ç½®æˆåŠŸåˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     boolean setValue(Object value, int row, int column);
 
     /**
-     * ¸ÄĞĞÊÇ·ñ¿É±à¼­
+     * æ”¹è¡Œæ˜¯å¦å¯ç¼–è¾‘
      * @param row
-     * @return µÚrowĞĞ¿É±à¼­·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return ç¬¬rowè¡Œå¯ç¼–è¾‘è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     boolean isEditable(int row);
 }

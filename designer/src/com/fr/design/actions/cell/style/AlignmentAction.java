@@ -37,7 +37,7 @@ public class AlignmentAction extends ButtonGroupAction implements StyleActionInt
 	}
 
 	/**
-	 * ¸üĞÂStyle
+	 * æ›´æ–°Style
 	 *
 	 * @param style style
 	 */
@@ -65,7 +65,7 @@ public class AlignmentAction extends ButtonGroupAction implements StyleActionInt
 	public void update() {
 		super.update();
 
-		//peter:Èç¹ûµ±Ç°Ã»ÓĞReportFrame,²»ĞèÒª¼ÌĞø.
+		//peter:å¦‚æœå½“å‰æ²¡æœ‰ReportFrame,ä¸éœ€è¦ç»§ç»­.
 		if (!this.isEnabled()) {
 			return;
 		}
@@ -91,7 +91,7 @@ public class AlignmentAction extends ButtonGroupAction implements StyleActionInt
 	}
 
 	/**
-	 * ´´½¨¹¤¾ßÌõ£¬ÇÒÓĞÌáÊ¾
+	 * åˆ›å»ºå·¥å…·æ¡ï¼Œä¸”æœ‰æç¤º
 	 *
 	 * @return
 	 */

@@ -13,10 +13,10 @@ import com.fr.base.BaseUtils;
 import com.fr.base.FRContext;
 
 /**
- * ¾¯¸æÍ¼Æ¬
+ * è­¦å‘Šå›¾ç‰‡
  * 
  * @author zhou
- * @since 2012-3-28ÏÂÎç10:20:29
+ * @since 2012-3-28ä¸‹åˆ10:20:29
  */
 public class WarningIcon extends ImageIcon {
 	protected final static Component component = new Component() {

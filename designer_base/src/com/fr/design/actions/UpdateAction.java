@@ -31,8 +31,8 @@ import java.util.Map;
  * For example, a 'cut' action my be enabled or disabled based on the state of the selection
  * in a text component. Just before the edit menu is displayed, the cut action is given the
  * opportunity to update itself, and will appear in the menu with the correct state.
- * august:²»ĞèÒª¿¼ÂÇUpdateActionµÄ³Ö¾Ã»¯£¬ÄÑµÀĞèÒª³Ö¾Ã»¯Âğ£¿ ÓÖ²»ÏñÒÔÇ°ÄÇÑù±£´ædockingµÄ´óĞ¡²¼¾Ö
- * Èç¹ûÊÇToggleButton£¬¾Í¶îÍâ¼Ì³ĞToggleButtonUpdateAction½Ó¿Ú
+ * august:ä¸éœ€è¦è€ƒè™‘UpdateActionçš„æŒä¹…åŒ–ï¼Œéš¾é“éœ€è¦æŒä¹…åŒ–å—ï¼Ÿ åˆä¸åƒä»¥å‰é‚£æ ·ä¿å­˜dockingçš„å¤§å°å¸ƒå±€
+ * å¦‚æœæ˜¯ToggleButtonï¼Œå°±é¢å¤–ç»§æ‰¿ToggleButtonUpdateActionæ¥å£
  */
 public abstract class UpdateAction extends ShortCut implements Action {
 
@@ -43,7 +43,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 
 	/**
 	 * Contains the array of key bindings.
-	 * august:¹Ø¼ü´Êkey£¬ÊÇActionÀïÃæµÄfinal³£Á¿£¬Èç£ºAction.NAME¡¢Action.SMALL_ICONµÈµÈ
+	 * august:å…³é”®è¯keyï¼Œæ˜¯Actioné‡Œé¢çš„finalå¸¸é‡ï¼Œå¦‚ï¼šAction.NAMEã€Action.SMALL_ICONç­‰ç­‰
 	 */
 	private Map<String, Object> componentMap;
 
@@ -51,7 +51,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 	 * Constructor
 	 */
 	public UpdateAction() {
-		//ÉèÖÃÄ¬ÈÏµÄsmall icon,±ØĞëÓĞÒ»¸öÄ¬ÈÏµÄÍ¼Æ¬,ÕâÑù²Ëµ¥ÕûÌåÃÀ¹Û.
+		//è®¾ç½®é»˜è®¤çš„small icon,å¿…é¡»æœ‰ä¸€ä¸ªé»˜è®¤çš„å›¾ç‰‡,è¿™æ ·èœå•æ•´ä½“ç¾è§‚.
 		this.putValue(Action.SMALL_ICON, UIConstants.BLACK_ICON);
 	}
 
@@ -80,7 +80,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 		if (oldValue != newValue) {
 			this.enabled = newValue;
 
-			//Ñ­»·±éÀúËùÓĞµÄEnableÊôĞÔ.
+			//å¾ªç¯éå†æ‰€æœ‰çš„Enableå±æ€§.
 			Iterator<Object> valueIt = this.componentMap.values().iterator();
 			while (valueIt.hasNext()) {
 				Object valueObject = valueIt.next();
@@ -232,7 +232,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 		Object object = this.getValue(UIMenuItem.class.getName());
 		if (object == null && !(object instanceof UIMenuItem)) {
 			UIMenuItem menuItem = new UIMenuItem(this);
-			// ÉèÖÃÃû×ÖÓÃ×÷µ¥Ôª²â
+			// è®¾ç½®åå­—ç”¨ä½œå•å…ƒæµ‹
 			menuItem.setName(getName());
 			object = menuItem;
 
@@ -252,11 +252,11 @@ public abstract class UpdateAction extends ShortCut implements Action {
 		if (!(object instanceof AbstractButton)) {
 			UIButton button = null;
 			button = new UIButton();
-			// Ìí¼ÓÒ»¸öÃû×Ö×÷Îª×Ô¶¯»¯²âÊÔÓÃ
+			// æ·»åŠ ä¸€ä¸ªåå­—ä½œä¸ºè‡ªåŠ¨åŒ–æµ‹è¯•ç”¨
 			button.setName(getName());
 			button.set4ToolbarButton();
 
-			//ÉèÖÃÊôĞÔ.
+			//è®¾ç½®å±æ€§.
 			Integer mnemonicInteger = (Integer) this.getValue(Action.MNEMONIC_KEY);
 			if (mnemonicInteger != null) {
 				button.setMnemonic((char) mnemonicInteger.intValue());
@@ -271,7 +271,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 			button.setText(StringUtils.EMPTY);
 			button.setEnabled(this.isEnabled());
 
-			//peter:²úÉútooltip
+			//peter:äº§ç”Ÿtooltip
 			button.setToolTipText(ActionUtils.createButtonToolTipText(this));
 			object = button;
 		}
@@ -322,7 +322,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 	}
 
 	/**
-	 * È«¾ÖstyleµÄ²Ëµ¥
+	 * å…¨å±€styleçš„èœå•
 	 */
 	public static class UseMenuItem extends UIMenuItem {
 
@@ -383,7 +383,7 @@ public abstract class UpdateAction extends ShortCut implements Action {
 	public static UICheckBoxMenuItem createCheckBoxMenuItem(UpdateAction action) {
 		UICheckBoxMenuItem menuItem = new UICheckBoxMenuItem(action.getName());
 
-		// ÉèÖÃÊôĞÔ.
+		// è®¾ç½®å±æ€§.
 		Integer mnemonicInteger = (Integer) action
 				.getValue(Action.MNEMONIC_KEY);
 		if (mnemonicInteger != null) {

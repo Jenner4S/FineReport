@@ -85,10 +85,10 @@ public class UIMenuTable extends JTable {
 
 	/**
 	 * 
-	 * @param value ¸ÃĞĞÁĞµÄÖµ(×Ö·û´®)
+	 * @param value è¯¥è¡Œåˆ—çš„å€¼(å­—ç¬¦ä¸²)
 	 * @param row
 	 * @param column
-	 * @return ÁĞ±íÖĞÄ¬ÈÏÏÔÊ¾µÄ¶«Î÷£¬Èç¹ûÓĞºÜ¶àÄÚÈİ£¬¿ÉÒÔ×°ÔØÒ»¸öJPanelÀïÔÙÇ¶½øÀ´
+	 * @return åˆ—è¡¨ä¸­é»˜è®¤æ˜¾ç¤ºçš„ä¸œè¥¿ï¼Œå¦‚æœæœ‰å¾ˆå¤šå†…å®¹ï¼Œå¯ä»¥è£…è½½ä¸€ä¸ªJPanelé‡Œå†åµŒè¿›æ¥
 	 */
 	protected JComponent getRenderCompoment(Object value, int row,int column) {
 		UILabel text = new UILabel();
@@ -99,8 +99,8 @@ public class UIMenuTable extends JTable {
 	}
 
 	/**
-	 * @param line ¸ÃĞĞµÄÄÚÈİ
-	 * ÔÚtableµ×²¿Ôö¼ÓÒ»ĞĞÄÚÈİ
+	 * @param line è¯¥è¡Œçš„å†…å®¹
+	 * åœ¨tableåº•éƒ¨å¢åŠ ä¸€è¡Œå†…å®¹
 	 */
 	public void addLine(UIMenuNameableCreator line) {
 		((UIMenuTableDataModel)dataModel).addLine(line);
@@ -108,14 +108,14 @@ public class UIMenuTable extends JTable {
 
 	/**
 	 * @param rowIndex
-	 * @return Ä³Ò»ĞĞµÄÄÚÈİ
+	 * @return æŸä¸€è¡Œçš„å†…å®¹
 	 */
 	public UIMenuNameableCreator getLine(int rowIndex) {
 		return ((UIMenuTableDataModel)dataModel).getLine(rowIndex);
 	}
 
 	/**
-	 * É¾³ıÄ³ĞĞÄÚÈİ
+	 * åˆ é™¤æŸè¡Œå†…å®¹
 	 * @param rowIndex
 	 */
 	public void removeLine(int rowIndex) {
@@ -123,7 +123,7 @@ public class UIMenuTable extends JTable {
 	}
 	
 	/**
-	 * Çå³ıËùÓĞµÄÄÚÈİ
+	 * æ¸…é™¤æ‰€æœ‰çš„å†…å®¹
 	 */
 	public void clearAll() {
 		int rowCount = dataModel.getRowCount();
@@ -133,9 +133,9 @@ public class UIMenuTable extends JTable {
 	}
 
 	/**
-	 * ¶ÔÄ³Ò»ĞĞÍÏ¶¯Ê±½øĞĞÅÅĞò
+	 * å¯¹æŸä¸€è¡Œæ‹–åŠ¨æ—¶è¿›è¡Œæ’åº
 	 * @param rowIndex
-	 * @param positive Êó±êÒÆ¶¯µÄ¾àÀë
+	 * @param positive é¼ æ ‡ç§»åŠ¨çš„è·ç¦»
 	 */
 	public void dragSort(int rowIndex, boolean positive) {
 		((UIMenuTableDataModel)dataModel).dragSort(rowIndex, positive);

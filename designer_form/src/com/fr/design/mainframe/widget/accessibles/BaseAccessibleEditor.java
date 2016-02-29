@@ -96,7 +96,7 @@ public class BaseAccessibleEditor extends BasicPane implements AccessibleEditor 
     	return "Base";
     }
 
-    // ÏÔÊ¾±à¼­Æ÷Ï¸½Ú
+    // æ˜¾ç¤ºç¼–è¾‘å™¨ç»†èŠ‚
     protected void showEditorPane() {
     }
 
@@ -117,7 +117,7 @@ public class BaseAccessibleEditor extends BasicPane implements AccessibleEditor 
         }
     }
 
-    // ÓĞµÄ±à¼­Æ÷ÊÇÊ¹ÓÃÏÂÀ­¿òÀ´Ö±½ÓÑ¡ÔñµÄ,ÕâÊ±ºò¾Í°Ñ°´Å¥ÏÔÊ¾³ÉÏÂÀ­¿ò
+    // æœ‰çš„ç¼–è¾‘å™¨æ˜¯ä½¿ç”¨ä¸‹æ‹‰æ¡†æ¥ç›´æ¥é€‰æ‹©çš„,è¿™æ—¶å€™å°±æŠŠæŒ‰é’®æ˜¾ç¤ºæˆä¸‹æ‹‰æ¡†
     protected boolean isComboButton() {
         return false;
     }

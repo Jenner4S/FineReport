@@ -23,7 +23,7 @@ import java.net.URISyntaxException;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-18
- * Time: 上午9:21
+ * Time: 涓婂崍9:21
  */
 public class ForumAction extends UpdateAction {
     public ForumAction() {
@@ -34,8 +34,8 @@ public class ForumAction extends UpdateAction {
 
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         String url = "http://bbs.finereport.com/";

@@ -5,7 +5,7 @@ import com.fr.stable.StringUtils;
 /**
  * 
  * @author zhou
- * @since 2012-7-11ÏÂÎç5:11:31
+ * @since 2012-7-11ä¸‹åˆ5:11:31
  */
 public class DataBaseItems {
 	private String databaseName;

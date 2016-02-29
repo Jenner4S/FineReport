@@ -28,7 +28,7 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ÈÈµãÁ´½Ó²¿·Ö ÉÏ·½ ¶¨ÒåÌØÕ÷ ÑùÊ½ ±¨±í µÈÊôĞÔµÄ½çÃæ.
+ * çƒ­ç‚¹é“¾æ¥éƒ¨åˆ† ä¸Šæ–¹ å®šä¹‰ç‰¹å¾ æ ·å¼ æŠ¥è¡¨ ç­‰å±æ€§çš„ç•Œé¢.
  *
  * @author kunsnat
  */
@@ -39,7 +39,7 @@ public class ReporletHyperNorthPane extends AbstractHyperlinkPane<ReportletHyper
     private UICheckBox showParameterInterface;
     private UIButton browserButton;
 
-    // richer:²ÎÊı´«µİ·½Ê½
+    // richer:å‚æ•°ä¼ é€’æ–¹å¼
     private UIComboBox postComboBox;
 
     public ReporletHyperNorthPane(boolean needRenamePane) {
@@ -52,7 +52,7 @@ public class ReporletHyperNorthPane extends AbstractHyperlinkPane<ReportletHyper
     }
 
     /**
-     * ³õÊ¼»¯×é¼ş
+     * åˆå§‹åŒ–ç»„ä»¶
      */
     public void inits() {
         super.initComponents();
@@ -143,7 +143,7 @@ public class ReporletHyperNorthPane extends AbstractHyperlinkPane<ReportletHyper
     }
 
     /**
-     * »ñÈ¡°´Å¥½¹µã
+     * è·å–æŒ‰é’®ç„¦ç‚¹
      */
     public void requestButtonFocus() {
         this.browserButton.requestFocus();

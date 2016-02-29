@@ -14,7 +14,7 @@ import java.util.List;
  * Author : DAISY
  * Version: 6.5.6
  * Date: 14-10-29
- * Time: ÏÂÎç2:16
+ * Time: ä¸‹åˆ2:16
  */
 public class GanttPlotPane4ToolBar extends PlotPane4ToolBar {
 

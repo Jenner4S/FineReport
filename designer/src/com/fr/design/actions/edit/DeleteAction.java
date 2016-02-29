@@ -20,7 +20,7 @@ public class DeleteAction extends ElementCaseAction {
 		
         this.setName(Inter.getLocText("M_Edit-Delete") + "...");
         this.setMnemonic('D');
-        //Richie:É¾³ı²Ëµ¥Í¼±ê
+        //Richie:åˆ é™¤èœå•å›¾æ ‡
         this.setSmallIcon(BaseUtils.readIcon("/com/fr/design/images/m_report/delete.png"));
     }
     

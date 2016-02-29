@@ -23,7 +23,7 @@ import com.fr.design.widget.DataModify;
 
 public abstract class FieldEditorDefinePane<T extends FieldEditor> extends AbstractDataModify<T> {
 	private UICheckBox allowBlankCheckBox;
-	// richer:������Ϣ�������пؼ����е����ԣ����Էŵ�������
+	// richer:错误信息，是所有控件共有的属性，所以放到这里来
 	private UITextField errorMsgTextField;
 
 	public FieldEditorDefinePane() {
@@ -38,7 +38,7 @@ public abstract class FieldEditorDefinePane<T extends FieldEditor> extends Abstr
 		firstPanel.setBorder(BorderFactory.createEmptyBorder(0, -2, 0, 0));
 		//JPanel firstPanel = FRGUIPaneFactory.createBorderLayout_M_Pane();
 		allowBlankCheckBox = new UICheckBox(Inter.getLocText("Allow_Blank"));
-		// �Ƿ�����Ϊ��
+		// 是否允许为空
 		firstPanel.add(allowBlankCheckBox);
 		allowBlankCheckBox.addItemListener(new ItemListener() {
 			
@@ -48,7 +48,7 @@ public abstract class FieldEditorDefinePane<T extends FieldEditor> extends Abstr
 			}
 		});
 
-		// ������Ϣ
+		// 错误信息
 		JPanel errorMsgPane = FRGUIPaneFactory.createLeftFlowZeroGapBorderPane();
 		firstPanel.add(errorMsgPane);
 		northPane.add(firstPanel);
@@ -56,7 +56,7 @@ public abstract class FieldEditorDefinePane<T extends FieldEditor> extends Abstr
 		errorMsgTextField = new UITextField(16);
 		errorMsgPane.add(errorMsgTextField);
 
-		// richer:��ҪΪ�˷���鿴�Ƚϳ��Ĵ�����Ϣ
+		// richer:主要为了方便查看比较长的错误信息
 		errorMsgTextField.getDocument().addDocumentListener(new DocumentListener() {
 
 			public void changedUpdate(DocumentEvent e) {

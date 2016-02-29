@@ -27,7 +27,7 @@ public class DataLabelStylePane extends BasicPane {
 	}
 	
 	/**
-	 * ÊÇ·ñÖ§³Ö×ÖÌåÑÕÉ«µÄÉèÖÃ
+	 * æ˜¯å¦æ”¯æŒå­—ä½“é¢œè‰²çš„è®¾ç½®
 	 */
 	public DataLabelStylePane(boolean isSurpportFontColor) {
 		this.initPane(isSurpportFontColor);
@@ -54,7 +54,7 @@ public class DataLabelStylePane extends BasicPane {
 			this.add(colorBox = new ColorSelectBox(60));
 		}
 		
-		// Ä¬ÈÏ×ÖÌåÑ¡Ôñ.
+		// é»˜è®¤å­—ä½“é€‰æ‹©.
 		FRFont defaultFont = FRFont.getInstance();
 		nameBox.setSelectedItem(defaultFont.getFontName());
 		fontStyleBox.setSelectedIndex(defaultFont.getStyle());
@@ -109,7 +109,7 @@ public class DataLabelStylePane extends BasicPane {
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°Ãæ°åÖĞÉèÖÃµÄÎÄ±¾×ÖÌåÑùÊ½
+	 * è·å–å½“å‰é¢æ¿ä¸­è®¾ç½®çš„æ–‡æœ¬å­—ä½“æ ·å¼
 	 * @return FRFont
 	 */
 	public FRFont getInstanceFont() {

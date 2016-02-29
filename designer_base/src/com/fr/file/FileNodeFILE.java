@@ -20,7 +20,7 @@ import java.io.OutputStream;
 public class FileNodeFILE implements FILE {
 
     private FileNode node;
-    // carl£º¼ÇÂ¼ÏÂFILE¶ÔÓ¦µÄÔËĞĞ»·¾³,Ã¿´Î´´½¨¶¼ÉèÖÃÏÂµ±Ç°µÄÔËĞĞ»·¾³
+    // carlï¼šè®°å½•ä¸‹FILEå¯¹åº”çš„è¿è¡Œç¯å¢ƒ,æ¯æ¬¡åˆ›å»ºéƒ½è®¾ç½®ä¸‹å½“å‰çš„è¿è¡Œç¯å¢ƒ
     private String envPath;
 
     public FileNodeFILE(FileNodeFILE parent, String name, boolean isDir) {
@@ -54,9 +54,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * prefix ºó×º
+     * prefix åç¼€
      *
-     * @return ·µ»Øºó×º
+     * @return è¿”å›åç¼€
      */
     public String prefix() {
         if (ComparatorUtils.equals(getEnvPath(), FRContext.getCurrentEnv().getWebReportPath())) {
@@ -73,9 +73,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñÊÇÄ¿Â¼
+     * æ˜¯å¦æ˜¯ç›®å½•
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isDirectory() {
         return ComparatorUtils.equals(node, null) ? true : node.isDirectory();
@@ -141,9 +141,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÎÄ¼ş
+     * æ–‡ä»¶
      *
-     * @return ÎÄ¼ş×é
+     * @return æ–‡ä»¶ç»„
      */
     public FILE[] listFiles() {
         if (ComparatorUtils.equals(node, null)) {
@@ -172,10 +172,10 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ¸ùÄ¿Â¼ÎÄ¼şµØÖ·
+     * æ ¹ç›®å½•æ–‡ä»¶åœ°å€
      *
-     * @param rootFilePath ¸ùÎÄ¼şÂ·¾¶
-     * @return ·µ»ØÎÄ¼ş½Úµã
+     * @param rootFilePath æ ¹æ–‡ä»¶è·¯å¾„
+     * @return è¿”å›æ–‡ä»¶èŠ‚ç‚¹
      */
     private FileNode[] listFile(String rootFilePath) {
         if (ComparatorUtils.equals(envPath, FRContext.getCurrentEnv().getWebReportPath())) {
@@ -195,10 +195,10 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ´´½¨ÎÄ¼ş¼Ğ
+     * åˆ›å»ºæ–‡ä»¶å¤¹
      *
-     * @param name ÎÄ¼ş¼ĞÃû×Ö
-     * @return ´´½¨³É¹¦·µ»Øtrue
+     * @param name æ–‡ä»¶å¤¹åå­—
+     * @return åˆ›å»ºæˆåŠŸè¿”å›true
      */
     public boolean createFolder(String name) {
         if (ComparatorUtils.equals(node, null) || !node.isDirectory()) {
@@ -216,9 +216,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñËø×¡
+     * æ˜¯å¦é”ä½
      *
-     * @return ÎÄ¼ş±»Ëø·µ»Øtrue
+     * @return æ–‡ä»¶è¢«é”è¿”å›true
      */
     public boolean isLocked() {
         if (node == null) {
@@ -234,15 +234,15 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñ´æÔÚ
+     * æ˜¯å¦å­˜åœ¨
      *
-     * @return ÎÄ¼ş´æÔÚ·µ»Ø true
+     * @return æ–‡ä»¶å­˜åœ¨è¿”å› true
      */
     public boolean exists() {
         if (node == null) {
             return false;
         }
-        // µ±ÔËĞĞ»·¾³²»Ò»ÖÂ£¬·µ»Øfalse
+        // å½“è¿è¡Œç¯å¢ƒä¸ä¸€è‡´ï¼Œè¿”å›false
         if (!isCurrentEnv()) {
             return false;
         }
@@ -256,18 +256,18 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñÊÇµ±Ç°»·¾³
+     * æ˜¯å¦æ˜¯å½“å‰ç¯å¢ƒ
      *
-     * @return ÊÇ±¨±íµ±Ç°»·¾³·µ»Øtrue
+     * @return æ˜¯æŠ¥è¡¨å½“å‰ç¯å¢ƒè¿”å›true
      */
     public boolean isCurrentEnv() {
         return ComparatorUtils.equals(FRContext.getCurrentEnv().getPath(), envPath);
     }
 
     /**
-     * ´´½¨ÎÄ¼ş
+     * åˆ›å»ºæ–‡ä»¶
      *
-     * @return ³É¹¦·µ»Øtrue
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean mkfile() {
         if (node == null) {
@@ -283,9 +283,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ×÷ÎªÊäÈëÁ÷
+     * ä½œä¸ºè¾“å…¥æµ
      *
-     * @return ÊäÈëÁ÷
+     * @return è¾“å…¥æµ
      * @throws Exception
      */
     public InputStream asInputStream() throws Exception {
@@ -294,7 +294,7 @@ public class FileNodeFILE implements FILE {
         }
 
         String envPath = node.getEnvPath();
-        // envPath±ØĞëÒÔreportlets¿ªÍ·
+        // envPathå¿…é¡»ä»¥reportletså¼€å¤´
         if (!envPath.startsWith(ProjectConstants.REPORTLETS_NAME)) {
             return null;
         }
@@ -309,9 +309,9 @@ public class FileNodeFILE implements FILE {
     }
     
     /**
-     * ×÷ÎªÊä³öÁ÷
+     * ä½œä¸ºè¾“å‡ºæµ
      *
-     * @return ·µ»ØÊä³öÁ÷
+     * @return è¿”å›è¾“å‡ºæµ
      * @throws Exception
      */
     public OutputStream asOutputStream() throws Exception {
@@ -320,7 +320,7 @@ public class FileNodeFILE implements FILE {
         }
 
         String envPath = node.getEnvPath();
-        // envPath±ØĞëÒÔreportlets¿ªÍ·
+        // envPathå¿…é¡»ä»¥reportletså¼€å¤´
         if (!envPath.startsWith(ProjectConstants.REPORTLETS_NAME)) {
             return null;
         }
@@ -331,7 +331,7 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ¹Ø±ÕÄ£°å
+     * å…³é—­æ¨¡æ¿
      *
      * @throws Exception
      */
@@ -341,7 +341,7 @@ public class FileNodeFILE implements FILE {
         }
 
         String envPath = node.getEnvPath();
-        // envPath±ØĞëÒÔreportlets¿ªÍ·
+        // envPathå¿…é¡»ä»¥reportletså¼€å¤´
         if (!envPath.startsWith(ProjectConstants.REPORTLETS_NAME)) {
             return;
         }
@@ -351,7 +351,7 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * µÃµ½»·¾³µÄÈ«Ãû
+     * å¾—åˆ°ç¯å¢ƒçš„å…¨å
      *
      * @return
      */
@@ -360,25 +360,25 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ÊÇ·ñÊÇÄÚ´æÎÄ¼ş
+     * æ˜¯å¦æ˜¯å†…å­˜æ–‡ä»¶
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isMemFile() {
         return false;
     }
 
     /**
-     * ÊÇ·ñÊÇ»·¾³ÎÄ¼ş
+     * æ˜¯å¦æ˜¯ç¯å¢ƒæ–‡ä»¶
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isEnvFile() {
         return true;
     }
 
     /**
-     * ÊÇ·ğÏàÍ¬
+     * æ˜¯ä½›ç›¸åŒ
      *
      * @param obj
      * @return
@@ -392,9 +392,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ·µ»ØhashÂë
+     * è¿”å›hashç 
      *
-     * @return ·µ»ØhashÂë
+     * @return è¿”å›hashç 
      */
     public int hashCode() {
         int hash = 5;
@@ -404,9 +404,9 @@ public class FileNodeFILE implements FILE {
     }
 
     /**
-     * ×÷Îª×Ö·û´®·µ»Ø
+     * ä½œä¸ºå­—ç¬¦ä¸²è¿”å›
      *
-     * @return String  ×Ö·û´®
+     * @return String  å­—ç¬¦ä¸²
      */
     public String toString() {
         return prefix() + (this.node != null ? this.node.getEnvPath() : "");

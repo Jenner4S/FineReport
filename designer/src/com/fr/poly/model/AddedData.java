@@ -13,7 +13,7 @@ import com.fr.stable.StringUtils;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-2 ÓÃÀ´±£´æÒÑ¾­Ìí¼ÓÁËµÄÉè¼Æ¿é
+ * @since 6.5.4 åˆ›å»ºäº2011-4-2 ç”¨æ¥ä¿å­˜å·²ç»æ·»åŠ äº†çš„è®¾è®¡å—
  */
 public class AddedData {
 

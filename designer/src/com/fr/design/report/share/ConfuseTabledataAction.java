@@ -11,19 +11,19 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.StringUtils;
 
 /**
- * »ìÏı´«ÈëµÄtabledata
+ * æ··æ·†ä¼ å…¥çš„tabledata
  * 
  * @author neil
  *
- * @date: 2015-3-10-ÉÏÎç10:45:41
+ * @date: 2015-3-10-ä¸Šåˆ10:45:41
  */
 public class ConfuseTabledataAction {
 
 	/**
-	 * »ìÏıÖ¸¶¨µÄÄÚÖÃÊı¾İ¼¯
+	 * æ··æ·†æŒ‡å®šçš„å†…ç½®æ•°æ®é›†
 	 * 
-	 * @param info »ìÏıÏà¹ØµÄĞÅÏ¢
-	 * @param tabledata ĞèÒª»ìÏıµÄÊı¾İ¼¯
+	 * @param info æ··æ·†ç›¸å…³çš„ä¿¡æ¯
+	 * @param tabledata éœ€è¦æ··æ·†çš„æ•°æ®é›†
 	 * 
 	 */
     public void confuse(ConfusionInfo info, EmbeddedTableData tabledata){
@@ -34,7 +34,7 @@ public class ConfuseTabledataAction {
 				continue;
 			}
 			
-			//»º´æÏÂÒÑ¾­»ìÏıµÄÊı¾İ, ÕâÑùÏàÍ¬µÄÔ­Ê¼Êı¾İ, »ìÏı³öÀ´µÄ½á¹ûÊÇÒ»ÖÂµÄ.
+			//ç¼“å­˜ä¸‹å·²ç»æ··æ·†çš„æ•°æ®, è¿™æ ·ç›¸åŒçš„åŸå§‹æ•°æ®, æ··æ·†å‡ºæ¥çš„ç»“æœæ˜¯ä¸€è‡´çš„.
 			HashMap<Object, Object> cachedValue = new HashMap<Object, Object>();
 			for (int k = 0; k < rowCount; k++) {
 				Object oriValue = tabledata.getValueAt(k, j);
@@ -51,10 +51,10 @@ public class ConfuseTabledataAction {
 		}
     }
     
-    //»ìÏıÃ¿Ò»¸ö¸ñ×ÓµÄÊı¾İ
+    //æ··æ·†æ¯ä¸€ä¸ªæ ¼å­çš„æ•°æ®
     private Object confusionValue(ConfusionInfo info, int colIndex, String key, HashMap<Object, Object> cachedValue, Object oriValue){
 		if (info.isNumberColumn(colIndex)){
-			//Èç¹ûÊÇÊı×Ö¸ñÊ½µÄ, ÄÇÃ´¾Í×ö³Ë·¨, eg: 3 * 3, 8 *3.....
+			//å¦‚æœæ˜¯æ•°å­—æ ¼å¼çš„, é‚£ä¹ˆå°±åšä¹˜æ³•, eg: 3 * 3, 8 *3.....
 			Number keyValue = GeneralUtils.objectToNumber(key, false);
 			Number oriNumber = GeneralUtils.objectToNumber(oriValue, false);
 			return oriNumber.doubleValue() * keyValue.doubleValue();
@@ -62,11 +62,11 @@ public class ConfuseTabledataAction {
 		
 		String oriStrValue = GeneralUtils.objectToString(oriValue);
 		if(StringUtils.isEmpty(oriStrValue)){
-			//Èç¹ûÊÇ¿Õ×Ö¶Î, ¾ÍÄ¬ÈÏ²»»ìÏı. ÒòÎªÓĞµÄ¿Í»§Ëû¾ÍÊÇÁôÁË¿Õ×Ö¶ÎÀ´×öÒ»Ğ©¹ıÂË, Ìõ¼şÊôĞÔÖ®ÀàµÄ.
+			//å¦‚æœæ˜¯ç©ºå­—æ®µ, å°±é»˜è®¤ä¸æ··æ·†. å› ä¸ºæœ‰çš„å®¢æˆ·ä»–å°±æ˜¯ç•™äº†ç©ºå­—æ®µæ¥åšä¸€äº›è¿‡æ»¤, æ¡ä»¶å±æ€§ä¹‹ç±»çš„.
 			return oriStrValue;
 		}
 		
-		//Ä¬ÈÏÆäËû¸ñÊ½µÄ¾Í×ö¼Ó·¨, eg: µØÇø1, µØÇø2......
+		//é»˜è®¤å…¶ä»–æ ¼å¼çš„å°±åšåŠ æ³•, eg: åœ°åŒº1, åœ°åŒº2......
 		return key + cachedValue.size();
     }
 

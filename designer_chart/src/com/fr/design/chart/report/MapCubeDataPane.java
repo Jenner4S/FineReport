@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ×êÈ¡Êı¾İ 
+ * é’»å–æ•°æ® 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-21 ÏÂÎç11:02:02
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-21 ä¸‹åˆ11:02:02
  */
 public class MapCubeDataPane extends UIComboBoxPane<TopDefinitionProvider> {
 	
@@ -49,7 +49,7 @@ public class MapCubeDataPane extends UIComboBoxPane<TopDefinitionProvider> {
 	}
 	
 	/**
-	 * ¶ÔÊı¾İ¼¯»òÕßµ¥Ôª¸ñÊı¾İ¼ÓÔØ½çÃæ
+	 * å¯¹æ•°æ®é›†æˆ–è€…å•å…ƒæ ¼æ•°æ®åŠ è½½ç•Œé¢
 	 */
 	public void populateBean(TopDefinitionProvider definition) {
 		if(definition instanceof MapMoreLayerReportDefinition) {
@@ -64,7 +64,7 @@ public class MapCubeDataPane extends UIComboBoxPane<TopDefinitionProvider> {
 	}
 	
 	/**
-	 * ¸ù¾İ½çÃæ ÏÂÔØ±£´æÊı¾İ
+	 * æ ¹æ®ç•Œé¢ ä¸‹è½½ä¿å­˜æ•°æ®
 	 */
 	public TopDefinitionProvider update() {
 		if(this.getSelectedIndex() == 0) {

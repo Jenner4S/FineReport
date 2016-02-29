@@ -12,13 +12,13 @@ import java.awt.event.MouseEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-30
- * Time: ÏÂÎç2:28
+ * Time: ä¸‹åˆ2:28
  */
 public class DynamicScrollBarUI extends BasicScrollBarUI {
 
 
     private boolean isRollover = false;
-    //ÊÇ·ñ
+    //æ˜¯å¦
     private boolean wasRollover = false;
 
 
@@ -27,8 +27,8 @@ public class DynamicScrollBarUI extends BasicScrollBarUI {
     }
 
     /**
-     * ÊÇ·ñ¿É¼û
-     * @return ¿É¼û·µ»Øtrue
+     * æ˜¯å¦å¯è§
+     * @return å¯è§è¿”å›true
      */
     public boolean isThumbVisible() {
         if (scrollbar.getOrientation() == JScrollBar.VERTICAL) {
@@ -119,7 +119,7 @@ public class DynamicScrollBarUI extends BasicScrollBarUI {
 
     private void paintScrollBar(Graphics g, int xs, int ys, int x2, int y2, Rectangle t) {
         switch (scrollbar.getOrientation()) {
-            //harry: ´¹Ö±¹ö¶¯ÌõºÍË®Æ½¹ö¶¯ÌõµÄ»­·¨·Ö¿ª¡£
+            //harry: å‚ç›´æ»šåŠ¨æ¡å’Œæ°´å¹³æ»šåŠ¨æ¡çš„ç”»æ³•åˆ†å¼€ã€‚
             case JScrollBar.VERTICAL:
                 Graphics2D g2 = (Graphics2D) g;
                 GradientPaint scrollBarBg = null;

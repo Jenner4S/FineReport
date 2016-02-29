@@ -30,8 +30,8 @@ public class WidgetEventPane extends ObjectJControlPane {
     }
 
     /**
-     * Éú³ÉÌí¼Ó°´Å¥µÄNameableCreator
-     * @return °´Å¥µÄNameableCreator
+     * ç”Ÿæˆæ·»åŠ æŒ‰é’®çš„NameableCreator
+     * @return æŒ‰é’®çš„NameableCreator
      */
     public NameableCreator[] createNameableCreators() {
         return new NameableCreator[]{
@@ -55,8 +55,8 @@ public class WidgetEventPane extends ObjectJControlPane {
     	}
 
         /**
-         *  ¸ù¾İÓĞÎŞµ¥Ôª¸ñ´´½¨ DBManipulationPane
-         * @return   ÓĞµ¥Ôª¸ñ¡£ÓĞÖÇÄÜÌí¼Óµ¥Ôª¸ñµÈ°´Å¥£¬·µ»Ø SmartInsertDBManipulationPane
+         *  æ ¹æ®æœ‰æ— å•å…ƒæ ¼åˆ›å»º DBManipulationPane
+         * @return   æœ‰å•å…ƒæ ¼ã€‚æœ‰æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼ç­‰æŒ‰é’®ï¼Œè¿”å› SmartInsertDBManipulationPane
          */
         private DBManipulationPane autoCreateDBManipulationInWidgetEventPane() {
             JTemplate jTemplate = DesignerContext.getDesignerFrame().getSelectedJTemplate();
@@ -110,7 +110,7 @@ public class WidgetEventPane extends ObjectJControlPane {
         Listener listener;
         for (int i = 0, size = widget.getListenerSize(); i < size; i++) {
             listener = widget.getListener(i);
-            if (!listener.isDefault()) //name+(i+1)ĞèÒªÈ·±£Ãû×Ö²»ÖØ¸´
+            if (!listener.isDefault()) //name+(i+1)éœ€è¦ç¡®ä¿åå­—ä¸é‡å¤
             {
                 list.add(new NameObject(EventCreator.switchLang(listener.getEventName()) + (i + 1), listener));
             }
@@ -119,8 +119,8 @@ public class WidgetEventPane extends ObjectJControlPane {
     }
 
 	/**
-	 * ¸üĞÂ
-	 * @return ¼àÌıÆ÷
+	 * æ›´æ–°
+	 * @return ç›‘å¬å™¨
 	 */
     public Listener[] updateListeners() {
         Nameable[] res = this.update();

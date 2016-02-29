@@ -14,7 +14,7 @@ import java.util.Map;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-23
- * Time: ÉÏÎç11:08
+ * Time: ä¸Šåˆ11:08
  */
 public class Factory4TableDataContentPane {
 
@@ -33,10 +33,10 @@ public class Factory4TableDataContentPane {
     }
 
     /**
-     * ¸ù¾İplotÉú²ú¶ÔÓ¦µÄÊı¾İÃæ°å
-     * @param plot  Í¼±í
-     * @param parentPane ¸¸Ãæ°å
-     * @return ¶ÔÓ¦µÄÊı¾İÃæ°å
+     * æ ¹æ®plotç”Ÿäº§å¯¹åº”çš„æ•°æ®é¢æ¿
+     * @param plot  å›¾è¡¨
+     * @param parentPane çˆ¶é¢æ¿
+     * @return å¯¹åº”çš„æ•°æ®é¢æ¿
      */
     public static AbstractTableDataContentPane createTableDataContenetPaneWithPlotType(Plot plot, ChartDataPane parentPane){
         try {

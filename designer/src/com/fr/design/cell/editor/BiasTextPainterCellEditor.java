@@ -129,7 +129,7 @@ public class BiasTextPainterCellEditor extends AbstractCellEditor {
 
             formulaTextArea = new UITextArea();
             JScrollPane scrollPane = new JScrollPane(formulaTextArea);
-            // È¥ÁËscollPaneµÄ±ß¿ò£¬·ñÔò»áÓĞÁ½²ã±ß¿ò£¬ÂÔ³ó
+            // å»äº†scollPaneçš„è¾¹æ¡†ï¼Œå¦åˆ™ä¼šæœ‰ä¸¤å±‚è¾¹æ¡†ï¼Œç•¥ä¸‘
             scrollPane.setBorder(null);
             textPane.add(scrollPane, BorderLayout.CENTER);
 

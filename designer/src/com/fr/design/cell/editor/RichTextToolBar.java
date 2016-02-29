@@ -36,7 +36,7 @@ import java.math.BigDecimal;
 /**
  *
  *
- * @date: 2014-12-5-ÏÂÎç1:10:31
+ * @date: 2014-12-5-ä¸‹åˆ1:10:31
  */
 public class RichTextToolBar extends BasicPane{
 
@@ -53,7 +53,7 @@ public class RichTextToolBar extends BasicPane{
     private UIToggleButton subPane;
     private UIToggleButton formulaPane;
     
-    //Íâ²¿´«½øÀ´µÄ
+    //å¤–éƒ¨ä¼ è¿›æ¥çš„
     private RichTextEditingPane textPane;
 
     public RichTextToolBar() {
@@ -72,9 +72,9 @@ public class RichTextToolBar extends BasicPane{
     }
 
     protected void initComponents() {
-    	//³õÊ¼»¯²¢ÉèÖÃËùÓĞ°´Å¥ÑùÊ½
+    	//åˆå§‹åŒ–å¹¶è®¾ç½®æ‰€æœ‰æŒ‰é’®æ ·å¼
         initAllButton();
-        //Ìí¼Óµ½¹¤¾ßÀ¸
+        //æ·»åŠ åˆ°å·¥å…·æ 
         addToToolBar();
     }
     
@@ -92,13 +92,13 @@ public class RichTextToolBar extends BasicPane{
         subPane = new UIToggleButton(BaseUtils.readIcon("/com/fr/design/images/m_format/cellstyle/sub.png"));
         formulaPane = new UIToggleButton(BaseUtils.readIcon("/com/fr/design/images/m_insert/formula.png"));
 
-        //Ãû×Ö
+        //åå­—
         initAllNames();
-        //Ğü¸¡ÌáÊ¾
+        //æ‚¬æµ®æç¤º
         setToolTips();
-        //ÑùÊ½
+        //æ ·å¼
         setAllButtonStyle();
-    	//°ó¶¨¼àÌıÆ÷
+    	//ç»‘å®šç›‘å¬å™¨
         bindListener();
     }
     
@@ -148,7 +148,7 @@ public class RichTextToolBar extends BasicPane{
         colorSelectPane.addColorChangeListener(colorChangeAction);
         formulaPane.addActionListener(formulaActionListener);
         
-        //Ñ¡ÖĞÎÄ×ÖµÄ¼àÌıÆ÷
+        //é€‰ä¸­æ–‡å­—çš„ç›‘å¬å™¨
         textPane.addCaretListener(textCareListener);
         textPane.addMouseListener(setMouseCurrentStyle);
         textPane.getDocument().addDocumentListener(inputListener);
@@ -175,11 +175,11 @@ public class RichTextToolBar extends BasicPane{
     }
     
     /**
-	 * ÒÆ³ıÊäÈë¼àÌı
-	 * ÓÃÓÚpopulateÊ±, ²åÈë×Ö·û´®, ÄÇÊ±²»ĞèÒª²åÈë¼àÌı
+	 * ç§»é™¤è¾“å…¥ç›‘å¬
+	 * ç”¨äºpopulateæ—¶, æ’å…¥å­—ç¬¦ä¸², é‚£æ—¶ä¸éœ€è¦æ’å…¥ç›‘å¬
 	 * 
 	 *
-	 * @date 2015-1-5-ÏÂÎç5:13:04
+	 * @date 2015-1-5-ä¸‹åˆ5:13:04
 	 * 
 	 */
     public void removeInputListener(){
@@ -187,10 +187,10 @@ public class RichTextToolBar extends BasicPane{
     }
     
     /**
-	 * Ôö¼ÓÊäÈë¼àÌıÊÂ¼ş
+	 * å¢åŠ è¾“å…¥ç›‘å¬äº‹ä»¶
 	 * 
 	 *
-	 * @date 2015-1-5-ÏÂÎç5:13:26
+	 * @date 2015-1-5-ä¸‹åˆ5:13:26
 	 * 
 	 */
     public void addInputListener(){
@@ -202,7 +202,7 @@ public class RichTextToolBar extends BasicPane{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			boolean isBold = RichTextToolBar.this.bold.isSelected();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setBold(attr, !isBold);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -214,7 +214,7 @@ public class RichTextToolBar extends BasicPane{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			boolean isIta = RichTextToolBar.this.italic.isSelected();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setItalic(attr, !isIta);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -226,7 +226,7 @@ public class RichTextToolBar extends BasicPane{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			boolean isUnder = RichTextToolBar.this.underline.isSelected();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setUnderline(attr, !isUnder);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -237,7 +237,7 @@ public class RichTextToolBar extends BasicPane{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			boolean isSub = RichTextToolBar.this.subPane.isSelected();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setSubscript(attr, !isSub);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -248,7 +248,7 @@ public class RichTextToolBar extends BasicPane{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			boolean isSuper = RichTextToolBar.this.superPane.isSelected();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setSuperscript(attr, !isSuper);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -260,27 +260,27 @@ public class RichTextToolBar extends BasicPane{
         public void stateChanged(ChangeEvent e) {
         	Color color = RichTextToolBar.this.colorSelectPane.getColor();
         	color = color == null ? Color.BLACK : color;
-        	// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+        	// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setForeground(attr, color);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
         }
     };
 	
-	// ÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄÑùÊ½
+	// è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„æ ·å¼
 	private void setCharacterAttributes(JEditorPane editor, AttributeSet attr,
 			boolean replace) {
-		//×¢Òâ²»ÒªÊ§½¹
+		//æ³¨æ„ä¸è¦å¤±ç„¦
 		textPane.requestFocus();
 		
-		// È¡µÃÑ¡ÔñÎÄ±¾µÄÆğÊ¼Î»ÖÃºÍ½áÊøÎ»ÖÃ
+		// å–å¾—é€‰æ‹©æ–‡æœ¬çš„èµ·å§‹ä½ç½®å’Œç»“æŸä½ç½®
 		int start = editor.getSelectionStart();
 		int end = editor.getSelectionEnd();
 
-		// Èç¹ûÑ¡ÖĞÎÄ±¾£¬ÉèÖÃÑ¡ÖĞÎÄ±¾µÄÑùÊ½
+		// å¦‚æœé€‰ä¸­æ–‡æœ¬ï¼Œè®¾ç½®é€‰ä¸­æ–‡æœ¬çš„æ ·å¼
 		if (start != end) {
 			StyledDocument doc = (StyledDocument) textPane.getDocument();
-			// ½«ËùÑ¡ÎÄ±¾ÉèÖÃÎªĞÂµÄÑùÊ½£¬replaceÎªfalse±íÊ¾²»¸²¸ÇÔ­ÓĞµÄÑùÊ½
+			// å°†æ‰€é€‰æ–‡æœ¬è®¾ç½®ä¸ºæ–°çš„æ ·å¼ï¼Œreplaceä¸ºfalseè¡¨ç¤ºä¸è¦†ç›–åŸæœ‰çš„æ ·å¼
 			doc.setCharacterAttributes(start, end - start, attr, replace);
 		}
 	}
@@ -290,7 +290,7 @@ public class RichTextToolBar extends BasicPane{
     	public void itemStateChanged(ItemEvent e) {
     		int fontSize = (Integer) RichTextToolBar.this.fontSizeComboBox.getSelectedItem();
     		fontSize = scaleUp(fontSize);
-    		// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+    		// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
     		MutableAttributeSet attr = new SimpleAttributeSet();
     		StyleConstants.setFontSize(attr, fontSize);
     		setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -301,7 +301,7 @@ public class RichTextToolBar extends BasicPane{
         @Override
         public void itemStateChanged(ItemEvent e) {
         	String fontName = (String) RichTextToolBar.this.fontNameComboBox.getSelectedItem();
-			// µ÷ÓÃsetCharacterAttributesº¯ÊıÉèÖÃÎÄ±¾ÇøÑ¡ÔñÎÄ±¾µÄ×ÖÌå
+			// è°ƒç”¨setCharacterAttributeså‡½æ•°è®¾ç½®æ–‡æœ¬åŒºé€‰æ‹©æ–‡æœ¬çš„å­—ä½“
 			MutableAttributeSet attr = new SimpleAttributeSet();
 			StyleConstants.setFontFamily(attr, fontName);
 			setCharacterAttributes(RichTextToolBar.this.textPane, attr, false);
@@ -338,7 +338,7 @@ public class RichTextToolBar extends BasicPane{
 
 	private CaretListener textCareListener = new CaretListener() {
 		
-		//¸ù¾İÑ¡ÖĞ²¿·ÖµÄÎÄ×ÖÑùÊ½, À´¶¯Ì¬ÏÔÊ¾¹¤¾ßÀ¸ÉÏ°´Å¥µÄ×´Ì¬
+		//æ ¹æ®é€‰ä¸­éƒ¨åˆ†çš„æ–‡å­—æ ·å¼, æ¥åŠ¨æ€æ˜¾ç¤ºå·¥å…·æ ä¸ŠæŒ‰é’®çš„çŠ¶æ€
 		private void setSelectedCharStyle(int start, int end, StyledDocument doc){
 			boolean isBold = true;
 			boolean isItalic = true;
@@ -353,15 +353,15 @@ public class RichTextToolBar extends BasicPane{
 				Element ele = doc.getCharacterElement(i);
 				AttributeSet attrs = ele.getAttributes();
 				
-				//´ÖÌå
+				//ç²—ä½“
 				isBold = isBold && StyleConstants.isBold(attrs);
-				//Ğ±Ìå
+				//æ–œä½“
 				isItalic = isItalic && StyleConstants.isItalic(attrs);
-				//ÏÂ»®Ïß
+				//ä¸‹åˆ’çº¿
 				isUnderline = isUnderline && StyleConstants.isUnderline(attrs);
-				//ÏÂ±ê
+				//ä¸‹æ ‡
 				isSubscript = isSubscript && StyleConstants.isSubscript(attrs);
-				//ÉÏ±ê
+				//ä¸Šæ ‡
 				isSuperscript = isSuperscript && StyleConstants.isSuperscript(attrs);
 				
 				if(i == start){
@@ -376,7 +376,7 @@ public class RichTextToolBar extends BasicPane{
 					fontName_1st, fontSize_1st, fontColor_1st);
 		}
 		
-		//¶¯Ì¬ÏÔÊ¾¹¤¾ßÀ¸ÉÏ°´Å¥µÄ×´Ì¬
+		//åŠ¨æ€æ˜¾ç¤ºå·¥å…·æ ä¸ŠæŒ‰é’®çš„çŠ¶æ€
 		private void setButtonSelected(boolean isBold, boolean isItalic, boolean isUnderline, 
 				boolean isSubscript, boolean isSuperscript, String fontName_1st, 
 				int fontSize_1st, Color fontColor_1st){
@@ -385,8 +385,8 @@ public class RichTextToolBar extends BasicPane{
 			underline.setSelected(isUnderline);
 			subPane.setSelected(isSubscript);
 			superPane.setSelected(isSuperscript);
-			//ÎªÊ²Ã´×ÖÌåÃû³Æ, ´óĞ¡, ÑÕÉ«, ²»ĞèÒªÈ¥ÅĞ¶ÏÊÇ·ñÈ«ÏàÍ¬ÄØ
-			//ÒòÎªÈç¹ûÈ«ÏàÍ¬, ÔòÉèÖÃÎªµÚÒ»¸ö×Ö·ûµÄÑùÊ½, Èç¹û²»È«ÏàÍ¬, ÄÇÃ´Ä¬ÈÏÒ²ÉèÖÃ³ÉµÚÒ»¸ö×Ö·ûµÄÑùÊ½.
+			//ä¸ºä»€ä¹ˆå­—ä½“åç§°, å¤§å°, é¢œè‰², ä¸éœ€è¦å»åˆ¤æ–­æ˜¯å¦å…¨ç›¸åŒå‘¢
+			//å› ä¸ºå¦‚æœå…¨ç›¸åŒ, åˆ™è®¾ç½®ä¸ºç¬¬ä¸€ä¸ªå­—ç¬¦çš„æ ·å¼, å¦‚æœä¸å…¨ç›¸åŒ, é‚£ä¹ˆé»˜è®¤ä¹Ÿè®¾ç½®æˆç¬¬ä¸€ä¸ªå­—ç¬¦çš„æ ·å¼.
 			fontNameComboBox.setSelectedItem(fontName_1st);
 			fontSizeComboBox.removeItemListener(fontSizeItemListener);
 			fontSizeComboBox.setSelectedItem(scaleDown(fontSize_1st));
@@ -404,11 +404,11 @@ public class RichTextToolBar extends BasicPane{
 		public void caretUpdate(CaretEvent e) {
 			StyledDocument doc = (StyledDocument) textPane.getDocument();
 			
-			// È¡µÃÑ¡ÔñÎÄ±¾µÄÆğÊ¼Î»ÖÃºÍ½áÊøÎ»ÖÃ
+			// å–å¾—é€‰æ‹©æ–‡æœ¬çš„èµ·å§‹ä½ç½®å’Œç»“æŸä½ç½®
 			int start = textPane.getSelectionStart();
 			int end = textPane.getSelectionEnd();
 			
-			//Èç¹ûÃ»ÓĞÑ¡¶¨×Ö·û
+			//å¦‚æœæ²¡æœ‰é€‰å®šå­—ç¬¦
 			if(end == start){
 				return;
 			}
@@ -417,14 +417,14 @@ public class RichTextToolBar extends BasicPane{
 		}
 	};
 	
-	//ÉèÖÃµ±Ç°¹â±êÎ»ÑùÊ½
+	//è®¾ç½®å½“å‰å…‰æ ‡ä½æ ·å¼
 	private MouseListener setMouseCurrentStyle = new MouseAdapter() {
 		
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			StyledDocument doc = (StyledDocument) textPane.getDocument();
 			
-			// È¡µÃÑ¡ÔñÎÄ±¾µÄÆğÊ¼Î»ÖÃºÍ½áÊøÎ»ÖÃ
+			// å–å¾—é€‰æ‹©æ–‡æœ¬çš„èµ·å§‹ä½ç½®å’Œç»“æŸä½ç½®
 			int start = textPane.getSelectionStart();
 			int end = textPane.getSelectionEnd();
 			
@@ -435,13 +435,13 @@ public class RichTextToolBar extends BasicPane{
 			setToLastCharStyle(end, doc);
 		}
 		
-		//Èç¹ûÄ¬ÈÏ²»Ñ¡×Ö·û, ÄÇÃ´ÉèÖÃÎª×îºóÒ»¸ö×Ö·ûµÄÑùÊ½
+		//å¦‚æœé»˜è®¤ä¸é€‰å­—ç¬¦, é‚£ä¹ˆè®¾ç½®ä¸ºæœ€åä¸€ä¸ªå­—ç¬¦çš„æ ·å¼
 		private void setToLastCharStyle(int end, StyledDocument doc){
 			if(textPane.isUpdating()){
 				return;
 			}
 			
-			//È¡Ç°Ò»¸ö×Ö·ûµÄÑùÊ½
+			//å–å‰ä¸€ä¸ªå­—ç¬¦çš„æ ·å¼
 			Element ele = doc.getCharacterElement(end - 1);
 			AttributeSet attrs = ele.getAttributes();
 			populateToolBar(attrs);
@@ -449,12 +449,12 @@ public class RichTextToolBar extends BasicPane{
 	};
 	
 	/**
-	 * ´ÓÑùÊ½ÖĞ¸üĞÂ¹¤¾ßÀ¸ÉÏµÄ°´Å¥×´Ì¬
+	 * ä»æ ·å¼ä¸­æ›´æ–°å·¥å…·æ ä¸Šçš„æŒ‰é’®çŠ¶æ€
 	 * 
-	 * @param attrs ÑùÊ½
+	 * @param attrs æ ·å¼
 	 * 
 	 *
-	 * @date 2015-1-5-ÏÂÎç5:12:33
+	 * @date 2015-1-5-ä¸‹åˆ5:12:33
 	 * 
 	 */
 	public void populateToolBar(AttributeSet attrs){
@@ -473,12 +473,12 @@ public class RichTextToolBar extends BasicPane{
 		colorSelectPane.repaint();
 	}
 	
-	//pt×ªÎªpx =*4/3
+	//ptè½¬ä¸ºpx =*4/3
 	private int scaleUp(int fontSize){
 		return scale(fontSize, true);
 	}
 	
-	//px×ªpt = *3/4
+	//pxè½¬pt = *3/4
 	private int scaleDown(int fontSize){
 		return scale(fontSize, false);
 	}
@@ -499,7 +499,7 @@ public class RichTextToolBar extends BasicPane{
 		
 		@Override
 		public void insertUpdate(DocumentEvent e) {
-			//±êÖ¾ÕıÔÚ¸üĞÂÄÚÈİ
+			//æ ‡å¿—æ­£åœ¨æ›´æ–°å†…å®¹
 			textPane.startUpdating();
 			final MutableAttributeSet attr = updateStyleFromToolBar();
 			final int start = textPane.getSelectionStart();
@@ -510,7 +510,7 @@ public class RichTextToolBar extends BasicPane{
 				return;
 			}
 
-			//·Åµ½SwingWorkerÀï, ÊÇÒòÎªÔÚdocumentListenerÀï²»ÄÜ¶¯Ì¬¸Ä±ädocÄÚÈİ
+			//æ”¾åˆ°SwingWorkeré‡Œ, æ˜¯å› ä¸ºåœ¨documentListeneré‡Œä¸èƒ½åŠ¨æ€æ”¹å˜docå†…å®¹
 			SwingUtilities.invokeLater(new Runnable() {
 
 				@Override
@@ -520,19 +520,19 @@ public class RichTextToolBar extends BasicPane{
 			});
 		}
 		
-		//¸ù¾İStyleÀ´ÏÔÊ¾populate°´Å¥
+		//æ ¹æ®Styleæ¥æ˜¾ç¤ºpopulateæŒ‰é’®
 		private void changeContentStyle(int start, MutableAttributeSet attr){
 			changeContentStyle(start, attr, 1);
 		}
 		
 		private void changeContentStyle(int start, MutableAttributeSet attr, int contentLength){
-			// ½«ËùÑ¡ÎÄ±¾ÉèÖÃÎªĞÂµÄÑùÊ½£¬replaceÎªfalse±íÊ¾²»¸²¸ÇÔ­ÓĞµÄÑùÊ½
+			// å°†æ‰€é€‰æ–‡æœ¬è®¾ç½®ä¸ºæ–°çš„æ ·å¼ï¼Œreplaceä¸ºfalseè¡¨ç¤ºä¸è¦†ç›–åŸæœ‰çš„æ ·å¼
 			StyledDocument doc = (StyledDocument) textPane.getDocument();
 			doc.setCharacterAttributes(start, contentLength, attr, false);
 			textPane.finishUpdating();
 		}
 		
-		//½«½çÃæÉÏµÄÉèÖÃ¸³Öµ¸øÊäÈëµÄ×Ö·û
+		//å°†ç•Œé¢ä¸Šçš„è®¾ç½®èµ‹å€¼ç»™è¾“å…¥çš„å­—ç¬¦
 		private MutableAttributeSet updateStyleFromToolBar(){
 			final boolean isBold = bold.isSelected();
 			final boolean isItalic = italic.isSelected();
@@ -558,17 +558,17 @@ public class RichTextToolBar extends BasicPane{
 
 		private static final int NOT_INITED = -1;
 		private static final int UPDATING = -2;
-		//¼ÇÂ¼ÉÏÒ»´ÎÊäÈë³É¹¦ºó¹â±êµã¶¨Î», ÒòÎªÓĞ¿ÉÄÜÎÄ±¾ÊÇÔÚÖĞ¼ä²åÈëµÄ
+		//è®°å½•ä¸Šä¸€æ¬¡è¾“å…¥æˆåŠŸåå…‰æ ‡ç‚¹å®šä½, å› ä¸ºæœ‰å¯èƒ½æ–‡æœ¬æ˜¯åœ¨ä¸­é—´æ’å…¥çš„
 		private int inputStart = NOT_INITED;
 		private static final int JDK_6 = 6;
 		private static final int JDK_7 = 7;
 		
 		@Override
 		public void changedUpdate(DocumentEvent e) {
-			//Õâ±ßĞèÒª×¢Òâ, jdk1.6ºÍ1.7¶ÔÓÚÊäÈë·¨µÄ´¦ÀíÂß¼­²»Ò»Ñù, jdk6Ê±Ö±½ÓÔÚÊäÈë·¨ÖĞÊäÈëÒ»´ó¶ÎÖĞÎÄ
-			//Ëû»áÒ»¸ö¸öinsert½øÈ¥Ö±½Ó´¥·¢inserupdateÊÂ¼ş, ¶øjdk7»áÖ±½Ó°ÑËùÓĞµÄÈû½øÀ´.
-			//inserupdateÄÇ±ß°ó¶¨µÄÊÇÒ»¸ö¸ö²åÈëµÄÊÂ¼ş, ¶à¸öÒ»Æğ²åÈëµÄ·ÅÕâ
-			//bug84777 8.0²»×ßifÂß¼­£¬¸Ä³ÉÖ»ÓĞjdk7×ßifÂß¼­
+			//è¿™è¾¹éœ€è¦æ³¨æ„, jdk1.6å’Œ1.7å¯¹äºè¾“å…¥æ³•çš„å¤„ç†é€»è¾‘ä¸ä¸€æ ·, jdk6æ—¶ç›´æ¥åœ¨è¾“å…¥æ³•ä¸­è¾“å…¥ä¸€å¤§æ®µä¸­æ–‡
+			//ä»–ä¼šä¸€ä¸ªä¸ªinsertè¿›å»ç›´æ¥è§¦å‘inserupdateäº‹ä»¶, è€Œjdk7ä¼šç›´æ¥æŠŠæ‰€æœ‰çš„å¡è¿›æ¥.
+			//inserupdateé‚£è¾¹ç»‘å®šçš„æ˜¯ä¸€ä¸ªä¸ªæ’å…¥çš„äº‹ä»¶, å¤šä¸ªä¸€èµ·æ’å…¥çš„æ”¾è¿™
+			//bug84777 8.0ä¸èµ°ifé€»è¾‘ï¼Œæ”¹æˆåªæœ‰jdk7èµ°ifé€»è¾‘
 			if(StableUtils.getMajorJavaVersion() == JDK_7){
 				if(isUpdating()){
 					return;
@@ -579,35 +579,35 @@ public class RichTextToolBar extends BasicPane{
 				
 				final int start = textPane.getSelectionStart();
 				final int inputLen = start - inputStart;
-				//¼ì²âÊäÈëÄÚÈİ
+				//æ£€æµ‹è¾“å…¥å†…å®¹
 				try {
 					content = doc.getText(inputStart, inputLen);
 				} catch (BadLocationException e1) {
 					return;
 				}
 				
-				//ÖĞÎÄÊäÈë·¨, Ä¬ÈÏÊäÈë×Ö·û»á±»ÊäÈë·¨µÄ¿ò½ØÈ¡×¡, jtextpaneµÃµ½ÊÇÒ»¸ö¿Õ¸ñ, ´ËÊ±²»×ö´¦Àí
+				//ä¸­æ–‡è¾“å…¥æ³•, é»˜è®¤è¾“å…¥å­—ç¬¦ä¼šè¢«è¾“å…¥æ³•çš„æ¡†æˆªå–ä½, jtextpaneå¾—åˆ°æ˜¯ä¸€ä¸ªç©ºæ ¼, æ­¤æ—¶ä¸åšå¤„ç†
 				if(StringUtils.isBlank(content) || inputLen <= 0){
 					return;
 				}
-				//ÉèÖÃÒ»´ÎĞÔÊäÈë¶à¸öÎÄ×ÖµÄÑùÊ½
+				//è®¾ç½®ä¸€æ¬¡æ€§è¾“å…¥å¤šä¸ªæ–‡å­—çš„æ ·å¼
 				setContentStyle(inputLen);
 			}
 		}
 		
 		private void setContentStyle(final int inputLen){
-			//»º´æÏÂStart, ÏÂÃæÒªÓÃÀ´ÉèÖÃÑùÊ½
+			//ç¼“å­˜ä¸‹Start, ä¸‹é¢è¦ç”¨æ¥è®¾ç½®æ ·å¼
 			final int _start = inputStart;
 			final MutableAttributeSet attr = updateStyleFromToolBar();
 
-			//·Åµ½SwingWorkerÀï, ÊÇÒòÎªÔÚdocumentListenerÀï²»ÄÜ¶¯Ì¬¸Ä±ädocÄÚÈİ
+			//æ”¾åˆ°SwingWorkeré‡Œ, æ˜¯å› ä¸ºåœ¨documentListeneré‡Œä¸èƒ½åŠ¨æ€æ”¹å˜docå†…å®¹
 			SwingUtilities.invokeLater(new Runnable() {
 
 				@Override
 				public void run() {
-					//·ÀÖ¹´¥·¢ËÀÑ­»·changeÊÂ¼ş
+					//é˜²æ­¢è§¦å‘æ­»å¾ªç¯changeäº‹ä»¶
 					startUpdating();
-					//Start-1 ÊÇÒòÎªÖĞÎÄÊäÈë·¨»áÓÃ¿Õ¸ñÕ¼1Î»
+					//Start-1 æ˜¯å› ä¸ºä¸­æ–‡è¾“å…¥æ³•ä¼šç”¨ç©ºæ ¼å 1ä½
 					changeContentStyle(_start, attr, inputLen);
 					resetFlag();
 				}
@@ -622,7 +622,7 @@ public class RichTextToolBar extends BasicPane{
 			inputStart = UPDATING;
 		}
 		
-		//³õÊ¼±ê¼Ç×´Ì¬, ÓÃÓÚ¼ÇÂ¼ÖĞÎÄÊäÈë·¨¶à¸ö×Ö·ûÍ¬Ê±ÊäÈëµÄÎÊÌâ
+		//åˆå§‹æ ‡è®°çŠ¶æ€, ç”¨äºè®°å½•ä¸­æ–‡è¾“å…¥æ³•å¤šä¸ªå­—ç¬¦åŒæ—¶è¾“å…¥çš„é—®é¢˜
 		private void initFlag(StyledDocument doc){
 			if(inputStart != NOT_INITED){
 				return;
@@ -630,7 +630,7 @@ public class RichTextToolBar extends BasicPane{
 			inputStart = textPane.getSelectionStart() - 1;
 		}
 		
-		//ÖØÖÃ±ê¼Ç×´Ì¬
+		//é‡ç½®æ ‡è®°çŠ¶æ€
 		private void resetFlag(){
 			inputStart = NOT_INITED;
 		}

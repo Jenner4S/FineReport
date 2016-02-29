@@ -18,7 +18,7 @@ import com.fr.general.Inter;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-15 ÑÓ³Ù¼ÓÔØµÄÏÂÀ­¿ò
+ * @since 6.5.5 åˆ›å»ºäº2011-6-15 å»¶è¿ŸåŠ è½½çš„ä¸‹æ‹‰æ¡†
  */
 public abstract class LazyComboBox extends UIComboBox implements PopupMenuListener {
 	protected boolean loaded = false;
@@ -59,7 +59,7 @@ public abstract class LazyComboBox extends UIComboBox implements PopupMenuListen
 	}
 
 	/**
-	 * Í¨¹ıµ÷ÓÃ¸Ã·½·¨£¬ÔÚµã»÷ÏÂÀ­¿ò°´Å¥Ö®Ç°¾Í¼ÓÔØºÃÊı¾İ
+	 * é€šè¿‡è°ƒç”¨è¯¥æ–¹æ³•ï¼Œåœ¨ç‚¹å‡»ä¸‹æ‹‰æ¡†æŒ‰é’®ä¹‹å‰å°±åŠ è½½å¥½æ•°æ®
 	 */
 	public void loadInstant() {
 		if (loaded) {
@@ -98,7 +98,7 @@ public abstract class LazyComboBox extends UIComboBox implements PopupMenuListen
     }
 
 	/**
-	 * ¼ÆËã¼ÓÔØÏÂÀ­ÁĞ±í
+	 * è®¡ç®—åŠ è½½ä¸‹æ‹‰åˆ—è¡¨
 	 */
 	public void loadList() {
 		DefaultComboBoxModel model = new DefaultComboBoxModel(load());

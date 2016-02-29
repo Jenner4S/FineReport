@@ -19,9 +19,9 @@ import com.fr.design.utils.gui.GUICoreUtils;
 import java.awt.*;
 
 /**
- * ÀàËµÃ÷: Í¼±í³¬Á´ -- µ¯³ö Ğü¸¡´°. 
+ * ç±»è¯´æ˜: å›¾è¡¨è¶…é“¾ -- å¼¹å‡º æ‚¬æµ®çª—. 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-12-28 ÉÏÎç10:41:39
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-12-28 ä¸Šåˆ10:41:39
  */
 public class ChartHyperPoplinkPane extends BasicBeanPane<ChartHyperPoplink> {
 	private static final long serialVersionUID = 2469115951510144738L;
@@ -44,7 +44,7 @@ public class ChartHyperPoplinkPane extends BasicBeanPane<ChartHyperPoplink> {
 		cc.addChart(new Chart(new Bar2DPlot()));
 		
 		chartComponent = new ChartComponent();
-		chartComponent.setPreferredSize(new Dimension(220, 170));// ÔÚµ¥Ôª¸ñµ¯³öÊ± ĞèÒªµ÷Õû±£Ö¤ÊôĞÔ±íµÄ´óĞ¡.
+		chartComponent.setPreferredSize(new Dimension(220, 170));// åœ¨å•å…ƒæ ¼å¼¹å‡ºæ—¶ éœ€è¦è°ƒæ•´ä¿è¯å±æ€§è¡¨çš„å¤§å°.
 		chartComponent.setSupportEdit(false);
 		chartComponent.populate(cc);
 		
@@ -60,8 +60,8 @@ public class ChartHyperPoplinkPane extends BasicBeanPane<ChartHyperPoplink> {
 	}
 
     /**
-     * ÊÇ·ñĞèÒª¼ÓÔØÖØÃüÃûµÄ¿Õ¼ä
-     * @return Ä¬ÈÏĞèÒª¼ÓÔØ
+     * æ˜¯å¦éœ€è¦åŠ è½½é‡å‘½åçš„ç©ºé—´
+     * @return é»˜è®¤éœ€è¦åŠ è½½
      */
     protected boolean needRenamePane(){
         return true;
@@ -90,8 +90,8 @@ public class ChartHyperPoplinkPane extends BasicBeanPane<ChartHyperPoplink> {
 	}
 
 	/**
-	 * ³¬Á´Êı×éHyperlinkGoupÇĞ»»Ê± updateBean.
-	 * @return ·µ»ØµÄµ¯³ö³¬Á´.
+	 * è¶…é“¾æ•°ç»„HyperlinkGoupåˆ‡æ¢æ—¶ updateBean.
+	 * @return è¿”å›çš„å¼¹å‡ºè¶…é“¾.
 	 */
 	public ChartHyperPoplink updateBean() {
 		ChartHyperPoplink chartLink = new ChartHyperPoplink();
@@ -103,13 +103,13 @@ public class ChartHyperPoplinkPane extends BasicBeanPane<ChartHyperPoplink> {
 	}
 	
 	/**
-	 * ÊôĞÔ±í ¶ÔÓ¦update
+	 * å±æ€§è¡¨ å¯¹åº”update
 	 */
 	public void updateBean(ChartHyperPoplink chartHyperlink) {
 		hyperEditPane.updateHyperLink(chartHyperlink);
 		chartHyperlink.setChartCollection(chartComponent.update());
 		
-		ChartEditPane.getInstance().fire();// ÏìÓ¦Õû¸öÍ¼±í±£´æÊÂ¼şµÈ.
+		ChartEditPane.getInstance().fire();// å“åº”æ•´ä¸ªå›¾è¡¨ä¿å­˜äº‹ä»¶ç­‰.
         if(itemNameTextField != null){
             chartHyperlink.setItemName(this.itemNameTextField.getText());
         }

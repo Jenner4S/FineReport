@@ -37,7 +37,7 @@ public class XCardAddButton extends XButton{
 	private Icon addIcon = ADD_ICON;
 	
 	/**
-	 * card²¼¾ÖÌí¼Ócard°´Å¥
+	 * cardå¸ƒå±€æ·»åŠ cardæŒ‰é’®
 	 */
 
 	public XWCardTagLayout getTagLayout() {
@@ -57,18 +57,18 @@ public class XCardAddButton extends XButton{
 	}
 
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param widget °´Å¥
-	 * @param initSize ´óĞ¡
+	 * æ„é€ å‡½æ•°
+	 * @param widget æŒ‰é’®
+	 * @param initSize å¤§å°
 	 */
 	public XCardAddButton(CardAddButton widget, Dimension initSize) {
 		super(widget, initSize);
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param widget °´Å¥
-	 * @param initSize ´óĞ¡
+	 * æ„é€ å‡½æ•°
+	 * @param widget æŒ‰é’®
+	 * @param initSize å¤§å°
 	 */
 	public XCardAddButton(CardAddButton widget, Dimension initSize,XWCardTagLayout fit,XWCardLayout cardLayout) {
 		super(widget, initSize);
@@ -77,22 +77,22 @@ public class XCardAddButton extends XButton{
 	}
 	
 	/**
-	 * ÏìÓ¦µã»÷ÊÂ¼ş
-	 * @param editingMouseListener ÊÂ¼ş´¦ÀíÆ÷
-	 * @param e µã»÷ÊÂ¼ş
+	 * å“åº”ç‚¹å‡»äº‹ä»¶
+	 * @param editingMouseListener äº‹ä»¶å¤„ç†å™¨
+	 * @param e ç‚¹å‡»äº‹ä»¶
 	 * 
 	 */
     public void respondClick(EditingMouseListener editingMouseListener,MouseEvent e){
 		FormDesigner designer = editingMouseListener.getDesigner();
 		designer.fireTargetModified();
     	
-    	// addbutton¶ÔÓ¦µÄXWCardLayoutºÍXWCardTagLayoutÔİÎ´´æÈëµ½xmlÖĞ£¬ÖØĞÂ´ò¿ªÖ®ºóÏÈ¸ù¾İ¸¸×Ó²ã»ñÈ¡
+    	// addbuttonå¯¹åº”çš„XWCardLayoutå’ŒXWCardTagLayoutæš‚æœªå­˜å…¥åˆ°xmlä¸­ï¼Œé‡æ–°æ‰“å¼€ä¹‹åå…ˆæ ¹æ®çˆ¶å­å±‚è·å–
     	if(cardLayout == null && tagLayout ==null ){
     		initRalateLayout();
     	}
     	int index = cardLayout.toData().getWidgetCount();
     	
-    	//Ìí¼ÓĞÂµÄtab£¬²¢½«Ô­À´µÄÉèÎªÎ´Ñ¡ÖĞ×´Ì¬
+    	//æ·»åŠ æ–°çš„tabï¼Œå¹¶å°†åŸæ¥çš„è®¾ä¸ºæœªé€‰ä¸­çŠ¶æ€
     	setTabUnselectd();
     	addTab(index);
     	this.tagLayout.adjustComponentWidth();
@@ -103,7 +103,7 @@ public class XCardAddButton extends XButton{
 		}
 		
 		FormHierarchyTreePane.getInstance().refreshRoot();
-		//½«½¹µãÇĞ»»µ½ĞÂÔöµÄtab¶ÔÓ¦µÄtabfitLayoutÉÏ
+		//å°†ç„¦ç‚¹åˆ‡æ¢åˆ°æ–°å¢çš„tabå¯¹åº”çš„tabfitLayoutä¸Š
 		showNewTab(editingMouseListener,index);
 		
 		LayoutUtils.layoutRootContainer(designer.getRootComponent());
@@ -127,7 +127,7 @@ public class XCardAddButton extends XButton{
 		addIcon.paintIcon(this, g2d,LEFT_GAP,UP_GAP);
 	}
 	
-	//½«Ô­À´µÄtabÒ³ÉèÖÃÎªÎ´Ñ¡ÖĞ×´Ì¬
+	//å°†åŸæ¥çš„tabé¡µè®¾ç½®ä¸ºæœªé€‰ä¸­çŠ¶æ€
 	private void setTabUnselectd(){
 		for(int i=0;i<this.tagLayout.getComponentCount();i++){
 			WCardTagLayout layout = (WCardTagLayout) this.tagLayout.toData();
@@ -136,7 +136,7 @@ public class XCardAddButton extends XButton{
 		}
 	}
 	
-	//ĞÂÔötab
+	//æ–°å¢tab
 	private void addTab(int index){
 		Dimension dimension = new Dimension();
 		XCardSwitchButton button = (XCardSwitchButton) this.tagLayout.getComponent(INDEX);
@@ -144,7 +144,7 @@ public class XCardAddButton extends XButton{
     	
 		String cardLayoutName = cardLayout.toData().getWidgetName();
     	CardSwitchButton titleButton = new CardSwitchButton(index,cardLayoutName);
-    	//ÉèÖÃ±êÌâ
+    	//è®¾ç½®æ ‡é¢˜
     	titleButton.setText(getTabTitleName());
     	XCardSwitchButton showButton = new XCardSwitchButton(titleButton,dimension,cardLayout,tagLayout);
     	titleButton.setCustomStyle(true);
@@ -155,14 +155,14 @@ public class XCardAddButton extends XButton{
     	this.tagLayout.add(showButton);
 	}
 	
-	//ÇĞ»»½¹µãµ½ĞÂÔötabÒ³
+	//åˆ‡æ¢ç„¦ç‚¹åˆ°æ–°å¢tabé¡µ
 	private void showNewTab(EditingMouseListener editingMouseListener,int index){
 		SelectionModel selectionModel = editingMouseListener.getSelectionModel();
 		XWTabFitLayout tabFitLayout = (XWTabFitLayout) cardLayout.getComponent(index);
 		selectionModel.setSelectedCreator(tabFitLayout);
 	}
 	
-    //ĞÂÔöÊ±È¥tabFitLayoutÃû×ÖÖĞ×î´óµÄIndex+1£¬·ÀÖ¹ÖØÃû
+    //æ–°å¢æ—¶å»tabFitLayoutåå­—ä¸­æœ€å¤§çš„Index+1ï¼Œé˜²æ­¢é‡å
     private String getTabTitleName(){
     	WCardTagLayout layout = (WCardTagLayout) this.tagLayout.toData();
     	int size = layout.getWidgetCount();

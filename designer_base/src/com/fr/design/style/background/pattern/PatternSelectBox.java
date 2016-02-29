@@ -9,8 +9,8 @@ import com.fr.design.style.AbstractSelectBox;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-1 ÏÂÎç03:16:16
- * ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-1 ä¸‹åˆ03:16:16
+ * ç±»è¯´æ˜
  */
 public class PatternSelectBox extends AbstractSelectBox<Background> {
 	private static final long serialVersionUID = -2159891804571748604L;

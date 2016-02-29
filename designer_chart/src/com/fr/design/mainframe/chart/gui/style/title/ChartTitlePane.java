@@ -120,7 +120,7 @@ public class ChartTitlePane extends BasicScrollPane<Chart> {
         return TableLayoutHelper.createTableLayoutPane(components,rowSize,columnSize);
 	}
 	
-	// ¼ì²é±êÌâ½çÃæÊÇ·ñ¿ÉÓÃ.
+	// æ£€æŸ¥æ ‡é¢˜ç•Œé¢æ˜¯å¦å¯ç”¨.
 	private void checkTitlePaneUse() {
 		isTitleVisable.setVisible(true);
 		isTitleVisable.setEnabled(true);
@@ -129,8 +129,8 @@ public class ChartTitlePane extends BasicScrollPane<Chart> {
 	}
 
 	/**
-	 * µ¯³ö¿òµÄ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * å¼¹å‡ºæ¡†çš„ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_TITLE_TITLE;
@@ -147,7 +147,7 @@ public class ChartTitlePane extends BasicScrollPane<Chart> {
 		if (title == null) {
 			return;
 		}
-		isTitleVisable.setSelected(title.isTitleVisble());
+		isTitleVisable.setSelected(title.isTitleVisible());
 		if (title.getTextObject() instanceof Formula) {
 			titleContent.populateBean(((Formula) title.getTextObject()).getContent());
 		} else {
@@ -174,7 +174,7 @@ public class ChartTitlePane extends BasicScrollPane<Chart> {
 		if (title == null) {
 			title = new Title(StringUtils.EMPTY);
 		}
-		title.setTitleVisble(isTitleVisable.isSelected());
+		title.setTitleVisible(isTitleVisable.isSelected());
 		String titleString = titleContent.updateBean();
 		Object titleObj;
 		if (StableUtils.maybeFormula(titleString)) {
@@ -193,4 +193,3 @@ public class ChartTitlePane extends BasicScrollPane<Chart> {
 		backgroundPane.update(title);
 	}
 }
-

@@ -54,7 +54,7 @@ public class FRTreeComboBox extends UIComboBox {
 	private static final int PAGE_DIFF = 5;
 	private static final int DEFAULT_HEIGHT = 120;
 	
-    // richer:ÏÂÀ­Õ¹Ê¾ÓÃµÄtree
+    // richer:ä¸‹æ‹‰å±•ç¤ºç”¨çš„tree
     protected JTree tree;
     private boolean onlyLeafSelectable = true;
 
@@ -104,7 +104,7 @@ public class FRTreeComboBox extends UIComboBox {
     }
 
     /**
-     * »ñµÃFRTreeComboBoxµÄ·µ»ØÖµ
+     * è·å¾—FRTreeComboBoxçš„è¿”å›å€¼
      *
      * @return Object
      */
@@ -185,7 +185,7 @@ public class FRTreeComboBox extends UIComboBox {
     }
 
     /*
-      * richer:¸ù¾İNameObjectµÄÃû×ÖÀ´Ñ¡È¡
+      * richer:æ ¹æ®NameObjectçš„åå­—æ¥é€‰å–
       */
     public void setSelectedItemString(String _name) {
         if (StringUtils.isBlank(_name)) {
@@ -312,11 +312,11 @@ public class FRTreeComboBox extends UIComboBox {
     }
 
     /**
-	 * Ìí¼Óµ¯³ö²Ëµ¥¼àÌı
+	 * æ·»åŠ å¼¹å‡ºèœå•ç›‘å¬
 	 * 
-	 * @param l ¼àÌıÊÂ¼ş
+	 * @param l ç›‘å¬äº‹ä»¶
 	 * 
-	 * @date 2015-1-22-ÏÂÎç5:04:00
+	 * @date 2015-1-22-ä¸‹åˆ5:04:00
 	 * 
 	 */
     public void addPopupMenuListener(PopupMenuListener l) {
@@ -341,7 +341,7 @@ public class FRTreeComboBox extends UIComboBox {
     }
 
     /*
-      * richer:µ¯³ö²¿·Ö
+      * richer:å¼¹å‡ºéƒ¨åˆ†
       */
     private static class TreePopup extends JPopupMenu implements ComboPopup {
         /**
@@ -370,7 +370,7 @@ public class FRTreeComboBox extends UIComboBox {
             }
         };
 
-        //samuel:ÏàÓ¦Ê××ÖÄ¸µ¼º½µÄ¼üÅÌÈ·¶¨
+        //samuel:ç›¸åº”é¦–å­—æ¯å¯¼èˆªçš„é”®ç›˜ç¡®å®š
         private KeyListener treeKeyListener = new KeyAdapter() {
             public void keyReleased(KeyEvent e) {
                 int key = e.getKeyCode();
@@ -418,13 +418,13 @@ public class FRTreeComboBox extends UIComboBox {
             this.updatePopup();
             try {
                 /*
-                     * ÕâÀïÓĞ¸öÎÊÌâ£¬¿ÉÄÜÊÇÄÄÀïµÄlistenerrÓĞ³åÍ»½«Õâ¸öJPopMenu showµÄXÉèÖÃÎª70Ê±
-                     * ÕıºÃ¿ÉÒÔÍÑÀëDBManipulationPane£¬´ËÊ±¿ÉÒÔÕıÈ·ÏàÓ¦Êó±êµã»÷ÊÂ¼ş£¬·ñÔòÓÉÓÚ½¹µã²»ÔÚJPopmenu
-                     * ÉÏµã»÷£¬Ê÷Ê±½«µ¼ÖÂ´°¿ÚÏú»Ù£¬ÎŞ·¨ÕıÈ·ÏàÓ¦µã»÷ÊÂ¼ş
+                     * è¿™é‡Œæœ‰ä¸ªé—®é¢˜ï¼Œå¯èƒ½æ˜¯å“ªé‡Œçš„listenerræœ‰å†²çªå°†è¿™ä¸ªJPopMenu showçš„Xè®¾ç½®ä¸º70æ—¶
+                     * æ­£å¥½å¯ä»¥è„±ç¦»DBManipulationPaneï¼Œæ­¤æ—¶å¯ä»¥æ­£ç¡®ç›¸åº”é¼ æ ‡ç‚¹å‡»äº‹ä»¶ï¼Œå¦åˆ™ç”±äºç„¦ç‚¹ä¸åœ¨JPopmenu
+                     * ä¸Šç‚¹å‡»ï¼Œæ ‘æ—¶å°†å¯¼è‡´çª—å£é”€æ¯ï¼Œæ— æ³•æ­£ç¡®ç›¸åº”ç‚¹å‡»äº‹ä»¶
                      */
                 this.show(comboBox, 0, comboBox.getHeight());
             } catch (IllegalComponentStateException e) {
-                // richer:ÕâÀïÓĞ¿ÉÄÜ»áÅ×³öÒ»¸öÒì³££¬¿ÉÒÔ²»ÓÃ´¦Àí
+                // richer:è¿™é‡Œæœ‰å¯èƒ½ä¼šæŠ›å‡ºä¸€ä¸ªå¼‚å¸¸ï¼Œå¯ä»¥ä¸ç”¨å¤„ç†
             }
         }
 

@@ -28,7 +28,7 @@ public class BubbleSeriesPane extends AbstractPlotSeriesPane{
 	}
 
 	/**
-	 * ¼ÓÔØÄÚÈİµ½Õ¹ÏÖµÄ½çÃæ
+	 * åŠ è½½å†…å®¹åˆ°å±•ç°çš„ç•Œé¢
 	 */
 	public void populateBean(Plot plot) {
 		super.populateBean(plot);
@@ -39,7 +39,7 @@ public class BubbleSeriesPane extends AbstractPlotSeriesPane{
 	}
 
 	/**
-	 * ±£´æÕ¹Ê¾µÄ½çÃæÄÚÈİµ½ÊôĞÔ
+	 * ä¿å­˜å±•ç¤ºçš„ç•Œé¢å†…å®¹åˆ°å±æ€§
 	 */
 	public void updateBean(Plot plot) {
 		super.updateBean(plot);

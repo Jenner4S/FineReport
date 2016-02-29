@@ -8,8 +8,8 @@ import com.fr.design.mainframe.chart.gui.style.axis.ChartRadarPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-5
- * Time   : ÏÂÎç7:18
- * À×´ïÍ¼µÄÍ¼±íÑùÊ½--> ×ø±êÖá½çÃæ
+ * Time   : ä¸‹åˆ7:18
+ * é›·è¾¾å›¾çš„å›¾è¡¨æ ·å¼--> åæ ‡è½´ç•Œé¢
  */
 public class RadarChartStyleAxisPane extends ChartStyleAxisPane {
 	private static final long serialVersionUID = 8919941507725513032L;

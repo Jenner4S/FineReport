@@ -23,9 +23,9 @@ public class TableLayoutHelper {
 	}
 
 	/**
-	 * <p>Ò»¸öÍ¨ÓÃµÄTableLayoutPaneÉú³É·½·¨<p>
-	 * <p>rowSizeÎª¸÷ĞĞ¸ß¶ÈÖ®¼äµÄ±ÈÀı<p>
-	 * <p>columnSize Îª¸÷ÁĞ¿í¶ÈÖ®¼äµÄ±ÈÀı<p>
+	 * <p>ä¸€ä¸ªé€šç”¨çš„TableLayoutPaneç”Ÿæˆæ–¹æ³•<p>
+	 * <p>rowSizeä¸ºå„è¡Œé«˜åº¦ä¹‹é—´çš„æ¯”ä¾‹<p>
+	 * <p>columnSize ä¸ºå„åˆ—å®½åº¦ä¹‹é—´çš„æ¯”ä¾‹<p>
 	 * <p>Component[][] components = {<p>
 	 * <p>//    column_1      column_2     column_3<p>
 	 * <p>		{component11, component12, component13}	// row_1<p>
@@ -34,8 +34,8 @@ public class TableLayoutHelper {
 	 */
 
     /**
-     *×î³£ÓÃµÄ×îºóÒ»ĞĞÁĞfill»òÕß¶¼ÊÇpreferµÄtablelayout
-     * @param components ×é¼ş
+     *æœ€å¸¸ç”¨çš„æœ€åä¸€è¡Œåˆ—fillæˆ–è€…éƒ½æ˜¯preferçš„tablelayout
+     * @param components ç»„ä»¶
      * @return
      */
     public static JPanel createTableLayoutPane(Component[][] components, int fillType){
@@ -119,8 +119,8 @@ public class TableLayoutHelper {
 		JPanel resultPane = setPanelLayout(rowSize, columnSize, horizontalGap, verticalGap);
 
 		int k = components.length;
-		int[] row = new int[k];    //´æ·ÅÃ¿×é¿Ø¼şÔÚµÚ¼¸ĞĞ¿ªÊ¼
-		int sumRow = 1;     //´æ·ÅÒ»´ÎµİÔöµÄĞĞµÄÊıÄ¿
+		int[] row = new int[k];    //å­˜æ”¾æ¯ç»„æ§ä»¶åœ¨ç¬¬å‡ è¡Œå¼€å§‹
+		int sumRow = 1;     //å­˜æ”¾ä¸€æ¬¡é€’å¢çš„è¡Œçš„æ•°ç›®
 
 
 		for (int i = 0; i < components.length; i++) {
@@ -207,12 +207,12 @@ public class TableLayoutHelper {
 	}
 	
 	/**
-	 * Í¼±íÊôĞÔ±íÓÃµÄ±È½Ï¶àµÄÒ»ÖÖ²¼¾Ö£¬µÚÒ»ĞĞÊÇtitle,ÏÂÃæµÄcomponentsÏàµ±ÓÚ¶ş¼¶²Ëµ¥
-	 * ¶ş¼¶²Ëµ¥ºÍÉÏ²ãÃæ°åµÄ¼ä¾àÔÚlayoutconstantsÀï¶¨Òå
+	 * å›¾è¡¨å±æ€§è¡¨ç”¨çš„æ¯”è¾ƒå¤šçš„ä¸€ç§å¸ƒå±€ï¼Œç¬¬ä¸€è¡Œæ˜¯title,ä¸‹é¢çš„componentsç›¸å½“äºäºŒçº§èœå•
+	 * äºŒçº§èœå•å’Œä¸Šå±‚é¢æ¿çš„é—´è·åœ¨layoutconstantsé‡Œå®šä¹‰
 	 * @param title
-	 * @param components ¶ş¼¶²Ëµ¥µÄÄÚÈİ
-	 * @param rowSize ¶ş¼¶²Ëµ¥µÄĞĞÊı
-	 * @param columnSize ¶ş¼¶²Ëµ¥µÄÁĞÊı
+	 * @param components äºŒçº§èœå•çš„å†…å®¹
+	 * @param rowSize äºŒçº§èœå•çš„è¡Œæ•°
+	 * @param columnSize äºŒçº§èœå•çš„åˆ—æ•°
 	 * @return
 	 */
 	public static JPanel createTableLayoutPane4Chart(String[] title, Component[][] components, double[] rowSize, double[] columnSize){

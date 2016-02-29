@@ -12,9 +12,9 @@ import java.awt.event.FocusEvent;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-9-30
- * Time: ÉÏÎç11:06
+ * Time: ä¸Šåˆ11:06
  * To change this template use File | Settings | File Templates.
  */
 public class CalendarNumberField extends UINumberField {

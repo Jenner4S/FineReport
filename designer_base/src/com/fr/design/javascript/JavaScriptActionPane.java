@@ -36,7 +36,7 @@ public abstract class JavaScriptActionPane extends UIComboBoxPane<JavaScript> {
 
     protected List<FurtherBasicBeanPane<? extends JavaScript>> initPaneList() {
         List<FurtherBasicBeanPane<? extends JavaScript>> paneList = new ArrayList<FurtherBasicBeanPane<? extends JavaScript>>();
-        // JS½Å±¾,±íµ¥Ìá½»,Ìá½»Èë¿â,Á÷³Ì¹ÜÀí,·¢ËÍÓÊ¼ş. 703ÖĞÈ¥µô±íµ¥Ìá½»ºÍÁ÷³Ì¹ÜÀí
+        // JSè„šæœ¬,è¡¨å•æäº¤,æäº¤å…¥åº“,æµç¨‹ç®¡ç†,å‘é€é‚®ä»¶. 703ä¸­å»æ‰è¡¨å•æäº¤å’Œæµç¨‹ç®¡ç†
         paneList.add(new JavaScriptImplPane(getDefaultArgs()));
 //		paneList.add(new FormSubmitJavaScriptPane(this));
         contentDBManiPane = new ArrayList();
@@ -58,7 +58,7 @@ public abstract class JavaScriptActionPane extends UIComboBoxPane<JavaScript> {
                 paneList.add(jsp.getJavaScriptActionPane());
             }
         }
-        // ×Ô¶¨ÒåÊÂ¼ş
+        // è‡ªå®šä¹‰äº‹ä»¶
 //		paneList.add(new CustomActionPane());
         return paneList;
     }
@@ -78,9 +78,9 @@ public abstract class JavaScriptActionPane extends UIComboBoxPane<JavaScript> {
     }
 
     /**
-     * Éú³É»Øµ÷º¯ÊıµÄ°´Å¥
+     * ç”Ÿæˆå›è°ƒå‡½æ•°çš„æŒ‰é’®
      *
-     * @return ·µ»Ø°´Å¥¶ÔÏó
+     * @return è¿”å›æŒ‰é’®å¯¹è±¡
      */
     public UIButton createCallButton() {
         UIButton callButton = new UIButton(Inter.getLocText("Set_Callback_Function"));
@@ -138,10 +138,10 @@ public abstract class JavaScriptActionPane extends UIComboBoxPane<JavaScript> {
         return call;
     }
 
-    // Ä¬ÈÏ²ÎÊı
+    // é»˜è®¤å‚æ•°
     protected abstract String[] getDefaultArgs();
 
-    //ÓÃÓÚÇø±ğ±¨±í¸ú±íµ¥
+    //ç”¨äºåŒºåˆ«æŠ¥è¡¨è·Ÿè¡¨å•
     protected abstract boolean isForm();
 
     protected abstract DBManipulationPane createDBManipulationPane();
@@ -175,9 +175,9 @@ public abstract class JavaScriptActionPane extends UIComboBoxPane<JavaScript> {
     };
 
     /**
-     * Éú³É½çÃæÄ¬ÈÏµÄ×é½¨
+     * ç”Ÿæˆç•Œé¢é»˜è®¤çš„ç»„å»º
      *
-     * @return ·µ»ØÉú³ÉµÄÃæ°å
+     * @return è¿”å›ç”Ÿæˆçš„é¢æ¿
      */
     public static JavaScriptActionPane createDefault() {
         return new JavaScriptActionPane() {

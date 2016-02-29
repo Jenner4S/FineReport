@@ -12,9 +12,9 @@ import com.fr.design.mainframe.chart.gui.ChartStylePane;
 import com.fr.general.ComparatorUtils;
 
 /**
- * É¢µãÍ¼ ÊôĞÔ±í ÏµÁĞ½çÃæ.
+ * æ•£ç‚¹å›¾ å±æ€§è¡¨ ç³»åˆ—ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-23 ÉÏÎç10:34:22
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-23 ä¸Šåˆ10:34:22
  */
 public class XYScatterSeriesPane extends LineSeriesPane {
 
@@ -23,7 +23,7 @@ public class XYScatterSeriesPane extends LineSeriesPane {
 	}
 
 	/**
-	 * ¸üĞÂÉ¢µãÍ¼ÏµÁĞ½çÃæÊôĞÔ
+	 * æ›´æ–°æ•£ç‚¹å›¾ç³»åˆ—ç•Œé¢å±æ€§
 	 */
 	@Override
 	public void populateBean(Plot plot) {
@@ -32,7 +32,7 @@ public class XYScatterSeriesPane extends LineSeriesPane {
 	}
 
 	/**
-	 * ±£´æÏµÁĞ½çÃæÊôĞÔ.
+	 * ä¿å­˜ç³»åˆ—ç•Œé¢å±æ€§.
 	 */
 	@Override
 	public void updateBean(Plot plot) {

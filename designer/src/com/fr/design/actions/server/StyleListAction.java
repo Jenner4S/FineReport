@@ -28,8 +28,8 @@ public class StyleListAction extends UpdateAction {
 	}
 
     /**
-     * 动作
-     * @param evt 事件
+     * 鍔ㄤ綔
+     * @param evt 浜嬩欢
      */
 	public void actionPerformed(ActionEvent evt) {
 		DesignerFrame designerFrame = DesignerContext.getDesignerFrame();
@@ -39,7 +39,7 @@ public class StyleListAction extends UpdateAction {
 			@Override
 			public void doOk() {
 				styleListPane.update(ConfigManager.getProviderInstance());
-				//marks:保存数据
+				//marks:淇濆瓨鏁版嵁
 				Env currentEnv = FRContext.getCurrentEnv();
 				try {
 					currentEnv.writeResource(ConfigManager.getProviderInstance());

@@ -25,12 +25,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Í¼±í²åÈëĞü¸¡ÔªËØµÄ²Ù×÷.
+ * å›¾è¡¨æ’å…¥æ‚¬æµ®å…ƒç´ çš„æ“ä½œ.
  */
 public class ChartFloatAction extends ElementCaseAction {
 
     /**
-     * ¹¹Ôìº¯Êı Í¼±í²åÈëĞü¸¡ÔªËØ
+     * æ„é€ å‡½æ•° å›¾è¡¨æ’å…¥æ‚¬æµ®å…ƒç´ 
      */
 	public ChartFloatAction(ElementCasePane t) {
 		super(t);
@@ -58,8 +58,8 @@ public class ChartFloatAction extends ElementCaseAction {
 	};
 
     /**
-     * Ö´ĞĞ²åÈëĞü¸¡ÔªËØ²Ù×÷, ²¢·µ»Øtrue, ĞèÒª¼ÇÂ¼³·Ïú.
-     * @return ÊÇÔò·µ»Øtrue
+     * æ‰§è¡Œæ’å…¥æ‚¬æµ®å…ƒç´ æ“ä½œ, å¹¶è¿”å›true, éœ€è¦è®°å½•æ’¤é”€.
+     * @return æ˜¯åˆ™è¿”å›true
      */
 	public boolean executeActionReturnUndoRecordNeeded() {
 		final ElementCasePane reportPane = getEditingComponent();

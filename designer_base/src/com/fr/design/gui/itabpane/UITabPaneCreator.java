@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class UITabPaneCreator {
 	/**
-	 * 父类Component里面有个name成员变量，最好不要用那个
+	 * 鐖剁被Component閲岄潰鏈変釜name鎴愬憳鍙橀噺锛屾渶濂戒笉瑕佺敤閭ｄ釜
 	 */
 	private String tabName;
 	

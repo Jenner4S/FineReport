@@ -24,10 +24,10 @@ import com.fr.design.utils.gui.LayoutUtils;
 import com.fr.stable.ArrayUtils;
 
 /**
- * ¸Ãmodel±£´æµ±Ç°Ñ¡ÔñµÄ×é¼şºÍ¼ôÇĞ°æĞÅÏ¢
+ * è¯¥modelä¿å­˜å½“å‰é€‰æ‹©çš„ç»„ä»¶å’Œå‰ªåˆ‡ç‰ˆä¿¡æ¯
  */
 public class SelectionModel {
-    private static final int DELTA_X_Y = 20; //Õ³ÌùÊ±ºòµÄÆ«ÒÆ¾àÀë
+    private static final int DELTA_X_Y = 20; //ç²˜è´´æ—¶å€™çš„åç§»è·ç¦»
 	private static FormSelection CLIP_BOARD = new FormSelection();
 	private FormDesigner designer;
 	private FormSelection selection;
@@ -39,7 +39,7 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ÖØÖÃ¡£Çå¿ÕformSelctionÒÔ¼°Ñ¡ÔñÇøÓò
+	 * é‡ç½®ã€‚æ¸…ç©ºformSelctionä»¥åŠé€‰æ‹©åŒºåŸŸ
 	 */
 	public void reset() {
 		selection.reset();
@@ -47,26 +47,26 @@ public class SelectionModel {
 	}
 	
 	/**
-	 * formSelctionÊÇ·ñÎª¿Õ
-	 * @return ÊÇ·ñÎª¿Õ
+	 * formSelctionæ˜¯å¦ä¸ºç©º
+	 * @return æ˜¯å¦ä¸ºç©º
 	 */
 	public static boolean isEmpty(){
 		return CLIP_BOARD.isEmpty();
 	}
 
 	/**
-	 * Êó±êµã»÷Ò»ÏÂ£¬ËùÑ¡ÖĞµÄµ¥¸ö×é¼ş¡£°´ÏÂCtrl»òÕßshift¼üÊ±Êó±ê¿ÉÒÔ½øĞĞ¶àÑ¡
-	 * @param e Êó±êÊÂ¼ş
+	 * é¼ æ ‡ç‚¹å‡»ä¸€ä¸‹ï¼Œæ‰€é€‰ä¸­çš„å•ä¸ªç»„ä»¶ã€‚æŒ‰ä¸‹Ctrlæˆ–è€…shifté”®æ—¶é¼ æ ‡å¯ä»¥è¿›è¡Œå¤šé€‰
+	 * @param e é¼ æ ‡äº‹ä»¶
 	 */
 	public void selectACreatorAtMouseEvent(MouseEvent e) {
 		if (!e.isControlDown() && !e.isShiftDown()) {
-			// Èç¹ûCtrl»òÕßShift¼üÅÌÃ»ÓĞ°´ÏÂ£¬ÔòÇå³ıÒÑ¾­Ñ¡ÔñµÄ×é¼ş
+			// å¦‚æœCtrlæˆ–è€…Shifté”®ç›˜æ²¡æœ‰æŒ‰ä¸‹ï¼Œåˆ™æ¸…é™¤å·²ç»é€‰æ‹©çš„ç»„ä»¶
 			selection.reset();
 		}
 
-		// »ñÈ¡eËùÔÚµÄ×é¼ş
+		// è·å–eæ‰€åœ¨çš„ç»„ä»¶
 		XCreator comp = designer.getComponentAt(e);
-		// Èç¹û¸¸²ãÊÇscaleºÍtitleÁ½¸ö×¨ÊôÈİÆ÷£¬·µ»ØÆä¸¸²ã£¬×é¼ş±¾ÉíÊÇ²»ÈÃ±»Ñ¡ÖĞµÄ
+		// å¦‚æœçˆ¶å±‚æ˜¯scaleå’Œtitleä¸¤ä¸ªä¸“å±å®¹å™¨ï¼Œè¿”å›å…¶çˆ¶å±‚ï¼Œç»„ä»¶æœ¬èº«æ˜¯ä¸è®©è¢«é€‰ä¸­çš„
 		if (comp != designer.getRootComponent() && comp != designer.getParaComponent()) {
 			XCreator parentContainer = (XCreator) comp.getParent();
 			comp = parentContainer.isDedicateContainer() ? parentContainer : comp;
@@ -78,7 +78,7 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ½«ËùÑ¡×é¼ş¼ôÇĞµ½¼ôÇĞ°åÉÏ
+	 * å°†æ‰€é€‰ç»„ä»¶å‰ªåˆ‡åˆ°å‰ªåˆ‡æ¿ä¸Š
 	 */
 	public void cutSelectedCreator2ClipBoard() {
 		if (hasSelectionComponent()) {
@@ -89,7 +89,7 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ¸´ÖÆµ±Ç°Ñ¡ÖĞµÄ×é¼şµ½¼ôÇĞ°å
+	 * å¤åˆ¶å½“å‰é€‰ä¸­çš„ç»„ä»¶åˆ°å‰ªåˆ‡æ¿
 	 */
 	public void copySelectedCreator2ClipBoard() {
 		if (!selection.isEmpty()) {
@@ -98,8 +98,8 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ´Ó¼ôÇĞ°åÕ³Ìû×é¼ş
-	 * @return ·ñ
+	 * ä»å‰ªåˆ‡æ¿ç²˜å¸–ç»„ä»¶
+	 * @return å¦
 	 */
 	public boolean pasteFromClipBoard() {
 		if (!CLIP_BOARD.isEmpty()) {
@@ -124,7 +124,7 @@ public class SelectionModel {
 	}
 
 	/**
-	 * É¾³ıµ±Ç°ËùÓĞÑ¡ÔñµÄ×é¼ş
+	 * åˆ é™¤å½“å‰æ‰€æœ‰é€‰æ‹©çš„ç»„ä»¶
 	 */
 	public void deleteSelection() {
 		XCreator[] roots = selection.getSelectedCreators();
@@ -137,22 +137,22 @@ public class SelectionModel {
                 
 				removeCreatorFromContainer(creator, creator.getWidth(), creator.getHeight());
 				creator.removeAll();
-				// Çå³ı±»Ñ¡ÖĞµÄ×é¼ş
+				// æ¸…é™¤è¢«é€‰ä¸­çš„ç»„ä»¶
                 selection.reset();
 			}
             setSelectedCreator(designer.getRootComponent());
-			// ´¥·¢ÊÂ¼ş
+			// è§¦å‘äº‹ä»¶
 			designer.getEditListenerTable().fireCreatorModified(DesignerEvent.CREATOR_DELETED);
 			designer.repaint();
 		}
 	}
 
 	/**
-	 * ´ÓÑ¡Ôñ×é¼şÖĞÉ¾³ıÄ³×é¼ş
+	 * ä»é€‰æ‹©ç»„ä»¶ä¸­åˆ é™¤æŸç»„ä»¶
 	 * 
-	 * @param creator ×é¼ş
-	 * @param creatorWidth ×é¼şÖ®Ç°¿í¶È
-	 * @param creatorHeight ×é¼şÖ®Ç°¸ß¶È
+	 * @param creator ç»„ä»¶
+	 * @param creatorWidth ç»„ä»¶ä¹‹å‰å®½åº¦
+	 * @param creatorHeight ç»„ä»¶ä¹‹å‰é«˜åº¦
 	 */
 	public void removeCreator(XCreator creator, int creatorWidth, int creatorHeight) {
 		selection.removeCreator(creator);
@@ -161,14 +161,14 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ÉèÖÃÑ¡ÔñÇøÓò
+	 * è®¾ç½®é€‰æ‹©åŒºåŸŸ
 	 */
 	public void setHotspotBounds(Rectangle rect) {
 		hotspot_bounds = rect;
 	}
 
 	/**
-	 * »ñµÃµ±Ç°Ñ¡ÔñÇøÓò
+	 * è·å¾—å½“å‰é€‰æ‹©åŒºåŸŸ
 	 */
 	public Rectangle getHotspotBounds() {
 		return hotspot_bounds;
@@ -184,28 +184,28 @@ public class SelectionModel {
 			creator = (XCreator) creator.getParent();
 		}
 		parent.getLayoutAdapter().removeBean(creator, creatorWidth, creatorHeight);
-		// É¾³ıÆä¸ù×é¼ş£¬Í¬Ê±¾ÍÉ¾³ıÁËÍ¬Ê±±»Ñ¡ÔñµÄÒ¶×Ó×é¼ş
+		// åˆ é™¤å…¶æ ¹ç»„ä»¶ï¼ŒåŒæ—¶å°±åˆ é™¤äº†åŒæ—¶è¢«é€‰æ‹©çš„å¶å­ç»„ä»¶
 		parent.remove(creator);
 		LayoutManager layout = parent.getLayout();
 
 		if (layout != null) {
-			// Ë¢ĞÂ×é¼şÈİÆ÷µÄ²¼¾Ö
+			// åˆ·æ–°ç»„ä»¶å®¹å™¨çš„å¸ƒå±€
 			LayoutUtils.layoutContainer(parent);
 		}
 	}
 
 	/**
-	 * ÊÇ·ñÓĞ×é¼ş±»Ñ¡Ôñ¡£Èç¹ûËùÑ¡×é¼şÊÇ×îµ×²ãÈİÆ÷£¬Ò²ÊÓÎªÎŞÑ¡Ôñ
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æœ‰ç»„ä»¶è¢«é€‰æ‹©ã€‚å¦‚æœæ‰€é€‰ç»„ä»¶æ˜¯æœ€åº•å±‚å®¹å™¨ï¼Œä¹Ÿè§†ä¸ºæ— é€‰æ‹©
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean hasSelectionComponent() {
 		return !selection.isEmpty() && selection.getSelectedCreator().getParent() != null;
 	}
 
 	/**
-	 * ÒÆ¶¯×é¼şÖÁÖ¸¶¨Î»ÖÃ
-	 * @param x ×ø±êx
-	 * @param y ×ø±êy
+	 * ç§»åŠ¨ç»„ä»¶è‡³æŒ‡å®šä½ç½®
+	 * @param x åæ ‡x
+	 * @param y åæ ‡y
 	 */
 	public void move(int x, int y) {
 		for (XCreator creator : selection.getSelectedCreators()) {
@@ -220,7 +220,7 @@ public class SelectionModel {
 	}
 
 	/**
-	 * ÊÍ·Å²¶»ñ
+	 * é‡Šæ”¾æ•è·
 	 */
 	public void releaseDragging() {
 		designer.setPainter(null);

@@ -26,7 +26,7 @@ public class CellDScolumnEditor extends CellQuickEditor {
         @Override
         public void itemStateChanged(ItemEvent e) {
             if (e == null) {
-                //·Ö×é-¸ß¼¶-×Ô¶¨ÒåµãÈ·¶¨µÄÊ±ºò´«½øÀ´nullµÄe,µ«ÊÇÕâÊ±ºòÓ¦¸Ã´¥·¢±£´æ
+                //åˆ†ç»„-é«˜çº§-è‡ªå®šä¹‰ç‚¹ç¡®å®šçš„æ—¶å€™ä¼ è¿›æ¥nullçš„e,ä½†æ˜¯è¿™æ—¶å€™åº”è¯¥è§¦å‘ä¿å­˜
                 groupPane.update();
                 fireTargetModified();
                 return;
@@ -81,7 +81,7 @@ public class CellDScolumnEditor extends CellQuickEditor {
         return centerPane;
     }
 
-    // august:ÕâÀïÃæµÄ¶«Î÷¶¼È«²¿ÖØĞÂ¶¯Ì¬Éú³É£¬²»È»ÈİÒ×³ö´í
+    // august:è¿™é‡Œé¢çš„ä¸œè¥¿éƒ½å…¨éƒ¨é‡æ–°åŠ¨æ€ç”Ÿæˆï¼Œä¸ç„¶å®¹æ˜“å‡ºé”™
     @Override
     protected void refreshDetails() {
         JPanel pane = new JPanel(new BorderLayout(LayoutConstants.HGAP_LARGE, 0));

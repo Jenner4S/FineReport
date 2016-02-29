@@ -12,7 +12,7 @@ import com.fr.design.mainframe.JChart;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: …œŒÁ9:47
+ * Time: ‰∏äÂçà9:47
  */
 public abstract class JChartAction extends JTemplateAction<JChart> {
     public JChartAction(JChart jChart) {

@@ -43,8 +43,8 @@ public class TextBoxFloatAction extends AbstractShapeAction {
 
 
     /**
-     * 动作
-     * @param e 动作
+     * 鍔ㄤ綔
+     * @param e 鍔ㄤ綔
      */
 	public void actionPerformed(ActionEvent e) {
     	ElementCasePane jws = getEditingComponent();

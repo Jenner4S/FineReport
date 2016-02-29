@@ -5,8 +5,8 @@ import com.fr.design.dialog.JWizardPanel;
 
 /**
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-4-23 ÏÂÎç03:07:52
-* ÀàËµÃ÷: Í¼±íÏòµ¼½çÃæ
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-4-23 ä¸‹åˆ03:07:52
+* ç±»è¯´æ˜: å›¾è¡¨å‘å¯¼ç•Œé¢
  */
 public abstract class ChartWizardPane extends JWizardPanel {
 

@@ -9,7 +9,7 @@ import java.awt.Dimension;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-25
+ * @since 6.5.4 åˆ›å»ºäºŽ2011-5-25
  */
 public class FRAbsoluteLayout implements FRLayoutManager {
 

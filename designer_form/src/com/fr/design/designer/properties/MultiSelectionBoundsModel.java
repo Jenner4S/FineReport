@@ -14,7 +14,7 @@ import com.fr.design.mainframe.widget.editors.PropertyCellEditor;
 import com.fr.design.designer.beans.ConstraintsGroupModel;
 
 /**
- * 多个组件时候的属性组
+ * 澶氫釜缁勪欢鏃跺�欑殑灞炴�х粍
  *
  */
 public class MultiSelectionBoundsModel implements ConstraintsGroupModel {

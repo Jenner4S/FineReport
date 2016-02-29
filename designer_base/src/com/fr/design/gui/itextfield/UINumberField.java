@@ -19,13 +19,13 @@ import com.fr.stable.StringUtils;
  * Number Field.
  */
 public class UINumberField extends UITextField {
-	public static final double ERROR_VALUE = Double.MAX_VALUE + 4.44; // peter:´íÎóµÄÖµ.
+	public static final double ERROR_VALUE = Double.MAX_VALUE + 4.44; // peter:é”™è¯¯çš„å€¼.
 	/**
-	 * ÕûÊı²¿·ÖµÄ³¤¶È
+	 * æ•´æ•°éƒ¨åˆ†çš„é•¿åº¦
 	 */
 	private int maxIntegerLength = 24;
 	/**
-	 * Ğ¡Êı²¿·ÖµÄ³¤¶È
+	 * å°æ•°éƒ¨åˆ†çš„é•¿åº¦
 	 */
     private static final int DEFAULTMAXDECIMALLENTH = 16;
     private static final  int TESTMAXVALUE = 100;
@@ -162,7 +162,7 @@ public class UINumberField extends UITextField {
                     || ComparatorUtils.equals(s,"f")
                     || ComparatorUtils.equals(s,"D")
                     || ComparatorUtils.equals(s,"d")
-                    ||(ComparatorUtils.equals(str.trim(),"0") && !ComparatorUtils.equals(s.substring(0, 1),".") && offset != 0)// µÚÒ»Î»ÊÇ0Ê±,µÚ¶şÎ»Ö»ÄÜÎªĞ¡Êıµã
+                    ||(ComparatorUtils.equals(str.trim(),"0") && !ComparatorUtils.equals(s.substring(0, 1),".") && offset != 0)// ç¬¬ä¸€ä½æ˜¯0æ—¶,ç¬¬äºŒä½åªèƒ½ä¸ºå°æ•°ç‚¹
                     ||(ComparatorUtils.equals(s,".") && maxDecimalLength == 0));
 
         }
@@ -170,7 +170,7 @@ public class UINumberField extends UITextField {
 		public void insertString(int offset, String s, AttributeSet a) throws BadLocationException {
 			String str = getText(0, getLength());
 
-			// ²»ÄÜÎªf,F,d,D
+			// ä¸èƒ½ä¸ºf,F,d,D
 			if (checkString(offset,s, str)  ) {
 				Toolkit.getDefaultToolkit().beep();
 				return;
@@ -184,11 +184,11 @@ public class UINumberField extends UITextField {
 			super.insertString(offset, s, a);
 		}
 		
-		// kunsnat: ÕâÖÖÏŞÖÆÊäÈë ÓĞ¸ö²»ºÃµÄµØ·½, ±ÈÈçÉ¾³ıÊ±: 10.1  ×î´óÖµÏŞ¶¨100, ÄÇÃ´¾ÍÉ¾³ıÖĞ¼äµÄĞ¡ÊıµãÖ®ºó±äÎª101, ³¬³öÁË100. 
-		// µ«ÊÇÖ±½ÓÏŞÖÆ²»ÄÜÉ¾³ıÖĞ¼äÀàËÆĞ¡Êıµã, ÄÇÃ´Ò²¿ÉÄÜÓöµ½: ×îĞ¡Öµ10 , ´Ó100±ä»¯µ½ÆäÖĞµÄ19, ¾ÍºÜÄÑ.. 
+		// kunsnat: è¿™ç§é™åˆ¶è¾“å…¥ æœ‰ä¸ªä¸å¥½çš„åœ°æ–¹, æ¯”å¦‚åˆ é™¤æ—¶: 10.1  æœ€å¤§å€¼é™å®š100, é‚£ä¹ˆå°±åˆ é™¤ä¸­é—´çš„å°æ•°ç‚¹ä¹‹åå˜ä¸º101, è¶…å‡ºäº†100. 
+		// ä½†æ˜¯ç›´æ¥é™åˆ¶ä¸èƒ½åˆ é™¤ä¸­é—´ç±»ä¼¼å°æ•°ç‚¹, é‚£ä¹ˆä¹Ÿå¯èƒ½é‡åˆ°: æœ€å°å€¼10 , ä»100å˜åŒ–åˆ°å…¶ä¸­çš„19, å°±å¾ˆéš¾.. 
 		private boolean notChange(String strNew) {
 			boolean noChange = false;
-			strNew = strNew.replaceFirst("-", StringUtils.EMPTY); // ¿ØÖÆÄÜÊäÈë¸ºÊı
+			strNew = strNew.replaceFirst("-", StringUtils.EMPTY); // æ§åˆ¶èƒ½è¾“å…¥è´Ÿæ•°
 			boolean isMinus = strNew.startsWith("-");
 			String strIntPart;
 			String strDecPart = StringUtils.EMPTY;
@@ -205,7 +205,7 @@ public class UINumberField extends UITextField {
 			}
 			
 			try {
-				if (!ComparatorUtils.equals(strNew, StringUtils.EMPTY) && !ComparatorUtils.equals(strNew, "-")) {// ¿ØÖÆÄÜÊäÈë¸ºÊı
+				if (!ComparatorUtils.equals(strNew, StringUtils.EMPTY) && !ComparatorUtils.equals(strNew, "-")) {// æ§åˆ¶èƒ½è¾“å…¥è´Ÿæ•°
 					double d = Double.parseDouble(strNew) * (isMinus ? -1 : 1);
 					if (d < minValue || d > maxValue) {
 						throw new Exception();
@@ -227,7 +227,7 @@ public class UINumberField extends UITextField {
 	}
 
     /**
-     * ²âÊÔ³ÌĞò
+     * æµ‹è¯•ç¨‹åº
      */
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("");

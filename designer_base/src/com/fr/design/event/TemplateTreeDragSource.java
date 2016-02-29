@@ -17,7 +17,7 @@ import java.awt.dnd.DragSourceAdapter;
  * Created with IntelliJ IDEA.
  * User: richie
  * Date: 13-11-4
- * Time: ÏÂÎç2:17
+ * Time: ä¸‹åˆ2:17
  */
 public class TemplateTreeDragSource extends DragSourceAdapter implements DragGestureListener {
     private DragSource source;

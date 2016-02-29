@@ -10,7 +10,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-1-2
- * Time: ÉÏÎç10:10
+ * Time: ä¸Šåˆ10:10
  */
 public class UIPopupMenuBorder extends AbstractBorder implements UIResource {
 

@@ -9,7 +9,7 @@ import javax.swing.JComponent;
 
 
 /**
- * <div class="cn">ËùÓĞ¸ñ×ÓÖĞ×é¼şµÄ¸¸Àà,GridColumn, GridRowºÍGrid¶¼¼Ì³ĞÁËÕâ¸öÀà.</div>
+ * <div class="cn">æ‰€æœ‰æ ¼å­ä¸­ç»„ä»¶çš„çˆ¶ç±»,GridColumn, GridRowå’ŒGridéƒ½ç»§æ‰¿äº†è¿™ä¸ªç±».</div>
  * <div class="en">Base component.</div>
  */
 public abstract class BaseGridComponent extends JComponent {

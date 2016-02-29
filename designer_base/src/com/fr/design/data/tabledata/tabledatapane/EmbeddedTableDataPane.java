@@ -61,13 +61,13 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 		scrollPane = new JScrollPane(dataJTable);
 		this.add(scrollPane, BorderLayout.CENTER);
 
-		// ÏÔÊ¾double,dateÀà;äÖÈ¾dateÀà
+		// æ˜¾ç¤ºdouble,dateç±»;æ¸²æŸ“dateç±»
 		dataJTable.setDefaultRenderer(Double.class, new DoubleRenderer());
 		dataJTable.setDefaultRenderer(Date.class, new DateRenderer());
 		dataJTable.setDefaultEditor(Date.class, new DateEditor(new UIDatePicker(UIDatePicker.STYLE_CN_DATE1)));
 		tableStructureChanged();
 
-		// µ¥»÷¼´¿É±à¼­
+		// å•å‡»å³å¯ç¼–è¾‘
 		editbysingleclick(dataJTable, String.class);
 		editbysingleclick(dataJTable, Date.class);
 		editbysingleclick(dataJTable, Double.class);
@@ -80,19 +80,19 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 		dataJTable.setColumnSelectionAllowed(true);
 
 
-		// peter:¿ØÖÆPanel
+		// peter:æŽ§åˆ¶Panel
 		JPanel northPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		this.add(northPane, BorderLayout.NORTH);
 		northPane.setBorder(BorderFactory.createEmptyBorder(0, 0, 3, 0));
 
-		// kel:ÔÚ×óÉÏ½Ç¼ÓÒ»¸öJLabelÓÃÀ´ÏÔÊ¾×ø±ê£¬·½±ãÓÃ»§²é¿´¡£
+		// kel:åœ¨å·¦ä¸Šè§’åŠ ä¸€ä¸ªJLabelç”¨æ¥æ˜¾ç¤ºåæ ‡ï¼Œæ–¹ä¾¿ç”¨æˆ·æŸ¥çœ‹ã€‚
 		coordinatelabel = new UILabel("0/0,0/0");
 		coordinatelabel.setHorizontalAlignment(UILabel.CENTER);
 		northPane.add(coordinatelabel);
 
 		dataJTable.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
-				// kel£º¼ÓÉÏÒ»¸öÊó±êµã»÷µÄ¼à¿Ø£¬Êó±êµã»÷Ê±£¬·µ»ØÑ¡ÖÐµÄÐÐ×ø±êºÍÁÐ×ø±ê¡£
+				// kelï¼šåŠ ä¸Šä¸€ä¸ªé¼ æ ‡ç‚¹å‡»çš„ç›‘æŽ§ï¼Œé¼ æ ‡ç‚¹å‡»æ—¶ï¼Œè¿”å›žé€‰ä¸­çš„è¡Œåæ ‡å’Œåˆ—åæ ‡ã€‚
 				selectedChanged();
 			}
 		});
@@ -106,7 +106,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 	}
 
     private void initOtherNorthPaneComponents(JPanel northPane) {
-        // ±í½á¹¹ÉèÖÃ
+        // è¡¨ç»“æž„è®¾ç½®
         columnSetButton = new UIButton(Inter.getLocText(new String[]{"Table", "Design"}));
         columnSetButton.setMnemonic('C');
         northPane.add(columnSetButton);
@@ -164,7 +164,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 
 	@Override
 	public void checkValid() throws Exception {
-		// alex:Í£Ö¹µ±Ç°µÄ±à¼­
+		// alex:åœæ­¢å½“å‰çš„ç¼–è¾‘
 		try {
 			dataJTable.getCellEditor().stopCellEditing();
 		} catch (Exception e) {
@@ -185,7 +185,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 	public void populateBean(EmbeddedTableData ob) {
 		EmbeddedTableModel localDefaultModel = (EmbeddedTableModel) dataJTable.getModel();
 		localDefaultModel.clear();
-		// ¶ÁÈ¡tabeldata
+		// è¯»å–tabeldata
 		for (int i = 0; i < ob.getColumnCount(); i++) {
 			String columnName = ob.getColumnName(i);
 			Class columnClass = ob.getColumnClass(i);
@@ -220,7 +220,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 	}
 
 	private void tableStructureChanged() {
-		// ÐÐºÅÏÔÊ¾,Ã¿´ÎdateJTableµÄ±í½á¹¹·¢Éú±ä»¯Ê±¶¼Òªµ÷ÓÃ
+		// è¡Œå·æ˜¾ç¤º,æ¯æ¬¡dateJTableçš„è¡¨ç»“æž„å‘ç”Ÿå˜åŒ–æ—¶éƒ½è¦è°ƒç”¨
 		TableColumn tableColumn = dataJTable.getColumnModel().getColumn(0);
 		tableColumn.setCellRenderer(new CellRenderer());
 		tableColumn.setMaxWidth(30);
@@ -286,7 +286,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 	private void insertRow() {
 		EmbeddedTableModel localDefaultModel = (EmbeddedTableModel) dataJTable.getModel();
 
-		// alex:Í£Ö¹µ±Ç°µÄ±à¼­
+		// alex:åœæ­¢å½“å‰çš„ç¼–è¾‘
 		try {
 			dataJTable.getCellEditor().stopCellEditing();
 		} catch (Exception e) {
@@ -303,7 +303,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 
 		localDefaultModel.addNewRowData(indexedrow);
 		localDefaultModel.fireTableDataChanged();
-		// kel:Ìí¼ÓÒ»¸öfocus¼à¿Ø£¬ÔÚ²åÈëÐÐÊ±»ñµÃ½¹µã¡££¨Î´ÊµÏÖ£©
+		// kel:æ·»åŠ ä¸€ä¸ªfocusç›‘æŽ§ï¼Œåœ¨æ’å…¥è¡Œæ—¶èŽ·å¾—ç„¦ç‚¹ã€‚ï¼ˆæœªå®žçŽ°ï¼‰
 		dataJTable.requestFocusInWindow();
 		dataJTable.setRowSelectionInterval(indexedrow, indexedrow);
 		dataJTable.setColumnSelectionInterval(indexedcol, indexedcol);
@@ -315,7 +315,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 	private void removeRow() {
 		EmbeddedTableModel localDefaultModel = (EmbeddedTableModel) dataJTable.getModel();
 
-		// peter:¿ªÊ¼É¾³ýÐÐ
+		// peter:å¼€å§‹åˆ é™¤è¡Œ
 		int selectedRow = dataJTable.getSelectedRow();
 
 		int selectedCol = dataJTable.getSelectedColumn();
@@ -326,7 +326,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 			selectedCol = 0;
 		}
 
-		// alex:Í£Ö¹µ±Ç°µÄ±à¼­
+		// alex:åœæ­¢å½“å‰çš„ç¼–è¾‘
 		try {
 			dataJTable.getCellEditor().stopCellEditing();
 		} catch (Exception e) {
@@ -337,7 +337,7 @@ public class EmbeddedTableDataPane extends AbstractTableDataPane<EmbeddedTableDa
 		}
 		localDefaultModel.fireTableDataChanged();
 
-		// peter:µ÷ÕûSelection
+		// peter:è°ƒæ•´Selection
 		int rowCount = localDefaultModel.getRowCount();
 		if (rowCount > 0) {
 			if (selectedRow < rowCount) {

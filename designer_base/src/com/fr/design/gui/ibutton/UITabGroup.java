@@ -19,9 +19,9 @@ public class UITabGroup extends UIButtonGroup<Integer> {
     private static final int GAP = 11;
 
     /**
-     * ±êÇ©Ò³¸Ä±ä
+     * æ ‡ç­¾é¡µæ”¹å˜
      *
-     * @param index ĞòºÅ
+     * @param index åºå·
      */
     public void tabChanged(int index) {
 

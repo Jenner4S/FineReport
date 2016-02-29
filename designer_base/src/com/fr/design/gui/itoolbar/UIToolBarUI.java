@@ -35,19 +35,19 @@ public class UIToolBarUI extends MetalToolBarUI {
     private static Border toolButtonBorder = new UIToolButtonBorder();
 
     /**
-     * 创建组件UI
+     * 鍒涘缓缁勪欢UI
      *
-     * @param c 组件
-     * @return 组件UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIToolBarUI();
     }
 
     /**
-     * 加载组件ui
+     * 鍔犺浇缁勪欢ui
      *
-     * @param c 组件
+     * @param c 缁勪欢
      */
     public void installUI(JComponent c) {
         super.installUI(c);

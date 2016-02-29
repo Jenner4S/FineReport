@@ -13,7 +13,7 @@ import javax.swing.JComponent;
 import com.fr.design.gui.itextfield.UITextField;
 
 /**
- * ÏÔÊ¾ÑÕÉ«µÄ¿Ø¼ş,ÄÜÍ¬Ê±ÏÔÊ¾ÑÕÉ«ºÍÎÄ×Ö
+ * æ˜¾ç¤ºé¢œè‰²çš„æ§ä»¶,èƒ½åŒæ—¶æ˜¾ç¤ºé¢œè‰²å’Œæ–‡å­—
  * @since 6.5.2
  */
 public class ColorTextField extends JComponent implements ITextComponent {

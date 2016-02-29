@@ -23,7 +23,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date: 14-9-11
- * Time: 上午11:27
+ * Time: 涓婂崍11:27
  */
 public class ChartTextAttrNoColorPane extends ChartTextAttrPane{
 
@@ -63,8 +63,8 @@ public class ChartTextAttrNoColorPane extends ChartTextAttrPane{
     }
 
     /**
-     * 更新字体
-     * @return 字体
+     * 鏇存柊瀛椾綋
+     * @return 瀛椾綋
      */
     public FRFont updateFRFont() {
         int style = Font.PLAIN;

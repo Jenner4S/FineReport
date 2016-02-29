@@ -17,7 +17,7 @@ import javax.swing.*;
 
 /**
  * @author richer
- * @since 6.5.3 com.fr.rpt.web.ui.WidgetµÄÉè¼Æ×é¼ş
+ * @since 6.5.3 com.fr.rpt.web.ui.Widgetçš„è®¾è®¡ç»„ä»¶
  */
 public abstract class XWidgetCreator extends XCreator {
 
@@ -30,8 +30,8 @@ public abstract class XWidgetCreator extends XCreator {
     }
 
     /**
-     * ´ıËµÃ÷
-     * @return    ´ıËµÃ÷
+     * å¾…è¯´æ˜
+     * @return    å¾…è¯´æ˜
      * @throws IntrospectionException
      */
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -58,15 +58,15 @@ public abstract class XWidgetCreator extends XCreator {
 	}
 
     /**
-     * ´ıËµÃ÷
-     * @return     ´ıËµÃ÷
+     * å¾…è¯´æ˜
+     * @return     å¾…è¯´æ˜
      */
     public Widget toData() {
         return this.data;
     }
 
     /**
-     * ¸ù¾İWidgetµÄÊôĞÔÖµ³õÊ¼»¯XCreatorµÄÊôĞÔÖµ
+     * æ ¹æ®Widgetçš„å±æ€§å€¼åˆå§‹åŒ–XCreatorçš„å±æ€§å€¼
      */
     @Override
     protected void initXCreatorProperties() {
@@ -74,7 +74,7 @@ public abstract class XWidgetCreator extends XCreator {
     }
 
     /**
-     * ´ıËµÃ÷
+     * å¾…è¯´æ˜
      */
     public void recalculateChildrenSize() {
     }
@@ -104,41 +104,41 @@ public abstract class XWidgetCreator extends XCreator {
 				mt.addImage(img, 0);
 				mt.waitForAll();
 
-				GraphicsConfiguration gc = new JFrame().getGraphicsConfiguration(); // ±¾µØÍ¼ĞÎÉè±¸
-				Image image = gc.createCompatibleImage(w, h, Transparency.TRANSLUCENT);//½¨Á¢Í¸Ã÷»­²¼
-				Graphics2D g = (Graphics2D) image.getGraphics(); //ÔÚ»­²¼ÉÏ´´½¨»­±Ê
+				GraphicsConfiguration gc = new JFrame().getGraphicsConfiguration(); // æœ¬åœ°å›¾å½¢è®¾å¤‡
+				Image image = gc.createCompatibleImage(w, h, Transparency.TRANSLUCENT);//å»ºç«‹é€æ˜ç”»å¸ƒ
+				Graphics2D g = (Graphics2D) image.getGraphics(); //åœ¨ç”»å¸ƒä¸Šåˆ›å»ºç”»ç¬”
 
-				Composite alpha = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f); //Ö¸¶¨Í¸Ã÷¶ÈÎª°ëÍ¸Ã÷90%
+				Composite alpha = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f); //æŒ‡å®šé€æ˜åº¦ä¸ºåŠé€æ˜90%
 				g.setComposite(alpha);
-				g.drawImage(img, 0, 0, this); //×¢ÒâÊÇ,½«image»­µ½g»­±ÊËùÔÚµÄ»­²¼ÉÏ
-				g.setColor(Color.black);//ÉèÖÃÑÕÉ«ÎªºÚÉ«
-				g.drawString(name, 25, 20);//Ğ´×Ö
-				g.dispose(); //ÊÍ·ÅÄÚ´æ
+				g.drawImage(img, 0, 0, this); //æ³¨æ„æ˜¯,å°†imageç”»åˆ°gç”»ç¬”æ‰€åœ¨çš„ç”»å¸ƒä¸Š
+				g.setColor(Color.black);//è®¾ç½®é¢œè‰²ä¸ºé»‘è‰²
+				g.drawString(name, 25, 20);//å†™å­—
+				g.dispose(); //é‡Šæ”¾å†…å­˜
 
 				Composite alpha2 = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity);
 				Image image1 = gc.createCompatibleImage(w, h, Transparency.TRANSLUCENT);
 				g = (Graphics2D) image1.getGraphics();
 				g.setComposite(alpha2);
-				g.drawImage(img, 2, 2, this); //¸Ä±äÍ¼ÏñÆğÊ¼Î»ÖÃ,²úÉú¶¯Ì¬Ğ§¹û
+				g.drawImage(img, 2, 2, this); //æ”¹å˜å›¾åƒèµ·å§‹ä½ç½®,äº§ç”ŸåŠ¨æ€æ•ˆæœ
 				g.setColor(Color.black);
 				g.drawString(name, 25, 20);
 				g.dispose();
 
 				this.setIgnoreRepaint(true);
-				this.setFocusable(false);//ÉèÖÃÃ»ÓĞ½¹µã
-				this.setBorder(null);//ÉèÖÃ²»»­°´Å¥±ß¿ò
-				this.setContentAreaFilled(false);//ÉèÖÃ²»»­°´Å¥±³¾°
-				this.setIcon(new ImageIcon(image1)); //°Ñ¸Õ²ÅÉú³ÉµÄ°ëÍ¸Ã÷image±ä³ÉImageIcon,Ìùµ½°´Å¥ÉÏÈ¥
+				this.setFocusable(false);//è®¾ç½®æ²¡æœ‰ç„¦ç‚¹
+				this.setBorder(null);//è®¾ç½®ä¸ç”»æŒ‰é’®è¾¹æ¡†
+				this.setContentAreaFilled(false);//è®¾ç½®ä¸ç”»æŒ‰é’®èƒŒæ™¯
+				this.setIcon(new ImageIcon(image1)); //æŠŠåˆšæ‰ç”Ÿæˆçš„åŠé€æ˜imageå˜æˆImageIcon,è´´åˆ°æŒ‰é’®ä¸Šå»
 				this.setRolloverIcon(new ImageIcon(image1));
-				this.setPressedIcon(new ImageIcon(image));//°´ÏÂÈ¥µÄÍ¼±ê
+				this.setPressedIcon(new ImageIcon(image));//æŒ‰ä¸‹å»çš„å›¾æ ‡
 			} catch (Exception e) {
 				FRContext.getLogger().error(e.getMessage());
 			}
 		}
 
         /**
-         * ´ıËµÃ÷
-         * @param visible       ´ıËµÃ÷
+         * å¾…è¯´æ˜
+         * @param visible       å¾…è¯´æ˜
          */
 		public void makeVisible(boolean visible) {
 			this.opacity = visible ? FULL_OPACITY : HALF_OPACITY;
@@ -147,10 +147,10 @@ public abstract class XWidgetCreator extends XCreator {
 	}
 	
 	/**
-	 * ÖØÃüÃû
+	 * é‡å‘½å
 	 * 
-	 * @param designer ±íµ¥Éè¼ÆÆ÷
-	 * @param creator µ±Ç°×é¼ş
+	 * @param designer è¡¨å•è®¾è®¡å™¨
+	 * @param creator å½“å‰ç»„ä»¶
 	 * 
 	 */
 	public void ChangeCreatorName(FormDesigner designer,XCreator creator){

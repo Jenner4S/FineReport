@@ -40,14 +40,14 @@ public class ChartOtherPane extends AbstractChartAttrPane {
 
         this.removeAll();
         initAll();
-        this.validate();// kunsnat: ÖØĞÂ¼¤»îÃæ°å. ²»È»ÊÂ¼ş ¹ö¶¯ÌõµÈ²»ÏìÓ¦.
+        this.validate();// kunsnat: é‡æ–°æ¿€æ´»é¢æ¿. ä¸ç„¶äº‹ä»¶ æ»šåŠ¨æ¡ç­‰ä¸å“åº”.
 
 		otherPane.populateBean(collection);
 	}
 	
 	/**
-	 * ×¢²á ÇĞ»»°´Å¥µÄ ¸Ä±äÊÂ¼ş, ºÍ³¬Á´Çø·Ö.
-     * @param currentChartEditPane  µ±Ç°Í¼±í±à¼­½çÃæ.
+	 * æ³¨å†Œ åˆ‡æ¢æŒ‰é’®çš„ æ”¹å˜äº‹ä»¶, å’Œè¶…é“¾åŒºåˆ†.
+     * @param currentChartEditPane  å½“å‰å›¾è¡¨ç¼–è¾‘ç•Œé¢.
 	 */
 	public void registerChartEditPane(ChartEditPane currentChartEditPane) {
 		otherPane.registerChartEditPane(currentChartEditPane);
@@ -64,8 +64,8 @@ public class ChartOtherPane extends AbstractChartAttrPane {
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-	 * @return ·µ»Ø±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜
+	 * @return è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_OTHER_TITLE;
@@ -76,7 +76,7 @@ public class ChartOtherPane extends AbstractChartAttrPane {
 	}
 	
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄ½çÃæid
+	 * è®¾ç½®é€‰ä¸­çš„ç•Œé¢id
 	 */
 	public void setSelectedByIds(int level, String... id) {
 		otherPane.setSelectedByIds(level, id);
@@ -131,7 +131,7 @@ public class ChartOtherPane extends AbstractChartAttrPane {
 		}
 		
 		/**
-		 * ÉèÖÃÑ¡ÖĞµÄ½çÃæid
+		 * è®¾ç½®é€‰ä¸­çš„ç•Œé¢id
 		 */
 		public void setSelectedByIds(int level, String... id) {
 	        for (int i = 0; i < paneList.size(); i++) {
@@ -147,8 +147,8 @@ public class ChartOtherPane extends AbstractChartAttrPane {
 	    }
 		
 		/**
-		 * ×¢²á ÇĞ»»°´Å¥µÄÇĞ»»ÊÂ¼ş.
-		 * @param currentChartEditPane µ±Ç°±à¼­µÄÍ¼±í±à¼­½çÃæ.
+		 * æ³¨å†Œ åˆ‡æ¢æŒ‰é’®çš„åˆ‡æ¢äº‹ä»¶.
+		 * @param currentChartEditPane å½“å‰ç¼–è¾‘çš„å›¾è¡¨ç¼–è¾‘ç•Œé¢.
 		 */
 		public void registerChartEditPane(ChartEditPane currentChartEditPane) {
 //			chartSwitchPane.registerChartEditPane(currentChartEditPane);

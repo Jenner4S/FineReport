@@ -116,7 +116,7 @@ public class ChartTitlePaneNoFormula extends BasicScrollPane<Chart> {
         return TableLayoutHelper.createTableLayoutPane(components,rowSize,columnSize);
     }
 
-    // ¼ì²é±êÌâ½çÃæÊÇ·ñ¿ÉÓÃ.
+    // æ£€æŸ¥æ ‡é¢˜ç•Œé¢æ˜¯å¦å¯ç”¨.
     private void checkTitlePaneUse() {
         isTitleVisable.setVisible(true);
         isTitleVisable.setEnabled(true);
@@ -125,8 +125,8 @@ public class ChartTitlePaneNoFormula extends BasicScrollPane<Chart> {
     }
 
     /**
-     * µ¯³ö¿òµÄ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+     * å¼¹å‡ºæ¡†çš„ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return PaneTitleConstants.CHART_STYLE_TITLE_TITLE;
@@ -143,7 +143,7 @@ public class ChartTitlePaneNoFormula extends BasicScrollPane<Chart> {
         if (title == null) {
             return;
         }
-        isTitleVisable.setSelected(title.isTitleVisble());
+        isTitleVisable.setSelected(title.isTitleVisible());
 
         titleContent.setText(Utils.objectToString(title.getTextObject()));
 
@@ -168,7 +168,7 @@ public class ChartTitlePaneNoFormula extends BasicScrollPane<Chart> {
         if (title == null) {
             title = new Title(StringUtils.EMPTY);
         }
-        title.setTitleVisble(isTitleVisable.isSelected());
+        title.setTitleVisible(isTitleVisable.isSelected());
         String titleString = titleContent.getText();
         title.setTextObject(titleString);
         TextAttr textAttr = title.getTextAttr();

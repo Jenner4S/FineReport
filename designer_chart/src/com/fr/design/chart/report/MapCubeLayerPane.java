@@ -30,9 +30,9 @@ import java.util.*;
 import java.util.List;
 
 /**
- * µØÍ¼×êÈ¡²ã¼¶½çÃæ, Ä¬ÈÏ×êÈ¡µ½Í¬ÃûµÄµØÍ¼
+ * åœ°å›¾é’»å–å±‚çº§ç•Œé¢, é»˜è®¤é’»å–åˆ°åŒåçš„åœ°å›¾
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-11-20 ÏÂÎç03:39:08
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-11-20 ä¸‹åˆ03:39:08
  */
 public class MapCubeLayerPane extends BasicBeanPane<String>{
 	
@@ -72,15 +72,15 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
     }
 	
 	/**
-	 * ·µ»Ø½ÚµãÂ·¾¶
+	 * è¿”å›èŠ‚ç‚¹è·¯å¾„
 	 */
 	public int getTreeDepth() {
 		return root.getDepth();
 	}
 
     /**
-     *  ³õÊ¼»¯½Úµã½çÃæ.
-     * @param mapName µØÍ¼Ãû³Æ.
+     *  åˆå§‹åŒ–èŠ‚ç‚¹ç•Œé¢.
+     * @param mapName åœ°å›¾åç§°.
      */
 	public void initRootTree(String mapName) {
 		editingMap = mapName;
@@ -91,7 +91,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 		
 		root.add(node);
 		
-		// Ã¿¸ö½Úµã¶¼ÒªÈ¥ÅĞ¶ÏÊÇ·ñÓĞµØÍ¼ÔÙ°üº¬  Ä¬ÈÏ×êÈ¡µ½Í¬ÃûµÄµØÍ¼
+		// æ¯ä¸ªèŠ‚ç‚¹éƒ½è¦å»åˆ¤æ–­æ˜¯å¦æœ‰åœ°å›¾å†åŒ…å«  é»˜è®¤é’»å–åˆ°åŒåçš„åœ°å›¾
         if(isSvg) {
             MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(mapName);
             hasDealNames.clear();
@@ -113,8 +113,8 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	}
 
     /**
-     * Ìí¼ÓÏìÓ¦ÊÂ¼ş.
-     * @param change  ¸Ä±äµÄÊÂ¼ş.
+     * æ·»åŠ å“åº”äº‹ä»¶.
+     * @param change  æ”¹å˜çš„äº‹ä»¶.
      */
 	public void addChangeListener(ChangeListener change) {
 		fireWhenTreeChange.add(change);
@@ -131,7 +131,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
                 MapAttr tmpAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(nextToName);
                 if(tmpAttr != null) {
                     DefaultMutableTreeNode currentName = new DefaultMutableTreeNode(names);
-                    node.add(currentName);// ÓĞ×êÈ¡ÄÚÈİµÄµØÍ¼²ÅÌí¼Ó½Úµã
+                    node.add(currentName);// æœ‰é’»å–å†…å®¹çš„åœ°å›¾æ‰æ·»åŠ èŠ‚ç‚¹
 
                     if(!hasDealNames.contains(Utils.objectToString(currentName.getUserObject()))) {
                         hasDealNames.add(Utils.objectToString(currentName.getUserObject()));
@@ -153,7 +153,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 				MapSvgAttr tmpAttr = MapSvgXMLHelper.getInstance().getMapAttr(nextToName);
 				if(tmpAttr != null) {
 					DefaultMutableTreeNode currentName = new DefaultMutableTreeNode(names);
-					node.add(currentName);// ÓĞ×êÈ¡ÄÚÈİµÄµØÍ¼²ÅÌí¼Ó½Úµã
+					node.add(currentName);// æœ‰é’»å–å†…å®¹çš„åœ°å›¾æ‰æ·»åŠ èŠ‚ç‚¹
 					
 					if(!hasDealNames.contains(Utils.objectToString(currentName.getUserObject()))) {
 						hasDealNames.add(Utils.objectToString(currentName.getUserObject()));
@@ -166,7 +166,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	
 	MouseListener mapListener = new MouseAdapter() {
 		  public void mouseClicked(MouseEvent e) {
-			  final TreePath visiblePath = mapTree.getSelectionPath(); // È¡µÃµ±Ç°Ñ¡ÖĞµÄ½Úµã selectTreeName
+			  final TreePath visiblePath = mapTree.getSelectionPath(); // å–å¾—å½“å‰é€‰ä¸­çš„èŠ‚ç‚¹ selectTreeName
 			  if(visiblePath == null) {
 				  return;
 			  }
@@ -182,13 +182,13 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 				  setDataPane.freshComboxNames();
 				  MapSvgAttr mapAttr = MapSvgXMLHelper.getInstance().getMapAttr(selectTreeName);
                   editedMap.add(selectTreeName);
-				  if(mapAttr != null) {// ´ÓÖĞÈ¡³ö¶ÔÓ¦¹ØÏµ  // È¡³öµ±Ç°½ÚµãÃû³ÆËù¶ÔÓ¦µÄµØÍ¼
+				  if(mapAttr != null) {// ä»ä¸­å–å‡ºå¯¹åº”å…³ç³»  // å–å‡ºå½“å‰èŠ‚ç‚¹åç§°æ‰€å¯¹åº”çš„åœ°å›¾
 					  List list = new ArrayList();
-					  Iterator names = mapAttr.shapeValuesIterator();//ĞĞ:  µØÍ¼ÇøÓòÃû(String) + ¶ÔÓ¦µØÍ¼Ãû(String)
+					  Iterator names = mapAttr.shapeValuesIterator();//è¡Œ:  åœ°å›¾åŒºåŸŸå(String) + å¯¹åº”åœ°å›¾å(String)
 					  while(names.hasNext()) {
 						  Object name = names.next();
                           String layName = editingAttr.getLayerTo(Utils.objectToString(name));
-                          if(ArrayUtils.contains(ChartConstants.NONE_KEYS, layName)) {// kunsnat: ¿¼ÂÇÇĞ»»Éè¼ÆÆ÷ÓïÑÔ.
+                          if(ArrayUtils.contains(ChartConstants.NONE_KEYS, layName)) {// kunsnat: è€ƒè™‘åˆ‡æ¢è®¾è®¡å™¨è¯­è¨€.
                               layName = StringUtils.EMPTY;
                           }
 						  list.add(new Object[]{name, layName});
@@ -201,7 +201,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 
                   UIDialog dialog = setDataPane.showUnsizedWindow(SwingUtilities.getWindowAncestor(setDataPane), new DialogActionAdapter() {
 					  public void doOk() {
-						  List list = setDataPane.updateBean(); // ¸üĞÂµ±Ç°µÄ µØÍ¼ÃûËù¶ÔÓ¦µÄ ÇøÓòÃû×êÈ¡¹ØÏµ ÖØĞÂinittree
+						  List list = setDataPane.updateBean(); // æ›´æ–°å½“å‰çš„ åœ°å›¾åæ‰€å¯¹åº”çš„ åŒºåŸŸåé’»å–å…³ç³» é‡æ–°inittree
 						  for(int i = 0; i < list.size(); i++) {
 							  Object[] values = (Object[])list.get(i);
 							  editingAttr.putLayerTo(Utils.objectToString(values[0]), Utils.objectToString(values[1]));
@@ -224,13 +224,13 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
         final MapCubeSetDataPane setDataPane = new MapCubeSetDataPane();
         setDataPane.freshBitMapComboxNames();
         MapAttr mapAttr = (MapAttr)MapXMLHelper.getInstance().getMapAttr(selectTreeName);
-        if(mapAttr != null) {// ´ÓÖĞÈ¡³ö¶ÔÓ¦¹ØÏµ  // È¡³öµ±Ç°½ÚµãÃû³ÆËù¶ÔÓ¦µÄµØÍ¼
+        if(mapAttr != null) {// ä»ä¸­å–å‡ºå¯¹åº”å…³ç³»  // å–å‡ºå½“å‰èŠ‚ç‚¹åç§°æ‰€å¯¹åº”çš„åœ°å›¾
             List list = new ArrayList();
-            Iterator names = mapAttr.shapeValuesIterator();//ĞĞ:  µØÍ¼ÇøÓòÃû(String) + ¶ÔÓ¦µØÍ¼Ãû(String)
+            Iterator names = mapAttr.shapeValuesIterator();//è¡Œ:  åœ°å›¾åŒºåŸŸå(String) + å¯¹åº”åœ°å›¾å(String)
             while(names.hasNext()) {
                 Object name = names.next();
                 String layName = editingAttr.getLayerTo(Utils.objectToString(name));
-                if(ArrayUtils.contains(ChartConstants.NONE_KEYS, layName)) {// kunsnat: ¿¼ÂÇÇĞ»»Éè¼ÆÆ÷ÓïÑÔ.
+                if(ArrayUtils.contains(ChartConstants.NONE_KEYS, layName)) {// kunsnat: è€ƒè™‘åˆ‡æ¢è®¾è®¡å™¨è¯­è¨€.
                     layName = StringUtils.EMPTY;
                 }
                 list.add(new Object[]{name, layName});
@@ -243,7 +243,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 
         UIDialog dialog = setDataPane.showUnsizedWindow(SwingUtilities.getWindowAncestor(setDataPane), new DialogActionAdapter() {
             public void doOk() {
-                List list = setDataPane.updateBean(); // ¸üĞÂµ±Ç°µÄ µØÍ¼ÃûËù¶ÔÓ¦µÄ ÇøÓòÃû×êÈ¡¹ØÏµ ÖØĞÂinittree
+                List list = setDataPane.updateBean(); // æ›´æ–°å½“å‰çš„ åœ°å›¾åæ‰€å¯¹åº”çš„ åŒºåŸŸåé’»å–å…³ç³» é‡æ–°inittree
                 for(int i = 0; i < list.size(); i++) {
                     Object[] values = (Object[])list.get(i);
                     editingAttr.putLayerTo(values[0], values[1]);
@@ -284,13 +284,13 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	}
 	
 	@Override
-	public void populateBean(String rootMapName) {// ¸ü½ÚµãµÄµØÍ¼Ãû³Æ  Ö»ÓĞ¸ù½ÚµãÊÇÈ·¶¨µÄ
-		// ´ÓÊı¾İ¿âÖĞÈ¡³öµØÍ¼Ãû³Æ ºÍ ²ã¼¶¹ØÏµ Ë¢ĞÂÁĞ±í
+	public void populateBean(String rootMapName) {// æ›´èŠ‚ç‚¹çš„åœ°å›¾åç§°  åªæœ‰æ ¹èŠ‚ç‚¹æ˜¯ç¡®å®šçš„
+		// ä»æ•°æ®åº“ä¸­å–å‡ºåœ°å›¾åç§° å’Œ å±‚çº§å…³ç³» åˆ·æ–°åˆ—è¡¨
 		initRootTree(rootMapName);
 	}
 	
-	public void updateBean(String rootMapName) {// HashMap --> ¶ÔÓ¦²ã¼¶µÄ   µØÍ¼Ãû³Æ
-		// Ë¢ĞÂÁĞ±í, ¸üĞÂÊı¾İ¿âÖĞµÄµØÍ¼Ãû³Æ
+	public void updateBean(String rootMapName) {// HashMap --> å¯¹åº”å±‚çº§çš„   åœ°å›¾åç§°
+		// åˆ·æ–°åˆ—è¡¨, æ›´æ–°æ•°æ®åº“ä¸­çš„åœ°å›¾åç§°
 		
 	}
 
@@ -300,7 +300,7 @@ public class MapCubeLayerPane extends BasicBeanPane<String>{
 	}
 	
 	/**
-	 * ·µ»Ø½çÃæ±êÌâ.
+	 * è¿”å›ç•Œé¢æ ‡é¢˜.
 	 */
 	protected String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Map_Drill");

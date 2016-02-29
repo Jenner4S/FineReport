@@ -14,9 +14,9 @@ public class DefaultIndentationUnitProcessor extends AbstractIndentationUnitProc
     }
 
     /**
-     * Ä¬ÈÏ´¦ÀíÏµÊıÊÇ1
-     * @param value ÊäÈë
-     * @return Êä³ö
+     * é»˜è®¤å¤„ç†ç³»æ•°æ˜¯1
+     * @param value è¾“å…¥
+     * @return è¾“å‡º
      */
     @Override
     public int paddingUnitProcessor(int value){
@@ -24,9 +24,9 @@ public class DefaultIndentationUnitProcessor extends AbstractIndentationUnitProc
     }
 
     /**
-     * Ä¬ÈÏ´¦ÀíÏµÊıÊÇ1£¬ÊäÈëspinnerµÄ¾ÍÊÇptÖµ
-     * @param value ÊäÈëÖµ
-     * @return Êä³ö
+     * é»˜è®¤å¤„ç†ç³»æ•°æ˜¯1ï¼Œè¾“å…¥spinnerçš„å°±æ˜¯ptå€¼
+     * @param value è¾“å…¥å€¼
+     * @return è¾“å‡º
      */
     @Override
     public int paddingUnitGainFromSpinner(int value) {

@@ -13,7 +13,7 @@ import com.fr.report.elementcase.ElementCase;
 /**
  * 
  * @editor zhou
- * @since 2012-3-23ÉÏÎç10:55:36
+ * @since 2012-3-23ä¸Šåˆ10:55:36
  */
 public class GridKeyListener implements KeyListener {
 
@@ -27,7 +27,7 @@ public class GridKeyListener implements KeyListener {
 	}
 
 	public void keyPressed(KeyEvent evt) {
-		if (!grid.isEnabled() || evt.isConsumed()) {// Èç¹ûÓÃ»§ÔÚ×Ô¼ºµÄKyeListenerÀïÃæconsumeÁË.¾Í²»Ö´ĞĞÏÂÃæµÄ´úÂëÁË.
+		if (!grid.isEnabled() || evt.isConsumed()) {// å¦‚æœç”¨æˆ·åœ¨è‡ªå·±çš„KyeListeneré‡Œé¢consumeäº†.å°±ä¸æ‰§è¡Œä¸‹é¢çš„ä»£ç äº†.
 			return;
 		}
 		KeyEvent newEvt = KeyEventWork.processKeyEvent(evt);
@@ -68,7 +68,7 @@ public class GridKeyListener implements KeyListener {
 			isNeedRepaint = true;
 			break;
 		}
-		// Richie:Ctrl + AÈ«Ñ¡µ¥Ôª¸ñ
+		// Richie:Ctrl + Aå…¨é€‰å•å…ƒæ ¼
 		case KeyEvent.VK_A:
 			if (code == KeyEvent.VK_A && evt.isControlDown()) {
 				reportPane.setSelection(new CellSelection(0, 0, report.getColumnCount(), report.getRowCount()));
@@ -84,7 +84,7 @@ public class GridKeyListener implements KeyListener {
 	}
 
 	/**
-	 * µ¥Ñ¡ÖĞĞü¸¡ÔªËØÊ±£¬Ö»´¦Àí4¸ö·½Ïò¼ü
+	 * å•é€‰ä¸­æ‚¬æµ®å…ƒç´ æ—¶ï¼Œåªå¤„ç†4ä¸ªæ–¹å‘é”®
 	 * 
 	 * @param reportPane
 	 * @param code
@@ -139,7 +139,7 @@ public class GridKeyListener implements KeyListener {
 		}
 		}
 
-		// Ö§³ÖĞ¡¼üÅÌ
+		// æ”¯æŒå°é”®ç›˜
 		if (IS_NUM_PAD_KEY(code)) {
 			keyTyped(evt);
 		}
@@ -170,11 +170,11 @@ public class GridKeyListener implements KeyListener {
 			return;
 		}
 		char ch = evt.getKeyChar();
-		if (ch == KeyEvent.VK_TAB) {// ½ûÖ¹Tab¼ü.
+		if (ch == KeyEvent.VK_TAB) {// ç¦æ­¢Tabé”®.
 			return;
 		}
 		int code = evt.getKeyCode();
-		if (Character.isDefined(ch)) {// VK_SUBTRACTĞ¡¼üÅÌµÄ¼õºÅ
+		if (Character.isDefined(ch)) {// VK_SUBTRACTå°é”®ç›˜çš„å‡å·
 			Selection s = grid.getElementCasePane().getSelection();
 			if (s instanceof CellSelection) {
 				if (!grid.getElementCasePane().isSelectedOneCell()) {
@@ -187,7 +187,7 @@ public class GridKeyListener implements KeyListener {
 
 				if (grid.getCellEditor() != null && grid.editorComponent != null) {
 					if (IS_NUM_PAD_KEY(code)) {
-						// 103 - 55 = 48, Ğ¡¼üÅÌºÍ´ó¼üÅÌÊı×ÖµÄ²îÖµ 48
+						// 103 - 55 = 48, å°é”®ç›˜å’Œå¤§é”®ç›˜æ•°å­—çš„å·®å€¼ 48
 						KeyEvent ke = new KeyEvent(grid, KeyEvent.KEY_PRESSED, 0, 0, code - 48, ch);
 						grid.editorComponent.dispatchEvent(ke);
 						ke.consume();
@@ -201,7 +201,7 @@ public class GridKeyListener implements KeyListener {
 		}
 	}
 	/**
-	 * Ğ¡¼üÅÌ
+	 * å°é”®ç›˜
 	 * @param code
 	 * @return
 	 */

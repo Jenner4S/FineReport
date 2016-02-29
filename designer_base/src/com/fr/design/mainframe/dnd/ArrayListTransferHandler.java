@@ -113,7 +113,7 @@ public class ArrayListTransferHandler extends TransferHandler {
     }
 
     protected void exportJListDone(JList targetList, int[] indices) {
-//Ò»°ãÇé¿öÏÂ£¬²»ĞèÒªÉ¾³ı.Ç°Ò»¸öJListµ±ÖĞµÄÊı¾İ.ËùÒÔÕâÀïÊ²Ã´Ò²²»×ö.
+//ä¸€èˆ¬æƒ…å†µä¸‹ï¼Œä¸éœ€è¦åˆ é™¤.å‰ä¸€ä¸ªJListå½“ä¸­çš„æ•°æ®.æ‰€ä»¥è¿™é‡Œä»€ä¹ˆä¹Ÿä¸åš.
 
 //      DefaultListModel model = (DefaultListModel) targetList.getModel();
 //

@@ -66,7 +66,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-14 Ò³ÃæÉèÖÃÃæ°å
+ * @since 6.5.5 åˆ›å»ºäº2011-6-14 é¡µé¢è®¾ç½®é¢æ¿
  */
 public class PageSetupPane extends BasicPane {
     private PagePane pagePane;
@@ -290,7 +290,7 @@ public class PageSetupPane extends BasicPane {
             paperSizeRightPane.add(switchInch);
 
 
-            // peter:ÉèÖÃ±ß¾à..
+            // peter:è®¾ç½®è¾¹è·..
             JPanel outermarginPane = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("PageSetup-Margin"));
             JPanel marginPane = FRGUIPaneFactory.createX_AXISBoxInnerContainer_M_Pane();
             outermarginPane.add(marginPane);
@@ -322,7 +322,7 @@ public class PageSetupPane extends BasicPane {
             JPanel marginRightPane = FRGUIPaneFactory.createY_AXISBoxInnerContainer_M_Pane();
             marginPane.add(marginRightPane);
 
-            // peter:Õâ¸öÒ»¸ö´¹Ö±µÄÉÏÏÂµÄ×Ö·ûpanel.
+            // peter:è¿™ä¸ªä¸€ä¸ªå‚ç›´çš„ä¸Šä¸‹çš„å­—ç¬¦panel.
             JPanel marginRightTextPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
             marginRightPane.add(marginRightTextPane);
             marginRightTextPane.add(new UILabel(Inter.getLocText("Left") + ":"));
@@ -387,7 +387,7 @@ public class PageSetupPane extends BasicPane {
             }
         };
 
-        //js:Ò³ÃæÉèÖÃ£¬µã»÷ÇĞ»»µ¥Î»£¬Ó¢´ç -- ºÁÃ×
+        //js:é¡µé¢è®¾ç½®ï¼Œç‚¹å‡»åˆ‡æ¢å•ä½ï¼Œè‹±å¯¸ -- æ¯«ç±³
         private ActionListener switchInchListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == switchInch) {
@@ -431,7 +431,7 @@ public class PageSetupPane extends BasicPane {
             } else {
                 this.portraitRadioButton.setSelected(true);
             }
-            //js:setSelectedIndex»á´¥·¢switchInchListener£¬Òò´ËÏÈÉ¾µô
+            //js:setSelectedIndexä¼šè§¦å‘switchInchListenerï¼Œå› æ­¤å…ˆåˆ æ‰
             switchInch.removeActionListener(switchInchListener);
             if (unitType == Constants.UNIT_INCH) {
                 switchInch.setSelectedIndex(1);
@@ -449,7 +449,7 @@ public class PageSetupPane extends BasicPane {
             for (int i = 0; i < ReportConstants.PaperSizeNameSizeArray.length; i++) {
                 Object[] tmpPaperSizeNameArray = ReportConstants.PaperSizeNameSizeArray[i];
                 
-                // peter:µ±Ç°Ñ¡ÔñµÄÊÇÔ¤ÏÈ¶¨ÒåºÃµÄ.
+                // peter:å½“å‰é€‰æ‹©çš„æ˜¯é¢„å…ˆå®šä¹‰å¥½çš„.
                 if (ComparatorUtils.equals(paperSize, tmpPaperSizeNameArray[1])) {
                     this.predefinedComboBox.setSelectedIndex(i);
                     this.predefinedRadioButton.setSelected(true);
@@ -501,7 +501,7 @@ public class PageSetupPane extends BasicPane {
                     paperHeightSpinner.setValue(new Float(paperSize.getHeight().toMMValue4Scale2()));
                 }
             }
-            // Ô¤ÀÀµÄ³õÊ¼»¯
+            // é¢„è§ˆçš„åˆå§‹åŒ–
             if (unitType == Constants.UNIT_CM) {
                 showPagePane.populate(paperSize.getWidth().toCMValue4Scale2(), paperSize.getHeight().toCMValue4Scale2(),
                         psetting.getOrientation(), false);
@@ -533,7 +533,7 @@ public class PageSetupPane extends BasicPane {
         private void updatePaperSizeByType(PaperSettingProvider psetting){
             // paper size.
             if (this.predefinedRadioButton.isSelected()) {
-                // peter:Õâ¸öµØ·½ĞèÒªcloneÒ»ÏÂ£¬·ÀÖ¹ÓÃ»§ÔÚÍâÃæĞŞ¸ÄÕâ¸öPaperSize.
+                // peter:è¿™ä¸ªåœ°æ–¹éœ€è¦cloneä¸€ä¸‹ï¼Œé˜²æ­¢ç”¨æˆ·åœ¨å¤–é¢ä¿®æ”¹è¿™ä¸ªPaperSize.
                 try {
                     psetting.setPaperSize((PaperSize) ((PaperSize) predefinedComboBox.getSelectedItem()).clone());
                 } catch (CloneNotSupportedException cloneNotSupportedException) {
@@ -565,7 +565,7 @@ public class PageSetupPane extends BasicPane {
          */
         public void update(Report report) {
         	ReportSettingsProvider reportSettings = report.getReportSettings();
-            // samuel:ÏÈÅĞ¶ÏÊÇ·ñreportSettingsÊÇ·ñÎª¿Õ£¬Èç¹ûÎª¿Õ£¬ÏÈĞÂ½¨
+            // samuel:å…ˆåˆ¤æ–­æ˜¯å¦reportSettingsæ˜¯å¦ä¸ºç©ºï¼Œå¦‚æœä¸ºç©ºï¼Œå…ˆæ–°å»º
             if (reportSettings == null) {
                 reportSettings = new ReportSettings();
                 report.setReportSettings(reportSettings);
@@ -809,7 +809,7 @@ public class PageSetupPane extends BasicPane {
                 if (paper_width <= 0 || paper_height <= 0)  {
                     return;
                 }
-                // ×î´ó2000£¬ÒÔÃâ»­µÄÊ±ºò³¬±ß
+                // æœ€å¤§2000ï¼Œä»¥å…ç”»çš„æ—¶å€™è¶…è¾¹
                 this.paper_width = Math.min(paper_width, 2000);
                 this.paper_height = Math.min(paper_height, 2000);
                 this.paper_orientation = paper_orientation;
@@ -836,14 +836,14 @@ public class PageSetupPane extends BasicPane {
                     }
                     Graphics2D g2d = (Graphics2D) g;
                     FontMetrics fm = g2d.getFontMetrics();
-                    // ºáÏòµÄ³¤¶È
+                    // æ¨ªå‘çš„é•¿åº¦
                     String w_str = "" + paper_width;
                     if (w_str.indexOf(CoreConstants.DOT) > 0) {
                         w_str = w_str.substring(0, w_str.indexOf(CoreConstants.DOT) + 2);
                     }
                     int w_length = fm.stringWidth(w_str);
                     paint_width = Math.max(paint_width, w_length + 26);
-                    // ×İÏòµÄ³¤¶È
+                    // çºµå‘çš„é•¿åº¦
                     String h_str = "" + paper_height;
                     if (h_str.indexOf(".") > 0) {
                         h_str = h_str.substring(0, h_str.indexOf(".") + 2);
@@ -871,26 +871,26 @@ public class PageSetupPane extends BasicPane {
                 g2d.setColor(Color.WHITE);
                 g2d.fill3DRect(0, 0, (int) paint_width, (int) paint_height, true);
                 g2d.setColor(Color.BLACK);
-                // ºáÏòµÄÁ½¸ùÊúÏß
+                // æ¨ªå‘çš„ä¸¤æ ¹ç«–çº¿
                 g2d.drawLine(0, NUM_NEG_5, 0, NUM_NEG_15);
                 g2d.drawLine((int) paint_width - 1, NUM_NEG_5, (int) paint_width - 1, NUM_NEG_15);
 
                 g2d.drawString(w_str, (int) ((paint_width - w_length) / 2), NUM_NEG_5);
-                // »­ºáÏòµÄÁ½¸ö¼ıÍ·
+                // ç”»æ¨ªå‘çš„ä¸¤ä¸ªç®­å¤´
                 g2d.drawLine(2, NUM_NEG_10, (int) ((paint_width - w_length) / 2) + NUM_NEG_5, NUM_NEG_10);
                 g2d.drawLine((int) ((paint_width + w_length) / 2) -NUM_NEG_5, NUM_NEG_10, (int) paint_width -NUM_3, NUM_NEG_10);
                 g2d.drawLine(2, NUM_NEG_10, -NUM_NEG_7, NUM_NEG_13);
                 g2d.drawLine(2, NUM_NEG_10, -NUM_NEG_7, NUM_NEG_7);
                 g2d.drawLine((int) paint_width - NUM_3,NUM_NEG_10, (int) paint_width +NUM_NEG_8, NUM_NEG_13);
                 g2d.drawLine((int) paint_width - NUM_3, NUM_NEG_10, (int) paint_width+NUM_NEG_8, NUM_NEG_7);
-                // ×İÏòµÄÁ½¸ùÊúÏß
+                // çºµå‘çš„ä¸¤æ ¹ç«–çº¿
                 g2d.drawLine(NUM_NEG_15, 0, NUM_NEG_5, 0);
                 g2d.drawLine(NUM_NEG_15, (int) paint_height - 1, NUM_NEG_5, (int) paint_height - 1);
 
                 g2d.rotate(-Math.toRadians((NUM_NEG_10*NUM_NEG_8-NUM_NEG_10)));
                 g2d.drawString(h_str, -(int) ((paint_height + h_length) / 2), NUM_NEG_5);
                 g2d.rotate(Math.toRadians((NUM_NEG_10*NUM_NEG_8-NUM_NEG_10)));
-                // ×İÏòµÄ¼ıÍ·
+                // çºµå‘çš„ç®­å¤´
                 g2d.drawLine(NUM_NEG_10, 2, NUM_NEG_10, (int) ((paint_height - h_length) / 2) +NUM_NEG_5);
                 g2d.drawLine(NUM_NEG_10, (int) ((paint_height + h_length) / 2) -NUM_NEG_5, NUM_NEG_10, (int) paint_height - NUM_3);
                 g2d.drawLine(NUM_NEG_10, 2, NUM_NEG_13, -NUM_NEG_7);
@@ -992,7 +992,7 @@ public class PageSetupPane extends BasicPane {
             defaultPane.add(firstPaneNumberPane);
 
             firstPaneNumberPane.add(new UILabel(Inter.getLocText("PageSetup-First_Page_Number") + ": "));
-            // marks: Õâ¸öµØ·½±ØĞëÎª´óÓÚÁãµÄÕûÊı
+            // marks: è¿™ä¸ªåœ°æ–¹å¿…é¡»ä¸ºå¤§äºé›¶çš„æ•´æ•°
             firstPageNumberSpinner = new UISpinner(1, Integer.MAX_VALUE, 1, 1);
             firstPaneNumberPane.add(firstPageNumberSpinner);
 

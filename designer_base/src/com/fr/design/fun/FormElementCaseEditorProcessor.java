@@ -10,9 +10,9 @@ public interface FormElementCaseEditorProcessor {
     String MARK_STRING = "PropertyEditor";
 
     /**
-     * 生成属性表
-     * @param temp 传入当前操作的class
-     * @return 返回属性表
+     * 鐢熸垚灞炴�ц〃
+     * @param temp 浼犲叆褰撳墠鎿嶄綔鐨刢lass
+     * @return 杩斿洖灞炴�ц〃
      */
     PropertyDescriptor[] createPropertyDescriptor(Class<?> temp);
 

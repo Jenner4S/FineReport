@@ -45,8 +45,8 @@ public class ChartBorderPane extends BasicPane{
 	}
 
     /**
-     * 标题
-     * @return 标题
+     * 鏍囬
+     * @return 鏍囬
      */
 	public String title4PopupWindow() {
 		return null;

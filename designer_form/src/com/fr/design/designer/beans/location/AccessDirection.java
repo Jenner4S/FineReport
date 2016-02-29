@@ -34,7 +34,7 @@ public abstract class AccessDirection implements Direction {
 			Rectangle oldbounds);
 
 	protected int[] sorption(int x, int y,Rectangle current_bounds, FormDesigner designer) {
-		// ×ÔÊÊÓ¦²¼¾Ö²»ĞèÒªÎü¸½Ïß£¬µ«ĞèÒª¶ÔÆëÏß£¬¶ÔÆëÏßºóÃæ´¦Àí
+		// è‡ªé€‚åº”å¸ƒå±€ä¸éœ€è¦å¸é™„çº¿ï¼Œä½†éœ€è¦å¯¹é½çº¿ï¼Œå¯¹é½çº¿åé¢å¤„ç†
 		if (!designer.hasWAbsoluteLayout()) {
 			return new int[] { x, y };
 		} else {
@@ -56,7 +56,7 @@ public abstract class AccessDirection implements Direction {
 		} else if (x > designer.getRootComponent().getWidth() && designer.getSelectionModel().hasSelectionComponent()) {
 			x = designer.getRootComponent().getWidth();
 		}
-        //²ÎÊıÃæ°å¿ÉÒÔÎŞÏÂÏŞÀ­³¤
+        //å‚æ•°é¢æ¿å¯ä»¥æ— ä¸‹é™æ‹‰é•¿
 		if (y < 0) {
 			y = 0;
 		} else if (y > designer.getRootComponent().getHeight() && designer.getSelectionModel().hasSelectionComponent()
@@ -125,14 +125,14 @@ public abstract class AccessDirection implements Direction {
     }
 
 	/**
-	 * ÍÏ×§
-	 * @param dx ×ø±êx
-	 * @param dy ×ø±êy
-	 * @param designer Éè¼Æ½çÃæ
+	 * æ‹–æ‹½
+	 * @param dx åæ ‡x
+	 * @param dy åæ ‡y
+	 * @param designer è®¾è®¡ç•Œé¢
 	 */
 	public void drag(int dx, int dy, FormDesigner designer) {
 		Rectangle rec = getDraggedBounds(dx, dy, designer.getSelectionModel().getSelection().getRelativeBounds(), designer, designer.getSelectionModel().getSelection().getBackupBounds());
-        //Éè¶¨¿Ø¼ş×îĞ¡¸ß¶È21£¬ÒòÃ¿´ÎÍÏÒ·ÖÁÉÙÒÆ¶¯1£¬·ÀÖ¹¿Ø¼ş¸ß¶ÈµÈÓÚ21Ê±£¬ÍÏÒ·µ¼ÖÂrec.yµÄ±ä»¯Ê¹µÃ¿Ø¼ş²»Í£µÄÏòÉÏ»òÏòÏÂÒÆ¶¯¡£
+        //è®¾å®šæ§ä»¶æœ€å°é«˜åº¦21ï¼Œå› æ¯æ¬¡æ‹–æ›³è‡³å°‘ç§»åŠ¨1ï¼Œé˜²æ­¢æ§ä»¶é«˜åº¦ç­‰äº21æ—¶ï¼Œæ‹–æ›³å¯¼è‡´rec.yçš„å˜åŒ–ä½¿å¾—æ§ä»¶ä¸åœçš„å‘ä¸Šæˆ–å‘ä¸‹ç§»åŠ¨ã€‚
         if(rec.height == MINHEIGHT){
             ymin = rec.y;
         }
@@ -143,7 +143,7 @@ public abstract class AccessDirection implements Direction {
             rec.height = MINHEIGHT;
             rec.y = ymin;
         }
-        // Ôö¼ÓÏÂ¿í¶ÈÒ²Éè×îĞ¡Îª21
+        // å¢åŠ ä¸‹å®½åº¦ä¹Ÿè®¾æœ€å°ä¸º21
         if (rec.width == MINWIDTH) {
         	xmin = rec.x;
         }
@@ -160,23 +160,23 @@ public abstract class AccessDirection implements Direction {
 	}
 
 	/**
-	 * ¸üĞÂÊó±êÖ¸ÕëĞÎ×´
-	 * @param formEditor Éè¼Æ½çÃæ×é¼ş
+	 * æ›´æ–°é¼ æ ‡æŒ‡é’ˆå½¢çŠ¶
+	 * @param formEditor è®¾è®¡ç•Œé¢ç»„ä»¶
 	 */
 	public void updateCursor(FormDesigner formEditor) {
 
-		// µ÷ÓÃÎ»ÖÃÃ¶¾ÙµÄ¶àÌ¬·½·¨getCursor»ñÈ¡Êó±êĞÎ×´
+		// è°ƒç”¨ä½ç½®æšä¸¾çš„å¤šæ€æ–¹æ³•getCursorè·å–é¼ æ ‡å½¢çŠ¶
 		int type = getCursor();
 
 		if (type != formEditor.getCursor().getType()) {
-			// ÉèÖÃµ±Ç°ĞÎ×´
+			// è®¾ç½®å½“å‰å½¢çŠ¶
 			formEditor.setCursor(Cursor.getPredefinedCursor(type));
 		}
 	}
 	
 	/**
-	 * Éú³É×é¼ş±¸ÓÃµÄbound
-	 * @param formEditor Éè¼Æ½çÃæ×é¼ş
+	 * ç”Ÿæˆç»„ä»¶å¤‡ç”¨çš„bound
+	 * @param formEditor è®¾è®¡ç•Œé¢ç»„ä»¶
 	 */
 	public void backupBounds(FormDesigner formEditor) {
 		formEditor.getSelectionModel().getSelection().backupBounds();

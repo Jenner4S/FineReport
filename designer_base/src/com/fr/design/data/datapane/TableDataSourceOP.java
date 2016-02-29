@@ -23,10 +23,10 @@ import com.fr.design.gui.itree.refreshabletree.UserObjectOP;
 import com.fr.general.Inter;
 
 /**
- * Êı¾İ¼¯Ê÷µÄ²Ù×÷
+ * æ•°æ®é›†æ ‘çš„æ“ä½œ
  *
  * @editor zhou
- * @since 2012-3-28ÏÂÎç9:58:53
+ * @since 2012-3-28ä¸‹åˆ9:58:53
  */
 public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
     public static final int TEMPLATE_TABLE_DATA = 0;
@@ -42,7 +42,7 @@ public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
     }
 
     /**
-     * ³õÊ¼»¯Êı¾İ¼¯µÄlist
+     * åˆå§‹åŒ–æ•°æ®é›†çš„list
      *
      * @return
      */
@@ -52,9 +52,9 @@ public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
             return DesignTableDataManager.getEditingDataSet(tc.getBook());
         }
         List<Map<String, TableDataWrapper>> empty = new ArrayList<Map<String, TableDataWrapper>>();
-        empty.add(Collections.<String, TableDataWrapper>emptyMap());//Êı¾İ¼¯
-        empty.add(Collections.<String, TableDataWrapper>emptyMap());//·şÎñÆ÷Êı¾İ¼¯
-        empty.add(Collections.<String, TableDataWrapper>emptyMap());//´æ´¢¹ı³Ì
+        empty.add(Collections.<String, TableDataWrapper>emptyMap());//æ•°æ®é›†
+        empty.add(Collections.<String, TableDataWrapper>emptyMap());//æœåŠ¡å™¨æ•°æ®é›†
+        empty.add(Collections.<String, TableDataWrapper>emptyMap());//å­˜å‚¨è¿‡ç¨‹
         return empty;
     }
 
@@ -68,7 +68,7 @@ public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
     }
 
     /**
-     * ÒÆ³ıÃû×ÖÊÇnameµÄTableData
+     * ç§»é™¤åå­—æ˜¯nameçš„TableData
      * @param name tabledata name
      */
     public void removeAction(String name) {
@@ -114,7 +114,7 @@ public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
     }
 
     /**
-     * ¸ù¾İ²»Í¬Ä£Ê½Éú³É×Ó½Úµã
+     * æ ¹æ®ä¸åŒæ¨¡å¼ç”Ÿæˆå­èŠ‚ç‚¹
      *
      * @return
      */
@@ -133,9 +133,9 @@ public class TableDataSourceOP implements UserObjectOP<TableDataWrapper> {
             serverDataMap = Collections.emptyMap();
             storeProcedureMap = Collections.emptyMap();
         }
-        List<ExpandMutableTreeNode> list = new ArrayList<ExpandMutableTreeNode>(); //ËùÓĞµÄÊı¾İ¼¯
-        List<ExpandMutableTreeNode> templist = new ArrayList<ExpandMutableTreeNode>(); //Ä£°åÊı¾İ¼¯
-        List<ExpandMutableTreeNode> serverlist = new ArrayList<ExpandMutableTreeNode>();   //·şÎñÆ÷Êı¾İ¼¯
+        List<ExpandMutableTreeNode> list = new ArrayList<ExpandMutableTreeNode>(); //æ‰€æœ‰çš„æ•°æ®é›†
+        List<ExpandMutableTreeNode> templist = new ArrayList<ExpandMutableTreeNode>(); //æ¨¡æ¿æ•°æ®é›†
+        List<ExpandMutableTreeNode> serverlist = new ArrayList<ExpandMutableTreeNode>();   //æœåŠ¡å™¨æ•°æ®é›†
 
         list.add(initTemplateDataNode(templateDataMap));
         addNodeToList(templateDataMap, templist);

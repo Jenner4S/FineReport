@@ -58,9 +58,9 @@ public class Inner extends AccessDirection {
 			}
 			
 			/**
-			 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄË®Æ½ÏßÊı×é
+			 * è·å–å½“å‰é€‰ä¸­å—çš„æ°´å¹³çº¿æ•°ç»„
 			 * 
-			 * @return ¿éµÄË®Æ½ÏßÊı×é
+			 * @return å—çš„æ°´å¹³çº¿æ•°ç»„
 			 * 
 			 */
 			public int[] getHorizontalLine(){
@@ -68,9 +68,9 @@ public class Inner extends AccessDirection {
 			}
 			
 			/**
-			 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄ´¹Ö±ÏßÊı×é
+			 * è·å–å½“å‰é€‰ä¸­å—çš„å‚ç›´çº¿æ•°ç»„
 			 * 
-			 * @return ¿éµÄ´¹Ö±ÏßÊı×é
+			 * @return å—çš„å‚ç›´çº¿æ•°ç»„
 			 * 
 			 */
 			public int[] getVerticalLine(){

@@ -1,4 +1,3 @@
-
 package com.fr.design.mainframe.chart.gui;
 
 import com.fr.chart.chartattr.Chart;
@@ -36,7 +35,7 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 	private TabPane stylePane;
 	private Chart chart;
 	private AttributeChangeListener listener;
-    private boolean isNeedFormula = true;//ÅĞ¶ÏÕâ¸ö½çÃæÉÏÊÇ²»ÊÇÒªÓĞ¹«Ê½
+    private boolean isNeedFormula = true;//åˆ¤æ–­è¿™ä¸ªç•Œé¢ä¸Šæ˜¯ä¸æ˜¯è¦æœ‰å…¬å¼
 	private ChartTitlePane chartTitlePane;
     private ChartTitlePaneNoFormula chartTitlePaneNoFormula;
     private BasicPane chartLegendPane;
@@ -161,38 +160,38 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 	}
 
 	/**
-	 * ·µ»Ø¶ÔÓ¦µÄÍ¼Æ¬Â·¾¶.
+	 * è¿”å›å¯¹åº”çš„å›¾ç‰‡è·¯å¾„.
 	 */
 	public String getIconPath() {
 		return "com/fr/design/images/chart/ChartStyle.png";
 	}
 
 	/**
-	 * ·µ»Ø½çÃæµÄ±êÌâÃû³Æ
-     * @return  ·µ»ØÃû³Æ.
+	 * è¿”å›ç•Œé¢çš„æ ‡é¢˜åç§°
+     * @return  è¿”å›åç§°.
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_STYLE_TITLE;
 	}
 	
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄ½çÃæid
+	 * è®¾ç½®é€‰ä¸­çš„ç•Œé¢id
 	 */
 	public void setSelectedByIds(int level, String... id) {
         stylePane.setSelectedByIds(level, id);
     }
 
 	/**
-	 * ×¢²áÊÂ¼ş¼àÌıÆ÷
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * æ³¨å†Œäº‹ä»¶ç›‘å¬å™¨
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		 this.uiObserverListener = listener;
 	}
 
 	/**
-	 * ÊÇ·ñÏàÓ¦ÊÂ¼ş
-	 * @return ÊÇ
+	 * æ˜¯å¦ç›¸åº”äº‹ä»¶
+	 * @return æ˜¯
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
@@ -207,7 +206,7 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 		}
 
 		private void dealWithChoosedPane(int index){
-			//µÚÒ»¸ö×ÜÊÇ±êÌâ
+			//ç¬¬ä¸€ä¸ªæ€»æ˜¯æ ‡é¢˜
 			if(index == 0){
 				return;
 			}
@@ -284,20 +283,20 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 				paneList.add(chartLegendPane);
 			}
 			
-			if(plot.isSupportDataSeriesAttr()) {// ÏµÁĞÊôĞÔ
+			if(plot.isSupportDataSeriesAttr()) {// ç³»åˆ—å±æ€§
 				paneList.add(chartSeriesPane);
 			}
 
-            if(plot.isSupportDataLabelAttr()) {// Êı¾İ±êÇ©
+            if(plot.isSupportDataLabelAttr()) {// æ•°æ®æ ‡ç­¾
 				paneList.add(chartDataLabelPane);
             }
 
             if(plot.isMeterPlot()){
-                //±êÇ©ÊôĞÔ
+                //æ ‡ç­¾å±æ€§
                 paneList.add(chartLabelFontPane);
             }
 			
-			if(plot.isHaveAxis()) {// È»ºó¼ÓÔØ×ø±êÖá½çÃæ.
+			if(plot.isHaveAxis()) {// ç„¶ååŠ è½½åæ ‡è½´ç•Œé¢.
 				paneList.add(chartAxisPane);
 				
 				paneList.add(chartAreaPane);
@@ -309,7 +308,7 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 				paneList.add(chartAreaPane);
 			}
 			
-			//¼ÓÔØ·ÖÎöÏßĞÍ½çÃæ
+			//åŠ è½½åˆ†æçº¿å‹ç•Œé¢
 			if(plot.needAnalysisLinePane()){
 				paneList.add(chartAnalysisLinePane);
 			}
@@ -341,7 +340,7 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 		}
 
 		/**
-		 * ½ÓÊÜ½çÃæµÄÀàĞÍ
+		 * æ¥å—ç•Œé¢çš„ç±»å‹
 		 */
 		@Override
 		public boolean accept(Object ob) {
@@ -349,7 +348,7 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 		}
 
 		/**
-		 * ½çÃæ±êÌâ
+		 * ç•Œé¢æ ‡é¢˜
 		 */
 		@Override
 		public String title4PopupWindow() {
@@ -357,14 +356,14 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 		}
 
 		/**
-		 * ÖØÖÃ
+		 * é‡ç½®
 		 */
 		public void reset() {
 
 		}
 		
 		/**
-		 * ÉèÖÃÑ¡ÖĞµÄ½çÃæid
+		 * è®¾ç½®é€‰ä¸­çš„ç•Œé¢id
 		 */
 		public void setSelectedByIds(int level, String... id) {
             tabPane.setSelectedIndex(-1);
@@ -381,4 +380,3 @@ public class ChartStylePane extends AbstractChartAttrPane implements UIObserver{
 	    }
 	}
 }
-

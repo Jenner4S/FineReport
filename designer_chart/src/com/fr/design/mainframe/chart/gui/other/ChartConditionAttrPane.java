@@ -35,8 +35,8 @@ public class ChartConditionAttrPane extends BasicScrollPane<Chart> {
 	}
 
     /**
-     * 面板标题
-     * @return 标题
+     * 闈㈡澘鏍囬
+     * @return 鏍囬
      */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Chart-Condition_Display");

@@ -15,9 +15,9 @@ import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
 /**
- * ±ıÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö½çÃæ.
+ * é¥¼å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç06:55:33
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ06:55:33
  */
 public class PiePlotPane extends AbstractChartTypePane{
 	private static final long serialVersionUID = -601566194238908115L;
@@ -61,8 +61,8 @@ public class PiePlotPane extends AbstractChartTypePane{
 
 
 	/**
-	 * ·µ»Ø½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * è¿”å›ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("I-PieStyle_Normal");
@@ -85,7 +85,7 @@ public class PiePlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
         super.populateBean(chart);
@@ -116,7 +116,7 @@ public class PiePlotPane extends AbstractChartTypePane{
     }
 	
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
 		chart.switchPlot(getSelectedClonedPlot());
@@ -124,9 +124,9 @@ public class PiePlotPane extends AbstractChartTypePane{
 	}
 	
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

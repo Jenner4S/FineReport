@@ -63,7 +63,7 @@ public class OldColumnIndexEditor extends Editor {
 		checkPane.add(indexCheckBox);
 		checkPane.add(nameCheckBox);
 		indexCheckBox.setSelected(true);
-		// ÓÃÃû×Ö°¡ ĞòºÅË­ÖªµÀÊÇ¶ÔÓ¦µÄÊ²Ã´.
+		// ç”¨åå­—å•Š åºå·è°çŸ¥é“æ˜¯å¯¹åº”çš„ä»€ä¹ˆ.
 //		nameCheckBox.setSelected(true);
 
 		this.add(checkPane, BorderLayout.EAST);

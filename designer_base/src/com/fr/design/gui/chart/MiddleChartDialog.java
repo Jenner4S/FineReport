@@ -7,9 +7,9 @@ import com.fr.base.chart.BaseChartCollection;
 import com.fr.design.dialog.BasicDialog;
 
 /**
- *  * ³éÏóµÄ, ÓÃÓÚ¶à¹¤³Ì¼äĞ­×÷, ·â×°Ò»²ã Í¼±íĞÂ½¨µÄ¶Ô»°¿ò, ÅäºÏÊôĞÔ±íÈ·¶¨: ÏÈµ¥¶ÀÖ»ÒªÒ»ÖÖÍ¼±íÀàĞÍµÄ¶Ô»°¿ò.
+ *  * æŠ½è±¡çš„, ç”¨äºå¤šå·¥ç¨‹é—´åä½œ, å°è£…ä¸€å±‚ å›¾è¡¨æ–°å»ºçš„å¯¹è¯æ¡†, é…åˆå±æ€§è¡¨ç¡®å®š: å…ˆå•ç‹¬åªè¦ä¸€ç§å›¾è¡¨ç±»å‹çš„å¯¹è¯æ¡†.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-7-10 ÉÏÎç10:07:56
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-7-10 ä¸Šåˆ10:07:56
  */
 public abstract class MiddleChartDialog extends BasicDialog{
 

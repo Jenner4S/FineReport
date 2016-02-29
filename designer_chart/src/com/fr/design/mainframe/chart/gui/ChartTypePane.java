@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Í¼±í ÊôĞÔ±í, ÀàĞÍÑ¡Ôñ ½çÃæ.
+ * å›¾è¡¨ å±æ€§è¡¨, ç±»å‹é€‰æ‹© ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç10:56:51
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ10:56:51
  */
 public class ChartTypePane extends AbstractChartAttrPane{
 	private ComboBoxPane chartTypePane;
@@ -46,15 +46,15 @@ public class ChartTypePane extends AbstractChartAttrPane{
 	}
 
 	/**
-	 * ½çÃæ×öÎª°´Å¥Ê±µÄÍ¼Æ¬Î»ÖÃ. design_base
+	 * ç•Œé¢åšä¸ºæŒ‰é’®æ—¶çš„å›¾ç‰‡ä½ç½®. design_base
 	 */
 	public String getIconPath() {
 		return "com/fr/design/images/chart/ChartType.png";
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return PaneTitleConstants.CHART_TYPE_TITLE;
@@ -79,7 +79,7 @@ public class ChartTypePane extends AbstractChartAttrPane{
             try{
                 Chart newDefaultChart = (Chart)((AbstractChartTypePane)cards.get(jcb.getSelectedIndex())).getDefaultChart().clone();
                 if(!chart.accept(newDefaultChart.getClass())){
-                    //vanChart ºÍ chart Ö®¼äÇĞ»»
+                    //vanChart å’Œ chart ä¹‹é—´åˆ‡æ¢
                     editingCollection.removeNameObject(editingCollection.getSelectedIndex());
                     editingCollection.addChart(newDefaultChart);
                     chart = newDefaultChart;
@@ -88,7 +88,7 @@ public class ChartTypePane extends AbstractChartAttrPane{
                 FRContext.getLogger().error(e.getMessage(), e);
             }
 
-			//ÕâÒ»²½»áÌæ»»plot
+			//è¿™ä¸€æ­¥ä¼šæ›¿æ¢plot
             ((AbstractChartTypePane) cards.get(jcb.getSelectedIndex())).updateBean(chart);
 
 			Plot plot = chart.getPlot();
@@ -96,7 +96,7 @@ public class ChartTypePane extends AbstractChartAttrPane{
 			if(plot != null){
 				String plotID = plot.getPlotID();
 
-				//plot¸Ä±äµÄ»°Í¼±íÀàĞÍ¾ÍËã¸Ä±äÁË
+				//plotæ”¹å˜çš„è¯å›¾è¡¨ç±»å‹å°±ç®—æ”¹å˜äº†
 
 				chart.setWrapperName(ChartTypeManager.getInstance().getWrapperName(plotID));
 
@@ -112,7 +112,7 @@ public class ChartTypePane extends AbstractChartAttrPane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÊôĞÔ ÓÃÓÚÕ¹Ê¾
+	 * æ›´æ–°ç•Œé¢å±æ€§ ç”¨äºå±•ç¤º
 	 */
 	public void populate(ChartCollection collection) {
 		Chart chart = collection.getSelectedChart();
@@ -122,43 +122,43 @@ public class ChartTypePane extends AbstractChartAttrPane{
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void update(ChartCollection collection) {
         editingCollection = collection;
-		buttonPane.update(collection);// ÄÚ²¿²Ù×÷Ê± ÒÑ¾­×ö¹ı´¦Àí.
+		buttonPane.update(collection);// å†…éƒ¨æ“ä½œæ—¶ å·²ç»åšè¿‡å¤„ç†.
 		Chart chart = collection.getSelectedChart();
 
 		chartTypePane.updateBean(chart);
 	}
 
     /**
-     * ËùÓĞÍ¼±íµÄÀàĞÍ½çÃæ
-     * @return ÀàĞÍ½çÃæ
+     * æ‰€æœ‰å›¾è¡¨çš„ç±»å‹ç•Œé¢
+     * @return ç±»å‹ç•Œé¢
      */
     public FurtherBasicBeanPane[] getPaneList(){
         return chartTypePane.getCards().toArray(new FurtherBasicBeanPane[0]);
     }
 
     /**
-     * µ±Ç°Ñ¡ÖĞµÄÍ¼±íµÄindex
-     * @return µ±Ç°Ñ¡ÖĞµÄÍ¼±íµÄindex
+     * å½“å‰é€‰ä¸­çš„å›¾è¡¨çš„index
+     * @return å½“å‰é€‰ä¸­çš„å›¾è¡¨çš„index
      */
     public int getSelectedIndex(){
         return chartTypePane.getSelectedIndex();
     }
 
     /**
-     * ·µ»ØÑ¡ÖĞµÄÍ¼±íµÄindex
-     * @return Ñ¡ÖĞµÄÍ¼±êµÄĞòºÅ
+     * è¿”å›é€‰ä¸­çš„å›¾è¡¨çš„index
+     * @return é€‰ä¸­çš„å›¾æ ‡çš„åºå·
      */
     public int getSelectedChartIndex(){
         return chartTypePane.getSelectedIndex();
     }
 
     /**
-     * ÉèÖÃÏÂ±à¼­µÄÃæ°å
-     * @param currentEditPane ÉèÖÃÏÂ±à¼­µÄÃæ°å
+     * è®¾ç½®ä¸‹ç¼–è¾‘çš„é¢æ¿
+     * @param currentEditPane è®¾ç½®ä¸‹ç¼–è¾‘çš„é¢æ¿
      */
     public void registerChartEditPane(ChartEditPane currentEditPane) {
         this.editPane = currentEditPane;

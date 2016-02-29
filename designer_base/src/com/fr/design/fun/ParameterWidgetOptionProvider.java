@@ -5,33 +5,33 @@ import com.fr.form.ui.Widget;
 /**
  * @author : richie
  * @since : 8.0
- * ×Ô¶¨Òå²ÎÊı½çÃæ¿Ø¼ş
+ * è‡ªå®šä¹‰å‚æ•°ç•Œé¢æ§ä»¶
  */
 public interface ParameterWidgetOptionProvider {
 
     public static final String XML_TAG = "ParameterWidgetOptionProvider";
 
     /**
-     * ×Ô¶¨Òå²ÎÊı¿Ø¼şµÄÊµ¼ÊÀà£¬¸ÃÀàĞèÒª¼Ì³Ğ×Ôcom.fr.form.ui.Widget
-     * @return ¿Ø¼şÀà
+     * è‡ªå®šä¹‰å‚æ•°æ§ä»¶çš„å®é™…ç±»ï¼Œè¯¥ç±»éœ€è¦ç»§æ‰¿è‡ªcom.fr.form.ui.Widget
+     * @return æ§ä»¶ç±»
      */
     public Class<? extends Widget> classForWidget();
 
     /**
-     * ×Ô¶¨Òå²ÎÊı¿Ø¼şµÄÉè¼Æ½çÃæÀà£¬¸ÃÀàĞèÒª¼Ì³Ğ×Ôcom.fr.form.designer.creator.XWidgetCreator
-     * @return ¿Ø¼şÉè¼Æ½çÃæÀà
+     * è‡ªå®šä¹‰å‚æ•°æ§ä»¶çš„è®¾è®¡ç•Œé¢ç±»ï¼Œè¯¥ç±»éœ€è¦ç»§æ‰¿è‡ªcom.fr.form.designer.creator.XWidgetCreator
+     * @return æ§ä»¶è®¾è®¡ç•Œé¢ç±»
      */
     public Class<?> appearanceForWidget();
 
     /**
-     * ×Ô¶¨Òå²ÎÊı¿Ø¼şÔÚÉè¼ÆÆ÷½çÃæÉÏµÄÍ¼±êÂ·¾¶
-     * @return Í¼±êËùÔÚµÄÂ·¾¶
+     * è‡ªå®šä¹‰å‚æ•°æ§ä»¶åœ¨è®¾è®¡å™¨ç•Œé¢ä¸Šçš„å›¾æ ‡è·¯å¾„
+     * @return å›¾æ ‡æ‰€åœ¨çš„è·¯å¾„
      */
     public String iconPathForWidget();
 
     /**
-     * ×Ô¶¨Òå²ÎÊı¿Ø¼şµÄÃû×Ö
-     * @return ¿Ø¼şÃû×Ö
+     * è‡ªå®šä¹‰å‚æ•°æ§ä»¶çš„åå­—
+     * @return æ§ä»¶åå­—
      */
     public String nameForWidget();
 }

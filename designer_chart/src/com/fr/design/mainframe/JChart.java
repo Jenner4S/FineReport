@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2001-2014,FineReport Inc, All Rights Reserved.
- * Í¼±íÀàĞÍÎÄ¼ş
+ * å›¾è¡¨ç±»å‹æ–‡ä»¶
  */
 
 package com.fr.design.mainframe;
@@ -34,13 +34,13 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 
 /**
- * Í¼±ícrtÎÄ¼ş
+ * å›¾è¡¨crtæ–‡ä»¶
  * <p/>
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç2:28
+ * Time: ä¸‹åˆ2:28
  */
 public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     public static final String XML_TAG = "JChart";
@@ -49,13 +49,13 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
 
     private static final String[] CARDNAME = new String[]{CHART_CARD, ELEMENTCASE_CARD};
     private static final int TOOLBARPANEDIMHEIGHT_FORM = 60;
-    //Í¼±íÉè¼ÆÆ÷
+    //å›¾è¡¨è®¾è®¡å™¨
     ChartDesigner chartDesigner;
 
-    //ÖĞ¼ä±à¼­ÇøÓò, carllayout²¼¾Ö
+    //ä¸­é—´ç¼–è¾‘åŒºåŸŸ, carllayoutå¸ƒå±€
     private JPanel tabCenterPane;
     private CardLayout cardLayout;
-    //µ±Ç°±à¼­µÄ×é¼ş¶ÔÏó
+    //å½“å‰ç¼–è¾‘çš„ç»„ä»¶å¯¹è±¡
     private JComponent editingComponent;
     private FormECCompositeProvider reportComposite;
 
@@ -78,7 +78,7 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
         tabCenterPane.add(centerPane, CHART_CARD, 0);
         chartDesigner.addTargetModifiedListener(new TargetModifiedListener() {
                     public void targetModified(TargetModifiedEvent e) {
-                        JChart.this.fireTargetModified();// µ÷ÓÃ±£´æ*, µ÷ÓÃË¢ĞÂ½çÃæ, Ë¢ĞÂ¹¤¾ßÀ¸°´Å¥
+                        JChart.this.fireTargetModified();// è°ƒç”¨ä¿å­˜*, è°ƒç”¨åˆ·æ–°ç•Œé¢, åˆ·æ–°å·¥å…·æ æŒ‰é’®
                     }
                 });
 
@@ -87,57 +87,57 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     }
 
     /**
-     * ÒÆ³ıÑ¡Ôñ
+     * ç§»é™¤é€‰æ‹©
      */
     public void removeTemplateSelection() {
 
     }
 
     /**
-     * Ë¢ĞÂÈİÆ÷
+     * åˆ·æ–°å®¹å™¨
      */
     public void refreshContainer() {
 
     }
 
     /**
-     * ÒÆ³ı²ÎÊıÃæ°åÑ¡Ôñ
+     * ç§»é™¤å‚æ•°é¢æ¿é€‰æ‹©
      */
     public void removeParameterPaneSelection() {
 
     }
 
     /**
-     * ´´½¨Éè¼ÆÄ£Ê½
+     * åˆ›å»ºè®¾è®¡æ¨¡å¼
      *
-     * @return ·µ»ØÄ£Ê½
+     * @return è¿”å›æ¨¡å¼
      */
     protected DesignModelAdapter<ChartBook, ?> createDesignModel() {
         return null;
     }
 
     /**
-     * ´´½¨Ô¤ÀÀµÃ²Ëµ¥
+     * åˆ›å»ºé¢„è§ˆå¾—èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public UIMenuItem[] createMenuItem4Preview() {
         return new UIMenuItem[0];
     }
 
     /**
-     * ´´½¨³·Ïú×´Ì¬
+     * åˆ›å»ºæ’¤é”€çŠ¶æ€
      *
-     * @return ×´Ì¬
+     * @return çŠ¶æ€
      */
     protected ChartUndoState createUndoState() {
         return new ChartUndoState(this,chartDesigner.getArea());
     }
 
     /**
-     * Ó¦ÓÃ³·Ïú×´Ì¬
+     * åº”ç”¨æ’¤é”€çŠ¶æ€
      *
-     * @param chartUndoState ³·Ïú×´Ì¬
+     * @param chartUndoState æ’¤é”€çŠ¶æ€
      */
     protected void applyUndoState(ChartUndoState chartUndoState) {
         try {
@@ -150,167 +150,167 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     }
 
     /**
-     * ºó×º
+     * åç¼€
      *
-     * @return ºó×º
+     * @return åç¼€
      */
     public String suffix() {
         return ".crt";
     }
 
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     public void copy() {
 
     }
 
     /**
-     * ğ¤Ìù
+     * é»è´´
      *
-     * @return ÊÇ·ñÄñÌù³É¹¦
+     * @return æ˜¯å¦é¸Ÿè´´æˆåŠŸ
      */
     public boolean paste() {
         return false;
     }
 
     /**
-     * ÊÇ·ñ¼ôÇĞ
+     * æ˜¯å¦å‰ªåˆ‡
      *
-     * @return ¼ôÇĞ³É¹¦
+     * @return å‰ªåˆ‡æˆåŠŸ
      */
     public boolean cut() {
         return false;
     }
 
     /**
-     * ´´½¨È¨ÏŞ±à¼­Ãæ°å
+     * åˆ›å»ºæƒé™ç¼–è¾‘é¢æ¿
      *
-     * @return Ãæ°å
+     * @return é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         return null;
     }
 
     /**
-     * ¹¤¾ßÀ¸
+     * å·¥å…·æ 
      *
-     * @return ¹¤¾ßÀ¸
+     * @return å·¥å…·æ 
      */
     public ToolBarMenuDockPlus getToolBarMenuDockPlus() {
         return null;
     }
 
     /**
-     * ¶«ÉÏÃæ°å
+     * ä¸œä¸Šé¢æ¿
      *
-     * @return Ãæ°å
+     * @return é¢æ¿
      */
     public JPanel getEastUpPane() {
         return null;
     }
 
     /**
-     * ¶«ÏÂÃæ°å
+     * ä¸œä¸‹é¢æ¿
      *
-     * @return Ãæ°å
+     * @return é¢æ¿
      */
     public JPanel getEastDownPane() {
         return null;
     }
 
     /**
-     * ¹¤¾ßÀ¸²Ëµ¥
+     * å·¥å…·æ èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public ToolBarDef[] toolbars4Target() {
         return new ToolBarDef[0];
     }
 
     /**
-     * ±íµ¥Ãæ°å
+     * è¡¨å•é¢æ¿
      *
-     * @return Ãæ°å
+     * @return é¢æ¿
      */
     public JPanel[] toolbarPanes4Form() {
         return new JPanel[0];
     }
 
     /**
-     * Ä£°æ²Ëµ¥
+     * æ¨¡ç‰ˆèœå•
      *
-     * @return Ä£°æ²Ëµ¥
+     * @return æ¨¡ç‰ˆèœå•
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return new ShortCut[0];
     }
 
     /**
-     * È¨ÏŞ±à¼­²Ëµ¥
+     * æƒé™ç¼–è¾‘èœå•
      *
-     * @return ²Ëµ¥
+     * @return èœå•
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[0];
     }
 
     /**
-     * ¹¤¾ßÌõ±íµ¥
+     * å·¥å…·æ¡è¡¨å•
      *
-     * @return ±íµ¥
+     * @return è¡¨å•
      */
     public JComponent[] toolBarButton4Form() {
         return new JComponent[0];
     }
 
     /**
-     * È¨ÏŞ±à¼­¹¤¾ßÀ¸,µ«ÊÇÍ¼±íÉè¼ÆÆ÷ÀïÃæÓÃÓÚÕı³£¹¤¾ßÀ¸²»ÊÇÈ«ÏØ±à¼­
+     * æƒé™ç¼–è¾‘å·¥å…·æ ,ä½†æ˜¯å›¾è¡¨è®¾è®¡å™¨é‡Œé¢ç”¨äºæ­£å¸¸å·¥å…·æ ä¸æ˜¯å…¨å¿ç¼–è¾‘
      *
-     * @return ¹¤¾ßÌõ
+     * @return å·¥å…·æ¡
      */
     public JComponent toolBar4Authority() {
         return chartDesigner.getChartToolBarPane();
     }
 
     /**
-     * ¹¤¾ßÌõ¸ß¶È
+     * å·¥å…·æ¡é«˜åº¦
      *
-     * @return ¹¤¾ßÌõ¸ß¶È
+     * @return å·¥å…·æ¡é«˜åº¦
      */
     public int getToolBarHeight() {
         return 0;
     }
 
     /**
-     * ÊÇ·ñÊÇ±¨±í
+     * æ˜¯å¦æ˜¯æŠ¥è¡¨
      *
-     * @return ²»ÊÇ
+     * @return ä¸æ˜¯
      */
     public boolean isJWorkBook() {
         return false;
     }
 
     /**
-     * ÊÇ·ñÊÇÍ¼±í
+     * æ˜¯å¦æ˜¯å›¾è¡¨
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isChartBook() {
         return true;
     }
 
     /**
-     * ÉèÖÃÈ¨ÏŞ±à¼­Ä£Ê½
+     * è®¾ç½®æƒé™ç¼–è¾‘æ¨¡å¼
      *
-     * @param isUpMode Ã»ÓĞÈ¨ÏŞ±à¼­
+     * @param isUpMode æ²¡æœ‰æƒé™ç¼–è¾‘
      */
     public void setAuthorityMode(boolean isUpMode) {
 
     }
 
     /**
-     * Ë¢ĞÂ¹¤¾ßÇøÓò
+     * åˆ·æ–°å·¥å…·åŒºåŸŸ
      */
     public void refreshToolArea() {
         DesignerContext.getDesignerFrame().resetToolkitByPlus(JChart.this);
@@ -320,9 +320,9 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     }
 
     /**
-     * µ¼³ö²Ëµ¥µÄ×Ó²Ëµ¥ £¬Ä¿Ç°ÓÃÓÚÍ¼±íÉè¼ÆÆ÷
+     * å¯¼å‡ºèœå•çš„å­èœå• ï¼Œç›®å‰ç”¨äºå›¾è¡¨è®¾è®¡å™¨
      *
-     * @return ×Ó²Ëµ¥
+     * @return å­èœå•
      */
     public ShortCut[] shortcut4ExportMenu() {
         return new ShortCut[]{new PNGExportAction4Chart(this), new ExcelExportAction4Chart(this), new PDFExportAction4Chart(this)};
@@ -337,7 +337,7 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     }
 
     /**
-     * ¸´ÖÆJS´úÂë
+     * å¤åˆ¶JSä»£ç 
      */
     public void copyJS(){
         JSONObject jsonObject =this.getTarget().createExportConfig();
@@ -363,7 +363,7 @@ public class JChart extends JTemplate<ChartBook, ChartUndoState> {
     };
 
     /**
-     * ÏµÁĞ·ç¸ñ¸Ä¶¯
+     * ç³»åˆ—é£æ ¼æ”¹åŠ¨
      */
     public void styleChange(){
           chartDesigner.clearToolBarStyleChoose();

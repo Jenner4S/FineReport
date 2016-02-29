@@ -11,8 +11,8 @@ import com.fr.design.chart.series.SeriesCondition.TrendLinePane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç9:56
- * ¹É¼ÛÍ¼µÄÌõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:56
+ * è‚¡ä»·å›¾çš„æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class StockPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = 1348842506599776627L;

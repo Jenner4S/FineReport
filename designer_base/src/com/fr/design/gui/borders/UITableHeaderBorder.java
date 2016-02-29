@@ -16,7 +16,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-6
- * Time: ÏÂÎç3:37
+ * Time: ä¸‹åˆ3:37
  */
 public class UITableHeaderBorder extends AbstractBorder implements UIResource {
     protected static final Insets INSETS_XP = new Insets(3, 0, 3, 2);

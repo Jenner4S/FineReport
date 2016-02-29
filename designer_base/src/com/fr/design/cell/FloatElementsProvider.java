@@ -4,10 +4,10 @@
 package com.fr.design.cell;
 
 /**
- * Ğü¸¡ÔªËØ
+ * æ‚¬æµ®å…ƒç´ 
  * 
  * @author focus
- * @time 2014Äê11ÔÂ17ÈÕÏÂÎç10:44:10
+ * @time 2014å¹´11æœˆ17æ—¥ä¸‹åˆ10:44:10
  * @version 
  */
 public interface FloatElementsProvider {

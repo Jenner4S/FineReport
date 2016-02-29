@@ -13,7 +13,7 @@ import java.awt.*;
 
 /**
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:12:14
+ * @since 2012-5-29ä¸‹åˆ1:12:14
  */
 public class ColorBackgroundPane extends BackgroundSettingPane {
 
@@ -37,9 +37,9 @@ public class ColorBackgroundPane extends BackgroundSettingPane {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		detailColorSelectPane.addChangeListener(new ChangeListener() {
@@ -51,10 +51,10 @@ public class ColorBackgroundPane extends BackgroundSettingPane {
 
 	@Override
 	/**
-	 * ÊÇ·ñÎªColorBackground ÀàĞÍ
+	 * æ˜¯å¦ä¸ºColorBackground ç±»å‹
 	 * 
-	 * @param background ±³¾°
-	 * @return Í¬ÉÏ
+	 * @param background èƒŒæ™¯
+	 * @return åŒä¸Š
 	 * 
 	 */
 	public boolean accept(Background background) {
@@ -63,8 +63,8 @@ public class ColorBackgroundPane extends BackgroundSettingPane {
 
 	@Override
 	/**
-	 * ´°¿ÚÃû³Æ
-	 * @return Í¬ÉÏ
+	 * çª—å£åç§°
+	 * @return åŒä¸Š
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Color");

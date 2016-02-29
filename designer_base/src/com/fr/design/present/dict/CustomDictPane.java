@@ -16,7 +16,7 @@ import com.fr.stable.StringUtils;
 
 public class CustomDictPane extends FurtherBasicBeanPane<CustomDictionary> {
 	private static final long serialVersionUID = 1L;
-	private String[] columnNames = {Inter.getLocText("Actual_Value"), Inter.getLocText("Display_Value")}; // ×ÖµäÁĞÃûkey,value
+	private String[] columnNames = {Inter.getLocText("Actual_Value"), Inter.getLocText("Display_Value")}; // å­—å…¸åˆ—åkey,value
 
 	private CustomDictCorrelationPane correlationPane;
 

@@ -10,9 +10,9 @@ import com.fr.design.layout.TableLayoutHelper;
 import com.fr.general.Inter;
 
 /**
- * Ô¤¶¨ÒåµÄÍ¼±íÅäÉ«½çÃæ, ÆäÖĞºÍÊôĞÔ±íÖĞChartFillStylePane Ö÷ÒªµÄ²»Í¬¾ÍÊÇ±êÇ©µÄÎ»ÖÃ.
+ * é¢„å®šä¹‰çš„å›¾è¡¨é…è‰²ç•Œé¢, å…¶ä¸­å’Œå±æ€§è¡¨ä¸­ChartFillStylePane ä¸»è¦çš„ä¸åŒå°±æ˜¯æ ‡ç­¾çš„ä½ç½®.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-21 ÏÂÎç03:16:27
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-21 ä¸‹åˆ03:16:27
  */
 public class ChartPreFillStylePane extends ChartFillStylePane {
 	
@@ -20,7 +20,7 @@ public class ChartPreFillStylePane extends ChartFillStylePane {
 		
 	}
 	
-	protected void initLayout() {// ½ö½öÊÇ·şÎñÆ÷Ô¤¶¨ ·ç¸ñ½çÃæ²¼¾Ö, ºÍÊôĞÔ±í ÓĞËù²»Í¬.
+	protected void initLayout() {// ä»…ä»…æ˜¯æœåŠ¡å™¨é¢„å®š é£æ ¼ç•Œé¢å¸ƒå±€, å’Œå±æ€§è¡¨ æœ‰æ‰€ä¸åŒ.
 		customPane.setPreferredSize(new Dimension(200, 200));
 		colorGradient.setPreferredSize(new Dimension(120, 30));
 		
@@ -39,13 +39,13 @@ public class ChartPreFillStylePane extends ChartFillStylePane {
         styleSelectBox.setSelectedIndex(styleSelectBox.getItemCount()-1);
 
         if(condition == null || condition.getColorStyle() == ChartConstants.COLOR_DEFAULT) {
-            colorAcc.populateBean(ChartConstants.CHART_COLOR_ARRAY);// ĞÂ½¨Ê± ±£³ÖÄ¬ÈÏÑùÊ½
+            colorAcc.populateBean(ChartConstants.CHART_COLOR_ARRAY);// æ–°å»ºæ—¶ ä¿æŒé»˜è®¤æ ·å¼
             accButton.setSelected(true);
             gradientButton.setSelected(false);
             cardLayout.show(changeColorSetPane, "acc");
 
             colorGradient.getSelectColorPointBtnP1().setColorInner(Color.white);
-            colorGradient.getSelectColorPointBtnP2().setColorInner(Color.black);// ¿Ø¼şÖĞµÄÎ»ÖÃÎŞĞ§.
+            colorGradient.getSelectColorPointBtnP2().setColorInner(Color.black);// æ§ä»¶ä¸­çš„ä½ç½®æ— æ•ˆ.
         } else {
             int colorStyle = condition.getColorStyle();
             gradientButton.setSelected(colorStyle == ChartConstants.COLOR_GRADIENT);

@@ -7,7 +7,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-29
- * Time   : ÉÏÎç10:37
+ * Time   : ä¸Šåˆ10:37
  */
 public class MeterDataLabelPane extends DataLabelPane {
 

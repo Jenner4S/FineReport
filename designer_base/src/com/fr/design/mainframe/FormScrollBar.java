@@ -53,8 +53,8 @@ public class FormScrollBar extends JScrollBar {
 	}
 
 	/**
-	 * ¹ö¶¯Ìõ¸³Öµ
-	 * @param value Öµ
+	 * æ»šåŠ¨æ¡èµ‹å€¼
+	 * @param value å€¼
 	 */
 	@Override
 	public void setValue(int value) {
@@ -114,17 +114,17 @@ public class FormScrollBar extends JScrollBar {
 		public abstract int getMinSize();
 		
 		/**
-		 * ÒÔÇ°µÄµ×²ã²¼¾ÖÊÇabsoluteÖ§³ÖÎŞÏŞÍÏ¶¯£¬ÏÖÔÚ²»ĞèÒª£¬È¥µôÉèÖÃrootComponent´óĞ¡
+		 * ä»¥å‰çš„åº•å±‚å¸ƒå±€æ˜¯absoluteæ”¯æŒæ— é™æ‹–åŠ¨ï¼Œç°åœ¨ä¸éœ€è¦ï¼Œå»æ‰è®¾ç½®rootComponentå¤§å°
 		 * 
-		 * @param value ¹ö¶¯ÌõµÄvalue
-		 * @param max   ¹ö¶¯ÌõµÄ×î´óÖµ
+		 * @param value æ»šåŠ¨æ¡çš„value
+		 * @param max   æ»šåŠ¨æ¡çš„æœ€å¤§å€¼
 		 */ 
 		public abstract void resetDesiger(int value, int max);
 		
 		/**
-		 * ÉèÖÃ¹ö¶¯ÌõµÄÖµ
-		 * @param newValue µ±Ç°Öµ
-		 * @param designer ËùÔÚµÄÈİÆ÷
+		 * è®¾ç½®æ»šåŠ¨æ¡çš„å€¼
+		 * @param newValue å½“å‰å€¼
+		 * @param designer æ‰€åœ¨çš„å®¹å™¨
 		 */
 		public void setValue(int newValue, ScrollRulerComponent designer, int orientation) {
 			int oldValue = getValue();
@@ -135,15 +135,15 @@ public class FormScrollBar extends JScrollBar {
 			if (newValue < oldValue) {
 				max = oldmax;
 				if (newValue < 0) {
-					// Ğ¡ÓÚ0 ¾ÍÊÇ¹ö¶¯ÌõÎª0Ê±¼ÌĞøµã»÷ÒÆ¶¯¼ıÍ·»òÕß¹öÂÖÉÏ¹ö
-					// Ä¿Ç°±íµ¥µ×²ã²¼¾Ö²»ĞèÒªµ÷ÕûmaxÖµ£¬·ñÔò¹ö¶¯ÌõÏûÊ§£¬ÈİÆ÷´óĞ¡¸Ä±ä
+					// å°äº0 å°±æ˜¯æ»šåŠ¨æ¡ä¸º0æ—¶ç»§ç»­ç‚¹å‡»ç§»åŠ¨ç®­å¤´æˆ–è€…æ»šè½®ä¸Šæ»š
+					// ç›®å‰è¡¨å•åº•å±‚å¸ƒå±€ä¸éœ€è¦è°ƒæ•´maxå€¼ï¼Œå¦åˆ™æ»šåŠ¨æ¡æ¶ˆå¤±ï¼Œå®¹å™¨å¤§å°æ”¹å˜
 					newValue = 0;
 				} 
 			} else {
 				max = Math.max((newValue + visi), oldmax);
 			}
 			max =  Math.max(max, Math.max(total, visi));
-			// ±íµ¥½çÃæºá×İÏò¹ö¶¯Ìõ²»Ö§³Öµã»÷¹ö¶¯ÖáÊ±ÎŞÏŞÀ©´ó
+			// è¡¨å•ç•Œé¢æ¨ªçºµå‘æ»šåŠ¨æ¡ä¸æ”¯æŒç‚¹å‡»æ»šåŠ¨è½´æ—¶æ— é™æ‰©å¤§
 			Point p = designer.calculateScroll(oldmax, max, newValue, oldValue, visi, orientation);
 			newValue = p.x;
 			max = p.y;

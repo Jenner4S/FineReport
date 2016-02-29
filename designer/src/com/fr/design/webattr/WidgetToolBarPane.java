@@ -11,7 +11,7 @@ import com.fr.stable.Constants;
 /**
  * 
  * @author zhou
- * 2012-3-22ÏÂÎç3:58:40
+ * 2012-3-22ä¸‹åˆ3:58:40
  */
 public abstract class WidgetToolBarPane extends BasicBeanPane<ToolBarManager[]> {
 	protected ToolBarPane northToolBar;

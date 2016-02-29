@@ -3,14 +3,14 @@ package com.fr.design.gui.frpane;
 import com.fr.design.gui.controlpane.NameableCreator;
 
 /**
- * ³¬¼¶Á´½Ó Ö§³ÖµÄÀàĞÍ ÖÖÀà. 
+ * è¶…çº§é“¾æ¥ æ”¯æŒçš„ç±»å‹ ç§ç±». 
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-6-26 ÏÂÎç04:41:55
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-6-26 ä¸‹åˆ04:41:55
  */
 public interface HyperlinkGroupType {
 	
 	/**
-	 * ·µ»ØÖ§³ÖµÄ³¬¼¶Á´½ÓÀàĞÍ
+	 * è¿”å›æ”¯æŒçš„è¶…çº§é“¾æ¥ç±»å‹
 	 * @return NameableCreator[]
 	 */
 	public NameableCreator[] getHyperlinkCreators();

@@ -17,7 +17,7 @@ import com.fr.report.worksheet.WorkSheet;
 /**
  * @author richer
  * @since 6.5.5
- *        ´´½¨ÓÚ2011-6-14
+ *        åˆ›å»ºäºŽ2011-6-14
  */
 public class ReportPageAttrAction extends ReportComponentAction<WorkSheetDesigner> {
     private boolean returnValue;
@@ -31,9 +31,9 @@ public class ReportPageAttrAction extends ReportComponentAction<WorkSheetDesigne
     }
 
     /**
-     * Ö´ÐÐ¶¯×÷
+     * æ‰§è¡ŒåŠ¨ä½œ
      *
-     * @return ÊÇ·ñÖ´ÐÐ³É¹¦
+     * @return æ˜¯å¦æ‰§è¡ŒæˆåŠŸ
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         WorkSheetDesigner jws = getEditingComponent();
@@ -58,4 +58,3 @@ public class ReportPageAttrAction extends ReportComponentAction<WorkSheetDesigne
         return returnValue;
     }
 }
-

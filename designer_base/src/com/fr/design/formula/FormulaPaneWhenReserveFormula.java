@@ -24,7 +24,7 @@ public class FormulaPaneWhenReserveFormula extends FormulaPane {
 
     @Override
     protected void extendCheckBoxPane(JPanel checkBoxPane) {
-        // peter:Ìí¼Ó¹«Ê½ÊÇ·ñ¼æÈİExcelµÄÊôĞÔ
+        // peter:æ·»åŠ å…¬å¼æ˜¯å¦å…¼å®¹Excelçš„å±æ€§
         reserveCheckBox4Result = new UICheckBox(Inter.getLocText("FormulaD-Reserve_when_export-edit_result"));
         reserveCheckBox4Result.setSelected(false);
         reserveCheckBox4Result.addChangeListener(new ChangeListener() {

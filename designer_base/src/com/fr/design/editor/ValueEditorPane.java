@@ -57,7 +57,7 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
 
         this.cards = cards;
 
-        // Frank£º²¼¾Ö
+        // Frankï¼šå¸ƒå±€
         this.setLayout(new BorderLayout(2, 0));
         centerPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         arrowButton = new UIButton();
@@ -83,7 +83,7 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
         });
         arrowButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (cards != null && cards.length > 1) { // Èç¹ûÖ»ÓĞ¡°ÁĞ¡±µÄ»°£¬¾Í²»ĞèÒªµ¯³ö²Ëµ¥ÁË
+                if (cards != null && cards.length > 1) { // å¦‚æœåªæœ‰â€œåˆ—â€çš„è¯ï¼Œå°±ä¸éœ€è¦å¼¹å‡ºèœå•äº†
                     Rectangle re = centerPane.getBounds();
                     menu.setPopupSize(re.width + arrowButton.getWidth(), menu.getPreferredSize().height);
                     menu.show(centerPane, -arrowButton.getWidth(), re.height);
@@ -184,8 +184,8 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     private void setCardValue(int i,Object object){
         setCurrentEditor(i);
         cards[i].setValue(object);
-        // kunsnat: bug7861 ËùÓĞµÄEditorÖµ¶¼Òª¸úËæ¸Ä±ä, ÒòÎªpopulateµÄeditor ´Ó""
-        // Ò»¶¨ÊÇ×îºóµÄEditorÅ¶.
+        // kunsnat: bug7861 æ‰€æœ‰çš„Editorå€¼éƒ½è¦è·Ÿéšæ”¹å˜, å› ä¸ºpopulateçš„editor ä»""
+        // ä¸€å®šæ˜¯æœ€åçš„Editorå“¦.
         for (int j = 0; j < cards.length; j++) {
             if (i == j) {
                 continue;
@@ -197,7 +197,7 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     public Object update() {
         String name = currentEditor.getName();
         Object columnIndex = currentEditor.getValue();
-        //bug86542,Õâ±ßÎªÉ¶ÒªnewÒ»¸ö¹«Ê½³öÀ´£¬Ö»±£Áôcontent,ÆäËûÊôĞÔÈ«²»ÒªÁË?
+        //bug86542,è¿™è¾¹ä¸ºå•¥è¦newä¸€ä¸ªå…¬å¼å‡ºæ¥ï¼Œåªä¿ç•™content,å…¶ä»–å±æ€§å…¨ä¸è¦äº†?
 //        if (ComparatorUtils.equals(name, Inter.getLocText("Formula"))) {
 //            columnIndex = new Formula(columnIndex == null ? "" : columnIndex.toString());
 //        }
@@ -243,9 +243,9 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     }
 
     /**
-     * ¼ì²éÊÇ·ñÓĞĞ§
+     * æ£€æŸ¥æ˜¯å¦æœ‰æ•ˆ
      *
-     * @throws Exception Òì³£
+     * @throws Exception å¼‚å¸¸
      */
     public void checkValid() throws Exception {
         if (!(currentEditor instanceof TextEditor)) {
@@ -305,7 +305,7 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     }
 
     /**
-     * ÖØÖÃ×é¼ş
+     * é‡ç½®ç»„ä»¶
      */
     public void resetComponets() {
         for (Editor card : cards) {
@@ -314,7 +314,7 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     }
 
     /**
-     * Çå³ı×é¼şÊı¾İ
+     * æ¸…é™¤ç»„ä»¶æ•°æ®
      */
     public void clearComponentsData() {
         for (Editor card : cards) {
@@ -332,18 +332,18 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
 
 
     /**
-     * ×¢²áÈ«¾ÖÃû×Ö¼àÌıÊÂ¼ş
+     * æ³¨å†Œå…¨å±€åå­—ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerNameListener(GlobalNameListener listener) {
         globalNameListener = listener;
     }
 
     /**
-     * ÊÇ·ñ¶ÔÃû×Ölistener¼àÌıÆ÷×ö³öÏìÓ¦
+     * æ˜¯å¦å¯¹åå­—listenerç›‘å¬å™¨åšå‡ºå“åº”
      *
-     * @return Èç¹ûÒª×ö³öÏìÓ¦£¬Ôò·µ»Øtrue
+     * @return å¦‚æœè¦åšå‡ºå“åº”ï¼Œåˆ™è¿”å›true
      */
     public boolean shouldResponseNameListener() {
         return false;
@@ -367,9 +367,9 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     }
 
     /**
-     * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+     * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
@@ -390,9 +390,9 @@ public class ValueEditorPane extends BasicPane implements UIObserver, GlobalName
     }
 
     /**
-     * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+     * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
      *
-     * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public boolean shouldResponseChangeListener() {
         return true;

@@ -8,7 +8,7 @@ import com.fr.design.chart.series.SeriesCondition.dlp.DataLabelPane;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-5
- * Time   : ÏÂÎç5:29
+ * Time   : ä¸‹åˆ5:29
  */
 public class FactoryObject {
     private Class<? extends ChartStyleAxisPane> axisPaneClass;

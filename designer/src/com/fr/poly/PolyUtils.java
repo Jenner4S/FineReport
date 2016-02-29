@@ -23,7 +23,7 @@ import com.fr.stable.bridge.StableFactory;
 
 /**
  * @author richer
- * @since 6.5.3 ¾ÛºÏ±¨±íÉè¼Æ½çÃæ¹¤¾ßÀà
+ * @since 6.5.3 èšåˆæŠ¥è¡¨è®¾è®¡ç•Œé¢å·¥å…·ç±»
  */
 public class PolyUtils {
 	public static Map<Class, Class> blockMapCls = new HashMap<Class, Class>();
@@ -104,7 +104,7 @@ public class PolyUtils {
 	}
 	
 	/**
-	 * »ñÈ¡Ëù´¦(x,y)Î»ÖÃµÄ¾ÛºÏ¿é£¬Èç¹ûÃ»ÓĞ£¬¾Í·µ»Ønull
+	 * è·å–æ‰€å¤„(x,y)ä½ç½®çš„èšåˆå—ï¼Œå¦‚æœæ²¡æœ‰ï¼Œå°±è¿”å›null
 	 * @param designer
 	 * @param x
 	 * @param y

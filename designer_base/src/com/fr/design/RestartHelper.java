@@ -30,9 +30,9 @@ public class RestartHelper {
 
 
     /**
-     * °ÑÒªÉ¾³ıµÄÎÄ¼ş¶¼¼ÇÂ¼µ½delete.propertiesÖĞ
+     * æŠŠè¦åˆ é™¤çš„æ–‡ä»¶éƒ½è®°å½•åˆ°delete.propertiesä¸­
      *
-     * @param files ÒªÉ¾³ıµÄÎÄ¼ş
+     * @param files è¦åˆ é™¤çš„æ–‡ä»¶
      */
     public static void saveFilesWhichToDelete(String[] files) {
         Properties properties = new Properties();
@@ -62,9 +62,9 @@ public class RestartHelper {
     }
 
     /**
-     * °ÑÒªÒÆ¶¯µÄÎÄ¼ş¶¼¼ÇÂ¼µ½move.propertiesÖĞ
+     * æŠŠè¦ç§»åŠ¨çš„æ–‡ä»¶éƒ½è®°å½•åˆ°move.propertiesä¸­
      *
-     * @param map ÒÆ¶¯µÄÎÄ¼ş
+     * @param map ç§»åŠ¨çš„æ–‡ä»¶
      */
     public static void saveFilesWhichToMove(Map<String, String> map) {
         Properties properties = new Properties();
@@ -93,11 +93,11 @@ public class RestartHelper {
     }
 
     /**
-     * ĞèÒªÖØÆôÆô¶¯Æ÷ÓÃÓÚÉ¾³ıÎÄ¼ş
+     * éœ€è¦é‡å¯å¯åŠ¨å™¨ç”¨äºåˆ é™¤æ–‡ä»¶
      */
     public static void deleteRecordFilesWhenStart() {
         File ff = new File(RECORD_FILE);
-        // Èç¹ûÎÄ¼ş²»´æÔÚ¾ÍÖ±½Ó·µ»ØÁË
+        // å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨å°±ç›´æ¥è¿”å›äº†
         if (!ff.exists()) {
             return;
         }
@@ -134,16 +134,16 @@ public class RestartHelper {
     }
 
     /**
-     * ÖØÆôÉè¼ÆÆ÷
+     * é‡å¯è®¾è®¡å™¨
      */
     public static void restart() {
         restart(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
     /**
-     * ÖØÆôÉè¼ÆÆ÷²¢É¾³ıÄ³Ğ©ÌØ¶¨µÄÎÄ¼ş
+     * é‡å¯è®¾è®¡å™¨å¹¶åˆ é™¤æŸäº›ç‰¹å®šçš„æ–‡ä»¶
      *
-     * @param filesToBeDelete ÒªÉ¾³ıµÄÎÄ¼ş¼¯ºÏ
+     * @param filesToBeDelete è¦åˆ é™¤çš„æ–‡ä»¶é›†åˆ
      */
     public static void restart(String[] filesToBeDelete) {
         String installHome = StableUtils.getInstallHome();

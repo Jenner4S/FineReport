@@ -18,9 +18,9 @@ import com.fr.general.FRFont;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ×ÖÌå¸ñÊ½ÉèÖÃ, ÎŞ×ÖÌå´óĞ¡ÉèÖÃ.
+ * å­—ä½“æ ¼å¼è®¾ç½®, æ— å­—ä½“å¤§å°è®¾ç½®.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-21 ÏÂÎç03:35:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-21 ä¸‹åˆ03:35:47
  */
 public class ChartTextAttrNoFontSizePane extends ChartTextAttrPane {
 	

@@ -14,7 +14,7 @@ import com.fr.design.designer.creator.XLayoutContainer;
 import com.fr.design.utils.ComponentUtils;
 
 /**
- * ÊÊÅäÆ÷ÖĞÊà£¬Îª×é¼şºÍ×é¼şÊÊÅäÆ÷¡¢²¼¾ÖºÍ²¼¾ÖÊÊÅäÆ÷¡£
+ * é€‚é…å™¨ä¸­æ¢ï¼Œä¸ºç»„ä»¶å’Œç»„ä»¶é€‚é…å™¨ã€å¸ƒå±€å’Œå¸ƒå±€é€‚é…å™¨ã€‚
  */
 public class AdapterBus {
 
@@ -33,11 +33,11 @@ public class AdapterBus {
 	}
 
 	/**
-	 * »ñÈ¡×é¼şÀàĞÍÊÇcomponentClass¶ÔÓ¦µÄ×é¼şÊÊÅäÆ÷£¬Èç¹û³õÊ¼Ó³Éä±íÖĞÃ»ÓĞ¸ÃÊÊÅäÆ÷£¬
-	 * Ôò¼ÌĞø²éÕÒÆä¸¸Àà¶ÔÓ¦µÄÊÊÅäÆ÷£¬Ö±ÖÁ²éÕÒµ½ComponentÀàÎªÖ¹£¬Èç¹û»¹ÊÇÃ»ÓĞ²éÕÒµ½£¬
-	 * ÔòÊ¹ÓÃÈ±Ê¡µÄ×é¼şÊÊÅäÆ÷£ºDefaultComponentAdapter
+	 * è·å–ç»„ä»¶ç±»å‹æ˜¯componentClasså¯¹åº”çš„ç»„ä»¶é€‚é…å™¨ï¼Œå¦‚æœåˆå§‹æ˜ å°„è¡¨ä¸­æ²¡æœ‰è¯¥é€‚é…å™¨ï¼Œ
+	 * åˆ™ç»§ç»­æŸ¥æ‰¾å…¶çˆ¶ç±»å¯¹åº”çš„é€‚é…å™¨ï¼Œç›´è‡³æŸ¥æ‰¾åˆ°Componentç±»ä¸ºæ­¢ï¼Œå¦‚æœè¿˜æ˜¯æ²¡æœ‰æŸ¥æ‰¾åˆ°ï¼Œ
+	 * åˆ™ä½¿ç”¨ç¼ºçœçš„ç»„ä»¶é€‚é…å™¨ï¼šDefaultComponentAdapter
 	 * 
-	 * @return ¸Ã×é¼şÀàËù¶ÔÓ¦µÄ×é¼şÊÊÅäÆ÷¶ÔÏó
+	 * @return è¯¥ç»„ä»¶ç±»æ‰€å¯¹åº”çš„ç»„ä»¶é€‚é…å™¨å¯¹è±¡
 	 */
 	public static ComponentAdapter getComponentAdapter(FormDesigner designer, JComponent creator) {
 		JComponent jcomponent = getJComponent(creator);
@@ -67,7 +67,7 @@ public class AdapterBus {
 	}
 
 	public static HoverPainter getContainerPainter(FormDesigner designer, XLayoutContainer container) {
-		// ÈİÆ÷×é¼şµÄÊÊÅäÆ÷
+		// å®¹å™¨ç»„ä»¶çš„é€‚é…å™¨
 		LayoutAdapter containerAdapter = container.getLayoutAdapter();
 		HoverPainter painter = containerAdapter.getPainter();
 		if (painter != null) {

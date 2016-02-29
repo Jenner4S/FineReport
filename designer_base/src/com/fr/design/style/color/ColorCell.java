@@ -85,8 +85,8 @@ public class ColorCell extends JComponent implements ColorSelectable {
     }
 
     /**
-     * Êó±êÊÂ¼ş´¦Àí
-     * @param Êó±êÊÂ¼ş
+     * é¼ æ ‡äº‹ä»¶å¤„ç†
+     * @param é¼ æ ‡äº‹ä»¶
      */
     public void processMouseEvent(MouseEvent e) {
         if (e == null || e.getID() == MouseEvent.MOUSE_RELEASED) {
@@ -108,8 +108,8 @@ public class ColorCell extends JComponent implements ColorSelectable {
     }
 
     /**
-     * Ñ¡ÖĞÑÕÉ«
-     * @param ÑÕÉ«µ¥Ôª¸ñ
+     * é€‰ä¸­é¢œè‰²
+     * @param é¢œè‰²å•å…ƒæ ¼
      * 
      */
 	@Override

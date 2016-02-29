@@ -14,12 +14,12 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-29
- * Time: ÏÂÎç2:18
+ * Time: ä¸‹åˆ2:18
  */
 public class DonutPlotPane4ToolBar extends PlotPane4ToolBar {
 
-    private static final int DONUT_CHART = 0; //2dÔ²»·Í¼
-   	private static final int THREE_D_DONUT_CHART = 1; //3DÔ²»·Í¼
+    private static final int DONUT_CHART = 0; //2dåœ†ç¯å›¾
+   	private static final int THREE_D_DONUT_CHART = 1; //3Dåœ†ç¯å›¾
 
     public DonutPlotPane4ToolBar(ChartDesigner designer) {
         super(designer);

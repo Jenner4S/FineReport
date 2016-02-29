@@ -35,9 +35,9 @@ import java.awt.event.MouseEvent;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-10
+ * @since 6.5.4 åˆ›å»ºäº2011-5-10
  */
-// Í¼Æ¬µÄÃüÃû±ØĞë·ûºÏÏÂÃæµÄ´úÂë¹æ·¶£¨chartÀà±ğ+ĞòºÅµÄ·½Ê½£© ²»È»¶ÁÈ¡²»µ½Ö¸¶¨Í¼Æ¬
+// å›¾ç‰‡çš„å‘½åå¿…é¡»ç¬¦åˆä¸‹é¢çš„ä»£ç è§„èŒƒï¼ˆchartç±»åˆ«+åºå·çš„æ–¹å¼ï¼‰ ä¸ç„¶è¯»å–ä¸åˆ°æŒ‡å®šå›¾ç‰‡
 public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChartBlock> {
 	private static final int BOUND_OFF = 21;
 	private static Border buttonBorder;
@@ -60,7 +60,7 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 
 	public ChartBlockEditor(PolyDesigner designer, ChartBlockCreator creator) {
 		super(designer, creator);
-        //shine:ºÍ²úÆ·ÉÌÁ¿ºó¾ö¶¨°Ñ×îÉÏÃæÒ»ÅÅÇĞ»»°´Å¥È¥µô
+        //shine:å’Œäº§å“å•†é‡åå†³å®šæŠŠæœ€ä¸Šé¢ä¸€æ’åˆ‡æ¢æŒ‰é’®å»æ‰
 		//this.initNorthBarComponent();
 	}
 
@@ -92,7 +92,7 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 	}
 
     /**
-     * ¼ì²é¿Ø¼şÊÇ·ñ¿ÉÓÃ
+     * æ£€æŸ¥æ§ä»¶æ˜¯å¦å¯ç”¨
      */
 	public void checkChartButtonsEnable() {
 //		for (ChartButton chartButton : chartButtons) {
@@ -101,7 +101,7 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 	}
 
     /**
-     * Ë¢ĞÂ×é¼ş
+     * åˆ·æ–°ç»„ä»¶
      */
 	public void refreshChartComponent() {
 		editComponent.reset();
@@ -117,11 +117,11 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 
 	private void initEffective(BaseChartCollection chartCollection) {
 		editComponent = DesignModuleFactory.getChartComponent(chartCollection);
-		editComponent.addStopEditingListener(new PropertyChangeAdapter() {// ÓÒ¼üµÄ Í£Ö¹±à¼­ÊÂ¼ş ÔÚresetµÄÊ±ºò´¥·¢.
+		editComponent.addStopEditingListener(new PropertyChangeAdapter() {// å³é”®çš„ åœæ­¢ç¼–è¾‘äº‹ä»¶ åœ¨resetçš„æ—¶å€™è§¦å‘.
 			@Override
 			public void propertyChange() {
 				QuickEditorRegion.getInstance().populate(creator.getQuickEditor(designer));
-				designer.fireTargetModified();// Õû¸öÄ£°åµÄÏìÓ¦ÊÂ¼ş
+				designer.fireTargetModified();// æ•´ä¸ªæ¨¡æ¿çš„å“åº”äº‹ä»¶
 			}
 
 		});
@@ -245,22 +245,22 @@ public class ChartBlockEditor extends BlockEditor<MiddleChartComponent, PolyChar
 	}
 
 	/**
-	 * Ë¢ĞÂÍ¼±í¿Ø¼ş.
+	 * åˆ·æ–°å›¾è¡¨æ§ä»¶.
 	 */
 	public void refreshChartCompon() {
 		editComponent.reset();
 	}
 
 	/**
-	 * Ë¢ĞÂÑ¡ÖĞ×´Ì¬.ÈÕEC
+	 * åˆ·æ–°é€‰ä¸­çŠ¶æ€.æ—¥EC
 	 */
 	public void resetSelectionAndChooseState() {
 		designer.setChooseType(SelectionType.BLOCK);
-//		refreshChartComponent();// Ñ¡ÖĞÖ®ºó Ë¢ĞÂÏÂÍ¼±í±à¼­²ã
+//		refreshChartComponent();// é€‰ä¸­ä¹‹å åˆ·æ–°ä¸‹å›¾è¡¨ç¼–è¾‘å±‚
 		if (BaseUtils.isAuthorityEditing()) {
 			JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
 			if (jTemplate.isJWorkBook()) {
-				//Çå²ÎÊıÃæ°å
+				//æ¸…å‚æ•°é¢æ¿
 				jTemplate.removeParameterPaneSelection();
 			}
 			EastRegionContainerPane.getInstance().replaceUpPane(new NoSupportAuthorityEdit());

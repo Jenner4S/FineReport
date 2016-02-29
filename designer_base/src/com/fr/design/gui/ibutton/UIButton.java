@@ -1,4 +1,3 @@
-
 package com.fr.design.gui.ibutton;
 
 import com.fr.base.BaseUtils;
@@ -64,9 +63,9 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ÊÇ·ñ½øĞĞ¹ıÈ¨ÏŞ±à¼­
-     * @param role ½ÇÉ«
-     * @return ·ñ
+     * æ˜¯å¦è¿›è¡Œè¿‡æƒé™ç¼–è¾‘
+     * @param role è§’è‰²
+     * @return å¦
      */
 	public boolean isDoneAuthorityEdited(String role) {
 		return false;
@@ -97,8 +96,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
 
-	//È·¶¨ÊÇÕı³£µÄ±ß¿òÀàĞÍ£¬»¹ÊÇÆäËûµÄBorderÀàĞÍ
-	//ÈôÊÇÆäËûµÄborderÀàĞÍ£¬ÔòÒªsetOtherType£¬¼´ÉèÖÃÏßĞÍÑÕÉ«µÈ¡£ÈôÊÇÆäËûÀàĞÍ£¬µ«ÊÇÃ»ÓĞÉèÖÃ£¬ÔòÄ¬ÈÏµÄÊÇĞéÏßĞÍ±ß¿ò
+	//ç¡®å®šæ˜¯æ­£å¸¸çš„è¾¹æ¡†ç±»å‹ï¼Œè¿˜æ˜¯å…¶ä»–çš„Borderç±»å‹
+	//è‹¥æ˜¯å…¶ä»–çš„borderç±»å‹ï¼Œåˆ™è¦setOtherTypeï¼Œå³è®¾ç½®çº¿å‹é¢œè‰²ç­‰ã€‚è‹¥æ˜¯å…¶ä»–ç±»å‹ï¼Œä½†æ˜¯æ²¡æœ‰è®¾ç½®ï¼Œåˆ™é»˜è®¤çš„æ˜¯è™šçº¿å‹è¾¹æ¡†
 	public void setBorderType(int borderType) {
 		this.borderType = borderType;
 	}
@@ -147,7 +146,7 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ¸üĞÂ½çÃæ
+     * æ›´æ–°ç•Œé¢
      */
 	public void updateUI() {
 		setUI(getUI());
@@ -241,8 +240,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ÊÇ·ñ¶îÍâ»­
-     * @return ÊÇÔò·µ»ØTRUE
+     * æ˜¯å¦é¢å¤–ç”»
+     * @return æ˜¯åˆ™è¿”å›TRUE
      */
 	public boolean isExtraPainted() {
 		return this.isExtraPainted;
@@ -256,8 +255,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ÊÇ·ñÔ²±ß¿ò
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦åœ†è¾¹æ¡†
+     * @return æ˜¯åˆ™è¿”å›true
      */
 	public boolean isRoundBorder() {
 		return isRoundBorder;
@@ -280,8 +279,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ÊÇ·ñ°´Ñ¹»­
-     * @return ÊÇÔò·µ»ØTRUE
+     * æ˜¯å¦æŒ‰å‹ç”»
+     * @return æ˜¯åˆ™è¿”å›TRUE
      */
 	public boolean isPressedPainted() {
 		return isPressedPainted;
@@ -295,8 +294,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * ÊÇ·ñÕı³£»­
-     * @return ÊÇÔò·µ»ØTRUE
+     * æ˜¯å¦æ­£å¸¸ç”»
+     * @return æ˜¯åˆ™è¿”å›TRUE
      */
 	public boolean isNormalPainted() {
 		return isNormalPainted;
@@ -321,8 +320,8 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
     /**
-     * Ö÷º¯Êı
-     * @param args Èë¿Ú²ÎÊı
+     * ä¸»å‡½æ•°
+     * @param args å…¥å£å‚æ•°
      */
 	public static void main(String... args) {
 		JFrame jf = new JFrame("test");
@@ -343,18 +342,18 @@ public class UIButton extends JButton implements UIObserver {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		this.uiObserverListener = listener;
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;

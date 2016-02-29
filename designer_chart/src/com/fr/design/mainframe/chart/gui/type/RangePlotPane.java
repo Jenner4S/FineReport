@@ -10,9 +10,9 @@ import com.fr.chart.charttypes.RangeIndependentChart;
 import com.fr.general.Inter;
 
 /**
- * È«¾àÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö ½çÃæ.
+ * å…¨è·å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-26 ÉÏÎç10:43:50
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸Šåˆ10:43:50
  */
 public class RangePlotPane extends AbstractChartTypePane{
 	private static final long serialVersionUID = -601566194238908115L;
@@ -47,15 +47,15 @@ public class RangePlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("ChartF-Range_Chart");
 	}
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ
+	 * ä¿å­˜ç•Œé¢å±æ€§
 	 */
 	public void updateBean(Chart chart) {
         if(needsResetChart(chart)){
@@ -67,7 +67,7 @@ public class RangePlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæÄÚÈİ
+	 * æ›´æ–°ç•Œé¢å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		typeDemo.get(RANGE).isPressing = true;
@@ -76,9 +76,9 @@ public class RangePlotPane extends AbstractChartTypePane{
 	}
 
     /**
-     * ÅĞ¶Ï½çÃæÊÇ·ñÎªChart ´«Èë
-     * @param ob ¶ÔÏóÊÇ·ñÎªchart
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * åˆ¤æ–­ç•Œé¢æ˜¯å¦ä¸ºChart ä¼ å…¥
+     * @param ob å¯¹è±¡æ˜¯å¦ä¸ºchart
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

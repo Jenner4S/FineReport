@@ -6,7 +6,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-27
- * Time: ÏÂÎç4:51
+ * Time: ä¸‹åˆ4:51
  * To change this template use File | Settings | File Templates.
  */
 public class FiveButtonLayout extends GridLayout {
@@ -17,8 +17,8 @@ public class FiveButtonLayout extends GridLayout {
     }
 
     /**
-     * ÈİÆ÷²¼¾Ö
-     * @param parent ÈİÆ÷
+     * å®¹å™¨å¸ƒå±€
+     * @param parent å®¹å™¨
      */
     public void layoutContainer(Container parent) {
         synchronized(parent.getTreeLock()) {

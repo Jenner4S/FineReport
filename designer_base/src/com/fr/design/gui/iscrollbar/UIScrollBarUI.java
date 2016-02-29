@@ -46,7 +46,7 @@ import sun.swing.DefaultLookup;
  * Like BasicScrollBarUI,but without two buttons
  *
  * @author zhou
- * @since 2012-5-18下午12:51:55
+ * @since 2012-5-18涓嬪崍12:51:55
  */
 public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingConstants {
     protected Dimension minimumThumbSize;
@@ -144,7 +144,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
     }
 
     /**
-     * 设置UI
+     * 璁剧疆UI
      *
      * @param c
      */
@@ -159,7 +159,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
     }
 
     /**
-     * 重新设置UI
+     * 閲嶆柊璁剧疆UI
      *
      * @param c
      */
@@ -179,7 +179,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
             scrollBarWidth = 16;
         }
 //		minimumThumbSize = (Dimension)UIManager.get("ScrollBar.minimumThumbSize");
-        //滚动条的滑块的高度最小为30像素
+        //婊氬姩鏉＄殑婊戝潡鐨勯珮搴︽渶灏忎负30鍍忕礌
         minimumThumbSize = new Dimension(10, 30);
         maximumThumbSize = (Dimension) UIManager.get("ScrollBar.maximumThumbSize");
 
@@ -355,7 +355,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
     }
 
     /**
-     * 只画Thumb
+     * 鍙敾Thumb
      */
     public void paint(Graphics g, JComponent c) {
         Rectangle thumbBounds = getThumbBounds();
@@ -524,7 +524,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
     }
 
     /**
-     * 得到最好的布局大小
+     * 寰楀埌鏈�濂界殑甯冨眬澶у皬
      *
      * @param scrollbarContainer
      * @return
@@ -534,7 +534,7 @@ public class UIScrollBarUI extends ScrollBarUI implements LayoutManager, SwingCo
     }
 
     /**
-     * 最小的布局大小
+     * 鏈�灏忕殑甯冨眬澶у皬
      *
      * @param scrollbarContainer
      * @return

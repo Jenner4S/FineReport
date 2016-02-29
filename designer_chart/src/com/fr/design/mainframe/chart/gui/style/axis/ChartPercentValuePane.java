@@ -3,13 +3,13 @@ package com.fr.design.mainframe.chart.gui.style.axis;
 import javax.swing.JPanel;
 
 /**
- * ÊôĞÔ±í ¼Ì³ĞµÄ °Ù·Ö±È ÖµÖá½çÃæ, Ã»ÓĞ°Ù·Ö±È.
+ * å±æ€§è¡¨ ç»§æ‰¿çš„ ç™¾åˆ†æ¯” å€¼è½´ç•Œé¢, æ²¡æœ‰ç™¾åˆ†æ¯”.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÏÂÎç03:22:43
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸‹åˆ03:22:43
  */
 public class ChartPercentValuePane extends ChartValuePane {
 	
-	// Ã»ÓĞ°Ù·Ö±È
+	// æ²¡æœ‰ç™¾åˆ†æ¯”
 	protected JPanel addLogarithmicPane2ValuePane() {
 		return null;
     }

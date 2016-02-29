@@ -199,7 +199,7 @@ public class WLayoutSelectionPane extends BasicPane {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-        	// Ïû³ýÆäËûµÄÑ¡ÖÐ×´Ì¬
+        	// æ¶ˆé™¤å…¶ä»–çš„é€‰ä¸­çŠ¶æ€
             if (currentKindPane != null) {
                 currentKindPane.isMousePressed = false;
                 currentKindPane.repaint();
@@ -207,7 +207,7 @@ public class WLayoutSelectionPane extends BasicPane {
             currentKindPane = this;
             currentKindPane.isMousePressed = true;
             wLayout = this.layout;
-            // richer:Ë«»÷Ð§¹û
+            // richer:åŒå‡»æ•ˆæžœ
             if (me.getClickCount() >= 2) {
                 Component c = KindPane.this.getParent();
                 while (c != null && !(c instanceof BasicDialog)) {

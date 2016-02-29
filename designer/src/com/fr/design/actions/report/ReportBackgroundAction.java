@@ -26,8 +26,8 @@ public class ReportBackgroundAction extends ReportComponentAction<ReportComponen
     }
 
     /**
-     * 执行动作
-     * @return 是否执行成功
+     * 鎵ц鍔ㄤ綔
+     * @return 鏄惁鎵ц鎴愬姛
      */
 	public boolean executeActionReturnUndoRecordNeeded() {
         final ReportComponent reportPane = this.getEditingComponent();

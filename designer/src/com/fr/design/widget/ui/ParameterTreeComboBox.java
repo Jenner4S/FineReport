@@ -29,7 +29,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ¿Ø¼şÉèÖÃÃæ°åµÄ¡°¿Ø¼şÃû¡±ÏÂÀ­¿ò£¬ÀïÃæÊÇËùÓĞ²ÎÊıµÄÃû×Ö
+ * æ§ä»¶è®¾ç½®é¢æ¿çš„â€œæ§ä»¶åâ€ä¸‹æ‹‰æ¡†ï¼Œé‡Œé¢æ˜¯æ‰€æœ‰å‚æ•°çš„åå­—
  * 
  * @author zhou
  * 
@@ -109,7 +109,7 @@ public class ParameterTreeComboBox extends FRTreeComboBox {
 	}
 
     /**
-     * Ë¢ĞÂÄ¿Â¼Ê÷
+     * åˆ·æ–°ç›®å½•æ ‘
      */
 	public void refreshTree() {
 		DefaultMutableTreeNode rootTreeNode = (DefaultMutableTreeNode)tree.getModel().getRoot();
@@ -140,24 +140,24 @@ public class ParameterTreeComboBox extends FRTreeComboBox {
 		Parameter[] parameters;
 		DesignModelAdapter<?,?> model = DesignModelAdapter.getCurrentModelAdapter();
 		if (model != null) {
-			// ±¨±í²ÎÊı
+			// æŠ¥è¡¨å‚æ•°
 			parameters = model.getReportParameters();
 			if (!ArrayUtils.isEmpty(parameters)) {
 				groupList.add(new ParameterGroup(Inter.getLocText("ParameterD-Report_Parameter"), parameters));
 			}
-			// Êı¾İÔ´²ÎÊı
+			// æ•°æ®æºå‚æ•°
 			parameters = model.getTableDataParameters();
 			if (!ArrayUtils.isEmpty(parameters)) {
 				groupList.add(new ParameterGroup(Inter.getLocText("FR-Designer_Datasource-Parameter"), parameters));
 			}
 		}
 		
-		// È«¾Ö²ÎÊı
+		// å…¨å±€å‚æ•°
 		parameters = ConfigManager.getProviderInstance().getGlobal_Parameters();
 		if (!ArrayUtils.isEmpty(parameters)) {
 			groupList.add(new ParameterGroup(Inter.getLocText("M_Server-Global_Parameters"), parameters));
 		}
-		// È«¾ÖÊı¾İÔ´²ÎÊı
+		// å…¨å±€æ•°æ®æºå‚æ•°
 		parameters = new Parameter[0];
 		Calculator c = Calculator.createCalculator();
 		DatasourceManagerProvider datasourceManager = DatasourceManager.getProviderInstance();

@@ -5,10 +5,10 @@ import javax.swing.JComponent;
 import com.fr.design.designer.TargetComponent;
 
 /**
- * ¿ìËÙ±à¼­ÇøÓò
+ * å¿«é€Ÿç¼–è¾‘åŒºåŸŸ
  * 
  * @author zhou
- * @since 2012-7-12ÏÂÎç2:48:20
+ * @since 2012-7-12ä¸‹åˆ2:48:20
  */
 @SuppressWarnings("rawtypes")
 public abstract class QuickEditor<T extends TargetComponent> extends JComponent {
@@ -30,7 +30,7 @@ public abstract class QuickEditor<T extends TargetComponent> extends JComponent 
 	}
 
 	/**
-	 * ´¥·¢±£´æÒ»¶¨ÒªÓÃÕâ¸ö
+	 * è§¦å‘ä¿å­˜ä¸€å®šè¦ç”¨è¿™ä¸ª
 	 */
 	protected void fireTargetModified() {
 		if(!isEditing) {

@@ -14,9 +14,9 @@ import com.fr.general.Inter;
 import java.awt.*;
 
 /**
- * ÊôĞÔ±í, ÈıÎ¬ÖùĞÎ, ÏµÁĞ½çÃæ.
+ * å±æ€§è¡¨, ä¸‰ç»´æŸ±å½¢, ç³»åˆ—ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-9 ÉÏÎç10:08:35
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-9 ä¸Šåˆ10:08:35
  */
 public class Bar3DSeriesPane extends AbstractPlotSeriesPane {
     private UINumberDragPane seriesGap;

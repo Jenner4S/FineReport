@@ -36,7 +36,7 @@ import com.fr.stable.StableUtils;
 import com.fr.stable.StringUtils;
 
 /**
- * ÊôĞÔ±ígisµØÍ¼µ¥Ôª¸ñÊı¾İÔ´ÉèÖÃ½çÃæ
+ * å±æ€§è¡¨gisåœ°å›¾å•å…ƒæ ¼æ•°æ®æºè®¾ç½®ç•Œé¢
  *
  * @author eason
  */
@@ -99,24 +99,24 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
     }
 
     /**
-     * ½çÃæ½ÓÈë.
-     * @param ob ¶ÔÏó
-     * @return true±íÊ¾½ÓÊÜ
+     * ç•Œé¢æ¥å…¥.
+     * @param ob å¯¹è±¡
+     * @return trueè¡¨ç¤ºæ¥å—
      */
     public boolean accept(Object ob) {
         return true;
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
 
     }
 
     /**
-     * ½çÃæµ¯³ö±êÌâ.
-     * @return  ±êÌâ
+     * ç•Œé¢å¼¹å‡ºæ ‡é¢˜.
+     * @return  æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Cell");
@@ -210,9 +210,9 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
     }
 
     /**
-     * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+     * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(final UIObserverListener listener) {
         changeListeners.add(new ChangeListener() {
@@ -223,9 +223,9 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
     }
 
     /**
-     * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+     * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
      *
-     * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -235,7 +235,7 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
         private JComponent editorComponent;
 
         /**
-         * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+         * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
          */
         public Object getCellEditorValue() {
             if (editorComponent instanceof TinyFormulaPane) {
@@ -248,7 +248,7 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
         }
 
         /**
-         * ·µ»Øµ±Ç°±à¼­Æ÷..
+         * è¿”å›å½“å‰ç¼–è¾‘å™¨..
          */
         public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
             if (column == table.getModel().getColumnCount()) {
@@ -292,7 +292,7 @@ public class GisMapReportDataContentPane extends FurtherBasicBeanPane<GisMapRepo
             textField.addFocusListener(new FocusAdapter() {
                 @Override
                 public void focusLost(FocusEvent e) {
-//					seriesPane.stopCellEditing();	//kunsnat: ²»stopÊÇÒòÎª¿ÉÄÜÖ±½Óµã»÷¹«Ê½±à¼­°´Å¥, ·ñÔòĞèÒªµã»÷Á½´Î²ÅÄÜµ¯³ö.
+//					seriesPane.stopCellEditing();	//kunsnat: ä¸stopæ˜¯å› ä¸ºå¯èƒ½ç›´æ¥ç‚¹å‡»å…¬å¼ç¼–è¾‘æŒ‰é’®, å¦åˆ™éœ€è¦ç‚¹å‡»ä¸¤æ¬¡æ‰èƒ½å¼¹å‡º.
                     seriesPane.fireTargetChanged();
                 }
             });

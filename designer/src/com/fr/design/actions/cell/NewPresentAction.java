@@ -29,7 +29,7 @@ public class NewPresentAction extends PresentCheckBoxAction {
             CellElementPropertyPane.getInstance().GoToPane(Inter.getLocText("Present"), this.itemName);
         } else {
             TemplateCellElement ce = getSelectedCellElement();
-            // 只有原来ce设置了形态的情况下才有undo操作
+            // 鍙湁鍘熸潵ce璁剧疆浜嗗舰鎬佺殑鎯呭喌涓嬫墠鏈塽ndo鎿嶄綔
             if (ce != null && ce.getPresent() != null) {
                 ce.setPresent(null);
                 return true;
@@ -45,7 +45,7 @@ public class NewPresentAction extends PresentCheckBoxAction {
         return hasCurrentPresentSet();
     }
 
-    // TODO ALEX_SEP enable有没有可能也通过这个方法来解决呢?
+    // TODO ALEX_SEP enable鏈夋病鏈夊彲鑳戒篃閫氳繃杩欎釜鏂规硶鏉ヨВ鍐冲憿?
     private TemplateCellElement getSelectedCellElement() {
         ElementCasePane ePane = this.getEditingComponent();
         Selection sel = ePane.getSelection();

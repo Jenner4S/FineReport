@@ -61,23 +61,23 @@ public abstract class ItemEditableComboBoxPanel extends JPanel {
 	}
 	
 	/**
-	 * ¸øitemComboBoxÌí¼ÓActionListener
+	 * ç»™itemComboBoxæ·»åŠ ActionListener
 	 */
 	public void addComboBoxActionListener(ActionListener l) {
 		itemComboBox.addActionListener(l);
 	}
 	
 	/*
-	 * Ë¢ĞÂitemComboBoxµÄÄÚÈİ
+	 * åˆ·æ–°itemComboBoxçš„å†…å®¹
 	 */
 	protected void refreshItems() {
-		// ¼ÇÂ¼Ô­À´Ñ¡ÖĞµÄItem,ÖØĞÂ¼ÓÔØºóĞèÒªÔÙ´ÎÑ¡ÖĞ
+		// è®°å½•åŸæ¥é€‰ä¸­çš„Item,é‡æ–°åŠ è½½åéœ€è¦å†æ¬¡é€‰ä¸­
 		Object lastSelectedItem = itemComboBox.getSelectedItem();
 		
 		DefaultComboBoxModel model = ((DefaultComboBoxModel) itemComboBox.getModel());
 		model.removeAllElements();
 		
-		// ÏÈ¼ÓEMPTY,ÔÙ¼Óitems
+		// å…ˆåŠ EMPTY,å†åŠ items
 		model.addElement(EMPTY);
 		
 		java.util.Iterator<String> itemIt = items();
@@ -85,7 +85,7 @@ public abstract class ItemEditableComboBoxPanel extends JPanel {
 			model.addElement(itemIt.next());
 		}
 		
-		// ÔÙ´ÎÑ¡ÖĞÖ®Ç°Ñ¡ÖĞµÄItem
+		// å†æ¬¡é€‰ä¸­ä¹‹å‰é€‰ä¸­çš„Item
 		int idx = model.getIndexOf(lastSelectedItem);
 		if(idx < 0) {
 			idx = 0;
@@ -94,7 +94,7 @@ public abstract class ItemEditableComboBoxPanel extends JPanel {
 	}
 	
 	/*
-	 * µÃµ½ÆäÖĞµÄitemComboBoxËùÑ¡ÖĞµÄItem
+	 * å¾—åˆ°å…¶ä¸­çš„itemComboBoxæ‰€é€‰ä¸­çš„Item
 	 */
 	public String getSelectedItem() {
 		Object selected = itemComboBox.getSelectedItem();
@@ -103,7 +103,7 @@ public abstract class ItemEditableComboBoxPanel extends JPanel {
 	}
 	
 	/*
-	 * Ñ¡ÖĞnameÏî
+	 * é€‰ä¸­nameé¡¹
 	 */
 	public void setSelectedItem(String name) {
 		DefaultComboBoxModel model = ((DefaultComboBoxModel) itemComboBox.getModel());
@@ -111,12 +111,12 @@ public abstract class ItemEditableComboBoxPanel extends JPanel {
 	}
 	
 	/*
-	 * Ë¢ĞÂComboBox.items
+	 * åˆ·æ–°ComboBox.items
 	 */
 	protected abstract java.util.Iterator<String> items();
 	
 	/*
-	 * µ¯³ö¶Ô»°¿ò±à¼­Items
+	 * å¼¹å‡ºå¯¹è¯æ¡†ç¼–è¾‘Items
 	 */
 	protected abstract void editItems();
 }

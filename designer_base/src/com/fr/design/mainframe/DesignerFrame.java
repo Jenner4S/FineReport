@@ -89,15 +89,15 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	private Icon closeMode = UIConstants.CLOSE_OF_AUTHORITY;
 	private JLayeredPane layeredPane = this.getLayeredPane();
 	private JPanel basePane = new JPanel();
-	// ÉÏÃæµÄĞéÏß
+	// ä¸Šé¢çš„è™šçº¿
 	private DottedLine upDottedLine;
-	// ÏÂÃæµÄĞéÏß
+	// ä¸‹é¢çš„è™šçº¿
 	private DottedLine downDottedLine;
 
-	// ×ó±ßµÄĞéÏß
+	// å·¦è¾¹çš„è™šçº¿
 	private DottedLine leftDottedLine;
 
-	// ÓÒ±ßµÄĞéÏß
+	// å³è¾¹çš„è™šçº¿
 	private DottedLine rightDottedLine;
 
 	private int contentWidth = (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth());
@@ -114,7 +114,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		@Override
 		public void windowClosing(WindowEvent e) {
 			SaveSomeTemplatePane saveSomeTempaltePane = new SaveSomeTemplatePane(true);
-			// Ö»ÓĞÒ»¸öÎÄ¼şÎ´±£´æÊ±
+			// åªæœ‰ä¸€ä¸ªæ–‡ä»¶æœªä¿å­˜æ—¶
 			if (HistoryTemplateListPane.getInstance().getHistoryCount() == 1) {
 				int choose = saveSomeTempaltePane.saveLastOneTemplate();
 				if (choose != JOptionPane.CANCEL_OPTION) {
@@ -139,10 +139,10 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	};
 
 	/**
-	 * ×¢²áapp.
+	 * æ³¨å†Œapp.
 	 * 
 	 * @param app
-	 *            ×¢²áapp.
+	 *            æ³¨å†Œapp.
 	 */
 	public static void registApp(App<?> app) {
 		if (app != null) {
@@ -161,7 +161,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		setName(DESIGNER_FRAME_NAME);
 		this.ad = ad;
 		this.initTitleIcon();
-		this.setTitle();// james:ÒòÎªÓĞÄ¬ÈÏµÄÁË
+		this.setTitle();// james:å› ä¸ºæœ‰é»˜è®¤çš„äº†
 
 		// set this to context.
 		DesignerContext.setDesignerFrame(this);
@@ -204,14 +204,14 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		basePane.add(EastRegionContainerPane.getInstance(), BorderLayout.EAST);
 		basePane.setBounds(0, 0, contentWidth, contentHeight);
 
-		// ÊıÖµÔ½Ğ¡¡£Ô½ÔÚµ×²ã
+		// æ•°å€¼è¶Šå°ã€‚è¶Šåœ¨åº•å±‚
 		layeredPane.add(basePane);
-		// µ÷ÕûWindow´óĞ¡
+		// è°ƒæ•´Windowå¤§å°
 		modWindowBounds();
 
 		this.resetToolkitByPlus(null);
 
-		// p:¼ì²éËùÓĞ°´Å¥µÄ¿É¼ûĞÔºÍÊÇ·ñ¿ÉÒÔ±à¼­ĞÔ.
+		// p:æ£€æŸ¥æ‰€æœ‰æŒ‰é’®çš„å¯è§æ€§å’Œæ˜¯å¦å¯ä»¥ç¼–è¾‘æ€§.
 		checkToolbarMenuEnable();
 
 		// window close listener.
@@ -245,7 +245,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 	
 	private JPanel initNorthEastPane(final ToolBarMenuDock ad){
-		//¶¥²¿ÈÕÖ¾+µÇÂ½°´Å¥
+		//é¡¶éƒ¨æ—¥å¿—+ç™»é™†æŒ‰é’®
 		final JPanel northEastPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         GeneralContext.addPluginReadListener(new PluginReadListener() {
             @Override
@@ -277,7 +277,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		basePane.add(WestRegionContainerPane.getInstance(), BorderLayout.WEST);
 	}
 
-	// µ÷Õûwindows´óĞ¡
+	// è°ƒæ•´windowså¤§å°
 	private void reCalculateFrameSize() {
 		contentHeight = layeredPane.getHeight();
 		contentWidth = layeredPane.getWidth();
@@ -288,22 +288,22 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¸üĞÂ
+	 * æ›´æ–°
 	 */
 	public void populateAuthorityArea() {
 		int centerWidth = contentWidth - WestRegionContainerPane.getInstance().getContainerWidth()
 				- EastRegionContainerPane.getInstance().getContainerWidth();
-		// ÉÏÃæµÄĞéÏß
+		// ä¸Šé¢çš„è™šçº¿
 		upDottedLine = new DottedLine(UIScrollBar.HORIZONTAL, centerWidth);
 		upDottedLine.setBounds(WestRegionContainerPane.getInstance().getContainerWidth(), MENU_HEIGHT - 1, centerWidth,
 				3);
 
-		// ÏÂÃæµÄĞéÏß
+		// ä¸‹é¢çš„è™šçº¿
 		downDottedLine = new DottedLine(UIScrollBar.HORIZONTAL, centerWidth);
 		downDottedLine.setBounds(WestRegionContainerPane.getInstance().getContainerWidth(), contentHeight - 3,
 				centerWidth, 3);
 
-		// ×ó±ßµÄĞéÏß
+		// å·¦è¾¹çš„è™šçº¿
 		leftDottedLine = new DottedLine(UIScrollBar.VERTICAL, contentHeight - MENU_HEIGHT);
 		leftDottedLine.setBounds(WestRegionContainerPane.getInstance().getContainerWidth(), MENU_HEIGHT, 3,
 				contentHeight - MENU_HEIGHT);
@@ -335,7 +335,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * Ë¢ĞÂ
+	 * åˆ·æ–°
 	 */
 	public void refreshDottedLine() {
 		if (BaseUtils.isAuthorityEditing()) {
@@ -349,7 +349,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * Ë¢ĞÂDottedLine
+	 * åˆ·æ–°DottedLine
 	 */
 	public void doResize() {
 		removeDottedLine();
@@ -402,7 +402,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	};
 
 	/**
-	 * Ë¢ĞÂCloseButton
+	 * åˆ·æ–°CloseButton
 	 */
 	public void populateCloseButton() {
 
@@ -416,12 +416,12 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ÍË³öÈ¨ÏŞ±à¼­Ê±£¬½«ËùÓĞµÄ×ö¹ıÈ¨ÏŞ±à¼­µÄ×´Ì¬£¬×÷ÎªÒ»¸ö×´Ì¬¸³¸ø±¨¡¢±¨±íÖ÷Ìå
+	 * é€€å‡ºæƒé™ç¼–è¾‘æ—¶ï¼Œå°†æ‰€æœ‰çš„åšè¿‡æƒé™ç¼–è¾‘çš„çŠ¶æ€ï¼Œä½œä¸ºä¸€ä¸ªçŠ¶æ€èµ‹ç»™æŠ¥ã€æŠ¥è¡¨ä¸»ä½“
 	 */
 	private void fireAuthorityStateToNomal() {
 		java.util.List<JTemplate<?, ?>> opendedTemplate = HistoryTemplateListPane.getInstance().getHistoryList();
 		for (int i = 0; i < opendedTemplate.size(); i++) {
-			// Èç¹ûÔÚÈ¨ÏŞ±à¼­Ê±×ö¹ı²Ù×÷£¬Ôò½«×ö¹ıµÄ²Ù×÷×÷ÎªÒ»¸öÕûÌå×´Ì¬¸³¸øÕıÔÚ±¨±í
+			// å¦‚æœåœ¨æƒé™ç¼–è¾‘æ—¶åšè¿‡æ“ä½œï¼Œåˆ™å°†åšè¿‡çš„æ“ä½œä½œä¸ºä¸€ä¸ªæ•´ä½“çŠ¶æ€èµ‹ç»™æ­£åœ¨æŠ¥è¡¨
 			if (opendedTemplate.get(i).isDoSomethingInAuthority()) {
 				opendedTemplate.get(i).fireAuthorityStateToNomal();
 			}
@@ -449,7 +449,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 			}
 		}
 		
-		//Ìí¼Ó·ÖÏí°´Å¥
+		//æ·»åŠ åˆ†äº«æŒ‰é’®
 		addShareButton();
 		
 		return combineUp;
@@ -469,12 +469,12 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¼ì²é
+	 * æ£€æŸ¥
 	 * 
 	 * @param flag
-	 *            ×é¼şÊÇ·ñ¿É¼û
+	 *            ç»„ä»¶æ˜¯å¦å¯è§
 	 * @param al
-	 *            ×é¼şÃû³Æ
+	 *            ç»„ä»¶åç§°
 	 */
 	public void checkCombineUp(boolean flag, ArrayList<String> al) {
 		combineUp.checkComponentsByNames(flag, al);
@@ -482,17 +482,17 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * Ë¢ĞÂ¹¤¾ßÌõ.
+	 * åˆ·æ–°å·¥å…·æ¡.
 	 */
 	public void refreshToolbar() {
 		this.ad.updateToolBarDef();
 	}
 
 	/**
-	 * ÖØÖÃÏà¹ØµÄ¹¤¾ßÌõ.
+	 * é‡ç½®ç›¸å…³çš„å·¥å…·æ¡.
 	 * 
 	 * @param plus
-	 *            ¹¤¾ßÌõÖĞÏà¹ØĞÅÏ¢
+	 *            å·¥å…·æ¡ä¸­ç›¸å…³ä¿¡æ¯
 	 */
 	public void resetToolkitByPlus(ToolBarMenuDockPlus plus) {
 		if (plus == null) {
@@ -511,14 +511,14 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 			combineUp = null;
 		}
 
-		// ±£´æ³·ÏúÄÇĞ©°´Å¥µÄÃæ°å
+		// ä¿å­˜æ’¤é”€é‚£äº›æŒ‰é’®çš„é¢æ¿
 		eastCenterPane.add(combineUp = combineUpTooBar(ad.resetUpToolBar(plus)), BorderLayout.NORTH);
 
 		if (toolbarComponent != null) {
 			toolbarPane.remove(toolbarComponent);
 		}
 
-		// ÑÕÉ«£¬×ÖÌåÄÇĞ©°´Å¥µÄ¹¤¾ßÀ¸
+		// é¢œè‰²ï¼Œå­—ä½“é‚£äº›æŒ‰é’®çš„å·¥å…·æ 
 		toolbarPane.add(toolbarComponent = ad.resetToolBar(toolbarComponent, plus), BorderLayout.CENTER);
 
 		this.checkToolbarMenuEnable();
@@ -531,7 +531,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÔÚÈ¨ÏŞ±à¼­×´Ì¬£¬ÈôÊÇÔÚÈ¨ÏŞ±à¼­×´Ì¬£¬ÔòĞèÒªÓĞĞéÏß¿òºÍ¹Ø±ÕÍ»±ä
+	 * åˆ¤æ–­æ˜¯å¦åœ¨æƒé™ç¼–è¾‘çŠ¶æ€ï¼Œè‹¥æ˜¯åœ¨æƒé™ç¼–è¾‘çŠ¶æ€ï¼Œåˆ™éœ€è¦æœ‰è™šçº¿æ¡†å’Œå…³é—­çªå˜
 	 */
 	public void needToAddAuhtorityPaint() {
 
@@ -539,7 +539,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¼ì²é¹¤¾ßÌõ.
+	 * æ£€æŸ¥å·¥å…·æ¡.
 	 */
 	private void checkToolbarMenuEnable() {
 		if (this.ad != null) {
@@ -549,13 +549,13 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ÉèÖÃ±êÌâ
+	 * è®¾ç½®æ ‡é¢˜
 	 */
 	public void setTitle() {
         JTemplate<?, ?> editingTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
         StringBuilder defaultTitleSB = new StringBuilder();
         defaultTitleSB.append(ProductConstants.PRODUCT_NAME);
-		// james£º±êÊ¶µÇÂ¼µÄÓÃ»§ºÍµÇÂ¼µÄENV
+		// jamesï¼šæ ‡è¯†ç™»å½•çš„ç”¨æˆ·å’Œç™»å½•çš„ENV
 		String envName = DesignerEnvManager.getEnvManager().getCurEnvName();
 		Env env = DesignerEnvManager.getEnvManager().getEnv(envName);
 		if (env != null) {
@@ -607,10 +607,10 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ±¨±íÔËĞĞ»·¾³¸Ä±äÊ±,ĞèÒªË¢ĞÂÄ³Ğ©Ãæ°å
+	 * æŠ¥è¡¨è¿è¡Œç¯å¢ƒæ”¹å˜æ—¶,éœ€è¦åˆ·æ–°æŸäº›é¢æ¿
 	 * 
 	 * @param env
-	 *            »·¾³
+	 *            ç¯å¢ƒ
 	 */
 	public void refreshEnv(Env env) {
 		this.setTitle();
@@ -622,14 +622,14 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄÄ£°å.
+	 * è¿”å›é€‰ä¸­çš„æ¨¡æ¿.
 	 */
 	public JTemplate<?, ?> getSelectedJTemplate() {
 		return this.centerTemplateCardPane.getSelectedJTemplate();
 	}
 
 	/**
-	 * ±£´æµ±Ç°±à¼­µÄÄ£°å
+	 * ä¿å­˜å½“å‰ç¼–è¾‘çš„æ¨¡æ¿
 	 */
 
 	public void saveCurrentEditingTemplate() {
@@ -637,8 +637,8 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		if (editingTemplate == null) {
 			return;
 		}
-		if (editingTemplate.isSaved()) {// isSaved == true±íÊ¾ÒÑ¾­±£´æ¹ı£¬»òÕßĞÂ½¨µÄÒ»ÕÅÄ£°å
-			if (editingTemplate.getEditingFILE().exists()) {// ±íÊ¾´ÅÅÌÉÏµÄÄ³Ò»ÕÅÒÑ¾­±£´æ¹ıµÄÄ£°å£¬ÒªÌí¼Óµ½ÀúÊ·ÖĞ
+		if (editingTemplate.isSaved()) {// isSaved == trueè¡¨ç¤ºå·²ç»ä¿å­˜è¿‡ï¼Œæˆ–è€…æ–°å»ºçš„ä¸€å¼ æ¨¡æ¿
+			if (editingTemplate.getEditingFILE().exists()) {// è¡¨ç¤ºç£ç›˜ä¸Šçš„æŸä¸€å¼ å·²ç»ä¿å­˜è¿‡çš„æ¨¡æ¿ï¼Œè¦æ·»åŠ åˆ°å†å²ä¸­
 				// HistoryTemplateListPane.getInstance().addHistory();
 			}
 		} else {
@@ -668,7 +668,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * Ìí¼ÓĞÂ½¨Ä£°å, ²¢¼¤»î.
+	 * æ·»åŠ æ–°å»ºæ¨¡æ¿, å¹¶æ¿€æ´».
 	 */
 	public void addAndActivateJTemplate() {
 		addAndActivateJTemplate(ad.createNewTemplate());
@@ -676,10 +676,10 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * Ìí¼Ó Ä£°å, ²¢¼¤»î.
+	 * æ·»åŠ  æ¨¡æ¿, å¹¶æ¿€æ´».
 	 * 
 	 * @param jt
-	 *            Ìí¼ÓµÄÄ£°å.
+	 *            æ·»åŠ çš„æ¨¡æ¿.
 	 */
 	public void addAndActivateJTemplate(JTemplate<?, ?> jt) {
 		if (jt == null || jt.getEditingFILE() == null) {
@@ -693,10 +693,10 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¼¤»îÒÑ¾­´æÔÚµÄÄ£°å
+	 * æ¿€æ´»å·²ç»å­˜åœ¨çš„æ¨¡æ¿
 	 * 
 	 * @param jt
-	 *            Ä£°å
+	 *            æ¨¡æ¿
 	 */
 	public void activateJTemplate(JTemplate<?, ?> jt) {
 		if (jt == null || jt.getEditingFILE() == null) {
@@ -708,51 +708,51 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¶ÔÏóÕìÌı
+	 * å¯¹è±¡ä¾¦å¬
 	 * 
 	 * @param e
-	 *            ÊÂ¼ş
+	 *            äº‹ä»¶
 	 */
 	public void targetModified(TargetModifiedEvent e) {
 		this.checkToolbarMenuEnable();
 	}
 
 	/**
-	 * Ä£°å¹Ø±ÕÊ± ´¦Àí.
+	 * æ¨¡æ¿å…³é—­æ—¶ å¤„ç†.
 	 * 
 	 * @param jt
-	 *            Ä£°å
+	 *            æ¨¡æ¿
 	 */
 	public void templateClosed(JTemplate<?, ?> jt) {
 	}
 
 	/**
-	 * Ä£°å´ò¿ªÊ± ´¦Àí.
+	 * æ¨¡æ¿æ‰“å¼€æ—¶ å¤„ç†.
 	 * 
 	 * @param jt
-	 *            Ä£°å
+	 *            æ¨¡æ¿
 	 */
 	public void templateOpened(JTemplate<?, ?> jt) {
 	}
 
 	/**
-	 * Ä£°å±£´æÊ± ´¦Àí.
+	 * æ¨¡æ¿ä¿å­˜æ—¶ å¤„ç†.
 	 * 
 	 * @param jt
-	 *            Ä£°å
+	 *            æ¨¡æ¿
 	 */
 	public void templateSaved(JTemplate<?, ?> jt) {
 		this.checkToolbarMenuEnable();
 	}
 
 	/**
-	 * ´ò¿ªÄ£°åÎÄ¼ş,Èç¹ûÊÇÒÑ¾­´ò¿ªµÄ¾Í¼¤»î´ËÄ£°åËù¶ÔÓ¦µÄJInternalFrame
+	 * æ‰“å¼€æ¨¡æ¿æ–‡ä»¶,å¦‚æœæ˜¯å·²ç»æ‰“å¼€çš„å°±æ¿€æ´»æ­¤æ¨¡æ¿æ‰€å¯¹åº”çš„JInternalFrame
 	 * 
 	 * @param tplFile
-	 *            ÎÄ¼ş
+	 *            æ–‡ä»¶
 	 */
 	public void openTemplate(FILE tplFile) {
-		// ²âÊÔÁ¬½Ó£¬Èç¹ûÁ¬½ÓÊ§°Ü£¬ÔòÌáÊ¾
+		// æµ‹è¯•è¿æ¥ï¼Œå¦‚æœè¿æ¥å¤±è´¥ï¼Œåˆ™æç¤º
 		try {
 			if (FRContext.getCurrentEnv() != null
 					&& !FRContext.getCurrentEnv().testServerConnectionWithOutShowMessagePane()) {
@@ -766,7 +766,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 			FRLogger.getLogger().error(e.getMessage());
 		}
 
-		// p:ÅĞ¶ÏÒ»ÏÂ£¬ÈçºÎÎÄ¼şÎª¿Õ»òÕßÎÄ¼ş²»´æÔÚ£¬Ö±½Ó·µ»Ø.
+		// p:åˆ¤æ–­ä¸€ä¸‹ï¼Œå¦‚ä½•æ–‡ä»¶ä¸ºç©ºæˆ–è€…æ–‡ä»¶ä¸å­˜åœ¨ï¼Œç›´æ¥è¿”å›.
 		if (tplFile == null || !tplFile.exists()) {
 			JOptionPane.showMessageDialog(this, Inter.getLocText("Warning-Template_Do_Not_Exsit"),
 					ProductConstants.PRODUCT_NAME, JOptionPane.INFORMATION_MESSAGE);
@@ -778,28 +778,28 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ÊÇ·ñ²»ºÏ°æ±¾µÄÉè¼ÆÆ÷
+	 * æ˜¯å¦ä¸åˆç‰ˆæœ¬çš„è®¾è®¡å™¨
 	 * 
 	 * @param jt
-	 *            µ±Ç°Ä£°å
+	 *            å½“å‰æ¨¡æ¿
 	 * 
-	 * @return ÊÇ·ñ²»ºÏ°æ±¾
+	 * @return æ˜¯å¦ä¸åˆç‰ˆæœ¬
 	 * 
 	 *
-	 * @date 2014-10-14-ÏÂÎç6:30:37
+	 * @date 2014-10-14-ä¸‹åˆ6:30:37
 	 */
 	private boolean inValidDesigner(JTemplate jt) {
 		return jt.isOldDesigner() || (!jt.isJWorkBook() && jt.isNewDesigner());
 	}
 
 	/**
-	 * ´ò¿ªÖ¸¶¨µÄÎÄ¼ş
+	 * æ‰“å¼€æŒ‡å®šçš„æ–‡ä»¶
 	 * 
 	 * @param tplFile
-	 *            Ö¸¶¨µÄÎÄ¼ş
+	 *            æŒ‡å®šçš„æ–‡ä»¶
 	 * 
 	 *
-	 * @date 2014-10-14-ÏÂÎç6:31:05
+	 * @date 2014-10-14-ä¸‹åˆ6:31:05
 	 */
 	private void openFile(FILE tplFile) {
 		String fileName = tplFile.getName();
@@ -823,7 +823,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 					if (jt == null) {
 						return;
 					}
-					// ĞÂµÄform²»ÍùÇ°¼æÈİ
+					// æ–°çš„formä¸å¾€å‰å…¼å®¹
 					if (inValidDesigner(jt)) {
 						this.addAndActivateJTemplate();
 						MutilTempalteTabPane.getInstance().setTemTemplate(
@@ -842,23 +842,23 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ¼¤»îÖ¸¶¨µÄÄ£°å
+	 * æ¿€æ´»æŒ‡å®šçš„æ¨¡æ¿
 	 * 
 	 * @param tplFile
-	 *            Ä£°åÎÄ¼ş
+	 *            æ¨¡æ¿æ–‡ä»¶
 	 * @param jt
-	 *            µ±Ç°±¨±í
+	 *            å½“å‰æŠ¥è¡¨
 	 * 
 	 *
-	 * @date 2014-10-14-ÏÂÎç6:31:23
+	 * @date 2014-10-14-ä¸‹åˆ6:31:23
 	 */
 	private void activeTemplate(FILE tplFile, JTemplate jt) {
-		// Èç¹û¸ÃÄ£°åÒÑ¾­´ò¿ª£¬Ôò½øĞĞ¼¤»î¾Í¿ÉÒÔÁË
+		// å¦‚æœè¯¥æ¨¡æ¿å·²ç»æ‰“å¼€ï¼Œåˆ™è¿›è¡Œæ¿€æ´»å°±å¯ä»¥äº†
 		String fullName = StableUtils.pathJoin(new String[] { ProjectConstants.REPORTLETS_NAME, tplFile.getName() });
 		if (tplFile instanceof FileNodeFILE) {
 			fullName = ((FileNodeFILE) tplFile).getEnvPath() + "/" + tplFile.getPath();
 		}
-		// Èç¹ûÊÇ´ÓÎÄ¼ş¼Ğ´ò¿ªµÄÎÄ¼ş£¬²»ÊÇ´ÓÉè¼ÆÆ÷ÎÄ¼şÊ÷´ò¿ªµÄÎÄ¼ş£¬ÔòÖ±½ÓÈ¡path¾ÍĞĞ
+		// å¦‚æœæ˜¯ä»æ–‡ä»¶å¤¹æ‰“å¼€çš„æ–‡ä»¶ï¼Œä¸æ˜¯ä»è®¾è®¡å™¨æ–‡ä»¶æ ‘æ‰“å¼€çš„æ–‡ä»¶ï¼Œåˆ™ç›´æ¥å–pathå°±è¡Œ
 		if (tplFile instanceof FileFILE) {
 			fullName = tplFile.getPath();
 		}
@@ -873,7 +873,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	}
 
 	/**
-	 * ExitÍË³ö
+	 * Exité€€å‡º
 	 */
 	public void exit() {
 		Thread thread = new Thread() {
@@ -919,7 +919,7 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		System.exit(0);
 	}
 
-	// harry£ºÌí¼Ó³ÌĞòÍâÍÏ×§ÎÄ¼ş½øÀ´´ò¿ªµÄ¹¦ÄÜ
+	// harryï¼šæ·»åŠ ç¨‹åºå¤–æ‹–æ‹½æ–‡ä»¶è¿›æ¥æ‰“å¼€çš„åŠŸèƒ½
 	class FileDropTargetListener implements DropTargetListener {
 
 		@Override
@@ -983,27 +983,27 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 	public static interface App<T extends IOFile> {
 
 		/**
-		 * Ä¬ÈÏÑÓÉì
+		 * é»˜è®¤å»¶ä¼¸
 		 * 
-		 * @return ÀàĞÍ
+		 * @return ç±»å‹
 		 */
 		public String[] defaultExtentions();
 
 		/**
-		 * ´ò¿ªÄ£°å
+		 * æ‰“å¼€æ¨¡æ¿
 		 * 
 		 * @param tplFile
-		 *            ÎÄ¼ş
-		 * @return ±¨±í
+		 *            æ–‡ä»¶
+		 * @return æŠ¥è¡¨
 		 */
 		public JTemplate<T, ?> openTemplate(FILE tplFile);
 
 		/**
-		 * ×öÎªÊä³öÎÄ¼ş.
+		 * åšä¸ºè¾“å‡ºæ–‡ä»¶.
 		 * 
 		 * @param tplFile
-		 *            ÎÄ¼ş
-		 * @return ±¨±í
+		 *            æ–‡ä»¶
+		 * @return æŠ¥è¡¨
 		 */
 		public T asIOFile(FILE tplFile);
 	}

@@ -18,7 +18,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-19
- * Time: ÏÂÎç4:39
+ * Time: ä¸‹åˆ4:39
  */
 public class UIToolButtonBorder extends AbstractBorder {
     protected final Insets insets = new Insets(1, 1, 1, 1);

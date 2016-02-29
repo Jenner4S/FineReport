@@ -9,8 +9,8 @@ import com.fr.design.style.background.BackgroundSelectPane;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-10-31 ÏÂÎç02:44:45
- * ÀàËµÃ÷: ±³¾°ÎÆÀíµÄÑ¡Ôñ"µ¯³ö"½çÃæ, ²Î¿¼: @Code ColorSelectPane
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-10-31 ä¸‹åˆ02:44:45
+ * ç±»è¯´æ˜: èƒŒæ™¯çº¹ç†çš„é€‰æ‹©"å¼¹å‡º"ç•Œé¢, å‚è€ƒ: @Code ColorSelectPane
  */
 public class TextureSelectPane extends BackgroundSelectPane {
 	private static final long serialVersionUID = -3119065431234298949L;
@@ -20,7 +20,7 @@ public class TextureSelectPane extends BackgroundSelectPane {
 	}
 	
 	public BackgroundSettingPane getShowPane(double preWidth) {
-		// ¼ÆËãºÏÊÊµÄÁĞ. ÖÁÉÙ4¸ö. ×î¶à8¸ö. 
+		// è®¡ç®—åˆé€‚çš„åˆ—. è‡³å°‘4ä¸ª. æœ€å¤š8ä¸ª. 
 		int column = Math.max((int)preWidth / 40, 4);
 		return new TextureBackgroundPane(column);
 	}

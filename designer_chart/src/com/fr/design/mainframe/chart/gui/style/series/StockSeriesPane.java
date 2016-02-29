@@ -16,9 +16,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * ¹É¼ÛÍ¼, ÊôĞÔ±í Í¼±íÑùÊ½-ÏµÁĞ.
+ * è‚¡ä»·å›¾, å±æ€§è¡¨ å›¾è¡¨æ ·å¼-ç³»åˆ—.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-6 ÉÏÎç09:20:19
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-6 ä¸Šåˆ09:20:19
  */
 public class StockSeriesPane extends AbstractPlotSeriesPane {
 	
@@ -68,7 +68,7 @@ public class StockSeriesPane extends AbstractPlotSeriesPane {
 	}
 	
 	/**
-	 * ·µ»Ø Ìî³ä½çÃæ.
+	 * è¿”å› å¡«å……ç•Œé¢.
 	 */
 	protected ChartFillStylePane getFillStylePane() {
 		return null;

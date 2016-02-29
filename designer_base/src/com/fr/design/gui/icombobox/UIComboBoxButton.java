@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: ÉÏÎç11:23
+ * Time: ä¸Šåˆ11:23
  */
 public class UIComboBoxButton extends JButton {
 
@@ -257,13 +257,13 @@ public class UIComboBoxButton extends JButton {
 
         GradientPaint scrollBarHight = new GradientPaint(0, 0, new Color(1.0f, 1.0f, 1.0f, 0.5f), 0, 7, new Color(1.0f, 1.0f, 1.0f, 0.2f));
         g2.setPaint(scrollBarBg);
-        g2.fillRoundRect(xs, ys, r.width, r.height, 3, 3);//»­½¥±äµÄ±³¾°
+        g2.fillRoundRect(xs, ys, r.width, r.height, 3, 3);//ç”»æ¸å˜çš„èƒŒæ™¯
         g2.setPaint(scrollBarHight);
-        g2.fillRoundRect(xs, ys, r.width, r.height / 2, 3, 3);//»­¸ß¹â
+        g2.fillRoundRect(xs, ys, r.width, r.height / 2, 3, 3);//ç”»é«˜å…‰
         g2.setColor(a);
         g2.drawLine(xs, ys, xs, y2);
         g2.setColor(lightBorderColor);
-        g2.drawRoundRect(xs + 1, ys, r.width - 3, r.height - 1, 1, 1);//»­¸ß¹âÏß£¨ÄÚ·¢¹â£¬0%×èÈû£©
+        g2.drawRoundRect(xs + 1, ys, r.width - 3, r.height - 1, 1, 1);//ç”»é«˜å…‰çº¿ï¼ˆå†…å‘å…‰ï¼Œ0%é˜»å¡ï¼‰
 
     }
 

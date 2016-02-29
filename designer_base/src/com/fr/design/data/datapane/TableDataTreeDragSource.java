@@ -16,7 +16,7 @@ import com.fr.design.gui.itree.refreshabletree.ExpandMutableTreeNode;
 import com.fr.design.mainframe.dnd.ArrayTransferable;
 
 /**
- * 从数据源树开始drag.
+ * 浠庢暟鎹簮鏍戝紑濮媎rag.
  */
 public class TableDataTreeDragSource extends DragSourceAdapter implements DragGestureListener {
     private DragSource source;
@@ -64,7 +64,7 @@ public class TableDataTreeDragSource extends DragSourceAdapter implements DragGe
                     continue;
                 }
                 displayName = (String) userObj;
-                // james 读取表名
+                // james 璇诲彇琛ㄥ悕
                 while (segmentMutableTreeNode.getParent().getParent() != null) {
                     segmentMutableTreeNode = (ExpandMutableTreeNode) segmentMutableTreeNode.getParent();
                     ExpandMutableTreeNode datasheetExpandMutableTreeNode = segmentMutableTreeNode;

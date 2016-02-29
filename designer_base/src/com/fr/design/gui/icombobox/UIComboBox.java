@@ -17,14 +17,14 @@ import java.awt.event.ItemListener;
 import java.util.Vector;
 
 /**
- * august:·Ç³£beautifulµÄComboBox£¬²»Ö§³Ö±à¼­×´Ì¬. ÄÚÈİ¹ı³¤Ê±£¬Êó±êÒÆ¶¯¹ıÈ¥»áÓĞToolTips,²»»áÓĞºáÏò¹ö¶¯Ìõ
- * ¼ÙÈçÖ§³Ö±à¼­£¬ÒòÎªUIComboBoxµÄTextField µÄ»æÖÆ ²¢²»ÊÇ¿¿RendererÀ´¿ØÖÆ ,
- * Ëü»áÍ¨¹ıpaintCurrentValueBackground()À´»æÖÆ±³¾°,
- * È»ºóÍ¨¹ıpaintCurrentValue(),È¥»æÖÆUIComboBoxÀïÏÔÊ¾µÄÖµ¡£Ëù¿¼ÂÇÇé¿ö±ÈÏÖÔÚ¸´ÔÓ¶à¶à¶à¶à¶àÁË£¬ËùÒÔÔİÊ±²»Ö§³Ö
- * ÁíÍâ£¬ÏîµÄÄÚÈİ×îºÃ²»ÒªÓĞÍ¼±ê
+ * august:éå¸¸beautifulçš„ComboBoxï¼Œä¸æ”¯æŒç¼–è¾‘çŠ¶æ€. å†…å®¹è¿‡é•¿æ—¶ï¼Œé¼ æ ‡ç§»åŠ¨è¿‡å»ä¼šæœ‰ToolTips,ä¸ä¼šæœ‰æ¨ªå‘æ»šåŠ¨æ¡
+ * å‡å¦‚æ”¯æŒç¼–è¾‘ï¼Œå› ä¸ºUIComboBoxçš„TextField çš„ç»˜åˆ¶ å¹¶ä¸æ˜¯é Rendereræ¥æ§åˆ¶ ,
+ * å®ƒä¼šé€šè¿‡paintCurrentValueBackground()æ¥ç»˜åˆ¶èƒŒæ™¯,
+ * ç„¶åé€šè¿‡paintCurrentValue(),å»ç»˜åˆ¶UIComboBoxé‡Œæ˜¾ç¤ºçš„å€¼ã€‚æ‰€è€ƒè™‘æƒ…å†µæ¯”ç°åœ¨å¤æ‚å¤šå¤šå¤šå¤šå¤šäº†ï¼Œæ‰€ä»¥æš‚æ—¶ä¸æ”¯æŒ
+ * å¦å¤–ï¼Œé¡¹çš„å†…å®¹æœ€å¥½ä¸è¦æœ‰å›¾æ ‡
  *
  * @author zhou
- * @since 2012-5-9ÏÂÎç3:18:58
+ * @since 2012-5-9ä¸‹åˆ3:18:58
  */
 public class UIComboBox extends JComboBox implements UIObserver, GlobalNameObserver {
 
@@ -106,7 +106,7 @@ public class UIComboBox extends JComboBox implements UIObserver, GlobalNameObser
     }
 
     /**
-     * Ö»ÔÊĞíÉèÖÃÎªUIComboBoxRenderer£¬ËùÒÔÒª¼Ì³ĞUIComboBoxRenderer
+     * åªå…è®¸è®¾ç½®ä¸ºUIComboBoxRendererï¼Œæ‰€ä»¥è¦ç»§æ‰¿UIComboBoxRenderer
      */
     @Override
     public void setRenderer(ListCellRenderer aRenderer) {
@@ -127,18 +127,18 @@ public class UIComboBox extends JComboBox implements UIObserver, GlobalNameObser
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(super.getPreferredSize().width + SIZE5, SIZE);//¼Ó5µÄÔ­ÒòÔÚÓÚ£ºrenderÀï£¬Ã¿Ò»¸öÏîÇ°ÃæÁË¿ÕÁËÒ»¸ñ£¬Òª¶à¼¸ÏñËØ
+        return new Dimension(super.getPreferredSize().width + SIZE5, SIZE);//åŠ 5çš„åŸå› åœ¨äºï¼šrenderé‡Œï¼Œæ¯ä¸€ä¸ªé¡¹å‰é¢äº†ç©ºäº†ä¸€æ ¼ï¼Œè¦å¤šå‡ åƒç´ 
     }
 
     /**
-     * Êó±ê½øÈëÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥äº‹ä»¶
      */
     public void mouseEnterEvent() {
 
     }
 
     /**
-     * Êó±êÀë¿ªÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€äº‹ä»¶
      */
     public void mouseExitEvent() {
 
@@ -154,7 +154,7 @@ public class UIComboBox extends JComboBox implements UIObserver, GlobalNameObser
 
 	/**
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
@@ -169,7 +169,7 @@ public class UIComboBox extends JComboBox implements UIObserver, GlobalNameObser
 
 	/**
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
     public void registerNameListener(GlobalNameListener listener) {
         globalNameListener = listener;

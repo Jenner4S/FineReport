@@ -16,11 +16,11 @@ import com.fr.general.Inter;
 
 public class TreeRootPane extends BasicPane {
 	
-	// ÊÇ·ñÖ§³Ö¶àÑ¡(checkBoxTree)
+	// æ˜¯å¦æ”¯æŒå¤šé€‰(checkBoxTree)
 	//private JCheckBox multipleSelection;
 	private UIComboBox checkTypeComboBox;
 	
-	// richer:¼ÓÔØµÄ·½Ê½£¬Ö§³ÖÒì²½¼ÓÔØºÍÍêÈ«¼ÓÔØ
+	// richer:åŠ è½½çš„æ–¹å¼ï¼Œæ”¯æŒå¼‚æ­¥åŠ è½½å’Œå®Œå…¨åŠ è½½
 	private UIComboBox loadTypeComboBox;
 	
 	private UICheckBox layerTypeCheckBox;

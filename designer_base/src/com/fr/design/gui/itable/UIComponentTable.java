@@ -4,9 +4,9 @@ import javax.swing.JComponent;
 import com.fr.design.gui.ilable.UILabel;
 
 /**
- * ±£³Ö ±à¼­¿Ø¼ş ´æÔÚ ²»toString
+ * ä¿æŒ ç¼–è¾‘æ§ä»¶ å­˜åœ¨ ä¸toString
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-6 ÏÂÎç03:37:18
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-6 ä¸‹åˆ03:37:18
  */
 public class UIComponentTable extends UITable {
 	
@@ -16,10 +16,10 @@ public class UIComponentTable extends UITable {
 	}
 	
 	/**
-	 * @param value  ¸ÃĞĞÁĞµÄÖµ(×Ö·û´®)
+	 * @param value  è¯¥è¡Œåˆ—çš„å€¼(å­—ç¬¦ä¸²)
 	 * @param row
 	 * @param column
-	 * @return ÁĞ±íÖĞÄ¬ÈÏÏÔÊ¾µÄ¶«Î÷£¬Èç¹ûÓĞºÜ¶àÄÚÈİ£¬¿ÉÒÔ×°ÔØÒ»¸öJPanelÀïÔÙÇ¶½øÀ´
+	 * @return åˆ—è¡¨ä¸­é»˜è®¤æ˜¾ç¤ºçš„ä¸œè¥¿ï¼Œå¦‚æœæœ‰å¾ˆå¤šå†…å®¹ï¼Œå¯ä»¥è£…è½½ä¸€ä¸ªJPanelé‡Œå†åµŒè¿›æ¥
 	 */
 	protected JComponent getRenderCompoment(Object value, int row, int column) {
 		UILabel text = new UILabel();

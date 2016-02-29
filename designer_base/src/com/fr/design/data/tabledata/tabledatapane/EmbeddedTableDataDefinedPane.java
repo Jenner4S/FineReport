@@ -52,22 +52,22 @@ public class EmbeddedTableDataDefinedPane extends BasicPane{
         dataJTable.setRowSelectionAllowed(true);
         dataJTable.setColumnSelectionAllowed(true);
         
-        // 类型选择
+        // 绫诲瀷閫夋嫨
         UIComboBox typeBox = new UIComboBox(TYPE);
         dataJTable.getColumnModel().getColumn(2).setCellEditor(new DefaultCellEditor(typeBox));
         
-        // 单击编辑
+        // 鍗曞嚮缂栬緫
         TableCellEditor tableCellEditor = dataJTable.getDefaultEditor(String.class);
     	if (tableCellEditor != null) {
     		(( DefaultCellEditor) tableCellEditor).setClickCountToStart(1);
     	}
     	
-    	// 行号显示
+    	// 琛屽彿鏄剧ず
         TableColumn tableColumn = dataJTable.getColumnModel().getColumn(0);
         tableColumn.setCellRenderer(new CellRenderer());
         tableColumn.setMaxWidth(30);
         
-        // 控制按钮
+        // 鎺у埗鎸夐挳
         add = new UIButton(Inter.getLocText("Add"));
         del = new UIButton(Inter.getLocText("Delete"));
         JPanel buttonPane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();

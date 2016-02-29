@@ -58,7 +58,7 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
             "com.ibm.db2.jcc.DB2Driver",
             "com.mysql.jdbc.Driver",
             "org.gjt.mm.mysql.Driver"
-    }; // ĞèÒªÒş²ØÃæ°åµÄÊı¾İ¿âµÄÇı¶¯
+    }; // éœ€è¦éšè—é¢æ¿çš„æ•°æ®åº“çš„é©±åŠ¨
     private static final String PREVIEW_BUTTON = Inter.getLocText("FR-Designer_Preview");
     private ConnectionTableProcedurePane connectionTableProcedurePane;
     private JPanel cardpane;
@@ -69,11 +69,11 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
     private UITableEditorPane<StoreProcedureParameter> inAutoeditorPane;
     private UITableEditorPane<StoreProcedureParameter> autoEditorPane;
     private StoreProcedure storeprocedure;
-    // ´æ´¢¹ı³ÌµÄÄÚÈİ
+    // å­˜å‚¨è¿‡ç¨‹çš„å†…å®¹
     private SQLEditPane storeProcedureContext;
-    // ´æ´¢¹ı³ÌµÄ¾¯¸æÌáÊ¾
+    // å­˜å‚¨è¿‡ç¨‹çš„è­¦å‘Šæç¤º
     private UILabel warningLabel;
-    // ´æ´¢¹ı³ÌÏÔÊ¾µÄÃû×Ö
+    // å­˜å‚¨è¿‡ç¨‹æ˜¾ç¤ºçš„åå­—
     private UILabel queryText;
     private UICheckBox isShareCheckBox;
     private MaxMemRowCountPanel maxPanel;
@@ -116,7 +116,7 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
         JPanel sqlSplitPane = new JPanel(new BorderLayout(4, 4));
         sqlSplitPane.add(box, BorderLayout.CENTER);
 
-        // ×ó±ßµÄPanel,ÉÏÃæÊÇÑ¡ÔñDatabaseConnectionµÄComboBox,ÏÂÃæDatabaseConnection¶ÔÓ¦µÄTable
+        // å·¦è¾¹çš„Panel,ä¸Šé¢æ˜¯é€‰æ‹©DatabaseConnectionçš„ComboBox,ä¸‹é¢DatabaseConnectionå¯¹åº”çš„Table
         initconnectionTableProcedurePane();
         this.setLayout(new BorderLayout(4, 4));
         this.add(connectionTableProcedurePane, BorderLayout.WEST);
@@ -217,9 +217,9 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
     }
 
     /**
-     * Ôö¼Ó´æ´¢¹ı³Ì¼àÌıÆ÷
+     * å¢åŠ å­˜å‚¨è¿‡ç¨‹ç›‘å¬å™¨
      *
-     * @param listener ¼àÌıÆ÷
+     * @param listener ç›‘å¬å™¨
      */
     public void addStoreProcedureWorkerListener(StoreProcedureWorkerListener listener) {
 
@@ -228,7 +228,7 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
     }
 
     /**
-     * È¥³ı´æ´¢¹ı³Ì¼àÌıÆ÷
+     * å»é™¤å­˜å‚¨è¿‡ç¨‹ç›‘å¬å™¨
      */
     public void removeStoreProcedureWorkerListener() {
         this.storeProcedureWorkerListener = null;
@@ -292,7 +292,7 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
         }
     }
 
-    // Ë¢ĞÂ²ÎÊı,´ÓÊı¾İ¿âÈ¡Öµ
+    // åˆ·æ–°å‚æ•°,ä»æ•°æ®åº“å–å€¼
     private void refresh() {
         String text = this.queryText.getText();
         if (text == null) {
@@ -304,12 +304,12 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
         try {
             String procedureText = FRContext.getCurrentEnv().getProcedureText(this.connectionTableProcedurePane.getSelectedDatabaseConnnectonName(), text);
 
-            // »ñÈ¡²ÎÊıÄ¬ÈÏÖµ£¬ÀıÈç£ºNAME in varchar2 default 'SCOTT'£¬Ä¬ÈÏÖµÎªSCOTT
+            // è·å–å‚æ•°é»˜è®¤å€¼ï¼Œä¾‹å¦‚ï¼šNAME in varchar2 default 'SCOTT'ï¼Œé»˜è®¤å€¼ä¸ºSCOTT
             String parameterDefaultValue = "";
             if (StringUtils.isNotEmpty(procedureText)) {
             	int index_begin = procedureText.indexOf("BEGIN");
             	
-            	//from sam: Ä¬ÈÏÖµÖ»»áÔÚbeginÖ®Ç°ÉùÃ÷, ²»È»»á°ÑËùÓĞµÄ´æ´¢¹ı³ÌÀï´ø'xx'µÄ¶¼×÷ÎªÄ¬ÈÏÖµ
+            	//from sam: é»˜è®¤å€¼åªä¼šåœ¨beginä¹‹å‰å£°æ˜, ä¸ç„¶ä¼šæŠŠæ‰€æœ‰çš„å­˜å‚¨è¿‡ç¨‹é‡Œå¸¦'xx'çš„éƒ½ä½œä¸ºé»˜è®¤å€¼
             	String defaulValueStr = index_begin == -1 ? procedureText : procedureText.substring(0, index_begin);
             	String[] strs = defaulValueStr.split("\'");
                 parameterDefaultValue = strs.length > 1 ? strs[1] : parameterDefaultValue;
@@ -335,16 +335,16 @@ public class ProcedureDataPane extends AbstractTableDataPane<StoreProcedure> imp
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      */
     public void fireDSChanged() {
         fireDSChanged(new HashMap<String, String>());
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      *
-     * @param map ¸Ä±äµÄmap
+     * @param map æ”¹å˜çš„map
      */
     public void fireDSChanged(Map<String, String> map) {
         DesignTableDataManager.fireDSChanged(map);

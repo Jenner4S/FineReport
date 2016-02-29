@@ -20,7 +20,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-5
- * Time: ÏÂÎç3:13
+ * Time: ä¸‹åˆ3:13
  */
 public class UIInternalFrameBorder extends AbstractBorder implements UIResource {
     private static HashMap cache = new HashMap();

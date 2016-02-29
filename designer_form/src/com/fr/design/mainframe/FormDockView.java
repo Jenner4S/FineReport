@@ -9,7 +9,7 @@ public abstract class FormDockView extends DockingView {
 		this.editor = editor;
 	}
     
-    // TODO ALEX_SEP dockingView.enabled²»ÖªÄÜ·ñÀûÓÃÕâ¸ö·½·¨ & ÔİÊ±²»ÊµÏÖ
+    // TODO ALEX_SEP dockingView.enabledä¸çŸ¥èƒ½å¦åˆ©ç”¨è¿™ä¸ªæ–¹æ³• & æš‚æ—¶ä¸å®ç°
     public FormDesigner getEditingFormDesigner() {
     	return editor;
     }

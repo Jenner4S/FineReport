@@ -80,7 +80,7 @@ public class ParameterComboBox extends UIComboBox {
                 return;
             }
         }
-        //august:¼ÓÈëitemlistÀïÃæÃ»ÓĞ,Ó¦¸Ã¼Ó½øÈ¥,²»È»¾Í²»ÏÔÊ¾ÁË
+        //august:åŠ å…¥itemlisté‡Œé¢æ²¡æœ‰,åº”è¯¥åŠ è¿›å»,ä¸ç„¶å°±ä¸æ˜¾ç¤ºäº†
         this.addItem(parameter);
         this.setSelectedItem(parameter);
     }

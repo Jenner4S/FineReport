@@ -23,7 +23,7 @@ import java.awt.event.MouseEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç1:57
+ * Time: ä¸‹åˆ1:57
  */
 public class ChartDesignerDataPane extends ChartDataPane {
     private AttributeChangeListener listener;
@@ -62,11 +62,10 @@ public class ChartDesignerDataPane extends ChartDataPane {
    	}
 
     /**
-     * Ö÷ÒªÓÃÓÚÍ¼±íÉè¼ÆÆ÷
-     * @return ÊÇ
+     * ä¸»è¦ç”¨äºå›¾è¡¨è®¾è®¡å™¨
+     * @return æ˜¯
      */
     public boolean isNeedPresentPaneWhenFilterData(){
         return true;
     }
 }
-

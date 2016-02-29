@@ -24,9 +24,9 @@ public class PluginsReaderFromStore {
     private static Set<Plugin> pluginsToUpdate = new HashSet<Plugin>();
 
     /**
-     * 从插件商店服务器读取插件信息，以JSON形式返回
+     * 浠庢彃浠跺晢搴楁湇鍔″櫒璇诲彇鎻掍欢淇℃伅锛屼互JSON褰㈠紡杩斿洖
      *
-     * @return 插件信息
+     * @return 鎻掍欢淇℃伅
      */
     public static Plugin[] readPlugins() throws Exception {
             String resText;
@@ -40,7 +40,7 @@ public class PluginsReaderFromStore {
             }
             if (StringUtils.isNotEmpty(resText)) {
                 try {
-                    plugins.clear();//先清空set
+                    plugins.clear();//鍏堟竻绌簊et
                     JSONArray jsonArray = new JSONArray(resText);
                     for (int i = 0, size = jsonArray.length(); i < size; i++) {
                         Plugin plugin = new Plugin();
@@ -58,9 +58,9 @@ public class PluginsReaderFromStore {
     }
 
     /**
-     * 从插件商店服务器读取插件信息，以JSON形式返回
+     * 浠庢彃浠跺晢搴楁湇鍔″櫒璇诲彇鎻掍欢淇℃伅锛屼互JSON褰㈠紡杩斿洖
      *
-     * @return 插件信息
+     * @return 鎻掍欢淇℃伅
      */
     public static Plugin[] readPluginsForUpdate() throws Exception {
             String resText;

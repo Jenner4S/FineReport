@@ -44,7 +44,7 @@ public class DefaultAxisAreaPane extends ChartAxisAreaPane {
         this.add(panel,BorderLayout.CENTER);
 	}
 
-	//³õÊ¼»¯¼ä¸ô±³¾°
+	//åˆå§‹åŒ–é—´éš”èƒŒæ™¯
 	private void initBackgroundColorPane(){
 		double p = TableLayout.PREFERRED;
 		double f = TableLayout.FILL;
@@ -62,7 +62,7 @@ public class DefaultAxisAreaPane extends ChartAxisAreaPane {
 		backgroundPane = TableLayoutHelper.createTableLayoutPane4Chart(new String[]{"Chart_Interval_Back"}, components, rowSize, columnSize);
 	}
 	
-	//³õÊ¼»¯Íø¸ñÏß
+	//åˆå§‹åŒ–ç½‘æ ¼çº¿
 	private void initGridlinePane(){
 		double p = TableLayout.PREFERRED;
 		double f = TableLayout.FILL;
@@ -87,7 +87,7 @@ public class DefaultAxisAreaPane extends ChartAxisAreaPane {
 	}
 	
 	/**
-	 * ¸üĞÂ¼ä¸ô±³¾°½çÃæ.
+	 * æ›´æ–°é—´éš”èƒŒæ™¯ç•Œé¢.
 	 */
 	public void populateBean(Plot plot) {
 		isVerticleGridLine.setSelected(plot.getyAxis().getMainGridStyle() != Constants.LINE_NONE);
@@ -98,7 +98,7 @@ public class DefaultAxisAreaPane extends ChartAxisAreaPane {
 	}
 
 	/**
-	 * ±£´æ¼ä¸ô±³¾°µÄ½çÃæÊôĞÔ.
+	 * ä¿å­˜é—´éš”èƒŒæ™¯çš„ç•Œé¢å±æ€§.
 	 */
 	public void updateBean(Plot plot) {
 		if(isVerticleGridLine.isSelected()) {

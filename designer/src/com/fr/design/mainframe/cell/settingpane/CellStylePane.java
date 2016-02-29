@@ -15,7 +15,7 @@ import com.fr.report.elementcase.TemplateElementCase;
 
 /**
  * @author zhou
- * @since 2012-5-11ÏÂÎç3:59:39
+ * @since 2012-5-11ä¸‹åˆ3:59:39
  */
 public class CellStylePane extends AbstractCellAttrPane {
 	private StylePane stylePane;
@@ -34,7 +34,7 @@ public class CellStylePane extends AbstractCellAttrPane {
 
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				adjustValues();// ÀïÃæµÄTabÇĞ»»ºóÒª¼°Ê±µ÷Õû¹ö¶¯Ìõ,ÒòÎªÒ»Ğ©½çÃæ¿ÉÄÜ²»ĞèÒª¹ö¶¯Ìõ
+				adjustValues();// é‡Œé¢çš„Tabåˆ‡æ¢åè¦åŠæ—¶è°ƒæ•´æ»šåŠ¨æ¡,å› ä¸ºä¸€äº›ç•Œé¢å¯èƒ½ä¸éœ€è¦æ»šåŠ¨æ¡
 			}
 		});
 		return content;
@@ -94,7 +94,7 @@ public class CellStylePane extends AbstractCellAttrPane {
 					}
 				}
 			}
-			stylePane.updateBorder();// border±ØĞëÌØ±ğ´¦Àí
+			stylePane.updateBorder();// borderå¿…é¡»ç‰¹åˆ«å¤„ç†
 		}
 	}
 

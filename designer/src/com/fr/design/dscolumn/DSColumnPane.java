@@ -46,13 +46,13 @@ public class DSColumnPane extends BasicPane {
         JPanel contentPane = this;
         contentPane.setLayout(FRGUIPaneFactory.createBorderLayout());
 
-        //peter:ÖĞĞÄPanel.
+        //peter:ä¸­å¿ƒPanel.
         tabbedPane = new UITabbedPane();
         tabbedPane.addChangeListener(appliedWizardTabChangeListener);
 
         contentPane.add(tabbedPane, BorderLayout.CENTER);
 
-        //_denny: Êı¾İÁĞÃæ°å
+        //_denny: æ•°æ®åˆ—é¢æ¿
         basicPane = new DSColumnBasicPane(setting);
         basicPane.addPropertyChangeListener("cellElement", myPropertyChangeListener);
         tabbedPane.addTab(Inter.getLocText("Basic"), basicPane);
@@ -78,11 +78,11 @@ public class DSColumnPane extends BasicPane {
     	this.tplEC = tds;
     	
         if (tds == null || cellElement == null) {
-            // _denny: ÎÒ²»ÈÏÎªÕâÖÖÇé¿öÓ¦¸Ã³öÏÖ£¬ÒÔ·ÀÍòÒ»
+            // _denny: æˆ‘ä¸è®¤ä¸ºè¿™ç§æƒ…å†µåº”è¯¥å‡ºç°ï¼Œä»¥é˜²ä¸‡ä¸€
             this.cellElement = new DefaultTemplateCellElement();
             return;
         }
-        // _denny: Õâ±ßĞèÒª¿ËÂ¡Ò»ÏÂ£¬ÒòÎªÔÚÉèÖÃÊ±£¬¿ÉÄÜ¸Ä±ä×Ö¶ÎcellElement£¬µ«¸Ä±äÕæÊµÖµÊÇ²»±»ÆÚÍûµÄ
+        // _denny: è¿™è¾¹éœ€è¦å…‹éš†ä¸€ä¸‹ï¼Œå› ä¸ºåœ¨è®¾ç½®æ—¶ï¼Œå¯èƒ½æ”¹å˜å­—æ®µcellElementï¼Œä½†æ”¹å˜çœŸå®å€¼æ˜¯ä¸è¢«æœŸæœ›çš„
         try {
             this.cellElement = (TemplateCellElement) cellElement.clone();
         } catch (CloneNotSupportedException ce) {
@@ -108,17 +108,17 @@ public class DSColumnPane extends BasicPane {
                 if (lastSelectedComponent == null) {
                     lastSelectedComponent = basicPane;
                 }
-                //selectTabComponentÊÇÕıÒªÇĞ»»µ½µÄÄÇ¸öPane
+                //selectTabComponentæ˜¯æ­£è¦åˆ‡æ¢åˆ°çš„é‚£ä¸ªPane
                 Component selectTabComponent = tabbedPane.getSelectedComponent();
-                // _denny: Èç¹ûÇĞ»»TabÊ±ÉÏÒ»¸öPaneÊÇbasicPane, ÔòË¢ĞÂÒ»ÏÂÆäËûPane£¬
-                // ÒòÎªÑ¡ÔñµÄÊı¾İÁĞ¿ÉÄÜ¸Ä±ä, µ¼ÖÂºóÃæ¹ıÂËºÍÊ¹ÓÃ¹«Ê½ÓÃµ½µÄÊı¾İÏî¸Ä±ä
+                // _denny: å¦‚æœåˆ‡æ¢Tabæ—¶ä¸Šä¸€ä¸ªPaneæ˜¯basicPane, åˆ™åˆ·æ–°ä¸€ä¸‹å…¶ä»–Paneï¼Œ
+                // å› ä¸ºé€‰æ‹©çš„æ•°æ®åˆ—å¯èƒ½æ”¹å˜, å¯¼è‡´åé¢è¿‡æ»¤å’Œä½¿ç”¨å…¬å¼ç”¨åˆ°çš„æ•°æ®é¡¹æ”¹å˜
                 if (lastSelectedComponent == basicPane) {
                     basicPane.update(cellElement);
 
-                    // denny_GUI: Ë¢ĞÂÆäËûÃæ°å
+                    // denny_GUI: åˆ·æ–°å…¶ä»–é¢æ¿
                     refrushOtherTabs();
                 }
-                // ÇĞ»»±êÇ©µÄÊ±ºò¾Í£¬È·ÈÏÊÇ·ñÓĞÃ»ÓĞÌí¼Óµ½ÁĞ±íÖĞµÄÌõ¼ş
+                // åˆ‡æ¢æ ‡ç­¾çš„æ—¶å€™å°±ï¼Œç¡®è®¤æ˜¯å¦æœ‰æ²¡æœ‰æ·»åŠ åˆ°åˆ—è¡¨ä¸­çš„æ¡ä»¶
                 lastSelectedComponent = selectTabComponent;
             } catch (Exception e) {
                 FRContext.getLogger().error(e.getMessage(), e);
@@ -126,8 +126,8 @@ public class DSColumnPane extends BasicPane {
 
         }
     };
-    // cellElement ¸Ä±äÊ±£¬Ë¢ĞÂÒ»ÏÂ
-    // ±ÈÈç£ºÉÏ±ßÇĞ»»TabÊ±£¬basicPane UpdateÁËÒ»ÏÂ£¬¿ÉÄÜ»á¸Ä±äField cellElementµÄÖµ
+    // cellElement æ”¹å˜æ—¶ï¼Œåˆ·æ–°ä¸€ä¸‹
+    // æ¯”å¦‚ï¼šä¸Šè¾¹åˆ‡æ¢Tabæ—¶ï¼ŒbasicPane Updateäº†ä¸€ä¸‹ï¼Œå¯èƒ½ä¼šæ”¹å˜Field cellElementçš„å€¼
     PropertyChangeListener myPropertyChangeListener = new PropertyChangeListener() {
 
         public void propertyChange(PropertyChangeEvent evt) {
@@ -135,9 +135,9 @@ public class DSColumnPane extends BasicPane {
         }
     };
 
-    //_denny:µ±Êı¾İtabÖĞµÄÊı¾İ·¢Éú±ä»¯µÄÊ±ºòË¢ĞÂºóÃæµÄtab
+    //_denny:å½“æ•°æ®tabä¸­çš„æ•°æ®å‘ç”Ÿå˜åŒ–çš„æ—¶å€™åˆ·æ–°åé¢çš„tab
     public void refrushOtherTabs() {
-        // ¡ª¡ªdeny:µ±JTabPaneÖĞ¼ÓÈëÒ»¸öPaneÊ±£¬ºóÃæµÄPane¿ÉÄÜ»¹Ã»ÓĞ³õÊ¼»¯
+        // â€”â€”deny:å½“JTabPaneä¸­åŠ å…¥ä¸€ä¸ªPaneæ—¶ï¼Œåé¢çš„Paneå¯èƒ½è¿˜æ²¡æœ‰åˆå§‹åŒ–
         if (conditionPane == null || advancedPane == null) {
             return;
         }

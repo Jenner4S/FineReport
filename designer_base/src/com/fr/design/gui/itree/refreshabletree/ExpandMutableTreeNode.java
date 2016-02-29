@@ -11,7 +11,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 public class ExpandMutableTreeNode extends DefaultMutableTreeNode {
     private boolean isExpanded = false; //the expend state
     
-    //默认显示:“正在加载”，如需要显示tree，则传入相应userobject
+    //榛樿鏄剧ず:鈥滄鍦ㄥ姞杞解�濓紝濡傞渶瑕佹樉绀簍ree锛屽垯浼犲叆鐩稿簲userobject
     public ExpandMutableTreeNode() {
     	this(RefreshableJTree.PENDING);
     }
@@ -33,7 +33,7 @@ public class ExpandMutableTreeNode extends DefaultMutableTreeNode {
     }
 
     /**
-     * 展开所有Expanded为true的TreeNode
+     * 灞曞紑鎵�鏈塃xpanded涓簍rue鐨凾reeNode
      */
     public void expandCurrentTreeNode(JTree tree) {
     	if (this.isExpanded) {
@@ -53,7 +53,7 @@ public class ExpandMutableTreeNode extends DefaultMutableTreeNode {
             return;
         }
 
-        //peter:扩展.
+        //peter:鎵╁睍.
         tree.expandPath(GUICoreUtils.getTreePath(this));
         this.setExpanded(true);
 

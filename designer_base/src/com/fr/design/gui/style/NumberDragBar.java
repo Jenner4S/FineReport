@@ -14,7 +14,7 @@ import java.awt.geom.GeneralPath;
 /**
  * 
  * @author zhou
- * @since 2012-5-28下午2:37:37
+ * @since 2012-5-28涓嬪崍2:37:37
  */
 public class NumberDragBar extends JComponent {
 
@@ -27,7 +27,7 @@ public class NumberDragBar extends JComponent {
 
 	private GeneralPath path;
 	int x = 4;
-	private static int H = 15;// 线的位置
+	private static int H = 15;// 绾跨殑浣嶇疆
     private static final int WIDTH_ADJUST = 8;
     private static final int X_ADJUST = 4;
 	private boolean isMoveingOnButton = false;
@@ -81,16 +81,16 @@ public class NumberDragBar extends JComponent {
 	}
 
     /**
-     * 添加响应
-     * @param changeListener 响应
+     * 娣诲姞鍝嶅簲
+     * @param changeListener 鍝嶅簲
      */
 	public void addChangeListener(ChangeListener changeListener) {
 		this.changeListener = changeListener;
 	}
 
     /**
-     * 删除响应
-     * @param changeListener 响应
+     * 鍒犻櫎鍝嶅簲
+     * @param changeListener 鍝嶅簲
      */
 	public void removeChangeListener(ChangeListener changeListener) {
 		this.changeListener = null;
@@ -222,4 +222,3 @@ public class NumberDragBar extends JComponent {
         }
     }
 }
-

@@ -23,28 +23,28 @@ import com.fr.form.ui.container.cardlayout.WCardTitleLayout;
 /**
  *
  *
- * @date: 2014-12-1-ÏÂÎç7:26:21
+ * @date: 2014-12-1-ä¸‹åˆ7:26:21
  */
 public class XWCardTitleLayout extends XWBorderLayout {
 	
 	private static final int CENTER = 1;
 
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public XWCardTitleLayout() {
 	
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public XWCardTitleLayout(WCardTitleLayout widget, Dimension initSize) {
 		super(widget, initSize);
 	}
 	
     /**
-     * ½«WLayout×ª»»ÎªXLayoutContainer
+     * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
      */
 	public void convert(){
         isRefreshing = true;
@@ -64,12 +64,12 @@ public class XWCardTitleLayout extends XWBorderLayout {
 	}
 	
 	/**
-	 * »ñÈ¡±êÇ©ÇøÓò
+	 * è·å–æ ‡ç­¾åŒºåŸŸ
 	 * 
-	 * @return ±êÇ©ÇøÓò
+	 * @return æ ‡ç­¾åŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:50:04
+	 * @date 2014-12-10-ä¸‹åˆ1:50:04
 	 * 
 	 */
 	public XWCardTagLayout getTagPart(){
@@ -77,12 +77,12 @@ public class XWCardTitleLayout extends XWBorderLayout {
 	}
 	
 	/**
-	 * Ìí¼Ó±êÇ©ÇøÓò
+	 * æ·»åŠ æ ‡ç­¾åŒºåŸŸ
 	 * 
-	 * @param tagPart ±êÇ©ÇøÓò
+	 * @param tagPart æ ‡ç­¾åŒºåŸŸ
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:49:40
+	 * @date 2014-12-10-ä¸‹åˆ1:49:40
 	 * 
 	 */
 	public void addTagPart(XWCardTagLayout tagPart){
@@ -90,12 +90,12 @@ public class XWCardTitleLayout extends XWBorderLayout {
 	}
 	
 	/**
-	 * Ìí¼ÓĞÂ½¨°´Å¥
+	 * æ·»åŠ æ–°å»ºæŒ‰é’®
 	 * 
-	 * @param addBtn ĞÂ½¨°´Å¥
+	 * @param addBtn æ–°å»ºæŒ‰é’®
 	 * 
 	 *
-	 * @date 2014-12-10-ÏÂÎç1:49:19
+	 * @date 2014-12-10-ä¸‹åˆ1:49:19
 	 * 
 	 */
 	public void addNewButton(XCardAddButton addBtn){
@@ -103,9 +103,9 @@ public class XWCardTitleLayout extends XWBorderLayout {
 	}
 	
     /**
-     * ÇĞ»»µ½·ÇÌí¼Ó×´Ì¬
+     * åˆ‡æ¢åˆ°éæ·»åŠ çŠ¶æ€
      * 
-     * @return designer ±íµ¥Éè¼ÆÆ÷
+     * @return designer è¡¨å•è®¾è®¡å™¨
      */
     public void stopAddingState(FormDesigner designer){
     	designer.stopAddingState();
@@ -113,8 +113,8 @@ public class XWCardTitleLayout extends XWBorderLayout {
     }
     
     /**
-     * ¸Ã²¼¾ÖÒş²Ø£¬ÎŞĞè¶Ô±ß¿ò½øĞĞ²Ù×÷
-     * @param border ±ß¿ò
+     * è¯¥å¸ƒå±€éšè—ï¼Œæ— éœ€å¯¹è¾¹æ¡†è¿›è¡Œæ“ä½œ
+     * @param border è¾¹æ¡†
      * 
      */
     public void setBorder(Border border) {
@@ -123,9 +123,9 @@ public class XWCardTitleLayout extends XWBorderLayout {
     
     @Override
 	/**
-	 * ¸Ã²¼¾ÖÒş²Ø£¬µã»÷¸Ã²¼¾ÖÊ±Ñ¡ÖĞÏàÓ¦µÄtab²¼¾ÖÖ÷Ìå
-	 * @param editingMouseListener ¼àÌı
-	 * @param e Êó±êµã»÷ÊÂ¼ş
+	 * è¯¥å¸ƒå±€éšè—ï¼Œç‚¹å‡»è¯¥å¸ƒå±€æ—¶é€‰ä¸­ç›¸åº”çš„tabå¸ƒå±€ä¸»ä½“
+	 * @param editingMouseListener ç›‘å¬
+	 * @param e é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 * 
 	 */
     public void respondClick(EditingMouseListener editingMouseListener,

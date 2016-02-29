@@ -3,7 +3,7 @@ package com.fr.design.selection;
 /**
  * 
  * @author zhou
- * @since 2012-7-26ÉÏÎç10:20:32
+ * @since 2012-7-26ä¸Šåˆ10:20:32
  */
 public interface Selectedable<S extends SelectableElement> {
 
@@ -21,5 +21,5 @@ public interface Selectedable<S extends SelectableElement> {
 	 */
 	public void removeSelectionChangeListener(SelectionListener selectionListener);
 
-	// august:Õâ¶ù¾Í²»Òª¼ÓfireSelectionChangeListener·½·¨ÁË¡£ÒòÎªÕâ¸ö·½·¨Ò»°ãÒª¶¨Òå³ÉË½ÓĞµÄ£¬²»È»Íâ²¿Ëæ¼´µÄµ÷ÓÃ£¡
+	// august:è¿™å„¿å°±ä¸è¦åŠ fireSelectionChangeListeneræ–¹æ³•äº†ã€‚å› ä¸ºè¿™ä¸ªæ–¹æ³•ä¸€èˆ¬è¦å®šä¹‰æˆç§æœ‰çš„ï¼Œä¸ç„¶å¤–éƒ¨éšå³çš„è°ƒç”¨ï¼
 }

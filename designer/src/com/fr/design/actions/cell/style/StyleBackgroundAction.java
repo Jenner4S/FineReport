@@ -67,7 +67,7 @@ public class StyleBackgroundAction extends AbstractStyleAction implements Change
             tbButton.setColor(Color.WHITE);
             tbButton.addColorChangeListener(this);
 
-            //peter:²úÉútooltip
+            //peter:äº§ç”Ÿtooltip
             tbButton.setToolTipText(ActionUtils.createButtonToolTipText(this));
             return tbButton;
         }

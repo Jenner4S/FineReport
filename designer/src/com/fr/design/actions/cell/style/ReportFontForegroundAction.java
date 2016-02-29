@@ -58,7 +58,7 @@ public class ReportFontForegroundAction extends AbstractStyleAction implements C
 			tbButton.setEnabled(this.isEnabled());
 			tbButton.addColorChangeListener(this);
 
-			//peter:²úÉútooltip
+			//peter:äº§ç”Ÿtooltip
 			tbButton.setToolTipText(ActionUtils.createButtonToolTipText(this));
 			return tbButton;
 		}

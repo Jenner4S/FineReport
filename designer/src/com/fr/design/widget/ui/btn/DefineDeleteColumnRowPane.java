@@ -11,7 +11,7 @@ import com.fr.report.web.button.write.DeleteRowButton;
 
 /**
  * Created by IntelliJ IDEA. Author : Richer Version: 6.5.6 Date : 11-11-16 Time
- * : …œŒÁ10:56
+ * : ‰∏äÂçà10:56
  */
 public class DefineDeleteColumnRowPane extends BasicPane {
     private static final int BORDER_LEFT = -10;

@@ -18,8 +18,8 @@ import com.fr.general.Inter;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-29 ÉÏÎç10:43:25
- * ÀàËµÃ÷: µ±Ç°Ñ¡ÔñÇøÓò, ×Ô¶¨ÒåÇøÓòµÄÇĞ»»ÏÂÀ­¿ñBox.
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-29 ä¸Šåˆ10:43:25
+ * ç±»è¯´æ˜: å½“å‰é€‰æ‹©åŒºåŸŸ, è‡ªå®šä¹‰åŒºåŸŸçš„åˆ‡æ¢ä¸‹æ‹‰ç‹‚Box.
  */
 public class GradientFromToPixPane extends BasicPane {
 	private static final long serialVersionUID = -5235291383557225506L;

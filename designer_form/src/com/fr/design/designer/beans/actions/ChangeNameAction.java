@@ -23,9 +23,9 @@ public class ChangeNameAction extends FormUndoableAction {
     }
 
 	/**
-	 * ÖØÃüÃû
+	 * é‡å‘½å
 	 * 
-	 * @return ÊÇ·ñÖØÃüÃû³É¹¦
+	 * @return æ˜¯å¦é‡å‘½åæˆåŠŸ
 	 * 
 	 */
     @Override
@@ -35,7 +35,7 @@ public class ChangeNameAction extends FormUndoableAction {
             return false;
         }
         
-        // Èç¹ûÑ¡ÖĞÁË¶à¸öÒ²Ö»¸Ä±äÑ¡ÖĞµÄµÚÒ»¸ö¿Ø¼şµÄÃû×Ö
+        // å¦‚æœé€‰ä¸­äº†å¤šä¸ªä¹Ÿåªæ”¹å˜é€‰ä¸­çš„ç¬¬ä¸€ä¸ªæ§ä»¶çš„åå­—
         XWidgetCreator creator = (XWidgetCreator) designer.getSelectionModel().getSelection().getSelectedCreator();
         if(creator == null) {
         	return false;

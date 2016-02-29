@@ -35,7 +35,7 @@ public class DeleteColumnAction extends CellSelectionAction {
         ElementCasePane ePane = this.getEditingComponent();
         ElementCase report = ePane.getEditingElementCase();
 
-        // É¾µô¶àÐÐ
+        // åˆ æŽ‰å¤šè¡Œ
         int[] columns = cs.getSelectedColumns();
         for (int i = 0; i < columns.length; i++) {
             report.removeColumn(columns[i] - i);

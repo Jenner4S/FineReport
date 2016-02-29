@@ -40,7 +40,7 @@ import com.fr.stable.StringUtils;
 public class ServerPrinterPane extends BasicPane {
 	private JList printerList;
 
-	//Kevin Wang: Ìí¼ÓÎå¸ö°´Å¥ÓÃÓÚÒÔÍ¼ĞÎĞÎÊ½Ìá¹©×ó²à±à¼­´òÓ¡»úÁĞ±íµÄ¹¦ÄÜ¡£
+	//Kevin Wang: æ·»åŠ äº”ä¸ªæŒ‰é’®ç”¨äºä»¥å›¾å½¢å½¢å¼æä¾›å·¦ä¾§ç¼–è¾‘æ‰“å°æœºåˆ—è¡¨çš„åŠŸèƒ½ã€‚
 	private UIButton addButton;
 	private UIButton editButton;
 	private UIButton removeButton;
@@ -56,7 +56,7 @@ public class ServerPrinterPane extends BasicPane {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		this.setBorder(BorderFactory.createEmptyBorder(6, 2, 4, 2));
 
-		//Kevin Wang: Îª×ó²à´òÓ¡»úÌí¼ÓÎå¸öÍ¼ĞÎĞÎÊ½µÄ°´Å¥
+		//Kevin Wang: ä¸ºå·¦ä¾§æ‰“å°æœºæ·»åŠ äº”ä¸ªå›¾å½¢å½¢å¼çš„æŒ‰é’®
 		JToolBar toolbar = new JToolBar();
 		this.add(toolbar, BorderLayout.NORTH);
 
@@ -94,7 +94,7 @@ public class ServerPrinterPane extends BasicPane {
 
 		printerList = new JList(new DefaultListModel());
 		printerList.addListSelectionListener(printerSelectionListener);
-		//shark:Ë«»÷printerlistÒ²¿ÉÒÔ±à¼­
+		//shark:åŒå‡»printerlistä¹Ÿå¯ä»¥ç¼–è¾‘
 		printerList.addMouseListener(mouseClickedListener);
 		this.add(new JScrollPane(printerList), BorderLayout.CENTER);
 
@@ -236,15 +236,15 @@ public class ServerPrinterPane extends BasicPane {
 		@Override
 		public void mouseClicked(MouseEvent e){
 			int clickedNumber = e.getClickCount();
-			//shark: Èç¹ûµã»÷´ÎÊı´óÓÚ2ÈÏÎª·¢ÉúË«»÷£¬µ¯³ö±à¼­½çÃæ
+			//shark: å¦‚æœç‚¹å‡»æ¬¡æ•°å¤§äº2è®¤ä¸ºå‘ç”ŸåŒå‡»ï¼Œå¼¹å‡ºç¼–è¾‘ç•Œé¢
 			if(clickedNumber >= 2){
 				editPrinterList();
 			}
 		}
 	};
-	//shark:·şÎñÆ÷ÁĞ±í±à¼­
+	//shark:æœåŠ¡å™¨åˆ—è¡¨ç¼–è¾‘
 	public void editPrinterList(){
-		//sahrk »ñÈ¡Ñ¡ÖĞÁĞ
+		//sahrk è·å–é€‰ä¸­åˆ—
 		final int index = printerList.getSelectedIndex();
 		final PrintersPane printersPane = new PrintersPane();
 		BasicDialog printerDialog = printersPane.showSmallWindow(SwingUtilities.getWindowAncestor(ServerPrinterPane.this),new DialogActionAdapter() {
@@ -255,7 +255,7 @@ public class ServerPrinterPane extends BasicPane {
 				if (StringUtils.isNotBlank(newPrintName)) {
 					DefaultListModel defaultListModel = (DefaultListModel) printerList.getModel();
 					
-					//shark °Ñ¸ÃÁĞÉ¾³ı ÔÙÔÚÔ­Î»ÖÃ²åÈëĞÂÁĞ Ïàµ±ÓÚÌæ»»
+					//shark æŠŠè¯¥åˆ—åˆ é™¤ å†åœ¨åŸä½ç½®æ’å…¥æ–°åˆ— ç›¸å½“äºæ›¿æ¢
 	              defaultListModel.remove(index);
 	              defaultListModel.add(index, newPrintName);
 					printerList.setSelectedIndex(index);

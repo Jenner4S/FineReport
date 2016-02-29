@@ -17,12 +17,12 @@ import com.fr.stable.bridge.StableFactory;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-8-20
- * Time: ÏÂÎç5:15
+ * Time: ä¸‹åˆ5:15
  */
 public class FormHyperlinkGroup extends BaseHyperlinkGroup {
 
     /**
-     * ·µ»ØÖ§³ÖµÄ³¬¼¶Á´½ÓÀàĞÍ
+     * è¿”å›æ”¯æŒçš„è¶…çº§é“¾æ¥ç±»å‹
      * @return NameableCreator[]
      */
     public NameableCreator[] getHyperlinkCreators() {

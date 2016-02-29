@@ -43,8 +43,8 @@ public class FormulaFloatAction extends AbstractShapeAction {
     };
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
 	public void actionPerformed(ActionEvent e) {
     	ElementCasePane jws = getEditingComponent();

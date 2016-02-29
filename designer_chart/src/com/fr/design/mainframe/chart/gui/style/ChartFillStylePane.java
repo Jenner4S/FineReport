@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Í¼±íÅäÉ«(¸÷¸öÏµÁĞ, Ô¤¶¨Òå·ç¸ñÉèÖÃ) ÑÕÉ«ÉèÖÃ.
+ * å›¾è¡¨é…è‰²(å„ä¸ªç³»åˆ—, é¢„å®šä¹‰é£æ ¼è®¾ç½®) é¢œè‰²è®¾ç½®.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-8-20 ÏÂÎç05:10:54
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-8-20 ä¸‹åˆ05:10:54
  */
 public class ChartFillStylePane extends BasicBeanPane<AttrFillStyle>{
 	
@@ -139,17 +139,17 @@ public class ChartFillStylePane extends BasicBeanPane<AttrFillStyle>{
 	@Override
 	public void populateBean(AttrFillStyle condition) {
         String fillStyleName = condition == null? "" : condition.getFillStyleName();
-		if(StringUtils.isBlank(fillStyleName)){//¼æÈİ´¦Àí
+		if(StringUtils.isBlank(fillStyleName)){//å…¼å®¹å¤„ç†
             if(condition == null || condition.getColorStyle() == ChartConstants.COLOR_DEFAULT) {
-                styleSelectBox.setSelectedIndex(0);//Ä¬ÈÏ
+                styleSelectBox.setSelectedIndex(0);//é»˜è®¤
 
-                colorAcc.populateBean(ChartConstants.CHART_COLOR_ARRAY);// ĞÂ½¨Ê± ±£³ÖÄ¬ÈÏÑùÊ½
+                colorAcc.populateBean(ChartConstants.CHART_COLOR_ARRAY);// æ–°å»ºæ—¶ ä¿æŒé»˜è®¤æ ·å¼
                 accButton.setSelected(true);
                 gradientButton.setSelected(false);
                 cardLayout.show(changeColorSetPane, "acc");
 
                 colorGradient.getSelectColorPointBtnP1().setColorInner(Color.white);
-                colorGradient.getSelectColorPointBtnP2().setColorInner(Color.black);// ¿Ø¼şÖĞµÄÎ»ÖÃÎŞĞ§.
+                colorGradient.getSelectColorPointBtnP2().setColorInner(Color.black);// æ§ä»¶ä¸­çš„ä½ç½®æ— æ•ˆ.
             } else {
                 styleSelectBox.setSelectedIndex(styleSelectBox.getItemCount() - 1);
 

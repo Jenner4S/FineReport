@@ -18,30 +18,30 @@ import java.awt.geom.*;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-25
- * Time: ÉÏÎç10:42
+ * Time: ä¸Šåˆ10:42
  */
 public class FormTabPane extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final Icon WORK_SHEET_ICON = BaseUtils.readIcon("com/fr/base/images/oem/worksheet.png");
     private static final Icon POLY_SHEET_ICON = BaseUtils.readIcon("com/fr/design/images/sheet/polysheet.png");
 
-    private static final int GAP = 5;       //¼ä¸ô
+    private static final int GAP = 5;       //é—´éš”
 
     private BaseJForm form;
     private FormElementCaseContainerProvider elementCase;
 
-    //Ñ¡ÁË30¶ÈºÍ60¶ÈµÄÌØÊâ½Ç¶ÈµÄx,y×÷Îª¾­¹ıµÄÁ½¸öµãµÄ×ø±ê
+    //é€‰äº†30åº¦å’Œ60åº¦çš„ç‰¹æ®Šè§’åº¦çš„x,yä½œä¸ºç»è¿‡çš„ä¸¤ä¸ªç‚¹çš„åæ ‡
     private double specialLocation1 = 2.5;
     private double specialLocation2 = 4.330127;
 
-    //tabÀ¸¿ÉÒÔ·ÅÏÂµÄÃ¿¸ötabµÄÊµ¼Ê¿í¶È
+    //tabæ å¯ä»¥æ”¾ä¸‹çš„æ¯ä¸ªtabçš„å®é™…å®½åº¦
     private int formTabWidth = 100;
     private int ecTabWidth = formTabWidth;
-    private static final int ADD_WIDTH_BY_SHEETNAME = 20; //sheetÃû×ÖµÄÎÄ±¾µ½Í¼±ê±ß¿òµÄ¾àÀë
+    private static final int ADD_WIDTH_BY_SHEETNAME = 20; //sheetåå­—çš„æ–‡æœ¬åˆ°å›¾æ ‡è¾¹æ¡†çš„è·ç¦»
     private int tabHeight = 17;
 
 
-    //µ±Ç°±êÇ©Ò³À¸´æ·ÅµÄËùÓĞ±êÇ©Ò³µÄindex
+    //å½“å‰æ ‡ç­¾é¡µæ å­˜æ”¾çš„æ‰€æœ‰æ ‡ç­¾é¡µçš„index
     private static final int FORM_INDEX = BaseJForm.FORM_TAB;
     private static final int EC_INDEX = BaseJForm.ELEMENTCASE_TAB;
     private int mouseOveredIndex = -1;
@@ -66,7 +66,7 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
     }
 
     /**
-     * »­ectab
+     * ç”»ectab
      *
      * @param g2d
      * @param sheetName
@@ -111,7 +111,7 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
     }
 
     /**
-     * »­formtab
+     * ç”»formtab
      *
      * @param g2d
      * @param startX
@@ -158,7 +158,7 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
     }
 
     /**
-     * ¸ù¾İÃû×ÖºÍ¸öÊı¼ÆËã³öËùÓĞtabµÄ¿í¶È
+     * æ ¹æ®åå­—å’Œä¸ªæ•°è®¡ç®—å‡ºæ‰€æœ‰tabçš„å®½åº¦
      *
      * @return
      */
@@ -171,8 +171,8 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
 
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e  ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e  äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
         selectedIndex = getTabIndex(e.getX());
@@ -183,30 +183,30 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
     }
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÀë¿ª
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e   äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
     }
 
     /**
-     * Êó±ê½øÈë
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e   äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
     }
 
     /**
-     * Êó±êÀë¿ª
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e   äº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
         mouseOveredIndex = -1;
@@ -214,15 +214,15 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
     }
 
     /**
-     * Êó±êÍÏ¶¯
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡æ‹–åŠ¨
+     * @param e   äº‹ä»¶
      */
     public void mouseDragged(MouseEvent e) {
     }
 
     /**
-     * Êó±êÒÆ¶¯
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç§»åŠ¨
+     * @param e   äº‹ä»¶
      */
     public void mouseMoved(MouseEvent e) {
         mouseOveredIndex = getTabIndex(e.getX());
@@ -231,7 +231,7 @@ public class FormTabPane extends JComponent implements MouseListener, MouseMotio
 
 
     /**
-     *  ÅĞ¶ÏÊó±êËùÔÚTab
+     *  åˆ¤æ–­é¼ æ ‡æ‰€åœ¨Tab
      * @param   evtX
      * @return    index
      */

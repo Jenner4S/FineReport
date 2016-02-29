@@ -68,7 +68,7 @@ public class ReportColumnsPane extends BasicPane{
     private UIRadioButton rowButton;
     private UIRadioButton colButton;
 
-    // ĞĞ·ÖĞĞ
+    // è¡Œåˆ†è¡Œ
     private UIRadioButton maxRadioButton;
     private UIBasicSpinner maxNumberSpinner;
     private UILabel maxUILabel;
@@ -170,13 +170,13 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * ´´½¨·ÖÀ¸Ò³Ãæ
+	 * åˆ›å»ºåˆ†æ é¡µé¢
 	 */
     private JPanel createRowColumnPane() {
         JPanel divideRowPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         divideRowPane.setBorder(BorderFactory.createEmptyBorder(0,21,0,21));
         JPanel center = FRGUIPaneFactory.createBorderLayout_S_Pane();
-        // ĞĞ·ÖÀ¸ÑùÊ½
+        // è¡Œåˆ†æ æ ·å¼
         JPanel north = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText(new String[] {"ReportColumns-Columns", "Style"}));
         north.setPreferredSize(new Dimension(549, 216));
         north.add(createSamplePane());
@@ -194,7 +194,7 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * ´´½¨Ê¾ÀıÒ³Ãæ
+	 * åˆ›å»ºç¤ºä¾‹é¡µé¢
 	 */
     private JPanel createSamplePane() {
         JPanel sampleLablePane = new JPanel(new GridLayout(1,2));
@@ -254,7 +254,7 @@ public class ReportColumnsPane extends BasicPane{
         JPanel RowMaxOrSetPane = new JPanel();
         RowMaxOrSetPane.setBorder(BorderFactory.createEmptyBorder(8, 5, 0, 0));
         RowMaxOrSetPane.setLayout(new FlowLayout(FlowLayout.LEFT,25,2));
-        //marks:ÔÚ¶àÉÙĞĞºó¿ªÊ¼·ÖÀ¸
+        //marks:åœ¨å¤šå°‘è¡Œåå¼€å§‹åˆ†æ 
         maxRadioButton = new UIRadioButton(Inter.getLocText("ReportColumns-Columns_after"));
         maxNumberSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
         GUICoreUtils.setColumnForSpinner(maxNumberSpinner, 6);
@@ -262,7 +262,7 @@ public class ReportColumnsPane extends BasicPane{
         maxUILabel = new UILabel(COLUMN_ROW_TEXTS[rowOrColumn] );
         JPanel maxRowRadioPane = GUICoreUtils.createFlowPane(new JComponent[]{maxRadioButton, maxNumberSpinner, maxUILabel, new UILabel(Inter.getLocText("FR-Designer_ReportColumns-Columns"))}, FlowLayout.CENTER);
         RowMaxOrSetPane.add(maxRowRadioPane);
-        //marks:·Ö³É¶àÉÙĞĞ
+        //marks:åˆ†æˆå¤šå°‘è¡Œ
         toXRadioButton = new UIRadioButton(Inter.getLocText("ReportColumns-Columns_to"));
         toXRadioButton.addActionListener(toXBtnListener);
         toXSpinner = new UIBasicSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
@@ -300,7 +300,7 @@ public class ReportColumnsPane extends BasicPane{
     };
 
     /**
-	 * ´´½¨ĞĞ·ÖÀ¸½çÃæ
+	 * åˆ›å»ºè¡Œåˆ†æ ç•Œé¢
 	 */
     private JPanel createRowPane() {
         JPanel rowPane = new JPanel();
@@ -326,11 +326,11 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * ´ÓworksheetAttrÖĞpopulateÊı¾İ¸ø½çÃæ
+	 * ä»worksheetAtträ¸­populateæ•°æ®ç»™ç•Œé¢
 	 * 
-	 * @param attr µ±Ç°ElementCaseµÄworksheetÊôĞÔ
-	 * @param rowCount ×ÜĞĞÊı
-	 * @param colCount ×ÜÁĞÊı
+	 * @param attr å½“å‰ElementCaseçš„worksheetå±æ€§
+	 * @param rowCount æ€»è¡Œæ•°
+	 * @param colCount æ€»åˆ—æ•°
 	 */
     public void populate(WorkSheetAttr attr, int rowCount, int colCount){
         this.isRepeate = true;
@@ -354,7 +354,7 @@ public class ReportColumnsPane extends BasicPane{
     }
     
     /**
-	 * populateÁĞ·ÖÀ¸Êı¾İ
+	 * populateåˆ—åˆ†æ æ•°æ®
 	 */
     private void populateLeftRight(WorkSheetAttr attr){
         this.rowOrColumn = COLUMN;
@@ -375,7 +375,7 @@ public class ReportColumnsPane extends BasicPane{
     }
     
     /**
-	 * populateĞĞ·ÖÀ¸
+	 * populateè¡Œåˆ†æ 
 	 */
     private void populateTopBottom(WorkSheetAttr attr){
         this.onOffButtonGroup.setSelectedIndex(0);
@@ -396,9 +396,9 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * ´ÓworksheetÖĞpopulateÊı¾İ
+	 * ä»worksheetä¸­populateæ•°æ®
 	 * 
-	 * @param worksheet µ±Ç°worksheet
+	 * @param worksheet å½“å‰worksheet
 	 */
     public void populate(WorkSheet worksheet) {
         if (worksheet == null) {
@@ -414,7 +414,7 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * ½«attrÖĞµÄÊı¾İsetµ½Ãæ°åÉÏ
+	 * å°†atträ¸­çš„æ•°æ®setåˆ°é¢æ¿ä¸Š
 	 */
     private void setValueText(WorkSheetAttr attr, int rowCount, int colCount, UITextField repeatColDataTextField,
     		UITextField copyTitleTextField, UICheckBox showBlankCheckBox) {
@@ -443,7 +443,7 @@ public class ReportColumnsPane extends BasicPane{
     }
     
     /**
-	 * updateĞĞÊı¾İ
+	 * updateè¡Œæ•°æ®
 	 */
     private void updateRow(WorkSheetAttr attr){
         attr.setDirection(Constants.TOP_TO_BOTTOM);
@@ -462,7 +462,7 @@ public class ReportColumnsPane extends BasicPane{
     }
     
     /**
-	 * updateÁĞÊı¾İ
+	 * updateåˆ—æ•°æ®
 	 */
     private void updateCol(WorkSheetAttr attr){
         attr.setDirection(Constants.LEFT_TO_RIGHT);
@@ -481,9 +481,9 @@ public class ReportColumnsPane extends BasicPane{
     }
     
     /**
-	 * updateÊı¾İ¸øWorksheetAttr
+	 * updateæ•°æ®ç»™WorksheetAttr
 	 * 
-	 * @param µ±Ç°sheetAttr
+	 * @param å½“å‰sheetAttr
 	 */
     public void update(WorkSheetAttr attr){
     	if (!isRepeate) {
@@ -507,9 +507,9 @@ public class ReportColumnsPane extends BasicPane{
     }
 
     /**
-	 * updateÊı¾İ¸øworksheet
+	 * updateæ•°æ®ç»™worksheet
 	 * 
-	 * @param worksheet µ±Ç°worksheet
+	 * @param worksheet å½“å‰worksheet
 	 */
     public void update(WorkSheet worksheet) {
         if (worksheet == null) {
@@ -524,12 +524,12 @@ public class ReportColumnsPane extends BasicPane{
 
 
     /**
-     * ´Ó½çÃæÖĞ¸³Öµ¸øWorkSheetAttr
+     * ä»ç•Œé¢ä¸­èµ‹å€¼ç»™WorkSheetAttr
      * 
-     * @param attr ±¨±í·ÖÀ¸ÊôĞÔ
-     * @param repeatColDataTextField ´ÓÄÄĞĞ¿ªÊ¼¸´ÖÆ
-     * @param copyTitleTextField ¸´ÖÆÁĞĞòÁĞ
-     * @param showBlankCheckBox ÊÇ·ñÌî³ä¿Õ°×
+     * @param attr æŠ¥è¡¨åˆ†æ å±æ€§
+     * @param repeatColDataTextField ä»å“ªè¡Œå¼€å§‹å¤åˆ¶
+     * @param copyTitleTextField å¤åˆ¶åˆ—åºåˆ—
+     * @param showBlankCheckBox æ˜¯å¦å¡«å……ç©ºç™½
      */
     public void divide(WorkSheetAttr attr, UITextField repeatColDataTextField,
                        UITextField copyTitleTextField, UICheckBox showBlankCheckBox) {
@@ -561,7 +561,7 @@ public class ReportColumnsPane extends BasicPane{
     
 
     /**
-	 * ÅĞ¶ÏÊäÈëÊÇ·ñºÏ·¨
+	 * åˆ¤æ–­è¾“å…¥æ˜¯å¦åˆæ³•
 	 */
     public void checkValid() throws Exception {
         String repeatText = repeatColDataTextField.getText().trim();

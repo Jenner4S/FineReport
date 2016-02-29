@@ -24,8 +24,8 @@ import com.fr.stable.Constants;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-29 ÉÏÎç10:42:43
- * ÀàËµÃ÷: ½¥±äÉ«µÄÇĞ»»box. µ±Ç°ÇøÓòºÍ×Ô¶¨ÒåÇøÓò.
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-29 ä¸Šåˆ10:42:43
+ * ç±»è¯´æ˜: æ¸å˜è‰²çš„åˆ‡æ¢box. å½“å‰åŒºåŸŸå’Œè‡ªå®šä¹‰åŒºåŸŸ.
  */
 public class GradientChangeBoxPane extends BasicPane {
 	private static final long serialVersionUID = -6747468244414651602L;

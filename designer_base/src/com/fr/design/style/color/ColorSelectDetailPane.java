@@ -16,7 +16,7 @@ import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.general.Inter;
 
 /**
- * ÑÕÉ«Ñ¡ÔñÆ÷¸ü¶àÑÕÉ«Ãæ°å
+ * é¢œè‰²é€‰æ‹©å™¨æ›´å¤šé¢œè‰²é¢æ¿
  * @author focus
  *
  */
@@ -25,13 +25,13 @@ public class ColorSelectDetailPane extends BasicPane{
 	// Selected color
 	private Color color;
 	
-	// ÑÕÉ«Ñ¡ÔñÆ÷Ãæ°å
+	// é¢œè‰²é€‰æ‹©å™¨é¢æ¿
 	JColorChooser selectedPanel;
 	
-	// ×î½üÊ¹ÓÃÑÕÉ«Ãæ°å
+	// æœ€è¿‘ä½¿ç”¨é¢œè‰²é¢æ¿
 	JPanel recentUsePanel;
 	
-	// Ô¤ÀÀ
+	// é¢„è§ˆ
 	JPanel previewPanel;
 	
 	public JColorChooser getSelectedPanel() {
@@ -70,7 +70,7 @@ public class ColorSelectDetailPane extends BasicPane{
 	protected void initComponents() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		
-		// ÑÕÉ«Ñ¡ÔñÆ÷Ãæ°å
+		// é¢œè‰²é€‰æ‹©å™¨é¢æ¿
 		selectedPanel = new JColorChooser(this.color);
 		selectedPanel.setPreferredSize(new Dimension(selectedPanel.getWidth(),SELECT_PANEL_HEIGHT));
 		AbstractColorChooserPanel[] choosers = selectedPanel.getChooserPanels();
@@ -85,7 +85,7 @@ public class ColorSelectDetailPane extends BasicPane{
 		selectedPanel.addChooserPanel(customChooserPanel);
 		this.add(selectedPanel, BorderLayout.NORTH);
 		
-		// ×î½üÊ¹ÓÃÃæ°å
+		// æœ€è¿‘ä½¿ç”¨é¢æ¿
 		recentUsePanel = FRGUIPaneFactory.createTitledBorderPane(Inter.getLocText("FR-Designer_Used"));
 		RecentUseColorPane recent = new RecentUseColorPane(selectedPanel);
 		recentUsePanel.add(recent);
@@ -94,7 +94,7 @@ public class ColorSelectDetailPane extends BasicPane{
 		
 		selectedPanel.setPreviewPanel(new JPanel());
 
-		// Ô¤ÀÀ
+		// é¢„è§ˆ
 		previewPanel = FRGUIPaneFactory.createTitledBorderPaneCenter(Inter.getLocText("FR-Designer_Preview"));
 		final ColorChooserPreview colorChooserPreview = new ColorChooserPreview();
 		ColorSelectionModel model = selectedPanel.getSelectionModel();
@@ -110,4 +110,3 @@ public class ColorSelectDetailPane extends BasicPane{
 		this.add(previewPanel, BorderLayout.SOUTH);
 	}
 }
-

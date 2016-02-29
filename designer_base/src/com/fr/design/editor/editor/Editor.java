@@ -10,10 +10,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * The baics abstract CellEditor. ×ÓÀà±ØĞëÈ·¶¨ÀàĞÍT
+ * The baics abstract CellEditor. å­ç±»å¿…é¡»ç¡®å®šç±»å‹T
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç5:08:21
+ * @since 2012-3-29ä¸‹åˆ5:08:21
  */
 public abstract class Editor<T> extends JComponent {
 	private static final long serialVersionUID = 1L;
@@ -31,8 +31,8 @@ public abstract class Editor<T> extends JComponent {
 
 	public abstract boolean accept(Object object);
 
-	// Ô¼¶¨Í¼Æ¬µÄÎÄ¼şÃûÎªthis.getName(),´¦ÀíÆğÀ´·½±ãĞ©
-	// b:ÕâÀï¹ú¼Ê»¯Ã»ÓĞ¿¼ÂÇ
+	// çº¦å®šå›¾ç‰‡çš„æ–‡ä»¶åä¸ºthis.getName(),å¤„ç†èµ·æ¥æ–¹ä¾¿äº›
+	// b:è¿™é‡Œå›½é™…åŒ–æ²¡æœ‰è€ƒè™‘
 	public Icon getIcon() {
 		String iconName = "com/fr/design/images/buttonicon/" + this.getIconName() + ".png";
 		try {

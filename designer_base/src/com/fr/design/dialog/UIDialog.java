@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-7-16
- * Time: ÏÂÎç2:17
+ * Time: ä¸‹åˆ2:17
  * To change this template use File | Settings | File Templates.
  */
 public abstract class UIDialog extends JDialog {
@@ -83,11 +83,11 @@ public abstract class UIDialog extends JDialog {
         JPanel buttonsPane = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 0));
         controlPane.add(buttonsPane, BorderLayout.EAST);
 
-        //Ôö¼ÓÒ»¸ö×Ô¶¨Òå°´Å¥, ¿ÉÒÔÓÃÓÚeg: ÉèÎªÈ«¾ÖÅäÖÃ
+        //å¢åŠ ä¸€ä¸ªè‡ªå®šä¹‰æŒ‰é’®, å¯ä»¥ç”¨äºeg: è®¾ä¸ºå…¨å±€é…ç½®
         addCustomButton(buttonsPane);
-        //È·¶¨
+        //ç¡®å®š
         addOkButton(buttonsPane);
-        //È¡Ïû
+        //å–æ¶ˆ
         addCancelButton(buttonsPane);
 
         this.getRootPane().setDefaultButton(okButton);
@@ -127,9 +127,9 @@ public abstract class UIDialog extends JDialog {
 
 
     /**
-     * Ìí¼Ó¼àÌıÆ÷
+     * æ·»åŠ ç›‘å¬å™¨
      *
-     * @param l ¼àÌıÆ÷
+     * @param l ç›‘å¬å™¨
      *
      */
     public void addDialogActionListener(DialogActionListener l) {
@@ -137,7 +137,7 @@ public abstract class UIDialog extends JDialog {
     }
 
     /**
-     * Çå³ıËùÓĞ¼àÌıÆ÷
+     * æ¸…é™¤æ‰€æœ‰ç›‘å¬å™¨
      *
      */
     public void clearDialogActionListeners() {
@@ -145,7 +145,7 @@ public abstract class UIDialog extends JDialog {
     }
 
     /**
-     * È·¶¨²Ù×÷
+     * ç¡®å®šæ“ä½œ
      *
      */
     public void doOK() {
@@ -157,9 +157,9 @@ public abstract class UIDialog extends JDialog {
         }
 
         synchronized (this) {
-            // dialogExit();august:ÔõÃ´ÄÜÕâ¶ùexitÄØ,disposeÁË¾ÍÊÇÊÍ·ÅÁË¶Ô»°¿òµÄÏß³ÌËøÁË,
-            // ÄÇÃ´ÏÂÃæµÄdoOkºÍÔ­À´µÄÅÉÇ²Ïß³Ì¾Í»á¾ºÕùÖ´ĞĞ,ÍòÒ»ÅÉÇ²Ïß³ÌÒÀÀµdoOkµÄ½á¹û¡¢¶ødoOKÓÖÊÇºóÖ´ĞĞµÄ£¬ÄÇÃ´¾Í»á³ö´íÁË
-            // ÕâBugÊµÔÚÊÇÌ«Òş±ÎÁË£¡
+            // dialogExit();august:æ€ä¹ˆèƒ½è¿™å„¿exitå‘¢,disposeäº†å°±æ˜¯é‡Šæ”¾äº†å¯¹è¯æ¡†çš„çº¿ç¨‹é”äº†,
+            // é‚£ä¹ˆä¸‹é¢çš„doOkå’ŒåŸæ¥çš„æ´¾é£çº¿ç¨‹å°±ä¼šç«äº‰æ‰§è¡Œ,ä¸‡ä¸€æ´¾é£çº¿ç¨‹ä¾èµ–doOkçš„ç»“æœã€è€ŒdoOKåˆæ˜¯åæ‰§è¡Œçš„ï¼Œé‚£ä¹ˆå°±ä¼šå‡ºé”™äº†
+            // è¿™Bugå®åœ¨æ˜¯å¤ªéšè”½äº†ï¼
             isDoOKSucceed = true;
             for (DialogActionListener l : listeners) {
                 try {
@@ -176,7 +176,7 @@ public abstract class UIDialog extends JDialog {
     }
 
     /**
-     * È¡Ïû²Ù×÷
+     * å–æ¶ˆæ“ä½œ
      *
      */
     public void doCancel() {
@@ -223,7 +223,7 @@ public abstract class UIDialog extends JDialog {
     }
 
     /**
-     * ¼ì²â½á¹ûÊÇ·ñºÏ·¨
+     * æ£€æµ‹ç»“æœæ˜¯å¦åˆæ³•
      *
      */
     public abstract void checkValid() throws Exception;

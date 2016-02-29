@@ -17,7 +17,7 @@ import com.fr.design.mainframe.widget.editors.PropertyCellEditor;
 /**
  * @author richer
  * @since 6.5.3
- * ±íµ¥²¼¾ÖÒ²ĞèÒª±ß½çÊôĞÔ
+ * è¡¨å•å¸ƒå±€ä¹Ÿéœ€è¦è¾¹ç•Œå±æ€§
  */
 public class FRFormLayoutPropertiesGroupModel implements GroupModel{
     private DefaultTableCellRenderer renderer;

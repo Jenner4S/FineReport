@@ -119,7 +119,7 @@ public class DSColumnBasicPane extends BasicPane {
 
         selectDataColumnPane.update(cellElement);
 
-        // ÉèÖÃ¸¸¸ñºÍÀ©Õ¹·½Ïò
+        // è®¾ç½®çˆ¶æ ¼å’Œæ‰©å±•æ–¹å‘
         CellExpandAttr cellExpandAttr = cellElement.getCellExpandAttr();
 
         if (cellExpandAttr == null) {

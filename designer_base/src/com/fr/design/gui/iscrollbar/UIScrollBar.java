@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * UIScrollBarÊÇÃ»ÓĞÏÂÉÏµÄ°´Å¥µÄ,¿íÎª8ÏñËØ
+ * UIScrollBaræ˜¯æ²¡æœ‰ä¸‹ä¸Šçš„æŒ‰é’®çš„,å®½ä¸º8åƒç´ 
  *
  * @author zhou
- * @since 2012-5-9ÏÂÎç4:32:59
+ * @since 2012-5-9ä¸‹åˆ4:32:59
  */
 public class UIScrollBar extends JScrollBar {
 
@@ -34,7 +34,7 @@ public class UIScrollBar extends JScrollBar {
 
 	@Override
 	/**
-	 * È¡µÃ¿í¶È
+	 * å–å¾—å®½åº¦
 	 */
 	public int getWidth() {
 		return getOrientation() == UIScrollBar.VERTICAL ? temp : super.getWidth();
@@ -42,7 +42,7 @@ public class UIScrollBar extends JScrollBar {
 
 	@Override
 	/**
-	 * È¡µÃ¸ß¶È
+	 * å–å¾—é«˜åº¦
 	 */
 	public int getHeight() {
 		return getOrientation() == UIScrollBar.HORIZONTAL ? temp : super.getHeight();

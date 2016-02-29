@@ -48,7 +48,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
  * @author zhou
- * @since 2012-6-4ÏÂÎç6:49:59
+ * @since 2012-6-4ä¸‹åˆ6:49:59
  */
 public class BarCodePane extends FurtherBasicBeanPane<BarcodePresent> {
     private final int num16 = 16;
@@ -245,7 +245,7 @@ public class BarCodePane extends FurtherBasicBeanPane<BarcodePresent> {
 
     private void repaintPreviewBarCode() {
         try {
-            // carl:²»Ö§³ÖÖĞÎÄ×ªÌõĞÎÂë
+            // carl:ä¸æ”¯æŒä¸­æ–‡è½¬æ¡å½¢ç 
             if (ChineseHelper.containChinese(getTestText()) && this.typeComboBox.getSelectedIndex() != num16) {
                 throw new Exception("Illegal Character.");
             }
@@ -326,7 +326,7 @@ public class BarCodePane extends FurtherBasicBeanPane<BarcodePresent> {
                 Dimension size = this.getSize();
                 barcodeImpl.draw((Graphics2D) g, (int) (size.getWidth() - barcodeImpl.getWidth()) / 2, (int) (size.getHeight() - barcodeImpl.getHeight()) / 2);
             } else {
-                // ÔÚÖĞÑë»­³ö×Ö·û.
+                // åœ¨ä¸­å¤®ç”»å‡ºå­—ç¬¦.
                 Graphics2D graphics2D = (Graphics2D) g;
                 graphics2D.setPaint(Color.RED);
                 Map map = new HashMap();

@@ -32,13 +32,13 @@ public class CellElementsClip implements Cloneable, java.io.Serializable {
     public String compateExcelPaste() {
     	Arrays.sort(this.clips, CellElementComparator.getRowFirstComparator());
 
-		// ≈≈–Ú
+		// ÊéíÂ∫è
 		StringBuffer sbuf = new StringBuffer();
 
 		int currentRow = -1;
 		for (int i = 0; i < clips.length; i++) {
 			CellElement cellElement = clips[i];
-			if (currentRow == -1) {// ≥ı ºªØµ±«∞––.
+			if (currentRow == -1) {// ÂàùÂßãÂåñÂΩìÂâçË°å.
 				currentRow = cellElement.getRow();
 			}
 
@@ -49,7 +49,7 @@ public class CellElementsClip implements Cloneable, java.io.Serializable {
 				currentRow = cellElement.getRow();
 			}
 
-			// ÃÌº”∑÷∏Ù∑˚∫≈.
+			// Ê∑ªÂä†ÂàÜÈöîÁ¨¶Âè∑.
 			if (sbuf.length() > 0 && sbuf.charAt(sbuf.length() - 1) != '\n') {
 				sbuf.append('\t');
 			}
@@ -76,7 +76,7 @@ public class CellElementsClip implements Cloneable, java.io.Serializable {
     			return null;
     		}
     		
-    		// peter:“ÚŒ™«∞√Ê“—æ≠Ω´’‚∏ˆŒª÷√µƒ‘™Àÿ…æ≥˝¡À,À˘“‘≤ª–Ë“™override¡À.
+    		// peter:Âõ†‰∏∫ÂâçÈù¢Â∑≤ÁªèÂ∞ÜËøô‰∏™‰ΩçÁΩÆÁöÑÂÖÉÁ¥†Âà†Èô§‰∫Ü,ÊâÄ‰ª•‰∏çÈúÄË¶Åoverride‰∫Ü.
     		ec.addCellElement((TemplateCellElement) cellElement.deriveCellElement(
     			column + cellElement.getColumn(), row + cellElement.getRow()		
     		), false);
@@ -93,7 +93,7 @@ public class CellElementsClip implements Cloneable, java.io.Serializable {
             TemplateCellElement cellElement = clips[i];
 
             cellElement = (TemplateCellElement) cellElement.deriveCellElement(startColumn + cellElement.getColumn(), startRow + cellElement.getRow());
-            //peter:ºÏ≤È «∑Ò‘ΩΩÁ,‘ΩΩÁæÕ≤ª◊ˆ¡À.
+            //peter:Ê£ÄÊü•ÊòØÂê¶Ë∂äÁïå,Ë∂äÁïåÂ∞±‰∏çÂÅö‰∫Ü.
             if (cellElement.getColumn() >= column + columnSpan || cellElement.getRow() >= row + rowSpan || cellElement.getColumn() < column
                     || cellElement.getRow() < row) {
                 continue;

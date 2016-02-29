@@ -32,9 +32,9 @@ public class XWFitLayout extends XLayoutContainer {
 	
 	private static final long serialVersionUID = 8112908607102660176L;
 	
-	//ÓÉÓÚÆÁÄ»·Ö±æÂÊ²»Í¬£¬½çÃæÉÏµÄÈİÆ÷´óĞ¡¿ÉÄÜ²»ÊÇÄ¬ÈÏµÄ100%£¬´ËÊ±ÍÏÈë×é¼şÊ±£¬±£´æµÄ´óĞ¡°´ÕÕ100%Ê±µÄ¼ÆËã
+	//ç”±äºå±å¹•åˆ†è¾¨ç‡ä¸åŒï¼Œç•Œé¢ä¸Šçš„å®¹å™¨å¤§å°å¯èƒ½ä¸æ˜¯é»˜è®¤çš„100%ï¼Œæ­¤æ—¶æ‹–å…¥ç»„ä»¶æ—¶ï¼Œä¿å­˜çš„å¤§å°æŒ‰ç…§100%æ—¶çš„è®¡ç®—
 	protected double containerPercent = 1.0;
-	// ²¼¾ÖËõĞ¡µÄÊ±ºò£¬¿¼ÂÇ×îĞ¡¿í¸ß£¬Èô°¤×ÅÓÒ²à»òµ×²à±ß¿òµÄ¿Ø¼şËõĞ¡ºó´ïµ½×îĞ¡¿í»ò¸ß£¬´ËÊ±ÈİÆ÷´óĞ¡Î¢µ÷ÏÂ
+	// å¸ƒå±€ç¼©å°çš„æ—¶å€™ï¼Œè€ƒè™‘æœ€å°å®½é«˜ï¼Œè‹¥æŒ¨ç€å³ä¾§æˆ–åº•ä¾§è¾¹æ¡†çš„æ§ä»¶ç¼©å°åè¾¾åˆ°æœ€å°å®½æˆ–é«˜ï¼Œæ­¤æ—¶å®¹å™¨å¤§å°å¾®è°ƒä¸‹
 	private int needAddWidth = 0;
 	private int needAddHeight = 0;
 	private int minWidth = WLayout.MIN_WIDTH;
@@ -53,7 +53,7 @@ public class XWFitLayout extends XLayoutContainer {
 		initPercent();
 	}
 	
-	//¸ù¾İÆÁÄ»´óĞ¡À´È·¶¨ÏÔÊ¾µÄ°Ù·Ö±È, 1440*900Ä¬ÈÏ100%, 1366*768Ëõ·Å90%
+	//æ ¹æ®å±å¹•å¤§å°æ¥ç¡®å®šæ˜¾ç¤ºçš„ç™¾åˆ†æ¯”, 1440*900é»˜è®¤100%, 1366*768ç¼©æ”¾90%
 	private void initPercent(){
     	Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension scrnsize = toolkit.getScreenSize();
@@ -79,8 +79,8 @@ public class XWFitLayout extends XLayoutContainer {
 	}
     
     /**
-     * ·µ»Ø×îÓÒ²à¿Ø¼şµÄÎ¢µ÷¿í¶È
-     * @return Î¢µ÷¿í¶È
+     * è¿”å›æœ€å³ä¾§æ§ä»¶çš„å¾®è°ƒå®½åº¦
+     * @return å¾®è°ƒå®½åº¦
      */
 	public int getNeedAddWidth() {
 		return needAddWidth;
@@ -91,8 +91,8 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 
     /**
-     * ·µ»Ø×îÓÒ²à¿Ø¼şµÄÎ¢µ÷¸ß¶È
-     * @return Î¢µ÷¿í¶È
+     * è¿”å›æœ€å³ä¾§æ§ä»¶çš„å¾®è°ƒé«˜åº¦
+     * @return å¾®è°ƒå®½åº¦
      */
 	public int getNeedAddHeight() {
 		return needAddHeight;
@@ -103,8 +103,8 @@ public class XWFitLayout extends XLayoutContainer {
 	}
     
 	/**
-	 * ¸üĞÂ×é¼şµÄbackupBound
-	 *  ÍÏ¶¯»¬¿é¸Ä±äÈİÆ÷´óĞ¡£¬¸Ä±äµÄÊÇ½çÃæÏÔÊ¾´óĞ¡£¬¸üĞÂbound£¬ÔÙ´ÎÍÏÈë»òÀ­Éì±ß¿òÓÃµ½
+	 * æ›´æ–°ç»„ä»¶çš„backupBound
+	 *  æ‹–åŠ¨æ»‘å—æ”¹å˜å®¹å™¨å¤§å°ï¼Œæ”¹å˜çš„æ˜¯ç•Œé¢æ˜¾ç¤ºå¤§å°ï¼Œæ›´æ–°boundï¼Œå†æ¬¡æ‹–å…¥æˆ–æ‹‰ä¼¸è¾¹æ¡†ç”¨åˆ°
 	 */
 	private void updateCreatorsBackupBound() {
 		for (int i=0,size=this.getComponentCount(); i<size; i++) {
@@ -115,9 +115,9 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * Ö±½ÓÍÏ¶¯»¬Ìõ¸Ä±äÕûÌåÏñËØ´óĞ¡Ê±£¬²»ÓÃ¿¼ÂÇ¿Ø¼şµÄ×îĞ¡¸ß¶È¿í¶È£¬ÄÚ²¿×é¼şÈ«²¿Ò»ÆğËõĞ¡·Å´ó
-	 * Ö»ÊÇ½çÃæÏÔÊ¾´óĞ¡¸Ä±ä£¬²»¸Ä±ä¶ÔÓ¦µÄBoundsWidget´óĞ¡
-	 * @param percent Ëõ·ÅµÄ°Ù·ÖÖµ
+	 * ç›´æ¥æ‹–åŠ¨æ»‘æ¡æ”¹å˜æ•´ä½“åƒç´ å¤§å°æ—¶ï¼Œä¸ç”¨è€ƒè™‘æ§ä»¶çš„æœ€å°é«˜åº¦å®½åº¦ï¼Œå†…éƒ¨ç»„ä»¶å…¨éƒ¨ä¸€èµ·ç¼©å°æ”¾å¤§
+	 * åªæ˜¯ç•Œé¢æ˜¾ç¤ºå¤§å°æ”¹å˜ï¼Œä¸æ”¹å˜å¯¹åº”çš„BoundsWidgetå¤§å°
+	 * @param percent ç¼©æ”¾çš„ç™¾åˆ†å€¼
 	 */
 	public void adjustCreatorsWhileSlide(double percent) {
 		int count = this.getComponentCount();
@@ -128,7 +128,7 @@ public class XWFitLayout extends XLayoutContainer {
 			this.setSize(size);
 			return;
 		}
-		// ³õÊ¼»¯Ê±»¹Î´¼Ó¼ä¸ô
+		// åˆå§‹åŒ–æ—¶è¿˜æœªåŠ é—´éš”
 		if (hasCalGap) {
 			moveContainerMargin();
 			moveCompInterval(backupGap);
@@ -141,8 +141,8 @@ public class XWFitLayout extends XLayoutContainer {
 		PaddingMargin margin = toData().getMargin();
 		for (int i=0; i<count; i++) {
 			XCreator creator = getXCreator(i);
-			// °Ù·Ö±ÈºÍupdateBoundsWidgetÊ±¶¼»áµ÷Õû´óĞ¡
-			// ×Ó×é¼ş·Ç¿ÕÊ±£¬µ÷Õû½çÃæ´óĞ¡¡¢ ³·Ïú¡¢ÔÙ´Î´ò¿ª±íµ¥£¬¶¼»á°´ÆÁÄ»°Ù·Ö±Èµ÷Õû£¬´ËÊ±±ØĞë¿¼ÂÇÄÚ±ß¾à
+			// ç™¾åˆ†æ¯”å’ŒupdateBoundsWidgetæ—¶éƒ½ä¼šè°ƒæ•´å¤§å°
+			// å­ç»„ä»¶éç©ºæ—¶ï¼Œè°ƒæ•´ç•Œé¢å¤§å°ã€ æ’¤é”€ã€å†æ¬¡æ‰“å¼€è¡¨å•ï¼Œéƒ½ä¼šæŒ‰å±å¹•ç™¾åˆ†æ¯”è°ƒæ•´ï¼Œæ­¤æ—¶å¿…é¡»è€ƒè™‘å†…è¾¹è·
 			Rectangle rec = modifyCreatorPoint(creator.getBounds(), percent, hors, veris);
 			if (rec.x == margin.getLeft()) {
 				containerH += rec.height;
@@ -153,10 +153,10 @@ public class XWFitLayout extends XLayoutContainer {
 			creator.setBounds(rec);
 			creator.updateChildBound(getActualMinHeight());
 		}
-		// ²¼¾ÖÄÚ²¿×é¼ş·Å´óËõĞ¡ºó£¬¶¼ÊÇ³ËÒÔ°Ù·Ö±ÈºóÈ¡Õû£¬¿ÉÄÜ»á²úÉú¿ÕÏ¶£¬´Ë´¦µ÷ÕûÈİÆ÷
+		// å¸ƒå±€å†…éƒ¨ç»„ä»¶æ”¾å¤§ç¼©å°åï¼Œéƒ½æ˜¯ä¹˜ä»¥ç™¾åˆ†æ¯”åå–æ•´ï¼Œå¯èƒ½ä¼šäº§ç”Ÿç©ºéš™ï¼Œæ­¤å¤„è°ƒæ•´å®¹å™¨
 		this.setSize(containerW + margin.getLeft() + margin.getRight(), containerH + margin.getTop() + margin.getBottom());
 		updateCreatorsBackupBound();
-		// ¼ä¸ôÒ²°´ÏÔÊ¾´óĞ¡±ÈÀıµ÷Õû
+		// é—´éš”ä¹ŸæŒ‰æ˜¾ç¤ºå¤§å°æ¯”ä¾‹è°ƒæ•´
 		if (!hasCalGap) {
 			moveContainerMargin();
 			addCompInterval(getAcualInterval());
@@ -165,7 +165,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * µ÷Õû¿Ø¼şµÄpointºÍsize,±ÜÃâÍÏ¶¯»¬¿é³öÏÖ¿ÕÏ¶
+	 * è°ƒæ•´æ§ä»¶çš„pointå’Œsize,é¿å…æ‹–åŠ¨æ»‘å—å‡ºç°ç©ºéš™
 	 */
 	private Rectangle modifyCreatorPoint(Rectangle rec, double percent, int[] hors, int[] veris) {
 		int xIndex = 0, yIndex = 0;
@@ -204,8 +204,8 @@ public class XWFitLayout extends XLayoutContainer {
 		return rec;
 	}
 	/**
-	 * »ñÈ¡ÄÚ²¿×é¼şºá×ø±êµÄÖµ
-	 * @return int[] ºá×ø±êÊı×é
+	 * è·å–å†…éƒ¨ç»„ä»¶æ¨ªåæ ‡çš„å€¼
+	 * @return int[] æ¨ªåæ ‡æ•°ç»„
 	 */
 	
 	public int[] getHors(){
@@ -213,8 +213,8 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * »ñÈ¡ÄÚ²¿×é¼ş×İ×ø±êÖµ
-	 * @return int[] ×İ×ø±êÊı×é
+	 * è·å–å†…éƒ¨ç»„ä»¶çºµåæ ‡å€¼
+	 * @return int[] çºµåæ ‡æ•°ç»„
 	 * 
 	 */
 	public int[] getVeris(){
@@ -222,14 +222,14 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * »ñÈ¡ÄÚ²¿×é¼şºá×ø±êµÄÖµ
-	 * @param isActualSize Êµ¼Ê´óĞ¡
-	 * @return int[] ºá×ø±êÊı×é
+	 * è·å–å†…éƒ¨ç»„ä»¶æ¨ªåæ ‡çš„å€¼
+	 * @param isActualSize å®é™…å¤§å°
+	 * @return int[] æ¨ªåæ ‡æ•°ç»„
 	 */
 	public int[] getHors(boolean isActualSize) {
 		double perc = isActualSize ? containerPercent : 1.0;
 		List<Integer> posX = new ArrayList<Integer>();
-		// ±£´æÊµ¼Ê´óĞ¡Ê±,×é¼ş´óĞ¡ÒÑ¾­È¥³ıÄÚ±ß¾à£¬´Ë´¦Ò²ÅĞ¶ÏÏÂ
+		// ä¿å­˜å®é™…å¤§å°æ—¶,ç»„ä»¶å¤§å°å·²ç»å»é™¤å†…è¾¹è·ï¼Œæ­¤å¤„ä¹Ÿåˆ¤æ–­ä¸‹
 		PaddingMargin margin = isActualSize ? new PaddingMargin(0,0,0,0) : toData().getMargin();
 		posX.add(margin.getLeft());
 		int width = this.getWidth() - margin.getLeft() - margin.getRight();
@@ -247,15 +247,15 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * »ñÈ¡ÄÚ²¿×é¼ş×İ×ø±êÖµ
-	 * @param isActualSize Êµ¼Ê´óĞ¡
-	 * @return int[] ×İ×ø±êÊı×é
+	 * è·å–å†…éƒ¨ç»„ä»¶çºµåæ ‡å€¼
+	 * @param isActualSize å®é™…å¤§å°
+	 * @return int[] çºµåæ ‡æ•°ç»„
 	 * 
 	 */
 	public int[] getVeris(boolean isActualSize) {
 		double perc = isActualSize ? containerPercent : 1.0;
 		List<Integer> posY = new ArrayList<Integer>();
-		// ±£´æÊµ¼Ê´óĞ¡Ê±,×é¼ş´óĞ¡ÒÑ¾­È¥³ıÄÚ±ß¾à£¬´Ë´¦Ò²ÅĞ¶ÏÏÂ
+		// ä¿å­˜å®é™…å¤§å°æ—¶,ç»„ä»¶å¤§å°å·²ç»å»é™¤å†…è¾¹è·ï¼Œæ­¤å¤„ä¹Ÿåˆ¤æ–­ä¸‹
 		PaddingMargin margin = isActualSize ? new PaddingMargin(0,0,0,0) : toData().getMargin();
 		posY.add(margin.getTop());
 		int height = this.getHeight() - margin.getTop() - margin.getBottom();
@@ -273,27 +273,27 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ÊÇ·ñÄÜËõĞ¡
-	 * @param percent °Ù·Ö±È
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦èƒ½ç¼©å°
+	 * @param percent ç™¾åˆ†æ¯”
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean canReduce(double percent) {
 		boolean canReduceSize = true;
 		if (percent < 0 && hasCalGap) {
-			// ËõĞ¡Ê±¿¼ÂÇ¼ä¸ôµÄ´æÔÚÊÇ·ñÄÜËõĞ¡
+			// ç¼©å°æ—¶è€ƒè™‘é—´éš”çš„å­˜åœ¨æ˜¯å¦èƒ½ç¼©å°
 			canReduceSize = canReduceSize(percent);
 		}
 		return canReduceSize;
 	}
 	
 	/**
-	 * °´ÕÕ°Ù·Ö±ÈËõ·ÅÄÚ²¿×é¼ş¿í¶È
+	 * æŒ‰ç…§ç™¾åˆ†æ¯”ç¼©æ”¾å†…éƒ¨ç»„ä»¶å®½åº¦
 	 * 
-	 * @param percent ¿í¶È±ä»¯µÄ°Ù·Ö±È
+	 * @param percent å®½åº¦å˜åŒ–çš„ç™¾åˆ†æ¯”
 	 */
 	public void adjustCreatorsWidth(double percent) {
 		if (this.getComponentCount()==0) {
-			// ³õÊ¼»¯Ã»ÓĞÍÏÈë¿Ø¼şÊ±£¬Êµ¼Ê¿í¶ÈÒÀÈ»µ÷Õû
+			// åˆå§‹åŒ–æ²¡æœ‰æ‹–å…¥æ§ä»¶æ—¶ï¼Œå®é™…å®½åº¦ä¾ç„¶è°ƒæ•´
 			this.toData().setContainerWidth(this.getWidth());
 			return;
 		}
@@ -313,7 +313,7 @@ public class XWFitLayout extends XLayoutContainer {
 		LayoutUtils.layoutContainer(this);
 	}
 	
-	// ÊÖ¶¯ĞŞ¸Ä¿í¸ßÊ±£¬È«²¿ÓÃµÄÊµ¼Ê´óĞ¡¼ÆËã£¬ËùÒÔ×îĞ¡Öµ²»ÓÃ°Ù·Ö±È¼ÆËãºóµÄ
+	// æ‰‹åŠ¨ä¿®æ”¹å®½é«˜æ—¶ï¼Œå…¨éƒ¨ç”¨çš„å®é™…å¤§å°è®¡ç®—ï¼Œæ‰€ä»¥æœ€å°å€¼ä¸ç”¨ç™¾åˆ†æ¯”è®¡ç®—åçš„
 	protected void layoutWidthResize(double percent) {
 		int[] hroValues= toData().getHorComps();
 		int num=hroValues.length;
@@ -324,7 +324,7 @@ public class XWFitLayout extends XLayoutContainer {
 			x = hroValues[i];
 			nextX = hroValues[i+1];
 			dw = (int) ((nextX-x)*percent);
-			//×ÔÊÊÓ¦²¼¾ÖÀï£¬¿Ø¼şµÄ×îĞ¡¿í¶ÈÎª36
+			//è‡ªé€‚åº”å¸ƒå±€é‡Œï¼Œæ§ä»¶çš„æœ€å°å®½åº¦ä¸º36
 			if (nextX-x < MIN_WIDTH-dw) {
 				dw = MIN_WIDTH +x - nextX;
 			} 
@@ -333,7 +333,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * xÎ»ÖÃµÄ×é¼ş¿í¶È°´dw½øĞĞµ÷Õû
+	 * xä½ç½®çš„ç»„ä»¶å®½åº¦æŒ‰dwè¿›è¡Œè°ƒæ•´
 	 */
 	private void caculateWidth(int x, int dw) {
 		List<Component> comps = getCompsAtX(x);
@@ -371,7 +371,7 @@ public class XWFitLayout extends XLayoutContainer {
 				tempWidth = MIN_WIDTH;
 			}
 			creator.setBounds(posX, rec.y, tempWidth, rec.height);
-			// ËõĞ¡£ºĞ¡ÓÚminwidthÖ»ÓĞ×îÓÒ²àÊ±£¬Ç°ÃæÈ«²¿ÒÑËõĞ¡µ½×îĞ¡Öµ
+			// ç¼©å°ï¼šå°äºminwidthåªæœ‰æœ€å³ä¾§æ—¶ï¼Œå‰é¢å…¨éƒ¨å·²ç¼©å°åˆ°æœ€å°å€¼
 			if (width<MIN_WIDTH) {
 				needAddWidth = Math.max(needAddWidth, MIN_WIDTH-width);
 			}
@@ -380,7 +380,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ÊÇ·ñÔÚ²¼¾Ö×îÓÒ²à
+	 * æ˜¯å¦åœ¨å¸ƒå±€æœ€å³ä¾§
 	 */
 	private boolean notHasRightCreator(Rectangle rec) {
 		if ( rec.x+rec.width==this.getBackupBound().width) {
@@ -390,7 +390,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ÊÇ·ñÔÚ²¼¾Ö×îÏÂ²à
+	 * æ˜¯å¦åœ¨å¸ƒå±€æœ€ä¸‹ä¾§
 	 */
 	private boolean notHasBottomCreator(Rectangle rec) {
 		if ( rec.y+rec.height == this.getBackupBound().height) {
@@ -400,7 +400,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ²¼¾Ö×îÓÒ²à»òÏÂ²àÓĞ¿Ø¼şÔÚËõĞ¡Ê±´ïµ½×îĞ¡¿í¸ß£¬ÔòÎ¢µ÷ÏÂ
+	 * å¸ƒå±€æœ€å³ä¾§æˆ–ä¸‹ä¾§æœ‰æ§ä»¶åœ¨ç¼©å°æ—¶è¾¾åˆ°æœ€å°å®½é«˜ï¼Œåˆ™å¾®è°ƒä¸‹
 	 */
 	protected void modifyEdgemostCreator(boolean isHor) {
 		for (int i=0, size=this.getComponentCount(); i<size; i++) {
@@ -416,13 +416,13 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ²¼¾ÖÈİÆ÷¸ß¶ÈÊÖ¶¯ĞŞ¸ÄÊ±£¬
-	 * Í¬Ê±µ÷ÕûÈİÆ÷ÄÚµÄ×é¼şÃÇ,ËõĞ¡Ê±ĞèÒª¿¼ÂÇÓĞµÄ×é¼ş¸ß¶È²»Âú×ãËõĞ¡¸ß¶È
-	 * @param percent ¸ß¶È±ä»¯µÄ°Ù·Ö±È
+	 * å¸ƒå±€å®¹å™¨é«˜åº¦æ‰‹åŠ¨ä¿®æ”¹æ—¶ï¼Œ
+	 * åŒæ—¶è°ƒæ•´å®¹å™¨å†…çš„ç»„ä»¶ä»¬,ç¼©å°æ—¶éœ€è¦è€ƒè™‘æœ‰çš„ç»„ä»¶é«˜åº¦ä¸æ»¡è¶³ç¼©å°é«˜åº¦
+	 * @param percent é«˜åº¦å˜åŒ–çš„ç™¾åˆ†æ¯”
 	 */
 	public void adjustCreatorsHeight(double percent) {
 		if (this.getComponentCount()==0) {
-			//µ÷Õû¸ß¶Èºó£¬wlayoutÄÇ±ß¼ÇÂ¼ÏÂ
+			//è°ƒæ•´é«˜åº¦åï¼Œwlayouté‚£è¾¹è®°å½•ä¸‹
 			this.toData().setContainerHeight(this.getHeight());
 			return;
 		}
@@ -461,7 +461,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * yÎ»ÖÃµÄ×é¼ş°´dh½øĞĞµ÷Õû
+	 * yä½ç½®çš„ç»„ä»¶æŒ‰dhè¿›è¡Œè°ƒæ•´
 	 */
 	private void calculateHeight(int y, int dh) {
 		List<Component> comps = getCompsAtY(y);
@@ -495,7 +495,7 @@ public class XWFitLayout extends XLayoutContainer {
 			int h = notHasBottomCreator(rec) ? this.getHeight()-posY : rec.height+dh;
 			creator.setBounds(rec.x, posY, rec.width, h);
 			if (h<MIN_HEIGHT) {
-				// ËõĞ¡£ºĞ¡ÓÚminheightÖ»ÓĞ×îÏÂ²àÊ±£¬Ç°ÃæÈ«²¿ÒÑËõĞ¡µ½×îĞ¡Öµ
+				// ç¼©å°ï¼šå°äºminheightåªæœ‰æœ€ä¸‹ä¾§æ—¶ï¼Œå‰é¢å…¨éƒ¨å·²ç¼©å°åˆ°æœ€å°å€¼
 				needAddHeight = Math.max(needAddHeight, MIN_HEIGHT-h);
 			}
 		}
@@ -510,7 +510,7 @@ public class XWFitLayout extends XLayoutContainer {
 			XCreator creator = (XCreator) comp;
 			BoundsWidget widget = toData().getBoundsWidget(creator.toData());
 			Rectangle rec = widget.getBackupBounds();
-			//rec.xĞ¡ÓÚx£¬ÓÒ²à´óÓÚx
+			//rec.xå°äºxï¼Œå³ä¾§å¤§äºx
 			boolean isLowX = rec.x<x && x<rec.x+rec.width;
 			if (isLowX || rec.x==x) {
 				comps.add(comp);
@@ -543,7 +543,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»ØÉÏ²à×é¼ş×îĞÂµÄÎ»ÖÃ
+	 * è¿”å›ä¸Šä¾§ç»„ä»¶æœ€æ–°çš„ä½ç½®
 	 */
 	private int getPosY(XCreator creator) {
 		if (creator == null) {
@@ -554,11 +554,11 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»Ø x¡¢y ËùÔÚÇøÓòµÄ×é¼ş
+	 * è¿”å› xã€y æ‰€åœ¨åŒºåŸŸçš„ç»„ä»¶
 	 * 
-	 * @param x ×ø±êx
-	 * @param y ×ø±êy
-	 * @return Ö¸¶¨×ø±êµÄ×é¼ş
+	 * @param x åæ ‡x
+	 * @param y åæ ‡y
+	 * @return æŒ‡å®šåæ ‡çš„ç»„ä»¶
 	 */
 	public XCreator getCreatorAt(int x, int y) {
 		for (int i=0,size=this.getComponentCount(); i<size; i++) {
@@ -574,7 +574,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ¸üĞÂboundsWidgetµÄbackupBound
+	 * æ›´æ–°boundsWidgetçš„backupBound
 	 */
 	protected void updateWidgetBackupBounds() {
 		for (int i=0, size=this.getComponentCount(); i<size; i++) {
@@ -587,12 +587,12 @@ public class XWFitLayout extends XLayoutContainer {
 	
 	
 	/**
-	 * ·µ»ØÄÚ²¿×é¼şµÄ×îĞ¡¸ß¶È
-	 * @param comps ×é¼ş¼¯ºÏ
-	 * @return ×îĞ¡¸ß¶È
+	 * è¿”å›å†…éƒ¨ç»„ä»¶çš„æœ€å°é«˜åº¦
+	 * @param comps ç»„ä»¶é›†åˆ
+	 * @return æœ€å°é«˜åº¦
 	 */
 	public int getMinHeight(List<Component> comps) {
-		//ÈİÆ÷¸ß¶ÈÀ­ÉìÊ±£¬¼ÆËãÄÚ²¿×é¼şµÄ×îĞ¡¸ß¶È
+		//å®¹å™¨é«˜åº¦æ‹‰ä¼¸æ—¶ï¼Œè®¡ç®—å†…éƒ¨ç»„ä»¶çš„æœ€å°é«˜åº¦
 		if (comps.isEmpty()) {
     		return 0;
     	}
@@ -604,8 +604,8 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ³õÊ¼»¯×é¼ş´óĞ¡
-	 * @return Ä¬ÈÏ´óĞ¡
+	 * åˆå§‹åŒ–ç»„ä»¶å¤§å°
+	 * @return é»˜è®¤å¤§å°
 	 */
 	@Override
 	public Dimension initEditorSize() {
@@ -613,16 +613,16 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * f·µ»ØÄ¬ÈÏ×é¼şname
-	 * @return ÈİÆ÷Ãû
+	 * fè¿”å›é»˜è®¤ç»„ä»¶name
+	 * @return å®¹å™¨å
 	 */
 	public String createDefaultName() {
 		return "fit";
 	}
 	
 	/**
-	 * ·µ»ØÈİÆ÷¶ÔÓ¦µÄwlayout
-	 * @return Í¬ÉÏ
+	 * è¿”å›å®¹å™¨å¯¹åº”çš„wlayout
+	 * @return åŒä¸Š
 	 */
 	@Override
     public WFitLayout toData() {
@@ -630,10 +630,10 @@ public class XWFitLayout extends XLayoutContainer {
     }
 	
 	/**
-	 * µ±Ç°×é¼şzorderÎ»ÖÃÌæ»»ĞÂµÄ¿Ø¼ş
-	 * @param widget ¿Ø¼ş
-	 * @param  oldcreator ¾É×é¼ş
-	 * @return ×é¼ş
+	 * å½“å‰ç»„ä»¶zorderä½ç½®æ›¿æ¢æ–°çš„æ§ä»¶
+	 * @param widget æ§ä»¶
+	 * @param  oldcreator æ—§ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	@Override
 	public XCreator replace(Widget widget, XCreator oldcreator) {
@@ -653,7 +653,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
 	/**
-     * ½«WLayout×ª»»ÎªXLayoutContainer
+     * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
      */
     public void convert() {
         isRefreshing = true;
@@ -674,8 +674,8 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ×é¼şÔö¼Ó
-     * @param e ÈİÆ÷ÊÂ¼ş
+     * ç»„ä»¶å¢åŠ 
+     * @param e å®¹å™¨äº‹ä»¶
      */
     public void componentAdded(ContainerEvent e) {
     	if (isRefreshing) {
@@ -683,7 +683,7 @@ public class XWFitLayout extends XLayoutContainer {
         }
     	LayoutUtils.layoutContainer(this);
     	WFitLayout layout = this.toData();
-    	//×ÔÊÊÓ¦²¼¾ÖĞÂÔö¿Ø¼şºó£¬ÆäËû¿Ø¼şÎ»ÖÃÒ²»á±ä
+    	//è‡ªé€‚åº”å¸ƒå±€æ–°å¢æ§ä»¶åï¼Œå…¶ä»–æ§ä»¶ä½ç½®ä¹Ÿä¼šå˜
 		XWidgetCreator creator = (XWidgetCreator) e.getChild();
 		Rectangle rec = creator.getBounds();
 		layout.addWidget(new BoundsWidget(creator.toData(), rec));
@@ -691,7 +691,7 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ½çÃæÈİÆ÷´óĞ¡²»ÊÇÄ¬ÈÏµÄÊ±£¬´¦Àí¿Ø¼şµÄBoundsWidget£¬ÇÒ±ÜÃâ³öÏÖ¿ÕÏ¶
+     * ç•Œé¢å®¹å™¨å¤§å°ä¸æ˜¯é»˜è®¤çš„æ—¶ï¼Œå¤„ç†æ§ä»¶çš„BoundsWidgetï¼Œä¸”é¿å…å‡ºç°ç©ºéš™
      */
     private Rectangle dealWidgetBound(Rectangle rec) {
     	if (containerPercent == 1.0) {
@@ -705,15 +705,15 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ĞÂÔöÉ¾³ıÀ­Éìºó¸üĞÂÃ¿¸ö×é¼şµÄBoundsWidget
+     * æ–°å¢åˆ é™¤æ‹‰ä¼¸åæ›´æ–°æ¯ä¸ªç»„ä»¶çš„BoundsWidget
      */
     public void updateBoundsWidget() {
     	WFitLayout layout = this.toData();
     	if (this.getComponentCount() == 0) {
-    		// É¾³ı×îºóÒ»¸ö×é¼şÊ±¾Í²»ÔÙĞèÒªµ÷ÕûÁË
+    		// åˆ é™¤æœ€åä¸€ä¸ªç»„ä»¶æ—¶å°±ä¸å†éœ€è¦è°ƒæ•´äº†
     		return;
     	}
-    	// Ê²Ã´¼ä¸ô°¡ ±ß¾à°¡¶¼È¥µô
+    	// ä»€ä¹ˆé—´éš”å•Š è¾¹è·å•Šéƒ½å»æ‰
     	moveContainerMargin();
     	moveCompInterval(getAcualInterval());
     	int[] hors = getHors(true);
@@ -723,7 +723,7 @@ public class XWFitLayout extends XLayoutContainer {
     	for (int index=0, n=this.getComponentCount(); index<n; index++) {
     		XCreator creator = (XCreator) this.getComponent(index);
     		BoundsWidget wgt = layout.getBoundsWidget(creator.toData());
-    		// ÓÃµ±Ç°µÄÏÔÊ¾´óĞ¡¼ÆËãºóµ÷Õı¾ßÌåÎ»ÖÃ
+    		// ç”¨å½“å‰çš„æ˜¾ç¤ºå¤§å°è®¡ç®—åè°ƒæ­£å…·ä½“ä½ç½®
     		Rectangle wgtBound = dealWidgetBound(creator.getBounds());
     		Rectangle rec = recalculateWidgetBounds(wgtBound, hors, veris);
     		wgt.setBounds(rec);
@@ -734,7 +734,7 @@ public class XWFitLayout extends XLayoutContainer {
     		if (rec.y == 0) {
     			containerWidth += rec.width;
     		}
-    		// Èç¹û×Ó×é¼şÊ±tab²¼¾Ö£¬Ôòtab²¼¾ÖÄÚ²¿µÄ×é¼şµÄwigetÒ²Òª¸üĞÂ£¬·ñÔò±£´æºóÖØĞÂ´ò¿ª´óĞ¡²»¶Ô
+    		// å¦‚æœå­ç»„ä»¶æ—¶tabå¸ƒå±€ï¼Œåˆ™tabå¸ƒå±€å†…éƒ¨çš„ç»„ä»¶çš„wigetä¹Ÿè¦æ›´æ–°ï¼Œå¦åˆ™ä¿å­˜åé‡æ–°æ‰“å¼€å¤§å°ä¸å¯¹
     		ArrayList<?> childrenList = creator.getTargetChildrenList();
     		if(!childrenList.isEmpty()){
     			for(int i=0; i<childrenList.size(); i++){
@@ -762,7 +762,7 @@ public class XWFitLayout extends XLayoutContainer {
 		}
 		for (int i=xIndex,len=hors.length; i<len-1; i++) {
 			bound.width +=  (hors[i+1]-hors[i]);
-			// ÏÂÒ»¸öxÖµ¼õÈ¥µ±Ç°xÖµ¿ÉÄÜ»á±ÈÊµ¼Ê¿í¶È´ó1
+			// ä¸‹ä¸€ä¸ªxå€¼å‡å»å½“å‰xå€¼å¯èƒ½ä¼šæ¯”å®é™…å®½åº¦å¤§1
 			if (hors[i+1]-hors[xIndex] >= rec.width) {
 				break;
 			}
@@ -786,8 +786,8 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ×é¼şÉ¾³ı
-     * @param e ÈİÆ÷ÊÂ¼ş
+     * ç»„ä»¶åˆ é™¤
+     * @param e å®¹å™¨äº‹ä»¶
      */
     public void componentRemoved(ContainerEvent e) {
         if (isRefreshing) {
@@ -802,9 +802,9 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     *  ÔÚÌí¼ÓµÄÊ±ºòĞèÒª°Ñ¿ÉÀ­ÉìµÄ·½ÏòÈ·¶¨£¬ËùÒÔÖØĞ´ÁËadd·½·¨
-     *  @param comp ×é¼ş
-     *  @param constraints ÊôĞÔ
+     *  åœ¨æ·»åŠ çš„æ—¶å€™éœ€è¦æŠŠå¯æ‹‰ä¼¸çš„æ–¹å‘ç¡®å®šï¼Œæ‰€ä»¥é‡å†™äº†addæ–¹æ³•
+     *  @param comp ç»„ä»¶
+     *  @param constraints å±æ€§
      */
     public void add(Component comp, Object constraints) {
     	if (comp == null) {
@@ -822,18 +822,18 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ´¦Àí×ÔÊÊÓ¦²¼¾ÖµÄdirections
-     * @param creator ×é¼ş
+     * å¤„ç†è‡ªé€‚åº”å¸ƒå±€çš„directions
+     * @param creator ç»„ä»¶
      */
     private void dealDirections(XCreator xcreator, boolean isInit) {
     	if (xcreator == null) {
             return;
         }
-    	// ÖØĞÂ´ò¿ªÄ£°æÊ±£¬ÈİÆ÷»¹Ã»³õÊ¼»¯£¬´óĞ¡¶¼»¹Îª0
+    	// é‡æ–°æ‰“å¼€æ¨¡ç‰ˆæ—¶ï¼Œå®¹å™¨è¿˜æ²¡åˆå§‹åŒ–ï¼Œå¤§å°éƒ½è¿˜ä¸º0
     	int containerWidth = isInit ? toData().getContainerWidth() : this.getWidth();
     	int containerHeight = isInit ? toData().getContainerHeight() : this.getHeight();
     	PaddingMargin margin = isInit ? new PaddingMargin(0,0,0,0) : toData().getMargin();
-    	// ÔÙ´Î´ò¿ªÊ±ºÍ³õÊ¼Éè¼ÆÊ±µÄÇø±ğÊÇÃ»¼ÆËã¹ıÄÚ±ß¾àºÍÃ»°´ÆÁÄ»·Ö±æÂÊµ÷Õû´óĞ¡
+    	// å†æ¬¡æ‰“å¼€æ—¶å’Œåˆå§‹è®¾è®¡æ—¶çš„åŒºåˆ«æ˜¯æ²¡è®¡ç®—è¿‡å†…è¾¹è·å’Œæ²¡æŒ‰å±å¹•åˆ†è¾¨ç‡è°ƒæ•´å¤§å°
     	for (int i=0; i<this.getXCreatorCount(); i++) {
     		XCreator creator = this.getXCreator(i);
     		int x = creator.getX();
@@ -841,7 +841,7 @@ public class XWFitLayout extends XLayoutContainer {
     		int w = creator.getWidth();
     		int h = creator.getHeight();
     		List<Integer> directions = new ArrayList<Integer>();
-    		// Ö»Òª×é¼ş±ß¿òÃ»ÓĞºÍcontainerÌù×ÅµÄ£¬¶¼¿ÉÒÔÀ­Éì
+    		// åªè¦ç»„ä»¶è¾¹æ¡†æ²¡æœ‰å’Œcontainerè´´ç€çš„ï¼Œéƒ½å¯ä»¥æ‹‰ä¼¸
     		if (x > margin.getLeft()) {
     			directions.add(Direction.LEFT);
     		}
@@ -865,10 +865,10 @@ public class XWFitLayout extends XLayoutContainer {
     
     
     /**
-     * ¼ä¸ô´óÓÚ0Ê±£¬½çÃæ´¦¼ÓÉÏ¼ä¸ô
-     * ½çÃæµÄ¼ä¸ôÊÇÕë¶ÔÏÔÊ¾£¬Êµ¼Ê±£´æµÄ´óĞ¡²»ÊÜ¼ä¸ôÓ°Ïì
-     * ps:¸Ä±ä²¼¾Ö´óĞ¡»òÕßÍÏÈë¡¢É¾³ı¡¢À­Éì¶¼ÒªÖØĞÂ¿¼ÂÇ¼ä¸ô
-     * @param gap ¼ä¸ô
+     * é—´éš”å¤§äº0æ—¶ï¼Œç•Œé¢å¤„åŠ ä¸Šé—´éš”
+     * ç•Œé¢çš„é—´éš”æ˜¯é’ˆå¯¹æ˜¾ç¤ºï¼Œå®é™…ä¿å­˜çš„å¤§å°ä¸å—é—´éš”å½±å“
+     * ps:æ”¹å˜å¸ƒå±€å¤§å°æˆ–è€…æ‹–å…¥ã€åˆ é™¤ã€æ‹‰ä¼¸éƒ½è¦é‡æ–°è€ƒè™‘é—´éš”
+     * @param gap é—´éš”
      */
     public void addCompInterval(int gap) {
     	if (gap == 0) {
@@ -899,8 +899,8 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * È¥³ıÔ­ÓĞµÄ¼ä¸ô
-     * @param gap ¼ä¸ô
+     * å»é™¤åŸæœ‰çš„é—´éš”
+     * @param gap é—´éš”
      */
     public void moveCompInterval(int gap) {
     	if (gap == 0) {
@@ -931,9 +931,9 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ÊÇ·ñ¿ÉÒÔ¼ÓÈëµ±Ç°¼ä¸ô
-     * @param interval ¼ä¸ô
-     * @return Ä¬ÈÏ·µ»Øtrue
+     * æ˜¯å¦å¯ä»¥åŠ å…¥å½“å‰é—´éš”
+     * @param interval é—´éš”
+     * @return é»˜è®¤è¿”å›true
      */
     public boolean canAddInterval(int interval) {
     	int val = interval/2;
@@ -967,7 +967,7 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * ËõĞ¡¿í¶È»òÕß¸ß¶ÈÊ±  ´æÔÚ¼ä¸ôµÄ»°ÊÇ·ñÖ§³ÖËõĞ¡
+     * ç¼©å°å®½åº¦æˆ–è€…é«˜åº¦æ—¶  å­˜åœ¨é—´éš”çš„è¯æ˜¯å¦æ”¯æŒç¼©å°
      */
     private boolean canReduceSize(double percent) {
     	int val = toData().getCompInterval()/2;
@@ -977,7 +977,7 @@ public class XWFitLayout extends XLayoutContainer {
 			Rectangle rec = widget.getBounds();
     		Dimension d = new Dimension(this.getBackupBound().width, this.getBackupBound().height);
     		Rectangle bound = dealBound(rec, d, val, percent);
-    		// ËõĞ¡¿í¸ß¶¼ÊÇÊµ¼Ê´óĞ¡ÅĞ¶Ï
+    		// ç¼©å°å®½é«˜éƒ½æ˜¯å®é™…å¤§å°åˆ¤æ–­
     		if (bound.width < MIN_WIDTH || bound.height< MIN_HEIGHT) {
     			return false;
     		}
@@ -995,8 +995,8 @@ public class XWFitLayout extends XLayoutContainer {
     }
     
     /**
-     * È¥³ıÄÚ±ß¾à
-     * ÖØÉè¼ä¸ôÊ±£¬±£´æÊµ¼Ê´óĞ¡Ê±¶¼ÒªÏÈÈ¥µôÄÚ±ß¾à
+     * å»é™¤å†…è¾¹è·
+     * é‡è®¾é—´éš”æ—¶ï¼Œä¿å­˜å®é™…å¤§å°æ—¶éƒ½è¦å…ˆå»æ‰å†…è¾¹è·
      */
     public void moveContainerMargin() {
     	PaddingMargin margin = toData().getMargin();
@@ -1065,7 +1065,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
     
 	/**
-	 * ·µ»ØÈİÆ÷´óĞ¡µÄ°Ù·Ö±È
+	 * è¿”å›å®¹å™¨å¤§å°çš„ç™¾åˆ†æ¯”
 	 * @return the containerPercent
 	 */
 	public double getContainerPercent() {
@@ -1073,7 +1073,7 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 
 	/**
-	 * ÉèÖÃÈİÆ÷´óĞ¡µÄ°Ù·Ö±È
+	 * è®¾ç½®å®¹å™¨å¤§å°çš„ç™¾åˆ†æ¯”
 	 * @param containerPercent the containerPercent to set
 	 */
 	public void setContainerPercent(double containerPercent) {
@@ -1083,59 +1083,59 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏ×§(±íµ¥ÖĞ²ÎÊıÃæ°åºÍ×ÔÊÊÓ¦²¼¾Ö²»¿ÉÒÔÍÏ×§)
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–æ‹½(è¡¨å•ä¸­å‚æ•°é¢æ¿å’Œè‡ªé€‚åº”å¸ƒå±€ä¸å¯ä»¥æ‹–æ‹½)
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isSupportDrag(){
         return false;
     }
     
     /**
-     * ·µ»Ø½çÃæ´¦¸ù¾İ°Ù·Ö±Èµ÷ÕûºóµÄ×îĞ¡¿í¶È
-     * @return ×îĞ¡¿í¶È
+     * è¿”å›ç•Œé¢å¤„æ ¹æ®ç™¾åˆ†æ¯”è°ƒæ•´åçš„æœ€å°å®½åº¦
+     * @return æœ€å°å®½åº¦
      */
     public int getActualMinWidth() {
 		return this.minWidth;
 	}
     
     /**
-     * ·µ»Ø½çÃæ´¦¸ù¾İ°Ù·Ö±Èµ÷ÕûºóµÄ×îĞ¡¸ß¶È
-     * @return ×îĞ¡¸ß¶È
+     * è¿”å›ç•Œé¢å¤„æ ¹æ®ç™¾åˆ†æ¯”è°ƒæ•´åçš„æœ€å°é«˜åº¦
+     * @return æœ€å°é«˜åº¦
      */
     public int getActualMinHeight() {
 		return this.minHeight;
 	}
     
     /**
-     * ·µ»Ø½çÃæ´¦¸ù¾İ°Ù·Ö±Èµ÷ÕûºóµÄ¼ä¸ô´óĞ¡£¨ÇÒÎªÅ¼Êı£©
-     * @return ¼ä¸ô
+     * è¿”å›ç•Œé¢å¤„æ ¹æ®ç™¾åˆ†æ¯”è°ƒæ•´åçš„é—´éš”å¤§å°ï¼ˆä¸”ä¸ºå¶æ•°ï¼‰
+     * @return é—´éš”
      */
     public int getAcualInterval() {
-    	// adapterÄÇ±ß½»²æÈıµÈ·Ö¡¢É¾³ı¶¼ÒªÅĞ¶ÏÊÇ·ñ¶ÔÆë£¬ËùÒÔ¼ä¸ô×ªÎªÅ¼Êı
+    	// adapteré‚£è¾¹äº¤å‰ä¸‰ç­‰åˆ†ã€åˆ é™¤éƒ½è¦åˆ¤æ–­æ˜¯å¦å¯¹é½ï¼Œæ‰€ä»¥é—´éš”è½¬ä¸ºå¶æ•°
     	int interval = (int) (toData().getCompInterval()*containerPercent);
     	int val = interval/2;
     	return val*2;
     }
 
 	/**
-	 * ·µ»ØÊÇ·ñÒÑ¾­¼ÓÉÏ¼ä¸ô
-	 * @return the hasCalGap ÊÇ·ñ
+	 * è¿”å›æ˜¯å¦å·²ç»åŠ ä¸Šé—´éš”
+	 * @return the hasCalGap æ˜¯å¦
 	 */
 	public boolean isHasCalGap() {
 		return hasCalGap;
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°µÄ¼ä¸ô
-	 * @param hasCalGap the hasCalGap to set ¼ä¸ô
+	 * è®¾ç½®å½“å‰çš„é—´éš”
+	 * @param hasCalGap the hasCalGap to set é—´éš”
 	 */
 	public void setHasCalGap(boolean hasCalGap) {
 		this.hasCalGap = hasCalGap;
 	}
 	
 	/**
-	 * ÉèÖÃÉÏ´ÎµÄ¼ä¸ô
-	 * @param backupPercent ÉÏ´ÎµÄ°Ù·Ö±È
+	 * è®¾ç½®ä¸Šæ¬¡çš„é—´éš”
+	 * @param backupPercent ä¸Šæ¬¡çš„ç™¾åˆ†æ¯”
 	 */
 	public void setBackupGap(double backupPercent) {
 		int value = (int) (toData().getCompInterval()*backupPercent);
@@ -1144,12 +1144,12 @@ public class XWFitLayout extends XLayoutContainer {
 	}
 	
     /**
-	 * Ñ°ÕÒ×î½üµÄÎª×ÔÊÊÓ¦²¼¾ÖµÄ¸¸ÈİÆ÷
+	 * å¯»æ‰¾æœ€è¿‘çš„ä¸ºè‡ªé€‚åº”å¸ƒå±€çš„çˆ¶å®¹å™¨
 	 * 
-	 * @return ²¼¾ÖÈİÆ÷
+	 * @return å¸ƒå±€å®¹å™¨
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç3:15:28
+	 * @date 2014-12-30-ä¸‹åˆ3:15:28
 	 * 
 	 */
 	public XLayoutContainer findNearestFit() {

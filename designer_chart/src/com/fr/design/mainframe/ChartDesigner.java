@@ -23,11 +23,11 @@ import java.util.ArrayList;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÏÂÎç4:30
+ * Time: ä¸‹åˆ4:30
  */
 public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseListener{
 
-    private ChartArea chartArea;//ÉÏ²ãÇøÓò
+    private ChartArea chartArea;//ä¸Šå±‚åŒºåŸŸ
     private boolean hasCalGap = false;
     private ChartDesignerUI designerUI;
     private ArrayList<ChangeListener> changeListeners = new ArrayList<ChangeListener>();
@@ -52,11 +52,11 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
                 }
             }
         });
-        updateUI();// ³õÊ¼»¯½çÃæÉè¼Æ¹¤¾ßµÄUIÊµÀı
+        updateUI();// åˆå§‹åŒ–ç•Œé¢è®¾è®¡å·¥å…·çš„UIå®ä¾‹
     }
 
     /**
-     * ÉèÖÃÆäUIÀàÎªDesignerUI£¬¸ºÔğäÖÈ¾
+     * è®¾ç½®å…¶UIç±»ä¸ºDesignerUIï¼Œè´Ÿè´£æ¸²æŸ“
      */
     @Override
     public void updateUI() {
@@ -64,125 +64,125 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
     }
 
     /**
-     * ÉèÖÃÉÏ²ãÇøÓò
-     * @param chartArea Í¼±íÇøÓò
+     * è®¾ç½®ä¸Šå±‚åŒºåŸŸ
+     * @param chartArea å›¾è¡¨åŒºåŸŸ
      */
     public void setParent(ChartArea chartArea) {
         this.chartArea = chartArea;
     }
 
     /**
-     * ¸´ÖÆ
+     * å¤åˆ¶
      */
     public void copy() {
 
     }
 
     /**
-     * ğ¤Ìù
-     * @return ³É¹¦·µ»Øtrue
+     * é»è´´
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean paste() {
         return false;
     }
 
     /**
-     * ¼ôÇĞ
-     * @return ³É¹¦·µ»ØTRUE
+     * å‰ªåˆ‡
+     * @return æˆåŠŸè¿”å›TRUE
      */
     public boolean cut() {
         return false;
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
 
     }
 
     /**
-     * È¨ÏŞ±à¼­Ãæ°å
-     * @return Ãæ°å
+     * æƒé™ç¼–è¾‘é¢æ¿
+     * @return é¢æ¿
      */
     public AuthorityEditPane createAuthorityEditPane() {
         return null;
     }
 
     /**
-     * ¹¤¾ßÌõ
-     * @return ¹¤¾ßÌõ
+     * å·¥å…·æ¡
+     * @return å·¥å…·æ¡
      */
     public ToolBarMenuDockPlus getToolBarMenuDockPlus() {
         return null;
     }
 
     /**
-     * ²Ëµ¥×´Ì¬
-     * @return ×´Ì¬
+     * èœå•çŠ¶æ€
+     * @return çŠ¶æ€
      */
     public int getMenuState() {
         return 0;
     }
 
     /**
-     * ¶«ÉÏÃæ°å
-     * @return Ãæ°å
+     * ä¸œä¸Šé¢æ¿
+     * @return é¢æ¿
      */
     public JPanel getEastUpPane() {
         return null;
     }
 
     /**
-     * ¶«ÏÂÃæ°å
-     * @return Ãæ°å
+     * ä¸œä¸‹é¢æ¿
+     * @return é¢æ¿
      */
     public JPanel getEastDownPane() {
         return null;
     }
 
     /**
-     * È¡Ïû¸ñÊ½
+     * å–æ¶ˆæ ¼å¼
      */
     public void cancelFormat() {
 
     }
 
     /**
-     * Í¼±íÉè¼ÆÆ÷µÃ¹¤¾ßÌõÏî
-     * @return Í¼±íÉè¼ÆÆ÷µÃ¹¤¾ßÌõÏî
+     * å›¾è¡¨è®¾è®¡å™¨å¾—å·¥å…·æ¡é¡¹
+     * @return å›¾è¡¨è®¾è®¡å™¨å¾—å·¥å…·æ¡é¡¹
      */
     public ToolBarDef[] toolbars4Target() {
         return new ToolBarDef[0];
     }
 
     /**
-     * ²Ëµ¥
-     * @return ²Ëµ¥
+     * èœå•
+     * @return èœå•
      */
     public MenuDef[] menus4Target() {
         return new MenuDef[0];
     }
 
     /**
-     * ²Ëµ¥Ïî
-     * @return ²Ëµ¥Ïî
+     * èœå•é¡¹
+     * @return èœå•é¡¹
      */
     public ShortCut[] shortcut4TemplateMenu() {
         return new ShortCut[0];
     }
 
     /**
-     * È¨ÏŞ±à¼­µÃ²Ëµ¥Ïî
-     * @return ²Ëµ¥Ïî
+     * æƒé™ç¼–è¾‘å¾—èœå•é¡¹
+     * @return èœå•é¡¹
      */
     public ShortCut[] shortCuts4Authority() {
         return new ShortCut[0];
     }
 
     /**
-     * ±íµ¥µÃ¹¤¾ßÌõ°´Å¥
-     * @return ±íµ¥µÃ¹¤¾ßÌõ°´Å¥
+     * è¡¨å•å¾—å·¥å…·æ¡æŒ‰é’®
+     * @return è¡¨å•å¾—å·¥å…·æ¡æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         return new JComponent[0];
@@ -190,8 +190,8 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
 
 
     /**
-     * ·µ»Ø±íµ¥ÇøÓò
-     * @return ±íµ¥ÇøÓò
+     * è¿”å›è¡¨å•åŒºåŸŸ
+     * @return è¡¨å•åŒºåŸŸ
      */
     public ChartArea getArea() {
         return chartArea;
@@ -199,8 +199,8 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
 
 
     /**
-     * Êó±êµã»÷
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡ç‚¹å‡»
+     * @param e äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
         designerUI.mouseClicked(e);
@@ -208,32 +208,32 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
     }
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÊÍ·Å
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡é‡Šæ”¾
+     * @param e äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
 
     }
 
     /**
-     * Êó±ê½øÈë
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
 
     }
 
     /**
-     * Êó±êÍË³ö
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡é€€å‡º
+     * @param e äº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
 
@@ -256,7 +256,7 @@ public class ChartDesigner extends TargetComponent<ChartBook>  implements MouseL
     }
 
     /**
-     * Çå³ı¹¤¾ßÀ¸ÉÏÃæÈ«¾Ö·ç¸ñ°´Å¥µÄÑ¡ÖĞ
+     * æ¸…é™¤å·¥å…·æ ä¸Šé¢å…¨å±€é£æ ¼æŒ‰é’®çš„é€‰ä¸­
      */
     public void clearToolBarStyleChoose(){
         chartToolBarPane.clearStyleChoose();

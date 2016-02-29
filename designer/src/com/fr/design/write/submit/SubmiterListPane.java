@@ -42,9 +42,9 @@ public class SubmiterListPane extends ObjectJControlPane {
     }
 
     /**
-     * ´´½¨Ñ¡Ïî
+     * åˆ›å»ºé€‰é¡¹
      *
-     * @return Ñ¡Ïî
+     * @return é€‰é¡¹
      */
     public NameableCreator[] createNameableCreators() {
         return new NameableCreator[]{
@@ -85,12 +85,12 @@ public class SubmiterListPane extends ObjectJControlPane {
     }
 
     /**
-     * ¸üĞÂÌî±¨ÊôĞÔ
+     * æ›´æ–°å¡«æŠ¥å±æ€§
      *
-     * @param reportWriteAttr ±¨±íÌî±¨ÊôĞÔ
+     * @param reportWriteAttr æŠ¥è¡¨å¡«æŠ¥å±æ€§
      */
     public void updateReportWriteAttr(ReportWriteAttrProvider reportWriteAttr) {
-        // Nameable[]¾ÓÈ»²»ÄÜÇ¿×ª³ÉNameObject[],Ò»¶¨ÒªÕâÃ´Ğ´...
+        // Nameable[]å±…ç„¶ä¸èƒ½å¼ºè½¬æˆNameObject[],ä¸€å®šè¦è¿™ä¹ˆå†™...
         Nameable[] res = this.update();
         NameObject[] res_array = new NameObject[res.length];
         java.util.Arrays.asList(res).toArray(res_array);
@@ -136,7 +136,7 @@ public class SubmiterListPane extends ObjectJControlPane {
         public BuiltInSQLSubmiterProvider updateBean() {
             DBManipulation dbManipulation = dbManipulationPane.updateBean();
 
-            //¸´ÖÆ¶ÔÏóÓÃÓÚ³·Ïú
+            //å¤åˆ¶å¯¹è±¡ç”¨äºæ’¤é”€
             try{
                 editing = (BuiltInSQLSubmiterProvider)editing.clone();
             }catch (Exception e){
@@ -148,7 +148,7 @@ public class SubmiterListPane extends ObjectJControlPane {
         }
 
         /**
-         * ¼ì²éÊÇ·ñ·ûºÏ¹æ·¶
+         * æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„èŒƒ
          *
          * @throws Exception
          */

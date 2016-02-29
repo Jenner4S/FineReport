@@ -28,7 +28,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-5 ¾ÛºÏ±¨±í¿é±à¼­Æ÷
+ * @since 6.5.4 åˆ›å»ºäº2011-5-5 èšåˆæŠ¥è¡¨å—ç¼–è¾‘å™¨
  */
 public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> extends JComponent{
 	
@@ -37,9 +37,9 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 	protected int resolution = ScreenResolution.getScreenResolution();
 	protected T editComponent;
 	
-	private JComponent addHeightTool;// ¸Ä±ä¸ß¶ÈµÄ×é¼ş
-	private JComponent addWidthTool; // ¸Ä±ä¿í¶ÈµÄ×é¼ş
-	private JComponent moveTool; // ÍÏ¶¯¾ÛºÏ¿éµÄ×é¼ş
+	private JComponent addHeightTool;// æ”¹å˜é«˜åº¦çš„ç»„ä»¶
+	private JComponent addWidthTool; // æ”¹å˜å®½åº¦çš„ç»„ä»¶
+	private JComponent moveTool; // æ‹–åŠ¨èšåˆå—çš„ç»„ä»¶
 	
 	private boolean isDragging;
 	private Absorptionline lineInX;
@@ -80,7 +80,7 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 	}
 	
 	/**
-	 * ÖØÖÃµ±Ç°Êó±êÑ¡ÖĞ×´Ì¬
+	 * é‡ç½®å½“å‰é¼ æ ‡é€‰ä¸­çŠ¶æ€
 	 * 
 	 */
 	public abstract void resetSelectionAndChooseState();
@@ -136,9 +136,9 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 	}
 	
 	/**
-	 * µ±Ç°ÊÇ·ñ´¦ÓÚÍÏ¶¯×´Ì¬
+	 * å½“å‰æ˜¯å¦å¤„äºæ‹–åŠ¨çŠ¶æ€
 	 * 
-	 * @return ÊÇ·ñ´¦ÓÚÍÏ¶¯×´Ì¬
+	 * @return æ˜¯å¦å¤„äºæ‹–åŠ¨çŠ¶æ€
 	 * 
 	 */
 	public boolean isDragging() {
@@ -155,10 +155,10 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 	
 	
 	/**
-	 * ÏÔÊ¾½ûÖ¹ÖØµş´°¿Ú
+	 * æ˜¾ç¤ºç¦æ­¢é‡å çª—å£
 	 * 
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
 	 * 
 	 */
 	public void showForbiddenWindow(int x, int y){
@@ -166,7 +166,7 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 	}
 	
 	/**
-	 * Òş²Ø½ûÖ¹ÖØµş´°¿Ú
+	 * éšè—ç¦æ­¢é‡å çª—å£
 	 * 
 	 */
 	public void hideForbiddenWindow(){
@@ -182,7 +182,7 @@ public abstract class BlockEditor<T extends JComponent,U extends TemplateBlock> 
 		}
 	}
 
-	// ¸ù¾İTemplateBlockµÄ±ß½çÈ·¶¨BlockEditorµÄ±ß½ç  notice£º chartµÄsetbounds±»¸²¸ÇÁË
+	// æ ¹æ®TemplateBlockçš„è¾¹ç•Œç¡®å®šBlockEditorçš„è¾¹ç•Œ  noticeï¼š chartçš„setboundsè¢«è¦†ç›–äº†
 	protected void initSize() {
 		Dimension cornerSize = getCornerSize();
 		TemplateBlock block = getValue();

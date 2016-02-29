@@ -34,9 +34,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * ÖµÖá¾¯½äÏß½çÃæ, ÊôĞÔ±í, Í¼±íÑùÊ½.
+ * å€¼è½´è­¦æˆ’çº¿ç•Œé¢, å±æ€§è¡¨, å›¾è¡¨æ ·å¼.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-5 ÉÏÎç01:13:25
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-5 ä¸Šåˆ01:13:25
  */
 public class ChartValuePane extends ChartAxisUsePane<Axis>{
 	
@@ -146,7 +146,7 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
 	}
 
 
-	//¹¹ÔìÊı¾İ¶¨Òå½çÃæ
+	//æ„é€ æ•°æ®å®šä¹‰ç•Œé¢
 	private JPanel createDataDefinePane(){
 		double p = TableLayout.PREFERRED;
 		double f = TableLayout.FILL;
@@ -159,7 +159,7 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
 		return TableLayoutHelper.createTableLayoutPane(component, rowSize, columnSize);
 	}
 
-    // ·µ»Ø×î´ó×îĞ¡Öµ½çÃæ. À×´ïÖá ÓĞÇĞ»»°´Å¥.
+    // è¿”å›æœ€å¤§æœ€å°å€¼ç•Œé¢. é›·è¾¾è½´ æœ‰åˆ‡æ¢æŒ‰é’®.
     protected JPanel initMinMaxValue() {
         if(minValuePane == null) {
             minValuePane = new MinMaxValuePane();
@@ -168,7 +168,7 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
         return minValuePane;
     }
 	
-	// ·µ»Ø¶ÔÊıÏà¹Ø½çÃæ. °Ù·Ö±È Ã»ÓĞ´Ë½çÃæ.
+	// è¿”å›å¯¹æ•°ç›¸å…³ç•Œé¢. ç™¾åˆ†æ¯” æ²¡æœ‰æ­¤ç•Œé¢.
 	protected JPanel addLogarithmicPane2ValuePane() {
         JPanel labelLogPane = FRGUIPaneFactory.createLeftFlowZeroGapBorderPane();
         labelLogPane.add(logBox = new UICheckBox(Inter.getLocText("Logarithmic")+":"));
@@ -211,14 +211,14 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
         this.axisTitlePane.populate(axis);
     }
     
-    protected JPanel aliagnZero4Second() {// Ìí¼Ó 0Öµ¶ÔÆë 
+    protected JPanel aliagnZero4Second() {// æ·»åŠ  0å€¼å¯¹é½ 
     	return null;
     }
     
   
 	/**
-	 * ½çÃæ±êÌâ.
-     * @return  ·µ»Ø±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜.
+     * @return  è¿”å›æ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Chart_F_Radar_Axis");
@@ -281,7 +281,7 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
 				numberAxis.setLog(true);
 				Formula formula = new Formula(increment);
 				Number number = ChartBaseUtils.formula2Number(formula);
-				// ½çÃæ´¦Àí·ÀÖ¹ Óöµ½ ¶ÔÊıÔöÁ¿ÎªĞ¡ÓÚ1µÄÖµ.
+				// ç•Œé¢å¤„ç†é˜²æ­¢ é‡åˆ° å¯¹æ•°å¢é‡ä¸ºå°äº1çš„å€¼.
 				if (number != null && number.doubleValue() <= 1.0) {
 					numberAxis.setLogBase(new Formula("2"));
 				} else {
@@ -300,7 +300,7 @@ public class ChartValuePane extends ChartAxisUsePane<Axis>{
         populateBean(axis);
 	}
 
-	// °ÑaxisrevserdÈ¥µô
+	// æŠŠaxisrevserdå»æ‰
 	private void relayoutNoAxisRevser(){
 		this.removeAll();
 		JPanel pane = isSupportLineStyle() ? getPaneWithOutAxisRevert() : getPaneWithOutAxisRevertAndLineStyle() ;

@@ -210,7 +210,7 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 	}
 
 	/**
-	 * ÉèÖÃ±ä»¯µÄ±³¾°ÑÕÉ«
+	 * è®¾ç½®å˜åŒ–çš„èƒŒæ™¯é¢œè‰²
 	 * */
 	protected void setBackgroundUIColor(int index,Color color) {
 		((ColorPickerPaneNumFiled)textFieldList.get(index)).setBackgroundUIColor(color);
@@ -228,7 +228,7 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 	}
 
 	/**
-	 * ·µ»ØÔ¤ÉèµÄ½çÃæ´óĞ¡.
+	 * è¿”å›é¢„è®¾çš„ç•Œé¢å¤§å°.
 	 */
 	public Dimension getPreferredSize() {
 		if (designTypeButtonGroup.getSelectedIndex() == 0) {
@@ -241,9 +241,9 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		changeListener = new ChangeListener() {
@@ -258,9 +258,9 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
@@ -483,13 +483,13 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
         }
 
 		/**
-		 * ¸ù¾İÕâĞ© È·¶¨Ã¿¸öFieldµÄ×î´ó×îĞ¡Öµ. ²¢ÇÒ¸Ä±ä±³¾°ÑÕÉ«.
+		 * æ ¹æ®è¿™äº› ç¡®å®šæ¯ä¸ªFieldçš„æœ€å¤§æœ€å°å€¼. å¹¶ä¸”æ”¹å˜èƒŒæ™¯é¢œè‰².
 		 */
 		public void checkEveryFiledMinMax() {
 			
 			double forValue = Double.MAX_VALUE;
 			double backValue = -Double.MAX_VALUE;
-			for(int i = 0, size = textFieldList.size(); i < size; i++) {// check ÊÇ·ñºÏ¸ñ, È»ºó¼ì²é ÊÇ·ñ¸Ä±äÑÕÉ«,
+			for(int i = 0, size = textFieldList.size(); i < size; i++) {// check æ˜¯å¦åˆæ ¼, ç„¶åæ£€æŸ¥ æ˜¯å¦æ”¹å˜é¢œè‰²,
 				if(i == size - 1) {
 					backValue = -Double.MAX_VALUE;
 				} else {
@@ -510,7 +510,7 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 					}
 					forValue = value;
 				}else{
-					//¹«Ê½ÀàĞÍ
+					//å…¬å¼ç±»å‹
 					setBackgroundUIColor(i,Color.white);
 				}
 			}
@@ -599,9 +599,9 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 
 
 	/**
-	 *Ë¢ĞÂÑÕÉ«Ñ¡È¡Æ÷
-	 * @param colorArray ÑÕÉ«Öµ
-	 * @param valueArray ÖµÇø¼ä
+	 *åˆ·æ–°é¢œè‰²é€‰å–å™¨
+	 * @param colorArray é¢œè‰²å€¼
+	 * @param valueArray å€¼åŒºé—´
 	 */
 	public void refreshGroupPane(Color[] colorArray, Formula[] valueArray) {
 		colorGroup.refreshColorGroupPane(colorArray);
@@ -651,7 +651,7 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 		hotAreaColor.setAreaNumber(regionNumPane.updateBean().intValue());
 
 		if (hotAreaColor.getUseType() == MapHotAreaColor.CUSTOM) {
-			if(!checkInOrder()) {// ÏÈ¼ì²éË³Ğò,  Èç¹ûÅÅÁĞ²»ÕıÈ·, ²»´¥·¢±£´æµÈ.
+			if(!checkInOrder()) {// å…ˆæ£€æŸ¥é¡ºåº,  å¦‚æœæ’åˆ—ä¸æ­£ç¡®, ä¸è§¦å‘ä¿å­˜ç­‰.
 				return;
 			}
 			hotAreaColor.clearColor();
@@ -664,7 +664,7 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 		}
 	}
 
-	// ¼ì²é Êı×ÖË³Ğò.
+	// æ£€æŸ¥ æ•°å­—é¡ºåº.
 	private boolean checkInOrder() {
 		textGroup.checkEveryFiledMinMax();
 		
@@ -723,8 +723,8 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 
 
 	/**
-	 * ²âÊÔ³ÌĞòÖ÷º¯Êı
-	 * @param args ²ÎÊı
+	 * æµ‹è¯•ç¨‹åºä¸»å‡½æ•°
+	 * @param args å‚æ•°
 	 */
 	public static void main(String... args) {
 		JFrame jf = new JFrame("test");

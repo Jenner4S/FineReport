@@ -111,14 +111,14 @@ public class UITextField extends JTextField implements UIObserver, GlobalNameObs
     }
 
     /**
-     * ÉèÖÃ±ä»¯µÄ±³¾°ÑÕÉ«
+     * è®¾ç½®å˜åŒ–çš„èƒŒæ™¯é¢œè‰²
      */
     public void setBackgroundUIColor(Color color) {
         ((UITextFieldUI) this.ui).setBackgroundColor4NoGiveNumber(color);
     }
 
     /**
-     * ¸üĞÂUI
+     * æ›´æ–°UI
      */
     public void updateUI() {
         this.setUI(new UITextFieldUI(this));
@@ -148,18 +148,18 @@ public class UITextField extends JTextField implements UIObserver, GlobalNameObs
     }
 
     /**
-     * ×¢²á¼àÌı
+     * æ³¨å†Œç›‘å¬
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerNameListener(GlobalNameListener listener) {
         globalNameListener = listener;
     }
 
     /**
-     * ÊÇ·ñĞèÒª»ØÓ¦¼àÌıÆ÷ÏìÓ¦
+     * æ˜¯å¦éœ€è¦å›åº”ç›‘å¬å™¨å“åº”
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean shouldResponseNameListener() {
         return true;
@@ -167,26 +167,26 @@ public class UITextField extends JTextField implements UIObserver, GlobalNameObs
 
 
     /**
-     * ×¢²á¼àÌıÆ÷
+     * æ³¨å†Œç›‘å¬å™¨
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
     }
 
     /**
-     * ÊÇ·ñĞèÒª»ØÓ¦¼àÌıÆ÷ÏìÓ¦
+     * æ˜¯å¦éœ€è¦å›åº”ç›‘å¬å™¨å“åº”
      *
-     * @return ÊÇÔò·µ»Øtrue
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean shouldResponseChangeListener() {
         return true;
     }
 
     /**
-     * Ö÷º¯Êı
-     * @param args ²ÎÊı
+     * ä¸»å‡½æ•°
+     * @param args å‚æ•°
      */
     public static void main(String... args) {
         LayoutManager layoutManager = null;

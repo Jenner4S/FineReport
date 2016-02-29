@@ -17,18 +17,18 @@ public class AbstractIndentationUnitProcessor implements IndentationUnitProcesso
     }
 
     /**
-     * ´¦ÀípaddingunitµÄÖµ
-     * @param value ÊäÈë
-     * @return Êä³ö
+     * å¤„ç†paddingunitçš„å€¼
+     * @param value è¾“å…¥
+     * @return è¾“å‡º
      */
     public int paddingUnitProcessor(int value){
         return value;
     }
 
     /**
-     * ´¦Àí´Óspinner´¦»ñµÃµÄÖµ
-     * @param value ÊäÈëÖµ
-     * @return Êä³ö
+     * å¤„ç†ä»spinnerå¤„è·å¾—çš„å€¼
+     * @param value è¾“å…¥å€¼
+     * @return è¾“å‡º
      */
     public int paddingUnitGainFromSpinner(int value){
         return value;

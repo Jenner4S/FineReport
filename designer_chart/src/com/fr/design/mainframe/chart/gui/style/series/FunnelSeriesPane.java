@@ -9,7 +9,7 @@ import javax.swing.*;
  * Created with IntelliJ IDEA.
  * User: Randost
  * Date: 14-12-3
- * Time: ÉÏÎç10:35
+ * Time: ä¸Šåˆ10:35
  * To change this template use File | Settings | File Templates.
  */
 public class FunnelSeriesPane extends AbstractPlotSeriesPane {

@@ -16,8 +16,8 @@ import com.fr.form.ui.container.WFitLayout;
 import com.fr.general.Inter;
 
 /**
- * ×ÔÊÊÓ¦²¼¾Ö×ÔÉíµÄÊôĞÔ±í
- * Ö÷ÒªÎª²¼¾ÖÄÚ×é¼ş¼ä¸ô£¨ºÏ²¢Ë®Æ½ºÍÊúÖ±¼ä¸ô£©£¬Ô­ÑùËõ·Å£¨Îªweb¶Ë±£³Öµ±Ç°Éè¼ÆµÄ¿î¸ß±ÈÀı£©
+ * è‡ªé€‚åº”å¸ƒå±€è‡ªèº«çš„å±æ€§è¡¨
+ * ä¸»è¦ä¸ºå¸ƒå±€å†…ç»„ä»¶é—´éš”ï¼ˆåˆå¹¶æ°´å¹³å’Œç«–ç›´é—´éš”ï¼‰ï¼ŒåŸæ ·ç¼©æ”¾ï¼ˆä¸ºwebç«¯ä¿æŒå½“å‰è®¾è®¡çš„æ¬¾é«˜æ¯”ä¾‹ï¼‰
  * 
  * @author jim
  * @date 2014-6-24
@@ -41,7 +41,7 @@ public class FRFitLayoutPropertiesGroupModel implements GroupModel {
 	}
 
 	/** 
-	 * ²¼¾Ö¹ÜÀíÆ÷×Ô¼ºµÄÊôĞÔ
+	 * å¸ƒå±€ç®¡ç†å™¨è‡ªå·±çš„å±æ€§
 	 */
 	@Override
 	public String getGroupName() {
@@ -99,7 +99,7 @@ public class FRFitLayoutPropertiesGroupModel implements GroupModel {
 			return false;
 		} else {
 			if (row ==0 && xfl.canAddInterval(state)) {
-				// ÉèÖÃÍê¼ä¸ôºó£¬ÒªÍ¬²½´¦Àí½çÃæ×é¼ş£¬ÈİÆ÷Ë¢ĞÂºóÏÔÊ¾³ö¶ÔÓ¦Ğ§¹û
+				// è®¾ç½®å®Œé—´éš”åï¼Œè¦åŒæ­¥å¤„ç†ç•Œé¢ç»„ä»¶ï¼Œå®¹å™¨åˆ·æ–°åæ˜¾ç¤ºå‡ºå¯¹åº”æ•ˆæœ
 				setLayoutGap(state);
 				return true;
 			}else if (row == 1) {
@@ -121,9 +121,9 @@ public class FRFitLayoutPropertiesGroupModel implements GroupModel {
 	}
 
 	/**
-	 * ÊÇ·ñ¿É±à¼­
-	 * @param row ĞĞ
-	 * @return ·ñ
+	 * æ˜¯å¦å¯ç¼–è¾‘
+	 * @param row è¡Œ
+	 * @return å¦
 	 */
 	@Override
 	public boolean isEditable(int row) {

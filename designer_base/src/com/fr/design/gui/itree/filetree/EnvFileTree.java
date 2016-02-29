@@ -27,7 +27,7 @@ import com.fr.stable.CoreConstants;
 import com.fr.stable.StableUtils;
 
 /*
- * ÎÄ¼ş½á¹¹Ê÷.
+ * æ–‡ä»¶ç»“æ„æ ‘.
  */
 public class EnvFileTree extends RefreshableJTree {
 
@@ -101,7 +101,7 @@ public class EnvFileTree extends RefreshableJTree {
 				this.setIcon(null);
 				this.setText(PENDING.toString());
 			}
-			// ÕâÀïĞÂ½¨Ò»¸öLabel×÷ÎªrenderÊÇÒòÎªJTreeÔÚ¶¯Ì¬Ë¢ĞÂµÄÊ±ºò£¬½ÚµãÉÏrender»­²¼µÄµÄ¿í¶È²»»á±ä£¬»áÊ¹µÃÒ»²¿·Ö±È½Ï³¤µÄÊı¾İÏÔÊ¾Îª"..."
+			// è¿™é‡Œæ–°å»ºä¸€ä¸ªLabelä½œä¸ºrenderæ˜¯å› ä¸ºJTreeåœ¨åŠ¨æ€åˆ·æ–°çš„æ—¶å€™ï¼ŒèŠ‚ç‚¹ä¸Šrenderç”»å¸ƒçš„çš„å®½åº¦ä¸ä¼šå˜ï¼Œä¼šä½¿å¾—ä¸€éƒ¨åˆ†æ¯”è¾ƒé•¿çš„æ•°æ®æ˜¾ç¤ºä¸º"..."
 			UILabel label = new UILabel();
 			label.setText(getText());
 			label.setIcon(getIcon());
@@ -117,7 +117,7 @@ public class EnvFileTree extends RefreshableJTree {
 	};
 
 	/*
-	 * ÔÚµ±Ç°treeÖĞÑ¡ÖĞcurrentPath
+	 * åœ¨å½“å‰treeä¸­é€‰ä¸­currentPath
 	 */
 	public void selectPath(String currentPath) {
 		if (currentPath == null) {
@@ -127,7 +127,7 @@ public class EnvFileTree extends RefreshableJTree {
 		DefaultTreeModel m_model = (DefaultTreeModel) this.getModel();
 		ExpandMutableTreeNode treeNode = (ExpandMutableTreeNode) m_model.getRoot();
 		for (int i = 0, len = treeNode.getChildCount(); i < len; i++) {
-			// È¡³öµ±Ç°µÄchildTreeNode,²¢appendµ½searchingPathºóÃæ
+			// å–å‡ºå½“å‰çš„childTreeNode,å¹¶appendåˆ°searchingPathåé¢
 			ExpandMutableTreeNode childTreeNode = (ExpandMutableTreeNode) treeNode.getChildAt(i);
 
 			if (selectFilePath(childTreeNode, "", currentPath, m_model)) {
@@ -142,22 +142,22 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ÔÚcurrentTreeNodeÏÂÕÒÑ°filePath
+	 * åœ¨currentTreeNodeä¸‹æ‰¾å¯»filePath
 	 * 
-	 * prefix + currentTreeNode.getName() = currentTreeNodeËù¶ÔÓ¦µÄPath
+	 * prefix + currentTreeNode.getName() = currentTreeNodeæ‰€å¯¹åº”çš„Path
 	 * 
-	 * ·µ»ØcurrentTreeNodeÏÂÊÇ·ñÕÒµ½ÁËfilePath
+	 * è¿”å›currentTreeNodeä¸‹æ˜¯å¦æ‰¾åˆ°äº†filePath
 	 */
 	private boolean selectFilePath(ExpandMutableTreeNode currentTreeNode, String prefix, String filePath, DefaultTreeModel m_model) {
 		FileNode fileNode = (FileNode) currentTreeNode.getUserObject();
 		String nodePath = fileNode.getName();
 		String currentTreePath = prefix + nodePath;
 
-		// Èç¹ûequals,ËµÃ÷ÕÒµ½ÁË,²»±ØÔÙÕÒÏÂÈ¥ÁË
+		// å¦‚æœequals,è¯´æ˜æ‰¾åˆ°äº†,ä¸å¿…å†æ‰¾ä¸‹å»äº†
 		if (ComparatorUtils.equals(new File(currentTreePath), new File(filePath))) {
 			this.setSelectionPath(new TreePath(m_model.getPathToRoot(currentTreeNode)));
 			return true;
-		} // Èç¹ûµ±Ç°Â·¾¶ÊÇcurrentFilePathµÄParnetFile,ÔòexpandTreeNode,²¢¼ÌĞøÍùÏÂÕÒ
+		} // å¦‚æœå½“å‰è·¯å¾„æ˜¯currentFilePathçš„ParnetFile,åˆ™expandTreeNode,å¹¶ç»§ç»­å¾€ä¸‹æ‰¾
 		else if (EnvFileTree.isParentFile(currentTreePath, filePath)) {
 			this.loadPendingChildTreeNode(currentTreeNode);
 
@@ -176,7 +176,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * Çóµ±Ç°TreeNodeÏÂËùÓĞµÄFileNode.
+	 * æ±‚å½“å‰TreeNodeä¸‹æ‰€æœ‰çš„FileNode.
 	 */
 	private FileNode[] listFileNodes(ExpandMutableTreeNode currentTreeNode) {
 		if (currentTreeNode == null) {
@@ -193,7 +193,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ÇófilePathÕâ¸öString,ÇóÆäÂ·¾¶ÏÂÃæµÄËùÓĞµÄFileNode
+	 * æ±‚filePathè¿™ä¸ªString,æ±‚å…¶è·¯å¾„ä¸‹é¢çš„æ‰€æœ‰çš„FileNode
 	 */
 	private FileNode[] listFileNodes(String filePath) {
 		FileNode[] res_fns = null;
@@ -208,7 +208,7 @@ public class EnvFileTree extends RefreshableJTree {
 			res_fns = new FileNode[0];
 		}
 
-		// ÓÃFileNodeFilter¹ıÂËÒ»ÏÂ
+		// ç”¨FileNodeFilterè¿‡æ»¤ä¸€ä¸‹
 		if (filter != null) {
 			java.util.List<FileNode> t_list = new ArrayList<FileNode>();
 			for (int i = 0; i < res_fns.length; i++) {
@@ -226,7 +226,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * »ñÈ¡µ±Ç°Ñ¡ÖĞµÄFilePathµÄString,Õâ¸öFilePathÊÇĞèÒªÆ´ÆğÀ´µÄ
+	 * è·å–å½“å‰é€‰ä¸­çš„FilePathçš„String,è¿™ä¸ªFilePathæ˜¯éœ€è¦æ‹¼èµ·æ¥çš„
 	 */
 	public FileNode getSelectedFileNode() {
 		TreePath selectedTreePath = this.getSelectionPath();
@@ -245,7 +245,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ¸Ä±äEnvºó,¸ù¾İ¹¹Ôìº¯ÊıÊ±ÉèÖÃµÄRootPathes,ÖØĞÂ¼ÓÔØ
+	 * æ”¹å˜Envå,æ ¹æ®æ„é€ å‡½æ•°æ—¶è®¾ç½®çš„RootPathes,é‡æ–°åŠ è½½
 	 */
 	public void refreshEnv(Env env) {
 		this.env = env;
@@ -256,11 +256,11 @@ public class EnvFileTree extends RefreshableJTree {
 
 		FileNode[] fns;
 
-		// Èç¹ûrootPathsÊÇnullµÄ»°ÁĞ³öËùÓĞÎÄ¼ş
+		// å¦‚æœrootPathsæ˜¯nullçš„è¯åˆ—å‡ºæ‰€æœ‰æ–‡ä»¶
 		if (subPathes == null) {
 			fns = listFileNodes(this.treeRootPath);
 		} else {
-			// ÖØĞÂ¼ÓÔØĞÂµÄFileDirectoryNode
+			// é‡æ–°åŠ è½½æ–°çš„FileDirectoryNode
 			fns = new FileNode[subPathes.length];
 			for (int i = 0; i < subPathes.length; i++) {
 				fns[i] = new FileNode(StableUtils.pathJoin(new String[]{this.treeRootPath, subPathes[i]}), true);
@@ -279,26 +279,26 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ÉèÖÃµ±Ç°TreeµÄrootPathes
+	 * è®¾ç½®å½“å‰Treeçš„rootPathes
 	 */
 	private void setSubPathes(String[] subPathes) {
 		this.subPathes = subPathes;
 	}
 
 	/**
-	 * currentTreeNodeÏÂÃæÈç¹ûÊÇPENDINGµÄ½Úµã,¼ÓÔØÖ®...
+	 * currentTreeNodeä¸‹é¢å¦‚æœæ˜¯PENDINGçš„èŠ‚ç‚¹,åŠ è½½ä¹‹...
 	 */
 	private void loadPendingChildTreeNode(ExpandMutableTreeNode currentTreeNode) {
 		if (currentTreeNode.isLeaf()) {
 			return;
 		}
 
-		// ÅĞ¶ÏµÚÒ»¸öº¢×Ó½Úµã.UserObjectÊÇ²»ÊÇPENDING,Èç¹ûÊÇPENDINGµÄ»°,ĞèÒªÖØĞÂ¼ÓÔØÕâ¸öTreeNode
+		// åˆ¤æ–­ç¬¬ä¸€ä¸ªå­©å­èŠ‚ç‚¹.UserObjectæ˜¯ä¸æ˜¯PENDING,å¦‚æœæ˜¯PENDINGçš„è¯,éœ€è¦é‡æ–°åŠ è½½è¿™ä¸ªTreeNode
 		ExpandMutableTreeNode flag = (ExpandMutableTreeNode) currentTreeNode.getFirstChild();
 		if (flag == null || flag.getUserObject() != PENDING) {
 			return;
 		}
-		currentTreeNode.removeAllChildren(); // É¾³ıËùÓĞµÄ½Úµã.
+		currentTreeNode.removeAllChildren(); // åˆ é™¤æ‰€æœ‰çš„èŠ‚ç‚¹.
 
 		ExpandMutableTreeNode[] children = loadChildTreeNodes(currentTreeNode);
 		for (ExpandMutableTreeNode c : children) {
@@ -307,7 +307,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ÅĞ¶ÏeTreeNodeÊÇ·ñĞèÒªRefresh,¿ÉÌáÇ°ÖĞÖ¹,·µ»ØtrueÔò±íÊ¾ÌáÇ°ÖĞÖ¹,²»ĞèÒªRefresh
+	 * åˆ¤æ–­eTreeNodeæ˜¯å¦éœ€è¦Refresh,å¯æå‰ä¸­æ­¢,è¿”å›trueåˆ™è¡¨ç¤ºæå‰ä¸­æ­¢,ä¸éœ€è¦Refresh
 	 */
 	protected boolean interceptRefresh(ExpandMutableTreeNode eTreeNode) {
 		Object userObject = eTreeNode.getUserObject();
@@ -319,7 +319,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * µÃµ½treeNodeµÄ×Ó½ÚµãExpandMutableTreeNodeµÄÊı×é
+	 * å¾—åˆ°treeNodeçš„å­èŠ‚ç‚¹ExpandMutableTreeNodeçš„æ•°ç»„
 	 */
 	protected ExpandMutableTreeNode[] loadChildTreeNodes(ExpandMutableTreeNode treeNode) {
 		FileNode[] fn_array = listFileNodes(treeNode);
@@ -328,7 +328,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * °ÑFileNode[]×ª³ÉExpandMutableTreeNode[]
+	 * æŠŠFileNode[]è½¬æˆExpandMutableTreeNode[]
 	 */
 	private ExpandMutableTreeNode[] fileNodeArray2TreeNodeArray(FileNode[] fn_array) {
 		ExpandMutableTreeNode[] res = new ExpandMutableTreeNode[fn_array.length];
@@ -344,7 +344,7 @@ public class EnvFileTree extends RefreshableJTree {
 	}
 
 	/*
-	 * ÊÇ·ñÊÇ¸¸×Ó¹ØÏµµÄÎÄ¼ş.
+	 * æ˜¯å¦æ˜¯çˆ¶å­å…³ç³»çš„æ–‡ä»¶.
 	 */
 	private static boolean isParentFile(String parentFilePath, String childFilePath) {
 		File parentFile = new File(parentFilePath);

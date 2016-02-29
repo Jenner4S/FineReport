@@ -11,8 +11,8 @@ import com.fr.general.Inter;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-12-29 ÏÂÎç02:28:43
- * ÀàËµÃ÷: ĞĞÁĞÑ¡Ôñ½çÃæ  Ö»ÊÇºÍColumnRowPaneµÄ²¼¾Ö²»Í¬.
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-12-29 ä¸‹åˆ02:28:43
+ * ç±»è¯´æ˜: è¡Œåˆ—é€‰æ‹©ç•Œé¢  åªæ˜¯å’ŒColumnRowPaneçš„å¸ƒå±€ä¸åŒ.
  */
 public class ColumnRowVerticalPane extends ColumnRowPane {
 

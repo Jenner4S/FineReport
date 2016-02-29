@@ -24,7 +24,7 @@ import java.util.Map;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-5
- * Time: 下午4:03
+ * Time: 涓嬪崍4:03
  */
 public class UISpinnerUI extends BasicSpinnerUI {
     private static final ArrowButtonHandler NEXT_BUTTON_HANDLER =
@@ -33,9 +33,9 @@ public class UISpinnerUI extends BasicSpinnerUI {
             new ArrowButtonHandler("decrement", false);
 
     /**
-     * 创建UI
-     * @param c 组件
-     * @return 组件UI
+     * 鍒涘缓UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UISpinnerUI();

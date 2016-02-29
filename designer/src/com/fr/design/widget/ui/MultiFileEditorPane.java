@@ -60,7 +60,7 @@ public class MultiFileEditorPane extends FieldEditorDefinePane<MultiFileEditor> 
 
 	@Override
 	protected void populateSubFieldEditorBean(MultiFileEditor e) {
-		// 这里存在兼容问题 getAccept可能没在待选项目中
+		// 杩欓噷瀛樺湪鍏煎闂 getAccept鍙兘娌″湪寰呴�夐」鐩腑
 		acceptType.setSelectedItem(e.getAccept());
 		singleFileCheckBox.setSelected(e.isSingleFile());
 		fileSizeField.setValue(e.getMaxSize());

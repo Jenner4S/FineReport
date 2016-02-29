@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 
 /**
- * Í¼±í ³¬¼¶Á´½Ó  tab ÇĞ»»
+ * å›¾è¡¨ è¶…çº§é“¾æ¥  tab åˆ‡æ¢
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-8-6 ÏÂÎç02:18:23
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-8-6 ä¸‹åˆ02:18:23
  */
 public class ChartHyperEditPane  extends ChartEditPane {
 	
@@ -59,15 +59,15 @@ public class ChartHyperEditPane  extends ChartEditPane {
 	}
 	
 	/**
-	 * ¹ØÁª  ¶ÔÓ¦µÄChartComponent
-	 * @param chartComponent ¶ÔÓ¦µÄChartComponent
+	 * å…³è”  å¯¹åº”çš„ChartComponent
+	 * @param chartComponent å¯¹åº”çš„ChartComponent
 	 */
 	public void useChartComponent(ChartComponent chartComponent) {
 		this.useChartComponent = chartComponent;
 	}
 	
 	/**
-	 * ÏìÓ¦³¬¼¶Á´½ÓÖĞµÄdemo±ä»¯.
+	 * å“åº”è¶…çº§é“¾æ¥ä¸­çš„demoå˜åŒ–.
 	 */
 	public void fire() {
 		if(useChartComponent != null) {
@@ -77,8 +77,8 @@ public class ChartHyperEditPane  extends ChartEditPane {
 	}
 
     /**
-     * È¡
-     * @param hyperlink ³¬Á´
+     * å–
+     * @param hyperlink è¶…é“¾
      */
 	public void populateHyperLink(ChartHyperPoplink  hyperlink) {
 		attrPane.populateBean(hyperlink);
@@ -86,8 +86,8 @@ public class ChartHyperEditPane  extends ChartEditPane {
 	}
 
     /**
-     * ´æ
-     * @param hyperlink ³¬Á´
+     * å­˜
+     * @param hyperlink è¶…é“¾
      */
 	public void updateHyperLink(ChartHyperPoplink hyperlink) {
 		attrPane.updateBean(hyperlink);

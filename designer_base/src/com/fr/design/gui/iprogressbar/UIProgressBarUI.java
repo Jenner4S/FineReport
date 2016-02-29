@@ -21,7 +21,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-4
- * Time: 上午10:41
+ * Time: 涓婂崍10:41
  */
 public class UIProgressBarUI extends BasicProgressBarUI {
 
@@ -40,10 +40,10 @@ public class UIProgressBarUI extends BasicProgressBarUI {
     }
 
     /**
-     * 创建UI
+     * 鍒涘缓UI
      *
-     * @param c 组件
-     * @return 组件UI
+     * @param c 缁勪欢
+     * @return 缁勪欢UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UIProgressBarUI();

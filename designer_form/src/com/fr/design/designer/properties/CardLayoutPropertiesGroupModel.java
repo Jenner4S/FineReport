@@ -114,9 +114,9 @@ public class CardLayoutPropertiesGroupModel implements GroupModel {
 	}
 
     /**
-     * ÊÇ·ñ¿ÉÒÔ±à¼­
-     * @param ÁĞ
-     * @return ÊÇ·ñ¿ÉÒÔ±à¼­
+     * æ˜¯å¦å¯ä»¥ç¼–è¾‘
+     * @param åˆ—
+     * @return æ˜¯å¦å¯ä»¥ç¼–è¾‘
      */
     @Override
     public boolean isEditable(int row) {

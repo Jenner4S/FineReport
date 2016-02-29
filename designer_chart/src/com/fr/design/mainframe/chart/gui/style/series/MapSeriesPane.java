@@ -24,9 +24,9 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 /**
- * Í¼±íÊôĞÔ±í, Í¼±íÑùÊ½- µØÍ¼ÏµÁĞ.
+ * å›¾è¡¨å±æ€§è¡¨, å›¾è¡¨æ ·å¼- åœ°å›¾ç³»åˆ—.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-14 ÉÏÎç11:00:32
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-14 ä¸Šåˆ11:00:32
  */
 public class MapSeriesPane extends AbstractPlotSeriesPane{
 	private UICheckBox isHeatMap;
@@ -116,7 +116,7 @@ public class MapSeriesPane extends AbstractPlotSeriesPane{
 		return pane;
 	}
 
-	//Ã¿´ÎpopulateºÍupdate¶¼ÒªcheckÒ»ÏÂ
+	//æ¯æ¬¡populateå’Œupdateéƒ½è¦checkä¸€ä¸‹
 	private void checkHeatMapAreaTitles(){
 		if(this.chart != null && this.chart.getFilterDefinition() != null){
 			MapPlot mapPlot = (MapPlot)this.chart.getPlot();
@@ -191,7 +191,7 @@ public class MapSeriesPane extends AbstractPlotSeriesPane{
 		}
 	}
 
-	//¸ù¾İ×éºÏµØÍ¼µÄ²»Í¬ÀàĞÍÖØ¹¹Ãæ°å
+	//æ ¹æ®ç»„åˆåœ°å›¾çš„ä¸åŒç±»å‹é‡æ„é¢æ¿
 	private void reLayoutWithMapPlot(){
 		this.removeAll();
 		fillStylePane = getFillStylePane();

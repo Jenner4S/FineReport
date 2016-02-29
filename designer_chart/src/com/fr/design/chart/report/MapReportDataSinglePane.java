@@ -34,10 +34,10 @@ import com.fr.general.Inter;
 import com.fr.stable.StableUtils;
 
 /**
- * µØÍ¼ µ¥Ôª¸ñÊı¾İ µ¥²ãµØÍ¼ ½çÃæ
+ * åœ°å›¾ å•å…ƒæ ¼æ•°æ® å•å±‚åœ°å›¾ ç•Œé¢
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-22 ÏÂÎç05:16:23
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-22 ä¸‹åˆ05:16:23
  */
 public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayerReportDefinition> implements UIObserver {
 
@@ -73,21 +73,21 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 	}
 
 	/**
-	 * ½çÃæ½ÓÈë.
+	 * ç•Œé¢æ¥å…¥.
 	 */
 	public boolean accept(Object ob) {
 		return true;
 	}
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	public void reset() {
 
 	}
 
 	/**
-	 * ½çÃæµ¯³ö±êÌâ.
+	 * ç•Œé¢å¼¹å‡ºæ ‡é¢˜.
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("Cell");
@@ -142,9 +142,9 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(final UIObserverListener listener) {
 		changeListeners.add(new ChangeListener() {
@@ -155,9 +155,9 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 	}
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public boolean shouldResponseChangeListener() {
 		return true;
@@ -167,7 +167,7 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 		private JComponent editorComponent;
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
 		 */
 		public Object getCellEditorValue() {
 			if(editorComponent instanceof TinyFormulaPane) {
@@ -180,7 +180,7 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 		}
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷..
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨..
 		 */
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 			if (column == table.getModel().getColumnCount()) {
@@ -224,7 +224,7 @@ public class MapReportDataSinglePane extends FurtherBasicBeanPane<MapSingleLayer
 			textField.addFocusListener(new FocusAdapter() {
 				@Override
 				public void focusLost(FocusEvent e) {
-//					seriesPane.stopCellEditing();	//kunsnat: ²»stopÊÇÒòÎª¿ÉÄÜÖ±½Óµã»÷¹«Ê½±à¼­°´Å¥, ·ñÔòĞèÒªµã»÷Á½´Î²ÅÄÜµ¯³ö.
+//					seriesPane.stopCellEditing();	//kunsnat: ä¸stopæ˜¯å› ä¸ºå¯èƒ½ç›´æ¥ç‚¹å‡»å…¬å¼ç¼–è¾‘æŒ‰é’®, å¦åˆ™éœ€è¦ç‚¹å‡»ä¸¤æ¬¡æ‰èƒ½å¼¹å‡º.
 					seriesPane.fireTargetChanged();
 				}
 			});

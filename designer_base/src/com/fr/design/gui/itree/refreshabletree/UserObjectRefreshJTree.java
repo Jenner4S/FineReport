@@ -24,15 +24,15 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 		this.setShowsRootHandles(true);
 		this.setRootVisible(false);
 
-		// ¸Ä±äÑ¡ÔñÄ£Ê½ÊÇÎªÁËÄÜÍÏ¶¯¶à¸öÊı¾İÁĞ
+		// æ”¹å˜é€‰æ‹©æ¨¡å¼æ˜¯ä¸ºäº†èƒ½æ‹–åŠ¨å¤šä¸ªæ•°æ®åˆ—
 		this.getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
 
-		// alex:Ñ¡ÖĞ¶à¸ö½ÚµãµÄÊ±ºò,µ±×ó¼üµã»÷ÆäÖĞÄ³½ÚµãÊ±,»¹±ØĞëÑ¡ÖĞÄÇ¶à¸ö½Úµã
+		// alex:é€‰ä¸­å¤šä¸ªèŠ‚ç‚¹çš„æ—¶å€™,å½“å·¦é”®ç‚¹å‡»å…¶ä¸­æŸèŠ‚ç‚¹æ—¶,è¿˜å¿…é¡»é€‰ä¸­é‚£å¤šä¸ªèŠ‚ç‚¹
 		this.addMouseListener(treeMouseListener);
 	}
 
 	/*
-	* ÅĞ¶ÏeTreeNodeÊÇ·ñĞèÒªRefresh,¿ÉÌáÇ°ÖĞÖ¹,·µ»ØtrueÔò±íÊ¾ÌáÇ°ÖĞÖ¹,²»ĞèÒªRefresh
+	* åˆ¤æ–­eTreeNodeæ˜¯å¦éœ€è¦Refresh,å¯æå‰ä¸­æ­¢,è¿”å›trueåˆ™è¡¨ç¤ºæå‰ä¸­æ­¢,ä¸éœ€è¦Refresh
 	*/
 	@Override
 	protected boolean interceptRefresh(ExpandMutableTreeNode eTreeNode) {
@@ -66,7 +66,7 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 	}
 
 	/**
-	 * ÒÆµô¸ùÄ¿Â¼ÏÂµÄ
+	 * ç§»æ‰æ ¹ç›®å½•ä¸‹çš„
 	 */
 	public void removeNameObject(NameObject no) {
 		DefaultTreeModel treeModel = (DefaultTreeModel) this.getModel();
@@ -84,7 +84,7 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 	}
 
 	/*
-	* ¸ù¾İNameObjectÈ¡TreePath
+	* æ ¹æ®NameObjectå–TreePath
 	*/
 	public TreePath getTreePathByNameObject(NameObject nameObject) {
 		if (nameObject == null) {
@@ -93,7 +93,7 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 
 		DefaultTreeModel treeModel = (DefaultTreeModel) this.getModel();
 
-		// ĞÂ½¨Ò»¸ö·Å×ÅNameObjectµÄnewChildTreeNode,¼Óµ½RootÏÂÃæ
+		// æ–°å»ºä¸€ä¸ªæ”¾ç€NameObjectçš„newChildTreeNode,åŠ åˆ°Rootä¸‹é¢
 		ExpandMutableTreeNode root = (ExpandMutableTreeNode) treeModel.getRoot();
 
 		for (int i = 0, len = root.getChildCount(); i < len; i++) {
@@ -107,7 +107,7 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 	}
 
 	/**
-	 * ¿´Ò»ÏÂÃû×ÖÊÇ·ñÖØ¸´
+	 * çœ‹ä¸€ä¸‹åå­—æ˜¯å¦é‡å¤
 	 */
 	public boolean isNameRepeated(String name) {
 		DefaultTreeModel treeModel = (DefaultTreeModel) this.getModel();
@@ -146,7 +146,7 @@ public abstract class UserObjectRefreshJTree<T extends UserObjectOP<?>> extends 
 						}
 					}
 				}
-				// marks:Êó±êÔÚÉÏ´ÎÑ¡ÖĞµÄpathsÉÏ£¬Ôò½«ÉÏ´ÎµÄpathsÉèÎªµÄÊ÷µÄÂ·¾¶,·ñÔò½«Êó±êËùÔÚµÄ½ÚµãÉèÎªÑ¡ÖĞµÄ½Úµã
+				// marks:é¼ æ ‡åœ¨ä¸Šæ¬¡é€‰ä¸­çš„pathsä¸Šï¼Œåˆ™å°†ä¸Šæ¬¡çš„pathsè®¾ä¸ºçš„æ ‘çš„è·¯å¾„,å¦åˆ™å°†é¼ æ ‡æ‰€åœ¨çš„èŠ‚ç‚¹è®¾ä¸ºé€‰ä¸­çš„èŠ‚ç‚¹
 				if (!(e.isShiftDown() || e.isControlDown())) {
 					if (isFind) {
 						setSelectionPaths(oldPaths);

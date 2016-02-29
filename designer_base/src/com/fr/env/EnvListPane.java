@@ -92,9 +92,9 @@ public class EnvListPane extends JControlPane {
     }
 
     /**
-     * Éú³ÉÌí¼Ó°´Å¥µÄNameableCreator
+     * ç”Ÿæˆæ·»åŠ æŒ‰é’®çš„NameableCreator
      *
-     * @return ·µ»ØÌí¼Ó°´Å¥µÄNameableCreator
+     * @return è¿”å›æ·»åŠ æŒ‰é’®çš„NameableCreator
      */
     public NameableCreator[] createNameableCreators() {
         NameableCreator local = new NameObjectCreator(Inter.getLocText("Env-Local_Directory"), "com/fr/design/images/data/bind/localconnect.png",
@@ -110,9 +110,9 @@ public class EnvListPane extends JControlPane {
     }
 
     /**
-     * µ¯³öÑ¡ÖĞ»·¾³µÄÃæ°å
+     * å¼¹å‡ºé€‰ä¸­ç¯å¢ƒçš„é¢æ¿
      *
-     * @param selectedEnv Ñ¡ÖĞµÄ»·¾³
+     * @param selectedEnv é€‰ä¸­çš„ç¯å¢ƒ
      */
     public void populateEnvManager(String selectedEnv) {
         DesignerEnvManager mgr = DesignerEnvManager.getEnvManager();
@@ -134,9 +134,9 @@ public class EnvListPane extends JControlPane {
 
 
     /**
-     * ¸üĞÂdesignerEnvManagerÀïÃæËùÓĞµÄEnv
+     * æ›´æ–°designerEnvManageré‡Œé¢æ‰€æœ‰çš„Env
      *
-     * @return ·µ»ØÑ¡ÖĞµÄ»·¾³µÄÃû×Ö
+     * @return è¿”å›é€‰ä¸­çš„ç¯å¢ƒçš„åå­—
      */
     public String updateEnvManager() {
         DesignerEnvManager mgr = DesignerEnvManager.getEnvManager();
@@ -167,18 +167,18 @@ public class EnvListPane extends JControlPane {
             northPane.add(new UILabel(Inter.getLocText("Location") + ":"), BorderLayout.WEST);
             northPane.add(pathTextField = new UITextField(), BorderLayout.CENTER);
 
-            // É¾³ıÑ¡ÔñÎÄ¼ş°´Å¥ Ìí¼ÓJFileTree
+            // åˆ é™¤é€‰æ‹©æ–‡ä»¶æŒ‰é’® æ·»åŠ JFileTree
 
             // centerPane
             JPanel centerPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
             this.add(centerPane, BorderLayout.CENTER);
 
-            // Ìí¼ÓJFileTree
+            // æ·»åŠ JFileTree
             localEnvTree = new JFileTree();
             JScrollPane localEnvPane = new JScrollPane(localEnvTree);
             centerPane.add(localEnvPane, BorderLayout.CENTER);
 
-            // ÉèÖÃ¸ùÂ·¾¶File ºÍ ÎÄ¼ş¹ıÂËÀàĞÍ
+            // è®¾ç½®æ ¹è·¯å¾„File å’Œ æ–‡ä»¶è¿‡æ»¤ç±»å‹
             localEnvTree.setFileFilter(new OnlyShowDirectoryFileFilter());
             localEnvTree.setRootFiles(File.listRoots());
             localEnvTree.addTreeSelectionListener(new TreeSelectionListener() {
@@ -241,11 +241,11 @@ public class EnvListPane extends JControlPane {
         private String envPath;
         private String hint;
         
-        // ¸÷ÖÖ²ÎÊıÃæ°å
+        // å„ç§å‚æ•°é¢æ¿
         private JPanel northPane;
-        // ÌáÊ¾Ãæ°å
+        // æç¤ºé¢æ¿
         private JPanel previewPane;
-        // Ãæ°åµÄËùÓĞ×é¼ş
+        // é¢æ¿çš„æ‰€æœ‰ç»„ä»¶
         private Component[][]  coms;
         DocumentListener docListener = new DocumentListener() {
 
@@ -273,7 +273,7 @@ public class EnvListPane extends JControlPane {
         public RemoteEnvPane() {
             this.setBorder(BorderFactory.createTitledBorder(new ModLineBorder(ModLineBorder.TOP), Inter.getLocText("Config_Servlet")));
             this.setLayout(FRGUIPaneFactory.createM_BorderLayout());
-            // Î»ÖÃ
+            // ä½ç½®
             JPanel servletPathPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             servletPathPane.add(new UILabel(Inter.getLocText("Server_Path") + ":"));
             servletPathField.setEditable(false);
@@ -283,32 +283,32 @@ public class EnvListPane extends JControlPane {
             webApplyField.getDocument().addDocumentListener(docListener);
             servletField.getDocument().addDocumentListener(docListener);
 
-            // Ö÷»úÃû
+            // ä¸»æœºå
             JPanel servletNamePane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             servletNamePane.add(new UILabel(Inter.getLocText("Host_Name") + "/IP" + ":"));
-            // ¶Ë¿Ú
+            // ç«¯å£
             JPanel portNamePane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             portNamePane.add(new UILabel(Inter.getLocText("Port") + ":"));
-            // webÓ¦ÓÃ
+            // webåº”ç”¨
             JPanel webApplyPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             webApplyPane.add(new UILabel(Inter.getLocText("Web_Apply") + ":"));
             // servlet
             JPanel servletPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             servletPane.add(new UILabel("Servlet" + ":"));
-            // ÓÃ»§Ãû
+            // ç”¨æˆ·å
             JPanel userNamePane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             userNamePane.add(new UILabel(Inter.getLocText("Username") + ":"));
-            // ÃÜÂë
+            // å¯†ç 
             JPanel passWordPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             passWordPane.add(new UILabel(Inter.getLocText("Password") + ":"));
-            // httpsÖ¤ÊéÂ·¾¶
+            // httpsè¯ä¹¦è·¯å¾„
             JPanel certificatePathPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             certificatePathPane.add(new UILabel(Inter.getLocText("FR-Designer_Certificate_Path")+ ":"));
-            // httpsÃØÔ¿
+            // httpsç§˜é’¥
             JPanel certificatePassPane = FRGUIPaneFactory.createRightFlowInnerContainer_S_Pane();
             certificatePassPane.add(new UILabel(Inter.getLocText("FR-Designer_Certificate_Pass") + ":"));
             
-            //ÊäÈëÃÜÂëµÄÊ±ºò¼ì²âÏÂ´óĞ´Ëø¶¨
+            //è¾“å…¥å¯†ç çš„æ—¶å€™æ£€æµ‹ä¸‹å¤§å†™é”å®š
             passwordTextField.addMouseListener(new MouseAdapter() {
                 public void mouseEntered(MouseEvent e) {
                     if (java.awt.Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK)) {
@@ -371,7 +371,7 @@ public class EnvListPane extends JControlPane {
 
             JTextPane previewTextArea = new JTextPane();
 
-            // e:µ±ĞĞµÄ³¤¶È´óÓÚËù·ÖÅäµÄ¿í¶ÈÊ±£¬½«»»ĞĞ.
+            // e:å½“è¡Œçš„é•¿åº¦å¤§äºæ‰€åˆ†é…çš„å®½åº¦æ—¶ï¼Œå°†æ¢è¡Œ.
 //			previewTextArea.setLineWrap(true);
             previewTextArea.setEditable(false);
             previewTextArea.setText(Inter.getLocText("Env-Des2"));
@@ -459,8 +459,8 @@ public class EnvListPane extends JControlPane {
                 try {
                     String remoteVersion = env.getDesignerVersion();
                     if (StringUtils.isBlank(remoteVersion) || ComparatorUtils.compare(remoteVersion, ProductConstants.DESIGNER_VERSION) < 0) {
-                        String infor = Inter.getLocText("Server-version-tip") + "¡£";
-                        String moreInfo = Inter.getLocText("Server-version-tip-moreInfo") + "¡£";
+                        String infor = Inter.getLocText("Server-version-tip") + "ã€‚";
+                        String moreInfo = Inter.getLocText("Server-version-tip-moreInfo") + "ã€‚";
                         new InformationWarnPane(infor, moreInfo, Inter.getLocText("Tooltips")).show();
                         return false;
                     }
@@ -480,8 +480,8 @@ public class EnvListPane extends JControlPane {
         }
 
         /**
-         * ÏÔÊ¾show the content of serverPathFiled
-         * @param isHttps ÊÇ·ñÆôÓÃhttps
+         * æ˜¾ç¤ºshow the content of serverPathFiled
+         * @param isHttps æ˜¯å¦å¯ç”¨https
          */
         public void showServletPathField(boolean isHttps) {
             String s = StringUtils.isBlank(webApplyField.getText()) ? "" : "/", t = StringUtils.isBlank(servletField.getText()) ? "" : "/", colon = StringUtils.isBlank(portNameField.getText()) ? ""
@@ -511,11 +511,11 @@ public class EnvListPane extends JControlPane {
         		DesignerEnvManager manager = DesignerEnvManager.getEnvManager();
         		this.certificatePath.setText(manager.getCertificatePath());
         		this.certificatePass.setText(manager.getCertificatePass());
-                // µÚ¶ş´Î³öÏÖ":"µÄµØ·½,portÎ»ÖÃÆğÊ¼µã
+                // ç¬¬äºŒæ¬¡å‡ºç°":"çš„åœ°æ–¹,portä½ç½®èµ·å§‹ç‚¹
                 int secondTime = envPath.indexOf(":", envPath.indexOf(":") + 1);
-                // µÚÈı´Î³öÏÖ"/"µÄµØ·½
+                // ç¬¬ä¸‰æ¬¡å‡ºç°"/"çš„åœ°æ–¹
                 int thirdTime = envPath.indexOf("/", secondTime + 1);
-                // ×îºó³öÏÖ"/"µÄµØ·½
+                // æœ€åå‡ºç°"/"çš„åœ°æ–¹
                 int lastTime = envPath.lastIndexOf("/");
                 String hostName = isHttps ? envPath.substring(HTTPS_HOST_INDEX, secondTime) : envPath.substring(HTTP_HOST_INDEX, secondTime);
                 this.hostNameField.setText(hostName);
@@ -590,4 +590,3 @@ public class EnvListPane extends JControlPane {
         }
     }
 }
-

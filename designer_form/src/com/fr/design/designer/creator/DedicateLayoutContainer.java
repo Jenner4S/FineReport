@@ -10,7 +10,7 @@ import java.beans.IntrospectionException;
 import java.util.ArrayList;
 
 /**
- * Ò»Ğ©¿Ø¼ş×¨ÊôµÄÈİÆ÷£¬Èç±êÌâÈİÆ÷£¬sclaeÈİÆ÷
+ * ä¸€äº›æ§ä»¶ä¸“å±çš„å®¹å™¨ï¼Œå¦‚æ ‡é¢˜å®¹å™¨ï¼Œsclaeå®¹å™¨
  * @author jim
  * @date 2014-11-7
  */
@@ -21,8 +21,8 @@ public abstract class DedicateLayoutContainer extends XLayoutContainer {
 	}
 	
 	/**
-     *  µÃµ½ÊôĞÔÃû
-     * @return ÊôĞÔÃû
+     *  å¾—åˆ°å±æ€§å
+     * @return å±æ€§å
      * @throws IntrospectionException
      */
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -30,7 +30,7 @@ public abstract class DedicateLayoutContainer extends XLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»ØÈİÆ÷Í¼±ê
+	 * è¿”å›å®¹å™¨å›¾æ ‡
 	 * 
 	 * @return
 	 */
@@ -44,16 +44,16 @@ public abstract class DedicateLayoutContainer extends XLayoutContainer {
 
 	
 	/**
-	 * ¿Ø¼şÊ÷²»ÏÔÊ¾´Ë×é¼ş
-	 * @param path ¿Ø¼şÊ÷list
+	 * æ§ä»¶æ ‘ä¸æ˜¾ç¤ºæ­¤ç»„ä»¶
+	 * @param path æ§ä»¶æ ‘list
 	 */
 	public void notShowInComponentTree(ArrayList<Component> path) {
 		path.remove(path.size()-1);
 	}
 	
 	/**
-	 * ÖØÖÃ×é¼şµÄÃû³Æ
-	 * @param name Ãû³Æ
+	 * é‡ç½®ç»„ä»¶çš„åç§°
+	 * @param name åç§°
 	 */
 	public void resetCreatorName(String name) {
 		super.resetCreatorName(name);
@@ -62,24 +62,24 @@ public abstract class DedicateLayoutContainer extends XLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»Ø¶ÔÓ¦ÊôĞÔ±íµÄ×é¼ş£¬scaleºÍtitle·µ»ØÆä×Ó×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›å¯¹åº”å±æ€§è¡¨çš„ç»„ä»¶ï¼Œscaleå’Œtitleè¿”å›å…¶å­ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	public XCreator getPropertyDescriptorCreator() {
 		return getXCreator(XWScaleLayout.INDEX);
 	}
 	
 	/**
-	 * ÊÇ·ñ×÷Îª¿Ø¼şÊ÷µÄÒ¶×Ó½Úµã
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦ä½œä¸ºæ§ä»¶æ ‘çš„å¶å­èŠ‚ç‚¹
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isComponentTreeLeaf() {
 		return true;
 	}
 	
 	/**
-	 *  ÊÇ·ñÎªsclaeºÍtitle×¨ÊôÈİÆ÷
-	 * @return ÊÇÔò·µ»Øtrue
+	 *  æ˜¯å¦ä¸ºsclaeå’Œtitleä¸“å±å®¹å™¨
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean isDedicateContainer() {
 		return true;

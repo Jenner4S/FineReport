@@ -36,7 +36,7 @@ public class DeleteRowAction extends CellSelectionAction {
         ElementCasePane ePane = this.getEditingComponent();
         ElementCase report = ePane.getEditingElementCase();
 
-        // É¾µô¶àÐÐ
+        // åˆ æŽ‰å¤šè¡Œ
         int[] rows = cs.getSelectedRows();
         for (int i = 0; i < rows.length; i++) {
             report.removeRow(rows[i] - i);

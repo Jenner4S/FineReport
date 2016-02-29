@@ -12,7 +12,7 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : ÏÂÎç5:00
+ * Time   : ä¸‹åˆ5:00
  */
 public class SetChartStyleAciton extends ChartComponentAction {
 

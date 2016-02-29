@@ -29,8 +29,8 @@ import java.net.URISyntaxException;
 
 public class StartServer {
 	public static boolean NEED_LOAD_ENV = true;
-	// Ô­ÏÈµÄjettyHost·ÅÔÚÀàJettyHostÀïÃæ£¬ºÜ²»·½±ã²Ù×÷£¬¶øÇÒÒòÎª´æÔÚ¶à¸ö½ø³ÌµÄÔ­Òò£¬
-	// Ô­ÏÈµÄgetInstance()·½·¨ÎŞ¶à´óÒâÒå
+	// åŸå…ˆçš„jettyHostæ”¾åœ¨ç±»JettyHosté‡Œé¢ï¼Œå¾ˆä¸æ–¹ä¾¿æ“ä½œï¼Œè€Œä¸”å› ä¸ºå­˜åœ¨å¤šä¸ªè¿›ç¨‹çš„åŸå› ï¼Œ
+	// åŸå…ˆçš„getInstance()æ–¹æ³•æ— å¤šå¤§æ„ä¹‰
 	private static JettyHost jettyHost = null;
 
 	static {
@@ -42,11 +42,11 @@ public class StartServer {
 	}
 
     /**
-     * Ô¤ÀÀDemo
-     * ÕÒÄ¬ÈÏ¹¤×÷Ä¿Â¼£¬²»Ó¦¸Ã°´ÕÕÃû×ÖÈ¥ÕÒ£¬¶øÓ¦¸Ã°´ÕÕ°²×°Â·¾¶£¬ÒòÎªÄ¬ÈÏ¹¤×÷Ä¿Â¼µÄÃû×Ö¿ÉÄÜ»á¸Ä±ä¡£
+     * é¢„è§ˆDemo
+     * æ‰¾é»˜è®¤å·¥ä½œç›®å½•ï¼Œä¸åº”è¯¥æŒ‰ç…§åå­—å»æ‰¾ï¼Œè€Œåº”è¯¥æŒ‰ç…§å®‰è£…è·¯å¾„ï¼Œå› ä¸ºé»˜è®¤å·¥ä½œç›®å½•çš„åå­—å¯èƒ½ä¼šæ”¹å˜ã€‚
      */
 	public static void browerDemoURL() {
-		if (ComparatorUtils.equals(StableUtils.getInstallHome(), ".")) {//august:¹©´úÂëÊ¹ÓÃ
+		if (ComparatorUtils.equals(StableUtils.getInstallHome(), ".")) {//august:ä¾›ä»£ç ä½¿ç”¨
 			String web = GeneralContext.getCurrentAppNameOfEnv();
 			browerURLWithLocalEnv("http://localhost:" + DesignerEnvManager.getEnvManager().getJettyServerPort() + "/" + web + "/" + ConfigManager.getProviderInstance().getServletMapping()
 					+ "?op=fs");
@@ -92,7 +92,7 @@ public class StartServer {
 		} catch (Exception e) {
 			FRContext.getLogger().errorWithServerLevel(e.getMessage());
 		} finally {
-			//ÏÈ·ÃÎÊDemo, ºó·ÃÎÊ±¨±í, ²»ĞèÒªÖØÖÃ·şÎñÆ÷.
+			//å…ˆè®¿é—®Demo, åè®¿é—®æŠ¥è¡¨, ä¸éœ€è¦é‡ç½®æœåŠ¡å™¨.
 			NEED_LOAD_ENV = false;
 			browser("http://localhost:" + DesignerEnvManager.getEnvManager().getJettyServerPort() + "/" + ProjectConstants.WEBAPP_NAME + "/" + ConfigManager.getProviderInstance().getServletMapping()
 					+ "?op=fs");
@@ -100,9 +100,9 @@ public class StartServer {
 	}
 
     /**
-     * ±¾µØ»·¾³ä¯ÀÀurl
+     * æœ¬åœ°ç¯å¢ƒæµè§ˆurl
      *
-     * @param url Ö¸¶¨Â·¾¶
+     * @param url æŒ‡å®šè·¯å¾„
      */
 	public static void browerURLWithLocalEnv(String url) {
 		try {
@@ -132,12 +132,12 @@ public class StartServer {
 	}
 
 	public static JettyHost getInstance() {
-		// august£º ÕıÈ·µÄÂß¼­ÄÜ±£Ö¤jettyHost²»Îªnull£¬²»È»¾ÍÓĞbug£¬²»ÔÊĞíÕâ¶ù¼ÓÊÇ·ñµÈÓÚnullÅĞ¶Ï
+		// augustï¼š æ­£ç¡®çš„é€»è¾‘èƒ½ä¿è¯jettyHostä¸ä¸ºnullï¼Œä¸ç„¶å°±æœ‰bugï¼Œä¸å…è®¸è¿™å„¿åŠ æ˜¯å¦ç­‰äºnullåˆ¤æ–­
 		return jettyHost;
 	}
 
     /**
-     * ÔËĞĞ»·¾³¸Ä±äÊÂ¼ş
+     * è¿è¡Œç¯å¢ƒæ”¹å˜äº‹ä»¶
      */
 	public static void currentEnvChanged() {
 		if (!NEED_LOAD_ENV) {

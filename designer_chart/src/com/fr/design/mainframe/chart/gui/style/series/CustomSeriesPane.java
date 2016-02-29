@@ -21,9 +21,9 @@ import com.fr.design.mainframe.chart.gui.style.ChartBeautyPane;
 import com.fr.general.Inter;
 
 /**
- * ×éºÏÍ¼, ÊôĞÔ±í, Í¼±íÑùÊ½-ÏµÁĞ.
+ * ç»„åˆå›¾, å±æ€§è¡¨, å›¾è¡¨æ ·å¼-ç³»åˆ—.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-6 ÉÏÎç10:37:22
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-6 ä¸Šåˆ10:37:22
  */
 public class CustomSeriesPane extends AbstractPlotSeriesPane {
 

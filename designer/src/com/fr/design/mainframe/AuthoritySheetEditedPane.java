@@ -18,7 +18,7 @@ import com.fr.main.impl.WorkBook;
  * Author : Richer
  * Version: 6.5.6
  * Date: 13-12-16
- * Time: …œŒÁ10:09
+ * Time: ‰∏äÂçà10:09
  */
 public class AuthoritySheetEditedPane extends AuthorityPropertyPane {
 

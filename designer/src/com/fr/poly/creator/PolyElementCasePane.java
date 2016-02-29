@@ -9,14 +9,14 @@ import com.fr.report.poly.PolyECBlock;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-6
+ * @since 6.5.4 åˆ›å»ºäº2011-4-6
  */
 public abstract class PolyElementCasePane extends ElementCasePane<PolyECBlock> {
 
 	public PolyElementCasePane(PolyECBlock block) {
 		super(block);
         setSelection(new CellSelection(0, 0, 1, 1));
-        // ¶¼²»¼ÓÕâÁ½¸ö×é¼ş£¬µ±È»ËûÃÇÒ²¾ÍÃ»¿É¼ûĞÔÁË
+        // éƒ½ä¸åŠ è¿™ä¸¤ä¸ªç»„ä»¶ï¼Œå½“ç„¶ä»–ä»¬ä¹Ÿå°±æ²¡å¯è§æ€§äº†
 		setHorizontalScrollBarVisible(false);
 		setVerticalScrollBarVisible(false);
 	}

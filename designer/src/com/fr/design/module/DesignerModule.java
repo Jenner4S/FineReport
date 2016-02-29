@@ -71,7 +71,7 @@ import java.util.Iterator;
 public class DesignerModule extends DesignModule {
 
 	/**
-	 * Æô¶¯Éè¼ÆÆ÷Ä£¿é
+	 * å¯åŠ¨è®¾è®¡å™¨æ¨¡å—
 	 */
 	public void start() {
 		super.start();
@@ -102,7 +102,7 @@ public class DesignerModule extends DesignModule {
 	}
 	
 	/**
-	 * kunsnat:×¢²áµ¥Ôª¸ñÑ¡ÖĞEditor
+	 * kunsnat:æ³¨å†Œå•å…ƒæ ¼é€‰ä¸­Editor
 	 */
 	
 	private void registerCellEditor() {
@@ -128,7 +128,7 @@ public class DesignerModule extends DesignModule {
 
 	
 	/**
-	 * kunnat: ×¢²áĞü¸¡Ñ¡ÖĞEditor
+	 * kunnat: æ³¨å†Œæ‚¬æµ®é€‰ä¸­Editor
 	 */
 	private void registerFloatEditor() {
 		FloatStringQuickEditor floatStringQuickEditor = new FloatStringQuickEditor();
@@ -144,8 +144,8 @@ public class DesignerModule extends DesignModule {
 	}
 
 	/**
-	 * kunsnat: Ò»Ğ©Ä£¿éĞÅÏ¢ ±ØĞë¸úËæÉè¼ÆÆ÷Æô¶¯,
-	 * ±ÈÈç ¶ÁÈ¡CC.XML, Éè¼ÆÆ÷Æô¶¯Ö®ºó, ÂíÉÏ»á¶ÁÈ¡XML, ĞèÒªChart_ModuleÖĞµÄ×¢²áĞÅÏ¢
+	 * kunsnat: ä¸€äº›æ¨¡å—ä¿¡æ¯ å¿…é¡»è·Ÿéšè®¾è®¡å™¨å¯åŠ¨,
+	 * æ¯”å¦‚ è¯»å–CC.XML, è®¾è®¡å™¨å¯åŠ¨ä¹‹å, é©¬ä¸Šä¼šè¯»å–XML, éœ€è¦Chart_Moduleä¸­çš„æ³¨å†Œä¿¡æ¯
 	 */
 	private void justStartModules4Engine() {
 		ModuleContext.startModule(ENGINE_MODULE);
@@ -157,9 +157,9 @@ public class DesignerModule extends DesignModule {
 	}
 
 	/**
-	 * CellElementValueConverterÓÃÀ´´¦ÀíÉè¼ÆÆ÷¸ñ×ÓÀïµÄÖµ£¬½«¹«Ê½/Êı×é/ÆäËûÔªËØ×ª»»³É¶ÔÓ¦µÄÖµ¡£
+	 * CellElementValueConverterç”¨æ¥å¤„ç†è®¾è®¡å™¨æ ¼å­é‡Œçš„å€¼ï¼Œå°†å…¬å¼/æ•°ç»„/å…¶ä»–å…ƒç´ è½¬æ¢æˆå¯¹åº”çš„å€¼ã€‚
 	 *
-	 * @return ·µ»Ø´¦Àí¸ñ×ÓÖµµÄ×ª»»Æ÷
+	 * @return è¿”å›å¤„ç†æ ¼å­å€¼çš„è½¬æ¢å™¨
 	 */
 	public ValueConverter valueConverter() {
 		return new CellElementValueConverter();
@@ -167,24 +167,24 @@ public class DesignerModule extends DesignModule {
 
 	@Override
 	/**
-	 * Õë¶Ô²»Í¬µÄ¶ÔÏó£¬ÔÚ¶ÁÈ¡Object¶ÔÏóµÄxmlµÄÊ±ºòĞèÒªÊ¹ÓÃ²»Í¬µÄ¶ÔÏóÉú³ÉÆ÷
-	 * @return ·µ»Ø¶ÔÏóÉú³ÉÆ÷
+	 * é’ˆå¯¹ä¸åŒçš„å¯¹è±¡ï¼Œåœ¨è¯»å–Objectå¯¹è±¡çš„xmlçš„æ—¶å€™éœ€è¦ä½¿ç”¨ä¸åŒçš„å¯¹è±¡ç”Ÿæˆå™¨
+	 * @return è¿”å›å¯¹è±¡ç”Ÿæˆå™¨
 	 */
 	public ObjectTokenizer startXMLReadObjectTokenizer() {
 		return new ReportXMLUtils.ReportObjectTokenizer();
 	}
 
 	/**
-	 * Õë¶Ô²»Í¬µÄ¶ÔÏó£¬ÔÚĞ´¶ÔÏóµÄXMLÊ±ĞèÒªÊ¹ÓÃ²»Í¬µÄXMLÉú³ÉÆ÷
+	 * é’ˆå¯¹ä¸åŒçš„å¯¹è±¡ï¼Œåœ¨å†™å¯¹è±¡çš„XMLæ—¶éœ€è¦ä½¿ç”¨ä¸åŒçš„XMLç”Ÿæˆå™¨
 	 *
-	 * @return ·µ»ØxmlÉú³ÉÆ÷
+	 * @return è¿”å›xmlç”Ÿæˆå™¨
 	 */
 	@Override
 	public ObjectXMLWriterFinder startObjectXMLWriterFinder() {
 		return new ReportXMLUtils.ReportObjectXMLWriterFinder();
 	}
 
-	//wei:fsµÄÄ£¿éÖĞ¿ÉÄÜÓĞĞèÒªÉè¼ÆÆ÷½çÃæ×öÉèÖÃµÄµØ·½£¬ÔÚÕâ±ßÌí¼Ó
+	//wei:fsçš„æ¨¡å—ä¸­å¯èƒ½æœ‰éœ€è¦è®¾è®¡å™¨ç•Œé¢åšè®¾ç½®çš„åœ°æ–¹ï¼Œåœ¨è¿™è¾¹æ·»åŠ 
 	private void addAdapterForPlate() {
 
 		ProcessTransitionAdapter.setProcessTransitionAdapter(new ProcessTransitionAdapter() {
@@ -219,8 +219,8 @@ public class DesignerModule extends DesignModule {
 
 	@Override
 	/**
-	 * ·µ»ØÉè¼ÆÆ÷ÄÜ´ò¿ªµÄÄ£°åÀàĞÍµÄÒ»¸öÊı×éÁĞ±í
-	 * @return ¿ÉÒÔ´ò¿ªµÄÄ£°åÀàĞÍµÄÊı×é
+	 * è¿”å›è®¾è®¡å™¨èƒ½æ‰“å¼€çš„æ¨¡æ¿ç±»å‹çš„ä¸€ä¸ªæ•°ç»„åˆ—è¡¨
+	 * @return å¯ä»¥æ‰“å¼€çš„æ¨¡æ¿ç±»å‹çš„æ•°ç»„
 	 */
 	public DesignerFrame.App[] apps4TemplateOpener() {
 		return new DesignerFrame.App[]{new AbstractWorkBookApp() {
@@ -237,7 +237,7 @@ public class DesignerModule extends DesignModule {
 				}
 				
 				WorkBook tpl = new WorkBook();
-				// richer:´ò¿ª±¨±íÍ¨Öª
+				// richer:æ‰“å¼€æŠ¥è¡¨é€šçŸ¥
 				FRContext.getLogger().info(Inter.getLocText(new String[]{"LOG-Is_Being_Openned", "LOG-Please_Wait"}, new String[]{"\"" + file.getName() + "\"" + ",", "..."}));
 				TempNameStyle namestyle = TempNameStyle.getInstance();
 				namestyle.clear();
@@ -301,7 +301,7 @@ public class DesignerModule extends DesignModule {
 	private static void showConfirmDialog(final ArrayList<String> namelist) {
 
 		final JDialog jd = new JDialog();
-		// Ä£Ì¬Ò»ÏÂ£¬ÒòÎª¿ÉÄÜ»á¶à¸öÑùÊ½¶ªÊ§
+		// æ¨¡æ€ä¸€ä¸‹ï¼Œå› ä¸ºå¯èƒ½ä¼šå¤šä¸ªæ ·å¼ä¸¢å¤±
 		// jd.setModal(true);
 		jd.setAlwaysOnTop(true);
 		jd.setSize(450, 150);
@@ -313,7 +313,7 @@ public class DesignerModule extends DesignModule {
 		jd.add(jl, BorderLayout.CENTER);
 		JPanel jp = new JPanel();
 
-		// ¡±ÊÇ¡°°´Å¥£¬µã»÷Ö®ºó½«Éú³ÉÒ»¸öÈ«¾ÖÑùÊ½£¬²¢Ğ´Èëxml
+		// â€æ˜¯â€œæŒ‰é’®ï¼Œç‚¹å‡»ä¹‹åå°†ç”Ÿæˆä¸€ä¸ªå…¨å±€æ ·å¼ï¼Œå¹¶å†™å…¥xml
 		UIButton confirmButton = new UIButton(Inter.getLocText("FR-Designer_Yes"));
 		confirmButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -326,7 +326,7 @@ public class DesignerModule extends DesignModule {
 					FRLogger.getLogger().error(ex.getMessage());
 				}
 				jd.dispose();
-				new StyleListAction().actionPerformed(e);// µ¯´°
+				new StyleListAction().actionPerformed(e);// å¼¹çª—
 			}
 		});
 

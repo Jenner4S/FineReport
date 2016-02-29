@@ -115,15 +115,15 @@ public abstract class FunctionConstants {
 	private static String[] findClassNamesUnderFilePath(String filePath) {
 		java.util.List<String> classNameList = new ArrayList<String>();
 		/*
-		 * alex:Èç¹ûÊÇjar°üÖĞµÄclassÎÄ¼ş
+		 * alex:å¦‚æœæ˜¯jaråŒ…ä¸­çš„classæ–‡ä»¶
 		 * file:/D:/opt/FineReport6.5/WebReport/WEB-INF/lib/fr-server-6.5.jar!/com/fr/rpt/script/function
 		 */
 		if (filePath.indexOf("!/") >= 0) {
 			String[] arr = filePath.split("!/");
-			String jarPath = arr[0].substring(6); // alex:substring(6)È¥µôÇ°ÃæµÄfile:/ÕâÁù¸ö×Ö·û
+			String jarPath = arr[0].substring(6); // alex:substring(6)å»æ‰å‰é¢çš„file:/è¿™å…­ä¸ªå­—ç¬¦
 			String classPath = arr[1];
             if (OperatingSystem.isMacOS()){
-                //windowsÀïsubstringºóÊÇd:\123\456, macÏÂsubstringºóÊÇApplication/123/456
+                //windowsé‡Œsubstringåæ˜¯d:\123\456, macä¸‹substringåæ˜¯Application/123/456
                 jarPath = StringUtils.perfectStart(jarPath, "/");
             }
 			
@@ -161,7 +161,7 @@ public abstract class FunctionConstants {
 		return classNameList.toArray(new String[classNameList.size()]);
 	}
 	
-	// alex:¶ÁÈ¡com.fr.script.function°üÏÂÃæËùÓĞµÄFunctionÀà
+	// alex:è¯»å–com.fr.script.functionåŒ…ä¸‹é¢æ‰€æœ‰çš„Functionç±»
 	static {
 		String pkgName = "com.fr.function";
 		Class<Function> iface = Function.class;
@@ -170,8 +170,8 @@ public abstract class FunctionConstants {
 		String classFilePath = url.getFile();
 		
 		/*
-		 * alex:url.getFile»ñÈ¡µÄµØÖ·ÖĞ,Èç¹ûÓĞ¿Õ¸ñ»òÖĞÎÄ»á±»URLEncoder.encode´¦Àí
-		 * »á±ä³É%20ÕâÖÖ%´òÍ·µÄ¶«Î÷,µ«ÊÇnew FileµÄÊ±ºò%20ÊÇÎŞ·¨½âÎö³É¿Õ¸ñ,ËùÒÔÔÚ´ËĞèÒª×öURLDecoder.decode´¦Àí
+		 * alex:url.getFileè·å–çš„åœ°å€ä¸­,å¦‚æœæœ‰ç©ºæ ¼æˆ–ä¸­æ–‡ä¼šè¢«URLEncoder.encodeå¤„ç†
+		 * ä¼šå˜æˆ%20è¿™ç§%æ‰“å¤´çš„ä¸œè¥¿,ä½†æ˜¯new Fileçš„æ—¶å€™%20æ˜¯æ— æ³•è§£ææˆç©ºæ ¼,æ‰€ä»¥åœ¨æ­¤éœ€è¦åšURLDecoder.decodeå¤„ç†
 		 */
 		try {
 			classFilePath = URLDecoder.decode(classFilePath, EncodeConstants.ENCODING_UTF_8);
@@ -180,7 +180,7 @@ public abstract class FunctionConstants {
 		}
 		FRContext.getLogger().info("ClassFilePath:" + classFilePath);
 		/*
-		 * alex:Èç¹ûÊÇjar°üÖĞµÄclassÎÄ¼ş
+		 * alex:å¦‚æœæ˜¯jaråŒ…ä¸­çš„classæ–‡ä»¶
 		 * file:/D:/opt/FineReport6.5/WebReport/WEB-INF/lib/fr-server-6.5.jar!/com/fr/rpt/script/function
 		 */
 		for (String fileName : findClassNamesUnderFilePath(classFilePath)) {

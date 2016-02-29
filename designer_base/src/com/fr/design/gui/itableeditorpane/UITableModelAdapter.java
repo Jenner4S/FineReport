@@ -19,9 +19,9 @@ import com.fr.design.mainframe.DesignerContext;
 import com.fr.general.Inter;
 
 /**
- * ÓÃÀ´´¦ÀíTableEditorPaneµÄmodel
+ * ç”¨æ¥å¤„ç†TableEditorPaneçš„model
  * @editor zhou
- * @since 2012-3-28ÏÂÎç3:07:44
+ * @since 2012-3-28ä¸‹åˆ3:07:44
  */
 public abstract class UITableModelAdapter<T extends Object> extends AbstractTableModel implements UITableEditorLoader {
 
@@ -34,7 +34,7 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	private Class<?>[] classes;
 	private String[] columnNames;
 
-	// listÀï·ÅµÄÊÇÒ»ĞĞÊı¾İ
+	// listé‡Œæ”¾çš„æ˜¯ä¸€è¡Œæ•°æ®
 	private List<T> list = new ArrayList<T>();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -47,8 +47,8 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	}
 
     /**
-     * ´´½¨±í
-     * @return   ±í
+     * åˆ›å»ºè¡¨
+     * @return   è¡¨
      */
 	public JTable createTable() {
 		return table;
@@ -87,8 +87,8 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	}
 
     /**
-     * Ôö¼ÓĞĞ
-     * @param obj     ĞĞ
+     * å¢åŠ è¡Œ
+     * @param obj     è¡Œ
      */
 	public void addRow(T obj) {
 		this.list.add(obj);
@@ -106,8 +106,8 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	}
 
     /**
-     * È¥µôĞĞ
-     * @param rowIndex ĞĞºÅ
+     * å»æ‰è¡Œ
+     * @param rowIndex è¡Œå·
      */
 	public void removeRow(int rowIndex) {
 		if (this.list != null) {
@@ -118,14 +118,14 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	}
 
     /**
-     * È¥³ıËùÓĞ
+     * å»é™¤æ‰€æœ‰
      */
 	public void clear() {
 		this.list.clear();
 	}
 
     /**
-     * Í¨ÖªËùÓĞlinstener£¬TableÃ¿Ò»ĞĞµÄÖµ¿ÉÄÜ¸Ä±ä£¬²¢¼ì²é
+     * é€šçŸ¥æ‰€æœ‰linstenerï¼ŒTableæ¯ä¸€è¡Œçš„å€¼å¯èƒ½æ”¹å˜ï¼Œå¹¶æ£€æŸ¥
      */
 	@Override
 	public void fireTableDataChanged() {
@@ -159,7 +159,7 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	public abstract Object getValueAt(int rowIndex, int columnIndex);
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
 	@Override
 	public void stopCellEditing() {
@@ -173,10 +173,10 @@ public abstract class UITableModelAdapter<T extends Object> extends AbstractTabl
 	}
 
     /**
-     * µ¥Ôª¸ñÊÇ·ñ¿É±à¼­
-     * @param row ĞĞ
-     * @param col ÁĞ
-     * @return    ÊÇÔò·µ»Øtrue
+     * å•å…ƒæ ¼æ˜¯å¦å¯ç¼–è¾‘
+     * @param row è¡Œ
+     * @param col åˆ—
+     * @return    æ˜¯åˆ™è¿”å›true
      */
 	@Override
 	public abstract boolean isCellEditable(int row, int col);

@@ -43,7 +43,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	private void initComponents(boolean isEditor) {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 		JPanel buildWayPanel= FRGUIPaneFactory.createMediumHGapFlowInnerContainer_M_Pane();
-		UILabel buildWayLabel = new UILabel(Inter.getLocText("FR-Designer_Build-Way") + " £º");
+		UILabel buildWayLabel = new UILabel(Inter.getLocText("FR-Designer_Build-Way") + " ï¼š");
 		buildWayPanel.add(buildWayLabel);
 		buildBox = new UIComboBox(buildWay);
 		buildBox.addItemListener(new ItemListener() {
@@ -107,7 +107,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	}
 
 	/**
-	 * ÊÓÍ¼Ê÷µÄupdate
+	 * è§†å›¾æ ‘çš„update
 	 * @return
 	 */
 	public TreeEditor updateTreeEditor() {
@@ -146,7 +146,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	}
 
 	/**
-	 * Ê÷½ÚµãÊôÐÔµÄupdate
+	 * æ ‘èŠ‚ç‚¹å±žæ€§çš„update
 	 * @return
 	 */
 	public Object updateTreeNodeAttrs() {
@@ -162,7 +162,7 @@ public class TreeSettingPane extends BasicPane implements DataCreatorUI {
 	}
 
 	/**
-	 * ÏÂÀ­Ê÷µÄupdate
+	 * ä¸‹æ‹‰æ ‘çš„update
 	 * @return
 	 */
 	public TreeComboBoxEditor updateTreeComboBox() {

@@ -50,18 +50,18 @@ public class FormElementCasePaneDelegate extends ElementCasePane<FormElementCase
     }
 
     /**
-     * Ñ¡ÖÐÄ¿±êµÄ ¶ÔÓ¦Menu
+     * é€‰ä¸­ç›®æ ‡çš„ å¯¹åº”Menu
      *
-     * @return ·µ»ØMenuDefÊý×é.
+     * @return è¿”å›žMenuDefæ•°ç»„.
      */
     public MenuDef[] menus4Target() {
         return new MenuDef[0];
     }
 
     /**
-     * ±¨±í¿é¹¤¾ßÀ¸ ¿ì½Ý¼ü²Ëµ¥°´Å¥ °üÀ¨·ÖÒ³¶³½á
+     * æŠ¥è¡¨å—å·¥å…·æ  å¿«æ·é”®èœå•æŒ‰é’® åŒ…æ‹¬åˆ†é¡µå†»ç»“
      *
-     * @return ·µ»Ø¹¤¾ßÀ¸Êý×é.
+     * @return è¿”å›žå·¥å…·æ æ•°ç»„.
      */
     public ToolBarDef[] toolbars4Target() {
         return new ToolBarDef[]{
@@ -78,8 +78,8 @@ public class FormElementCasePaneDelegate extends ElementCasePane<FormElementCase
     }
 
     /**
-     * ±íµ¥µÄ±¨±í¿éµÄ¹¤¾ß°´Å¥
-     * @return ¹¤¾ß°´Å¥
+     * è¡¨å•çš„æŠ¥è¡¨å—çš„å·¥å…·æŒ‰é’®
+     * @return å·¥å…·æŒ‰é’®
      */
     public JComponent[] toolBarButton4Form() {
         return new JComponent[]{
@@ -87,17 +87,17 @@ public class FormElementCasePaneDelegate extends ElementCasePane<FormElementCase
     }
 
     /**
-     * ÊÇ·ñ±ØÐëÎª¿É¼û·¶Î§.
+     * æ˜¯å¦å¿…é¡»ä¸ºå¯è§èŒƒå›´.
      *
-     * @return ²»ÊÇ±ØÐëÔÚ¿É¼û·¶Î§.
+     * @return ä¸æ˜¯å¿…é¡»åœ¨å¯è§èŒƒå›´.
      */
     public boolean mustInVisibleRange() {
         return false;
     }
 
     /**
-     * Ä£°å²Ëµ¥
-     * @return   Ä£°å²Ëµ¥
+     * æ¨¡æ¿èœå•
+     * @return   æ¨¡æ¿èœå•
      */
     public MenuDef createTemplateShortCuts() {
         MenuDef menuDef = new MenuDef(KeySetUtils.TEMPLATE.getMenuKeySetName(), KeySetUtils.TEMPLATE.getMnemonic());

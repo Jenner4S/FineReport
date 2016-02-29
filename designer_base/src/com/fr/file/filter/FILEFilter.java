@@ -5,22 +5,22 @@ import com.fr.file.FILE;
 public interface FILEFilter {
 
     /**
-     *ÎÄ¼şÊÇ·ñÖ§³Ö
-     * @param f ÎÄ¼ş
-     * @return Ö§³ÖÔò·µ»Øtrue
+     *æ–‡ä»¶æ˜¯å¦æ”¯æŒ
+     * @param f æ–‡ä»¶
+     * @return æ”¯æŒåˆ™è¿”å›true
      */
     public boolean accept(FILE f);
 
     /**
-     * È¡ÃèÊö
-     * @return ÃèÊö
+     * å–æè¿°
+     * @return æè¿°
      */
     public String getDescription();
 
     /**
-     * ÊÇ·ñ°üº¬Ò²¶¨µÃÀ©Õ¹
-     * @param extension  À©Õ¹
-     * @return °üº¬Ôò·µ»Øtrue
+     * æ˜¯å¦åŒ…å«ä¹Ÿå®šå¾—æ‰©å±•
+     * @param extension  æ‰©å±•
+     * @return åŒ…å«åˆ™è¿”å›true
      */
     public boolean containsExtension(String extension);
     

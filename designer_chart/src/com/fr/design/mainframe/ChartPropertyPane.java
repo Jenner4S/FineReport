@@ -15,7 +15,7 @@ import com.fr.design.gui.ilable.UILabel;
 public class ChartPropertyPane extends MiddleChartPropertyPane{
 
 	/**
-	 * 创建图表属性表实例.
+	 * 鍒涘缓鍥捐〃灞炴�ц〃瀹炰緥.
 	 */
 	public synchronized static ChartPropertyPane getInstance() {
 		if(singleton == null) {
@@ -55,4 +55,3 @@ public class ChartPropertyPane extends MiddleChartPropertyPane{
 		
 	}
 }
-

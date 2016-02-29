@@ -13,7 +13,7 @@ import com.fr.design.chart.gui.active.action.SetAxisStyleAction;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : 下午4:00
+ * Time   : 涓嬪崍4:00
  */
 public abstract class AxisActiveGlyph extends ActiveGlyph {
     protected AxisGlyph axis;
@@ -35,7 +35,7 @@ public abstract class AxisActiveGlyph extends ActiveGlyph {
     }
 
     /**
-     * 返回 对应的属性Axis
+     * 杩斿洖 瀵瑰簲鐨勫睘鎬xis
      */
     public Glyph getGlyph() {
         return this.axis;

@@ -17,17 +17,17 @@ public class DottedSeparatorUI extends BasicSeparatorUI {
     protected static final Dimension HORZ_DIMENSION = new Dimension(2, 0);
 
     /**
-     * ´´½¨×é¼þUI
-     * @param c  ×é¼þ
-     * @return ×é¼þUI
+     * åˆ›å»ºç»„ä»¶UI
+     * @param c  ç»„ä»¶
+     * @return ç»„ä»¶UI
      */
     public static ComponentUI createUI(JComponent c) {
         return new UISeparatorUI();
     }
 
     /**
-     * ¼ÓÔØÄ¬ÈÏ
-     * @param s ·Ö¸ô·û
+     * åŠ è½½é»˜è®¤
+     * @param s åˆ†éš”ç¬¦
      */
     protected void installDefaults(JSeparator s) {
         LookAndFeel.installColors(s, "Separator.background",

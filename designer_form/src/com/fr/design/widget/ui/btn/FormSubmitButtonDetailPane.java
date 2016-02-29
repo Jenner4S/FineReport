@@ -10,7 +10,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç6:25
+ * Time   : ä¸‹åˆ6:25
  */
 public class FormSubmitButtonDetailPane extends ButtonWithHotkeysDetailPane<FormSubmitButton> {
 

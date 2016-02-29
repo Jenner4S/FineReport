@@ -19,7 +19,7 @@ public class MaxMemRowCountPanel extends UIToolbar {
 	private UISpinner numberSpinner;
 	private UIComboBox switchCache;
 
-	private boolean showAll; // alex:²»ÖªµÀÔõÃ´Í¨¹ı½çÃæÅĞ¶Ïµ±Ç°µÄ×´Ì¬,Ö»ºÃ¼ÓÒ»¸öbooleanÁ¿ÁË
+	private boolean showAll; // alex:ä¸çŸ¥é“æ€ä¹ˆé€šè¿‡ç•Œé¢åˆ¤æ–­å½“å‰çš„çŠ¶æ€,åªå¥½åŠ ä¸€ä¸ªbooleané‡äº†
 
 	private ActionListener switchStateL = new ActionListener() {
 		@Override

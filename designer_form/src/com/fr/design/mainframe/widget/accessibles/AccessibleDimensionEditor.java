@@ -10,7 +10,7 @@ import com.fr.design.dialog.BasicDialog;
 import com.fr.design.dialog.DialogActionAdapter;
 
 /**
- * Size±à¼­Æ÷
+ * Sizeç¼–è¾‘å™¨
  * @since 6.5.3
  */
 public class AccessibleDimensionEditor extends BaseAccessibleEditor {

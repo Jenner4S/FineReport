@@ -42,7 +42,7 @@ public abstract class AbstractStyleAction extends ElementCaseAction implements S
      */
     @Override
     public void updateStyle(Style style) {
-        // peter:Õâ¸ö·½·¨Ä¬ÈÏÇé¿öÏÂÊ²Ã´¶¼²»×ö.
+        // peter:è¿™ä¸ªæ–¹æ³•é»˜è®¤æƒ…å†µä¸‹ä»€ä¹ˆéƒ½ä¸åš.
     }
 
     public boolean isFontStye() {
@@ -51,7 +51,7 @@ public abstract class AbstractStyleAction extends ElementCaseAction implements S
 
     @Override
     public void update() {
-        // james:Ó¦¸Ã´ÓActionÖĞµÄReportPaneÄÃStyle£¬¶ø²»ÊÇ´ÓreportFrameÖĞÄÃ
+        // james:åº”è¯¥ä»Actionä¸­çš„ReportPaneæ‹¿Styleï¼Œè€Œä¸æ˜¯ä»reportFrameä¸­æ‹¿
         this.setEnabled(true);
         ElementCasePane reportPane = this.getEditingComponent();
         if (reportPane == null) {
@@ -65,7 +65,7 @@ public abstract class AbstractStyleAction extends ElementCaseAction implements S
             if (tplEC != null && cs instanceof FloatSelection) {
                 FloatElement selectedFloat = tplEC.getFloatElement(((FloatSelection) cs).getSelectedFloatName());
                 if (selectedFloat == null) {
-                    //ÓĞÇé¿öÊÇ³·ÏúworksheetÀïÃæµÄÔªËØ³·ÏûÁË£¬µ«ÊÇreportpaneÀïÃæµÄselectionÃ»ÓĞ±ä
+                    //æœ‰æƒ…å†µæ˜¯æ’¤é”€worksheeté‡Œé¢çš„å…ƒç´ æ’¤æ¶ˆäº†ï¼Œä½†æ˜¯reportpaneé‡Œé¢çš„selectionæ²¡æœ‰å˜
                     reportPane.setSelection(new CellSelection());
                     return;
                 }
@@ -76,7 +76,7 @@ public abstract class AbstractStyleAction extends ElementCaseAction implements S
                 }
             }
         }
-        // ¸üĞÂStyle
+        // æ›´æ–°Style
         this.updateStyle(ReportActionUtils.getCurrentStyle(reportPane));
     }
 }

@@ -2,14 +2,14 @@ package com.fr.design.data.tabledata;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-8-5
- * Time: ÉÏÎç11:23
+ * Time: ä¸Šåˆ11:23
  * To change this template use File | Settings | File Templates.
  */
 public interface Prepare4DataSourceChange {
     /**
-     *×¢²álistener,ÏàÓ¦Êı¾İ¼¯¸Ä±ä
+     *æ³¨å†Œlistener,ç›¸åº”æ•°æ®é›†æ”¹å˜
      */
     public void registerDSChangeListener ();
 }

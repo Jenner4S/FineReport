@@ -31,7 +31,7 @@ import com.fr.stable.ArrayUtils;
 
 
 /**
- * richer:下拉复选框
+ * richer:涓嬫媺澶嶉�夋
  */
 public class ComboCheckBox extends UIComboBox {
 
@@ -59,7 +59,7 @@ public class ComboCheckBox extends UIComboBox {
     }
 
     /**
-     * 更新UI
+     * 鏇存柊UI
      */
     public void updateUI() {
         ComboBoxUI cui = (ComboBoxUI) UIManager.getUI(this);
@@ -117,7 +117,7 @@ public class ComboCheckBox extends UIComboBox {
             try {
                 this.show(comboBox, 0, getFittingLocaltion2Show());
             } catch (IllegalComponentStateException e) {
-                // richer:这里有可能会抛出一个异常，可以不用处理
+                // richer:杩欓噷鏈夊彲鑳戒細鎶涘嚭涓�涓紓甯革紝鍙互涓嶇敤澶勭悊
             }
             checkBoxList.requestFocus();
         }

@@ -16,7 +16,7 @@ import com.fr.design.mainframe.JTemplate;
 import com.fr.design.selection.QuickEditor;
 
 /**
- * Ò»Ğ©ActionUtils
+ * ä¸€äº›ActionUtils
  */
 public class ActionUtils {
 	private static Class<UpdateAction>[] actionClasses;
@@ -34,41 +34,41 @@ public class ActionUtils {
 	private static UpdateAction chartPreStyleAction = null;
 
     /**
-     * ´ıËµÃ÷
-     * @param clzz     ´ıËµÃ÷
-     * @param editor   ´ıËµÃ÷
+     * å¾…è¯´æ˜
+     * @param clzz     å¾…è¯´æ˜
+     * @param editor   å¾…è¯´æ˜
      */
 	public static void registerCellEditor(Class clzz, QuickEditor editor) {
 		cellEditor.put(clzz, editor);
 	}
 
     /**
-     * ´ıËµÃ÷
-     * @param clzz     ´ıËµÃ÷
-     * @param editor    ´ıËµÃ÷
+     * å¾…è¯´æ˜
+     * @param clzz     å¾…è¯´æ˜
+     * @param editor    å¾…è¯´æ˜
      */
 	public static void registerFloatEditor(Class clzz, QuickEditor editor) {
 		floatEditor.put(clzz, editor);
 	}
 	
 	/**
-	 * ×¢²áÍ¼±íµÄ Ô¤¶¨ÒåÑùÊ½. 
-	 * @param action ×¢²áµÄÍ¼±íÔ¤¶¨ÒåÑùÊ½action
+	 * æ³¨å†Œå›¾è¡¨çš„ é¢„å®šä¹‰æ ·å¼. 
+	 * @param action æ³¨å†Œçš„å›¾è¡¨é¢„å®šä¹‰æ ·å¼action
 	 */
 	public static void registerChartPreStyleAction(UpdateAction action) {
 		chartPreStyleAction = action;
 	}
 	
 	/**
-	 * ·µ»Ø Í¼±íÔ¤¶¨ÒåÑùÊ½Action
+	 * è¿”å› å›¾è¡¨é¢„å®šä¹‰æ ·å¼Action
 	 */
 	public static UpdateAction getChartPreStyleAction() {
 		return chartPreStyleAction;
 	}
 
     /**
-     * kunsnat: Í¼±í×¢²á Ğü¸¡ÔªËØ±à¼­Æ÷ , ÒòÎªChartCollecionºÍChartQuickEditorÒ»¸öÔÚChart,Ò»¸öÔÚDesigner, ËùÒÔ·Ö¿ª×¢²á.
-     * @param clzz  ´ıËµÃ÷
+     * kunsnat: å›¾è¡¨æ³¨å†Œ æ‚¬æµ®å…ƒç´ ç¼–è¾‘å™¨ , å› ä¸ºChartCollecionå’ŒChartQuickEditorä¸€ä¸ªåœ¨Chart,ä¸€ä¸ªåœ¨Designer, æ‰€ä»¥åˆ†å¼€æ³¨å†Œ.
+     * @param clzz  å¾…è¯´æ˜
      */
 	public static void registerChartCollection(Class clzz) {
 		chartCollectionClass = clzz;
@@ -79,8 +79,8 @@ public class ActionUtils {
 	}
 	
 	/**
-	 * kunsnat: Í¼±í×¢²á Ğü¸¡ÔªËØ±à¼­Æ÷ , ÒòÎªChartCollecionºÍChartQuickEditorÒ»¸öÔÚChart,Ò»¸öÔÚDesigner, ËùÒÔ·Ö¿ª×¢²á.
-     * @param editor  ´ıËµÃ÷
+	 * kunsnat: å›¾è¡¨æ³¨å†Œ æ‚¬æµ®å…ƒç´ ç¼–è¾‘å™¨ , å› ä¸ºChartCollecionå’ŒChartQuickEditorä¸€ä¸ªåœ¨Chart,ä¸€ä¸ªåœ¨Designer, æ‰€ä»¥åˆ†å¼€æ³¨å†Œ.
+     * @param editor  å¾…è¯´æ˜
 	 */
 	public static void registerChartFloatEditorInEditor(QuickEditor editor) {
 		if(chartCollectionClass != null) {
@@ -89,8 +89,8 @@ public class ActionUtils {
 	}
 
     /**
-     * kunsnat: Í¼±í×¢²á Ğü¸¡ÔªËØ±à¼­Æ÷ , ÒòÎªChartCollecionºÍChartQuickEditorÒ»¸öÔÚChart,Ò»¸öÔÚDesigner, ËùÒÔ·Ö¿ª×¢²á.
-     * @param editor  ´ıËµÃ÷
+     * kunsnat: å›¾è¡¨æ³¨å†Œ æ‚¬æµ®å…ƒç´ ç¼–è¾‘å™¨ , å› ä¸ºChartCollecionå’ŒChartQuickEditorä¸€ä¸ªåœ¨Chart,ä¸€ä¸ªåœ¨Designer, æ‰€ä»¥åˆ†å¼€æ³¨å†Œ.
+     * @param editor  å¾…è¯´æ˜
      */
 	public static void registerChartCellEditorInEditor(QuickEditor editor) {
 		if(chartCollectionClass != null) {
@@ -99,7 +99,7 @@ public class ActionUtils {
 	}
 	
 	/**
-	 * ·µ»Ø Ğü¸¡ÔªËØÑ¡ÖĞµÄEditor
+	 * è¿”å› æ‚¬æµ®å…ƒç´ é€‰ä¸­çš„Editor
 	 */
 	public static QuickEditor getFloatEditor(Class clazz) {
 		return floatEditor.get(clazz);
@@ -110,14 +110,14 @@ public class ActionUtils {
 	}
 
     /**
-     * peter:´ÓActionÀ´²úÉúToolTipText.
-     * @param action   ¶¯×÷
-     * @return    ×Ö·û
+     * peter:ä»Actionæ¥äº§ç”ŸToolTipText.
+     * @param action   åŠ¨ä½œ
+     * @return    å­—ç¬¦
      */
 	public static String createButtonToolTipText(Action action) {
 		StringBuffer buttonToolTipTextBuf = new StringBuffer();
 
-		//peter:°ÑÖĞÎÄºóÃæµÄ(U),alt ¿ì½İ¼üµÄÀ¨ºÅÈ¥µô,Õâ¸ö·½·¨ÊÇÁÙÊ±µÄ×ö·¨.
+		//peter:æŠŠä¸­æ–‡åé¢çš„(U),alt å¿«æ·é”®çš„æ‹¬å·å»æ‰,è¿™ä¸ªæ–¹æ³•æ˜¯ä¸´æ—¶çš„åšæ³•.
 		String actionName = (String) action.getValue(Action.NAME);
 		if (actionName.lastIndexOf("(") != -1) {
 			buttonToolTipTextBuf.append(actionName.substring(0, actionName.lastIndexOf("(")));
@@ -125,7 +125,7 @@ public class ActionUtils {
 			buttonToolTipTextBuf.append(actionName);
 		}
 
-		//peter:²úÉú¿ì½İ¼üµÄToolTip.
+		//peter:äº§ç”Ÿå¿«æ·é”®çš„ToolTip.
 		KeyStroke keyStroke = (KeyStroke) action.getValue(Action.ACCELERATOR_KEY);
 		if (keyStroke != null) {
 			buttonToolTipTextBuf.append(" (");
@@ -139,25 +139,25 @@ public class ActionUtils {
 	}
 
 	/**
-	 * ¼ÍÂ¼²åÈëÔªËØµÄÖÖÀà
+	 * çºªå½•æ’å…¥å…ƒç´ çš„ç§ç±»
 	 *
-	 * @param cls ÀàĞÍÊı×é
+	 * @param cls ç±»å‹æ•°ç»„
 	 */
 	public static void registerCellInsertActionClass(Class<UpdateAction>[] cls) {
 		actionClasses = cls;
 	}
 
 	/**
-	 * Éú³Éµ¥Ôª¸ñ²åÈëÏà¹ØµÄAction
+	 * ç”Ÿæˆå•å…ƒæ ¼æ’å…¥ç›¸å…³çš„Action
 	 *
-	 * @param cls ¹¹Ôìº¯Êı²ÎÊıÀàĞÍ
-	 * @param obj ¹¹Ôìº¯Êı²ÎÊıÖµ
-	 * @return Ïà¹ØAction×é³ÉµÄÒ»¸öÊı×é
+	 * @param cls æ„é€ å‡½æ•°å‚æ•°ç±»å‹
+	 * @param obj æ„é€ å‡½æ•°å‚æ•°å€¼
+	 * @return ç›¸å…³Actionç»„æˆçš„ä¸€ä¸ªæ•°ç»„
 	 */
 	public static UpdateAction[] createCellInsertAction(Class cls, Object obj) {
         int length = 0;
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
-        //±íµ¥ÖĞ±¨±í¿é±à¼­ÆÁ±Îµô   ²åÈë×Ó±¨±í
+        //è¡¨å•ä¸­æŠ¥è¡¨å—ç¼–è¾‘å±è”½æ‰   æ’å…¥å­æŠ¥è¡¨
         length = jTemplate.isJWorkBook()? actionClasses.length : actionClasses.length - 1;
 		UpdateAction[] actions = new UpdateAction[length];
 		for (int i = 0; i < length; i++) {
@@ -172,20 +172,20 @@ public class ActionUtils {
 	}
 
 	/**
-	 * µÇ¼ÇĞü¸¡ÔªËØ²åÈëÀàĞÍ
+	 * ç™»è®°æ‚¬æµ®å…ƒç´ æ’å…¥ç±»å‹
 	 *
-	 * @param cls ²åÈëÀàĞÍÊı×é
+	 * @param cls æ’å…¥ç±»å‹æ•°ç»„
 	 */
 	public static void registerFloatInsertActionClass(Class<UpdateAction>[] cls) {
 		floatActionClasses = cls;
 	}
 
 	/**
-	 * Éú³ÉĞü¸¡ÔªËØ²åÈëÏà¹ØµÄAction
+	 * ç”Ÿæˆæ‚¬æµ®å…ƒç´ æ’å…¥ç›¸å…³çš„Action
 	 *
-	 * @param cls ¹¹Ôìº¯Êı²ÎÊıÀàĞÍ
-	 * @param obj ¹¹Ôìº¯Êı²ÎÊıÖµ
-	 * @return Ïà¹ØAction×é³ÉµÄÒ»¸öÊı×é
+	 * @param cls æ„é€ å‡½æ•°å‚æ•°ç±»å‹
+	 * @param obj æ„é€ å‡½æ•°å‚æ•°å€¼
+	 * @return ç›¸å…³Actionç»„æˆçš„ä¸€ä¸ªæ•°ç»„
 	 */
 	public static UpdateAction[] createFloatInsertAction(Class cls, Object obj) {
 		UpdateAction[] actions = new UpdateAction[floatActionClasses.length];

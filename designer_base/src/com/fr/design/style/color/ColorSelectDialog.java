@@ -18,7 +18,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.Inter;
 
 /**
- * ÑÕÉ«Ñ¡ÔñÆ÷¸ü¶àÑÕÉ«¶Ô»°¿ò
+ * é¢œè‰²é€‰æ‹©å™¨æ›´å¤šé¢œè‰²å¯¹è¯æ¡†
  * @author focus
  *
  */
@@ -39,15 +39,15 @@ public class ColorSelectDialog extends MiddleChartDialog{
 	private UIButton ok;
 	private UIButton cancel;
 	
-	// Íâ²ãÑÕÉ«Ñ¡ÔñÆ÷Ãæ°å
+	// å¤–å±‚é¢œè‰²é€‰æ‹©å™¨é¢æ¿
 	private ColorSelectable seletePane;
 	
-	// ÑÕÉ«Ñ¡Ôñ¼àÌı
+	// é¢œè‰²é€‰æ‹©ç›‘å¬
 	ColorTracker okListener;
 
 	/**
 	 * construct
-	 * @param owner ¸¸ÈİÆ÷
+	 * @param owner çˆ¶å®¹å™¨
 	 */
     public ColorSelectDialog(Frame owner) {
         super(owner);
@@ -56,7 +56,7 @@ public class ColorSelectDialog extends MiddleChartDialog{
 
     /**
      * construct 
-     * @param owner ¸¸ÈİÆ÷
+     * @param owner çˆ¶å®¹å™¨
      */
     public ColorSelectDialog(Dialog owner) {
         super(owner);
@@ -65,11 +65,11 @@ public class ColorSelectDialog extends MiddleChartDialog{
     
     /**
      * construct
-     * @param owner ¸¸ÈİÆ÷
-     * @param pane ÑÕÉ«Ñ¡ÔñÆ÷¸ü¶àÑÕÉ«Ãæ°å
-     * @param initialColor ³õÊ¼ÑÕÉ«
-     * @param okListener ÑÕÉ«Ñ¡Ôñ¼àÌı
-     * @param seletePane Íâ²ãÑÕÉ«Ñ¡ÔñÃæ°å
+     * @param owner çˆ¶å®¹å™¨
+     * @param pane é¢œè‰²é€‰æ‹©å™¨æ›´å¤šé¢œè‰²é¢æ¿
+     * @param initialColor åˆå§‹é¢œè‰²
+     * @param okListener é¢œè‰²é€‰æ‹©ç›‘å¬
+     * @param seletePane å¤–å±‚é¢œè‰²é€‰æ‹©é¢æ¿
      */
     public ColorSelectDialog(Frame owner,ColorSelectDetailPane pane,Color initialColor,ActionListener okListener,ColorSelectable seletePane){
     	super(owner);
@@ -127,11 +127,11 @@ public class ColorSelectDialog extends MiddleChartDialog{
 	}
 
 	/**
-	 * ÏÔÊ¾ÑÕÉ«Ñ¡ÔñÆ÷¸ü¶àÑÕÉ«¶Ô»°¿ò
-	 * @param owner ¸¸ÈİÆ÷
-	 * @param pane ¸ü¶àÑÕÉ«Ñ¡ÔñÆ÷Ãæ°å
-	 * @param initialColor ³õÊ¼ÑÕÉ«
-	 * @param selectePane Íâ²ãÑÕÉ«Ñ¡ÔñÆ÷Ãæ°å
+	 * æ˜¾ç¤ºé¢œè‰²é€‰æ‹©å™¨æ›´å¤šé¢œè‰²å¯¹è¯æ¡†
+	 * @param owner çˆ¶å®¹å™¨
+	 * @param pane æ›´å¤šé¢œè‰²é€‰æ‹©å™¨é¢æ¿
+	 * @param initialColor åˆå§‹é¢œè‰²
+	 * @param selectePane å¤–å±‚é¢œè‰²é€‰æ‹©å™¨é¢æ¿
 	 * void
 	 */
 	public static void showDialog(Frame owner,ColorSelectDetailPane pane,Color initialColor,ColorSelectable selectePane){
@@ -142,7 +142,7 @@ public class ColorSelectDialog extends MiddleChartDialog{
 	}
 
 	/**
-	 * ²»´¦Àí
+	 * ä¸å¤„ç†
 	 */
 	@Override
 	public void checkValid() throws Exception {
@@ -152,7 +152,7 @@ public class ColorSelectDialog extends MiddleChartDialog{
 }
 
 /**
- * ÑÕÉ«Ñ¡ÔñÆ÷¼àÌı
+ * é¢œè‰²é€‰æ‹©å™¨ç›‘å¬
  * @author focus
  *
  */

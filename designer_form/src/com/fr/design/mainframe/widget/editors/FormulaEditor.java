@@ -9,7 +9,7 @@ import com.fr.design.mainframe.widget.accessibles.AccessiblePropertyEditor;
 /**
  * @author richer
  * @since 6.5.3
- * ¹«Ê½±à¼­Æ÷
+ * å…¬å¼ç¼–è¾‘å™¨
  */
 public class FormulaEditor extends AccessiblePropertyEditor {
     public FormulaEditor() {

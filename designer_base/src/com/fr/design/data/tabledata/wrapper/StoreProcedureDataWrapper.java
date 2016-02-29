@@ -25,17 +25,17 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.Inter;
 
 /**
- * <code>StoreProcedureDataWrappe</code> £º´æ´¢¹ı³ÌµÄÒ»¸ö·µ»ØÊı¾İ¼¯,²»ÊÇËü±¾Éí¡£<br>
- * OracleÊı¾İ¿â¿Ï¶¨ÓĞËü¡£SQL SERVER¾Í²»Ò»¶¨ÓĞÁË,´ó²¿·ÖÇé¿öÏÂ¶¼Ã»ÓĞ.
+ * <code>StoreProcedureDataWrappe</code> ï¼šå­˜å‚¨è¿‡ç¨‹çš„ä¸€ä¸ªè¿”å›æ•°æ®é›†,ä¸æ˜¯å®ƒæœ¬èº«ã€‚<br>
+ * Oracleæ•°æ®åº“è‚¯å®šæœ‰å®ƒã€‚SQL SERVERå°±ä¸ä¸€å®šæœ‰äº†,å¤§éƒ¨åˆ†æƒ…å†µä¸‹éƒ½æ²¡æœ‰.
  * <p/>
- * <code>StoreProcedureNameWrappe</code> £º´æ´¢¹ı³Ì±¾ÉíµÄ·µ»ØÊı¾İ¼¯£¬ÊÇËü±¾Éí¡£<br>
- * OracleÊı¾İ¿âÓĞËü£¬µ«ÆäÊµÃ»±ØÒª£¬Ëü¾ÍÊÇOracleËùÓĞ·µ»ØÊı¾İ¼¯µÄµÚÒ»¸ö¡£SQL SERVER¿Ï¶¨ÓĞÕâ¸ö¶«Î÷¡£
+ * <code>StoreProcedureNameWrappe</code> ï¼šå­˜å‚¨è¿‡ç¨‹æœ¬èº«çš„è¿”å›æ•°æ®é›†ï¼Œæ˜¯å®ƒæœ¬èº«ã€‚<br>
+ * Oracleæ•°æ®åº“æœ‰å®ƒï¼Œä½†å…¶å®æ²¡å¿…è¦ï¼Œå®ƒå°±æ˜¯Oracleæ‰€æœ‰è¿”å›æ•°æ®é›†çš„ç¬¬ä¸€ä¸ªã€‚SQL SERVERè‚¯å®šæœ‰è¿™ä¸ªä¸œè¥¿ã€‚
  * <code>StoreProcedureNameWrappe</code>
- * Êµ¼Ê¾ÍÊÇ£ºÒÔÇ°ÎÒÃÇÔÚĞÂ½¨Êı¾İ¼¯Ê±£¬´Ó×ó±ßµÄÁĞ±íÖĞÍÏ¶¯Ò»¸ö´æ´¢¹ı³Ìµ½ÓÒ±ßµÄSQLÃæ°å£¬
- * µÃµ½µÄSQLÓï¾äÖ´ĞĞºó·µ»ØµÄÊı¾İ¼¯¡£ÓÖÒòÎª½á¹û¿ÉÄÜµÃµ½¶à¸öÊı¾İ¼¯£¬ËùÒÔÄ¬ÈÏÓÃµÚÒ»¸ö
+ * å®é™…å°±æ˜¯ï¼šä»¥å‰æˆ‘ä»¬åœ¨æ–°å»ºæ•°æ®é›†æ—¶ï¼Œä»å·¦è¾¹çš„åˆ—è¡¨ä¸­æ‹–åŠ¨ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹åˆ°å³è¾¹çš„SQLé¢æ¿ï¼Œ
+ * å¾—åˆ°çš„SQLè¯­å¥æ‰§è¡Œåè¿”å›çš„æ•°æ®é›†ã€‚åˆå› ä¸ºç»“æœå¯èƒ½å¾—åˆ°å¤šä¸ªæ•°æ®é›†ï¼Œæ‰€ä»¥é»˜è®¤ç”¨ç¬¬ä¸€ä¸ª
  *
  * @author zhou
- * @since 2012-4-12ÉÏÎç10:29:15
+ * @since 2012-4-12ä¸Šåˆ10:29:15
  */
 public final class StoreProcedureDataWrapper implements TableDataWrapper {
     public static final int PREVIEW_ALL = 0;
@@ -59,9 +59,9 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
 
 
     /**
-     * @param dsName             ´æ´¢¹ı³ÌÒ»¸ö·µ»ØÊı¾İ¼¯µÄÃû×Ö
-     * @param storeProcedure     ´æ´¢¹ı³Ì
-     * @param storeprocedureName ´æ´¢¹ı³ÌµÄÃû×Ö(Ä³Ğ©Çé¿öÏÂ¿ÉÒÔÎª¿Õ)
+     * @param dsName             å­˜å‚¨è¿‡ç¨‹ä¸€ä¸ªè¿”å›æ•°æ®é›†çš„åå­—
+     * @param storeProcedure     å­˜å‚¨è¿‡ç¨‹
+     * @param storeprocedureName å­˜å‚¨è¿‡ç¨‹çš„åå­—(æŸäº›æƒ…å†µä¸‹å¯ä»¥ä¸ºç©º)
      */
     public StoreProcedureDataWrapper(StoreProcedure storeProcedure, String storeprocedureName, String dsName, boolean needLoad) {
         this.dsName = dsName;
@@ -90,12 +90,12 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
     }
 
     /**
-     * Êı¾İ¼¯Ö´ĞĞ½á¹û·µ»ØµÄËùÓĞ×Ö¶Î
+     * æ•°æ®é›†æ‰§è¡Œç»“æœè¿”å›çš„æ‰€æœ‰å­—æ®µ
      *
-     * @return Êı¾İ¼¯Ö´ĞĞ½á¹û·µ»ØµÄËùÓĞ×Ö¶Î
+     * @return æ•°æ®é›†æ‰§è¡Œç»“æœè¿”å›çš„æ‰€æœ‰å­—æ®µ
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:43:17
+	 * @date 2014-12-3-ä¸‹åˆ7:43:17
 	 * 
 	 */
     public List<String> calculateColumnNameList() {
@@ -111,12 +111,12 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
     }
 
     /**
-     * Éú³É×Ó½Úµã
+     * ç”Ÿæˆå­èŠ‚ç‚¹
      *
-     * @return ½ÚµãÊı×é
+     * @return èŠ‚ç‚¹æ•°ç»„
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:06:47
+	 * @date 2014-12-3-ä¸‹åˆ7:06:47
 	 * 
 	 */
     public ExpandMutableTreeNode[] load() {
@@ -159,12 +159,12 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
     }
 
     /**
-	 * Ô¤ÀÀÊı¾İ
+	 * é¢„è§ˆæ•°æ®
 	 * 
-	 * @param previewModel Ô¤ÀÀÄ£Ê½, È«²¿»¹ÊÇÒ»¸ö
+	 * @param previewModel é¢„è§ˆæ¨¡å¼, å…¨éƒ¨è¿˜æ˜¯ä¸€ä¸ª
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:05:50
+	 * @date 2014-12-3-ä¸‹åˆ7:05:50
 	 * 
 	 */
     public void previewData(final int previewModel) {
@@ -194,7 +194,7 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
                 boolean status = FRContext.getCurrentEnv().testConnection(((StoreProcedure) getTableData()).getDatabaseConnection());
                 if (!status) {
                     connectionBar.close();
-                    // bug 61345 Ô¤ÀÀÊ§°ÜÊ±£¬¹Ø±Õ´°¿Ú
+                    // bug 61345 é¢„è§ˆå¤±è´¥æ—¶ï¼Œå…³é—­çª—å£
                     dialog.setVisible(false);
                     throw new Exception(Inter.getLocText("Datasource-Connection_failed"));
                 }
@@ -236,29 +236,29 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
         return this.worker;
     }
 
-    // august:Õâ¸öÖ»ÊÇÔ¤ÀÀ·µ»ØµÄÒ»¸öÊı¾İ¼¯
+    // august:è¿™ä¸ªåªæ˜¯é¢„è§ˆè¿”å›çš„ä¸€ä¸ªæ•°æ®é›†
 
     /**
-     * Ô¤ÀÀ·µ»ØµÄÒ»¸öÊı¾İ¼¯
+     * é¢„è§ˆè¿”å›çš„ä¸€ä¸ªæ•°æ®é›†
      * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:42:53
+	 * @date 2014-12-3-ä¸‹åˆ7:42:53
 	 * 
 	 */
     public void previewData() {
         previewData(-1, -1);
     }
 
-    // august:Õâ¸öÖ»ÊÇÔ¤ÀÀ·µ»ØµÄÒ»¸öÊı¾İ¼¯
+    // august:è¿™ä¸ªåªæ˜¯é¢„è§ˆè¿”å›çš„ä¸€ä¸ªæ•°æ®é›†
 
     /**
-     * Ô¤ÀÀ·µ»ØµÄÒ»¸öÊı¾İ¼¯£¬´øÓĞÏÔÊ¾ÖµºÍÊµ¼ÊÖµµÄ±ê¼Ç½á¹û
+     * é¢„è§ˆè¿”å›çš„ä¸€ä¸ªæ•°æ®é›†ï¼Œå¸¦æœ‰æ˜¾ç¤ºå€¼å’Œå®é™…å€¼çš„æ ‡è®°ç»“æœ
      * 
-	 * @param keyIndex Êµ¼ÊÖµ
-	 * @param valueIndex ÏÔÊ¾Öµ
+	 * @param keyIndex å®é™…å€¼
+	 * @param valueIndex æ˜¾ç¤ºå€¼
 	 * 
 	 *
-	 * @date 2014-12-3-ÏÂÎç7:42:27
+	 * @date 2014-12-3-ä¸‹åˆ7:42:27
 	 * 
 	 */
     public void previewData(final int keyIndex, final int valueIndex) {
@@ -267,7 +267,7 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
 
 
     /**
-     * Ô¤ÀÀ·µ»ØµÄËùÓĞÊı¾İ¼¯£¬Ö»ÓĞÔÚ±à¼­´æ´¢¹ı³ÌÊ±²ÅÓÃµ½
+     * é¢„è§ˆè¿”å›çš„æ‰€æœ‰æ•°æ®é›†ï¼Œåªæœ‰åœ¨ç¼–è¾‘å­˜å‚¨è¿‡ç¨‹æ—¶æ‰ç”¨åˆ°
      */
     public void previewAllTable() {
         if (procedureDataModel == null) {
@@ -292,9 +292,9 @@ public final class StoreProcedureDataWrapper implements TableDataWrapper {
     }
 
     /**
-     * ÊÇ·ñÒì³£
+     * æ˜¯å¦å¼‚å¸¸
      *
-     * @return ÊÇ·ñÒì³£
+     * @return æ˜¯å¦å¼‚å¸¸
      */
     public boolean isUnusual() {
         return false;

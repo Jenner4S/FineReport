@@ -63,10 +63,10 @@ public class ToolTipEditor extends JWindow {
 	}
 
     /**
-     * ÏÔÊ¾XEditorHolder¿É³ÉÎªÀàĞÍµ¯³ö¿ò
-     * @param holder  ¿Ø¼ş
-     * @param xAbs ºá×ø±ê
-     * @param yAbs   ×İ×ø±ê
+     * æ˜¾ç¤ºXEditorHolderå¯æˆä¸ºç±»å‹å¼¹å‡ºæ¡†
+     * @param holder  æ§ä»¶
+     * @param xAbs æ¨ªåæ ‡
+     * @param yAbs   çºµåæ ‡
      */
 	public void showToolTip(XEditorHolder holder, int xAbs, int yAbs) {
 		this.setEditor(holder);
@@ -80,25 +80,25 @@ public class ToolTipEditor extends JWindow {
 	}
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÒş²Ø
-     * @return  ÊÇ·µ»Øtrue
+     * åˆ¤æ–­æ˜¯å¦éšè—
+     * @return  æ˜¯è¿”å›true
      */
 	public boolean isEditorVisible() {
 		return this.isVisible();
 	}
 
     /**
-     * Òş²Øµ¯³ö¿ò
+     * éšè—å¼¹å‡ºæ¡†
      */
 	public void hideToolTip() {
 		this.setVisible(false);
 	}
 
     /**
-     * ³äÖµ´óĞ¡
-     * @param xEditorHolder       ¿Ø¼ş
-     * @param bounds       ĞÂ³ß´ç
-     * @param oldBounds     ¾É³ß´ç
+     * å……å€¼å¤§å°
+     * @param xEditorHolder       æ§ä»¶
+     * @param bounds       æ–°å°ºå¯¸
+     * @param oldBounds     æ—§å°ºå¯¸
      */
 	public void resetBounds(XEditorHolder xEditorHolder, Rectangle bounds, Rectangle oldBounds) {
 		if (this.isVisible() && this.holder == xEditorHolder) {

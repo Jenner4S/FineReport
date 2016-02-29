@@ -22,7 +22,7 @@ import com.fr.general.Inter;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-2
- * Time   : …œŒÁ8:48
+ * Time   : ‰∏äÂçà8:48
  */
 public abstract class ChartStyleAxisPane extends BasicPane implements ListSelectionListener {
     protected static final String CATE_AXIS = Inter.getLocText("ChartF-Category_Axis");

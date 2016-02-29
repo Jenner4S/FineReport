@@ -17,7 +17,7 @@ import java.awt.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç7:45
+ * Time   : ä¸‹åˆ7:45
  */
 public class TreeNodeToogleButtonDefinePane<T extends TreeNodeToggleButton> extends ButtonDetailPane<Button> {
 

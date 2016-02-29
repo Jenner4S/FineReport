@@ -13,9 +13,9 @@ import java.util.Map;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç10:25
- * ÏµÁĞµÄÌõ¼şÊôĞÔ ¹¤³§. 
- * ²»°üÀ¨×éºÏÍ¼.(ps ×éºÏÍ¼ÊÇÓÃ×éºÏÀàĞÍ½çÃæÆ´´ÕµÄ) 
+ * Time   : ä¸Šåˆ10:25
+ * ç³»åˆ—çš„æ¡ä»¶å±æ€§ å·¥å‚. 
+ * ä¸åŒ…æ‹¬ç»„åˆå›¾.(ps ç»„åˆå›¾æ˜¯ç”¨ç»„åˆç±»å‹ç•Œé¢æ‹¼å‡‘çš„) 
  */
 public class DataSeriesConditionPaneFactory {
     private static final String TREND = ".TrendLine";
@@ -46,9 +46,9 @@ public class DataSeriesConditionPaneFactory {
     }
 
     /**
-     * ÕÒµ½PlotÌõ¼ş½çÃæ¶ÔÓ¦µÄDataSeriesµÄ.
-     * @param plot  ¶ÔÓ¦Plot
-     * @return ·µ»Øclass¶ÔÓ¦µÄÊôĞÔ½çÃæ.
+     * æ‰¾åˆ°Plotæ¡ä»¶ç•Œé¢å¯¹åº”çš„DataSeriesçš„.
+     * @param plot  å¯¹åº”Plot
+     * @return è¿”å›classå¯¹åº”çš„å±æ€§ç•Œé¢.
      */
     public static Class<? extends ConditionAttributesPane> findConfitionPane4DataSeries(Plot plot) {
         if (plot == null) {

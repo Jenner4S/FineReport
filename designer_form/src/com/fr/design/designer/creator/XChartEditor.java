@@ -27,18 +27,18 @@ import com.fr.general.Inter;
 import com.fr.stable.core.PropertyChangeAdapter;
 
 /**
- * formÖĞµÄÍ¼±í°´Å¥µ¯³öµÄ¿Ø¼ş, ´´½¨³õÊ¼»¯Í¼±íÄÚÈİ.
+ * formä¸­çš„å›¾è¡¨æŒ‰é’®å¼¹å‡ºçš„æ§ä»¶, åˆ›å»ºåˆå§‹åŒ–å›¾è¡¨å†…å®¹.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-7-5 ÉÏÎç10:28:30
- *          ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-7-5 ä¸Šåˆ10:28:30
+ *          ç±»è¯´æ˜
  */
 public class XChartEditor extends XBorderStyleWidgetCreator {
 	private static final long serialVersionUID = -7009439442104836657L;
-	//¾ßÌåÀ´ËµÊÇDesignerEditor<SimpleChartComponent>
+	//å…·ä½“æ¥è¯´æ˜¯DesignerEditor<SimpleChartComponent>
 	private DesignerEditor<JComponent> designerEditor;
 	//	private DesignerEditor<SimpleChartComponent> designerEditor;
-	//marro£ºÎŞÄÎµÄÊôĞÔ£¬ÔİÊ±Ïë²»³öºÃ°ì·¨
+	//marroï¼šæ— å¥ˆçš„å±æ€§ï¼Œæš‚æ—¶æƒ³ä¸å‡ºå¥½åŠæ³•
 	private boolean isRefreshing = false;
 
 	public XChartEditor(BaseChartEditor editor) {
@@ -61,24 +61,24 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 	}
 
     /**
-     * ·µ»Ø×é¼şÄ¬ÈÏÃû
-     * @return ×é¼şÀàÃû(Ğ¡Ğ´)
+     * è¿”å›ç»„ä»¶é»˜è®¤å
+     * @return ç»„ä»¶ç±»å(å°å†™)
      */
     public String createDefaultName() {
         return "chart";
     }
     
     /**
-     * ÊÇ·ñÖ§³ÖÉèÖÃ±êÌâ
-     * @return ÊÇ·µ»Øtrue
+     * æ˜¯å¦æ”¯æŒè®¾ç½®æ ‡é¢˜
+     * @return æ˜¯è¿”å›true
      */
     public boolean hasTitleStyle() {
 		return true;
 	}
 
     /**
-     *  µÃµ½ÊôĞÔÃû
-     * @return ÊôĞÔÃû
+     *  å¾—åˆ°å±æ€§å
+     * @return å±æ€§å
      * @throws java.beans.IntrospectionException
      */
     public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -99,15 +99,15 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
     }
 
     /**
-     * ¸Ã×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë²ÎÊıÃæ°å
-     * @return ÊÇÔò·µ»Øtrue
+     * è¯¥ç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥å‚æ•°é¢æ¿
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canEnterIntoParaPane(){
         return false;
     }
 
 	/**
-	 * ·µ»ØÉè¼ÆÆ÷µÄEditor
+	 * è¿”å›è®¾è®¡å™¨çš„Editor
 	 */
 	public DesignerEditor<JComponent> getDesignerEditor() {
 		return designerEditor;
@@ -124,12 +124,12 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 	}
 
 	/**
-	 * µã»÷Ñ¡ÖĞµÄÊ±ºò, Ë¢ĞÂ½çÃæ
-	 * ÓÒ¼ü resetÖ®ºó, ´¥·¢ÊÂ¼ş populate´Ë·½·¨
+	 * ç‚¹å‡»é€‰ä¸­çš„æ—¶å€™, åˆ·æ–°ç•Œé¢
+	 * å³é”® resetä¹‹å, è§¦å‘äº‹ä»¶ populateæ­¤æ–¹æ³•
 	 *
-	 * @param jform        ±íµ¥
-	 * @param formDesigner ±íµ¥Éè¼ÆÆ÷
-	 * @return ¿Ø¼ş.
+	 * @param jform        è¡¨å•
+	 * @param formDesigner è¡¨å•è®¾è®¡å™¨
+	 * @return æ§ä»¶.
 	 */
 	public JComponent createToolPane(final BaseJForm jform, final FormDesigner formDesigner) {
 		getDesignerEditorTarget().addStopEditingListener(new PropertyChangeAdapter() {
@@ -164,7 +164,7 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 	}
 
 	/**
-	 * äÖÈ¾Painter
+	 * æ¸²æŸ“Painter
 	 */
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -172,9 +172,9 @@ public class XChartEditor extends XBorderStyleWidgetCreator {
 	}
 
 	/**
-	 * ³õÊ¼»¯Editor´óĞ¡.
+	 * åˆå§‹åŒ–Editorå¤§å°.
 	 *
-	 * @return ·µ»Ø´óĞ¡.
+	 * @return è¿”å›å¤§å°.
 	 */
 	public Dimension initEditorSize() {
 		return new Dimension(250, 100);

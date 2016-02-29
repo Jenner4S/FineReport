@@ -26,12 +26,12 @@ import com.fr.general.Inter;
  */
 public abstract class AbstractPropertyTable extends JTable {
 
-    // ÊôĞÔ·Ö×é
+    // å±æ€§åˆ†ç»„
     protected ArrayList<PropertyGroup> groups;
     protected TableModel default_table_model;
-	// ÊôĞÔ±í±»Ñ¡ÖĞµÄĞĞ¼ÓÒ»¸öÇ³À¶É«µÄ±³¾°
+	// å±æ€§è¡¨è¢«é€‰ä¸­çš„è¡ŒåŠ ä¸€ä¸ªæµ…è“è‰²çš„èƒŒæ™¯
 	public static final Color PROPERTY_SELECTION_BACKGROUND = new Color(153, 204, 255);
-	// ÊôĞÔ±íµÄĞĞ¸ß
+	// å±æ€§è¡¨çš„è¡Œé«˜
 	public static final int PROPERTY_TABLE_ROW_HEIGHT = 22;
 
     public AbstractPropertyTable() {

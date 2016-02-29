@@ -33,7 +33,7 @@ import com.fr.stable.StringUtils;
  * Created by IntelliJ IDEA.
  * User: Richer
  * Date: 11-6-30
- * Time: ÏÂÎç8:21
+ * Time: ä¸‹åˆ8:21
  */
 public class ComboBoxDemo extends JPanel {
     public ComboBoxDemo() {
@@ -59,7 +59,7 @@ public class ComboBoxDemo extends JPanel {
     }
 
     private ComboCheckBox createComboCheckBox() {
-        ComboCheckBox ccb = new ComboCheckBox(new Object[]{"ÕÅÈı", "ÀîËÄ", "ÍõÎå", "ÕÔÁù"});
+        ComboCheckBox ccb = new ComboCheckBox(new Object[]{"å¼ ä¸‰", "æå››", "ç‹äº”", "èµµå…­"});
         ccb.setRenderer(new DefaultListCellRenderer() {
             @Override
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -83,7 +83,7 @@ public class ComboBoxDemo extends JPanel {
     private DictionaryComboBox createDictComboBox() {
         DictionaryComboBox dcb = new DictionaryComboBox(
                 new Integer[]{1, 2, 3, 4},
-                new String[]{"Ò»", "¶ş", "Èı", "ËÄ"}
+                new String[]{"ä¸€", "äºŒ", "ä¸‰", "å››"}
         );
         return dcb;
     }
@@ -93,7 +93,7 @@ public class ComboBoxDemo extends JPanel {
                 "Hello   world,   alksdfjlaskdjflaskjdflaksdf",
                 "Hello   world,   alksdfjlaskdjflaskjdflaksdfasdfklajsdflkasjdflkasdf",
                 "Hello   world,   alksdfjlaskdjflaskjdflaksdfasdfklajsdflkasjdflkasdfaaaaaaaaaaaaaaaaaadfsdf",
-                "Hello   world,   Ì«³¤ÁË£¬¶¼¿´²»È«ÁËjlaskdjflaskjdflaksdfasdfklajsdflkasjdflkasdfsdfgklsdjfgklsdfjgklsjdfgkljsdflkgjsdlfk"});
+                "Hello   world,   å¤ªé•¿äº†ï¼Œéƒ½çœ‹ä¸å…¨äº†jlaskdjflaskjdflaksdfasdfklajsdflkasjdflkasdfsdfgklsdjfgklsdfjgklsjdfgkljsdflkgjsdlfk"});
         return ecb;
     }
 
@@ -118,16 +118,16 @@ public class ComboBoxDemo extends JPanel {
 
     private FRTreeComboBox createTreeComboBox() {
 
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("¸ù½Úµã");
-        DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("×Ó½Úµã1");
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("æ ¹èŠ‚ç‚¹");
+        DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("å­èŠ‚ç‚¹1");
         root.add(child1);
-        DefaultMutableTreeNode child11 = new DefaultMutableTreeNode("×Ó½Úµã1-1");
+        DefaultMutableTreeNode child11 = new DefaultMutableTreeNode("å­èŠ‚ç‚¹1-1");
         child1.add(child11);
-        DefaultMutableTreeNode child12 = new DefaultMutableTreeNode("×Ó½Úµã1-2");
+        DefaultMutableTreeNode child12 = new DefaultMutableTreeNode("å­èŠ‚ç‚¹1-2");
         child1.add(child12);
-        DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("×Ó½Úµã2");
+        DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("å­èŠ‚ç‚¹2");
         root.add(child2);
-        DefaultMutableTreeNode child21 = new DefaultMutableTreeNode("×Ó½Úµã2-1");
+        DefaultMutableTreeNode child21 = new DefaultMutableTreeNode("å­èŠ‚ç‚¹2-1");
         child2.add(child21);
         JTree tree = new JTree(root);
         TreeCellRenderer treeCellRender = new DefaultTreeCellRenderer() {
@@ -136,7 +136,7 @@ public class ComboBoxDemo extends JPanel {
                 if (value instanceof DefaultMutableTreeNode) {
                     DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
                     Object userObj = node.getUserObject();
-                    setText(userObj + "-ÎÒÊÇäÖÈ¾Æ÷¶îÍâ¼ÓµÄ");
+                    setText(userObj + "-æˆ‘æ˜¯æ¸²æŸ“å™¨é¢å¤–åŠ çš„");
                 }
                 return this;
             }
@@ -162,7 +162,7 @@ public class ComboBoxDemo extends JPanel {
         LazyComboBox lcb = new LazyComboBox() {
             @Override
             public Object[] load() {
-                // Ë¯5Ãë
+                // ç¡5ç§’
                 try {
                     Thread.sleep(5000);
                 } catch (InterruptedException e) {

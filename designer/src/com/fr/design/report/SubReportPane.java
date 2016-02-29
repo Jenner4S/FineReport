@@ -115,7 +115,7 @@ public class SubReportPane extends BasicPane {
     }
 
     public SubReport update() {
-    	// check µÄÊ±ºòÒÑ¾­ÅĞ±ğ¹ıÁË
+    	// check çš„æ—¶å€™å·²ç»åˆ¤åˆ«è¿‡äº†
 //    	if (StringUtils.isNotBlank(pathTextField.getText())) {
     		LinkWorkBookTemplate linkTemplate = new LinkWorkBookTemplate();
     		int length = "env://".length() + ProjectConstants.REPORTLETS_NAME.length() + 1;
@@ -134,17 +134,17 @@ public class SubReportPane extends BasicPane {
     }
     
     protected boolean checkFILE() {
-    	// TODO ALEX_SEP ×Ó±¨±í¶¼ÒªÉ¾ÁË,Õâ¸ö»¹???
+    	// TODO ALEX_SEP å­æŠ¥è¡¨éƒ½è¦åˆ äº†,è¿™ä¸ªè¿˜???
 //    	if (StringUtils.isBlank(pathTextField.getText())) {
 //    		JOptionPane.showConfirmDialog(this, Inter.getLocText("Sub_Report_Message1"),
 //					Inter.getLocText("Sub_Report_ToolTips"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 //    		return false;
-//    	// È·±£¸¸±¨±í´æÔÚ£¬Ö÷ÒªÊÇ·ÀÖ¹¸¸±¨±í²»ÔÙµ±Ç°ÔËĞĞ»·¾³ÖĞ
+//    	// ç¡®ä¿çˆ¶æŠ¥è¡¨å­˜åœ¨ï¼Œä¸»è¦æ˜¯é˜²æ­¢çˆ¶æŠ¥è¡¨ä¸å†å½“å‰è¿è¡Œç¯å¢ƒä¸­
 //    	}else if (!ReportDeziUtils.getEditingReportInternalFrame().getEditingFILE().exists()) {
 //    		JOptionPane.showConfirmDialog(this, Inter.getLocText("Sub_Report_Message2"),
 //    				Inter.getLocText("Sub_Report_ToolTips"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 //    		return false;
-//    	// carl:¸¸×Ó±¨±í²»ÄÜÏàÍ¬
+//    	// carl:çˆ¶å­æŠ¥è¡¨ä¸èƒ½ç›¸åŒ
 //    	} else if(ReportDeziUtils.getEditingReportInternalFrame().getEditingFILE().getPath().equals(chooseFILE.getPath())) {
 //    		JOptionPane.showConfirmDialog(this, Inter.getLocText("Sub_Report_Message3"),
 //    				Inter.getLocText("Sub_Report_ToolTips"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);

@@ -36,21 +36,21 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * Éè¼ÆÆ÷¹ÜÀí²Ù×÷Êı¾İ¼¯µÄÀà:
- * 1.¶ÔÓÚÃ¿¸öTableData,»áÉú³ÉÏàÓ¦µÄTableDataWrapper.TableDataWrapperÀïÃæÓĞTableDataµÄÊı¾İÁĞ»º´æ
- * 2.TableDataWrapperÊÇ²»Ö§³Ö¶ÔTableDataµÄĞŞ¸Ä²éÑ¯Óï¾ä ÖØÃüÃûµÈĞŞ¸ÄÉ¾³ı²Ù×÷
- * Èç¹ûTableData±ä»¯ÁË£¬ÄÇÃ´TableDataWrapper Ò²»áÖØĞÂÉú³É,È»ºó´æ½ø»º´æ.ÕâÑù±£Ö¤»º´æÊÇÕıÈ·µÄ,²»»áÈ¡µ½´íÎóµÄÊı¾İÁĞ¡£
- * 3.¶ÔÓÚÄ£°åÊı¾İ¼¯£¬¹Ø¼ü´ÊÓ¦¸Ã±£Ö¤¸÷¸öÄ£°åÊı¾İ¼¯Ö®¼ä²»Í¬£¬ËùÒÔÄ¬ÈÏÓĞ¸ö¼ÓÉÏÄ£°åÃûµÄ²Ù×÷¡£
- * 4.¸öÈË¾õµÃÍêÈ«Ã»ÓĞ±ØÒª×ö³ÉÄÇÖÖÒ»¸öSQLÓï¾ä¶ÔÓ¦Ò»¸öÊı¾İÁĞµÄÇé¿ö£¬ÄÇÑù×ÓÌ«¸´ÔÓÁË¡£¶øÇÒÃ¿´Î±È½Ï¹Ø¼ü´Ê¶¼ºÜÂı
+ * è®¾è®¡å™¨ç®¡ç†æ“ä½œæ•°æ®é›†çš„ç±»:
+ * 1.å¯¹äºæ¯ä¸ªTableData,ä¼šç”Ÿæˆç›¸åº”çš„TableDataWrapper.TableDataWrapperé‡Œé¢æœ‰TableDataçš„æ•°æ®åˆ—ç¼“å­˜
+ * 2.TableDataWrapperæ˜¯ä¸æ”¯æŒå¯¹TableDataçš„ä¿®æ”¹æŸ¥è¯¢è¯­å¥ é‡å‘½åç­‰ä¿®æ”¹åˆ é™¤æ“ä½œ
+ * å¦‚æœTableDataå˜åŒ–äº†ï¼Œé‚£ä¹ˆTableDataWrapper ä¹Ÿä¼šé‡æ–°ç”Ÿæˆ,ç„¶åå­˜è¿›ç¼“å­˜.è¿™æ ·ä¿è¯ç¼“å­˜æ˜¯æ­£ç¡®çš„,ä¸ä¼šå–åˆ°é”™è¯¯çš„æ•°æ®åˆ—ã€‚
+ * 3.å¯¹äºæ¨¡æ¿æ•°æ®é›†ï¼Œå…³é”®è¯åº”è¯¥ä¿è¯å„ä¸ªæ¨¡æ¿æ•°æ®é›†ä¹‹é—´ä¸åŒï¼Œæ‰€ä»¥é»˜è®¤æœ‰ä¸ªåŠ ä¸Šæ¨¡æ¿åçš„æ“ä½œã€‚
+ * 4.ä¸ªäººè§‰å¾—å®Œå…¨æ²¡æœ‰å¿…è¦åšæˆé‚£ç§ä¸€ä¸ªSQLè¯­å¥å¯¹åº”ä¸€ä¸ªæ•°æ®åˆ—çš„æƒ…å†µï¼Œé‚£æ ·å­å¤ªå¤æ‚äº†ã€‚è€Œä¸”æ¯æ¬¡æ¯”è¾ƒå…³é”®è¯éƒ½å¾ˆæ…¢
  * <p/>
- * !!!Notice: ³ıÁËÔ¤ÀÀÊı¾İ¼¯µÄ²Ù×÷£¬ÆäËûËùÓĞÉæ¼°µ½Êı¾İ¼¯µÄ½çÃæ²Ù×÷£¬¶¼Òª¾­¹ıÕâ¸öÀà(ÒòÎªËüÓĞÊı¾İ¼¯µÄ»º´æ,²»ĞèÒªÖØ¸´¼ÆËã£©
+ * !!!Notice: é™¤äº†é¢„è§ˆæ•°æ®é›†çš„æ“ä½œï¼Œå…¶ä»–æ‰€æœ‰æ¶‰åŠåˆ°æ•°æ®é›†çš„ç•Œé¢æ“ä½œï¼Œéƒ½è¦ç»è¿‡è¿™ä¸ªç±»(å› ä¸ºå®ƒæœ‰æ•°æ®é›†çš„ç¼“å­˜,ä¸éœ€è¦é‡å¤è®¡ç®—ï¼‰
  *
  * @author zhou
  */
 public abstract class DesignTableDataManager {
     /**
-     * ÆäÊµglobalDsCacheÃ»ÓĞ¾ø¶ÔµÄ±ØÒª£¬Ö»ÊÇÎªÁË²Ù×÷·½±ã¡£Èç¹ûÃ»ÓĞËü£¬ÄÇÃ´Ã¿´ÎÇå¿Õ·şÎñÆ÷Êı¾İ¼¯»òÕß´æ´¢¹ı³ÌµÄÊ±ºò£¬»¹ÒªÈ¥±éÀúÕÒÒ»ÏÂ£¬
-     * Õâ¸ö²Ù×÷¿ÉÄÜ±È½Ï¸´ÔÓ ¡£ ´Ó¼õÉÙ´úÂë¸´ÔÓ¶ÈµÄ½Ç¶È¿´£¬»¹ÊÇºÜÓĞ±ØÒªµÄ
+     * å…¶å®globalDsCacheæ²¡æœ‰ç»å¯¹çš„å¿…è¦ï¼Œåªæ˜¯ä¸ºäº†æ“ä½œæ–¹ä¾¿ã€‚å¦‚æœæ²¡æœ‰å®ƒï¼Œé‚£ä¹ˆæ¯æ¬¡æ¸…ç©ºæœåŠ¡å™¨æ•°æ®é›†æˆ–è€…å­˜å‚¨è¿‡ç¨‹çš„æ—¶å€™ï¼Œè¿˜è¦å»éå†æ‰¾ä¸€ä¸‹ï¼Œ
+     * è¿™ä¸ªæ“ä½œå¯èƒ½æ¯”è¾ƒå¤æ‚ ã€‚ ä»å‡å°‘ä»£ç å¤æ‚åº¦çš„è§’åº¦çœ‹ï¼Œè¿˜æ˜¯å¾ˆæœ‰å¿…è¦çš„
      */
     private static java.util.Map<String, TableDataWrapper> globalDsCache = new java.util.HashMap<String, TableDataWrapper>();
     private static java.util.Map<String, String> dsNameChangedMap = new HashMap<String, String>();
@@ -58,24 +58,24 @@ public abstract class DesignTableDataManager {
 
     public static String NO_PARAMETER = "no_paramater_pane";
 
-    //ÓÃÓÚ¼ÇÂ¼ÊÇ·ñÒªµ¯³ö²ÎÊı¿ò
+    //ç”¨äºè®°å½•æ˜¯å¦è¦å¼¹å‡ºå‚æ•°æ¡†
     private static ThreadLocal<String> threadLocal = new ThreadLocal<String>();
 
 
     /**
-     * Çå³ıÈ«¾Ö Êı¾İ¼¯»º´æ.
+     * æ¸…é™¤å…¨å±€ æ•°æ®é›†ç¼“å­˜.
      */
     public static void clearGlobalDs() {
         globalDsCache.clear();
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä.
+     * å“åº”æ•°æ®é›†æ”¹å˜.
      */
     private static void fireDsChanged() {
         for (int i = 0; i < dsListeners.size(); i++) {
-        //ÔöÇ¿forÑ­»·ÓÃµÄiteratorÊµÏÖµÄ, Èç¹ûÖĞ¼äÄÄ¸ölistenerĞŞ¸Ä»òÉ¾³ıÁË(ÈçChartEditPane.dsChangeListener),
-        // ÓÉÓÚdsListenersÊÇarraylist, ´ËÊ±»áConcurrentModifyException
+        //å¢å¼ºforå¾ªç¯ç”¨çš„iteratorå®ç°çš„, å¦‚æœä¸­é—´å“ªä¸ªlistenerä¿®æ”¹æˆ–åˆ é™¤äº†(å¦‚ChartEditPane.dsChangeListener),
+        // ç”±äºdsListenersæ˜¯arraylist, æ­¤æ—¶ä¼šConcurrentModifyException
 //        for (ChangeListener l : dsListeners) {
             ChangeEvent e = null;
             dsListeners.get(i).stateChanged(e);
@@ -83,9 +83,9 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * ÏìÓ¦Êı¾İ¼¯¸Ä±ä
+     * å“åº”æ•°æ®é›†æ”¹å˜
      *
-     * @param dsNameChangedMap ¸Ä±äÃû×ÖµÄÊı¾İ¼¯
+     * @param dsNameChangedMap æ”¹å˜åå­—çš„æ•°æ®é›†
      */
     public static void fireDSChanged(Map<String, String> dsNameChangedMap) {
         if (!dsNameChangedMap.isEmpty()) {
@@ -104,10 +104,10 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * Êı¾İ¿âÊÇ·ñ¸Ä±ä
+     * æ•°æ®åº“æ˜¯å¦æ”¹å˜
      *
-     * @param oldDsName ¾ÉÃû×Ö
-     * @return ÊÇÔò·µ»Øtrue
+     * @param oldDsName æ—§åå­—
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public static boolean isDsNameChanged(String oldDsName) {
         return dsNameChangedMap.containsKey(oldDsName);
@@ -122,19 +122,19 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * Ìí¼ÓÄ£°åÊı¾İ¼¯¸Ä±ä ¼àÌıÊÂ¼ş.
+     * æ·»åŠ æ¨¡æ¿æ•°æ®é›†æ”¹å˜ ç›‘å¬äº‹ä»¶.
      *
-     * @param l ChangeListener¼àÌıÆ÷
+     * @param l ChangeListenerç›‘å¬å™¨
      */
     public static void addDsChangeListener(ChangeListener l) {
         dsListeners.add(l);
     }
 
     /**
-     * »ñÈ¡Êı¾İÔ´sourceÖĞdsNameµÄËùÓĞ×Ö¶Î
+     * è·å–æ•°æ®æºsourceä¸­dsNameçš„æ‰€æœ‰å­—æ®µ
      *
-     * @param source Êı¾İÔ´
-     * @param dsName Êı¾İ¼¯Ãû×Ö
+     * @param source æ•°æ®æº
+     * @param dsName æ•°æ®é›†åå­—
      * @return
      */
     public static String[] getSelectedColumnNames(TableDataSource source, String dsName) {
@@ -145,17 +145,17 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * august:·µ»Øµ±Ç°ÕıÔÚ±à¼­µÄ¾ßÓĞ±¨±íÊı¾İÔ´µÄÄ£°å(»ù±¾±¨±í¡¢¾ÛºÏ±¨±í) °üÀ¨ : Í¼±íÄ£°å
+     * august:è¿”å›å½“å‰æ­£åœ¨ç¼–è¾‘çš„å…·æœ‰æŠ¥è¡¨æ•°æ®æºçš„æ¨¡æ¿(åŸºæœ¬æŠ¥è¡¨ã€èšåˆæŠ¥è¡¨) åŒ…æ‹¬ : å›¾è¡¨æ¨¡æ¿
      *
      * @return TableDataSource
-     *         attention:ÓëÕâ¸ö·½·¨ÓĞ¹ØÏµµÄ¾²Ì¬×é¼ş£¨²»Ëæ×ÅÇĞ»»Ä£°åtab¶ø±ä»¯µÄ£©£¬Ó¦¸ÃÖØĞÂÖ´ĞĞ¸Ã·½·¨£¬ÔÙË¢ĞÂ×é¼ş
+     *         attention:ä¸è¿™ä¸ªæ–¹æ³•æœ‰å…³ç³»çš„é™æ€ç»„ä»¶ï¼ˆä¸éšç€åˆ‡æ¢æ¨¡æ¿tabè€Œå˜åŒ–çš„ï¼‰ï¼Œåº”è¯¥é‡æ–°æ‰§è¡Œè¯¥æ–¹æ³•ï¼Œå†åˆ·æ–°ç»„ä»¶
      */
     public static TableDataSource getEditingTableDataSource() {
         return DesignModelAdapter.getCurrentModelAdapter() == null ? null : DesignModelAdapter.getCurrentModelAdapter().getBook();
     }
 
     /**
-     * ·µ»Øµ±Ç°Ä£°å(source)Êı¾İ¼¯¡¢·şÎñÆ÷Êı¾İ¼¯ºÍ´æ´¢¹ı³ÌÖĞËùÓĞµÄÊı¾İ¼¯Ãû×Ö
+     * è¿”å›å½“å‰æ¨¡æ¿(source)æ•°æ®é›†ã€æœåŠ¡å™¨æ•°æ®é›†å’Œå­˜å‚¨è¿‡ç¨‹ä¸­æ‰€æœ‰çš„æ•°æ®é›†åå­—
      *
      * @param source
      * @return
@@ -171,16 +171,16 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * ²»¸ù¾İ¹ıÂËÉèÖÃ£¬·µ»Øµ±Ç°Ä£°åÊı¾İ¼¯¡¢·şÎñÆ÷Êı¾İ¼¯¡¢´æ´¢¹ı³Ì±¾Éí£¬ÊÇÓĞË³ĞòµÄ
+     * ä¸æ ¹æ®è¿‡æ»¤è®¾ç½®ï¼Œè¿”å›å½“å‰æ¨¡æ¿æ•°æ®é›†ã€æœåŠ¡å™¨æ•°æ®é›†ã€å­˜å‚¨è¿‡ç¨‹æœ¬èº«ï¼Œæ˜¯æœ‰é¡ºåºçš„
      */
     public static java.util.Map<String, TableDataWrapper> getAllEditingDataSet(TableDataSource source) {
         java.util.Map<String, TableDataWrapper> resMap = new java.util.LinkedHashMap<String, TableDataWrapper>();
-        // Ä£°åÊı¾İ¼¯
+        // æ¨¡æ¿æ•°æ®é›†
         addTemplateData(resMap, source);
 
-        // ·şÎñÆ÷Êı¾İ¼¯
+        // æœåŠ¡å™¨æ•°æ®é›†
         addServerData(resMap);
-        // ´æ´¢¹ı³Ì
+        // å­˜å‚¨è¿‡ç¨‹
         addStoreProcedureData(resMap);
 
         return resMap;
@@ -229,21 +229,21 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * ²»¸ù¾İ¹ıÂËÉèÖÃ£¬·µ»Øµ±Ç°·şÎñÆ÷Êı¾İ¼¯¡¢´æ´¢¹ı³ÌËùÓĞµÄÊı¾İ¼¯£¬ÊÇÓĞË³ĞòµÄ
+     * ä¸æ ¹æ®è¿‡æ»¤è®¾ç½®ï¼Œè¿”å›å½“å‰æœåŠ¡å™¨æ•°æ®é›†ã€å­˜å‚¨è¿‡ç¨‹æ‰€æœ‰çš„æ•°æ®é›†ï¼Œæ˜¯æœ‰é¡ºåºçš„
      */
     public static java.util.Map<String, TableDataWrapper> getGlobalDataSet() {
         java.util.Map<String, TableDataWrapper> resMap = new java.util.LinkedHashMap<String, TableDataWrapper>();
 
-        // ·şÎñÆ÷Êı¾İ¼¯
+        // æœåŠ¡å™¨æ•°æ®é›†
         addServerData(resMap);
-        // ´æ´¢¹ı³Ì
+        // å­˜å‚¨è¿‡ç¨‹
         addStoreProcedureData(resMap);
 
         return resMap;
     }
 
     /**
-     * ¸ù¾İ¹ıÂËÉèÖÃ£¬·µ»Øµ±Ç°Ä£°åÊı¾İ¼¯¡¢·şÎñÆ÷Êı¾İ¼¯¡¢´æ´¢¹ı³ÌËùÓĞµÄÊı¾İ¼¯£¬ÊÇÓĞË³ĞòµÄ
+     * æ ¹æ®è¿‡æ»¤è®¾ç½®ï¼Œè¿”å›å½“å‰æ¨¡æ¿æ•°æ®é›†ã€æœåŠ¡å™¨æ•°æ®é›†ã€å­˜å‚¨è¿‡ç¨‹æ‰€æœ‰çš„æ•°æ®é›†ï¼Œæ˜¯æœ‰é¡ºåºçš„
      */
     public static List<Map<String, TableDataWrapper>> getEditingDataSet(TableDataSource source) {
         Map<String, TableDataWrapper> templateDataMap = new LinkedHashMap<String, TableDataWrapper>();
@@ -312,38 +312,38 @@ public abstract class DesignTableDataManager {
 
 
     /**
-     * Ô¤ÀÀĞèÒª²ÎÊıµÄÊı¾İ¼¯
+     * é¢„è§ˆéœ€è¦å‚æ•°çš„æ•°æ®é›†
      *
-     * @param tabledata      Êı¾İ¼¯
-     * @param rowCount       ĞèÒªÔ¤ÀÀµÄĞĞÊı
-     * @param needLoadingBar ÊÇ·ñĞèÒª¼ÓÔØ½ø¶ÈÌõ
-     * @return Êı¾İ¼¯
-     * @throws Exception Òì³£
+     * @param tabledata      æ•°æ®é›†
+     * @param rowCount       éœ€è¦é¢„è§ˆçš„è¡Œæ•°
+     * @param needLoadingBar æ˜¯å¦éœ€è¦åŠ è½½è¿›åº¦æ¡
+     * @return æ•°æ®é›†
+     * @throws Exception å¼‚å¸¸
      */
     public static EmbeddedTableData previewTableDataNeedInputParameters(TableData tabledata, int rowCount, boolean needLoadingBar) throws Exception {
         return previewTableData(tabledata, rowCount, true, needLoadingBar);
     }
 
     /**
-     * Ô¤ÀÀ²»ĞèÒª²ÎÊıµÄÊı¾İ¼¯
+     * é¢„è§ˆä¸éœ€è¦å‚æ•°çš„æ•°æ®é›†
      *
-     * @param tabledata      Êı¾İ¼¯
-     * @param rowCount       ĞèÒªÔ¤ÀÀµÄĞĞÊı
-     * @param needLoadingBar ÊÇ·ñĞèÒª¼ÓÔØ½ø¶ÈÌõ
-     * @return Êı¾İ¼¯
-     * @throws Exception Òì³£
+     * @param tabledata      æ•°æ®é›†
+     * @param rowCount       éœ€è¦é¢„è§ˆçš„è¡Œæ•°
+     * @param needLoadingBar æ˜¯å¦éœ€è¦åŠ è½½è¿›åº¦æ¡
+     * @return æ•°æ®é›†
+     * @throws Exception å¼‚å¸¸
      */
     public static EmbeddedTableData previewTableDataNotNeedInputParameters(TableData tabledata, int rowCount, boolean needLoadingBar) throws Exception {
         return previewTableData(tabledata, rowCount, false, needLoadingBar);
     }
 
     /**
-     * »ñÈ¡Ô¤ÀÀºóµÄEmbeddedTableData£¬¿¼ÂÇµ½Env
+     * è·å–é¢„è§ˆåçš„EmbeddedTableDataï¼Œè€ƒè™‘åˆ°Env
      *
      * @param tabledata
      * @param rowCount
-     * @param isMustInputParameters ÊÇ·ñ±ØĞëÊäÈë²ÎÊıÖµ£¨²»¹Ü²ÎÊıÓĞÃ»ÓĞÄ¬ÈÏÖµ£©¡£Ò»°ãÔ¤ÀÀÊ±Õâ¸öÖµÎªtrue£¬ÒòÎªÒ»°ãÔ¤ÀÀÊÇÒª¿´²»Í¬µÄ²ÎÊıµÄ½á¹ûµÄ¡£
-     *                              ¶ø»ñÈ¡Êı¾İ¼¯µÄ×Ö¶ÎÃû×ÖÊ±£¬ÔòÃ»±ØÒª
+     * @param isMustInputParameters æ˜¯å¦å¿…é¡»è¾“å…¥å‚æ•°å€¼ï¼ˆä¸ç®¡å‚æ•°æœ‰æ²¡æœ‰é»˜è®¤å€¼ï¼‰ã€‚ä¸€èˆ¬é¢„è§ˆæ—¶è¿™ä¸ªå€¼ä¸ºtrueï¼Œå› ä¸ºä¸€èˆ¬é¢„è§ˆæ˜¯è¦çœ‹ä¸åŒçš„å‚æ•°çš„ç»“æœçš„ã€‚
+     *                              è€Œè·å–æ•°æ®é›†çš„å­—æ®µåå­—æ—¶ï¼Œåˆ™æ²¡å¿…è¦
      * @return
      */
     private static EmbeddedTableData previewTableData(TableData tabledata, int rowCount, boolean isMustInputParameters, boolean needLoadingBar) throws Exception {
@@ -398,10 +398,10 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * ·µ»Ø<code>TableData</code>µÄÊı¾İÁĞ,×¢Òâ<code>TableData</code>
-     * ÊÇÃ»ÓĞ¿¼ÂÇ²ÎÊıµÄ¡£ÓÃÓÚ¼òµ¥µÄ²éÑ¯Óï¾äÉú³ÉµÄ<code>TableData</code>, »òÕß
-     * <code>EmbeddedTableData</code>. ±ÈÈçËµ£ºÊı¾İ×Öµä-Êı¾İ¿â±íÉú³ÉµÄ<code>TableData</code>¡£
-     * Ê¹ÓÃ¸Ã·½·¨ÊÇÃ»ÓĞÊı¾İ¼¯»º´æµÄ¹¦ÄÜµÄ
+     * è¿”å›<code>TableData</code>çš„æ•°æ®åˆ—,æ³¨æ„<code>TableData</code>
+     * æ˜¯æ²¡æœ‰è€ƒè™‘å‚æ•°çš„ã€‚ç”¨äºç®€å•çš„æŸ¥è¯¢è¯­å¥ç”Ÿæˆçš„<code>TableData</code>, æˆ–è€…
+     * <code>EmbeddedTableData</code>. æ¯”å¦‚è¯´ï¼šæ•°æ®å­—å…¸-æ•°æ®åº“è¡¨ç”Ÿæˆçš„<code>TableData</code>ã€‚
+     * ä½¿ç”¨è¯¥æ–¹æ³•æ˜¯æ²¡æœ‰æ•°æ®é›†ç¼“å­˜çš„åŠŸèƒ½çš„
      *
      * @return List<String>
      */
@@ -426,17 +426,17 @@ public abstract class DesignTableDataManager {
     }
 
     /**
-     * ¸Ã·½·¨Ö÷ÒªÀûÓÃÁËStoreProcedureÀïÃæµÄ¡°dataModelListÓĞ»º´æ×÷ÓÃ¡±µÄ»úÖÆ
-     * ËùÒÔÓÃ¸Ã·½·¨£¬²»»á¶ÔÒ»¸öÒÑ¾­¼ÆËãÁËµÄ´æ´¢¹ı³ÌÖØ¸´¼ÆËã.ºÍ·ÖÒ³Ô¤ÀÀÊ±´¦Àí»úÖÆÒ»Ñù£¬ÕâÑù¶ÔÓĞ¶à¸ö·µ»ØÊı¾İ¼¯µÄ´æ´¢¹ı³ÌÀ´ËµºÜÓĞ±ØÒª
+     * è¯¥æ–¹æ³•ä¸»è¦åˆ©ç”¨äº†StoreProcedureé‡Œé¢çš„â€œdataModelListæœ‰ç¼“å­˜ä½œç”¨â€çš„æœºåˆ¶
+     * æ‰€ä»¥ç”¨è¯¥æ–¹æ³•ï¼Œä¸ä¼šå¯¹ä¸€ä¸ªå·²ç»è®¡ç®—äº†çš„å­˜å‚¨è¿‡ç¨‹é‡å¤è®¡ç®—.å’Œåˆ†é¡µé¢„è§ˆæ—¶å¤„ç†æœºåˆ¶ä¸€æ ·ï¼Œè¿™æ ·å¯¹æœ‰å¤šä¸ªè¿”å›æ•°æ®é›†çš„å­˜å‚¨è¿‡ç¨‹æ¥è¯´å¾ˆæœ‰å¿…è¦
      *
-     * @param needLoadingBar ÊÇ·ñĞèÒª½ø¶ÈÌõ
-     * @param storeProcedure ´æ´¢¹ı³Ì
-     * @return Êı¾İ
+     * @param needLoadingBar æ˜¯å¦éœ€è¦è¿›åº¦æ¡
+     * @param storeProcedure å­˜å‚¨è¿‡ç¨‹
+     * @return æ•°æ®
      */
     public static ProcedureDataModel[] createLazyDataModel(StoreProcedure storeProcedure, boolean needLoadingBar) throws Exception {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         XMLPrintWriter writer = XMLPrintWriter.create(out);
-        // °ÑstoreProcedureĞ´³ÉxmlÎÄ¼şµ½out
+        // æŠŠstoreProcedureå†™æˆxmlæ–‡ä»¶åˆ°out
         DataCoreXmlUtils.writeXMLStoreProcedure(writer, storeProcedure, null);
         Env currentEnv = FRContext.getCurrentEnv();
         if (storeProcedure.getDataModelSize() > 0 && !storeProcedure.isFirstExpand()) {
@@ -444,7 +444,7 @@ public abstract class DesignTableDataManager {
         }
         ParameterProvider[] inParameters = currentEnv.getStoreProcedureParameters(storeProcedure);
         final Map<String, Object> parameterMap = new HashMap<String, Object>();
-        if (inParameters.length > 0 && !ComparatorUtils.equals(threadLocal.get(), NO_PARAMETER)) {// ¼ì²éParameter.
+        if (inParameters.length > 0 && !ComparatorUtils.equals(threadLocal.get(), NO_PARAMETER)) {// æ£€æŸ¥Parameter.
             final ParameterInputPane pPane = new ParameterInputPane(inParameters);
             pPane.showSmallWindow(DesignerContext.getDesignerFrame(), new DialogActionAdapter() {
                 public void doOk() {

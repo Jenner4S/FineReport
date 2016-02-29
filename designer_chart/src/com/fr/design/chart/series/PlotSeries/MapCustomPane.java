@@ -33,16 +33,16 @@ import com.fr.stable.StringUtils;
 import org.apache.batik.swing.svg.SVGFileFilter;
 
 /**
- * ×Ô¶¨ÒåµØÍ¼½çÃæ.
+ * è‡ªå®šä¹‰åœ°å›¾ç•Œé¢.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-10-15 ÏÂÎç03:38:15
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-10-15 ä¸‹åˆ03:38:15
  */
-public class MapCustomPane extends BasicBeanPane<String> implements AbstrctMapAttrEditPane{ // ´¢´æµØÍ¼¶ÔÓ¦µÄ×Ö¶Î. Ãû³Æ, ÀàĞÍ. shape (µã ÓÃÔ²ĞÎ´úÌæ)
+public class MapCustomPane extends BasicBeanPane<String> implements AbstrctMapAttrEditPane{ // å‚¨å­˜åœ°å›¾å¯¹åº”çš„å­—æ®µ. åç§°, ç±»å‹. shape (ç‚¹ ç”¨åœ†å½¢ä»£æ›¿)
 
-	private FilterComboBox<String> areaString;// ÇøÓò×Ö¶Î
-	private DatabaseTableDataPane tableDataNameBox;// Êı¾İ¼¯Ãû³Æ  + ºóÃæ¸úËæÔ¤ÀÀ°´Å¥
-	private MapImageEditPane imageShowPane; // Í¼Æ¬Õ¹Ê¾±à¼­µÄ½çÃæ
+	private FilterComboBox<String> areaString;// åŒºåŸŸå­—æ®µ
+	private DatabaseTableDataPane tableDataNameBox;// æ•°æ®é›†åç§°  + åé¢è·Ÿéšé¢„è§ˆæŒ‰é’®
+	private MapImageEditPane imageShowPane; // å›¾ç‰‡å±•ç¤ºç¼–è¾‘çš„ç•Œé¢
 	private String lastSelectPath;
 	private boolean isNeedDataSource = true;
 
@@ -148,7 +148,7 @@ refreshAreaNameBox();
 	};
 
 	/**
-	 * Ñ¡ÖĞ·½Ê½: ÇøÓò»òÕßµã
+	 * é€‰ä¸­æ–¹å¼: åŒºåŸŸæˆ–è€…ç‚¹
 	 */
 	public void setImageSelectType(int selectType) {
 		if (imageShowPane != null) {
@@ -156,7 +156,7 @@ refreshAreaNameBox();
 		}
 	}
 
-	private void refreshAreaNameBox() {// Ë¢ĞÂÇøÓòÃû³ÆÁĞ±í
+	private void refreshAreaNameBox() {// åˆ·æ–°åŒºåŸŸåç§°åˆ—è¡¨
 		if(!isNeedDataSource){
 			return;
 		}
@@ -171,26 +171,26 @@ refreshAreaNameBox();
 	}
 
     /**
-     * µ±Ç°ÕıÔÚ±à¼­µÄÌõÄ¿µÄÀà±ğ(¹ú¼Ò£¬Ê¡ÊĞ)ÃûºÍµØÍ¼Ãû
-     * @param typeName Àà±ğÃû
-     * @param mapName µØÍ¼Ãû
+     * å½“å‰æ­£åœ¨ç¼–è¾‘çš„æ¡ç›®çš„ç±»åˆ«(å›½å®¶ï¼Œçœå¸‚)åå’Œåœ°å›¾å
+     * @param typeName ç±»åˆ«å
+     * @param mapName åœ°å›¾å
      */
     public void setTypeNameAndMapName(String typeName, String mapName){
         imageShowPane.setTypeNameAndMapName(typeName, mapName);
     }
 
 	/**
-	 * ¸ù¾İµØÍ¼Ãû³Æ ¼ÓÔØĞÅÏ¢
+	 * æ ¹æ®åœ°å›¾åç§° åŠ è½½ä¿¡æ¯
 	 */
 	public void populateBean(String list) {
 		imageShowPane.populateBean(list);
 	}
 
 	/**
-	 * ¸ù¾İµØÍ¼Ãû³Æ ±£´æĞÅÏ¢
+	 * æ ¹æ®åœ°å›¾åç§° ä¿å­˜ä¿¡æ¯
 	 */
 	public String updateBean() {
-		// µØÍ¼ÀàĞÍµÈ ¼ÓÈëHelper
+		// åœ°å›¾ç±»å‹ç­‰ åŠ å…¥Helper
 		return imageShowPane.updateBean();
 	}
 
@@ -200,16 +200,16 @@ refreshAreaNameBox();
 	}
 
 	/**
-      * ¸üĞÂ½çÃæ
-      * @param attr  µØÍ¼ÊôĞÔ
+      * æ›´æ–°ç•Œé¢
+      * @param attr  åœ°å›¾å±æ€§
     */
 	public void populateMapAttr(MapSvgAttr attr) {
 		imageShowPane.populateMapSvgAttr(attr);
 	}
 
 	/**
-      * ¸üĞÂMapSvgAttr
-      * @return  ·µ»ØÊôĞÔ
+      * æ›´æ–°MapSvgAttr
+      * @return  è¿”å›å±æ€§
 	 */
 	public MapSvgAttr updateCurrentAttr() {
 		return imageShowPane.updateWithOutSave();

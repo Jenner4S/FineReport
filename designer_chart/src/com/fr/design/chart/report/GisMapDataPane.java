@@ -25,7 +25,7 @@ import java.util.List;
 public class GisMapDataPane extends DataContentsPane{
 	private static final long serialVersionUID = -190573722921978406L;
 
-	private UIComboBoxPane<Chart> dataFromPane;// Êı¾İÀ´Ô´µÄbox½çÃæ
+	private UIComboBoxPane<Chart> dataFromPane;// æ•°æ®æ¥æºçš„boxç•Œé¢
 	
 	private GisMapReportDataContentPane reportPane;
 	private GisMapTableDataContentPane tablePane;
@@ -38,24 +38,24 @@ public class GisMapDataPane extends DataContentsPane{
 	
 
 	/**
-	 * ÅĞ¶Ï×¼ĞíµÄÇé¿ö
-     * @param ob ´«ÈëµÄ¶ÔÏó
-     * @return ·µ»ØÊÇ·ñÔÊĞí
+	 * åˆ¤æ–­å‡†è®¸çš„æƒ…å†µ
+     * @param ob ä¼ å…¥çš„å¯¹è±¡
+     * @return è¿”å›æ˜¯å¦å…è®¸
 	 */
 	public boolean accept(Object ob) {
 		return ob instanceof TopDefinition;
 	}
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	public void reset() {
 		
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("ChartF-Gis");
@@ -122,8 +122,8 @@ public class GisMapDataPane extends DataContentsPane{
 					protected List<FurtherBasicBeanPane<? extends Chart>> initPaneList() {
 						List list = new ArrayList();
 						
-						list.add(tablePane = new GisMapTableDataContentPane());// Êı¾İ¼¯½çÃæ
-						list.add(reportPane = new GisMapReportDataContentPane());// µ¥Ôª¸ñ½çÃæ
+						list.add(tablePane = new GisMapTableDataContentPane());// æ•°æ®é›†ç•Œé¢
+						list.add(reportPane = new GisMapReportDataContentPane());// å•å…ƒæ ¼ç•Œé¢
 						
 						return list;
 					}

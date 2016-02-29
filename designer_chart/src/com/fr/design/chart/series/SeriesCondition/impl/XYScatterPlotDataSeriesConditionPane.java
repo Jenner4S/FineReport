@@ -13,8 +13,8 @@ import com.fr.design.chart.series.SeriesCondition.*;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-30
- * Time   : ÉÏÎç9:53
- * É¢µãÍ¼µÄÌõ¼şÊôĞÔ½çÃæ
+ * Time   : ä¸Šåˆ9:53
+ * æ•£ç‚¹å›¾çš„æ¡ä»¶å±æ€§ç•Œé¢
  */
 public class XYScatterPlotDataSeriesConditionPane extends DataSeriesConditionPane {
 	private static final long serialVersionUID = -2552214303519434824L;

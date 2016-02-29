@@ -42,7 +42,7 @@ import com.fr.stable.StringUtils;
 import com.fr.design.utils.gui.GUICoreUtils;
 
 /**
- * ÊôĞÔ½çÃæÖĞµÄ¸ñÊ½Ãæ°å
+ * å±æ€§ç•Œé¢ä¸­çš„æ ¼å¼é¢æ¿
  */
 public class FormatPane extends BasicPane {
     private static final long serialVersionUID = 724330854437726751L;
@@ -247,12 +247,12 @@ public class FormatPane extends BasicPane {
     }
 
     private boolean isCurrency (String pattern) {
-       return pattern.length() > 0 && pattern.charAt(0) == '¡è' || pattern.length() > 0 && pattern.charAt(0) == '$';
+       return pattern.length() > 0 && pattern.charAt(0) == 'Â¤' || pattern.length() > 0 && pattern.charAt(0) == '$';
     }
 
     /**
-     * ÉèÖÃ¿ÉÓÃµÄ¸ñÊ½
-     * @param formatStyle ¿ÉÓÃµÄ¸ñÊ½
+     * è®¾ç½®å¯ç”¨çš„æ ¼å¼
+     * @param formatStyle å¯ç”¨çš„æ ¼å¼
      */
     public void setStyle4Pane(int[] formatStyle) {
         numberRadioButton.setEnabled(false);
@@ -279,7 +279,7 @@ public class FormatPane extends BasicPane {
     }
     
     /**
-     * °Ù·Ö±ÈÃæ°å
+     * ç™¾åˆ†æ¯”é¢æ¿
      */
     public void percentFormatPane() {
         nullRadioButton.setEnabled(false);
@@ -296,11 +296,11 @@ public class FormatPane extends BasicPane {
     }
 
     /**
-     * ÊÇ·ñÊôÓÚÊı×éÖĞµÄÁĞ±íÑùÊ½
+     * æ˜¯å¦å±äºæ•°ç»„ä¸­çš„åˆ—è¡¨æ ·å¼
      * 
-     * @param stringArray ¸ñÊ½Êı×é
-     * @param pattern ÊäÈëµÄ¸ñÊ½
-     * @return  ·µ»ØÔÚÊı×éÖĞµÄÎ»ÖÃ
+     * @param stringArray æ ¼å¼æ•°ç»„
+     * @param pattern è¾“å…¥çš„æ ¼å¼
+     * @return  è¿”å›åœ¨æ•°ç»„ä¸­çš„ä½ç½®
      */
     public static int isArrayContainPattern(String[] stringArray, String pattern) {
         for (int i = 0; i < stringArray.length; i++) {
@@ -350,7 +350,7 @@ public class FormatPane extends BasicPane {
     	this.sampleLabel.setText(FormatField.getInstance().getFormatValue());
     	String text = patternTextField.getText();
         try{
-        	// ²ÎÊıÃæ°åÈÕÆÚ¿Ø¼şµÄÊôĞÔ¸ñÊ½Àï£¬Ò²Òª¼ÓÉÏÌáÊ¾¸ñÊ½Ğ£Ñé²»Í¨¹ı
+        	// å‚æ•°é¢æ¿æ—¥æœŸæ§ä»¶çš„å±æ€§æ ¼å¼é‡Œï¼Œä¹Ÿè¦åŠ ä¸Šæç¤ºæ ¼å¼æ ¡éªŒä¸é€šè¿‡
         	Color c = UIManager.getColor("Label.foreground");
         	int formatType = getFormatContents();
         	if (ComparatorUtils.equals(formatType, FormatContents.DATE) || ComparatorUtils.equals(formatType, FormatContents.TIME)) {

@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * @author zhou
- * @since 2012-5-9ÏÂÎç4:39:33
+ * @since 2012-5-9ä¸‹åˆ4:39:33
  */
 public class UIScrollPane extends JScrollPane {
 
@@ -23,7 +23,7 @@ public class UIScrollPane extends JScrollPane {
 
     @Override
     /**
-     * Éú³ÉË®Æ½¹ö¶¯Ìõ
+     * ç”Ÿæˆæ°´å¹³æ»šåŠ¨æ¡
      */
     public JScrollBar createHorizontalScrollBar() {
         UIScrollBar sbr = new UIScrollBar(JScrollBar.HORIZONTAL);
@@ -33,7 +33,7 @@ public class UIScrollPane extends JScrollPane {
 
     @Override
     /**
-     * Éú³É´¹Ö±¹ö¶¯Ìõ
+     * ç”Ÿæˆå‚ç›´æ»šåŠ¨æ¡
      */
     public JScrollBar createVerticalScrollBar() {
         UIScrollBar sbr = new UIScrollBar(JScrollBar.VERTICAL);

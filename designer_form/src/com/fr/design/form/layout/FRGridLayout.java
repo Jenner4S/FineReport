@@ -58,13 +58,13 @@ public class FRGridLayout extends GridLayout implements LayoutManager2, FRLayout
     }
 
     /**
-     * 将组件添加到指定的位置上
+     * 灏嗙粍浠舵坊鍔犲埌鎸囧畾鐨勪綅缃笂
      * @param comp
      * @param constraints new FRGridLayout.Grid(2, 3);
      */
     @Override
     public void addLayoutComponent(Component comp, Object constraints) {
-        // 如果没有指定添加位置,就从第一排开始逐个添加
+        // 濡傛灉娌℃湁鎸囧畾娣诲姞浣嶇疆,灏变粠绗竴鎺掑紑濮嬮�愪釜娣诲姞
         if (constraints == null) {
             for (int r = 0; r < getRows(); r++) {
                 for (int c = 0; c < getColumns(); c++) {
@@ -75,7 +75,7 @@ public class FRGridLayout extends GridLayout implements LayoutManager2, FRLayout
                     }
                 }
             }
-            // 如果指定位置了，就不管原来位置上有没有组件都直接覆盖
+            // 濡傛灉鎸囧畾浣嶇疆浜嗭紝灏变笉绠″師鏉ヤ綅缃笂鏈夋病鏈夌粍浠堕兘鐩存帴瑕嗙洊
         } else {
             Point point = (Point) constraints;
             if (point.x > getColumns() - 1 || point.y > getRows() - 1) {

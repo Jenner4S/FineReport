@@ -39,7 +39,7 @@ import java.util.ArrayList;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-13
- * Time: ÉÏÎç11:02
+ * Time: ä¸Šåˆ11:02
  */
 public class Designer4Chart extends BaseDesigner {
     private static final int TOOLBAR_HEIGHT = 53;
@@ -54,9 +54,9 @@ public class Designer4Chart extends BaseDesigner {
     private UIButton copy;
 
     /**
-     * Ö÷º¯Êı
+     * ä¸»å‡½æ•°
      *
-     * @param args Èë¿Ú²ÎÊı
+     * @param args å…¥å£å‚æ•°
      */
     public static void main(String[] args) {
         new Designer4Chart(args);
@@ -74,7 +74,7 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     protected void initLanguage() {
-        //ÕâÁ½¾äµÄÎ»ÖÃ²»ÄÜËæ±ãµ÷»»£¬ÒòÎª»áÓ°ÏìÓïÑÔÇĞ»»µÄÎÊÌâ
+        //è¿™ä¸¤å¥çš„ä½ç½®ä¸èƒ½éšä¾¿è°ƒæ¢ï¼Œå› ä¸ºä¼šå½±å“è¯­è¨€åˆ‡æ¢çš„é—®é¢˜
         FRContext.setLanguage(Constants.LANGUAGE_ENGLISH);
     }
 
@@ -83,16 +83,16 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * buildµÃÂ·¾¶
-     * @return  buildµÃÂ·¾¶
+     * buildå¾—è·¯å¾„
+     * @return  buildå¾—è·¯å¾„
      */
     public String buildPropertiesPath() {
         return "/com/fr/chart/base/build.properties";
     }
 
     /**
-     * ´´½¨ÎÄ¼ş²Ëµ¥Ïî
-     * @return ²Ëµ¥Ïî
+     * åˆ›å»ºæ–‡ä»¶èœå•é¡¹
+     * @return èœå•é¡¹
      */
     public ShortCut[] createNewFileShortCuts() {
         ArrayList<ShortCut> shortCuts = new ArrayList<ShortCut>();
@@ -101,8 +101,8 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * ´´½¨ĞÂÄ£°æ
-     * @return Ä£°æ
+     * åˆ›å»ºæ–°æ¨¡ç‰ˆ
+     * @return æ¨¡ç‰ˆ
      */
     public JTemplate<?, ?> createNewTemplate() {
         return new JChart();
@@ -114,9 +114,9 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * ´´½¨Éè¼ÆÆ÷ÉÏ¼¸¸ö±È½Ï´óµÄÍ¼±ê£ºĞÂ½¨cpt£¬±£´æ£¬Ç°½ø£¬ºóÍË£¬ÔËĞĞ¡£
+     * åˆ›å»ºè®¾è®¡å™¨ä¸Šå‡ ä¸ªæ¯”è¾ƒå¤§çš„å›¾æ ‡ï¼šæ–°å»ºcptï¼Œä¿å­˜ï¼Œå‰è¿›ï¼Œåé€€ï¼Œè¿è¡Œã€‚
      *
-     * @return ·µ»Ø´óÍ¼±ê¶ÔÓ¦µÄ¹¤¾ßÀ¸
+     * @return è¿”å›å¤§å›¾æ ‡å¯¹åº”çš„å·¥å…·æ 
      */
     public UILargeToolbar createLargeToolbar() {
 
@@ -175,9 +175,9 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * ´´½¨ÉÏÃæÒ»ÅÅµÄ¹¤¾ßÀ¸°´Å¥
+     * åˆ›å»ºä¸Šé¢ä¸€æ’çš„å·¥å…·æ æŒ‰é’®
      *
-     * @return °´Å¥
+     * @return æŒ‰é’®
      */
     public UIButton[] createUp() {
         return new UIButton[]{createSaveButton(), createUndoButton(), createRedoButton()};
@@ -247,7 +247,7 @@ public class Designer4Chart extends BaseDesigner {
               	if (!jt.isSaved() && !jt.saveTemplate2Env()) {
               		return;
               	}
-                //¸´ÖÆ´úÂë
+                //å¤åˆ¶ä»£ç 
                 jt.copyJS();
             }
         });
@@ -303,10 +303,10 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * ÖØÖÃ¹¤¾ßÌõ
-     * @param toolbarComponent ¹¤¾ßÀ¸
-     * @param plus             ¶ÔÏó
-     * @return   ¹¤¾ßÌõ¶ÔÏó
+     * é‡ç½®å·¥å…·æ¡
+     * @param toolbarComponent å·¥å…·æ 
+     * @param plus             å¯¹è±¡
+     * @return   å·¥å…·æ¡å¯¹è±¡
      */
     public JComponent resetToolBar(JComponent toolbarComponent, ToolBarMenuDockPlus plus) {
         return plus.toolBar4Authority();
@@ -354,7 +354,7 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     *¸üĞÂ¹¤¾ßÀ¸
+     *æ›´æ–°å·¥å…·æ 
      */
     public void updateToolBarDef() {
         refreshLargeToolbarState();
@@ -380,8 +380,8 @@ public class Designer4Chart extends BaseDesigner {
     }
 
     /**
-     * ´´½¨°ïÖú²Ëµ¥µÃ²Ëµ¥Ïî
-     * @return ²Ëµ¥Ïî
+     * åˆ›å»ºå¸®åŠ©èœå•å¾—èœå•é¡¹
+     * @return èœå•é¡¹
      */
     public ShortCut[] createHelpShortCuts() {
         resetToolTips();

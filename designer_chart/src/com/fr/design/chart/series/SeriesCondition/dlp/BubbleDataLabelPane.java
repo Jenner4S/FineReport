@@ -12,8 +12,8 @@ import java.awt.*;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-4-13 ÉÏÎç10:08:39
- * ÀàËµÃ÷: ÆøÅİÏµÁĞ±êÇ©½çÃæ
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-4-13 ä¸Šåˆ10:08:39
+ * ç±»è¯´æ˜: æ°”æ³¡ç³»åˆ—æ ‡ç­¾ç•Œé¢
  */
 public class BubbleDataLabelPane extends DataLabelPane {
 	private static final long serialVersionUID = 6122072293885219893L;

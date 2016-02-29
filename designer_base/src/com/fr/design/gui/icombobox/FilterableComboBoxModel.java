@@ -58,7 +58,7 @@ public class FilterableComboBoxModel extends AbstractListModel implements Mutabl
         if (filter == null) {
             filteredItems.addAll(itemList);
         } else {
-        	// alex:先加一个NPE判断
+        	// alex:鍏堝姞涓�涓狽PE鍒ゆ柇
         	if (itemList != null) {
         		for (Iterator iterator = itemList.iterator(); iterator.hasNext();) {
         			Object item = iterator.next();

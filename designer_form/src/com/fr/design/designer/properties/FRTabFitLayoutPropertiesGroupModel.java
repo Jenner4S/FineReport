@@ -21,7 +21,7 @@ import com.fr.form.ui.container.cardlayout.WTabFitLayout;
 import com.fr.general.Inter;
 
 /**
- * tab²¼¾ÖtabFitÊôĞÔ±í
+ * tabå¸ƒå±€tabFitå±æ€§è¡¨
  * 
  * @author focus
  * @date 2014-6-24
@@ -47,7 +47,7 @@ public class FRTabFitLayoutPropertiesGroupModel extends FRFitLayoutPropertiesGro
 	}
 
 	/** 
-	 * ²¼¾Ö¹ÜÀíÆ÷×Ô¼ºµÄÊôĞÔ
+	 * å¸ƒå±€ç®¡ç†å™¨è‡ªå·±çš„å±æ€§
 	 */
 	@Override
 	public String getGroupName() {
@@ -120,7 +120,7 @@ public class FRTabFitLayoutPropertiesGroupModel extends FRFitLayoutPropertiesGro
 		}
 	}
 	
-	//»ñÈ¡±êÌâ
+	//è·å–æ ‡é¢˜
 	private String getTitle(){
 		if(layout.getCurrentCard() == null){
 			layout.setCurrentCard(getRelateSwitchButton());
@@ -128,7 +128,7 @@ public class FRTabFitLayoutPropertiesGroupModel extends FRFitLayoutPropertiesGro
 		return layout.getCurrentCard().getText();
 	}
 	
-	//»ñÈ¡layout¶ÔÓ¦µÄswitchButton,ÓÉÓÚÔİÊ±Ã»ÓĞ°ÑxcardSwitchButton´æµ½xmlÖĞ£¬£¬¹Ø±Õ´ò¿ªºó£¬ÔİÊ±¸ù¾İ¹Ì¶¨µÄ¸¸×Ó²ã¹ØÏµ»ñÈ¡
+	//è·å–layoutå¯¹åº”çš„switchButton,ç”±äºæš‚æ—¶æ²¡æœ‰æŠŠxcardSwitchButtonå­˜åˆ°xmlä¸­ï¼Œï¼Œå…³é—­æ‰“å¼€åï¼Œæš‚æ—¶æ ¹æ®å›ºå®šçš„çˆ¶å­å±‚å…³ç³»è·å–
 	private CardSwitchButton getRelateSwitchButton(){
 		int index = layout.getIndex();
 		
@@ -145,9 +145,9 @@ public class FRTabFitLayoutPropertiesGroupModel extends FRFitLayoutPropertiesGro
 	}
 	
 	/**
-	 * ÊÇ·ñ¿É±à¼­
-	 * @param row ĞĞ
-	 * @return ·ñ
+	 * æ˜¯å¦å¯ç¼–è¾‘
+	 * @param row è¡Œ
+	 * @return å¦
 	 */
 	@Override
 	public boolean isEditable(int row) {

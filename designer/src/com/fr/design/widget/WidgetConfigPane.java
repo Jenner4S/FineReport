@@ -15,14 +15,14 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Widget配置面板
+ * Widget閰嶇疆闈㈡澘
  */
 public class WidgetConfigPane extends JControlPane {
 
     /**
-     * 创建用户自定义widget组件
+     * 鍒涘缓鐢ㄦ埛鑷畾涔墂idget缁勪欢
      *
-     * @return 组件面板
+     * @return 缁勪欢闈㈡澘
      */
 	public NameableCreator[] createNameableCreators() {
 		NameableCreator defaultWidget = new NameObjectCreator(WidgetConstants.USER_DEFINED_WIDGETCONFIG,

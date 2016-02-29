@@ -14,7 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Õû¸öFormElementCase±à¼­ÇøÓò °üÀ¨¹ö¶¯Ìõ¡¢ÖĞ¼äµÄgrid»òÕß¾ÛºÏ¿é¡¢ÏÂÃæµÄsheetTab
+ * æ•´ä¸ªFormElementCaseç¼–è¾‘åŒºåŸŸ åŒ…æ‹¬æ»šåŠ¨æ¡ã€ä¸­é—´çš„gridæˆ–è€…èšåˆå—ã€ä¸‹é¢çš„sheetTab
  */
 public class FormReportComponentComposite extends JComponent implements TargetModifiedListener, FormECCompositeProvider{
 	
@@ -40,16 +40,16 @@ public class FormReportComponentComposite extends JComponent implements TargetMo
     private java.util.List<TargetModifiedListener> targetModifiedList = new java.util.ArrayList<TargetModifiedListener>();
 
     /**
-     *  Ìí¼ÓÄ¿±ê¸Ä±äµÄ¼àÌı
-     * @param targetModifiedListener     Ä¿±ê¸Ä±äÊÂ¼ş
+     *  æ·»åŠ ç›®æ ‡æ”¹å˜çš„ç›‘å¬
+     * @param targetModifiedListener     ç›®æ ‡æ”¹å˜äº‹ä»¶
      */
     public void addTargetModifiedListener(TargetModifiedListener targetModifiedListener) {
     	targetModifiedList.add(targetModifiedListener);
     }
 
     /**
-     * Ä¿±ê¸Ä±ä
-     * @param e      ÊÂ¼ş
+     * ç›®æ ‡æ”¹å˜
+     * @param e      äº‹ä»¶
      */
 	public void targetModified(TargetModifiedEvent e) {
         for (TargetModifiedListener l : targetModifiedList) {
@@ -72,7 +72,7 @@ public class FormReportComponentComposite extends JComponent implements TargetMo
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
     	elementCaseDesigner.stopEditing();
@@ -91,7 +91,7 @@ public class FormReportComponentComposite extends JComponent implements TargetMo
 	}
 
     /**
-     * Ä£°å¸üĞÂ
+     * æ¨¡æ¿æ›´æ–°
      */
     public void fireTargetModified() {
         jForm.fireTargetModified();

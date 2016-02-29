@@ -15,7 +15,7 @@ import java.util.Map;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-12-2
- * Time   : ÉÏÎç11:27
+ * Time   : ä¸Šåˆ11:27
  */
 public class ChartPlotFactory {
 
@@ -38,7 +38,7 @@ public class ChartPlotFactory {
         map.put(Bar2DPlot.class.getName(), new FactoryObject()
                 .setDataLabelPaneClass(Bar2DDataLabelPane.class));
         map.put(Bar3DPlot.class.getName(), new FactoryObject()
-        		.setDataLabelPaneClass(Bar3DDataLabelPane.class));
+        		.setDataLabelPaneClass(Bar2DDataLabelPane.class));
         map.put(BubblePlot.class.getName(), new FactoryObject()
                 .setAxisPaneCls(XYChartStyleAxisPane.class)
                 .setDataLabelPaneClass(BubbleDataLabelPane.class));
@@ -80,9 +80,9 @@ public class ChartPlotFactory {
     }
 
     /**
-     * ´´½¨¶ÔÓ¦µÄ×ø±êÖá½çÃæ
-     * @param plot plotÀàĞÍ
-     * @return ·µ»Ø×ø±êÖá½çÃæ
+     * åˆ›å»ºå¯¹åº”çš„åæ ‡è½´ç•Œé¢
+     * @param plot plotç±»å‹
+     * @return è¿”å›åæ ‡è½´ç•Œé¢
      */
     public static ChartStyleAxisPane createChartStyleAxisPaneByPlot(Plot plot) {
         FactoryObject factoryObject = map.get(plot.getClass().getName());
@@ -98,9 +98,9 @@ public class ChartPlotFactory {
     }
 
     /**
-     * ´´½¨¶ÔÓ¦µÄ±êÇ©Plot
-     * @param plotClass plotµÄÀà
-     * @return ¶ÔÓ¦µÄ±êÇ©½çÃæ
+     * åˆ›å»ºå¯¹åº”çš„æ ‡ç­¾Plot
+     * @param plotClass plotçš„ç±»
+     * @return å¯¹åº”çš„æ ‡ç­¾ç•Œé¢
      */
     public static DataLabelPane createDataLabelPane4Plot(Class plotClass) {
         FactoryObject factoryObject = map.get(plotClass.getName());

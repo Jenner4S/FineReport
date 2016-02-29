@@ -114,11 +114,11 @@ public class PolyBoundsGroup implements GroupModel {
 	}
 
 	/**
-	 * �Ƿ�ɱ༭
+	 * 是否可编辑
 	 * 
-	 * @param row ָ����
+	 * @param row 指定行
 	 * 
-	 * @return �Ƿ�ɱ༭
+	 * @return 是否可编辑
 	 * 
 	 */
 	public boolean isEditable(int row) {

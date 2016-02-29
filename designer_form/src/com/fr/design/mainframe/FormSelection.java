@@ -29,40 +29,40 @@ public class FormSelection {
 	}
 
 	/**
-	 * ÖØÖÃÑ¡ÖĞµÄ×é¼ş
+	 * é‡ç½®é€‰ä¸­çš„ç»„ä»¶
 	 */
 	public void reset() {
 		selection.clear();
 	}
 
 	/**
-	 * ÊÇ·ñÃ»ÓĞÑ¡ÖĞµÄ×é¼ş
-	 * @return Îª¿Õ·µ»Øtrue
+	 * æ˜¯å¦æ²¡æœ‰é€‰ä¸­çš„ç»„ä»¶
+	 * @return ä¸ºç©ºè¿”å›true
 	 */
 	public boolean isEmpty() {
 		return selection.isEmpty();
 	}
 
 	/**
-	 * Ñ¡ÖĞµÄ×é¼şÊıÁ¿
-	 * @return Ñ¡ÖĞµÄ×é¼şÊıÁ¿
+	 * é€‰ä¸­çš„ç»„ä»¶æ•°é‡
+	 * @return é€‰ä¸­çš„ç»„ä»¶æ•°é‡
 	 */
 	public int size() {
 		return selection.size();
 	}
 
 	/**
-	 * È¥³ıÑ¡ÖĞµÄ×é¼şÖĞÖ¸¶¨×é¼ş 
-	 * @param creator ´ıÈ¥³ı×é¼ş
+	 * å»é™¤é€‰ä¸­çš„ç»„ä»¶ä¸­æŒ‡å®šç»„ä»¶ 
+	 * @param creator å¾…å»é™¤ç»„ä»¶
 	 */
 	public void removeCreator(XCreator creator) {
 		selection.remove(creator);
 	}
 	
 	/**
-	 * ÊÇ·ñ³É¹¦É¾³ıÑ¡ÔñµÄ×é¼ş
-	 * @param comp ×é¼ş
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æˆåŠŸåˆ é™¤é€‰æ‹©çš„ç»„ä»¶
+	 * @param comp ç»„ä»¶
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean removeSelectedCreator(XCreator comp) {
 		if (selection.size() > 1 && selection.contains(comp)) {
@@ -73,9 +73,9 @@ public class FormSelection {
 	}
 
 	/**
-	 * ³É¹¦Ôö¼ÓÑ¡ÖĞµÄ×é¼ş
-	 * @param creator ×é¼ş
-	 * @return ³É¹¦Ôö¼Ó·µ»Øtrue
+	 * æˆåŠŸå¢åŠ é€‰ä¸­çš„ç»„ä»¶
+	 * @param creator ç»„ä»¶
+	 * @return æˆåŠŸå¢åŠ è¿”å›true
 	 */
 	public boolean addSelectedCreator(XCreator creator) {
 		if (addedable(creator)) {
@@ -86,9 +86,9 @@ public class FormSelection {
 	}
 
 	/**
-	 * ÊÇ·ñÊÇ¿ÉÒÔÔö¼ÓµÄ
-	 * @param creator ×é¼ş
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦æ˜¯å¯ä»¥å¢åŠ çš„
+	 * @param creator ç»„ä»¶
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean addedable(XCreator creator) {
 		if (selection.isEmpty()) {
@@ -107,16 +107,16 @@ public class FormSelection {
 	}
 
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄµÚÒ»¸ö×é¼ş£¬Îª¿Õ·µ»Ønull
-	 * @return ·µ»ØÑ¡ÖĞ×é¼ş
+	 * è¿”å›é€‰ä¸­çš„ç¬¬ä¸€ä¸ªç»„ä»¶ï¼Œä¸ºç©ºè¿”å›null
+	 * @return è¿”å›é€‰ä¸­ç»„ä»¶
 	 */
 	public XCreator getSelectedCreator() {
 		return !selection.isEmpty() ? selection.get(0) : null;
 	}
 
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄËùÓĞ×é¼ş
-	 * @return ËùÓĞ×é¼şs
+	 * è¿”å›é€‰ä¸­çš„æ‰€æœ‰ç»„ä»¶
+	 * @return æ‰€æœ‰ç»„ä»¶s
 	 */
 	public XCreator[] getSelectedCreators() {
 		return selection.toArray(new XCreator[selection.size()]);
@@ -145,9 +145,9 @@ public class FormSelection {
 	}
 
 	/**
-	 * ÊÇ·ñ°üº¬µ±Ç°¿Ø¼ş
-	 * @param widget ¿Ø¼ş
-	 * @return ÊÇÔò·µ»Øtrue
+	 * æ˜¯å¦åŒ…å«å½“å‰æ§ä»¶
+	 * @param widget æ§ä»¶
+	 * @return æ˜¯åˆ™è¿”å›true
 	 */
 	public boolean contains(Widget widget) {
 		for (XCreator creator : selection) {
@@ -169,7 +169,7 @@ public class FormSelection {
 	}
 
 	/**
-	 * ±¸·İ×é¼şµÄbound
+	 * å¤‡ä»½ç»„ä»¶çš„bound
 	 */
 	public void backupBounds() {
 		backupBounds = getRelativeBounds();
@@ -245,8 +245,8 @@ public class FormSelection {
 	}
 	
 	/**
-	 * µ÷Õû×é¼ş´óĞ¡
-	 * @param designer Éè¼Æ½çÃæ×é¼ş
+	 * è°ƒæ•´ç»„ä»¶å¤§å°
+	 * @param designer è®¾è®¡ç•Œé¢ç»„ä»¶
 	 */
 	public void fixCreator(FormDesigner designer) {
 		for (XCreator creator : selection) {
@@ -263,19 +263,19 @@ public class FormSelection {
 		if (parent == null) {
 			return;
 		}
-		// É¾³ıÆä¸ù×é¼ş£¬Í¬Ê±¾ÍÉ¾³ıÁËÍ¬Ê±±»Ñ¡ÔñµÄÒ¶×Ó×é¼ş
+		// åˆ é™¤å…¶æ ¹ç»„ä»¶ï¼ŒåŒæ—¶å°±åˆ é™¤äº†åŒæ—¶è¢«é€‰æ‹©çš„å¶å­ç»„ä»¶
 		parent.remove(creator);
 		LayoutManager layout = parent.getLayout();
 
 		if (layout != null) {
-			// Ë¢ĞÂ×é¼şÈİÆ÷µÄ²¼¾Ö
+			// åˆ·æ–°ç»„ä»¶å®¹å™¨çš„å¸ƒå±€
 			LayoutUtils.layoutContainer(parent);
 		}
 	}
 
 	/**
-	 * ¼ôÇĞÑ¡ÖĞµÄËùÓĞ×é¼ş
-	 * @param clipBoard ¼ôÇĞ°å
+	 * å‰ªåˆ‡é€‰ä¸­çš„æ‰€æœ‰ç»„ä»¶
+	 * @param clipBoard å‰ªåˆ‡æ¿
 	 */
 	public void cut2ClipBoard(FormSelection clipBoard) {
 		clipBoard.reset();
@@ -288,8 +288,8 @@ public class FormSelection {
 	}
 
 	/**
-	 * ¸´ÖÆÑ¡ÖĞµÄËùÓĞ×é¼ş
-	 * @param clipBoard ¸´ÖÆ°å
+	 * å¤åˆ¶é€‰ä¸­çš„æ‰€æœ‰ç»„ä»¶
+	 * @param clipBoard å¤åˆ¶æ¿
 	 */
 	public void copy2ClipBoard(FormSelection clipBoard) {
 		clipBoard.reset();

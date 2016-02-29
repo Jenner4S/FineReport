@@ -4,7 +4,7 @@ package com.fr.design.constants;
  * Created with IntelliJ IDEA.
  * User: richie
  * Date: 13-11-13
- * Time: ÏÂÎç6:50
+ * Time: ä¸‹åˆ6:50
  */
 public class KeyWords {
     private KeyWords() {
@@ -12,9 +12,9 @@ public class KeyWords {
     }
 
     
-/*    parameterEl £ºobject
-    ·µ»Ø¶ÔÏó²ÎÊı½çÃæ
-    ÀıÈç£º
+/*    parameterEl ï¼šobject
+    è¿”å›å¯¹è±¡å‚æ•°ç•Œé¢
+    ä¾‹å¦‚ï¼š
     contentPane.parameterEl
     currentPageIndex
     curLGP
@@ -81,7 +81,7 @@ public class KeyWords {
             "options",
             "parameterEl",
             "reportTotalPage",
-            "selectedIndex", //µ±Ç°Ñ¡ÖĞµÄsheetºÅ
+            "selectedIndex", //å½“å‰é€‰ä¸­çš„sheetå·
             "zoom",
             
             "appendReportRC()",
@@ -113,7 +113,7 @@ public class KeyWords {
             "scale()",
             "setCellValue([reportIndex], columnIndex, rowIndex, cv)",
             "stopEditing()",
-            "verifyAndWriteReport(true)", //¿Õ»òfalseÎªÌá½»ËùÓĞsheet£¬trueÎªÌá½»µ±Ç°sheet
+            "verifyAndWriteReport(true)", //ç©ºæˆ–falseä¸ºæäº¤æ‰€æœ‰sheetï¼Œtrueä¸ºæäº¤å½“å‰sheet
             "verifyReport()",
             "writeReportIgnoreVerify(true)",
             "writeReport(index)",

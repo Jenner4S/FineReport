@@ -6,7 +6,7 @@ import com.fr.design.designer.creator.XLayoutContainer;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-7-21
- * Time: ÏÂÎç7:57
+ * Time: ä¸‹åˆ7:57
  */
 public class FRParameterLayoutPainter extends AbstractPainter{
 

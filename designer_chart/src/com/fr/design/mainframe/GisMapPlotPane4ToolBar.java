@@ -19,7 +19,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 7.1.1
  * Date: 14/12/1
- * Time: 下午3:11
+ * Time: 涓嬪崍3:11
  */
 public class GisMapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar {
     private static final int BAIDU = 0;
@@ -101,8 +101,8 @@ public class GisMapPlotPane4ToolBar extends AbstractMapPlotPane4ToolBar {
     }
 
     /**
-     * 更新地图面板
-     * @param mapType 地图名字
+     * 鏇存柊鍦板浘闈㈡澘
+     * @param mapType 鍦板浘鍚嶅瓧
      */
     public void populateMapPane(String mapType){
         super.populateMapPane(mapType);

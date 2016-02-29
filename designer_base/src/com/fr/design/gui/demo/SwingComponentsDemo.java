@@ -16,7 +16,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
  * Created by IntelliJ IDEA.
  * User: Richer
  * Date: 11-6-27
- * Time: ÏÂÎç4:54
+ * Time: ä¸‹åˆ4:54
  */
 public class SwingComponentsDemo extends JFrame {
     public SwingComponentsDemo() {
@@ -26,16 +26,16 @@ public class SwingComponentsDemo extends JFrame {
         contentPane.setLayout(FRGUIPaneFactory.createBorderLayout());
         JTabbedPane tab = new JTabbedPane();
         contentPane.add(tab, BorderLayout.CENTER);
-        tab.addTab("ÏÂÀ­¿ò", new ComboBoxDemo());
-        tab.addTab("¶àĞĞÌáÊ¾", new MultiLineTooltipDemo());
-        tab.addTab("ÁĞ±í", new ListDemo());
-        tab.addTab("±êÇ©", new LabelDemo());
-        tab.addTab("¼ÓÔØºÄÊ±½Ï¶àµÄÃæ°å", new LoadingPaneDemo());
+        tab.addTab("ä¸‹æ‹‰æ¡†", new ComboBoxDemo());
+        tab.addTab("å¤šè¡Œæç¤º", new MultiLineTooltipDemo());
+        tab.addTab("åˆ—è¡¨", new ListDemo());
+        tab.addTab("æ ‡ç­¾", new LabelDemo());
+        tab.addTab("åŠ è½½è€—æ—¶è¾ƒå¤šçš„é¢æ¿", new LoadingPaneDemo());
     }
 
     private void init() {
         DesignUtils.initLookAndFeel();
-        setTitle("Éè¼ÆÆ÷×é¼şÑİÊ¾");
+        setTitle("è®¾è®¡å™¨ç»„ä»¶æ¼”ç¤º");
     }
 
     public static void main(String[] args) {

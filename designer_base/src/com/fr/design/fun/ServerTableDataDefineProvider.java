@@ -3,7 +3,7 @@ package com.fr.design.fun;
 /**
  * @author : richie
  * @since : 8.0
- * ×Ô¶¨Òå·şÎñÆ÷Êı¾İ¼¯Éè¼Æ½çÃæ½Ó¿Ú
+ * è‡ªå®šä¹‰æœåŠ¡å™¨æ•°æ®é›†è®¾è®¡ç•Œé¢æ¥å£
  */
 public interface ServerTableDataDefineProvider extends TableDataDefineProvider {
 

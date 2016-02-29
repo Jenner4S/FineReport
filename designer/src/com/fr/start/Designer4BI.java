@@ -18,14 +18,14 @@ import com.fr.stable.Constants;
  * User: richie
  * Date: 12/17/13
  * Time: 12:54 PM
- * ÕâÊÇÓ¢ÎÄ°æµÄGridBIÉè¼ÆÆ÷Æô¶¯Àà
+ * è¿™æ˜¯è‹±æ–‡ç‰ˆçš„GridBIè®¾è®¡å™¨å¯åŠ¨ç±»
  */
 public class Designer4BI extends Designer {
 	
 	/**
-	 * Æô¶¯BIµÄÉè¼ÆÆ÷
+	 * å¯åŠ¨BIçš„è®¾è®¡å™¨
 	 * 
-	 * @param args ²ÎÊı
+	 * @param args å‚æ•°
 	 * 
 	 */
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class Designer4BI extends Designer {
     }
 
     protected void initLanguage() {
-        //ÕâÁ½¾äµÄÎ»ÖÃ²»ÄÜËæ±ãµ÷»»£¬ÒòÎª»áÓ°ÏìÓïÑÔÇĞ»»µÄÎÊÌâ
+        //è¿™ä¸¤å¥çš„ä½ç½®ä¸èƒ½éšä¾¿è°ƒæ¢ï¼Œå› ä¸ºä¼šå½±å“è¯­è¨€åˆ‡æ¢çš„é—®é¢˜
         FRContext.setLanguage(Constants.LANGUAGE_ENGLISH);
     }
 
@@ -47,8 +47,8 @@ public class Designer4BI extends Designer {
 
     @Override
     /**
-     * ´´½¨ĞÂ½¨ÎÄ¼şµÄ¿ì½İ·½Ê½Êı×é¡£
-     * @return ·µ»Ø¿ì½İ·½Ê½µÄÊı×é
+     * åˆ›å»ºæ–°å»ºæ–‡ä»¶çš„å¿«æ·æ–¹å¼æ•°ç»„ã€‚
+     * @return è¿”å›å¿«æ·æ–¹å¼çš„æ•°ç»„
      */
     public ShortCut[] createNewFileShortCuts() {
         ArrayList<ShortCut> shortCuts = new ArrayList<ShortCut>();
@@ -57,11 +57,11 @@ public class Designer4BI extends Designer {
     }
 
     /**
-	 * »ñÈ¡Ä£°å-²Ëµ¥Ñ¡Ïî
+	 * è·å–æ¨¡æ¿-èœå•é€‰é¡¹
 	 * 
-	 * @param plus µ±Ç°µÄ¹¤×÷¶ÔÏó
+	 * @param plus å½“å‰çš„å·¥ä½œå¯¹è±¡
 	 * 
-	 * @return ²Ëµ¥À¸¶ÔÏóÊı×é
+	 * @return èœå•æ å¯¹è±¡æ•°ç»„
 	 * 
 	 */
     public MenuDef[] createTemplateShortCuts(ToolBarMenuDockPlus plus) {

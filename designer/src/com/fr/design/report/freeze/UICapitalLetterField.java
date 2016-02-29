@@ -13,7 +13,7 @@ import java.awt.*;
  * Created with IntelliJ IDEA.
  * User: Lenovo
  * Date: 13-3-29
- * Time: ÏÂÎç12:41
+ * Time: ä¸‹åˆ12:41
  * To change this template use File | Settings | File Templates.
  */
 
@@ -61,4 +61,3 @@ public class UICapitalLetterField extends UINumberField {
 
     }
 }
-

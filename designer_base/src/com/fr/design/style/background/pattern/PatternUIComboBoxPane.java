@@ -14,8 +14,8 @@ import com.fr.design.style.color.ColorSelectBox;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-3 ÉÏÎç10:42:05
- * ÀàËµÃ÷: Í¼°¸µÄUIComboBoxÇĞ»»·ÖÖ§pane, Ô­ĞÍÍ¼@bug 5471
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-3 ä¸Šåˆ10:42:05
+ * ç±»è¯´æ˜: å›¾æ¡ˆçš„UIComboBoxåˆ‡æ¢åˆ†æ”¯pane, åŸå‹å›¾@bug 5471
  */
 public class PatternUIComboBoxPane extends BackgroundPane4BoxChange {
 	private static final long serialVersionUID = -6341773082454804759L;

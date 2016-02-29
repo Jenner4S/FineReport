@@ -26,7 +26,7 @@ import java.text.NumberFormat;
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 7.1.1
- * ÔÚÏß¸üĞÂÃæ°å
+ * åœ¨çº¿æ›´æ–°é¢æ¿
  */
 public class UpdateOnLinePane extends BasicPane{
     private static final int GAP = 40;
@@ -136,7 +136,7 @@ public class UpdateOnLinePane extends BasicPane{
         this.revalidate();
     }
 
-    //¸üĞÂÊ§°ÜµÄÌáÊ¾
+    //æ›´æ–°å¤±è´¥çš„æç¤º
     private void init4UpdateFaild(){
         this.messagePane.removeAll();
         UILabel label = new UILabel(Inter.getLocText("FR-Chart-Version_UpdateFail")+"!");
@@ -213,7 +213,7 @@ public class UpdateOnLinePane extends BasicPane{
 
     private void judge(){
         if(ComparatorUtils.equals(ProductConstants.RELEASE_VERSION,serverVersion)){
-            //°æ±¾Ò»ÖÂ,ÌáÊ¾ÒÑ¾­ÊÇ×îĞÂ°æ±¾
+            //ç‰ˆæœ¬ä¸€è‡´,æç¤ºå·²ç»æ˜¯æœ€æ–°ç‰ˆæœ¬
             init4VersionSamePane();
         }else{
             init4VersionDifferentPane();

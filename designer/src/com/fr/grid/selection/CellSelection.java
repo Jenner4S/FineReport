@@ -41,9 +41,9 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * the cell selection (column£¬row)ÊÇËùÑ¡µ¥Ôª¸ñÖĞ×óÉÏ½ÇµÄÎ»ÖÃ £¬ Õâ¸öÊı¾İ½á¹¹¾ÍÊÇÒ»¸öRectangle
+ * the cell selection (columnï¼Œrow)æ˜¯æ‰€é€‰å•å…ƒæ ¼ä¸­å·¦ä¸Šè§’çš„ä½ç½® ï¼Œ è¿™ä¸ªæ•°æ®ç»“æ„å°±æ˜¯ä¸€ä¸ªRectangle
  *
- * @editor zhou 2012-3-22ÏÂÎç1:53:59
+ * @editor zhou 2012-3-22ä¸‹åˆ1:53:59
  */
 public class CellSelection extends Selection {
     public static final int NORMAL = 0;
@@ -98,8 +98,8 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * Ôö¼ÓÑ¡ÖĞµÄÇøÓò
-     * @param cellRectangle ÇøÓò
+     * å¢åŠ é€‰ä¸­çš„åŒºåŸŸ
+     * @param cellRectangle åŒºåŸŸ
      */
     public void addCellRectangle(Rectangle cellRectangle) {
         int index = this.cellRectangleList.indexOf(cellRectangle);
@@ -120,7 +120,7 @@ public class CellSelection extends Selection {
      * Gets the only cell rectangle
      */
     public Rectangle getFirstCellRectangle() {
-        //p:ÕâÀï²»ÅĞ¶Ï³ß´ç£¬Ö±½ÓÁô×ÅÅ×´í£¬ÔÚtype==CELLµÄÊ±ºò£¬List³¤¶ÈÒ»¶¨´óÓÚ0.
+        //p:è¿™é‡Œä¸åˆ¤æ–­å°ºå¯¸ï¼Œç›´æ¥ç•™ç€æŠ›é”™ï¼Œåœ¨type==CELLçš„æ—¶å€™ï¼ŒListé•¿åº¦ä¸€å®šå¤§äº0.
         return (Rectangle) this.cellRectangleList.get(0);
     }
 
@@ -148,18 +148,18 @@ public class CellSelection extends Selection {
 
 
     /**
-     * Çå³ıÇøÓò¿é
-     * @param i ÇøÓò¿é
+     * æ¸…é™¤åŒºåŸŸå—
+     * @param i åŒºåŸŸå—
      */
     public void clearCellRectangles(int i) {
         this.cellRectangleList.remove(i);
     }
 
     /**
-     * °üº¬µ¥Ôª¸ñ
-     * @param column  ÁĞ
-     * @param row  ĞĞ
-     * @return Èô²»°üº¬·µ»Ø-1
+     * åŒ…å«å•å…ƒæ ¼
+     * @param column  åˆ—
+     * @param row  è¡Œ
+     * @return è‹¥ä¸åŒ…å«è¿”å›-1
      */
     public int containsCell(int column, int row) {
         for (int i = 0; i < this.cellRectangleList.size(); i++) {
@@ -189,17 +189,17 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ×ª»»³É¾ØĞÎ
-     * @return ¾ØĞÎ
+     * è½¬æ¢æˆçŸ©å½¢
+     * @return çŸ©å½¢
      */
     public Rectangle toRectangle() {
         return new Rectangle(column, row, columnSpan, rowSpan);
     }
 
     /**
-     * ÊÇ·ñÑ¡ÔñÒ»¸öµ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return ÊÇÔò·µ»Ørue
+     * æ˜¯å¦é€‰æ‹©ä¸€ä¸ªå•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return æ˜¯åˆ™è¿”å›rue
      */
     public boolean isSelectedOneCell(ElementCasePane ePane) {
         if (getCellRectangleCount() > 1) {
@@ -223,9 +223,9 @@ public class CellSelection extends Selection {
 
 
     /**
-     * ×÷Îª¿É´«ÊäµÄ
-     * @param transferable ´«Êä½éÖÊ
-     * @param ePane ÇøÓò
+     * ä½œä¸ºå¯ä¼ è¾“çš„
+     * @param transferable ä¼ è¾“ä»‹è´¨
+     * @param ePane åŒºåŸŸ
      */
     public void asTransferable(ElementsTransferable transferable, ElementCasePane ePane) {
         java.util.List<TemplateCellElement> list = new java.util.ArrayList<TemplateCellElement>();
@@ -241,10 +241,10 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ğ¤Ìùµ¥Ôª¸ñ
-     * @param ceClip µ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return  ³É¹¦·µ»Øtrue
+     * é»è´´å•å…ƒæ ¼
+     * @param ceClip å•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return  æˆåŠŸè¿”å›true
      */
     public boolean pasteCellElementsClip(CellElementsClip ceClip, ElementCasePane ePane) {
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -257,18 +257,18 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ğ¤Ìù×Ö·û´®
-     * @param str ×Ö·û´®
-     * @param ePane  ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * é»è´´å­—ç¬¦ä¸²
+     * @param str å­—ç¬¦ä¸²
+     * @param ePane  åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean pasteString(String str, ElementCasePane ePane) {
-        // Ö÷ÒªĞèÒª´¦ÀíExcelµ±ÖĞµÄÀàĞÍ.
-        // Excel µÄ¼ôÌù°å¸ñÊ½
-        // Excel µÄ¼ôÌù°å¸ñÊ½·Ç³£¼òµ¥¡£Ëü²ÉÓÃÖÆ±í·û·Ö¸ôÍ¬Ò»ĞĞÉÏµÄÔªËØ£¬
-        // ²¢ÓÃ»»ĞĞ·û·Ö¸ôĞĞ¡£ÕâÑù£¬µ±Äú¸´ÖÆÒ»×éÁ¬ĞøµÄºÍ/»òÏàÁÚµÄµ¥Ôª¸ñÊ±£¬Excel
-        // Ö»½«µç×Ó±í¸ñÊı¾İ±ê¼Çµ½Ò»¸ö³¤×Ö·û´®ÖĞ£¬¸÷¸öµ¥Ôª¸ñÖµÓÉ¸Ã×Ö·û´®ÄÚµÄÖÆ±í·ûºÍ»»ĞĞ·û·Ö¸ô¡£
-        // Èç¹ûËùÑ¡µÄµ¥Ôª¸ñ²»ÏàÁÚÊ±ÔõÃ´°ì£¿ºÜ¼òµ¥£ºExcel ²»»áÈÃÄú½«ËùÑ¡ÄÚÈİ¸´ÖÆµ½¼ôÌù°å¡£
+        // ä¸»è¦éœ€è¦å¤„ç†Excelå½“ä¸­çš„ç±»å‹.
+        // Excel çš„å‰ªè´´æ¿æ ¼å¼
+        // Excel çš„å‰ªè´´æ¿æ ¼å¼éå¸¸ç®€å•ã€‚å®ƒé‡‡ç”¨åˆ¶è¡¨ç¬¦åˆ†éš”åŒä¸€è¡Œä¸Šçš„å…ƒç´ ï¼Œ
+        // å¹¶ç”¨æ¢è¡Œç¬¦åˆ†éš”è¡Œã€‚è¿™æ ·ï¼Œå½“æ‚¨å¤åˆ¶ä¸€ç»„è¿ç»­çš„å’Œ/æˆ–ç›¸é‚»çš„å•å…ƒæ ¼æ—¶ï¼ŒExcel
+        // åªå°†ç”µå­è¡¨æ ¼æ•°æ®æ ‡è®°åˆ°ä¸€ä¸ªé•¿å­—ç¬¦ä¸²ä¸­ï¼Œå„ä¸ªå•å…ƒæ ¼å€¼ç”±è¯¥å­—ç¬¦ä¸²å†…çš„åˆ¶è¡¨ç¬¦å’Œæ¢è¡Œç¬¦åˆ†éš”ã€‚
+        // å¦‚æœæ‰€é€‰çš„å•å…ƒæ ¼ä¸ç›¸é‚»æ—¶æ€ä¹ˆåŠï¼Ÿå¾ˆç®€å•ï¼šExcel ä¸ä¼šè®©æ‚¨å°†æ‰€é€‰å†…å®¹å¤åˆ¶åˆ°å‰ªè´´æ¿ã€‚
         // set value to current edit cell element.
 
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -285,7 +285,7 @@ public class CellSelection extends Selection {
                     if (number != null) {
                         ec.setCellValue(column + c, row + r, number);
                     } else {
-                        // alex:¶ÔÓÚ100,000,000ÕâÖÖÊıÖµ,ÏÈ×öÒ»¸öÈ¡ÇÉµÄ½â¾ö·½·¨
+                        // alex:å¯¹äº100,000,000è¿™ç§æ•°å€¼,å…ˆåšä¸€ä¸ªå–å·§çš„è§£å†³æ–¹æ³•
                         String newStr = Utils.replaceAllString(lineTextArray[c], ",", "");
                         number = Utils.string2Number(newStr);
                         if (number != null) {
@@ -304,10 +304,10 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ğ¤ÌùÆäËû
-     * @param ob Òªğ¤ÌùµÄ¶«Î÷
-     * @param ePane ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * é»è´´å…¶ä»–
+     * @param ob è¦é»è´´çš„ä¸œè¥¿
+     * @param ePane åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean pasteOtherType(Object ob, ElementCasePane ePane) {
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -326,9 +326,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ÊÇ·ñÄÜºÏ²¢µ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦èƒ½åˆå¹¶å•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canMergeCells(ElementCasePane ePane) {
 
@@ -336,15 +336,15 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ºÏ²¢µ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * åˆå¹¶å•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean mergeCells(ElementCasePane ePane) {
 
         TemplateElementCase ec = ePane.getEditingElementCase();
         Iterator cells = ec.intersect(column, row, columnSpan, rowSpan);
-        if (cells.hasNext() && cells.hasNext()) { // alex:ÓĞÁ½¸öÒÔÉÏµÄ¸ñ×ÓÔÚÕâ¸öÇøÓòÄÚ
+        if (cells.hasNext() && cells.hasNext()) { // alex:æœ‰ä¸¤ä¸ªä»¥ä¸Šçš„æ ¼å­åœ¨è¿™ä¸ªåŒºåŸŸå†…
             int returnValue = JOptionPane.showConfirmDialog(SwingUtilities.getWindowAncestor(ePane), Inter.getLocText("Des-Merger_Cell"), Inter.getLocText("Utils-Merge_Cell"),
                     JOptionPane.OK_CANCEL_OPTION);
             if (returnValue != JOptionPane.OK_OPTION) {
@@ -358,9 +358,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ÊÇ·ñ³·ÏúºÏ²¢µ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æ’¤é”€åˆå¹¶å•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean canUnMergeCells(ElementCasePane ePane) {
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -378,9 +378,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ³·ÏúºÏ²¢µ¥Ôª¸ñ
-     * @param ePane ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * æ’¤é”€åˆå¹¶å•å…ƒæ ¼
+     * @param ePane åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean unMergeCells(ElementCasePane ePane) {
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -401,7 +401,7 @@ public class CellSelection extends Selection {
                         continue;
                     }
 
-                    // ²»¸²¸ÇÒÔÇ°µÄÔªËØ
+                    // ä¸è¦†ç›–ä»¥å‰çš„å…ƒç´ 
                     ec.addCellElement(new DefaultTemplateCellElement(kc, kr), false);
                 }
             }
@@ -413,9 +413,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ´´½¨µ¯³ö²Ëµ¥
-     * @param ePane ÇøÓò
-     * @return ²Ëµ¥
+     * åˆ›å»ºå¼¹å‡ºèœå•
+     * @param ePane åŒºåŸŸ
+     * @return èœå•
      */
     public UIPopupMenu createPopupMenu(ElementCasePane ePane) {
         UIPopupMenu popup = new UIPopupMenu();
@@ -445,7 +445,7 @@ public class CellSelection extends Selection {
             popup.add(new StyleAction().createMenuItem());
         }
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
-        if (jTemplate.isJWorkBook()){ //±íµ¥ÖĞ±¨±í¿é±à¼­ÆÁ±Îµô  ¿Ø¼şÉèÖÃ
+        if (jTemplate.isJWorkBook()){ //è¡¨å•ä¸­æŠ¥è¡¨å—ç¼–è¾‘å±è”½æ‰  æ§ä»¶è®¾ç½®
             popup.add(new CellWidgetAttrAction(ePane).createMenuItem());
         }
         popup.add(new CellExpandAttrAction().createMenuItem());
@@ -467,10 +467,10 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * Çå³ı
-     * @param type ÒªÇå³ıµÄÀàĞÍ
-     * @param ePane  ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * æ¸…é™¤
+     * @param type è¦æ¸…é™¤çš„ç±»å‹
+     * @param ePane  åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean clear(Clear type, ElementCasePane ePane) {
         TemplateElementCase ec = ePane.getEditingElementCase();
@@ -548,8 +548,8 @@ public class CellSelection extends Selection {
 
 
     /**
-     * Ïò×óÒÆ¶¯
-     * @param ePane ÇøÓò
+     * å‘å·¦ç§»åŠ¨
+     * @param ePane åŒºåŸŸ
      */
     public void moveLeft(ElementCasePane ePane) {
         if (column - 1 < 0) {
@@ -559,16 +559,16 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ÏòÓÒÒÆ¶¯
-     * @param ePane ÇøÓò
+     * å‘å³ç§»åŠ¨
+     * @param ePane åŒºåŸŸ
      */
     public void moveRight(ElementCasePane ePane) {
         moveTo(ePane, column + columnSpan, row);
     }
 
     /**
-     * ÏòÉÏÒÆ¶¯
-     * @param ePane ÇøÓò
+     * å‘ä¸Šç§»åŠ¨
+     * @param ePane åŒºåŸŸ
      */
     public void moveUp(ElementCasePane ePane) {
         if (row - 1 < 0) {
@@ -578,8 +578,8 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ÏòÏÂÒÆ¶¯
-     * @param ePane ÇøÓò
+     * å‘ä¸‹ç§»åŠ¨
+     * @param ePane åŒºåŸŸ
      */
     public void moveDown(ElementCasePane ePane) {
         moveTo(ePane, column, row + rowSpan);
@@ -593,9 +593,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * ´¥·¢É¾³ı¶¯×÷
-     * @param ePane ÇøÓò
-     * @return ³É¹¦·µ»Øtrue
+     * è§¦å‘åˆ é™¤åŠ¨ä½œ
+     * @param ePane åŒºåŸŸ
+     * @return æˆåŠŸè¿”å›true
      */
     public boolean triggerDeleteAction(ElementCasePane ePane) {
         final TemplateElementCase ec = ePane.getEditingElementCase();
@@ -623,9 +623,9 @@ public class CellSelection extends Selection {
     }
 
     /**
-     * °üº¬ĞĞÁĞ
-     * @param cr ĞĞÁĞ
-     * @return °üº¬·µ»Øtrue
+     * åŒ…å«è¡Œåˆ—
+     * @param cr è¡Œåˆ—
+     * @return åŒ…å«è¿”å›true
      */
     public boolean containsColumnRow(ColumnRow cr) {
         return new Rectangle(column, row, columnSpan, rowSpan).contains(cr.column, cr.row);
@@ -668,7 +668,7 @@ public class CellSelection extends Selection {
             value = cellElement.getValue();
         }
         value = value == null ? "" : value;
-        //Ö®Ç°ÊÇÉÙÁË¸öbigInteger,¸ÕkunsnatÓÖ·¢ÏÖÉÙÁË¸öbigDecimal£¬Êı×ÖÀàĞÍµÄ¶¼ÓÃstringEditor£¬Ã»±ØÒªÄÇ¸öÑù×Ó
+        //ä¹‹å‰æ˜¯å°‘äº†ä¸ªbigInteger,åˆškunsnatåˆå‘ç°å°‘äº†ä¸ªbigDecimalï¼Œæ•°å­—ç±»å‹çš„éƒ½ç”¨stringEditorï¼Œæ²¡å¿…è¦é‚£ä¸ªæ ·å­
         QuickEditor editor = ActionUtils.getCellEditor((value instanceof Number) ? (Number.class) : (value.getClass()));
         if (editor == null) {
             return null;

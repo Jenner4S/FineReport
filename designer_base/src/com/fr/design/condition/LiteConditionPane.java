@@ -48,7 +48,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     private static int MOVE_DOWN = 1;
 
     private static final long serialVersionUID = 1L;
-    // peter:ÕâÁ½¸ö±äÁ¿ÔÚµ¯³ö¹«Ê½±à¼­Æ÷µÄÊ±ºò,ĞèÒªÓÃ.
+    // peter:è¿™ä¸¤ä¸ªå˜é‡åœ¨å¼¹å‡ºå…¬å¼ç¼–è¾‘å™¨çš„æ—¶å€™,éœ€è¦ç”¨.
     private UIRadioButton commonRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_Common"));
     private UIRadioButton formulaRadioButton = new UIRadioButton(Inter.getLocText("FR-Designer_LiteCondition_Formula"));
     private JPanel conditionCardPane;
@@ -86,7 +86,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 @Override
                 public void doOk() {
                     Formula formula = formulaPane.update();
-                    if (formula.getContent().length() <= 1) {// Èç¹ûÃ»ÓĞÌîÈÎºÎ×Ö·û£¬ÔòÊÇ¿Õ°×ÎÄ±¾
+                    if (formula.getContent().length() <= 1) {// å¦‚æœæ²¡æœ‰å¡«ä»»ä½•å­—ç¬¦ï¼Œåˆ™æ˜¯ç©ºç™½æ–‡æœ¬
                         formulaTextArea.setText("");
                     } else {
                         formulaTextArea.setText(formula.getContent().substring(1));
@@ -101,7 +101,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
 
         @Override
         public void actionPerformed(ActionEvent evt) {
-            // peter:ÏÈ»ñµÃµ±Ç°µÄLiteCondition.
+            // peter:å…ˆè·å¾—å½“å‰çš„LiteCondition.
 
             Condition liteCondition = null;
             if (commonRadioButton.isSelected()) {
@@ -126,7 +126,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             parentTreeNode.expandCurrentTreeNode(conditionsTree);
             conditionsTree.setSelectionPath(GUICoreUtils.getTreePath(newJionConditionTreeNode));
 
-            // peter:±ØĞëÒª¼ì²éEnabled.
+            // peter:å¿…é¡»è¦æ£€æŸ¥Enabled.
             checkButtonEnabledForList();
         }
     };
@@ -137,14 +137,14 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         @Override
         public void mouseEntered(MouseEvent evt) {
             TreePath selectedTreePath = conditionsTree.getSelectionPath();
-            // peter:µ±Ç°µÄ½Úµã
+            // peter:å½“å‰çš„èŠ‚ç‚¹
             if (selectedTreePath != null) {
                 ExpandMutableTreeNode selectedTreeNode = (ExpandMutableTreeNode) selectedTreePath.getLastPathComponent();
                 JoinCondition oldJoinCondition = (JoinCondition) selectedTreeNode.getUserObject();
                 oldJoinCondition.setJoin(andRadioButton.isSelected() ? DataConstants.AND : DataConstants.OR);
 
                 Condition oldLiteCondition = oldJoinCondition.getCondition();
-                // peter:Èç¹ûµ±Ç°Ñ¡ÖĞµÄÊÇListCondition,Ö»Òª¸Ä±äJoinÎªAND»òÕßOR,Ö±½Ó·µ»Ø.
+                // peter:å¦‚æœå½“å‰é€‰ä¸­çš„æ˜¯ListCondition,åªè¦æ”¹å˜Joinä¸ºANDæˆ–è€…OR,ç›´æ¥è¿”å›.
                 if (oldLiteCondition instanceof ListCondition) {
                     GUICoreUtils.setEnabled(conditionCardPane, false);
                 }
@@ -173,7 +173,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             if (userObject instanceof JoinCondition) {
                 JoinCondition joinCondition = (JoinCondition) userObject;
 
-                // peter:ÏÈÅªjoin.
+                // peter:å…ˆå¼„join.
                 int join = joinCondition.getJoin();
                 if (join == DataConstants.AND) {
                     andRadioButton.setSelected(true);
@@ -181,9 +181,9 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                     orRadioButton.setSelected(true);
                 }
 
-                // peter:µ±Ç°µÄliteCondtion.
+                // peter:å½“å‰çš„liteCondtion.
                 Condition liteCondition = joinCondition.getCondition();
-                // elake:Á½ÖÖCondition¶ÔÓ¦ÓÚÊı¾İÁĞºÍ¸ßÁÁ.
+                // elake:ä¸¤ç§Conditionå¯¹åº”äºæ•°æ®åˆ—å’Œé«˜äº®.
                 if (liteCondition instanceof CommonCondition || liteCondition instanceof ObjectCondition) {
                     Condition commonCondition = liteCondition;
                     commonRadioButton.setSelected(true);
@@ -224,7 +224,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                     ExpandMutableTreeNode selectedTreeNode = (ExpandMutableTreeNode) selectedTreePaths[i].getLastPathComponent();
                     ExpandMutableTreeNode parentTreeNode = (ExpandMutableTreeNode) selectedTreeNode.getParent();
 
-                    // peter:½«ÒªÑ¡Ôñ½Úµã.
+                    // peter:å°†è¦é€‰æ‹©èŠ‚ç‚¹.
                     ExpandMutableTreeNode nextSelectTreeNode;
                     if (parentTreeNode.getChildAfter(selectedTreeNode) != null) {
                         nextSelectTreeNode = (ExpandMutableTreeNode) parentTreeNode.getChildAfter(selectedTreeNode);
@@ -246,7 +246,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                     }
                 }
 
-                // peter:¼ì²éButton Enabled.
+                // peter:æ£€æŸ¥Button Enabled.
                 checkButtonEnabledForList();
             }
         }
@@ -293,12 +293,12 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         @Override
         public void actionPerformed(ActionEvent evt) {
             TreePath[] selectedTreePaths = conditionsTree.getSelectionPaths();
-            // peter:µ±Ç°µÄ½Úµã
+            // peter:å½“å‰çš„èŠ‚ç‚¹
             if (selectedTreePaths == null || selectedTreePaths.length <= 1) {
                 return;
             }
 
-            // peter: ÕÒµ½¸¸Ç×½Úµã,²¢ÇÒÉ¾³ıËùÓĞµÄ½Úµã.
+            // peter: æ‰¾åˆ°çˆ¶äº²èŠ‚ç‚¹,å¹¶ä¸”åˆ é™¤æ‰€æœ‰çš„èŠ‚ç‚¹.
             TreePath topTreePath = GUICoreUtils.getTopTreePath(conditionsTree, selectedTreePaths);
             ExpandMutableTreeNode leadTreeNode = (ExpandMutableTreeNode) topTreePath.getLastPathComponent();
             ExpandMutableTreeNode parentTreeNode = (ExpandMutableTreeNode) leadTreeNode.getParent();
@@ -310,7 +310,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 parentTreeNode.remove(tmpTreeNode);
             }
 
-            // peter:½¨Á¢ĞÂµÄ½Úµã.
+            // peter:å»ºç«‹æ–°çš„èŠ‚ç‚¹.
             JoinCondition newJionCondition = new JoinCondition();
             newJionCondition.setJoin(firstJionCondition.getJoin());
             newJionCondition.setCondition(new ListCondition());
@@ -320,15 +320,15 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 newTreeNode.add(tmpTreeNode);
             }
 
-            // peter:Ìí¼ÓĞÂµÄ½Úµã
+            // peter:æ·»åŠ æ–°çš„èŠ‚ç‚¹
             parentTreeNode.insert(newTreeNode, topIndex);
 
-            // peter:ĞèÒªreload
+            // peter:éœ€è¦reload
             DefaultTreeModel defaultTreeModel = (DefaultTreeModel) conditionsTree.getModel();
             defaultTreeModel.reload(parentTreeNode);
             parentTreeNode.expandCurrentTreeNode(conditionsTree);
 
-            // peter:Ñ¡ÔñÒ»¸ö½Úµã
+            // peter:é€‰æ‹©ä¸€ä¸ªèŠ‚ç‚¹
             conditionsTree.setSelectionPath(GUICoreUtils.getTreePath(newTreeNode));
         }
     };
@@ -339,7 +339,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         @Override
         public void actionPerformed(ActionEvent evt) {
             TreePath selectedTreePath = conditionsTree.getSelectionPath();
-            // peter:µ±Ç°µÄ½Úµã
+            // peter:å½“å‰çš„èŠ‚ç‚¹
             if (selectedTreePath == null) {
                 return;
             }
@@ -351,7 +351,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 ExpandMutableTreeNode parentTreeNode = (ExpandMutableTreeNode) selectedTreeNode.getParent();
                 int index = parentTreeNode.getIndex(selectedTreeNode);
 
-                // peter:Ìí¼Ó½Úµã
+                // peter:æ·»åŠ èŠ‚ç‚¹
                 List<TreePath> treePathList = new ArrayList<TreePath>();
                 for (int i = selectedTreeNode.getChildCount() - 1; i >= 0; i--) {
                     ExpandMutableTreeNode tmpTreeNode = (ExpandMutableTreeNode) selectedTreeNode.getChildAt(i);
@@ -359,15 +359,15 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                     treePathList.add(GUICoreUtils.getTreePath(tmpTreeNode));
                 }
 
-                // peter;É¾³ıÕâ¸öList½Úµã
+                // peter;åˆ é™¤è¿™ä¸ªListèŠ‚ç‚¹
                 parentTreeNode.remove(selectedTreeNode);
 
-                // peter:ĞèÒªreload
+                // peter:éœ€è¦reload
                 DefaultTreeModel defaultTreeModel = (DefaultTreeModel) conditionsTree.getModel();
                 defaultTreeModel.reload(parentTreeNode);
                 parentTreeNode.expandCurrentTreeNode(conditionsTree);
 
-                // peter:Ñ¡ÔñËùÓĞÑ¡ÔñµÄ½Úµã
+                // peter:é€‰æ‹©æ‰€æœ‰é€‰æ‹©çš„èŠ‚ç‚¹
                 TreePath[] selectedTreePaths = new TreePath[treePathList.size()];
                 treePathList.toArray(selectedTreePaths);
                 conditionsTree.setSelectionPaths(selectedTreePaths);
@@ -385,7 +385,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     };
 
 
-    // Í¼±íÌõ¼ş¸ßÁÁÊ±Ã»ÓĞ¹«Ê½Ñ¡Ôñ
+    // å›¾è¡¨æ¡ä»¶é«˜äº®æ—¶æ²¡æœ‰å…¬å¼é€‰æ‹©
     protected JPanel conditonTypePane;
 
     public LiteConditionPane() {
@@ -432,7 +432,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         previewPane.add(GUICoreUtils.createBorderPane(buttonPane, BorderLayout.NORTH), BorderLayout.EAST);
         initButtonPane(buttonPane);
 
-        // peter:±ØĞëÒª¼ì²éEnabled.
+        // peter:å¿…é¡»è¦æ£€æŸ¥Enabled.
         checkButtonEnabledForList();
     }
 
@@ -454,13 +454,13 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         moveDownButton.setIcon(BaseUtils.readIcon("com/fr/design/images/control/down.png"));
         moveDownButton.addActionListener(actionListener5);
 
-        // peter:¼ÓÀ¨ºÅ
+        // peter:åŠ æ‹¬å·
         bracketButton = new UIButton(Inter.getLocText("ConditionB-Add_bracket"));
         buttonPane.add(bracketButton);
         bracketButton.setIcon(BaseUtils.readIcon("com/fr/design/images/condition/bracket.png"));
         bracketButton.addActionListener(actionListener6);
 
-        // peter:È¥µôÀ¨ºÅ
+        // peter:å»æ‰æ‹¬å·
         unBracketButton = new UIButton(Inter.getLocText("ConditionB-Remove_bracket"));
         buttonPane.add(unBracketButton);
         unBracketButton.setIcon(BaseUtils.readIcon("com/fr/design/images/condition/unBracket.png"));
@@ -560,7 +560,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         addControlPane.add(modifyButton);
         modifyButton.addActionListener(actionListener8);
 
-        // peter:µ±Êó±ê½øÈëĞŞ¸Ä°´Å¥µÄÊ±ºò,Èç¹ûÊÇListConditonÄÚÈİ±à¼­ÇøÓò²»¿É±à¼­
+        // peter:å½“é¼ æ ‡è¿›å…¥ä¿®æ”¹æŒ‰é’®çš„æ—¶å€™,å¦‚æœæ˜¯ListConditonå†…å®¹ç¼–è¾‘åŒºåŸŸä¸å¯ç¼–è¾‘
         modifyButton.addMouseListener(mouseAdapter);
     }
 
@@ -570,19 +570,19 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         return Inter.getLocText("FR-Designer-Submit_Condition");
     }
 
-    // samuel:ÒÆ³öÀ´£¬·½±ãµ÷ÓÃ
+    // samuel:ç§»å‡ºæ¥ï¼Œæ–¹ä¾¿è°ƒç”¨
     protected void modify() {
         TreePath selectedTreePath = conditionsTree.getSelectionPath();
-        // peter:µ±Ç°µÄ½Úµã
+        // peter:å½“å‰çš„èŠ‚ç‚¹
         if (selectedTreePath != null) {
             ExpandMutableTreeNode selectedTreeNode = (ExpandMutableTreeNode) selectedTreePath.getLastPathComponent();
             JoinCondition oldJoinCondition = (JoinCondition) selectedTreeNode.getUserObject();
             oldJoinCondition.setJoin(andRadioButton.isSelected() ? DataConstants.AND : DataConstants.OR);
 
             Condition oldLiteCondition = oldJoinCondition.getCondition();
-            // peter:Èç¹ûµ±Ç°Ñ¡ÖĞµÄÊÇListCondition,Ö»Òª¸Ä±äJoinÎªAND»òÕßOR,Ö±½Ó·µ»Ø.
+            // peter:å¦‚æœå½“å‰é€‰ä¸­çš„æ˜¯ListCondition,åªè¦æ”¹å˜Joinä¸ºANDæˆ–è€…OR,ç›´æ¥è¿”å›.
             if (oldLiteCondition != null && !(oldLiteCondition instanceof ListCondition)) {
-                // peter:ÏÈ»ñµÃµ±Ç°µÄLiteCondition.
+                // peter:å…ˆè·å¾—å½“å‰çš„LiteCondition.
                 Condition liteCondition;
                 if (commonRadioButton.isSelected()) {
                     liteCondition = defaultConditionPane.updateBean();
@@ -593,7 +593,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 oldJoinCondition.setCondition(liteCondition);
             }
 
-            // peter:ĞèÒªreload parent
+            // peter:éœ€è¦reload parent
             DefaultTreeModel defaultTreeModel = (DefaultTreeModel) conditionsTree.getModel();
             ExpandMutableTreeNode parentTreeNode = (ExpandMutableTreeNode) selectedTreeNode.getParent();
             defaultTreeModel.reload(parentTreeNode);
@@ -622,7 +622,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         }
 
 
-        // peter:¼ì²éButton Enabled.
+        // peter:æ£€æŸ¥Button Enabled.
         checkButtonEnabledForList();
     }
 
@@ -647,7 +647,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     }
 
     /**
-     * peter:¼ì²éButtonÊÇ·ñ¿ÉÒÔ±à¼­.
+     * peter:æ£€æŸ¥Buttonæ˜¯å¦å¯ä»¥ç¼–è¾‘.
      */
     private void checkButtonEnabledForList() {
         modifyButton.setEnabled(false);
@@ -662,7 +662,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             modifyButton.setEnabled(true);
             removeButton.setEnabled(true);
 
-            // peter:¸ù¾İÑ¡ÖĞµÄ½ÚµãµÄÊÇ·ñÊÇµÚÒ»¸ö»òÕß×îºóÒ»¸ö.
+            // peter:æ ¹æ®é€‰ä¸­çš„èŠ‚ç‚¹çš„æ˜¯å¦æ˜¯ç¬¬ä¸€ä¸ªæˆ–è€…æœ€åä¸€ä¸ª.
             ExpandMutableTreeNode selectedTreeNode = (ExpandMutableTreeNode) selectedTreePath.getLastPathComponent();
             DefaultMutableTreeNode parentTreeNode = (DefaultMutableTreeNode) selectedTreeNode.getParent();
             if (parentTreeNode.getChildBefore(selectedTreeNode) != null) {
@@ -672,13 +672,13 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 moveDownButton.setEnabled(true);
             }
 
-            // peter: Á¬ĞøÑ¡ÖĞÁË³¬¹ıÁ½¸öÌõ¼ş,Í¬Ê±Ã»ÓĞÑ¡ÖĞËùÓĞµÄ½Úµã.
+            // peter: è¿ç»­é€‰ä¸­äº†è¶…è¿‡ä¸¤ä¸ªæ¡ä»¶,åŒæ—¶æ²¡æœ‰é€‰ä¸­æ‰€æœ‰çš„èŠ‚ç‚¹.
             int selectionCount = conditionsTree.getSelectionCount();
             if (selectionCount > 1 && parentTreeNode.getChildCount() > selectionCount) {
                 this.bracketButton.setEnabled(true);
             }
 
-            // peter:Ñ¡ÖĞµÄ½Úµã±ØĞëÊÇListCondition,²Å¿ÉÒÔÉ¾³ıÀ¨ºÅ
+            // peter:é€‰ä¸­çš„èŠ‚ç‚¹å¿…é¡»æ˜¯ListCondition,æ‰å¯ä»¥åˆ é™¤æ‹¬å·
             JoinCondition jonCondition = (JoinCondition) selectedTreeNode.getUserObject();
             Condition liteCondtion = jonCondition.getCondition();
             if (liteCondtion instanceof ListCondition) {
@@ -688,7 +688,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     }
 
     /**
-     * À©Õ¹ÊÂ¼ş.
+     * æ‰©å±•äº‹ä»¶.
      */
     TreeExpansionListener treeExpansionListener = new TreeExpansionListener() {
 
@@ -718,14 +718,14 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     private ExpandMutableTreeNode getParentTreeNode() {
         DefaultTreeModel defaultTreeModel = (DefaultTreeModel) conditionsTree.getModel();
         TreePath selectedTreePath = conditionsTree.getSelectionPath();
-        // peter:Èç¹ûÃ»ÓĞÑ¡ÔñµÄ½Úµã,Ö±½ÓÌí¼Óµ½¸ù½Úµã.
+        // peter:å¦‚æœæ²¡æœ‰é€‰æ‹©çš„èŠ‚ç‚¹,ç›´æ¥æ·»åŠ åˆ°æ ¹èŠ‚ç‚¹.
         ExpandMutableTreeNode parentTreeNode;
         if (selectedTreePath == null) {
             parentTreeNode = (ExpandMutableTreeNode) defaultTreeModel.getRoot();
         } else {
             parentTreeNode = (ExpandMutableTreeNode) ((ExpandMutableTreeNode) selectedTreePath.getLastPathComponent()).getParent();
         }
-        // peter:Èç¹ûÃ»ÓĞÑ¡ÖĞµÄ½Úµã,Ö±½Ó·µ»Ø.
+        // peter:å¦‚æœæ²¡æœ‰é€‰ä¸­çš„èŠ‚ç‚¹,ç›´æ¥è¿”å›.
         return parentTreeNode;
     }
 
@@ -737,7 +737,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         JoinCondition parentJoinCondition = (JoinCondition) parentTreeNode.getUserObject();
         Condition parentLiteCondition = parentJoinCondition.getCondition();
         if (parentLiteCondition instanceof ListCondition) {
-            // peter:ÔÚÌí¼ÓUserObjectµÄ½Úµã.
+            // peter:åœ¨æ·»åŠ UserObjectçš„èŠ‚ç‚¹.
 
             for (int i = 0; i < parentTreeNode.getChildCount(); i++) {
                 ExpandMutableTreeNode tempTreeNode = (ExpandMutableTreeNode) parentTreeNode.getChildAt(i);
@@ -778,7 +778,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
             }
 
             if (liteCondition != null) {
-                // TODO alex:ÕâÀïµÃµ½µÄliteConditionÎªÊ²Ã´»áÊÇnullÄØ?
+                // TODO alex:è¿™é‡Œå¾—åˆ°çš„liteConditionä¸ºä»€ä¹ˆä¼šæ˜¯nullå‘¢?
                 sBuf.append(liteCondition.toString());
             }
             this.setText(sBuf.toString());
@@ -787,7 +787,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         }
     };
 
-    // peter:¸ù¾İº¢×Ó¼¸µã,µ÷Õûµ±Ç°½ÚµãµÄListConditionµÄÖµ.
+    // peter:æ ¹æ®å­©å­å‡ ç‚¹,è°ƒæ•´å½“å‰èŠ‚ç‚¹çš„ListConditionçš„å€¼.
     protected void adjustParentListCondition(DefaultMutableTreeNode currentTreeNode) {
         DefaultMutableTreeNode parentTreeNode = (DefaultMutableTreeNode) currentTreeNode.getParent();
 
@@ -805,13 +805,13 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 }
             }
 
-            // peter:Õâ¸öµØ·½¶¯Ì¬²úÉúListCondition,ÒòÎªListConditionµÄ½Úµã»á±ä»¯µÄ,
-            // ¸¸Ç×½ÚµãµÄListConditionÕâ¸öUserObjectĞèÒª¸ú×Å±ä»¯.
+            // peter:è¿™ä¸ªåœ°æ–¹åŠ¨æ€äº§ç”ŸListCondition,å› ä¸ºListConditionçš„èŠ‚ç‚¹ä¼šå˜åŒ–çš„,
+            // çˆ¶äº²èŠ‚ç‚¹çš„ListConditionè¿™ä¸ªUserObjectéœ€è¦è·Ÿç€å˜åŒ–.
             if (liteCondition instanceof ListCondition) {
                 ListCondition listCondition = (ListCondition) liteCondition;
                 listCondition.clearJoinConditions();
 
-                // peter:¶¯Ì¬Ìí¼Óº¢×Ó½Úµã
+                // peter:åŠ¨æ€æ·»åŠ å­©å­èŠ‚ç‚¹
                 int childCount = currentTreeNode.getChildCount();
                 for (int i = 0; i < childCount; i++) {
                     Object tmpUserObject = ((DefaultMutableTreeNode) currentTreeNode.getChildAt(i)).getUserObject();
@@ -844,13 +844,13 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
     	if(liteCondition == null){
     		return;
     	}
-        // peter: ÏÈÉ¾³ıËùÓĞµÄ½Úµã
+        // peter: å…ˆåˆ é™¤æ‰€æœ‰çš„èŠ‚ç‚¹
         DefaultTreeModel defaultTreeModel = (DefaultTreeModel) this.conditionsTree.getModel();
         ExpandMutableTreeNode rootTreeNode = (ExpandMutableTreeNode) defaultTreeModel.getRoot();
         rootTreeNode.setUserObject(new JoinCondition(DataConstants.AND, new ListCondition()));
         rootTreeNode.removeAllChildren();
 
-        // peter:ĞèÒª¹¹½¨³ÉListCondition,¼ÓÈëµ½ÀïÃæ.
+        // peter:éœ€è¦æ„å»ºæˆListCondition,åŠ å…¥åˆ°é‡Œé¢.
         if (liteCondition instanceof ListCondition) {
             ListCondition listCondition = (ListCondition) liteCondition;
 
@@ -864,15 +864,15 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
                 addLiteConditionToListCondition(rootTreeNode, listCondition.getJoinCondition(i));
             }
         } else if (needDoWithCondition(liteCondition)) {
-            // peter:Ö±½ÓÌí¼Ó
+            // peter:ç›´æ¥æ·»åŠ 
             ExpandMutableTreeNode newTreeNode = new ExpandMutableTreeNode(new JoinCondition(DataConstants.AND, liteCondition));
             rootTreeNode.add(newTreeNode);
         }
 
-        // peter:ĞèÒªreload
+        // peter:éœ€è¦reload
         defaultTreeModel.reload(rootTreeNode);
         rootTreeNode.expandCurrentTreeNode(conditionsTree);
-        // marks:Ä¬ÈÏµÄÑ¡ÔñµÚÒ»ĞĞ
+        // marks:é»˜è®¤çš„é€‰æ‹©ç¬¬ä¸€è¡Œ
         if (conditionsTree.getRowCount() > 0) {
             conditionsTree.setSelectionRow(0);
         }
@@ -889,12 +889,12 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
         return true;
     }
 
-    // peter:ÔËÓÃµİ¹é·½Ê½,¹¹½¨³õÊ¼µÄ½Úµã
+    // peter:è¿ç”¨é€’å½’æ–¹å¼,æ„å»ºåˆå§‹çš„èŠ‚ç‚¹
     private void addLiteConditionToListCondition(ExpandMutableTreeNode parentTreeNode, JoinCondition joinCondition) {
         ExpandMutableTreeNode newTreeNode = new ExpandMutableTreeNode(joinCondition);
         parentTreeNode.add(newTreeNode);
 
-        // peter:¼ÌĞøÌí¼Ó.
+        // peter:ç»§ç»­æ·»åŠ .
         Condition liteCondition = joinCondition.getCondition();
         if (liteCondition instanceof ListCondition) {
             ListCondition listCondition = (ListCondition) liteCondition;
@@ -914,23 +914,23 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
      */
     @Override
     public Condition updateBean() {
-        // Samuel£ºÏÈ°´modifybutton
+        // Samuelï¼šå…ˆæŒ‰modifybutton
         modify();
-        // peter: ÏÈÉ¾³ıËùÓĞµÄ½Úµã
+        // peter: å…ˆåˆ é™¤æ‰€æœ‰çš„èŠ‚ç‚¹
         DefaultTreeModel defaultTreeModel = (DefaultTreeModel) this.conditionsTree.getModel();
         ExpandMutableTreeNode rootTreeNode = (ExpandMutableTreeNode) defaultTreeModel.getRoot();
 
         int childCount = rootTreeNode.getChildCount();
-        // peter: Èç¹ûÖ»ÓĞÒ»¸öº¢×Ó½Úµã, ·µ»Ø¿ÕµÄ ListCondition
+        // peter: å¦‚æœåªæœ‰ä¸€ä¸ªå­©å­èŠ‚ç‚¹, è¿”å›ç©ºçš„ ListCondition
         if (childCount == 0) {
             return new ListCondition();
-        } // peter: Èç¹ûroottreeNodeÖ»ÓĞÒ»¸öº¢×Ó½Úµã.
+        } // peter: å¦‚æœroottreeNodeåªæœ‰ä¸€ä¸ªå­©å­èŠ‚ç‚¹.
         else if (childCount == 1) {
             JoinCondition joinCondition = (JoinCondition) ((ExpandMutableTreeNode) rootTreeNode.getChildAt(0)).getUserObject();
             return joinCondition.getCondition();
-        } // peter: ÓĞºÃ¶àµÄº¢×Ó½Úµã.
+        } // peter: æœ‰å¥½å¤šçš„å­©å­èŠ‚ç‚¹.
         else {
-            // peter:Éî¶È±éÀúËùÓĞµÄº¢×Ó½Úµã
+            // peter:æ·±åº¦éå†æ‰€æœ‰çš„å­©å­èŠ‚ç‚¹
             Enumeration depthEnumeration = rootTreeNode.depthFirstEnumeration();
             while (depthEnumeration.hasMoreElements()) {
                 this.adjustParentListCondition((ExpandMutableTreeNode) depthEnumeration.nextElement());
@@ -938,7 +938,7 @@ public abstract class LiteConditionPane<T extends Condition> extends BasicBeanPa
 
             JoinCondition joinCondition = (JoinCondition) rootTreeNode.getUserObject();
             Condition newCondition = joinCondition.getCondition();
-            //clone(),·ÀÖ¹¶à¸öÌõ¼ş·Ö×éÊ¹ÓÃÍ¬Ò»¸öcondition¶ÔÏó
+            //clone(),é˜²æ­¢å¤šä¸ªæ¡ä»¶åˆ†ç»„ä½¿ç”¨åŒä¸€ä¸ªconditionå¯¹è±¡
             try{
                 newCondition = (Condition)joinCondition.getCondition().clone();
             }catch (CloneNotSupportedException e){

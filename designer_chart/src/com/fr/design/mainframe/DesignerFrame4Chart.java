@@ -49,14 +49,14 @@ public class DesignerFrame4Chart extends DesignerFrame {
    	}
 
     /**
-     * ÍË³ö
+     * é€€å‡º
      */
     public void exit() {
         ChartEnvManager.getEnvManager().saveXMLFile();
         super.exit();
     }
 
-    //²»ĞèÒªÎ÷²àµÄÎÄ¼şÊ÷Ãæ°å
+    //ä¸éœ€è¦è¥¿ä¾§çš„æ–‡ä»¶æ ‘é¢æ¿
     protected void laoyoutWestPane(){
 
     }

@@ -8,7 +8,7 @@ import com.fr.form.ui.reg.CustomReg;
 import com.fr.form.ui.reg.RegExp;
 
 /**
- * ÕıÔò±í´ïÊ½
+ * æ­£åˆ™è¡¨è¾¾å¼
  */
 public class RegexWrapper implements Encoder, Decoder {
 

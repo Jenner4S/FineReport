@@ -17,7 +17,7 @@ import com.fr.stable.Constants;
 /**
  * 
  * @author zhou
- * @since 2012-5-9ÏÂÎç4:33:07
+ * @since 2012-5-9ä¸‹åˆ4:33:07
  */
 public class TreeComboBoxUI extends BasicComboBoxUI implements MouseListener {
 

@@ -69,8 +69,8 @@ public class UISpinner extends JPanel implements UIObserver, GlobalNameObserver 
 	}
 
 	/**
-	 *  ¸ø×é¼ş·Ö±ğ¼ÓÉÏFocusListener
-	 * @param focusListener    ¼àÌıÊÂ¼ş
+	 *  ç»™ç»„ä»¶åˆ†åˆ«åŠ ä¸ŠFocusListener
+	 * @param focusListener    ç›‘å¬äº‹ä»¶
 	 */
 	public void addUISpinnerFocusListenner(FocusListener focusListener) {
 		this.addFocusListener(focusListener);
@@ -139,16 +139,16 @@ public class UISpinner extends JPanel implements UIObserver, GlobalNameObserver 
 	}
 
 	/**
-	 *Ôö¼Ó a <code>ChangeListener</code> to the listener list.
-	 * @param l    ¼àÌıÊÂ¼ş
+	 *å¢åŠ  a <code>ChangeListener</code> to the listener list.
+	 * @param l    ç›‘å¬äº‹ä»¶
 	 */
 	public void addChangeListener(ChangeListener l) {
 		this.listenerList.add(ChangeListener.class, l);
 	}
 
 	/**
-	 *ÒÆ³ı a <code>ChangeListener</code> from the listener list.
-	 * @param l    ¼àÌıÊÂ¼ş
+	 *ç§»é™¤ a <code>ChangeListener</code> from the listener list.
+	 * @param l    ç›‘å¬äº‹ä»¶
 	 */
 	public void removeChangeListener(ChangeListener l) {
 		this.listenerList.remove(ChangeListener.class, l);
@@ -254,35 +254,35 @@ public class UISpinner extends JPanel implements UIObserver, GlobalNameObserver 
 	};
 
 	/**
-	 *  ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 *  ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
 	public void registerChangeListener(UIObserverListener listener) {
 		uiObserverListener = listener;
 	}
 
     /**
-     * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+     * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
      *
-     * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
 	public boolean shouldResponseChangeListener() {
 		return true;
 	}
 
     /**
-     * ¸ø×é¼şµÇ¼ÇÒ»¸öÈ«¾ÖÃû×Ö¹Û²ìÕß¼àÌıÊÂ¼ş
+     * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªå…¨å±€åå­—è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      *
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
 	public void registerNameListener(GlobalNameListener listener) {
 		globalNameListener = listener;
 	}
 
     /**
-     * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+     * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
      *
-     * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
 	public boolean shouldResponseNameListener() {
 		return true;
@@ -329,8 +329,8 @@ public class UISpinner extends JPanel implements UIObserver, GlobalNameObserver 
 	}
 
     /**
-     *   ³ÌĞòÈë¿Ú  ²âÊÔ
-     * @param args       ²ÎÊı
+     *   ç¨‹åºå…¥å£  æµ‹è¯•
+     * @param args       å‚æ•°
      */
 	public static void main(String... args) {
 		LayoutManager layoutManager = null;

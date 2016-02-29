@@ -34,7 +34,7 @@ import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
 /**
- * ÆÕÍ¨Ä£Ê½ÏÂµÄÊó±êµã»÷¡¢Î»ÖÃ´¦ÀíÆ÷
+ * æ™®é€šæ¨¡å¼ä¸‹çš„é¼ æ ‡ç‚¹å‡»ã€ä½ç½®å¤„ç†å™¨
  */
 public class EditingMouseListener extends MouseInputAdapter {
 
@@ -42,27 +42,27 @@ public class EditingMouseListener extends MouseInputAdapter {
 	private FormDesigner designer;
 
 	/**
-	 * ÆÕÍ¨Ä£Ê½ÏÂ¶ÔÓ¦µÄmodel
+	 * æ™®é€šæ¨¡å¼ä¸‹å¯¹åº”çš„model
 	 */
 	private StateModel stateModel;
 	
 	/**
-	 * »ñÈ¡±íµ¥Éè¼ÆÆ÷
+	 * è·å–è¡¨å•è®¾è®¡å™¨
 	 * 
-	 * @return ±íµ¥Éè¼ÆÆ÷
+	 * @return è¡¨å•è®¾è®¡å™¨
 	 */
 	public FormDesigner getDesigner() {
 		return designer;
 	}
 
 	/**
-	 * Ñ¡ÔñÄ£ĞÍ£¬´æ´¢µ±Ç°Ñ¡ÔñµÄ×é¼şºÍ¼ôÇĞ°å
+	 * é€‰æ‹©æ¨¡å‹ï¼Œå­˜å‚¨å½“å‰é€‰æ‹©çš„ç»„ä»¶å’Œå‰ªåˆ‡æ¿
 	 */
 	private SelectionModel selectionModel;
 	/**
-	 * »ñÈ¡Ñ¡ÔñÄ£ĞÍ
+	 * è·å–é€‰æ‹©æ¨¡å‹
 	 * 
-	 * @return Ñ¡Ôñ 
+	 * @return é€‰æ‹© 
 	 */
 	public SelectionModel getSelectionModel() {
 		return selectionModel;
@@ -74,9 +74,9 @@ public class EditingMouseListener extends MouseInputAdapter {
 	private XCreator current_creator;
 
 	/**
-	 * »ñÈ¡×îĞ¡ÒÆ¶¯¾àÀë
+	 * è·å–æœ€å°ç§»åŠ¨è·ç¦»
 	 * 
-	 * @return ×îĞ¡ÒÆ¶¯¾àÀë
+	 * @return æœ€å°ç§»åŠ¨è·ç¦»
 	 */
 	public int getMinMoveSize() {
 		return minMoveSize;
@@ -84,7 +84,7 @@ public class EditingMouseListener extends MouseInputAdapter {
 
 	private int minDragSize = 5;
 	private int minMoveSize = 8;
-    //±¨±í¿éµÄ±à¼­°´Å¥²»ÁéÃô£¬·¶Î§À©´óÒ»µã
+    //æŠ¥è¡¨å—çš„ç¼–è¾‘æŒ‰é’®ä¸çµæ•ï¼ŒèŒƒå›´æ‰©å¤§ä¸€ç‚¹
     private static final int GAP = 10;
 
     private XElementCase xElementCase;
@@ -124,19 +124,19 @@ public class EditingMouseListener extends MouseInputAdapter {
 
 
     /**
-     * °´ÏÂ
-     * @param e    Êó±êÊÂ¼ş
+     * æŒ‰ä¸‹
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mousePressed(MouseEvent e) {
 		if (!stopEditing()) {
 			return;
 		}
 		if (!designer.isFocusOwner()) {
-			// »ñÈ¡½¹µã£¬ÒÔ±ã»ñÈ¡ÈÈ¼ü
+			// è·å–ç„¦ç‚¹ï¼Œä»¥ä¾¿è·å–çƒ­é”®
 			designer.requestFocus();
 		}
 		if (e.isPopupTrigger()) {
-			// Îª´¥·¢ÉÏÏÂÎÄ²Ëµ¥Ô¤Áô
+			// ä¸ºè§¦å‘ä¸Šä¸‹æ–‡èœå•é¢„ç•™
 		} else if (e.getButton() == MouseEvent.BUTTON1) {
 
 			Direction dir = selectionModel.getDirectionAt(e);
@@ -165,8 +165,8 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
     /**
-     * ÊÍ·Å
-     * @param e    Êó±êÊÂ¼ş
+     * é‡Šæ”¾
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseReleased(MouseEvent e) {
 		if (e.isPopupTrigger()) {
@@ -180,27 +180,27 @@ public class EditingMouseListener extends MouseInputAdapter {
 					designer.getDrawLineHelper().createDefalutLine();
 				}
 			} else if (stateModel.isSelecting()) {
-				// Èç¹ûµ±Ç°ÊÇÇøÓòÑ¡Ôñ×´Ì¬£¬ÔòÑ¡Ôñ¸ÃÇøÓòËùº¬µÄ×é¼ş
+				// å¦‚æœå½“å‰æ˜¯åŒºåŸŸé€‰æ‹©çŠ¶æ€ï¼Œåˆ™é€‰æ‹©è¯¥åŒºåŸŸæ‰€å«çš„ç»„ä»¶
 				designer.selectComponents(e);
 			}
 			if (stateModel.isDragging()) {
-                // µ±Ç°Êó±êËùÔÚµÄ×é¼ş
+                // å½“å‰é¼ æ ‡æ‰€åœ¨çš„ç»„ä»¶
                 XCreator hoveredComponent = designer.getComponentAt(e.getX(), e.getY());
-                // À­ÉìÊ±Êó±êÍÏ¶¯¹ı¿ì£¬µ¼ÖÂËùÔÚ×é¼ş»ñÈ¡»áÎª¿Õ
+                // æ‹‰ä¼¸æ—¶é¼ æ ‡æ‹–åŠ¨è¿‡å¿«ï¼Œå¯¼è‡´æ‰€åœ¨ç»„ä»¶è·å–ä¼šä¸ºç©º
                 if (hoveredComponent == null && e.getY() < 0) {
                 	// bug63538
-                	// ²»ÊÇÍÏ¶¯¹ı¿ìµ¼ÖÂµÄ£¬¶øÊÇ×İ×ø±êÎª¸ºÖµµ¼ÖÂµÄ£¬ÕâÊ±²ÎÕÕºá×ø±êÎª¸ºÖµÊ±µÄ×ö·¨£¬È¡±ß½çÎ»ÖÃµÄ×é¼ş£¬ÎªÊó±êËùÔÚµãµÄ×é¼ş
-                	// Èç¹ûÖ±½Óreturn£¬½çÃæÉÏÒÑ¾­½øĞĞÁËÍÏ×§²»ÄÜ»Ö¸´
+                	// ä¸æ˜¯æ‹–åŠ¨è¿‡å¿«å¯¼è‡´çš„ï¼Œè€Œæ˜¯çºµåæ ‡ä¸ºè´Ÿå€¼å¯¼è‡´çš„ï¼Œè¿™æ—¶å‚ç…§æ¨ªåæ ‡ä¸ºè´Ÿå€¼æ—¶çš„åšæ³•ï¼Œå–è¾¹ç•Œä½ç½®çš„ç»„ä»¶ï¼Œä¸ºé¼ æ ‡æ‰€åœ¨ç‚¹çš„ç»„ä»¶
+                	// å¦‚æœç›´æ¥returnï¼Œç•Œé¢ä¸Šå·²ç»è¿›è¡Œäº†æ‹–æ‹½ä¸èƒ½æ¢å¤
                 	hoveredComponent = designer.getComponentAt(0, 0);
                 }
-                // »ñÈ¡¸Ã×é¼şËùÔÚµÄ½¹µãÈİÆ÷
+                // è·å–è¯¥ç»„ä»¶æ‰€åœ¨çš„ç„¦ç‚¹å®¹å™¨
                 XLayoutContainer container = XCreatorUtils.getHotspotContainer(hoveredComponent);
 
                 if (container != null) {
                     boolean formSubmit2Adapt = !selectionModel.getSelection().getSelectedCreator().canEnterIntoAdaptPane() 
                     					&& container.acceptType(XWFitLayout.class);
                     if ( !formSubmit2Adapt) {
-                        // Èç¹ûÊÇ´¦ÓÚÍÏ×§×´Ì¬£¬ÔòÊÍ·Å×é¼ş
+                        // å¦‚æœæ˜¯å¤„äºæ‹–æ‹½çŠ¶æ€ï¼Œåˆ™é‡Šæ”¾ç»„ä»¶
                         stateModel.releaseDragging(e);
                     } else {
                         selectionModel.deleteSelection();
@@ -216,8 +216,8 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
 	/**
-	 * ¼¤»îÉÏÏÂÎÄ²Ëµ¥£¬´ıÍêÉÆ
-	 * 6.56ÔİÊ±²»Ö§³ÖÓÒ¼ü bugid 8777
+	 * æ¿€æ´»ä¸Šä¸‹æ–‡èœå•ï¼Œå¾…å®Œå–„
+	 * 6.56æš‚æ—¶ä¸æ”¯æŒå³é”® bugid 8777
 	 */
 	private void trigger_popup(MouseEvent e) {
 
@@ -234,13 +234,13 @@ public class EditingMouseListener extends MouseInputAdapter {
 		if (popupMenu != null) {
 			popupMenu.show(designer, e.getX(), e.getY());
 		}
-		// Í¨Öª×é¼şÒÑ¾­±»Ñ¡ÔñÁË
+		// é€šçŸ¥ç»„ä»¶å·²ç»è¢«é€‰æ‹©äº†
 		designer.getEditListenerTable().fireCreatorModified(creator, DesignerEvent.CREATOR_SELECTED);
 	}
 
     /**
-     * ÒÆ¶¯
-     * @param e    Êó±êÊÂ¼ş
+     * ç§»åŠ¨
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseMoved(MouseEvent e) {
 		XCreator component = designer.getComponentAt(e);
@@ -275,7 +275,7 @@ public class EditingMouseListener extends MouseInputAdapter {
             UIButton button = (UIButton)xElementCase.getCoverPane().getComponent(0);
             if(designer.getCursor().getType() ==Cursor.HAND_CURSOR) {
                 designer.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-            } // component.getParent() ÊÇ±¨±í¿éËùÔÚµÄXWTitleLayout
+            } // component.getParent() æ˜¯æŠ¥è¡¨å—æ‰€åœ¨çš„XWTitleLayout
             int minX = button.getX() + component.getX() + component.getParent().getX() - designer.getArea().getHorizontalValue();
             int minY = button.getY() + component.getY() + component.getParent().getY() + designer.getParaHeight() - designer.getArea().getVerticalValue();
             if(e.getX() + GAP >  minX && e.getX() - GAP < minX + button.getWidth()){
@@ -295,28 +295,28 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
     /**
-     * ÍÏ×§
-     * @param e    Êó±êÊÂ¼ş
+     * æ‹–æ‹½
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseDragged(MouseEvent e) {
 		if (BaseUtils.isAuthorityEditing()) {
 			return;
 		}
-		// Èç¹ûµ±Ç°ÊÇ×ó¼üÍÏ×§×´Ì¬£¬ÍÏ×§×é¼ş
+		// å¦‚æœå½“å‰æ˜¯å·¦é”®æ‹–æ‹½çŠ¶æ€ï¼Œæ‹–æ‹½ç»„ä»¶
 		if (stateModel.dragable()) {
 			if (SwingUtilities.isRightMouseButton(e)) {
 				return;
 			} else {
 				stateModel.dragging(e);
-				// »ñÈ¡eËùÔÚµÄ½¹µã×é¼ş
+				// è·å–eæ‰€åœ¨çš„ç„¦ç‚¹ç»„ä»¶
 				XCreator hotspot = designer.getComponentAt(e.getX(), e.getY());
-				// À­ÉìÊ±Êó±êÍÏ¶¯¹ı¿ì£¬µ¼ÖÂËùÔÚ×é¼ş»ñÈ¡»áÎª¿Õ
+				// æ‹‰ä¼¸æ—¶é¼ æ ‡æ‹–åŠ¨è¿‡å¿«ï¼Œå¯¼è‡´æ‰€åœ¨ç»„ä»¶è·å–ä¼šä¸ºç©º
 				if (hotspot == null) {
 					return;
 				}
-				// »ñÈ¡½¹µã×é¼şËùÔÚµÄ½¹µãÈİÆ÷
+				// è·å–ç„¦ç‚¹ç»„ä»¶æ‰€åœ¨çš„ç„¦ç‚¹å®¹å™¨
 				XLayoutContainer container = XCreatorUtils.getHotspotContainer(hotspot);
-				//ÌáÊ¾×é¼şÊÇ·ñ¿ÉÒÔÍÏÈë
+				//æç¤ºç»„ä»¶æ˜¯å¦å¯ä»¥æ‹–å…¥
 				promptUser(e.getX(), e.getY(), container);
 				}
 		} else if (designer.isDrawLineMode()) {
@@ -324,14 +324,14 @@ public class EditingMouseListener extends MouseInputAdapter {
 				stateModel.drawLine(e);
 			}
 		} else if (stateModel.isSelecting() && (selectionModel.getHotspotBounds() != null)) {
-			// Èç¹ûÊÇÍÏ×§Ñ¡ÔñÇøÓò×´Ì¬£¬Ôò¸üĞÂÑ¡ÔñÇøÓò
+			// å¦‚æœæ˜¯æ‹–æ‹½é€‰æ‹©åŒºåŸŸçŠ¶æ€ï¼Œåˆ™æ›´æ–°é€‰æ‹©åŒºåŸŸ
 			stateModel.changeSelection(e);
 		} else {
 			if ((lastPressEvent == null) || (last_creator == null)) {
 				return;
 			}
 			if (e.getPoint().distance(lastPressEvent.getPoint()) > minDragSize) {
-                //²ÎÊıÃæ°åºÍ×ÔÊÊÓ¦²¼¾Ö²»Ö§³ÖÍÏ×§
+                //å‚æ•°é¢æ¿å’Œè‡ªé€‚åº”å¸ƒå±€ä¸æ”¯æŒæ‹–æ‹½
                 if (last_creator.isSupportDrag()){
                     designer.startDraggingComponent(last_creator, lastPressEvent, e.getX(), e.getY());
                 }
@@ -343,8 +343,8 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
     /**
-     * µã»÷
-     * @param e    Êó±êÊÂ¼ş
+     * ç‚¹å‡»
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseClicked(MouseEvent e) {
 		if (e.getButton() != MouseEvent.BUTTON1) {
@@ -361,8 +361,8 @@ public class EditingMouseListener extends MouseInputAdapter {
 
 
     /**
-     * Àë¿ª
-     * @param e    Êó±êÊÂ¼ş
+     * ç¦»å¼€
+     * @param e    é¼ æ ‡äº‹ä»¶
      */
 	public void mouseExited(MouseEvent e) {
 		if (designer.getCursor().getType() != Cursor.DEFAULT_CURSOR) {
@@ -376,10 +376,10 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
 	/**
-	 * ¿ªÊ¼±à¼­
-	 * @param creator ÈİÆ÷
-	 * @param designerEditor Éè¼ÆÆ÷
-	 * @param adapter ÊÊÅäÆ÷
+	 * å¼€å§‹ç¼–è¾‘
+	 * @param creator å®¹å™¨
+	 * @param designerEditor è®¾è®¡å™¨
+	 * @param adapter é€‚é…å™¨
 	 */
 	public void startEditing(XCreator creator, DesignerEditor<? extends JComponent> designerEditor, ComponentAdapter adapter) {
 		if (designerEditor != null) {
@@ -399,8 +399,8 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
     /**
-     * Í£Ö¹±à¼­
-     * @return     ÊÇ·ñ±à¼­³É¹¦
+     * åœæ­¢ç¼–è¾‘
+     * @return     æ˜¯å¦ç¼–è¾‘æˆåŠŸ
      */
 	public boolean stopEditing() {
 		if (current_editor != null) {
@@ -422,7 +422,7 @@ public class EditingMouseListener extends MouseInputAdapter {
 	}
 
     /**
-     * ÖØÖÃ±à¼­¿Ø¼ş´óĞ¡
+     * é‡ç½®ç¼–è¾‘æ§ä»¶å¤§å°
      */
 	public void resetEditorComponentBounds() {
 		if (current_editor == null) {

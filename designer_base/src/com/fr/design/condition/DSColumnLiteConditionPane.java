@@ -54,8 +54,8 @@ public class DSColumnLiteConditionPane extends LiteConditionPane<CommonCondition
 	}
 
     /**
-     * Ë¢ÐÂÊý¾ÝÁÐ
-     * @param displayNames  Êý¾ÝÁÐÃû³Æ
+     * åˆ·æ–°æ•°æ®åˆ—
+     * @param displayNames  æ•°æ®åˆ—åç§°
      */
 	public void populateColumns(String[] displayNames) {
 		CommonConditionPane ccp = (CommonConditionPane) this.defaultConditionPane;

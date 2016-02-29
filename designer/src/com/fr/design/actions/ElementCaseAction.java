@@ -1,6 +1,6 @@
 package com.fr.design.actions;
 
-//ElementCaseActionÓ¦¸ÃÓĞGridSelectionChangeListener£¬¾Í´ÓĞü¸¡ÔªËØºÍµ¥Ôª¸ñÀ´½²£¬¾Í±ØĞëÓĞÁË£¬ÓÃÀ´ÅĞ¶ÏÕâĞ©ElementCaseActionÊÇ·ñ¿ÉÒÔ±à¼­,µ±È»»¹¿ÉÒÔ×öĞ©ÆäËûÊÂÇé
+//ElementCaseActionåº”è¯¥æœ‰GridSelectionChangeListenerï¼Œå°±ä»æ‚¬æµ®å…ƒç´ å’Œå•å…ƒæ ¼æ¥è®²ï¼Œå°±å¿…é¡»æœ‰äº†ï¼Œç”¨æ¥åˆ¤æ–­è¿™äº›ElementCaseActionæ˜¯å¦å¯ä»¥ç¼–è¾‘,å½“ç„¶è¿˜å¯ä»¥åšäº›å…¶ä»–äº‹æƒ…
 //
 
 import com.fr.design.mainframe.DesignerContext;
@@ -22,7 +22,7 @@ public abstract class ElementCaseAction extends TemplateComponentAction<ElementC
 					Selection selection = getEditingComponent().getSelection();
 					if (selection instanceof CellSelection) {
 						CellSelection cellselection = (CellSelection) selection;
-						//ÑùÊ½´¦Àí
+						//æ ·å¼å¤„ç†
 						getEditingComponent().setCellNeedTOFormat(cellselection);
 					}
 				}

@@ -40,9 +40,9 @@ public class UITable extends JTable implements UIObserver {
 
 
     /**
-	 * ÔÚÃ»ÓĞÈÎºÎÊı¾İµÄÊ±ºò£¬Ê¹ÓÃ´Ë¹¹Ôìº¯Êı£¬È»ºóÍ¨¹ıpopulate¸üĞÂÊı¾İ
+	 * åœ¨æ²¡æœ‰ä»»ä½•æ•°æ®çš„æ—¶å€™ï¼Œä½¿ç”¨æ­¤æ„é€ å‡½æ•°ï¼Œç„¶åé€šè¿‡populateæ›´æ–°æ•°æ®
 	 *
-	 * @param columnSize ÁĞ±íµÄÁĞÊı
+	 * @param columnSize åˆ—è¡¨çš„åˆ—æ•°
 	 */
 	public UITable(int columnSize) {
 
@@ -50,7 +50,7 @@ public class UITable extends JTable implements UIObserver {
 		initComponents();
         iniListener();
         shouldResponseAwt = false;
-        // kunsnat: ÆÁ±Î: ¶ÔÓÚÏÂÀ­¿ò, ÎŞ·¨µÈ´ıÑ¡Ôñ½á¹ûÖ®ºóÔÚstop..
+        // kunsnat: å±è”½: å¯¹äºä¸‹æ‹‰æ¡†, æ— æ³•ç­‰å¾…é€‰æ‹©ç»“æœä¹‹ååœ¨stop..
 //        Toolkit.getDefaultToolkit().addAWTEventListener(awt, AWTEvent.MOUSE_EVENT_MASK);
 	}
 
@@ -69,9 +69,9 @@ public class UITable extends JTable implements UIObserver {
     }
 
 	/**
-	 * values²»ÔÊĞíÎª¿Õ£¡
+	 * valuesä¸å…è®¸ä¸ºç©ºï¼
 	 *
-	 * @param values Ò»¸öÁĞ±í£¬ÀïÃæ×°ÓĞ×Ö·û´®Êı×é£¬Ã¿¸öÊı×é´ú±íÒ»ĞĞÄÚÈİ
+	 * @param values ä¸€ä¸ªåˆ—è¡¨ï¼Œé‡Œé¢è£…æœ‰å­—ç¬¦ä¸²æ•°ç»„ï¼Œæ¯ä¸ªæ•°ç»„ä»£è¡¨ä¸€è¡Œå†…å®¹
 	 */
 	public UITable(List<Object[]> values) {
 		super(new UITableDataModel(values));
@@ -104,7 +104,7 @@ public class UITable extends JTable implements UIObserver {
     			MouseEvent mv = (MouseEvent) event;
     			if (mv.getClickCount() > 0) {
     				Point point = new Point((int) (mv.getLocationOnScreen().getX()) - 2 * OFF_LEFT, (int) mv.getLocationOnScreen().getY());
-    				// ÅĞ¶ÏÊó±êµã»÷ÊÇ·ñÔÚ±ß½çÄÚ
+    				// åˆ¤æ–­é¼ æ ‡ç‚¹å‡»æ˜¯å¦åœ¨è¾¹ç•Œå†…
     				if (!bounds.contains(point) && shouldResponseAwt) {
                         if (!isEditingStopped) {
                             this.editor.stopCellEditing();
@@ -120,15 +120,15 @@ public class UITable extends JTable implements UIObserver {
 	}
 
 	/**
-	 * ÔÚtableµ×²¿Ôö¼ÓÒ»¿ÕĞĞ
+	 * åœ¨tableåº•éƒ¨å¢åŠ ä¸€ç©ºè¡Œ
 	 */
 	public void addBlankLine() {
 		getTableDataModel().addBlankLine();
 	}
 
 	/**
-	 * ÔÚtableµ×²¿Ôö¼ÓÒ»ĞĞÄÚÈİ
-	 * @param line ¸ÃĞĞµÄÄÚÈİ
+	 * åœ¨tableåº•éƒ¨å¢åŠ ä¸€è¡Œå†…å®¹
+	 * @param line è¯¥è¡Œçš„å†…å®¹
 	 */
 	public void addLine(Object[] line) {
 		getTableDataModel().addLine(line);
@@ -136,26 +136,26 @@ public class UITable extends JTable implements UIObserver {
 
 	/**
 	 * @param rowIndex
-	 * @return Ä³Ò»ĞĞµÄÄÚÈİ
+	 * @return æŸä¸€è¡Œçš„å†…å®¹
 	 */
 	public Object[] getLine(int rowIndex) {
 		return getTableDataModel().getLine(rowIndex);
 	}
 
 	/**
-	 * É¾³ıÄ³ĞĞÄÚÈİ
+	 * åˆ é™¤æŸè¡Œå†…å®¹
 	 *
-	 * @param rowIndex ĞĞºÅ
+	 * @param rowIndex è¡Œå·
 	 */
 	public void removeLine(int rowIndex) {
 		getTableDataModel().removeLine(rowIndex);
 	}
 
 	/**
-	 * ¶ÔÄ³Ò»ĞĞÍÏ¶¯Ê±½øĞĞÅÅĞò
+	 * å¯¹æŸä¸€è¡Œæ‹–åŠ¨æ—¶è¿›è¡Œæ’åº
 	 *
-	 * @param rowIndex ĞĞºÅ
-	 * @param positive Êó±êÒÆ¶¯µÄ¾àÀë
+	 * @param rowIndex è¡Œå·
+	 * @param positive é¼ æ ‡ç§»åŠ¨çš„è·ç¦»
 	 */
 	public void dragSort(int rowIndex, boolean positive) {
 		((UITableDataModel) dataModel).dragSort(rowIndex, positive);
@@ -163,17 +163,17 @@ public class UITable extends JTable implements UIObserver {
 
 
 	/**
-	 *¸ñ×ÓÊÇ·ñ¿É±à¼­£¬¿ÉÖÃ¶¥Ä³Ò»ÁĞcolumn²»¿É±à¼­
-	 * @param row ĞĞºÅ
-	 * @param column ÁĞºÅ
-	 * @return ÊÇ·ñ¿É±à¼­
+	 *æ ¼å­æ˜¯å¦å¯ç¼–è¾‘ï¼Œå¯ç½®é¡¶æŸä¸€åˆ—columnä¸å¯ç¼–è¾‘
+	 * @param row è¡Œå·
+	 * @param column åˆ—å·
+	 * @return æ˜¯å¦å¯ç¼–è¾‘
 	 */
 	public boolean isCellEditable(int row, int column) {
 		return true;
 	}
 
 	/**
-	 * Çå¿ÕÊı¾İ
+	 * æ¸…ç©ºæ•°æ®
 	 */
 	public void clear() {
 		getTableDataModel().clear();
@@ -184,10 +184,10 @@ public class UITable extends JTable implements UIObserver {
 	}
 
 	/**
-	 * @param value  ¸ÃĞĞÁĞµÄÖµ(×Ö·û´®)
+	 * @param value  è¯¥è¡Œåˆ—çš„å€¼(å­—ç¬¦ä¸²)
 	 * @param row
 	 * @param column
-	 * @return ÁĞ±íÖĞÄ¬ÈÏÏÔÊ¾µÄ¶«Î÷£¬Èç¹ûÓĞºÜ¶àÄÚÈİ£¬¿ÉÒÔ×°ÔØÒ»¸öJPanelÀïÔÙÇ¶½øÀ´
+	 * @return åˆ—è¡¨ä¸­é»˜è®¤æ˜¾ç¤ºçš„ä¸œè¥¿ï¼Œå¦‚æœæœ‰å¾ˆå¤šå†…å®¹ï¼Œå¯ä»¥è£…è½½ä¸€ä¸ªJPanelé‡Œå†åµŒè¿›æ¥
 	 */
 	protected JComponent getRenderCompoment(Object value, int row, int column) {
 		UILabel text = new UILabel();
@@ -228,8 +228,8 @@ public class UITable extends JTable implements UIObserver {
 	}
 
 	/**
-	 * Êó±êĞü¸¡ÔÙÄ³Ò»ĞĞÊ±´¥·¢µÄÊÂ¼ş
-	 * @param index ĞĞºÅ
+	 * é¼ æ ‡æ‚¬æµ®å†æŸä¸€è¡Œæ—¶è§¦å‘çš„äº‹ä»¶
+	 * @param index è¡Œå·
 	 */
 	public void dealWithRollOver(int index){
 
@@ -255,24 +255,24 @@ public class UITable extends JTable implements UIObserver {
 
 
 	/**
-	 *Í£Ö¹±à¼­ÊÂ¼ş
-	 * @param e ÊÂ¼ş
+	 *åœæ­¢ç¼–è¾‘äº‹ä»¶
+	 * @param e äº‹ä»¶
 	 */
 	public void tableCellEditingStopped(ChangeEvent e) {
 
 	}
 
     /**
-     *È¡Ïû±à¼­ÊÂ¼ş
-     * @param e ÊÂ¼ş
+     *å–æ¶ˆç¼–è¾‘äº‹ä»¶
+     * @param e äº‹ä»¶
      */
 	public void tableCellEditingCanceled(ChangeEvent e) {
 
 	}
 
 	/**
-	 * ±à¼­Æ÷
-	 * @return ±à¼­Æ÷
+	 * ç¼–è¾‘å™¨
+	 * @return ç¼–è¾‘å™¨
 	 */
 	public UITableEditor createTableEditor() {
 		return new UIDefaultTableCellEditor(new UITextField());
@@ -305,18 +305,18 @@ public class UITable extends JTable implements UIObserver {
 	}
 
 	/**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
     public void registerChangeListener(UIObserverListener listener) {
         uiObserverListener = listener;
     }
 
 	/**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -345,24 +345,24 @@ public class UITable extends JTable implements UIObserver {
 	}
 
 	/**
-	 * Ôö¼Ó¼àÌı
-	 * @param l ¼àÌı
+	 * å¢åŠ ç›‘å¬
+	 * @param l ç›‘å¬
 	 */
 	public void addChangeListener(ChangeListener l) {
 		this.listenerList.add(ChangeListener.class, l);
 	}
 
     /**
-     *ÒÆ³ı¼àÌı
-     * @param l ¼àÌı
+     *ç§»é™¤ç›‘å¬
+     * @param l ç›‘å¬
      */
 	public void removeChangeListener(ChangeListener l) {
 		this.listenerList.remove(ChangeListener.class, l);
 	}
 
     /**
-     *²âÊÔÖ÷º¯Êı
-     * @param args ²ÎÊı
+     *æµ‹è¯•ä¸»å‡½æ•°
+     * @param args å‚æ•°
      */
 	public static void main(String... args) {
 		JFrame jf = new JFrame("test");
@@ -385,4 +385,4 @@ public class UITable extends JTable implements UIObserver {
 		jf.setSize(400, 400);
 		jf.setVisible(true);
 	}
-}  
+}

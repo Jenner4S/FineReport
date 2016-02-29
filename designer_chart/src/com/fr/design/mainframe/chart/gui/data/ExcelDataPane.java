@@ -31,7 +31,7 @@ import java.awt.event.MouseListener;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-15
- * Time: ÏÂÎç11:58
+ * Time: ä¸‹åˆ11:58
  */
 public class ExcelDataPane extends ChartDesignDataLoadPane {
 
@@ -87,7 +87,7 @@ public class ExcelDataPane extends ChartDesignDataLoadPane {
         reviewButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Ô¤ÀÀ±¾µØexcel
+                //é¢„è§ˆæœ¬åœ°excel
                 try {
                     PreviewTablePane.previewTableData(getTableData());
                 } catch (Exception e1) {
@@ -108,9 +108,9 @@ public class ExcelDataPane extends ChartDesignDataLoadPane {
     }
 
     /**
-     * ¼ÓÔØÊı¾İ¼¯
+     * åŠ è½½æ•°æ®é›†
      *
-     * @param tableData Êı¾İ¼¯
+     * @param tableData æ•°æ®é›†
      */
     public void populateChartTableData(TableData tableData) {
         if (tableData instanceof ExcelTableData) {

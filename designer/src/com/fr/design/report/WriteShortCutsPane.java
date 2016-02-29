@@ -36,7 +36,7 @@ public class WriteShortCutsPane extends JPanel{
 		}
 	}
 	
-	//todo:²¼¾Ö²»ÒªÓÃ¾ø¶Ô¶¨Î»
+	//todo:å¸ƒå±€ä¸è¦ç”¨ç»å¯¹å®šä½
 	public JPanel getFeatureNamePane(){
 		JPanel panel1 = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
 		panel1.setBounds(20, 20, 600, 140);

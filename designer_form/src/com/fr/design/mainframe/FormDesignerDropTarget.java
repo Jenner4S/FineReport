@@ -30,16 +30,16 @@ public class FormDesignerDropTarget extends DropTargetAdapter {
     }
 
     /**
-     * ÏìÓ¦ÍÏ×§½øÈëÊÂ¼ş
-     * @param dtde  ĞèÒª±»´¦ÀíµÄÍÏ×§ÊÂ¼ş
+     * å“åº”æ‹–æ‹½è¿›å…¥äº‹ä»¶
+     * @param dtde  éœ€è¦è¢«å¤„ç†çš„æ‹–æ‹½äº‹ä»¶
      */
     public void dragEnter(DropTargetDragEvent dtde) {
         dtde.acceptDrag(dtde.getDropAction());
     }
 
     /**
-     * ´¦ÀíÍÏ×§¾­¹ıÊÂ¼ş
-     * @param dtde ĞèÒª±»´¦ÀíµÄÍÏ×§ÊÂ¼ş
+     * å¤„ç†æ‹–æ‹½ç»è¿‡äº‹ä»¶
+     * @param dtde éœ€è¦è¢«å¤„ç†çš„æ‹–æ‹½äº‹ä»¶
      */
     public void dragOver(DropTargetDragEvent dtde) {
         Point p = dtde.getLocation();
@@ -51,8 +51,8 @@ public class FormDesignerDropTarget extends DropTargetAdapter {
     }
 
     /**
-     * ´¦ÀíÍÏ×§ÊÍ·ÅÊÂ¼ş
-     * @param dtde  ĞèÒª±»´¦ÀíµÄÍÏ×§ÊÂ¼ş
+     * å¤„ç†æ‹–æ‹½é‡Šæ”¾äº‹ä»¶
+     * @param dtde  éœ€è¦è¢«å¤„ç†çš„æ‹–æ‹½äº‹ä»¶
      */
     public void drop(DropTargetDropEvent dtde) {
         Transferable tr = dtde.getTransferable();

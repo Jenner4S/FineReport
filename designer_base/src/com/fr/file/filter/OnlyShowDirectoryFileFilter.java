@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileFilter;
 
 /**
- * 隐藏所有的文件的FileFilter.()
+ * 闅愯棌鎵�鏈夌殑鏂囦欢鐨凢ileFilter.()
  */
 public class OnlyShowDirectoryFileFilter implements FileFilter {
     public boolean accept(File file) {

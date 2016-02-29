@@ -31,14 +31,14 @@ public class ReportFontSizeAction extends AbstractStyleAction {
     }
 
 	/**
-	 * Ó¦ÓÃÑ¡ÖĞµÄÑùÊ½
+	 * åº”ç”¨é€‰ä¸­çš„æ ·å¼
 	 * 
-	 * @param style Ö®Ç°µÄÑùÊ½
-	 * @param defStyle Ñ¡ÖĞµÄÑùÊ½
+	 * @param style ä¹‹å‰çš„æ ·å¼
+	 * @param defStyle é€‰ä¸­çš„æ ·å¼
 	 * 
-	 * @return ¸ü¸ÄºóµÄÑùÊ½
+	 * @return æ›´æ”¹åçš„æ ·å¼
 	 * 
-	 * @date 2015-1-22-ÏÂÎç4:54:00
+	 * @date 2015-1-22-ä¸‹åˆ4:54:00
 	 * 
 	 */
 	public Style executeStyle(Style style, Style defStyle) {
@@ -64,12 +64,12 @@ public class ReportFontSizeAction extends AbstractStyleAction {
         Object object = this.getValue(UIComboBox.class.getName());
         if (object != null && object instanceof UIComboBox) {
             UIComboBox comboBox = (UIComboBox) object;
-            //ÏÈºÍÒÔÇ°µÄFont Size±È½Ï.
+            //å…ˆå’Œä»¥å‰çš„Font Sizeæ¯”è¾ƒ.
             if (ComparatorUtils.equals(comboBox.getSelectedItem(), size)) {
                 return;
             }
 
-            //ÉèÖÃĞÂFont Size
+            //è®¾ç½®æ–°Font Size
             comboBox.removeActionListener(this);
             comboBox.setSelectedItem(size + "");
             comboBox.addActionListener(this);
@@ -77,11 +77,11 @@ public class ReportFontSizeAction extends AbstractStyleAction {
     }
 
     /**
-	 * ´´½¨¹¤¾ßÀ¸×é¼ş
+	 * åˆ›å»ºå·¥å…·æ ç»„ä»¶
 	 * 
-	 * @return ×é¼ş
+	 * @return ç»„ä»¶
 	 * 
-	 * @date 2015-1-22-ÏÂÎç4:53:29
+	 * @date 2015-1-22-ä¸‹åˆ4:53:29
 	 * 
 	 */
 	public JComponent createToolBarComponent() {
@@ -98,7 +98,7 @@ public class ReportFontSizeAction extends AbstractStyleAction {
             itemComponent.setPreferredSize(new Dimension(50, 20));
             itemComponent.setEnabled(this.isEnabled());
             itemComponent.addActionListener(this);
-            //ĞèÇó×ÖÌå´óĞ¡¿É±à¼­
+            //éœ€æ±‚å­—ä½“å¤§å°å¯ç¼–è¾‘
             itemComponent.setEditable(true);
 
             return itemComponent;
@@ -108,9 +108,9 @@ public class ReportFontSizeAction extends AbstractStyleAction {
     }
 
     /**
-     * ¸üĞÂÑùÊ½
+     * æ›´æ–°æ ·å¼
      * 
-     * @param style ÑùÊ½
+     * @param style æ ·å¼
      * 
      */
     @Override

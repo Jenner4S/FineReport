@@ -6,45 +6,45 @@ import com.fr.design.data.tabledata.tabledatapane.AbstractTableDataPane;
 /**
  * @author : richie
  * @since : 7.1.1
- * ×Ô¶¨Òå±¨±íÊı¾İ¼¯½çÃæ½Ó¿Ú£¬µ¥¶À´æÔÚµÄÒ»¸ö¸öÊı¾İ¼¯
+ * è‡ªå®šä¹‰æŠ¥è¡¨æ•°æ®é›†ç•Œé¢æ¥å£ï¼Œå•ç‹¬å­˜åœ¨çš„ä¸€ä¸ªä¸ªæ•°æ®é›†
  */
 public interface TableDataDefineProvider {
 
     public static final String XML_TAG = "TableDataDefineProvider";
 
     /**
-     * ×Ô¶¨ÒåµÄÊı¾İ¼¯ÉèÖÃ½çÃæËù¶ÔÓ¦µÄÊı¾İ¼¯ÀàĞÍ
-     * @return Êı¾İ¼¯µÄÀàĞÍ
+     * è‡ªå®šä¹‰çš„æ•°æ®é›†è®¾ç½®ç•Œé¢æ‰€å¯¹åº”çš„æ•°æ®é›†ç±»å‹
+     * @return æ•°æ®é›†çš„ç±»å‹
      */
     public Class<? extends TableData> classForTableData();
 
     /**
-     * ×Ô¶¨ÒåÊı¾İ¼¯ÉèÖÃ½çÃæËù¶ÔÓ¦µÄ³õÊ¼»¯Êı¾İ¼¯ÀàĞÍ£¬ÔÚÒ»ÖÖÊı¾İ¼¯ÓĞ¶à¸öÊµÏÖµÄÊ±ºòÓĞĞ§
-     * @return Êı¾İ¼¯ÀàĞÍ
+     * è‡ªå®šä¹‰æ•°æ®é›†è®¾ç½®ç•Œé¢æ‰€å¯¹åº”çš„åˆå§‹åŒ–æ•°æ®é›†ç±»å‹ï¼Œåœ¨ä¸€ç§æ•°æ®é›†æœ‰å¤šä¸ªå®ç°çš„æ—¶å€™æœ‰æ•ˆ
+     * @return æ•°æ®é›†ç±»å‹
      */
     public Class<? extends TableData> classForInitTableData();
 
     /**
-     * ×Ô¶¨ÒåµÄÊı¾İ¼¯ÉèÖÃ½çÃæËù¶ÔÓ¦µÄ½çÃæÀàĞÍ
-     * @return Êı¾İ¼¯½çÃæÀàĞÍ
+     * è‡ªå®šä¹‰çš„æ•°æ®é›†è®¾ç½®ç•Œé¢æ‰€å¯¹åº”çš„ç•Œé¢ç±»å‹
+     * @return æ•°æ®é›†ç•Œé¢ç±»å‹
      */
     public Class<? extends AbstractTableDataPane> appearanceForTableData();
 
     /**
-     * ×Ô¶¨ÒåÊı¾İ¼¯ÉèÖÃ½çÃæÔÚ²Ëµ¥ÉÏµÄÏÖÊµÃû×Ö
-     * @return Ãû×Ö
+     * è‡ªå®šä¹‰æ•°æ®é›†è®¾ç½®ç•Œé¢åœ¨èœå•ä¸Šçš„ç°å®åå­—
+     * @return åå­—
      */
     public String nameForTableData();
 
     /**
-     * ×Ô¶¨ÒåÊı¾İ¼¯ÔÚĞÂ½¨µÄÊ±ºòÃû×ÖÇ°×º
-     * @return Ãû×ÖÇ°×º
+     * è‡ªå®šä¹‰æ•°æ®é›†åœ¨æ–°å»ºçš„æ—¶å€™åå­—å‰ç¼€
+     * @return åå­—å‰ç¼€
      */
     public String prefixForTableData();
 
     /**
-     * ×Ô¶¨ÒåÊı¾İ¼¯ÔÚ²Ëµ¥ÉÏÏÖÊµµÄÍ¼±ê
-     * @return Í¼±ê
+     * è‡ªå®šä¹‰æ•°æ®é›†åœ¨èœå•ä¸Šç°å®çš„å›¾æ ‡
+     * @return å›¾æ ‡
      */
     public String iconPathForTableData();
 }

@@ -62,10 +62,10 @@ public class JDBCDefPane extends JPanel {
 	private UITextField urlTextField;
 	private UITextField userNameTextField;
 	private JPasswordField passwordTextField;
-	// Çë²»Òª¸Ä¶¯dbtype,Ö»Ó¦¸Ã×îºóÌí¼Ó
+	// è¯·ä¸è¦æ”¹åŠ¨dbtype,åªåº”è¯¥æœ€åæ·»åŠ 
 	private final String[] dbtype = {"", "Oracle", "DB2", "SQL Server", "MySQL", "Sybase", "Access", "Derby", "Postgre","SQLite", "Others"};
 
-	// carl:DBCPµÄÒ»Ğ©ÊôĞÔ
+	// carl:DBCPçš„ä¸€äº›å±æ€§
 	private IntegerEditor DBCP_INITIAL_SIZE = new IntegerEditor();
 	private IntegerEditor DBCP_MAX_ACTIVE = new IntegerEditor();
 	private IntegerEditor DBCP_MAX_IDLE = new IntegerEditor();
@@ -286,7 +286,7 @@ public class JDBCDefPane extends JPanel {
 				if (ComparatorUtils.equals(driverComboBox.getSelectedItem(), (dus[i].getDriver()))) {
 					urlTextField.setText(dus[i].getURL());
 					if (ComparatorUtils.equals(dbtypeComboBox.getSelectedItem(), ("Access"))) {
-						// ben:Õâ¸öÄÜ²»ÄÜ»»ÖÖ´¦Àí·½°¸- -
+						// ben:è¿™ä¸ªèƒ½ä¸èƒ½æ¢ç§å¤„ç†æ–¹æ¡ˆ- -
 						JFileChooser filechooser = new JFileChooser();
 						filechooser.setDialogTitle(Inter.getLocText("Open"));
 						filechooser.setMultiSelectionEnabled(false);

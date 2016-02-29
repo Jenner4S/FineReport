@@ -6,14 +6,13 @@ package com.fr.poly;
 /**
  * @author richer
  * @since 6.5.4 
- * ´´½¨ÓÚ2011-4-8
+ * åˆ›å»ºäº2011-4-8
  */
 public class PolyConstants {
 	private PolyConstants() {
 		
 	}
 	
-	// ²Ù×÷¾ÛºÏ±¨±íÌí¼ÓĞĞ£¨ÁĞ£©µÄ×é¼şµÄ¸ß£¨¿í£©¶È
+	// æ“ä½œèšåˆæŠ¥è¡¨æ·»åŠ è¡Œï¼ˆåˆ—ï¼‰çš„ç»„ä»¶çš„é«˜ï¼ˆå®½ï¼‰åº¦
 	public static final int OPERATION_SIZE = 15;
 }
-

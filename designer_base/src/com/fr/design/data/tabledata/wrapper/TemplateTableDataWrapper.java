@@ -27,7 +27,7 @@ public final class TemplateTableDataWrapper extends AbstractTableDataWrapper {
 
 	@Override
 	public boolean isUnusual() {
-		// Ŀǰֻ�ж�DBTableData���쳣
+		// 目前只判断DBTableData的异常
 		if (tabledata instanceof DBTableData && StringUtils.isBlank(((DBTableData) tabledata).getQuery())) {
 			return true;
 		}

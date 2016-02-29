@@ -44,7 +44,7 @@ public class RadarAxisAreaPane extends ChartAxisAreaPane {
 	}
 
 	/**
-	 * ¸üĞÂ¼ä¸ô±³¾°½çÃæ.
+	 * æ›´æ–°é—´éš”èƒŒæ™¯ç•Œé¢.
 	 */
 	public void populateBean(Plot p) {
 		RadarPlot plot = (RadarPlot)p;
@@ -54,7 +54,7 @@ public class RadarAxisAreaPane extends ChartAxisAreaPane {
 	}
 
 	/**
-	 * ±£´æ¼ä¸ô±³¾°µÄ½çÃæÊôĞÔ.
+	 * ä¿å­˜é—´éš”èƒŒæ™¯çš„ç•Œé¢å±æ€§.
 	 */
 	public void updateBean(Plot p) {
 		RadarPlot plot = (RadarPlot)p;

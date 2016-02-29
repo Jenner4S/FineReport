@@ -7,15 +7,15 @@ package com.fr.design.chart.series.SeriesCondition;
 import com.fr.chart.base.ChartConstants;
 
 /**
- * É¢µãÍ¼ Ìõ¼şÊôĞÔ ÏÔÊ¾²ÎÊı ½çÃæ.
+ * æ•£ç‚¹å›¾ æ¡ä»¶å±æ€§ æ˜¾ç¤ºå‚æ•° ç•Œé¢.
  * Created by kunsnat on 14-3-10.
  * kunsnat@gmail.com
  */
 public class XYPlotChartConditionPane extends ChartConditionPane {
 
     /**
-     * ½çÃæÌõ¼şĞòºÅ ÁĞ±í
-     * @return ·µ»ØÌõ¼şÁĞ±í.
+     * ç•Œé¢æ¡ä»¶åºå· åˆ—è¡¨
+     * @return è¿”å›æ¡ä»¶åˆ—è¡¨.
      */
     public String[] columns2Populate() {
         return new String[]{

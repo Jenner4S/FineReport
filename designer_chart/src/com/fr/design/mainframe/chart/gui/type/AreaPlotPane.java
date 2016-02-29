@@ -13,9 +13,9 @@ import com.fr.chart.charttypes.AreaIndependentChart;
 import com.fr.general.Inter;
 
 /**
- * Ãæ»ıÍ¼ ÊôĞÔ±í Ñ¡ÔñÀàĞÍ ²¼¾Ö ½çÃæ.
+ * é¢ç§¯å›¾ å±æ€§è¡¨ é€‰æ‹©ç±»å‹ å¸ƒå±€ ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-25 ÏÂÎç06:57:36
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-25 ä¸‹åˆ06:57:36
  */
 public class AreaPlotPane extends AbstractChartTypePane{
 
@@ -70,7 +70,7 @@ public class AreaPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ¸üĞÂ½çÃæ ÄÚÈİ
+	 * æ›´æ–°ç•Œé¢ å†…å®¹
 	 */
 	public void populateBean(Chart chart) {
 		super.populateBean(chart);
@@ -127,7 +127,7 @@ public class AreaPlotPane extends AbstractChartTypePane{
     }
 
 	/**
-	 * ±£´æ½çÃæÊôĞÔ 
+	 * ä¿å­˜ç•Œé¢å±æ€§ 
 	 */
 	public void updateBean(Chart chart) {
 		chart.switchPlot(getSelectedClonedPlot());
@@ -145,17 +145,17 @@ public class AreaPlotPane extends AbstractChartTypePane{
 	}
 
 	/**
-	 * ½çÃæ±êÌâ
-     * @return  ½çÃæ±êÌâ
+	 * ç•Œé¢æ ‡é¢˜
+     * @return  ç•Œé¢æ ‡é¢˜
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Area");
 	}
 
     /**
-     * ÅĞ¶Ï½çÃæÊÇ·ñÎªChart ´«Èë
-     * @param ob ¶ÔÏóÊÇ·ñÎªchart
-     * @return ÊÇ·ñÊÇchart¶ÔÏó
+     * åˆ¤æ–­ç•Œé¢æ˜¯å¦ä¸ºChart ä¼ å…¥
+     * @param ob å¯¹è±¡æ˜¯å¦ä¸ºchart
+     * @return æ˜¯å¦æ˜¯chartå¯¹è±¡
      */
 	public boolean accept(Object ob) {
 		if(!super.accept(ob)) {

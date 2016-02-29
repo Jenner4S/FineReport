@@ -8,9 +8,9 @@ import javax.swing.event.ChangeEvent;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Ğ¡»Ò»Ò
+ * User: å°ç°ç°
  * Date: 13-7-22
- * Time: ÏÂÎç2:27
+ * Time: ä¸‹åˆ2:27
  * To change this template use File | Settings | File Templates.
  */
 public class CustomDictCorrelationPane extends UICorrelationPane {

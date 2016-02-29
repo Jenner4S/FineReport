@@ -10,7 +10,7 @@ import com.fr.design.form.parameter.RootDesignGroupModel;
 import com.fr.form.ui.container.WParameterLayout;
 
 /**
- * ±íµ¥²ÎÊı½çÃæµÄ¼àÌıÆ÷
+ * è¡¨å•å‚æ•°ç•Œé¢çš„ç›‘å¬å™¨
  */
 public class FRParameterLayoutAdapter extends FRAbsoluteLayoutAdapter {
 
@@ -30,8 +30,8 @@ public class FRParameterLayoutAdapter extends FRAbsoluteLayoutAdapter {
     }
 
     /**
-     * ´ıËµÃ÷
-     * @param creator    ×é¼ş
+     * å¾…è¯´æ˜
+     * @param creator    ç»„ä»¶
      */
 	public void fix(XCreator creator) {
 		super.fix(creator);

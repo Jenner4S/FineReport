@@ -15,14 +15,14 @@ import com.fr.general.Inter;
 import com.fr.stable.Constants;
 
 /**
- * Ô²»·Í¼µÄÀàĞÍ½çÃæ
+ * åœ†ç¯å›¾çš„ç±»å‹ç•Œé¢
  * @author eason
  *
  */
 public class DonutPlotPane extends AbstractChartTypePane{
 	private static final long serialVersionUID = -7084314809934346710L;
-	private static final int DONUT_CHART = 0; //2dÔ²»·Í¼
-	private static final int THREE_D_DONUT_CHART = 1; //3DÔ²»·Í¼
+	private static final int DONUT_CHART = 0; //2dåœ†ç¯å›¾
+	private static final int THREE_D_DONUT_CHART = 1; //3Dåœ†ç¯å›¾
 	
 	protected List<ChartImagePane> initDemoList() {
 		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
@@ -56,9 +56,9 @@ public class DonutPlotPane extends AbstractChartTypePane{
 
 
     /**
-     * ½çÃæÊÇ·ñ½ÓÊÜ
-     * @param ob ¶ÔÏó
-     * @return  true±íÊ¾½ÓÊÜ
+     * ç•Œé¢æ˜¯å¦æ¥å—
+     * @param ob å¯¹è±¡
+     * @return  trueè¡¨ç¤ºæ¥å—
      */
     public boolean accept(Object ob) {
         if(!super.accept(ob)) {
@@ -70,7 +70,7 @@ public class DonutPlotPane extends AbstractChartTypePane{
     }
 
     /**
-     * ¸üĞÂ½çÃæÄÚÈİ
+     * æ›´æ–°ç•Œé¢å†…å®¹
      */
     public void populateBean(Chart chart) {
         super.populateBean(chart);
@@ -101,7 +101,7 @@ public class DonutPlotPane extends AbstractChartTypePane{
     }
 
     /**
-     * ±£´æ½çÃæÊôĞÔ
+     * ä¿å­˜ç•Œé¢å±æ€§
      */
     public void updateBean(Chart chart) {
         chart.switchPlot(getSelectedClonedPlot());
@@ -109,16 +109,16 @@ public class DonutPlotPane extends AbstractChartTypePane{
     }
 
     /**
-     *½çÃæ±êÌâ
-     * @return ±êÌâ
+     *ç•Œé¢æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Donut");
 	}
 
     /**
-     * ÊÇ·ñÓĞ×ø±êÖá
-     * @return Ã»ÓĞ×ø±êÖá
+     * æ˜¯å¦æœ‰åæ ‡è½´
+     * @return æ²¡æœ‰åæ ‡è½´
      */
     public boolean isHaveAxis() {
         return false;

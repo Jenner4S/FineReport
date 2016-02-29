@@ -27,7 +27,7 @@ import com.fr.stable.unit.UnitRectangle;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-5-5 µ¥Ôª¸ñÀàĞÍµÄ¾ÛºÏ¿é±à¼­Æ÷
+ * @since 6.5.4 åˆ›å»ºäº2011-5-5 å•å…ƒæ ¼ç±»å‹çš„èšåˆå—ç¼–è¾‘å™¨
  */
 public class ECBlockEditor extends BlockEditor<ECBlockPane, PolyECBlock> {
 
@@ -49,12 +49,12 @@ public class ECBlockEditor extends BlockEditor<ECBlockPane, PolyECBlock> {
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°±à¼­µÄ×é¼ş
+	 * è·å–å½“å‰ç¼–è¾‘çš„ç»„ä»¶
 	 * 
-	 * @return ¾ÛºÏ±¨±í×é¼ş
+	 * @return èšåˆæŠ¥è¡¨ç»„ä»¶
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:49:12
+	 * @date 2014-11-24-ä¸‹åˆ3:49:12
 	 * 
 	 */
 	public ECBlockPane createEffective() {
@@ -123,10 +123,10 @@ public class ECBlockEditor extends BlockEditor<ECBlockPane, PolyECBlock> {
 	}
 
 	/**
-	 * ÖØÖÃµ±Ç°µÄÑ¡Ôñ×´Ì¬, ÓÃÓÚ¸üĞÂÓÒ²àÊôĞÔ±í
+	 * é‡ç½®å½“å‰çš„é€‰æ‹©çŠ¶æ€, ç”¨äºæ›´æ–°å³ä¾§å±æ€§è¡¨
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:48:19
+	 * @date 2014-11-24-ä¸‹åˆ3:48:19
 	 * 
 	 */
 	public void resetSelectionAndChooseState() {
@@ -134,7 +134,7 @@ public class ECBlockEditor extends BlockEditor<ECBlockPane, PolyECBlock> {
 		if (BaseUtils.isAuthorityEditing()) {
 			JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
 			if (jTemplate.isJWorkBook()) {
-				//Çå²ÎÊıÃæ°å
+				//æ¸…å‚æ•°é¢æ¿
 				jTemplate.removeParameterPaneSelection();
 			}
 			designer.noAuthorityEdit();

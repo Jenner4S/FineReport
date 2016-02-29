@@ -20,9 +20,9 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * ³éÏóµÄ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İ½çÃæ.
+ * æŠ½è±¡çš„ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-27 ÉÏÎç10:31:53
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-27 ä¸Šåˆ10:31:53
  */
 public abstract class AbstractReportDataContentPane extends BasicBeanPane<ChartCollection>{
 	private static final double ROW = 6;
@@ -44,7 +44,7 @@ public abstract class AbstractReportDataContentPane extends BasicBeanPane<ChartC
 		this.add(seriesPane, "0,2,2,2");
 	}
 
-    //kunsnat: ÓÃÓÚÖØÔØ, ¸ÊÌØÍ¼, ¹É¼ÛÍ¼ µÚÒ»ÁĞ Ä¬ÈÏÓ¦¸Ã²»¿É±à¼­.
+    //kunsnat: ç”¨äºé‡è½½, ç”˜ç‰¹å›¾, è‚¡ä»·å›¾ ç¬¬ä¸€åˆ— é»˜è®¤åº”è¯¥ä¸å¯ç¼–è¾‘.
     protected void initSeriesPane() {
         seriesPane = new UICorrelationPane(columnNames()) {
             public UITableEditor createUITableEditor() {
@@ -67,14 +67,14 @@ public abstract class AbstractReportDataContentPane extends BasicBeanPane<ChartC
     }
 	
 	/**
-	 * ¼ì²é½çÃæBox Áª¶¯ ÊÇ·ñ¿ÉÓÃ.
+	 * æ£€æŸ¥ç•Œé¢Box è”åŠ¨ æ˜¯å¦å¯ç”¨.
 	 */
 	public void checkBoxUse() {
 		
 	}
 	
 	/**
-	 * ¸²¸Ç·½·¨ doNothing
+	 * è¦†ç›–æ–¹æ³• doNothing
 	 */
 	@Override
 	public ChartCollection updateBean() {
@@ -82,21 +82,21 @@ public abstract class AbstractReportDataContentPane extends BasicBeanPane<ChartC
 	}
 	
 	/**
-	 * ÓÃÓÚÖ±½Ó¸üĞÂ ÏÂÀ­ÁĞ±íÖ®ÀàµÄ½çÃæ
+	 * ç”¨äºç›´æ¥æ›´æ–° ä¸‹æ‹‰åˆ—è¡¨ä¹‹ç±»çš„ç•Œé¢
 	 */
 	protected void populateList(List list) {
 		seriesPane.populateBean(list);
 	}
 	
 	/**
-	 * ÓÃÓÚ¸üĞÂµÃµ½×îĞÂµÄ½çÃæÁĞ±íÖµ
+	 * ç”¨äºæ›´æ–°å¾—åˆ°æœ€æ–°çš„ç•Œé¢åˆ—è¡¨å€¼
 	 */
 	protected List updateList() {
 		return seriesPane.updateBean();
 	}
 
 	/**
-	 * ½çÃæ±êÌâ: 
+	 * ç•Œé¢æ ‡é¢˜: 
 	 */
 	protected String title4PopupWindow() {
 		return "";
@@ -125,14 +125,14 @@ public abstract class AbstractReportDataContentPane extends BasicBeanPane<ChartC
 		private TinyFormulaPane editorComponent;
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
 		 */
 		public Object getCellEditorValue() {
 			return editorComponent.getUITextField().getText();
 		}
 
 		/**
-		 * ·µ»Øµ±Ç°±à¼­Æ÷..
+		 * è¿”å›å½“å‰ç¼–è¾‘å™¨..
 		 */
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 			if(column == table.getModel().getColumnCount()) {

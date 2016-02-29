@@ -7,10 +7,10 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: ÏÂÎç4:24
+ * Time: ä¸‹åˆ4:24
  */
 public class ColorRoutines {
-    //Ò»Ğ©³£Á¿
+    //ä¸€äº›å¸¸é‡
     private static final int GRB_MAX = 256;
     private static final int GRB_VALUE = 255;
     private static final int ANGLE = 360;
@@ -648,10 +648,10 @@ public class ColorRoutines {
     }
 
     /**
-     * ×ª»»ÑÕÉ«
+     * è½¬æ¢é¢œè‰²
      *
-     * @param c RGBÑÕÉ«Öµ
-     * @return ·µ»ØÖµ
+     * @param c RGBé¢œè‰²å€¼
+     * @return è¿”å›å€¼
      */
     public static int calculateHue(Color c) {
         float f[] = Color.RGBtoHSB(c.getRed(), c.getGreen(), c.getBlue(), null);
@@ -803,13 +803,13 @@ public class ColorRoutines {
     }
 
     /**
-     * ½«ÑÕÉ«Öµ×ª»»³ÉintÖµ
+     * å°†é¢œè‰²å€¼è½¬æ¢æˆintå€¼
      *
-     * @param r ºìÉ«Öµ
-     * @param g ÂÌÉ«Öµ
-     * @param b À¶É«Öµ
-     * @param a Í¸Ã÷¶È
-     * @return ×ª»»µÄÖµ
+     * @param r çº¢è‰²å€¼
+     * @param g ç»¿è‰²å€¼
+     * @param b è“è‰²å€¼
+     * @param a é€æ˜åº¦
+     * @return è½¬æ¢çš„å€¼
      */
     public int colorize(int r, int g, int b, int a) {
         if (cbri == BRIGHTNESS) {
@@ -936,11 +936,11 @@ public class ColorRoutines {
     }
 
     /**
-     * ¼ÆËãÁÁ¶È£¬¼õÇá
+     * è®¡ç®—äº®åº¦ï¼Œå‡è½»
      *
-     * @param c      ÑÕÉ«Öµ
-     * @param amount ÁÁ¶ÈÖµ
-     * @return ¼ÆËã¹ıÁÁ¶ÈµÄÑÕÉ«Öµ
+     * @param c      é¢œè‰²å€¼
+     * @param amount äº®åº¦å€¼
+     * @return è®¡ç®—è¿‡äº®åº¦çš„é¢œè‰²å€¼
      */
     public static Color lighten(Color c, int amount) {
         if (amount < 0) {
@@ -958,11 +958,11 @@ public class ColorRoutines {
     }
 
     /**
-     * ¼ÆËãÁÁ¶È£¬¼ÒÖĞ
+     * è®¡ç®—äº®åº¦ï¼Œå®¶ä¸­
      *
-     * @param c      ÑÕÉ«Öµ
-     * @param amount ¼ÓÖØÖµ
-     * @return ¼ÓÖØÁËÁÁ¶ÈµÄÑÕÉ«Öµ
+     * @param c      é¢œè‰²å€¼
+     * @param amount åŠ é‡å€¼
+     * @return åŠ é‡äº†äº®åº¦çš„é¢œè‰²å€¼
      */
     public static Color darken(Color c, int amount) {
         if (amount < 0 || amount > BRIGHTNESS) {
@@ -977,11 +977,11 @@ public class ColorRoutines {
     }
 
     /**
-     * ÑÕÉ«
+     * é¢œè‰²
      *
-     * @param grey   »Ò¶È
-     * @param amount Á¿
-     * @return ÑÕÉ«Öµ
+     * @param grey   ç°åº¦
+     * @param amount é‡
+     * @return é¢œè‰²å€¼
      */
     public static Color lighten(int grey, int amount) {
         if (amount < 0 || amount > BRIGHTNESS) {
@@ -994,11 +994,11 @@ public class ColorRoutines {
     }
 
     /**
-     * ÑÕÉ«
+     * é¢œè‰²
      *
-     * @param grey   »Ò¶È
-     * @param amount Á¿
-     * @return ÑÕÉ«Öµ
+     * @param grey   ç°åº¦
+     * @param amount é‡
+     * @return é¢œè‰²å€¼
      */
     public static Color darken(int grey, int amount) {
         if (amount < 0 || amount > BRIGHTNESS) {

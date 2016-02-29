@@ -25,9 +25,9 @@ import java.awt.*;
 import java.util.Iterator;
 
 /**
- * ÊôĞÔ±í, ÑùÊ½ - À×´ïÍ¼ÏµÁĞÊôĞÔ.
+ * å±æ€§è¡¨, æ ·å¼ - é›·è¾¾å›¾ç³»åˆ—å±æ€§.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-5-3 ÉÏÎç10:59:27
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-5-3 ä¸Šåˆ10:59:27
  */
 public class RadarSeriesPane extends AbstractPlotSeriesPane{
 
@@ -91,7 +91,7 @@ public class RadarSeriesPane extends AbstractPlotSeriesPane{
         }
         attrList.addDataSeriesCondition(new AttrMarkerType(markerPane.getSelectedMarkder().getMarkerType()));
 
-        attr = attrList.getExisted(AttrColor.class);// kunsnat: ¼æÈİ.
+        attr = attrList.getExisted(AttrColor.class);// kunsnat: å…¼å®¹.
         if(attr != null) {
             attrList.remove(attr);
         }

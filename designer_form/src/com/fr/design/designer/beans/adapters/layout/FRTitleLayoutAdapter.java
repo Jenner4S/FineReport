@@ -14,21 +14,21 @@ import com.fr.design.designer.creator.XLayoutContainer;
 public class FRTitleLayoutAdapter extends AbstractLayoutAdapter{
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * 
-	 * @param container ²¼¾ÖÈİÆ÷
+	 * @param container å¸ƒå±€å®¹å™¨
 	 */
 	public FRTitleLayoutAdapter(XLayoutContainer container) {
 		super(container);
 	}
 
 	/**
-	 * ÄÜ·ñ¶ÔÓ¦Î»ÖÃ·ÅÖÃµ±Ç°×é¼ş
+	 * èƒ½å¦å¯¹åº”ä½ç½®æ”¾ç½®å½“å‰ç»„ä»¶
 	 * 
-	 * @param creator ×é¼ş
-	 * @param x Ìí¼ÓµÄÎ»ÖÃx£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-	 * @param y Ìí¼ÓµÄÎ»ÖÃy£¬¸ÃÎ»ÖÃÊÇÏà¶ÔÓÚcontainerµÄ
-	 * @return ÊÇ·ñ¿ÉÒÔ·ÅÖÃ
+	 * @param creator ç»„ä»¶
+	 * @param x æ·»åŠ çš„ä½ç½®xï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+	 * @param y æ·»åŠ çš„ä½ç½®yï¼Œè¯¥ä½ç½®æ˜¯ç›¸å¯¹äºcontainerçš„
+	 * @return æ˜¯å¦å¯ä»¥æ”¾ç½®
 	 */
 	@Override
 	public boolean accept(XCreator creator, int x, int y) {

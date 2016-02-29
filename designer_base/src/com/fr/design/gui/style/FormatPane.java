@@ -35,7 +35,7 @@ import java.text.SimpleDateFormat;
  * Format pane to edit java.text.Format.
  *
  * @author zhou
- * @since 2012-5-24ÉÏÎç10:57:00
+ * @since 2012-5-24ä¸Šåˆ10:57:00
  */
 public class FormatPane extends AbstractBasicStylePane {
     private static final long serialVersionUID = 724330854437726751L;
@@ -43,7 +43,7 @@ public class FormatPane extends AbstractBasicStylePane {
     private static final int LABLE_X = 4;
     private static final int LABLE_Y = 18;
     private static final int LABLE_DELTA_WIDTH = 8;
-    private static final int LABLE_HEIGHT = 15; //±êÇ©±³¾°µÄ·¶Î§
+    private static final int LABLE_HEIGHT = 15; //æ ‡ç­¾èƒŒæ™¯çš„èŒƒå›´
     private static final int CURRENCY_FLAG_POINT = 6;
 
     private static final Integer[] TYPES = new Integer[]{FormatContents.NULL, FormatContents.NUMBER, FormatContents.CURRENCY, FormatContents.PERCENT, FormatContents.SCIENTIFIC,
@@ -142,7 +142,7 @@ public class FormatPane extends AbstractBasicStylePane {
 
     @Override
     /**
-     * µÃµ½ºÏÊÊµÄ´óĞ¡
+     * å¾—åˆ°åˆé€‚çš„å¤§å°
      */
     public Dimension getPreferredSize() {
         if (this.typeComboBox.getSelectedIndex() == FormatContents.NULL) {
@@ -152,8 +152,8 @@ public class FormatPane extends AbstractBasicStylePane {
     }
 
     /**
-     * µ¯³ö¿ò±êÌâ
-     * @return ±êÌâ
+     * å¼¹å‡ºæ¡†æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Format");
@@ -171,7 +171,7 @@ public class FormatPane extends AbstractBasicStylePane {
             if (format instanceof CoreDecimalFormat) {
                 // check all value
                 String pattern = ((CoreDecimalFormat) format).toPattern();
-                boolean isCurrency1 = (pattern.length() > 0 && pattern.charAt(0) == '¡è');
+                boolean isCurrency1 = (pattern.length() > 0 && pattern.charAt(0) == 'Â¤');
                 boolean isCurrency2 = (pattern.length() > 0 && pattern.charAt(0) == '$');
                 boolean isCurrency = isCurrency1 || isCurrency2;
                 boolean isCurrency4 = (pattern.length() > CURRENCY_FLAG_POINT && ComparatorUtils.equals(pattern.substring(0, CURRENCY_FLAG_POINT), "#,##0;"));
@@ -201,11 +201,11 @@ public class FormatPane extends AbstractBasicStylePane {
 
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÊÇÊı×éÓĞÄ£Ê½
+     * åˆ¤æ–­æ˜¯å¦æ˜¯æ•°ç»„æœ‰æ¨¡å¼
      *
-     * @param stringArray ×Ö·û´®Êı×é
-     * @param pattern   ¸ñÊ½
-     * @return  ÊÇ·ñÊÇÊı×éÓĞÄ£Ê½
+     * @param stringArray å­—ç¬¦ä¸²æ•°ç»„
+     * @param pattern   æ ¼å¼
+     * @return  æ˜¯å¦æ˜¯æ•°ç»„æœ‰æ¨¡å¼
      */
     public static int isArrayContainPattern(String[] stringArray, String pattern) {
         for (int i = 0; i < stringArray.length; i++) {
@@ -352,7 +352,7 @@ public class FormatPane extends AbstractBasicStylePane {
     }
 
     /**
-     * Ä¬ÈÏÖ»ÏÔÊ¾°Ù·Ö±ÈµÄ±à¼­ÏÂÀ­.
+     * é»˜è®¤åªæ˜¾ç¤ºç™¾åˆ†æ¯”çš„ç¼–è¾‘ä¸‹æ‹‰.
      */
     public void justUsePercentFormat() {
         typeComboBox.setEnabled(false);

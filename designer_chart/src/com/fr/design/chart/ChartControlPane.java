@@ -15,15 +15,15 @@ import java.awt.*;
 import java.util.HashMap;
 
 /**
- * ¹ÜÀíÍ¼±íÀàĞÍPane 
- * @author kunsnat: ChartComponentÒÆ³ö.
+ * ç®¡ç†å›¾è¡¨ç±»å‹Pane 
+ * @author kunsnat: ChartComponentç§»å‡º.
  */
 public class ChartControlPane extends JControlPane {
 	private static final long serialVersionUID = 7336270815128413184L;
 
 	public ChartControlPane() {
 		super();
-		// ÖØĞÂÉè¶¨´óĞ¡. ÒòÎªJControlPaneÄ¬ÈÏµÄ(450,450) ²»ÊÊºÏÍ¼±íÕâ±ß @ChartSize
+		// é‡æ–°è®¾å®šå¤§å°. å› ä¸ºJControlPaneé»˜è®¤çš„(450,450) ä¸é€‚åˆå›¾è¡¨è¿™è¾¹ @ChartSize
 //		this.setPreferredSize(new Dimension(770, 520));
 	}
 	
@@ -48,13 +48,13 @@ public class ChartControlPane extends JControlPane {
 		}
 				
 		populate(nameObjects);
-		// kunsnat: Ñ¡ÖĞµ±Ç°Í¼±íÑ¡ÖĞµÄname
+		// kunsnat: é€‰ä¸­å½“å‰å›¾è¡¨é€‰ä¸­çš„name
 		String chartSelectedName = cc.getChartName(cc.getSelectedIndex() < cc.getChartCount() ? cc.getSelectedIndex() : 0);
 		setSelectedName(chartSelectedName);
 	}
 	
 	public void update(ChartCollection cc) {
-		HashMap namesChart = new HashMap();// Ôİ´æÅĞ¶ÏÊÇ·ñÓĞ±ØÒª¸üĞÂ
+		HashMap namesChart = new HashMap();// æš‚å­˜åˆ¤æ–­æ˜¯å¦æœ‰å¿…è¦æ›´æ–°
 		for(int i = 0; i < cc.getChartCount(); i++) {
 			try {
 				namesChart.put(cc.getChartName(i), cc.getChart(i).clone());
@@ -80,7 +80,7 @@ public class ChartControlPane extends JControlPane {
 					Chart tmpChart = (Chart)namesChart.get(name);
 					if(chart.getPlot() != null && tmpChart.getPlot() != null
 							&& chart.getPlot().match4GUI(tmpChart.getPlot())) {
-						chart = tmpChart;// ´úÌæÖ®Ç°×ö¹ı±à¼­µÄChart
+						chart = tmpChart;// ä»£æ›¿ä¹‹å‰åšè¿‡ç¼–è¾‘çš„Chart
 					}
 				}
 				cc.addNamedChart(name, chart);
@@ -92,7 +92,7 @@ public class ChartControlPane extends JControlPane {
 	}
 	
 	/*
-	 * alex:¼Ì³ĞUpdatePaneµÄChartTypePane
+	 * alex:ç»§æ‰¿UpdatePaneçš„ChartTypePane
 	 */
 	public static class ChartTypeUpdatePane extends BasicBeanPane<Chart> {
 		private static final long serialVersionUID = -7058348930816218415L;

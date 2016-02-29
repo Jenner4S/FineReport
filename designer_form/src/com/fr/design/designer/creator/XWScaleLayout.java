@@ -15,7 +15,7 @@ import com.fr.form.ui.container.WAbsoluteLayout.BoundsWidget;
 import com.fr.form.ui.container.WScaleLayout;
 
 /**
- * ×ÔÊÊÓ¦²¼¾ÖÖĞÌí¼Ó×é¼şÊ±£¬²¿·Ö¿Ø¼şÈçÊı×ÖÎÄ±¾ÏÂÀ­µÈĞèÒª±£³Ö¿Ø¼şÄ¬ÈÏ¸ß¶È21£¬ ÓÃ´ËÈİÆ÷À´ÊµÏÖ
+ * è‡ªé€‚åº”å¸ƒå±€ä¸­æ·»åŠ ç»„ä»¶æ—¶ï¼Œéƒ¨åˆ†æ§ä»¶å¦‚æ•°å­—æ–‡æœ¬ä¸‹æ‹‰ç­‰éœ€è¦ä¿æŒæ§ä»¶é»˜è®¤é«˜åº¦21ï¼Œ ç”¨æ­¤å®¹å™¨æ¥å®ç°
  * 
  * @author jim
  * @date 2014-8-5
@@ -29,24 +29,24 @@ public class XWScaleLayout extends DedicateLayoutContainer {
     public static final int INDEX=0;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 */
 	public XWScaleLayout() {
 		this(new WScaleLayout("scalePanel"), new Dimension());
 	}
 
 	/**
-	 * ÈİÆ÷¹¹Ôìº¯Êı
+	 * å®¹å™¨æ„é€ å‡½æ•°
 	 * 
-	 * @param widget ¿Ø¼şwidget
-	 * @param initSize ³ß´ç´óĞ¡
+	 * @param widget æ§ä»¶widget
+	 * @param initSize å°ºå¯¸å¤§å°
 	 */
 	public XWScaleLayout(WScaleLayout widget, Dimension initSize) {
 		super(widget, initSize);
 	}
 	
 	/**
-	 * ³õÊ¼»¯ÈİÆ÷¶ÔÓ¦µÄ²¼¾Ö ÓÉÓÚÊÇÖ»×°Ò»¸öĞèÒª±£³ÖÔ­Ñù¸ß¶ÈµÄ¿Ø¼ş£¬²¼¾ÖÉèÎªabsolute
+	 * åˆå§‹åŒ–å®¹å™¨å¯¹åº”çš„å¸ƒå±€ ç”±äºæ˜¯åªè£…ä¸€ä¸ªéœ€è¦ä¿æŒåŸæ ·é«˜åº¦çš„æ§ä»¶ï¼Œå¸ƒå±€è®¾ä¸ºabsolute
 	 */
 	@Override
 	protected void initLayoutManager() {
@@ -54,7 +54,7 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ÈİÆ÷µÄäÖÈ¾Æ÷
+	 * å®¹å™¨çš„æ¸²æŸ“å™¨
 	 */
 	@Override
 	public LayoutAdapter getLayoutAdapter() {
@@ -62,9 +62,9 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ·µ»ØÈİÆ÷¶ÔÓ¦µÄwlayout
+	 * è¿”å›å®¹å™¨å¯¹åº”çš„wlayout
 	 * 
-	 * @return Í¬ÉÏ
+	 * @return åŒä¸Š
 	 */
 	@Override
 	public WScaleLayout toData() {
@@ -72,9 +72,9 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ·µ»ØÄ¬ÈÏ×é¼şname
+	 * è¿”å›é»˜è®¤ç»„ä»¶name
 	 * 
-	 * @return ÈİÆ÷Ãû
+	 * @return å®¹å™¨å
 	 */
 	@Override
 	public String createDefaultName() {
@@ -82,7 +82,7 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ½«WLayout×ª»»ÎªXLayoutContainer
+	 * å°†WLayoutè½¬æ¢ä¸ºXLayoutContainer
 	 */
 	@Override
 	public void convert() {
@@ -103,10 +103,10 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ×é¼şÔö¼Ó
+	 * ç»„ä»¶å¢åŠ 
 	 * 
 	 * @param e
-	 *            ÈİÆ÷ÊÂ¼ş
+	 *            å®¹å™¨äº‹ä»¶
 	 */
 	@Override
 	public void componentAdded(ContainerEvent e) {
@@ -123,10 +123,10 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ×é¼şÉ¾³ı
+	 * ç»„ä»¶åˆ é™¤
 	 * 
 	 * @param e
-	 *            ÈİÆ÷ÊÂ¼ş
+	 *            å®¹å™¨äº‹ä»¶
 	 */
 	@Override
 	public void componentRemoved(ContainerEvent e) {
@@ -141,16 +141,16 @@ public class XWScaleLayout extends DedicateLayoutContainer {
 	}
 
 	/**
-	 * ·µ»Ø´ËÈİÆ÷µÄ¶ÔÓ¦×é¼ş
-	 * @return ×é¼ş
+	 * è¿”å›æ­¤å®¹å™¨çš„å¯¹åº”ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	public XCreator getEditingChildCreator() {
 		return getXCreator(INDEX);
 	}
 	
 	/**
-	 * ¸üĞÂ×é¼şµÄbackupBound,scaleºÍtitleÈİÆ÷Ò²ÒªÍ¬²½¸üĞÂ×Ó×é¼şµÄ
-	 * @param minHeight ×îĞ¡¸ß¶È
+	 * æ›´æ–°ç»„ä»¶çš„backupBound,scaleå’Œtitleå®¹å™¨ä¹Ÿè¦åŒæ­¥æ›´æ–°å­ç»„ä»¶çš„
+	 * @param minHeight æœ€å°é«˜åº¦
 	 */
 	public void updateChildBound(int minHeight) {
 		XCreator child = getXCreator(INDEX);

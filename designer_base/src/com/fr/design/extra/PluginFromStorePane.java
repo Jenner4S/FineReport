@@ -34,8 +34,8 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ´´½¨³É¹¦Ò³Ãæ
-     * @return ´´½¨µÄÒ³Ãæ¶ÔÏó
+     * åˆ›å»ºæˆåŠŸé¡µé¢
+     * @return åˆ›å»ºçš„é¡µé¢å¯¹è±¡
      */
     public JPanel createSuccessPane() {
         return new PluginStatusCheckCompletePane(){
@@ -78,8 +78,8 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ´´½¨´íÎóÒ³Ãæ
-     * @return ´´½¨µÄÒ³Ãæ¶ÔÏó
+     * åˆ›å»ºé”™è¯¯é¡µé¢
+     * @return åˆ›å»ºçš„é¡µé¢å¯¹è±¡
      */
     @Override
     public JPanel createErrorPane() {
@@ -117,8 +117,8 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ¼ÓÔØÊý¾Ý
-     * @return ²å¼þ
+     * åŠ è½½æ•°æ®
+     * @return æ’ä»¶
      */
     public Plugin[] loadData() throws Exception {
         //Thread.sleep(3000);
@@ -126,8 +126,8 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ¼ÓÔØ³É¹¦´¦Àí
-     * @param plugins ²å¼þ
+     * åŠ è½½æˆåŠŸå¤„ç†
+     * @param plugins æ’ä»¶
      */
     public void loadOnSuccess(Plugin[] plugins) {
         controlPane.loadPlugins(plugins);
@@ -135,8 +135,8 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ¼ÓÔØÊ§°Ü
-     * @param e Òì³£ÏûÏ¢
+     * åŠ è½½å¤±è´¥
+     * @param e å¼‚å¸¸æ¶ˆæ¯
      */
     public void loadOnFailed(Exception e) {
         errorMsgLabel.setText(e.getCause().getMessage());
@@ -209,7 +209,7 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
             }
 
             public void done() {
-                //ÏÂÔØÍê³É£¬¿ªÊ¼Ö´ÐÐ°²×°
+                //ä¸‹è½½å®Œæˆï¼Œå¼€å§‹æ‰§è¡Œå®‰è£…
                 try {
                     get();
                     pane.didTaskFinished();
@@ -226,16 +226,16 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     /**
-     * ÕýÔÚ¼ÓÔØÒ³µÄ±êÌâ
-     * @return ±êÌâ×Ö·û´®
+     * æ­£åœ¨åŠ è½½é¡µçš„æ ‡é¢˜
+     * @return æ ‡é¢˜å­—ç¬¦ä¸²
      */
     public String textForLoadingLabel() {
         return Inter.getLocText("FR-Designer-Plugin_Load_Plugins_From_Server");
     }
 
     /**
-     * ´Ó´ÅÅÌ°²×°°´Å¥µÄÌáÊ¾
-     * @return °´Å¥±êÌâ×Ö·û´®
+     * ä»Žç£ç›˜å®‰è£…æŒ‰é’®çš„æç¤º
+     * @return æŒ‰é’®æ ‡é¢˜å­—ç¬¦ä¸²
      */
     @Override
     public String textForInstallFromDiskFileButton() {

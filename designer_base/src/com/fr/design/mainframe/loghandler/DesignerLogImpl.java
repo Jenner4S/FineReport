@@ -24,16 +24,16 @@ public class DesignerLogImpl extends AbstractLogProvider{
     private List<LogRecordTimeProvider> records = new ArrayList<LogRecordTimeProvider>();
 
     /**
-     * Çå³ıÄÚ´æÖĞµÄÈÕÖ¾¼ÇÂ¼
+     * æ¸…é™¤å†…å­˜ä¸­çš„æ—¥å¿—è®°å½•
      */
     public void clear(){
         records.clear();
     }
 
     /**
-     * »ñÈ¡ËùÓĞÈÕÖ¾ĞÅÏ¢
+     * è·å–æ‰€æœ‰æ—¥å¿—ä¿¡æ¯
      *
-     * @return ÈÕÖ¾ĞÅÏ¢
+     * @return æ—¥å¿—ä¿¡æ¯
      */
     public LogRecordTimeProvider[] getRecorders(){
         return records.toArray(new LogRecordTimeProvider[records.size()]);

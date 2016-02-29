@@ -24,9 +24,9 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
- * Í¼±í ÀàĞÍ ÔöÉ¾ ¿ØÖÆ°´Å¥½çÃæ.
+ * å›¾è¡¨ ç±»å‹ å¢åˆ  æ§åˆ¶æŒ‰é’®ç•Œé¢.
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-9-26 ÉÏÎç09:27:49
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-9-26 ä¸Šåˆ09:27:49
  */
 public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implements UIObserver {
     private static final long serialVersionUID = -8130803225718028933L;
@@ -46,8 +46,8 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
     private boolean mouseOnChartTypeButtonPane = false;
 
     /**
-     * Êó±êÊÂ¼şÊÇ·ñÔÚÕâ¸öÃæ°å
-     * @return ·µ»ØÊÇ·ñ
+     * é¼ æ ‡äº‹ä»¶æ˜¯å¦åœ¨è¿™ä¸ªé¢æ¿
+     * @return è¿”å›æ˜¯å¦
      */
     public boolean isMouseOnChartTypeButtonPane() {
         return this.mouseOnChartTypeButtonPane;
@@ -55,7 +55,7 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
 
     private AWTEventListener awt = new AWTEventListener() {
         public void eventDispatched(AWTEvent event) {
-            //Ã»ÓĞ½øĞĞÊó±êµã»÷£¬Ôò·µ»Ø
+            //æ²¡æœ‰è¿›è¡Œé¼ æ ‡ç‚¹å‡»ï¼Œåˆ™è¿”å›
             if (event instanceof MouseEvent && ((MouseEvent) event).getClickCount() > 0) {
                 if (currentEditingEditor != null && !ComparatorUtils.equals(event.getSource(), currentEditingEditor)) {
                     stopEditing();
@@ -187,16 +187,16 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
     }
 
     /**
-     * ×¢²á¼àÌıÆ÷
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * æ³¨å†Œç›‘å¬å™¨
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         uiobListener = listener;
     }
 
     /**
-     * ÊÇ·ñÓ¦¸ÃÏìÓ¦ÊÂ¼ş¼àÌıÆ÷
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦åº”è¯¥å“åº”äº‹ä»¶ç›‘å¬å™¨
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean shouldResponseChangeListener() {
         return true;
@@ -223,7 +223,7 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
     }
 
     /**
-     * ÉèÖÃµ±Ç°¶ÔÓ¦µÄ±à¼­Type
+     * è®¾ç½®å½“å‰å¯¹åº”çš„ç¼–è¾‘Type
      *
      * @param chartPane
      */
@@ -251,9 +251,9 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
 
     private void checkAddButtonVisible() {
         addButton.setVisible(true);
-        //ĞÂ½¨Ò»¸öcollection
+        //æ–°å»ºä¸€ä¸ªcollection
         if(editingCollection != null && editingCollection.getChartCount() == 1){
-            //vanChart ²»Ö§³ÖÍ¼±íÇĞ»» Ä¿Ç°
+            //vanChart ä¸æ”¯æŒå›¾è¡¨åˆ‡æ¢ ç›®å‰
             if(!ComparatorUtils.equals(editingCollection.getSelectedChart().getClass(), Chart.class)){
                 addButton.setVisible(false);
             }
@@ -266,10 +266,10 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
     }
 
     /**
-     * ±£´æ ÊôĞÔ±íÊôĞÔ.
+     * ä¿å­˜ å±æ€§è¡¨å±æ€§.
      */
     public void update(ChartCollection collection) {
-        // Ê²Ã´Ò²²»×ö, ÔÚbutton²Ù×÷µã»÷µÈÊ± ÒÑ¾­´¦Àí.
+        // ä»€ä¹ˆä¹Ÿä¸åš, åœ¨buttonæ“ä½œç‚¹å‡»ç­‰æ—¶ å·²ç»å¤„ç†.
     }
 
 
@@ -418,7 +418,7 @@ public class ChartTypeButtonPane extends BasicBeanPane<ChartCollection> implemen
                 return;
             }
 
-            //µÚÒ»´ÎÑ¡Ôñ
+            //ç¬¬ä¸€æ¬¡é€‰æ‹©
 
             if (isEnabled()) {
                 noSelected();

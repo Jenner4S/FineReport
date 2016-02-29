@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * µØÍ¼Ñ¡ÖĞµÄshape, ·â×°Ñ¡ÖĞµÄµã, GeneralPath ×ö´¦Àí
+ * åœ°å›¾é€‰ä¸­çš„shape, å°è£…é€‰ä¸­çš„ç‚¹, GeneralPath åšå¤„ç†
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-12 ÏÂÎç05:00:34
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-12 ä¸‹åˆ05:00:34
  */
 public class MapSelectShape {
 	
@@ -29,7 +29,7 @@ public class MapSelectShape {
 	}
 	
 	/**
-	 * ÅĞ¶Ï¶à¸öÇøÓòÖĞ ÊÇ·ñ°üº¬Point
+	 * åˆ¤æ–­å¤šä¸ªåŒºåŸŸä¸­ æ˜¯å¦åŒ…å«Point
 	 */
 	public boolean containsPoint(Point point) {
 		boolean contains = false;
@@ -45,7 +45,7 @@ public class MapSelectShape {
 	}
 	
 	/**
-	 * Ìí¼Ó¶ÔÓ¦µÄÑ¡ÖĞµãºÍÑ¡ÖĞµÄÇøÓò
+	 * æ·»åŠ å¯¹åº”çš„é€‰ä¸­ç‚¹å’Œé€‰ä¸­çš„åŒºåŸŸ
 	 */
 	public void addSelectValue(Point point, Shape shape) {
 		if(!selectShape.contains(shape)) {
@@ -57,28 +57,28 @@ public class MapSelectShape {
 	}
 	
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄµã Êı×é
+	 * è¿”å›é€‰ä¸­çš„ç‚¹ æ•°ç»„
 	 */
 	public Point[] getSelectPoints() {
 		return (Point[])this.selectPoint.toArray(new Point[selectPoint.size()]);
 	}
 	
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄÇøÓò Êı×é
+	 * è¿”å›é€‰ä¸­çš„åŒºåŸŸ æ•°ç»„
 	 */
 	public Shape[] getSelectShapes() {
 		return (Shape[])this.selectShape.toArray(new Shape[selectShape.size()]);
 	}
 	
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄÀàĞÍ: ÇøÓò »òÕßµã
+	 * è®¾ç½®é€‰ä¸­çš„ç±»å‹: åŒºåŸŸ æˆ–è€…ç‚¹
 	 */
 	public void setSelectType(int selectType) {
 		this.selectType = selectType;
 	}
 
 	/**
-	 * ·µ»ØÑ¡ÖĞµÄÀàĞÍ: ÇøÓò »òÕßµã
+	 * è¿”å›é€‰ä¸­çš„ç±»å‹: åŒºåŸŸ æˆ–è€…ç‚¹
 	 */
 	public int getSelectType() {
 		return selectType;

@@ -59,7 +59,7 @@ public class UITextFieldUI extends BasicTextFieldUI {
 	}
 	
 	/**
-	 * 在出现不允许的数字时, 变换背景.
+	 * 鍦ㄥ嚭鐜颁笉鍏佽鐨勬暟瀛楁椂, 鍙樻崲鑳屾櫙.
 	 */
 	public void setBackgroundColor4NoGiveNumber(Color color) {
 		this.backgroundColor = color;

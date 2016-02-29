@@ -43,7 +43,7 @@ public class DatabaseTableDataPane extends BasicPane{
 	}
 
 	/**
-	 * 返回选中的数据源.
+	 * 杩斿洖閫変腑鐨勬暟鎹簮.
 	 */
 	public TableDataWrapper getTableDataWrapper() {
 		return tableNameCombox.getSelectedItem();  
@@ -63,7 +63,7 @@ public class DatabaseTableDataPane extends BasicPane{
 	}
 	
 	/**
-	 * 数据集列表选中后的事件
+	 * 鏁版嵁闆嗗垪琛ㄩ�変腑鍚庣殑浜嬩欢
 	 */
 	protected void userEvent() {
 

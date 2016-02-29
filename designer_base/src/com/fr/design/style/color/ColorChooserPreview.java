@@ -14,7 +14,7 @@ public class ColorChooserPreview extends JPanel {
     private static final int SQUARE_SIZE = 25;
     private static final int SQUARE_GAP = 5;
     /**
-     * ·½ĞÎÔ¤ÀÀ¿ò£¬Èı²ãÇ¶Ì×¿òÖ®¼äµÄ¼ä¸ô
+     * æ–¹å½¢é¢„è§ˆæ¡†ï¼Œä¸‰å±‚åµŒå¥—æ¡†ä¹‹é—´çš„é—´éš”
      */
     private static final int INNER_GAP = 5;
     private static final int INNER_GAP2 = (INNER_GAP * 2);
@@ -97,7 +97,7 @@ public class ColorChooserPreview extends JPanel {
     }
 
     /**
-     * »­ÑÕÉ«Ñ¡ÔñÆ÷-Ô¤ÀÀÃæ°åÉÏµÄ×ÖÌåÔ¤ÀÀ£¬¹²3ĞĞ
+     * ç”»é¢œè‰²é€‰æ‹©å™¨-é¢„è§ˆé¢æ¿ä¸Šçš„å­—ä½“é¢„è§ˆï¼Œå…±3è¡Œ
      * @param g
      * @param offsetX
      * @return
@@ -140,7 +140,7 @@ public class ColorChooserPreview extends JPanel {
     }
 
     /**
-     * »­ÑÕÉ«Ñ¡ÔñÆ÷-Ô¤ÀÀÃæ°åÉÏµÄ·½ĞÎÔ¤ÀÀ¿ò£¬ÒÔ2ĞĞ3ÁĞ·½Ê½ÅÅÁĞ£¬¹²6¸ö
+     * ç”»é¢œè‰²é€‰æ‹©å™¨-é¢„è§ˆé¢æ¿ä¸Šçš„æ–¹å½¢é¢„è§ˆæ¡†ï¼Œä»¥2è¡Œ3åˆ—æ–¹å¼æ’åˆ—ï¼Œå…±6ä¸ª
      * @param g
      * @param offsetX
      * @return
@@ -148,17 +148,17 @@ public class ColorChooserPreview extends JPanel {
     private int paintSquares(Graphics g, int offsetX) {
         int squareXOffset = offsetX;
         Color color = myColor;
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ1ÁĞµÚ1ĞĞ£º´ÓÍâµ½ÄÚ£¨white,color,white£© */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬1åˆ—ç¬¬1è¡Œï¼šä»å¤–åˆ°å†…ï¼ˆwhite,color,whiteï¼‰ */
         g.setColor(Color.white);
         g.fillRect(squareXOffset, 0, SQUARE_SIZE, SQUARE_SIZE);
         g.setColor(color);
         g.fillRect(squareXOffset + INNER_GAP, INNER_GAP, SQUARE_SIZE - INNER_GAP2, SQUARE_SIZE - INNER_GAP2);
         g.setColor(Color.white);
         g.fillRect(squareXOffset+INNER_GAP2, INNER_GAP2, SQUARE_SIZE - INNER_GAP3, SQUARE_SIZE - INNER_GAP3);
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ1ÁĞµÚ2ĞĞ£ºcolorÈ«É« */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬1åˆ—ç¬¬2è¡Œï¼šcolorå…¨è‰² */
         g.setColor(color);
         g.fillRect(squareXOffset, SQUARE_SIZE + SQUARE_GAP, SQUARE_SIZE, SQUARE_SIZE);
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ2ÁĞµÚ1ĞĞ£º´ÓÍâµ½ÄÚ£¨black,color,white£© */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬2åˆ—ç¬¬1è¡Œï¼šä»å¤–åˆ°å†…ï¼ˆblack,color,whiteï¼‰ */
         g.translate(SQUARE_SIZE + SQUARE_GAP, 0);
         g.setColor(Color.black);
         g.fillRect(squareXOffset, 0, SQUARE_SIZE, SQUARE_SIZE);
@@ -167,14 +167,14 @@ public class ColorChooserPreview extends JPanel {
         g.setColor(Color.white);
         g.fillRect(squareXOffset + INNER_GAP2, INNER_GAP2, SQUARE_SIZE - INNER_GAP3, SQUARE_SIZE - INNER_GAP3);
         g.translate(-(SQUARE_SIZE + SQUARE_GAP), 0);
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ2ÁĞµÚ2ĞĞ£º´ÓÍâµ½ÄÚ£¨white,color£© */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬2åˆ—ç¬¬2è¡Œï¼šä»å¤–åˆ°å†…ï¼ˆwhite,colorï¼‰ */
         g.translate(SQUARE_SIZE + SQUARE_GAP, SQUARE_SIZE + SQUARE_GAP);
         g.setColor(Color.white);
         g.fillRect(squareXOffset,0,SQUARE_SIZE,SQUARE_SIZE);
         g.setColor(color);
         g.fillRect(squareXOffset + INNER_GAP, INNER_GAP, SQUARE_SIZE - INNER_GAP2, SQUARE_SIZE - INNER_GAP2);
         g.translate(-(SQUARE_SIZE + SQUARE_GAP), -(SQUARE_SIZE + SQUARE_GAP));
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ3ÁĞµÚ1ĞĞ£º´ÓÍâµ½ÄÚ£¨white,color,black£© */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬3åˆ—ç¬¬1è¡Œï¼šä»å¤–åˆ°å†…ï¼ˆwhite,color,blackï¼‰ */
         g.translate((SQUARE_SIZE + SQUARE_GAP) * 2, 0);
         g.setColor(Color.white);
         g.fillRect(squareXOffset, 0, SQUARE_SIZE,SQUARE_SIZE);
@@ -183,7 +183,7 @@ public class ColorChooserPreview extends JPanel {
         g.setColor(Color.black);
         g.fillRect(squareXOffset + INNER_GAP2, INNER_GAP2, SQUARE_SIZE - INNER_GAP3, SQUARE_SIZE - INNER_GAP3);
         g.translate(-((SQUARE_SIZE + SQUARE_GAP) * 2), 0);
-        /** ·½ĞÎÔ¤ÀÀ¿òµÚ3ÁĞµÚ2ĞĞ£º´ÓÍâµ½ÄÚ£¨black,color£© */
+        /** æ–¹å½¢é¢„è§ˆæ¡†ç¬¬3åˆ—ç¬¬2è¡Œï¼šä»å¤–åˆ°å†…ï¼ˆblack,colorï¼‰ */
         g.translate((SQUARE_SIZE + SQUARE_GAP) * 2, (SQUARE_SIZE + SQUARE_GAP));
         g.setColor(Color.black);
         g.fillRect(squareXOffset, 0, SQUARE_SIZE, SQUARE_SIZE);
@@ -201,4 +201,3 @@ public class ColorChooserPreview extends JPanel {
         return this.sampleText;
     }
 }
-

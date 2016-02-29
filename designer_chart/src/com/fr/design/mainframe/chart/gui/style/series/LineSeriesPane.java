@@ -25,9 +25,9 @@ import java.awt.*;
 import java.util.Iterator;
 
 /**
- * ÕÛÏßÍ¼ ÊôĞÔ±í ÏµÁĞ½çÃæ.
+ * æŠ˜çº¿å›¾ å±æ€§è¡¨ ç³»åˆ—ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2013-1-23 ÉÏÎç10:29:03
+* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-23 ä¸Šåˆ10:29:03
  */
 public class LineSeriesPane extends AbstractPlotSeriesPane{
 
@@ -67,7 +67,7 @@ public class LineSeriesPane extends AbstractPlotSeriesPane{
 	}
 
 	/**
-	 * ¸üĞÂÏµÁĞ½çÃæ.
+	 * æ›´æ–°ç³»åˆ—ç•Œé¢.
 	 */
 	@Override
 	public void populateBean(Plot plot) {
@@ -102,7 +102,7 @@ public class LineSeriesPane extends AbstractPlotSeriesPane{
     }
 
 	/**
-	 * ±£´æÏµÁĞ½çÃæµÄÊôĞÔ
+	 * ä¿å­˜ç³»åˆ—ç•Œé¢çš„å±æ€§
 	 */
 	@Override
 	public void updateBean(Plot plot) {
@@ -129,7 +129,7 @@ public class LineSeriesPane extends AbstractPlotSeriesPane{
         }
         attrList.addDataSeriesCondition(new AttrMarkerType(markerPane.getSelectedMarkder().getMarkerType()));
 
-        attr = attrList.getExisted(AttrColor.class);//kunsnat: ¼æÈİ ÑÕÉ«È¥µôÉèÖÃ.
+        attr = attrList.getExisted(AttrColor.class);//kunsnat: å…¼å®¹ é¢œè‰²å»æ‰è®¾ç½®.
         if(attr != null) {
             attrList.remove(attr);
         }

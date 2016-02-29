@@ -56,12 +56,12 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     private int horicalMax = 0;
     private FormScrollBar verScrollBar;
 	private FormScrollBar horScrollBar;
-    //ÏÔÊ¾ºÍÉèÖÃ±íµ¥½çÃæ´óĞ¡µÄ¿Ø¼ş
+    //æ˜¾ç¤ºå’Œè®¾ç½®è¡¨å•ç•Œé¢å¤§å°çš„æ§ä»¶
     private UINumberField widthPane;
     private UINumberField heightPane;
     private UINumberSlidePane slidePane;
     private boolean isValid = true;
-    // ³õÊ¼Ê±»¬¿éÖµÎª100£¬ÍĞ¶¯ºóµÄÖµÉèÎªSTART_VALUE;
+    // åˆå§‹æ—¶æ»‘å—å€¼ä¸º100ï¼Œæ‰˜åŠ¨åçš„å€¼è®¾ä¸ºSTART_VALUE;
     private double START_VALUE = DEFAULT_SLIDER;
     private double screenValue;
     
@@ -92,7 +92,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
             this.add(FormRulerLayout.HIRIZONTAL, horScrollBar);
             enableEvents(AWTEvent.MOUSE_WHEEL_EVENT_MASK);
         }  else {
-        	// ±¨±í²ÎÊı½çÃæÖ»Òª±ê³ßºÍÖĞĞÄpane
+        	// æŠ¥è¡¨å‚æ•°ç•Œé¢åªè¦æ ‡å°ºå’Œä¸­å¿ƒpane
             this.setLayout(new RulerLayout());
             this.add(RulerLayout.CENTER, designer);
             addFormRuler();
@@ -101,7 +101,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * Ôö¼Ó±íµ¥µÄÒ³Ãæ´óĞ¡¿ØÖÆ½çÃæ£¬°üÀ¨ÊÖ¶¯ĞŞ¸ÄºÍ»¬¿éÍÏ¶¯
+     * å¢åŠ è¡¨å•çš„é¡µé¢å¤§å°æ§åˆ¶ç•Œé¢ï¼ŒåŒ…æ‹¬æ‰‹åŠ¨ä¿®æ”¹å’Œæ»‘å—æ‹–åŠ¨
      */
     private void addFormSize() {
     	double f = TableLayout.FILL;
@@ -122,7 +122,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
                 rowSize, columnSize, 8);
     	this.add(FormRulerLayout.BOTTOM, resizePane);
     	setWidgetsConfig();
-    	// ÏÈ³õÊ¼»°»¬¿é¼°¶ÔÓ¦ÊÂ¼ş£¬È»ºó»ñÈ¡·Ö±æÂÊµ÷ÕûÈİÆ÷µÄÏÔÊ¾´óĞ¡
+    	// å…ˆåˆå§‹è¯æ»‘å—åŠå¯¹åº”äº‹ä»¶ï¼Œç„¶åè·å–åˆ†è¾¨ç‡è°ƒæ•´å®¹å™¨çš„æ˜¾ç¤ºå¤§å°
     	slidePane.setEnabled(false);
     	slidePane.setVisible(false);
 //    	initTransparent();
@@ -134,7 +134,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     	heightPane.setHorizontalAlignment(heightPane.CENTER);
     	widthPane.setMaxDecimalLength(0);
     	heightPane.setMaxDecimalLength(0);
-    	//¿Ø¼ş³õÊ¼Öµ¾ÍÊÇ¸ù½Úµã×é¼ş³õÊ¼µÄ¿íºÍ¸ß
+    	//æ§ä»¶åˆå§‹å€¼å°±æ˜¯æ ¹èŠ‚ç‚¹ç»„ä»¶åˆå§‹çš„å®½å’Œé«˜
     	widthPane.setValue(designer.getRootComponent().getWidth());
     	heightPane.setValue(designer.getRootComponent().getHeight());
     	addWidthPaneListener();
@@ -156,16 +156,16 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     *  ·µ»Øµ±Ç°µÄÆÁÄ»·Ö±æÂÊ¶ÔÓ¦µÄ°Ù·Ö±ÈÖµ
-     * @return Ëõ·ÅµÄ°Ù·Ö±ÈÖµ
+     *  è¿”å›å½“å‰çš„å±å¹•åˆ†è¾¨ç‡å¯¹åº”çš„ç™¾åˆ†æ¯”å€¼
+     * @return ç¼©æ”¾çš„ç™¾åˆ†æ¯”å€¼
      */
     public double getScreenValue() {
 		return screenValue;
 	}
 
     /**
-     * ÉèÖÃÆÁÄ»·Ö±æÂÊ¶ÔÓ¦µÄ°Ù·Ö±ÈÖµ
-     * @param screenValue °Ù·Ö±ÈÖµ
+     * è®¾ç½®å±å¹•åˆ†è¾¨ç‡å¯¹åº”çš„ç™¾åˆ†æ¯”å€¼
+     * @param screenValue ç™¾åˆ†æ¯”å€¼
      */
 	public void setScreenValue(double screenValue) {
 		this.screenValue = screenValue;
@@ -176,14 +176,14 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
         Dimension scrnsize = toolkit.getScreenSize();
         this.screenValue = FRScreen.getByDimension(scrnsize).getValue();
         XLayoutContainer root = FormArea.this.designer.getRootComponent();
-        // 7.1.1²»·ÅËõ·Å»¬¿é£¬µ«±íµ¥´óĞ¡ÈÔ°´ÆÁÄ»·Ö±æÂÊµ÷Õû
+        // 7.1.1ä¸æ”¾ç¼©æ”¾æ»‘å—ï¼Œä½†è¡¨å•å¤§å°ä»æŒ‰å±å¹•åˆ†è¾¨ç‡è°ƒæ•´
 //        slidePane.populateBean(screenValue);
         if (root.acceptType(XWFitLayout.class)) {
 	    	XWFitLayout layout = (XWFitLayout) root;
 	        if (screenValue != DEFAULT_SLIDER ) {
 	        	reCalculateRoot(screenValue, true);
 	        } else {
-	        	// ×é¼ş¼ä¸ô°¡
+	        	// ç»„ä»¶é—´éš”å•Š
 	        	int val = layout.getAcualInterval();
 	        	layout.addCompInterval(val);
 	        }
@@ -191,7 +191,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 		LayoutUtils.layoutContainer(root);
     }
     
-    //ÉèÖÃ¿í¶ÈµÄ¿Ø¼ş¼°ÏìÓ¦ÊÂ¼ş
+    //è®¾ç½®å®½åº¦çš„æ§ä»¶åŠå“åº”äº‹ä»¶
     private void addWidthPaneListener() {
     	widthPane.addActionListener(
     			new ActionListener() { 
@@ -203,7 +203,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     	widthPane.addFocusListener(
     			new FocusAdapter(){
 		    	    public void focusLost(FocusEvent e){
-		    	         // Ê§È¥½¹µãÊ±£¬¿ÉÒÔÈÏÎªÊäÈë½áÊø
+		    	         // å¤±å»ç„¦ç‚¹æ—¶ï¼Œå¯ä»¥è®¤ä¸ºè¾“å…¥ç»“æŸ
 		    	    	int width = (int) ((UINumberField) e.getSource()).getValue();
 		    	    	changeWidthPaneValue(width);
 		    	    }
@@ -229,7 +229,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     	heightPane.addFocusListener(
     			new FocusAdapter(){
 		    	    public void focusLost(FocusEvent e){
-		    	         // Ê§È¥½¹µãÊ±£¬¿ÉÒÔÈÏÎªÊäÈë½áÊø
+		    	         // å¤±å»ç„¦ç‚¹æ—¶ï¼Œå¯ä»¥è®¤ä¸ºè¾“å…¥ç»“æŸ
 		    	    	int height = (int) ((UINumberField) e.getSource()).getValue();
 		    	    	changeHeightPaneValue(height);
 		    	    }
@@ -250,7 +250,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 			XWFitLayout layout = (XWFitLayout) root;
 			Dimension d = new Dimension(layout.toData().getContainerWidth(), layout.toData().getContainerHeight());
 			Rectangle rec = new Rectangle(d);
-			// ÈİÆ÷´óĞ¡¸Ä±äÊ±£¬ÉèÏÂbackupBoundÎªÆäÖ®Ç°µÄÊµ¼Ê´óĞ¡,ÒÔ±ãµ÷ÕûÌù±ß½çµÄ×é¼ş
+			// å®¹å™¨å¤§å°æ”¹å˜æ—¶ï¼Œè®¾ä¸‹backupBoundä¸ºå…¶ä¹‹å‰çš„å®é™…å¤§å°,ä»¥ä¾¿è°ƒæ•´è´´è¾¹ç•Œçš„ç»„ä»¶
 			layout.setBackupBound(rec);
 			int dW = width-rec.width;
 			if (dW == 0) {
@@ -261,12 +261,12 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 				widthPane.setValue(rec.width);
 				return;
 			}
-			// ²¼¾ÖÈİÆ÷ÏÈÉè´óĞ¡ÎªÊµ¼ÊµÄ¸ßºÍµ±Ç°µÄ¿í£¬È»ºó°´´Ëµ÷ÕûÄÚ²¿µÄ×é¼ş
+			// å¸ƒå±€å®¹å™¨å…ˆè®¾å¤§å°ä¸ºå®é™…çš„é«˜å’Œå½“å‰çš„å®½ï¼Œç„¶åæŒ‰æ­¤è°ƒæ•´å†…éƒ¨çš„ç»„ä»¶
 			layout.setSize(width, rec.height);
 			layout.adjustCreatorsWidth(percent);
 			if (layout.getNeedAddWidth() > 0) {
 				widthPane.setValue(layout.getWidth());
-				// µ÷ÕûÖ®ºóÇåÁãµ÷ÕûÁ¿£¬·ñÔòÔÙ´ÎËõ·Åµ½×îĞ¡Öµ»á²úÉú¸ÉÈÅ
+				// è°ƒæ•´ä¹‹åæ¸…é›¶è°ƒæ•´é‡ï¼Œå¦åˆ™å†æ¬¡ç¼©æ”¾åˆ°æœ€å°å€¼ä¼šäº§ç”Ÿå¹²æ‰°
 				layout.setNeedAddWidth(0);
 			}
 			doReCalculateRoot(width, rec.height, layout);
@@ -279,7 +279,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 			XWFitLayout layout = (XWFitLayout) root;
 			Dimension d = new Dimension(layout.toData().getContainerWidth(), layout.toData().getContainerHeight());
 			Rectangle rec = new Rectangle(d);
-			// ÈİÆ÷´óĞ¡¸Ä±äÊ±£¬ÉèÏÂbackupBoundÎªÆäÖ®Ç°µÄÊµ¼Ê´óĞ¡
+			// å®¹å™¨å¤§å°æ”¹å˜æ—¶ï¼Œè®¾ä¸‹backupBoundä¸ºå…¶ä¹‹å‰çš„å®é™…å¤§å°
 			layout.setBackupBound(rec);
 			int dH = height - rec.height;
 			if (dH == 0) {
@@ -294,7 +294,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 			layout.adjustCreatorsHeight(percent);
 			if (layout.getNeedAddHeight() > 0) {
 				heightPane.setValue(layout.getHeight());
-				// µ÷ÕûÖ®ºóÇåÁãµ÷ÕûÁ¿£¬·ñÔòÔÙ´ÎËõ·Åµ½×îĞ¡Öµ»á²úÉú¸ÉÈÅ
+				// è°ƒæ•´ä¹‹åæ¸…é›¶è°ƒæ•´é‡ï¼Œå¦åˆ™å†æ¬¡ç¼©æ”¾åˆ°æœ€å°å€¼ä¼šäº§ç”Ÿå¹²æ‰°
 				layout.setNeedAddHeight(0);
 			}
 			doReCalculateRoot(rec.width, height, layout);
@@ -302,11 +302,11 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * ĞŞ¸Ä´óĞ¡ºó£¬ÔÙ¸ù¾İÆÁÄ»·Ö±æÂÊµ÷ÕûÏÂ
+     * ä¿®æ”¹å¤§å°åï¼Œå†æ ¹æ®å±å¹•åˆ†è¾¨ç‡è°ƒæ•´ä¸‹
      */
     private void doReCalculateRoot(int width, int height, XWFitLayout layout) {
 //    	double value = slidePane.updateBean();
-    	//ÖØÖÃ»¬¿éµÄÖµÎªÄ¬ÈÏÖµ100
+    	//é‡ç½®æ»‘å—çš„å€¼ä¸ºé»˜è®¤å€¼100
     	START_VALUE = DEFAULT_SLIDER;
 		if (screenValue == DEFAULT_SLIDER) {
 			layout.getParent().setSize(width, height+designer.getParaHeight());
@@ -318,8 +318,8 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * °´ÕÕ½çÃæ´óĞ¡µÄ°Ù·Ö±ÈÖµµ÷Õûroot´óĞ¡
-     * @param needCalculateParaHeight ÊÇ·ñĞèÒªµ÷Õû²ÎÊı½çÃæ¸ß¶È
+     * æŒ‰ç…§ç•Œé¢å¤§å°çš„ç™¾åˆ†æ¯”å€¼è°ƒæ•´rootå¤§å°
+     * @param needCalculateParaHeight æ˜¯å¦éœ€è¦è°ƒæ•´å‚æ•°ç•Œé¢é«˜åº¦
      * @param value
      */
     private void reCalculateRoot(double value, boolean needCalculateParaHeight) {
@@ -334,14 +334,14 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 			traverAndAdjust(layout, percent);
 			layout.adjustCreatorsWhileSlide(percent);
 			
-			// ÍÏ¶¯»¬¿é£¬ÏÈ½«ÄÚ²¿×é¼ş°Ù·Ö±È´óĞ¡¼ÆËã£¬ÔÙ¼ÆËãÈİÆ÷´óĞ¡
+			// æ‹–åŠ¨æ»‘å—ï¼Œå…ˆå°†å†…éƒ¨ç»„ä»¶ç™¾åˆ†æ¯”å¤§å°è®¡ç®—ï¼Œå†è®¡ç®—å®¹å™¨å¤§å°
 
 			Dimension d = new Dimension(layout.getWidth(), layout.getHeight());
-			// ×ÔÊÊÓ¦²¼¾ÖµÄ¸¸²ãÊÇborder
+			// è‡ªé€‚åº”å¸ƒå±€çš„çˆ¶å±‚æ˜¯border
 			if (layout.getParent() != null) {
 				int paraHeight = designer.getParaHeight();
 				if (needCalculateParaHeight && paraHeight > 0) {
-					// µ÷Õû²ÎÊı½çÃæµÄ´óĞ¡
+					// è°ƒæ•´å‚æ•°ç•Œé¢çš„å¤§å°
 					paraHeight += (int) (paraHeight*percent) ;
 					designer.setParaHeight(paraHeight);
 					XWBorderLayout parent =  (XWBorderLayout) layout.getParent();
@@ -351,14 +351,14 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
 					parent.add(designer.getRootComponent(),WBorderLayout.CENTER);
 				}
 				layout.getParent().setSize(d.width, d.height+paraHeight);
-				// µ÷Õû×ÔÊÊÓ¦²¼¾Ö´óĞ¡ºó£¬Í¬²½µ÷Õû²ÎÊı½çÃæºÍborder´óĞ¡£¬´ËÊ±Ë¢ĞÂÏÂformArea
+				// è°ƒæ•´è‡ªé€‚åº”å¸ƒå±€å¤§å°åï¼ŒåŒæ­¥è°ƒæ•´å‚æ•°ç•Œé¢å’Œborderå¤§å°ï¼Œæ­¤æ—¶åˆ·æ–°ä¸‹formArea
 				FormArea.this.validate();
 			}
 			START_VALUE = value;
 		}
     }
     
-    //Ñ­»·±éÀú²¼¾Ö£¬°´°Ù·Ö±Èµ÷Õû×Ó×é¼ş´óĞ¡
+    //å¾ªç¯éå†å¸ƒå±€ï¼ŒæŒ‰ç™¾åˆ†æ¯”è°ƒæ•´å­ç»„ä»¶å¤§å°
     private void  traverAndAdjust(XCreator creator,double percent){
 		for(int i=0; i<creator.getComponentCount(); i++){
 			Object object = creator.getComponent(i);
@@ -372,7 +372,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * Ôö¼Ó¿Ì¶ÈÌõ
+     * å¢åŠ åˆ»åº¦æ¡
      */
     public void addFormRuler() {
         BaseRuler vRuler = new VerticalRuler(this);
@@ -382,8 +382,8 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * Êó±ê¹öÂÖÊÂ¼ş
-     * ÓÉÓÚ±íµ¥Éè¼Æ½çÃæÒªÇó£º ÈİÆ÷´óĞ¡´óÓÚ½çÃæÊ±£¬¹ö¶¯Ìõ²Å¿ÉÒÔÍÏ¶¯£¬ËùÒÔ²»Ö§³Ö¹ö¶¯ÎŞÏŞÍùÏÂ¹ö
+     * é¼ æ ‡æ»šè½®äº‹ä»¶
+     * ç”±äºè¡¨å•è®¾è®¡ç•Œé¢è¦æ±‚ï¼š å®¹å™¨å¤§å°å¤§äºç•Œé¢æ—¶ï¼Œæ»šåŠ¨æ¡æ‰å¯ä»¥æ‹–åŠ¨ï¼Œæ‰€ä»¥ä¸æ”¯æŒæ»šåŠ¨æ— é™å¾€ä¸‹æ»š
      */
     @Override
     protected void processMouseWheelEvent(java.awt.event.MouseWheelEvent evt) {
@@ -394,7 +394,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
                 int value = this.verScrollBar.getValue() + rotations * ROTATIONS ; 
                 value = Math.min(value, verticalMax);
                 value = Math.max(0, value);
-                doLayout(); //¼ÓdolayoutÊÇÒòÎªÃ¿´Î¹ö¶¯¶¼ÒªÖØÖÃ MaxµÄ´óĞ¡
+                doLayout(); //åŠ dolayoutæ˜¯å› ä¸ºæ¯æ¬¡æ»šåŠ¨éƒ½è¦é‡ç½® Maxçš„å¤§å°
                 this.verScrollBar.setValue(value);
                 break;
             }
@@ -402,7 +402,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ·µ»Ø±íµ¥ÈİÆ÷µÄÖĞĞÄdesigner
+     * è¿”å›è¡¨å•å®¹å™¨çš„ä¸­å¿ƒdesigner
      * getFormEditor.
      */
     public FormDesigner getFormEditor() {
@@ -414,10 +414,10 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ÉèÖÃ½çÃæÄÚµÄ×é¼ş¿É¼ûÒÔ¼°Ë®Æ½´¹Ö±¹ö¶¯ÌõµÄÖµ
-     * £¨³ıÁË¸ùÈİÆ÷£¬ÍÏÈë×é¼ş½øÀ´Ê±Èç¹û´óĞ¡³¬¹ıµ±Ç°½çÃæ´óĞ¡£¬±ØĞëÉèÖÃ¹ö¶¯ÌõÖµ£¬·ñÔò¹ö¶¯ÌõÄ¬ÈÏ²»ÏÔÊ¾£©
+     * è®¾ç½®ç•Œé¢å†…çš„ç»„ä»¶å¯è§ä»¥åŠæ°´å¹³å‚ç›´æ»šåŠ¨æ¡çš„å€¼
+     * ï¼ˆé™¤äº†æ ¹å®¹å™¨ï¼Œæ‹–å…¥ç»„ä»¶è¿›æ¥æ—¶å¦‚æœå¤§å°è¶…è¿‡å½“å‰ç•Œé¢å¤§å°ï¼Œå¿…é¡»è®¾ç½®æ»šåŠ¨æ¡å€¼ï¼Œå¦åˆ™æ»šåŠ¨æ¡é»˜è®¤ä¸æ˜¾ç¤ºï¼‰
      *
-     * @param creator   ¿Ø¼ş
+     * @param creator   æ§ä»¶
      */
     public void scrollPathToVisible(XCreator creator) {
     	creator.seleteRelatedComponent(creator);
@@ -429,55 +429,55 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
         if (shouldSetScrollValue(creator)) {
         	return;
         }
-        //»ñÈ¡ÔÚÈİÆ÷µÄ¾ø¶ÔÎ»ÖÃ
+        //è·å–åœ¨å®¹å™¨çš„ç»å¯¹ä½ç½®
         Rectangle rec = ComponentUtils.getRelativeBounds(creator);
         int dWidth = getDesignerWidth();
         if (rec.width <= dWidth&&rec.x < getHorizontalValue()) {
-        	//ÔÚ±ß½çÄÚ²¿ÇÒxÎ»ÖÃĞ¡ÓÚË®Æ½¹ö¶¯ÌõµÄÖµ
+        	//åœ¨è¾¹ç•Œå†…éƒ¨ä¸”xä½ç½®å°äºæ°´å¹³æ»šåŠ¨æ¡çš„å€¼
         	horScrollBar.setValue(rec.x);
         } else if (rec.x+rec.width > dWidth) {
-        	//³¬³ö±ß½ç¿í¶È
+        	//è¶…å‡ºè¾¹ç•Œå®½åº¦
         	horScrollBar.setValue(rec.x+rec.width-dWidth);
         }
         int dHeight = getDesignerHeight();
         if (rec.height < dHeight && rec.y < getVerticalValue()) {
-        	//ÔÚ±ß½çÄÚ²¿ÇÒyÎ»ÖÃĞ¡ÓÚÊúÖ±¹ö¶¯ÌõµÄÖµ
+        	//åœ¨è¾¹ç•Œå†…éƒ¨ä¸”yä½ç½®å°äºç«–ç›´æ»šåŠ¨æ¡çš„å€¼
         	 verScrollBar.setValue(rec.y);
         } else if (rec.y+rec.height > dHeight) {
-        	//³¬³ö±ß½ç¸ß¶È
+        	//è¶…å‡ºè¾¹ç•Œé«˜åº¦
         	verScrollBar.setValue(rec.y+rec.height-dHeight);
         }
     }
     
     
     /**
-     * ÈİÆ÷²¼¾Ö
+     * å®¹å™¨å¸ƒå±€
      */
     public void doLayout() {
     	layout();
     	if (isValid) {
     		XLayoutContainer root = designer.getRootComponent();
     		setScrollBarProperties(root.getWidth()-designer.getWidth(), horScrollBar);
-            //¼ÆËã¹ö¶¯ÌõÖµµÄÊ±ºòÓ¦¸ÃËãÉÏ²ÎÊıÃæ°åµÄ¸ß¶È
+            //è®¡ç®—æ»šåŠ¨æ¡å€¼çš„æ—¶å€™åº”è¯¥ç®—ä¸Šå‚æ•°é¢æ¿çš„é«˜åº¦
             setScrollBarProperties(designer.getParaHeight() + root.getHeight()-designer.getHeight(), verScrollBar);
     	}
     }
     
     /**
-     * ÉèÖÃ¹ö¶¯ÌõµÄÊôĞÔ
+     * è®¾ç½®æ»šåŠ¨æ¡çš„å±æ€§
      */
     private void setScrollBarProperties(int value, FormScrollBar bar) {
     	if (value == 0 && isScrollNotVisible(bar)) {
     		return;
     	}
     	if (value <= 0) {
-    		// ½çÃæÓĞ¹ö¶¯ÌõÊ±£¬ÊÖ¶¯ËõĞ¡ÈİÆ÷¿í¶Èµ½½çÃæÄÚ£¬ÖØÖÃ¹ö¶¯ÌõÖµºÍmax
+    		// ç•Œé¢æœ‰æ»šåŠ¨æ¡æ—¶ï¼Œæ‰‹åŠ¨ç¼©å°å®¹å™¨å®½åº¦åˆ°ç•Œé¢å†…ï¼Œé‡ç½®æ»šåŠ¨æ¡å€¼å’Œmax
     		setScrollBarMax(0, bar);
     		bar.setMaximum(0);
     		bar.setValue(0);
     		bar.setEnabled(false);
     	} else {
-            //²ÎÊıÃæ°åÍÏ×§¹ı³ÌÖĞvalueÒ»Ö±Îªµ±Ç°value
+            //å‚æ•°é¢æ¿æ‹–æ‹½è¿‡ç¨‹ä¸­valueä¸€ç›´ä¸ºå½“å‰value
             int oldValue = verticalValue;
     		setScrollBarMax(value, bar);
     		bar.setEnabled(true);
@@ -504,7 +504,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     *·µ»ØdesignerµÄ×îĞ¡¸ß¶È
+     *è¿”å›designerçš„æœ€å°é«˜åº¦
      *
      * @return int
      */
@@ -513,7 +513,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     *·µ»ØdesignerµÄ×îĞ¡¿í¶È
+     *è¿”å›designerçš„æœ€å°å®½åº¦
      *
      * @return int
      */
@@ -531,7 +531,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ·µ»ØË®Æ½¹ö¶¯ÌõµÄvalue
+     * è¿”å›æ°´å¹³æ»šåŠ¨æ¡çš„value
      *
      * @return int
      */
@@ -540,7 +540,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ÉèÖÃË®Æ½¹ö¶¯ÌõµÄvalue
+     * è®¾ç½®æ°´å¹³æ»šåŠ¨æ¡çš„value
      *
      * @param newValue
      */
@@ -549,7 +549,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ·µ»ØÊúÖ±¹ö¶¯ÌõµÄvalue
+     * è¿”å›ç«–ç›´æ»šåŠ¨æ¡çš„value
      *
      * @return
      */
@@ -558,7 +558,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ÊúÖ±¹ö¶¯Ìõ¸³Öµ
+     * ç«–ç›´æ»šåŠ¨æ¡èµ‹å€¼
      *
      * @param newValue
      */
@@ -567,7 +567,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ·µ»Øµ±Ç°designerµÄ¸ß¶È
+     * è¿”å›å½“å‰designerçš„é«˜åº¦
      *
      * @return height
      */
@@ -576,7 +576,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
 
     /**
-     * ·µ»Øµ±Ç°designerµÄ¿í¶È
+     * è¿”å›å½“å‰designerçš„å®½åº¦
      *
      * @return
      */
@@ -585,52 +585,52 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * ·µ»Ø¿í¶È¿Ø¼şµÄvalue
+     * è¿”å›å®½åº¦æ§ä»¶çš„value
      *
-     * @return ¿í¶È
+     * @return å®½åº¦
      */
     public double getWidthPaneValue() {
         return widthPane.getValue();
     }
     
     /**
-     * ÉèÖÃ¿í¶ÈÖµ
-     * @param value Öµ
+     * è®¾ç½®å®½åº¦å€¼
+     * @param value å€¼
      */
     public void setWidthPaneValue(int value) {
     	widthPane.setValue(value);
     }
     
     /**
-     * ÉèÖÃ¸ß¶ÈÖµ
-     * @param value Öµ
+     * è®¾ç½®é«˜åº¦å€¼
+     * @param value å€¼
      */
     public void setHeightPaneValue(int value) {
     	heightPane.setValue(value);
     }
     
     /**
-     * ·µ»Ø¸ß¶È¿Ø¼şµÄvalue
+     * è¿”å›é«˜åº¦æ§ä»¶çš„value
      *
-     * @return ¸ß¶È
+     * @return é«˜åº¦
      */
     public double getHeightPaneValue() {
         return heightPane.getValue();
     }
     
     /**
-     * ·µ»Ø½çÃæ´óĞ¡µÄ°Ù·Ö±ÈÖµ
+     * è¿”å›ç•Œé¢å¤§å°çš„ç™¾åˆ†æ¯”å€¼
      *
-     * @return °Ù·Ö±ÈÖµ
+     * @return ç™¾åˆ†æ¯”å€¼
      */
     public double getSlideValue() {
 //    	return slidePane.updateBean();
-    	//7.1.1²»¼ÓËõ·Å»¬¿é
+    	//7.1.1ä¸åŠ ç¼©æ”¾æ»‘å—
     	return this.screenValue;
     }
 
     /**
-     * ·µ»Ø½çÃæÇøÓò´óĞ¡
+     * è¿”å›ç•Œé¢åŒºåŸŸå¤§å°
      *
      * @return Dimension
      */
@@ -648,8 +648,8 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     public void setAreaSize(Dimension totalSize, int horizontalValue, int verticalValue, double width, double height, double slide) {
     	this.verticalMax = (int) totalSize.getHeight();
     	this.horicalMax = (int) totalSize.getHeight();
-        // ³·ÏúÊ±»árefreshRoot£¬µ¼ÖÂlayout´óĞ¡±äÎªÄ¬ÈÏ´óĞ¡
-        // °´ÕÕÖ®Ç°ÉèÖÃµÄ¿í¸ßºÍ°Ù·Ö±ÈÖØÖÃÏÂÈİÆ÷size
+        // æ’¤é”€æ—¶ä¼šrefreshRootï¼Œå¯¼è‡´layoutå¤§å°å˜ä¸ºé»˜è®¤å¤§å°
+        // æŒ‰ç…§ä¹‹å‰è®¾ç½®çš„å®½é«˜å’Œç™¾åˆ†æ¯”é‡ç½®ä¸‹å®¹å™¨size
         if (width != widthPane.getValue()) {
         	widthPane.setValue(width);
         	reCalculateWidth((int) width);
@@ -660,7 +660,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
         }
         if (designer.getRootComponent().acceptType(XWFitLayout.class) && slide == DEFAULT_SLIDER) {
         	XWFitLayout layout = (XWFitLayout) designer.getRootComponent();
-        	// ³·ÏúÊ±ÏÈrefreshRootÁË£¬´Ë´¦È¥µôÄÚ±ß¾àÔÙÔö¼Ó¼ä¸ô
+        	// æ’¤é”€æ—¶å…ˆrefreshRootäº†ï¼Œæ­¤å¤„å»æ‰å†…è¾¹è·å†å¢åŠ é—´éš”
         	layout.moveContainerMargin();
         	layout.addCompInterval(layout.getAcualInterval());
         } else if (designer.getRootComponent().acceptType(XWFitLayout.class)){
@@ -671,19 +671,19 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
     }
     
     /**
-     * ¼ÆËã¹ö¶¯ÌõµÄÖµºÍmax
-     * @param oldmax Ö®Ç°×î´óÖµ
-     * @param max µ±Ç°×î´óÖµ
-     * @param newValue µ±Ç°value
-     * @param oldValue Ö®Ç°value
-     * @param visi designerµÄ´óĞ¡
-     * @param orientation ¹ö¶¯Ìõ·½Ïò
-     * @return ¼ÆËãºóµÄÖµºÍmax
+     * è®¡ç®—æ»šåŠ¨æ¡çš„å€¼å’Œmax
+     * @param oldmax ä¹‹å‰æœ€å¤§å€¼
+     * @param max å½“å‰æœ€å¤§å€¼
+     * @param newValue å½“å‰value
+     * @param oldValue ä¹‹å‰value
+     * @param visi designerçš„å¤§å°
+     * @param orientation æ»šåŠ¨æ¡æ–¹å‘
+     * @return è®¡ç®—åçš„å€¼å’Œmax
      */
     @Override
     public Point calculateScroll(int oldmax, int max, int newValue, int oldValue, int visi, int orientation) {
     	int scrollMax = orientation==1 ? verticalMax : horicalMax;
-    	//·ÀÖ¹¹ö¶¯Ìõµ½´ïµÍ¶Ë»¹¿ÉÒÔ¼ÌĞøµã»÷ÒÆ¶¯(¹ö¶¯Ìõ×î´ó·¶Î§²»±äÊ±£¬newValueÒªÔÚ·¶Î§Ö®ÄÚ)
+    	//é˜²æ­¢æ»šåŠ¨æ¡åˆ°è¾¾ä½ç«¯è¿˜å¯ä»¥ç»§ç»­ç‚¹å‡»ç§»åŠ¨(æ»šåŠ¨æ¡æœ€å¤§èŒƒå›´ä¸å˜æ—¶ï¼ŒnewValueè¦åœ¨èŒƒå›´ä¹‹å†…)
     	if ( oldmax == scrollMax+visi && newValue>scrollMax ) {
     		return new Point(oldValue, oldmax);
     	}
@@ -700,7 +700,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
         }
         
         /**
-         * ±íµ¥ÓÃµÄlayout£¬µ±Ç°²»ĞèÒª±ê³ß
+         * è¡¨å•ç”¨çš„layoutï¼Œå½“å‰ä¸éœ€è¦æ ‡å°º
          */
         public void layoutContainer(Container target) {
             synchronized (target.getTreeLock()) {
@@ -727,7 +727,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
                 	DESIGNERHEIGHT = dg.hasWAbsoluteLayout() ? root.getHeight()+dg.getParaHeight() :  root.getHeight();
             	}
                 Rectangle rec = new Rectangle(left+(right - DESIGNERWIDTH)/2, TOPGAP, right, bottom);
-                //ÊÇ·ñÎª±íµ¥
+                //æ˜¯å¦ä¸ºè¡¨å•
                 if (isValid ){
             		int maxHeight = bottom - hbarPreferredSize.height - resize.height -TOPGAP*2;
             		int maxWidth =  right - vbarPreferredSize.width;
@@ -736,7 +736,7 @@ public class FormArea extends JComponent implements ScrollRulerComponent {
             		int designerLeft = left+(verScrollBar.getX() - DESIGNERWIDTH)/2;
             		rec = new Rectangle(designerLeft, TOPGAP, DESIGNERWIDTH, DESIGNERHEIGHT);
                 } 
-                // designerÊÇÕû¸ö±íµ¥Éè¼Æ½çÃæÖĞµÄÃæ°å²¿·Ö£¬Ä¿Ç°Ö»·Å×ÔÊÊÓ¦²¼¾ÖºÍ²ÎÊı½çÃæ¡£
+                // designeræ˜¯æ•´ä¸ªè¡¨å•è®¾è®¡ç•Œé¢ä¸­çš„é¢æ¿éƒ¨åˆ†ï¼Œç›®å‰åªæ”¾è‡ªé€‚åº”å¸ƒå±€å’Œå‚æ•°ç•Œé¢ã€‚
                 designer.setBounds(rec);
             }
         }

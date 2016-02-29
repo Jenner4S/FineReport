@@ -25,8 +25,8 @@ public class BubbleIndependentChartInterface extends AbstractIndependentChartUI 
     }
 
     /**
-     *Í¼±êÂ·¾¶
-     * @return Í¼±êÂ·¾¶
+     *å›¾æ ‡è·¯å¾„
+     * @return å›¾æ ‡è·¯å¾„
      */
     public String getIconPath(){
         return "com/fr/design/images/form/toolbar/Chart_BubbleChart.png";

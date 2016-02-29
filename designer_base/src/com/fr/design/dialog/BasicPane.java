@@ -11,15 +11,15 @@ import javax.swing.event.DocumentEvent;
 import java.awt.*;
 
 /*
- * _denny: ÕâÀïµÄBasicPaneÍ¨³£»áÓĞpopulate & update·½·¨
- * ¼ÇµÃpopulate Ò»¶¨ÒªÔÚ¶ÔÓ¦µÄdialog setVisibleÖ®Ç°populate
+ * _denny: è¿™é‡Œçš„BasicPaneé€šå¸¸ä¼šæœ‰populate & updateæ–¹æ³•
+ * è®°å¾—populate ä¸€å®šè¦åœ¨å¯¹åº”çš„dialog setVisibleä¹‹å‰populate
  */
 public abstract class BasicPane extends JPanel {
 
 	/**
-	 *ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @return ¶Ô»°¿ò
+	 *æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow(Window window) {
 		return this.showWindow(window, null);
@@ -27,10 +27,10 @@ public abstract class BasicPane extends JPanel {
 
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow(Window window, DialogActionListener l) {
 		BasicDialog dg;
@@ -51,10 +51,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param isNeedButtonsPane ÊÇ·ñĞèÒªÈ·¶¨É¾³ı°´Å¥
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param isNeedButtonsPane æ˜¯å¦éœ€è¦ç¡®å®šåˆ é™¤æŒ‰é’®
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow(Window window, boolean isNeedButtonsPane) {
 		BasicDialog dg;
@@ -72,11 +72,11 @@ public abstract class BasicPane extends JPanel {
 
 
 	/**
-	 * Í¼±íÀàĞÍÑ¡ÔñÊ± µ¯³öµÄ°´Å¥´óĞ¡, ²»ÊÊºÏÓÃ×î´ó×îĞ¡, ÒòÎªÍ¼±í´óĞ¡ Ä¬ÈÏÊÇ¹æ¶¨ºÃµÄ, ÄÇÃ´½çÃæ´óĞ¡Ò²ÊÇ±ØĞëÅäºÏ.
-	 * ²¢ÇÒ°üÀ¨ Ìõ¼şÏÔÊ¾ÖĞ ¶à¸öÌõ¼şµÄ´óĞ¡
-	 * @param window ´°¿Ú
-	 * @param l ¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * å›¾è¡¨ç±»å‹é€‰æ‹©æ—¶ å¼¹å‡ºçš„æŒ‰é’®å¤§å°, ä¸é€‚åˆç”¨æœ€å¤§æœ€å°, å› ä¸ºå›¾è¡¨å¤§å° é»˜è®¤æ˜¯è§„å®šå¥½çš„, é‚£ä¹ˆç•Œé¢å¤§å°ä¹Ÿæ˜¯å¿…é¡»é…åˆ.
+	 * å¹¶ä¸”åŒ…æ‹¬ æ¡ä»¶æ˜¾ç¤ºä¸­ å¤šä¸ªæ¡ä»¶çš„å¤§å°
+	 * @param window çª—å£
+	 * @param l ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow4ChartType(Window window, DialogActionListener l) {
 		BasicDialog dg;
@@ -97,10 +97,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showSmallWindow(Window window, DialogActionListener l) {
 		BasicDialog dg;
@@ -120,10 +120,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showMediumWindow(Window window, DialogActionListener l) {
 		BasicDialog dg;
@@ -143,10 +143,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showLargeWindow(Window window, DialogActionListener l) {
 		BasicDialog dg;
@@ -166,10 +166,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public UIDialog showUnsizedWindow(Window window, DialogActionListener l) {
 		UIDialog dg;
@@ -188,10 +188,10 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @param l ¶Ô»°¿ò¼àÌıÆ÷
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @param l å¯¹è¯æ¡†ç›‘å¬å™¨
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow4ChartMapArray(Window window,DialogActionListener l){
 		BasicDialog dg;
@@ -212,9 +212,9 @@ public abstract class BasicPane extends JPanel {
 
 
 	/**
-	 * ÏÔÊ¾´°¿Ú
-	 * @param window ´°¿Ú
-	 * @return ¶Ô»°¿ò
+	 * æ˜¾ç¤ºçª—å£
+	 * @param window çª—å£
+	 * @return å¯¹è¯æ¡†
 	 */
 	public BasicDialog showWindow4UpdateOnline(Window window){
 		BasicDialog dg;
@@ -236,17 +236,17 @@ public abstract class BasicPane extends JPanel {
 	}
 
 	/**
-	 * ×÷ÎªÃû×ÖÃæ°å
-	 * @return Ãæ°å
+	 * ä½œä¸ºåå­—é¢æ¿
+	 * @return é¢æ¿
 	 */
 	public NamePane asNamePane() {
 		return new NamePane(this);
 	}
 
 	/**
-     * ¼ì²éÊÇ·ñ·ûºÏ¹æ·¶
+     * æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„èŒƒ
      *
-     * @throws Exception Òì³£
+     * @throws Exception å¼‚å¸¸
     */
 	public void checkValid() throws Exception {
 	}
@@ -314,9 +314,9 @@ public abstract class BasicPane extends JPanel {
 		}
 
 		/**
-	     * ¼ì²éÊÇ·ñ·ûºÏ¹æ·¶
+	     * æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„èŒƒ
 	     *
-	     * @throws Exception Òì³£
+	     * @throws Exception å¼‚å¸¸
 	    */
 		public void checkValid() throws Exception {
 			super.checkValid();
@@ -325,8 +325,8 @@ public abstract class BasicPane extends JPanel {
 		}
 
 		/**
-		 * Ìí¼ÓÊôĞÔ¸Ä±äµÄ¼àÌıÆ÷
-		 * @param listener ¼àÌıÆ÷
+		 * æ·»åŠ å±æ€§æ”¹å˜çš„ç›‘å¬å™¨
+		 * @param listener ç›‘å¬å™¨
 		 */
 		public void addPropertyChangeListener(PropertyChangeAdapter listener) {
 			this.changeListener = listener;

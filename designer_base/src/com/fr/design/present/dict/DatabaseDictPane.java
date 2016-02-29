@@ -38,7 +38,7 @@ import com.fr.stable.StringUtils;
 
 public class DatabaseDictPane extends FurtherBasicBeanPane<DatabaseDictionary> implements Previewable, UIObserver {
     /**
-     * richer:Êı¾İ×ÖµäºÍÊı¾İÁ´Ãæ°å
+     * richer:æ•°æ®å­—å…¸å’Œæ•°æ®é“¾é¢æ¿
      */
     protected com.fr.data.impl.Connection database;
     protected ValueEditorPane keyColumnPane;
@@ -139,7 +139,7 @@ public class DatabaseDictPane extends FurtherBasicBeanPane<DatabaseDictionary> i
         	return;
         }
         
-        // richer:Õâ¸öÒ²Òª+1²ÅĞĞ
+        // richer:è¿™ä¸ªä¹Ÿè¦+1æ‰è¡Œ
     	if(StringUtils.isNotEmpty(dbDict.getKeyColumnName())){
     		this.keyColumnPane.populate(dbDict.getKeyColumnName());
     	}else{
@@ -154,7 +154,7 @@ public class DatabaseDictPane extends FurtherBasicBeanPane<DatabaseDictionary> i
 	        if (dbDict.getFormula() != null) {
 	            value = dbDict.getFormula();
 	        } else {
-	            // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ
+	            // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„
 	            value = dbDict.getValueColumnIndex() + 1;
 	        }
 	        this.valueDictPane.populate(value);
@@ -176,7 +176,7 @@ public class DatabaseDictPane extends FurtherBasicBeanPane<DatabaseDictionary> i
 
         dbDict.setSchema(para.getSchemaName());
         dbDict.setTableName(para.getTableName());
-        // alex:ÒòÎªÏÔÊ¾µ½½çÃæÉÏµÄindexÊÇÒÔ1ÎªÊ¼µÄ,ËùÒÔÒª¼õ1
+        // alex:å› ä¸ºæ˜¾ç¤ºåˆ°ç•Œé¢ä¸Šçš„indexæ˜¯ä»¥1ä¸ºå§‹çš„,æ‰€ä»¥è¦å‡1
 		if (this.keyColumnPane.update() != null && (Integer) this.keyColumnPane.update() - 1 >= 0) {
 			int keyColumnIndex = (Integer) this.keyColumnPane.update() - 1;
 			String keyColumnName = StringUtils.EMPTY;

@@ -63,9 +63,9 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
     }
 
     /**
-     * ÊÇ·ñÖ§³Ö¸ÄÎÄµµ
-     * @param f ÎÄ¼ş
-     * @return Ö§³Ö·µ»Øtrue
+     * æ˜¯å¦æ”¯æŒæ”¹æ–‡æ¡£
+     * @param f æ–‡ä»¶
+     * @return æ”¯æŒè¿”å›true
      */
     public boolean accept(File f) {
         if (f != null) {
@@ -88,9 +88,9 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
     }
 
     /**
-     * ÊÇ·ñÖ§³Ö
-     * @param f ÎÄ¼ş
-     * @return Ö§³Ö·µ»Ø true
+     * æ˜¯å¦æ”¯æŒ
+     * @param f æ–‡ä»¶
+     * @return æ”¯æŒè¿”å› true
      */
     public boolean accept(FILE f) {
         if (f != null) {
@@ -143,8 +143,8 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
     }
 
     /**
-     * ¼ÓÀ©Õ¹
-     * @param extension À©Õ¹
+     * åŠ æ‰©å±•
+     * @param extension æ‰©å±•
      */
     public void addExtension(String extension) {
         if (filters == null) {
@@ -159,9 +159,9 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
 
 
     /**
-     * ÊÇ·ñ°üº¬¸ÃÀ©Õ¹
-     * @param extension  À©Õ¹
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦åŒ…å«è¯¥æ‰©å±•
+     * @param extension  æ‰©å±•
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean containsExtension(String extension){
          return filters.contains(extension.toLowerCase());
@@ -215,8 +215,8 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
     }
 
     /**
-     * À©Õ¹ÊÇ·ñÁĞÔÚÃèÊöÖ®ÄÚÁË
-     * @return ÊÇÔò·µ»Øtrue
+     * æ‰©å±•æ˜¯å¦åˆ—åœ¨æè¿°ä¹‹å†…äº†
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean isExtensionListInDescription() {
         return useExtensionsInDescription;
@@ -245,8 +245,8 @@ public class ChooseFileFilter extends FileFilter implements FILEFilter , java.io
     }
 
     /**
-     * toString·½±ãÖØĞ´
-     * @return ÖØĞ´
+     * toStringæ–¹ä¾¿é‡å†™
+     * @return é‡å†™
      */
     public String toString() {
     	return getDescription();

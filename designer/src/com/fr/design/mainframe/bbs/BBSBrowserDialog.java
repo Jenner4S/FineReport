@@ -16,7 +16,7 @@ import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.Inter;
 
 /**
- * ·â×°ä¯ÀÀÆ÷µÄdialog
+ * å°è£…æµè§ˆå™¨çš„dialog
  * 
  */
 public class BBSBrowserDialog extends UIDialog { 
@@ -47,7 +47,7 @@ public class BBSBrowserDialog extends UIDialog {
 	}
 
 	/**
-	 * Í¨Öª×é¼ş¿ÉÒÔÏÔÊ¾ÁË
+	 * é€šçŸ¥ç»„ä»¶å¯ä»¥æ˜¾ç¤ºäº†
 	 * 
 	 */
     public void addNotify() {  
@@ -74,20 +74,20 @@ public class BBSBrowserDialog extends UIDialog {
 	}
 
 	/**
-	 * ¼ì²âÃæ°åÖĞÄÚÈİºÏ·¨ĞÔ
+	 * æ£€æµ‹é¢æ¿ä¸­å†…å®¹åˆæ³•æ€§
 	 * 
 	 */
 	public void checkValid() throws Exception {
 	} 
 	
 	/**
-	 * ÔÚ´°¿ÚÖĞÏÔÊ¾Ö¸¶¨µÄurl
+	 * åœ¨çª—å£ä¸­æ˜¾ç¤ºæŒ‡å®šçš„url
 	 * 
-	 * @param url Ö¸¶¨µÄurl
+	 * @param url æŒ‡å®šçš„url
 	 * 
 	 */
 	public void showWindow(String url){
 		this.setUrl(url);
 		this.setVisible(true);
 	}
-}  
+}

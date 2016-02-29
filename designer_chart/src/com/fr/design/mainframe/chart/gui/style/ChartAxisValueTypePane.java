@@ -12,9 +12,9 @@ import com.fr.design.dialog.BasicPane;
 import com.fr.general.Inter;
 
 /**
- * ×ø±êÖá ÖµÀàĞÍ½çÃæ(ÎÄ±¾×ø±êÖá »òÕß ÈÕÆÚ×ø±êÖá).
+ * åæ ‡è½´ å€¼ç±»å‹ç•Œé¢(æ–‡æœ¬åæ ‡è½´ æˆ–è€… æ—¥æœŸåæ ‡è½´).
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2013-1-4 ÉÏÎç10:15:35
+ * @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸Šåˆ10:15:35
  */
 public class ChartAxisValueTypePane extends BasicPane {
 	
@@ -46,14 +46,14 @@ public class ChartAxisValueTypePane extends BasicPane {
 	}
 	
 	/**
-	 * ½çÃæ±êÌâ.
+	 * ç•Œé¢æ ‡é¢˜.
 	 */
 	protected String title4PopupWindow() {
 		return Inter.getLocText("AxisValue");
 	}
 	
 	/**
-	 * ÅĞ¶ÏÀàĞÍ, ¸üĞÂ½çÃæÊôĞÔ
+	 * åˆ¤æ–­ç±»å‹, æ›´æ–°ç•Œé¢å±æ€§
 	 */
 	public void populateBean(CategoryAxis axis) {
 		if(axis != null && axis.isDate()) {
@@ -65,7 +65,7 @@ public class ChartAxisValueTypePane extends BasicPane {
 	}
 	
 	/**
-	 * ±£´æ½çÃæÊôĞÔ.
+	 * ä¿å­˜ç•Œé¢å±æ€§.
 	 */
 	public void updateBean(CategoryAxis axis) {
 		if(boxPane.getSelectedIndex() == 0) {
@@ -77,57 +77,57 @@ public class ChartAxisValueTypePane extends BasicPane {
 		}
 	}
 	
-	//¸ÊÌØÍ¼µÄÊ±¼ä×ø±êÖá²»ÄÜÓĞÎÄ±¾×ø±êÖáµÄÏÂÀ­Ïî
+	//ç”˜ç‰¹å›¾çš„æ—¶é—´åæ ‡è½´ä¸èƒ½æœ‰æ–‡æœ¬åæ ‡è½´çš„ä¸‹æ‹‰é¡¹
 	public void removeTextAxisPane(){
-		if(this.boxPane.getUIComboBox().getItemCount() > 1){ //·ÀÖ¹¶à´Îµ÷ÓÃ
+		if(this.boxPane.getUIComboBox().getItemCount() > 1){ //é˜²æ­¢å¤šæ¬¡è°ƒç”¨
 			this.boxPane.getUIComboBox().removeItemAt(1);
 			this.boxPane.getCards().remove(1);
 		}
 	}
 	
 	/**
-	 * ÎÄ±¾×ø±êÖá.
+	 * æ–‡æœ¬åæ ‡è½´.
 	* @author kunsnat E-mail:kunsnat@gmail.com
-	* @version ´´½¨Ê±¼ä£º2013-1-4 ÉÏÎç10:55:05
+	* @version åˆ›å»ºæ—¶é—´ï¼š2013-1-4 ä¸Šåˆ10:55:05
 	 */
 	private class TextAxisValueTypePane extends FurtherBasicBeanPane<CategoryAxis> {
 		
 		/**
-		 *  ÅĞ¶Ï½çÃæ½ÓÊÜ.
+		 *  åˆ¤æ–­ç•Œé¢æ¥å—.
 		 */
 		public boolean accept(Object ob) {
 			return ob instanceof CategoryAxis;
 		}
 
 		/**
-		 * ÖØÖÃ
+		 * é‡ç½®
 		 */
 		public void reset() {
 			
 		}
 
 		/**
-		 * ½çÃæ±êÌâ
+		 * ç•Œé¢æ ‡é¢˜
 		 */
 		public String title4PopupWindow() {
 			return Inter.getLocText("Chart_Text_Axis");
 		}
 
 		/**
-		 * ¸üĞÂ½çÃæ donothing
+		 * æ›´æ–°ç•Œé¢ donothing
 		 */
 		public void populateBean(CategoryAxis ob) {
 		}
 
 		/**
-		 * ±£´æ½çÃæÊôĞÔ. donothing
+		 * ä¿å­˜ç•Œé¢å±æ€§. donothing
 		 */
 		public CategoryAxis updateBean() {
 			return null;
 		}
 		
 		/**
-		 * ±£´æ½çÃæ donothing
+		 * ä¿å­˜ç•Œé¢ donothing
 		 */
 		public void updateBean(CategoryAxis axis) {
 			

@@ -144,7 +144,7 @@ public class LeftCenterRightLayout implements LayoutManager, java.io.Serializabl
             this.centerComponent.setBounds(left + leftOrRightWidth, top,
                     centerWidth, bottom - top);
             this.rightComponent.setBounds(right - leftOrRightWidth, top,
-                    leftOrRightWidth, bottom - top); //right与left等宽等高
+                    leftOrRightWidth, bottom - top); //right涓巐eft绛夊绛夐珮
         }
     }
 }

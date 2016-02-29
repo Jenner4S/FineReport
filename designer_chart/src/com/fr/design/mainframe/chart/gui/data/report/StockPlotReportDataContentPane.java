@@ -32,10 +32,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * ¹É¼ÛÍ¼ ÊôĞÔ±í µ¥Ôª¸ñÊı¾İÔ´.
+ * è‚¡ä»·å›¾ å±æ€§è¡¨ å•å…ƒæ ¼æ•°æ®æº.
  *
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç04:10:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ04:10:47
  */
 public class StockPlotReportDataContentPane extends AbstractReportDataContentPane {
     private static final String AXIS = Inter.getLocText("Chart_HorialTimeAxis");
@@ -236,7 +236,7 @@ public class StockPlotReportDataContentPane extends AbstractReportDataContentPan
         }
 
         /**
-         * ·µ»Øµ±Ç°±à¼­Æ÷µÄÖµ
+         * è¿”å›å½“å‰ç¼–è¾‘å™¨çš„å€¼
          */
         public Object getCellEditorValue() {
             if (currentEditColumn == 0) {
@@ -246,7 +246,7 @@ public class StockPlotReportDataContentPane extends AbstractReportDataContentPan
         }
 
         /**
-         * ·µ»Øµ±Ç°±à¼­Æ÷..
+         * è¿”å›å½“å‰ç¼–è¾‘å™¨..
          */
         public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
             if (column == table.getModel().getColumnCount()) {

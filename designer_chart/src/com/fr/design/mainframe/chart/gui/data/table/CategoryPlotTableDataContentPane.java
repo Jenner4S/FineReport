@@ -22,9 +22,9 @@ import java.awt.event.ItemListener;
 import java.util.List;
 
 /**
- * ÊôĞÔ±í, ¾ØĞÎÀàµÄ Êı¾İ¼¯ Êı¾İ½çÃæ.
+ * å±æ€§è¡¨, çŸ©å½¢ç±»çš„ æ•°æ®é›† æ•°æ®ç•Œé¢.
 * @author kunsnat E-mail:kunsnat@gmail.com
-* @version ´´½¨Ê±¼ä£º2012-12-26 ÏÂÎç04:48:01
+* @version åˆ›å»ºæ—¶é—´ï¼š2012-12-26 ä¸‹åˆ04:48:01
  */
 public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPane{
 	private static final long serialVersionUID = 7284078589672079657L;
@@ -72,8 +72,8 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
 	}
 	
 	/**
-	 * ¼ì²é Ä³Ğ©BoxÊÇ·ñ¿ÉÓÃ
-     * @param hasUse  ÊÇ·ñÊ¹ÓÃ.
+	 * æ£€æŸ¥ æŸäº›Boxæ˜¯å¦å¯ç”¨
+     * @param hasUse  æ˜¯å¦ä½¿ç”¨.
 	 */
 	public void checkBoxUse(boolean hasUse) {
 		categoryCombox.setEnabled(hasUse);
@@ -94,7 +94,7 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
     }
 
     /**
-     * Çå¿ÕËùÓĞµÄboxÉèÖÃ
+     * æ¸…ç©ºæ‰€æœ‰çš„boxè®¾ç½®
      */
     public void clearAllBoxList(){
         clearBoxItems(categoryCombox);
@@ -103,7 +103,7 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
     }
 	
 	/**
-	 * ±£´æ½çÃæÄÚÈİµ½ChartCollection
+	 * ä¿å­˜ç•Œé¢å†…å®¹åˆ°ChartCollection
 	 */
 	public void updateBean(ChartCollection collection) {
 		seriesTypeComboxPane.updateBean(collection);
@@ -122,7 +122,7 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
 	}
 
 	/**
-	 * ¸ù¾İChartCollection ¸üĞÂ½çÃæ
+	 * æ ¹æ®ChartCollection æ›´æ–°ç•Œé¢
 	 */
 	public void populateBean(ChartCollection collection) {
 		super.populateBean(collection);
@@ -159,7 +159,7 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
  }
 
     /**
-     * ÖØĞÂ²¼¾ÖÕû¸öÃæ°å
+     * é‡æ–°å¸ƒå±€æ•´ä¸ªé¢æ¿
      */
     public void redoLayoutPane(){
        seriesTypeComboxPane.relayoutPane(this.isNeedSummaryCaculateMethod());

@@ -64,7 +64,7 @@ public class ParameterPropertyPane extends JPanel{
 					return;
 				}
 				final UIButton parameterSelectedLabel = (UIButton) e.getSource();
-				// ²»ÓÃ¶àÏß³Ì¿ÉÄÜ»á³öÏÖËÀÑ­»·
+				// ä¸ç”¨å¤šçº¿ç¨‹å¯èƒ½ä¼šå‡ºç°æ­»å¾ªç¯
 				SwingUtilities.invokeLater(new Runnable() {
 					@Override
 					public void run() {

@@ -7,7 +7,7 @@ import com.fr.design.designer.properties.items.ItemProvider;
 import com.fr.design.designer.properties.items.LabelHorizontalAlignmentItems;
 /**
  * 
- * barry: 用作左中右对齐设置的下拉框Editor
+ * barry: 鐢ㄤ綔宸︿腑鍙冲榻愯缃殑涓嬫媺妗咵ditor
  *
  */
 public class ItemCellEditor extends ComboEditor {

@@ -16,7 +16,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-5
- * Time: ÏÂÎç2:49
+ * Time: ä¸‹åˆ2:49
  */
 public class UITextFieldBorder extends AbstractBorder implements UIResource {
     private Insets insets;

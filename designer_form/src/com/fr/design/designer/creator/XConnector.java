@@ -14,7 +14,7 @@ import com.fr.design.designer.beans.location.Direction;
 import com.fr.form.ui.Connector;
 import com.fr.design.form.util.XCreatorConstants;
 
-//Õâ¸öÀà½ö½öÊÇ¶ÔConnector°ü×°ÏÂ£¬Ê¹µÃ±íµ¥Éè¼ÆÒ³ÃæÂß¼­¸üÇåÎú
+//è¿™ä¸ªç±»ä»…ä»…æ˜¯å¯¹ConnectoråŒ…è£…ä¸‹ï¼Œä½¿å¾—è¡¨å•è®¾è®¡é¡µé¢é€»è¾‘æ›´æ¸…æ™°
 public class XConnector implements XComponent {
 
 	private XWAbsoluteLayout parent;

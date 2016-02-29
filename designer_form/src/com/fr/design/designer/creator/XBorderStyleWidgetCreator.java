@@ -23,7 +23,7 @@ import com.fr.stable.StringUtils;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-22
- * Time: ÉÏÎç10:40
+ * Time: ä¸Šåˆ10:40
  */
 
 public class XBorderStyleWidgetCreator extends XWidgetCreator{
@@ -35,8 +35,8 @@ public class XBorderStyleWidgetCreator extends XWidgetCreator{
     }
     
     /**
-	 * ·µ»ØÈİÆ÷¶ÔÓ¦µÄwidget
-	 * @return Í¬ÉÏ
+	 * è¿”å›å®¹å™¨å¯¹åº”çš„widget
+	 * @return åŒä¸Š
 	 */
 	@Override
     public AbstractBorderStyleWidget toData() {
@@ -53,7 +53,7 @@ public class XBorderStyleWidgetCreator extends XWidgetCreator{
          }
      }
 
-  // ±ß¿òÄ¬ÈÏÖµÉèÎªNONE,²»È»ÏñscalelayoutÕâÖÖÖ»ÓÃÄ¬ÈÏ±ß¿òµÄ»á²»ÏÔÊ¾±ß¿ò
+  // è¾¹æ¡†é»˜è®¤å€¼è®¾ä¸ºNONE,ä¸ç„¶åƒscalelayoutè¿™ç§åªç”¨é»˜è®¤è¾¹æ¡†çš„ä¼šä¸æ˜¾ç¤ºè¾¹æ¡†
     protected void initBorderStyle() {
     	LayoutBorderStyle style = toData().getBorderStyle();
         if (style != null && style.getBorder() != Constants.LINE_NONE) {
@@ -74,8 +74,8 @@ public class XBorderStyleWidgetCreator extends XWidgetCreator{
     }
     
 	 /**
-     * ÉèÖÃÑùÊ½Îª±êÌâÑùÊ½Ê±£¬¶ÔÓ¦×é¼ş¼ÓÉÏ±êÌâ
-     * @param style ÑùÊ½
+     * è®¾ç½®æ ·å¼ä¸ºæ ‡é¢˜æ ·å¼æ—¶ï¼Œå¯¹åº”ç»„ä»¶åŠ ä¸Šæ ‡é¢˜
+     * @param style æ ·å¼
      */
     protected void initTitleStyle(LayoutBorderStyle style){
     	if (style.getTitle() == null) {
@@ -89,28 +89,28 @@ public class XBorderStyleWidgetCreator extends XWidgetCreator{
     		title.initXCreatorProperties();
     		return;
     	} 
-    	// ³õÊ¼»¯±êÌâ¿Ø¼ş
+    	// åˆå§‹åŒ–æ ‡é¢˜æ§ä»¶
     	XLabel title = new XLabel(new Label(), new Dimension());
     	Label label =  title.toData();
     	updateTitleWidgetStyle(label, style);
     	parent.add(title, WTitleLayout.TITLE);
-    	// ³õÊ¼»¯±êÌâ±ß¿ò
+    	// åˆå§‹åŒ–æ ‡é¢˜è¾¹æ¡†
     	title.initXCreatorProperties();
     	WTitleLayout layout = parent.toData();
     	layout.updateChildBounds(layout.getBodyBoundsWidget().getBounds());
     }
     
     /**
-     * ¸üĞÂ±êÌâ¿Ø¼şËùÓĞµÄÑùÊ½
+     * æ›´æ–°æ ‡é¢˜æ§ä»¶æ‰€æœ‰çš„æ ·å¼
      */
     private void updateTitleWidgetStyle(Label title, LayoutBorderStyle style) {
-    	//±êÌâµÄ±ß¿òÑùÊ½Ä¿Ç°ÊÇÈ¡¶ÔÓ¦µÄ¿Ø¼şµÄ±ß¿òÑùÊ½
+    	//æ ‡é¢˜çš„è¾¹æ¡†æ ·å¼ç›®å‰æ˜¯å–å¯¹åº”çš„æ§ä»¶çš„è¾¹æ¡†æ ·å¼
     	title.setBorder(style.getBorder());
     	title.setColor(style.getColor());
     	title.setCorner(style.isCorner());
     	
     	WidgetTitle wTitle = style.getTitle();
-    	//ÉèÖÃ³ÉËæ»ú²»ÖØ¸´µÄ, ²»È»¶¼ÓÃÒ»¸öÃû×ÖµÄ»°, Áª¶¯Ö»ÄÜÁª¶¯Ò»¸ö
+    	//è®¾ç½®æˆéšæœºä¸é‡å¤çš„, ä¸ç„¶éƒ½ç”¨ä¸€ä¸ªåå­—çš„è¯, è”åŠ¨åªèƒ½è”åŠ¨ä¸€ä¸ª
     	title.setWidgetName(wTitle.TITLE_NAME_INDEX + this.toData().getWidgetName());
     	title.setWidgetValue(getTitleValue(wTitle));
     	title.setFont(wTitle.getFrFont());
@@ -134,8 +134,8 @@ public class XBorderStyleWidgetCreator extends XWidgetCreator{
     }
     
     /**
-     * ÄÚ±ß¾à
-     * @return Í¬ÉÏ
+     * å†…è¾¹è·
+     * @return åŒä¸Š
      */
     @Override
     public Insets getInsets() {

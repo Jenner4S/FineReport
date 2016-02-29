@@ -9,7 +9,7 @@ import com.fr.design.chart.gui.ChartComponent;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-22
- * Time   : œ¬ŒÁ4:01
+ * Time   : ‰∏ãÂçà4:01
  */
 public class CategoryAxisActiveGlyph extends AxisActiveGlyph {
 
@@ -17,4 +17,3 @@ public class CategoryAxisActiveGlyph extends AxisActiveGlyph {
         super(chartComponent, axis, parentGlyph);
     }
 }
-

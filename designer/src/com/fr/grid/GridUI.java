@@ -72,7 +72,7 @@ import com.fr.third.antlr.ANTLRException;
 
 public class GridUI extends ComponentUI {
 
-    public static int INVALID_INTEGER = Integer.MIN_VALUE;// ×÷Îª²»ºÏ·¨µÄÊıÖµ.
+    public static int INVALID_INTEGER = Integer.MIN_VALUE;// ä½œä¸ºä¸åˆæ³•çš„æ•°å€¼.
     protected Dimension gridSize;
     protected int verticalValue;
     protected int horizontalValue;
@@ -83,11 +83,11 @@ public class GridUI extends ComponentUI {
     protected int verticalEndValue;
     protected int horizontalEndValue;
     protected DrawFlowRect drawFlowRect;
-    // paintµÄ¸¨ÖúÀà
+    // paintçš„è¾…åŠ©ç±»
     protected List paintCellElementList = new ArrayList();
     protected List paintCellElementRectangleList = new ArrayList();
-    protected List paginateLineList = new ArrayList(); // ·ÖÒ³Ïß
-    // ÎªÁË»­°×É«µÄ±³¾°.
+    protected List paginateLineList = new ArrayList(); // åˆ†é¡µçº¿
+    // ä¸ºäº†ç”»ç™½è‰²çš„èƒŒæ™¯.
     protected static Background WHITE_Backgorund = ColorBackground.getInstance(Color.WHITE);
     // CellElementPainter
     protected CellElementPainter painter = new CellElementPainter();
@@ -96,11 +96,11 @@ public class GridUI extends ComponentUI {
     // Top
     protected Rectangle2D.Double top_col_row_rect = new Rectangle2D.Double(0, 0, 0, 0);
     protected Rectangle2D.Double back_or_selection_rect = new Rectangle2D.Double(0, 0, 0, 0);
-    // alex:ÓÃÀ´»­ÍÏ×§ÖĞµÄ¸ñ×ÓµÄ±ß¿ò
+    // alex:ç”¨æ¥ç”»æ‹–æ‹½ä¸­çš„æ ¼å­çš„è¾¹æ¡†
     protected Rectangle2D.Double drag_cell_rect = new Rectangle2D.Double(0, 0, 0, 0);
-    // alex:ÓÃÀ´»­µ¥Ôª¸ñµÄ°×É«±³¾°,ÒÔÇå¿ÕÔ­À´»­µÄÄÚÈİ
+    // alex:ç”¨æ¥ç”»å•å…ƒæ ¼çš„ç™½è‰²èƒŒæ™¯,ä»¥æ¸…ç©ºåŸæ¥ç”»çš„å†…å®¹
     protected Rectangle2D.Double cell_back_rect = new Rectangle2D.Double(0, 0, 0, 0);
-    // ÓÉÓÚ±¨±í¶³½áµÄÊ±ºò,µ±ÓĞ¶³½áÏß´©¹ımergeµÄ¸ñ×ÓµÄÊ±ºò,×î¶àĞèÒªÓÉ8¸örectangleÀ´¾ö¶¨.
+    // ç”±äºæŠ¥è¡¨å†»ç»“çš„æ—¶å€™,å½“æœ‰å†»ç»“çº¿ç©¿è¿‡mergeçš„æ ¼å­çš„æ—¶å€™,æœ€å¤šéœ€è¦ç”±8ä¸ªrectangleæ¥å†³å®š.
     protected Rectangle2D.Double tmpRectangle = new Rectangle2D.Double(INVALID_INTEGER,
             INVALID_INTEGER, INVALID_INTEGER, INVALID_INTEGER);
 
@@ -126,17 +126,17 @@ public class GridUI extends ComponentUI {
     protected void paintBackground(Graphics g, Grid grid, ElementCase elementCase, int resolution) {
         Graphics2D g2d = (Graphics2D) g;
 
-        // µ±Ç°µÄGridÃæ°åµÄ´óĞ¡
+        // å½“å‰çš„Gridé¢æ¿çš„å¤§å°
         this.back_or_selection_rect.setRect(0, 0, gridSize.getWidth(), gridSize.getHeight());
 
-        // ĞèÒªÓÃ°×É«±³¾°À´Çå¿Õ±³¾°.
+        // éœ€è¦ç”¨ç™½è‰²èƒŒæ™¯æ¥æ¸…ç©ºèƒŒæ™¯.
         clearBackground(g2d, grid);
 
         // paint print dash line.
         this.paperPaintWidth = 0;
         this.paperPaintHeight = 0;
 
-        // richer;¾ÛºÏ±¨±íÉè¼ÆÖĞ£¬×î³õµÄElementCase»¹Ã»ÓĞ¼Óµ½ReportÖĞ,ËùÒÔelementCase.getReport()¿ÉÄÜÎª¿Õ
+        // richer;èšåˆæŠ¥è¡¨è®¾è®¡ä¸­ï¼Œæœ€åˆçš„ElementCaseè¿˜æ²¡æœ‰åŠ åˆ°Reportä¸­,æ‰€ä»¥elementCase.getReport()å¯èƒ½ä¸ºç©º
         ReportSettingsProvider reportSettings = getReportSettings(elementCase);
         PaperSettingProvider psetting = reportSettings.getPaperSetting();
         if (grid.isShowPaginateLine()) {// paint paper margin line.
@@ -145,7 +145,7 @@ public class GridUI extends ComponentUI {
 
             double paperWidth = paperSize.getWidth().toPixD(resolution);
             double paperHeight = paperSize.getHeight().toPixD(resolution);
-            // carl:ºáÏò¾Í·´¹ıÀ´
+            // carl:æ¨ªå‘å°±åè¿‡æ¥
             if (psetting.getOrientation() == ReportConstants.LANDSCAPE) {
                 paperWidth = paperSize.getHeight().toPixD(resolution);
                 paperHeight = paperSize.getWidth().toPixD(resolution);
@@ -159,7 +159,7 @@ public class GridUI extends ComponentUI {
                     - reportSettings.getFooterHeight().toPixD(resolution);
         }
 
-        // denny:»­±³¾°.Background
+        // denny:ç”»èƒŒæ™¯.Background
         Background background = reportSettings.getBackground();
 
         if (background != null) {
@@ -244,11 +244,11 @@ public class GridUI extends ComponentUI {
                                int resolution) {
         Graphics2D g2d = (Graphics2D) g;
 
-        // --¿ªÊ¼»­Ë®Æ½£¬´¹Ö±Ïß.
+        // --å¼€å§‹ç”»æ°´å¹³ï¼Œå‚ç›´çº¿.
         g2d.setPaint(grid.getGridLineColor()); // line color.
         GraphHelper.setStroke(g2d, GraphHelper.getStroke(Constants.LINE_THIN));
 
-        // ·ÖÒ³Ïß
+        // åˆ†é¡µçº¿
         paginateLineList.clear();
 
         new DrawVerticalLineHelper(grid.getVerticalBeginValue(), verticalEndValue,
@@ -261,7 +261,7 @@ public class GridUI extends ComponentUI {
     }
 
     /**
-     * ×îºó´¦Àí
+     * æœ€åå¤„ç†
      */
     public void finalize() {
         try {
@@ -307,11 +307,11 @@ public class GridUI extends ComponentUI {
         protected void iterateStart2End(Graphics2D g2d) {
             float tmpSize = 0, paperSumSize = 0, sumSize = 0;
             for (int i = 0; i <= endIndex; i++) {
-                // denny: ¿ªÊ¼
+                // denny: å¼€å§‹
                 if (i == 0) {
                     i = startIndex;
 
-                    // denny: Ôö¼Ó´Ó0µ½Grid×ó±ß±»hideµÄÁĞ¿í
+                    // denny: å¢åŠ ä»0åˆ°Gridå·¦è¾¹è¢«hideçš„åˆ—å®½
                     for (int k = 0; k < startIndex; k++) {
                         tmpSize = sizeList.get(k).toPixF(resolution);
 
@@ -340,7 +340,7 @@ public class GridUI extends ComponentUI {
                 sumSize += tmpSize;
             }
 
-            // paint ×îºóÒ»¸öºáÏß..
+            // paint æœ€åä¸€ä¸ªæ¨ªçº¿..
             if (showGridLine) {
                 drawLastLine(g2d, (int) sumSize);
             }
@@ -421,18 +421,18 @@ public class GridUI extends ComponentUI {
         int horizontalBeginValue = grid.getHorizontalBeginValue();
         int verticalBeginValue = grid.getVerticalBeginValue();
 
-        // ÔªËØÊıÄ¿.
+        // å…ƒç´ æ•°ç›®.
         Shape oldClip = null;
         TemplateCellElement tmpCellElement = null;
 
         Iterator cells = report.intersect(horizontalBeginValue, verticalBeginValue,
                 horizontalEndValue - horizontalBeginValue, verticalEndValue - verticalBeginValue);
 
-        // ¼ÆËãÒş²ØµôµÄwidth
+        // è®¡ç®—éšè—æ‰çš„width
         double hideWidth = columnWidthList.getRangeValue(0, horizontalValue).toPixD(resolution);
         double hideHeight = rowHeightList.getRangeValue(0, verticalValue).toPixD(resolution);
 
-        // Çå¿ÕleftºÍtopµÄ»æ»­ÇøÓò.
+        // æ¸…ç©ºleftå’Œtopçš„ç»˜ç”»åŒºåŸŸ.
         this.left_col_row_rect.setRect(0, 0, 0, 0);
         this.top_col_row_rect.setRect(0, 0, 0, 0);
 
@@ -448,43 +448,43 @@ public class GridUI extends ComponentUI {
             if (tmpCellElement == null) {
                 continue;
             }
-            // Ç¿ÖÆ·ÖÒ³Ïß
+            // å¼ºåˆ¶åˆ†é¡µçº¿
             this.calculateForcedPagingOfCellElement(reportPane, tmpCellElement, hideWidth, hideHeight);
             storeFatherLocation(selectedCellElement, tmpCellElement);
             // element bounds
             this.caculateScrollVisibleBounds(this.tmpRectangle, tmpCellElement.getColumn(),
                     tmpCellElement.getRow(), tmpCellElement.getColumnSpan(),
                     tmpCellElement.getRowSpan());
-            // peter:clipµÄÇøÓò.
-            // peter:±£Áôclip.
+            // peter:clipçš„åŒºåŸŸ.
+            // peter:ä¿ç•™clip.
             oldClip = g2d.getClip();            /*
-             * alex:´Ë´¦µÄtmpRectangle_1±»GridUtils.validateÅĞ¶Ï±Ø¶¨Îªtrue,
-			 * ÒòÎªÕâĞ©tmpCellElementÊÇintersectµÄ½á¹û ËùÒÔ,²»±ØÅĞ¶ÏÁË
+             * alex:æ­¤å¤„çš„tmpRectangle_1è¢«GridUtils.validateåˆ¤æ–­å¿…å®šä¸ºtrue,
+			 * å› ä¸ºè¿™äº›tmpCellElementæ˜¯intersectçš„ç»“æœ æ‰€ä»¥,ä¸å¿…åˆ¤æ–­äº†
 			 */
             g2d.clip(this.tmpRectangle);
 
-            // Õâ±ßÎªÊ²Ã´Òª¼Ó1? ÒòÎªµ¥Ôª¸ñµÄ×ó±ßºÍÉÏÃæÓĞÏß£¬¿í¶ÈÎªÒ»£¬ÊôÓÚ´Ëµ¥Ôª¸ñ£¬»­µ¥Ôª¸ñµÄÄÚÈİ²»Ó¦¸Ã°ÑÄÇÌõÏß¸øÕÚ×¡ÁË
+            // è¿™è¾¹ä¸ºä»€ä¹ˆè¦åŠ 1? å› ä¸ºå•å…ƒæ ¼çš„å·¦è¾¹å’Œä¸Šé¢æœ‰çº¿ï¼Œå®½åº¦ä¸ºä¸€ï¼Œå±äºæ­¤å•å…ƒæ ¼ï¼Œç”»å•å…ƒæ ¼çš„å†…å®¹ä¸åº”è¯¥æŠŠé‚£æ¡çº¿ç»™é®ä½äº†
             g2d.translate(this.tmpRectangle.getX() + 1, this.tmpRectangle.getY() + 1);
 
-            // peter:tmpRectangle2D_3Ö»ÊÇÒ»¸öÁÙÊ±µÄRectangle2D,ÓÉÓÚºóÃæ²»ÉÙµØ·½ĞèÒªÓÃµ½Õâ¸ö¾ØĞÎ
+            // peter:tmpRectangle2D_3åªæ˜¯ä¸€ä¸ªä¸´æ—¶çš„Rectangle2D,ç”±äºåé¢ä¸å°‘åœ°æ–¹éœ€è¦ç”¨åˆ°è¿™ä¸ªçŸ©å½¢
             this.cell_back_rect.setRect(0, 0, this.tmpRectangle.getWidth() - 1,
                     this.tmpRectangle.getHeight() - 1);
-            // peter:¶ÔÓÚºÏ²¢µÄµ¥Ôª¸ñ,ĞèÒªÏÈ°×É«µÄ±³¾°À´Çå³ı±³¾°.
+            // peter:å¯¹äºåˆå¹¶çš„å•å…ƒæ ¼,éœ€è¦å…ˆç™½è‰²çš„èƒŒæ™¯æ¥æ¸…é™¤èƒŒæ™¯.
             if (tmpCellElement.getColumnSpan() > 1 || tmpCellElement.getRowSpan() > 1) {
                 WHITE_Backgorund.paint(g2d, this.cell_back_rect);
-                //daniel:ÉÏÃæÕâÀï¾ÍÓĞÎÊÌâÁË°¡....±¨±íµÄ±³¾°ÔÚÕâ¸öÖ®Ç°»­µÄ »á¸²¸Ç±¨±í±³¾°....²»¹ıÖ»ÊÇÉè¼ÆÆ÷ÖĞ¿´µ½Ô¤ÀÀä¯ÀÀÃ»ÎÊÌâ
+                //daniel:ä¸Šé¢è¿™é‡Œå°±æœ‰é—®é¢˜äº†å•Š....æŠ¥è¡¨çš„èƒŒæ™¯åœ¨è¿™ä¸ªä¹‹å‰ç”»çš„ ä¼šè¦†ç›–æŠ¥è¡¨èƒŒæ™¯....ä¸è¿‡åªæ˜¯è®¾è®¡å™¨ä¸­çœ‹åˆ°é¢„è§ˆæµè§ˆæ²¡é—®é¢˜
             }
-            // peter:½«Õâ¸öÔªËØÌí¼Óµ½ĞèÒªpaintµÄÔªËØÁĞ±íµ±ÖĞÈ¥,Áô×Å»­±ß¿òÏß..
+            // peter:å°†è¿™ä¸ªå…ƒç´ æ·»åŠ åˆ°éœ€è¦paintçš„å…ƒç´ åˆ—è¡¨å½“ä¸­å»,ç•™ç€ç”»è¾¹æ¡†çº¿..
             paintCellElementList.add(tmpCellElement);
             paintCellElementRectangleList.add(this.tmpRectangle.clone());
 
             int cellWidth = (int) this.tmpRectangle.getWidth(), cellHeight = (int) this.tmpRectangle
                     .getHeight();
-            // denny_Grid: »­GridÖĞµ¥Ôª¸ñµÄÄÚÈİ(°üÀ¨µ¥Ôª¸ñµÄ±³¾°Content + Background), ²»°üÀ¨±ß¿ò
+            // denny_Grid: ç”»Gridä¸­å•å…ƒæ ¼çš„å†…å®¹(åŒ…æ‹¬å•å…ƒæ ¼çš„èƒŒæ™¯Content + Background), ä¸åŒ…æ‹¬è¾¹æ¡†
 
             painter.paintBackground(g2d, report, tmpCellElement, cellWidth, cellHeight);
             painter.paintContent(g2d, report, tmpCellElement, cellWidth, cellHeight, resolution);
-            // denny_Grid: ×¢ÒâÏÂÃæ»¹Òª¼õÒ», ÒòÎªÉÏÃætranslateÊ±¼ÓÒ»
+            // denny_Grid: æ³¨æ„ä¸‹é¢è¿˜è¦å‡ä¸€, å› ä¸ºä¸Šé¢translateæ—¶åŠ ä¸€
             g2d.translate(-this.tmpRectangle.getX() - 1, -this.tmpRectangle.getY() - 1);
             paintAuthorityCell(g2d, tmpCellElement);
             g2d.setClip(oldClip);
@@ -511,29 +511,29 @@ public class GridUI extends ComponentUI {
     }
 
     private void storeFatherLocation(CellElement selectedCellElement, TemplateCellElement tmpCellElement) {
-//		// ĞèÒª¼ì²éÊÇ·ñÔÚDesign×´Ì¬Òş²Ø.
+//		// éœ€è¦æ£€æŸ¥æ˜¯å¦åœ¨DesignçŠ¶æ€éšè—.
 //		CellGUIAttr cellGUIAttr = tmpCellElement.getCellGUIAttr();
 //		if (cellGUIAttr == null) {
-//			// ²»set¸øcurCellElement,¸³ÖµÖ»ÊÇÎªÁË·½±ãÏÂÃæµÄ²Ù×÷
+//			// ä¸setç»™curCellElement,èµ‹å€¼åªæ˜¯ä¸ºäº†æ–¹ä¾¿ä¸‹é¢çš„æ“ä½œ
 //			cellGUIAttr = CellGUIAttr.DEFAULT_CELLGUIATTR;
 //		}
 
 		/*
-         * ¼ÇÂ¼µ±Ç°Ñ¡ÖĞµÄµ¥Ôª¸ñµÄ×ó¸¸ÓëÉÏ¸¸µÄÎ»ÖÃÓÚleftColumnRowRectangle2D &
+         * è®°å½•å½“å‰é€‰ä¸­çš„å•å…ƒæ ¼çš„å·¦çˆ¶ä¸ä¸Šçˆ¶çš„ä½ç½®äºleftColumnRowRectangle2D &
 		 * topColumnRowRectangle2D
 		 */
         if (selectedCellElement == tmpCellElement) {
             CellExpandAttr cellExpandAttr = tmpCellElement.getCellExpandAttr();
             if (cellExpandAttr != null) {
                 ColumnRow leftColumnRow = cellExpandAttr.getLeftParentColumnRow();
-                // leftColumnRow±ØĞëÔÚ¿ÉÊÓ·¶Î§ÄÚ
+                // leftColumnRowå¿…é¡»åœ¨å¯è§†èŒƒå›´å†…
                 if (ColumnRow.validate(leftColumnRow)) {
                     this.caculateScrollVisibleBounds(this.left_col_row_rect,
                             leftColumnRow.getColumn(), leftColumnRow.getRow(), 1, 1);
                 }
 
                 ColumnRow topColumnRow = cellExpandAttr.getUpParentColumnRow();
-                // topColumnRow±ØĞëÔÚ¿ÉÊÓ·¶Î§ÄÚ
+                // topColumnRowå¿…é¡»åœ¨å¯è§†èŒƒå›´å†…
                 if (ColumnRow.validate(topColumnRow)) {
                     this.caculateScrollVisibleBounds(this.top_col_row_rect,
                             topColumnRow.getColumn(), topColumnRow.getRow(), 1, 1);
@@ -543,16 +543,16 @@ public class GridUI extends ComponentUI {
     }
 
     private void paintBorder(Graphics2D g2d, TemplateCellElement tmpCellElement, TemplateElementCase report) {
-        // »­±ß¿ò
+        // ç”»è¾¹æ¡†
         Rectangle2D.Double tmpCellElementRectangle;
         for (int i = 0; i < paintCellElementList.size(); i++) {
             tmpCellElement = (TemplateCellElement) paintCellElementList.get(i);
             tmpCellElementRectangle = (Rectangle2D.Double) paintCellElementRectangleList.get(i);
 
-            // ĞèÒª¼ì²éÊÇ·ñÔÚDesign×´Ì¬Òş²Ø.
+            // éœ€è¦æ£€æŸ¥æ˜¯å¦åœ¨DesignçŠ¶æ€éšè—.
             CellGUIAttr cellGUIAttr = tmpCellElement.getCellGUIAttr();
             if (cellGUIAttr == null) {
-                // ²»set¸øcurCellElement,¸³ÖµÖ»ÊÇÎªÁË·½±ãÏÂÃæµÄ²Ù×÷
+                // ä¸setç»™curCellElement,èµ‹å€¼åªæ˜¯ä¸ºäº†æ–¹ä¾¿ä¸‹é¢çš„æ“ä½œ
                 cellGUIAttr = CellGUIAttr.DEFAULT_CELLGUIATTR;
             }
 
@@ -566,7 +566,7 @@ public class GridUI extends ComponentUI {
     }
 
     private void paintFatherLeft(Graphics2D g2d) {
-        // »­×ó¸¸¸ñ×Ó.
+        // ç”»å·¦çˆ¶æ ¼å­.
         if (validate(this.left_col_row_rect) && this.left_col_row_rect.getHeight() > 5) {
             g2d.setPaint(Color.BLUE);
             double centerX = this.left_col_row_rect.getX() + 4;
@@ -595,20 +595,20 @@ public class GridUI extends ComponentUI {
     private void paintPaginateLines(Graphics g, Grid grid) {
         JTemplate jTemplate = HistoryTemplateListPane.getInstance().getCurrentEditingTemplate();
         if(!jTemplate.isJWorkBook()){
-            //±¨±í¿éÎŞ·ÖÒ³Ö®Ëµ
+            //æŠ¥è¡¨å—æ— åˆ†é¡µä¹‹è¯´
             return;
         }
         Graphics2D g2d = (Graphics2D) g;
 
-        // james »­·ÖÒ³Ïß
+        // james ç”»åˆ†é¡µçº¿
         if (this.paginateLineList.size() > 0) {
             Line2D tmpLine2D = new Line2D.Double(0, 0, 0, 0);
 
             // james
-            // ÊáÀíforcedPaperMarginLineList£¬½«ÆäÖĞÏàÍ¬µÄÏßÈ¥³ı£¬·ñÔòÔÚGridµÄpaintConponetÊ±»áÒòsetXORMode¶ø½«ÏàÍ¬µÄÏß¸ø¸²¸Çµô
+            // æ¢³ç†forcedPaperMarginLineListï¼Œå°†å…¶ä¸­ç›¸åŒçš„çº¿å»é™¤ï¼Œå¦åˆ™åœ¨Gridçš„paintConponetæ—¶ä¼šå› setXORModeè€Œå°†ç›¸åŒçš„çº¿ç»™è¦†ç›–æ‰
             Line2D tmpLine2D2;
             for (int j = 0; j < paginateLineList.size(); j++) {
-                tmpLine2D = (Line2D) paginateLineList.get(j);// Ö±½ÓÇ¿ÖÆ×ª»»£¬ÒòÎªListÖĞ¿Ï¶¨¶¼ÊÇLine2DĞÍµÄ
+                tmpLine2D = (Line2D) paginateLineList.get(j);// ç›´æ¥å¼ºåˆ¶è½¬æ¢ï¼Œå› ä¸ºListä¸­è‚¯å®šéƒ½æ˜¯Line2Då‹çš„
                 for (int k = j + 1; k < paginateLineList.size(); k++) {
                     tmpLine2D2 = (Line2D) paginateLineList.get(k);
                     if (tmpLine2D2.getX1() == tmpLine2D.getX1()
@@ -635,10 +635,10 @@ public class GridUI extends ComponentUI {
     private void paintGridSelection(Graphics g, Grid grid, ElementCase report) {
         Graphics2D g2d = (Graphics2D) g;
         Selection sel = grid.getElementCasePane().getSelection();
-        // »­GridSelection:CELL
-        if (sel instanceof CellSelection) {// james:cell²»¿ÉÒÔselectµÄÊ±ºò¾Í²»»­ÁË
+        // ç”»GridSelection:CELL
+        if (sel instanceof CellSelection) {// james:cellä¸å¯ä»¥selectçš„æ—¶å€™å°±ä¸ç”»äº†
             CellSelection gridSelection = (CellSelection) sel;
-            // peter:¿ªÊ¼Ñ¡Ôñ¿òCellRectangle.
+            // peter:å¼€å§‹é€‰æ‹©æ¡†CellRectangle.
             Rectangle editRectangle = gridSelection.getEditRectangle();
             int cellRectangleCount = gridSelection.getCellRectangleCount();
             Area selectedCellRectArea = new Area();
@@ -662,7 +662,7 @@ public class GridUI extends ComponentUI {
                 referenced = paintReferenceCell(reportPane, grid, g2d, editCellRectArea, selectedCellRectArea, referenced);
                 paintFormatArea(selectedCellRectArea, gridSelection, grid, g2d, referenced);
             }
-            // denny: ±ê¼Ç¹«Ê½ÓÃµ½µÄµ¥Ôª¸ñ
+            // denny: æ ‡è®°å…¬å¼ç”¨åˆ°çš„å•å…ƒæ ¼
             paintGridSelectionForFormula(g2d, report, gridSelection);
         }
     }
@@ -705,8 +705,8 @@ public class GridUI extends ComponentUI {
             double selectedCellWidth = this.tmpRectangle.getWidth();
             double selectedCellHeight = this.tmpRectangle.getHeight();
 
-            // TODO ALEX_SEP Õâ¸ö°ëÍ¸Ã÷µÄ,»­²»»­ÄØ?
-            // peter:»­°ëÍ¸Ã÷µÄ±³¾°,±ØĞëSelectCellRectangleºÍEditCellRectangle²»ÖØ¸´²ÅĞèÒª°ëÍ¸Ã÷±³¾°.
+            // TODO ALEX_SEP è¿™ä¸ªåŠé€æ˜çš„,ç”»ä¸ç”»å‘¢?
+            // peter:ç”»åŠé€æ˜çš„èƒŒæ™¯,å¿…é¡»SelectCellRectangleå’ŒEditCellRectangleä¸é‡å¤æ‰éœ€è¦åŠé€æ˜èƒŒæ™¯.
             if (gridSelection.getRowSpan() > 1
                     || gridSelection.getColumnSpan() > 1) {
                 Composite oldComposite = g2d.getComposite();
@@ -730,8 +730,8 @@ public class GridUI extends ComponentUI {
             double selectedCellWidth = this.tmpRectangle.getWidth();
             double selectedCellHeight = this.tmpRectangle.getHeight();
 
-            // TODO ALEX_SEP Õâ¸ö°ëÍ¸Ã÷µÄ,»­²»»­ÄØ?
-            // peter:»­°ëÍ¸Ã÷µÄ±³¾°,±ØĞëSelectCellRectangleºÍEditCellRectangle²»ÖØ¸´²ÅĞèÒª°ëÍ¸Ã÷±³¾°.
+            // TODO ALEX_SEP è¿™ä¸ªåŠé€æ˜çš„,ç”»ä¸ç”»å‘¢?
+            // peter:ç”»åŠé€æ˜çš„èƒŒæ™¯,å¿…é¡»SelectCellRectangleå’ŒEditCellRectangleä¸é‡å¤æ‰éœ€è¦åŠé€æ˜èƒŒæ™¯.
             if (gridSelection.getRowSpan() > 1
                     || gridSelection.getColumnSpan() > 1) {
                 Composite oldComposite = g2d.getComposite();
@@ -742,7 +742,7 @@ public class GridUI extends ComponentUI {
             }
 
 
-            // ÅĞ¶ÏÊÇ·ñÊ¹ÓÃÖÇÄÜÌí¼Óµ¥Ôª¸ñÈôÊ¹ÓÃÖÇÄÜÌí¼Óµ¥Ôª¸ñ£¬Ôò»­¶¯Ì¬ĞéÏß
+            // åˆ¤æ–­æ˜¯å¦ä½¿ç”¨æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼è‹¥ä½¿ç”¨æ™ºèƒ½æ·»åŠ å•å…ƒæ ¼ï¼Œåˆ™ç”»åŠ¨æ€è™šçº¿
             paintGridSelectionDependsOnTableSelectionPane(g2d, selectedCellX, selectedCellY, selectedCellWidth, selectedCellHeight, grid);
         }
     }
@@ -753,11 +753,11 @@ public class GridUI extends ComponentUI {
         selectedCellRectArea = new Area();
         // cellRectangleCount > 1
 
-        // p:ÏÂÃæ´¦Àí¶à¸öÑ¡ÔñµÄÇé¿ö£¬Âé·³Ò»Ğ©.
+        // p:ä¸‹é¢å¤„ç†å¤šä¸ªé€‰æ‹©çš„æƒ…å†µï¼Œéº»çƒ¦ä¸€äº›.
         for (int i = 0; i < cellRectangleCount; i++) {
             Rectangle cellRectangle = gridSelection.getCellRectangle(i);
 
-            // p:¼ÆËãCellSelection.
+            // p:è®¡ç®—CellSelection.
             this.caculateScrollVisibleBounds(this.tmpRectangle, cellRectangle);
 
             if (validate(this.tmpRectangle)) {
@@ -769,16 +769,16 @@ public class GridUI extends ComponentUI {
         selectedCellRectArea.add(editCellRectArea);
         selectedCellRectArea.exclusiveOr(editCellRectArea);
 
-        // denny: »­°ëÍ¸Ã÷±³¾°
+        // denny: ç”»åŠé€æ˜èƒŒæ™¯
         Composite oldComposite = g2d.getComposite();
         g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
         g2d.setPaint(grid.getSelectedBackground());
         GraphHelper.fill(g2d, selectedCellRectArea);
         g2d.setComposite(oldComposite);
 
-        // p:»­edit¿Õ°×ÇøÓòµÄ±ß¿ò.
+        // p:ç”»editç©ºç™½åŒºåŸŸçš„è¾¹æ¡†.
         g2d.setPaint(Color.blue);
-        // marks:Èç¹ûeditCellRectAreaÎª¿Õ£¬¾Í²»ĞèÒª»­£¬ËµÃ÷¶¼²»ÔÚ¿É¼ûÇøÓòÄÚ
+        // marks:å¦‚æœeditCellRectAreaä¸ºç©ºï¼Œå°±ä¸éœ€è¦ç”»ï¼Œè¯´æ˜éƒ½ä¸åœ¨å¯è§åŒºåŸŸå†…
         if (editCellRectArea != null) {
             GraphHelper.draw(g2d, editCellRectArea);
         }
@@ -788,12 +788,12 @@ public class GridUI extends ComponentUI {
 
 
     private void paintGridSelectionForFormula(Graphics2D g2d, ElementCase report, CellSelection cs) {
-        // denny: ±ê¼Ç¹«Ê½ÓÃµ½µÄµ¥Ôª¸ñ
+        // denny: æ ‡è®°å…¬å¼ç”¨åˆ°çš„å•å…ƒæ ¼
         if (report.getCellValue(cs.getColumn(), cs.getRow()) instanceof Formula) {
             Formula tmpFormula = (Formula) report
                     .getCellValue(cs.getColumn(), cs.getRow());
             String statement = tmpFormula.getContent();
-            // denny: »ñµÃ¹«Ê½ÖĞ°üº¬µÄËùÓĞµ¥Ôª¸ñ
+            // denny: è·å¾—å…¬å¼ä¸­åŒ…å«çš„æ‰€æœ‰å•å…ƒæ ¼
             ColumnRow[] columnRowArray = new ColumnRow[0];
             try {
                 columnRowArray = CalculatorUtils.relatedColumnRowArray(statement.substring(1));
@@ -810,7 +810,7 @@ public class GridUI extends ComponentUI {
                 if (columnRowCE != null) {
                     columnSpan = columnRowCE.getColumnSpan();
                     rowSpan = columnRowCE.getRowSpan();
-                    // _denny: Èç¹ûÈ¡µÃÊÇºÏ²¢µ¥Ôª¸ñµÄºóÃæµÄ£¬ÄÇÃ´ĞèÒªÖØÖÃcolumnRow
+                    // _denny: å¦‚æœå–å¾—æ˜¯åˆå¹¶å•å…ƒæ ¼çš„åé¢çš„ï¼Œé‚£ä¹ˆéœ€è¦é‡ç½®columnRow
                     if (columnSpan > 1 || rowSpan > 1) {
                         columnRow = ColumnRow.valueOf(columnRowCE.getColumn(),
                                 columnRowCE.getRow());
@@ -828,12 +828,12 @@ public class GridUI extends ComponentUI {
     }
 
     private void paintFormulaCellArea(Graphics2D g2d, Area formulaCellArea, int i) {
-        // denny: ±ê¼Ç¸ñ×ÓµÄ±ß¿ò
+        // denny: æ ‡è®°æ ¼å­çš„è¾¹æ¡†
         formulaCellArea = new Area(new Rectangle2D.Double(this.tmpRectangle.getX(),
                 this.tmpRectangle.getY(), this.tmpRectangle.getWidth(),
                 this.tmpRectangle.getHeight()));
 
-        // peter:È¥µôeditµÄ¸ñ×ÓÇøÓò
+        // peter:å»æ‰editçš„æ ¼å­åŒºåŸŸ
         formulaCellArea.exclusiveOr(new Area(
                 new Rectangle2D.Double(this.tmpRectangle.getX() + 1,
                         this.tmpRectangle.getY() + 1,
@@ -861,10 +861,10 @@ public class GridUI extends ComponentUI {
     private void paintGridSelectionDependsOnTableSelectionPane(Graphics2D g2d, double selectedCellX, double selectedCellY,
                                                                double selectedCellWidth, double selectedCellHeight, Grid grid) {
         if (grid.IsNotShowingTableSelectPane()) {
-            // peter:¹¹½¨²¢¿ªÊ¼»­±ß¿ò,Ö»ĞèÒª¶ÔµÚÒ»¸öCell
+            // peter:æ„å»ºå¹¶å¼€å§‹ç”»è¾¹æ¡†,åªéœ€è¦å¯¹ç¬¬ä¸€ä¸ªCell
             paintNormal(g2d, selectedCellX, selectedCellY, selectedCellWidth, selectedCellHeight, grid);
         } else {
-            // ¶¯Ì¬ĞéÏß
+            // åŠ¨æ€è™šçº¿
             Stroke stroke = g2d.getStroke();
             g2d.setStroke(new BasicStroke(1));
             if (drawFlowRect == null) {
@@ -893,7 +893,7 @@ public class GridUI extends ComponentUI {
         this.back_or_selection_rect.setRect(selectedCellX + selectedCellWidth - 3,
                 selectedCellY + selectedCellHeight - 1, 1, 3);
         borderLineArea.exclusiveOr(new Area(this.back_or_selection_rect));
-        // peter:ÓÒÏÂ½ÇÂäµÄÄÇ¸öĞ¡ºÚ·½¿é.
+        // peter:å³ä¸‹è§’è½çš„é‚£ä¸ªå°é»‘æ–¹å—.
         this.back_or_selection_rect.setRect(selectedCellX + selectedCellWidth - 2,
                 selectedCellY + selectedCellHeight - 2, 5, 5);
         borderLineArea.add(new Area(this.back_or_selection_rect));
@@ -917,7 +917,7 @@ public class GridUI extends ComponentUI {
                     tmpFloatElement.getTopDistance().toFU() + tmpFloatElement.getHeight().toFU()
             ));
 
-            // ÏŞÖÆÏà¶ÔÎ»ÖÃ.
+            // é™åˆ¶ç›¸å¯¹ä½ç½®.
             if (isSuitablePosition(lastRow)) {
                 float floatX = columnWidthList.getRangeValue(horizontalValue, 0).toPixF(
                         resolution)
@@ -935,8 +935,8 @@ public class GridUI extends ComponentUI {
             }
         }
 
-        // p:»­Ñ¡ÖĞµÄĞü¸¡ÔªËØµÄ±ß¿ò,ÕâÀï±ØĞëÔÙÑ­»·Ò»´ÎËùÓĞµÄĞü¸¡ÔªËØ£¬
-        // ÒòÎªÕâĞ©·½¿òÑ¡Ôñµã£¬¼°Ê±Õâ¸öĞü¸¡ÔªËØ±»¸²¸ÇµÄÊ±ºò£¬»¹ÄÜ¹»Ñ¡ÖĞµã»÷µÄ£¬À´¸Ä±äÔªËØµÄ³ß´çµÄ.
+        // p:ç”»é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ çš„è¾¹æ¡†,è¿™é‡Œå¿…é¡»å†å¾ªç¯ä¸€æ¬¡æ‰€æœ‰çš„æ‚¬æµ®å…ƒç´ ï¼Œ
+        // å› ä¸ºè¿™äº›æ–¹æ¡†é€‰æ‹©ç‚¹ï¼ŒåŠæ—¶è¿™ä¸ªæ‚¬æµ®å…ƒç´ è¢«è¦†ç›–çš„æ—¶å€™ï¼Œè¿˜èƒ½å¤Ÿé€‰ä¸­ç‚¹å‡»çš„ï¼Œæ¥æ”¹å˜å…ƒç´ çš„å°ºå¯¸çš„.
         paintFloatElementsBorder(g2d, grid, sel, flotIt, report);
 
         paintAuthorityFloatElement(g2d, report, ReportAndFSManagePane.getInstance().getRoleTree().getSelectedRoleName(), grid);
@@ -949,13 +949,13 @@ public class GridUI extends ComponentUI {
     }
 
     private void paintFloatElementsBorder(Graphics2D g2d, Grid grid, Selection sel, Iterator flotIt, ElementCase report) {
-        // p:»­Ñ¡ÖĞµÄĞü¸¡ÔªËØµÄ±ß¿ò,ÕâÀï±ØĞëÔÙÑ­»·Ò»´ÎËùÓĞµÄĞü¸¡ÔªËØ£¬
-        // ÒòÎªÕâĞ©·½¿òÑ¡Ôñµã£¬¼°Ê±Õâ¸öĞü¸¡ÔªËØ±»¸²¸ÇµÄÊ±ºò£¬»¹ÄÜ¹»Ñ¡ÖĞµã»÷µÄ£¬À´¸Ä±äÔªËØµÄ³ß´çµÄ.
+        // p:ç”»é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ çš„è¾¹æ¡†,è¿™é‡Œå¿…é¡»å†å¾ªç¯ä¸€æ¬¡æ‰€æœ‰çš„æ‚¬æµ®å…ƒç´ ï¼Œ
+        // å› ä¸ºè¿™äº›æ–¹æ¡†é€‰æ‹©ç‚¹ï¼ŒåŠæ—¶è¿™ä¸ªæ‚¬æµ®å…ƒç´ è¢«è¦†ç›–çš„æ—¶å€™ï¼Œè¿˜èƒ½å¤Ÿé€‰ä¸­ç‚¹å‡»çš„ï¼Œæ¥æ”¹å˜å…ƒç´ çš„å°ºå¯¸çš„.
         if (sel instanceof FloatSelection) {
             flotIt = report.floatIterator();
             while (flotIt.hasNext()) {
                 FloatElement tmpFloatElement = (FloatElement) flotIt.next();
-                // p:Èç¹û²»ÊÇÑ¡ÖĞµÄĞü¸¡ÔªËØ,Ö±½Ócontinue.
+                // p:å¦‚æœä¸æ˜¯é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ ,ç›´æ¥continue.
                 if (!ComparatorUtils.equals(tmpFloatElement.getName(), ((FloatSelection) sel).getSelectedFloatName())) {
                     continue;
                 }
@@ -999,7 +999,7 @@ public class GridUI extends ComponentUI {
         Iterator flotIt = report.floatIterator();
         while (flotIt.hasNext()) {
             FloatElement tmpFloatElement = (FloatElement) flotIt.next();
-            // p:Èç¹û²»ÊÇÑ¡ÖĞµÄĞü¸¡ÔªËØ,Ö±½Ócontinue.
+            // p:å¦‚æœä¸æ˜¯é€‰ä¸­çš„æ‚¬æµ®å…ƒç´ ,ç›´æ¥continue.
             if (!tmpFloatElement.getFloatPrivilegeControl().checkInvisible(selectedRoles)) {
                 continue;
             }
@@ -1014,7 +1014,7 @@ public class GridUI extends ComponentUI {
             double width = floatX2 - x;
             double height = floatY2 - y;
 
-            //»­×ö¹ıÈ¨ÏŞ±à¼­¹ıµÄĞü¸¡ÔªËØµÄ±ß¿ò
+            //ç”»åšè¿‡æƒé™ç¼–è¾‘è¿‡çš„æ‚¬æµ®å…ƒç´ çš„è¾¹æ¡†
             if (isAuthority) {
                 paintAuthorityFloatElementBorder(g2d, x, y, width, height, grid);
             }
@@ -1060,48 +1060,48 @@ public class GridUI extends ComponentUI {
 
         Grid grid = (Grid) c;
 
-        // È¡µÃElementCasePane.ElementCase
+        // å–å¾—ElementCasePane.ElementCase
         ElementCasePane elementCasePane = grid.getElementCasePane();
-        TemplateElementCase elementCase = elementCasePane.getEditingElementCase();// È¡³öElementCase¶ÔÏó
+        TemplateElementCase elementCase = elementCasePane.getEditingElementCase();// å–å‡ºElementCaseå¯¹è±¡
 
         dealWithSizeBeforePaint(grid, elementCase);
 
-        double realWidth = gridSize.getWidth();// ¿í¶È
-        double realHeight = gridSize.getHeight();// ¸ß¶È
+        double realWidth = gridSize.getWidth();// å®½åº¦
+        double realHeight = gridSize.getHeight();// é«˜åº¦
 
-        // »­±³¾°
+        // ç”»èƒŒæ™¯
         this.paintBackground(g2d, grid, elementCase, resolution);
 
-        // »­Grid Line
+        // ç”»Grid Line
         this.paintGridLine(g2d, grid, realWidth, realHeight, resolution);
 
-        // peter:ÌíÉÏÏß³ÌµÄÖ§³Ö,ÓĞÊ±ºò,paintÔªËØµÄÊ±ºò,¿ÉÄÜ»áÓĞÔªËØ±»É¾³ıÁË.
-        // ĞèÒªÏÈÇå³ı»­BorderĞèÒªµÄÔªËØ.
+        // peter:æ·»ä¸Šçº¿ç¨‹çš„æ”¯æŒ,æœ‰æ—¶å€™,paintå…ƒç´ çš„æ—¶å€™,å¯èƒ½ä¼šæœ‰å…ƒç´ è¢«åˆ é™¤äº†.
+        // éœ€è¦å…ˆæ¸…é™¤ç”»Borderéœ€è¦çš„å…ƒç´ .
         paintCellElementList.clear();
         paintCellElementRectangleList.clear();
 
-        // »­µ¥Ôª¸ñÔªËØ
+        // ç”»å•å…ƒæ ¼å…ƒç´ 
         this.paintCellElements(g2d, grid, elementCase, resolution);
 
-        // »­·ÖÒ³Ïß
+        // ç”»åˆ†é¡µçº¿
         this.paintPaginateLines(g2d, grid);
 
-        // »­ GridSelection
+        // ç”» GridSelection
         if (!(isAuthority && elementCase instanceof WorkSheet && !((WorkSheet) elementCase).isPaintSelection())) {
             this.paintGridSelection(g2d, grid, elementCase);
         }
 
-        // »­Ğü¸¡ÔªËØ
+        // ç”»æ‚¬æµ®å…ƒç´ 
         this.paintFloatElements(g2d, grid, elementCase, resolution);
 
-        // »­Drag¸ñ×ÓµÄ±ß¿ò.
+        // ç”»Dragæ ¼å­çš„è¾¹æ¡†.
         this.paintDragCellBorder(g2d, grid);
 
         grid.ajustEditorComponentBounds(); // refresh size
     }
 
     private void dealWithSizeBeforePaint(Grid grid, TemplateElementCase elementCase) {
-        // È¡³öËùÓĞµÄĞĞ¸ßºÍÁĞ¿íµÄList
+        // å–å‡ºæ‰€æœ‰çš„è¡Œé«˜å’Œåˆ—å®½çš„List
         this.rowHeightList = ReportHelper.getRowHeightList(elementCase);
         this.columnWidthList = ReportHelper.getColumnWidthList(elementCase);
 
@@ -1116,7 +1116,7 @@ public class GridUI extends ComponentUI {
         grid.setHorizontalBeginValue(horizontalValue);
         // denny: end
 
-        // »ñµÃ¿Ø¼şµÄÊµ¼Ê³ß´ç
+        // è·å¾—æ§ä»¶çš„å®é™…å°ºå¯¸
         this.gridSize = grid.getSize();
 
         this.verticalEndValue = verticalValue + verticalExtent + 1;
@@ -1124,10 +1124,10 @@ public class GridUI extends ComponentUI {
     }
 
     /**
-     * ¼ÆËãµ¥Ôª¸ñ¿É¼ûµÄ±ß¿ò·¶Î§
+     * è®¡ç®—å•å…ƒæ ¼å¯è§çš„è¾¹æ¡†èŒƒå›´
      *
-     * @param rect        ÓÃÓÚ¼ÆËãµÄrect
-     * @param cellElement µ¥Ôª¸ñ
+     * @param rect        ç”¨äºè®¡ç®—çš„rect
+     * @param cellElement å•å…ƒæ ¼
      */
     public void caculateScrollVisibleBounds(Rectangle2D.Double rect, CellElement cellElement) {
         caculateScrollVisibleBounds(rect, cellElement.getColumn(), cellElement.getRow(),
@@ -1135,33 +1135,33 @@ public class GridUI extends ComponentUI {
     }
 
     /**
-     * ¼ÆËã¾ØĞÎ¿É¼ûµÄ±ß¿ò·¶Î§
+     * è®¡ç®—çŸ©å½¢å¯è§çš„è¾¹æ¡†èŒƒå›´
      *
-     * @param rect   ÓÃÓÚ¼ÆËãµÄrect
-     * @param target Ä¿±ê¾ØĞÎ
+     * @param rect   ç”¨äºè®¡ç®—çš„rect
+     * @param target ç›®æ ‡çŸ©å½¢
      */
     public void caculateScrollVisibleBounds(Rectangle2D.Double rect, Rectangle target) {
         caculateScrollVisibleBounds(rect, target.x, target.y, target.width, target.height);
     }
 
     /**
-     * ¼ÆËã(int column,int row,int columnSpan,int rowSpan,),ÔÚGrid¿Ø¼şÉÏÃæµÄÎ»ÖÃ.
-     * ×¢Òâ:·µ»ØµÄpaintRectangleºÍclipRectangle²»ÄÜÎªnull,À´Çø±ğÊÇ·ñ²»ĞèÒªpaint»òÕßÃ»ÓĞclip.
-     * ÒòÎªÕâ¸ö·½·¨ÓÃÔÚGridÀïÃæ,ÎªÁË¼Ó¿ìGridµÄpaintËÙ¶È,²»ÄÜ²»Í£µÄnew Rectangle()À´Ôö¼ÓÄÚ´æµÄÏûºÄ.
+     * è®¡ç®—(int column,int row,int columnSpan,int rowSpan,),åœ¨Gridæ§ä»¶ä¸Šé¢çš„ä½ç½®.
+     * æ³¨æ„:è¿”å›çš„paintRectangleå’ŒclipRectangleä¸èƒ½ä¸ºnull,æ¥åŒºåˆ«æ˜¯å¦ä¸éœ€è¦paintæˆ–è€…æ²¡æœ‰clip.
+     * å› ä¸ºè¿™ä¸ªæ–¹æ³•ç”¨åœ¨Gridé‡Œé¢,ä¸ºäº†åŠ å¿«Gridçš„painté€Ÿåº¦,ä¸èƒ½ä¸åœçš„new Rectangle()æ¥å¢åŠ å†…å­˜çš„æ¶ˆè€—.
      * <p/>
-     * ´¦Àí¹ıµÄtmpRectangle2Ds±ØĞë¾­¹ıvalidateµÄ´¦Àí²Å¿ÉÒÔÊ¹ÓÃ!!
+     * å¤„ç†è¿‡çš„tmpRectangle2Dså¿…é¡»ç»è¿‡validateçš„å¤„ç†æ‰å¯ä»¥ä½¿ç”¨!!
      *
-     * @param rect       rectÊÇÒ»¸ö³¤¶ÈÎª8µÄRectangle2DÊı×é, »æ»­µÄÇøÓò²»¿É¼û paintRectangle.x =INVALID_INTEGER
-     * @param column     ÁĞ
-     * @param row        ĞĞ
-     * @param columnSpan ÁĞÊı
-     * @param rowSpan    ĞĞÊı
+     * @param rect       rectæ˜¯ä¸€ä¸ªé•¿åº¦ä¸º8çš„Rectangle2Dæ•°ç»„, ç»˜ç”»çš„åŒºåŸŸä¸å¯è§ paintRectangle.x =INVALID_INTEGER
+     * @param column     åˆ—
+     * @param row        è¡Œ
+     * @param columnSpan åˆ—æ•°
+     * @param rowSpan    è¡Œæ•°
      */
     public void caculateScrollVisibleBounds(Rectangle2D.Double rect, int column, int row,
                                             int columnSpan, int rowSpan) {
-        // ÅĞ¶ÏÊÇ·ñÔÚ²»¿É¼ûµÄÇøÓò.
+        // åˆ¤æ–­æ˜¯å¦åœ¨ä¸å¯è§çš„åŒºåŸŸ.
         if (outOfScreen(column, row, columnSpan, rowSpan)) {
-            // Èç¹ûÔÚÆÁÄ»Ö®Íâ,±ä³ÉINVALID_INTEGER
+            // å¦‚æœåœ¨å±å¹•ä¹‹å¤–,å˜æˆINVALID_INTEGER
             rect.x = INVALID_INTEGER;
         } else {
             rect.x = (columnWidthList.getRangeValue(horizontalValue, column))
@@ -1179,10 +1179,10 @@ public class GridUI extends ComponentUI {
     }
 
     /**
-     * ÊÇ·ñÓĞĞ§µÄRectangle2D
+     * æ˜¯å¦æœ‰æ•ˆçš„Rectangle2D
      *
-     * @param rect Ä¿±êrect
-     * @return ÓĞĞ§·µ»Øtrue
+     * @param rect ç›®æ ‡rect
+     * @return æœ‰æ•ˆè¿”å›true
      */
     public static boolean validate(Rectangle2D rect) {
         return rect != null && rect.getX() != INVALID_INTEGER;
@@ -1190,12 +1190,12 @@ public class GridUI extends ComponentUI {
 
 
     /**
-     * double frozenHeight´Ó¶¥²¿µ½¶³½á´°¿ÚµÄ¸ñ×Ó¸ß¶È
+     * double frozenHeightä»é¡¶éƒ¨åˆ°å†»ç»“çª—å£çš„æ ¼å­é«˜åº¦
      *
-     * @param reportPane     ÓÃÓÚ¼ÆËãµÄµ¥Ôª¸ñÃæ°å
-     * @param tmpCellElement ÓÃÓÚ¼ÆËãµÄelement
-     * @param hideWidth      ÓÉÓÚ¶³½á´°¿Ú»ò¹ö¶¯Ìõ¹ö¶¯Òş²ØÁËµÄ×Ü¿í¶È double
-     * @param hideHeight     ÓÉÓÚ¶³½á´°¿Ú»ò¹ö¶¯Ìõ¹ö¶¯Òş²ØÁËµÄ×Ü¸ß¶È double frozenWidth;//´Ó×ó²àµ½¶³½á´°¿ÚµÄ¸ñ×Ó¿í¶È
+     * @param reportPane     ç”¨äºè®¡ç®—çš„å•å…ƒæ ¼é¢æ¿
+     * @param tmpCellElement ç”¨äºè®¡ç®—çš„element
+     * @param hideWidth      ç”±äºå†»ç»“çª—å£æˆ–æ»šåŠ¨æ¡æ»šåŠ¨éšè—äº†çš„æ€»å®½åº¦ double
+     * @param hideHeight     ç”±äºå†»ç»“çª—å£æˆ–æ»šåŠ¨æ¡æ»šåŠ¨éšè—äº†çš„æ€»é«˜åº¦ double frozenWidth;//ä»å·¦ä¾§åˆ°å†»ç»“çª—å£çš„æ ¼å­å®½åº¦
      */
     public void calculateForcedPagingOfCellElement(ElementCasePane reportPane,
                                                    CellElement tmpCellElement, double hideWidth, double hideHeight) {
@@ -1203,7 +1203,7 @@ public class GridUI extends ComponentUI {
             return;
         }
 
-        // ÕÒ³öËùÓĞĞèÒªpaintµÄÇ¿ÖÆ·ÖÒ³Ïß
+        // æ‰¾å‡ºæ‰€æœ‰éœ€è¦paintçš„å¼ºåˆ¶åˆ†é¡µçº¿
         CellPageAttr cellPageAttr = tmpCellElement.getCellPageAttr();
         if (cellPageAttr == null) {
             return;
@@ -1217,8 +1217,8 @@ public class GridUI extends ComponentUI {
         int width = reportPane.getSize().width;
         int height = reportPane.getSize().height;
 
-        double sumWidth;// ·ÖÒ³ÏßµÄÆğÊ¼xÎ»ÖÃ
-        double sumHeight;// ·ÖÒ³ÏßµÄÆğÊ¼yÎ»ÖÃ
+        double sumWidth;// åˆ†é¡µçº¿çš„èµ·å§‹xä½ç½®
+        double sumHeight;// åˆ†é¡µçº¿çš„èµ·å§‹yä½ç½®
         if (cellPageAttr.isPageAfterColumn()) {
             sumWidth = columnWidthList.getRangeValueFromZero(
                     tmpCellElement.getColumn() + tmpCellElement.getColumnSpan()).toPixD(resolution)

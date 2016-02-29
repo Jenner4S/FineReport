@@ -9,7 +9,7 @@ import java.awt.*;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: œ¬ŒÁ3:04
+ * Time: ‰∏ãÂçà3:04
  */
 public class ThemeUtils {
     public static final ColorUIResource NORMAL_FOREGROUND = new ColorUIResource(0, 0, 0);

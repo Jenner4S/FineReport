@@ -25,7 +25,7 @@ public class GridKeyAction extends AbstractAction {
 	}
 
 	/**
-	 * ×¢²áÄ¬ÈÏµÄInputMapºÍActionMap.
+	 * æ³¨å†Œé»˜è®¤çš„InputMapå’ŒActionMap.
 	 */
 	protected static void initGridInputActionMap(Grid grid) {
 		InputMap inputMap = grid.getInputMap();

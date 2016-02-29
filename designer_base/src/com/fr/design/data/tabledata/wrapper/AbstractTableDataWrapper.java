@@ -34,12 +34,12 @@ public abstract class AbstractTableDataWrapper implements TableDataWrapper {
 	}
 
     /**
-	 * »ñÈ¡Êı¾İ¼¯µÄËùÓĞÁĞÃûlist
+	 * è·å–æ•°æ®é›†çš„æ‰€æœ‰åˆ—ålist
 	 * 
-	 * @return Êı¾İ¼¯µÄËùÓĞÁĞÃûlist
+	 * @return æ•°æ®é›†çš„æ‰€æœ‰åˆ—ålist
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:51:41
+	 * @date 2014-11-24-ä¸‹åˆ3:51:41
 	 * 
 	 */
 	public List<String> calculateColumnNameList() {
@@ -69,12 +69,12 @@ public abstract class AbstractTableDataWrapper implements TableDataWrapper {
 	}
 
     /**
-	 * Éú³É×Ó½Úµã
+	 * ç”Ÿæˆå­èŠ‚ç‚¹
 	 * 
-	 * @return Éú³É×Ó½Úµã
+	 * @return ç”Ÿæˆå­èŠ‚ç‚¹
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:51:17
+	 * @date 2014-11-24-ä¸‹åˆ3:51:17
 	 * 
 	 */
 	public ExpandMutableTreeNode[] load() {
@@ -88,10 +88,10 @@ public abstract class AbstractTableDataWrapper implements TableDataWrapper {
 	}
 
 	/**
-	 * Ô¤ÀÀÊı¾İ¼¯
+	 * é¢„è§ˆæ•°æ®é›†
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:50:20
+	 * @date 2014-11-24-ä¸‹åˆ3:50:20
 	 * 
 	 */
 	public void previewData() {
@@ -99,13 +99,13 @@ public abstract class AbstractTableDataWrapper implements TableDataWrapper {
 	}
 
     /**
-	 * Ô¤ÀÀÊı¾İ¼¯,´øÓĞÏÔÊ¾ÖµºÍÊµ¼ÊÖµµÄ±ê¼Ç½á¹û
+	 * é¢„è§ˆæ•°æ®é›†,å¸¦æœ‰æ˜¾ç¤ºå€¼å’Œå®é™…å€¼çš„æ ‡è®°ç»“æœ
 	 * 
-	 * @param keyIndex Êµ¼ÊÖµ
-	 * @param valueIndex ÏÔÊ¾Öµ
+	 * @param keyIndex å®é™…å€¼
+	 * @param valueIndex æ˜¾ç¤ºå€¼
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:50:20
+	 * @date 2014-11-24-ä¸‹åˆ3:50:20
 	 * 
 	 */
 	public void previewData(final int keyIndex,final int valueIndex){
@@ -117,12 +117,12 @@ public abstract class AbstractTableDataWrapper implements TableDataWrapper {
 	}
 
 	/**
-	 * »ñÈ¡Êı¾İ¼¯µÄÃæ°å
+	 * è·å–æ•°æ®é›†çš„é¢æ¿
 	 * 
-	 * @return Êı¾İ¼¯Ãæ°å
+	 * @return æ•°æ®é›†é¢æ¿
 	 * 
 	 *
-	 * @date 2014-11-24-ÏÂÎç3:50:00
+	 * @date 2014-11-24-ä¸‹åˆ3:50:00
 	 * 
 	 */
 	public AbstractTableDataPane<?> creatTableDataPane() {

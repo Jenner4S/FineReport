@@ -27,7 +27,7 @@ public class EditFloatElementNameAction extends FloatSelectionAction {
 		final ElementCasePane reportPane = getEditingComponent();
         final ElementCase report = reportPane.getEditingElementCase();
 
-        //p:»ñµÃ×îºóÒ»¸öÑ¡ÖĞµÄĞü¸¡ÔªËØ.
+        //p:è·å¾—æœ€åä¸€ä¸ªé€‰ä¸­çš„æ‚¬æµ®å…ƒç´ .
         final FloatElement selectedFloatElement = report.getFloatElement(fs.getSelectedFloatName());
         
         final NamePane pane = new NamePane();

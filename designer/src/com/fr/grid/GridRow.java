@@ -12,7 +12,7 @@ import com.fr.design.mainframe.ElementCasePane;
  * GridRow used to paint and edit grid row.
  * 
  * @editor zhou
- * @since 2012-3-22ÏÂÎç6:12:03
+ * @since 2012-3-22ä¸‹åˆ6:12:03
  */
 public class GridRow extends GridHeader<Integer> {
 	@Override

@@ -41,17 +41,17 @@ public class XLabel extends XWidgetCreator {
 	}
 
 	/**
-	 * Éú³Écreator¶ÔÓ¦µÄ¿Ø¼şwidget
-	 * @return ¿Ø¼şwidget
+	 * ç”Ÿæˆcreatorå¯¹åº”çš„æ§ä»¶widget
+	 * @return æ§ä»¶widget
 	 */
 	public Label toData() {
 		return (Label) data;
 	}
 	
 	/**
-	 * ·µ»Ø×é¼şÊôĞÔÖµ
-	 * @return ·µ»Ø×é¼şÊôĞÔÖµ
-	 * @throws IntrospectionException Òì³£
+	 * è¿”å›ç»„ä»¶å±æ€§å€¼
+	 * @return è¿”å›ç»„ä»¶å±æ€§å€¼
+	 * @throws IntrospectionException å¼‚å¸¸
 	 */
 	@Override
 	public CRPropertyDescriptor[] supportedDescriptor() throws IntrospectionException {
@@ -80,7 +80,7 @@ public class XLabel extends XWidgetCreator {
 		super.paintComponent(g);
 		Label label = (Label) data;
 		Dimension size = this.getSize();
-		//ÏÈ»­±³¾°£¬ÔÙ»­±êÌâ
+		//å…ˆç”»èƒŒæ™¯ï¼Œå†ç”»æ ‡é¢˜
 		if (toData().getBackground() != null) {
 			toData().getBackground().paint(g,new Rectangle2D.Double(0, 0, size.getWidth(), size.getHeight()));
 		}

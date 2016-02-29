@@ -4,23 +4,23 @@ import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
 
 /**
- * ÓÃÀ´ÍùMenuDef»òÊÇToolBarDefÀïÃæ¼Ó¶«Î÷Ê±ÓÃµÄ½Ó¿Ú
- * august:ShortCutÃ»ÓĞ±ØÒªĞòÁĞ»¯ºÍXMLabled
- * Ô­À´ÄÇÃ´¶àMenudef¶¼Ìá¹©³Ö¾Ã»¯²Ù×÷£¬Ì«ÀË·Ñ×ÊÔ´
+ * ç”¨æ¥å¾€MenuDefæˆ–æ˜¯ToolBarDefé‡Œé¢åŠ ä¸œè¥¿æ—¶ç”¨çš„æ¥å£
+ * august:ShortCutæ²¡æœ‰å¿…è¦åºåˆ—åŒ–å’ŒXMLabled
+ * åŸæ¥é‚£ä¹ˆå¤šMenudeféƒ½æä¾›æŒä¹…åŒ–æ“ä½œï¼Œå¤ªæµªè´¹èµ„æº
  */
 public abstract class ShortCut {
 
     private MenuKeySet menuKeySet = null;
 
     /**
-     * ½«¸Ä²Ëµ¥Ìí¼Óµ½menulÀïÃæÈ¥
-     * @param menu Ìí¼Óµ½µÄmenu
+     * å°†æ”¹èœå•æ·»åŠ åˆ°menulé‡Œé¢å»
+     * @param menu æ·»åŠ åˆ°çš„menu
      */
     public abstract void intoJPopupMenu(JPopupMenu menu);
 
     /**
-     * ½«¸Ã²Ëµ¥Ìí¼Óµ½¹¤¾ßÀ¸ÀïÃæÈ¥
-     * @param toolBar ¹¤¾ßÀ¸
+     * å°†è¯¥èœå•æ·»åŠ åˆ°å·¥å…·æ é‡Œé¢å»
+     * @param toolBar å·¥å…·æ 
      */
     public abstract void intoJToolBar(JToolBar toolBar);
 
@@ -28,16 +28,16 @@ public abstract class ShortCut {
     public abstract void setEnabled(boolean b);
 
     /**
-     * ÊÇ·ñ¿ÉÓÃ
-     * @return ¿ÉÓÃ
+     * æ˜¯å¦å¯ç”¨
+     * @return å¯ç”¨
      */
     public abstract boolean isEnabled();
 
 
     /**
-     *×÷Îª¹¤¾ßÀ¸²Ëµ¥
-     * @param scs ²Ëµ¥
-     * @return ¹¤¾ßÀ¸
+     *ä½œä¸ºå·¥å…·æ èœå•
+     * @param scs èœå•
+     * @return å·¥å…·æ 
      */
     public static final ToolBarDef asToolBarDef(ShortCut[] scs) {
         ToolBarDef def = new ToolBarDef();

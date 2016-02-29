@@ -26,7 +26,7 @@ public class CellHighlightAddMenuDef extends MenuDef {
 		this.setMnemonic(mnemonic);
 	}
 
-	// 生成UIButton,iconpath不可为null
+	// 鐢熸垚UIButton,iconpath涓嶅彲涓簄ull
 	public UIButton createUIButton() {
 		if (createdButton == null) {
 			if (this.iconPath != null && this.name != null) {

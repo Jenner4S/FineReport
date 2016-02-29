@@ -13,13 +13,13 @@ import com.fr.design.utils.ComponentUtils;
 import com.fr.general.ComparatorUtils;
 
 /**
- * Ìí¼Ó×´Ì¬ÏÂµÄmodel
+ * æ·»åŠ çŠ¶æ€ä¸‹çš„model
  */
 public class AddingModel {
 
-	// µ±Ç°ÒªÌí¼ÓµÄ×é¼ş
+	// å½“å‰è¦æ·»åŠ çš„ç»„ä»¶
 	private XCreator creator;
-	// ¼ÇÂ¼µ±Ç°Êó±êµÄÎ»ÖÃĞÅÏ¢
+	// è®°å½•å½“å‰é¼ æ ‡çš„ä½ç½®ä¿¡æ¯
 	private int current_x;
 	private int current_y;
 	private boolean added;
@@ -28,15 +28,15 @@ public class AddingModel {
 		String creatorName = getXCreatorName(designer, xCreator);
 		this.creator = xCreator;
 		instantiateCreator(designer, creatorName);
-		// ³õÊ¼µÄÊ±ºòÒş²Ø¸Ã×é¼şµÄÍ¼±ê
+		// åˆå§‹çš„æ—¶å€™éšè—è¯¥ç»„ä»¶çš„å›¾æ ‡
 		current_x = -this.creator.getWidth();
 		current_y = -this.creator.getHeight();
 	}
 
     /**
-     * ´ıËµÃ÷
-     * @param designer     Éè¼ÆÆ÷
-     * @param creatorName      ×é¼şÃû
+     * å¾…è¯´æ˜
+     * @param designer     è®¾è®¡å™¨
+     * @param creatorName      ç»„ä»¶å
      */
 	public void instantiateCreator(FormDesigner designer, String creatorName) {
 		creator.toData().setWidgetName(creatorName);
@@ -56,7 +56,7 @@ public class AddingModel {
 	}
 
     /**
-     * Òş²Øµ±Ç°×é¼şµÄÍ¼±ê
+     * éšè—å½“å‰ç»„ä»¶çš„å›¾æ ‡
      */
 	public void reset() {
 		current_x = -this.creator.getWidth();
@@ -85,9 +85,9 @@ public class AddingModel {
 
 
     /**
-     * ÒÆ¶¯×é¼şÍ¼±êµ½Êó±êÊÂ¼ş·¢ÉúµÄÎ»ÖÃ
-     * @param x   ×ø±ê
-     * @param y  ×ø±ê
+     * ç§»åŠ¨ç»„ä»¶å›¾æ ‡åˆ°é¼ æ ‡äº‹ä»¶å‘ç”Ÿçš„ä½ç½®
+     * @param x   åæ ‡
+     * @param y  åæ ‡
      */
 	public void moveTo(int x, int y) {
 		current_x = x - (this.creator.getWidth() / 2);
@@ -99,20 +99,20 @@ public class AddingModel {
 	}
 
     /**
-     * µ±Ç°×é¼şÊÇ·ñÒÑ¾­Ìí¼Óµ½Ä³¸öÈİÆ÷ÖĞ
-     * @return   ÊÇ·µ»Øtrue
+     * å½“å‰ç»„ä»¶æ˜¯å¦å·²ç»æ·»åŠ åˆ°æŸä¸ªå®¹å™¨ä¸­
+     * @return   æ˜¯è¿”å›true
      */
 	public boolean isCreatorAdded() {
 		return added;
 	}
 
     /**
-     * ¼ÓÈëÈİÆ÷
-     * @param designer        Éè¼ÆÆ÷
-     * @param container       ÈİÆ÷
-     * @param x   ×ø±ê
-     * @param y     ×ø±ê
-     * @return  ³É¹¦·µ»Øtrue
+     * åŠ å…¥å®¹å™¨
+     * @param designer        è®¾è®¡å™¨
+     * @param container       å®¹å™¨
+     * @param x   åæ ‡
+     * @param y     åæ ‡
+     * @return  æˆåŠŸè¿”å›true
      */
 	public boolean add2Container(FormDesigner designer, XLayoutContainer container, int x, int y) {
 		Rectangle rect = ComponentUtils.getRelativeBounds(container);

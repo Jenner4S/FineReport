@@ -48,16 +48,16 @@ public class GUIPaintUtils {
     }
 
     /**
-     * Õı³£×´Ì¬Ìî³ä
-     * @param g2d Í¼ĞÎ¶ÔÏó
-     * @param x  x×ø±ê
-     * @param y  y×ø±ê
-     * @param width ¿í¶È
-     * @param height ¸ß¶È
-     * @param isRound ÊÇ·ñÔ²½Ç
-     * @param rectDirection  ¾ØĞÎ·½Ïò
-     * @param isAuthorityEdited ÊÇ·ñÈ¨ÏŞ±à¼­
-     * @param isPressedPainted ÊÇ·ñ°´Ñ¹»­
+     * æ­£å¸¸çŠ¶æ€å¡«å……
+     * @param g2d å›¾å½¢å¯¹è±¡
+     * @param x  xåæ ‡
+     * @param y  yåæ ‡
+     * @param width å®½åº¦
+     * @param height é«˜åº¦
+     * @param isRound æ˜¯å¦åœ†è§’
+     * @param rectDirection  çŸ©å½¢æ–¹å‘
+     * @param isAuthorityEdited æ˜¯å¦æƒé™ç¼–è¾‘
+     * @param isPressedPainted æ˜¯å¦æŒ‰å‹ç”»
      */
     public static final void fillNormal(Graphics2D g2d, int x, int y, int width, int height, boolean isRound, int rectDirection, boolean isAuthorityEdited, boolean isPressedPainted) {
         GradientPaint gp;
@@ -73,16 +73,16 @@ public class GUIPaintUtils {
     }
 
     /**
-     * Êó±êĞüÍ£×´Ì¬Ìî³ä
-     * @param g2d Í¼ĞÎ¶ÔÏó
-     * @param x  x×ø±ê
-     * @param y  y×ø±ê
-     * @param width ¿í¶È
-     * @param height ¸ß¶È
-     * @param isRound ÊÇ·ñÔ²½Ç
-     * @param rectDirection  ¾ØĞÎ·½Ïò
-     * @param isAuthorityEdited ÊÇ·ñÈ¨ÏŞ±à¼­
-     * @param isPressedPainted ÊÇ·ñ°´Ñ¹»­
+     * é¼ æ ‡æ‚¬åœçŠ¶æ€å¡«å……
+     * @param g2d å›¾å½¢å¯¹è±¡
+     * @param x  xåæ ‡
+     * @param y  yåæ ‡
+     * @param width å®½åº¦
+     * @param height é«˜åº¦
+     * @param isRound æ˜¯å¦åœ†è§’
+     * @param rectDirection  çŸ©å½¢æ–¹å‘
+     * @param isAuthorityEdited æ˜¯å¦æƒé™ç¼–è¾‘
+     * @param isPressedPainted æ˜¯å¦æŒ‰å‹ç”»
      */
     public static final void fillRollOver(Graphics2D g2d, int x, int y, int width, int height, boolean isRound, int rectDirection, boolean isAuthorityEdited, boolean isPressedPainted) {
         GradientPaint gp;
@@ -98,15 +98,15 @@ public class GUIPaintUtils {
     }
 
     /**
-     * °´Ñ¹×´Ì¬Ìî³ä
-     * @param g2d Í¼ĞÎ¶ÔÏó
-     * @param x  x×ø±ê
-     * @param y  y×ø±ê
-     * @param width ¿í¶È
-     * @param height ¸ß¶È
-     * @param isRound ÊÇ·ñÔ²½Ç
-     * @param rectDirection  ¾ØĞÎ·½Ïò
-     * @param isAuthorityEdited ÊÇ·ñÈ¨ÏŞ±à¼­
+     * æŒ‰å‹çŠ¶æ€å¡«å……
+     * @param g2d å›¾å½¢å¯¹è±¡
+     * @param x  xåæ ‡
+     * @param y  yåæ ‡
+     * @param width å®½åº¦
+     * @param height é«˜åº¦
+     * @param isRound æ˜¯å¦åœ†è§’
+     * @param rectDirection  çŸ©å½¢æ–¹å‘
+     * @param isAuthorityEdited æ˜¯å¦æƒé™ç¼–è¾‘
      *
      */
     public static final void fillPressed(Graphics2D g2d, int x, int y, int width, int height, boolean isRound, int rectDirection, boolean isAuthorityEdited) {
@@ -137,16 +137,16 @@ public class GUIPaintUtils {
         g2d.setColor(oldColor);
     }
     /**
-     * ×Ô¶¨Òå»­±ÊÌî³ä
-     * @param g2d Í¼ĞÎ¶ÔÏó
-     * @param x  x×ø±ê
-     * @param y  y×ø±ê
-     * @param width ¿í¶È
-     * @param height ¸ß¶È
-     * @param isRound ÊÇ·ñÔ²½Ç
-     * @param rectDirection  ¾ØĞÎ·½Ïò
-     * @param paint »­±Ê
-     * @param arc Ô²½Ç³ß´ç
+     * è‡ªå®šä¹‰ç”»ç¬”å¡«å……
+     * @param g2d å›¾å½¢å¯¹è±¡
+     * @param x  xåæ ‡
+     * @param y  yåæ ‡
+     * @param width å®½åº¦
+     * @param height é«˜åº¦
+     * @param isRound æ˜¯å¦åœ†è§’
+     * @param rectDirection  çŸ©å½¢æ–¹å‘
+     * @param paint ç”»ç¬”
+     * @param arc åœ†è§’å°ºå¯¸
      */
     public static final void fillPaint(Graphics2D g2d, int x, int y, int width, int height, boolean isRound, int rectDirection, Paint paint, int arc) {
         Paint oldPaint = g2d.getPaint();

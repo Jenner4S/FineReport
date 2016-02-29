@@ -17,17 +17,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * <code>StoreProcedureDataWrappe</code> £º´æ´¢¹ı³ÌµÄÒ»¸ö·µ»ØÊı¾İ¼¯,²»ÊÇËü±¾Éí¡£<br>
- * OracleÊı¾İ¿â¿Ï¶¨ÓĞËü¡£SQL SERVER¾Í²»Ò»¶¨ÓĞÁË,´ó²¿·ÖÇé¿öÏÂ¶¼Ã»ÓĞ.
+ * <code>StoreProcedureDataWrappe</code> ï¼šå­˜å‚¨è¿‡ç¨‹çš„ä¸€ä¸ªè¿”å›æ•°æ®é›†,ä¸æ˜¯å®ƒæœ¬èº«ã€‚<br>
+ * Oracleæ•°æ®åº“è‚¯å®šæœ‰å®ƒã€‚SQL SERVERå°±ä¸ä¸€å®šæœ‰äº†,å¤§éƒ¨åˆ†æƒ…å†µä¸‹éƒ½æ²¡æœ‰.
  * <p/>
- * <code>StoreProcedureNameWrappe</code> £º´æ´¢¹ı³Ì±¾ÉíµÄ·µ»ØÊı¾İ¼¯£¬ÊÇËü±¾Éí¡£<br>
- * OracleÊı¾İ¿âÓĞËü£¬µ«ÆäÊµÃ»±ØÒª£¬Ëü¾ÍÊÇOracleËùÓĞ·µ»ØÊı¾İ¼¯µÄµÚÒ»¸ö¡£SQL SERVER¿Ï¶¨ÓĞÕâ¸ö¶«Î÷¡£
+ * <code>StoreProcedureNameWrappe</code> ï¼šå­˜å‚¨è¿‡ç¨‹æœ¬èº«çš„è¿”å›æ•°æ®é›†ï¼Œæ˜¯å®ƒæœ¬èº«ã€‚<br>
+ * Oracleæ•°æ®åº“æœ‰å®ƒï¼Œä½†å…¶å®æ²¡å¿…è¦ï¼Œå®ƒå°±æ˜¯Oracleæ‰€æœ‰è¿”å›æ•°æ®é›†çš„ç¬¬ä¸€ä¸ªã€‚SQL SERVERè‚¯å®šæœ‰è¿™ä¸ªä¸œè¥¿ã€‚
  * <code>StoreProcedureNameWrappe</code>
- * Êµ¼Ê¾ÍÊÇ£ºÒÔÇ°ÎÒÃÇÔÚĞÂ½¨Êı¾İ¼¯Ê±£¬´Ó×ó±ßµÄÁĞ±íÖĞÍÏ¶¯Ò»¸ö´æ´¢¹ı³Ìµ½ÓÒ±ßµÄSQLÃæ°å£¬
- * µÃµ½µÄSQLÓï¾äÖ´ĞĞºó·µ»ØµÄÊı¾İ¼¯¡£ÓÖÒòÎª½á¹û¿ÉÄÜµÃµ½¶à¸öÊı¾İ¼¯£¬ËùÒÔÄ¬ÈÏÓÃµÚÒ»¸ö
+ * å®é™…å°±æ˜¯ï¼šä»¥å‰æˆ‘ä»¬åœ¨æ–°å»ºæ•°æ®é›†æ—¶ï¼Œä»å·¦è¾¹çš„åˆ—è¡¨ä¸­æ‹–åŠ¨ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹åˆ°å³è¾¹çš„SQLé¢æ¿ï¼Œ
+ * å¾—åˆ°çš„SQLè¯­å¥æ‰§è¡Œåè¿”å›çš„æ•°æ®é›†ã€‚åˆå› ä¸ºç»“æœå¯èƒ½å¾—åˆ°å¤šä¸ªæ•°æ®é›†ï¼Œæ‰€ä»¥é»˜è®¤ç”¨ç¬¬ä¸€ä¸ª
  *
  * @author zhou
- * @since 2012-4-12ÉÏÎç10:29:15
+ * @since 2012-4-12ä¸Šåˆ10:29:15
  */
 public final class StoreProcedureNameWrapper implements TableDataWrapper {
     private ProcedureDataModel procedureDataModel;
@@ -36,8 +36,8 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     private List<String> columnNameList;
 
     /**
-     * @param name           ´æ´¢¹ı³Ì±¾ÉíÃû×Ö
-     * @param storeProcedure ´æ´¢¹ı³Ì
+     * @param name           å­˜å‚¨è¿‡ç¨‹æœ¬èº«åå­—
+     * @param storeProcedure å­˜å‚¨è¿‡ç¨‹
      */
     public StoreProcedureNameWrapper(String name, StoreProcedure storeProcedure) {
         this.name = name;
@@ -45,9 +45,9 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     }
 
     /**
-     * Éú³É×Ó½Úµã
+     * ç”Ÿæˆå­èŠ‚ç‚¹
      *
-     * @return ×Ó½Úµã
+     * @return å­èŠ‚ç‚¹
      */
     public ExpandMutableTreeNode[] load() {
         List<String> namelist = calculateColumnNameList();
@@ -82,11 +82,11 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     }
 
     /**
-     * Êı¾İ¼¯Ö´ĞĞ½á¹û·µ»ØµÄËùÓĞ×Ö¶Î
+     * æ•°æ®é›†æ‰§è¡Œç»“æœè¿”å›çš„æ‰€æœ‰å­—æ®µ
      * <p/>
-     * TODO:Òª²»Òª¼ÓÉÏExceptionÄØ£¿¸öÈË¸Ğ¾õºÜÓĞ±ØÒª
+     * TODO:è¦ä¸è¦åŠ ä¸ŠExceptionå‘¢ï¼Ÿä¸ªäººæ„Ÿè§‰å¾ˆæœ‰å¿…è¦
      *
-     * @return ×Ö¶Î
+     * @return å­—æ®µ
      */
     public List<String> calculateColumnNameList() {
         if (columnNameList != null) {
@@ -114,7 +114,7 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     }
 
     /**
-     * Ô¤ÀÀÊı¾İ¼¯
+     * é¢„è§ˆæ•°æ®é›†
      */
     public void previewData() {
         if (procedureDataModel == null) {
@@ -125,10 +125,10 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     }
 
     /**
-     * Ô¤ÀÀÊı¾İ¼¯£¬´øÓĞÏÔÊ¾ÖµºÍÊµ¼ÊÖµµÄ±ê¼Ç½á¹û
+     * é¢„è§ˆæ•°æ®é›†ï¼Œå¸¦æœ‰æ˜¾ç¤ºå€¼å’Œå®é™…å€¼çš„æ ‡è®°ç»“æœ
      *
-     * @param keyIndex   ÏÔÊ¾ÖµIndex
-     * @param valueIndex Êµ¼ÊÖµindex
+     * @param keyIndex   æ˜¾ç¤ºå€¼Index
+     * @param valueIndex å®é™…å€¼index
      */
     public void previewData(int keyIndex, int valueIndex) {
         if (procedureDataModel == null) {
@@ -138,9 +138,9 @@ public final class StoreProcedureNameWrapper implements TableDataWrapper {
     }
 
     /**
-     * ÊÇ·ñÒì³£
+     * æ˜¯å¦å¼‚å¸¸
      *
-     * @return Òì³£·µ»Øtrue
+     * @return å¼‚å¸¸è¿”å›true
      */
     public boolean isUnusual() {
         return false;

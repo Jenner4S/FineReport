@@ -5,7 +5,7 @@ import java.awt.Color;
 import com.fr.design.gui.itextfield.UITextField;
 
 /**
- * 用来显示可直接编辑的控件的属性值的控件
+ * 鐢ㄦ潵鏄剧ず鍙洿鎺ョ紪杈戠殑鎺т欢鐨勫睘鎬у�肩殑鎺т欢
  * @since 6.5.2
  */
 public class TextField extends UITextField implements ITextComponent {

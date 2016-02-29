@@ -16,162 +16,162 @@ import java.util.List;
 public class ValueEditorPaneFactory {
 
     /**
-     * ´´½¨´ø±à¼­Æ÷µÄValueEditorPane
+     * åˆ›å»ºå¸¦ç¼–è¾‘å™¨çš„ValueEditorPane
      *
-     * @param editors ×Ô¶¨ÒåµÄ±à¼­Æ÷
-     * @return ·µ»Øpane
+     * @param editors è‡ªå®šä¹‰çš„ç¼–è¾‘å™¨
+     * @return è¿”å›pane
      */
     public static ValueEditorPane createValueEditorPane(Editor<?>[] editors) {
         return createValueEditorPane(editors, StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨±à¼­Æ÷ Ãû³Æ µ¯³öµÄValueEditorPane
+     * åˆ›å»ºç¼–è¾‘å™¨ åç§° å¼¹å‡ºçš„ValueEditorPane
      *
-     * @param editors         ±à¼­Æ÷
-     * @param popupName       µ¯³öµÄÃû×Ö
-     * @param textEditorValue Öµ
-     * @return ·µ»Øpane
+     * @param editors         ç¼–è¾‘å™¨
+     * @param popupName       å¼¹å‡ºçš„åå­—
+     * @param textEditorValue å€¼
+     * @return è¿”å›pane
      */
     public static ValueEditorPane createValueEditorPane(Editor<?>[] editors, String popupName, String textEditorValue) {
         return new ValueEditorPane(editors, popupName, textEditorValue);
     }
 
     /**
-     * ´´½¨±à¼­Æ÷ Ãû³Æ µ¯³öµÄValueEditorPane
+     * åˆ›å»ºç¼–è¾‘å™¨ åç§° å¼¹å‡ºçš„ValueEditorPane
      *
-     * @param editors             ±à¼­Æ÷
-     * @param popupName           µ¯³öµÄÃû×Ö
-     * @param textEditorValue     Öµ
-     * @param editor_center_width ±à¼­Æ÷Ö÷ÌåµÄ¿í¶È
-     * @return ·µ»Øpane
+     * @param editors             ç¼–è¾‘å™¨
+     * @param popupName           å¼¹å‡ºçš„åå­—
+     * @param textEditorValue     å€¼
+     * @param editor_center_width ç¼–è¾‘å™¨ä¸»ä½“çš„å®½åº¦
+     * @return è¿”å›pane
      */
     public static ValueEditorPane createValueEditorPane(Editor<?>[] editors, String popupName, String textEditorValue, int editor_center_width) {
         return new ValueEditorPane(editors, popupName, textEditorValue, editor_center_width);
     }
 
     /**
-     * ´´½¨»ù±¾µÄÖµ±à¼­Æ÷Ãæ°å
+     * åˆ›å»ºåŸºæœ¬çš„å€¼ç¼–è¾‘å™¨é¢æ¿
      *
-     * @return ·µ»ØÖµ±à¼­Æ÷Ãæ°å
+     * @return è¿”å›å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createBasicValueEditorPane() {
         return createValueEditorPane(basicEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨¹«Ê½±à¼­Æ÷Ãæ°å
+     * åˆ›å»ºå…¬å¼ç¼–è¾‘å™¨é¢æ¿
      *
-     * @return ·µ»Ø¹«Ê½±à¼­Æ÷Ãæ°å
+     * @return è¿”å›å…¬å¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createFormulaValueEditorPane() {
         return createValueEditorPane(new Editor[]{new FormulaEditor(Inter.getLocText("Parameter-Formula"))},
                 StringUtils.EMPTY, StringUtils.EMPTY);
     }
     /**
-     * ´´½¨»ù±¾µÄÖµ±à¼­Æ÷Ãæ°å
+     * åˆ›å»ºåŸºæœ¬çš„å€¼ç¼–è¾‘å™¨é¢æ¿
      *
-     * @param editor_center_width Ö¸¶¨Öµ±à¼­Æ÷µÄÖ÷Ìå¿í¶È
-     * @return ·µ»ØÖµ±à¼­Æ÷Ãæ°å
+     * @param editor_center_width æŒ‡å®šå€¼ç¼–è¾‘å™¨çš„ä¸»ä½“å®½åº¦
+     * @return è¿”å›å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createBasicValueEditorPane(int editor_center_width) {
         return createValueEditorPane(basicEditors(), StringUtils.EMPTY, StringUtils.EMPTY, editor_center_width);
     }
 
     /**
-     * ProcessÓÃµÄeditorPane
+     * Processç”¨çš„editorPane
      *
-     * @return Öµ±à¼­Æ÷Ãæ°å
+     * @return å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createFormEditorPane() {
         return createValueEditorPane(formEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * StoreProcedÓÃµÄEditorPane
+     * StoreProcedç”¨çš„EditorPane
      *
-     * @return Öµ±à¼­Æ÷Ãæ°å
+     * @return å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createStoreProcedValueEditorPane() {
         return createValueEditorPane(StoreProcedureEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * À©Õ¹µÄValueEditorPane
+     * æ‰©å±•çš„ValueEditorPane
      *
-     * @return Öµ±à¼­Æ÷Ãæ°å
+     * @return å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createExtendedValueEditorPane() {
         return createValueEditorPane(extendedEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * URLÊ¹ÓÃµÄValueEditorPane
+     * URLä½¿ç”¨çš„ValueEditorPane
      *
-     * @param popupName       µ¯³öµÄÃû×Ö
-     * @param textEditorValue ±à¼­Æ÷Öµ
-     * @return Öµ±à¼­Æ÷·µ»Ø
+     * @param popupName       å¼¹å‡ºçš„åå­—
+     * @param textEditorValue ç¼–è¾‘å™¨å€¼
+     * @return å€¼ç¼–è¾‘å™¨è¿”å›
      */
     public static ValueEditorPane createURLValueEditorPane(String popupName, String textEditorValue) {
         return createValueEditorPane(URLEditors(popupName, textEditorValue), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨ÈÕÆÚµÄValueEditorPane
+     * åˆ›å»ºæ—¥æœŸçš„ValueEditorPane
      *
-     * @param popupName       Ãû×Ö
-     * @param textEditorValue Öµ
-     * @return Öµ±à¼­Æ÷Ãæ°å
+     * @param popupName       åå­—
+     * @param textEditorValue å€¼
+     * @return å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createDateValueEditorPane(String popupName, String textEditorValue) {
         return createValueEditorPane(dateEditors(popupName, textEditorValue), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´øÓĞËùÓĞ±à¼­Æ÷µÄValueEditorPane
+     * å¸¦æœ‰æ‰€æœ‰ç¼–è¾‘å™¨çš„ValueEditorPane
      *
-     * @return Öµ±à¼­Æ÷Ãæ°å
+     * @return å€¼ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane createAllValueEditorPane() {
         return createValueEditorPane(allEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨²»´ø¹«Ê½Ãæ°åµÄpane
-     * @return ±à¼­Æ÷Ãæ°å
+     * åˆ›å»ºä¸å¸¦å…¬å¼é¢æ¿çš„pane
+     * @return ç¼–è¾‘å™¨é¢æ¿
      */
     public static ValueEditorPane  createBasicEditorWithoutFormulaPane(){
         return createValueEditorPane(basicEditorsWithoutFormula(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
     /**
-     * ´´½¨NoCRNoColumn
+     * åˆ›å»ºNoCRNoColumn
      *
-     * @return Öµ±à¼­Æ÷
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static ValueEditorPane createNoCRNoColumnValueEditorPane() {
         return createValueEditorPane(noCRnoColumnEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨ÊıÖµ±à¼­Æ÷
-     * @return Öµ±à¼­Æ÷
+     * åˆ›å»ºæ•°å€¼ç¼–è¾‘å™¨
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static ValueEditorPane createNumberValueEditorPane(){
         return createValueEditorPane(numberEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * ´´½¨ÈÕÆÚ±à¼­Æ÷
-     * @return Öµ±à¼­Æ÷
+     * åˆ›å»ºæ—¥æœŸç¼–è¾‘å™¨
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static ValueEditorPane createDateValueEditorPane(){
         return createValueEditorPane(dateEditors(), StringUtils.EMPTY, StringUtils.EMPTY);
     }
     /**
-     * ¸ù¾İ²ÎÊıparaUseType ´´½¨±à¼­Æ÷ÀàĞÍ.
+     * æ ¹æ®å‚æ•°paraUseType åˆ›å»ºç¼–è¾‘å™¨ç±»å‹.
      *
-     * @param paraUseType ²ÎÊıÀàĞÍ
-     * @return Öµ±à¼­Æ÷
+     * @param paraUseType å‚æ•°ç±»å‹
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static ValueEditorPane createVallueEditorPaneWithUseType(int paraUseType) {
         if (paraUseType == ParameterTableModel.NO_CHART_USE) {
@@ -184,19 +184,19 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * Í¼±íÓÃµÄ²ÎÊı±à¼­Æ÷µÄValueEditorPane
+     * å›¾è¡¨ç”¨çš„å‚æ•°ç¼–è¾‘å™¨çš„ValueEditorPane
      *
-     * @param paraUseType ²ÎÊıÀàĞÍ
-     * @return Öµ±à¼­Æ÷
+     * @param paraUseType å‚æ•°ç±»å‹
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static ValueEditorPane createChartHotValueEditorPane(int paraUseType) {
         return createValueEditorPane(chartHotEditors(paraUseType), StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
     /**
-     * »ù´¡µÄÒ»Ğ©ValueEditorPaneËùÓÃµ½µÄEditors
+     * åŸºç¡€çš„ä¸€äº›ValueEditorPaneæ‰€ç”¨åˆ°çš„Editors
      *
-     * @return Öµ±à¼­Æ÷
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] basicEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -211,9 +211,9 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ±íµ¥µÄÒ»Ğ©±à¼­Æ÷.
+     * è¡¨å•çš„ä¸€äº›ç¼–è¾‘å™¨.
      *
-     * @return Öµ±à¼­Æ÷
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] formEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -229,9 +229,9 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * À©Õ¹µ¥Ôª¸ñµÄÒ»Ğ©±à¼­Æ÷
+     * æ‰©å±•å•å…ƒæ ¼çš„ä¸€äº›ç¼–è¾‘å™¨
      *
-     * @return Öµ±à¼­Æ÷
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] extendedEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -248,8 +248,8 @@ public class ValueEditorPaneFactory {
     }
 
 	/**
-	 * ´øµ¥Ôª¸ñ×éµÄ±à¼­Æ÷
-	 * @return Öµ±à¼­Æ÷
+	 * å¸¦å•å…ƒæ ¼ç»„çš„ç¼–è¾‘å™¨
+	 * @return å€¼ç¼–è¾‘å™¨
 	 */
 	public static Editor<?>[] extendedCellGroupEditors() {
 		FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -267,8 +267,8 @@ public class ValueEditorPaneFactory {
 	}
 
 	/**
-	 * Ö»ÓĞµ¥Ôª¸ñºÍµ¥Ôª¸ñ×éµÄ±à¼­Æ÷
-	 * @return ±à¼­Æ÷b
+	 * åªæœ‰å•å…ƒæ ¼å’Œå•å…ƒæ ¼ç»„çš„ç¼–è¾‘å™¨
+	 * @return ç¼–è¾‘å™¨b
 	 */
 	public static Editor<?>[] cellGroupEditor() {
 		return new Editor[] {
@@ -278,11 +278,11 @@ public class ValueEditorPaneFactory {
 	}
 
     /**
-     * URLµÄÒ»Ğ©±à¼­Æ÷.
+     * URLçš„ä¸€äº›ç¼–è¾‘å™¨.
      *
-     * @param popupName       Ãû×Ö
-     * @param textEditorValue Öµ
-     * @return Öµ±à¼­Æ÷
+     * @param popupName       åå­—
+     * @param textEditorValue å€¼
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] URLEditors(String popupName, String textEditorValue) {
         return new Editor[]{
@@ -292,11 +292,11 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ÈÕÆÚÀàĞÍµÄÒ»Ğ©±à¼­Æ÷
+     * æ—¥æœŸç±»å‹çš„ä¸€äº›ç¼–è¾‘å™¨
      *
-     * @param popupName       Ãû×Ö
-     * @param textEditorValue Öµ
-     * @return Öµ±à¼­Æ÷
+     * @param popupName       åå­—
+     * @param textEditorValue å€¼
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] dateEditors(String popupName, String textEditorValue) {
         return new Editor[]{
@@ -307,9 +307,9 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ËùÓĞÀàĞÍµÄ±à¼­Æ÷
+     * æ‰€æœ‰ç±»å‹çš„ç¼–è¾‘å™¨
      *
-     * @return Öµ±à¼­Æ÷
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor<?>[] allEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -324,14 +324,14 @@ public class ValueEditorPaneFactory {
                 new ParameterEditor(),
                 new ColumnRowEditor(Inter.getLocText("Cell")),
                 new ColumnSelectedEditor(),
-                //23328 allEditorsÖĞÉ¾³ı¿Ø¼şÑ¡Ïî
+                //23328 allEditorsä¸­åˆ é™¤æ§ä»¶é€‰é¡¹
 //                new WidgetNameEditor(Inter.getLocText("Widget"))
         };
     }
 
     /**
-     * ²»´ø¹«Ê½±à¼­Æ÷
-     * @return ±à¼­Æ÷²»´ø¹«Ê½
+     * ä¸å¸¦å…¬å¼ç¼–è¾‘å™¨
+     * @return ç¼–è¾‘å™¨ä¸å¸¦å…¬å¼
      */
     public static Editor<?>[] basicEditorsWithoutFormula(){
         return new Editor[]{
@@ -344,9 +344,9 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * noCRnoColumn±à¼­Æ÷
+     * noCRnoColumnç¼–è¾‘å™¨
      *
-     * @return ±à¼­Æ÷
+     * @return ç¼–è¾‘å™¨
      */
     public static Editor<?>[] noCRnoColumnEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -362,8 +362,8 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ÊıÖµ±à¼­Æ÷
-      * @return ±à¼­Æ÷
+     * æ•°å€¼ç¼–è¾‘å™¨
+      * @return ç¼–è¾‘å™¨
      */
     public static Editor<?>[] numberEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -376,8 +376,8 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ÈÕÆÚ±à¼­Æ÷
-     * @return ±à¼­Æ÷
+     * æ—¥æœŸç¼–è¾‘å™¨
+     * @return ç¼–è¾‘å™¨
      */
     public static Editor<?>[] dateEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -389,9 +389,9 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ´æ´¢µÄÒ»Ğ©±à¼­Æ÷
+     * å­˜å‚¨çš„ä¸€äº›ç¼–è¾‘å™¨
      *
-     * @return ´æ´¢¹ı³ÌµÄ±à¼­Æ÷
+     * @return å­˜å‚¨è¿‡ç¨‹çš„ç¼–è¾‘å™¨
      */
     public static Editor<?>[] StoreProcedureEditors() {
         FormulaEditor formulaEditor = new FormulaEditor(Inter.getLocText("Parameter-Formula"));
@@ -408,10 +408,10 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * Í¼±íÈÈµãµÄÒ»Ğ©±à¼­Æ÷
+     * å›¾è¡¨çƒ­ç‚¹çš„ä¸€äº›ç¼–è¾‘å™¨
      *
-     * @param paraUseType ²ÎÊıÀàĞÍ
-     * @return Öµ±à¼­Æ÷
+     * @param paraUseType å‚æ•°ç±»å‹
+     * @return å€¼ç¼–è¾‘å™¨
      */
     public static Editor[] chartHotEditors(int paraUseType) {
         List<Editor> list = createEditors4Chart(paraUseType);
@@ -430,10 +430,10 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ÎªÍ¼±í´´½¨±à¼­Æ÷.
+     * ä¸ºå›¾è¡¨åˆ›å»ºç¼–è¾‘å™¨.
      *
-     * @param paraUseType ²ÎÊıÀàĞÍ
-     * @return Öµ±à¼­Æ÷
+     * @param paraUseType å‚æ•°ç±»å‹
+     * @return å€¼ç¼–è¾‘å™¨
      */
     private static List<Editor> createEditors4Chart(int paraUseType) {
         if(paraUseType == ParameterTableModel.CHART_PIE_USE) {
@@ -609,11 +609,11 @@ public class ValueEditorPaneFactory {
     }
 
     /**
-     * ²úÉúÒ»¸öÊµ¼ÊÖµºÍÏÔÊ¾ÖµµÄÃæ°å
+     * äº§ç”Ÿä¸€ä¸ªå®é™…å€¼å’Œæ˜¾ç¤ºå€¼çš„é¢æ¿
      *
-     * @param keyColumnPane Êµ¼ÊÖµ
-     * @param valueDictPane ÏÔÊ¾Öµ
-     * @return ²úÉúÒ»¸öÊµ¼ÊÖµºÍÏÔÊ¾ÖµµÄÃæ°å
+     * @param keyColumnPane å®é™…å€¼
+     * @param valueDictPane æ˜¾ç¤ºå€¼
+     * @return äº§ç”Ÿä¸€ä¸ªå®é™…å€¼å’Œæ˜¾ç¤ºå€¼çš„é¢æ¿
      */
     public static JPanel createKeyAndValuePane(ValueEditorPane keyColumnPane, ValueEditorPane valueDictPane) {
         JPanel pane = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();

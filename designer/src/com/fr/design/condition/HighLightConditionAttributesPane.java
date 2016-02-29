@@ -17,7 +17,7 @@ public class HighLightConditionAttributesPane extends ConditionAttributesPane<De
     }
 
     /**
-     * ³õÊ¼»¯×é¼þ
+     * åˆå§‹åŒ–ç»„ä»¶
      */
     public void initComponents() {
         super.initComponents();
@@ -26,7 +26,7 @@ public class HighLightConditionAttributesPane extends ConditionAttributesPane<De
     }
 
     protected void initLiteConditionPane() {
-        // Ìõ¼þPanel
+        // æ¡ä»¶Panel
         JPanel centerPane = FRGUIPaneFactory.createBorderLayout_S_Pane();
         this.add(centerPane);
 

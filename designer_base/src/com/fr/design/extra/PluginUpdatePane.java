@@ -32,8 +32,8 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
     }
 
     /**
-     * ¸üÐÂpane
-     * @return Í¬ÉÏ
+     * æ›´æ–°pane
+     * @return åŒä¸Š
      */
     public JPanel createSuccessPane() {
         return new PluginStatusCheckCompletePane() {
@@ -76,8 +76,8 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
     }
 
     /**
-     * ³ö´ípane
-     * @return Í¬ÉÏ
+     * å‡ºé”™pane
+     * @return åŒä¸Š
      */
     @Override
     public JPanel createErrorPane() {
@@ -116,17 +116,17 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
     }
 
     /**
-     * ¼ÓÔØ²å¼þ
-     * @return ËùÓÐ²å¼þ
+     * åŠ è½½æ’ä»¶
+     * @return æ‰€æœ‰æ’ä»¶
      */
     public Plugin[] loadData() throws Exception {
         return PluginsReaderFromStore.readPluginsForUpdate();
     }
 
     /**
-     * ¼ÓÔØ³É¹¦´¦Àí
+     * åŠ è½½æˆåŠŸå¤„ç†
      * 
-     * @param plugins ²å¼þ
+     * @param plugins æ’ä»¶
      */
     public void loadOnSuccess(Plugin[] plugins) {
         controlPane.loadPlugins(plugins);
@@ -134,17 +134,17 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
     }
 
     /**
-     * ¼ÓÔØÊ§°Ü´¦Àí
+     * åŠ è½½å¤±è´¥å¤„ç†
      * 
-     * @param e Òì³£
+     * @param e å¼‚å¸¸
      */
     public void loadOnFailed(Exception e) {
         errorMsgLabel.setText(e.getCause().getMessage());
     }
 
     /**
-     * ÂÔ
-     * @return ÂÔ
+     * ç•¥
+     * @return ç•¥
      */
     @Override
     public String textForLoadingLabel() {
@@ -190,7 +190,7 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
             }
 
             public void done() {
-                //ÏÂÔØÍê³É£¬¿ªÊ¼Ö´ÐÐ°²×°
+                //ä¸‹è½½å®Œæˆï¼Œå¼€å§‹æ‰§è¡Œå®‰è£…
                 try {
                     get();
                     pane.didTaskFinished();
@@ -211,9 +211,9 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
             }
             Plugin oldPlugin = PluginLoader.getLoader().getPluginById(plugin.getId());
             if (oldPlugin != null) {
-                // ËµÃ÷°²×°ÁËÍ¬IDµÄ²å¼þ£¬ÔÙ±È½ÏÁ½¸ö²å¼þµÄ°æ±¾
+                // è¯´æ˜Žå®‰è£…äº†åŒIDçš„æ’ä»¶ï¼Œå†æ¯”è¾ƒä¸¤ä¸ªæ’ä»¶çš„ç‰ˆæœ¬
                 if (PluginHelper.isNewThan(plugin, oldPlugin)) {
-                    // ËµÃ÷ÊÇÐÂµÄ²å¼þ£¬É¾³ýÀÏµÄÈ»ºó°²×°ÐÂµÄ
+                    // è¯´æ˜Žæ˜¯æ–°çš„æ’ä»¶ï¼Œåˆ é™¤è€çš„ç„¶åŽå®‰è£…æ–°çš„
                     final String[] files = PluginHelper.uninstallPlugin(FRContext.getCurrentEnv(), oldPlugin);
                     PluginHelper.installPluginFromUnzippedTempDir(FRContext.getCurrentEnv(), plugin, new After() {
                         @Override
@@ -235,7 +235,7 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
                                 RestartHelper.restart();
                             }
 
-                            // Èç¹û²»ÊÇÁ¢¼´ÖØÆô£¬¾Í°ÑÒªÉ¾³ýµÄÎÄ¼þ´æ·ÅÆðÀ´
+                            // å¦‚æžœä¸æ˜¯ç«‹å³é‡å¯ï¼Œå°±æŠŠè¦åˆ é™¤çš„æ–‡ä»¶å­˜æ”¾èµ·æ¥
                             if (rv == JOptionPane.CANCEL_OPTION || rv == JOptionPane.CLOSED_OPTION) {
                                 RestartHelper.saveFilesWhichToDelete(files);
                             }
@@ -253,8 +253,8 @@ public class PluginUpdatePane extends PluginAbstractLoadingViewPane<Plugin[], Vo
     }
 
     /**
-     * ´Ó´ÅÅÌ°²×°°´Å¥µÄÌáÊ¾
-     * @return °´Å¥±êÌâ×Ö·û´®
+     * ä»Žç£ç›˜å®‰è£…æŒ‰é’®çš„æç¤º
+     * @return æŒ‰é’®æ ‡é¢˜å­—ç¬¦ä¸²
      */
     @Override
     public String textForInstallFromDiskFileButton() {

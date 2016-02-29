@@ -14,7 +14,7 @@ import java.awt.geom.RoundRectangle2D;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-25
- * Time: ÏÂÎç4:11
+ * Time: ä¸‹åˆ4:11
  */
 public class ToolTip4Chart extends JWindow {
     private static ToolTip4Chart instance = new ToolTip4Chart();
@@ -37,11 +37,11 @@ public class ToolTip4Chart extends JWindow {
     }
 
     /**
-     * ÏÖÊµÌáÊ¾ĞÅÏ¢
+     * ç°å®æç¤ºä¿¡æ¯
      *
-     * @param toolTip ÌáÊ¾ĞÅÏ¢
-     * @param xAbs    ¾ø¶ÔÎ»ÖÃx
-     * @param yAbs    ¾ø¶ÔÎ»ÖÃY
+     * @param toolTip æç¤ºä¿¡æ¯
+     * @param xAbs    ç»å¯¹ä½ç½®x
+     * @param yAbs    ç»å¯¹ä½ç½®Y
      */
     public void showToolTip(String toolTip, int xAbs, int yAbs) {
         stringPane.text = toolTip.trim();
@@ -58,7 +58,7 @@ public class ToolTip4Chart extends JWindow {
     }
 
     /**
-     * Òş²Øµ¯³ö¿ò
+     * éšè—å¼¹å‡ºæ¡†
      */
     public void hideToolTip() {
         this.setVisible(false);

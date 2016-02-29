@@ -19,7 +19,7 @@ import com.fr.design.mainframe.ElementCasePane;
 import com.fr.design.selection.SelectionListener;
 
 /*
- * SmartJTablePaneÓÃÓÚÔÚGridÉÏÃæÑ¡µ¥Ôª¸ñÊ±±à¼­JTable
+ * SmartJTablePaneç”¨äºåœ¨Gridä¸Šé¢é€‰å•å…ƒæ ¼æ—¶ç¼–è¾‘JTable
  */
 public abstract class SmartJTablePane extends BasicPane {
 	
@@ -51,19 +51,19 @@ public abstract class SmartJTablePane extends BasicPane {
 	public void initComponents() {
 		this.setLayout(FRGUIPaneFactory.createBorderLayout());
 
-		// BasicPaneµÄnorth·ÅÃèÊö
+		// BasicPaneçš„northæ”¾æè¿°
 		this.add(new UILabel(Inter.getLocText("RWA-Click_Cell_To_Edit_Value")), BorderLayout.NORTH);
 
-		// BasicPaneµÄcenter·ÅJTable
+		// BasicPaneçš„centeræ”¾JTable
 		table = new JTable(model);
 		this.add(scrollPane = new JScrollPane(table), BorderLayout.CENTER);
 
-		// Êó±êÇĞ»»Ñ¡ÖĞÏîÊ±,editingRowIndexÒ²Òª¸ú×Å±ä
+		// é¼ æ ‡åˆ‡æ¢é€‰ä¸­é¡¹æ—¶,editingRowIndexä¹Ÿè¦è·Ÿç€å˜
 		table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 
 			public void valueChanged(ListSelectionEvent e) {
 				int selected = table.getSelectedRow();
-				// alex:µ±SmartJTablePaneÊ§È¥½¹µãÊ±,ºÃÏñÒ²»á´¥·¢Õâ¸ö,selectedÎª-1
+				// alex:å½“SmartJTablePaneå¤±å»ç„¦ç‚¹æ—¶,å¥½åƒä¹Ÿä¼šè§¦å‘è¿™ä¸ª,selectedä¸º-1
 				if (selected >= 0) {
 					setEditingRowIndex(selected);
 					table.repaint();
@@ -90,7 +90,7 @@ public abstract class SmartJTablePane extends BasicPane {
 	
 	
 	/*
-	 * ÉèÖÃÕıÔÚ±à¼­µÄRowIndex,²¢Scroll
+	 * è®¾ç½®æ­£åœ¨ç¼–è¾‘çš„RowIndex,å¹¶Scroll
 	 */
 	protected void setEditingRowIndex(int idx) {
 		editingRowIndex = idx;

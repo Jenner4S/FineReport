@@ -5,19 +5,19 @@ import java.awt.Point;
 import com.fr.design.designer.creator.XCreator;
 
 /**
- * äÖÈ¾Æ÷£¬Ä¿µÄÊÇÎª×é¼ş»òÕß²¼¾Ö¹ÜÀíÆ÷Ìá¹©¶îÍâµÄäÖÈ¾Èë¿Ú¡£
+ * æ¸²æŸ“å™¨ï¼Œç›®çš„æ˜¯ä¸ºç»„ä»¶æˆ–è€…å¸ƒå±€ç®¡ç†å™¨æä¾›é¢å¤–çš„æ¸²æŸ“å…¥å£ã€‚
  * @since 6.5.3
  */
 public interface HoverPainter extends Painter {
 	/**
-	 *  µ±Ç°½¹µãÈÈµã£¬¼´Êó±êËùÔÚµã
-	 * @param p ½¹µãÎ»ÖÃ
+	 *  å½“å‰ç„¦ç‚¹çƒ­ç‚¹ï¼Œå³é¼ æ ‡æ‰€åœ¨ç‚¹
+	 * @param p ç„¦ç‚¹ä½ç½®
 	 */
 	void setHotspot(Point p);
 
 	/**
-	 *  µ±Ç°Òª·ÅÖÃµÄ×é¼ş
-	 * @param creator ×é¼ş
+	 *  å½“å‰è¦æ”¾ç½®çš„ç»„ä»¶
+	 * @param creator ç»„ä»¶
 	 */
 	void setCreator(XCreator creator);
 }

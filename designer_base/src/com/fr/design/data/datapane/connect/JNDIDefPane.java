@@ -239,7 +239,7 @@ public class JNDIDefPane extends JPanel {
 		}
 	}
 
-	// Ö÷Á¦ContextÊôÐÔ
+	// ä¸»åŠ›Contextå±žæ€§
 	class ContextTextField extends UITextField {
 		private String contextName;
 
@@ -257,7 +257,7 @@ public class JNDIDefPane extends JPanel {
 		}
 
 		/*
-		 * ¸üÐÂProperties.
+		 * æ›´æ–°Properties.
 		 */
 		public void applyProperties(Properties properties) {
 			properties.put(contextName, this.getText());

@@ -1,4 +1,3 @@
-
 package com.fr.design.mainframe.widget.wrappers.primitive;
 
 import com.fr.design.Exception.ValidationException;

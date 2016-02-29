@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
  * CellEditor used to edit Formula object.
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:27:27
+ * @since 2012-3-29ä¸‹åˆ6:27:27
  */
 public class FormulaEditor extends Editor<Formula> {
     private Formula formula = new Formula(StringUtils.EMPTY);
@@ -70,7 +70,7 @@ public class FormulaEditor extends Editor<Formula> {
 
 
     /**
-     * Ñ¡ÖĞÊ±µ¯³ö¹«Ê½±à¼­¿ò
+     * é€‰ä¸­æ—¶å¼¹å‡ºå…¬å¼ç¼–è¾‘æ¡†
      */
     public void selected() {
         showFormulaPane();
@@ -120,9 +120,9 @@ public class FormulaEditor extends Editor<Formula> {
     }
 
     /**
-     * Ôö¼ÓÎÄ±¾¼àÌı
+     * å¢åŠ æ–‡æœ¬ç›‘å¬
      *
-     * @param l ¼àÌıÆ÷
+     * @param l ç›‘å¬å™¨
      */
     public void addDocumentListener(DocumentListener l) {
         currentTextField.getDocument().addDocumentListener(l);
@@ -133,17 +133,17 @@ public class FormulaEditor extends Editor<Formula> {
     }
 
     /**
-     * objectÊÇ·ñÊÇ¹«Ë¾ÀàĞÍ¶ÔÏó
+     * objectæ˜¯å¦æ˜¯å…¬å¸ç±»å‹å¯¹è±¡
      *
-     * @param object ĞèÅĞ¶ÏµÄ¶ÔÏó
-     * @return ÊÇ¹«Ê½ÀàĞÍÔò·µ»Øtrue
+     * @param object éœ€åˆ¤æ–­çš„å¯¹è±¡
+     * @return æ˜¯å…¬å¼ç±»å‹åˆ™è¿”å›true
      */
     public boolean accept(Object object) {
         return object instanceof Formula;
     }
 
     /**
-     * ÖØÖÃ
+     * é‡ç½®
      */
     public void reset() {
         currentTextField.setText("=");
@@ -151,16 +151,16 @@ public class FormulaEditor extends Editor<Formula> {
     }
 
     /**
-     * Çå³şÊı¾İ
+     * æ¸…æ¥šæ•°æ®
      */
     public void clearData() {
         reset();
     }
 
     /**
-     * ÊÇ·ñ¿ÉÓÃ
+     * æ˜¯å¦å¯ç”¨
      *
-     * @param flag Îªtrue´ú±í¿ÉÓÃ
+     * @param flag ä¸ºtrueä»£è¡¨å¯ç”¨
      */
     public void enableEditor(boolean flag) {
         this.setEnabled(flag);

@@ -14,12 +14,12 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * 图表设计器的图标属性表高级tab
+ * 鍥捐〃璁捐鍣ㄧ殑鍥炬爣灞炴�ц〃楂樼骇tab
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: 下午2:04
+ * Time: 涓嬪崍2:04
  */
 public class ChartDesignerOtherPane extends ChartOtherPane {
 
@@ -32,9 +32,9 @@ public class ChartDesignerOtherPane extends ChartOtherPane {
     }
 
     /**
-     * 界面标题
+     * 鐣岄潰鏍囬
      *
-     * @return 返回标题.
+     * @return 杩斿洖鏍囬.
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Advanced");

@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA. Author : Richer Version: 6.5.6 Date : 11-11-15 Time
- * : ÏÂÎç6:24
+ * : ä¸‹åˆ6:24
  */
 public class DefaultButtonDetailPane extends ButtonWithHotkeysDetailPane<Button> {
 

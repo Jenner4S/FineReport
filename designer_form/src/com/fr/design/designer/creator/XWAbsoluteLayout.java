@@ -45,8 +45,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * Ôö¼Ó¶ÔÆëÏß
-	 * @param connector ¶ÔÆëÏß
+	 * å¢åŠ å¯¹é½çº¿
+	 * @param connector å¯¹é½çº¿
 	 */
 	public void addConnector(Connector connector) {
 		xConnectorMap.put(connector, new XConnector(connector, this));
@@ -58,8 +58,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * È¥³ı¶ÔÆëÏß
-	 * @param connector ¶ÔÆëÏß
+	 * å»é™¤å¯¹é½çº¿
+	 * @param connector å¯¹é½çº¿
 	 */
 	public void removeConnector(Connector connector) {
 		((WAbsoluteLayout) data).removeConnector(connector);
@@ -67,8 +67,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ·µ»Ø¶ÔÓ¦µÄwidgetÈİÆ÷
-	 * @return ·µ»ØWAbsoluteLayout
+	 * è¿”å›å¯¹åº”çš„widgetå®¹å™¨
+	 * @return è¿”å›WAbsoluteLayout
 	 */
 	@Override
 	public WAbsoluteLayout toData() {
@@ -81,8 +81,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 
 	/**
-	 * ·µ»ØÄ¬ÈÏµÄÈİÆ÷name
-	 * @return ·µ»Ø¾ø¶Ô²¼¾ÖÈİÆ÷Ãû
+	 * è¿”å›é»˜è®¤çš„å®¹å™¨name
+	 * @return è¿”å›ç»å¯¹å¸ƒå±€å®¹å™¨å
 	 */
 	@Override
 	public String createDefaultName() {
@@ -105,7 +105,7 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * ×ª»»±£´æ×é¼şĞÅÏ¢µÄwlayoutÎª¶ÔÓ¦µÄcontainer
+	 * è½¬æ¢ä¿å­˜ç»„ä»¶ä¿¡æ¯çš„wlayoutä¸ºå¯¹åº”çš„container
 	 */
 	@Override
 	public void convert() {
@@ -128,10 +128,10 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	/**
-	 * µ±Ç°×é¼şzorderÎ»ÖÃÌæ»»ĞÂµÄ¿Ø¼ş
-	 * @param widget ¿Ø¼ş
-	 * @param  oldcreator ¾É×é¼ş
-	 * @return ×é¼ş
+	 * å½“å‰ç»„ä»¶zorderä½ç½®æ›¿æ¢æ–°çš„æ§ä»¶
+	 * @param widget æ§ä»¶
+	 * @param  oldcreator æ—§ç»„ä»¶
+	 * @return ç»„ä»¶
 	 */
 	@Override
 	public XCreator replace(Widget widget, XCreator oldcreator) {
@@ -146,8 +146,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 
 	 /**
-     * ×é¼şÔö¼Ó
-     * @param e ÈİÆ÷ÊÂ¼ş
+     * ç»„ä»¶å¢åŠ 
+     * @param e å®¹å™¨äº‹ä»¶
      */
 	@Override
 	public void componentAdded(ContainerEvent e) {
@@ -163,8 +163,8 @@ public class XWAbsoluteLayout extends XLayoutContainer {
 	}
 	
 	 /**
-     * ÔÚÉè¼Æ½çÃæÖĞÓĞ×é¼şÒÆ³ıµÄÊ±ºò£¬ĞèÒªÍ¨ÖªWLayoutÈİÆ÷ÖØĞÂpaint
-     * @param e ÈİÆ÷ÊÂ¼ş
+     * åœ¨è®¾è®¡ç•Œé¢ä¸­æœ‰ç»„ä»¶ç§»é™¤çš„æ—¶å€™ï¼Œéœ€è¦é€šçŸ¥WLayoutå®¹å™¨é‡æ–°paint
+     * @param e å®¹å™¨äº‹ä»¶
      */
     @Override
     public void componentRemoved(ContainerEvent e) {

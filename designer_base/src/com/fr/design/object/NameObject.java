@@ -6,7 +6,7 @@ import com.fr.general.ComparatorUtils;
 /**
  * 
  * @author zhou
- * @since 2012-5-29ÏÂÎç1:25:42
+ * @since 2012-5-29ä¸‹åˆ1:25:42
  */
 public class NameObject<T> {
 	private String name;
@@ -19,31 +19,31 @@ public class NameObject<T> {
 	}
 
 	/**
-	 * »ñÈ¡¶ÔÏóµÄÃû×Ö
+	 * è·å–å¯¹è±¡çš„åå­—
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * ÉèÖÃ¶ÔÏóµÄÃû×Ö
+	 * è®¾ç½®å¯¹è±¡çš„åå­—
 	 * 
 	 * @param name
-	 *            ¶ÔÏóµÄÃû×Ö
+	 *            å¯¹è±¡çš„åå­—
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * »ñÈ¡°üº¬µÄÒ»°ã¶ÔÏó
+	 * è·å–åŒ…å«çš„ä¸€èˆ¬å¯¹è±¡
 	 */
 	public T getObject() {
 		return this.object;
 	}
 
 	/**
-	 * ÉèÖÃ°üº¬µÄÒ»°ã¶ÔÏó
+	 * è®¾ç½®åŒ…å«çš„ä¸€èˆ¬å¯¹è±¡
 	 */
 	public void setObject(T object) {
 		this.object = object;

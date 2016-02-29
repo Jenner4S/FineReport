@@ -17,5 +17,3 @@ public class CellEditorEvent extends EventObject {
         super(source);
     }
 }
-
-

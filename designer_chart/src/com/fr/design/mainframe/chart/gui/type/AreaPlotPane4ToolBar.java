@@ -18,7 +18,7 @@ import java.util.List;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-16
- * Time: ÏÂÎç5:55
+ * Time: ä¸‹åˆ5:55
  */
 public class AreaPlotPane4ToolBar extends PlotPane4ToolBar {
 

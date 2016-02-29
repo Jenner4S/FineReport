@@ -11,7 +11,7 @@ import com.fr.stable.ArrayUtils;
 import com.fr.stable.project.ProjectConstants;
 
 /*
- * ÏÔÊ¾EnvÏÂµÄreportletsÄ¿Â¼ÏÂÃæµÄËùÓĞcptÎÄ¼ş
+ * æ˜¾ç¤ºEnvä¸‹çš„reportletsç›®å½•ä¸‹é¢çš„æ‰€æœ‰cptæ–‡ä»¶
  */
 public class TemplateFileTree extends EnvFileTree {
 	
@@ -21,14 +21,14 @@ public class TemplateFileTree extends EnvFileTree {
     }
 
     /*
-     * Ñ¡ÖĞreportPath
+     * é€‰ä¸­reportPath
      */
     public void setSelectedTemplatePath(String templatePath) {
         this.selectPath(templatePath);
     }
 
     /**
-     * ·µ»ØÑ¡ÖĞµÄTemplateµÄÂ·¾¶
+     * è¿”å›é€‰ä¸­çš„Templateçš„è·¯å¾„
      */
     public String getSelectedTemplatePath() {
         FileNode fn = this.getSelectedFileNode();

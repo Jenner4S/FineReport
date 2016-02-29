@@ -28,10 +28,10 @@ import com.fr.general.Inter;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-4 ÉÏÎç11:05:32
- * ÀàËµÃ÷: Êı×Ö¸ñÊ½µÄUIComboBox½çÃæ. Ô­ĞÍÍ¼²Î¿¼bug5471Ğ§¹û3
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-4 ä¸Šåˆ11:05:32
+ * ç±»è¯´æ˜: æ•°å­—æ ¼å¼çš„UIComboBoxç•Œé¢. åŸå‹å›¾å‚è€ƒbug5471æ•ˆæœ3
  * 
- * @<a> ÓĞ¿ÉÄÜÖ»ĞèÒª°Ù·Ö±È(±ıÍ¼µÄ°Ù·Ö±È¸ñÊ½ÉèÖÃ)
+ * @<a> æœ‰å¯èƒ½åªéœ€è¦ç™¾åˆ†æ¯”(é¥¼å›¾çš„ç™¾åˆ†æ¯”æ ¼å¼è®¾ç½®)
  */
 public class FormatBox extends BasicPane {
 	private static final long serialVersionUID = -8728652510003088618L;
@@ -63,7 +63,7 @@ public class FormatBox extends BasicPane {
 		
 		pane.add(new UILabel(Inter.getLocText("Format") + ":"));
 		formatBox = new UIComboBox();
-		// kunsnat: ´óĞ¡: Õâ¸öÓĞµÄ¸ñÊ½µÄ´óĞ¡ĞèÒªºÜ¿í!
+		// kunsnat: å¤§å°: è¿™ä¸ªæœ‰çš„æ ¼å¼çš„å¤§å°éœ€è¦å¾ˆå®½!
 		formatBox.setPreferredSize(new Dimension(150, 20));
 		formatBox.setEditable(false);
 		formatBox.setEnabled(false);
@@ -203,6 +203,6 @@ public class FormatBox extends BasicPane {
 	}
 	
 	private boolean isMoneyPattern(String pattern) {
-		return (pattern.length() > 0 && pattern.charAt(0) == '¡è') || (pattern.length() > 0 && pattern.charAt(0) == '$');
+		return (pattern.length() > 0 && pattern.charAt(0) == 'Â¤') || (pattern.length() > 0 && pattern.charAt(0) == '$');
 	}
 }

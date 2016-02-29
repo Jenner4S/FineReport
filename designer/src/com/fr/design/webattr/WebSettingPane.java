@@ -119,7 +119,7 @@ public abstract class WebSettingPane<T extends WebContent> extends BasicBeanPane
 
 	@Override
 	public void populateBean(ReportWebAttr reportWebAttr) {
-		if (reportWebAttr == null || this.getWebContent(reportWebAttr) == null) {// Èç¹ûÊÇ¿ÕÖµ¾ÍËµÃ÷²ÉÓÃ·şÎñÆ÷ÅäÖÃÁË
+		if (reportWebAttr == null || this.getWebContent(reportWebAttr) == null) {// å¦‚æœæ˜¯ç©ºå€¼å°±è¯´æ˜é‡‡ç”¨æœåŠ¡å™¨é…ç½®äº†
 			choseComboBox.removeItemListener(itemListener);
 			choseComboBox.setSelectedIndex(SERVER_SET);
 			choseComboBox.addItemListener(itemListener);
@@ -127,7 +127,7 @@ public abstract class WebSettingPane<T extends WebContent> extends BasicBeanPane
 			populateServerSettings();
 			return;
 		}
-		// Ä£°åÉèÖÃ
+		// æ¨¡æ¿è®¾ç½®
 		choseComboBox.removeItemListener(itemListener);
 		choseComboBox.setSelectedIndex(SINGLE_SET);
 		choseComboBox.addItemListener(itemListener);
@@ -210,11 +210,11 @@ public abstract class WebSettingPane<T extends WebContent> extends BasicBeanPane
 	}
 
     /**
-     * webÊôĞÔÊÇ·ñÎª¿Õ
+     * webå±æ€§æ˜¯å¦ä¸ºç©º
      *
-     * @param reportWebAttr Ä£°åwebÊôĞÔ
+     * @param reportWebAttr æ¨¡æ¿webå±æ€§
      *
-     * @return Ä£°åwebÊôĞÔÊé·ñÎª¿Õ
+     * @return æ¨¡æ¿webå±æ€§ä¹¦å¦ä¸ºç©º
      */
 	public static boolean is_Null_ReportWebAttr(ReportWebAttr reportWebAttr) {
 		if (reportWebAttr == null) {

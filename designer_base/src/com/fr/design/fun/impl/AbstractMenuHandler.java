@@ -34,10 +34,10 @@ public abstract class AbstractMenuHandler implements MenuHandler {
     }
 
     /**
-     * »ñÈ¡µ±Ç°²Ëµ¥¶ÔÓ¦µÄAction
-     * ²»ĞèÒªÑ¡ÖĞ¶ÔÏó, (ÎÄ¼ş, ·şÎñÆ÷, ¹ØÓÚ)
+     * è·å–å½“å‰èœå•å¯¹åº”çš„Action
+     * ä¸éœ€è¦é€‰ä¸­å¯¹è±¡, (æ–‡ä»¶, æœåŠ¡å™¨, å…³äº)
      *
-     * @return ²Ëµ¥Action
+     * @return èœå•Action
      *
      */
     public ShortCut shortcut(){
@@ -45,11 +45,11 @@ public abstract class AbstractMenuHandler implements MenuHandler {
     }
 
     /**
-     * »ñÈ¡µ±Ç°²Ëµ¥¶ÔÓ¦µÄAction
+     * è·å–å½“å‰èœå•å¯¹åº”çš„Action
      *
-     * @param plus µ±Ç°Ñ¡ÖĞµÄ¶ÔÏó(Ä£°å)
+     * @param plus å½“å‰é€‰ä¸­çš„å¯¹è±¡(æ¨¡æ¿)
      *
-     * @return ²Ëµ¥Action
+     * @return èœå•Action
      *
      */
     public ShortCut shortcut(ToolBarMenuDockPlus plus){

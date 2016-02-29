@@ -15,10 +15,10 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * ±í¸ñ±à¼­Ãæ°å,Ò»°ãÊÇÁ½ÁĞ.¼ü-Öµ ÓÃ·ºĞÍÊµÏÖ£¬ÓÃµÄÊ±ºòÇë¶¨ÒåT.modelÀïÃæµÄTÒªÒ»Ñù
+ * è¡¨æ ¼ç¼–è¾‘é¢æ¿,ä¸€èˆ¬æ˜¯ä¸¤åˆ—.é”®-å€¼ ç”¨æ³›å‹å®ç°ï¼Œç”¨çš„æ—¶å€™è¯·å®šä¹‰T.modelé‡Œé¢çš„Tè¦ä¸€æ ·
  * 
  * @editor zhou
- * @since 2012-3-28ÏÂÎç3:06:30
+ * @since 2012-3-28ä¸‹åˆ3:06:30
  */
 public class UITableEditorPane<T> extends BasicPane {
 	/**
@@ -26,7 +26,7 @@ public class UITableEditorPane<T> extends BasicPane {
 	 */
 	private static final long serialVersionUID = 6855793816972735815L;
 	private JTable editTable;
-	// ·ÅÖÃaction µÄ°´Å¥.
+	// æ”¾ç½®action çš„æŒ‰é’®.
 	private UITableModelAdapter<T> tableModel;
 	private String leftLabelName;
     private JPanel buttonPane;
@@ -86,16 +86,16 @@ public class UITableEditorPane<T> extends BasicPane {
     }
 
     /**
-     * Ôö¼ÓÊÂ¼ş¼àÌı
-     * @param l     ¼ÓµÄ¶«¶«
+     * å¢åŠ äº‹ä»¶ç›‘å¬
+     * @param l     åŠ çš„ä¸œä¸œ
      */
 	public void addTableListener(TableModelListener l) {
 		tableModel.addTableModelListener(l);
 	}
 
     /**
-     * ÒÆ³ıÊÂ¼ş¼àÌı
-     * @param l     È¥µÄ¶«¶«
+     * ç§»é™¤äº‹ä»¶ç›‘å¬
+     * @param l     å»çš„ä¸œä¸œ
      */
 	public void removeTableListener(TableModelListener l) {
 		tableModel.removeTableModelListener(l);
@@ -120,7 +120,7 @@ public class UITableEditorPane<T> extends BasicPane {
 		}
 	}
 
-	// TODO:augustÕâ¸ö×îºÃ»¹ÊÇ·µ»ØÊı×é
+	// TODO:augustè¿™ä¸ªæœ€å¥½è¿˜æ˜¯è¿”å›æ•°ç»„
 	public List<T> update() {
 		tableModel.stopCellEditing();
 		return tableModel.getList();
@@ -139,7 +139,7 @@ public class UITableEditorPane<T> extends BasicPane {
     }
 
     /**
-     * Í£Ö¹±à¼­
+     * åœæ­¢ç¼–è¾‘
      */
     public void stopEditing() {
         tableModel.stopCellEditing();

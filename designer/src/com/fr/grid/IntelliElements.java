@@ -120,7 +120,7 @@ public class IntelliElements {
             R2LDHelper.doIntelliAction();
         }
 
-        //ÉèÖÃGridSelection.
+        //è®¾ç½®GridSelection.
         reportPane.setSelection(new CellSelection(this.dragCellRectangle.x, this.dragCellRectangle.y, this.dragCellRectangle.width, this.dragCellRectangle.height));
         reportPane.repaint();
     }
@@ -172,7 +172,7 @@ public class IntelliElements {
                     copy(cellElementsClip);
                 }
 
-                //ÉèÖÃGridSelection.
+                //è®¾ç½®GridSelection.
                 reportPane.setSelection(new CellSelection(
                         IntelliElements.this.dragCellRectangle.x,
                         IntelliElements.this.dragCellRectangle.y,
@@ -205,7 +205,7 @@ public class IntelliElements {
                         newCellElement.setValue(formula);
                     } else {
                         try {
-                            //richer:²»¸Ä±äÔ­µ¥Ôª¸ñ
+                            //richer:ä¸æ”¹å˜åŸå•å…ƒæ ¼
                             newCellElement.setValue(BaseUtils.cloneObject(sourceCellElement.getValue()));
                         } catch (CloneNotSupportedException e) {
                             FRContext.getLogger().error(e.getMessage(), e);
@@ -251,7 +251,7 @@ public class IntelliElements {
                 int tokenStart = matcher.start();
                 int tokenEnd = matcher.end();
 
-                //jack Õâ¸öµØ·½¾ÍÊÇÎªÁËÈÃ²ÎÊıµÄĞÎÊ½²»À©Õ¹¡£
+                //jack è¿™ä¸ªåœ°æ–¹å°±æ˜¯ä¸ºäº†è®©å‚æ•°çš„å½¢å¼ä¸æ‰©å±•ã€‚
                 char isParam = formulaContent.charAt(tokenStart - 1);
                 if (isParam == '$') {
                     continue;
@@ -273,7 +273,7 @@ public class IntelliElements {
         }
     }
 
-    // Ë³Ê±ÕëµÄÍÏ×§£¬°üÀ¨´Ó×óµ½ÓÒºÍ´ÓÉÏµ½ÏÂ
+    // é¡ºæ—¶é’ˆçš„æ‹–æ‹½ï¼ŒåŒ…æ‹¬ä»å·¦åˆ°å³å’Œä»ä¸Šåˆ°ä¸‹
     private abstract class ClockwiseDragHelper extends DragHelper {
         @Override
 		public void copy(CellElementsClip cellElementsClip) {
@@ -287,7 +287,7 @@ public class IntelliElements {
 
     }
 
-    // ÄæÊ±ÕëµÄÍÏ×§£¬°üÀ¨´ÓÓÒµ½×óºÍ´ÓÏÂµ½ÉÏ
+    // é€†æ—¶é’ˆçš„æ‹–æ‹½ï¼ŒåŒ…æ‹¬ä»å³åˆ°å·¦å’Œä»ä¸‹åˆ°ä¸Š
     private abstract class CounterClockwiseDragHelper extends DragHelper {
         @Override
 		public void copy(CellElementsClip cellElementsClip) {
@@ -318,7 +318,7 @@ public class IntelliElements {
         @Override
         public int[] getRect(int i) {
             return new int[]{i, oldCellRectangle.y, i, oldCellRectangle.y,
-                    //peter:×îºó²»ÄÜÔ½½ç.
+                    //peter:æœ€åä¸èƒ½è¶Šç•Œ.
                     Math.min(oldCellRectangle.width, IntelliElements.this.dragCellRectangle.x + IntelliElements.this.dragCellRectangle.width - i),
                     oldCellRectangle.height
             };
@@ -388,7 +388,7 @@ public class IntelliElements {
                     i,
                     oldCellRectangle.y,
                     Math.max(i, IntelliElements.this.dragCellRectangle.x), oldCellRectangle.y,
-                    //peter:×îÇ°ÃæµÄÊ±ºò²»ÄÜÔ½½ç
+                    //peter:æœ€å‰é¢çš„æ—¶å€™ä¸èƒ½è¶Šç•Œ
                     Math.min(oldCellRectangle.width, oldCellRectangle.width - (IntelliElements.this.dragCellRectangle.x - i)), oldCellRectangle.height
             };
         }
@@ -456,7 +456,7 @@ public class IntelliElements {
             return new int[]{
                     oldCellRectangle.x, i, oldCellRectangle.x, i,
                     oldCellRectangle.width,
-                    //peter:×îºó²»ÄÜÔ½½ç.
+                    //peter:æœ€åä¸èƒ½è¶Šç•Œ.
                     Math.min(oldCellRectangle.height, IntelliElements.this.dragCellRectangle.y + IntelliElements.this.dragCellRectangle.height - i)
             };
         }
@@ -523,7 +523,7 @@ public class IntelliElements {
             return new int[]{
                     oldCellRectangle.x, i, oldCellRectangle.x,
                     Math.max(i, IntelliElements.this.dragCellRectangle.y), oldCellRectangle.width,
-                    //peter:×îÇ°ÃæµÄÊ±ºò²»ÄÜÔ½½ç
+                    //peter:æœ€å‰é¢çš„æ—¶å€™ä¸èƒ½è¶Šç•Œ
                     Math.min(oldCellRectangle.height, oldCellRectangle.height - (IntelliElements.this.dragCellRectangle.y - i))
 
             };

@@ -11,7 +11,7 @@ import java.awt.*;
 
 
 /**
- * ÓÃÓÚÊôĞÔ±íÖĞµÄÃæ°å£¬Ö÷ÒªÊÇÎªÁË¸ø°üº¬ÓÚÕâ¸öÃæ°åÄÚ²¿µÄÖÚ¶àUI¿Ø¼ş¼Ó¼àÌıÊÂ¼ş£¬ÔÚUI¿Ø¼ş¸Ä±äµÄÊ±ºò£¬Í¨ÖªÄ£°å×öÏàÓ¦µÄ±ä»¯
+ * ç”¨äºå±æ€§è¡¨ä¸­çš„é¢æ¿ï¼Œä¸»è¦æ˜¯ä¸ºäº†ç»™åŒ…å«äºè¿™ä¸ªé¢æ¿å†…éƒ¨çš„ä¼—å¤šUIæ§ä»¶åŠ ç›‘å¬äº‹ä»¶ï¼Œåœ¨UIæ§ä»¶æ”¹å˜çš„æ—¶å€™ï¼Œé€šçŸ¥æ¨¡æ¿åšç›¸åº”çš„å˜åŒ–
  */
 public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	private static final int DEFAULT_HEIGHT = 250;
@@ -37,7 +37,7 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	}
 
 	/**
-	 * ºóÌ¨³õÊ¼»¯ËùÓĞÊÂ¼ş.
+	 * åå°åˆå§‹åŒ–æ‰€æœ‰äº‹ä»¶.
 	 */
 	public void initAllListeners() {
         initListener(AbstractAttrNoScrollPane.this);
@@ -52,7 +52,7 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	protected abstract JPanel createContentPane();
 
 	/**
-	 * august:²»ÈİÒ×°¡ »¹ÒªÓÃ±Ê»­Í¼Á¢¸ö·½³Ì²Å¼ÆËã³öÀ´
+	 * august:ä¸å®¹æ˜“å•Š è¿˜è¦ç”¨ç¬”ç”»å›¾ç«‹ä¸ªæ–¹ç¨‹æ‰è®¡ç®—å‡ºæ¥
 	 */
 	protected void adjustValues() {
 		doLayout();
@@ -94,15 +94,15 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	}
 
     /**
-     * ÊÇ·ñÓĞ¸Ä±ä¼àÌı
-     * @return  ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦æœ‰æ”¹å˜ç›‘å¬
+     * @return  æ˜¯åˆ™è¿”å›true
      */
 	public static boolean isHasChangeListener() {
 		return hasChangeListener;
 	}
 
 	/**
-	 * ·µ»ØÔ¤¶¨ÒåµÄ´óĞ¡.
+	 * è¿”å›é¢„å®šä¹‰çš„å¤§å°.
 	 */
 	public Dimension getPreferredSize() {
 		return new Dimension(super.getPreferredSize().width, DEFAULT_HEIGHT);
@@ -110,8 +110,8 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 
 
     /**
-     * ·µ»Ø°ó¶¨µÄÊôĞÔÊÂ¼ş.
-     * @param listener  Ôö¼Ó¼àÌı
+     * è¿”å›ç»‘å®šçš„å±æ€§äº‹ä»¶.
+     * @param listener  å¢åŠ ç›‘å¬
      */
 	public void addAttributeChangeListener(AttributeChangeListener listener) {
 		this.listener = listener;
@@ -119,7 +119,7 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	}
 
 	/**
-	 * ÏìÓ¦ÊôĞÔÊÂ¼ş.
+	 * å“åº”å±æ€§äº‹ä»¶.
 	 */
 	public void attributeChanged() {
 		synchronized (this) {
@@ -130,18 +130,18 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	}
 
 	/**
-	 * ·µ»ØÍ¼±êµÄÂ·¾¶
+	 * è¿”å›å›¾æ ‡çš„è·¯å¾„
 	 */
 	public abstract String getIconPath();
 
     /**
-     * ½çÃæ±êÌâ
-     * @return ±êÌâ
+     * ç•Œé¢æ ‡é¢˜
+     * @return æ ‡é¢˜
      */
 	public abstract String title4PopupWindow();
 
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄID, ÓÃÓÚË«»÷Õ¹Ê¾½çÃæ.
+	 * è®¾ç½®é€‰ä¸­çš„ID, ç”¨äºåŒå‡»å±•ç¤ºç•Œé¢.
 	 */
 	public void setSelectedByIds(int level, String... id) {
 
@@ -152,8 +152,8 @@ public abstract class AbstractAttrNoScrollPane extends BasicPane {
 	}
 
     /**
-     * Ö÷ÒªÓÃÓÚÍ¼±íÉè¼ÆÆ÷
-     * @return ÊÇ
+     * ä¸»è¦ç”¨äºå›¾è¡¨è®¾è®¡å™¨
+     * @return æ˜¯
      */
     public boolean isNeedPresentPaneWhenFilterData(){
         return true;

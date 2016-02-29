@@ -16,7 +16,7 @@ import java.util.HashMap;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-2-13
- * Time: ÏÂÎç2:53
+ * Time: ä¸‹åˆ2:53
  */
 public class UICheckBoxIcon extends MetalCheckBoxIcon {
 

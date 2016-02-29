@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * User: zheng
  * Date: 14-3-28
- * Time: ÏÂÎç3:24
+ * Time: ä¸‹åˆ3:24
  */
 
 public  class CommitTabbedPane extends JComponent implements MouseListener, MouseMotionListener {
@@ -34,14 +34,14 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     private static final Icon DISABLED_RIGHT_ICON = BaseUtils.createIcon(DESIGN_IMAGE, 14, 14, 14, 14);
     private Icon addIcon = ADD_NORMAL;
 
-    private static final int TOOLBAR_HEIGHT = 16;  //  °´Å¥¸ß¶È
-    private static final int GAP = 5;       //¼ä¸ô
+    private static final int TOOLBAR_HEIGHT = 16;  //  æŒ‰é’®é«˜åº¦
+    private static final int GAP = 5;       //é—´éš”
     private static final int SMALLGAP = 3;
     
     private static final int FIRST_TAB_POSITION = 20;
 
 
-    // ×óÒÆºÍÓÒÒÆ°´Å¥
+    // å·¦ç§»å’Œå³ç§»æŒ‰é’®
     private UIButton leftButton;
     private UIButton rightButton;
 
@@ -51,10 +51,10 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
     private Commit2DBJavaScriptPane commit2DBJavaScriptPane;
 
-    // ÄÜÏÔÊ¾µÄtab¸öÊı
+    // èƒ½æ˜¾ç¤ºçš„tabä¸ªæ•°
     private int showCount = 0;
 
-    //Ñ¡ÁË30¶ÈºÍ60¶ÈµÄÌØÊâ½Ç¶ÈµÄx,y×÷Îª¾­¹ıµÄÁ½¸öµãµÄ×ø±ê
+    //é€‰äº†30åº¦å’Œ60åº¦çš„ç‰¹æ®Šè§’åº¦çš„x,yä½œä¸ºç»è¿‡çš„ä¸¤ä¸ªç‚¹çš„åæ ‡
     private double specialLocation1 = 2.5;
     private double specialLocation2 = 4.330127;
 
@@ -65,20 +65,20 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     private static final double CORNOR_RADIUS = 5.0;
 
 
-    //tabÀ¸¿ÉÒÔ·ÅÏÂµÄÃ¿¸ötabµÄÊµ¼Ê¿í¶È
+    //tabæ å¯ä»¥æ”¾ä¸‹çš„æ¯ä¸ªtabçš„å®é™…å®½åº¦
     private int tabWidth = 70;
 
 
-    //µ±Ç°±êÇ©Ò³À¸´æ·ÅµÄËùÓĞ±êÇ©Ò³µÄindex
+    //å½“å‰æ ‡ç­¾é¡µæ å­˜æ”¾çš„æ‰€æœ‰æ ‡ç­¾é¡µçš„index
     private int scrollIndex = 0;
     private int lastOneIndex = 0;
 
-    //Ìí¼Ó±êÇ©Î»ÖÃ
+    //æ·»åŠ æ ‡ç­¾ä½ç½®
     private int addX = -1;
     private int addY = -1;
 
 
-    //¸÷É¾³ı±êÇ©Î»ÖÃ
+    //å„åˆ é™¤æ ‡ç­¾ä½ç½®
     private int[] closeIconStartX;
 
 
@@ -170,9 +170,9 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     private void paintBackgroundAndLine(Graphics2D g2d, double maxWidth) {
-        //ÄÜ»­µÄ¸öÊı
+        //èƒ½ç”»çš„ä¸ªæ•°
         showCount = (int) (maxWidth) / tabWidth;
-        //¼ÆËã¿ªÊ¼»­µÄ×îĞ¡Ä£°åindexºÍ×î´óÄ£°åindex
+        //è®¡ç®—å¼€å§‹ç”»çš„æœ€å°æ¨¡æ¿indexå’Œæœ€å¤§æ¨¡æ¿index
         if (selectedIndex >= dbManipulationPaneList.size()) {
             selectedIndex = dbManipulationPaneList.size() - 1;
         }
@@ -183,7 +183,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
         closeIconStartX = new int[lastOneIndex - scrollIndex + 1];
 
         int startX = 0;
-        //´Ó¿ÉÒÔ¿ªÊ¼Õ¹Ê¾ÔÚtabÃæ°åÉÏµÄtab¿ªÊ¼»­
+        //ä»å¯ä»¥å¼€å§‹å±•ç¤ºåœ¨tabé¢æ¿ä¸Šçš„tabå¼€å§‹ç”»
         for (int i = scrollIndex; i <= lastOneIndex; i++) {
             DBManipulationPane dbManipulationPane = (DBManipulationPane)dbManipulationPaneList.get(i);
             String name ;
@@ -214,7 +214,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
         String prefix = Inter.getLocText("FR-Designer-CommitTab_Submit");
         int  count = getTabCount();
         while (true) {
-            //´ÓÌá½»1¿ªÊ¼
+            //ä»æäº¤1å¼€å§‹
             count = count == 0 ? 1 : count;
             String newName = prefix + count;
             boolean repeated = false;
@@ -236,7 +236,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
 
     private void paintUnderLine(double startX, double maxWidth, Graphics2D g2d) {
-        //»­ÏÂÃæµÄÄÇÌõÏß
+        //ç”»ä¸‹é¢çš„é‚£æ¡çº¿
         if (startX < maxWidth) {
             GeneralPath generalPath = new GeneralPath(Path2D.WIND_EVEN_ODD, 2);
             generalPath.moveTo((float) startX, (float) (getHeight() - 1));
@@ -248,18 +248,18 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
 
-    private void calMinAndMaxIndex() { //Èç¹û¸öÊı´óÓÚ×î¶àÄÜÈİÄÉµÄ¸öÊı£¬Ôò¶àÓàµÄ½øĞĞ´¦Àí       
+    private void calMinAndMaxIndex() { //å¦‚æœä¸ªæ•°å¤§äºæœ€å¤šèƒ½å®¹çº³çš„ä¸ªæ•°ï¼Œåˆ™å¤šä½™çš„è¿›è¡Œå¤„ç†       
 
         if (dbManipulationPaneList.size() > showCount) {
 
-            if (selectedIndex >= lastOneIndex) {     //Ëùµã»÷ÁĞ±íÖĞµÄ±êÇ©Ò³´¦ÔÚ±êÇ©Ò³À¸×îºóÒ»¸ö±êÇ©Ò³Ö®ºó£¬Ôò±êÇ©Ò³À¸×óÒÆÖÁËùµã»÷±êÇ©Ò³³öÏÖ
+            if (selectedIndex >= lastOneIndex) {     //æ‰€ç‚¹å‡»åˆ—è¡¨ä¸­çš„æ ‡ç­¾é¡µå¤„åœ¨æ ‡ç­¾é¡µæ æœ€åä¸€ä¸ªæ ‡ç­¾é¡µä¹‹åï¼Œåˆ™æ ‡ç­¾é¡µæ å·¦ç§»è‡³æ‰€ç‚¹å‡»æ ‡ç­¾é¡µå‡ºç°
                 scrollIndex = selectedIndex - showCount + 1;
                 lastOneIndex = selectedIndex;
                 if (scrollIndex <= 0) {
                     scrollIndex = 0;
                     lastOneIndex = showCount - 1;
                 }
-            } else if (selectedIndex <= scrollIndex) {  //Ëùµã»÷ÁĞ±íÖĞµÄ±êÇ©Ò³´¦ÔÚ±êÇ©Ò³À¸µÚÒ»¸ö±êÇ©Ò³Ö®Ç°£¬Ôò±êÇ©Ò³À¸ÓÒÒÆÖÁËùµã»÷±êÇ©Ò³³öÏÖ
+            } else if (selectedIndex <= scrollIndex) {  //æ‰€ç‚¹å‡»åˆ—è¡¨ä¸­çš„æ ‡ç­¾é¡µå¤„åœ¨æ ‡ç­¾é¡µæ ç¬¬ä¸€ä¸ªæ ‡ç­¾é¡µä¹‹å‰ï¼Œåˆ™æ ‡ç­¾é¡µæ å³ç§»è‡³æ‰€ç‚¹å‡»æ ‡ç­¾é¡µå‡ºç°
 
                 scrollIndex = selectedIndex;
                 lastOneIndex = scrollIndex + showCount - 1;
@@ -286,7 +286,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
 
     /**
-     * »­Ñ¡ÖĞµÄtab
+     * ç”»é€‰ä¸­çš„tab
      *
      * @param g2d
      * @param sheetName
@@ -321,7 +321,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
         g2d.draw(new Line2D.Double(x[0] + 3 ,0,x[2] - 3,0));
         g2d.draw(new Arc2D.Double(x[3] - CORNOR_RADIUS * 2, y[3], CORNOR_RADIUS * 2, CORNOR_RADIUS * 2, 90, -90, 0));
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
-        // »­×Ö·û
+        // ç”»å­—ç¬¦
         g2d.setPaint(getForeground());
         g2d.drawString(sheetName,  startX  + 2 * GAP, getHeight()-GAP);
         int closePosition =  startX + tabWidth - closeIcon.getIconWidth() - SMALLGAP;
@@ -334,7 +334,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * »­Ã»ÓĞÑ¡ÖĞµÄtab
+     * ç”»æ²¡æœ‰é€‰ä¸­çš„tab
      *
      * @param g2d
      * @param startX
@@ -377,7 +377,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
         g2d.draw(new Arc2D.Double(x[3] - CORNOR_RADIUS * 2, y[3], CORNOR_RADIUS * 2, CORNOR_RADIUS * 2, 90, -90, 0));
 
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
-        // »­×Ö·û
+        // ç”»å­—ç¬¦
         g2d.setPaint(getForeground());
         g2d.drawString(sheetName,  startX  + 2 * GAP, getHeight() - GAP );
         int closeY = (getHeight() - closeIcon.getIconHeight()) / 2;
@@ -390,15 +390,15 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e  ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e  äº‹ä»¶
      */
     public void mouseClicked(MouseEvent e) {
     }
 
     /**
-     * Êó±ê°´ÏÂ
-     * @param e ÊÂ¼ş
+     * é¼ æ ‡æŒ‰ä¸‹
+     * @param e äº‹ä»¶
      */
     public void mousePressed(MouseEvent e) {
         int x = e.getX(), y = e.getY();
@@ -413,7 +413,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
             if (re == JOptionPane.OK_OPTION) {
                 dbManipulationPaneList.remove(getTabIndex(x));
                 commit2DBJavaScriptPane.setList(dbManipulationPaneList);
-                // É¾³ıtabÒÔºó£¬»ñµÃµÚÒ»¸ötab£¬ÔÙË¢ĞÂÒ»ÏÂ£¬·ñÔò»­Ãæ»áÍ£ÁôÔÚÒÑÉ¾³ıµÄtabÉÏ£¬µÚÒ»¸ötabÊÇ²»¿ÉÉ¾³ıµÄ
+                // åˆ é™¤tabä»¥åï¼Œè·å¾—ç¬¬ä¸€ä¸ªtabï¼Œå†åˆ·æ–°ä¸€ä¸‹ï¼Œå¦åˆ™ç”»é¢ä¼šåœç•™åœ¨å·²åˆ é™¤çš„tabä¸Šï¼Œç¬¬ä¸€ä¸ªtabæ˜¯ä¸å¯åˆ é™¤çš„
                 selectedIndex = getTabIndex(FIRST_TAB_POSITION);
                 commit2DBJavaScriptPane.updateCardPane();
                 
@@ -426,8 +426,8 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * Êó±êÀë¿ª
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e   äº‹ä»¶
      */
     public void mouseReleased(MouseEvent e) {
         if(addX != -1 && isOverAddIcon(e.getX(), e.getY())){
@@ -436,15 +436,15 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * Êó±ê½øÈë
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡è¿›å…¥
+     * @param e   äº‹ä»¶
      */
     public void mouseEntered(MouseEvent e) {
     }
 
     /**
-     * Êó±êÀë¿ª
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç¦»å¼€
+     * @param e   äº‹ä»¶
      */
     public void mouseExited(MouseEvent e) {
         mouseOveredIndex = -1;
@@ -452,15 +452,15 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * Êó±êÍÏ¶¯
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡æ‹–åŠ¨
+     * @param e   äº‹ä»¶
      */
     public void mouseDragged(MouseEvent e) {
     }
 
     /**
-     * Êó±êÒÆ¶¯
-     * @param e   ÊÂ¼ş
+     * é¼ æ ‡ç§»åŠ¨
+     * @param e   äº‹ä»¶
      */
     public void mouseMoved(MouseEvent e) {
         if(addX!= -1 && isOverAddIcon(e.getX(), e.getY())){
@@ -474,7 +474,7 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
 
     /**
-     *  ÅĞ¶ÏÊó±êËùÔÚTab
+     *  åˆ¤æ–­é¼ æ ‡æ‰€åœ¨Tab
      * @param   evtX
      * @return    index
      */
@@ -490,10 +490,10 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * ÅĞ¶ÏÊó±êÊÇ·ñÔÚÌí¼Ó°´Å¥ÉÏ
-     * @param x Êó±ê×ø±êx
-     * @param y Êó±ê×ø±êy
-     * @return ·µ»ØÊó±êÊÇ·ñÔÚÌí¼Ó°´Å¥ÉÏ
+     * åˆ¤æ–­é¼ æ ‡æ˜¯å¦åœ¨æ·»åŠ æŒ‰é’®ä¸Š
+     * @param x é¼ æ ‡åæ ‡x
+     * @param y é¼ æ ‡åæ ‡y
+     * @return è¿”å›é¼ æ ‡æ˜¯å¦åœ¨æ·»åŠ æŒ‰é’®ä¸Š
      */
     private boolean isOverAddIcon(int x, int y){
         int addWidth = addIcon.getIconWidth(),addHeight = addIcon.getIconHeight();
@@ -502,9 +502,9 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
 
 
     /**
-     * ÅĞ¶ÏÊó±êÊÇ·ñÔÚ¹Ø±Õ°´Å¥ÉÏ
+     * åˆ¤æ–­é¼ æ ‡æ˜¯å¦åœ¨å…³é—­æŒ‰é’®ä¸Š
      * @param evtX      x
-     * @return ·µ»ØÊó±êÊÇ·ñÔÚ¹Ø±Õ°´Å¥ÉÏ
+     * @return è¿”å›é¼ æ ‡æ˜¯å¦åœ¨å…³é—­æŒ‰é’®ä¸Š
      */
     private boolean isOverCloseIcon(int evtX) {
         boolean isOverCloseIcon = false;
@@ -520,15 +520,15 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
     /**
-     * Èç¹ûtabÖ»Ê£ÏÂ×îºóÒ»¸ö£¬Ôò²»»­É¾³ı°´Å¥
-     * @return ·µ»Øµ±Ç°tab»¹¿É·ñ¹Ø±Õ
+     * å¦‚æœtabåªå‰©ä¸‹æœ€åä¸€ä¸ªï¼Œåˆ™ä¸ç”»åˆ é™¤æŒ‰é’®
+     * @return è¿”å›å½“å‰tabè¿˜å¯å¦å…³é—­
      */
     private boolean canClose(){
         return closeIconStartX.length > 1;
     }
 
     /**
-     * Ë¢ĞÂtab£¬Í£ÁôÔÚµÚÒ»¸ötabÉÏÃæ
+     * åˆ·æ–°tabï¼Œåœç•™åœ¨ç¬¬ä¸€ä¸ªtabä¸Šé¢
      */
     public void refreshTab(){
         selectedIndex = getTabIndex(FIRST_TAB_POSITION);
@@ -536,4 +536,3 @@ public  class CommitTabbedPane extends JComponent implements MouseListener, Mous
     }
 
 }
-

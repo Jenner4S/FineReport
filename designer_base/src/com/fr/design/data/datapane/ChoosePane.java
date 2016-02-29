@@ -51,23 +51,23 @@ import java.util.List;
 
 /**
  * @author zhou
- * @since 2012-7-11ÏÂÎç4:49:39
+ * @since 2012-7-11ä¸‹åˆ4:49:39
  */
 public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refreshable, Previewable, Prepare4DataSourceChange {
     private static final double COLUMN_SIZE = 24;
 
     /**
-     * Êı¾İ¿â
+     * æ•°æ®åº“
      */
     protected StringUIComboBox dsNameComboBox;
 
     /**
-     * Ä£Ê½
+     * æ¨¡å¼
      */
     protected StringUIComboBox schemaBox;
 
     /**
-     * ±íÃû
+     * è¡¨å
      */
     protected FRTreeComboBox tableNameComboBox;
 
@@ -273,7 +273,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     }
 
     /**
-     * ÖØÖÃÑ¡ÖĞµÄbox
+     * é‡ç½®é€‰ä¸­çš„box
      */
     public void resetComponets() {
         GUICoreUtils.setSelectedItemQuietly(dsNameComboBox, -1);
@@ -284,7 +284,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     protected com.fr.data.impl.Connection getConnection() {
         String selectedDSName = this.getDSName();
         if (StringUtils.isEmpty(selectedDSName)) {
-            return null; // peter:Ñ¡ÖĞÁËµ±Ç°µÄÁã³¤¶ÈµÄ½Úµã,Ö±½Ó·µ»Ø.
+            return null; // peter:é€‰ä¸­äº†å½“å‰çš„é›¶é•¿åº¦çš„èŠ‚ç‚¹,ç›´æ¥è¿”å›.
         }
         DatasourceManagerProvider datasourceManager = DatasourceManager.getProviderInstance();
         @SuppressWarnings("unchecked")
@@ -299,7 +299,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     }
 
     /**
-     * Ë¢ĞÂÃ»¶à´óÓÃ¡£¶øÇÒÒªË¢ĞÂÒ²²»ÊÇÕâ¶ùË¢ĞÂ¡£
+     * åˆ·æ–°æ²¡å¤šå¤§ç”¨ã€‚è€Œä¸”è¦åˆ·æ–°ä¹Ÿä¸æ˜¯è¿™å„¿åˆ·æ–°ã€‚
      */
     public void refresh() {
         DBUtils.refreshDatabase();
@@ -342,16 +342,16 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
 
 
     /**
-     *  Ìí¼ÓÏîÄ¿¼àÌıÊÂ¼ş
-     * @param aListener   ÊÂ¼ş¼àÌıÆ÷
+     *  æ·»åŠ é¡¹ç›®ç›‘å¬äº‹ä»¶
+     * @param aListener   äº‹ä»¶ç›‘å¬å™¨
      */
     public void addItemListener(ItemListener aListener) {
         this.tableNameComboBox.addItemListener(aListener);
     }
 
     /**
-     *  É¾³ıÏîÄ¿¼àÌıÊÂ¼ş
-     * @param aListener   ÊÂ¼ş¼àÌıÆ÷
+     *  åˆ é™¤é¡¹ç›®ç›‘å¬äº‹ä»¶
+     * @param aListener   äº‹ä»¶ç›‘å¬å™¨
      */
     public void removeItemListener(ItemListener aListener) {
         this.tableNameComboBox.removeItemListener(aListener);
@@ -397,7 +397,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
             }
             ((DefaultTreeModel) tree.getModel()).reload();
             /**
-             * daniel Õ¹¿ªËùÓĞtree
+             * daniel å±•å¼€æ‰€æœ‰tree
              */
             TreeNode root = (TreeNode) tree.getModel().getRoot();
             TreePath parent = new TreePath(root);
@@ -413,8 +413,8 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     }
 
     /**
-     * ´´½¨Ñ¡ÖĞµÄÊı¾İ¼¯Êı¾İ
-     * @return    Êı¾İ¼¯Êı¾İ
+     * åˆ›å»ºé€‰ä¸­çš„æ•°æ®é›†æ•°æ®
+     * @return    æ•°æ®é›†æ•°æ®
      */
     public TableData createSelectTableData() {
         DataBaseItems paras = this.updateBean();
@@ -436,7 +436,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
 			failedToFindTable();
             return null;
         }
-        // ÏÔÊ¾TableÊı¾İ.
+        // æ˜¾ç¤ºTableæ•°æ®.
 
         TableData tableData = null;
         if (FRContext.getCurrentEnv() instanceof LocalEnv) {
@@ -482,8 +482,8 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     }
 
     /**
-     * µÃµ½µ±Ç°µÄColumnName[]
-     * @return   ·µ»Øµ±Ç°µÄColumnName[]
+     * å¾—åˆ°å½“å‰çš„ColumnName[]
+     * @return   è¿”å›å½“å‰çš„ColumnName[]
      */
     public String[] currentColumnNames() {
         String[] colNames = null;
@@ -491,7 +491,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
         DataBaseItems paras = this.updateBean();
         String selectedDSName = paras.getDatabaseName();
         if (StringUtils.isBlank(selectedDSName)) {
-            return colNames = new String[0]; // peter:Ñ¡ÖĞÁËµ±Ç°µÄÁã³¤¶ÈµÄ½Úµã,Ö±½Ó·µ»Ø.
+            return colNames = new String[0]; // peter:é€‰ä¸­äº†å½“å‰çš„é›¶é•¿åº¦çš„èŠ‚ç‚¹,ç›´æ¥è¿”å›.
         }
 
         String selectedTableObject = paras.getTableName();
@@ -500,7 +500,7 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
         }
         java.sql.Connection conn = null;
         try {
-            // daniel:Ôö¼Ó²ÎÊı
+            // daniel:å¢åŠ å‚æ•°
             colNames = FRContext.getCurrentEnv().getColumns(selectedDSName, paras.getSchemaName(), selectedTableObject);
         } catch (Exception e2) {
             FRContext.getLogger().error(e2.getMessage(), e2);
@@ -515,30 +515,30 @@ public class ChoosePane extends BasicBeanPane<DataBaseItems> implements Refresha
     }
 
     /**
-     *  Ô¤ÀÀkey value¶ÔÓ¦µÄÊı¾İ
-     * @param key   ¼ü
-     * @param value    Öµ
+     *  é¢„è§ˆkey valueå¯¹åº”çš„æ•°æ®
+     * @param key   é”®
+     * @param value    å€¼
      */
     public void preview(int key, int value) {
         PreviewTablePane.previewTableData(createSelectTableData(), key, value);
     }
 
     /**
-     * Ä¬ÈÏÔ¤ÀÀ
+     * é»˜è®¤é¢„è§ˆ
      */
     public void preview() {
         preview(-1, -1);
     }
 
     /**
-     * ÉèÖÃÊı¾İ¼¯Ãû.
+     * è®¾ç½®æ•°æ®é›†å.
      */
     public void setTableNameComboBoxPopSize(int width, int height) {
         tableNameComboBox.setPopSize(width, height);
     }
 
     /**
-     *×¢²álistener,ÏàÓ¦Êı¾İ¼¯¸Ä±ä
+     *æ³¨å†Œlistener,ç›¸åº”æ•°æ®é›†æ”¹å˜
      */
     public void registerDSChangeListener() {
         DesignTableDataManager.addDsChangeListener(new ChangeListener() {

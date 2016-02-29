@@ -63,21 +63,21 @@ public class CardLayoutConstraints implements ConstraintsGroupModel {
 		if (column == 1) {
 			layout.setWidgetIndex(widget, value == null ? 0 : (((Number) value).intValue() - 1));
 			container.convert();
-			//TODO:convertºó¶ªÊ§½¹µã
+			//TODO:convertåä¸¢å¤±ç„¦ç‚¹
 			return true;
 		}
 		return true;
 	}
 
 	/**
-	 * ÊÇ·ñ¿É±à¼­
+	 * æ˜¯å¦å¯ç¼–è¾‘
 	 * 
-	 * @param row µ±Ç°ĞĞ
+	 * @param row å½“å‰è¡Œ
 	 * 
-	 * @return ÊÇ·ñ¿É±à¼­
+	 * @return æ˜¯å¦å¯ç¼–è¾‘
 	 * 
 	 *
-	 * @date 2014-12-30-ÏÂÎç5:14:31
+	 * @date 2014-12-30-ä¸‹åˆ5:14:31
 	 * 
 	 */
 	public boolean isEditable(int row) {

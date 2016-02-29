@@ -10,12 +10,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * 图表设计器得产品演示
+ * 鍥捐〃璁捐鍣ㄥ緱浜у搧婕旂ず
  * Created by IntelliJ IDEA.
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-10-27
- * Time: 下午9:01
+ * Time: 涓嬪崍9:01
  */
 public class ChartWebAction  extends UpdateAction {
     public ChartWebAction() {
@@ -46,8 +46,8 @@ public class ChartWebAction  extends UpdateAction {
 
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         StartServer.browerURLWithLocalEnv("http://www.vancharts.com/demo.html");

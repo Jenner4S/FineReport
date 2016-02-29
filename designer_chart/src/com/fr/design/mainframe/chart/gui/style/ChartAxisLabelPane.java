@@ -38,7 +38,7 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
     private static final long serialVersionUID = 6601571951210596823L;
     private static final int NUM90 = 90;
     private UICheckBox isLabelShow;
-    private UIComboBox showWay;//ÏÔÊ¾·½Ê½
+    private UIComboBox showWay;//æ˜¾ç¤ºæ–¹å¼
     private UITextField customLabelSamleTime;
     private UIComboBox labelOrientationChoose;
     private NumberDragBar orientationBar;
@@ -314,7 +314,7 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
 
 
     /**
-     * ½çÃæ±êÇ©
+     * ç•Œé¢æ ‡ç­¾
      */
     protected String title4PopupWindow() {
         return Inter.getLocText("ChartF-Tick_Label");
@@ -345,7 +345,7 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
     }
 
     /**
-     * ¼ì²é ±êÇ©½çÃæÊÇ·ñ¿ÉÓÃ.
+     * æ£€æŸ¥ æ ‡ç­¾ç•Œé¢æ˜¯å¦å¯ç”¨.
      */
     private void checkLabelUse() {
         isLabelShow.setEnabled(true);
@@ -362,7 +362,7 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
     }
 
     /**
-     * ¸üĞÂ½çÃæÄÚÈİ.
+     * æ›´æ–°ç•Œé¢å†…å®¹.
      */
     public void populate(Axis axis) {
         if(axis.isSupportAxisLabelWrap()){
@@ -395,7 +395,7 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
 
 
     /**
-     * ±£´æ½çÃæÊôĞÔ.
+     * ä¿å­˜ç•Œé¢å±æ€§.
      */
     public void update(Axis axis) {
         axis.setShowAxisLabel(isLabelShow.isSelected());
@@ -442,8 +442,8 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
     }
 
     /**
-     * ×¢²áÊ±¼ä¼àÌıÆ÷
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * æ³¨å†Œæ—¶é—´ç›‘å¬å™¨
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerChangeListener(UIObserverListener listener) {
         this.observerListener = listener;
@@ -462,8 +462,8 @@ public class ChartAxisLabelPane extends BasicPane implements UIObserver{
     }
 
     /**
-     * ÊÇ·ñÏìÓ¦ÊÂ¼ş¼àÌı
-     * @return ÊÇÔò·µ»Øtrue
+     * æ˜¯å¦å“åº”äº‹ä»¶ç›‘å¬
+     * @return æ˜¯åˆ™è¿”å›true
      */
     public boolean shouldResponseChangeListener() {
         return true;

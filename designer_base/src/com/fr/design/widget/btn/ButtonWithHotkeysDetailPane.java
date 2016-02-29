@@ -20,7 +20,7 @@ import com.fr.stable.StableUtils;
  * Author : Richer
  * Version: 6.5.6
  * Date   : 11-11-15
- * Time   : ÏÂÎç6:22
+ * Time   : ä¸‹åˆ6:22
  */
 public abstract class ButtonWithHotkeysDetailPane<T extends Button> extends ButtonDetailPane<T> {
     private UITextField hotkeysTextField;

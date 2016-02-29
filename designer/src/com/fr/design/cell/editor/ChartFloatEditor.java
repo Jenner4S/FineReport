@@ -37,7 +37,7 @@ public class ChartFloatEditor extends AbstractFloatEditor implements DialogActio
         }
 
         BaseChartCollection cc = this.chartFloatEditorDialog.getChartCollection();
-        // ÅĞ¶ÏÌõ¼şÒÔ¼°·µ»ØÖµ
+        // åˆ¤æ–­æ¡ä»¶ä»¥åŠè¿”å›å€¼
         if (cc != null) {
             return cc;
         } else {
@@ -56,7 +56,7 @@ public class ChartFloatEditor extends AbstractFloatEditor implements DialogActio
                     @Override
                     public void propertyChange() {
                         stopFloatEditing();
-                        grid.requestFocus();// kunsnat: ²¹³ä, ±à¼­Í¼±íresetÖ®ºó, GridÒ²ËãÍ£Ö¹±à¼­ ÖØ»ñ½¹µã bug20443
+                        grid.requestFocus();// kunsnat: è¡¥å……, ç¼–è¾‘å›¾è¡¨resetä¹‹å, Gridä¹Ÿç®—åœæ­¢ç¼–è¾‘ é‡è·ç„¦ç‚¹ bug20443
                     }
                 });
             	

@@ -19,8 +19,8 @@ import com.fr.design.utils.gui.LayoutUtils;
 
 /**
  * @author richer
- * @since 6.5.5 ´´½¨ÓÚ2011-6-16 »áÏÔÊ¾ÕıÔÚ¼ÓÔØµÄ±êÖ¾
- * august:¸Ä³É²»È·¶¨Ê½
+ * @since 6.5.5 åˆ›å»ºäº2011-6-16 ä¼šæ˜¾ç¤ºæ­£åœ¨åŠ è½½çš„æ ‡å¿—
+ * august:æ”¹æˆä¸ç¡®å®šå¼
  */
 public abstract class LoadingBasicPane extends BasicPane {
     private CardLayout card;
@@ -75,7 +75,7 @@ public abstract class LoadingBasicPane extends BasicPane {
     }
 
     /**
-     * Íê³ÉÊ±
+     * å®Œæˆæ—¶
      */
     public void complete() {
 

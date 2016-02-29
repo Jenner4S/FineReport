@@ -23,7 +23,7 @@ public class FRFontPreviewArea extends UITextArea {
 	private FRFont frFont = null;
 	
 	public FRFontPreviewArea() {
-		//≥ı ºªØpaintFont
+		//ÂàùÂßãÂåñpaintFont
         frFont = FRContext.getDefaultValues().getFRFont();
 	}
 	public FRFontPreviewArea(FRFont frFont) {

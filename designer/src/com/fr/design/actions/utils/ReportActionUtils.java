@@ -62,12 +62,12 @@ public class ReportActionUtils {
 
 	public static void actionIterateWithCellSelection(
 			CellSelection gridSelection, TemplateElementCase report, IterAction action) {
-		//ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
-		// ´Ó×îºóÑ­»·ÆğÒÔ±£Ö¤×îºóÒ»¸öĞŞ¸Ä±ê×¼µ¥Ôª¸ñ£¨originalStyle£©¡£
+		//éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
+		// ä»æœ€åå¾ªç¯èµ·ä»¥ä¿è¯æœ€åä¸€ä¸ªä¿®æ”¹æ ‡å‡†å•å…ƒæ ¼ï¼ˆoriginalStyleï¼‰ã€‚
 		int cellRectangleCount = gridSelection.getCellRectangleCount();
 		for (int rec = 0; rec < cellRectangleCount; rec++) {
 			Rectangle cellRectangle = gridSelection.getCellRectangle(rec);
-			// ´Ó×îºóÑ­»·ÆğÒÔ±£Ö¤×îºóÒ»¸öĞŞ¸Ä±ê×¼µ¥Ôª¸ñ£¨originalStyle£©¡£
+			// ä»æœ€åå¾ªç¯èµ·ä»¥ä¿è¯æœ€åä¸€ä¸ªä¿®æ”¹æ ‡å‡†å•å…ƒæ ¼ï¼ˆoriginalStyleï¼‰ã€‚
 			for (int j = cellRectangle.height - 1; j >= 0; j--) {
 				for (int i = cellRectangle.width - 1; i >= 0; i--) {
 					int column = i + cellRectangle.x;
@@ -78,7 +78,7 @@ public class ReportActionUtils {
 						editCellElement = new DefaultTemplateCellElement(column, row);
 						report.addCellElement(editCellElement);
 					} else {
-						// ¶ÔÓÚºÏ²¢µÄ¸ñ×Ó,ÎÒÃÇ²»¶à´Î¼ÆËãµÄStyle.
+						// å¯¹äºåˆå¹¶çš„æ ¼å­,æˆ‘ä»¬ä¸å¤šæ¬¡è®¡ç®—çš„Style.
 						if (editCellElement.getColumn() != column
 								|| editCellElement.getRow() != row) {
 							continue;
@@ -92,7 +92,7 @@ public class ReportActionUtils {
 	}
 
 	/**
-	 * peter:ÊÇÖ»¶ÁµÄ·ÖÎöÈ»ºó»ñµÃµ±Ç°µÄStyle.
+	 * peter:æ˜¯åªè¯»çš„åˆ†æç„¶åè·å¾—å½“å‰çš„Style.
 	 *
 	 * @param reportPane the current rpt pane.
 	 * @return current style.
@@ -107,16 +107,16 @@ public class ReportActionUtils {
 			return selectedFloatElement.getStyle();
 		}
 
-		//ĞèÒªÏÈĞĞºóÁĞµØÔö¼ÓĞÂÔªËØ¡£
-		//vivian: ÈçexcelÄÇÑù¸Ä±ästyle.ÊÇ×´Ì¬µÄ¸Ä±äÓÉµÚÒ»¸öµÄ×´Ì¬¾ö¶¨£¬¼´Èç¹ûÖ»Ñ¡ÔñÁËµÚÒ»¸öÖµÄÇÃ´¾Í¸ÄÎªÏà·´µÄÖµ£¬
-		// Èç¹ûÊÇÑ¡ÔñÁË¶à¸öÖµÔòÊ×ÏÈ±ä³ÉºÍµÚÒ»¸öÖµµÄÒ»Ñù
+		//éœ€è¦å…ˆè¡Œååˆ—åœ°å¢åŠ æ–°å…ƒç´ ã€‚
+		//vivian: å¦‚excelé‚£æ ·æ”¹å˜style.æ˜¯çŠ¶æ€çš„æ”¹å˜ç”±ç¬¬ä¸€ä¸ªçš„çŠ¶æ€å†³å®šï¼Œå³å¦‚æœåªé€‰æ‹©äº†ç¬¬ä¸€ä¸ªå€¼é‚£ä¹ˆå°±æ”¹ä¸ºç›¸åçš„å€¼ï¼Œ
+		// å¦‚æœæ˜¯é€‰æ‹©äº†å¤šä¸ªå€¼åˆ™é¦–å…ˆå˜æˆå’Œç¬¬ä¸€ä¸ªå€¼çš„ä¸€æ ·
 
 		CellElement editCellElement = report.getCellElement(((CellSelection) sel).getColumn(), ((CellSelection) sel).getRow());
 		if (editCellElement == null) {
 			return Style.DEFAULT_STYLE;
 		}
 
-		//peter:Ö±½Ó·µ»Øµ±Ç°±à¼­ÔªËØµÄStyle
+		//peter:ç›´æ¥è¿”å›å½“å‰ç¼–è¾‘å…ƒç´ çš„Style
 		return editCellElement.getStyle();
 	}
 }

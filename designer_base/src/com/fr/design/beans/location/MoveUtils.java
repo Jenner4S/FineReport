@@ -12,7 +12,7 @@ import javax.swing.SwingConstants;
  * Created by IntelliJ IDEA.
  * 
  * @author: Richer
- * @since : 6.5.5 Date: 11-7-1 Time: ÏÂÎç2:22
+ * @since : 6.5.5 Date: 11-7-1 Time: ä¸‹åˆ2:22
  */
 public class MoveUtils {
 
@@ -25,47 +25,47 @@ public class MoveUtils {
 	public interface RectangleDesigner {
 
 		/**
-		 * »ñÈ¡¿é±ß½çµÄµü´úÆ÷
+		 * è·å–å—è¾¹ç•Œçš„è¿­ä»£å™¨
 		 * 
-		 * @return ¿é±ß½çµÄµü´úÆ÷
+		 * @return å—è¾¹ç•Œçš„è¿­ä»£å™¨
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:43:47
+		 * @date 2015-2-12-ä¸‹åˆ2:43:47
 		 * 
 		 */
 		RectangleIterator createRectangleIterator();
 
 		/**
-		 * ÉèÖÃXÖáµÄÏß
+		 * è®¾ç½®Xè½´çš„çº¿
 		 * 
-		 * @param line Á¬½ÓÏß
+		 * @param line è¿æ¥çº¿
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:44:04
+		 * @date 2015-2-12-ä¸‹åˆ2:44:04
 		 * 
 		 */
 		void setXAbsorptionline(Absorptionline line);
 
 		/**
-		 * ÉèÖÃYÖáµÄÏß
+		 * è®¾ç½®Yè½´çš„çº¿
 		 * 
-		 * @param line Á¬½ÓÏß
+		 * @param line è¿æ¥çº¿
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:44:04
+		 * @date 2015-2-12-ä¸‹åˆ2:44:04
 		 * 
 		 */
 		void setYAbsorptionline(Absorptionline line);
 		
 		/**
-		 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄ´¹Ö±ÏßÊı×é
+		 * è·å–å½“å‰é€‰ä¸­å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄ´¹Ö±ÏßÊı×é
+		 * @return å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
 		 */
 		int[] getVerticalLine();
 		
 		/**
-		 * »ñÈ¡µ±Ç°Ñ¡ÖĞ¿éµÄË®Æ½ÏßÊı×é
+		 * è·å–å½“å‰é€‰ä¸­å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄË®Æ½ÏßÊı×é
+		 * @return å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
 		 */
 		int[] getHorizontalLine();
@@ -74,41 +74,41 @@ public class MoveUtils {
 	public interface RectangleIterator {
 
 		/**
-		 * ÊÇ·ñ´æÔÚÏÂÒ»¸ö¿é
+		 * æ˜¯å¦å­˜åœ¨ä¸‹ä¸€ä¸ªå—
 		 * 
-		 * @return ÊÇ·ñ´æÔÚÏÂÒ»¸ö¿é
+		 * @return æ˜¯å¦å­˜åœ¨ä¸‹ä¸€ä¸ªå—
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:41:32
+		 * @date 2015-2-12-ä¸‹åˆ2:41:32
 		 * 
 		 */
 		boolean hasNext();
 
 		/**
-		 * »ñÈ¡ÏÂÒ»¸ö¿éµÄbounds
+		 * è·å–ä¸‹ä¸€ä¸ªå—çš„bounds
 		 * 
-		 * @return ÏÂÒ»¸ö¿éµÄbounds
+		 * @return ä¸‹ä¸€ä¸ªå—çš„bounds
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:41:55
+		 * @date 2015-2-12-ä¸‹åˆ2:41:55
 		 * 
 		 */
 		Rectangle nextRectangle();
 		
 		/**
-		 * »ñÈ¡¿éµÄ´¹Ö±ÏßÊı×é
+		 * è·å–å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄ´¹Ö±ÏßÊı×é
+		 * @return å—çš„å‚ç›´çº¿æ•°ç»„
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:42:27
+		 * @date 2015-2-12-ä¸‹åˆ2:42:27
 		 * 
 		 */
 		int[] getVerticalLine();
 		
 		/**
-		 * »ñÈ¡¿éµÄË®Æ½ÏßÊı×é
+		 * è·å–å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
-		 * @return ¿éµÄË®Æ½ÏßÊı×é
+		 * @return å—çš„æ°´å¹³çº¿æ•°ç»„
 		 * 
-		 * @date 2015-2-12-ÏÂÎç2:42:27
+		 * @date 2015-2-12-ä¸‹åˆ2:42:27
 		 * 
 		 */
 		int[] getHorizontalLine();
@@ -185,17 +185,17 @@ public class MoveUtils {
 	}
 
 	/**
-	 * Îü¸½
+	 * å¸é™„
 	 * 
-	 * @param x x×ø±ê
-	 * @param y y×ø±ê
-	 * @param width ¿í¶È
-	 * @param height ¸ß¶È
-	 * @param designer ¿éÉè¼ÆÆ÷
+	 * @param x xåæ ‡
+	 * @param y yåæ ‡
+	 * @param width å®½åº¦
+	 * @param height é«˜åº¦
+	 * @param designer å—è®¾è®¡å™¨
 	 * 
-	 * @return Îü¸½ºó×ø±ê
+	 * @return å¸é™„ååæ ‡
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:39:16
+	 * @date 2015-2-12-ä¸‹åˆ2:39:16
 	 * 
 	 */
 	public static Point sorption(int x, int y, int width, int height, RectangleDesigner designer) {
@@ -305,7 +305,7 @@ public class MoveUtils {
 		designer.setYAbsorptionline(line);
 	}
 	
-	//¸üĞÂ×İÏòĞĞÁĞÏß
+	//æ›´æ–°çºµå‘è¡Œåˆ—çº¿
 	private static void updateVerticalLine(int[] selfVertical, RectangleIterator iterator, Absorptionline line){
 		int[] targetArray = iterator.getVerticalLine();
 		if (intersectArrays(targetArray, selfVertical)){
@@ -313,7 +313,7 @@ public class MoveUtils {
 		}
 	}
 	
-	//¸üĞÂºáÏòĞĞÁĞÏß
+	//æ›´æ–°æ¨ªå‘è¡Œåˆ—çº¿
 	private static void updateHorizontalLine(int[] selfHorizontal, RectangleIterator iterator, Absorptionline line){
 		int[] targetArray = iterator.getHorizontalLine();
 		if (intersectArrays(targetArray, selfHorizontal)){
@@ -321,7 +321,7 @@ public class MoveUtils {
 		}
 	}
 	
-	//¼ì²âÁ½¸öÊı×éÊÇ·ñÓĞÏà½»µÄ²¿·Ö
+	//æ£€æµ‹ä¸¤ä¸ªæ•°ç»„æ˜¯å¦æœ‰ç›¸äº¤çš„éƒ¨åˆ†
 	private static boolean intersectArrays(int[] targetArray, int[] selfArray){
 		for (int i : targetArray) {
 			for (int j : selfArray) {

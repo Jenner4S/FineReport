@@ -7,7 +7,7 @@ import javax.swing.plaf.ColorUIResource;
  * Author : daisy
  * Version: 6.5.6
  * Date: 13-12-30
- * Time: ÏÂÎç4:12
+ * Time: ä¸‹åˆ4:12
  */
 public class ScrollBarUIConstant {
 

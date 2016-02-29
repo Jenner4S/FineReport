@@ -114,7 +114,7 @@ public abstract class ExpandFatherPane extends JPanel implements GlobalNameObser
     }
 
     /**
-     * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+     * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
      */
     public void registerNameListener(GlobalNameListener listener) {
         globalNameListener = listener;

@@ -69,7 +69,7 @@ public class UIEditLabel extends JPanel implements UIObserver{
     		MouseEvent mv = (MouseEvent) event;
     		if (mv.getClickCount() > 0) {
     			Point point = new Point((int) (mv.getLocationOnScreen().getX()) - 2 * OFF_LEFT, (int) mv.getLocationOnScreen().getY());
-    			// ÅĞ¶ÏÊó±êµã»÷ÊÇ·ñÔÚ±ß½çÄÚ
+    			// åˆ¤æ–­é¼ æ ‡ç‚¹å‡»æ˜¯å¦åœ¨è¾¹ç•Œå†…
     			if (!bounds.contains(point)) {
                     if (!isEditingStopped) {
                         stopEditing();
@@ -146,7 +146,7 @@ public class UIEditLabel extends JPanel implements UIObserver{
     }
 
     /**
-     * ÉèÖÃ³ÉÕı³£µÄ±³¾°
+     * è®¾ç½®æˆæ­£å¸¸çš„èƒŒæ™¯
      */
     public void resetNomalrBackground(){
         UIEditLabel.this.setBackground(UIConstants.NORMAL_BACKGROUND);
@@ -194,18 +194,18 @@ public class UIEditLabel extends JPanel implements UIObserver{
     }
 
     /**
-	 * ¸ø×é¼şµÇ¼ÇÒ»¸ö¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * ç»™ç»„ä»¶ç™»è®°ä¸€ä¸ªè§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 *
-	 * @param listener ¹Û²ìÕß¼àÌıÊÂ¼ş
+	 * @param listener è§‚å¯Ÿè€…ç›‘å¬äº‹ä»¶
 	 */
     public void registerChangeListener(UIObserverListener listener) {
         this.observerListener = listener;
     }
 
     /**
-	 * ×é¼şÊÇ·ñĞèÒªÏìÓ¦Ìí¼ÓµÄ¹Û²ìÕßÊÂ¼ş
+	 * ç»„ä»¶æ˜¯å¦éœ€è¦å“åº”æ·»åŠ çš„è§‚å¯Ÿè€…äº‹ä»¶
 	 *
-	 * @return Èç¹ûĞèÒªÏìÓ¦¹Û²ìÕßÊÂ¼şÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @return å¦‚æœéœ€è¦å“åº”è§‚å¯Ÿè€…äº‹ä»¶åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
     public boolean shouldResponseChangeListener() {
         return true;

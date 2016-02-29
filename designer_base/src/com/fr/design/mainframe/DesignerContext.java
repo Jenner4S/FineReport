@@ -16,12 +16,12 @@ import java.util.Hashtable;
 
 public class DesignerContext {
 
-	//¸ñÊ½Ë¢µÄÈı¸ö×´Ì¬
+	//æ ¼å¼åˆ·çš„ä¸‰ä¸ªçŠ¶æ€
 	public static final int FORMAT_STATE_NULL = 0;
 	public static final int FORMAT_STATE_ONCE = 1;
 	public static final int FORMAT_STATE_MORE = 2;
 
-	private static Clipboard clipboard = null; //µ±Ç°µÄ¼ôÌù°å.
+	private static Clipboard clipboard = null; //å½“å‰çš„å‰ªè´´æ¿.
 	private static int formatState = FORMAT_STATE_NULL;
 	private static Style[][] referencedStyle = null;
 	private static TargetComponent referencedElementCasePane;
@@ -73,10 +73,10 @@ public class DesignerContext {
 				return (Clipboard) clipMethod.invoke(transferAction, new Object[]{comp});
 			} catch (Exception securityException) {
 				FRLogger.getLogger().error(securityException.getMessage(), securityException);
-				//ÓÃ·´Éä»úÖÆ£¬»ñµÃTransferHandlerµÄgetClipboard
-				//ÕâÑù¿ÉÒÔ±£Ö¤ºÍTextFieldÖ±½ÓµÄcopy paste
+				//ç”¨åå°„æœºåˆ¶ï¼Œè·å¾—TransferHandlerçš„getClipboard
+				//è¿™æ ·å¯ä»¥ä¿è¯å’ŒTextFieldç›´æ¥çš„copy paste
 				try {
-					//¿Ø¼şµÄClipboard.
+					//æ§ä»¶çš„Clipboard.
 					DesignerContext.clipboard = comp.getToolkit().getSystemClipboard();
 				} catch (Exception exp) {
 					FRLogger.getLogger().error(exp.getMessage(), exp);
@@ -123,15 +123,15 @@ public class DesignerContext {
 	}
 
     /**
-     * µÃµ½µ±Ç°ÊµÀı
-     * @return ÊµÀı¡£Ò»°ãÒ»´ÎÖ»ÄÜ´ò¿ªÒ»¸ö±¨±íÌî±¨ÊôĞÔÃæ°å
+     * å¾—åˆ°å½“å‰å®ä¾‹
+     * @return å®ä¾‹ã€‚ä¸€èˆ¬ä¸€æ¬¡åªèƒ½æ‰“å¼€ä¸€ä¸ªæŠ¥è¡¨å¡«æŠ¥å±æ€§é¢æ¿
      */
     public static BasicDialog getReportWritePane(){
         return reportWriteThread.get();
     }
 
     /**
-     * ¼ÇÂ¼µ±Ç°±¨±íÌî±¨ÊôĞÔÃæ°å£¨¾ßÌåµÄÊµÀı£©
+     * è®°å½•å½“å‰æŠ¥è¡¨å¡«æŠ¥å±æ€§é¢æ¿ï¼ˆå…·ä½“çš„å®ä¾‹ï¼‰
      */
     public static void setReportWritePane(BasicDialog dlg){
         reportWriteThread.set(dlg);

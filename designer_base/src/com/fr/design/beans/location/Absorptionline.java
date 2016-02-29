@@ -22,13 +22,13 @@ public class Absorptionline {
 	private boolean trans;
 
 	/**
-	 * ´´½¨XÖáÁ¬½ÓÏß
+	 * åˆ›å»ºXè½´è¿æ¥çº¿
 	 * 
-	 * @param x x×ø±ê
+	 * @param x xåæ ‡
 	 * 
-	 * @return XÖáµÄÁ¬½ÓÏß
+	 * @return Xè½´çš„è¿æ¥çº¿
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:45:49
+	 * @date 2015-2-12-ä¸‹åˆ2:45:49
 	 * 
 	 */
 	public static Absorptionline createXAbsorptionline(int x) {
@@ -39,13 +39,13 @@ public class Absorptionline {
 	}
 
 	/**
-	 * ´´½¨XÖĞÖáÁ¬½ÓÏß
+	 * åˆ›å»ºXä¸­è½´è¿æ¥çº¿
 	 * 
-	 * @param x x×ø±ê
+	 * @param x xåæ ‡
 	 * 
-	 * @return XÖĞÖáµÄÁ¬½ÓÏß
+	 * @return Xä¸­è½´çš„è¿æ¥çº¿
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:45:49
+	 * @date 2015-2-12-ä¸‹åˆ2:45:49
 	 * 
 	 */
 	public static Absorptionline createXMidAbsorptionline(int x) {
@@ -56,13 +56,13 @@ public class Absorptionline {
 	}
 
 	/**
-	 * ´´½¨YÖáÁ¬½ÓÏß
+	 * åˆ›å»ºYè½´è¿æ¥çº¿
 	 * 
-	 * @param y y×ø±ê
+	 * @param y yåæ ‡
 	 * 
-	 * @return YÖáµÄÁ¬½ÓÏß
+	 * @return Yè½´çš„è¿æ¥çº¿
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:45:49
+	 * @date 2015-2-12-ä¸‹åˆ2:45:49
 	 * 
 	 */
 	public static Absorptionline createYAbsorptionline(int y) {
@@ -73,13 +73,13 @@ public class Absorptionline {
 	}
 
 	/**
-	 * ´´½¨YÖĞÖáÁ¬½ÓÏß
+	 * åˆ›å»ºYä¸­è½´è¿æ¥çº¿
 	 * 
-	 * @param y y×ø±ê
+	 * @param y yåæ ‡
 	 * 
-	 * @return YÖĞÖáµÄÁ¬½ÓÏß
+	 * @return Yä¸­è½´çš„è¿æ¥çº¿
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:45:49
+	 * @date 2015-2-12-ä¸‹åˆ2:45:49
 	 * 
 	 */
 	public static Absorptionline createYMidAbsorptionline(int y) {
@@ -109,11 +109,11 @@ public class Absorptionline {
 	}
 
 	/**
-	 * ÊÇ·ñÏà¹Ø²ÎÊı¶¼ÒÑÉèÖÃÍê±Ï
+	 * æ˜¯å¦ç›¸å…³å‚æ•°éƒ½å·²è®¾ç½®å®Œæ¯•
 	 * 
-	 * @return Ïà¹Ø²ÎÊı¶¼ÒÑÉèÖÃÍê±Ï
+	 * @return ç›¸å…³å‚æ•°éƒ½å·²è®¾ç½®å®Œæ¯•
 	 * 
-	 * @date 2015-2-12-ÏÂÎç2:44:46
+	 * @date 2015-2-12-ä¸‹åˆ2:44:46
 	 * 
 	 */
 	public boolean isFull() {

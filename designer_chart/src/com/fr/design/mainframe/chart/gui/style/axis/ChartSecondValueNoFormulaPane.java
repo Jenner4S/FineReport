@@ -14,7 +14,7 @@ import java.awt.*;
 public class ChartSecondValueNoFormulaPane extends ChartValueNoFormulaPane{
     private UICheckBox isAlignZeroValue;
 
-    protected JPanel aliagnZero4Second() {// Ìí¼Ó 0Öµ¶ÔÆë
+    protected JPanel aliagnZero4Second() {// æ·»åŠ  0å€¼å¯¹é½
         JPanel pane = new JPanel();
         pane.setLayout(new FlowLayout(FlowLayout.RIGHT));
         pane.add(isAlignZeroValue = new UICheckBox(Inter.getLocText("Chart_AxisAlignZeroValueLine"), false));
@@ -37,8 +37,8 @@ public class ChartSecondValueNoFormulaPane extends ChartValueNoFormulaPane{
     }
 
     /**
-     * ½çÃæ±êÌâ µÚ¶şÖµÖá
-     * @return µÚ¶şÖµÖá
+     * ç•Œé¢æ ‡é¢˜ ç¬¬äºŒå€¼è½´
+     * @return ç¬¬äºŒå€¼è½´
      */
     public String title4PopupWindow() {
         return Inter.getLocText(new String[]{"Second", "Chart_F_Radar_Axis"});

@@ -146,7 +146,7 @@ public interface UIConstants {
 
 
     /**
-     * ÕıÔÚ¼ÓÔØµÄ½çÃæ
+     * æ­£åœ¨åŠ è½½çš„ç•Œé¢
      */
     public static final Object PENDING = new Object() {
 
@@ -156,7 +156,7 @@ public interface UIConstants {
         }
     };
     /**
-     * Êı¾İ¿âÁ¬½ÓÊ§°ÜµÄ½çÃæ
+     * æ•°æ®åº“è¿æ¥å¤±è´¥çš„ç•Œé¢
      */
     public static final Object CONNECTION_FAILED = new Object() {
 
@@ -166,7 +166,7 @@ public interface UIConstants {
     };
 
     /**
-     * ×Ô¶¯²¹È«µÄÄ¬ÈÏ¿ì½İ¼ü£¬Ò»°ãÀ´ËµÊÇ alt + /.
+     * è‡ªåŠ¨è¡¥å…¨çš„é»˜è®¤å¿«æ·é”®ï¼Œä¸€èˆ¬æ¥è¯´æ˜¯ alt + /.
      */
     public static final String DEFAULT_AUTO_COMPLETE = "alt + SLASH";
 }

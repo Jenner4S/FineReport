@@ -4,9 +4,9 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public interface Painter {
-    //µ±Ç°½¹µãÇøÓò£¬¼´ËùÔÚÈİÆ÷µÄ±ß½ç
+    //å½“å‰ç„¦ç‚¹åŒºåŸŸï¼Œå³æ‰€åœ¨å®¹å™¨çš„è¾¹ç•Œ
     void setRenderingBounds(Rectangle rect);
 
-    //äÖÈ¾Èë¿Ú£¬ÓÉFormDesignerµ÷ÓÃÀ´Íâ³É¶îÍâäÖÈ¾
+    //æ¸²æŸ“å…¥å£ï¼Œç”±FormDesignerè°ƒç”¨æ¥å¤–æˆé¢å¤–æ¸²æŸ“
 	void paint(Graphics g, int startX, int startY);
 }

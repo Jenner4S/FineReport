@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-5-10
- * Time: ÏÂÎç2:13
+ * Time: ä¸‹åˆ2:13
  * To change this template use File | Settings | File Templates.
  */
 public class LineSeparator extends UpdateAction{

@@ -24,7 +24,7 @@ import java.awt.geom.RoundRectangle2D;
  * Created with IntelliJ IDEA.
  * User: zx
  * Date: 14-9-18
- * Time: ÏÂÎç3:31
+ * Time: ä¸‹åˆ3:31
  */
 public class LayoutBorderPreviewPane extends JPanel{
     private titlePreviewPane jp;
@@ -36,8 +36,8 @@ public class LayoutBorderPreviewPane extends JPanel{
     private static final String TAB_ONE = "1";
 
     /**
-     * ÊÇ·ñÎªtab²¼¾Ö
-     * @return ÊÇ·ñÎªtab²¼¾Ö
+     * æ˜¯å¦ä¸ºtabå¸ƒå±€
+     * @return æ˜¯å¦ä¸ºtabå¸ƒå±€
      */
     public boolean isTagLayout() {
 		return isTabLayout;
@@ -60,8 +60,8 @@ public class LayoutBorderPreviewPane extends JPanel{
     }
 	
     /**
-     * ÖØĞÂ»­
-     * @param borderStyle      ÑùÊ½
+     * é‡æ–°ç”»
+     * @param borderStyle      æ ·å¼
      */
     public void repaint(LayoutBorderStyle borderStyle){
         this.borderStyle = borderStyle;

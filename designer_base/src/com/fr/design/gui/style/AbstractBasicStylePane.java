@@ -6,7 +6,7 @@ import com.fr.design.beans.BasicBeanPane;
 /**
  * 
  * @author zhou
- * @since 2012-5-24ÏÂÎç1:42:53
+ * @since 2012-5-24ä¸‹åˆ1:42:53
  */
 public abstract class AbstractBasicStylePane extends BasicBeanPane<Style> {
 

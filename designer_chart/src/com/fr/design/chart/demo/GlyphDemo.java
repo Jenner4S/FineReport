@@ -14,8 +14,8 @@ public class GlyphDemo extends JFrame {
 	private static final long serialVersionUID = -3174315376448330927L;
 
 	/**
-	 * Ö÷º¯Êı
-	 * @param args ²ÎÊı
+	 * ä¸»å‡½æ•°
+	 * @param args å‚æ•°
 	 */
 	public static void main(String[] args) {
 		new GlyphDemo();
@@ -41,7 +41,7 @@ public class GlyphDemo extends JFrame {
 		tab.add("Bubble", createBubblePane());
 
 		setSize(1200, 600);
-		// ¹Ø±ÕÊ±ÍË³ö
+		// å…³é—­æ—¶é€€å‡º
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		setTitle("Line Glyph Demo");

@@ -4,15 +4,15 @@ package com.fr.design.fun;
  * @author richie
  * @date 2015-03-23
  * @since 8.0
- * 表单控件
+ * 琛ㄥ崟鎺т欢
  */
 public interface FormWidgetOptionProvider extends ParameterWidgetOptionProvider {
 
     public static final String XML_TAG = "FormWidgetOptionProvider";
 
     /**
-     * 组件是否是布局容器
-     * @return 是布局容器则返回true，否则返回false
+     * 缁勪欢鏄惁鏄竷灞�瀹瑰櫒
+     * @return 鏄竷灞�瀹瑰櫒鍒欒繑鍥瀟rue锛屽惁鍒欒繑鍥瀎alse
      */
     public boolean isContainer();
 

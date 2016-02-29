@@ -7,22 +7,22 @@ import com.fr.design.condition.ConditionAttributesPane;
  * @author richie
  * @date 2015-03-26
  * @since 8.0
- * Ìõ¼şÊôĞÔ½Ó¿Ú
+ * æ¡ä»¶å±æ€§æ¥å£
  */
 public interface HighlightProvider {
 
     public static final String MARK_STRING = "HighlightProvider";
 
     /**
-     * Ìõ¼şÊôĞÔµÄÊµÏÖÀà
-     * @return ÊµÏÖÀà
+     * æ¡ä»¶å±æ€§çš„å®ç°ç±»
+     * @return å®ç°ç±»
      */
     public Class<?> classForHighlightAction();
 
     /**
-     * Ìõ¼şÊôĞÔµÄ½çÃæ
-     * @param conditionAttributesPane Ìõ¼ş½çÃæ
-     * @return ÉèÖÃ½çÃæ
+     * æ¡ä»¶å±æ€§çš„ç•Œé¢
+     * @param conditionAttributesPane æ¡ä»¶ç•Œé¢
+     * @return è®¾ç½®ç•Œé¢
      */
     public ConditionAttrSingleConditionPane appearanceForCondition(ConditionAttributesPane conditionAttributesPane);
 }

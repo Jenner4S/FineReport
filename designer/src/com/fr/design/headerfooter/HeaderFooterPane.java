@@ -160,7 +160,7 @@ public abstract class HeaderFooterPane extends BasicPane {
 
 			int currentReportHFType = (Integer) selectObj;
 			if (currentReportHFType != lastSelectedHFType) {
-				// ĞèÒª±£´æÉÏ´ÎÑ¡ÔñµÄÒ³Ãæ.
+				// éœ€è¦ä¿å­˜ä¸Šæ¬¡é€‰æ‹©çš„é¡µé¢.
 				if (lastSelectedHFType != -1) {// last SelectedHFType
 					if (defineCheckBox.isSelected()) {
 						reportHFHash.put(lastSelectedHFType,
@@ -172,7 +172,7 @@ public abstract class HeaderFooterPane extends BasicPane {
 
 				lastSelectedHFType = currentReportHFType;
 
-				// Populateµ±Ç°µÄ.
+				// Populateå½“å‰çš„.
 				Object reportHFObject = reportHFHash.get(new Integer(
 						currentReportHFType));
 				if (reportHFObject == null) {
@@ -185,7 +185,7 @@ public abstract class HeaderFooterPane extends BasicPane {
 						0.53 * ScreenResolution.getScreenResolution());
 
 //				headerFooterEditPane.populate(null, eventMask, eventMask);
-				// Ä¬ÈÏÒ³Ãæ
+				// é»˜è®¤é¡µé¢
 				if (currentReportHFType == ReportConstants.REPORTPAGE_DEFAULT) {
 					defineCheckBox.setSelected(true);
 					defineCheckBox.setEnabled(false);

@@ -37,7 +37,7 @@ import java.awt.*;
 
 /**
  * @author richer
- * @since 6.5.4 ´´½¨ÓÚ2011-4-2 ¾ÛºÏ±¨±í×é¼ş±à¼­Æ÷
+ * @since 6.5.4 åˆ›å»ºäº2011-4-2 èšåˆæŠ¥è¡¨ç»„ä»¶ç¼–è¾‘å™¨
  */
 public class ECBlockPane extends PolyElementCasePane {
     private PolyDesigner designer;
@@ -71,10 +71,10 @@ public class ECBlockPane extends PolyElementCasePane {
 
             @Override
             public void targetModified(TargetModifiedEvent e) {
-                // kunsnat: Ã»ÓĞÕÒµ½Ïà¹Ø×÷ÓÃ,bug 35286 ÔÚÍ¼±í¾ÛºÏ´¥·¢ÖØĞÂpopulate, µ¼ÖÂ½çÃæÓÖ»Øµ½µÚÒ»²ã. ¹ÊÆÁ±Î.
+                // kunsnat: æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ä½œç”¨,bug 35286 åœ¨å›¾è¡¨èšåˆè§¦å‘é‡æ–°populate, å¯¼è‡´ç•Œé¢åˆå›åˆ°ç¬¬ä¸€å±‚. æ•…å±è”½.
 //				ECBlockPane.this.be.resetSelectionAndChooseState();
             	// bug65880
-            	// ¾ÛºÏ±¨±íµ¥Ôª¸ñÉèÖÃÍØÕ¹µÄÊ±ºòÃ»ÓĞ´¥·¢£¬ÆÕÍ¨±¨±íÓĞ´¥·¢
+            	// èšåˆæŠ¥è¡¨å•å…ƒæ ¼è®¾ç½®æ‹“å±•çš„æ—¶å€™æ²¡æœ‰è§¦å‘ï¼Œæ™®é€šæŠ¥è¡¨æœ‰è§¦å‘
             	CellElementPropertyPane.getInstance().populate(ECBlockPane.this);
             }
         });
@@ -96,9 +96,9 @@ public class ECBlockPane extends PolyElementCasePane {
     }
 
     /**
-     * Ä¿±êµÄMenu
+     * ç›®æ ‡çš„Menu
      *
-     * @return ·µ»ØMenuDefÊı×é.
+     * @return è¿”å›MenuDefæ•°ç»„.
      */
     public MenuDef[] menus4Target() {
         if (BaseUtils.isAuthorityEditing()) {
@@ -112,10 +112,10 @@ public class ECBlockPane extends PolyElementCasePane {
     }
 
 
-    // ²åÈë²Ëµ¥
+    // æ’å…¥èœå•
     private MenuDef createInsertMenuDef() {
         MenuDef menuDef = new MenuDef(Inter.getLocText("M-Insert"), 'I');
-        // µ¥Ôª¸ñ²Ëµ¥
+        // å•å…ƒæ ¼èœå•
         menuDef.addShortCut(DeprecatedActionManager.getCellMenu(this));
 
         addInsertFloatMenuDef(menuDef);
@@ -126,7 +126,7 @@ public class ECBlockPane extends PolyElementCasePane {
     }
 
     private void addInsertFloatMenuDef(MenuDef menuDef) {
-        // Ğü¸¡ÔªËØ²Ëµ¥
+        // æ‚¬æµ®å…ƒç´ èœå•
         MenuDef subMenuDef = new MenuDef(KeySetUtils.INSERT_FLOAT.getMenuKeySetName());
         subMenuDef.setIconPath("/com/fr/design/images/m_insert/float.png");
         menuDef.addShortCut(subMenuDef);
@@ -136,7 +136,7 @@ public class ECBlockPane extends PolyElementCasePane {
         }
     }
 
-    // ¸ñÊ½²Ëµ¥
+    // æ ¼å¼èœå•
     private MenuDef createCellMenuDef() {
         MenuDef menuDef = new MenuDef(KeySetUtils.CELL.getMenuKeySetName(), KeySetUtils.CELL.getMnemonic());
 
@@ -145,7 +145,7 @@ public class ECBlockPane extends PolyElementCasePane {
         menuDef.addShortCut(new GlobalStyleMenuDef(this));
         menuDef.addShortCut(new ConditionAttributesAction(this));
 
-        // µ¥Ôª¸ñĞÎÌ¬
+        // å•å…ƒæ ¼å½¢æ€
         menuDef.addShortCut(DeprecatedActionManager.getPresentMenu(this));
 
         menuDef.addShortCut(new HyperlinkAction(this));

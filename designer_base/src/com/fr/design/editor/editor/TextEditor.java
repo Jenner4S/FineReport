@@ -17,7 +17,7 @@ import com.fr.stable.StringUtils;
  * CellEditor used to edit String object.
  *
  * @editor zhou
- * @since 2012-3-29ÏÂÎç6:00:43
+ * @since 2012-3-29ä¸‹åˆ6:00:43
  */
 public class TextEditor extends Editor<String> {
 
@@ -108,7 +108,7 @@ public class TextEditor extends Editor<String> {
 
 
     /**
-     * ÇëÇó½¹µã
+     * è¯·æ±‚ç„¦ç‚¹
      */
     public void requestFocus() {
         this.textField.requestFocus();
@@ -131,7 +131,7 @@ public class TextEditor extends Editor<String> {
     };
 
     /**
-     * ±»Ñ¡ÖĞÊ±ÎÄ±¾ÊäÈë¿òÇëÇó½¹µã
+     * è¢«é€‰ä¸­æ—¶æ–‡æœ¬è¾“å…¥æ¡†è¯·æ±‚ç„¦ç‚¹
      */
     public void selected() {
         this.textField.requestFocus();
@@ -142,10 +142,10 @@ public class TextEditor extends Editor<String> {
     }
 
     /**
-     * ÅĞ¶ÏobjectÊÇ·ñÊÇ×Ö·ûÀàĞÍ
+     * åˆ¤æ–­objectæ˜¯å¦æ˜¯å­—ç¬¦ç±»å‹
      *
-     * @param object ĞèÒªÅĞ¶ÏµÄobject
-     * @return ÊÇ×Ö·ûÀàĞÍÔò·µ»Øtrue
+     * @param object éœ€è¦åˆ¤æ–­çš„object
+     * @return æ˜¯å­—ç¬¦ç±»å‹åˆ™è¿”å›true
      */
     public boolean accept(Object object) {
         return object instanceof String;

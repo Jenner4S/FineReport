@@ -10,7 +10,7 @@ import java.awt.Dimension;
 /**
  * @author richer
  * @since 6.5.3
- * ±íµ¥²¼¾Ö£¬¿ÉÒÔ×ÔÓÉµ÷Õû×é¼şµÄÎ»ÖÃµ«²»ÔÊĞí»ù±¾×é¼şÖ®¼ä³öÏÖÏà½»µÄÇé¿ö
+ * è¡¨å•å¸ƒå±€ï¼Œå¯ä»¥è‡ªç”±è°ƒæ•´ç»„ä»¶çš„ä½ç½®ä½†ä¸å…è®¸åŸºæœ¬ç»„ä»¶ä¹‹é—´å‡ºç°ç›¸äº¤çš„æƒ…å†µ
  */
 public class FRFormLayout implements FRLayoutManager, java.io.Serializable {
     public FRFormLayout() {

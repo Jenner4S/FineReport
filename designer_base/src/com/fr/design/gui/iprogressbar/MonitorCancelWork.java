@@ -4,7 +4,7 @@ package com.fr.design.gui.iprogressbar;
  * Created with IntelliJ IDEA.
  * User: pony
  * Date: 13-6-5
- * Time: ÏÂÎç7:24
+ * Time: ä¸‹åˆ7:24
  * To change this template use File | Settings | File Templates.
  */
 public interface MonitorCancelWork {

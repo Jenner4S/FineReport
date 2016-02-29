@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
  * Author : daisy
  * Version: 6.5.6
  * Date: 14-3-18
- * Time: 上午9:09
+ * Time: 涓婂崍9:09
  */
 public class FeedBackAction extends UpdateAction {
 
@@ -27,8 +27,8 @@ public class FeedBackAction extends UpdateAction {
     }
 
     /**
-     * 动作
-     * @param e 事件
+     * 鍔ㄤ綔
+     * @param e 浜嬩欢
      */
     public void actionPerformed(ActionEvent e) {
         final DesignerFrame designerFrame = DesignerContext.getDesignerFrame();

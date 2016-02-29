@@ -16,8 +16,8 @@ import java.util.List;
 
 /**
  * @author kunsnat E-mail:kunsnat@gmail.com
- * @version ´´½¨Ê±¼ä£º2011-11-24 ÏÂÎç02:51:12
- *          ÀàËµÃ÷: µ¯³öbox
+ * @version åˆ›å»ºæ—¶é—´ï¼š2011-11-24 ä¸‹åˆ02:51:12
+ *          ç±»è¯´æ˜: å¼¹å‡ºbox
  */
 public abstract class AbstractPopBox extends JPanel {
 
@@ -36,7 +36,7 @@ public abstract class AbstractPopBox extends JPanel {
 		}
 
 		public void mouseExited(MouseEvent evt) {
-			int x= evt.getXOnScreen();//macºÍwidowsµÄ¼ÆËã½á¹û»¹²»Ò»Ñù
+			int x= evt.getXOnScreen();//macå’Œwidowsçš„è®¡ç®—ç»“æœè¿˜ä¸ä¸€æ ·
         	int y = evt.getYOnScreen();
 			if (selectPopupWindow != null) {
                 Rectangle rectangle = selectPopupWindow.getBounds();
@@ -72,7 +72,7 @@ public abstract class AbstractPopBox extends JPanel {
 
 		Point convertPoint = new Point(0, 0);
 
-		// e: ½«µã(0,0)´ÓColorSelectionPaneµÄ×ø±êÏµÍ³×ª»»µ½ÆÁÄ»×ø±ê.
+		// e: å°†ç‚¹(0,0)ä»ColorSelectionPaneçš„åæ ‡ç³»ç»Ÿè½¬æ¢åˆ°å±å¹•åæ ‡.
 		SwingUtilities.convertPointToScreen(convertPoint, this);
 		int y = convertPoint.y + this.getSize().height;
 		int x = convertPoint.x;
@@ -80,7 +80,7 @@ public abstract class AbstractPopBox extends JPanel {
 		int width = x + selectPopupWindow.getWidth();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (h > screenSize.height) {
-			y = y - selectPopupWindow.getHeight() - GAP2;// ³¬¹ıÆÁÄ»¸ß¶ÈÁË
+			y = y - selectPopupWindow.getHeight() - GAP2;// è¶…è¿‡å±å¹•é«˜åº¦äº†
 		}
 		
 		if(width > screenSize.width) {
@@ -90,7 +90,7 @@ public abstract class AbstractPopBox extends JPanel {
 
 		selectPopupWindow.setVisible(true);
 
-		//wei : ÎªÁËµã»÷±ğµÄµØ·½ÏÂÀ­ÑÕÉ«´°¿ÚÏûÊ§
+		//wei : ä¸ºäº†ç‚¹å‡»åˆ«çš„åœ°æ–¹ä¸‹æ‹‰é¢œè‰²çª—å£æ¶ˆå¤±
 		MouseAdapter parentMouseListener = new MouseAdapter() {
 			public void mousePressed(MouseEvent evt) {
 				mouseClick(evt);
@@ -151,23 +151,23 @@ public abstract class AbstractPopBox extends JPanel {
 	}
 
     /**
-     * Ìí¼ÓÊÂ¼ş
-     * @param changeListener ÊÂ¼ş
+     * æ·»åŠ äº‹ä»¶
+     * @param changeListener äº‹ä»¶
      */
 	public void addSelectChangeListener(ChangeListener changeListener) {
 		this.changeListenerList.add(changeListener);
 	}
 
     /**
-     * É¾³ıÊÂ¼ş
-     * @param changeListener ÊÂ¼ş
+     * åˆ é™¤äº‹ä»¶
+     * @param changeListener äº‹ä»¶
      */
 	public void removeSelectChangeListener(ChangeListener changeListener) {
 		this.changeListenerList.remove(changeListener);
 	}
 
     /**
-     * ÏìÓ¦ÊÂ¼ş
+     * å“åº”äº‹ä»¶
      */
 	public void fireChangeListener() {
 		if (!changeListenerList.isEmpty()) {
@@ -179,8 +179,8 @@ public abstract class AbstractPopBox extends JPanel {
 	}
 
     /**
-     * ´ıËµÃ÷
-     * @param background ±³¾°
+     * å¾…è¯´æ˜
+     * @param background èƒŒæ™¯
      */
 	public void fireDisplayComponent(Background background) {
 		if (displayComponent != null) {
@@ -191,9 +191,9 @@ public abstract class AbstractPopBox extends JPanel {
 	}
 
     /**
-     * ³õÊ¼»¯µ¯³ö¿òµÄÃæ°å
-     * @param preWidth ¿í¶È
-     * @return µ¯³öÃæ°å
+     * åˆå§‹åŒ–å¼¹å‡ºæ¡†çš„é¢æ¿
+     * @param preWidth å®½åº¦
+     * @return å¼¹å‡ºé¢æ¿
      */
 	public abstract JPanel initWindowPane(double preWidth);
 

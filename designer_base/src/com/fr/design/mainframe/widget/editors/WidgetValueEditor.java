@@ -29,10 +29,10 @@ public class WidgetValueEditor extends AbstractPropertyEditor {
 	private ValueEditorPane wep;
 
     /**
-     * ¸ù¾İÀàĞÍ´´½¨
-     * @param type  ÀàĞÍ
-     * @param onlyServer ÊÇ·ñÊÇ·şÎñÆ÷
-     * @return ±à¼­Æ÷
+     * æ ¹æ®ç±»å‹åˆ›å»º
+     * @param type  ç±»å‹
+     * @param onlyServer æ˜¯å¦æ˜¯æœåŠ¡å™¨
+     * @return ç¼–è¾‘å™¨
      */
 	public static Editor createWidgetValueEditorByType(int type, boolean onlyServer) {
 		switch (type) {
@@ -56,10 +56,10 @@ public class WidgetValueEditor extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * ÓÃDataControl¹¹½¨
-	 * @param data Êı¾İ
-     * @param onlyServer ÊÇ·ñÊÇ·şÎñÆ÷
-	 * @return ±à¼­Æ÷
+	 * ç”¨DataControlæ„å»º
+	 * @param data æ•°æ®
+     * @param onlyServer æ˜¯å¦æ˜¯æœåŠ¡å™¨
+	 * @return ç¼–è¾‘å™¨
 	 */
     public static Editor[] createWidgetValueEditor(DataControl data, boolean onlyServer) {
 		int types[] = data.getValueType();
@@ -97,8 +97,8 @@ public class WidgetValueEditor extends AbstractPropertyEditor {
 	}
 
     /**
-     *ÖµÑéÖ¤
-     * @throws ValidationException Òì³£
+     *å€¼éªŒè¯
+     * @throws ValidationException å¼‚å¸¸
      */
 	public void validateValue() throws ValidationException {
 

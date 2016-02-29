@@ -11,16 +11,16 @@ public interface IndentationUnitProcessor {
     void setIndentationUnit(int value);
 
     /**
-     * ´¦Àípaddingunit
-     * @param value ÊäÈë
-     * @return Êä³ö
+     * å¤„ç†paddingunit
+     * @param value è¾“å…¥
+     * @return è¾“å‡º
      */
     int paddingUnitProcessor(int value);
 
     /**
-     * ´Óspinner»ñµÃËõ½øÖµ£¬²¢´¦Àíºó±ä³Épaddingunit
-     * @param value ÊäÈëÖµ
-     * @return Êä³ö
+     * ä»spinnerè·å¾—ç¼©è¿›å€¼ï¼Œå¹¶å¤„ç†åå˜æˆpaddingunit
+     * @param value è¾“å…¥å€¼
+     * @return è¾“å‡º
      */
     int paddingUnitGainFromSpinner(int value);
 }

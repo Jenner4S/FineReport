@@ -3,27 +3,27 @@ package com.fr.design.fun;
 import com.fr.design.beans.BasicBeanPane;
 
 /**
- * ×Ô¶¨ÒåÌá½»½Ó¿Ú
+ * è‡ªå®šä¹‰æäº¤æ¥å£
  */
 public interface SubmitProvider {
 
     String MARK_STRING = "SubmitProvider";
 
     /**
-     * ÉèÖÃ½çÃæ
-     * @return ½çÃæ
+     * è®¾ç½®ç•Œé¢
+     * @return ç•Œé¢
      */
     BasicBeanPane appearanceForSubmit();
 
     /**
-     * ÏÂÀ­Ñ¡Ïî
-     * @return ÏÂÀ­¿òÖĞµÄÎÄ±¾
+     * ä¸‹æ‹‰é€‰é¡¹
+     * @return ä¸‹æ‹‰æ¡†ä¸­çš„æ–‡æœ¬
      */
     String dataForSubmit();
 
     /**
-     * ¼ü
-     * @return Ìá½»µÄ¼ü
+     * é”®
+     * @return æäº¤çš„é”®
      */
     String keyForSubmit();
 }

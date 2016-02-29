@@ -28,7 +28,7 @@ public class ReportFontBoldAction extends AbstractStyleAction implements ToggleB
 	}
 
 	/**
-	 * ���ݰ�ť״̬��ȡ��ʽ
+	 * 根据按钮状态获取格式
 	 *
 	 * @param style
 	 * @param defStyle

@@ -87,9 +87,9 @@ public class ChartTypeInterfaceManager extends XMLFileManager implements ExtraCh
     }
 
     /**
-     * Ôö¼Ó½çÃæ½Ó¿Ú¶¨Òå
-     * @param className ÀàÃû
-     * @param plotID ±êÖ¾ID
+     * å¢åŠ ç•Œé¢æ¥å£å®šä¹‰
+     * @param className ç±»å
+     * @param plotID æ ‡å¿—ID
      */
     public void addChartInterface(String className, String plotID) {
         if (StringUtils.isNotBlank(className)) {
@@ -106,9 +106,9 @@ public class ChartTypeInterfaceManager extends XMLFileManager implements ExtraCh
     }
 
     /**
-     * °ÑËùÓĞµÄpane¼Óµ½listÀï
+     * æŠŠæ‰€æœ‰çš„paneåŠ åˆ°listé‡Œ
      *
-     * @param paneList paneÈİÆ÷
+     * @param paneList paneå®¹å™¨
      */
     public void addPlotTypePaneList(List<FurtherBasicBeanPane<? extends Chart>> paneList) {
 
@@ -142,10 +142,10 @@ public class ChartTypeInterfaceManager extends XMLFileManager implements ExtraCh
     }
 
     /**
-     * ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ£¬ÎªÁË±ÜÃâ½çÃæÀ´»ØÇĞ»»
+     * æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢ï¼Œä¸ºäº†é¿å…ç•Œé¢æ¥å›åˆ‡æ¢
      *
-     * @param plotID ĞòºÅ
-     * @return ÊÇ·ñÊ¹ÓÃÄ¬ÈÏµÄ½çÃæ
+     * @param plotID åºå·
+     * @return æ˜¯å¦ä½¿ç”¨é»˜è®¤çš„ç•Œé¢
      */
     public boolean isUseDefaultPane(String plotID) {
 
@@ -174,8 +174,8 @@ public class ChartTypeInterfaceManager extends XMLFileManager implements ExtraCh
     }
 
     /**
-     * ÎÄ¼şÃû
-     * @return ÎÄ¼şÃû
+     * æ–‡ä»¶å
+     * @return æ–‡ä»¶å
      */
     public String fileName() {
         return "chart.xml";

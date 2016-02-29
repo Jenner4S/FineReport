@@ -5,12 +5,12 @@ import com.fr.design.designer.TargetComponent;
 /**
  * 
  * @author zhou
- * @since 2012-7-26ÉÏÎç10:20:22
+ * @since 2012-7-26ä¸Šåˆ10:20:22
  */
 public interface SelectableElement {
 
 	/**
-	 * »ñÈ¡Ñ¡ÖĞÔªËØµÄ¿ìËÙ±à¼­ÇøÓò
+	 * è·å–é€‰ä¸­å…ƒç´ çš„å¿«é€Ÿç¼–è¾‘åŒºåŸŸ
 	 * 
 	 * @return
 	 */

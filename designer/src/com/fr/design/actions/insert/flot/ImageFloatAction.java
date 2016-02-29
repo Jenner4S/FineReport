@@ -56,8 +56,8 @@ public class ImageFloatAction extends ElementCaseAction {
     };
 
     /**
-     * 执行动作
-     * @return 成功返回true
+     * 鎵ц鍔ㄤ綔
+     * @return 鎴愬姛杩斿洖true
      */
     public boolean executeActionReturnUndoRecordNeeded() {
         final ElementCasePane reportPane = getEditingComponent();
