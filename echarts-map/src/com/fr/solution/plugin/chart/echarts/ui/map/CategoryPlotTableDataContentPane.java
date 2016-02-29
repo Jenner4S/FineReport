@@ -57,8 +57,8 @@ public class CategoryPlotTableDataContentPane extends AbstractTableDataContentPa
 		
 		seriesTypeComboxPane = new SeriesTypeUseComboxPane(parent, new Bar2DPlot());
 //		seriesTypeComboxPane.relayoutPane(false);
-		this.add(seriesTypeComboxPane, BorderLayout.SOUTH);
-		
+		this.add(seriesTypeComboxPane, BorderLayout.CENTER);
+		this.add(new UILabel("    "),BorderLayout.SOUTH);
 		categoryCombox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				checkSeriseUse(categoryCombox.getSelectedItem() != null);

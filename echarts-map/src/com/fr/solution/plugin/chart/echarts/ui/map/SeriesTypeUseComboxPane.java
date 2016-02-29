@@ -13,13 +13,14 @@ import com.fr.design.event.UIObserverListener;
 import com.fr.design.formula.TinyFormulaPane;
 import com.fr.design.gui.frpane.UIComboBoxPane;
 import com.fr.design.gui.frpane.UICorrelationPane;
+import com.fr.design.gui.ilable.BoldFontTextLabel;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.gui.itable.UITable;
 import com.fr.design.gui.itable.UITableEditor;
+import com.fr.design.layout.TableLayout;
+import com.fr.design.layout.TableLayoutHelper;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.ChartDataFilterPane;
-import com.fr.design.mainframe.chart.gui.data.table.SeriesNameUseFieldNamePane;
-import com.fr.design.mainframe.chart.gui.data.table.SeriesNameUseFieldValuePane;
 import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.general.Inter;
 import com.fr.json.JSONException;
@@ -51,6 +52,7 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
     private ChartDataPane parent;
     private Plot initplot;
     private boolean isNeedSummary = true;
+	private JPanel centerPane;
 
     public SeriesTypeUseComboxPane(ChartDataPane parent, Plot initplot) {
         this.initplot = initplot;
@@ -69,7 +71,7 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
         northPane.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 1));
         this.add(northPane, BorderLayout.NORTH);
         this.add(cardPane, BorderLayout.CENTER);
-        this.add(seriesPane = new UICorrelationPane(new String[]{"×Ö¶ÎÃû","ÇøÓòÃû"}) {
+        seriesPane = new UICorrelationPane(new String[]{"\u5B57\u6BB5\u540D","\u533A\u57DF\u540D"}) {
             public UITableEditor createUITableEditor() {
                 return new InnerTableEditor();
             }
@@ -86,7 +88,20 @@ public class SeriesTypeUseComboxPane extends UIComboBoxPane<ChartCollection> {
                     }
                 };
             }
-        },BorderLayout.SOUTH);
+        };
+        
+        /*
+        double p = TableLayout.PREFERRED;
+        double f = TableLayout.FILL;
+        double[] columnSize = {f};
+        double[] rowSize = {p, p};
+        Component[][] components = new Component[][]{
+                new Component[]{seriesPane},
+                new Component[]{new JSeparator()},
+        };
+        centerPane = TableLayoutHelper.createTableLayoutPane(components, rowSize, columnSize);*/
+        
+        this.add(seriesPane,BorderLayout.SOUTH);
     }
 
     /**

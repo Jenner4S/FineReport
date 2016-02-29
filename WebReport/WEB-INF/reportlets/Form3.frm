@@ -206,7 +206,7 @@
 <FillStyleName fillStyleName=""/>
 </AttrFillStyle>
 </newPlotFillStyle>
-<MapChart Type="world"/>
+<MapChart Type="guide"/>
 </Plot>
 <ChartDefinition>
 <OneValueCDDefinition seriesName="ColName2" valueName="ColName3" function="com.fr.data.util.function.NoneFunction">
@@ -223,7 +223,7 @@
 <DataRange max="1000" min="10"/>
 </MapDataRange>
 <MAPNAME>
-<MAPNAMEREF name="{*哈哈*:*北京*,*大神*:*撒旦*}"/>
+<MAPNAMEREF name="{*哈哈*:*北京*,*发送*:*倒萨*,*大神*:*撒旦*}"/>
 </MAPNAME>
 </Chart>
 </InnerWidget>
