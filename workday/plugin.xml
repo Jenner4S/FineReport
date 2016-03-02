@@ -5,10 +5,11 @@
     <active>yes</active>
     <version>1.1</version>
     <env-version>8.0</env-version>
-    <jartime>2016-03-02</jartime>
+    <jartime>2015-03-02</jartime>
     <vendor>haoyiping</vendor>
     <description><![CDATA[输入为日期字符串（格式：20160302），输出为jsonobject对象]]></description>
     
+    <change-notes><![CDATA[暂无更新]]></change-notes>
   <extra-core>
         <LocaleFinder class="com.hyp.plugin.workday.WorkDayLocaleFinder"/>
        <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期(单个日期格式如：20160303)返回结果为json对象"/>

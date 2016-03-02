@@ -15,6 +15,10 @@
 <![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=isworkday(20160306)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
