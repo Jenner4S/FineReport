@@ -50,7 +50,7 @@
 <C c="0" r="1">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=isworkday(20160303)]]></Attributes>
+<![CDATA[=isworkday(20190303)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -58,7 +58,7 @@
 <C c="1" r="1">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=workday("20161001","20150215")]]></Attributes>
+<![CDATA[=workday(20161001,20160303,20160306)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>

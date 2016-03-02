@@ -10,7 +10,8 @@
     <description><![CDATA[输入为日期字符串（格式：20160302），输出为jsonobject对象]]></description>
     
   <extra-core>
-       <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期返回结果为json对象"/>
-       <FunctionDefineProvider class="com.hyp.plugin.workday.IsWorkDay" name="isworkday" description="传入一个日期 返回是否为工作日"/>
+        <LocaleFinder class="com.hyp.plugin.workday.WorkDayLocaleFinder"/>
+       <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期(单个日期格式如：20160303)返回结果为json对象"/>
+       <FunctionDefineProvider class="com.hyp.plugin.workday.IsWorkDay" name="isworkday" description="传入一个日期(日期格式如：20160303) 返回是否为工作日"/>
    </extra-core>
 </plugin>

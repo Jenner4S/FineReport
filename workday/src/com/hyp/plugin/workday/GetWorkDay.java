@@ -9,6 +9,7 @@ import java.net.URLConnection;
 
 import org.omg.CORBA.OBJ_ADAPTER;
 
+import com.fr.general.Inter;
 import com.fr.json.JSONArray;
 import com.fr.json.JSONException;
 import com.fr.json.JSONObject;
@@ -55,11 +56,11 @@ public class GetWorkDay {
 				if(out.has(day)){
 					int intday = out.getInt(day);
 					if(intday==0){
-						res.put(day, "working day");
+						res.put(day,  Inter.getLocText("Plugin-WorkDay_Workday"));
 					}else if(intday == 1){
-						res.put(day, "Rest Day");
+						res.put(day,  Inter.getLocText("Plugin-WorkDay_restday"));
 					}else if(intday==2){
-						res.put(day, "holiday");
+						res.put(day,  Inter.getLocText("Plugin-WorkDay_holiday"));
 					}
 				}
 			}
