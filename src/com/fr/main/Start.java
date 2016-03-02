@@ -5,9 +5,9 @@ import com.fr.start.Designer4Debug;
 
 public class Start {
 	public static void main(String[] str ){
-//		Designer.main(str);
+		Designer.main(str);
 		
-		Designer4Debug.main(str);
+//		Designer4Debug.main(str);
 	}
 
 }

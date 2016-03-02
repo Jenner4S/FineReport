@@ -1,7 +1,6 @@
 package com.fr.design.mainframe.cell.settingpane;
 
 import java.awt.*;
-
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -19,17 +18,38 @@ import com.fr.report.elementcase.TemplateElementCase;
  */
 public class CellStylePane extends AbstractCellAttrPane {
 	private StylePane stylePane;
-
+//	private UIButtonGroup<Boolean> isCopy;
+	
+//	
+//	private TemplateCellElement copyCellElement=null;
+//
+//	private ElementCasePane copyCasePane=null;
+	
+	
 	@Override
 	public JPanel createContentPane() {
 		JPanel content = new JPanel(new BorderLayout());
+		
 		stylePane = new StylePane();
+//		isCopy = new UIButtonGroup<Boolean>(new String[]{"复制", "不复制"}, new Boolean[]{true, false});
+//		isCopy.setSelectedIndex(1);
+//		content.add(isCopy, BorderLayout.NORTH);
+//		isCopy.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                copySetting();
+//            }
+//			
+//        });
+//		label = new UILabel("    ");
+//		content.add(label, BorderLayout.SOUTH);
+		
 		content.add(stylePane, BorderLayout.CENTER);
 		stylePane.addPredefinedChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				attributeChanged();
 			}
 		});
+//		stylePane.getAncestorListeners()[0].
 		stylePane.addCustomTabChangeListener(new ChangeListener() {
 
 			@Override
@@ -40,6 +60,17 @@ public class CellStylePane extends AbstractCellAttrPane {
 		return content;
 	}
 
+	
+	//新加方法
+//	private void copySetting() {
+//		// TODO Auto-generated method stub
+//		copyCellElement = cellElement;
+//		copyCasePane = elementCasePane;
+////		isCopy.setSelectedIndex(1);
+//	}
+//	
+	
+	
 	@Override
 	public String getIconPath() {
 		return "com/fr/design/images/m_format/cell.png";
@@ -48,6 +79,7 @@ public class CellStylePane extends AbstractCellAttrPane {
 	@Override
 	public void updateBean(TemplateCellElement cellElement) {
 		cellElement.setStyle(stylePane.updateBean());
+		
 	}
 
 	@Override
@@ -100,8 +132,16 @@ public class CellStylePane extends AbstractCellAttrPane {
 
 	@Override
 	protected void populateBean() {
+
+//		if(isCopy.getSelectedItem()&&copyCasePane!=null&&copyCellElement!=null){
+//			stylePane.populateBean(copyCellElement.getStyle());
+//			stylePane.dealWithBorder(copyCasePane);
+//			
+//			return;
+//		}
 		stylePane.populateBean(cellElement.getStyle());
 		stylePane.dealWithBorder(elementCasePane);
+
 	}
 
 	@Override
