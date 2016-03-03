@@ -23,10 +23,10 @@ public class IsWorkDay extends AbstractFunction {
 		
     @Override
     public Object run(Object[] args) {
-    	FunctionProcessor processor=ExtraClassManager.getInstance().getFunctionProcessor();
-    	if(processor!=null){
-    		processor.recordFunction(ONEFUNCTION);
-    	}
+//    	FunctionProcessor processor=ExtraClassManager.getInstance().getFunctionProcessor();
+//    	if(processor!=null){
+//    		processor.recordFunction(ONEFUNCTION);
+//    	}
     	
     	if(args!=null){
     			return GetWorkDay.isWorkDay(args);
