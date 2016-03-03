@@ -7,7 +7,7 @@
     <env-version>8.0</env-version>
     <jartime>2015-03-02</jartime>
     <vendor>haoyiping</vendor>
-    <description><![CDATA[输入为日期字符串（格式：20160302），输出为jsonobject对象]]></description>
+    <description><![CDATA[1. 判断是否为工作日    例如：输入函数 isworkday(20160303)  输出结果为 false   2. 输入日期序列，得到工作日情况json对象   例如：输入函数 workday(20161001,20160303,20160306) 输出结果为 	{"20161001":"假期","20160303":"工作日","20160306":"休息日"}]]></description>
     
     <change-notes><![CDATA[暂无更新]]></change-notes>
   <extra-core>
