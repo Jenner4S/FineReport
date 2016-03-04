@@ -36,7 +36,6 @@ public class MapChartDataRange implements XMLable {
             String name = reader.getTagName();
             if("DataRange".equals(name)){
                 setMax(reader.getAttrAsString("max", "1000"));
-
                 setMin(reader.getAttrAsString("min", "1000"));
             }
         }

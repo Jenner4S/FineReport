@@ -55,7 +55,6 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
 				guideMap(js, repo);
     		return;
     	}
-    		
     	 chineseOrworldMap(js, repo);
     }
 
@@ -95,7 +94,7 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
                     	 {
                     		 if(name_ref.getListName()!=null)
                     		 {
-                    			 System.out.println("µÃµ½µÄÖµ£º£º"+name_ref.getListName().toString());
+                    			 System.out.println("ï¿½Ãµï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½"+name_ref.getListName().toString());
                             	 if(name_ref.getListName().has(label)){
                             		 label = name_ref.getListName().getString(label);
                             	 }
@@ -171,7 +170,7 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
                     	 {
                     		 if(name_ref.getListName()!=null)
                     		 {
-                    			 System.out.println("µÃµ½µÄÖµ£º£º"+name_ref.getListName().toString());
+                    			 System.out.println("ï¿½Ãµï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½"+name_ref.getListName().toString());
                             	 if(name_ref.getListName().has(label)){
                             		 label = name_ref.getListName().getString(label);
                             	 }
@@ -222,7 +221,7 @@ public class ChineseMapPlotGlyph extends PlotGlyph {
             DataSeries dataSeries = this.getSeries(seriesIndex);
             DataPoint dataPoint = dataSeries.getDataPoint(categoryIndex);
             ;
-            System.out.println("Ãû×Ö"+dataPoint.getCategoryName()/*+dataPoint.toJSONObject(arg0)*/);
+            System.out.println("ï¿½ï¿½ï¿½ï¿½"+dataPoint.getCategoryName()/*+dataPoint.toJSONObject(arg0)*/);
             if (dataPoint.isValueIsNull()) {
                 continue;
             }

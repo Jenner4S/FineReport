@@ -7,7 +7,7 @@ EChartsFactory = function(options, $dom) {
     this.chartID = options.chartID;
     this.autoRefreshTime = options.autoRefreshTime || 0;
 
-    this.width = options.width || $dom.width();// �����dom��ȡ.
+    this.width = options.width || $dom.width();
     this.height = options.height || $dom.height();
     this.sheetIndex = options.sheetIndex || 0;
     this.ecName = options.ecName || '';
