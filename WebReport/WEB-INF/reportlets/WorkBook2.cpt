@@ -23,6 +23,10 @@
 <Expand/>
 </C>
 <C c="1" r="0" s="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=circleworkday(20160303,2)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

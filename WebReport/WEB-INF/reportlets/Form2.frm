@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Form xmlVersion="20151125" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="Embedded1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[ColName1,,.,,ColName2,,.,,ColName3]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[b7)J5cV*AIZD6a=f'Sts-<urMJYtZ[TBob!Bk.VP~
+]]></RowData>
+</TableData>
+<TableData name="Embedded2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[ColName1,,.,,ColName2,,.,,ColName3]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[!@%U"s5g&Uk-Urkl%>,[\"3m]A2)Pa&N0iV:X9mstMWV=U#r4=o~
+]]></RowData>
+</TableData>
+</TableDataMap>
 <Layout class="com.fr.form.ui.container.WBorderLayout">
 <WidgetName name="form"/>
 <WidgetAttr>
@@ -108,7 +134,7 @@
 <FRFont name="Microsoft YaHei" style="0" size="88"/>
 </Attr>
 </TextAttr>
-<TitleVisible value="true" position="0"/>
+<TitleVisible value="true" position="1"/>
 </Title>
 <Attr4MapChart Title="新建图表标题" SubTitle="默认副标题" IsShow="true"/>
 </MapChartTitle>
@@ -182,11 +208,21 @@
 <FillStyleName fillStyleName=""/>
 </AttrFillStyle>
 </newPlotFillStyle>
-<MapChart Type="china"/>
+<MapChart Type="guide"/>
 </Plot>
+<ChartDefinition>
+<OneValueCDDefinition seriesName="ColName2" valueName="ColName3" function="com.fr.data.util.function.NoneFunction">
+<Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[Embedded2]]></Name>
+</TableData>
+<CategoryName value="ColName1"/>
+</OneValueCDDefinition>
+</ChartDefinition>
 </Chart>
 <MapDataRange>
-<DataRange max="1000" min="1000"/>
+<DataRange max="1000" min="1"/>
 </MapDataRange>
 <MAPNAME>
 <MAPNAMEREF name="{}"/>
