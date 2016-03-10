@@ -20,8 +20,8 @@ public class DateHelper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		long d = c/1000/60/60/24;//天
-		System.out.println(d+"天");
+		long d = c/1000/60/60/24;
+		System.out.println(d+"day");
 		return (int) Math.abs(d);
 	}
 	public static String[] getDays(String startday,int daynum){
