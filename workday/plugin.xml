@@ -18,5 +18,7 @@
        <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期(单个日期格式如：20160303)返回结果为json对象"/>
        <FunctionDefineProvider class="com.hyp.plugin.workday.IsWorkDay" name="isworkday" description="传入一个日期(日期格式如：20160303) 返回是否为工作日"/>
     	<FunctionDefineProvider class="com.hyp.plugin.workday.CircleWorkDay" name="circleworkday" description="传入格式(日期格式如：20160303 ，循环天数  3) 返回是否为触发"/>
+ 		<FunctionDefineProvider class="com.hyp.plugin.workday.UpdateWorkDay" name="updateworkday" description="传入格式(日期格式如：20160303 ，循环天数  3) 返回是否为触发"/>
+  
   </extra-core>
 </plugin>

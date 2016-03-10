@@ -25,7 +25,7 @@
 <C c="1" r="0" s="0">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=circleworkday(20160303,2)]]></Attributes>
+<![CDATA[=circleworkday(20130223,1)]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -94,6 +94,10 @@
 <PrivilegeControl/>
 </C>
 <C c="0" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=updateworkday(2012)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
