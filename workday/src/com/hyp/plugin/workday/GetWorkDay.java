@@ -9,6 +9,8 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.activation.DataHandler;
+
 import org.omg.CORBA.OBJ_ADAPTER;
 
 import com.fr.general.Inter;
@@ -20,52 +22,35 @@ import com.fr.report.core.A.o;
 public class GetWorkDay { 
 	public static boolean circleWordDay(Object[] ob){
 		if(ob.length==2){
-			String startday =  ob[0].toString();
-			int start = Integer.parseInt( startday);
+			String startdaystr =  ob[0].toString();
+			int startdayint = Integer.parseInt( startdaystr);
 			int circle = Integer.parseInt( ob[1].toString());
-
 			SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
-			int now = Integer.parseInt(df.format(new Date()));
-			String str = "";
-			String[] days =new  String[Math.abs(now-start)];
-			int sta = ++start;
-			for(int i = 0;sta<=now;i++){
-				days[i] =""+ sta;
-				str += ","+sta ; 
-				sta++;
+			String nowstr = df.format(new Date());
+			int alldaynum = DateHelper.getDateNum(startdaystr, nowstr);
+			int workdaynum = 0;
+			int inum = alldaynum/50;
+			for(int i=0;i<inum;i++){
+				String[] days = DateHelper.getDays(startdaystr, 50);
+				String daysstr = DateHelper.daysString;
+				workdaynum += DateHelper.getWorkdayNum(httpGet(daysstr),days);
+				startdaystr = DateHelper.endDayString;
+				
 			}
-			str = str.substring(1);
-			String result = httpGet(str);
-			int daynum = 0;
-			boolean flag = false;
-			try {
-				JSONObject out = new JSONObject(result);
-				for(String day:days){
-					if(out.has(day)){
-						int intday = out.getInt(day);
-						if(intday==0){
-							daynum++;
-						}
-						if(day.equals(""+now)){
-							flag = true;
-						}
-							/*else if(intday == 1){
-						}
-//							res.put(day,  Inter.getLocText("Plugin-WorkDay_restday"));
-						}else if(intday==2){
-//							res.put(day,  Inter.getLocText("Plugin-WorkDay_holiday"));
-						}*/
-					}
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			if(daynum%circle==0&&flag){
+//			if(alldaynum%50!=0){
+				String[] days = DateHelper.getDays(startdaystr, alldaynum%50);
+				String daysstr = DateHelper.daysString;
+				workdaynum += DateHelper.getWorkdayNum(httpGet(daysstr),days);
+//			}
+			int todayisworkday = DateHelper.getWorkdayNum(httpGet(nowstr),new String[]{nowstr});
+			System.out.println(workdaynum+"   "+todayisworkday);
+			if(workdaynum%circle==0&&todayisworkday==1){
 				return true;
 			}
 		}
 		return false;
 	}
+	
 	public static boolean isWorkDay(Object[] ob){
 		if(ob.length==1){
 			String str = ob[0].toString();
@@ -132,7 +117,7 @@ public class GetWorkDay {
 		BufferedReader br = null;
 		String result="{}";
 		try { 
-			httpsConn = (URLConnection) myURL.openConnection();// ��ʹ�ô��� 
+			httpsConn = (URLConnection) myURL.openConnection();
 			if (httpsConn != null) { 
 				insr = new InputStreamReader( httpsConn.getInputStream(), "UTF-8"); 
 				br = new BufferedReader(insr); 
@@ -166,7 +151,7 @@ public class GetWorkDay {
 		return result;
 	} 
 	public static void main(String[] args) throws IOException, JSONException {
-		boolean o = GetWorkDay.circleWordDay(new Object[]{"20160304","3"});
+		boolean o = GetWorkDay.circleWordDay(new Object[]{"20160110","3"});
 		System.out.println(o);
 	}
 
