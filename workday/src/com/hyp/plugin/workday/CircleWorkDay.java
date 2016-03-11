@@ -18,7 +18,7 @@ public class CircleWorkDay  extends AbstractFunction {
     	}
     	
     	if(args!=null){
-    			return GetWorkDay.circleWordDay(args);
+    			return GetWorkDay.circleWorkDay(args);
     	}
 //    	System.out.println(args[0]);
     	return false;

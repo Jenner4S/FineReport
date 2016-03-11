@@ -27,8 +27,10 @@
 <![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0">
-<O t="I">
-<![CDATA[11]]></O>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=circleworkday(20160303,5)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Expand/>
 </C>

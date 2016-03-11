@@ -10,7 +10,6 @@
 	<classpathentry kind="src" path="designer_chart/src"/>
 	<classpathentry kind="src" path="designer_form/src"/>
 	<classpathentry kind="src" path="workday/src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2-sources.jar"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/fest-lib/fest-assert-1.2-sources.jar"/>

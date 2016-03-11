@@ -96,24 +96,24 @@ public static String daysString;
 		return daynum;
 	}
 	public static JSONObject getWorkday(String result) {
-		JSONObject json = new JSONObject();
+		JSONObject out = new JSONObject();
 		// TODO Auto-generated method stub
 		try {
-			JSONObject out = new JSONObject(result);
+			out = new JSONObject(result);
 			System.out.println(out);
-			 Iterator it = out.keys();
-			for(;it.hasNext();){
-				String key=(String)it.next();
-				int value = out.getInt(key);
-				if(value==0){
-					json.put(key, value);
-				}
-				
-			}
+//			 Iterator it = out.keys();
+//			for(;it.hasNext();){
+//				String key=(String)it.next();
+//				int value = out.getInt(key);
+//				if(value==0){
+//					json.put(key, value);
+//				}
+//				
+//			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		
-		return json;
+		return out;
 	}
 }
