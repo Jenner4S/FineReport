@@ -24,7 +24,8 @@ public class WorkDayFunction {
 	}
 	
 	public static String workDay(Object[] ob) throws Exception{
-		JSONObject res = new JSONObject();
+//		JSONObject res = new JSONObject();
+		String res = "";
 		for(Object o :ob){
 			String day = o.toString();
 			DateHelper.isValidDate(day, "yyyyMMdd");
@@ -34,15 +35,18 @@ public class WorkDayFunction {
 			if(json.has(day)){
 				int intday = json.getInt(day);
 				if(intday==1){
-					res.put(day,  Inter.getLocText("Plugin-WorkDay_restday"));
+					res+=",\""+day+"\":\""+Inter.getLocText("Plugin-WorkDay_restday")+"\"";
+//					res.put(day,  Inter.getLocText("Plugin-WorkDay_restday"));
 				}else /*if(intday == 2)*/{
-					res.put(day,  Inter.getLocText("Plugin-WorkDay_holiday"));
+					res+=",\""+day+"\":\""+Inter.getLocText("Plugin-WorkDay_holiday")+"\"";
+//					res.put(day,  Inter.getLocText("Plugin-WorkDay_holiday"));
 				}
 			}else {
-				res.put(day,  Inter.getLocText("Plugin-WorkDay_Workday"));
+				res+=",\""+day+"\":\""+Inter.getLocText("Plugin-WorkDay_Workday")+"\"";
+//				res.put(day,  Inter.getLocText("Plugin-WorkDay_Workday"));
 			}
 		}
-		return res.toString();
+		return "{"+res.substring(1)+"}";
 	}
 	
 	public static String circleWorkDay(Object[] ob) throws Exception{
@@ -133,7 +137,7 @@ public class WorkDayFunction {
 //			updateWorkDay(new Object[]{"2014"});
 //			String result = isWorkDay(new Object[]{"20160501"});
 //			String res = workDay(new Object[]{"20150501","20160203"});
-			String cir = circleWorkDay(new Object[]{"20150230","2"});
+			String cir = workDay(new Object[]{"20150212","20160203"});
 			System.out.println(cir);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
