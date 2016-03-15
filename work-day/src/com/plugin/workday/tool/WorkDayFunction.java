@@ -129,31 +129,6 @@ public class WorkDayFunction {
 	
 	public static void main(String[] str){
 		
-		
-//		// 如果日期不合法，则抛异常
-//		try {
-//			String date_str = "20070228";
-//			
-//			SimpleDateFormat format=new SimpleDateFormat("yyyyMMdd");
-//			format.setLenient(false);
-//			Date date = format.parse(date_str);
-//			
-//		} catch (Exception ex){
-//			ex.printStackTrace();
-//			System.out.println("日期不合法");
-//		}
-//		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		try {
 //			updateWorkDay(new Object[]{"2014"});
 //			String result = isWorkDay(new Object[]{"20160501"});

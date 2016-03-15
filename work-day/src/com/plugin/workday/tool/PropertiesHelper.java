@@ -32,10 +32,10 @@ public class PropertiesHelper {
             	throw new Exception("Please updateworkday for "+key +" year");
             }
         } catch (FileNotFoundException e) {   
-            throw new Exception("FileNotFoundException！");
+            throw new Exception("FileNotFoundException!");
         }   catch (IOException e) {
 			// TODO: handle exception
-        	throw new Exception("IOException！");
+        	throw new Exception("IOException!");
 		}
 	}
 	public static boolean writeValue( String key,String value) throws Exception {  
