@@ -9,7 +9,7 @@
 	<classpathentry kind="src" path="designer_base/src"/>
 	<classpathentry kind="src" path="designer_chart/src"/>
 	<classpathentry kind="src" path="designer_form/src"/>
-	<classpathentry kind="src" path="workday/src"/>
+	<classpathentry kind="src" path="work-day/src"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2-sources.jar"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/fest-lib/fest-assert-1.2-sources.jar"/>
@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="lib/fest-lib/jcip-annotations-1.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/finer"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="WebReport/WEB-INF/classes"/>
 </classpath>

@@ -29,7 +29,7 @@ public class GetWorkDay {
 				String year = o.toString();
 //				DecimalFormat df = new DecimalFormat("0000");
 //				df.format(Integer.parseInt(year));
-				int num = 100;
+				int num = 10;
 				String beginday = year+"0100";
 				String endday = year+"1231";
 				int alldaynum = DateHelper.getDateNum(beginday, endday);
@@ -256,7 +256,8 @@ public class GetWorkDay {
 		return res.toString();
 	}
 	private static String httpGet(String str) {
-		String url = "http://www.easybots.cn/api/holiday.php?d="+ str; 
+		//http://9.tbip.sinaapp.com/?apiserviceid=1116&d=20130101,20160203
+		String url = "http://9.tbip.sinaapp.com/?apiserviceid=1116&d="+ str; 
 		URL myURL = null; 
 		URLConnection httpsConn = null; 
 		try { 

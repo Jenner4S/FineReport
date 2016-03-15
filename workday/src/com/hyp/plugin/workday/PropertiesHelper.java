@@ -39,7 +39,7 @@ public class PropertiesHelper {
         	System.out.println(PropertiesHelper.class.getClass().getClassLoader());
         	InputStream in;
         	File file = new File(filepath);
-        	if(file.exists()){
+        	if(file.exists()&&!key.equals("2016")){
         		in = new  FileInputStream(file);
         	}else{
         		System.out.println("::::::::::::");
