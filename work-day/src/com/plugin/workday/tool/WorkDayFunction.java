@@ -137,7 +137,7 @@ public class WorkDayFunction {
 //			updateWorkDay(new Object[]{"2014"});
 //			String result = isWorkDay(new Object[]{"20160501"});
 //			String res = workDay(new Object[]{"20150501","20160203"});
-			String cir = workDay(new Object[]{"20150212","20160203"});
+			String cir = circleWorkDay(new Object[]{"20160201","3"});
 			System.out.println(cir);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

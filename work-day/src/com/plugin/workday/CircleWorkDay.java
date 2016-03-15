@@ -14,7 +14,15 @@ public class CircleWorkDay extends AbstractFunction {
     	}
     	
     	try {
-			return WorkDayFunction.circleWorkDay(args);
+    		String res = WorkDayFunction.circleWorkDay(args);
+    		if(res.equals("true")){
+    			return true;
+    		}else if(res.equals("false")){
+    			return false;
+    		}else{
+    			return res;
+    		}
+    		
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			return e.getMessage();
