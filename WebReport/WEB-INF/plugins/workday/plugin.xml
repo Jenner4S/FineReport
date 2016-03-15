@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
-    <id>com.hyp.plugin.workday</id>
+    <id>com.plugin.workday</id>
     <name><![CDATA[工作日判断函数]]></name>
     <active>yes</active>
     <version>1.2</version>
@@ -10,16 +10,16 @@
     <description><![CDATA[1. 判断是否为工作日    例如：输入函数 isworkday(20160303)  输出结果为 false   
     2. 输入日期序列，得到工作日情况json对象   例如：输入函数 workday(20161001,20160303,20160306) 输出结果为 	{"20161001":"假期","20160303":"工作日","20160306":"休息日"}
     3. 判断是否为工作日循环触发    例如：输入函数 circleworkday(20160304,3)  输出结果为 true  注：今天是20160309   
-    4. 更新本地数据库  例如：输入函数 updateworkday(2014) 输出结果为 Success 表示该年份工作日本地数据库已经更新（可在局域网中使用）
+    4. 更新本地数据库  例如：输入函数 updateworkday(2014) 输出结果为 Update 2014 Success 表示该年份工作日本地数据库已经更新（可在局域网中使用）
     ]]></description>
     
-    <change-notes><![CDATA[添加工作日循环触发判断函数，添加离线模式]]></change-notes>
+    <change-notes><![CDATA[添加工作日循环触发判断函数，添加离线模式，解决函数执行效率的问题]]></change-notes>
   <extra-core>
-        <LocaleFinder class="com.hyp.plugin.workday.WorkDayLocaleFinder"/>
-       <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期(单个日期格式如：20160303)返回结果为json对象"/>
-       <FunctionDefineProvider class="com.hyp.plugin.workday.IsWorkDay" name="isworkday" description="传入一个日期(日期格式如：20160303) 返回是否为工作日"/>
-    	<FunctionDefineProvider class="com.hyp.plugin.workday.CircleWorkDay" name="circleworkday" description="传入格式(日期格式如：20160303 ，循环天数  3) 返回是否为触发"/>
- 		<FunctionDefineProvider class="com.hyp.plugin.workday.UpdateWorkDay" name="updateworkday" description="传入格式(年份：2015) 返回Success表示更新成功"/>
+        <LocaleFinder class="com.plugin.workday.WorkDayLocaleFinder"/>
+       <FunctionDefineProvider class="com.plugin.workday.WorkDay" name="workday" description="输入日期序列，得到工作日情况json对象   例如：输入函数 workday(20161001,20160303,20160306) 输出结果为 	{'20161001':'假期','20160303':'工作日','20160306':'休息日'}"/>
+       <FunctionDefineProvider class="com.plugin.workday.IsWorkDay" name="isworkday" description="判断是否为工作日    例如：输入函数 isworkday(20160303)  输出结果为 false "/>
+    	<FunctionDefineProvider class="com.plugin.workday.CircleWorkDay" name="circleworkday" description="判断是否为工作日循环触发    例如：输入函数 circleworkday(20160304,3)  输出结果为 true  注：今天是20160309"/>
+ 		<FunctionDefineProvider class="com.plugin.workday.UpdateWorkDay" name="updateworkday" description="更新本地数据库  例如：输入函数 updateworkday(2014) 输出结果为 Update 2014 Success 表示该年份工作日本地数据库已经更新（可在局域网中使用）"/>
   
   </extra-core>
 </plugin>
