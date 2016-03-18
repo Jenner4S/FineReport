@@ -1,6 +1,7 @@
 package com.plugin.sso;
-
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import java.util.List;
 
@@ -10,34 +11,121 @@ import javax.net.ssl.X509TrustManager;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.params.ConnManagerPNames;
-import org.apache.http.conn.params.ConnPerRouteBean;
-import org.apache.http.conn.scheme.PlainSocketFactory;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.SingleClientConnManager;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 
 
 public class SSO {
+	
+//	 EnvListPane();
+	
+	private static CloseableHttpClient createHttpClient() throws NoSuchAlgorithmException,
+	KeyManagementException {
+		// 采用绕过验证的方式处理https请求
+		SSLContext sslcontext = createIgnoreVerifySSL();
+
+		// 设置协议http和https对应的处理socket链接工厂的对象
+		Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder
+		.<ConnectionSocketFactory> create()
+		.register("http", PlainConnectionSocketFactory.INSTANCE)
+		.register("https", new SSLConnectionSocketFactory(sslcontext))
+		.build();
+		PoolingHttpClientConnectionManager connManager = new PoolingHttpClientConnectionManager(
+		socketFactoryRegistry);
+		HttpClients.custom().setConnectionManager(connManager);
+
+// 创建自定义的httpclient对象
+		CloseableHttpClient client = HttpClients.custom()
+		.setConnectionManager(connManager)
+		//禁用自动重定向
+//		.disableRedirectHandling()
+//		.setDefaultCookieStore(cookieStore)
+				.build();
+		return client;
+	}
+
+	public static SSLContext createIgnoreVerifySSL() throws NoSuchAlgorithmException, KeyManagementException {
+		SSLContext sc = SSLContext.getInstance("SSLv3");
+
+		// 实现一个X509TrustManager接口，用于绕过验证，不用修改里面的方法
+		X509TrustManager trustManager = new X509TrustManager() {
+
+//			@Override
+			public void checkClientTrusted(X509Certificate[] arg0, String arg1)
+					throws java.security.cert.CertificateException {
+				// TODO Auto-generated method stub
+				
+			}
+
+//			@Override
+			public void checkServerTrusted(X509Certificate[] arg0, String arg1)
+					throws java.security.cert.CertificateException {
+				// TODO Auto-generated method stub
+				
+			}
+
+//			@Override
+			public X509Certificate[] getAcceptedIssuers() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+		};
+
+		sc.init(null, new TrustManager[] { trustManager }, null);
+		return sc;
+	}
+
+	
+	
 	public static String getUrl(String url,String username,String password) throws Exception{
 		
+
+//		X509TrustManager tm = new X509TrustManager() {
+//			public void checkClientTrusted(X509Certificate[] xcs, String string) {}
+//			public void checkServerTrusted(X509Certificate[] xcs, String string) {}
+//			public X509Certificate[] getAcceptedIssuers() {return null;}
+//		};
+//
+//		SSLContext sslcontext = SSLContext.getInstance("TLS");
+//
+//		sslcontext.init(null, new TrustManager[]{tm}, null);
+//		
+//		SSLSocketFactory socketFactory = new SSLSocketFactory(sslcontext,SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+//		// 不校验域名
+//		// socketFactory.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+//		Scheme sch = new Scheme("https", 443, socketFactory);
+//		
+//		SchemeRegistry schemeRegistry = new SchemeRegistry();
+//		schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+//		schemeRegistry.register(sch);
+//		
+//		HttpParams params = new BasicHttpParams();
+//		params.setParameter(ConnManagerPNames.MAX_TOTAL_CONNECTIONS, 30);
+//		params.setParameter(ConnManagerPNames.MAX_CONNECTIONS_PER_ROUTE, new ConnPerRouteBean(30));
+//		params.setParameter(HttpProtocolParams.USE_EXPECT_CONTINUE, false);
+//		HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+//		
+//		ClientConnectionManager cm = new SingleClientConnManager(params, schemeRegistry);
+		HttpClient client = SSO.createHttpClient();
 		
-		CloseableHttpClient client = HttpClients.createDefault();
+		
+		
+		
+		
+//		CloseableHttpClient client = HttpClients.createDefault();
 		HttpGet httpGet=new HttpGet(url);
 		HttpClientContext context = new HttpClientContext();
 		HttpResponse httpResponse=null;
@@ -47,25 +135,25 @@ public class SSO {
 			throw new Exception("https Certificate error!");
 			// TODO Auto-generated catch block
 		}
-		//��һ�η���  �ض���URL
+		//第一次访问  重定向到URL
 		String url_prefix = context.getTargetHost().toURI();
      	String uri = context.getRequest().getRequestLine().getUri();
      	String tour = url_prefix+uri;
 		System.out.println(tour);
-		//�ж��Ƿ�Ϊ�ض���
+		//判断是否为重定向
 		if(!tour.startsWith(url)){
-			//��һ�η��� �õ�ҳ����Ϣ
+			//第一次访问 得到页面信息
 			HttpEntity entity = httpResponse.getEntity();
 			String result = EntityUtils.toString(entity);
 			CasLoginPage loginPage = new CasLoginPage(result);
 			url_prefix+=loginPage.getFormUrl();
-			//�ڶ��η��� �����û��������ύ
+			//第二次访问 填完用户名密码提交
 			HttpPost httpPost = new HttpPost(url_prefix);
 			httpPost.setEntity(loginPage.fillForm(username, password));
 			client.execute(httpPost, context);
-			//����η��� �ύticket �����������֤
+			//第三次访问 提交ticket 报表服务器验证
 			httpResponse =client.execute(httpGet,context);
-			//�ӷ�����Ϣ�л�ȡcookie �Ӷ��ȡ�Ựid
+			//从返回信息中获取cookie 从而获取会话id
 			String sessionid = getSessionid(context,uri);
 			return url+";jsessionid="+sessionid;
 		}else{
@@ -93,12 +181,8 @@ public class SSO {
 
 	
 	public static void main (String[] st){
-		
-		String path ="http://localhost:80/FineR/ReportServer;jsessionid=718D4E0DEC9AF7B01198BC5602F2ADC3";
-		String[] s = path.split(";");
-		System.out.println(s[0]);
 		try {
-			String url = getUrl("http://localhost/ServletDemo", "s", "s");
+			String url = getUrl("http://localhost/FineR/", "s", "s");
 			System.out.println("gggg"+url);
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block

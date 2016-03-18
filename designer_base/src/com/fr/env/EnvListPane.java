@@ -441,6 +441,7 @@ public class EnvListPane extends JControlPane {
             String url = servletPathField.getText();
             //添加 Jsessionid
             try {
+//            	setHttpsParas();
 				url = SSO.getUrl(url, "a","a");
 				System.out.println("CCCCCCC"+url);
 			} catch (Exception e1) {
@@ -531,7 +532,20 @@ public class EnvListPane extends JControlPane {
         		this.certificatePath.setText(manager.getCertificatePath());
         		this.certificatePass.setText(manager.getCertificatePass());
                 // 第二次出现":"的地方,port位置起始点
-
+        		
+        		
+        		
+        		//如果是cas登录的  删除之前的会话
+        		envPath =  envPath.split(";")[0];
+        		//创建新的会话
+        		try {
+					envPath = SSO.getUrl(envPath, "a","a"/*ob.getUser() == null ? StringUtils.EMPTY : ob.getUser(), ob.getPassword() == null ? StringUtils.EMPTY : ob.getPassword()*/);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+        		
+        		
                 int secondTime = envPath.indexOf(":", envPath.indexOf(":") + 1);
                 // 第三次出现"/"的地方
                 int thirdTime = envPath.indexOf("/", secondTime + 1);
