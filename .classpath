@@ -10,6 +10,7 @@
 	<classpathentry kind="src" path="designer_chart/src"/>
 	<classpathentry kind="src" path="designer_form/src"/>
 	<classpathentry kind="src" path="work-day/src"/>
+	<classpathentry kind="src" path="sso"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2-sources.jar"/>
 	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/fest-lib/fest-assert-1.2-sources.jar"/>
@@ -21,7 +22,11 @@
 	<classpathentry kind="lib" path="lib/fest-lib/jcip-annotations-1.0-sources.jar"/>
 	<classpathentry kind="lib" path="lib/fest-lib/jcip-annotations-1.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/finer"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/cas-client-core-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/httpclient-4.5.1.jar"/>
+	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/httpcore-4.4.3.jar"/>
+	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/jsoup-1.7.2.jar"/>
 	<classpathentry kind="output" path="WebReport/WEB-INF/classes"/>
 </classpath>

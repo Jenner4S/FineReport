@@ -164,6 +164,7 @@ public class RemoteEnv implements Env {
      */
     private HttpClient createHttpMethod(HashMap<String, String> para, boolean isSignIn) throws EnvException, UnsupportedEncodingException {
         String methodPath = this.path;
+//        System.out.println("GGGGGGGGGGG"+methodPath);
         if (!isSignIn) {
             methodPath = methodPath + "?id=" + createUserID();
         }
@@ -339,7 +340,7 @@ public class RemoteEnv implements Env {
         if (path.startsWith("https") && (!DesignerEnvManager.getEnvManager().isHttps())) {
             return false;
         }
-
+        
         HttpClient client = createHttpMethod(para, true);
 
         String res = stream2String(execute4InputStream(client));
