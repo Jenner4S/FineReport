@@ -14,25 +14,6 @@
 	<classpathentry kind="src" path="plugin-webservice/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8"/>
-	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="lib/fr-chart-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-designer-chart-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-designer-core-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-designer-feedback-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-designer-report-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-performance-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-platform-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-report-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/fr-third-8.0.jar"/>
-	<classpathentry kind="lib" path="lib/ifxjdbc.jar"/>
-	<classpathentry kind="lib" path="lib/JavaPNS_2.2.jar"/>
-	<classpathentry kind="lib" path="lib/jtds-1.2.2.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.6-bin.jar"/>
-	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
-	<classpathentry kind="lib" path="lib/plugin-com.fr.plugin.chart.vancharts-0.jar"/>
-	<classpathentry kind="lib" path="lib/sqlite-jdbc.jar"/>
-	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
-	<classpathentry kind="lib" path="lib/sybase.jar"/>
 	<classpathentry kind="lib" path="lib/jetty/activation.jar"/>
 	<classpathentry kind="lib" path="lib/jetty/commons-el.jar"/>
 	<classpathentry kind="lib" path="lib/jetty/commons-logging.jar"/>
@@ -51,13 +32,33 @@
 	<classpathentry kind="lib" path="lib/jetty/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="lib/jetty/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/jetty/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-chart-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-core-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-feedback-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-report-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/plugin-com.fr.online.update-0.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-examples-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-excelant-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="lib/poi-scratchpad-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/fr-chart-8.0.jar"/>
 	<classpathentry kind="lib" path="lib/fr-core-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-performance-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-platform-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-report-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-third-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/ifxjdbc.jar"/>
+	<classpathentry kind="lib" path="lib/JavaPNS_2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jtds-1.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/plugin-com.fr.plugin.chart.vancharts-0.jar"/>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="lib/sybase.jar"/>
 	<classpathentry kind="lib" path="lib/swingexporer/swag.jar"/>
 	<classpathentry kind="lib" path="lib/swingexporer/swexpl.jar"/>
 	<classpathentry kind="lib" path="lib/swingexporer/swt.jar"/>
