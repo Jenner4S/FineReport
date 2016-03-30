@@ -14,7 +14,14 @@ import com.fr.general.ComparatorUtils;
 /**
  * Created by eason on 15/4/23.
  */
+@Deprecated
 public abstract class AbstractIndependentChartUI implements IndependentChartUIProvider {
+
+    @Override
+    public int currentAPILevel() {
+        return -1;
+    }
+
     public AbstractChartAttrPane[] getAttrPaneArray(AttributeChangeListener listener){
         return new AbstractChartAttrPane[0];
     }
@@ -42,5 +49,4 @@ public abstract class AbstractIndependentChartUI implements IndependentChartUIPr
     public ConditionAttributesPane getPlotConditionPane(Plot plot){
         return new DataSeriesConditionPane();
     }
-
 }

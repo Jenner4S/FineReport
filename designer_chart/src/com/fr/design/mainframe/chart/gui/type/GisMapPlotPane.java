@@ -1,12 +1,6 @@
 package com.fr.design.mainframe.chart.gui.type;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JPanel;
-
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.Chart;
 import com.fr.chart.chartattr.GisMapPlot;
 import com.fr.chart.chartattr.Plot;
@@ -19,6 +13,9 @@ import com.fr.design.layout.TableLayout;
 import com.fr.design.layout.TableLayoutHelper;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
+
+import javax.swing.*;
+import java.awt.*;
 
 
 public class GisMapPlotPane extends AbstractChartTypePane{
@@ -34,7 +31,7 @@ public class GisMapPlotPane extends AbstractChartTypePane{
 		double f = TableLayout.FILL;
         Component[][] components = null;
 
-		styleList = initStyleList();
+		styleList = createStyleList();
 		
 		checkDemosBackground();
 
@@ -65,30 +62,6 @@ public class GisMapPlotPane extends AbstractChartTypePane{
         this.add(panel,BorderLayout.CENTER);
 	
 	}
-	
-	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], "gis"+Inter.getLocText("FR-Chart-Map_Map"), true);
-		pane.isPressing = true;
-		demoList.add(pane);
-		return demoList;
-	}
-
-	/**
-	 * 布局
-	 */
-	protected List<ChartImagePane> initStyleList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		String baiduMap = Inter.getLocText("FR-Chart-Type_BaiduMap");
-		String googleMap = Inter.getLocText("FR-Chart-Map_GoogleMap");
-		String[] layoutPaths = getTypeLayoutPath();
-		ChartImagePane pane = new ChartImagePane(layoutPaths[0], baiduMap);
-		pane.isPressing = true;
-		demoList.add(pane);
-		demoList.add(new ChartImagePane(layoutPaths[1], googleMap));
-		return demoList;
-	}
 
     @Override
     protected String[] getTypeIconPath() {
@@ -96,12 +69,31 @@ public class GisMapPlotPane extends AbstractChartTypePane{
         };
     }
 
-    @Override
+	@Override
+	protected String[] getTypeTipName() {
+		return new String[]{
+				"gis"+Inter.getLocText("FR-Chart-Map_Map")
+		};
+	}
+
+	@Override
+	protected String getPlotTypeID() {
+		return ChartConstants.GIS_CHAER;
+	}
+
     protected String[] getTypeLayoutPath() {
         return new String[]{"/com/fr/design/images/chart/GisMapPlot/layout/0.png",
                 "/com/fr/design/images/chart/GisMapPlot/layout/1.png",
         };
     }
+
+	@Override
+	protected String[] getTypeLayoutTipName() {
+		return new String[]{
+				Inter.getLocText("FR-Chart-Type_BaiduMap"),
+				Inter.getLocText("FR-Chart-Map_GoogleMap")
+		};
+	}
 
 	/**
 	 * 保存界面属性
@@ -174,21 +166,6 @@ public class GisMapPlotPane extends AbstractChartTypePane{
         styleList.get(GOOGLE).checkBackground();
         styleList.get(BAIDU).checkBackground();
 	}
-
-    /**
-     * 界面是否接受
-     * @param ob 对象
-     * @return  true表示接受
-     */
-	public boolean accept(Object ob) {
-		if(!super.accept(ob)) {
-			return false;
-		}
-		Chart chart = (Chart)ob;
-		Plot plot = chart.getPlot();
-		return (plot instanceof GisMapPlot);
-	}
-
 
     /**
      * 界面标题

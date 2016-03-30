@@ -1,5 +1,7 @@
 package com.fr.design.menu;
 
+import com.fr.stable.fun.Level;
+
 import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
 
@@ -8,7 +10,14 @@ import javax.swing.JToolBar;
  * august:ShortCut没有必要序列化和XMLabled
  * 原来那么多Menudef都提供持久化操作，太浪费资源
  */
-public abstract class ShortCut {
+public abstract class ShortCut implements Level{
+
+    public static final int CURRENT_LEVEL = 1;
+
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
 
     private MenuKeySet menuKeySet = null;
 

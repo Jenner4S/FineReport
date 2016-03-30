@@ -8,4 +8,5 @@ import com.fr.design.fun.ServerTableDataDefineProvider;
  * @since 8.0
  */
 public abstract class AbstractServerTableDataDefineProvider implements ServerTableDataDefineProvider {
+
 }

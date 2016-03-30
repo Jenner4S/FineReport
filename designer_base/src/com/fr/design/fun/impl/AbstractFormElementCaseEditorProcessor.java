@@ -9,6 +9,11 @@ import java.beans.PropertyDescriptor;
  */
 public abstract class AbstractFormElementCaseEditorProcessor implements FormElementCaseEditorProcessor {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
     /**
      * 生成属性表
      * @param temp 传入当前操作的class

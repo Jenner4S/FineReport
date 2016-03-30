@@ -7,10 +7,14 @@ import com.fr.base.FRContext;
 import com.fr.design.DesignerEnvManager;
 import com.fr.design.ExtraDesignClassManager;
 import com.fr.design.RestartHelper;
+import com.fr.design.actions.server.PluginManagerAction;
+import com.fr.design.dialog.BasicDialog;
+import com.fr.design.extra.PluginManagerPane;
 import com.fr.design.file.HistoryTemplateListPane;
 import com.fr.design.file.MutilTempalteTabPane;
 import com.fr.design.file.TemplateTreePane;
 import com.fr.design.fun.GlobalListenerProvider;
+import com.fr.design.mainframe.DesignerContext;
 import com.fr.design.mainframe.DesignerFrame;
 import com.fr.design.mainframe.TemplatePane;
 import com.fr.design.mainframe.toolbar.ToolBarMenuDock;
@@ -20,12 +24,13 @@ import com.fr.file.FILE;
 import com.fr.file.FILEFactory;
 import com.fr.file.FileFILE;
 import com.fr.general.*;
-import com.fr.stable.ArrayUtils;
-import com.fr.stable.BuildContext;
-import com.fr.stable.OperatingSystem;
-import com.fr.stable.ProductConstants;
+import com.fr.plugin.PluginCollector;
+import com.fr.stable.*;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -39,6 +44,8 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
     private static final int LOAD_TREE_MAXNUM = 10;
 
     private static final int MESSAGEPORT = 51462;
+
+    private Timer timer;
 
     public BaseDesigner(String[] args) {
         if (isDebug()) {
@@ -97,6 +104,8 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
         splashWindow.dispose();
 
         bindGlobalListener();
+
+        showErrorPluginsMessage();
     }
 
     private void bindGlobalListener() {
@@ -105,6 +114,28 @@ public abstract class BaseDesigner extends ToolBarMenuDock {
             for (GlobalListenerProvider provider : providers) {
                 Toolkit.getDefaultToolkit().addAWTEventListener(provider.listener(), AWTEvent.KEY_EVENT_MASK);
             }
+        }
+    }
+
+    private void showErrorPluginsMessage() {
+        if (timer == null) {
+            timer = new Timer(5000, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String[] plugins = PluginCollector.getCollector().getErrorPlugins();
+                    if (ArrayUtils.isNotEmpty(plugins)) {
+                        String text = StableUtils.join(plugins, ",") + Inter.getLocText("FR-Designer_Plugin_Should_Update");
+                        int r = JOptionPane.showConfirmDialog(null, text, Inter.getLocText("FR-Designer_Plugin_Should_Update_Title"), JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+                        if (r == JOptionPane.OK_OPTION) {
+                            final PluginManagerPane managerPane = new PluginManagerPane();
+                            BasicDialog dlg = managerPane.showLargeWindow(DesignerContext.getDesignerFrame(),null);
+                            dlg.setVisible(true);
+                        }
+                    }
+                    timer.stop();
+                }
+            });
+            timer.start();
         }
     }
 

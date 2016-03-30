@@ -44,8 +44,8 @@ public class PluginHelper {
      * @param id 插件id
      * @param p  下载百分比处理
      */
-    public static void downloadPluginFile(String id, Process<Double> p) throws Exception {
-        HttpClient httpClient = new HttpClient(getDownloadPath(id));
+    public static void downloadPluginFile(String id, String username, String password, Process<Double> p) throws Exception {
+        HttpClient httpClient = new HttpClient(getDownloadPath(id, username, password));
         if (httpClient.getResponseCode() == HttpURLConnection.HTTP_OK) {
             int totalSize = httpClient.getContentLength();
             InputStream reader = httpClient.getResponseStream();
@@ -68,9 +68,11 @@ public class PluginHelper {
         }
     }
 
-    private static String getDownloadPath(String id) throws Exception {
+    private static String getDownloadPath(String id, String username, String password) throws Exception {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("id", id);
+        map.put("username", username);
+        map.put("password", password);
         HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_DOWNLOAD_URL, map);
         String resText = httpClient.getResponseText();
         String charSet = EncodeConstants.ENCODING_UTF_8;
@@ -105,13 +107,13 @@ public class PluginHelper {
             if (ArrayUtils.isNotEmpty(pluginFiles)) {
                 for (File f : pluginFiles) {
                     if (f.getName().equals("plugin.xml")) {
-                        FileInputStream in = new FileInputStream(f);
                         plugin = new Plugin();
-                        XMLTools.readInputStreamXML(plugin, in);
+                        InputStream inputStream = plugin.readEncryptXml(new FileInputStream(f));
+                        XMLTools.readInputStreamXML(plugin, inputStream);
                         if (!plugin.isValidate()) {
                             return null;
                         }
-                        in.close();
+                        inputStream.close();
                         break;
                     }
                 }
@@ -193,28 +195,23 @@ public class PluginHelper {
 
     private static void validPlugin(Plugin plugin) throws Exception {
         if (plugin == null) {
-            throw new com.fr.design.extra.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
+            throw new com.fr.plugin.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Illegal_Plugin_Zip_Cannot_Be_Install"));
         }
         if (PluginLoader.getLoader().isInstalled(plugin)) {
-            throw new com.fr.design.extra.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
+            throw new com.fr.plugin.PluginVerifyException(Inter.getLocText("FR-Designer-Plugin_Has_Been_Installed"));
         }
         if (plugin.isJarExpired()) {
             String jarExpiredInfo = Inter.getLocText(new String[]{"FR-Designer-Plugin_Jar_Expired", ",", "FR-Designer-Plugin_Install_Failed", ",", "FR-Designer-Plugin_Please_Update_Jar", plugin.getRequiredJarTime()});
             FRLogger.getLogger().error(jarExpiredInfo);
-            throw new com.fr.design.extra.PluginVerifyException(jarExpiredInfo);
+            throw new com.fr.plugin.PluginVerifyException(jarExpiredInfo);
         }
         File fileToCheck = getTempPluginFileDirectory();
-        if (!FRContext.getCurrentEnv().isTruePluginMD5(plugin, fileToCheck)) {
-            String MD5Info = plugin.getName() + Inter.getLocText("FR-Plugin-Plugin_Is_Damaged");
-            FRLogger.getLogger().error(MD5Info);
-            throw new com.fr.design.extra.PluginVerifyException(MD5Info);
-        }
         File oldfile = new File(StableUtils.pathJoin(FRContext.getCurrentEnv().getPath(), ProjectConstants.PLUGINS_NAME, "plugin-" + plugin.getId()));
         if (!PluginManagerHelper.checkLic(plugin, fileToCheck)) {
             if (!PluginManagerHelper.checkLic(plugin, oldfile)) {//安装时,在安装目录下和压缩包里都没有才弹框
                 String checkLicFail = Inter.getLocText("FR-Designer-PluginLicense_Check_Failed");
                 FRLogger.getLogger().error(checkLicFail);
-                throw new com.fr.design.extra.PluginVerifyException(checkLicFail);
+                throw new com.fr.plugin.PluginVerifyException(checkLicFail);
             }
         }
     }
@@ -290,7 +287,8 @@ public class PluginHelper {
         map.put("key", DesignerEnvManager.getEnvManager().getActivationKey());
         map.put("detail", plugin.toJSONObject().toString());
         map.put("build", GeneralUtils.readBuildNO());
-        HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_INSTALL_INFO, map);
+        //第三个参数encode, nodejs服务器那边如果参数不encode, 带了空格会报错, 直接用urlconnection也是一样, jetty没能还原.
+        HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_INSTALL_INFO, map, true);
         httpClient.setTimeout(TIME_OUT);
         httpClient.asGet();
         return httpClient.getResponseText();

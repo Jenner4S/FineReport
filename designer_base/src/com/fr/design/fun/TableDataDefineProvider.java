@@ -2,15 +2,18 @@ package com.fr.design.fun;
 
 import com.fr.base.TableData;
 import com.fr.design.data.tabledata.tabledatapane.AbstractTableDataPane;
+import com.fr.stable.fun.Level;
 
 /**
  * @author : richie
  * @since : 7.1.1
  * 自定义报表数据集界面接口，单独存在的一个个数据集
  */
-public interface TableDataDefineProvider {
+public interface TableDataDefineProvider extends Level {
 
     public static final String XML_TAG = "TableDataDefineProvider";
+
+    int CURRENT_LEVEL = 1;
 
     /**
      * 自定义的数据集设置界面所对应的数据集类型

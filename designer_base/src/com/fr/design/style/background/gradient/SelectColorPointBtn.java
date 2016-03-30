@@ -7,18 +7,26 @@ import java.awt.geom.GeneralPath;
 
 
 public class SelectColorPointBtn implements Comparable<SelectColorPointBtn> {
-	double x;
-	double y;
+	private double x;
+	private double y;
 	private double a = 4;
 	private double b = 4;
 	private GeneralPath ipath;
 	private GeneralPath jpath;
 	private Color colorInner;
+
+    /*提供一个可设置拖拉按钮边框颜色*/
+    private Color borderColor;
 	public SelectColorPointBtn(double m, double n, Color colorInner){
-		this.x = m;
-		this.y = n;
-		this.colorInner = colorInner;
+		this(m, n, colorInner, Color.BLACK);
 	}
+
+    public SelectColorPointBtn(double m, double n, Color colorInner, Color borderColor){
+        this.x = m;
+        this.y = n;
+        this.colorInner = colorInner;
+        this.borderColor = borderColor;
+    }
 	
 	public void setColorInner(Color color){
 		this.colorInner = color; 
@@ -67,15 +75,15 @@ public class SelectColorPointBtn implements Comparable<SelectColorPointBtn> {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setColor(new Color(237, 237, 237));
 		g2.fill(ipath);
-		g2.setColor(Color.BLACK);
+		g2.setColor(borderColor);
 		g2.draw(ipath);
 		
 		g2.setColor(this.colorInner);
 		g2.fill(jpath);
+
 		g2.setColor(new Color(228, 228, 228));
 		g2.draw(jpath);
 	}
-
 	
 	public boolean contains(double x, double y){
 		return ipath.contains(x, y);

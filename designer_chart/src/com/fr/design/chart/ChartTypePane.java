@@ -24,7 +24,7 @@ import java.awt.*;
 public class ChartTypePane extends ChartCommonWizardPane {
     private static final long serialVersionUID = -1175602484968520546L;
 
-    private ChartInternationalNameContentBean[] typeName = ChartTypeManager.getInstance().getAllChartNames();
+    private ChartInternationalNameContentBean[] typeName = ChartTypeManager.getInstance().getAllChartBaseNames();
     private Chart[][] charts4Icon = null;
 
     {
@@ -56,7 +56,7 @@ public class ChartTypePane extends ChartCommonWizardPane {
         mainTypeList = new JList(defaultListModel);
 
         for (int i = 0; i < typeName.length; i++) {
-            defaultListModel.insertElementAt(typeName[i].getName(), i);
+            defaultListModel.insertElementAt(Inter.getLocText(typeName[i].getName()), i);
         }
         mainTypeList.addListSelectionListener(listSelectionListener);
 

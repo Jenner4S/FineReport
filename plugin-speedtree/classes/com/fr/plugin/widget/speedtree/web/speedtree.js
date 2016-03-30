@@ -1,0 +1,1 @@
+;(function ($) {    /**     * 速度优先的下拉树（只根据层级判断有无子节点）     * @class FR.ComboBox4Chinese     * @extends FR.ComboBoxEditor     */    FR.SpeedTreeEditor = FR.extend(FR.TreeComboBoxEditor, /**@class FR.SpeedTree*/{    });    $.shortcut('speedtree', FR.SpeedTreeEditor);})(jQuery);

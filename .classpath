@@ -1,32 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="echarts-map/src"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="plugin-vancharts/src"/>
-	<classpathentry kind="src" path="plugin-treesearch/src"/>
-	<classpathentry kind="src" path="plugin-searchhelp/src"/>
+	<classpathentry kind="src" path="sso"/>
+	<classpathentry kind="src" path="plugin-clock/src"/>
+	<classpathentry kind="src" path="plugin-estateRadioGroup/src"/>
+	<classpathentry kind="src" path="plugin-dynamichighlight/src"/>
+	<classpathentry kind="src" path="plugin-speedtree/src"/>
+	<classpathentry kind="src" path="plugin-scan/src"/>
 	<classpathentry kind="src" path="designer/src"/>
 	<classpathentry kind="src" path="designer_base/src"/>
 	<classpathentry kind="src" path="designer_chart/src"/>
 	<classpathentry kind="src" path="designer_form/src"/>
-	<classpathentry kind="src" path="work-day/src"/>
-	<classpathentry kind="src" path="sso"/>
-	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2-sources.jar"/>
-	<classpathentry kind="lib" path="lib/fest/fest-swing-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-assert-1.2-sources.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-assert-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-reflect-1.2-sources.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-reflect-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-util-1.1.2-sources.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/fest-util-1.1.2.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/jcip-annotations-1.0-sources.jar"/>
-	<classpathentry kind="lib" path="lib/fest-lib/jcip-annotations-1.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/finer"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8"/>
+	<classpathentry kind="src" path="plugin-webservice/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/cas-client-core-3.2.1.jar"/>
-	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/httpclient-4.5.1.jar"/>
-	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/httpcore-4.4.3.jar"/>
-	<classpathentry kind="lib" path="/cas-server-web/WebRoot/WEB-INF/lib/jsoup-1.7.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/fr-chart-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-chart-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-core-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-feedback-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-designer-report-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-performance-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-platform-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-report-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/fr-third-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/ifxjdbc.jar"/>
+	<classpathentry kind="lib" path="lib/JavaPNS_2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jtds-1.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/plugin-com.fr.plugin.chart.vancharts-0.jar"/>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="lib/sybase.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/activation.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/commons-el.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/jasper-compiler.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/jasper-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/mail.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/mx4j-remote.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/mx4j-tools.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/mx4j.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/org.mortbay.jetty.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/org.mortbay.jmx.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/saaj.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/swt.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/jetty/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/poi-examples-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/fr-core-8.0.jar"/>
+	<classpathentry kind="lib" path="lib/swingexporer/swag.jar"/>
+	<classpathentry kind="lib" path="lib/swingexporer/swexpl.jar"/>
+	<classpathentry kind="lib" path="lib/swingexporer/swt.jar"/>
 	<classpathentry kind="output" path="WebReport/WEB-INF/classes"/>
 </classpath>

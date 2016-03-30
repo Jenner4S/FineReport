@@ -106,11 +106,9 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 		double f = TableLayout.FILL;
 		double[] columnSize = {p, f};
 		double[] rowSize = {p, p, p};
-		Component[][] components = new Component[][]{
-				new Component[]{new BoldFontTextLabel(Inter.getLocText("FR_Chart-Data_Range_configuration")), designTypeButtonGroup},
-				new Component[]{new BoldFontTextLabel(Inter.getLocText(new String[]{"FR-Chart-Color_Subject", "FR-Chart-Color_Color"})), fillStyleCombox},
-				new Component[]{new BoldFontTextLabel(Inter.getLocText("FR-Chart-Value_Divided_stage")), regionNumPane},
-		};
+
+		Component[][] components = createComponents();
+
 		upControlPane = TableLayoutHelper.createTableLayoutPane(components, rowSize, columnSize);
 
 		this.textFieldList = this.getTextFieldList();
@@ -123,7 +121,27 @@ public class UIColorPickerPane extends BasicPane implements UIObserver {
 
 		refreshGroupPane(colors, getValueArray(number));
 	}
-	
+
+    protected UIButtonGroup<Integer> getDesignTypeButtonGroup(){
+        return designTypeButtonGroup;
+    }
+
+    protected ColorSelectBox getFillStyleCombox(){
+        return fillStyleCombox;
+    }
+
+    protected UINumberDragPane getRegionNumPane(){
+        return regionNumPane;
+    }
+
+    protected Component[][] createComponents(){
+        return new Component[][]{
+                new Component[]{new BoldFontTextLabel(Inter.getLocText("FR_Chart-Data_Range_Configuration")), designTypeButtonGroup},
+                new Component[]{new BoldFontTextLabel(Inter.getLocText(new String[]{"FR-Chart-Color_Subject", "FR-Chart-Color_Color"})), fillStyleCombox},
+                new Component[]{new BoldFontTextLabel(Inter.getLocText("FR-Chart-Value_Divided_stage")), regionNumPane},
+        };
+    }
+
 	public UIColorPickerPane(String meterString){
 
 		fillStyleCombox = this.getColorSelectBox();

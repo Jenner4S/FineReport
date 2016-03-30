@@ -6,7 +6,6 @@ package com.fr.design.mainframe;
 import com.fr.base.BaseUtils;
 import com.fr.base.Env;
 import com.fr.base.FRContext;
-import com.fr.base.io.IOFile;
 import com.fr.design.DesignModelAdapter;
 import com.fr.design.DesignState;
 import com.fr.design.DesignerEnvManager;
@@ -16,10 +15,13 @@ import com.fr.design.data.DesignTableDataManager;
 import com.fr.design.data.datapane.TableDataTreePane;
 import com.fr.design.event.TargetModifiedEvent;
 import com.fr.design.event.TargetModifiedListener;
-import com.fr.design.file.*;
+import com.fr.design.file.HistoryTemplateListPane;
+import com.fr.design.file.MutilTempalteTabPane;
+import com.fr.design.file.NewTemplatePane;
+import com.fr.design.file.SaveSomeTemplatePane;
+import com.fr.design.file.TemplateTreePane;
 import com.fr.design.fun.TitlePlaceProcessor;
 import com.fr.design.gui.ibutton.UIButton;
-import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.gui.imenu.UIMenuHighLight;
 import com.fr.design.gui.iscrollbar.UIScrollBar;
 import com.fr.design.gui.itoolbar.UIToolbar;
@@ -38,7 +40,6 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralContext;
 import com.fr.general.Inter;
-import com.fr.plugin.PluginLoader;
 import com.fr.stable.CoreConstants;
 import com.fr.stable.OperatingSystem;
 import com.fr.stable.ProductConstants;
@@ -52,8 +53,20 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
-import java.awt.dnd.*;
-import java.awt.event.*;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.DropTargetDragEvent;
+import java.awt.dnd.DropTargetDropEvent;
+import java.awt.dnd.DropTargetEvent;
+import java.awt.dnd.DropTargetListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -773,7 +786,13 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 			DesignerFrameFileDealerPane.getInstance().refresh();
 			return;
 		}
-		openFile(tplFile);
+
+        try {
+            openFile(tplFile);
+        } catch (Throwable t) {
+            FRLogger.getLogger().error(t.getMessage(), t);
+            addAndActivateJTemplate();
+        }
 
 	}
 
@@ -980,31 +999,4 @@ public class DesignerFrame extends JFrame implements JTemplateActionListener, Ta
 		}
 	}
 
-	public static interface App<T extends IOFile> {
-
-		/**
-		 * 默认延伸
-		 * 
-		 * @return 类型
-		 */
-		public String[] defaultExtentions();
-
-		/**
-		 * 打开模板
-		 * 
-		 * @param tplFile
-		 *            文件
-		 * @return 报表
-		 */
-		public JTemplate<T, ?> openTemplate(FILE tplFile);
-
-		/**
-		 * 做为输出文件.
-		 * 
-		 * @param tplFile
-		 *            文件
-		 * @return 报表
-		 */
-		public T asIOFile(FILE tplFile);
-	}
 }

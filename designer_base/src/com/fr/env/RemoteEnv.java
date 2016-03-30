@@ -164,7 +164,6 @@ public class RemoteEnv implements Env {
      */
     private HttpClient createHttpMethod(HashMap<String, String> para, boolean isSignIn) throws EnvException, UnsupportedEncodingException {
         String methodPath = this.path;
-//        System.out.println("GGGGGGGGGGG"+methodPath);
         if (!isSignIn) {
             methodPath = methodPath + "?id=" + createUserID();
         }
@@ -340,7 +339,7 @@ public class RemoteEnv implements Env {
         if (path.startsWith("https") && (!DesignerEnvManager.getEnvManager().isHttps())) {
             return false;
         }
-        
+
         HttpClient client = createHttpMethod(para, true);
 
         String res = stream2String(execute4InputStream(client));
@@ -1101,26 +1100,35 @@ public class RemoteEnv implements Env {
     public FileNode[] listCpt(String rootFilePath, boolean recurse) {
         List<FileNode> fileNodeList = new ArrayList<FileNode>();
         try {
-            listAll(rootFilePath, fileNodeList, recurse);
+            listAll(rootFilePath, fileNodeList, new String[]{"cpt"}, recurse);
         } catch (Exception e) {
             FRContext.getLogger().error(e.getMessage(), e);
         }
         return fileNodeList.toArray(new FileNode[fileNodeList.size()]);
     }
 
-    private void listAll(String rootFilePath, List<FileNode> nodeList, boolean recurse) throws Exception {
+    private void listAll(String rootFilePath, List<FileNode> nodeList, String[] fileTypes, boolean recurse) throws Exception {
         FileNode[] fns = listFile(rootFilePath);
-        for (int i = 0; i < fns.length; i++) {
-            if (fns[i].isFileType("cpt")) {
-                nodeList.add(fns[i]);
-            } else if (fns[i].isDirectory()) {
+        for (FileNode fileNode : fns) {
+            if (isAcceptFileType(fileNode, fileTypes)) {
+                nodeList.add(fileNode);
+            } else if (fileNode.isDirectory()) {
                 if (recurse) {
-                    listAll(rootFilePath + File.separator + fns[i].getName(), nodeList, true);
+                    listAll(rootFilePath + File.separator + fileNode.getName(), nodeList, fileTypes, true);
                 } else {
-                    nodeList.add(fns[i]);
+                    nodeList.add(fileNode);
                 }
             }
         }
+    }
+
+    private boolean isAcceptFileType(FileNode fileNode, String[] fileTypes) {
+        for (String fileType : fileTypes) {
+            if (fileNode.isFileType(fileType)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

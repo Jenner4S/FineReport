@@ -1,5 +1,6 @@
 package com.fr.design.mainframe.chart.gui.type;
 
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.Chart;
 import com.fr.chart.chartattr.LinePlot;
 import com.fr.chart.chartattr.Plot;
@@ -7,45 +8,33 @@ import com.fr.chart.charttypes.LineIndependentChart;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LinePlotPane extends AbstractChartTypePane{
 
 	private static final int LINE_CHART = 0;
-	
-	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		
-		ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], Inter.getLocText("I-LineStyle_Line"));
-		pane.isPressing = true;
-		demoList.add(pane);
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return new ArrayList<ChartImagePane>();
-	}
-
 
     @Override
     protected String[] getTypeIconPath() {
-        return new String[]{"/com/fr/design/images/chart/LinePlot/type/0.png",
-                "/com/fr/design/images/chart/LinePlot/type/1.png",
-                "/com/fr/design/images/chart/LinePlot/type/2.png",
+        return new String[]{"/com/fr/design/images/chart/LinePlot/type/0.png"
         };
     }
 
-    @Override
+	@Override
+	protected String[] getTypeTipName() {
+		return new String[]{
+				Inter.getLocText("I-LineStyle_Line")
+		};
+	}
+
+	@Override
     protected String[] getTypeLayoutPath() {
-        return new String[]{"/com/fr/design/images/chart/LinePlot/layout/0.png",
-                "/com/fr/design/images/chart/LinePlot/layout/1.png",
-                "/com/fr/design/images/chart/LinePlot/layout/2.png",
-                "/com/fr/design/images/chart/LinePlot/layout/3.png",
-        };
+        return new String[0];
     }
+
+	@Override
+	protected String[] getTypeLayoutTipName() {
+		return new String[0];
+	}
+
 	/**
 	 * 更新折线的类型选择界面
 	 */
@@ -88,20 +77,16 @@ public class LinePlotPane extends AbstractChartTypePane{
 	 * 界面标题
      * @return 界面标题
 	 */
+	@Override
+	protected String getPlotTypeID() {
+		return ChartConstants.LINE_CHART;
+	}
+
 	public String title4PopupWindow() {
 		return Inter.getLocText("I-LineStyle_Line");
 	}
 
-    /**
-     * 界面是否接受
-     * @param ob 传入的对象
-     * @return 是否是chart对象
-     */
-	public boolean accept(Object ob) {
-		return super.accept(ob) && ((Chart) ob).getPlot().accept(LinePlot.class);
-	}
-
-    public Chart getDefaultChart() {
+	public Chart getDefaultChart() {
         return LineIndependentChart.lineChartTypes[0];
     }
 

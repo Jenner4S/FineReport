@@ -50,8 +50,8 @@ public class FormDesignerModule extends DesignModule {
      *apps模板的Opener
      * @return  返回app
      */
-    public DesignerFrame.App<?>[] apps4TemplateOpener() {
-        return new DesignerFrame.App[]{new DesignerFrame.App<Form>() {
+    public App<?>[] apps4TemplateOpener() {
+        return new App[]{new AbstractAppProvider<Form>() {
 
             @Override
             public String[] defaultExtentions() {
@@ -73,7 +73,7 @@ public class FormDesignerModule extends DesignModule {
                 if (XMLEncryptUtils.isCptEncoded() &&
                         !XMLEncryptUtils.checkVaild(DesignerEnvManager.getEnvManager().getEncryptionKey())) {
                     if (!new DecodeDialog(file).isPwdRight()) {
-                        FRContext.getLogger().error(Inter.getLocText("ECP_error_pwd"));
+                        FRContext.getLogger().error(Inter.getLocText("FR-Engine_ECP_error_pwd"));
                         return new Form();
                     }
                 }
@@ -97,6 +97,6 @@ public class FormDesignerModule extends DesignModule {
     }
 
     public String getInterNationalName() {
-        return Inter.getLocText("formDesignerModule");
+        return Inter.getLocText("FR-Designer_formDesignerModule");
     }
 }

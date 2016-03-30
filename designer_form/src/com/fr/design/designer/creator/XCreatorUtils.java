@@ -5,12 +5,18 @@ package com.fr.design.designer.creator;
 
 import com.fr.base.FRContext;
 import com.fr.design.ExtraDesignClassManager;
-import com.fr.design.designer.creator.cardlayout.*;
+import com.fr.design.designer.creator.cardlayout.XCardAddButton;
+import com.fr.design.designer.creator.cardlayout.XCardSwitchButton;
+import com.fr.design.designer.creator.cardlayout.XWCardLayout;
+import com.fr.design.designer.creator.cardlayout.XWCardMainBorderLayout;
+import com.fr.design.designer.creator.cardlayout.XWCardTagLayout;
+import com.fr.design.designer.creator.cardlayout.XWCardTitleLayout;
+import com.fr.design.designer.creator.cardlayout.XWTabFitLayout;
 import com.fr.design.module.DesignModuleFactory;
 import com.fr.design.utils.gui.LayoutUtils;
 import com.fr.form.parameter.FormSubmitButton;
-import com.fr.form.ui.*;
 import com.fr.form.ui.Button;
+import com.fr.form.ui.*;
 import com.fr.form.ui.Label;
 import com.fr.form.ui.TextArea;
 import com.fr.form.ui.container.*;
@@ -24,7 +30,6 @@ import com.fr.stable.StringUtils;
 import javax.swing.*;
 import java.awt.*;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * XCreator的相关处理
@@ -144,7 +149,7 @@ public class XCreatorUtils {
                 break;
             } catch (Exception ignore) {
                 // richie:这里的错误可以忽略
-                FRContext.getLogger().error(ignore.getMessage());
+//                FRContext.getLogger().error(ignore.getMessage());
             }
         }
         if (creator == null) {

@@ -1,13 +1,17 @@
 package com.fr.design.fun;
 
 import com.fr.design.beans.BasicBeanPane;
+import com.fr.stable.fun.Level;
 
 /**
  * 自定义提交接口
  */
-public interface SubmitProvider {
+public interface SubmitProvider extends Level{
 
     String MARK_STRING = "SubmitProvider";
+
+    int CURRENT_LEVEL = 1;
+
 
     /**
      * 设置界面

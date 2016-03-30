@@ -2,7 +2,7 @@ package com.fr.design.chartinterface;
 
 import com.fr.chart.chartattr.Plot;
 import com.fr.design.beans.BasicBeanPane;
-import com.fr.design.chart.fun.impl.AbstractIndependentChartUI;
+import com.fr.design.chart.fun.impl.AbstractIndependentChartUIWithAPILevel;
 import com.fr.design.chart.series.SeriesCondition.impl.Area3DPlotDataSeriesConditionPane;
 import com.fr.design.chart.series.SeriesCondition.impl.AreaPlotDataSeriesCondtionPane;
 import com.fr.design.condition.ConditionAttributesPane;
@@ -20,7 +20,7 @@ import com.fr.design.mainframe.chart.gui.type.AreaPlotPane;
 /**
  * Created by eason on 15/4/21.
  */
-public class AreaIndependentChartInterface extends AbstractIndependentChartUI {
+public class AreaIndependentChartInterface extends AbstractIndependentChartUIWithAPILevel {
 
     public AbstractChartTypePane getPlotTypePane(){
         return new AreaPlotPane();

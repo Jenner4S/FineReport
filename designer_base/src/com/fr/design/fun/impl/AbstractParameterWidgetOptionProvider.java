@@ -8,4 +8,9 @@ import com.fr.design.fun.ParameterWidgetOptionProvider;
  * @since 8.0
  */
 public abstract class AbstractParameterWidgetOptionProvider implements ParameterWidgetOptionProvider {
+
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
 }

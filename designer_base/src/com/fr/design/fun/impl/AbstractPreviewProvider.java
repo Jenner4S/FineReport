@@ -14,6 +14,11 @@ import java.util.Map;
  */
 public abstract class AbstractPreviewProvider implements PreviewProvider {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
     @Override
     public void onClick(JTemplate<?, ?> jt) {
         jt.previewMenuActionPerformed(this);

@@ -2,6 +2,7 @@ package com.fr.design.fun;
 
 import com.fr.base.present.Present;
 import com.fr.design.beans.FurtherBasicBeanPane;
+import com.fr.stable.fun.Level;
 
 /**
  * @author richie
@@ -9,7 +10,9 @@ import com.fr.design.beans.FurtherBasicBeanPane;
  * @since 8.0
  * 形态类型接口
  */
-public interface PresentKindProvider {
+public interface PresentKindProvider extends Level{
+
+    int CURRENT_LEVEL = 1;
 
     String MARK_STRING = "PresentKindProvider";
 

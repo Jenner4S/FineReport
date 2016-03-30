@@ -12,6 +12,8 @@ import com.fr.design.fun.*;
 import com.fr.design.gui.controlpane.NameObjectCreator;
 import com.fr.design.gui.core.WidgetOption;
 import com.fr.design.gui.core.WidgetOptionFactory;
+import com.fr.design.mainframe.App;
+import com.fr.design.mainframe.DesignerFrame;
 import com.fr.design.menu.ShortCut;
 import com.fr.design.widget.Appearance;
 import com.fr.file.XMLFileManager;
@@ -20,14 +22,25 @@ import com.fr.general.ComparatorUtils;
 import com.fr.general.FRLogger;
 import com.fr.general.GeneralContext;
 import com.fr.general.GeneralUtils;
-import com.fr.design.fun.ToolbarItemProvider;
+import com.fr.plugin.PluginCollector;
+import com.fr.plugin.PluginInvalidLevelException;
+import com.fr.plugin.PluginLicenseManager;
+import com.fr.plugin.PluginMessage;
 import com.fr.stable.EnvChangedListener;
 import com.fr.stable.StringUtils;
+import com.fr.stable.fun.Authorize;
+import com.fr.stable.fun.Level;
 import com.fr.stable.plugin.ExtraDesignClassManagerProvider;
+import com.fr.stable.plugin.PluginSimplify;
 import com.fr.stable.xml.XMLPrintWriter;
 import com.fr.stable.xml.XMLableReader;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author : richie
@@ -39,15 +52,14 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     private static final String XML_TAG = "ExtraDesignClassManager";
     private static final String TEMPLATE_TREE_TAG = "TemplateTreeShortCut";
 
+    private static ClassLoader loader = Thread.currentThread().getContextClassLoader();
+
     private static ExtraDesignClassManager classManager;
 
     public synchronized static ExtraDesignClassManager getInstance() {
         if (classManager == null) {
             classManager = new ExtraDesignClassManager();
             classManager.readXMLFile();
-            // 初始化的时候，默认尝试加载的插件
-            // richie:先屏蔽掉更新菜单，因为没有设计比较丑
-            //classManager.addMenuHandler("com.fr.update.UpdateMenuHandler");
         }
 
         return classManager;
@@ -112,6 +124,18 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     private Set<HyperlinkProvider> hyperlinkGroupProviders;
 
+    public void addSupportDesignApps(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, App.CURRENT_LEVEL, simplify.getPluginName());
+        App provider = (App) level;
+        DesignerFrame.registApp(provider);
+    }
+
+    private void validAPILevel(Level level, int targetLevel, String pluginName) {
+        if (PluginCollector.getCollector().isError(level, targetLevel, pluginName)) {
+            throw new PluginInvalidLevelException(pluginName, level.currentAPILevel());
+        }
+    }
+
     public HyperlinkProvider[] getHyperlinkProvider() {
         if (hyperlinkGroupProviders == null) {
             return new HyperlinkProvider[0];
@@ -119,19 +143,13 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         return hyperlinkGroupProviders.toArray(new HyperlinkProvider[hyperlinkGroupProviders.size()]);
     }
 
-    public void addHyperlinkProvider(String className) {
-        if (StringUtils.isNotEmpty(className)) {
-            if (hyperlinkGroupProviders == null) {
-                hyperlinkGroupProviders = new HashSet<HyperlinkProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                HyperlinkProvider provider = (HyperlinkProvider) clazz.newInstance();
-                hyperlinkGroupProviders.add(provider);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addHyperlinkProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (hyperlinkGroupProviders == null) {
+            hyperlinkGroupProviders = new HashSet<HyperlinkProvider>();
         }
+        validAPILevel(level, HyperlinkProvider.CURRENT_LEVEL, simplify.getPluginName());
+        HyperlinkProvider provider = (HyperlinkProvider) level;
+        hyperlinkGroupProviders.add(provider);
     }
 
     public GlobalListenerProvider[] getGlobalListenerProvider() {
@@ -152,45 +170,29 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加一个javaScriptPane
-     *
-     * @param className 类名
      */
-    public void addJavaScriptActionProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (javaScriptActionProviders == null) {
-                javaScriptActionProviders = new ArrayList<JavaScriptActionProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                JavaScriptActionProvider provider = (JavaScriptActionProvider) clazz.newInstance();
-                if (!javaScriptActionProviders.contains(provider)) {
-                    javaScriptActionProviders.add(provider);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addJavaScriptActionProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (javaScriptActionProviders == null) {
+            javaScriptActionProviders = new ArrayList<JavaScriptActionProvider>();
+        }
+        validAPILevel(level, JavaScriptActionProvider.CURRENT_LEVEL, simplify.getPluginName());
+        JavaScriptActionProvider provider = (JavaScriptActionProvider) level;
+        if (!javaScriptActionProviders.contains(provider)) {
+            javaScriptActionProviders.add(provider);
         }
     }
 
     /**
      * 添加全局监听
-     *
-     * @param className 包名
      */
-    public void addGlobalListenerProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (globalListenerProviders == null) {
-                globalListenerProviders = new ArrayList<GlobalListenerProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                GlobalListenerProvider provider = (GlobalListenerProvider) clazz.newInstance();
-                if (!globalListenerProviders.contains(provider)) {
-                    globalListenerProviders.add(provider);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addGlobalListenerProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (globalListenerProviders == null) {
+            globalListenerProviders = new ArrayList<GlobalListenerProvider>();
+        }
+        validAPILevel(level, GlobalListenerProvider.CURRENT_LEVEL, simplify.getPluginName());
+        GlobalListenerProvider provider = (GlobalListenerProvider) level;
+        if (!globalListenerProviders.contains(provider)) {
+            globalListenerProviders.add(provider);
         }
     }
 
@@ -212,30 +214,21 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
     public SubmitProvider[] getSubmitProviders() {
         if (submitProviders == null) {
             return new SubmitProvider[0];
-        } else {
-            return submitProviders.toArray(new SubmitProvider[submitProviders.size()]);
         }
+        return submitProviders.toArray(new SubmitProvider[submitProviders.size()]);
     }
 
     /**
      * 添加提交接口
-     *
-     * @param className 包全名
      */
-    public void addSubmitProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (submitProviders == null) {
-                submitProviders = new ArrayList<SubmitProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                SubmitProvider provider = (SubmitProvider) clazz.newInstance();
-                if (!submitProviders.contains(provider)) {
-                    submitProviders.add(provider);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addSubmitProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (submitProviders == null) {
+            submitProviders = new ArrayList<SubmitProvider>();
+        }
+        validAPILevel(level, SubmitProvider.CURRENT_LEVEL, simplify.getPluginName());
+        SubmitProvider provider = (SubmitProvider) level;
+        if (!submitProviders.contains(provider)) {
+            submitProviders.add(provider);
         }
     }
 
@@ -247,36 +240,28 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         }
     }
 
+
     /**
      * 添加reportTDCreators
      *
      * @param className 类名
      */
-    public void addTableDataNameObjectCreator(String className) {
+    public void addTableDataNameObjectCreator(String className, PluginSimplify simplify) {
         if (StringUtils.isNotBlank(className)) {
             try {
-                Class clazz = Class.forName(className);
                 if (reportTDCreators == null) {
                     reportTDCreators = new ArrayList<TableDataNameObjectCreator>();
                 }
-                TableDataDefineProvider provider = (TableDataDefineProvider) clazz.newInstance();
-                TableDataNameObjectCreator creator = new TableDataNameObjectCreator(
-                        provider.nameForTableData(),
-                        provider.prefixForTableData(),
-                        provider.iconPathForTableData(),
-                        provider.classForTableData(),
-                        provider.classForInitTableData(),
-                        provider.appearanceForTableData()
-                );
-                TableDataFactory.register(provider.classForTableData(), creator);
+                TableDataNameObjectCreator creator = createTableDataNameObjectCreator(className, simplify);
                 if (!reportTDCreators.contains(creator)) {
                     reportTDCreators.add(creator);
                 }
             } catch (Exception e) {
-                recordClassLoadError(className);
+                PluginMessage.remindUpdate(className + e.getMessage());
             }
         }
     }
+
 
     /**
      * 添加serverTDCreators
@@ -291,36 +276,41 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         }
     }
 
-
     /**
      * 添加serverTDCreators
      *
      * @param className 类名
      */
-    public void addServerTableDataNameObjectCreator(String className) {
+    public void addServerTableDataNameObjectCreator(String className, PluginSimplify simplify) {
         if (StringUtils.isNotBlank(className)) {
             try {
-                Class clazz = Class.forName(className);
                 if (serverTDCreators == null) {
                     serverTDCreators = new ArrayList<TableDataNameObjectCreator>();
                 }
-                TableDataDefineProvider provider = (TableDataDefineProvider) clazz.newInstance();
-                TableDataNameObjectCreator creator = new TableDataNameObjectCreator(
-                        provider.nameForTableData(),
-                        provider.prefixForTableData(),
-                        provider.iconPathForTableData(),
-                        provider.classForTableData(),
-                        provider.classForInitTableData(),
-                        provider.appearanceForTableData()
-                );
-                TableDataFactory.register(provider.classForTableData(), creator);
+                TableDataNameObjectCreator creator = createTableDataNameObjectCreator(className, simplify);
                 if (!serverTDCreators.contains(creator)) {
                     serverTDCreators.add(creator);
                 }
             } catch (Exception e) {
-                recordClassLoadError(className);
+                PluginMessage.remindUpdate(className + e.getMessage());
             }
         }
+    }
+
+    private TableDataNameObjectCreator createTableDataNameObjectCreator(String className, PluginSimplify simplify) throws Exception {
+        Class clazz = loader.loadClass(className);
+        TableDataDefineProvider provider = (TableDataDefineProvider) clazz.newInstance();
+        validAPILevel(provider, TableDataDefineProvider.CURRENT_LEVEL, simplify.getPluginName());
+        TableDataNameObjectCreator creator = new TableDataNameObjectCreator(
+                provider.nameForTableData(),
+                provider.prefixForTableData(),
+                provider.iconPathForTableData(),
+                provider.classForTableData(),
+                provider.classForInitTableData(),
+                provider.appearanceForTableData()
+        );
+        TableDataFactory.register(provider.classForTableData(), creator);
+        return creator;
     }
 
     public Map<Class<? extends Widget>, Class<?>> getParameterWidgetOptionsMap() {
@@ -341,58 +331,45 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加parameterWidgetOptionsMap
-     *
-     * @param className 类名
      */
-    public void addParameterWidgetOption(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = Class.forName(className);
-                if (parameterWidgetOptions == null) {
-                    parameterWidgetOptions = new ArrayList<WidgetOption>();
-                }
-                if (parameterWidgetOptionsMap == null) {
-                    parameterWidgetOptionsMap = new HashMap<Class<? extends Widget>, Class<?>>();
-                }
-                ParameterWidgetOptionProvider provider = (ParameterWidgetOptionProvider) clazz.newInstance();
-                WidgetOption option = WidgetOptionFactory.createByWidgetClass(
-                        provider.nameForWidget(),
-                        BaseUtils.readIcon(provider.iconPathForWidget()),
-                        provider.classForWidget()
-                );
-                parameterWidgetOptionsMap.put(provider.classForWidget(), provider.appearanceForWidget());
-                parameterWidgetOptions.add(option);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addParameterWidgetOption(Level level, PluginSimplify simplify) throws Exception {
+        if (parameterWidgetOptions == null) {
+            parameterWidgetOptions = new ArrayList<WidgetOption>();
         }
+        if (parameterWidgetOptionsMap == null) {
+            parameterWidgetOptionsMap = new HashMap<Class<? extends Widget>, Class<?>>();
+        }
+        validAPILevel(level, ParameterWidgetOptionProvider.CURRENT_LEVEL, simplify.getPluginName());
+
+        ParameterWidgetOptionProvider provider = (ParameterWidgetOptionProvider) level;
+        WidgetOption option = WidgetOptionFactory.createByWidgetClass(
+                provider.nameForWidget(),
+                BaseUtils.readIcon(provider.iconPathForWidget()),
+                provider.classForWidget()
+        );
+        parameterWidgetOptionsMap.put(provider.classForWidget(), provider.appearanceForWidget());
+        parameterWidgetOptions.add(option);
     }
 
     /**
      * 添加 webWidgetOptions
      *
-     * @param className 类名
      * @return 返回 webWidgetOptions
      */
-    public void addWebWidgetOption(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = Class.forName(className);
-                if (webWidgetOptions == null) {
-                    webWidgetOptions = new ArrayList<WidgetOption>();
-                }
-                ToolbarItemProvider provider = (ToolbarItemProvider) clazz.newInstance();
-                WidgetOption option = WidgetOptionFactory.createByWidgetClass(
-                        provider.nameForWidget(),
-                        BaseUtils.readIcon(provider.iconPathForWidget()),
-                        provider.classForWidget()
-                );
-                if (!webWidgetOptions.contains(option)) {
-                    webWidgetOptions.add(option);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addWebWidgetOption(Level level, PluginSimplify simplify) throws Exception {
+        if (webWidgetOptions == null) {
+            webWidgetOptions = new ArrayList<WidgetOption>();
+        }
+        validAPILevel(level, ToolbarItemProvider.CURRENT_LEVEL, simplify.getPluginName());
+
+        ToolbarItemProvider provider = (ToolbarItemProvider) level;
+        WidgetOption option = WidgetOptionFactory.createByWidgetClass(
+                provider.nameForWidget(),
+                BaseUtils.readIcon(provider.iconPathForWidget()),
+                provider.classForWidget()
+        );
+        if (!webWidgetOptions.contains(option)) {
+            webWidgetOptions.add(option);
         }
     }
 
@@ -430,37 +407,30 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加 formWidgetContainerOptions
-     *
-     * @param className 类名
      */
-    public void addFormWidgetOption(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = Class.forName(className);
-                if (formWidgetOptions == null) {
-                    formWidgetOptions = new ArrayList<WidgetOption>();
-                }
-                if (formWidgetContainerOptions == null) {
-                    formWidgetContainerOptions = new ArrayList<WidgetOption>();
-                }
-                if (formWidgetOptionsMap == null) {
-                    formWidgetOptionsMap = new HashMap<Class<? extends Widget>, Class<?>>();
-                }
-                FormWidgetOptionProvider provider = (FormWidgetOptionProvider) clazz.newInstance();
-                WidgetOption option = WidgetOptionFactory.createByWidgetClass(
-                        provider.nameForWidget(),
-                        BaseUtils.readIcon(provider.iconPathForWidget()),
-                        provider.classForWidget()
-                );
-                formWidgetOptionsMap.put(provider.classForWidget(), provider.appearanceForWidget());
-                if (provider.isContainer()) {
-                    formWidgetContainerOptions.add(option);
-                } else {
-                    formWidgetOptions.add(option);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addFormWidgetOption(Level level, PluginSimplify simplify) throws Exception {
+        if (formWidgetOptions == null) {
+            formWidgetOptions = new ArrayList<WidgetOption>();
+        }
+        if (formWidgetContainerOptions == null) {
+            formWidgetContainerOptions = new ArrayList<WidgetOption>();
+        }
+        if (formWidgetOptionsMap == null) {
+            formWidgetOptionsMap = new HashMap<Class<? extends Widget>, Class<?>>();
+        }
+        validAPILevel(level, FormWidgetOptionProvider.CURRENT_LEVEL, simplify.getPluginName());
+
+        FormWidgetOptionProvider provider = (FormWidgetOptionProvider) level;
+        WidgetOption option = WidgetOptionFactory.createByWidgetClass(
+                provider.nameForWidget(),
+                BaseUtils.readIcon(provider.iconPathForWidget()),
+                provider.classForWidget()
+        );
+        formWidgetOptionsMap.put(provider.classForWidget(), provider.appearanceForWidget());
+        if (provider.isContainer()) {
+            formWidgetContainerOptions.add(option);
+        } else {
+            formWidgetOptions.add(option);
         }
     }
 
@@ -482,34 +452,27 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加cellWidgetOptionMap
-     *
-     * @param className 类名
      */
-    public void addCellWidgetOption(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = Class.forName(className);
-                if (cellWidgetOptions == null) {
-                    cellWidgetOptions = new ArrayList<WidgetOption>();
-                }
-                if (cellWidgetOptionMap == null) {
-                    cellWidgetOptionMap = new HashMap<Class<? extends Widget>, Appearance>();
-                }
-                CellWidgetOptionProvider provider = (CellWidgetOptionProvider) clazz.newInstance();
-                WidgetOption option = WidgetOptionFactory.createByWidgetClass(
-                        provider.nameForWidget(),
-                        BaseUtils.readIcon(provider.iconPathForWidget()),
-                        provider.classForWidget()
-                );
-                if (cellWidgetOptions.contains(option)) {
-                    return;
-                }
-                cellWidgetOptionMap.put(provider.classForWidget(), new Appearance(provider.appearanceForWidget(), Appearance.P_MARK + cellWidgetOptionMap.size()));
-                cellWidgetOptions.add(option);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addCellWidgetOption(Level level, PluginSimplify simplify) throws Exception {
+        if (cellWidgetOptions == null) {
+            cellWidgetOptions = new ArrayList<WidgetOption>();
         }
+        if (cellWidgetOptionMap == null) {
+            cellWidgetOptionMap = new HashMap<Class<? extends Widget>, Appearance>();
+        }
+        validAPILevel(level, CellWidgetOptionProvider.CURRENT_LEVEL, simplify.getPluginName());
+
+        CellWidgetOptionProvider provider = (CellWidgetOptionProvider) level;
+        WidgetOption option = WidgetOptionFactory.createByWidgetClass(
+                provider.nameForWidget(),
+                BaseUtils.readIcon(provider.iconPathForWidget()),
+                provider.classForWidget()
+        );
+        if (cellWidgetOptions.contains(option)) {
+            return;
+        }
+        cellWidgetOptionMap.put(provider.classForWidget(), new Appearance(provider.appearanceForWidget(), Appearance.P_MARK + cellWidgetOptionMap.size()));
+        cellWidgetOptions.add(option);
     }
 
 
@@ -518,7 +481,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
      *
      * @param className 类名
      */
-    public void addConnection(String className) {
+    public void addConnection(String className, PluginSimplify simplify) {
         if (StringUtils.isNotBlank(className)) {
             try {
                 Class clazz = Class.forName(className);
@@ -526,6 +489,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     connectionCreators = new ArrayList<NameObjectCreator>();
                 }
                 ConnectionProvider provider = (ConnectionProvider) clazz.newInstance();
+                validAPILevel(provider, ConnectionProvider.CURRENT_LEVEL, simplify.getPluginName());
                 NameObjectCreator creator = new NameObjectCreator(
                         provider.nameForConnection(),
                         provider.iconPathForConnection(),
@@ -536,7 +500,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
                     connectionCreators.add(creator);
                 }
             } catch (Exception e) {
-                recordClassLoadError(className);
+                PluginMessage.remindUpdate(className + e.getMessage());
             }
         }
     }
@@ -558,23 +522,16 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加previewProviders
-     *
-     * @param className 类名
      */
-    public void addPreviewProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                if (previewProviders == null) {
-                    previewProviders = new HashSet<PreviewProvider>();
-                }
-                PreviewProvider provider = (PreviewProvider) clazz.newInstance();
-                if (!previewProviders.contains(provider)) {
-                    previewProviders.add(provider);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addPreviewProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (previewProviders == null) {
+            previewProviders = new HashSet<PreviewProvider>();
+        }
+        validAPILevel(level, PreviewProvider.CURRENT_LEVEL, simplify.getPluginName());
+
+        PreviewProvider provider = (PreviewProvider) level;
+        if (!previewProviders.contains(provider)) {
+            previewProviders.add(provider);
         }
     }
 
@@ -587,22 +544,14 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加 highlightProviders
-     *
-     * @param className 类名
      */
-    public void addTemplateTreeShortCutProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (templateTreeShortCutProviders == null) {
-                templateTreeShortCutProviders = new HashSet<ShortCut>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                ShortCut provider = (ShortCut) clazz.newInstance();
-                templateTreeShortCutProviders.add(provider);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addTemplateTreeShortCutProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (templateTreeShortCutProviders == null) {
+            templateTreeShortCutProviders = new HashSet<ShortCut>();
         }
+        validAPILevel(level, ShortCut.CURRENT_LEVEL, simplify.getPluginName());
+        ShortCut provider = (ShortCut) level;
+        templateTreeShortCutProviders.add(provider);
     }
 
     public ShortCut[] getTemplateTreeShortCutProviders() {
@@ -614,22 +563,14 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加 highlightProviders
-     *
-     * @param className 类名
      */
-    public void addConditionProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (highlightProviders == null) {
-                highlightProviders = new HashSet<HighlightProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                HighlightProvider provider = (HighlightProvider) clazz.newInstance();
-                highlightProviders.add(provider);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addConditionProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (highlightProviders == null) {
+            highlightProviders = new HashSet<HighlightProvider>();
         }
+        validAPILevel(level, HighlightProvider.CURRENT_LEVEL, simplify.getPluginName());
+        HighlightProvider provider = (HighlightProvider) level;
+        highlightProviders.add(provider);
     }
 
     public Feedback getFeedback() {
@@ -659,23 +600,15 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加menuHandlers
-     *
-     * @param className 类名
      */
-    public void addMenuHandler(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (menuHandlers == null) {
-                menuHandlers = new ArrayList<MenuHandler>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                MenuHandler handler = (MenuHandler) clazz.newInstance();
-                if (!menuHandlers.contains(handler)) {
-                    menuHandlers.add(handler);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addMenuHandler(Level level, PluginSimplify simplify) throws Exception {
+        if (menuHandlers == null) {
+            menuHandlers = new ArrayList<MenuHandler>();
+        }
+        validAPILevel(level, MenuHandler.CURRENT_LEVEL, simplify.getPluginName());
+        MenuHandler handler = (MenuHandler) level;
+        if (!menuHandlers.contains(handler)) {
+            menuHandlers.add(handler);
         }
     }
 
@@ -683,15 +616,9 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         return uiFormulaProcessor;
     }
 
-    public void setUIFormulaProcessor(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                uiFormulaProcessor = (UIFormulaProcessor) clazz.newInstance();
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
-        }
+    public void setUIFormulaProcessor(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, UIFormulaProcessor.CURRENT_LEVEL, simplify.getPluginName());
+        uiFormulaProcessor = (UIFormulaProcessor) level;
     }
 
     public PresentKindProvider[] getPresentKindProviders() {
@@ -703,22 +630,14 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加presentKindProviders
-     *
-     * @param className 类名
      */
-    public void addPresentKindProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (presentKindProviders == null) {
-                presentKindProviders = new ArrayList<PresentKindProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                PresentKindProvider provider = (PresentKindProvider) clazz.newInstance();
-                presentKindProviders.add(provider);
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addPresentKindProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (presentKindProviders == null) {
+            presentKindProviders = new ArrayList<PresentKindProvider>();
         }
+        validAPILevel(level, PresentKindProvider.CURRENT_LEVEL, simplify.getPluginName());
+        PresentKindProvider provider = (PresentKindProvider) level;
+        presentKindProviders.add(provider);
     }
 
     public ExportToolBarProvider[] getExportToolBarProviders() {
@@ -730,23 +649,15 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
 
     /**
      * 添加exportToolBarProviders
-     *
-     * @param className 类名
      */
-    public void addExportToolBarProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            if (exportToolBarProviders == null) {
-                exportToolBarProviders = new ArrayList<ExportToolBarProvider>();
-            }
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                ExportToolBarProvider provider = (ExportToolBarProvider) clazz.newInstance();
-                if (!exportToolBarProviders.contains(provider)) {
-                    exportToolBarProviders.add(provider);
-                }
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
+    public void addExportToolBarProvider(Level level, PluginSimplify simplify) throws Exception {
+        if (exportToolBarProviders == null) {
+            exportToolBarProviders = new ArrayList<ExportToolBarProvider>();
+        }
+        validAPILevel(level, ExportToolBarProvider.CURRENT_LEVEL, simplify.getPluginName());
+        ExportToolBarProvider provider = (ExportToolBarProvider) level;
+        if (!exportToolBarProviders.contains(provider)) {
+            exportToolBarProviders.add(provider);
         }
     }
 
@@ -754,66 +665,37 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
         return titlePlaceProcessor;
     }
 
-    public void setTitlePlaceProcessor(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                titlePlaceProcessor = (TitlePlaceProcessor) clazz.newInstance();
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
-        }
+    public void setTitlePlaceProcessor(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, TitlePlaceProcessor.CURRENT_LEVEL, simplify.getPluginName());
+        titlePlaceProcessor = (TitlePlaceProcessor) level;
     }
 
     public FormElementCaseEditorProcessor getPropertyTableEditor() {
         return formElementCaseEditorProcessor;
     }
 
-    public void setPropertyTableEditor(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                formElementCaseEditorProcessor = (FormElementCaseEditorProcessor) clazz.newInstance();
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
-        }
+    public void setPropertyTableEditor(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, FormElementCaseEditorProcessor.CURRENT_LEVEL, simplify.getPluginName());
+        formElementCaseEditorProcessor = (FormElementCaseEditorProcessor) level;
     }
 
     public IndentationUnitProcessor getIndentationUnitEditor() {
         return indentationUnitProcessor;
     }
 
-    public void setIndentationUnitEditor(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                indentationUnitProcessor = (IndentationUnitProcessor) clazz.newInstance();
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
-        }
+    public void setIndentationUnitEditor(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, IndentationUnitProcessor.CURRENT_LEVEL, simplify.getPluginName());
+        indentationUnitProcessor = (IndentationUnitProcessor) level;
     }
 
-    public CellAttributeProvider getCelllAttributeProvider(){
+    public CellAttributeProvider getCelllAttributeProvider() {
         return cellAttributeProvider;
     }
-	
-    public void setCellAttributeProvider(String className) {
-        if (StringUtils.isNotBlank(className)) {
-            try {
-                Class clazz = GeneralUtils.classForName(className);
-                cellAttributeProvider = (CellAttributeProvider) clazz.newInstance();
-            } catch (Exception e) {
-                recordClassLoadError(className);
-            }
-        }
-    }
 
-    private void recordClassLoadError(String className) {
-        FRContext.getLogger().error("Error to load:" + className);
+    public void setCellAttributeProvider(Level level, PluginSimplify simplify) throws Exception {
+        validAPILevel(level, CellAttributeProvider.CURRENT_LEVEL, simplify.getPluginName());
+        cellAttributeProvider = (CellAttributeProvider) level;
     }
-
 
     /**
      * 文件名
@@ -831,7 +713,7 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
      * @param reader xml对象
      */
     public void readXML(XMLableReader reader) {
-        readXML(reader, null);
+        readXML(reader, null, PluginSimplify.NULL);
     }
 
     /**
@@ -841,59 +723,95 @@ public class ExtraDesignClassManager extends XMLFileManager implements ExtraDesi
      * @param extraDesignInterfaceList 接口列表
      */
     @Override
-    public void readXML(XMLableReader reader, List<String> extraDesignInterfaceList) {
+    public void readXML(XMLableReader reader, List<String> extraDesignInterfaceList, PluginSimplify simplify) {
         if (reader.isChildNode()) {
             String tagName = reader.getTagName();
             if (extraDesignInterfaceList != null) {
                 extraDesignInterfaceList.add(tagName);
             }
-            if (tagName.equals(TableDataCreatorProvider.XML_TAG)) {
-                setTableDataCreatorProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(TableDataDefineProvider.XML_TAG)) {
-                addTableDataNameObjectCreator(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(ServerTableDataDefineProvider.XML_TAG)) {
-                addServerTableDataNameObjectCreator(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(ParameterWidgetOptionProvider.XML_TAG)) {
-                addParameterWidgetOption(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(FormWidgetOptionProvider.XML_TAG)) {
-                addFormWidgetOption(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(ToolbarItemProvider.XML_TAG)) {
-                addWebWidgetOption(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(ExportToolBarProvider.XML_TAG)) {
-                addExportToolBarProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(CellWidgetOptionProvider.XML_TAG)) {
-                addCellWidgetOption(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(ConnectionProvider.XML_TAG)) {
-                addConnection(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(PreviewProvider.MARK_STRING)) {
-                addPreviewProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(HighlightProvider.MARK_STRING)) {
-                addConditionProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(MenuHandler.MARK_STRING)) {
-                addMenuHandler(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(UIFormulaProcessor.MARK_STRING)) {
-                setUIFormulaProcessor(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(PresentKindProvider.MARK_STRING)) {
-                addPresentKindProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(TEMPLATE_TREE_TAG)) {
-                addTemplateTreeShortCutProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(SubmitProvider.MARK_STRING)) {
-                addSubmitProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(GlobalListenerProvider.XML_TAG)) {
-                addGlobalListenerProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(JavaScriptActionProvider.XML_TAG)) {
-                addJavaScriptActionProvider(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(TitlePlaceProcessor.MARK_STRING)) {
-                setTitlePlaceProcessor(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(FormElementCaseEditorProcessor.MARK_STRING)) {
-                setPropertyTableEditor(reader.getAttrAsString("class", ""));
-            } else if (tagName.equals(IndentationUnitProcessor.MARK_STRING)) {
-                setIndentationUnitEditor(reader.getAttrAsString("class",""));
-            } else if (tagName.equals(CellAttributeProvider.MARK_STRING)) {
-                setCellAttributeProvider(reader.getAttrAsString("class",""));
-            } else if (tagName.equals(HyperlinkProvider.XML_TAG)) {
-                addHyperlinkProvider(reader.getAttrAsString("class",""));
+            String className = reader.getAttrAsString("class", "");
+            if (StringUtils.isEmpty(className)) {
+                return;
             }
+            readLevelTag(tagName, className, simplify);
+        }
+    }
+
+    private void readLevelTag(String tagName, String className, PluginSimplify simplify) {
+        try {
+            //实现了Level接口的, 可以直接newInstance子类的
+            Class<?> clazz = loader.loadClass(className);
+            Authorize authorize = clazz.getAnnotation(Authorize.class);
+            if (authorize != null) {
+                PluginLicenseManager.getInstance().registerPaid(authorize, simplify);
+            }
+
+            Level impl = (Level) clazz.newInstance();
+            //控件
+            readWidgetRelated(tagName, impl, simplify);
+            //数据集, 数据连接
+            readTableDataRelated(tagName, className, simplify);
+            if (tagName.equals(ParameterWidgetOptionProvider.XML_TAG)) {
+                addParameterWidgetOption(impl, simplify);
+            } else if (tagName.equals(PreviewProvider.MARK_STRING)) {
+                addPreviewProvider(impl, simplify);
+            } else if (tagName.equals(HighlightProvider.MARK_STRING)) {
+                addConditionProvider(impl, simplify);
+            } else if (tagName.equals(MenuHandler.MARK_STRING)) {
+                addMenuHandler(impl, simplify);
+            } else if (tagName.equals(UIFormulaProcessor.MARK_STRING)) {
+                setUIFormulaProcessor(impl, simplify);
+            } else if (tagName.equals(PresentKindProvider.MARK_STRING)) {
+                addPresentKindProvider(impl, simplify);
+            } else if (tagName.equals(TEMPLATE_TREE_TAG)) {
+                addTemplateTreeShortCutProvider(impl, simplify);
+            } else if (tagName.equals(SubmitProvider.MARK_STRING)) {
+                addSubmitProvider(impl, simplify);
+            } else if (tagName.equals(GlobalListenerProvider.XML_TAG)) {
+                addGlobalListenerProvider(impl, simplify);
+            } else if (tagName.equals(JavaScriptActionProvider.XML_TAG)) {
+                addJavaScriptActionProvider(impl, simplify);
+            } else if (tagName.equals(TitlePlaceProcessor.MARK_STRING)) {
+                setTitlePlaceProcessor(impl, simplify);
+            } else if (tagName.equals(FormElementCaseEditorProcessor.MARK_STRING)) {
+                setPropertyTableEditor(impl, simplify);
+            } else if (tagName.equals(IndentationUnitProcessor.MARK_STRING)) {
+                setIndentationUnitEditor(impl, simplify);
+            } else if (tagName.equals(CellAttributeProvider.MARK_STRING)) {
+                setCellAttributeProvider(impl, simplify);
+            } else if (tagName.equals(HyperlinkProvider.XML_TAG)) {
+                addHyperlinkProvider(impl, simplify);
+            } else if (tagName.equals(App.MARK_STRING)) {
+                addSupportDesignApps(impl, simplify);
+            }
+        } catch (PluginInvalidLevelException e) {
+            PluginMessage.remindUpdate(e.getMessage());
+        } catch (Exception e) {
+            FRContext.getLogger().error(e.getMessage());
+        }
+    }
+
+    private void readTableDataRelated(String tagName, String className, PluginSimplify simplify) {
+        if (tagName.equals(TableDataCreatorProvider.XML_TAG)) {
+            setTableDataCreatorProvider(className);
+        } else if (tagName.equals(TableDataDefineProvider.XML_TAG)) {
+            addTableDataNameObjectCreator(className, simplify);
+        } else if (tagName.equals(ServerTableDataDefineProvider.XML_TAG)) {
+            addServerTableDataNameObjectCreator(className, simplify);
+        } else if (tagName.equals(ConnectionProvider.XML_TAG)) {
+            addConnection(className, simplify);
+        }
+    }
+
+    private void readWidgetRelated(String tagName, Level impl, PluginSimplify simplify) throws Exception {
+        if (tagName.equals(FormWidgetOptionProvider.XML_TAG)) {
+            addFormWidgetOption(impl, simplify);
+        } else if (tagName.equals(ToolbarItemProvider.XML_TAG)) {
+            addWebWidgetOption(impl, simplify);
+        } else if (tagName.equals(ExportToolBarProvider.XML_TAG)) {
+            addExportToolBarProvider(impl, simplify);
+        } else if (tagName.equals(CellWidgetOptionProvider.XML_TAG)) {
+            addCellWidgetOption(impl, simplify);
         }
     }
 

@@ -1,11 +1,8 @@
 package com.fr.design.mainframe.chart.gui.type;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.BubblePlot;
 import com.fr.chart.chartattr.Chart;
-import com.fr.chart.chartattr.Plot;
 import com.fr.chart.charttypes.BubbleIndependentChart;
 import com.fr.general.Inter;
 
@@ -21,30 +18,25 @@ public class BubblePlotPane extends AbstractChartTypePane {
 	private static final int BUBBLE_CHART = 0;
 
 	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List<ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], Inter.getLocText("FR-Chart-Chart_BubbleChart"), true);
-		pane.isPressing = true;
-		demoList.add(pane);
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return new ArrayList<ChartImagePane>();
-	}
-
-	@Override
 	protected String[] getTypeIconPath() {
 		return new String[]{"/com/fr/design/images/chart/BubblePlot/type/0.png",};
 	}
 
 	@Override
+	protected String[] getTypeTipName() {
+		return new String[]{
+				Inter.getLocText("FR-Chart-Chart_BubbleChart")
+		};
+	}
+
+	@Override
 	protected String[] getTypeLayoutPath() {
-		return new String[]{"/com/fr/design/images/chart/BubblePlot/layout/0.png",
-                "/com/fr/design/images/chart/BubblePlot/layout/1.png",
-                "/com/fr/design/images/chart/BubblePlot/layout/2.png",
-                "/com/fr/design/images/chart/BubblePlot/layout/3.png",};
+		return new String[0];
+	}
+
+	@Override
+	protected String[] getTypeLayoutTipName() {
+		return new String[0];
 	}
 
 	/**
@@ -67,6 +59,11 @@ public class BubblePlotPane extends AbstractChartTypePane {
 		chart.switchPlot(plot);
 	}
 
+    @Override
+	protected String getPlotTypeID() {
+		return ChartConstants.BUBBLE_CHART;
+	}
+
 	/**
 	 * 更新界面内容
 	 */
@@ -76,22 +73,7 @@ public class BubblePlotPane extends AbstractChartTypePane {
 		checkDemosBackground();
 	}
 
-	/**
-	 * 判断界面是否进入
-     * @param ob 传入的对象
-     * @return 是否对象是chart
-	 */
-	public boolean accept(Object ob) {
-		if (!super.accept(ob)) {
-			return false;
-		}
-		Chart chart = (Chart) ob;
-		Plot plot = chart.getPlot();
-		return (plot instanceof BubblePlot);
-	}
-
-
-    public Chart getDefaultChart() {
+	public Chart getDefaultChart() {
         return BubbleIndependentChart.bubbleChartTypes[0];
     }
 }

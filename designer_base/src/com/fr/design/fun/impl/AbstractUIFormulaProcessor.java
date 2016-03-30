@@ -8,4 +8,9 @@ import com.fr.design.fun.UIFormulaProcessor;
  * @since 8.0
  */
 public abstract class AbstractUIFormulaProcessor implements UIFormulaProcessor {
+
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
 }

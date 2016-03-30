@@ -5,6 +5,8 @@ package com.fr.design.mainframe.bbs;
 
 import com.fr.base.FRContext;
 import com.fr.design.DesignerEnvManager;
+import com.fr.design.extra.LoginCheckContext;
+import com.fr.design.extra.LoginCheckListener;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.mainframe.DesignerContext;
 import com.fr.general.ComparatorUtils;
@@ -72,6 +74,18 @@ public class UserInfoLabel extends UILabel{
 		this.setHorizontalAlignment(SwingConstants.CENTER);
 		this.setText(userName);
 		setUserName(userName);
+		LoginCheckContext.addLoginCheckListener(new LoginCheckListener() {
+			@Override
+			public void loginChecked() {
+				if (bbsLoginDialog == null) {
+					bbsLoginDialog = new BBSLoginDialog(DesignerContext.getDesignerFrame(), UserInfoLabel.this);
+				}
+				bbsLoginDialog.clearLoginInformation();
+				bbsLoginDialog.tipForUsernameEmpty();
+				bbsLoginDialog.setModal(true);
+				bbsLoginDialog.showWindow();
+			}
+		});
 	}
 
 	/**
@@ -108,9 +122,14 @@ public class UserInfoLabel extends UILabel{
                     return;
                 }
 
-                BBSDialog bbsLabel = new BBSDialog(DesignerContext.getDesignerFrame());
-				bbsLabel.showWindow(BBSConstants.UPDATE_INFO_URL);
-				DesignerEnvManager.getEnvManager().setLastShowBBSNewsTime(DateUtils.DATEFORMAT2.format(new Date()));
+				try {
+					BBSDialog bbsLabel = new BBSDialog(DesignerContext.getDesignerFrame());
+					bbsLabel.showWindow(BBSConstants.UPDATE_INFO_URL);
+					DesignerEnvManager.getEnvManager().setLastShowBBSNewsTime(DateUtils.DATEFORMAT2.format(new Date()));
+				} catch (Throwable e) {
+
+				}
+
 			}
 		});
 		showBBSThread.start();

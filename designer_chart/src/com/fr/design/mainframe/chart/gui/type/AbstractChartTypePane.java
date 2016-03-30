@@ -29,6 +29,8 @@ import java.util.List;
 
 public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
 
+    private static final int ONE_LINE_NUM = 4;
+
     protected static final int STYLE_SHADE = 0;
     protected static final int STYLE_TRANSPARENT = 1;
     protected static final int STYLE_PLANE3D = 2;
@@ -41,43 +43,30 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     protected List<ChartImagePane> styleList;
 
     protected JPanel stylePane; //样式布局的面板
-    protected abstract List<ChartImagePane> initDemoList();
-    protected abstract List<ChartImagePane> initStyleList();
     protected abstract String[] getTypeIconPath();
+    protected abstract String[] getTypeTipName();
     protected abstract String[] getTypeLayoutPath();
+    protected abstract String[] getTypeLayoutTipName();
     protected int lastStyleIndex = -1;
     protected int lastTypeIndex = -1;
     protected boolean typeChanged = false;//图表类型是否发生变化
 
-    /**
-     * 四种风格的布局
-     * @return 图片的list
-     */
-    protected List<ChartImagePane> initNormalStyleList(){
-        List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-        String shade = Inter.getLocText("FR-Chart-Style_TopDownShade");
-        String transparent = Inter.getLocText("FR-Chart-Style_Transparent");
-        String plane3D = Inter.getLocText("FR-Chart-Style_Plane3D");
-        String highLight = Inter.getLocText("FR-Chart-Style_GradientHighlight");
-        String[] layoutPaths = getTypeLayoutPath();
-
-        ChartImagePane pane = new ChartImagePane(layoutPaths[0], shade);
-        demoList.add(pane);
-
-        demoList.add(new ChartImagePane(layoutPaths[1], transparent));
-        demoList.add(new ChartImagePane(layoutPaths[2], plane3D));
-        demoList.add(new ChartImagePane(layoutPaths[3], highLight));
-        return demoList;
+    protected String[] getNormalLayoutTipName() {
+        return new String[] {
+                Inter.getLocText("FR-Chart-Style_TopDownShade"),
+                Inter.getLocText("FR-Chart-Style_Transparent"),
+                Inter.getLocText("FR-Chart-Style_Plane3D"),
+                Inter.getLocText("FR-Chart-Style_GradientHighlight")
+        };
     }
 
     public AbstractChartTypePane() {
         double vs = 4;
         double p = TableLayout.PREFERRED;
         double f = TableLayout.FILL;
-        Component[][] components;
 
-        typeDemo = initDemoList();
-        styleList = initStyleList();
+        typeDemo = createTypeDemoList();
+        styleList = createStyleList();
 
         checkDemosBackground();
 
@@ -100,10 +89,6 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
         double[] columnSize = { p, vs, f };
         double[] rowSize = { p,p,p,p,p,p,p};
 
-        components = new Component[][]{
-                new Component[]{typePane}
-        };
-
         if(styleList != null && !styleList.isEmpty()) {
             Component[][] styleComp = new Component[][]{
                     new Component[]{new JSeparator()},
@@ -112,16 +97,39 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
             };
             stylePane = TableLayoutHelper.createTableLayoutPane(styleComp,rowSize,columnSize);
             stylePane.setVisible(false);
-
-            components = new Component[][]{
-                    new Component[]{typePane},
-                    new Component[]{stylePane}
-            };
         }
 
-        JPanel panel = TableLayoutHelper.createTableLayoutPane(components,rowSize,columnSize);
+        JPanel panel = TableLayoutHelper.createTableLayoutPane(getPaneComponents(typePane),rowSize,columnSize);
         this.setLayout(new BorderLayout());
         this.add(panel,BorderLayout.CENTER);
+    }
+
+    protected List<ChartImagePane> createTypeDemoList() {
+        return createImagePaneList(getTypeIconPath(), getTypeTipName());
+    }
+
+    protected List<ChartImagePane> createStyleList() {
+        return createImagePaneList(getTypeLayoutPath(), getTypeLayoutTipName());
+    }
+
+    private List<ChartImagePane> createImagePaneList(String[] iconPaths, String[] tipNames) {
+        List<ChartImagePane> list = new ArrayList<>();
+        int iconLen = iconPaths.length;
+        int tipLen = tipNames.length;
+        for(int i = 0, len = Math.min(iconLen, tipLen); i < len; i++) {
+            boolean isDrawRightLine = (i == len - 1 || (i + 1) % ONE_LINE_NUM == 0);
+            ChartImagePane imagePane = new ChartImagePane(iconPaths[i], tipNames[i], isDrawRightLine);
+            imagePane.isPressing = (i == 0);
+            list.add(imagePane);
+        }
+        return list;
+    }
+
+    protected Component[][] getPaneComponents(JPanel typePane){
+        return new Component[][]{
+                new Component[]{typePane},
+                new Component[]{stylePane}
+        };
     }
 
     //子类覆盖
@@ -337,8 +345,26 @@ public abstract class AbstractChartTypePane extends FurtherBasicBeanPane<Chart>{
     public void reset() {
     }
 
+    /**
+     * 获取各图表类型界面ID, 本质是plotID
+     * @return 图表类型界面ID
+     */
+    protected abstract String getPlotTypeID();
+
+    /**
+     *
+     * @param ob 对象
+     * @return
+     */
     public boolean accept(Object ob) {
-        return ob instanceof Chart && ((Chart)ob).getPlot() != null;
+        if(ob instanceof Chart){
+            Chart chart = (Chart)ob;
+            Plot plot = chart.getPlot();
+            if(plot != null && ComparatorUtils.equals(plot.getPlotID(), getPlotTypeID())){
+                return true;
+            }
+        }
+        return false;
     }
 
         //高光渐变的默认属性设置

@@ -8,4 +8,9 @@ import com.fr.design.fun.ConnectionProvider;
  * @since 8.0
  */
 public abstract class AbstractConnectionProvider implements ConnectionProvider {
+
+    @Override
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
 }

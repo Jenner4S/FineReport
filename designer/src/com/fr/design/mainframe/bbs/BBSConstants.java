@@ -15,7 +15,7 @@ import java.util.Properties;
 public class BBSConstants {
 
 	//获取当前登陆用户未读取消息条数
-	public static final String GET_MESSAGE_URL = loadAttribute("GET_MESSAGE_URL", "http://bbs.finereport.com?op=bbs&cmd=checkMessageCount");
+	public static final String GET_MESSAGE_URL = loadAttribute("GET_MESSAGE_URL", "http://feedback.finedevelop.com:3000/bbs/message/count");
 	//默认打开的论坛窗口
 	public static final String DEFAULT_URL = loadAttribute("DEFAULT_URL", "http://bbs.finereport.com/home.php?mod=space&do=pm");
 	//默认模板分享的url

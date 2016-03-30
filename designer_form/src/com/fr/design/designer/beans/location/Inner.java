@@ -1,9 +1,5 @@
 package com.fr.design.designer.beans.location;
 
-import java.awt.Cursor;
-import java.awt.Point;
-import java.awt.Rectangle;
-
 import com.fr.design.beans.location.Absorptionline;
 import com.fr.design.beans.location.MoveUtils;
 import com.fr.design.beans.location.MoveUtils.RectangleDesigner;
@@ -12,9 +8,12 @@ import com.fr.design.designer.creator.XCreatorUtils;
 import com.fr.design.designer.creator.XLayoutContainer;
 import com.fr.design.designer.creator.XWBorderLayout;
 import com.fr.design.mainframe.FormDesigner;
+import com.fr.design.mainframe.FormSelection;
 import com.fr.form.ui.container.WAbsoluteLayout;
 import com.fr.form.ui.container.WAbsoluteLayout.BoundsWidget;
 import com.fr.stable.ArrayUtils;
+
+import java.awt.*;
 
 public class Inner extends AccessDirection {
 
@@ -86,16 +85,16 @@ public class Inner extends AccessDirection {
 	private RectangleIterator getRectangleIterator(final FormDesigner designer){
 		return new RectangleIterator() {
 			private int i;
+			private WAbsoluteLayout layout = getLayout(designer);
+			private int count = layout.getWidgetCount();
+			private FormSelection selection = designer.getSelectionModel().getSelection();
 
 			public boolean hasNext() {
-                WAbsoluteLayout layout = getLayout(designer);
-				int count = layout.getWidgetCount();
 				if (i >= count) {
 					return false;
 				}
 				BoundsWidget temp = (BoundsWidget) layout.getWidget(i);
-				while (!temp.isVisible()
-						|| designer.getSelectionModel().getSelection().contains(temp.getWidget())) {
+				while (!temp.isVisible() || selection.contains(temp.getWidget())) {
 					if (++i >= count) {
 						return false;
 					}
@@ -110,7 +109,6 @@ public class Inner extends AccessDirection {
 				return ArrayUtils.EMPTY_INT_ARRAY;
 			}
 			public Rectangle nextRectangle() {
-                WAbsoluteLayout layout = getLayout(designer);
 				BoundsWidget temp = (BoundsWidget) layout.getWidget(i++);
 				return temp.getBounds();
 			}

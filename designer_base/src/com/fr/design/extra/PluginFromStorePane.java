@@ -1,11 +1,13 @@
 package com.fr.design.extra;
 
 import com.fr.base.FRContext;
+import com.fr.design.DesignerEnvManager;
 import com.fr.design.RestartHelper;
 import com.fr.design.gui.frpane.UITabbedPane;
 import com.fr.design.gui.ilable.UILabel;
 import com.fr.general.Inter;
 import com.fr.plugin.Plugin;
+import com.fr.stable.StringUtils;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -154,6 +156,7 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
         }
     }
 
+
     private void installFromDiskZipFile(File chosenFile) {
         try {
             PluginHelper.installPluginFromDisk(chosenFile, new After() {
@@ -181,48 +184,55 @@ public class PluginFromStorePane extends PluginAbstractLoadingViewPane<Plugin[],
     }
 
     private void doUpdateOnline(final PluginStatusCheckCompletePane pane) {
-        new SwingWorker<Void, Double>(){
+        if (StringUtils.isNotEmpty(DesignerEnvManager.getEnvManager().getBBSName())){
+            new SwingWorker<Void, Double>(){
 
-            @Override
-            protected Void doInBackground() throws Exception {
-                Plugin plugin = controlPane.getSelectedPlugin();
-                String id = null;
-                if (plugin != null) {
-                    id = plugin.getId();
+                @Override
+                protected Void doInBackground() throws Exception {
+                    Plugin plugin = controlPane.getSelectedPlugin();
+                    String id = null;
+                    if (plugin != null) {
+                        id = plugin.getId();
+                    }
+                    String username = DesignerEnvManager.getEnvManager().getBBSName();
+                    String password = DesignerEnvManager.getEnvManager().getBBSPassword();
+                    try {
+                        PluginHelper.downloadPluginFile(id,username,password, new Process<Double>() {
+                            @Override
+                            public void process(Double integer) {
+                                publish(integer);
+                            }
+                        });
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+                        FRContext.getLogger().error(e.getMessage(), e);
+                    }
+                    return null;
                 }
-                try {
-                    PluginHelper.downloadPluginFile(id, new Process<Double>() {
-                        @Override
-                        public void process(Double integer) {
-                            publish(integer);
-                        }
-                    });
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-                    FRContext.getLogger().error(e.getMessage(), e);
-                }
-                return null;
-            }
 
-            public void process(List<Double> list) {
-                pane.setProgress(list.get(list.size() - LISTNUM1) * LISTNUM100);
-            }
-
-            public void done() {
-                //下载完成，开始执行安装
-                try {
-                    get();
-                    pane.didTaskFinished();
-                    installFromDiskZipFile(PluginHelper.getDownloadTempFile());
-                } catch (InterruptedException e) {
-                    FRContext.getLogger().error(e.getMessage(), e);
-                } catch (ExecutionException e) {
-                    FRContext.getLogger().error(e.getMessage(), e);
-                } catch (Exception e) {
-                    FRContext.getLogger().error(e.getMessage(), e);
+                public void process(List<Double> list) {
+                    pane.setProgress(list.get(list.size() - LISTNUM1) * LISTNUM100);
                 }
-            }
-        }.execute();
+
+                public void done() {
+                    //下载完成，开始执行安装
+                    try {
+                        get();
+                        pane.didTaskFinished();
+                        installFromDiskZipFile(PluginHelper.getDownloadTempFile());
+                    } catch (InterruptedException e) {
+                        FRContext.getLogger().error(e.getMessage(), e);
+                    } catch (ExecutionException e) {
+                        FRContext.getLogger().error(e.getMessage(), e);
+                    } catch (Exception e) {
+                        FRContext.getLogger().error(e.getMessage(), e);
+                    }
+                }
+            }.execute();
+        } else {
+            LoginCheckContext.fireLoginCheckListener();
+        }
+
     }
 
     /**

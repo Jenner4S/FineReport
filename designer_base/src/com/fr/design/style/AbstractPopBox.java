@@ -138,7 +138,7 @@ public abstract class AbstractPopBox extends JPanel {
 						double desValue = 2;
 						Rectangle rectangle = selectPopupWindow.getBounds();
                         boolean b1 = x < rectangle.x + desValue || x >= rectangle.x + rectangle.width - desValue;
-                        boolean b2 = y < rectangle.y + desValue || y > rectangle.y + rectangle.height - desValue;
+						boolean b2 = y > rectangle.y + rectangle.height - desValue;//避免了鼠标下移刚进入selectPopupWindow的过程中弹出框隐藏,上移移出后由AbstractPopBox的mouseListener处理
                         if (b1 || b2) {
 							hidePopupMenu();
 						}

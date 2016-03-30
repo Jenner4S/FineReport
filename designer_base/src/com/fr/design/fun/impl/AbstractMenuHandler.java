@@ -12,6 +12,11 @@ import com.fr.general.ComparatorUtils;
  */
 public abstract class AbstractMenuHandler implements MenuHandler {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
     public boolean equals(Object obj) {
         return obj instanceof AbstractMenuHandler
                 && ComparatorUtils.equals(category(), ((AbstractMenuHandler) obj).category())

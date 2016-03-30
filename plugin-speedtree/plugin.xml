@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.widget.speedtree</id>
+    <name><![CDATA[性能优先的下拉树]]></name>
+    <active>no</active>
+    <version>1.1</version>
+    <env-version>8.0</env-version>
+    <jartime>2016-1-10</jartime>
+    <vendor>finereport.zack</vendor>
+    <description><![CDATA[性能优先的下拉树，下拉树的子节点只根据层级来判断]]></description>
+    <change-notes><![CDATA[可以在参数界面、表单、填报控件中使用该控件]]></change-notes>
+    <change-notes><![CDATA[
+    [2015-12-25]可以在参数界面、表单、填报控件中使用该控件
+    [2016-1-11]加入功能点记录
+    ]]></change-notes>
+    <extra-core>
+        <LocaleFinder class="com.fr.plugin.widget.speedtree.SpeedTreeLocaleFinder"/>
+    </extra-core>
+    <extra-report>
+        <JavaScriptFileHandler class="com.fr.plugin.widget.speedtree.JavaScriptFile"/>
+    </extra-report>
+
+    <extra-designer>
+        <ParameterWidgetOptionProvider class="com.fr.plugin.widget.speedtree.SpeedTreeImpl"/>
+        <FormWidgetOptionProvider class="com.fr.plugin.widget.speedtree.SpeedTreeImpl"/>
+        <CellWidgetOptionProvider class="com.fr.plugin.widget.speedtree.CellSpeedTreeImpl"/>
+    </extra-designer>
+</plugin>

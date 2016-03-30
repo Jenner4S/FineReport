@@ -8,4 +8,9 @@ import com.fr.design.fun.TableDataDefineProvider;
  * @since 8.0
  */
 public abstract class AbstractTableDataDefineProvider implements TableDataDefineProvider {
+
+    @Override
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
 }

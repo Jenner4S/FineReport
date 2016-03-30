@@ -1,6 +1,7 @@
 package com.fr.design.module;
 
 import com.fr.design.ExtraDesignClassManager;
+import com.fr.design.mainframe.App;
 import com.fr.design.mainframe.DesignerFrame;
 import com.fr.general.ModuleContext;
 import com.fr.module.TopModule;
@@ -19,8 +20,8 @@ import com.fr.stable.plugin.ExtraDesignClassManagerProvider;
 public abstract class DesignModule extends TopModule {
 	public void start() {
 		super.start();
-		DesignerFrame.App<?>[] apps = apps4TemplateOpener();
-		for (DesignerFrame.App<?> app : apps) {
+		App<?>[] apps = apps4TemplateOpener();
+		for (App<?> app : apps) {
 			DesignerFrame.registApp(app);
 		}
         ModuleContext.registerStartedModule(DesignModule.class.getName(), this);
@@ -36,7 +37,7 @@ public abstract class DesignModule extends TopModule {
 	 *
 	 * @return 可以打开的模板类型的数组
 	 */
-	public abstract DesignerFrame.App<?>[] apps4TemplateOpener();
+	public abstract App<?>[] apps4TemplateOpener();
 
 	/**
 	 * 国际化文件路径

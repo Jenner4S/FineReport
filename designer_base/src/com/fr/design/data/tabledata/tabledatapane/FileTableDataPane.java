@@ -1,35 +1,5 @@
 package com.fr.design.data.tabledata.tabledatapane;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTree;
-import javax.swing.SwingUtilities;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
-import javax.swing.tree.TreeSelectionModel;
-
 import com.fr.base.BaseUtils;
 import com.fr.base.FRContext;
 import com.fr.base.Parameter;
@@ -74,6 +44,25 @@ import com.fr.stable.ParameterProvider;
 import com.fr.stable.StringUtils;
 import com.fr.stable.xml.XMLReadable;
 import com.fr.stable.xml.XMLableReader;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
     private static final int TEXT = 0;
@@ -304,32 +293,6 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         return controlPane;
     }
 
-//    private FocusAdapter getFocusAdapter(final UIComboBox jc) {
-//        FocusAdapter fa = new FocusAdapter() {
-//            public void focusGained(FocusEvent e) {
-//                String filePath = getFilePathFromUrlOrLocal();
-//                if (filePath.endsWith(".xml") && jc.getItemCount() <= 1) {
-//                    jc.removeAllItems();
-//                    xmlKeyPointList.clear();
-//                    xmlNodeTree = new XMLNodeTree();
-//                    xmlNodeTree.initData();
-//                    DefaultTreeModel dtm = xmlNodeTree.getTreeModel();
-//                    for (int i = 0; i < dtm.getChildCount(dtm.getRoot()); i++) {
-//                        String keyPoint = dtm.getChild(dtm.getRoot(), i).toString();
-//                        if (!xmlKeyPointList.contains(keyPoint)) {
-//                            xmlKeyPointList.add(keyPoint);
-//                        }
-//                    }
-//                    for (int j = 0; j < xmlKeyPointList.size(); j++) {
-//                        jc.addItem(xmlKeyPointList.get(j));
-//                    }
-//                    jc.setMaximumRowCount(xmlKeyPointList.size());
-//                }
-//            }
-//        };
-//        return fa;
-//    }
-
     private String getFilePathFromUrlOrLocal() {
         if (StringUtils.isNotEmpty(localText.getText()) && localFileRadioButton.isSelected()) {
             return localText.getText().trim();
@@ -454,7 +417,6 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         @Override
         public void actionPerformed(ActionEvent e) {
             FILEChooserPane fileChooser = FILEChooserPane.getInstance(true, false, new ChooseFileFilter(getFileSuffix()));
-
             if (fileChooser.showOpenDialog(DesignerContext.getDesignerFrame()) == FILEChooserPane.OK_OPTION) {
                 final FILE file = fileChooser.getSelectedFILE();
                 if (file == null) {// 选择的文件不能是 null
@@ -471,12 +433,16 @@ public class FileTableDataPane extends AbstractTableDataPane<FileTableData> {
         }
     };
 
-    private String getFileSuffix() {
+    private String[] getFileSuffix() {
+        List<String> suffixList = new ArrayList<String>();
         String suffix = fileTypeComboBox.getSelectedItem().toString().toLowerCase();
         if (suffix.equalsIgnoreCase("excel")) {
-            suffix = "xls";
+            suffixList.add("xls");
+            suffixList.add("xlsx");
+        } else {
+            suffixList.add(suffix);
         }
-        return suffix;
+        return suffixList.toArray(new String[suffixList.size()]);
     }
 
     private ActionListener getFileTypeListener(final JPanel setPanel, final int width, final int height) {

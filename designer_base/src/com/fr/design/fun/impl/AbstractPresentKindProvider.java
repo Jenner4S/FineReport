@@ -9,4 +9,9 @@ import com.fr.design.fun.PresentKindProvider;
  */
 public abstract class AbstractPresentKindProvider implements PresentKindProvider {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
 }

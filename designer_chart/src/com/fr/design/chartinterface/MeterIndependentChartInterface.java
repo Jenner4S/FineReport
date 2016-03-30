@@ -2,7 +2,7 @@ package com.fr.design.chartinterface;
 
 import com.fr.chart.chartattr.Plot;
 import com.fr.design.beans.BasicBeanPane;
-import com.fr.design.chart.fun.impl.AbstractIndependentChartUI;
+import com.fr.design.chart.fun.impl.AbstractIndependentChartUIWithAPILevel;
 import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.ChartStylePane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
@@ -16,7 +16,7 @@ import com.fr.design.mainframe.chart.gui.type.MeterPlotPane;
 /**
  * Created by eason on 15/4/21.
  */
-public class MeterIndependentChartInterface extends AbstractIndependentChartUI {
+public class MeterIndependentChartInterface extends AbstractIndependentChartUIWithAPILevel {
 
     public AbstractChartTypePane getPlotTypePane(){
         return new MeterPlotPane();

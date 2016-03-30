@@ -8,6 +8,11 @@ import com.fr.design.fun.IndentationUnitProcessor;
 public class AbstractIndentationUnitProcessor implements IndentationUnitProcessor {
     private int indentationUnit = 1;
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
     public void setIndentationUnit(int value){
         this.indentationUnit = value;
     }

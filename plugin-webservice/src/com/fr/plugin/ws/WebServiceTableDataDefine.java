@@ -26,7 +26,7 @@ public class WebServiceTableDataDefine extends AbstractTableDataDefineProvider i
 
     @Override
     public String nameForTableData() {
-        return "WebServicesÊı¾İ¼¯";
+        return "WebServiceæ•°æ®é›†";
     }
 
     @Override

@@ -70,7 +70,7 @@ public class ImageExporter4Chart implements Exporter4Chart{
         TopDefinitionProvider topDefinition = editingChart.getFilterDefinition();
         ChartData chartData4Glyph = null;
         if (topDefinition instanceof BaseTableDefinition) {
-            chartData4Glyph = ((BaseTableDefinition) topDefinition).calcu4ChartData(calculator);
+            chartData4Glyph = ((BaseTableDefinition) topDefinition).calcu4ChartData(calculator, editingChart.getDataProcessor());
         }
 
         if (chartData4Glyph == null) {

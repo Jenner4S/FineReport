@@ -2,6 +2,7 @@ package com.fr.design.fun;
 
 import com.fr.design.mainframe.toolbar.ToolBarMenuDockPlus;
 import com.fr.design.menu.ShortCut;
+import com.fr.stable.fun.Level;
 
 /**
  * @author richie
@@ -9,9 +10,12 @@ import com.fr.design.menu.ShortCut;
  * @since 8.0
  * 设计器菜单栏插件接口
  */
-public interface MenuHandler {
+public interface MenuHandler extends Level{
 
     String MARK_STRING = "MenuHandler";
+
+    int CURRENT_LEVEL = 1;
+
 
     int LAST = -1;
 

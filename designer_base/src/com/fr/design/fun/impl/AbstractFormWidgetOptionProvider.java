@@ -9,6 +9,11 @@ import com.fr.design.fun.FormWidgetOptionProvider;
  */
 public abstract class AbstractFormWidgetOptionProvider implements FormWidgetOptionProvider {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
     @Override
     public boolean isContainer() {
         return false;

@@ -1,12 +1,9 @@
 package com.fr.design.mainframe.chart.gui.type;
 
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.Chart;
-import com.fr.chart.chartattr.CustomPlot;
 import com.fr.chart.charttypes.CustomIndependentChart;
 import com.fr.general.Inter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 组合图 属性表 图表类型 界面.
@@ -14,19 +11,10 @@ import java.util.List;
  * @version 创建时间：2012-12-21 下午06:17:40
  */
 public class CustomPlotPane extends AbstractChartTypePane {
-	
-	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], Inter.getLocText("ChartF-Comb_Chart"), true);
-		pane.isPressing = true;
-		demoList.add(pane);
-		return demoList;
-	}
 
 	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return new ArrayList<ChartImagePane>();
+	protected String getPlotTypeID() {
+		return ChartConstants.CUSTOM_CHART;
 	}
 
     @Override
@@ -35,13 +23,22 @@ public class CustomPlotPane extends AbstractChartTypePane {
         };
     }
 
-    @Override
+	@Override
+	protected String[] getTypeTipName() {
+		return new String[]{
+				Inter.getLocText("ChartF-Comb_Chart")
+		};
+	}
+
+	@Override
     protected String[] getTypeLayoutPath() {
-        return new String[]{"/com/fr/design/images/chart/CustomPlot/layout/0.png",
-                "/com/fr/design/images/chart/CustomPlot/layout/1.png",
-                "/com/fr/design/images/chart/CustomPlot/layout/2.png",
-                "/com/fr/design/images/chart/CustomPlot/layout/3.png",};
+        return new String[0];
     }
+
+	@Override
+	protected String[] getTypeLayoutTipName() {
+		return new String[0];
+	}
 
 	/**
 	 * 界面 标题
@@ -69,17 +66,7 @@ public class CustomPlotPane extends AbstractChartTypePane {
         changePlotWithClone(chart, CustomIndependentChart.createCustomChart().getPlot());
 	}
 
-    /**
-     * 界面是否接受
-     * @param ob 传入的对象
-     * @return 是否是chart对象
-     */
-	public boolean accept(Object ob) {
-		return super.accept(ob) && ((Chart) ob).getPlot().accept(CustomPlot.class);
-	}
-
-
-    public Chart getDefaultChart() {
+	public Chart getDefaultChart() {
         return CustomIndependentChart.combChartTypes[0];
     }
 }

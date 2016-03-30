@@ -1,12 +1,9 @@
 package com.fr.design.mainframe.chart.gui.type;
 
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.Chart;
-import com.fr.chart.chartattr.StockPlot;
 import com.fr.chart.charttypes.StockIndependentChart;
 import com.fr.general.Inter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 股价图 属性表 选择类型 布局 界面.
@@ -24,24 +21,26 @@ public class StockPlotPane extends AbstractChartTypePane {
         };
     }
 
-    @Override
+	@Override
+	protected String[] getTypeTipName() {
+		return new String[]{
+				Inter.getLocText("FR-Chart-Stock_Chart")
+		};
+	}
+
+	@Override
+	protected String getPlotTypeID() {
+		return ChartConstants.STOCK_CHART;
+	}
+
     protected String[] getTypeLayoutPath() {
         return new String[]{
         };
     }
 
 	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], Inter.getLocText("FR-Chart-Stock_Chart"), true);
-		pane.isPressing = true;
-		demoList.add(pane);
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return new ArrayList<ChartImagePane>();
+	protected String[] getTypeLayoutTipName() {
+		return new String[0];
 	}
 
 	/**
@@ -71,17 +70,7 @@ public class StockPlotPane extends AbstractChartTypePane {
 		checkDemosBackground();
 	}
 
-    /**
-     * 界面是否接受
-     * @param ob 传入的对象
-     * @return 是否是chart对象
-     */
-	public boolean accept(Object ob) {
-		return super.accept(ob) && ((Chart) ob).getPlot() instanceof StockPlot;
-	}
-
-
-    public Chart getDefaultChart() {
+	public Chart getDefaultChart() {
         return StockIndependentChart.stockChartTypes[0];
     }
 }

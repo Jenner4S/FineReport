@@ -71,7 +71,7 @@ public class DesignUtils {
         try {
             socket = new Socket("localhost", port);
 
-            writer = new PrintWriter(socket.getOutputStream());
+            writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), EncodeConstants.ENCODING_UTF_8)));
             for (int i = 0; i < lines.length; i++) {
                 writer.println(lines[i]);
             }
@@ -106,12 +106,12 @@ public class DesignUtils {
                 while (true) {
                     try {
                         Socket socket = serverSocket.accept(); // 接收客户连接
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), EncodeConstants.ENCODING_UTF_8));
                         String line = null;
                         while ((line = reader.readLine()) != null) {
                             if (line.startsWith("demo")) {
                                 StartServer.browerDemoURL();
-                            } else if (!StringUtils.isEmpty(line)) {
+                            } else if (StringUtils.isNotEmpty(line)) {
                                 File f = new File(line);
                                 String path = f.getAbsolutePath();
 

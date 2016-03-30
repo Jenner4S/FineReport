@@ -2,14 +2,17 @@ package com.fr.design.fun;
 
 import com.fr.data.impl.Connection;
 import com.fr.design.beans.BasicBeanPane;
+import com.fr.stable.fun.Level;
 
 /**
  * @author : richie
  * @since : 8.0
  */
-public interface ConnectionProvider {
+public interface ConnectionProvider extends Level {
 
     public static final String XML_TAG = "ConnectionProvider";
+
+    int CURRENT_LEVEL = 1;
 
     /**
      * 数据连接弹出菜单的名字

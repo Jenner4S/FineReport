@@ -1,9 +1,7 @@
 package com.fr.design.mainframe.chart.gui.type;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fr.chart.base.AttrAlpha;
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.Area3DPlot;
 import com.fr.chart.chartattr.AreaPlot;
 import com.fr.chart.chartattr.Chart;
@@ -25,48 +23,44 @@ public class AreaPlotPane extends AbstractChartTypePane{
 	private static final int PERCENT_3D_AREA_LINE_CHART = 3;
 
 	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-		
-		String area = Inter.getLocText("FR-Chart-Type_Area");
-		String stack = Inter.getLocText("FR-Chart-Type_Stacked");
-		String percent = Inter.getLocText("FR-Chart-Use_Percent");
-        String[] iconPaths = getTypeIconPath();
-
-		ChartImagePane pane = new ChartImagePane(iconPaths[0], stack + area);
-		pane.isPressing = true;
-		demoList.add(pane);
-		demoList.add(new ChartImagePane(iconPaths[1], percent + stack + area));
-		
-		String td = Inter.getLocText("FR-Chart-Chart_3D");
-		demoList.add(new ChartImagePane(iconPaths[2], td + stack + area));
-		demoList.add(new ChartImagePane(iconPaths[3], td + percent + stack + area, true));
-
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return initNormalStyleList();
-	}
-
-	@Override
 	protected String[] getTypeIconPath() {
         return new String[]{"/com/fr/design/images/chart/AreaPlot/type/0.png",
                 "/com/fr/design/images/chart/AreaPlot/type/1.png",
                 "/com/fr/design/images/chart/AreaPlot/type/2.png",
                 "/com/fr/design/images/chart/AreaPlot/type/3.png",
-                "/com/fr/design/images/chart/AreaPlot/type/4.png",
-                "/com/fr/design/images/chart/AreaPlot/type/5.png"};
+		};
 	}
 
 	@Override
+	protected String[] getTypeTipName() {
+		String area = Inter.getLocText("FR-Chart-Type_Area");
+		String stack = Inter.getLocText("FR-Chart-Type_Stacked");
+		String percent = Inter.getLocText("FR-Chart-Use_Percent");
+		String td = Inter.getLocText("FR-Chart-Chart_3D");
+		return new String[]{
+				stack + area,
+				percent + stack + area,
+				td + stack + area,
+				td + percent + stack + area
+		};
+	}
+
+	@Override
+	protected String getPlotTypeID() {
+		return ChartConstants.AREA_CHART;
+	}
+
 	protected String[] getTypeLayoutPath() {
 		return new String[]{"/com/fr/design/images/chart/AreaPlot/layout/0.png",
                 "/com/fr/design/images/chart/AreaPlot/layout/1.png",
                 "/com/fr/design/images/chart/AreaPlot/layout/2.png",
                 "/com/fr/design/images/chart/AreaPlot/layout/3.png",
         };
+	}
+
+	@Override
+	protected String[] getTypeLayoutTipName() {
+		return getNormalLayoutTipName();
 	}
 
 	/**
@@ -150,20 +144,6 @@ public class AreaPlotPane extends AbstractChartTypePane{
 	 */
 	public String title4PopupWindow() {
 		return Inter.getLocText("FR-Chart-Type_Area");
-	}
-
-    /**
-     * 判断界面是否为Chart 传入
-     * @param ob 对象是否为chart
-     * @return 是否是chart对象
-     */
-	public boolean accept(Object ob) {
-		if(!super.accept(ob)) {
-			return false;
-		}
-		Chart chart = (Chart) ob;
-		Plot plot = chart.getPlot();
-		return plot instanceof AreaPlot || plot instanceof Area3DPlot;
 	}
 
     public Chart getDefaultChart() {

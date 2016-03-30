@@ -6,22 +6,21 @@ package com.fr.design.data.datapane.preview;
 import com.fr.base.BaseUtils;
 import com.fr.base.FRContext;
 import com.fr.base.TableData;
-import com.fr.design.data.DesignTableDataManager;
 import com.fr.data.impl.DBTableData;
 import com.fr.data.impl.EmbeddedTableData;
-import com.fr.data.impl.MultiTDTableData;
 import com.fr.data.impl.storeproc.ProcedureDataModel;
 import com.fr.design.DesignerEnvManager;
+import com.fr.design.data.DesignTableDataManager;
+import com.fr.design.dialog.BasicDialog;
+import com.fr.design.dialog.BasicPane;
 import com.fr.design.gui.frpane.UITabbedPane;
 import com.fr.design.gui.ilable.UILabel;
-import com.fr.design.gui.itextfield.UINumberField;
 import com.fr.design.gui.iprogressbar.AutoProgressBar;
 import com.fr.design.gui.itable.SortableJTable;
 import com.fr.design.gui.itable.TableSorter;
+import com.fr.design.gui.itextfield.UINumberField;
 import com.fr.design.layout.FRGUIPaneFactory;
 import com.fr.design.mainframe.DesignerContext;
-import com.fr.design.dialog.BasicDialog;
-import com.fr.design.dialog.BasicPane;
 import com.fr.function.TIME;
 import com.fr.general.FRFont;
 import com.fr.general.Inter;
@@ -75,7 +74,7 @@ public class PreviewTablePane extends BasicPane {
 
         JPanel currentPreviewPanel = FRGUIPaneFactory.createNormalFlowInnerContainer_S_Pane();
         previewNumberPanel.add(currentPreviewPanel);
-        currentPreviewPanel.add(new UILabel(Inter.getLocText("Current_Preview_Rows") + ":"));
+        currentPreviewPanel.add(new UILabel(Inter.getLocText("FR-Designer_Current_Preview_Rows") + ":"));
 
         currentRowsField = new UINumberField();
         currentPreviewPanel.add(currentRowsField);
@@ -152,7 +151,7 @@ public class PreviewTablePane extends BasicPane {
         if (this.dialog == null) {
             this.dialog = this.showWindow(DesignerContext.getDesignerFrame());
         }
-        progressBar = new AutoProgressBar(this, Inter.getLocText("Loading_Data"), "", 0, 100) {
+        progressBar = new AutoProgressBar(this, Inter.getLocText("FR-Designer_Loading_Data"), "", 0, 100) {
             public void doMonitorCanceled() {
                 if (getWorker() != null) {
                     getWorker().cancel(true);
@@ -168,7 +167,7 @@ public class PreviewTablePane extends BasicPane {
 
     @Override
     protected String title4PopupWindow() {
-        return Inter.getLocText("Preview");
+        return Inter.getLocText("FR-Designer_Preview");
     }
 
     private void addLoadedListener(LoadedEventListener l) {
@@ -262,7 +261,7 @@ public class PreviewTablePane extends BasicPane {
      */
     public static EmbeddedTableData previewTableData(TableData tableData, final int keyIndex, final int valueIndex) {
         PreviewTablePane previewTablePane = new PreviewTablePane();
-        previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("Data")));
+        previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer_Data")));
         try {
             previewTablePane.populate(tableData);
             previewTablePane.resetPreviewTableColumnColor();
@@ -298,7 +297,7 @@ public class PreviewTablePane extends BasicPane {
             return;
         }
         FRContext.getLogger().errorWithServerLevel(exp.getMessage(), exp);
-        JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), columnErrMessage, Inter.getLocText("Error"), JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(DesignerContext.getDesignerFrame(), columnErrMessage, Inter.getLocText("FR-Designer_Error"), JOptionPane.ERROR_MESSAGE);
     }
 
     private void populate(TableData tableData) throws Exception {
@@ -363,14 +362,10 @@ public class PreviewTablePane extends BasicPane {
                     }
                 }
                 connectionBar.close();
-                PreviewTableModel previewModel = null;
-                if (tableData instanceof MultiTDTableData) {
-                    ((MultiTDTableData) tableData).setTableDataSource(DesignTableDataManager.getEditingTableDataSource());
-                }
                 previewTableData = DesignTableDataManager.previewTableDataNeedInputParameters(tableData, (int) maxPreviewNumberField.getValue(), true);
                 // parameterInputDialog
                 // update之后的parameters,转成一个parameterMap,用于预览TableData
-                previewModel = new PreviewTableModel(previewTableData.createDataModel(null), (int) maxPreviewNumberField.getValue());
+                PreviewTableModel previewModel = new PreviewTableModel(previewTableData.createDataModel(null), (int) maxPreviewNumberField.getValue());
                 for (int i = 0; i < previewTableData.getColumnCount(); i++) {
                     Class<?> cls = previewTableData.getColumnClass(i);
                     if (cls == Date.class || cls == TIME.class || cls == Timestamp.class) {
@@ -419,7 +414,7 @@ public class PreviewTablePane extends BasicPane {
     public static void previewStoreData(final ProcedureDataModel storeProcedureDataModel, final int keyIndex, final int valueIndex) {
         final PreviewTablePane previewTablePane = new PreviewTablePane();
         previewTablePane.storeProcedureDataModel = storeProcedureDataModel;
-        previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("Data")));
+        previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer_Data")));
 
         try {
             previewTablePane.populateStoreDataSQL();
@@ -450,7 +445,7 @@ public class PreviewTablePane extends BasicPane {
         for (int i = 0; i < tableSize; i++) {
             PreviewTablePane previewTablePane = new PreviewTablePane();
             previewTablePane.storeProcedureDataModel = storeProcedureDataModels[i];
-            previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("Data")));
+            previewTablePane.setBorder(BorderFactory.createTitledBorder(Inter.getLocText("FR-Designer_Data")));
             try {
                 previewTablePane.populateStoreDataSQL();
             } catch (Exception e) {
@@ -463,7 +458,7 @@ public class PreviewTablePane extends BasicPane {
 
             @Override
             protected String title4PopupWindow() {
-                return Inter.getLocText("Preview");
+                return Inter.getLocText("FR-Designer_Preview");
             }
 
         };

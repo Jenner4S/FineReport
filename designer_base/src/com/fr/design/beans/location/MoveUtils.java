@@ -3,10 +3,9 @@
  */
 package com.fr.design.beans.location;
 
-import java.awt.Point;
-import java.awt.Rectangle;
-
-import javax.swing.SwingConstants;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -205,8 +204,11 @@ public class MoveUtils {
 		PlacePointing px = new PlacePointing(x);
 		PlacePointing py = new PlacePointing(y);
 		RectangleIterator iterator = designer.createRectangleIterator();
+
+		java.util.List<Rectangle> cacheRecs = new ArrayList<Rectangle>();
 		while (iterator.hasNext()) {
 			Rectangle bounds = iterator.nextRectangle();
+			cacheRecs.add(bounds);
 			findX(px, bounds, left, right, width);
 			findY(py, bounds, top, bottom, height);
 			if (px.isFind() && py.isFind()) {
@@ -214,13 +216,12 @@ public class MoveUtils {
 			}
 		}
 
-		createXAbsorptionline(px, designer, width);
-		createYAbsorptionline(py, designer, height);
-
+		createXAbsorptionline(px, designer, width, cacheRecs);
+		createYAbsorptionline(py, designer, height, cacheRecs);
 		return new Point(px.palce, py.palce);
 	}
 
-	private static void createXAbsorptionline(PlacePointing px, RectangleDesigner designer, int width) {
+	private static void createXAbsorptionline(PlacePointing px, RectangleDesigner designer, int width, java.util.List<Rectangle> cacheRecs) {
 		Absorptionline line = null;
 		RectangleIterator iterator = designer.createRectangleIterator();
 		int[] selfVertical = designer.getVerticalLine();
@@ -228,8 +229,7 @@ public class MoveUtils {
 			line = Absorptionline.createXMidAbsorptionline(px.palce + width / 2);
 			int left = px.palce;
 			int right = px.palce + width;
-			while (iterator.hasNext()) {
-				Rectangle bounds = iterator.nextRectangle();
+			for (Rectangle bounds : cacheRecs) {
 				if (bounds.x == left || bounds.x + bounds.width == left) {
 					line.setFirstLine(left);
 				}
@@ -245,8 +245,7 @@ public class MoveUtils {
 			int left = px.direction == SwingConstants.LEFT ? px.palce + width : px.palce;
 			line = Absorptionline.createXAbsorptionline(px.direction == SwingConstants.LEFT ? px.palce : px.palce + width);
 			int middle = px.palce + width / 2;
-			while (iterator.hasNext()) {
-				Rectangle bounds = iterator.nextRectangle();
+			for (Rectangle bounds : cacheRecs) {
 				if (bounds.x == left || bounds.x + bounds.width == left) {
 					line.setSecondLine(left);
 				}
@@ -262,7 +261,7 @@ public class MoveUtils {
 		designer.setXAbsorptionline(line);
 	}
 
-	private static void createYAbsorptionline(PlacePointing py, RectangleDesigner designer, int height) {
+	private static void createYAbsorptionline(PlacePointing py, RectangleDesigner designer, int height, java.util.List<Rectangle> cacheRecs) {
 		Absorptionline line = null;
 		RectangleIterator iterator = designer.createRectangleIterator();
 		int[] selfHorizontal = designer.getHorizontalLine();
@@ -270,8 +269,7 @@ public class MoveUtils {
 			line = Absorptionline.createYMidAbsorptionline(py.palce + height / 2);
 			int top = py.palce;
 			int bottom = py.palce + height;
-			while (iterator.hasNext()) {
-				Rectangle bounds = iterator.nextRectangle();
+			for (Rectangle bounds : cacheRecs) {
 				if (bounds.y == top || bounds.y + bounds.height == top) {
 					line.setFirstLine(top);
 				}
@@ -287,9 +285,7 @@ public class MoveUtils {
 			int top = py.direction == SwingConstants.TOP ? py.palce + height : py.palce;
 			line = Absorptionline.createYAbsorptionline(py.direction == SwingConstants.TOP ? py.palce : py.palce + height);
 			int middle = py.palce + height / 2;
-			
-			while (iterator.hasNext()) {
-				Rectangle bounds = iterator.nextRectangle();
+			for (Rectangle bounds : cacheRecs) {
 				if (bounds.y == top || bounds.y + bounds.height == top) {
 					line.setSecondLine(top);
 				}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.widget.scancodewidget.Scan</id>
+    <name><![CDATA[扫码控件]]></name>
+    <active>yes</active>
+    <version>1.0</version>
+    <env-version>8.0</env-version>
+    <jartime>2016-03-08</jartime>
+    <vendor>finereport.joy</vendor>
+    <description><![CDATA[无]]></description>
+    <change-notes><![CDATA[无]]></change-notes>
+<extra-designer>
+    <ParameterWidgetOptionProvider class="com.fr.plugin.widget.scancodewidget.ScanImpl"/>
+    <FormWidgetOptionProvider class="com.fr.plugin.widget.scancodewidget.ScanImpl"/>
+	  <CellWidgetOptionProvider class="com.fr.plugin.widget.scancodewidget.CellScanmpl"/>
+</extra-designer>
+<extra-core>
+    <JavaScriptFileHandler class="com.fr.plugin.widget.scancodewidget.JavaScriptFile"/>
+    <CssFileHandler class="com.fr.plugin.widget.scancodewidget.CssFile"/>
+    <LocaleFinder class="com.fr.plugin.widget.scancodewidget.locale.ScanLocalFinder"/>
+</extra-core>
+    </plugin>

@@ -1,6 +1,7 @@
 package com.fr.design.fun;
 
 import com.fr.design.formula.UIFormula;
+import com.fr.stable.fun.Level;
 
 /**
  * @author richie
@@ -8,8 +9,11 @@ import com.fr.design.formula.UIFormula;
  * @since 8.0
  * 公式编辑器界面处理接口
  */
-public interface UIFormulaProcessor {
+public interface UIFormulaProcessor extends Level{
     String MARK_STRING = "UIFormulaProcessor";
+
+    int CURRENT_LEVEL = 1;
+
 
     /**
      * 普通的公式编辑器界面类

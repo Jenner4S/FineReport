@@ -1,12 +1,26 @@
 package com.fr.design.module;
 
-import com.fr.base.*;
+import com.fr.base.BaseUtils;
+import com.fr.base.ConfigManager;
+import com.fr.base.FRContext;
+import com.fr.base.Formula;
+import com.fr.base.MultiFieldParameter;
+import com.fr.base.Style;
+import com.fr.base.TempNameStyle;
 import com.fr.base.io.XMLEncryptUtils;
 import com.fr.base.process.ProcessOperator;
+import com.fr.base.remote.RemoteDeziConstants;
 import com.fr.design.DesignerEnvManager;
 import com.fr.design.ExtraDesignClassManager;
 import com.fr.design.actions.core.ActionUtils;
-import com.fr.design.actions.insert.cell.*;
+import com.fr.design.actions.insert.cell.BiasCellAction;
+import com.fr.design.actions.insert.cell.ChartCellAction;
+import com.fr.design.actions.insert.cell.DSColumnCellAction;
+import com.fr.design.actions.insert.cell.FormulaCellAction;
+import com.fr.design.actions.insert.cell.GeneralCellAction;
+import com.fr.design.actions.insert.cell.ImageCellAction;
+import com.fr.design.actions.insert.cell.RichTextCellAction;
+import com.fr.design.actions.insert.cell.SubReportCellAction;
 import com.fr.design.actions.insert.flot.ChartFloatAction;
 import com.fr.design.actions.insert.flot.FormulaFloatAction;
 import com.fr.design.actions.insert.flot.ImageFloatAction;
@@ -22,7 +36,11 @@ import com.fr.design.javascript.EmailPane;
 import com.fr.design.javascript.JavaScriptImplPane;
 import com.fr.design.javascript.ParameterJavaScriptPane;
 import com.fr.design.javascript.ProcessTransitionAdapter;
-import com.fr.design.mainframe.*;
+import com.fr.design.mainframe.App;
+import com.fr.design.mainframe.DecodeDialog;
+import com.fr.design.mainframe.InformationCollector;
+import com.fr.design.mainframe.JTemplate;
+import com.fr.design.mainframe.JWorkBook;
 import com.fr.design.mainframe.bbs.BBSGuestPane;
 import com.fr.design.mainframe.form.FormECCompositeProvider;
 import com.fr.design.mainframe.form.FormECDesignerProvider;
@@ -32,15 +50,28 @@ import com.fr.design.mainframe.loghandler.DesignerLogImpl;
 import com.fr.design.parameter.WorkBookParameterReader;
 import com.fr.design.utils.gui.GUICoreUtils;
 import com.fr.file.FILE;
-import com.fr.general.*;
+import com.fr.general.ComparatorUtils;
+import com.fr.general.FRLogger;
+import com.fr.general.IOUtils;
+import com.fr.general.Inter;
+import com.fr.general.ModuleContext;
 import com.fr.general.xml.GeneralXMLTools;
 import com.fr.io.importer.Excel2007ReportImporter;
 import com.fr.io.importer.ExcelReportImporter;
-import com.fr.js.*;
+import com.fr.js.EmailJavaScript;
+import com.fr.js.JavaScriptImpl;
+import com.fr.js.ParameterJavaScript;
+import com.fr.js.ReportletHyperlink;
+import com.fr.js.WebHyperlink;
 import com.fr.main.impl.WorkBook;
 import com.fr.plugin.ExtraClassManager;
 import com.fr.quickeditor.ChartQuickEditor;
-import com.fr.quickeditor.cellquick.*;
+import com.fr.quickeditor.cellquick.CellBiasTextPainterEditor;
+import com.fr.quickeditor.cellquick.CellDScolumnEditor;
+import com.fr.quickeditor.cellquick.CellImageQuickEditor;
+import com.fr.quickeditor.cellquick.CellRichTextEditor;
+import com.fr.quickeditor.cellquick.CellStringQuickEditor;
+import com.fr.quickeditor.cellquick.CellSubReportEditor;
 import com.fr.quickeditor.floatquick.FloatImageQuickEditor;
 import com.fr.quickeditor.floatquick.FloatStringQuickEditor;
 import com.fr.report.cell.CellElementValueConverter;
@@ -57,7 +88,6 @@ import com.fr.stable.script.ValueConverter;
 import com.fr.stable.xml.ObjectTokenizer;
 import com.fr.stable.xml.ObjectXMLWriterFinder;
 import com.fr.start.BBSGuestPaneProvider;
-import com.fr.base.remote.RemoteDeziConstants;
 import com.fr.xml.ReportXMLUtils;
 
 import javax.swing.*;
@@ -210,7 +240,13 @@ public class DesignerModule extends DesignModule {
 		});
 	}
 
-	private static abstract class AbstractWorkBookApp implements DesignerFrame.App<WorkBook> {
+	private static abstract class AbstractWorkBookApp implements App<WorkBook>{
+
+		@Override
+		public int currentAPILevel() {
+			return CURRENT_LEVEL;
+		}
+
 		@Override
 		public JTemplate<WorkBook, ?> openTemplate(FILE tplFile) {
 			return new JWorkBook(asIOFile(tplFile), tplFile);
@@ -222,54 +258,12 @@ public class DesignerModule extends DesignModule {
 	 * 返回设计器能打开的模板类型的一个数组列表
 	 * @return 可以打开的模板类型的数组
 	 */
-	public DesignerFrame.App[] apps4TemplateOpener() {
-		return new DesignerFrame.App[]{new AbstractWorkBookApp() {
-			public String[] defaultExtentions() {
-				return new String[]{"cpt"};
-			}
-			public WorkBook asIOFile(FILE file) {
-				if(XMLEncryptUtils.isCptEncoded() && 
-						!XMLEncryptUtils.checkVaild(DesignerEnvManager.getEnvManager().getEncryptionKey())){
-					if(!new DecodeDialog(file).isPwdRight()){
-						FRContext.getLogger().error(Inter.getLocText("ECP-error_pwd"));
-						return new WorkBook();
-					}
-				}
-				
-				WorkBook tpl = new WorkBook();
-				// richer:打开报表通知
-				FRContext.getLogger().info(Inter.getLocText(new String[]{"LOG-Is_Being_Openned", "LOG-Please_Wait"}, new String[]{"\"" + file.getName() + "\"" + ",", "..."}));
-				TempNameStyle namestyle = TempNameStyle.getInstance();
-				namestyle.clear();
-				String checkStr = StringUtils.EMPTY;
-				try {
-					checkStr = IOUtils.inputStream2String(file.asInputStream());
-					tpl.readStream(file.asInputStream());
-				} catch (Exception exp) {
-					String errorMessage = StringUtils.EMPTY;
-					errorMessage = ComparatorUtils.equals(RemoteDeziConstants.INVALID_USER, checkStr) ? Inter.getLocText("FR-Designer_No-Privilege") 
-							: Inter.getLocText("NS-exception_readError");
-					FRContext.getLogger().error(errorMessage + file, exp);
-				}
-				checkNameStyle(namestyle);
-				return tpl;
-			}
-		}, new AbstractWorkBookApp() {
-			@Override
-			public String[] defaultExtentions() {
-				return new String[]{"xls"};
-			}
-			@Override
-			public WorkBook asIOFile(FILE tplFile) {
-				WorkBook workbook = null;
-				try {
-					workbook = new ExcelReportImporter().generateWorkBookByStream(tplFile.asInputStream());
-				} catch (Exception exp) {
-					FRContext.getLogger().error("Failed to generate xls from " + tplFile, exp);
-				}
-				return workbook;
-			}
-		}, new AbstractWorkBookApp() {
+	public App[] apps4TemplateOpener() {
+		return new App[]{getCptApp(), getXlsApp(), getXlsxApp()};
+	}
+
+	private AbstractWorkBookApp getXlsxApp() {
+		return new AbstractWorkBookApp() {
 			@Override
 			public String[] defaultExtentions() {
 				return new String[]{"xlsx"};
@@ -284,7 +278,61 @@ public class DesignerModule extends DesignModule {
 				}
 				return workbook;
 			}
-		}};
+		};
+	}
+
+	private AbstractWorkBookApp getXlsApp() {
+		return new AbstractWorkBookApp() {
+			@Override
+			public String[] defaultExtentions() {
+				return new String[]{"xls"};
+			}
+			@Override
+			public WorkBook asIOFile(FILE tplFile) {
+				WorkBook workbook = null;
+				try {
+					workbook = new ExcelReportImporter().generateWorkBookByStream(tplFile.asInputStream());
+				} catch (Exception exp) {
+					FRContext.getLogger().error("Failed to generate xls from " + tplFile, exp);
+				}
+				return workbook;
+			}
+		};
+	}
+
+	private AbstractWorkBookApp getCptApp() {
+		return new AbstractWorkBookApp() {
+			public String[] defaultExtentions() {
+				return new String[]{"cpt"};
+			}
+			public WorkBook asIOFile(FILE file) {
+				if(XMLEncryptUtils.isCptEncoded() &&
+						!XMLEncryptUtils.checkVaild(DesignerEnvManager.getEnvManager().getEncryptionKey())){
+					if(!new DecodeDialog(file).isPwdRight()){
+						FRContext.getLogger().error(Inter.getLocText("ECP-error_pwd"));
+						return new WorkBook();
+					}
+				}
+
+				WorkBook tpl = new WorkBook();
+				// richer:打开报表通知
+				FRContext.getLogger().info(Inter.getLocText(new String[]{"LOG-Is_Being_Openned", "LOG-Please_Wait"}, new String[]{"\"" + file.getName() + "\"" + ",", "..."}));
+				TempNameStyle namestyle = TempNameStyle.getInstance();
+				namestyle.clear();
+				String checkStr = StringUtils.EMPTY;
+				try {
+					checkStr = IOUtils.inputStream2String(file.asInputStream());
+					tpl.readStream(file.asInputStream());
+				} catch (Exception exp) {
+					String errorMessage = StringUtils.EMPTY;
+					errorMessage = ComparatorUtils.equals(RemoteDeziConstants.INVALID_USER, checkStr) ? Inter.getLocText("FR-Designer_No-Privilege")
+							: Inter.getLocText("NS-exception_readError");
+					FRContext.getLogger().error(errorMessage + file, exp);
+				}
+				checkNameStyle(namestyle);
+				return tpl;
+			}
+		};
 	}
 
 	private static void checkNameStyle(TempNameStyle namestyle) {

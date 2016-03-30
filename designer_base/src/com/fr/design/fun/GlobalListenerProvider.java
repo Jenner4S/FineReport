@@ -1,14 +1,19 @@
 package com.fr.design.fun;
 
 
+import com.fr.stable.fun.Level;
+
 import java.awt.event.AWTEventListener;
 
 /**
  * Created by zack on 2015/8/17.
  */
-public interface GlobalListenerProvider {
+public interface GlobalListenerProvider extends Level{
 
-    public static final String XML_TAG = "GlobalListenerProvider";
+    String XML_TAG = "GlobalListenerProvider";
 
-    public AWTEventListener listener();
+    int CURRENT_LEVEL = 1;
+
+
+    AWTEventListener listener();
 }

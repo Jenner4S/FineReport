@@ -1,13 +1,13 @@
 package com.fr.design.mainframe.chart.gui.type;
 
-import com.fr.chart.chartattr.*;
+import com.fr.chart.base.ChartConstants;
+import com.fr.chart.chartattr.Chart;
+import com.fr.chart.chartattr.MeterPlot;
+import com.fr.chart.chartattr.Plot;
 import com.fr.chart.chartglyph.MeterStyle;
 import com.fr.chart.charttypes.MeterIndependentChart;
 import com.fr.general.FRLogger;
 import com.fr.general.Inter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 仪表盘, 属性表 类型选择 界面.
@@ -30,9 +30,23 @@ public class MeterPlotPane extends AbstractChartTypePane {
     }
 
     @Override
-    protected String[] getTypeLayoutPath() {
+    protected String[] getTypeTipName() {
+        String meter = Inter.getLocText("FR-Chart-Type_Meter");
         return new String[]{
+                Inter.getLocText("FR-Chart-Mode_Custom") + meter,
+                meter + "1",
+                meter + "2"
         };
+    }
+
+    @Override
+    protected String[] getTypeLayoutPath() {
+        return new String[0];
+    }
+
+    @Override
+    protected String[] getTypeLayoutTipName() {
+        return new String[0];
     }
 
     protected Plot getSelectedClonedPlot(){
@@ -58,23 +72,6 @@ public class MeterPlotPane extends AbstractChartTypePane {
         return cloned;
     }
 
-	@Override
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-        String[] iconPaths = getTypeIconPath();
-		ChartImagePane pane = new ChartImagePane(iconPaths[0], Inter.getLocText(new String[]{"User-defined","ChartF-Meter"}), true);
-		pane.isPressing = true;
-		demoList.add(pane);
-        demoList.add(new ChartImagePane(iconPaths[1], Inter.getLocText("FR-Chart-Type_Meter")+"1", true));
-        demoList.add(new ChartImagePane(iconPaths[2], Inter.getLocText("FR-Chart-Type_Meter")+"2", true));
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return new ArrayList<ChartImagePane>();
-	}
-
 	/**
 	 * 界面标题
      * @return 界面标题
@@ -93,7 +90,12 @@ public class MeterPlotPane extends AbstractChartTypePane {
         chart.switchPlot(getSelectedClonedPlot());
 	}
 
-	/**
+    @Override
+    protected String getPlotTypeID() {
+        return ChartConstants.METER_CHART;
+    }
+
+    /**
 	 * 更新界面内容
 	 */
 	public void populateBean(Chart chart) {
@@ -115,16 +117,6 @@ public class MeterPlotPane extends AbstractChartTypePane {
         }
 		checkDemosBackground();
 	}
-
-    /**
-     * 界面是否接受
-     * @param ob 传入的对象
-     * @return 是否是chart对象
-     */
-	public boolean accept(Object ob) {
-		return super.accept(ob) && ((Chart) ob).getPlot() instanceof MeterPlot;
-	}
-
 
     public Chart getDefaultChart() {
         return MeterIndependentChart.meterChartTypes[0];

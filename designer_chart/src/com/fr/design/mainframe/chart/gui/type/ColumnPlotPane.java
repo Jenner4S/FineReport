@@ -1,8 +1,6 @@
 package com.fr.design.mainframe.chart.gui.type;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.fr.chart.base.ChartConstants;
 import com.fr.chart.chartattr.BarPlot;
 import com.fr.chart.chartattr.Chart;
 import com.fr.chart.chartattr.Plot;
@@ -31,6 +29,23 @@ public class ColumnPlotPane extends AbstractBarPane{
     }
 
     @Override
+    protected String[] getTypeTipName() {
+        String column = Inter.getLocText("FR-Chart-Type_Column");
+        String stack = Inter.getLocText("FR-Chart-Type_Stacked");
+        String percent = Inter.getLocText("FR-Chart-Use_Percent");
+        String td = Inter.getLocText("FR-Chart-Chart_3D");
+        return new String[]{
+                column,
+                stack + column,
+                percent + stack + column,
+                td + column,
+                td + column + "(" + Inter.getLocText("FR-Chart-Direction_Horizontal") + ")",
+                td + stack + column,
+                td + percent + stack + column
+        };
+    }
+
+    @Override
     protected String[] getTypeLayoutPath() {
         return new String[]{"/com/fr/design/images/chart/BarPlot/layout/0.png",
                 "/com/fr/design/images/chart/BarPlot/layout/1.png",
@@ -38,30 +53,10 @@ public class ColumnPlotPane extends AbstractBarPane{
                 "/com/fr/design/images/chart/BarPlot/layout/3.png",};
     }
 
-	protected List<ChartImagePane> initDemoList() {
-		List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-        String[] iconPaths = getTypeIconPath();
-		ChartImagePane pane = new ChartImagePane(iconPaths[COLOMN_CHART], Inter.getLocText("FR-Chart-Type_Column"));
-		pane.isPressing = true;
-		demoList.add(pane);
-        demoList.add(new ChartImagePane(iconPaths[STACK_COLOMN_CHART], Inter.getLocText(new String[]{"FR-Chart-Type_Stacked","FR-Chart-Type_Column"})));
-        demoList.add(new ChartImagePane(iconPaths[PERCENT_STACK_COLOMN_CHART],
-                Inter.getLocText(new String[]{"FR-Chart-Use_Percent","FR-Chart-Type_Stacked","FR-Chart-Type_Column"})));
-        demoList.add(new ChartImagePane(iconPaths[THREE_D_COLOMN_CHART], Inter.getLocText(new String[]{"FR-Chart-Chart_3D","FR-Chart-Type_Column"}), true));
-
-        demoList.add(new ChartImagePane(iconPaths[THREE_D_COLOMN_HORIZON_DRAW_CHART],Inter.getLocText(new String[]{"FR-Chart-Chart_3D","FR-Chart-Type_Column","FR-Chart-Direction_Horizontal"},new String[]{"","(",")"})));
-        demoList.add(new ChartImagePane(iconPaths[THREE_D_STACK_COLOMN_CHART],
-                Inter.getLocText(new String[]{"FR-Chart-Chart_3D","FR-Chart-Type_Stacked","FR-Chart-Type_Column"})));
-        demoList.add(new ChartImagePane(iconPaths[THREE_D_PERCENT_STACK_COLOMN_CHART],
-                Inter.getLocText(new String[]{"FR-Chart-Chart_3D","FR-Chart-Use_Percent","FR-Chart-Type_Stacked","FR-Chart-Type_Column"}), true));
-
-		return demoList;
-	}
-
-	@Override
-	protected List<ChartImagePane> initStyleList() {
-		return initNormalStyleList();
-	}
+    @Override
+    protected String[] getTypeLayoutTipName() {
+        return getNormalLayoutTipName();
+    }
 
 	/**
 	 * 界面标题
@@ -113,19 +108,10 @@ public class ColumnPlotPane extends AbstractBarPane{
 		super.updateBean(chart);
 	}
 
-	/**
-	 * 判断界面是否进入
-     * @param ob 传入的对象
-     * @return 对象是否是chart
-	 */
-	public boolean accept(Object ob) {
-		if(!super.accept(ob)) {
-			return false;
-		}
-		Chart chart = (Chart) ob;
-		Plot plot = chart.getPlot();
-		return plot.accept(BarPlot.class) && !((BarPlot)plot).isHorizontal();
-	}
+    @Override
+    protected String getPlotTypeID() {
+        return ChartConstants.COLUMN_CHART;
+    }
 
     public Chart getDefaultChart() {
         return ColumnIndependentChart.columnChartTypes[0];

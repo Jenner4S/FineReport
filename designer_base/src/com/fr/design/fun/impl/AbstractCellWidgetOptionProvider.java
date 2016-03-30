@@ -9,4 +9,9 @@ import com.fr.design.fun.CellWidgetOptionProvider;
  */
 public abstract class AbstractCellWidgetOptionProvider implements CellWidgetOptionProvider {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
 }

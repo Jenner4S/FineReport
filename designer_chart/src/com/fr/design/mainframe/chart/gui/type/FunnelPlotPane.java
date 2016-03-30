@@ -2,12 +2,14 @@ package com.fr.design.mainframe.chart.gui.type;
 
 import com.fr.base.CoreDecimalFormat;
 import com.fr.chart.base.AttrContents;
-import com.fr.chart.chartattr.*;
+import com.fr.chart.base.ChartConstants;
+import com.fr.chart.chartattr.Chart;
+import com.fr.chart.chartattr.FunnelPlot;
+import com.fr.chart.chartattr.Plot;
 import com.fr.chart.charttypes.FunnelIndependentChart;
 import com.fr.general.Inter;
+
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,36 +23,27 @@ public class FunnelPlotPane extends AbstractChartTypePane{
     private static final int FUNNEL_CHART = 0;
 
     @Override
-    protected List<ChartImagePane> initDemoList() {
-        List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-        ChartImagePane pane = new ChartImagePane(getTypeIconPath()[0], Inter.getLocText("FR-Chart-Type_Funnel"));
-        pane.isPressing = true;
-        demoList.add(pane);
-        return demoList;
-    }
-
-    @Override
-    protected List<ChartImagePane> initStyleList() {
-        return new ArrayList<ChartImagePane>();
-    }
-
-    @Override
     protected String[] getTypeIconPath() {
         return new String[]{"/com/fr/design/images/chart/FunnelPlot/type/0.png",
-                "/com/fr/design/images/chart/FunnelPlot/type/1.png",
+        };
+    }
+
+    @Override
+    protected String[] getTypeTipName() {
+        return new String[]{
+                Inter.getLocText("FR-Chart-Type_Funnel")
         };
     }
 
     @Override
     protected String[] getTypeLayoutPath() {
-        return new String[]{"/com/fr/design/images/chart/FunnelPlot/layout/0.png",
-                "/com/fr/design/images/chart/FunnelPlot/layout/1.png",
-                "/com/fr/design/images/chart/FunnelPlot/layout/2.png",
-                "/com/fr/design/images/chart/FunnelPlot/layout/3.png",
-        };
+        return new String[0];
     }
 
-
+    @Override
+    protected String[] getTypeLayoutTipName() {
+        return new String[0];
+    }
 
     /**
      * 返回界面标题
@@ -78,6 +71,11 @@ public class FunnelPlotPane extends AbstractChartTypePane{
         super.updateBean(chart);
     }
 
+    @Override
+    protected String getPlotTypeID() {
+        return ChartConstants.FUNNEL_CHART;
+    }
+
     protected Plot getSelectedClonedPlot(){
         Plot newPlot = new FunnelPlot();
         createFunnelCondition(newPlot);
@@ -90,16 +88,6 @@ public class FunnelPlotPane extends AbstractChartTypePane{
         attrContents.setFormat(new CoreDecimalFormat(new DecimalFormat(), "#.##"));
         attrContents.setPercentFormat(new CoreDecimalFormat(new DecimalFormat(), "#.##%"));
     }
-
-    /**
-     * 界面是否接受
-     * @param ob 传入的对象
-     * @return 是否是chart对象
-     */
-    public boolean accept(Object ob) {
-        return super.accept(ob) && ((Chart) ob).getPlot() instanceof FunnelPlot;
-    }
-
 
     public Chart getDefaultChart() {
         return FunnelIndependentChart.funnelChartTypes[0];

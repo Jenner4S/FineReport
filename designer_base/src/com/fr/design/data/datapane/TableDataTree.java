@@ -1,7 +1,6 @@
 package com.fr.design.data.datapane;
 
 import com.fr.base.BaseUtils;
-import com.fr.base.TableData;
 import com.fr.general.NameObject;
 import com.fr.design.constants.UIConstants;
 import com.fr.design.data.tabledata.wrapper.TableDataWrapper;
@@ -16,7 +15,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
-
 import java.awt.*;
 
 /**

@@ -7,4 +7,9 @@ import com.fr.design.fun.GlobalListenerProvider;
  */
 public abstract class AbstractGlobalListenerProvider implements GlobalListenerProvider {
 
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
+
 }

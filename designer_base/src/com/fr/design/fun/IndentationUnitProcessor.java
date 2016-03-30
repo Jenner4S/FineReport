@@ -1,10 +1,15 @@
 package com.fr.design.fun;
 
+import com.fr.stable.fun.Level;
+
 /**
  * Created by zhouping on 2015/9/20.
  */
-public interface IndentationUnitProcessor {
+public interface IndentationUnitProcessor extends Level{
     String MARK_STRING = "IndentationProcessor";
+
+    int CURRENT_LEVEL = 1;
+
 
     int getIndentationUnit();
 

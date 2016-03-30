@@ -8,4 +8,9 @@ import com.fr.design.fun.HighlightProvider;
  * @since 8.0
  */
 public abstract class AbstractHighlightProvider implements HighlightProvider {
+
+    public int currentAPILevel() {
+        return CURRENT_LEVEL;
+    }
+
 }

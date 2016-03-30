@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.parameter.widget.year</id>
+    <name><![CDATA[年份选择控件]]></name>
+    <active>yes</active>
+    <version>1.4</version>
+    <env-version>8.0</env-version>
+    <jartime>2015-01-06</jartime>
+    <vendor>Willow</vendor>
+    <description><![CDATA[年份选择控件,使用方法与日期控件一致]]></description>
+    <change-notes><![CDATA[单元格控件，水印无法保存处理，及开始，结束日期空值的中文显示]]></change-notes>
+    <extra-core>
+        <LocaleFinder class="com.fr.plugin.widget.year.ActualLocaleFinder"/>
+        <JavaScriptFileHandler class="com.fr.plugin.widget.year.JavaScriptFile"/>
+    </extra-core>
+    <extra-report/>
+    <extra-designer>
+        <FormWidgetOptionProvider class="com.fr.plugin.widget.year.YearImpl"/>
+        <ParameterWidgetOptionProvider class="com.fr.plugin.widget.year.YearImpl"/>
+        <CellWidgetOptionProvider class="com.fr.plugin.widget.year.CellYearImpl"/>
+    </extra-designer>
+</plugin>

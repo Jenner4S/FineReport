@@ -54,8 +54,8 @@ public class ChartStartModule extends ChartDesignerModule {
      * 应用打开器
      * @return 应用
      */
-    public DesignerFrame.App<?>[] apps4TemplateOpener() {
-        return new DesignerFrame.App[]{new DesignerFrame.App<ChartBook>() {
+    public App<?>[] apps4TemplateOpener() {
+        return new App[]{new AbstractAppProvider<ChartBook>() {
 
             @Override
             public String[] defaultExtentions() {

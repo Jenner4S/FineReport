@@ -33,8 +33,6 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 
-import org.mortbay.http.SSORealm;
-
 import com.fr.base.BaseUtils;
 import com.fr.base.Env;
 import com.fr.base.FRContext;
@@ -64,7 +62,6 @@ import com.fr.stable.Nameable;
 import com.fr.stable.ProductConstants;
 import com.fr.stable.StringUtils;
 import com.fr.stable.core.PropertyChangeAdapter;
-import com.plugin.sso.SSO;
 
 public class EnvListPane extends JControlPane {
     public EnvListPane() {
@@ -75,7 +72,7 @@ public class EnvListPane extends JControlPane {
                 String[] allListNames = nameableList.getAllNames();
                 allListNames[nameableList.getSelectedIndex()] = StringUtils.EMPTY;
                 if (StringUtils.isEmpty(tempName)) {
-                	String[] warning = new String[]{"NOT_NULL_Des", "Please_Rename"};
+                    String[] warning = new String[]{"NOT_NULL_Des", "Please_Rename"};
                     String[] sign = new String[]{",", "!"};
                     nameableList.stopEditing();
                     JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(EnvListPane.this), Inter.getLocText(warning, sign));
@@ -439,18 +436,6 @@ public class EnvListPane extends JControlPane {
         private boolean testConnection() {
             RemoteEnv env = new RemoteEnv();
             String url = servletPathField.getText();
-            //添加 Jsessionid
-            try {
-//            	setHttpsParas();
-				url = SSO.getUrl(url, "a","a");
-				System.out.println("CCCCCCC"+url);
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-            servletPathField.setText(url);
-            
-            
             env.setPath(url);
             env.setUser(userTextField.getText());
             env.setPassword(new String(passwordTextField.getPassword()));
@@ -464,11 +449,6 @@ public class EnvListPane extends JControlPane {
             		if(url.startsWith("https:")){
             			setHttpsParas();
             		}
-            		
-            		
-            		
-            		
-            		
                     connect = env.testConnectionWithOutRegisteServer(this);
                 }
             } catch (Exception e) {
@@ -532,20 +512,6 @@ public class EnvListPane extends JControlPane {
         		this.certificatePath.setText(manager.getCertificatePath());
         		this.certificatePass.setText(manager.getCertificatePass());
                 // 第二次出现":"的地方,port位置起始点
-        		
-        		
-        		
-        		//如果是cas登录的  删除之前的会话
-        		envPath =  envPath.split(";")[0];
-        		//创建新的会话
-        		try {
-					envPath = SSO.getUrl(envPath, "a","a"/*ob.getUser() == null ? StringUtils.EMPTY : ob.getUser(), ob.getPassword() == null ? StringUtils.EMPTY : ob.getPassword()*/);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-        		
-        		
                 int secondTime = envPath.indexOf(":", envPath.indexOf(":") + 1);
                 // 第三次出现"/"的地方
                 int thirdTime = envPath.indexOf("/", secondTime + 1);
@@ -565,9 +531,6 @@ public class EnvListPane extends JControlPane {
                     }
                     this.servletField.setText(envPath.substring(lastTime + 1));
                 }
-
-//                envPath =  envPath.split(";")[0];
-//        		System.out.println("PPPPPPPPATH"+envPath);
                 this.servletPathField.setText(envPath);
             }
 
@@ -608,7 +571,6 @@ public class EnvListPane extends JControlPane {
             String webApply = this.webApplyField.getText();
             String servlet = this.servletField.getText();
             String path = this.servletPathField.getText();
-            
             String user = this.userTextField.getText();
             String password = new String(this.passwordTextField.getPassword());
             if (isAllEmpty(new String[]{hostName, webApply, servlet})) {

@@ -1,5 +1,6 @@
 package com.fr.design.extra;
 
+import com.fr.general.GeneralUtils;
 import com.fr.general.Inter;
 import com.fr.general.http.HttpClient;
 import com.fr.json.JSONArray;
@@ -67,6 +68,8 @@ public class PluginsReaderFromStore {
             try {
                 HashMap<String, String> para = new HashMap<String, String>();
                 para.put("plugins", PluginLoader.getLoader().pluginsToString());
+                //只有当前设计器的jar高于插件新版本需要的jarTime时, 才提示更新该插件.
+                para.put("jarTime", GeneralUtils.readBuildNO());
                 HttpClient httpClient = new HttpClient(PluginConstants.PLUGIN_CHECK_UPDATE_URL, para);
                 resText = httpClient.getResponseText();
                 String charSet = EncodeConstants.ENCODING_UTF_8;
