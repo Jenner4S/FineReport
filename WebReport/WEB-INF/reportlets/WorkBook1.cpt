@@ -29,8 +29,107 @@
 <C c="0" r="0">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=circleworkday(20160303,5)]]></Attributes>
+<![CDATA[=$myCombox0]]></Attributes>
 </O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetName name="啊啊啊"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="阿aaa" value="ddd"/>
+<Dict key="dd" value="sss"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="0" r="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetName name="啊啊啊"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="阿aaa" value="ddd"/>
+<Dict key="dd" value="sss"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="3" r="4">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboCheckBox">
+<WidgetName name="阿"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="啊啊   " value="硕大的"/>
+<Dict key="大大" value="达到"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+<RAAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="4">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="三四十 " value="点对点"/>
+<Dict key="爱爱的发的" value="达到"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="4" r="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8">
+<PrivilegeControl/>
+<Widget class="com.bit.plugin.combox.MyCombox">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true"/>
+</Connection>
+</Dictionary>
+<widgetValue/>
+<RAAttr mutiSelect="true" isArray="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -46,6 +145,99 @@
 <Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
 <PWTitle>
 <![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="1" left="1" bottom="1" right="1"/>
+<Border>
+<border style="0" color="-723724" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-1118482"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="formSubmit0"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="303" y="32" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.bit.plugin.combox.MyCombox">
+<WidgetName name="myCombox0"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="sss" value="ddd"/>
+<Dict key="aaaa" value="sddd"/>
+<Dict key="aaad" value="dddd"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+<RAAttr mutiSelect="false"/>
+</InnerWidget>
+<BoundsAttr x="184" y="23" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.bit.plugin.combox.MyCombox">
+<WidgetName name="myCombox1"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<RAAttr mutiSelect="true"/>
+</InnerWidget>
+<BoundsAttr x="440" y="36" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.bit.plugin.combox.MyCombox">
+<WidgetName name="myCombox2"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="啊啊啊" value="订单"/>
+<Dict key="嗯嗯嗯" value="333"/>
+<Dict key="委托人" value="嘎嘎嘎"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+<RAAttr mutiSelect="true"/>
+</InnerWidget>
+<BoundsAttr x="607" y="31" width="80" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="myCombox0"/>
+<Widget widgetName="myCombox2"/>
+<Widget widgetName="myCombox1"/>
+</MobileWidgetList>
+<WidgetNameTagMap/>
+</Layout>
+<DesignAttr width="960" height="80"/>
+</ParameterUI>
 </ReportParameterAttr>
 <StyleList/>
 <DesignerVersion DesignerVersion="IAA"/>

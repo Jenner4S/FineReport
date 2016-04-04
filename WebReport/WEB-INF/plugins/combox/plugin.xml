@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
+    <id>com.fr.plugin.widget.widget.myplugin</id>
+    <name><![CDATA[wodekongjian xialakuagn]]></name>
+    <active>yes</active>
+    <version>1.0</version>
+    <env-version>8.0</env-version>
+    <jartime>2016-03-08</jartime>
+    <vendor>finereport.joy</vendor>
+    <description><![CDATA[无]]></description>
+    <change-notes><![CDATA[无]]></change-notes>
+<extra-designer>
+	  <CellWidgetOptionProvider class="com.bit.plugin.combox.CellCombox"/>
+    <FormWidgetOptionProvider class="com.bit.plugin.combox.FormCombox"/>
+	  <ParameterWidgetOptionProvider class="com.bit.plugin.combox.FormCombox"/>
+</extra-designer>
+<extra-core>
+    <LocaleFinder class="com.bit.plugin.combox.LocaleFinder"/>
+</extra-core>
+    </plugin>

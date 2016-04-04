@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WorkBook xmlVersion="20151125" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[JDBC1]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM `help_relation`]]></Query>
+</TableData>
+</TableDataMap>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
 <HR/>
@@ -15,18 +27,10 @@
 <![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="0">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=isworkday(20160306)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
 <C c="1" r="0" s="0">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=circleworkday(20130223,1)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -48,26 +52,21 @@
 </C>
 <C c="6" r="0" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="7" r="0" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="8" r="0" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="0" r="1">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=isworkday(20190303)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
 <C c="1" r="1">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=workday(20161001,20160303,20160306)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -77,27 +76,29 @@
 </C>
 <C c="3" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="4" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="5" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="6" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="7" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="8" r="1" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="0" r="2" s="1">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=updateworkday(2012)]]></Attributes>
-</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -131,6 +132,7 @@
 </C>
 <C c="8" r="2" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="1" r="3" s="2">
 <PrivilegeControl/>
@@ -162,6 +164,7 @@
 </C>
 <C c="8" r="3" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="1" r="4" s="2">
 <PrivilegeControl/>
@@ -169,6 +172,16 @@
 </C>
 <C c="2" r="4" s="2">
 <PrivilegeControl/>
+<Widget class="com.fr.form.ui.TreeComboBoxEditor">
+<WidgetName name="宿舍"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TreeAttr selectLeafOnly="true"/>
+<isAutoBuild autoBuild="false"/>
+<isPerformanceFirst performanceFirst="false"/>
+<widgetValue/>
+</Widget>
 <Expand/>
 </C>
 <C c="3" r="4" s="2">
@@ -193,6 +206,7 @@
 </C>
 <C c="8" r="4" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="1" r="5" s="2">
 <PrivilegeControl/>
@@ -224,6 +238,7 @@
 </C>
 <C c="8" r="5" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="0" r="6">
 <PrivilegeControl/>
@@ -515,6 +530,7 @@
 </C>
 <C c="8" r="14" s="0">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="7" r="15" s="4">
 <PrivilegeControl/>
@@ -536,6 +552,59 @@
 <Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
 <PWTitle>
 <![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="1" left="1" bottom="1" right="1"/>
+<Border>
+<border style="0" color="-723724" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-1118482"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.plugin.widget.ztree.core.ZTree">
+<WidgetName name="zTree0"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<ZTreeNode class="com.fr.plugin.widget.ztree.core.ZTreeNode">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="-1"/>
+<DBDictAttr tableName="" schemaName="" ki="1" vi="-1" kiName="" viName=""/>
+<Connection class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="" driver="" user="" password="___" encryptPassword="true"/>
+</Connection>
+</Dictionary>
+</ZTreeNode>
+<ZTreeAttr class="com.fr.plugin.widget.ztree.core.ZTreeAttr">
+<Attr cascade="descendant" popupHeight="240"/>
+</ZTreeAttr>
+</InnerWidget>
+<BoundsAttr x="228" y="25" width="80" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="zTree0"/>
+</MobileWidgetList>
+<WidgetNameTagMap/>
+</Layout>
+<DesignAttr width="960" height="80"/>
+</ParameterUI>
 </ReportParameterAttr>
 <StyleList>
 <Style imageLayout="1">

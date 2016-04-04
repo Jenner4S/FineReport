@@ -1,0 +1,19 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) fieldsfirst ansi 
+
+package com.fr.grid.event;
+
+import java.util.EventListener;
+
+// Referenced classes of package com.fr.grid.event:
+//            FloatEditorEvent
+
+public interface FloatEditorListener
+    extends EventListener
+{
+
+    public abstract void editingStopped(FloatEditorEvent floateditorevent);
+
+    public abstract void editingCanceled(FloatEditorEvent floateditorevent);
+}
