@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
-    <id>com.hyp.plugin.workday</id>
+    <id>com.plugin.workday</id>
     <name><![CDATA[工作日判断函数]]></name>
     <active>yes</active>
-    <version>1.2</version>
+    <version>4.0</version>
     <env-version>8.0</env-version>
-    <jartime>2015-03-02</jartime>
+    <jartime>2016-06-01</jartime>
     <vendor>haoyiping</vendor>
     <description><![CDATA[1. 判断是否为工作日    例如：输入函数 isworkday(20160303)  输出结果为 false   
     2. 输入日期序列，得到工作日情况json对象   例如：输入函数 workday(20161001,20160303,20160306) 输出结果为 	{"20161001":"假期","20160303":"工作日","20160306":"休息日"}
-    3. 判断是否为工作日循环触发    例如：输入函数 circleworkday(20160304,3)  输出结果为 true  注：今天是20160309   
+    3. 判断是否为工作日循环触发    例如：输入函数 circleworkday(201701012,5)  输出结果为 true  注：今天是201701019  
     4. 更新本地数据库  例如：输入函数 updateworkday(2014) 输出结果为 Success 表示该年份工作日本地数据库已经更新（可在局域网中使用）
     ]]></description>
     
-    <change-notes><![CDATA[添加工作日循环触发判断函数，添加离线模式]]></change-notes>
+    <change-notes><![CDATA[1.添加工作日循环触发判断函数，添加离线模式 2.更新在线工作日链接（内置：http://www.easybots.cn/api/holiday.php?d=）]]></change-notes>
   <extra-core>
         <LocaleFinder class="com.hyp.plugin.workday.WorkDayLocaleFinder"/>
        <FunctionDefineProvider class="com.hyp.plugin.workday.WorkDay" name="workday" description="可传入多个日期(单个日期格式如：20160303)返回结果为json对象"/>
